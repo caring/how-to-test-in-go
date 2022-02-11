@@ -1,0 +1,16 @@
+syntax = "proto3";
+package mocks;
+
+option go_package = "github.com/caring/how-to-test-in-go/1-mocks/pb";
+
+service MockService {
+  rpc FizzBuzz (FizzBuzzRequest) returns (FizzBuzzResponse);
+}
+
+message FizzBuzzRequest {
+  uint64 number = 1;
+}
+
+message FizzBuzzResponse {
+  string fizz_buzz = 1;
+}
