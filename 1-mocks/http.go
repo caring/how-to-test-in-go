@@ -1,6 +1,7 @@
 package mocks
 
 import (
+	"context"
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
@@ -11,11 +12,11 @@ import (
 	fizzbuzz "github.com/caring/test/0-begin-here"
 )
 
-// GetFizzBuzz makes an HTTP request to a fizzbuzz service an returns the result.
-func GetFizzBuzz(baseURL string, n int) (string, error) {
+// GetFizzBuzzHTTP makes an HTTP request to a fizzbuzz service an returns the result.
+func GetFizzBuzzHTTP(ctx context.Context, baseURL string, n int) (string, error) {
 	url := fmt.Sprintf("%s/fizzbuzz/%d", baseURL, n)
 
-	request, _ := http.NewRequest(http.MethodGet, url, nil)
+	request, _ := http.NewRequestWithContext(ctx, http.MethodGet, url, nil)
 	request.Header.Add("Accept", "application/json")
 	client := &http.Client{}
 
@@ -42,14 +43,12 @@ func GetFizzBuzz(baseURL string, n int) (string, error) {
 	return v.FizzBuzz, nil
 }
 
-
-
 // FizzBuzzHandler is a simple HTTP handler that returns a fizzbuzz result.
 // The encoding errors should probably be logged, but were left out of this example.
 func FizzBuzzHandler(w http.ResponseWriter, r *http.Request) {
-	var result struct{
+	var result struct {
 		FizzBuzz string `json:"fizz_buzz"`
-		Error  string `json:"err"`
+		Error    string `json:"err"`
 	}
 	enc := json.NewEncoder(w)
 
@@ -95,7 +94,6 @@ func FizzBuzzHandler(w http.ResponseWriter, r *http.Request) {
 
 		return
 	}
-
 
 	w.WriteHeader(http.StatusOK)
 	_ = enc.Encode(result)

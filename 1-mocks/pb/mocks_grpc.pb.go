@@ -18,7 +18,7 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MockServiceClient interface {
-	FizzBuzz(ctx context.Context, in *FizzBuzzRequest, opts ...grpc.CallOption) (*FizzBuzzResponse, error)
+	GetFizzBuzz(ctx context.Context, in *GetFizzBuzzRequest, opts ...grpc.CallOption) (*GetFizzBuzzResponse, error)
 }
 
 type mockServiceClient struct {
@@ -29,9 +29,9 @@ func NewMockServiceClient(cc grpc.ClientConnInterface) MockServiceClient {
 	return &mockServiceClient{cc}
 }
 
-func (c *mockServiceClient) FizzBuzz(ctx context.Context, in *FizzBuzzRequest, opts ...grpc.CallOption) (*FizzBuzzResponse, error) {
-	out := new(FizzBuzzResponse)
-	err := c.cc.Invoke(ctx, "/mocks.MockService/FizzBuzz", in, out, opts...)
+func (c *mockServiceClient) GetFizzBuzz(ctx context.Context, in *GetFizzBuzzRequest, opts ...grpc.CallOption) (*GetFizzBuzzResponse, error) {
+	out := new(GetFizzBuzzResponse)
+	err := c.cc.Invoke(ctx, "/mocks.MockService/GetFizzBuzz", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -42,7 +42,7 @@ func (c *mockServiceClient) FizzBuzz(ctx context.Context, in *FizzBuzzRequest, o
 // All implementations must embed UnimplementedMockServiceServer
 // for forward compatibility
 type MockServiceServer interface {
-	FizzBuzz(context.Context, *FizzBuzzRequest) (*FizzBuzzResponse, error)
+	GetFizzBuzz(context.Context, *GetFizzBuzzRequest) (*GetFizzBuzzResponse, error)
 	mustEmbedUnimplementedMockServiceServer()
 }
 
@@ -50,8 +50,8 @@ type MockServiceServer interface {
 type UnimplementedMockServiceServer struct {
 }
 
-func (UnimplementedMockServiceServer) FizzBuzz(context.Context, *FizzBuzzRequest) (*FizzBuzzResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method FizzBuzz not implemented")
+func (UnimplementedMockServiceServer) GetFizzBuzz(context.Context, *GetFizzBuzzRequest) (*GetFizzBuzzResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetFizzBuzz not implemented")
 }
 func (UnimplementedMockServiceServer) mustEmbedUnimplementedMockServiceServer() {}
 
@@ -66,20 +66,20 @@ func RegisterMockServiceServer(s grpc.ServiceRegistrar, srv MockServiceServer) {
 	s.RegisterService(&MockService_ServiceDesc, srv)
 }
 
-func _MockService_FizzBuzz_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(FizzBuzzRequest)
+func _MockService_GetFizzBuzz_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetFizzBuzzRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MockServiceServer).FizzBuzz(ctx, in)
+		return srv.(MockServiceServer).GetFizzBuzz(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/mocks.MockService/FizzBuzz",
+		FullMethod: "/mocks.MockService/GetFizzBuzz",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MockServiceServer).FizzBuzz(ctx, req.(*FizzBuzzRequest))
+		return srv.(MockServiceServer).GetFizzBuzz(ctx, req.(*GetFizzBuzzRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -92,8 +92,8 @@ var MockService_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*MockServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "FizzBuzz",
-			Handler:    _MockService_FizzBuzz_Handler,
+			MethodName: "GetFizzBuzz",
+			Handler:    _MockService_GetFizzBuzz_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

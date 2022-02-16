@@ -7,6 +7,7 @@ Additional Reaing
 package mocks_test
 
 import (
+	"context"
 	"encoding/json"
 	"net/http"
 	"net/http/httptest"
@@ -32,7 +33,10 @@ func TestGetFizzBuzz(t *testing.T) {
 	}))
 	defer server.Close()
 
-	value, _ := mocks.GetFizzBuzz(server.URL, 15)
+	// run client request
+	value, _ := mocks.GetFizzBuzzHTTP(context.TODO(), server.URL, 15)
+
+	// validate output
 	if value != "fizzbuzz" {
 		t.Errorf("expected 'fixed', got %s", value)
 	}
@@ -40,6 +44,7 @@ func TestGetFizzBuzz(t *testing.T) {
 
 // TestFizzBuzzHandler shows how to test the server handler with some simulated HTTP requests.
 func TestFizzBuzzHandler(t *testing.T) {
+	// setup a table test for requests.
 	tests := []struct {
 		Method   string
 		URL      string
@@ -61,29 +66,33 @@ func TestFizzBuzzHandler(t *testing.T) {
 	for i, tt := range tests {
 		t.Logf("Test %d - %s %s", i, tt.Method, tt.URL)
 
+		// build the mocked request and recorder
 		r := httptest.NewRequest(tt.Method, tt.URL, nil)
 		r.Header.Set("Accept", tt.Accept)
 		w := httptest.NewRecorder()
 
+		// call handler
 		mocks.FizzBuzzHandler(w, r)
 
+		// check the http response code is correct.
 		if tt.Code != w.Code {
 			t.Errorf("expected '%d' got '%d'", tt.Code, w.Code)
 		}
 
+		// decode the json payload
 		var result struct {
 			FizzBuzz string `json:"fizz_buzz"`
 			Error    string `json:"err"`
 		}
-
 		json.NewDecoder(w.Body).Decode(&result)
 
+		// check error message
 		if tt.Error != result.Error {
 			t.Errorf("expected error '%s' got '%s'", tt.Error, result.Error)
 		}
+		// check returned value
 		if tt.FizzBuzz != result.FizzBuzz {
 			t.Errorf("expected fizzbuzz '%s' got '%s'", tt.FizzBuzz, result.FizzBuzz)
 		}
 	}
 }
-

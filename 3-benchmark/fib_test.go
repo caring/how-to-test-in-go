@@ -7,24 +7,28 @@ import (
 	fib "github.com/caring/test/3-benchmark"
 )
 
+// ExampleRecursive runs a slow recursive version of fib.
 func ExampleRecursive() {
 	fmt.Println(fib.Recursive(47))
 
 	// Output: 2971215073
 }
 
+// ExampleLoop runs a medium iterative version of fib.
 func ExampleLoop() {
 	fmt.Println(fib.Loop(47))
 
 	// Output: 2971215073
 }
 
+// ExampleFast runs a fast recursive version of fib.
 func ExampleFast() {
 	fmt.Println(fib.Fast(47))
 
 	// Output: 2971215073
 }
 
+// BenchmarkFib will run all three fib implementations and print out the result.
 func BenchmarkFib(b *testing.B) {
 	benches := []struct {
 		Name string

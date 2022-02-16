@@ -4,13 +4,13 @@ package mocks;
 option go_package = "github.com/caring/how-to-test-in-go/1-mocks/pb";
 
 service MockService {
-  rpc FizzBuzz (FizzBuzzRequest) returns (FizzBuzzResponse);
+  rpc GetFizzBuzz (GetFizzBuzzRequest) returns (GetFizzBuzzResponse);
 }
 
-message FizzBuzzRequest {
+message GetFizzBuzzRequest {
   uint64 number = 1;
 }
 
-message FizzBuzzResponse {
+message GetFizzBuzzResponse {
   string fizz_buzz = 1;
 }
