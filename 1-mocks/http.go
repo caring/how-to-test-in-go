@@ -21,9 +21,12 @@ func GetFizzBuzzHTTP(ctx context.Context, baseURL string, n int) (string, error)
 	client := &http.Client{}
 
 	response, err := client.Do(request)
+	if err != nil {
+		return "", err
+	}
 
 	if response.StatusCode != 200 {
-		return "", err
+		return "", fmt.Errorf("failed to read response. got %d", response.StatusCode)
 	}
 
 	content, err := ioutil.ReadAll(response.Body)

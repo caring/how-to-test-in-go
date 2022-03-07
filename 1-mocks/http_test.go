@@ -1,7 +1,7 @@
 /* Mock HTTP
 
 
-Additional Reaing
+Additional Reading
 [1]: https://medium.com/zus-health/mocking-outbound-http-requests-in-go-youre-probably-doing-it-wrong-60373a38d2aa
 */
 package mocks_test
@@ -20,25 +20,53 @@ import (
 // TestGetFizzBuzz shows how to test a client that calls an HTTP server.
 // httptest.NewServer will modify the global RoundTripper until server.Close() is called.
 func TestGetFizzBuzz(t *testing.T) {
-	// Setup Mock HTTP server
-	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		if !strings.HasPrefix(r.URL.Path, "/fizzbuzz/") {
-			t.Errorf("expected to request '/fizzbuzz/', got: %s", r.URL.Path)
-		}
-		if r.Header.Get("Accept") != "application/json" {
-			t.Errorf("expected Accept: application/json header, got: %s", r.Header.Get("Accept"))
-		}
-		w.WriteHeader(http.StatusOK)
-		w.Write([]byte(`{"fizz_buzz":"fizzbuzz"}`))
-	}))
-	defer server.Close()
+	tests := []struct {
+		// values sent to server
+		URL string
+		// values returned by server
+		Code int
+		Body []byte
+		// expected values
+		Expected string
+		Error    string
+	}{
+		{"/fizzbuzz/1", http.StatusOK, []byte(`{"fizz_buzz":"1"}`), "1", ""},
+		{"/fizzbuzz/3", http.StatusOK, []byte(`{"fizz_buzz":"fizz"}`), "fizz", ""},
+		{"/fizzbuzz/5", http.StatusOK, []byte(`{"fizz_buzz":"buzz"}`), "buzz", ""},
+		{"/fizzbuzz/13", http.StatusOK, []byte(`{"fizz_buzz":"fizzbuzz"}`), "fizzbuzz", ""},
+		{"/fizzbuzz/0", http.StatusInternalServerError, []byte(`{"fizz_buzz":""}`), "", "failed to read response. got 500"},
+		{"/fizzbuzz/1", http.StatusOK, []byte(`{"fizz_buzz":"`), "", "unexpected end of JSON input"},
+	}
 
-	// run client request
-	value, _ := mocks.GetFizzBuzzHTTP(context.TODO(), server.URL, 15)
+	for _, tt := range tests {
+		// Setup Mock HTTP server
+		server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+			if !strings.HasPrefix(r.URL.Path, "/fizzbuzz/") {
+				t.Errorf("expected to request '/fizzbuzz/', got: %s", r.URL.Path)
+			}
+			if r.Header.Get("Accept") != "application/json" {
+				t.Errorf("expected Accept: application/json header, got: %s", r.Header.Get("Accept"))
+			}
+			w.WriteHeader(tt.Code)
+			w.Write(tt.Body)
+		}))
+		defer server.Close()
 
-	// validate output
-	if value != "fizzbuzz" {
-		t.Errorf("expected 'fixed', got %s", value)
+		// run client request
+		value, err := mocks.GetFizzBuzzHTTP(context.TODO(), server.URL, 15)
+
+		if tt.Error == "" && err != nil {
+			t.Errorf(err.Error())
+		}
+
+		if tt.Error != "" && err != nil && tt.Error != err.Error() {
+			t.Errorf("exptected %q, got %q", tt.Error, err.Error())
+		}
+
+		// validate output
+		if value != tt.Expected {
+			t.Errorf("expected %q, got %q", tt.Expected, value)
+		}
 	}
 }
 
@@ -61,6 +89,7 @@ func TestFizzBuzzHandler(t *testing.T) {
 		{http.MethodGet, "/fizzbuzz/3", "application/json", http.StatusOK, "fizz", ""},
 		{http.MethodGet, "/fizzbuzz/5", "application/json", http.StatusOK, "buzz", ""},
 		{http.MethodGet, "/fizzbuzz/15", "application/json", http.StatusOK, "fizzbuzz", ""},
+		{http.MethodGet, "/fizzbuzz/0", "application/json", http.StatusInternalServerError, "", "internal error: too much fizzbuzzery"},
 	}
 
 	for i, tt := range tests {

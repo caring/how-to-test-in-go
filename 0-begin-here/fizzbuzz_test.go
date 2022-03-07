@@ -27,7 +27,7 @@ func print(s string, err error) {
 }
 
 // TestFizzBuzz_Simple shows how to use the different assertions when testing.
-func TestFizzBuzz_Simple(t *testing.T) {
+func TestFizzBuzz_Simple(t *testing.T) { 
 	// is has a minimal set of functions that can be used for testing the result of a function.
 	is := is.New(t)
 
@@ -54,20 +54,20 @@ func TestFizzBuzz_Simple(t *testing.T) {
 	is.NoErr(err)
 	is.Equal(r, "fizzbuzz") // should be fizzbuzz when divisible by 3 and 5.
 
-	r, err = fizzbuzz.FizzBuzz(-1)
-	is.True(err != nil) // error expected for negative values.
+	r, err = fizzbuzz.FizzBuzz(0)
+	is.True(err != nil) // error expected for zerp.
 	is.Equal(r, "")     // no value expected when error.
 
-	// Sesting panics can be tricky since we need to use a defer to recover and assert.
+	// Testing panics can be tricky since we need to use a defer to recover and assert.
 	// Panic should be a very rare occurance! This example is to demonstrate how it could be done.
 	func() {
 		defer func() {
 			if p := recover(); p == nil {
-				is.Fail() // a value of 0 should panic.
+				is.Fail() // a negative value should panic.
 			}
 		}()
 
-		r, err := fizzbuzz.FizzBuzz(0)
+		r, err := fizzbuzz.FizzBuzz(-1)
 		// NOTE: These assertions will never get run because of the panic.
 		is.NoErr(err)
 		is.Equal(r, "")
@@ -90,8 +90,8 @@ func TestFizzBuzz_Table(t *testing.T) {
 		{in: 3, out: "fizz"},
 		{in: 5, out: "buzz"},
 		{in: 15, out: "fizzbuzz"},
-		{in: -1, isErr: true},
-		{in: 0, isPanic: true},
+		{in: -1, isPanic: true},
+		{in: 0, isErr: true},
 
 		// Examples that are designed to be caught by the test to prove that it is testing conditions.
 		// {in: 27, out: "27"},
@@ -160,14 +160,14 @@ func TestFizzBuzz_Helper(t *testing.T) {
 		{story: "3 divisor should return fizz", in: 3, hasFizz: true},
 		{story: "5 divisor should return buzz", in: 5, hasBuzz: true},
 		{story: "3 and 5 divisor should return fizzbuzz", in: 15, hasFizz: true, hasBuzz: true},
-		{story: "negative number should return error", in: -1, isErr: true},
-		{story: "zero should panic", in: 0, isPanic: true},
+		{story: "zero should return error", in: 0, isErr: true},
+		{story: "negative number should panic", in: -1, isPanic: true},
 
 		// Examples that are designed to be caught by the test to prove that it is testing conditions.
 		// {story: "FailTest 27 is divisible by 3", in: 27},
 		// {story: "TestFail 1 returns error", in: 1, isErr: true},
 		// {story: "TestFail 1 returns panic", in: 1, isPanic: true},
-		// {story: "TestFail 0 returns no panic", in: 0},
+		// {story: "TestFail -1 returns no panic", in: -1},
 	}
 
 	for i, tt := range tests {

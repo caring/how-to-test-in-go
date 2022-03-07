@@ -7,10 +7,10 @@ import (
 
 func FizzBuzz(n int) (string, error) {
 	if n < 0 {
-		return "", fmt.Errorf("n is negative. got = %d", n)
+		panic(fmt.Sprint("n is negative. got = ", n))
 	}
 	if n == 0 {
-		panic("too much fizzbuzzery")
+		return "", fmt.Errorf("too much fizzbuzzery")
 	}
 
 	switch {

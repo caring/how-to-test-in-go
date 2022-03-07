@@ -32,6 +32,7 @@ func TestFizzBuzzGRPCHandler(t *testing.T) {
 		{3, codes.OK, "fizz", ""},
 		{5, codes.OK, "buzz", ""},
 		{15, codes.OK, "fizzbuzz", ""},
+		{0, codes.Internal, "", "rpc error: code = Internal desc = too much fizzbuzzery"},
 	}
 
 	for i, tt := range tests {
@@ -42,9 +43,14 @@ func TestFizzBuzzGRPCHandler(t *testing.T) {
 
 		// Execute handler
 		result, err := c.GetFizzBuzz(context.TODO(), &pb.GetFizzBuzzRequest{Number: tt.Number})
-		if err != nil {
+
+		if tt.Error == "" && err != nil {
 			t.Errorf(err.Error())
 		}
+		if tt.Error != "" && tt.Error != err.Error() {
+			t.Errorf("expected: %v, got: %v", tt.Error, err.Error())
+		}
+
 
 		// Test result
 		if tt.FizzBuzz != result.GetFizzBuzz() {
@@ -66,6 +72,7 @@ func TestFizzBuzzGRPCClient(t *testing.T) {
 		{3, codes.OK, "fizz", ""},
 		{5, codes.OK, "buzz", ""},
 		{15, codes.OK, "fizzbuzz", ""},
+		{0, codes.Internal, "", "rpc error: code = Internal desc = too much fizzbuzzery"},
 	}
 
 	for i, tt := range tests {
@@ -79,7 +86,7 @@ func TestFizzBuzzGRPCClient(t *testing.T) {
 
 			n, err := mocks.GetFizzBuzzGRPC(ctx, tt.Number, cl)
 
-			if tt.Error != "" && tt.Error != err.Error() {
+			if tt.Error != "" && err != nil && tt.Error != err.Error() {
 				t.Errorf("expected error '%s' got '%s'", tt.Error, err.Error())
 			}
 
