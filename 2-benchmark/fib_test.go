@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	fib "github.com/caring/test/3-benchmark"
+	fib "github.com/caring/test/2-benchmark"
 )
 
 // ExampleRecursive runs a slow recursive version of fib.
