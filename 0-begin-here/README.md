@@ -9,3 +9,5 @@ Also, it shows some techniques for testing stories and code that may panic!
 # Additional Reading
 
 https://gobyexample.com/testing
+
+https://blog.alexellis.io/golang-writing-unit-tests/
