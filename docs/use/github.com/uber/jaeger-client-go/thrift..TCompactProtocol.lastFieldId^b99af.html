@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/uber/jaeger-client-go/thrift.TCompactProtocol.lastFieldId</title>
+<link href="../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift.html">github.com/uber/jaeger-client-go/thrift</a>.<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-103">TCompactProtocol</a>.<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-112">lastFieldId</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">13 uses</span>
+
+	github.com/uber/jaeger-client-go/thrift (current package)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-112">compact_protocol.go#L112</a>: 	<b>lastFieldId</b> int
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-179" class="path-duplicate">compact_protocol.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-179">#L179</a>: 	p.lastField = append(p.lastField, p.<b>lastFieldId</b>)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-180" class="path-duplicate">compact_protocol.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-180">#L180</a>: 	p.<b>lastFieldId</b> = 0
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-191" class="path-duplicate">compact_protocol.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-191">#L191</a>: 	p.<b>lastFieldId</b> = p.lastField[len(p.lastField)-1]
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-222" class="path-duplicate">compact_protocol.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-222">#L222</a>: 	if fieldId &gt; p.<b>lastFieldId</b> &amp;&amp; fieldId-p.<b>lastFieldId</b> &lt;= 15 {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-224" class="path-duplicate">compact_protocol.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-224">#L224</a>: 		err := p.writeByteDirect(byte((fieldId-p.<b>lastFieldId</b>)&lt;&lt;4) | typeToWrite)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-241" class="path-duplicate">compact_protocol.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-241">#L241</a>: 	p.<b>lastFieldId</b> = fieldId
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-410" class="path-duplicate">compact_protocol.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-410">#L410</a>: 	p.lastField = append(p.lastField, p.<b>lastFieldId</b>)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-411" class="path-duplicate">compact_protocol.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-411">#L411</a>: 	p.<b>lastFieldId</b> = 0
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-422" class="path-duplicate">compact_protocol.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-422">#L422</a>: 	p.<b>lastFieldId</b> = p.lastField[len(p.lastField)-1]
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-449" class="path-duplicate">compact_protocol.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-449">#L449</a>: 		id = int16(p.<b>lastFieldId</b>) + modifier
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-465" class="path-duplicate">compact_protocol.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-465">#L465</a>: 	p.<b>lastFieldId</b> = int(id)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

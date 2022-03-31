@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: encoding/binary.Read</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">func <b><a href="../../pkg/encoding/binary.html">encoding/binary</a>.<a href="../../src/encoding/binary/binary.go.html#line-162">Read</a></b></span>
+
+<span class="title">9 uses</span>
+
+	encoding/binary (current package)
+		<a href="../../src/encoding/binary/binary.go.html#line-162">binary.go#L162</a>: func <b>Read</b>(r io.Reader, order ByteOrder, data interface{}) error {
+
+	<a href="../../pkg/github.com/uber/jaeger-client-go.html">github.com/uber/jaeger-client-go</a>
+		<a href="../../src/github.com/uber/jaeger-client-go/propagation.go.html#line-233">propagation.go#L233</a>: 	if err := binary.<b>Read</b>(carrier, binary.BigEndian, &amp;ctx.traceID); err != nil {
+		<a href="../../src/github.com/uber/jaeger-client-go/propagation.go.html#line-236" class="path-duplicate">propagation.go</a><a href="../../src/github.com/uber/jaeger-client-go/propagation.go.html#line-236">#L236</a>: 	if err := binary.<b>Read</b>(carrier, binary.BigEndian, &amp;ctx.spanID); err != nil {
+		<a href="../../src/github.com/uber/jaeger-client-go/propagation.go.html#line-239" class="path-duplicate">propagation.go</a><a href="../../src/github.com/uber/jaeger-client-go/propagation.go.html#line-239">#L239</a>: 	if err := binary.<b>Read</b>(carrier, binary.BigEndian, &amp;ctx.parentID); err != nil {
+		<a href="../../src/github.com/uber/jaeger-client-go/propagation.go.html#line-244" class="path-duplicate">propagation.go</a><a href="../../src/github.com/uber/jaeger-client-go/propagation.go.html#line-244">#L244</a>: 	if err := binary.<b>Read</b>(carrier, binary.BigEndian, &amp;flags); err != nil {
+		<a href="../../src/github.com/uber/jaeger-client-go/propagation.go.html#line-251" class="path-duplicate">propagation.go</a><a href="../../src/github.com/uber/jaeger-client-go/propagation.go.html#line-251">#L251</a>: 	if err := binary.<b>Read</b>(carrier, binary.BigEndian, &amp;numBaggage); err != nil {
+		<a href="../../src/github.com/uber/jaeger-client-go/propagation.go.html#line-264" class="path-duplicate">propagation.go</a><a href="../../src/github.com/uber/jaeger-client-go/propagation.go.html#line-264">#L264</a>: 			if err := binary.<b>Read</b>(carrier, binary.BigEndian, &amp;keyLen); err != nil {
+		<a href="../../src/github.com/uber/jaeger-client-go/propagation.go.html#line-274" class="path-duplicate">propagation.go</a><a href="../../src/github.com/uber/jaeger-client-go/propagation.go.html#line-274">#L274</a>: 			if err := binary.<b>Read</b>(carrier, binary.BigEndian, &amp;valLen); err != nil {
+
+	<a href="../../pkg/github.com/uber/jaeger-client-go/thrift.html">github.com/uber/jaeger-client-go/thrift</a>
+		<a href="../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-421">header_transport.go#L421</a>: 	if err = binary.<b>Read</b>(&amp;t.frameBuffer, binary.BigEndian, &amp;meta); err != nil {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

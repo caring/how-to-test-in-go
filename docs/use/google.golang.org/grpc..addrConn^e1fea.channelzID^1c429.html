@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: google.golang.org/grpc.addrConn.channelzID</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../pkg/google.golang.org/grpc.html">google.golang.org/grpc</a>.<a href="../../src/google.golang.org/grpc/clientconn.go.html#line-1108">addrConn</a>.<a href="../../src/google.golang.org/grpc/clientconn.go.html#line-1133">channelzID</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">18 uses</span>
+
+	google.golang.org/grpc (current package)
+		<a href="../../src/google.golang.org/grpc/balancer_conn_wrappers.go.html#line-269">balancer_conn_wrappers.go#L269</a>: 			channelz.Warningf(logger, acbw.ac.<b>channelzID</b>, "acBalancerWrapper: UpdateAddresses: failed to newAddrConn: %v", err)
+		<a href="../../src/google.golang.org/grpc/clientconn.go.html#line-772">clientconn.go#L772</a>: 		ac.<b>channelzID</b> = channelz.RegisterSubChannel(ac, cc.channelzID, "")
+		<a href="../../src/google.golang.org/grpc/clientconn.go.html#line-773" class="path-duplicate">clientconn.go</a><a href="../../src/google.golang.org/grpc/clientconn.go.html#line-773">#L773</a>: 		channelz.AddTraceEvent(logger, ac.<b>channelzID</b>, 0, &amp;channelz.TraceEventDesc{
+		<a href="../../src/google.golang.org/grpc/clientconn.go.html#line-777" class="path-duplicate">clientconn.go</a><a href="../../src/google.golang.org/grpc/clientconn.go.html#line-777">#L777</a>: 				Desc:     fmt.Sprintf("Subchannel(id:%d) created", ac.<b>channelzID</b>),
+		<a href="../../src/google.golang.org/grpc/clientconn.go.html#line-874" class="path-duplicate">clientconn.go</a><a href="../../src/google.golang.org/grpc/clientconn.go.html#line-874">#L874</a>: 	channelz.Infof(logger, ac.<b>channelzID</b>, "addrConn: tryUpdateAddrs curAddr: %v, addrs: %v", ac.curAddr, addrs)
+		<a href="../../src/google.golang.org/grpc/clientconn.go.html#line-895" class="path-duplicate">clientconn.go</a><a href="../../src/google.golang.org/grpc/clientconn.go.html#line-895">#L895</a>: 	channelz.Infof(logger, ac.<b>channelzID</b>, "addrConn: tryUpdateAddrs curAddrFound: %v", curAddrFound)
+		<a href="../../src/google.golang.org/grpc/clientconn.go.html#line-1133" class="path-duplicate">clientconn.go</a><a href="../../src/google.golang.org/grpc/clientconn.go.html#line-1133">#L1133</a>: 	<b>channelzID</b> int64 // channelz unique identification number.
+		<a href="../../src/google.golang.org/grpc/clientconn.go.html#line-1143" class="path-duplicate">clientconn.go</a><a href="../../src/google.golang.org/grpc/clientconn.go.html#line-1143">#L1143</a>: 	channelz.Infof(logger, ac.<b>channelzID</b>, "Subchannel Connectivity change to %v", s)
+		<a href="../../src/google.golang.org/grpc/clientconn.go.html#line-1254" class="path-duplicate">clientconn.go</a><a href="../../src/google.golang.org/grpc/clientconn.go.html#line-1254">#L1254</a>: 		channelz.Infof(logger, ac.<b>channelzID</b>, "Subchannel picks a new address %q to connect", addr.Addr)
+		<a href="../../src/google.golang.org/grpc/clientconn.go.html#line-1316" class="path-duplicate">clientconn.go</a><a href="../../src/google.golang.org/grpc/clientconn.go.html#line-1316">#L1316</a>: 		copts.ChannelzParentID = ac.<b>channelzID</b>
+		<a href="../../src/google.golang.org/grpc/clientconn.go.html#line-1322" class="path-duplicate">clientconn.go</a><a href="../../src/google.golang.org/grpc/clientconn.go.html#line-1322">#L1322</a>: 		channelz.Warningf(logger, ac.<b>channelzID</b>, "grpc: addrConn.createTransport failed to connect to %v. Err: %v", addr, err)
+		<a href="../../src/google.golang.org/grpc/clientconn.go.html#line-1335" class="path-duplicate">clientconn.go</a><a href="../../src/google.golang.org/grpc/clientconn.go.html#line-1335">#L1335</a>: 			channelz.Warningf(logger, ac.<b>channelzID</b>, "grpc: addrConn.createTransport failed to connect to %v: %v", addr, err)
+		<a href="../../src/google.golang.org/grpc/clientconn.go.html#line-1417" class="path-duplicate">clientconn.go</a><a href="../../src/google.golang.org/grpc/clientconn.go.html#line-1417">#L1417</a>: 		channelz.Error(logger, ac.<b>channelzID</b>, "Health check is requested but health check function is not set.")
+		<a href="../../src/google.golang.org/grpc/clientconn.go.html#line-1447" class="path-duplicate">clientconn.go</a><a href="../../src/google.golang.org/grpc/clientconn.go.html#line-1447">#L1447</a>: 				channelz.Error(logger, ac.<b>channelzID</b>, "Subchannel health check is unimplemented at server side, thus health check is disabled")
+		<a href="../../src/google.golang.org/grpc/clientconn.go.html#line-1449" class="path-duplicate">clientconn.go</a><a href="../../src/google.golang.org/grpc/clientconn.go.html#line-1449">#L1449</a>: 				channelz.Errorf(logger, ac.<b>channelzID</b>, "HealthCheckFunc exits with unexpected error %v", err)
+		<a href="../../src/google.golang.org/grpc/clientconn.go.html#line-1501" class="path-duplicate">clientconn.go</a><a href="../../src/google.golang.org/grpc/clientconn.go.html#line-1501">#L1501</a>: 		channelz.AddTraceEvent(logger, ac.<b>channelzID</b>, 0, &amp;channelz.TraceEventDesc{
+		<a href="../../src/google.golang.org/grpc/clientconn.go.html#line-1505" class="path-duplicate">clientconn.go</a><a href="../../src/google.golang.org/grpc/clientconn.go.html#line-1505">#L1505</a>: 				Desc:     fmt.Sprintf("Subchanel(id:%d) deleted", ac.<b>channelzID</b>),
+		<a href="../../src/google.golang.org/grpc/clientconn.go.html#line-1511" class="path-duplicate">clientconn.go</a><a href="../../src/google.golang.org/grpc/clientconn.go.html#line-1511">#L1511</a>: 		channelz.RemoveEntry(ac.<b>channelzID</b>)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: reflect.Value.Addr</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/reflect.html">reflect</a>.<a href="../src/reflect/value.go.html#line-39">Value</a>.<a href="../src/reflect/value.go.html#line-271">Addr</a></b></span><span style="font-size: large;"><i> (method)</i></span>
+
+<span class="title">19 uses</span>
+
+	reflect (current package)
+		<a href="../src/reflect/value.go.html#line-271">value.go#L271</a>: func (v Value) <b>Addr</b>() Value {
+
+	<a href="../pkg/encoding/asn1.html">encoding/asn1</a>
+		<a href="../src/encoding/asn1/asn1.go.html#line-854">asn1.go#L854</a>: 	switch v := v.<b>Addr</b>().Interface().(type) {
+
+	<a href="../pkg/encoding/json.html">encoding/json</a>
+		<a href="../src/encoding/json/decode.go.html#line-445">decode.go#L445</a>: 		v = v.<b>Addr</b>()
+		<a href="../src/encoding/json/encode.go.html#line-490">encode.go#L490</a>: 	va := v.<b>Addr</b>()
+		<a href="../src/encoding/json/encode.go.html#line-524" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-524">#L524</a>: 	va := v.<b>Addr</b>()
+
+	<a href="../pkg/encoding/xml.html">encoding/xml</a>
+		<a href="../src/encoding/xml/marshal.go.html#line-438">marshal.go#L438</a>: 		pv := val.<b>Addr</b>()
+		<a href="../src/encoding/xml/marshal.go.html#line-449" class="path-duplicate">marshal.go</a><a href="../src/encoding/xml/marshal.go.html#line-449">#L449</a>: 		pv := val.<b>Addr</b>()
+		<a href="../src/encoding/xml/marshal.go.html#line-566" class="path-duplicate">marshal.go</a><a href="../src/encoding/xml/marshal.go.html#line-566">#L566</a>: 		pv := val.<b>Addr</b>()
+		<a href="../src/encoding/xml/marshal.go.html#line-589" class="path-duplicate">marshal.go</a><a href="../src/encoding/xml/marshal.go.html#line-589">#L589</a>: 		pv := val.<b>Addr</b>()
+		<a href="../src/encoding/xml/marshal.go.html#line-839" class="path-duplicate">marshal.go</a><a href="../src/encoding/xml/marshal.go.html#line-839">#L839</a>: 				pv := vf.<b>Addr</b>()
+		<a href="../src/encoding/xml/read.go.html#line-259">read.go#L259</a>: 		pv := val.<b>Addr</b>()
+		<a href="../src/encoding/xml/read.go.html#line-272" class="path-duplicate">read.go</a><a href="../src/encoding/xml/read.go.html#line-272">#L272</a>: 		pv := val.<b>Addr</b>()
+		<a href="../src/encoding/xml/read.go.html#line-346" class="path-duplicate">read.go</a><a href="../src/encoding/xml/read.go.html#line-346">#L346</a>: 		pv := val.<b>Addr</b>()
+		<a href="../src/encoding/xml/read.go.html#line-357" class="path-duplicate">read.go</a><a href="../src/encoding/xml/read.go.html#line-357">#L357</a>: 		pv := val.<b>Addr</b>()
+		<a href="../src/encoding/xml/read.go.html#line-570" class="path-duplicate">read.go</a><a href="../src/encoding/xml/read.go.html#line-570">#L570</a>: 		pv := saveData.<b>Addr</b>()
+
+	<a href="../pkg/google.golang.org/protobuf/internal/impl.html">google.golang.org/protobuf/internal/impl</a>
+		<a href="../src/google.golang.org/protobuf/internal/impl/convert.go.html#line-428">convert.go#L428</a>: 			v = v.<b>Addr</b>() // T =&gt; *T
+
+	<a href="../pkg/text/template.html">text/template</a>
+		<a href="../src/text/template/exec.go.html#line-605">exec.go#L605</a>: 		ptr = ptr.<b>Addr</b>()
+		<a href="../src/text/template/exec.go.html#line-783" class="path-duplicate">exec.go</a><a href="../src/text/template/exec.go.html#line-783">#L783</a>: 			value = value.<b>Addr</b>()
+		<a href="../src/text/template/exec.go.html#line-982" class="path-duplicate">exec.go</a><a href="../src/text/template/exec.go.html#line-982">#L982</a>: 			v = v.<b>Addr</b>()
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

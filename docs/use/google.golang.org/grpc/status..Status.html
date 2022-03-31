@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: google.golang.org/grpc/status.Status</title>
+<link href="../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../../../pkg/google.golang.org/grpc/status.html">google.golang.org/grpc/status</a>.<a href="../../../src/google.golang.org/grpc/status/status.go.html#line-45">Status</a></b></span>
+
+<span class="title">24 uses</span>
+
+	google.golang.org/grpc/status (current package)
+		<a href="../../../src/google.golang.org/grpc/status/status.go.html#line-45">status.go#L45</a>: type <b>Status</b> = status.Status
+		<a href="../../../src/google.golang.org/grpc/status/status.go.html#line-48" class="path-duplicate">status.go</a><a href="../../../src/google.golang.org/grpc/status/status.go.html#line-48">#L48</a>: func New(c codes.Code, msg string) *<b>Status</b> {
+		<a href="../../../src/google.golang.org/grpc/status/status.go.html#line-53" class="path-duplicate">status.go</a><a href="../../../src/google.golang.org/grpc/status/status.go.html#line-53">#L53</a>: func Newf(c codes.Code, format string, a ...interface{}) *<b>Status</b> {
+		<a href="../../../src/google.golang.org/grpc/status/status.go.html#line-73" class="path-duplicate">status.go</a><a href="../../../src/google.golang.org/grpc/status/status.go.html#line-73">#L73</a>: func FromProto(s *spb.Status) *<b>Status</b> {
+		<a href="../../../src/google.golang.org/grpc/status/status.go.html#line-87" class="path-duplicate">status.go</a><a href="../../../src/google.golang.org/grpc/status/status.go.html#line-87">#L87</a>: func FromError(err error) (s *<b>Status</b>, ok bool) {
+		<a href="../../../src/google.golang.org/grpc/status/status.go.html#line-92" class="path-duplicate">status.go</a><a href="../../../src/google.golang.org/grpc/status/status.go.html#line-92">#L92</a>: 		GRPCStatus() *<b>Status</b>
+		<a href="../../../src/google.golang.org/grpc/status/status.go.html#line-101" class="path-duplicate">status.go</a><a href="../../../src/google.golang.org/grpc/status/status.go.html#line-101">#L101</a>: func Convert(err error) *<b>Status</b> {
+		<a href="../../../src/google.golang.org/grpc/status/status.go.html#line-114" class="path-duplicate">status.go</a><a href="../../../src/google.golang.org/grpc/status/status.go.html#line-114">#L114</a>: 		GRPCStatus() *<b>Status</b>
+		<a href="../../../src/google.golang.org/grpc/status/status.go.html#line-124" class="path-duplicate">status.go</a><a href="../../../src/google.golang.org/grpc/status/status.go.html#line-124">#L124</a>: func FromContextError(err error) *<b>Status</b> {
+
+	<a href="../../../pkg/google.golang.org/grpc.html">google.golang.org/grpc</a>
+		<a href="../../../src/google.golang.org/grpc/rpc_util.go.html#line-668">rpc_util.go#L668</a>: func checkRecvPayload(pf payloadFormat, recvCompress string, haveCompressor bool) *status.<b>Status</b> {
+
+	<a href="../../../pkg/google.golang.org/grpc/internal/transport.html">google.golang.org/grpc/internal/transport</a>
+		<a href="../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-139">controlbuf.go#L139</a>: 	status         *status.<b>Status</b>
+		<a href="../../../src/google.golang.org/grpc/internal/transport/handler_server.go.html#line-184">handler_server.go#L184</a>: func (ht *serverHandlerTransport) WriteStatus(s *Stream, st *status.<b>Status</b>) error {
+		<a href="../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-811">http2_client.go#L811</a>: func (t *http2Client) closeStream(s *Stream, err error, rst bool, rstCode http2.ErrCode, st *status.<b>Status</b>, mdata map[string][]string, eosReceived bool) {
+		<a href="../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-908" class="path-duplicate">http2_client.go</a><a href="../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-908">#L908</a>: 	var st *status.<b>Status</b>
+		<a href="../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1308" class="path-duplicate">http2_client.go</a><a href="../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1308">#L1308</a>: 		statusGen      *status.<b>Status</b>
+		<a href="../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-992">http2_server.go#L992</a>: func (t *http2Server) WriteStatus(s *Stream, st *status.<b>Status</b>) error {
+		<a href="../../../src/google.golang.org/grpc/internal/transport/http_util.go.html#line-164">http_util.go#L164</a>: func decodeGRPCStatusDetails(rawDetails string) (*status.<b>Status</b>, error) {
+		<a href="../../../src/google.golang.org/grpc/internal/transport/transport.go.html#line-284">transport.go#L284</a>: 	status *status.<b>Status</b>
+		<a href="../../../src/google.golang.org/grpc/internal/transport/transport.go.html#line-414" class="path-duplicate">transport.go</a><a href="../../../src/google.golang.org/grpc/internal/transport/transport.go.html#line-414">#L414</a>: func (s *Stream) Status() *status.<b>Status</b> {
+		<a href="../../../src/google.golang.org/grpc/internal/transport/transport.go.html#line-688" class="path-duplicate">transport.go</a><a href="../../../src/google.golang.org/grpc/internal/transport/transport.go.html#line-688">#L688</a>: 	WriteStatus(s *Stream, st *status.<b>Status</b>) error
+
+	<a href="../../../pkg/github.com/caring/gopkg-errors.html">github.com/caring/gopkg-errors</a>
+		<a href="../../../src/github.com/caring/gopkg-errors/grpc.go.html#line-156">grpc.go#L156</a>: 	grpcStatus *status.<b>Status</b>
+		<a href="../../../src/github.com/caring/gopkg-errors/grpc.go.html#line-161" class="path-duplicate">grpc.go</a><a href="../../../src/github.com/caring/gopkg-errors/grpc.go.html#line-161">#L161</a>: func FromGrpcError(origErr *status.<b>Status</b>) error {
+		<a href="../../../src/github.com/caring/gopkg-errors/grpc.go.html#line-198" class="path-duplicate">grpc.go</a><a href="../../../src/github.com/caring/gopkg-errors/grpc.go.html#line-198">#L198</a>: func (w *withGrpcStatus) GRPCStatus() *status.<b>Status</b> {
+		<a href="../../../src/github.com/caring/gopkg-errors/http.go.html#line-48">http.go#L48</a>: func ToHTTP(in *status.<b>Status</b>, w http.ResponseWriter) error {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

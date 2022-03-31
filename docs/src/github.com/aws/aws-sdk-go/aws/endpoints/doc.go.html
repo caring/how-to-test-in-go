@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Source: doc.go in package github.com/aws/aws-sdk-go/aws/endpoints</title>
+<link href="../../../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre id="header"><code><span class="title">Source File</span>
+	doc.go
+
+<span class="title">Belonging Package</span>
+	<a href="../../../../../../pkg/github.com/aws/aws-sdk-go/aws/endpoints.html">github.com/aws/aws-sdk-go/aws/endpoints</a>
+</code></pre>
+
+<pre class="line-numbers">
+<div class="anchor" id="doc"><span class="codeline" id="line-1"><code><span class="comment">// Package endpoints provides the types and functionality for defining regions</span></code></span>
+<span class="codeline" id="line-2"><code><span class="comment">// and endpoints, as well as querying those definitions.</span></code></span>
+<span class="codeline" id="line-3"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-4"><code><span class="comment">// The SDK's Regions and Endpoints metadata is code generated into the endpoints</span></code></span>
+<span class="codeline" id="line-5"><code><span class="comment">// package, and is accessible via the DefaultResolver function. This function</span></code></span>
+<span class="codeline" id="line-6"><code><span class="comment">// returns a endpoint Resolver will search the metadata and build an associated</span></code></span>
+<span class="codeline" id="line-7"><code><span class="comment">// endpoint if one is found. The default resolver will search all partitions</span></code></span>
+<span class="codeline" id="line-8"><code><span class="comment">// known by the SDK. e.g AWS Standard (aws), AWS China (aws-cn), and</span></code></span>
+<span class="codeline" id="line-9"><code><span class="comment">// AWS GovCloud (US) (aws-us-gov).</span></code></span>
+<span class="codeline" id="line-10"><code><span class="comment">// .</span></code></span>
+<span class="codeline" id="line-11"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-12"><code><span class="comment">// Enumerating Regions and Endpoint Metadata</span></code></span>
+<span class="codeline" id="line-13"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-14"><code><span class="comment">// Casting the Resolver returned by DefaultResolver to a EnumPartitions interface</span></code></span>
+<span class="codeline" id="line-15"><code><span class="comment">// will allow you to get access to the list of underlying Partitions with the</span></code></span>
+<span class="codeline" id="line-16"><code><span class="comment">// Partitions method. This is helpful if you want to limit the SDK's endpoint</span></code></span>
+<span class="codeline" id="line-17"><code><span class="comment">// resolving to a single partition, or enumerate regions, services, and endpoints</span></code></span>
+<span class="codeline" id="line-18"><code><span class="comment">// in the partition.</span></code></span>
+<span class="codeline" id="line-19"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-20"><code><span class="comment">//     resolver := endpoints.DefaultResolver()</span></code></span>
+<span class="codeline" id="line-21"><code><span class="comment">//     partitions := resolver.(endpoints.EnumPartitions).Partitions()</span></code></span>
+<span class="codeline" id="line-22"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-23"><code><span class="comment">//     for _, p := range partitions {</span></code></span>
+<span class="codeline" id="line-24"><code><span class="comment">//         fmt.Println("Regions for", p.ID())</span></code></span>
+<span class="codeline" id="line-25"><code><span class="comment">//         for id, _ := range p.Regions() {</span></code></span>
+<span class="codeline" id="line-26"><code><span class="comment">//             fmt.Println("*", id)</span></code></span>
+<span class="codeline" id="line-27"><code><span class="comment">//         }</span></code></span>
+<span class="codeline" id="line-28"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-29"><code><span class="comment">//         fmt.Println("Services for", p.ID())</span></code></span>
+<span class="codeline" id="line-30"><code><span class="comment">//         for id, _ := range p.Services() {</span></code></span>
+<span class="codeline" id="line-31"><code><span class="comment">//             fmt.Println("*", id)</span></code></span>
+<span class="codeline" id="line-32"><code><span class="comment">//         }</span></code></span>
+<span class="codeline" id="line-33"><code><span class="comment">//     }</span></code></span>
+<span class="codeline" id="line-34"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-35"><code><span class="comment">// Using Custom Endpoints</span></code></span>
+<span class="codeline" id="line-36"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-37"><code><span class="comment">// The endpoints package also gives you the ability to use your own logic how</span></code></span>
+<span class="codeline" id="line-38"><code><span class="comment">// endpoints are resolved. This is a great way to define a custom endpoint</span></code></span>
+<span class="codeline" id="line-39"><code><span class="comment">// for select services, without passing that logic down through your code.</span></code></span>
+<span class="codeline" id="line-40"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-41"><code><span class="comment">// If a type implements the Resolver interface it can be used to resolve</span></code></span>
+<span class="codeline" id="line-42"><code><span class="comment">// endpoints. To use this with the SDK's Session and Config set the value</span></code></span>
+<span class="codeline" id="line-43"><code><span class="comment">// of the type to the EndpointsResolver field of aws.Config when initializing</span></code></span>
+<span class="codeline" id="line-44"><code><span class="comment">// the session, or service client.</span></code></span>
+<span class="codeline" id="line-45"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-46"><code><span class="comment">// In addition the ResolverFunc is a wrapper for a func matching the signature</span></code></span>
+<span class="codeline" id="line-47"><code><span class="comment">// of Resolver.EndpointFor, converting it to a type that satisfies the</span></code></span>
+<span class="codeline" id="line-48"><code><span class="comment">// Resolver interface.</span></code></span>
+<span class="codeline" id="line-49"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-50"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-51"><code><span class="comment">//     myCustomResolver := func(service, region string, optFns ...func(*endpoints.Options)) (endpoints.ResolvedEndpoint, error) {</span></code></span>
+<span class="codeline" id="line-52"><code><span class="comment">//         if service == endpoints.S3ServiceID {</span></code></span>
+<span class="codeline" id="line-53"><code><span class="comment">//             return endpoints.ResolvedEndpoint{</span></code></span>
+<span class="codeline" id="line-54"><code><span class="comment">//                 URL:           "s3.custom.endpoint.com",</span></code></span>
+<span class="codeline" id="line-55"><code><span class="comment">//                 SigningRegion: "custom-signing-region",</span></code></span>
+<span class="codeline" id="line-56"><code><span class="comment">//             }, nil</span></code></span>
+<span class="codeline" id="line-57"><code><span class="comment">//         }</span></code></span>
+<span class="codeline" id="line-58"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-59"><code><span class="comment">//         return endpoints.DefaultResolver().EndpointFor(service, region, optFns...)</span></code></span>
+<span class="codeline" id="line-60"><code><span class="comment">//     }</span></code></span>
+<span class="codeline" id="line-61"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-62"><code><span class="comment">//     sess := session.Must(session.NewSession(&amp;aws.Config{</span></code></span>
+<span class="codeline" id="line-63"><code><span class="comment">//         Region:           aws.String("us-west-2"),</span></code></span>
+<span class="codeline" id="line-64"><code><span class="comment">//         EndpointResolver: endpoints.ResolverFunc(myCustomResolver),</span></code></span>
+<span class="codeline" id="line-65"><code><span class="comment">//     }))</span></code></span></div><span class="codeline" id="line-66"><code><span class="keyword">package</span> endpoints</code></span>
+</pre><pre id="footer">
+<table><tr><td><img src="../../../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

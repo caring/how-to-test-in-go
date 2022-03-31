@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: reflect.MakeSlice</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">func <b><a href="../pkg/reflect.html">reflect</a>.<a href="../src/reflect/value.go.html#line-2643">MakeSlice</a></b></span>
+
+<span class="title">12 uses</span>
+
+	reflect (current package)
+		<a href="../src/reflect/value.go.html#line-417">value.go#L417</a>: 		slice := <b>MakeSlice</b>(t.In(n), m, m)
+		<a href="../src/reflect/value.go.html#line-2394" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2394">#L2394</a>: 	t := <b>MakeSlice</b>(s.Type(), i1, m)
+		<a href="../src/reflect/value.go.html#line-2643" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2643">#L2643</a>: func <b>MakeSlice</b>(typ Type, len, cap int) Value {
+
+	<a href="../pkg/encoding/asn1.html">encoding/asn1</a>
+		<a href="../src/encoding/asn1/asn1.go.html#line-643">asn1.go#L643</a>: 	ret = reflect.<b>MakeSlice</b>(sliceType, numElements, numElements)
+		<a href="../src/encoding/asn1/asn1.go.html#line-947" class="path-duplicate">asn1.go</a><a href="../src/encoding/asn1/asn1.go.html#line-947">#L947</a>: 			val.Set(reflect.<b>MakeSlice</b>(sliceType, len(innerBytes), len(innerBytes)))
+
+	<a href="../pkg/encoding/json.html">encoding/json</a>
+		<a href="../src/encoding/json/decode.go.html#line-550">decode.go#L550</a>: 				newv := reflect.<b>MakeSlice</b>(v.Type(), v.Len(), newcap)
+		<a href="../src/encoding/json/decode.go.html#line-596" class="path-duplicate">decode.go</a><a href="../src/encoding/json/decode.go.html#line-596">#L596</a>: 		v.Set(reflect.<b>MakeSlice</b>(v.Type(), 0, 0))
+
+	<a href="../pkg/fmt.html">fmt</a>
+		<a href="../src/fmt/scan.go.html#line-1040">scan.go#L1040</a>: 			v.Set(reflect.<b>MakeSlice</b>(typ, len(str), len(str)))
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/awsutil.html">github.com/aws/aws-sdk-go/aws/awsutil</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/copy.go.html#line-82">copy.go#L82</a>: 		s := reflect.<b>MakeSlice</b>(src.Type(), src.Len(), src.Cap())
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil.html">github.com/aws/aws-sdk-go/private/protocol/json/jsonutil</a>
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/unmarshal.go.html#line-184">unmarshal.go#L184</a>: 		value.Set(reflect.<b>MakeSlice</b>(value.Type(), l, l))
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/private/protocol/xml/xmlutil.html">github.com/aws/aws-sdk-go/private/protocol/xml/xmlutil</a>
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/xml/xmlutil/unmarshal.go.html#line-181">unmarshal.go#L181</a>: 				r.Set(reflect.<b>MakeSlice</b>(t, len(Children), len(Children)))
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/xml/xmlutil/unmarshal.go.html#line-193" class="path-duplicate">unmarshal.go</a><a href="../src/github.com/aws/aws-sdk-go/private/protocol/xml/xmlutil/unmarshal.go.html#line-193">#L193</a>: 			r.Set(reflect.<b>MakeSlice</b>(t, 0, 0))
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

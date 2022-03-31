@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime.gcControllerState.heapMarked</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/runtime.html">runtime</a>.<a href="../src/runtime/mgcpacer.go.html#line-74">gcControllerState</a>.<a href="../src/runtime/mgcpacer.go.html#line-169">heapMarked</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">11 uses</span>
+
+	runtime (current package)
+		<a href="../src/runtime/mgc.go.html#line-1424">mgc.go#L1424</a>: 	gcController.<b>heapMarked</b> = work.bytesMarked
+		<a href="../src/runtime/mgcpacer.go.html#line-169">mgcpacer.go#L169</a>: 	<b>heapMarked</b> uint64
+		<a href="../src/runtime/mgcpacer.go.html#line-268" class="path-duplicate">mgcpacer.go</a><a href="../src/runtime/mgcpacer.go.html#line-268">#L268</a>: 	c.<b>heapMarked</b> = uint64(float64(c.heapMinimum) / (1 + c.triggerRatio))
+		<a href="../src/runtime/mgcpacer.go.html#line-475" class="path-duplicate">mgcpacer.go</a><a href="../src/runtime/mgcpacer.go.html#line-475">#L475</a>: 	actualGrowthRatio := float64(c.heapLive)/float64(c.<b>heapMarked</b>) - 1
+		<a href="../src/runtime/mgcpacer.go.html#line-494" class="path-duplicate">mgcpacer.go</a><a href="../src/runtime/mgcpacer.go.html#line-494">#L494</a>: 		H_m_prev := c.<b>heapMarked</b>
+		<a href="../src/runtime/mgcpacer.go.html#line-658" class="path-duplicate">mgcpacer.go</a><a href="../src/runtime/mgcpacer.go.html#line-658">#L658</a>: 		goal = c.<b>heapMarked</b> + c.<b>heapMarked</b>*uint64(c.gcPercent)/100
+		<a href="../src/runtime/mgcpacer.go.html#line-704" class="path-duplicate">mgcpacer.go</a><a href="../src/runtime/mgcpacer.go.html#line-704">#L704</a>: 		trigger = uint64(float64(c.<b>heapMarked</b>) * (1 + triggerRatio))
+		<a href="../src/runtime/mgcpacer.go.html#line-722" class="path-duplicate">mgcpacer.go</a><a href="../src/runtime/mgcpacer.go.html#line-722">#L722</a>: 			print("runtime: heapGoal=", c.heapGoal, " heapMarked=", c.<b>heapMarked</b>, " gcController.heapLive=", c.heapLive, " initialHeapLive=", work.initialHeapLive, "triggerRatio=", triggerRatio, " minTrigger=", minTrigger, "\n")
+		<a href="../src/runtime/mgcpacer.go.html#line-794" class="path-duplicate">mgcpacer.go</a><a href="../src/runtime/mgcpacer.go.html#line-794">#L794</a>: 	egogc := float64(atomic.Load64(&amp;c.heapGoal)-c.<b>heapMarked</b>) / float64(c.<b>heapMarked</b>)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

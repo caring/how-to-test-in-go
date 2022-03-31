@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: reflect.interfaceType.String</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/reflect.html">reflect</a>.<a href="../src/reflect/type.go.html#line-395">interfaceType</a>.<a href="../src/reflect/type.go.html#line-794">String</a></b></span><span style="font-size: large;"><i> (method, <a href="../imp/reflect.interfaceType^e2202.html#name-String">view implemented interface methods</a>)</i></span>
+
+<span class="title">48 uses</span>
+
+	reflect (current package)
+		<a href="../src/reflect/type.go.html#line-794">type.go#L794</a>: func (t *rtype) <b>String</b>() string {
+		<a href="../src/reflect/type.go.html#line-810" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-810">#L810</a>: 		panic("reflect: Bits of non-arithmetic Type " + t.<b>String</b>())
+		<a href="../src/reflect/type.go.html#line-912" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-912">#L912</a>: 	s := t.<b>String</b>()
+		<a href="../src/reflect/type.go.html#line-922" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-922">#L922</a>: 		panic("reflect: ChanDir of non-chan type " + t.<b>String</b>())
+		<a href="../src/reflect/type.go.html#line-930" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-930">#L930</a>: 		panic("reflect: IsVariadic of non-func type " + t.<b>String</b>())
+		<a href="../src/reflect/type.go.html#line-954" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-954">#L954</a>: 	panic("reflect: Elem of invalid type " + t.<b>String</b>())
+		<a href="../src/reflect/type.go.html#line-959" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-959">#L959</a>: 		panic("reflect: Field of non-struct type " + t.<b>String</b>())
+		<a href="../src/reflect/type.go.html#line-967" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-967">#L967</a>: 		panic("reflect: FieldByIndex of non-struct type " + t.<b>String</b>())
+		<a href="../src/reflect/type.go.html#line-975" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-975">#L975</a>: 		panic("reflect: FieldByName of non-struct type " + t.<b>String</b>())
+		<a href="../src/reflect/type.go.html#line-983" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-983">#L983</a>: 		panic("reflect: FieldByNameFunc of non-struct type " + t.<b>String</b>())
+		<a href="../src/reflect/type.go.html#line-991" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-991">#L991</a>: 		panic("reflect: In of non-func type " + t.<b>String</b>())
+		<a href="../src/reflect/type.go.html#line-999" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-999">#L999</a>: 		panic("reflect: Key of non-map type " + t.<b>String</b>())
+		<a href="../src/reflect/type.go.html#line-1007" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1007">#L1007</a>: 		panic("reflect: Len of non-array type " + t.<b>String</b>())
+		<a href="../src/reflect/type.go.html#line-1015" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1015">#L1015</a>: 		panic("reflect: NumField of non-struct type " + t.<b>String</b>())
+		<a href="../src/reflect/type.go.html#line-1023" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1023">#L1023</a>: 		panic("reflect: NumIn of non-func type " + t.<b>String</b>())
+		<a href="../src/reflect/type.go.html#line-1031" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1031">#L1031</a>: 		panic("reflect: NumOut of non-func type " + t.<b>String</b>())
+		<a href="../src/reflect/type.go.html#line-1039" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1039">#L1039</a>: 		panic("reflect: Out of non-func type " + t.<b>String</b>())
+		<a href="../src/reflect/type.go.html#line-1438" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1438">#L1438</a>: 	s := "*" + t.<b>String</b>()
+		<a href="../src/reflect/type.go.html#line-1773" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1773">#L1773</a>: 			if !(rtypeOff(section, offs[h]).<b>String</b>() &gt;= s) {
+		<a href="../src/reflect/type.go.html#line-1786" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1786">#L1786</a>: 			if typ.<b>String</b>() != s {
+		<a href="../src/reflect/type.go.html#line-1844" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1844">#L1844</a>: 		s = "chan&lt;- " + typ.<b>String</b>()
+		<a href="../src/reflect/type.go.html#line-1846" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1846">#L1846</a>: 		s = "&lt;-chan " + typ.<b>String</b>()
+		<a href="../src/reflect/type.go.html#line-1848" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1848">#L1848</a>: 		typeStr := typ.<b>String</b>()
+		<a href="../src/reflect/type.go.html#line-1892" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1892">#L1892</a>: 		panic("reflect.MapOf: invalid key type " + ktyp.<b>String</b>())
+		<a href="../src/reflect/type.go.html#line-1902" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1902">#L1902</a>: 	s := "map[" + ktyp.<b>String</b>() + "]" + etyp.<b>String</b>()
+		<a href="../src/reflect/type.go.html#line-2110" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2110">#L2110</a>: 			repr = append(repr, (*sliceType)(unsafe.Pointer(t)).elem.<b>String</b>()...)
+		<a href="../src/reflect/type.go.html#line-2112" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2112">#L2112</a>: 			repr = append(repr, t.<b>String</b>()...)
+		<a href="../src/reflect/type.go.html#line-2126" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2126">#L2126</a>: 		repr = append(repr, t.<b>String</b>()...)
+		<a href="../src/reflect/type.go.html#line-2155" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2155">#L2155</a>: 		panic("isReflexive called on non-key type " + t.<b>String</b>())
+		<a href="../src/reflect/type.go.html#line-2182" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2182">#L2182</a>: 		panic("needKeyUpdate called on non-key type " + t.<b>String</b>())
+		<a href="../src/reflect/type.go.html#line-2276" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2276">#L2276</a>: 	s := "bucket(" + ktyp.<b>String</b>() + "," + etyp.<b>String</b>() + ")"
+		<a href="../src/reflect/type.go.html#line-2342" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2342">#L2342</a>: 	s := "[]" + typ.<b>String</b>()
+		<a href="../src/reflect/type.go.html#line-2464" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2464">#L2464</a>: 					panic("reflect.StructOf: illegal embedded field type " + ft.<b>String</b>())
+		<a href="../src/reflect/type.go.html#line-2603" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2603">#L2603</a>: 		repr = append(repr, (" " + ft.<b>String</b>())...)
+		<a href="../src/reflect/type.go.html#line-2864" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2864">#L2864</a>: 		panic("reflect.typeptrdata: unexpected type, " + t.<b>String</b>())
+		<a href="../src/reflect/type.go.html#line-2890" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2890">#L2890</a>: 	s := "[" + strconv.Itoa(length) + "]" + typ.<b>String</b>()
+		<a href="../src/reflect/type.go.html#line-3050" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-3050">#L3050</a>: 		panic("reflect: funcLayout of non-func type " + t.<b>String</b>())
+		<a href="../src/reflect/type.go.html#line-3053" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-3053">#L3053</a>: 		panic("reflect: funcLayout with interface receiver " + rcvr.<b>String</b>())
+		<a href="../src/reflect/type.go.html#line-3080" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-3080">#L3080</a>: 		s = "methodargs(" + rcvr.<b>String</b>() + ")(" + t.<b>String</b>() + ")"
+		<a href="../src/reflect/type.go.html#line-3082" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-3082">#L3082</a>: 		s = "funcargs(" + t.<b>String</b>() + ")"
+		<a href="../src/reflect/value.go.html#line-458">value.go#L458</a>: 		println("reflect.call", t.<b>String</b>())
+		<a href="../src/reflect/value.go.html#line-732" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-732">#L732</a>: 					print("kind=", steps[0].kind, ", type=", typ.<b>String</b>(), "\n")
+		<a href="../src/reflect/value.go.html#line-2810" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2810">#L2810</a>: 	panic(context + ": value of type " + v.typ.<b>String</b>() + " is not assignable to type " + dst.<b>String</b>())
+		<a href="../src/reflect/value.go.html#line-2822" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2822">#L2822</a>: 		panic("reflect.Value.Convert: value of type " + v.typ.<b>String</b>() + " cannot be converted to type " + t.String())
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

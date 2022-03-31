@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: go.uber.org/multierr.multiError</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../../pkg/go.uber.org/multierr.html">go.uber.org/multierr</a>.<a href="../../src/go.uber.org/multierr/error.go.html#line-225">multiError</a></b></span>
+
+<span class="title">18 uses</span>
+
+	go.uber.org/multierr (current package)
+		<a href="../../src/go.uber.org/multierr/error.go.html#line-207">error.go#L207</a>: 	eg, ok := err.(*<b>multiError</b>)
+		<a href="../../src/go.uber.org/multierr/error.go.html#line-225" class="path-duplicate">error.go</a><a href="../../src/go.uber.org/multierr/error.go.html#line-225">#L225</a>: type <b>multiError</b> struct {
+		<a href="../../src/go.uber.org/multierr/error.go.html#line-230" class="path-duplicate">error.go</a><a href="../../src/go.uber.org/multierr/error.go.html#line-230">#L230</a>: var _ errorGroup = (*<b>multiError</b>)(nil)
+		<a href="../../src/go.uber.org/multierr/error.go.html#line-235" class="path-duplicate">error.go</a><a href="../../src/go.uber.org/multierr/error.go.html#line-235">#L235</a>: func (merr *<b>multiError</b>) Errors() []error {
+		<a href="../../src/go.uber.org/multierr/error.go.html#line-247" class="path-duplicate">error.go</a><a href="../../src/go.uber.org/multierr/error.go.html#line-247">#L247</a>: func (merr *<b>multiError</b>) As(target interface{}) bool {
+		<a href="../../src/go.uber.org/multierr/error.go.html#line-260" class="path-duplicate">error.go</a><a href="../../src/go.uber.org/multierr/error.go.html#line-260">#L260</a>: func (merr *<b>multiError</b>) Is(target error) bool {
+		<a href="../../src/go.uber.org/multierr/error.go.html#line-269" class="path-duplicate">error.go</a><a href="../../src/go.uber.org/multierr/error.go.html#line-269">#L269</a>: func (merr *<b>multiError</b>) Error() string {
+		<a href="../../src/go.uber.org/multierr/error.go.html#line-284" class="path-duplicate">error.go</a><a href="../../src/go.uber.org/multierr/error.go.html#line-284">#L284</a>: func (merr *<b>multiError</b>) Format(f fmt.State, c rune) {
+		<a href="../../src/go.uber.org/multierr/error.go.html#line-292" class="path-duplicate">error.go</a><a href="../../src/go.uber.org/multierr/error.go.html#line-292">#L292</a>: func (merr *<b>multiError</b>) writeSingleline(w io.Writer) {
+		<a href="../../src/go.uber.org/multierr/error.go.html#line-304" class="path-duplicate">error.go</a><a href="../../src/go.uber.org/multierr/error.go.html#line-304">#L304</a>: func (merr *<b>multiError</b>) writeMultiline(w io.Writer) {
+		<a href="../../src/go.uber.org/multierr/error.go.html#line-363" class="path-duplicate">error.go</a><a href="../../src/go.uber.org/multierr/error.go.html#line-363">#L363</a>: 		if merr, ok := err.(*<b>multiError</b>); ok {
+		<a href="../../src/go.uber.org/multierr/error.go.html#line-385" class="path-duplicate">error.go</a><a href="../../src/go.uber.org/multierr/error.go.html#line-385">#L385</a>: 			return &amp;<b>multiError</b>{errors: errors}
+		<a href="../../src/go.uber.org/multierr/error.go.html#line-395" class="path-duplicate">error.go</a><a href="../../src/go.uber.org/multierr/error.go.html#line-395">#L395</a>: 		if nested, ok := err.(*<b>multiError</b>); ok {
+		<a href="../../src/go.uber.org/multierr/error.go.html#line-402" class="path-duplicate">error.go</a><a href="../../src/go.uber.org/multierr/error.go.html#line-402">#L402</a>: 	return &amp;<b>multiError</b>{errors: nonNilErrs}
+		<a href="../../src/go.uber.org/multierr/error.go.html#line-463" class="path-duplicate">error.go</a><a href="../../src/go.uber.org/multierr/error.go.html#line-463">#L463</a>: 	if _, ok := right.(*<b>multiError</b>); !ok {
+		<a href="../../src/go.uber.org/multierr/error.go.html#line-464" class="path-duplicate">error.go</a><a href="../../src/go.uber.org/multierr/error.go.html#line-464">#L464</a>: 		if l, ok := left.(*<b>multiError</b>); ok &amp;&amp; !l.copyNeeded.Swap(true) {
+		<a href="../../src/go.uber.org/multierr/error.go.html#line-468" class="path-duplicate">error.go</a><a href="../../src/go.uber.org/multierr/error.go.html#line-468">#L468</a>: 			return &amp;<b>multiError</b>{errors: errs}
+		<a href="../../src/go.uber.org/multierr/error.go.html#line-471" class="path-duplicate">error.go</a><a href="../../src/go.uber.org/multierr/error.go.html#line-471">#L471</a>: 			return &amp;<b>multiError</b>{errors: []error{left, right}}
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

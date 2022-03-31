@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Source: doc.go in package github.com/aws/aws-sdk-go/aws/session</title>
+<link href="../../../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre id="header"><code><span class="title">Source File</span>
+	doc.go
+
+<span class="title">Belonging Package</span>
+	<a href="../../../../../../pkg/github.com/aws/aws-sdk-go/aws/session.html">github.com/aws/aws-sdk-go/aws/session</a>
+</code></pre>
+
+<pre class="line-numbers">
+<div class="anchor" id="doc"><span class="codeline" id="line-1"><code><span class="comment">/*</span></code></span>
+<span class="codeline" id="line-2"><code><span class="comment">Package session provides configuration for the SDK's service clients. Sessions</span></code></span>
+<span class="codeline" id="line-3"><code><span class="comment">can be shared across service clients that share the same base configuration.</span></code></span>
+<span class="codeline" id="line-4"><code></code></span>
+<span class="codeline" id="line-5"><code><span class="comment">Sessions are safe to use concurrently as long as the Session is not being</span></code></span>
+<span class="codeline" id="line-6"><code><span class="comment">modified. Sessions should be cached when possible, because creating a new</span></code></span>
+<span class="codeline" id="line-7"><code><span class="comment">Session will load all configuration values from the environment, and config</span></code></span>
+<span class="codeline" id="line-8"><code><span class="comment">files each time the Session is created. Sharing the Session value across all of</span></code></span>
+<span class="codeline" id="line-9"><code><span class="comment">your service clients will ensure the configuration is loaded the fewest number</span></code></span>
+<span class="codeline" id="line-10"><code><span class="comment">of times possible.</span></code></span>
+<span class="codeline" id="line-11"><code></code></span>
+<span class="codeline" id="line-12"><code><span class="comment">Sessions options from Shared Config</span></code></span>
+<span class="codeline" id="line-13"><code></code></span>
+<span class="codeline" id="line-14"><code><span class="comment">By default NewSession will only load credentials from the shared credentials</span></code></span>
+<span class="codeline" id="line-15"><code><span class="comment">file (~/.aws/credentials). If the AWS_SDK_LOAD_CONFIG environment variable is</span></code></span>
+<span class="codeline" id="line-16"><code><span class="comment">set to a truthy value the Session will be created from the configuration</span></code></span>
+<span class="codeline" id="line-17"><code><span class="comment">values from the shared config (~/.aws/config) and shared credentials</span></code></span>
+<span class="codeline" id="line-18"><code><span class="comment">(~/.aws/credentials) files. Using the NewSessionWithOptions with</span></code></span>
+<span class="codeline" id="line-19"><code><span class="comment">SharedConfigState set to SharedConfigEnable will create the session as if the</span></code></span>
+<span class="codeline" id="line-20"><code><span class="comment">AWS_SDK_LOAD_CONFIG environment variable was set.</span></code></span>
+<span class="codeline" id="line-21"><code></code></span>
+<span class="codeline" id="line-22"><code><span class="comment">Credential and config loading order</span></code></span>
+<span class="codeline" id="line-23"><code></code></span>
+<span class="codeline" id="line-24"><code><span class="comment">The Session will attempt to load configuration and credentials from the</span></code></span>
+<span class="codeline" id="line-25"><code><span class="comment">environment, configuration files, and other credential sources. The order</span></code></span>
+<span class="codeline" id="line-26"><code><span class="comment">configuration is loaded in is:</span></code></span>
+<span class="codeline" id="line-27"><code></code></span>
+<span class="codeline" id="line-28"><code><span class="comment">  * Environment Variables</span></code></span>
+<span class="codeline" id="line-29"><code><span class="comment">  * Shared Credentials file</span></code></span>
+<span class="codeline" id="line-30"><code><span class="comment">  * Shared Configuration file (if SharedConfig is enabled)</span></code></span>
+<span class="codeline" id="line-31"><code><span class="comment">  * EC2 Instance Metadata (credentials only)</span></code></span>
+<span class="codeline" id="line-32"><code></code></span>
+<span class="codeline" id="line-33"><code><span class="comment">The Environment variables for credentials will have precedence over shared</span></code></span>
+<span class="codeline" id="line-34"><code><span class="comment">config even if SharedConfig is enabled. To override this behavior, and use</span></code></span>
+<span class="codeline" id="line-35"><code><span class="comment">shared config credentials instead specify the session.Options.Profile, (e.g.</span></code></span>
+<span class="codeline" id="line-36"><code><span class="comment">when using credential_source=Environment to assume a role).</span></code></span>
+<span class="codeline" id="line-37"><code></code></span>
+<span class="codeline" id="line-38"><code><span class="comment">  sess, err := session.NewSessionWithOptions(session.Options{</span></code></span>
+<span class="codeline" id="line-39"><code><span class="comment">	  Profile: "myProfile",</span></code></span>
+<span class="codeline" id="line-40"><code><span class="comment">  })</span></code></span>
+<span class="codeline" id="line-41"><code></code></span>
+<span class="codeline" id="line-42"><code><span class="comment">Creating Sessions</span></code></span>
+<span class="codeline" id="line-43"><code></code></span>
+<span class="codeline" id="line-44"><code><span class="comment">Creating a Session without additional options will load credentials region, and</span></code></span>
+<span class="codeline" id="line-45"><code><span class="comment">profile loaded from the environment and shared config automatically. See,</span></code></span>
+<span class="codeline" id="line-46"><code><span class="comment">"Environment Variables" section for information on environment variables used</span></code></span>
+<span class="codeline" id="line-47"><code><span class="comment">by Session.</span></code></span>
+<span class="codeline" id="line-48"><code></code></span>
+<span class="codeline" id="line-49"><code><span class="comment">	// Create Session</span></code></span>
+<span class="codeline" id="line-50"><code><span class="comment">	sess, err := session.NewSession()</span></code></span>
+<span class="codeline" id="line-51"><code></code></span>
+<span class="codeline" id="line-52"><code></code></span>
+<span class="codeline" id="line-53"><code><span class="comment">When creating Sessions optional aws.Config values can be passed in that will</span></code></span>
+<span class="codeline" id="line-54"><code><span class="comment">override the default, or loaded, config values the Session is being created</span></code></span>
+<span class="codeline" id="line-55"><code><span class="comment">with. This allows you to provide additional, or case based, configuration</span></code></span>
+<span class="codeline" id="line-56"><code><span class="comment">as needed.</span></code></span>
+<span class="codeline" id="line-57"><code></code></span>
+<span class="codeline" id="line-58"><code><span class="comment">	// Create a Session with a custom region</span></code></span>
+<span class="codeline" id="line-59"><code><span class="comment">	sess, err := session.NewSession(&amp;aws.Config{</span></code></span>
+<span class="codeline" id="line-60"><code><span class="comment">		Region: aws.String("us-west-2"),</span></code></span>
+<span class="codeline" id="line-61"><code><span class="comment">	})</span></code></span>
+<span class="codeline" id="line-62"><code></code></span>
+<span class="codeline" id="line-63"><code><span class="comment">Use NewSessionWithOptions to provide additional configuration driving how the</span></code></span>
+<span class="codeline" id="line-64"><code><span class="comment">Session's configuration will be loaded. Such as, specifying shared config</span></code></span>
+<span class="codeline" id="line-65"><code><span class="comment">profile, or override the shared config state,  (AWS_SDK_LOAD_CONFIG).</span></code></span>
+<span class="codeline" id="line-66"><code></code></span>
+<span class="codeline" id="line-67"><code><span class="comment">	// Equivalent to session.NewSession()</span></code></span>
+<span class="codeline" id="line-68"><code><span class="comment">	sess, err := session.NewSessionWithOptions(session.Options{</span></code></span>
+<span class="codeline" id="line-69"><code><span class="comment">		// Options</span></code></span>
+<span class="codeline" id="line-70"><code><span class="comment">	})</span></code></span>
+<span class="codeline" id="line-71"><code></code></span>
+<span class="codeline" id="line-72"><code><span class="comment">	sess, err := session.NewSessionWithOptions(session.Options{</span></code></span>
+<span class="codeline" id="line-73"><code><span class="comment">		// Specify profile to load for the session's config</span></code></span>
+<span class="codeline" id="line-74"><code><span class="comment">		Profile: "profile_name",</span></code></span>
+<span class="codeline" id="line-75"><code></code></span>
+<span class="codeline" id="line-76"><code><span class="comment">		// Provide SDK Config options, such as Region.</span></code></span>
+<span class="codeline" id="line-77"><code><span class="comment">		Config: aws.Config{</span></code></span>
+<span class="codeline" id="line-78"><code><span class="comment">			Region: aws.String("us-west-2"),</span></code></span>
+<span class="codeline" id="line-79"><code><span class="comment">		},</span></code></span>
+<span class="codeline" id="line-80"><code></code></span>
+<span class="codeline" id="line-81"><code><span class="comment">		// Force enable Shared Config support</span></code></span>
+<span class="codeline" id="line-82"><code><span class="comment">		SharedConfigState: session.SharedConfigEnable,</span></code></span>
+<span class="codeline" id="line-83"><code><span class="comment">	})</span></code></span>
+<span class="codeline" id="line-84"><code></code></span>
+<span class="codeline" id="line-85"><code><span class="comment">Adding Handlers</span></code></span>
+<span class="codeline" id="line-86"><code></code></span>
+<span class="codeline" id="line-87"><code><span class="comment">You can add handlers to a session to decorate API operation, (e.g. adding HTTP</span></code></span>
+<span class="codeline" id="line-88"><code><span class="comment">headers). All clients that use the Session receive a copy of the Session's</span></code></span>
+<span class="codeline" id="line-89"><code><span class="comment">handlers. For example, the following request handler added to the Session logs</span></code></span>
+<span class="codeline" id="line-90"><code><span class="comment">every requests made.</span></code></span>
+<span class="codeline" id="line-91"><code></code></span>
+<span class="codeline" id="line-92"><code><span class="comment">	// Create a session, and add additional handlers for all service</span></code></span>
+<span class="codeline" id="line-93"><code><span class="comment">	// clients created with the Session to inherit. Adds logging handler.</span></code></span>
+<span class="codeline" id="line-94"><code><span class="comment">	sess := session.Must(session.NewSession())</span></code></span>
+<span class="codeline" id="line-95"><code></code></span>
+<span class="codeline" id="line-96"><code><span class="comment">	sess.Handlers.Send.PushFront(func(r *request.Request) {</span></code></span>
+<span class="codeline" id="line-97"><code><span class="comment">		// Log every request made and its payload</span></code></span>
+<span class="codeline" id="line-98"><code><span class="comment">		logger.Printf("Request: %s/%s, Params: %s",</span></code></span>
+<span class="codeline" id="line-99"><code><span class="comment">			r.ClientInfo.ServiceName, r.Operation, r.Params)</span></code></span>
+<span class="codeline" id="line-100"><code><span class="comment">	})</span></code></span>
+<span class="codeline" id="line-101"><code></code></span>
+<span class="codeline" id="line-102"><code><span class="comment">Shared Config Fields</span></code></span>
+<span class="codeline" id="line-103"><code></code></span>
+<span class="codeline" id="line-104"><code><span class="comment">By default the SDK will only load the shared credentials file's</span></code></span>
+<span class="codeline" id="line-105"><code><span class="comment">(~/.aws/credentials) credentials values, and all other config is provided by</span></code></span>
+<span class="codeline" id="line-106"><code><span class="comment">the environment variables, SDK defaults, and user provided aws.Config values.</span></code></span>
+<span class="codeline" id="line-107"><code></code></span>
+<span class="codeline" id="line-108"><code><span class="comment">If the AWS_SDK_LOAD_CONFIG environment variable is set, or SharedConfigEnable</span></code></span>
+<span class="codeline" id="line-109"><code><span class="comment">option is used to create the Session the full shared config values will be</span></code></span>
+<span class="codeline" id="line-110"><code><span class="comment">loaded. This includes credentials, region, and support for assume role. In</span></code></span>
+<span class="codeline" id="line-111"><code><span class="comment">addition the Session will load its configuration from both the shared config</span></code></span>
+<span class="codeline" id="line-112"><code><span class="comment">file (~/.aws/config) and shared credentials file (~/.aws/credentials). Both</span></code></span>
+<span class="codeline" id="line-113"><code><span class="comment">files have the same format.</span></code></span>
+<span class="codeline" id="line-114"><code></code></span>
+<span class="codeline" id="line-115"><code><span class="comment">If both config files are present the configuration from both files will be</span></code></span>
+<span class="codeline" id="line-116"><code><span class="comment">read. The Session will be created from configuration values from the shared</span></code></span>
+<span class="codeline" id="line-117"><code><span class="comment">credentials file (~/.aws/credentials) over those in the shared config file</span></code></span>
+<span class="codeline" id="line-118"><code><span class="comment">(~/.aws/config).</span></code></span>
+<span class="codeline" id="line-119"><code></code></span>
+<span class="codeline" id="line-120"><code><span class="comment">Credentials are the values the SDK uses to authenticating requests with AWS</span></code></span>
+<span class="codeline" id="line-121"><code><span class="comment">Services. When specified in a file, both aws_access_key_id and</span></code></span>
+<span class="codeline" id="line-122"><code><span class="comment">aws_secret_access_key must be provided together in the same file to be</span></code></span>
+<span class="codeline" id="line-123"><code><span class="comment">considered valid. They will be ignored if both are not present.</span></code></span>
+<span class="codeline" id="line-124"><code><span class="comment">aws_session_token is an optional field that can be provided in addition to the</span></code></span>
+<span class="codeline" id="line-125"><code><span class="comment">other two fields.</span></code></span>
+<span class="codeline" id="line-126"><code></code></span>
+<span class="codeline" id="line-127"><code><span class="comment">	aws_access_key_id = AKID</span></code></span>
+<span class="codeline" id="line-128"><code><span class="comment">	aws_secret_access_key = SECRET</span></code></span>
+<span class="codeline" id="line-129"><code><span class="comment">	aws_session_token = TOKEN</span></code></span>
+<span class="codeline" id="line-130"><code></code></span>
+<span class="codeline" id="line-131"><code><span class="comment">	; region only supported if SharedConfigEnabled.</span></code></span>
+<span class="codeline" id="line-132"><code><span class="comment">	region = us-east-1</span></code></span>
+<span class="codeline" id="line-133"><code></code></span>
+<span class="codeline" id="line-134"><code><span class="comment">Assume Role configuration</span></code></span>
+<span class="codeline" id="line-135"><code></code></span>
+<span class="codeline" id="line-136"><code><span class="comment">The role_arn field allows you to configure the SDK to assume an IAM role using</span></code></span>
+<span class="codeline" id="line-137"><code><span class="comment">a set of credentials from another source. Such as when paired with static</span></code></span>
+<span class="codeline" id="line-138"><code><span class="comment">credentials, "profile_source", "credential_process", or "credential_source"</span></code></span>
+<span class="codeline" id="line-139"><code><span class="comment">fields. If "role_arn" is provided, a source of credentials must also be</span></code></span>
+<span class="codeline" id="line-140"><code><span class="comment">specified, such as "source_profile", "credential_source", or</span></code></span>
+<span class="codeline" id="line-141"><code><span class="comment">"credential_process".</span></code></span>
+<span class="codeline" id="line-142"><code></code></span>
+<span class="codeline" id="line-143"><code><span class="comment">	role_arn = arn:aws:iam::&lt;account_number&gt;:role/&lt;role_name&gt;</span></code></span>
+<span class="codeline" id="line-144"><code><span class="comment">	source_profile = profile_with_creds</span></code></span>
+<span class="codeline" id="line-145"><code><span class="comment">	external_id = 1234</span></code></span>
+<span class="codeline" id="line-146"><code><span class="comment">	mfa_serial = &lt;serial or mfa arn&gt;</span></code></span>
+<span class="codeline" id="line-147"><code><span class="comment">	role_session_name = session_name</span></code></span>
+<span class="codeline" id="line-148"><code></code></span>
+<span class="codeline" id="line-149"><code></code></span>
+<span class="codeline" id="line-150"><code><span class="comment">The SDK supports assuming a role with MFA token. If "mfa_serial" is set, you</span></code></span>
+<span class="codeline" id="line-151"><code><span class="comment">must also set the Session Option.AssumeRoleTokenProvider. The Session will fail</span></code></span>
+<span class="codeline" id="line-152"><code><span class="comment">to load if the AssumeRoleTokenProvider is not specified.</span></code></span>
+<span class="codeline" id="line-153"><code></code></span>
+<span class="codeline" id="line-154"><code><span class="comment">    sess := session.Must(session.NewSessionWithOptions(session.Options{</span></code></span>
+<span class="codeline" id="line-155"><code><span class="comment">        AssumeRoleTokenProvider: stscreds.StdinTokenProvider,</span></code></span>
+<span class="codeline" id="line-156"><code><span class="comment">    }))</span></code></span>
+<span class="codeline" id="line-157"><code></code></span>
+<span class="codeline" id="line-158"><code><span class="comment">To setup Assume Role outside of a session see the stscreds.AssumeRoleProvider</span></code></span>
+<span class="codeline" id="line-159"><code><span class="comment">documentation.</span></code></span>
+<span class="codeline" id="line-160"><code></code></span>
+<span class="codeline" id="line-161"><code><span class="comment">Environment Variables</span></code></span>
+<span class="codeline" id="line-162"><code></code></span>
+<span class="codeline" id="line-163"><code><span class="comment">When a Session is created several environment variables can be set to adjust</span></code></span>
+<span class="codeline" id="line-164"><code><span class="comment">how the SDK functions, and what configuration data it loads when creating</span></code></span>
+<span class="codeline" id="line-165"><code><span class="comment">Sessions. All environment values are optional, but some values like credentials</span></code></span>
+<span class="codeline" id="line-166"><code><span class="comment">require multiple of the values to set or the partial values will be ignored.</span></code></span>
+<span class="codeline" id="line-167"><code><span class="comment">All environment variable values are strings unless otherwise noted.</span></code></span>
+<span class="codeline" id="line-168"><code></code></span>
+<span class="codeline" id="line-169"><code><span class="comment">Environment configuration values. If set both Access Key ID and Secret Access</span></code></span>
+<span class="codeline" id="line-170"><code><span class="comment">Key must be provided. Session Token and optionally also be provided, but is</span></code></span>
+<span class="codeline" id="line-171"><code><span class="comment">not required.</span></code></span>
+<span class="codeline" id="line-172"><code></code></span>
+<span class="codeline" id="line-173"><code><span class="comment">	# Access Key ID</span></code></span>
+<span class="codeline" id="line-174"><code><span class="comment">	AWS_ACCESS_KEY_ID=AKID</span></code></span>
+<span class="codeline" id="line-175"><code><span class="comment">	AWS_ACCESS_KEY=AKID # only read if AWS_ACCESS_KEY_ID is not set.</span></code></span>
+<span class="codeline" id="line-176"><code></code></span>
+<span class="codeline" id="line-177"><code><span class="comment">	# Secret Access Key</span></code></span>
+<span class="codeline" id="line-178"><code><span class="comment">	AWS_SECRET_ACCESS_KEY=SECRET</span></code></span>
+<span class="codeline" id="line-179"><code><span class="comment">	AWS_SECRET_KEY=SECRET=SECRET # only read if AWS_SECRET_ACCESS_KEY is not set.</span></code></span>
+<span class="codeline" id="line-180"><code></code></span>
+<span class="codeline" id="line-181"><code><span class="comment">	# Session Token</span></code></span>
+<span class="codeline" id="line-182"><code><span class="comment">	AWS_SESSION_TOKEN=TOKEN</span></code></span>
+<span class="codeline" id="line-183"><code></code></span>
+<span class="codeline" id="line-184"><code><span class="comment">Region value will instruct the SDK where to make service API requests to. If is</span></code></span>
+<span class="codeline" id="line-185"><code><span class="comment">not provided in the environment the region must be provided before a service</span></code></span>
+<span class="codeline" id="line-186"><code><span class="comment">client request is made.</span></code></span>
+<span class="codeline" id="line-187"><code></code></span>
+<span class="codeline" id="line-188"><code><span class="comment">	AWS_REGION=us-east-1</span></code></span>
+<span class="codeline" id="line-189"><code></code></span>
+<span class="codeline" id="line-190"><code><span class="comment">	# AWS_DEFAULT_REGION is only read if AWS_SDK_LOAD_CONFIG is also set,</span></code></span>
+<span class="codeline" id="line-191"><code><span class="comment">	# and AWS_REGION is not also set.</span></code></span>
+<span class="codeline" id="line-192"><code><span class="comment">	AWS_DEFAULT_REGION=us-east-1</span></code></span>
+<span class="codeline" id="line-193"><code></code></span>
+<span class="codeline" id="line-194"><code><span class="comment">Profile name the SDK should load use when loading shared config from the</span></code></span>
+<span class="codeline" id="line-195"><code><span class="comment">configuration files. If not provided "default" will be used as the profile name.</span></code></span>
+<span class="codeline" id="line-196"><code></code></span>
+<span class="codeline" id="line-197"><code><span class="comment">	AWS_PROFILE=my_profile</span></code></span>
+<span class="codeline" id="line-198"><code></code></span>
+<span class="codeline" id="line-199"><code><span class="comment">	# AWS_DEFAULT_PROFILE is only read if AWS_SDK_LOAD_CONFIG is also set,</span></code></span>
+<span class="codeline" id="line-200"><code><span class="comment">	# and AWS_PROFILE is not also set.</span></code></span>
+<span class="codeline" id="line-201"><code><span class="comment">	AWS_DEFAULT_PROFILE=my_profile</span></code></span>
+<span class="codeline" id="line-202"><code></code></span>
+<span class="codeline" id="line-203"><code><span class="comment">SDK load config instructs the SDK to load the shared config in addition to</span></code></span>
+<span class="codeline" id="line-204"><code><span class="comment">shared credentials. This also expands the configuration loaded so the shared</span></code></span>
+<span class="codeline" id="line-205"><code><span class="comment">credentials will have parity with the shared config file. This also enables</span></code></span>
+<span class="codeline" id="line-206"><code><span class="comment">Region and Profile support for the AWS_DEFAULT_REGION and AWS_DEFAULT_PROFILE</span></code></span>
+<span class="codeline" id="line-207"><code><span class="comment">env values as well.</span></code></span>
+<span class="codeline" id="line-208"><code></code></span>
+<span class="codeline" id="line-209"><code><span class="comment">	AWS_SDK_LOAD_CONFIG=1</span></code></span>
+<span class="codeline" id="line-210"><code></code></span>
+<span class="codeline" id="line-211"><code><span class="comment">Shared credentials file path can be set to instruct the SDK to use an alternative</span></code></span>
+<span class="codeline" id="line-212"><code><span class="comment">file for the shared credentials. If not set the file will be loaded from</span></code></span>
+<span class="codeline" id="line-213"><code><span class="comment">$HOME/.aws/credentials on Linux/Unix based systems, and</span></code></span>
+<span class="codeline" id="line-214"><code><span class="comment">%USERPROFILE%\.aws\credentials on Windows.</span></code></span>
+<span class="codeline" id="line-215"><code></code></span>
+<span class="codeline" id="line-216"><code><span class="comment">	AWS_SHARED_CREDENTIALS_FILE=$HOME/my_shared_credentials</span></code></span>
+<span class="codeline" id="line-217"><code></code></span>
+<span class="codeline" id="line-218"><code><span class="comment">Shared config file path can be set to instruct the SDK to use an alternative</span></code></span>
+<span class="codeline" id="line-219"><code><span class="comment">file for the shared config. If not set the file will be loaded from</span></code></span>
+<span class="codeline" id="line-220"><code><span class="comment">$HOME/.aws/config on Linux/Unix based systems, and</span></code></span>
+<span class="codeline" id="line-221"><code><span class="comment">%USERPROFILE%\.aws\config on Windows.</span></code></span>
+<span class="codeline" id="line-222"><code></code></span>
+<span class="codeline" id="line-223"><code><span class="comment">	AWS_CONFIG_FILE=$HOME/my_shared_config</span></code></span>
+<span class="codeline" id="line-224"><code></code></span>
+<span class="codeline" id="line-225"><code><span class="comment">Path to a custom Credentials Authority (CA) bundle PEM file that the SDK</span></code></span>
+<span class="codeline" id="line-226"><code><span class="comment">will use instead of the default system's root CA bundle. Use this only</span></code></span>
+<span class="codeline" id="line-227"><code><span class="comment">if you want to replace the CA bundle the SDK uses for TLS requests.</span></code></span>
+<span class="codeline" id="line-228"><code></code></span>
+<span class="codeline" id="line-229"><code><span class="comment">	AWS_CA_BUNDLE=$HOME/my_custom_ca_bundle</span></code></span>
+<span class="codeline" id="line-230"><code></code></span>
+<span class="codeline" id="line-231"><code><span class="comment">Enabling this option will attempt to merge the Transport into the SDK's HTTP</span></code></span>
+<span class="codeline" id="line-232"><code><span class="comment">client. If the client's Transport is not a http.Transport an error will be</span></code></span>
+<span class="codeline" id="line-233"><code><span class="comment">returned. If the Transport's TLS config is set this option will cause the SDK</span></code></span>
+<span class="codeline" id="line-234"><code><span class="comment">to overwrite the Transport's TLS config's  RootCAs value. If the CA bundle file</span></code></span>
+<span class="codeline" id="line-235"><code><span class="comment">contains multiple certificates all of them will be loaded.</span></code></span>
+<span class="codeline" id="line-236"><code></code></span>
+<span class="codeline" id="line-237"><code><span class="comment">The Session option CustomCABundle is also available when creating sessions</span></code></span>
+<span class="codeline" id="line-238"><code><span class="comment">to also enable this feature. CustomCABundle session option field has priority</span></code></span>
+<span class="codeline" id="line-239"><code><span class="comment">over the AWS_CA_BUNDLE environment variable, and will be used if both are set.</span></code></span>
+<span class="codeline" id="line-240"><code></code></span>
+<span class="codeline" id="line-241"><code><span class="comment">Setting a custom HTTPClient in the aws.Config options will override this setting.</span></code></span>
+<span class="codeline" id="line-242"><code><span class="comment">To use this option and custom HTTP client, the HTTP client needs to be provided</span></code></span>
+<span class="codeline" id="line-243"><code><span class="comment">when creating the session. Not the service client.</span></code></span>
+<span class="codeline" id="line-244"><code><span class="comment">*/</span></code></span></div><span class="codeline" id="line-245"><code><span class="keyword">package</span> session</code></span>
+</pre><pre id="footer">
+<table><tr><td><img src="../../../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

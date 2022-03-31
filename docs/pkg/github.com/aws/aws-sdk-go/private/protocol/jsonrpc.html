@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Package: github.com/aws/aws-sdk-go/private/protocol/jsonrpc</title>
+<link href="../../../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre id="package-details"><code><span style="font-size:xx-large;">package <b>jsonrpc</b></span>
+
+<span class="title">Import Path</span>
+	<a href="../../../../../../index.html#pkg-github.com/aws/aws-sdk-go/private/protocol/jsonrpc">github.com/aws/aws-sdk-go/private/protocol/jsonrpc</a><i> (on <a href="https://pkg.go.dev/github.com/aws/aws-sdk-go/private/protocol/jsonrpc" target="_blank">go.dev</a>)</i>
+
+<span class="title">Dependency Relation</span>
+	imports <a href="../../../../../../dep/github.com/aws/aws-sdk-go/private/protocol/jsonrpc.html">10 packages</a>, and imported by <a href="../../../../../../dep/github.com/aws/aws-sdk-go/private/protocol/jsonrpc.html#imported-by">one package</a>
+
+<div id="files"><span class="title">Involved Source Files</span>
+
+	<input type='checkbox' checked class="fold" id="file-0-fold-content"><label for="file-0-fold-content">   <a href="../../../../../../src/github.com/aws/aws-sdk-go/private/protocol/jsonrpc/jsonrpc.go.html#doc">#d</a> <a href="../../../../../../src/github.com/aws/aws-sdk-go/private/protocol/jsonrpc/jsonrpc.go.html">jsonrpc.go</a></label><span id='file-0-fold-content-items' class="fold-items">
+		Package jsonrpc provides JSON RPC utilities for serialization of AWS
+		requests and responses.
+</span>
+	<span class="nodocs">      <a href="../../../../../../src/github.com/aws/aws-sdk-go/private/protocol/jsonrpc/unmarshal_error.go.html">unmarshal_error.go</a></span></div>
+<div id="exported-types"><span class="title">Package-Level Type Names<span class="title-stat"><i> (total 2, in which 1 are exported)</i></span></span>
+
+<div id="exported-types-buttons" class="js-on">	/* sort exporteds by: <label id="sort-types-by-alphabet" class="button">alphabet</label> | <label id="sort-types-by-popularity" class="button">popularity</label> */</div><div class="anchor type-res" id="name-UnmarshalTypedError" data-popularity="175">	<input type='checkbox' class="fold" id="UnmarshalTypedError-fold-content"><label for="UnmarshalTypedError-fold-content"> <a href="../../../../../../use/github.com/aws/aws-sdk-go/private/protocol/jsonrpc..UnmarshalTypedError.html">type</a> <a href="../../../../../../src/github.com/aws/aws-sdk-go/private/protocol/jsonrpc/unmarshal_error.go.html#line-18">UnmarshalTypedError</a> <i>(struct)</i></label><span id='UnmarshalTypedError-fold-content-docs' class="fold-docs">
+		UnmarshalTypedError provides unmarshaling errors API response errors
+		for both typed and untyped errors.
+
+		<input type='checkbox' class="fold" id="UnmarshalTypedError-fold-fields"><label for="UnmarshalTypedError-fold-fields">Fields (<i>only one, which is unexported</i>)</label><span id='UnmarshalTypedError-fold-fields-items' class="fold-items">
+			<input type='checkbox' class="showhide" id="UnmarshalTypedError-showhide-fields"><i><label for="UnmarshalTypedError-showhide-fields" class="show-inline">/* one unexported ... */</label><label for="UnmarshalTypedError-showhide-fields" class="hide-inline">/* one unexported: */</label></i><span class="hidden"><i>
+			<span class="nodocs"><a href="../../../../../../src/github.com/aws/aws-sdk-go/private/protocol/jsonrpc/unmarshal_error.go.html#line-19">exceptions</a> <i>map[<a href="../../../../../builtin.html#name-string">string</a>]func(<a href="../protocol.html">protocol</a>.<a href="../protocol.html#name-ResponseMetadata">ResponseMetadata</a>) <a href="../../../../../builtin.html#name-error">error</a></i></span></i></span></span>
+		<input type='checkbox' class="fold" id="UnmarshalTypedError-fold-methods"><label for="UnmarshalTypedError-fold-methods">Methods (<i>only one, which is exported</i>)</label><span id='UnmarshalTypedError-fold-methods-items' class="fold-items"><span>
+			<input type='checkbox' class="fold" id="UnmarshalTypedError-fold-method-UnmarshalError"><label for="UnmarshalTypedError-fold-method-UnmarshalError">(*UnmarshalTypedError) <a href="../../../../../../src/github.com/aws/aws-sdk-go/private/protocol/jsonrpc/unmarshal_error.go.html#line-33">UnmarshalError</a>(resp *<a href="../../../../../net/http.html">http</a>.<a href="../../../../../net/http.html#name-Response">Response</a>, respMeta <a href="../protocol.html">protocol</a>.<a href="../protocol.html#name-ResponseMetadata">ResponseMetadata</a>) (<a href="../../../../../builtin.html#name-error">error</a>, <a href="../../../../../builtin.html#name-error">error</a>)</label><span id='UnmarshalTypedError-fold-method-UnmarshalError-docs' class="fold-docs">
+				UnmarshalError attempts to unmarshal the HTTP response error as a known
+				error type. If unable to unmarshal the error type, the generic SDK error
+				type will be used.
+</span></span></span>
+		<input type='checkbox' class="fold" id="UnmarshalTypedError-fold-impls"><label for="UnmarshalTypedError-fold-impls">Implements (<i>at least one exported</i>)</label><span id='UnmarshalTypedError-fold-impls-items' class="fold-items"><span>
+			*UnmarshalTypedError : github.com/aws/aws-sdk-go/private/protocol.<a href="../protocol.html#name-ErrorUnmarshaler">ErrorUnmarshaler</a></span></span>
+		<input type='checkbox' class="fold" id="UnmarshalTypedError-fold-results"><label for="UnmarshalTypedError-fold-results">As Outputs Of (<i>at least one exported</i>)</label><span id='UnmarshalTypedError-fold-results-items' class="fold-items"><span>
+			func <a href="#name-NewUnmarshalTypedError">NewUnmarshalTypedError</a>(exceptions map[<a href="../../../../../builtin.html#name-string">string</a>]func(<a href="../protocol.html">protocol</a>.<a href="../protocol.html#name-ResponseMetadata">ResponseMetadata</a>) <a href="../../../../../builtin.html#name-error">error</a>) *<b>UnmarshalTypedError</b></span></span>
+
+</span></div></div><div>	<input type='checkbox' class="showhide" id="unexported-typenames-showhide"><i><label for="unexported-typenames-showhide" class="show-inline">/* one unexported ... */</label><label for="unexported-typenames-showhide" class="hide-inline">/* one unexported: */</label></i><div class="anchor type-res hidden" id="name-jsonErrorResponse" data-popularity="0">	<input type='checkbox' class="fold" id="jsonErrorResponse-fold-content"><label for="jsonErrorResponse-fold-content"> <a href="../../../../../../use/github.com/aws/aws-sdk-go/private/protocol/jsonrpc..jsonErrorResponse^5cbe3.html">type</a> <a href="../../../../../../src/github.com/aws/aws-sdk-go/private/protocol/jsonrpc/unmarshal_error.go.html#line-104">jsonErrorResponse</a> <i>(struct)</i></label><span id='jsonErrorResponse-fold-content-docs' class="fold-docs">
+
+		<input type='checkbox' class="fold" id="jsonErrorResponse-fold-fields"><label for="jsonErrorResponse-fold-fields">Fields (<i>total 2, both are exported</i>)</label><span id='jsonErrorResponse-fold-fields-items' class="fold-items"><span>
+			<span class="nodocs"><a href="../../../../../../src/github.com/aws/aws-sdk-go/private/protocol/jsonrpc/unmarshal_error.go.html#line-105">Code</a> <i><a href="../../../../../builtin.html#name-string">string</a></i></span></span><span>
+			<span class="nodocs"><a href="../../../../../../src/github.com/aws/aws-sdk-go/private/protocol/jsonrpc/unmarshal_error.go.html#line-106">Message</a> <i><a href="../../../../../builtin.html#name-string">string</a></i></span></span></span>
+
+</span></div></div>
+<div id="exported-functions"><span class="title">Package-Level Functions<span class="title-stat"><i> (total 5, all are exported)</i></span></span>
+
+<div class="anchor value-res" id="name-Build">	<input type='checkbox' class="fold" id="Build-fold-content"><label for="Build-fold-content"> <a href="../../../../../../use/github.com/aws/aws-sdk-go/private/protocol/jsonrpc..Build.html">func</a> <a href="../../../../../../src/github.com/aws/aws-sdk-go/private/protocol/jsonrpc/jsonrpc.go.html#line-39">Build</a>(req *<a href="../../aws/request.html">request</a>.<a href="../../aws/request.html#name-Request">Request</a>)</label><span id='Build-fold-content-docs' class="fold-docs">
+		Build builds a JSON payload for a JSON RPC request.
+
+</span></div><div class="anchor value-res" id="name-NewUnmarshalTypedError">	<input type='checkbox' class="fold" id="NewUnmarshalTypedError-fold-content"><label for="NewUnmarshalTypedError-fold-content"> <a href="../../../../../../use/github.com/aws/aws-sdk-go/private/protocol/jsonrpc..NewUnmarshalTypedError.html">func</a> <a href="../../../../../../src/github.com/aws/aws-sdk-go/private/protocol/jsonrpc/unmarshal_error.go.html#line-24">NewUnmarshalTypedError</a>(exceptions map[<a href="../../../../../builtin.html#name-string">string</a>]func(<a href="../protocol.html">protocol</a>.<a href="../protocol.html#name-ResponseMetadata">ResponseMetadata</a>) <a href="../../../../../builtin.html#name-error">error</a>) *<a href="#name-UnmarshalTypedError">UnmarshalTypedError</a></label><span id='NewUnmarshalTypedError-fold-content-docs' class="fold-docs">
+		NewUnmarshalTypedError returns an UnmarshalTypedError initialized for the
+		set of exception names to the error unmarshalers
+
+</span></div><div class="anchor value-res" id="name-Unmarshal">	<input type='checkbox' class="fold" id="Unmarshal-fold-content"><label for="Unmarshal-fold-content"> <a href="../../../../../../use/github.com/aws/aws-sdk-go/private/protocol/jsonrpc..Unmarshal.html">func</a> <a href="../../../../../../src/github.com/aws/aws-sdk-go/private/protocol/jsonrpc/jsonrpc.go.html#line-70">Unmarshal</a>(req *<a href="../../aws/request.html">request</a>.<a href="../../aws/request.html#name-Request">Request</a>)</label><span id='Unmarshal-fold-content-docs' class="fold-docs">
+		Unmarshal unmarshals a response for a JSON RPC service.
+
+</span></div><div class="anchor value-res" id="name-UnmarshalError">	<input type='checkbox' class="fold" id="UnmarshalError-fold-content"><label for="UnmarshalError-fold-content"> <a href="../../../../../../use/github.com/aws/aws-sdk-go/private/protocol/jsonrpc..UnmarshalError.html">func</a> <a href="../../../../../../src/github.com/aws/aws-sdk-go/private/protocol/jsonrpc/unmarshal_error.go.html#line-81">UnmarshalError</a>(req *<a href="../../aws/request.html">request</a>.<a href="../../aws/request.html#name-Request">Request</a>)</label><span id='UnmarshalError-fold-content-docs' class="fold-docs">
+		UnmarshalError unmarshals an error response for a JSON RPC service.
+
+</span></div><div class="anchor value-res" id="name-UnmarshalMeta">	<input type='checkbox' class="fold" id="UnmarshalMeta-fold-content"><label for="UnmarshalMeta-fold-content"> <a href="../../../../../../use/github.com/aws/aws-sdk-go/private/protocol/jsonrpc..UnmarshalMeta.html">func</a> <a href="../../../../../../src/github.com/aws/aws-sdk-go/private/protocol/jsonrpc/jsonrpc.go.html#line-86">UnmarshalMeta</a>(req *<a href="../../aws/request.html">request</a>.<a href="../../aws/request.html#name-Request">Request</a>)</label><span id='UnmarshalMeta-fold-content-docs' class="fold-docs">
+		UnmarshalMeta unmarshals headers from a response for a JSON RPC service.
+
+</span></div></div>
+<div id="exported-variables"><span class="title">Package-Level Variables<span class="title-stat"><i> (total 5, in which 4 are exported)</i></span></span>
+
+<div class="anchor value-res" id="name-BuildHandler">	<input type='checkbox' class="fold" id="BuildHandler-fold-content"><label for="BuildHandler-fold-content">  <a href="../../../../../../use/github.com/aws/aws-sdk-go/private/protocol/jsonrpc..BuildHandler.html">var</a> <a href="../../../../../../src/github.com/aws/aws-sdk-go/private/protocol/jsonrpc/jsonrpc.go.html#line-19">BuildHandler</a> <a href="../../aws/request.html">request</a>.<a href="../../aws/request.html#name-NamedHandler">NamedHandler</a></label><span id='BuildHandler-fold-content-docs' class="fold-docs">
+		BuildHandler is a named request handler for building jsonrpc protocol
+		requests
+
+</span></div><div class="anchor value-res" id="name-UnmarshalErrorHandler">	<input type='checkbox' class="fold" id="UnmarshalErrorHandler-fold-content"><label for="UnmarshalErrorHandler-fold-content">  <a href="../../../../../../use/github.com/aws/aws-sdk-go/private/protocol/jsonrpc..UnmarshalErrorHandler.html">var</a> <a href="../../../../../../src/github.com/aws/aws-sdk-go/private/protocol/jsonrpc/unmarshal_error.go.html#line-75">UnmarshalErrorHandler</a> <a href="../../aws/request.html">request</a>.<a href="../../aws/request.html#name-NamedHandler">NamedHandler</a></label><span id='UnmarshalErrorHandler-fold-content-docs' class="fold-docs">
+		UnmarshalErrorHandler is a named request handler for unmarshaling jsonrpc
+		protocol request errors
+
+</span></div><div class="anchor value-res" id="name-UnmarshalHandler">	<input type='checkbox' class="fold" id="UnmarshalHandler-fold-content"><label for="UnmarshalHandler-fold-content">  <a href="../../../../../../use/github.com/aws/aws-sdk-go/private/protocol/jsonrpc..UnmarshalHandler.html">var</a> <a href="../../../../../../src/github.com/aws/aws-sdk-go/private/protocol/jsonrpc/jsonrpc.go.html#line-26">UnmarshalHandler</a> <a href="../../aws/request.html">request</a>.<a href="../../aws/request.html#name-NamedHandler">NamedHandler</a></label><span id='UnmarshalHandler-fold-content-docs' class="fold-docs">
+		UnmarshalHandler is a named request handler for unmarshaling jsonrpc
+		protocol requests
+
+</span></div><div class="anchor value-res" id="name-UnmarshalMetaHandler">	<input type='checkbox' class="fold" id="UnmarshalMetaHandler-fold-content"><label for="UnmarshalMetaHandler-fold-content">  <a href="../../../../../../use/github.com/aws/aws-sdk-go/private/protocol/jsonrpc..UnmarshalMetaHandler.html">var</a> <a href="../../../../../../src/github.com/aws/aws-sdk-go/private/protocol/jsonrpc/jsonrpc.go.html#line-33">UnmarshalMetaHandler</a> <a href="../../aws/request.html">request</a>.<a href="../../aws/request.html#name-NamedHandler">NamedHandler</a></label><span id='UnmarshalMetaHandler-fold-content-docs' class="fold-docs">
+		UnmarshalMetaHandler is a named request handler for unmarshaling jsonrpc
+		protocol request metadata
+
+</span></div>	<input type='checkbox' class="showhide" id="unexported-variables-showhide"><i><label for="unexported-variables-showhide" class="show-inline">/* one unexported ... */</label><label for="unexported-variables-showhide" class="hide-inline">/* one unexported: */</label></i><div class="anchor value-res hidden" id="name-emptyJSON"><i>	<span class="nodocs">  <a href="../../../../../../use/github.com/aws/aws-sdk-go/private/protocol/jsonrpc..emptyJSON^c6f7d.html">var</a> <a href="../../../../../../src/github.com/aws/aws-sdk-go/private/protocol/jsonrpc/jsonrpc.go.html#line-15">emptyJSON</a> []<a href="../../../../../builtin.html#name-byte">byte</a></span></i></div></div></code></pre><pre id="footer">
+<table><tr><td><img src="../../../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

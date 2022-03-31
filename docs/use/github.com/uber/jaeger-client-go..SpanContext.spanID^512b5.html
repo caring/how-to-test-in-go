@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/uber/jaeger-client-go.SpanContext.spanID</title>
+<link href="../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../pkg/github.com/uber/jaeger-client-go.html">github.com/uber/jaeger-client-go</a>.<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-49">SpanContext</a>.<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-56">spanID</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">25 uses</span>
+
+	github.com/uber/jaeger-client-go (current package)
+		<a href="../../../src/github.com/uber/jaeger-client-go/jaeger_thrift_span.go.html#line-36">jaeger_thrift_span.go#L36</a>: 		SpanId:        int64(span.context.<b>spanID</b>),
+		<a href="../../../src/github.com/uber/jaeger-client-go/jaeger_thrift_span.go.html#line-179" class="path-duplicate">jaeger_thrift_span.go</a><a href="../../../src/github.com/uber/jaeger-client-go/jaeger_thrift_span.go.html#line-179">#L179</a>: 		SpanId:      int64(ctx.<b>spanID</b>),
+		<a href="../../../src/github.com/uber/jaeger-client-go/propagation.go.html#line-190">propagation.go#L190</a>: 	if err := binary.Write(carrier, binary.BigEndian, sc.<b>spanID</b>); err != nil {
+		<a href="../../../src/github.com/uber/jaeger-client-go/propagation.go.html#line-236" class="path-duplicate">propagation.go</a><a href="../../../src/github.com/uber/jaeger-client-go/propagation.go.html#line-236">#L236</a>: 	if err := binary.Read(carrier, binary.BigEndian, &amp;ctx.<b>spanID</b>); err != nil {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-401">sampler.go#L401</a>: 	if span.context.samplingState.isLocalRootSpan(span.context.<b>spanID</b>) {
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-56">span_context.go#L56</a>: 	<b>spanID</b> SpanID
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-206" class="path-duplicate">span_context.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-206">#L206</a>: 	return c.traceID.IsValid() &amp;&amp; c.<b>spanID</b> != 0
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-220" class="path-duplicate">span_context.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-220">#L220</a>: 		return fmt.Sprintf("%016x:%016x:%016x:%x", c.traceID.Low, uint64(c.<b>spanID</b>), uint64(c.parentID), flags)
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-222" class="path-duplicate">span_context.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-222">#L222</a>: 	return fmt.Sprintf("%016x%016x:%016x:%016x:%x", c.traceID.High, c.traceID.Low, uint64(c.<b>spanID</b>), uint64(c.parentID), flags)
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-239" class="path-duplicate">span_context.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-239">#L239</a>: 	if context.<b>spanID</b>, err = SpanIDFromString(parts[1]); err != nil {
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-261" class="path-duplicate">span_context.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-261">#L261</a>: 	return c.<b>spanID</b>
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-293" class="path-duplicate">span_context.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-293">#L293</a>: 		<b>spanID</b>:        spanID,
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-303" class="path-duplicate">span_context.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-303">#L303</a>: 	c.<b>spanID</b> = ctx.<b>spanID</b>
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-338" class="path-duplicate">span_context.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-338">#L338</a>: 		return SpanContext{c.traceID, c.<b>spanID</b>, c.parentID, newBaggage, "", c.samplingState, c.remote}
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-350" class="path-duplicate">span_context.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-350">#L350</a>: 	return SpanContext{c.traceID, c.<b>spanID</b>, c.parentID, newBaggage, "", c.samplingState, c.remote}
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-278">tracer.go#L278</a>: 			ctx.<b>spanID</b> = SpanID(ctx.traceID.Low)
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-281" class="path-duplicate">tracer.go</a><a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-281">#L281</a>: 				localRootSpan: ctx.<b>spanID</b>,
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-291" class="path-duplicate">tracer.go</a><a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-291">#L291</a>: 				ctx.<b>spanID</b> = parent.<b>spanID</b>
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-294" class="path-duplicate">tracer.go</a><a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-294">#L294</a>: 				ctx.<b>spanID</b> = SpanID(t.randomID())
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-295" class="path-duplicate">tracer.go</a><a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-295">#L295</a>: 				ctx.parentID = parent.<b>spanID</b>
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-300" class="path-duplicate">tracer.go</a><a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-300">#L300</a>: 				ctx.samplingState.localRootSpan = ctx.<b>spanID</b>
+		<a href="../../../src/github.com/uber/jaeger-client-go/zipkin.go.html#line-72">zipkin.go#L72</a>: 	ctx.<b>spanID</b> = SpanID(carrier.SpanID())
+		<a href="../../../src/github.com/uber/jaeger-client-go/zipkin_thrift_span.go.html#line-65">zipkin_thrift_span.go#L65</a>: 		ID:                int64(span.context.<b>spanID</b>),
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

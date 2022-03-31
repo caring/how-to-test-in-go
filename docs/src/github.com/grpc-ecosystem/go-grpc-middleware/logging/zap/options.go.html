@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Source: options.go in package github.com/grpc-ecosystem/go-grpc-middleware/logging/zap</title>
+<link href="../../../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre id="header"><code><span class="title">Source File</span>
+	options.go
+
+<span class="title">Belonging Package</span>
+	<a href="../../../../../../pkg/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap.html">github.com/grpc-ecosystem/go-grpc-middleware/logging/zap</a>
+</code></pre>
+<style>input[type=radio] {display: none;}
+input[id=r0]:checked ~pre label[for=r0],
+input[id=r1]:checked ~pre label[for=r1],
+input[id=r2]:checked ~pre label[for=r2],
+input[id=r3]:checked ~pre label[for=r3],
+input[id=r4]:checked ~pre label[for=r4],
+input[id=r5]:checked ~pre label[for=r5],
+input[id=r6]:checked ~pre label[for=r6],
+input[id=r7]:checked ~pre label[for=r7],
+input[id=r8]:checked ~pre label[for=r8],
+input[id=r9]:checked ~pre label[for=r9],
+input[id=r10]:checked ~pre label[for=r10],
+input[id=r11]:checked ~pre label[for=r11],
+input[id=r12]:checked ~pre label[for=r12],
+input[id=r13]:checked ~pre label[for=r13],
+input[id=r14]:checked ~pre label[for=r14],
+input[id=r15]:checked ~pre label[for=r15],
+input[id=r16]:checked ~pre label[for=r16],
+input[id=r17]:checked ~pre label[for=r17],
+input[id=r18]:checked ~pre label[for=r18],
+input[id=r19]:checked ~pre label[for=r19],
+input[id=r20]:checked ~pre label[for=r20],
+input[id=r21]:checked ~pre label[for=r21],
+input[id=r22]:checked ~pre label[for=r22],
+input[id=r23]:checked ~pre label[for=r23],
+input[id=r24]:checked ~pre label[for=r24],
+input[id=r25]:checked ~pre label[for=r25],
+input[id=r26]:checked ~pre label[for=r26],
+input[id=r27]:checked ~pre label[for=r27],
+input[id=r28]:checked ~pre label[for=r28],
+input[id=r29]:checked ~pre label[for=r29],
+input[id=r30]:checked ~pre label[for=r30],
+input[id=r31]:checked ~pre label[for=r31]
+{background: #226; color: #ff8;}
+input[id=i0]:checked ~pre .i0,
+input[id=i1]:checked ~pre .i1,
+input[id=i2]:checked ~pre .i2,
+input[id=i3]:checked ~pre .i3,
+input[id=i4]:checked ~pre .i4
+{background: brown; color: #eed;}
+</style><input id="r0" type="radio" name="g"/>
+<input id="r1" type="radio" name="g"/>
+<input id="r2" type="radio" name="g"/>
+<input id="r3" type="radio" name="g"/>
+<input id="r4" type="radio" name="g"/>
+<input id="r5" type="radio" name="g"/>
+<input id="r6" type="radio" name="g"/>
+<input id="r7" type="radio" name="g"/>
+<input id="r8" type="radio" name="g"/>
+<input id="r9" type="radio" name="g"/>
+<input id="r10" type="radio" name="g"/>
+<input id="r11" type="radio" name="g"/>
+<input id="r12" type="radio" name="g"/>
+<input id="r13" type="radio" name="g"/>
+<input id="r14" type="radio" name="g"/>
+<input id="r15" type="radio" name="g"/>
+<input id="r16" type="radio" name="g"/>
+<input id="r17" type="radio" name="g"/>
+<input id="r18" type="radio" name="g"/>
+<input id="r19" type="radio" name="g"/>
+<input id="r20" type="radio" name="g"/>
+<input id="r21" type="radio" name="g"/>
+<input id="r22" type="radio" name="g"/>
+<input id="r23" type="radio" name="g"/>
+<input id="r24" type="radio" name="g"/>
+<input id="r25" type="radio" name="g"/>
+<input id="r26" type="radio" name="g"/>
+<input id="r27" type="radio" name="g"/>
+<input id="r28" type="radio" name="g"/>
+<input id="r29" type="radio" name="g"/>
+<input id="r30" type="radio" name="g"/>
+<input id="r31" type="radio" name="g"/>
+<input id="i0" type="radio" name="i"/>
+<input id="i1" type="radio" name="i"/>
+<input id="i2" type="radio" name="i"/>
+<input id="i3" type="radio" name="i"/>
+<input id="i4" type="radio" name="i"/>
+
+<pre class="line-numbers">
+<span class="codeline" id="line-1"><code><span class="keyword">package</span> grpc_zap</code></span>
+<span class="codeline" id="line-2"><code></code></span>
+<span class="codeline" id="line-3"><code><span class="keyword">import</span> (</code></span>
+<span class="codeline" id="line-4"><code>	<label for="i0"><span class="lit-string i0">"time"</span></label></code></span>
+<span class="codeline" id="line-5"><code></code></span>
+<span class="codeline" id="line-6"><code>	<label for="i1"><span class="lit-string i1">"github.com/grpc-ecosystem/go-grpc-middleware/logging"</span></label></code></span>
+<span class="codeline" id="line-7"><code>	<label for="i2"><span class="lit-string i2">"go.uber.org/zap"</span></label></code></span>
+<span class="codeline" id="line-8"><code>	<label for="i3"><span class="lit-string i3">"go.uber.org/zap/zapcore"</span></label></code></span>
+<span class="codeline" id="line-9"><code>	<label for="i4"><span class="lit-string i4">"google.golang.org/grpc/codes"</span></label></code></span>
+<span class="codeline" id="line-10"><code>)</code></span>
+<span class="codeline" id="line-11"><code></code></span>
+<span class="codeline" id="line-12"><code><span class="keyword">var</span> (</code></span>
+<span class="codeline" id="line-13"><code>	<a href="../../../../../../pkg/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap.html#name-defaultOptions" class="ident">defaultOptions</a> = &amp;<a href="#line-21" class="ident">options</a>{</code></span>
+<span class="codeline" id="line-14"><code>		<a href="#line-22" class="ident">levelFunc</a>:    <a href="#line-85" class="ident">DefaultCodeToLevel</a>,</code></span>
+<span class="codeline" id="line-15"><code>		<a href="#line-23" class="ident">shouldLog</a>:    <a href="../../../../../../pkg/github.com/grpc-ecosystem/go-grpc-middleware/logging.html" class="ident i1">grpc_logging</a>.<a href="../common.go.html#line-28" class="ident">DefaultDeciderMethod</a>,</code></span>
+<span class="codeline" id="line-16"><code>		<a href="#line-24" class="ident">codeFunc</a>:     <a href="../../../../../../pkg/github.com/grpc-ecosystem/go-grpc-middleware/logging.html" class="ident i1">grpc_logging</a>.<a href="../common.go.html#line-19" class="ident">DefaultErrorToCode</a>,</code></span>
+<span class="codeline" id="line-17"><code>		<a href="#line-25" class="ident">durationFunc</a>: <a href="#line-169" class="ident">DefaultDurationToField</a>,</code></span>
+<span class="codeline" id="line-18"><code>	}</code></span>
+<span class="codeline" id="line-19"><code>)</code></span>
+<span class="codeline" id="line-20"><code></code></span>
+<span class="codeline" id="line-21"><code><span class="keyword">type</span> <a href="../../../../../../pkg/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap.html#name-options" class="ident">options</a> <span class="keyword">struct</span> {</code></span>
+<span class="codeline" id="line-22"><code>	<a href="../../../../../../use/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap..options^a793a.levelFunc^9749a.html" class="ident">levelFunc</a>    <a href="#line-51" class="ident">CodeToLevel</a></code></span>
+<span class="codeline" id="line-23"><code>	<a href="../../../../../../use/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap..options^a793a.shouldLog^a98ad.html" class="ident">shouldLog</a>    <a href="../../../../../../pkg/github.com/grpc-ecosystem/go-grpc-middleware/logging.html" class="ident i1">grpc_logging</a>.<a href="../common.go.html#line-24" class="ident">Decider</a></code></span>
+<span class="codeline" id="line-24"><code>	<a href="../../../../../../use/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap..options^a793a.codeFunc^bd0fa.html" class="ident">codeFunc</a>     <a href="../../../../../../pkg/github.com/grpc-ecosystem/go-grpc-middleware/logging.html" class="ident i1">grpc_logging</a>.<a href="../common.go.html#line-17" class="ident">ErrorToCode</a></code></span>
+<span class="codeline" id="line-25"><code>	<a href="../../../../../../use/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap..options^a793a.durationFunc^6fb4f.html" class="ident">durationFunc</a> <a href="#line-54" class="ident">DurationToField</a></code></span>
+<span class="codeline" id="line-26"><code>}</code></span>
+<span class="codeline" id="line-27"><code></code></span>
+<span class="codeline" id="line-28"><code><span class="keyword">func</span> <label for="r0" class="ident"><a href="../../../../../../pkg/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap.html#name-evaluateServerOpt" class="ident">evaluateServerOpt</a></label>(<label for="r1" class="ident">opts</label> []<a href="#line-48" class="ident">Option</a>) *<a href="#line-21" class="ident">options</a> {</code></span>
+<span class="codeline" id="line-29"><code>	<label for="r2" class="ident">optCopy</label> := &amp;<a href="#line-21" class="ident">options</a>{}</code></span>
+<span class="codeline" id="line-30"><code>	*<label for="r2" class="ident">optCopy</label> = *<a href="#line-13" class="ident">defaultOptions</a></code></span>
+<span class="codeline" id="line-31"><code>	<label for="r2" class="ident">optCopy</label>.<a href="#line-22" class="ident">levelFunc</a> = <a href="#line-85" class="ident">DefaultCodeToLevel</a></code></span>
+<span class="codeline" id="line-32"><code>	<span class="keyword">for</span> <label for="r3" class="ident">_</label>, <label for="r4" class="ident">o</label> := <span class="keyword">range</span> <label for="r1" class="ident">opts</label> {</code></span>
+<span class="codeline" id="line-33"><code>		<label for="r4" class="ident">o</label>(<label for="r2" class="ident">optCopy</label>)</code></span>
+<span class="codeline" id="line-34"><code>	}</code></span>
+<span class="codeline" id="line-35"><code>	<span class="keyword">return</span> <label for="r2" class="ident">optCopy</label></code></span>
+<span class="codeline" id="line-36"><code>}</code></span>
+<span class="codeline" id="line-37"><code></code></span>
+<span class="codeline" id="line-38"><code><span class="keyword">func</span> <label for="r5" class="ident"><a href="../../../../../../pkg/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap.html#name-evaluateClientOpt" class="ident">evaluateClientOpt</a></label>(<label for="r6" class="ident">opts</label> []<a href="#line-48" class="ident">Option</a>) *<a href="#line-21" class="ident">options</a> {</code></span>
+<span class="codeline" id="line-39"><code>	<label for="r7" class="ident">optCopy</label> := &amp;<a href="#line-21" class="ident">options</a>{}</code></span>
+<span class="codeline" id="line-40"><code>	*<label for="r7" class="ident">optCopy</label> = *<a href="#line-13" class="ident">defaultOptions</a></code></span>
+<span class="codeline" id="line-41"><code>	<label for="r7" class="ident">optCopy</label>.<a href="#line-22" class="ident">levelFunc</a> = <a href="#line-127" class="ident">DefaultClientCodeToLevel</a></code></span>
+<span class="codeline" id="line-42"><code>	<span class="keyword">for</span> <label for="r8" class="ident">_</label>, <label for="r9" class="ident">o</label> := <span class="keyword">range</span> <label for="r6" class="ident">opts</label> {</code></span>
+<span class="codeline" id="line-43"><code>		<label for="r9" class="ident">o</label>(<label for="r7" class="ident">optCopy</label>)</code></span>
+<span class="codeline" id="line-44"><code>	}</code></span>
+<span class="codeline" id="line-45"><code>	<span class="keyword">return</span> <label for="r7" class="ident">optCopy</label></code></span>
+<span class="codeline" id="line-46"><code>}</code></span>
+<span class="codeline" id="line-47"><code></code></span>
+<span class="codeline" id="line-48"><code><span class="keyword">type</span> <a href="../../../../../../pkg/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap.html#name-Option" class="ident">Option</a> <span class="keyword">func</span>(*<a href="#line-21" class="ident">options</a>)</code></span>
+<span class="codeline" id="line-49"><code></code></span>
+<span class="codeline" id="line-50"><code><span class="comment">// CodeToLevel function defines the mapping between gRPC return codes and interceptor log level.</span></code></span>
+<span class="codeline" id="line-51"><code><span class="keyword">type</span> <a href="../../../../../../pkg/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap.html#name-CodeToLevel" class="ident">CodeToLevel</a> <span class="keyword">func</span>(code <a href="../../../../../../pkg/google.golang.org/grpc/codes.html" class="ident i4">codes</a>.<a href="../../../../../google.golang.org/grpc/codes/codes.go.html#line-29" class="ident">Code</a>) <a href="../../../../../../pkg/go.uber.org/zap/zapcore.html" class="ident i3">zapcore</a>.<a href="../../../../../go.uber.org/zap/zapcore/level.go.html#line-32" class="ident">Level</a></code></span>
+<span class="codeline" id="line-52"><code></code></span>
+<span class="codeline" id="line-53"><code><span class="comment">// DurationToField function defines how to produce duration fields for logging</span></code></span>
+<span class="codeline" id="line-54"><code><span class="keyword">type</span> <a href="../../../../../../pkg/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap.html#name-DurationToField" class="ident">DurationToField</a> <span class="keyword">func</span>(duration <a href="../../../../../../pkg/time.html" class="ident i0">time</a>.<a href="../../../../../time/time.go.html#line-590" class="ident">Duration</a>) <a href="../../../../../../pkg/go.uber.org/zap/zapcore.html" class="ident i3">zapcore</a>.<a href="../../../../../go.uber.org/zap/zapcore/field.go.html#line-100" class="ident">Field</a></code></span>
+<span class="codeline" id="line-55"><code></code></span>
+<span class="codeline" id="line-56"><code><span class="comment">// WithDecider customizes the function for deciding if the gRPC interceptor logs should log.</span></code></span>
+<span class="codeline" id="line-57"><code><span class="keyword">func</span> <label for="r10" class="ident"><a href="../../../../../../pkg/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap.html#name-WithDecider" class="ident">WithDecider</a></label>(<label for="r11" class="ident">f</label> <a href="../../../../../../pkg/github.com/grpc-ecosystem/go-grpc-middleware/logging.html" class="ident i1">grpc_logging</a>.<a href="../common.go.html#line-24" class="ident">Decider</a>) <a href="#line-48" class="ident">Option</a> {</code></span>
+<span class="codeline" id="line-58"><code>	<span class="keyword">return</span> <span class="keyword">func</span>(<label for="r12" class="ident">o</label> *<a href="#line-21" class="ident">options</a>) {</code></span>
+<span class="codeline" id="line-59"><code>		<label for="r12" class="ident">o</label>.<a href="#line-23" class="ident">shouldLog</a> = <label for="r11" class="ident">f</label></code></span>
+<span class="codeline" id="line-60"><code>	}</code></span>
+<span class="codeline" id="line-61"><code>}</code></span>
+<span class="codeline" id="line-62"><code></code></span>
+<span class="codeline" id="line-63"><code><span class="comment">// WithLevels customizes the function for mapping gRPC return codes and interceptor log level statements.</span></code></span>
+<span class="codeline" id="line-64"><code><span class="keyword">func</span> <label for="r13" class="ident"><a href="../../../../../../pkg/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap.html#name-WithLevels" class="ident">WithLevels</a></label>(<label for="r14" class="ident">f</label> <a href="#line-51" class="ident">CodeToLevel</a>) <a href="#line-48" class="ident">Option</a> {</code></span>
+<span class="codeline" id="line-65"><code>	<span class="keyword">return</span> <span class="keyword">func</span>(<label for="r15" class="ident">o</label> *<a href="#line-21" class="ident">options</a>) {</code></span>
+<span class="codeline" id="line-66"><code>		<label for="r15" class="ident">o</label>.<a href="#line-22" class="ident">levelFunc</a> = <label for="r14" class="ident">f</label></code></span>
+<span class="codeline" id="line-67"><code>	}</code></span>
+<span class="codeline" id="line-68"><code>}</code></span>
+<span class="codeline" id="line-69"><code></code></span>
+<span class="codeline" id="line-70"><code><span class="comment">// WithCodes customizes the function for mapping errors to error codes.</span></code></span>
+<span class="codeline" id="line-71"><code><span class="keyword">func</span> <label for="r16" class="ident"><a href="../../../../../../pkg/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap.html#name-WithCodes" class="ident">WithCodes</a></label>(<label for="r17" class="ident">f</label> <a href="../../../../../../pkg/github.com/grpc-ecosystem/go-grpc-middleware/logging.html" class="ident i1">grpc_logging</a>.<a href="../common.go.html#line-17" class="ident">ErrorToCode</a>) <a href="#line-48" class="ident">Option</a> {</code></span>
+<span class="codeline" id="line-72"><code>	<span class="keyword">return</span> <span class="keyword">func</span>(<label for="r18" class="ident">o</label> *<a href="#line-21" class="ident">options</a>) {</code></span>
+<span class="codeline" id="line-73"><code>		<label for="r18" class="ident">o</label>.<a href="#line-24" class="ident">codeFunc</a> = <label for="r17" class="ident">f</label></code></span>
+<span class="codeline" id="line-74"><code>	}</code></span>
+<span class="codeline" id="line-75"><code>}</code></span>
+<span class="codeline" id="line-76"><code></code></span>
+<span class="codeline" id="line-77"><code><span class="comment">// WithDurationField customizes the function for mapping request durations to Zap fields.</span></code></span>
+<span class="codeline" id="line-78"><code><span class="keyword">func</span> <label for="r19" class="ident"><a href="../../../../../../pkg/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap.html#name-WithDurationField" class="ident">WithDurationField</a></label>(<label for="r20" class="ident">f</label> <a href="#line-54" class="ident">DurationToField</a>) <a href="#line-48" class="ident">Option</a> {</code></span>
+<span class="codeline" id="line-79"><code>	<span class="keyword">return</span> <span class="keyword">func</span>(<label for="r21" class="ident">o</label> *<a href="#line-21" class="ident">options</a>) {</code></span>
+<span class="codeline" id="line-80"><code>		<label for="r21" class="ident">o</label>.<a href="#line-25" class="ident">durationFunc</a> = <label for="r20" class="ident">f</label></code></span>
+<span class="codeline" id="line-81"><code>	}</code></span>
+<span class="codeline" id="line-82"><code>}</code></span>
+<span class="codeline" id="line-83"><code></code></span>
+<span class="codeline" id="line-84"><code><span class="comment">// DefaultCodeToLevel is the default implementation of gRPC return codes and interceptor log level for server side.</span></code></span>
+<span class="codeline" id="line-85"><code><span class="keyword">func</span> <label for="r22" class="ident"><a href="../../../../../../pkg/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap.html#name-DefaultCodeToLevel" class="ident">DefaultCodeToLevel</a></label>(<label for="r23" class="ident">code</label> <a href="../../../../../../pkg/google.golang.org/grpc/codes.html" class="ident i4">codes</a>.<a href="../../../../../google.golang.org/grpc/codes/codes.go.html#line-29" class="ident">Code</a>) <a href="../../../../../../pkg/go.uber.org/zap/zapcore.html" class="ident i3">zapcore</a>.<a href="../../../../../go.uber.org/zap/zapcore/level.go.html#line-32" class="ident">Level</a> {</code></span>
+<span class="codeline" id="line-86"><code>	<span class="keyword">switch</span> <label for="r23" class="ident">code</label> {</code></span>
+<span class="codeline" id="line-87"><code>	<span class="keyword">case</span> <a href="../../../../../../pkg/google.golang.org/grpc/codes.html" class="ident i4">codes</a>.<a href="../../../../../google.golang.org/grpc/codes/codes.go.html#line-33" class="ident">OK</a>:</code></span>
+<span class="codeline" id="line-88"><code>		<span class="keyword">return</span> <a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i2">zap</a>.<a href="../../../../../go.uber.org/zap/level.go.html#line-33" class="ident">InfoLevel</a></code></span>
+<span class="codeline" id="line-89"><code>	<span class="keyword">case</span> <a href="../../../../../../pkg/google.golang.org/grpc/codes.html" class="ident i4">codes</a>.<a href="../../../../../google.golang.org/grpc/codes/codes.go.html#line-39" class="ident">Canceled</a>:</code></span>
+<span class="codeline" id="line-90"><code>		<span class="keyword">return</span> <a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i2">zap</a>.<a href="../../../../../go.uber.org/zap/level.go.html#line-33" class="ident">InfoLevel</a></code></span>
+<span class="codeline" id="line-91"><code>	<span class="keyword">case</span> <a href="../../../../../../pkg/google.golang.org/grpc/codes.html" class="ident i4">codes</a>.<a href="../../../../../google.golang.org/grpc/codes/codes.go.html#line-49" class="ident">Unknown</a>:</code></span>
+<span class="codeline" id="line-92"><code>		<span class="keyword">return</span> <a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i2">zap</a>.<a href="../../../../../go.uber.org/zap/level.go.html#line-39" class="ident">ErrorLevel</a></code></span>
+<span class="codeline" id="line-93"><code>	<span class="keyword">case</span> <a href="../../../../../../pkg/google.golang.org/grpc/codes.html" class="ident i4">codes</a>.<a href="../../../../../google.golang.org/grpc/codes/codes.go.html#line-57" class="ident">InvalidArgument</a>:</code></span>
+<span class="codeline" id="line-94"><code>		<span class="keyword">return</span> <a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i2">zap</a>.<a href="../../../../../go.uber.org/zap/level.go.html#line-33" class="ident">InfoLevel</a></code></span>
+<span class="codeline" id="line-95"><code>	<span class="keyword">case</span> <a href="../../../../../../pkg/google.golang.org/grpc/codes.html" class="ident i4">codes</a>.<a href="../../../../../google.golang.org/grpc/codes/codes.go.html#line-67" class="ident">DeadlineExceeded</a>:</code></span>
+<span class="codeline" id="line-96"><code>		<span class="keyword">return</span> <a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i2">zap</a>.<a href="../../../../../go.uber.org/zap/level.go.html#line-36" class="ident">WarnLevel</a></code></span>
+<span class="codeline" id="line-97"><code>	<span class="keyword">case</span> <a href="../../../../../../pkg/google.golang.org/grpc/codes.html" class="ident i4">codes</a>.<a href="../../../../../google.golang.org/grpc/codes/codes.go.html#line-73" class="ident">NotFound</a>:</code></span>
+<span class="codeline" id="line-98"><code>		<span class="keyword">return</span> <a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i2">zap</a>.<a href="../../../../../go.uber.org/zap/level.go.html#line-33" class="ident">InfoLevel</a></code></span>
+<span class="codeline" id="line-99"><code>	<span class="keyword">case</span> <a href="../../../../../../pkg/google.golang.org/grpc/codes.html" class="ident i4">codes</a>.<a href="../../../../../google.golang.org/grpc/codes/codes.go.html#line-79" class="ident">AlreadyExists</a>:</code></span>
+<span class="codeline" id="line-100"><code>		<span class="keyword">return</span> <a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i2">zap</a>.<a href="../../../../../go.uber.org/zap/level.go.html#line-33" class="ident">InfoLevel</a></code></span>
+<span class="codeline" id="line-101"><code>	<span class="keyword">case</span> <a href="../../../../../../pkg/google.golang.org/grpc/codes.html" class="ident i4">codes</a>.<a href="../../../../../google.golang.org/grpc/codes/codes.go.html#line-90" class="ident">PermissionDenied</a>:</code></span>
+<span class="codeline" id="line-102"><code>		<span class="keyword">return</span> <a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i2">zap</a>.<a href="../../../../../go.uber.org/zap/level.go.html#line-36" class="ident">WarnLevel</a></code></span>
+<span class="codeline" id="line-103"><code>	<span class="keyword">case</span> <a href="../../../../../../pkg/google.golang.org/grpc/codes.html" class="ident i4">codes</a>.<a href="../../../../../google.golang.org/grpc/codes/codes.go.html#line-193" class="ident">Unauthenticated</a>:</code></span>
+<span class="codeline" id="line-104"><code>		<span class="keyword">return</span> <a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i2">zap</a>.<a href="../../../../../go.uber.org/zap/level.go.html#line-33" class="ident">InfoLevel</a> <span class="comment">// unauthenticated requests can happen</span></code></span>
+<span class="codeline" id="line-105"><code>	<span class="keyword">case</span> <a href="../../../../../../pkg/google.golang.org/grpc/codes.html" class="ident i4">codes</a>.<a href="../../../../../google.golang.org/grpc/codes/codes.go.html#line-98" class="ident">ResourceExhausted</a>:</code></span>
+<span class="codeline" id="line-106"><code>		<span class="keyword">return</span> <a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i2">zap</a>.<a href="../../../../../go.uber.org/zap/level.go.html#line-36" class="ident">WarnLevel</a></code></span>
+<span class="codeline" id="line-107"><code>	<span class="keyword">case</span> <a href="../../../../../../pkg/google.golang.org/grpc/codes.html" class="ident i4">codes</a>.<a href="../../../../../google.golang.org/grpc/codes/codes.go.html#line-121" class="ident">FailedPrecondition</a>:</code></span>
+<span class="codeline" id="line-108"><code>		<span class="keyword">return</span> <a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i2">zap</a>.<a href="../../../../../go.uber.org/zap/level.go.html#line-36" class="ident">WarnLevel</a></code></span>
+<span class="codeline" id="line-109"><code>	<span class="keyword">case</span> <a href="../../../../../../pkg/google.golang.org/grpc/codes.html" class="ident i4">codes</a>.<a href="../../../../../google.golang.org/grpc/codes/codes.go.html#line-131" class="ident">Aborted</a>:</code></span>
+<span class="codeline" id="line-110"><code>		<span class="keyword">return</span> <a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i2">zap</a>.<a href="../../../../../go.uber.org/zap/level.go.html#line-36" class="ident">WarnLevel</a></code></span>
+<span class="codeline" id="line-111"><code>	<span class="keyword">case</span> <a href="../../../../../../pkg/google.golang.org/grpc/codes.html" class="ident i4">codes</a>.<a href="../../../../../google.golang.org/grpc/codes/codes.go.html#line-150" class="ident">OutOfRange</a>:</code></span>
+<span class="codeline" id="line-112"><code>		<span class="keyword">return</span> <a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i2">zap</a>.<a href="../../../../../go.uber.org/zap/level.go.html#line-36" class="ident">WarnLevel</a></code></span>
+<span class="codeline" id="line-113"><code>	<span class="keyword">case</span> <a href="../../../../../../pkg/google.golang.org/grpc/codes.html" class="ident i4">codes</a>.<a href="../../../../../google.golang.org/grpc/codes/codes.go.html#line-160" class="ident">Unimplemented</a>:</code></span>
+<span class="codeline" id="line-114"><code>		<span class="keyword">return</span> <a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i2">zap</a>.<a href="../../../../../go.uber.org/zap/level.go.html#line-39" class="ident">ErrorLevel</a></code></span>
+<span class="codeline" id="line-115"><code>	<span class="keyword">case</span> <a href="../../../../../../pkg/google.golang.org/grpc/codes.html" class="ident i4">codes</a>.<a href="../../../../../google.golang.org/grpc/codes/codes.go.html#line-168" class="ident">Internal</a>:</code></span>
+<span class="codeline" id="line-116"><code>		<span class="keyword">return</span> <a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i2">zap</a>.<a href="../../../../../go.uber.org/zap/level.go.html#line-39" class="ident">ErrorLevel</a></code></span>
+<span class="codeline" id="line-117"><code>	<span class="keyword">case</span> <a href="../../../../../../pkg/google.golang.org/grpc/codes.html" class="ident i4">codes</a>.<a href="../../../../../google.golang.org/grpc/codes/codes.go.html#line-180" class="ident">Unavailable</a>:</code></span>
+<span class="codeline" id="line-118"><code>		<span class="keyword">return</span> <a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i2">zap</a>.<a href="../../../../../go.uber.org/zap/level.go.html#line-36" class="ident">WarnLevel</a></code></span>
+<span class="codeline" id="line-119"><code>	<span class="keyword">case</span> <a href="../../../../../../pkg/google.golang.org/grpc/codes.html" class="ident i4">codes</a>.<a href="../../../../../google.golang.org/grpc/codes/codes.go.html#line-185" class="ident">DataLoss</a>:</code></span>
+<span class="codeline" id="line-120"><code>		<span class="keyword">return</span> <a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i2">zap</a>.<a href="../../../../../go.uber.org/zap/level.go.html#line-39" class="ident">ErrorLevel</a></code></span>
+<span class="codeline" id="line-121"><code>	<span class="keyword">default</span>:</code></span>
+<span class="codeline" id="line-122"><code>		<span class="keyword">return</span> <a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i2">zap</a>.<a href="../../../../../go.uber.org/zap/level.go.html#line-39" class="ident">ErrorLevel</a></code></span>
+<span class="codeline" id="line-123"><code>	}</code></span>
+<span class="codeline" id="line-124"><code>}</code></span>
+<span class="codeline" id="line-125"><code></code></span>
+<span class="codeline" id="line-126"><code><span class="comment">// DefaultClientCodeToLevel is the default implementation of gRPC return codes to log levels for client side.</span></code></span>
+<span class="codeline" id="line-127"><code><span class="keyword">func</span> <label for="r24" class="ident"><a href="../../../../../../pkg/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap.html#name-DefaultClientCodeToLevel" class="ident">DefaultClientCodeToLevel</a></label>(<label for="r25" class="ident">code</label> <a href="../../../../../../pkg/google.golang.org/grpc/codes.html" class="ident i4">codes</a>.<a href="../../../../../google.golang.org/grpc/codes/codes.go.html#line-29" class="ident">Code</a>) <a href="../../../../../../pkg/go.uber.org/zap/zapcore.html" class="ident i3">zapcore</a>.<a href="../../../../../go.uber.org/zap/zapcore/level.go.html#line-32" class="ident">Level</a> {</code></span>
+<span class="codeline" id="line-128"><code>	<span class="keyword">switch</span> <label for="r25" class="ident">code</label> {</code></span>
+<span class="codeline" id="line-129"><code>	<span class="keyword">case</span> <a href="../../../../../../pkg/google.golang.org/grpc/codes.html" class="ident i4">codes</a>.<a href="../../../../../google.golang.org/grpc/codes/codes.go.html#line-33" class="ident">OK</a>:</code></span>
+<span class="codeline" id="line-130"><code>		<span class="keyword">return</span> <a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i2">zap</a>.<a href="../../../../../go.uber.org/zap/level.go.html#line-31" class="ident">DebugLevel</a></code></span>
+<span class="codeline" id="line-131"><code>	<span class="keyword">case</span> <a href="../../../../../../pkg/google.golang.org/grpc/codes.html" class="ident i4">codes</a>.<a href="../../../../../google.golang.org/grpc/codes/codes.go.html#line-39" class="ident">Canceled</a>:</code></span>
+<span class="codeline" id="line-132"><code>		<span class="keyword">return</span> <a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i2">zap</a>.<a href="../../../../../go.uber.org/zap/level.go.html#line-31" class="ident">DebugLevel</a></code></span>
+<span class="codeline" id="line-133"><code>	<span class="keyword">case</span> <a href="../../../../../../pkg/google.golang.org/grpc/codes.html" class="ident i4">codes</a>.<a href="../../../../../google.golang.org/grpc/codes/codes.go.html#line-49" class="ident">Unknown</a>:</code></span>
+<span class="codeline" id="line-134"><code>		<span class="keyword">return</span> <a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i2">zap</a>.<a href="../../../../../go.uber.org/zap/level.go.html#line-33" class="ident">InfoLevel</a></code></span>
+<span class="codeline" id="line-135"><code>	<span class="keyword">case</span> <a href="../../../../../../pkg/google.golang.org/grpc/codes.html" class="ident i4">codes</a>.<a href="../../../../../google.golang.org/grpc/codes/codes.go.html#line-57" class="ident">InvalidArgument</a>:</code></span>
+<span class="codeline" id="line-136"><code>		<span class="keyword">return</span> <a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i2">zap</a>.<a href="../../../../../go.uber.org/zap/level.go.html#line-31" class="ident">DebugLevel</a></code></span>
+<span class="codeline" id="line-137"><code>	<span class="keyword">case</span> <a href="../../../../../../pkg/google.golang.org/grpc/codes.html" class="ident i4">codes</a>.<a href="../../../../../google.golang.org/grpc/codes/codes.go.html#line-67" class="ident">DeadlineExceeded</a>:</code></span>
+<span class="codeline" id="line-138"><code>		<span class="keyword">return</span> <a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i2">zap</a>.<a href="../../../../../go.uber.org/zap/level.go.html#line-33" class="ident">InfoLevel</a></code></span>
+<span class="codeline" id="line-139"><code>	<span class="keyword">case</span> <a href="../../../../../../pkg/google.golang.org/grpc/codes.html" class="ident i4">codes</a>.<a href="../../../../../google.golang.org/grpc/codes/codes.go.html#line-73" class="ident">NotFound</a>:</code></span>
+<span class="codeline" id="line-140"><code>		<span class="keyword">return</span> <a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i2">zap</a>.<a href="../../../../../go.uber.org/zap/level.go.html#line-31" class="ident">DebugLevel</a></code></span>
+<span class="codeline" id="line-141"><code>	<span class="keyword">case</span> <a href="../../../../../../pkg/google.golang.org/grpc/codes.html" class="ident i4">codes</a>.<a href="../../../../../google.golang.org/grpc/codes/codes.go.html#line-79" class="ident">AlreadyExists</a>:</code></span>
+<span class="codeline" id="line-142"><code>		<span class="keyword">return</span> <a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i2">zap</a>.<a href="../../../../../go.uber.org/zap/level.go.html#line-31" class="ident">DebugLevel</a></code></span>
+<span class="codeline" id="line-143"><code>	<span class="keyword">case</span> <a href="../../../../../../pkg/google.golang.org/grpc/codes.html" class="ident i4">codes</a>.<a href="../../../../../google.golang.org/grpc/codes/codes.go.html#line-90" class="ident">PermissionDenied</a>:</code></span>
+<span class="codeline" id="line-144"><code>		<span class="keyword">return</span> <a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i2">zap</a>.<a href="../../../../../go.uber.org/zap/level.go.html#line-33" class="ident">InfoLevel</a></code></span>
+<span class="codeline" id="line-145"><code>	<span class="keyword">case</span> <a href="../../../../../../pkg/google.golang.org/grpc/codes.html" class="ident i4">codes</a>.<a href="../../../../../google.golang.org/grpc/codes/codes.go.html#line-193" class="ident">Unauthenticated</a>:</code></span>
+<span class="codeline" id="line-146"><code>		<span class="keyword">return</span> <a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i2">zap</a>.<a href="../../../../../go.uber.org/zap/level.go.html#line-33" class="ident">InfoLevel</a> <span class="comment">// unauthenticated requests can happen</span></code></span>
+<span class="codeline" id="line-147"><code>	<span class="keyword">case</span> <a href="../../../../../../pkg/google.golang.org/grpc/codes.html" class="ident i4">codes</a>.<a href="../../../../../google.golang.org/grpc/codes/codes.go.html#line-98" class="ident">ResourceExhausted</a>:</code></span>
+<span class="codeline" id="line-148"><code>		<span class="keyword">return</span> <a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i2">zap</a>.<a href="../../../../../go.uber.org/zap/level.go.html#line-31" class="ident">DebugLevel</a></code></span>
+<span class="codeline" id="line-149"><code>	<span class="keyword">case</span> <a href="../../../../../../pkg/google.golang.org/grpc/codes.html" class="ident i4">codes</a>.<a href="../../../../../google.golang.org/grpc/codes/codes.go.html#line-121" class="ident">FailedPrecondition</a>:</code></span>
+<span class="codeline" id="line-150"><code>		<span class="keyword">return</span> <a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i2">zap</a>.<a href="../../../../../go.uber.org/zap/level.go.html#line-31" class="ident">DebugLevel</a></code></span>
+<span class="codeline" id="line-151"><code>	<span class="keyword">case</span> <a href="../../../../../../pkg/google.golang.org/grpc/codes.html" class="ident i4">codes</a>.<a href="../../../../../google.golang.org/grpc/codes/codes.go.html#line-131" class="ident">Aborted</a>:</code></span>
+<span class="codeline" id="line-152"><code>		<span class="keyword">return</span> <a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i2">zap</a>.<a href="../../../../../go.uber.org/zap/level.go.html#line-31" class="ident">DebugLevel</a></code></span>
+<span class="codeline" id="line-153"><code>	<span class="keyword">case</span> <a href="../../../../../../pkg/google.golang.org/grpc/codes.html" class="ident i4">codes</a>.<a href="../../../../../google.golang.org/grpc/codes/codes.go.html#line-150" class="ident">OutOfRange</a>:</code></span>
+<span class="codeline" id="line-154"><code>		<span class="keyword">return</span> <a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i2">zap</a>.<a href="../../../../../go.uber.org/zap/level.go.html#line-31" class="ident">DebugLevel</a></code></span>
+<span class="codeline" id="line-155"><code>	<span class="keyword">case</span> <a href="../../../../../../pkg/google.golang.org/grpc/codes.html" class="ident i4">codes</a>.<a href="../../../../../google.golang.org/grpc/codes/codes.go.html#line-160" class="ident">Unimplemented</a>:</code></span>
+<span class="codeline" id="line-156"><code>		<span class="keyword">return</span> <a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i2">zap</a>.<a href="../../../../../go.uber.org/zap/level.go.html#line-36" class="ident">WarnLevel</a></code></span>
+<span class="codeline" id="line-157"><code>	<span class="keyword">case</span> <a href="../../../../../../pkg/google.golang.org/grpc/codes.html" class="ident i4">codes</a>.<a href="../../../../../google.golang.org/grpc/codes/codes.go.html#line-168" class="ident">Internal</a>:</code></span>
+<span class="codeline" id="line-158"><code>		<span class="keyword">return</span> <a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i2">zap</a>.<a href="../../../../../go.uber.org/zap/level.go.html#line-36" class="ident">WarnLevel</a></code></span>
+<span class="codeline" id="line-159"><code>	<span class="keyword">case</span> <a href="../../../../../../pkg/google.golang.org/grpc/codes.html" class="ident i4">codes</a>.<a href="../../../../../google.golang.org/grpc/codes/codes.go.html#line-180" class="ident">Unavailable</a>:</code></span>
+<span class="codeline" id="line-160"><code>		<span class="keyword">return</span> <a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i2">zap</a>.<a href="../../../../../go.uber.org/zap/level.go.html#line-36" class="ident">WarnLevel</a></code></span>
+<span class="codeline" id="line-161"><code>	<span class="keyword">case</span> <a href="../../../../../../pkg/google.golang.org/grpc/codes.html" class="ident i4">codes</a>.<a href="../../../../../google.golang.org/grpc/codes/codes.go.html#line-185" class="ident">DataLoss</a>:</code></span>
+<span class="codeline" id="line-162"><code>		<span class="keyword">return</span> <a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i2">zap</a>.<a href="../../../../../go.uber.org/zap/level.go.html#line-36" class="ident">WarnLevel</a></code></span>
+<span class="codeline" id="line-163"><code>	<span class="keyword">default</span>:</code></span>
+<span class="codeline" id="line-164"><code>		<span class="keyword">return</span> <a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i2">zap</a>.<a href="../../../../../go.uber.org/zap/level.go.html#line-33" class="ident">InfoLevel</a></code></span>
+<span class="codeline" id="line-165"><code>	}</code></span>
+<span class="codeline" id="line-166"><code>}</code></span>
+<span class="codeline" id="line-167"><code></code></span>
+<span class="codeline" id="line-168"><code><span class="comment">// DefaultDurationToField is the default implementation of converting request duration to a Zap field.</span></code></span>
+<span class="codeline" id="line-169"><code><span class="keyword">var</span> <a href="../../../../../../pkg/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap.html#name-DefaultDurationToField" class="ident">DefaultDurationToField</a> = <a href="#line-172" class="ident">DurationToTimeMillisField</a></code></span>
+<span class="codeline" id="line-170"><code></code></span>
+<span class="codeline" id="line-171"><code><span class="comment">// DurationToTimeMillisField converts the duration to milliseconds and uses the key `grpc.time_ms`.</span></code></span>
+<span class="codeline" id="line-172"><code><span class="keyword">func</span> <label for="r26" class="ident"><a href="../../../../../../pkg/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap.html#name-DurationToTimeMillisField" class="ident">DurationToTimeMillisField</a></label>(<label for="r27" class="ident">duration</label> <a href="../../../../../../pkg/time.html" class="ident i0">time</a>.<a href="../../../../../time/time.go.html#line-590" class="ident">Duration</a>) <a href="../../../../../../pkg/go.uber.org/zap/zapcore.html" class="ident i3">zapcore</a>.<a href="../../../../../go.uber.org/zap/zapcore/field.go.html#line-100" class="ident">Field</a> {</code></span>
+<span class="codeline" id="line-173"><code>	<span class="keyword">return</span> <a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i2">zap</a>.<a href="../../../../../go.uber.org/zap/field.go.html#line-137" class="ident">Float32</a>(<span class="lit-string">"grpc.time_ms"</span>, <a href="#line-182" class="ident">durationToMilliseconds</a>(<label for="r27" class="ident">duration</label>))</code></span>
+<span class="codeline" id="line-174"><code>}</code></span>
+<span class="codeline" id="line-175"><code></code></span>
+<span class="codeline" id="line-176"><code><span class="comment">// DurationToDurationField uses a Duration field to log the request duration</span></code></span>
+<span class="codeline" id="line-177"><code><span class="comment">// and leaves it up to Zap's encoder settings to determine how that is output.</span></code></span>
+<span class="codeline" id="line-178"><code><span class="keyword">func</span> <label for="r28" class="ident"><a href="../../../../../../pkg/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap.html#name-DurationToDurationField" class="ident">DurationToDurationField</a></label>(<label for="r29" class="ident">duration</label> <a href="../../../../../../pkg/time.html" class="ident i0">time</a>.<a href="../../../../../time/time.go.html#line-590" class="ident">Duration</a>) <a href="../../../../../../pkg/go.uber.org/zap/zapcore.html" class="ident i3">zapcore</a>.<a href="../../../../../go.uber.org/zap/zapcore/field.go.html#line-100" class="ident">Field</a> {</code></span>
+<span class="codeline" id="line-179"><code>	<span class="keyword">return</span> <a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i2">zap</a>.<a href="../../../../../go.uber.org/zap/field.go.html#line-376" class="ident">Duration</a>(<span class="lit-string">"grpc.duration"</span>, <label for="r29" class="ident">duration</label>)</code></span>
+<span class="codeline" id="line-180"><code>}</code></span>
+<span class="codeline" id="line-181"><code></code></span>
+<span class="codeline" id="line-182"><code><span class="keyword">func</span> <label for="r30" class="ident"><a href="../../../../../../pkg/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap.html#name-durationToMilliseconds" class="ident">durationToMilliseconds</a></label>(<label for="r31" class="ident">duration</label> <a href="../../../../../../pkg/time.html" class="ident i0">time</a>.<a href="../../../../../time/time.go.html#line-590" class="ident">Duration</a>) <a href="../../../../../../pkg/builtin.html#name-float32" class="ident">float32</a> {</code></span>
+<span class="codeline" id="line-183"><code>	<span class="keyword">return</span> <a href="../../../../../../pkg/builtin.html#name-float32" class="ident">float32</a>(<label for="r31" class="ident">duration</label>.<a href="../../../../../time/time.go.html#line-736" class="ident">Nanoseconds</a>()/<span class="lit-number">1000</span>) / <span class="lit-number">1000</span></code></span>
+<span class="codeline" id="line-184"><code>}</code></span>
+</pre><pre id="footer">
+<table><tr><td><img src="../../../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

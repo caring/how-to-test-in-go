@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: google.golang.org/protobuf/reflect/protoreflect.FileDescriptor</title>
+<link href="../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../../../../pkg/google.golang.org/protobuf/reflect/protoreflect.html">google.golang.org/protobuf/reflect/protoreflect</a>.<a href="../../../../src/google.golang.org/protobuf/reflect/protoreflect/type.go.html#line-119">FileDescriptor</a></b></span>
+
+<span class="title">55 uses</span>
+
+	google.golang.org/protobuf/reflect/protoreflect (current package)
+		<a href="../../../../src/google.golang.org/protobuf/reflect/protoreflect/type.go.html#line-26">type.go#L26</a>: 	ParentFile() <b>FileDescriptor</b>
+		<a href="../../../../src/google.golang.org/protobuf/reflect/protoreflect/type.go.html#line-119" class="path-duplicate">type.go</a><a href="../../../../src/google.golang.org/protobuf/reflect/protoreflect/type.go.html#line-119">#L119</a>: type <b>FileDescriptor</b> interface {
+		<a href="../../../../src/google.golang.org/protobuf/reflect/protoreflect/type.go.html#line-144" class="path-duplicate">type.go</a><a href="../../../../src/google.golang.org/protobuf/reflect/protoreflect/type.go.html#line-144">#L144</a>: type isFileDescriptor interface{ ProtoType(<b>FileDescriptor</b>) }
+		<a href="../../../../src/google.golang.org/protobuf/reflect/protoreflect/type.go.html#line-161" class="path-duplicate">type.go</a><a href="../../../../src/google.golang.org/protobuf/reflect/protoreflect/type.go.html#line-161">#L161</a>: 	<b>FileDescriptor</b>
+
+	<a href="../../../../pkg/google.golang.org/protobuf/reflect/protodesc.html">google.golang.org/protobuf/reflect/protodesc</a>
+		<a href="../../../../src/google.golang.org/protobuf/reflect/protodesc/desc.go.html#line-33">desc.go#L33</a>: 	FindFileByPath(string) (protoreflect.<b>FileDescriptor</b>, error)
+		<a href="../../../../src/google.golang.org/protobuf/reflect/protodesc/desc.go.html#line-66" class="path-duplicate">desc.go</a><a href="../../../../src/google.golang.org/protobuf/reflect/protodesc/desc.go.html#line-66">#L66</a>: func NewFile(fd *descriptorpb.FileDescriptorProto, r Resolver) (protoreflect.<b>FileDescriptor</b>, error) {
+		<a href="../../../../src/google.golang.org/protobuf/reflect/protodesc/desc.go.html#line-84" class="path-duplicate">desc.go</a><a href="../../../../src/google.golang.org/protobuf/reflect/protodesc/desc.go.html#line-84">#L84</a>: func (o FileOptions) New(fd *descriptorpb.FileDescriptorProto, r Resolver) (protoreflect.<b>FileDescriptor</b>, error) {
+		<a href="../../../../src/google.golang.org/protobuf/reflect/protodesc/proto.go.html#line-21">proto.go#L21</a>: func ToFileDescriptorProto(file protoreflect.<b>FileDescriptor</b>) *descriptorpb.FileDescriptorProto {
+
+	<a href="../../../../pkg/google.golang.org/protobuf/reflect/protoregistry.html">google.golang.org/protobuf/reflect/protoregistry</a>
+		<a href="../../../../src/google.golang.org/protobuf/reflect/protoregistry/registry.go.html#line-97">registry.go#L97</a>: 	filesByPath map[string][]protoreflect.<b>FileDescriptor</b>
+		<a href="../../../../src/google.golang.org/protobuf/reflect/protoregistry/registry.go.html#line-102" class="path-duplicate">registry.go</a><a href="../../../../src/google.golang.org/protobuf/reflect/protoregistry/registry.go.html#line-102">#L102</a>: 	files []protoreflect.<b>FileDescriptor</b>
+		<a href="../../../../src/google.golang.org/protobuf/reflect/protoregistry/registry.go.html#line-112" class="path-duplicate">registry.go</a><a href="../../../../src/google.golang.org/protobuf/reflect/protoregistry/registry.go.html#line-112">#L112</a>: func (r *Files) RegisterFile(file protoreflect.<b>FileDescriptor</b>) error {
+		<a href="../../../../src/google.golang.org/protobuf/reflect/protoregistry/registry.go.html#line-121" class="path-duplicate">registry.go</a><a href="../../../../src/google.golang.org/protobuf/reflect/protoregistry/registry.go.html#line-121">#L121</a>: 		r.filesByPath = make(map[string][]protoreflect.<b>FileDescriptor</b>)
+		<a href="../../../../src/google.golang.org/protobuf/reflect/protoregistry/registry.go.html#line-313" class="path-duplicate">registry.go</a><a href="../../../../src/google.golang.org/protobuf/reflect/protoregistry/registry.go.html#line-313">#L313</a>: func (r *Files) FindFileByPath(path string) (protoreflect.<b>FileDescriptor</b>, error) {
+		<a href="../../../../src/google.golang.org/protobuf/reflect/protoregistry/registry.go.html#line-348" class="path-duplicate">registry.go</a><a href="../../../../src/google.golang.org/protobuf/reflect/protoregistry/registry.go.html#line-348">#L348</a>: func (r *Files) RangeFiles(f func(protoreflect.<b>FileDescriptor</b>) bool) {
+		<a href="../../../../src/google.golang.org/protobuf/reflect/protoregistry/registry.go.html#line-383" class="path-duplicate">registry.go</a><a href="../../../../src/google.golang.org/protobuf/reflect/protoregistry/registry.go.html#line-383">#L383</a>: func (r *Files) RangeFilesByPackage(name protoreflect.FullName, f func(protoreflect.<b>FileDescriptor</b>) bool) {
+		<a href="../../../../src/google.golang.org/protobuf/reflect/protoregistry/registry.go.html#line-404" class="path-duplicate">registry.go</a><a href="../../../../src/google.golang.org/protobuf/reflect/protoregistry/registry.go.html#line-404">#L404</a>: func rangeTopLevelDescriptors(fd protoreflect.<b>FileDescriptor</b>, f func(protoreflect.Descriptor)) {
+
+	<a href="../../../../pkg/google.golang.org/protobuf/internal/descfmt.html">google.golang.org/protobuf/internal/descfmt</a>
+		<a href="../../../../src/google.golang.org/protobuf/internal/descfmt/stringer.go.html#line-109">stringer.go#L109</a>: 	reflect.TypeOf((*pref.<b>FileDescriptor</b>)(nil)).Elem():      {"Path", "Package", "Imports", "Messages", "Enums", "Extensions", "Services"},
+		<a href="../../../../src/google.golang.org/protobuf/internal/descfmt/stringer.go.html#line-131" class="path-duplicate">stringer.go</a><a href="../../../../src/google.golang.org/protobuf/internal/descfmt/stringer.go.html#line-131">#L131</a>: 	_, isFile := t.(pref.<b>FileDescriptor</b>)
+
+	<a href="../../../../pkg/google.golang.org/protobuf/internal/filedesc.html">google.golang.org/protobuf/internal/filedesc</a>
+		<a href="../../../../src/google.golang.org/protobuf/internal/filedesc/build.go.html#line-48">build.go#L48</a>: 		FindFileByPath(string) (protoreflect.<b>FileDescriptor</b>, error)
+		<a href="../../../../src/google.golang.org/protobuf/internal/filedesc/build.go.html#line-50" class="path-duplicate">build.go</a><a href="../../../../src/google.golang.org/protobuf/internal/filedesc/build.go.html#line-50">#L50</a>: 		RegisterFile(pref.<b>FileDescriptor</b>) error
+		<a href="../../../../src/google.golang.org/protobuf/internal/filedesc/build.go.html#line-73" class="path-duplicate">build.go</a><a href="../../../../src/google.golang.org/protobuf/internal/filedesc/build.go.html#line-73">#L73</a>: 	File pref.<b>FileDescriptor</b>
+		<a href="../../../../src/google.golang.org/protobuf/internal/filedesc/desc.go.html#line-62">desc.go#L62</a>: func (fd *File) ParentFile() pref.<b>FileDescriptor</b> { return fd }
+		<a href="../../../../src/google.golang.org/protobuf/internal/filedesc/desc.go.html#line-84" class="path-duplicate">desc.go</a><a href="../../../../src/google.golang.org/protobuf/internal/filedesc/desc.go.html#line-84">#L84</a>: func (fd *File) ProtoType(pref.<b>FileDescriptor</b>)         {}
+		<a href="../../../../src/google.golang.org/protobuf/internal/filedesc/desc.go.html#line-491" class="path-duplicate">desc.go</a><a href="../../../../src/google.golang.org/protobuf/internal/filedesc/desc.go.html#line-491">#L491</a>: func (d *Base) ParentFile() pref.<b>FileDescriptor</b> {
+		<a href="../../../../src/google.golang.org/protobuf/internal/filedesc/desc_list.go.html#line-292">desc_list.go#L292</a>: 	File pref.<b>FileDescriptor</b>
+		<a href="../../../../src/google.golang.org/protobuf/internal/filedesc/desc_list.go.html#line-317" class="path-duplicate">desc_list.go</a><a href="../../../../src/google.golang.org/protobuf/internal/filedesc/desc_list.go.html#line-317">#L317</a>: 		case pref.<b>FileDescriptor</b>:
+		<a href="../../../../src/google.golang.org/protobuf/internal/filedesc/desc_list.go.html#line-327" class="path-duplicate">desc_list.go</a><a href="../../../../src/google.golang.org/protobuf/internal/filedesc/desc_list.go.html#line-327">#L327</a>: 			case pref.<b>FileDescriptor</b>:
+		<a href="../../../../src/google.golang.org/protobuf/internal/filedesc/desc_list.go.html#line-340" class="path-duplicate">desc_list.go</a><a href="../../../../src/google.golang.org/protobuf/internal/filedesc/desc_list.go.html#line-340">#L340</a>: 				case pref.<b>FileDescriptor</b>:
+		<a href="../../../../src/google.golang.org/protobuf/internal/filedesc/desc_list.go.html#line-368" class="path-duplicate">desc_list.go</a><a href="../../../../src/google.golang.org/protobuf/internal/filedesc/desc_list.go.html#line-368">#L368</a>: 			case pref.<b>FileDescriptor</b>:
+		<a href="../../../../src/google.golang.org/protobuf/internal/filedesc/desc_list.go.html#line-388" class="path-duplicate">desc_list.go</a><a href="../../../../src/google.golang.org/protobuf/internal/filedesc/desc_list.go.html#line-388">#L388</a>: 			case pref.<b>FileDescriptor</b>:
+		<a href="../../../../src/google.golang.org/protobuf/internal/filedesc/placeholder.go.html#line-33">placeholder.go#L33</a>: func (f PlaceholderFile) ParentFile() pref.<b>FileDescriptor</b>       { return f }
+		<a href="../../../../src/google.golang.org/protobuf/internal/filedesc/placeholder.go.html#line-49" class="path-duplicate">placeholder.go</a><a href="../../../../src/google.golang.org/protobuf/internal/filedesc/placeholder.go.html#line-49">#L49</a>: func (f PlaceholderFile) ProtoType(pref.<b>FileDescriptor</b>)         { return }
+		<a href="../../../../src/google.golang.org/protobuf/internal/filedesc/placeholder.go.html#line-55" class="path-duplicate">placeholder.go</a><a href="../../../../src/google.golang.org/protobuf/internal/filedesc/placeholder.go.html#line-55">#L55</a>: func (e PlaceholderEnum) ParentFile() pref.<b>FileDescriptor</b>     { return nil }
+		<a href="../../../../src/google.golang.org/protobuf/internal/filedesc/placeholder.go.html#line-72" class="path-duplicate">placeholder.go</a><a href="../../../../src/google.golang.org/protobuf/internal/filedesc/placeholder.go.html#line-72">#L72</a>: func (e PlaceholderEnumValue) ParentFile() pref.<b>FileDescriptor</b>     { return nil }
+		<a href="../../../../src/google.golang.org/protobuf/internal/filedesc/placeholder.go.html#line-87" class="path-duplicate">placeholder.go</a><a href="../../../../src/google.golang.org/protobuf/internal/filedesc/placeholder.go.html#line-87">#L87</a>: func (m PlaceholderMessage) ParentFile() pref.<b>FileDescriptor</b>             { return nil }
+
+	<a href="../../../../pkg/google.golang.org/protobuf/internal/filetype.html">google.golang.org/protobuf/internal/filetype</a>
+		<a href="../../../../src/google.golang.org/protobuf/internal/filetype/build.go.html#line-119">build.go#L119</a>: 	File pref.<b>FileDescriptor</b>
+		<a href="../../../../src/google.golang.org/protobuf/internal/filetype/build.go.html#line-277" class="path-duplicate">build.go</a><a href="../../../../src/google.golang.org/protobuf/internal/filetype/build.go.html#line-277">#L277</a>: 		FindFileByPath(string) (pref.<b>FileDescriptor</b>, error)
+		<a href="../../../../src/google.golang.org/protobuf/internal/filetype/build.go.html#line-279" class="path-duplicate">build.go</a><a href="../../../../src/google.golang.org/protobuf/internal/filetype/build.go.html#line-279">#L279</a>: 		RegisterFile(pref.<b>FileDescriptor</b>) error
+
+	<a href="../../../../pkg/google.golang.org/protobuf/internal/impl.html">google.golang.org/protobuf/internal/impl</a>
+		<a href="../../../../src/google.golang.org/protobuf/internal/impl/legacy_extension.go.html#line-145">legacy_extension.go#L145</a>: func (x placeholderExtension) ParentFile() pref.<b>FileDescriptor</b>            { return nil }
+		<a href="../../../../src/google.golang.org/protobuf/internal/impl/legacy_file.go.html#line-43">legacy_file.go#L43</a>: func legacyLoadFileDesc(b []byte) protoreflect.<b>FileDescriptor</b> {
+		<a href="../../../../src/google.golang.org/protobuf/internal/impl/legacy_file.go.html#line-46" class="path-duplicate">legacy_file.go</a><a href="../../../../src/google.golang.org/protobuf/internal/impl/legacy_file.go.html#line-46">#L46</a>: 		return fd.(protoreflect.<b>FileDescriptor</b>)
+		<a href="../../../../src/google.golang.org/protobuf/internal/impl/legacy_file.go.html#line-64" class="path-duplicate">legacy_file.go</a><a href="../../../../src/google.golang.org/protobuf/internal/impl/legacy_file.go.html#line-64">#L64</a>: 		return fd.(protoreflect.<b>FileDescriptor</b>)
+		<a href="../../../../src/google.golang.org/protobuf/internal/impl/legacy_file.go.html#line-73" class="path-duplicate">legacy_file.go</a><a href="../../../../src/google.golang.org/protobuf/internal/impl/legacy_file.go.html#line-73">#L73</a>: func (r resolverOnly) FindFileByPath(path string) (protoreflect.<b>FileDescriptor</b>, error) {
+		<a href="../../../../src/google.golang.org/protobuf/internal/impl/legacy_file.go.html#line-79" class="path-duplicate">legacy_file.go</a><a href="../../../../src/google.golang.org/protobuf/internal/impl/legacy_file.go.html#line-79">#L79</a>: func (resolverOnly) RegisterFile(protoreflect.<b>FileDescriptor</b>) error {
+
+	<a href="../../../../pkg/google.golang.org/protobuf/types/descriptorpb.html">google.golang.org/protobuf/types/descriptorpb</a>
+		<a href="../../../../src/google.golang.org/protobuf/types/descriptorpb/descriptor.pb.go.html#line-3008">descriptor.pb.go#L3008</a>: var File_google_protobuf_descriptor_proto protoreflect.<b>FileDescriptor</b>
+
+	<a href="../../../../pkg/google.golang.org/protobuf/types/known/anypb.html">google.golang.org/protobuf/types/known/anypb</a>
+		<a href="../../../../src/google.golang.org/protobuf/types/known/anypb/any.pb.go.html#line-417">any.pb.go#L417</a>: var File_google_protobuf_any_proto protoreflect.<b>FileDescriptor</b>
+
+	<a href="../../../../pkg/google.golang.org/protobuf/types/known/durationpb.html">google.golang.org/protobuf/types/known/durationpb</a>
+		<a href="../../../../src/google.golang.org/protobuf/types/known/durationpb/duration.pb.go.html#line-297">duration.pb.go#L297</a>: var File_google_protobuf_duration_proto protoreflect.<b>FileDescriptor</b>
+
+	<a href="../../../../pkg/google.golang.org/protobuf/types/known/timestamppb.html">google.golang.org/protobuf/types/known/timestamppb</a>
+		<a href="../../../../src/google.golang.org/protobuf/types/known/timestamppb/timestamp.pb.go.html#line-308">timestamp.pb.go#L308</a>: var File_google_protobuf_timestamp_proto protoreflect.<b>FileDescriptor</b>
+
+	<a href="../../../../pkg/google.golang.org/genproto/googleapis/rpc/status.html">google.golang.org/genproto/googleapis/rpc/status</a>
+		<a href="../../../../src/google.golang.org/genproto/googleapis/rpc/status/status.pb.go.html#line-120">status.pb.go#L120</a>: var File_google_rpc_status_proto protoreflect.<b>FileDescriptor</b>
+
+	<a href="../../../../pkg/google.golang.org/grpc/binarylog/grpc_binarylog_v1.html">google.golang.org/grpc/binarylog/grpc_binarylog_v1</a>
+		<a href="../../../../src/google.golang.org/grpc/binarylog/grpc_binarylog_v1/binarylog.pb.go.html#line-878">binarylog.pb.go#L878</a>: var File_grpc_binlog_v1_binarylog_proto protoreflect.<b>FileDescriptor</b>
+
+	<a href="../../../../pkg/github.com/caring/test/1-mocks/pb.html">github.com/caring/test/1-mocks/pb</a>
+		<a href="../../../../src/github.com/caring/test/1-mocks/pb/mocks.pb.go.html#line-117">mocks.pb.go#L117</a>: var File_mocks_proto protoreflect.<b>FileDescriptor</b>
+
+	<a href="../../../../pkg/github.com/golang/protobuf/proto.html">github.com/golang/protobuf/proto</a>
+		<a href="../../../../src/github.com/golang/protobuf/proto/registry.go.html#line-130">registry.go#L130</a>: 	protoregistry.GlobalFiles.RangeFilesByPackage(protoPkg, func(fd protoreflect.<b>FileDescriptor</b>) bool {
+
+	<a href="../../../../pkg/github.com/golang/protobuf/ptypes/any.html">github.com/golang/protobuf/ptypes/any</a>
+		<a href="../../../../src/github.com/golang/protobuf/ptypes/any/any.pb.go.html#line-17">any.pb.go#L17</a>: var File_github_com_golang_protobuf_ptypes_any_any_proto protoreflect.<b>FileDescriptor</b>
+
+	<a href="../../../../pkg/github.com/golang/protobuf/ptypes/duration.html">github.com/golang/protobuf/ptypes/duration</a>
+		<a href="../../../../src/github.com/golang/protobuf/ptypes/duration/duration.pb.go.html#line-17">duration.pb.go#L17</a>: var File_github_com_golang_protobuf_ptypes_duration_duration_proto protoreflect.<b>FileDescriptor</b>
+
+	<a href="../../../../pkg/github.com/golang/protobuf/ptypes/timestamp.html">github.com/golang/protobuf/ptypes/timestamp</a>
+		<a href="../../../../src/github.com/golang/protobuf/ptypes/timestamp/timestamp.pb.go.html#line-17">timestamp.pb.go#L17</a>: var File_github_com_golang_protobuf_ptypes_timestamp_timestamp_proto protoreflect.<b>FileDescriptor</b>
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: go.uber.org/zap/buffer.Buffer.Write</title>
+<link href="../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../pkg/go.uber.org/zap/buffer.html">go.uber.org/zap/buffer</a>.<a href="../../../src/go.uber.org/zap/buffer/buffer.go.html#line-35">Buffer</a>.<a href="../../../src/go.uber.org/zap/buffer/buffer.go.html#line-104">Write</a></b></span><span style="font-size: large;"><i> (method, <a href="../../../imp/go.uber.org/zap/buffer.Buffer.html#name-Write">view implemented interface methods</a>)</i></span>
+
+<span class="title">7 uses</span>
+
+	go.uber.org/zap/buffer (current package)
+		<a href="../../../src/go.uber.org/zap/buffer/buffer.go.html#line-104">buffer.go#L104</a>: func (b *Buffer) <b>Write</b>(bs []byte) (int, error) {
+
+	<a href="../../../pkg/go.uber.org/zap/zapcore.html">go.uber.org/zap/zapcore</a>
+		<a href="../../../src/go.uber.org/zap/zapcore/console_encoder.go.html#line-139">console_encoder.go#L139</a>: 	line.<b>Write</b>(context.buf.Bytes())
+		<a href="../../../src/go.uber.org/zap/zapcore/json_encoder.go.html#line-170">json_encoder.go#L170</a>: 	_, err = enc.buf.<b>Write</b>(valueBytes)
+		<a href="../../../src/go.uber.org/zap/zapcore/json_encoder.go.html#line-258" class="path-duplicate">json_encoder.go</a><a href="../../../src/go.uber.org/zap/zapcore/json_encoder.go.html#line-258">#L258</a>: 	_, err = enc.buf.<b>Write</b>(valueBytes)
+		<a href="../../../src/go.uber.org/zap/zapcore/json_encoder.go.html#line-317" class="path-duplicate">json_encoder.go</a><a href="../../../src/go.uber.org/zap/zapcore/json_encoder.go.html#line-317">#L317</a>: 	clone.buf.<b>Write</b>(enc.buf.Bytes())
+		<a href="../../../src/go.uber.org/zap/zapcore/json_encoder.go.html#line-381" class="path-duplicate">json_encoder.go</a><a href="../../../src/go.uber.org/zap/zapcore/json_encoder.go.html#line-381">#L381</a>: 		final.buf.<b>Write</b>(enc.buf.Bytes())
+		<a href="../../../src/go.uber.org/zap/zapcore/json_encoder.go.html#line-482" class="path-duplicate">json_encoder.go</a><a href="../../../src/go.uber.org/zap/zapcore/json_encoder.go.html#line-482">#L482</a>: 		enc.buf.<b>Write</b>(s[i : i+size])
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

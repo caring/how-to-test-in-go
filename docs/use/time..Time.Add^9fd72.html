@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: time.Time.Add</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/time.html">time</a>.<a href="../src/time/time.go.html#line-127">Time</a>.<a href="../src/time/time.go.html#line-820">Add</a></b></span><span style="font-size: large;"><i> (method)</i></span>
+
+<span class="title">48 uses</span>
+
+	time (current package)
+		<a href="../src/time/time.go.html#line-820">time.go#L820</a>: func (t Time) <b>Add</b>(d Duration) Time {
+		<a href="../src/time/time.go.html#line-864" class="path-duplicate">time.go</a><a href="../src/time/time.go.html#line-864">#L864</a>: 	case u.<b>Add</b>(d).Equal(t):
+		<a href="../src/time/time.go.html#line-1452" class="path-duplicate">time.go</a><a href="../src/time/time.go.html#line-1452">#L1452</a>: 	return t.<b>Add</b>(-r)
+		<a href="../src/time/time.go.html#line-1470" class="path-duplicate">time.go</a><a href="../src/time/time.go.html#line-1470">#L1470</a>: 		return t.<b>Add</b>(-r)
+		<a href="../src/time/time.go.html#line-1472" class="path-duplicate">time.go</a><a href="../src/time/time.go.html#line-1472">#L1472</a>: 	return t.<b>Add</b>(d - r)
+
+	<a href="../pkg/context.html">context</a>
+		<a href="../src/context/context.go.html#line-507">context.go#L507</a>: 	return WithDeadline(parent, time.Now().<b>Add</b>(timeout))
+
+	<a href="../pkg/crypto/tls.html">crypto/tls</a>
+		<a href="../src/crypto/tls/conn.go.html#line-1361">conn.go#L1361</a>: 		c.SetWriteDeadline(time.Now().<b>Add</b>(time.Second * 5))
+		<a href="../src/crypto/tls/handshake_client_tls13.go.html#line-672">handshake_client_tls13.go#L672</a>: 		useBy:              c.config.time().<b>Add</b>(lifetime),
+
+	<a href="../pkg/database/sql.html">database/sql</a>
+		<a href="../src/database/sql/sql.go.html#line-542">sql.go#L542</a>: 	return dc.createdAt.<b>Add</b>(timeout).Before(nowFunc())
+		<a href="../src/database/sql/sql.go.html#line-1097" class="path-duplicate">sql.go</a><a href="../src/database/sql/sql.go.html#line-1097">#L1097</a>: 		expiredSince := nowFunc().<b>Add</b>(-db.maxLifetime)
+		<a href="../src/database/sql/sql.go.html#line-1113" class="path-duplicate">sql.go</a><a href="../src/database/sql/sql.go.html#line-1113">#L1113</a>: 		expiredSince := nowFunc().<b>Add</b>(-db.maxIdleTime)
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/corehandlers.html">github.com/aws/aws-sdk-go/aws/corehandlers</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/corehandlers/handlers.go.html#line-77">handlers.go#L77</a>: 		if signedTime.<b>Add</b>(5 * time.Minute).After(time.Now()) {
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/credentials.html">github.com/aws/aws-sdk-go/aws/credentials</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/credentials/credentials.go.html#line-178">credentials.go#L178</a>: 		e.expiration = e.expiration.<b>Add</b>(-window)
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/ec2metadata.html">github.com/aws/aws-sdk-go/aws/ec2metadata</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/ec2metadata/token_provider.go.html#line-76">token_provider.go#L76</a>: 	newToken.SetExpiration(time.Now().<b>Add</b>(output.TTL), ttlExpirationWindow)
+
+	<a href="../pkg/github.com/go-sql-driver/mysql.html">github.com/go-sql-driver/mysql</a>
+		<a href="../src/github.com/go-sql-driver/mysql/buffer.go.html#line-85">buffer.go#L85</a>: 			if err := b.nc.SetReadDeadline(time.Now().<b>Add</b>(b.timeout)); err != nil {
+		<a href="../src/github.com/go-sql-driver/mysql/packets.go.html#line-146">packets.go#L146</a>: 			if err := mc.netConn.SetWriteDeadline(time.Now().<b>Add</b>(mc.writeTimeout)); err != nil {
+
+	<a href="../pkg/github.com/uber/jaeger-client-go.html">github.com/uber/jaeger-client-go</a>
+		<a href="../src/github.com/uber/jaeger-client-go/zipkin_thrift_span.go.html#line-92">zipkin_thrift_span.go#L92</a>: 			endTs := span.startTime.<b>Add</b>(span.duration)
+
+	<a href="../pkg/golang.org/x/net/internal/timeseries.html">golang.org/x/net/internal/timeseries</a>
+		<a href="../src/golang.org/x/net/internal/timeseries/timeseries.go.html#line-188">timeseries.go#L188</a>: 	} else if t.After(ts.pendingTime.<b>Add</b>(-1 * smallBucketDuration)) {
+		<a href="../src/golang.org/x/net/internal/timeseries/timeseries.go.html#line-237" class="path-duplicate">timeseries.go</a><a href="../src/golang.org/x/net/internal/timeseries/timeseries.go.html#line-237">#L237</a>: 		if !t.Before(level.end.<b>Add</b>(level.size * time.Duration(ts.numBuckets))) {
+		<a href="../src/golang.org/x/net/internal/timeseries/timeseries.go.html#line-245" class="path-duplicate">timeseries.go</a><a href="../src/golang.org/x/net/internal/timeseries/timeseries.go.html#line-245">#L245</a>: 			level.end = level.end.<b>Add</b>(level.size)
+		<a href="../src/golang.org/x/net/internal/timeseries/timeseries.go.html#line-340" class="path-duplicate">timeseries.go</a><a href="../src/golang.org/x/net/internal/timeseries/timeseries.go.html#line-340">#L340</a>: 	return ts.Range(now.<b>Add</b>(-delta), now)
+		<a href="../src/golang.org/x/net/internal/timeseries/timeseries.go.html#line-368" class="path-duplicate">timeseries.go</a><a href="../src/golang.org/x/net/internal/timeseries/timeseries.go.html#line-368">#L368</a>: 		if !start.Before(l.end.<b>Add</b>(-l.size * time.Duration(ts.numBuckets))) {
+		<a href="../src/golang.org/x/net/internal/timeseries/timeseries.go.html#line-389" class="path-duplicate">timeseries.go</a><a href="../src/golang.org/x/net/internal/timeseries/timeseries.go.html#line-389">#L389</a>: 	return ts.ComputeRange(now.<b>Add</b>(-delta), now, num)
+		<a href="../src/golang.org/x/net/internal/timeseries/timeseries.go.html#line-400" class="path-duplicate">timeseries.go</a><a href="../src/golang.org/x/net/internal/timeseries/timeseries.go.html#line-400">#L400</a>: 	srcStart := l.end.<b>Add</b>(-srcInterval * time.Duration(ts.numBuckets))
+		<a href="../src/golang.org/x/net/internal/timeseries/timeseries.go.html#line-408" class="path-duplicate">timeseries.go</a><a href="../src/golang.org/x/net/internal/timeseries/timeseries.go.html#line-408">#L408</a>: 		srcStart = srcStart.<b>Add</b>(time.Duration(advance) * srcInterval)
+		<a href="../src/golang.org/x/net/internal/timeseries/timeseries.go.html#line-418" class="path-duplicate">timeseries.go</a><a href="../src/golang.org/x/net/internal/timeseries/timeseries.go.html#line-418">#L418</a>: 		dstEnd := dstStart.<b>Add</b>(dstInterval)
+		<a href="../src/golang.org/x/net/internal/timeseries/timeseries.go.html#line-420" class="path-duplicate">timeseries.go</a><a href="../src/golang.org/x/net/internal/timeseries/timeseries.go.html#line-420">#L420</a>: 			srcEnd := srcStart.<b>Add</b>(srcInterval)
+		<a href="../src/golang.org/x/net/internal/timeseries/timeseries.go.html#line-452" class="path-duplicate">timeseries.go</a><a href="../src/golang.org/x/net/internal/timeseries/timeseries.go.html#line-452">#L452</a>: 			srcStart = srcStart.<b>Add</b>(srcInterval)
+		<a href="../src/golang.org/x/net/internal/timeseries/timeseries.go.html#line-454" class="path-duplicate">timeseries.go</a><a href="../src/golang.org/x/net/internal/timeseries/timeseries.go.html#line-454">#L454</a>: 		dstStart = dstStart.<b>Add</b>(dstInterval)
+
+	<a href="../pkg/google.golang.org/grpc.html">google.golang.org/grpc</a>
+		<a href="../src/google.golang.org/grpc/clientconn.go.html#line-1186">clientconn.go#L1186</a>: 	connectDeadline := time.Now().<b>Add</b>(dialDuration)
+		<a href="../src/google.golang.org/grpc/server.go.html#line-834">server.go#L834</a>: 	rawConn.SetDeadline(time.Now().<b>Add</b>(s.opts.connectionTimeout))
+
+	<a href="../pkg/google.golang.org/grpc/internal/transport.html">google.golang.org/grpc/internal/transport</a>
+		<a href="../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-872">http2_server.go#L872</a>: 		if t.lastPingAt.<b>Add</b>(defaultPingTimeout).After(now) {
+		<a href="../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-877" class="path-duplicate">http2_server.go</a><a href="../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-877">#L877</a>: 		if t.lastPingAt.<b>Add</b>(t.kep.MinTime).After(now) {
+
+	<a href="../pkg/net.html">net</a>
+		<a href="../src/net/dial.go.html#line-120">dial.go#L120</a>: 		earliest = now.<b>Add</b>(d.Timeout)
+		<a href="../src/net/dial.go.html#line-156" class="path-duplicate">dial.go</a><a href="../src/net/dial.go.html#line-156">#L156</a>: 	return now.<b>Add</b>(timeout), nil
+		<a href="../src/net/dnsclient_unix.go.html#line-158">dnsclient_unix.go#L158</a>: 		ctx, cancel := context.WithDeadline(ctx, time.Now().<b>Add</b>(timeout))
+		<a href="../src/net/dnsclient_unix.go.html#line-364" class="path-duplicate">dnsclient_unix.go</a><a href="../src/net/dnsclient_unix.go.html#line-364">#L364</a>: 	if conf.lastChecked.After(now.<b>Add</b>(-5 * time.Second)) {
+		<a href="../src/net/hosts.go.html#line-61">hosts.go#L61</a>: 		hosts.expire = now.<b>Add</b>(cacheMaxAge)
+		<a href="../src/net/hosts.go.html#line-94" class="path-duplicate">hosts.go</a><a href="../src/net/hosts.go.html#line-94">#L94</a>: 	hosts.expire = now.<b>Add</b>(cacheMaxAge)
+		<a href="../src/net/interface.go.html#line-198">interface.go#L198</a>: 	if !force &amp;&amp; zc.lastFetched.After(now.<b>Add</b>(-60*time.Second)) {
+
+	<a href="../pkg/net/http.html">net/http</a>
+		<a href="../src/net/http/client.go.html#line-190">client.go#L190</a>: 		return time.Now().<b>Add</b>(c.Timeout)
+		<a href="../src/net/http/server.go.html#line-948">server.go#L948</a>: 		hdrDeadline = t0.<b>Add</b>(d)
+		<a href="../src/net/http/server.go.html#line-951" class="path-duplicate">server.go</a><a href="../src/net/http/server.go.html#line-951">#L951</a>: 		wholeReqDeadline = t0.<b>Add</b>(d)
+		<a href="../src/net/http/server.go.html#line-956" class="path-duplicate">server.go</a><a href="../src/net/http/server.go.html#line-956">#L956</a>: 			c.rwc.SetWriteDeadline(time.Now().<b>Add</b>(d))
+		<a href="../src/net/http/server.go.html#line-1813" class="path-duplicate">server.go</a><a href="../src/net/http/server.go.html#line-1813">#L1813</a>: 			c.rwc.SetReadDeadline(time.Now().<b>Add</b>(d))
+		<a href="../src/net/http/server.go.html#line-1816" class="path-duplicate">server.go</a><a href="../src/net/http/server.go.html#line-1816">#L1816</a>: 			c.rwc.SetWriteDeadline(time.Now().<b>Add</b>(d))
+		<a href="../src/net/http/server.go.html#line-1954" class="path-duplicate">server.go</a><a href="../src/net/http/server.go.html#line-1954">#L1954</a>: 			c.rwc.SetReadDeadline(time.Now().<b>Add</b>(d))
+		<a href="../src/net/http/transport.go.html#line-1026">transport.go#L1026</a>: 		oldTime = time.Now().<b>Add</b>(-t.IdleConnTimeout)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

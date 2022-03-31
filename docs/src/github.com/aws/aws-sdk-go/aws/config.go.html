@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Source: config.go in package github.com/aws/aws-sdk-go/aws</title>
+<link href="../../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre id="header"><code><span class="title">Source File</span>
+	config.go
+
+<span class="title">Belonging Package</span>
+	<a href="../../../../../pkg/github.com/aws/aws-sdk-go/aws.html">github.com/aws/aws-sdk-go/aws</a>
+</code></pre>
+<style>input[type=radio] {display: none;}
+input[id=r0]:checked ~pre label[for=r0],
+input[id=r1]:checked ~pre label[for=r1],
+input[id=r2]:checked ~pre label[for=r2],
+input[id=r3]:checked ~pre label[for=r3],
+input[id=r4]:checked ~pre label[for=r4],
+input[id=r5]:checked ~pre label[for=r5],
+input[id=r6]:checked ~pre label[for=r6],
+input[id=r7]:checked ~pre label[for=r7],
+input[id=r8]:checked ~pre label[for=r8],
+input[id=r9]:checked ~pre label[for=r9],
+input[id=r10]:checked ~pre label[for=r10],
+input[id=r11]:checked ~pre label[for=r11],
+input[id=r12]:checked ~pre label[for=r12],
+input[id=r13]:checked ~pre label[for=r13],
+input[id=r14]:checked ~pre label[for=r14],
+input[id=r15]:checked ~pre label[for=r15],
+input[id=r16]:checked ~pre label[for=r16],
+input[id=r17]:checked ~pre label[for=r17],
+input[id=r18]:checked ~pre label[for=r18],
+input[id=r19]:checked ~pre label[for=r19],
+input[id=r20]:checked ~pre label[for=r20],
+input[id=r21]:checked ~pre label[for=r21],
+input[id=r22]:checked ~pre label[for=r22],
+input[id=r23]:checked ~pre label[for=r23],
+input[id=r24]:checked ~pre label[for=r24],
+input[id=r25]:checked ~pre label[for=r25],
+input[id=r26]:checked ~pre label[for=r26],
+input[id=r27]:checked ~pre label[for=r27],
+input[id=r28]:checked ~pre label[for=r28],
+input[id=r29]:checked ~pre label[for=r29],
+input[id=r30]:checked ~pre label[for=r30],
+input[id=r31]:checked ~pre label[for=r31],
+input[id=r32]:checked ~pre label[for=r32],
+input[id=r33]:checked ~pre label[for=r33],
+input[id=r34]:checked ~pre label[for=r34],
+input[id=r35]:checked ~pre label[for=r35],
+input[id=r36]:checked ~pre label[for=r36],
+input[id=r37]:checked ~pre label[for=r37],
+input[id=r38]:checked ~pre label[for=r38],
+input[id=r39]:checked ~pre label[for=r39],
+input[id=r40]:checked ~pre label[for=r40],
+input[id=r41]:checked ~pre label[for=r41],
+input[id=r42]:checked ~pre label[for=r42],
+input[id=r43]:checked ~pre label[for=r43],
+input[id=r44]:checked ~pre label[for=r44],
+input[id=r45]:checked ~pre label[for=r45],
+input[id=r46]:checked ~pre label[for=r46],
+input[id=r47]:checked ~pre label[for=r47],
+input[id=r48]:checked ~pre label[for=r48],
+input[id=r49]:checked ~pre label[for=r49],
+input[id=r50]:checked ~pre label[for=r50],
+input[id=r51]:checked ~pre label[for=r51],
+input[id=r52]:checked ~pre label[for=r52],
+input[id=r53]:checked ~pre label[for=r53],
+input[id=r54]:checked ~pre label[for=r54],
+input[id=r55]:checked ~pre label[for=r55],
+input[id=r56]:checked ~pre label[for=r56],
+input[id=r57]:checked ~pre label[for=r57],
+input[id=r58]:checked ~pre label[for=r58],
+input[id=r59]:checked ~pre label[for=r59],
+input[id=r60]:checked ~pre label[for=r60],
+input[id=r61]:checked ~pre label[for=r61],
+input[id=r62]:checked ~pre label[for=r62],
+input[id=r63]:checked ~pre label[for=r63],
+input[id=r64]:checked ~pre label[for=r64],
+input[id=r65]:checked ~pre label[for=r65],
+input[id=r66]:checked ~pre label[for=r66],
+input[id=r67]:checked ~pre label[for=r67],
+input[id=r68]:checked ~pre label[for=r68],
+input[id=r69]:checked ~pre label[for=r69],
+input[id=r70]:checked ~pre label[for=r70],
+input[id=r71]:checked ~pre label[for=r71],
+input[id=r72]:checked ~pre label[for=r72],
+input[id=r73]:checked ~pre label[for=r73],
+input[id=r74]:checked ~pre label[for=r74],
+input[id=r75]:checked ~pre label[for=r75],
+input[id=r76]:checked ~pre label[for=r76],
+input[id=r77]:checked ~pre label[for=r77],
+input[id=r78]:checked ~pre label[for=r78],
+input[id=r79]:checked ~pre label[for=r79],
+input[id=r80]:checked ~pre label[for=r80],
+input[id=r81]:checked ~pre label[for=r81],
+input[id=r82]:checked ~pre label[for=r82],
+input[id=r83]:checked ~pre label[for=r83],
+input[id=r84]:checked ~pre label[for=r84],
+input[id=r85]:checked ~pre label[for=r85],
+input[id=r86]:checked ~pre label[for=r86]
+{background: #226; color: #ff8;}
+input[id=i0]:checked ~pre .i0,
+input[id=i1]:checked ~pre .i1,
+input[id=i2]:checked ~pre .i2,
+input[id=i3]:checked ~pre .i3
+{background: brown; color: #eed;}
+</style><input id="r0" type="radio" name="g"/>
+<input id="r1" type="radio" name="g"/>
+<input id="r2" type="radio" name="g"/>
+<input id="r3" type="radio" name="g"/>
+<input id="r4" type="radio" name="g"/>
+<input id="r5" type="radio" name="g"/>
+<input id="r6" type="radio" name="g"/>
+<input id="r7" type="radio" name="g"/>
+<input id="r8" type="radio" name="g"/>
+<input id="r9" type="radio" name="g"/>
+<input id="r10" type="radio" name="g"/>
+<input id="r11" type="radio" name="g"/>
+<input id="r12" type="radio" name="g"/>
+<input id="r13" type="radio" name="g"/>
+<input id="r14" type="radio" name="g"/>
+<input id="r15" type="radio" name="g"/>
+<input id="r16" type="radio" name="g"/>
+<input id="r17" type="radio" name="g"/>
+<input id="r18" type="radio" name="g"/>
+<input id="r19" type="radio" name="g"/>
+<input id="r20" type="radio" name="g"/>
+<input id="r21" type="radio" name="g"/>
+<input id="r22" type="radio" name="g"/>
+<input id="r23" type="radio" name="g"/>
+<input id="r24" type="radio" name="g"/>
+<input id="r25" type="radio" name="g"/>
+<input id="r26" type="radio" name="g"/>
+<input id="r27" type="radio" name="g"/>
+<input id="r28" type="radio" name="g"/>
+<input id="r29" type="radio" name="g"/>
+<input id="r30" type="radio" name="g"/>
+<input id="r31" type="radio" name="g"/>
+<input id="r32" type="radio" name="g"/>
+<input id="r33" type="radio" name="g"/>
+<input id="r34" type="radio" name="g"/>
+<input id="r35" type="radio" name="g"/>
+<input id="r36" type="radio" name="g"/>
+<input id="r37" type="radio" name="g"/>
+<input id="r38" type="radio" name="g"/>
+<input id="r39" type="radio" name="g"/>
+<input id="r40" type="radio" name="g"/>
+<input id="r41" type="radio" name="g"/>
+<input id="r42" type="radio" name="g"/>
+<input id="r43" type="radio" name="g"/>
+<input id="r44" type="radio" name="g"/>
+<input id="r45" type="radio" name="g"/>
+<input id="r46" type="radio" name="g"/>
+<input id="r47" type="radio" name="g"/>
+<input id="r48" type="radio" name="g"/>
+<input id="r49" type="radio" name="g"/>
+<input id="r50" type="radio" name="g"/>
+<input id="r51" type="radio" name="g"/>
+<input id="r52" type="radio" name="g"/>
+<input id="r53" type="radio" name="g"/>
+<input id="r54" type="radio" name="g"/>
+<input id="r55" type="radio" name="g"/>
+<input id="r56" type="radio" name="g"/>
+<input id="r57" type="radio" name="g"/>
+<input id="r58" type="radio" name="g"/>
+<input id="r59" type="radio" name="g"/>
+<input id="r60" type="radio" name="g"/>
+<input id="r61" type="radio" name="g"/>
+<input id="r62" type="radio" name="g"/>
+<input id="r63" type="radio" name="g"/>
+<input id="r64" type="radio" name="g"/>
+<input id="r65" type="radio" name="g"/>
+<input id="r66" type="radio" name="g"/>
+<input id="r67" type="radio" name="g"/>
+<input id="r68" type="radio" name="g"/>
+<input id="r69" type="radio" name="g"/>
+<input id="r70" type="radio" name="g"/>
+<input id="r71" type="radio" name="g"/>
+<input id="r72" type="radio" name="g"/>
+<input id="r73" type="radio" name="g"/>
+<input id="r74" type="radio" name="g"/>
+<input id="r75" type="radio" name="g"/>
+<input id="r76" type="radio" name="g"/>
+<input id="r77" type="radio" name="g"/>
+<input id="r78" type="radio" name="g"/>
+<input id="r79" type="radio" name="g"/>
+<input id="r80" type="radio" name="g"/>
+<input id="r81" type="radio" name="g"/>
+<input id="r82" type="radio" name="g"/>
+<input id="r83" type="radio" name="g"/>
+<input id="r84" type="radio" name="g"/>
+<input id="r85" type="radio" name="g"/>
+<input id="r86" type="radio" name="g"/>
+<input id="i0" type="radio" name="i"/>
+<input id="i1" type="radio" name="i"/>
+<input id="i2" type="radio" name="i"/>
+<input id="i3" type="radio" name="i"/>
+
+<pre class="line-numbers">
+<span class="codeline" id="line-1"><code><span class="keyword">package</span> aws</code></span>
+<span class="codeline" id="line-2"><code></code></span>
+<span class="codeline" id="line-3"><code><span class="keyword">import</span> (</code></span>
+<span class="codeline" id="line-4"><code>	<label for="i0"><span class="lit-string i0">"net/http"</span></label></code></span>
+<span class="codeline" id="line-5"><code>	<label for="i1"><span class="lit-string i1">"time"</span></label></code></span>
+<span class="codeline" id="line-6"><code></code></span>
+<span class="codeline" id="line-7"><code>	<label for="i2"><span class="lit-string i2">"github.com/aws/aws-sdk-go/aws/credentials"</span></label></code></span>
+<span class="codeline" id="line-8"><code>	<label for="i3"><span class="lit-string i3">"github.com/aws/aws-sdk-go/aws/endpoints"</span></label></code></span>
+<span class="codeline" id="line-9"><code>)</code></span>
+<span class="codeline" id="line-10"><code></code></span>
+<span class="codeline" id="line-11"><code><span class="comment">// UseServiceDefaultRetries instructs the config to use the service's own</span></code></span>
+<span class="codeline" id="line-12"><code><span class="comment">// default number of retries. This will be the default action if</span></code></span>
+<span class="codeline" id="line-13"><code><span class="comment">// Config.MaxRetries is nil also.</span></code></span>
+<span class="codeline" id="line-14"><code><span class="keyword">const</span> <a href="../../../../../pkg/github.com/aws/aws-sdk-go/aws.html#name-UseServiceDefaultRetries" class="ident">UseServiceDefaultRetries</a> = -<span class="lit-number">1</span></code></span>
+<span class="codeline" id="line-15"><code></code></span>
+<span class="codeline" id="line-16"><code><span class="comment">// RequestRetryer is an alias for a type that implements the request.Retryer</span></code></span>
+<span class="codeline" id="line-17"><code><span class="comment">// interface.</span></code></span>
+<span class="codeline" id="line-18"><code><span class="keyword">type</span> <a href="../../../../../pkg/github.com/aws/aws-sdk-go/aws.html#name-RequestRetryer" class="ident">RequestRetryer</a> <span class="keyword">interface</span>{}</code></span>
+<span class="codeline" id="line-19"><code></code></span>
+<span class="codeline" id="line-20"><code><span class="comment">// A Config provides service configuration for service clients. By default,</span></code></span>
+<span class="codeline" id="line-21"><code><span class="comment">// all clients will use the defaults.DefaultConfig structure.</span></code></span>
+<span class="codeline" id="line-22"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-23"><code><span class="comment">//     // Create Session with MaxRetries configuration to be shared by multiple</span></code></span>
+<span class="codeline" id="line-24"><code><span class="comment">//     // service clients.</span></code></span>
+<span class="codeline" id="line-25"><code><span class="comment">//     sess := session.Must(session.NewSession(&amp;aws.Config{</span></code></span>
+<span class="codeline" id="line-26"><code><span class="comment">//         MaxRetries: aws.Int(3),</span></code></span>
+<span class="codeline" id="line-27"><code><span class="comment">//     }))</span></code></span>
+<span class="codeline" id="line-28"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-29"><code><span class="comment">//     // Create S3 service client with a specific Region.</span></code></span>
+<span class="codeline" id="line-30"><code><span class="comment">//     svc := s3.New(sess, &amp;aws.Config{</span></code></span>
+<span class="codeline" id="line-31"><code><span class="comment">//         Region: aws.String("us-west-2"),</span></code></span>
+<span class="codeline" id="line-32"><code><span class="comment">//     })</span></code></span>
+<span class="codeline" id="line-33"><code><span class="keyword">type</span> <a href="../../../../../pkg/github.com/aws/aws-sdk-go/aws.html#name-Config" class="ident">Config</a> <span class="keyword">struct</span> {</code></span>
+<span class="codeline" id="line-34"><code>	<span class="comment">// Enables verbose error printing of all credential chain errors.</span></code></span>
+<span class="codeline" id="line-35"><code><span class="comment">	// Should be used when wanting to see all errors while attempting to</span></code></span>
+<span class="codeline" id="line-36"><code><span class="comment">	// retrieve credentials.</span></code></span>
+<span class="codeline" id="line-37"><code>	<a href="../../../../../use/github.com/aws/aws-sdk-go/aws..Config.CredentialsChainVerboseErrors.html" class="ident">CredentialsChainVerboseErrors</a> *<a href="../../../../../pkg/builtin.html#name-bool" class="ident">bool</a></code></span>
+<span class="codeline" id="line-38"><code></code></span>
+<span class="codeline" id="line-39"><code>	<span class="comment">// The credentials object to use when signing requests. Defaults to a</span></code></span>
+<span class="codeline" id="line-40"><code><span class="comment">	// chain of credential providers to search for credentials in environment</span></code></span>
+<span class="codeline" id="line-41"><code><span class="comment">	// variables, shared credential file, and EC2 Instance Roles.</span></code></span>
+<span class="codeline" id="line-42"><code>	<a href="../../../../../use/github.com/aws/aws-sdk-go/aws..Config.Credentials.html" class="ident">Credentials</a> *<a href="../../../../../pkg/github.com/aws/aws-sdk-go/aws/credentials.html" class="ident i2">credentials</a>.<a href="credentials/credentials.go.html#line-207" class="ident">Credentials</a></code></span>
+<span class="codeline" id="line-43"><code></code></span>
+<span class="codeline" id="line-44"><code>	<span class="comment">// An optional endpoint URL (hostname only or fully qualified URI)</span></code></span>
+<span class="codeline" id="line-45"><code><span class="comment">	// that overrides the default generated endpoint for a client. Set this</span></code></span>
+<span class="codeline" id="line-46"><code><span class="comment">	// to `""` to use the default generated endpoint.</span></code></span>
+<span class="codeline" id="line-47"><code><span class="comment">	//</span></code></span>
+<span class="codeline" id="line-48"><code><span class="comment">	// Note: You must still provide a `Region` value when specifying an</span></code></span>
+<span class="codeline" id="line-49"><code><span class="comment">	// endpoint for a client.</span></code></span>
+<span class="codeline" id="line-50"><code>	<a href="../../../../../use/github.com/aws/aws-sdk-go/aws..Config.Endpoint.html" class="ident">Endpoint</a> *<a href="../../../../../pkg/builtin.html#name-string" class="ident">string</a></code></span>
+<span class="codeline" id="line-51"><code></code></span>
+<span class="codeline" id="line-52"><code>	<span class="comment">// The resolver to use for looking up endpoints for AWS service clients</span></code></span>
+<span class="codeline" id="line-53"><code><span class="comment">	// to use based on region.</span></code></span>
+<span class="codeline" id="line-54"><code>	<a href="../../../../../use/github.com/aws/aws-sdk-go/aws..Config.EndpointResolver.html" class="ident">EndpointResolver</a> <a href="../../../../../pkg/github.com/aws/aws-sdk-go/aws/endpoints.html" class="ident i3">endpoints</a>.<a href="endpoints/endpoints.go.html#line-193" class="ident">Resolver</a></code></span>
+<span class="codeline" id="line-55"><code></code></span>
+<span class="codeline" id="line-56"><code>	<span class="comment">// EnforceShouldRetryCheck is used in the AfterRetryHandler to always call</span></code></span>
+<span class="codeline" id="line-57"><code><span class="comment">	// ShouldRetry regardless of whether or not if request.Retryable is set.</span></code></span>
+<span class="codeline" id="line-58"><code><span class="comment">	// This will utilize ShouldRetry method of custom retryers. If EnforceShouldRetryCheck</span></code></span>
+<span class="codeline" id="line-59"><code><span class="comment">	// is not set, then ShouldRetry will only be called if request.Retryable is nil.</span></code></span>
+<span class="codeline" id="line-60"><code><span class="comment">	// Proper handling of the request.Retryable field is important when setting this field.</span></code></span>
+<span class="codeline" id="line-61"><code>	<a href="../../../../../use/github.com/aws/aws-sdk-go/aws..Config.EnforceShouldRetryCheck.html" class="ident">EnforceShouldRetryCheck</a> *<a href="../../../../../pkg/builtin.html#name-bool" class="ident">bool</a></code></span>
+<span class="codeline" id="line-62"><code></code></span>
+<span class="codeline" id="line-63"><code>	<span class="comment">// The region to send requests to. This parameter is required and must</span></code></span>
+<span class="codeline" id="line-64"><code><span class="comment">	// be configured globally or on a per-client basis unless otherwise</span></code></span>
+<span class="codeline" id="line-65"><code><span class="comment">	// noted. A full list of regions is found in the "Regions and Endpoints"</span></code></span>
+<span class="codeline" id="line-66"><code><span class="comment">	// document.</span></code></span>
+<span class="codeline" id="line-67"><code><span class="comment">	//</span></code></span>
+<span class="codeline" id="line-68"><code><span class="comment">	// See http://docs.aws.amazon.com/general/latest/gr/rande.html for AWS</span></code></span>
+<span class="codeline" id="line-69"><code><span class="comment">	// Regions and Endpoints.</span></code></span>
+<span class="codeline" id="line-70"><code>	<a href="../../../../../use/github.com/aws/aws-sdk-go/aws..Config.Region.html" class="ident">Region</a> *<a href="../../../../../pkg/builtin.html#name-string" class="ident">string</a></code></span>
+<span class="codeline" id="line-71"><code></code></span>
+<span class="codeline" id="line-72"><code>	<span class="comment">// Set this to `true` to disable SSL when sending requests. Defaults</span></code></span>
+<span class="codeline" id="line-73"><code><span class="comment">	// to `false`.</span></code></span>
+<span class="codeline" id="line-74"><code>	<a href="../../../../../use/github.com/aws/aws-sdk-go/aws..Config.DisableSSL.html" class="ident">DisableSSL</a> *<a href="../../../../../pkg/builtin.html#name-bool" class="ident">bool</a></code></span>
+<span class="codeline" id="line-75"><code></code></span>
+<span class="codeline" id="line-76"><code>	<span class="comment">// The HTTP client to use when sending requests. Defaults to</span></code></span>
+<span class="codeline" id="line-77"><code><span class="comment">	// `http.DefaultClient`.</span></code></span>
+<span class="codeline" id="line-78"><code>	<a href="../../../../../use/github.com/aws/aws-sdk-go/aws..Config.HTTPClient.html" class="ident">HTTPClient</a> *<a href="../../../../../pkg/net/http.html" class="ident i0">http</a>.<a href="../../../../net/http/client.go.html#line-58" class="ident">Client</a></code></span>
+<span class="codeline" id="line-79"><code></code></span>
+<span class="codeline" id="line-80"><code>	<span class="comment">// An integer value representing the logging level. The default log level</span></code></span>
+<span class="codeline" id="line-81"><code><span class="comment">	// is zero (LogOff), which represents no logging. To enable logging set</span></code></span>
+<span class="codeline" id="line-82"><code><span class="comment">	// to a LogLevel Value.</span></code></span>
+<span class="codeline" id="line-83"><code>	<a href="../../../../../use/github.com/aws/aws-sdk-go/aws..Config.LogLevel.html" class="ident">LogLevel</a> *<a href="logger.go.html#line-10" class="ident">LogLevelType</a></code></span>
+<span class="codeline" id="line-84"><code></code></span>
+<span class="codeline" id="line-85"><code>	<span class="comment">// The logger writer interface to write logging messages to. Defaults to</span></code></span>
+<span class="codeline" id="line-86"><code><span class="comment">	// standard out.</span></code></span>
+<span class="codeline" id="line-87"><code>	<a href="../../../../../use/github.com/aws/aws-sdk-go/aws..Config.Logger.html" class="ident">Logger</a> <a href="logger.go.html#line-84" class="ident">Logger</a></code></span>
+<span class="codeline" id="line-88"><code></code></span>
+<span class="codeline" id="line-89"><code>	<span class="comment">// The maximum number of times that a request will be retried for failures.</span></code></span>
+<span class="codeline" id="line-90"><code><span class="comment">	// Defaults to -1, which defers the max retry setting to the service</span></code></span>
+<span class="codeline" id="line-91"><code><span class="comment">	// specific configuration.</span></code></span>
+<span class="codeline" id="line-92"><code>	<a href="../../../../../use/github.com/aws/aws-sdk-go/aws..Config.MaxRetries.html" class="ident">MaxRetries</a> *<a href="../../../../../pkg/builtin.html#name-int" class="ident">int</a></code></span>
+<span class="codeline" id="line-93"><code></code></span>
+<span class="codeline" id="line-94"><code>	<span class="comment">// Retryer guides how HTTP requests should be retried in case of</span></code></span>
+<span class="codeline" id="line-95"><code><span class="comment">	// recoverable failures.</span></code></span>
+<span class="codeline" id="line-96"><code><span class="comment">	//</span></code></span>
+<span class="codeline" id="line-97"><code><span class="comment">	// When nil or the value does not implement the request.Retryer interface,</span></code></span>
+<span class="codeline" id="line-98"><code><span class="comment">	// the client.DefaultRetryer will be used.</span></code></span>
+<span class="codeline" id="line-99"><code><span class="comment">	//</span></code></span>
+<span class="codeline" id="line-100"><code><span class="comment">	// When both Retryer and MaxRetries are non-nil, the former is used and</span></code></span>
+<span class="codeline" id="line-101"><code><span class="comment">	// the latter ignored.</span></code></span>
+<span class="codeline" id="line-102"><code><span class="comment">	//</span></code></span>
+<span class="codeline" id="line-103"><code><span class="comment">	// To set the Retryer field in a type-safe manner and with chaining, use</span></code></span>
+<span class="codeline" id="line-104"><code><span class="comment">	// the request.WithRetryer helper function:</span></code></span>
+<span class="codeline" id="line-105"><code><span class="comment">	//</span></code></span>
+<span class="codeline" id="line-106"><code><span class="comment">	//   cfg := request.WithRetryer(aws.NewConfig(), myRetryer)</span></code></span>
+<span class="codeline" id="line-107"><code><span class="comment">	//</span></code></span>
+<span class="codeline" id="line-108"><code>	<a href="../../../../../use/github.com/aws/aws-sdk-go/aws..Config.Retryer.html" class="ident">Retryer</a> <a href="#line-18" class="ident">RequestRetryer</a></code></span>
+<span class="codeline" id="line-109"><code></code></span>
+<span class="codeline" id="line-110"><code>	<span class="comment">// Disables semantic parameter validation, which validates input for</span></code></span>
+<span class="codeline" id="line-111"><code><span class="comment">	// missing required fields and/or other semantic request input errors.</span></code></span>
+<span class="codeline" id="line-112"><code>	<a href="../../../../../use/github.com/aws/aws-sdk-go/aws..Config.DisableParamValidation.html" class="ident">DisableParamValidation</a> *<a href="../../../../../pkg/builtin.html#name-bool" class="ident">bool</a></code></span>
+<span class="codeline" id="line-113"><code></code></span>
+<span class="codeline" id="line-114"><code>	<span class="comment">// Disables the computation of request and response checksums, e.g.,</span></code></span>
+<span class="codeline" id="line-115"><code><span class="comment">	// CRC32 checksums in Amazon DynamoDB.</span></code></span>
+<span class="codeline" id="line-116"><code>	<a href="../../../../../use/github.com/aws/aws-sdk-go/aws..Config.DisableComputeChecksums.html" class="ident">DisableComputeChecksums</a> *<a href="../../../../../pkg/builtin.html#name-bool" class="ident">bool</a></code></span>
+<span class="codeline" id="line-117"><code></code></span>
+<span class="codeline" id="line-118"><code>	<span class="comment">// Set this to `true` to force the request to use path-style addressing,</span></code></span>
+<span class="codeline" id="line-119"><code><span class="comment">	// i.e., `http://s3.amazonaws.com/BUCKET/KEY`. By default, the S3 client</span></code></span>
+<span class="codeline" id="line-120"><code><span class="comment">	// will use virtual hosted bucket addressing when possible</span></code></span>
+<span class="codeline" id="line-121"><code><span class="comment">	// (`http://BUCKET.s3.amazonaws.com/KEY`).</span></code></span>
+<span class="codeline" id="line-122"><code><span class="comment">	//</span></code></span>
+<span class="codeline" id="line-123"><code><span class="comment">	// Note: This configuration option is specific to the Amazon S3 service.</span></code></span>
+<span class="codeline" id="line-124"><code><span class="comment">	//</span></code></span>
+<span class="codeline" id="line-125"><code><span class="comment">	// See http://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html</span></code></span>
+<span class="codeline" id="line-126"><code><span class="comment">	// for Amazon S3: Virtual Hosting of Buckets</span></code></span>
+<span class="codeline" id="line-127"><code>	<a href="../../../../../use/github.com/aws/aws-sdk-go/aws..Config.S3ForcePathStyle.html" class="ident">S3ForcePathStyle</a> *<a href="../../../../../pkg/builtin.html#name-bool" class="ident">bool</a></code></span>
+<span class="codeline" id="line-128"><code></code></span>
+<span class="codeline" id="line-129"><code>	<span class="comment">// Set this to `true` to disable the SDK adding the `Expect: 100-Continue`</span></code></span>
+<span class="codeline" id="line-130"><code><span class="comment">	// header to PUT requests over 2MB of content. 100-Continue instructs the</span></code></span>
+<span class="codeline" id="line-131"><code><span class="comment">	// HTTP client not to send the body until the service responds with a</span></code></span>
+<span class="codeline" id="line-132"><code><span class="comment">	// `continue` status. This is useful to prevent sending the request body</span></code></span>
+<span class="codeline" id="line-133"><code><span class="comment">	// until after the request is authenticated, and validated.</span></code></span>
+<span class="codeline" id="line-134"><code><span class="comment">	//</span></code></span>
+<span class="codeline" id="line-135"><code><span class="comment">	// http://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUT.html</span></code></span>
+<span class="codeline" id="line-136"><code><span class="comment">	//</span></code></span>
+<span class="codeline" id="line-137"><code><span class="comment">	// 100-Continue is only enabled for Go 1.6 and above. See `http.Transport`'s</span></code></span>
+<span class="codeline" id="line-138"><code><span class="comment">	// `ExpectContinueTimeout` for information on adjusting the continue wait</span></code></span>
+<span class="codeline" id="line-139"><code><span class="comment">	// timeout. https://golang.org/pkg/net/http/#Transport</span></code></span>
+<span class="codeline" id="line-140"><code><span class="comment">	//</span></code></span>
+<span class="codeline" id="line-141"><code><span class="comment">	// You should use this flag to disble 100-Continue if you experience issues</span></code></span>
+<span class="codeline" id="line-142"><code><span class="comment">	// with proxies or third party S3 compatible services.</span></code></span>
+<span class="codeline" id="line-143"><code>	<a href="../../../../../use/github.com/aws/aws-sdk-go/aws..Config.S3Disable100Continue.html" class="ident">S3Disable100Continue</a> *<a href="../../../../../pkg/builtin.html#name-bool" class="ident">bool</a></code></span>
+<span class="codeline" id="line-144"><code></code></span>
+<span class="codeline" id="line-145"><code>	<span class="comment">// Set this to `true` to enable S3 Accelerate feature. For all operations</span></code></span>
+<span class="codeline" id="line-146"><code><span class="comment">	// compatible with S3 Accelerate will use the accelerate endpoint for</span></code></span>
+<span class="codeline" id="line-147"><code><span class="comment">	// requests. Requests not compatible will fall back to normal S3 requests.</span></code></span>
+<span class="codeline" id="line-148"><code><span class="comment">	//</span></code></span>
+<span class="codeline" id="line-149"><code><span class="comment">	// The bucket must be enable for accelerate to be used with S3 client with</span></code></span>
+<span class="codeline" id="line-150"><code><span class="comment">	// accelerate enabled. If the bucket is not enabled for accelerate an error</span></code></span>
+<span class="codeline" id="line-151"><code><span class="comment">	// will be returned. The bucket name must be DNS compatible to also work</span></code></span>
+<span class="codeline" id="line-152"><code><span class="comment">	// with accelerate.</span></code></span>
+<span class="codeline" id="line-153"><code>	<a href="../../../../../use/github.com/aws/aws-sdk-go/aws..Config.S3UseAccelerate.html" class="ident">S3UseAccelerate</a> *<a href="../../../../../pkg/builtin.html#name-bool" class="ident">bool</a></code></span>
+<span class="codeline" id="line-154"><code></code></span>
+<span class="codeline" id="line-155"><code>	<span class="comment">// S3DisableContentMD5Validation config option is temporarily disabled,</span></code></span>
+<span class="codeline" id="line-156"><code><span class="comment">	// For S3 GetObject API calls, #1837.</span></code></span>
+<span class="codeline" id="line-157"><code><span class="comment">	//</span></code></span>
+<span class="codeline" id="line-158"><code><span class="comment">	// Set this to `true` to disable the S3 service client from automatically</span></code></span>
+<span class="codeline" id="line-159"><code><span class="comment">	// adding the ContentMD5 to S3 Object Put and Upload API calls. This option</span></code></span>
+<span class="codeline" id="line-160"><code><span class="comment">	// will also disable the SDK from performing object ContentMD5 validation</span></code></span>
+<span class="codeline" id="line-161"><code><span class="comment">	// on GetObject API calls.</span></code></span>
+<span class="codeline" id="line-162"><code>	<a href="../../../../../use/github.com/aws/aws-sdk-go/aws..Config.S3DisableContentMD5Validation.html" class="ident">S3DisableContentMD5Validation</a> *<a href="../../../../../pkg/builtin.html#name-bool" class="ident">bool</a></code></span>
+<span class="codeline" id="line-163"><code></code></span>
+<span class="codeline" id="line-164"><code>	<span class="comment">// Set this to `true` to have the S3 service client to use the region specified</span></code></span>
+<span class="codeline" id="line-165"><code><span class="comment">	// in the ARN, when an ARN is provided as an argument to a bucket parameter.</span></code></span>
+<span class="codeline" id="line-166"><code>	<a href="../../../../../use/github.com/aws/aws-sdk-go/aws..Config.S3UseARNRegion.html" class="ident">S3UseARNRegion</a> *<a href="../../../../../pkg/builtin.html#name-bool" class="ident">bool</a></code></span>
+<span class="codeline" id="line-167"><code></code></span>
+<span class="codeline" id="line-168"><code>	<span class="comment">// Set this to `true` to enable the SDK to unmarshal API response header maps to</span></code></span>
+<span class="codeline" id="line-169"><code><span class="comment">	// normalized lower case map keys.</span></code></span>
+<span class="codeline" id="line-170"><code><span class="comment">	//</span></code></span>
+<span class="codeline" id="line-171"><code><span class="comment">	// For example S3's X-Amz-Meta prefixed header will be unmarshaled to lower case</span></code></span>
+<span class="codeline" id="line-172"><code><span class="comment">	// Metadata member's map keys. The value of the header in the map is unaffected.</span></code></span>
+<span class="codeline" id="line-173"><code>	<a href="../../../../../use/github.com/aws/aws-sdk-go/aws..Config.LowerCaseHeaderMaps.html" class="ident">LowerCaseHeaderMaps</a> *<a href="../../../../../pkg/builtin.html#name-bool" class="ident">bool</a></code></span>
+<span class="codeline" id="line-174"><code></code></span>
+<span class="codeline" id="line-175"><code>	<span class="comment">// Set this to `true` to disable the EC2Metadata client from overriding the</span></code></span>
+<span class="codeline" id="line-176"><code><span class="comment">	// default http.Client's Timeout. This is helpful if you do not want the</span></code></span>
+<span class="codeline" id="line-177"><code><span class="comment">	// EC2Metadata client to create a new http.Client. This options is only</span></code></span>
+<span class="codeline" id="line-178"><code><span class="comment">	// meaningful if you're not already using a custom HTTP client with the</span></code></span>
+<span class="codeline" id="line-179"><code><span class="comment">	// SDK. Enabled by default.</span></code></span>
+<span class="codeline" id="line-180"><code><span class="comment">	//</span></code></span>
+<span class="codeline" id="line-181"><code><span class="comment">	// Must be set and provided to the session.NewSession() in order to disable</span></code></span>
+<span class="codeline" id="line-182"><code><span class="comment">	// the EC2Metadata overriding the timeout for default credentials chain.</span></code></span>
+<span class="codeline" id="line-183"><code><span class="comment">	//</span></code></span>
+<span class="codeline" id="line-184"><code><span class="comment">	// Example:</span></code></span>
+<span class="codeline" id="line-185"><code><span class="comment">	//    sess := session.Must(session.NewSession(aws.NewConfig()</span></code></span>
+<span class="codeline" id="line-186"><code><span class="comment">	//       .WithEC2MetadataDiableTimeoutOverride(true)))</span></code></span>
+<span class="codeline" id="line-187"><code><span class="comment">	//</span></code></span>
+<span class="codeline" id="line-188"><code><span class="comment">	//    svc := s3.New(sess)</span></code></span>
+<span class="codeline" id="line-189"><code><span class="comment">	//</span></code></span>
+<span class="codeline" id="line-190"><code>	<a href="../../../../../use/github.com/aws/aws-sdk-go/aws..Config.EC2MetadataDisableTimeoutOverride.html" class="ident">EC2MetadataDisableTimeoutOverride</a> *<a href="../../../../../pkg/builtin.html#name-bool" class="ident">bool</a></code></span>
+<span class="codeline" id="line-191"><code></code></span>
+<span class="codeline" id="line-192"><code>	<span class="comment">// Instructs the endpoint to be generated for a service client to</span></code></span>
+<span class="codeline" id="line-193"><code><span class="comment">	// be the dual stack endpoint. The dual stack endpoint will support</span></code></span>
+<span class="codeline" id="line-194"><code><span class="comment">	// both IPv4 and IPv6 addressing.</span></code></span>
+<span class="codeline" id="line-195"><code><span class="comment">	//</span></code></span>
+<span class="codeline" id="line-196"><code><span class="comment">	// Setting this for a service which does not support dual stack will fail</span></code></span>
+<span class="codeline" id="line-197"><code><span class="comment">	// to make requets. It is not recommended to set this value on the session</span></code></span>
+<span class="codeline" id="line-198"><code><span class="comment">	// as it will apply to all service clients created with the session. Even</span></code></span>
+<span class="codeline" id="line-199"><code><span class="comment">	// services which don't support dual stack endpoints.</span></code></span>
+<span class="codeline" id="line-200"><code><span class="comment">	//</span></code></span>
+<span class="codeline" id="line-201"><code><span class="comment">	// If the Endpoint config value is also provided the UseDualStack flag</span></code></span>
+<span class="codeline" id="line-202"><code><span class="comment">	// will be ignored.</span></code></span>
+<span class="codeline" id="line-203"><code><span class="comment">	//</span></code></span>
+<span class="codeline" id="line-204"><code><span class="comment">	// Only supported with.</span></code></span>
+<span class="codeline" id="line-205"><code><span class="comment">	//</span></code></span>
+<span class="codeline" id="line-206"><code><span class="comment">	//     sess := session.Must(session.NewSession())</span></code></span>
+<span class="codeline" id="line-207"><code><span class="comment">	//</span></code></span>
+<span class="codeline" id="line-208"><code><span class="comment">	//     svc := s3.New(sess, &amp;aws.Config{</span></code></span>
+<span class="codeline" id="line-209"><code><span class="comment">	//         UseDualStack: aws.Bool(true),</span></code></span>
+<span class="codeline" id="line-210"><code><span class="comment">	//     })</span></code></span>
+<span class="codeline" id="line-211"><code>	<a href="../../../../../use/github.com/aws/aws-sdk-go/aws..Config.UseDualStack.html" class="ident">UseDualStack</a> *<a href="../../../../../pkg/builtin.html#name-bool" class="ident">bool</a></code></span>
+<span class="codeline" id="line-212"><code></code></span>
+<span class="codeline" id="line-213"><code>	<span class="comment">// SleepDelay is an override for the func the SDK will call when sleeping</span></code></span>
+<span class="codeline" id="line-214"><code><span class="comment">	// during the lifecycle of a request. Specifically this will be used for</span></code></span>
+<span class="codeline" id="line-215"><code><span class="comment">	// request delays. This value should only be used for testing. To adjust</span></code></span>
+<span class="codeline" id="line-216"><code><span class="comment">	// the delay of a request see the aws/client.DefaultRetryer and</span></code></span>
+<span class="codeline" id="line-217"><code><span class="comment">	// aws/request.Retryer.</span></code></span>
+<span class="codeline" id="line-218"><code><span class="comment">	//</span></code></span>
+<span class="codeline" id="line-219"><code><span class="comment">	// SleepDelay will prevent any Context from being used for canceling retry</span></code></span>
+<span class="codeline" id="line-220"><code><span class="comment">	// delay of an API operation. It is recommended to not use SleepDelay at all</span></code></span>
+<span class="codeline" id="line-221"><code><span class="comment">	// and specify a Retryer instead.</span></code></span>
+<span class="codeline" id="line-222"><code>	<a href="../../../../../use/github.com/aws/aws-sdk-go/aws..Config.SleepDelay.html" class="ident">SleepDelay</a> <span class="keyword">func</span>(<a href="../../../../../pkg/time.html" class="ident i1">time</a>.<a href="../../../../time/time.go.html#line-590" class="ident">Duration</a>)</code></span>
+<span class="codeline" id="line-223"><code></code></span>
+<span class="codeline" id="line-224"><code>	<span class="comment">// DisableRestProtocolURICleaning will not clean the URL path when making rest protocol requests.</span></code></span>
+<span class="codeline" id="line-225"><code><span class="comment">	// Will default to false. This would only be used for empty directory names in s3 requests.</span></code></span>
+<span class="codeline" id="line-226"><code><span class="comment">	//</span></code></span>
+<span class="codeline" id="line-227"><code><span class="comment">	// Example:</span></code></span>
+<span class="codeline" id="line-228"><code><span class="comment">	//    sess := session.Must(session.NewSession(&amp;aws.Config{</span></code></span>
+<span class="codeline" id="line-229"><code><span class="comment">	//         DisableRestProtocolURICleaning: aws.Bool(true),</span></code></span>
+<span class="codeline" id="line-230"><code><span class="comment">	//    }))</span></code></span>
+<span class="codeline" id="line-231"><code><span class="comment">	//</span></code></span>
+<span class="codeline" id="line-232"><code><span class="comment">	//    svc := s3.New(sess)</span></code></span>
+<span class="codeline" id="line-233"><code><span class="comment">	//    out, err := svc.GetObject(&amp;s3.GetObjectInput {</span></code></span>
+<span class="codeline" id="line-234"><code><span class="comment">	//    	Bucket: aws.String("bucketname"),</span></code></span>
+<span class="codeline" id="line-235"><code><span class="comment">	//    	Key: aws.String("//foo//bar//moo"),</span></code></span>
+<span class="codeline" id="line-236"><code><span class="comment">	//    })</span></code></span>
+<span class="codeline" id="line-237"><code>	<a href="../../../../../use/github.com/aws/aws-sdk-go/aws..Config.DisableRestProtocolURICleaning.html" class="ident">DisableRestProtocolURICleaning</a> *<a href="../../../../../pkg/builtin.html#name-bool" class="ident">bool</a></code></span>
+<span class="codeline" id="line-238"><code></code></span>
+<span class="codeline" id="line-239"><code>	<span class="comment">// EnableEndpointDiscovery will allow for endpoint discovery on operations that</span></code></span>
+<span class="codeline" id="line-240"><code><span class="comment">	// have the definition in its model. By default, endpoint discovery is off.</span></code></span>
+<span class="codeline" id="line-241"><code><span class="comment">	//</span></code></span>
+<span class="codeline" id="line-242"><code><span class="comment">	// Example:</span></code></span>
+<span class="codeline" id="line-243"><code><span class="comment">	//    sess := session.Must(session.NewSession(&amp;aws.Config{</span></code></span>
+<span class="codeline" id="line-244"><code><span class="comment">	//         EnableEndpointDiscovery: aws.Bool(true),</span></code></span>
+<span class="codeline" id="line-245"><code><span class="comment">	//    }))</span></code></span>
+<span class="codeline" id="line-246"><code><span class="comment">	//</span></code></span>
+<span class="codeline" id="line-247"><code><span class="comment">	//    svc := s3.New(sess)</span></code></span>
+<span class="codeline" id="line-248"><code><span class="comment">	//    out, err := svc.GetObject(&amp;s3.GetObjectInput {</span></code></span>
+<span class="codeline" id="line-249"><code><span class="comment">	//    	Bucket: aws.String("bucketname"),</span></code></span>
+<span class="codeline" id="line-250"><code><span class="comment">	//    	Key: aws.String("/foo/bar/moo"),</span></code></span>
+<span class="codeline" id="line-251"><code><span class="comment">	//    })</span></code></span>
+<span class="codeline" id="line-252"><code>	<a href="../../../../../use/github.com/aws/aws-sdk-go/aws..Config.EnableEndpointDiscovery.html" class="ident">EnableEndpointDiscovery</a> *<a href="../../../../../pkg/builtin.html#name-bool" class="ident">bool</a></code></span>
+<span class="codeline" id="line-253"><code></code></span>
+<span class="codeline" id="line-254"><code>	<span class="comment">// DisableEndpointHostPrefix will disable the SDK's behavior of prefixing</span></code></span>
+<span class="codeline" id="line-255"><code><span class="comment">	// request endpoint hosts with modeled information.</span></code></span>
+<span class="codeline" id="line-256"><code><span class="comment">	//</span></code></span>
+<span class="codeline" id="line-257"><code><span class="comment">	// Disabling this feature is useful when you want to use local endpoints</span></code></span>
+<span class="codeline" id="line-258"><code><span class="comment">	// for testing that do not support the modeled host prefix pattern.</span></code></span>
+<span class="codeline" id="line-259"><code>	<a href="../../../../../use/github.com/aws/aws-sdk-go/aws..Config.DisableEndpointHostPrefix.html" class="ident">DisableEndpointHostPrefix</a> *<a href="../../../../../pkg/builtin.html#name-bool" class="ident">bool</a></code></span>
+<span class="codeline" id="line-260"><code></code></span>
+<span class="codeline" id="line-261"><code>	<span class="comment">// STSRegionalEndpoint will enable regional or legacy endpoint resolving</span></code></span>
+<span class="codeline" id="line-262"><code>	<a href="../../../../../use/github.com/aws/aws-sdk-go/aws..Config.STSRegionalEndpoint.html" class="ident">STSRegionalEndpoint</a> <a href="../../../../../pkg/github.com/aws/aws-sdk-go/aws/endpoints.html" class="ident i3">endpoints</a>.<a href="endpoints/endpoints.go.html#line-60" class="ident">STSRegionalEndpoint</a></code></span>
+<span class="codeline" id="line-263"><code></code></span>
+<span class="codeline" id="line-264"><code>	<span class="comment">// S3UsEast1RegionalEndpoint will enable regional or legacy endpoint resolving</span></code></span>
+<span class="codeline" id="line-265"><code>	<a href="../../../../../use/github.com/aws/aws-sdk-go/aws..Config.S3UsEast1RegionalEndpoint.html" class="ident">S3UsEast1RegionalEndpoint</a> <a href="../../../../../pkg/github.com/aws/aws-sdk-go/aws/endpoints.html" class="ident i3">endpoints</a>.<a href="endpoints/endpoints.go.html#line-107" class="ident">S3UsEast1RegionalEndpoint</a></code></span>
+<span class="codeline" id="line-266"><code>}</code></span>
+<span class="codeline" id="line-267"><code></code></span>
+<span class="codeline" id="line-268"><code><span class="comment">// NewConfig returns a new Config pointer that can be chained with builder</span></code></span>
+<span class="codeline" id="line-269"><code><span class="comment">// methods to set multiple configuration values inline without using pointers.</span></code></span>
+<span class="codeline" id="line-270"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-271"><code><span class="comment">//     // Create Session with MaxRetries configuration to be shared by multiple</span></code></span>
+<span class="codeline" id="line-272"><code><span class="comment">//     // service clients.</span></code></span>
+<span class="codeline" id="line-273"><code><span class="comment">//     sess := session.Must(session.NewSession(aws.NewConfig().</span></code></span>
+<span class="codeline" id="line-274"><code><span class="comment">//         WithMaxRetries(3),</span></code></span>
+<span class="codeline" id="line-275"><code><span class="comment">//     ))</span></code></span>
+<span class="codeline" id="line-276"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-277"><code><span class="comment">//     // Create S3 service client with a specific Region.</span></code></span>
+<span class="codeline" id="line-278"><code><span class="comment">//     svc := s3.New(sess, aws.NewConfig().</span></code></span>
+<span class="codeline" id="line-279"><code><span class="comment">//         WithRegion("us-west-2"),</span></code></span>
+<span class="codeline" id="line-280"><code><span class="comment">//     )</span></code></span>
+<span class="codeline" id="line-281"><code><span class="keyword">func</span> <label for="r0" class="ident"><a href="../../../../../pkg/github.com/aws/aws-sdk-go/aws.html#name-NewConfig" class="ident">NewConfig</a></label>() *<a href="#line-33" class="ident">Config</a> {</code></span>
+<span class="codeline" id="line-282"><code>	<span class="keyword">return</span> &amp;<a href="#line-33" class="ident">Config</a>{}</code></span>
+<span class="codeline" id="line-283"><code>}</code></span>
+<span class="codeline" id="line-284"><code></code></span>
+<span class="codeline" id="line-285"><code><span class="comment">// WithCredentialsChainVerboseErrors sets a config verbose errors boolean and returning</span></code></span>
+<span class="codeline" id="line-286"><code><span class="comment">// a Config pointer.</span></code></span>
+<span class="codeline" id="line-287"><code><span class="keyword">func</span> (<label for="r1" class="ident">c</label> *<a href="#line-33" class="ident">Config</a>) <label for="r2" class="ident"><a href="../../../../../use/github.com/aws/aws-sdk-go/aws..Config.WithCredentialsChainVerboseErrors.html" class="ident">WithCredentialsChainVerboseErrors</a></label>(<label for="r3" class="ident">verboseErrs</label> <a href="../../../../../pkg/builtin.html#name-bool" class="ident">bool</a>) *<a href="#line-33" class="ident">Config</a> {</code></span>
+<span class="codeline" id="line-288"><code>	<label for="r1" class="ident">c</label>.<a href="#line-37" class="ident">CredentialsChainVerboseErrors</a> = &amp;<label for="r3" class="ident">verboseErrs</label></code></span>
+<span class="codeline" id="line-289"><code>	<span class="keyword">return</span> <label for="r1" class="ident">c</label></code></span>
+<span class="codeline" id="line-290"><code>}</code></span>
+<span class="codeline" id="line-291"><code></code></span>
+<span class="codeline" id="line-292"><code><span class="comment">// WithCredentials sets a config Credentials value returning a Config pointer</span></code></span>
+<span class="codeline" id="line-293"><code><span class="comment">// for chaining.</span></code></span>
+<span class="codeline" id="line-294"><code><span class="keyword">func</span> (<label for="r4" class="ident">c</label> *<a href="#line-33" class="ident">Config</a>) <label for="r5" class="ident"><a href="../../../../../use/github.com/aws/aws-sdk-go/aws..Config.WithCredentials.html" class="ident">WithCredentials</a></label>(<label for="r6" class="ident">creds</label> *<a href="../../../../../pkg/github.com/aws/aws-sdk-go/aws/credentials.html" class="ident i2">credentials</a>.<a href="credentials/credentials.go.html#line-207" class="ident">Credentials</a>) *<a href="#line-33" class="ident">Config</a> {</code></span>
+<span class="codeline" id="line-295"><code>	<label for="r4" class="ident">c</label>.<a href="#line-42" class="ident">Credentials</a> = <label for="r6" class="ident">creds</label></code></span>
+<span class="codeline" id="line-296"><code>	<span class="keyword">return</span> <label for="r4" class="ident">c</label></code></span>
+<span class="codeline" id="line-297"><code>}</code></span>
+<span class="codeline" id="line-298"><code></code></span>
+<span class="codeline" id="line-299"><code><span class="comment">// WithEndpoint sets a config Endpoint value returning a Config pointer for</span></code></span>
+<span class="codeline" id="line-300"><code><span class="comment">// chaining.</span></code></span>
+<span class="codeline" id="line-301"><code><span class="keyword">func</span> (<label for="r7" class="ident">c</label> *<a href="#line-33" class="ident">Config</a>) <label for="r8" class="ident"><a href="../../../../../use/github.com/aws/aws-sdk-go/aws..Config.WithEndpoint.html" class="ident">WithEndpoint</a></label>(<label for="r9" class="ident">endpoint</label> <a href="../../../../../pkg/builtin.html#name-string" class="ident">string</a>) *<a href="#line-33" class="ident">Config</a> {</code></span>
+<span class="codeline" id="line-302"><code>	<label for="r7" class="ident">c</label>.<a href="#line-50" class="ident">Endpoint</a> = &amp;<label for="r9" class="ident">endpoint</label></code></span>
+<span class="codeline" id="line-303"><code>	<span class="keyword">return</span> <label for="r7" class="ident">c</label></code></span>
+<span class="codeline" id="line-304"><code>}</code></span>
+<span class="codeline" id="line-305"><code></code></span>
+<span class="codeline" id="line-306"><code><span class="comment">// WithEndpointResolver sets a config EndpointResolver value returning a</span></code></span>
+<span class="codeline" id="line-307"><code><span class="comment">// Config pointer for chaining.</span></code></span>
+<span class="codeline" id="line-308"><code><span class="keyword">func</span> (<label for="r10" class="ident">c</label> *<a href="#line-33" class="ident">Config</a>) <label for="r11" class="ident"><a href="../../../../../use/github.com/aws/aws-sdk-go/aws..Config.WithEndpointResolver.html" class="ident">WithEndpointResolver</a></label>(<label for="r12" class="ident">resolver</label> <a href="../../../../../pkg/github.com/aws/aws-sdk-go/aws/endpoints.html" class="ident i3">endpoints</a>.<a href="endpoints/endpoints.go.html#line-193" class="ident">Resolver</a>) *<a href="#line-33" class="ident">Config</a> {</code></span>
+<span class="codeline" id="line-309"><code>	<label for="r10" class="ident">c</label>.<a href="#line-54" class="ident">EndpointResolver</a> = <label for="r12" class="ident">resolver</label></code></span>
+<span class="codeline" id="line-310"><code>	<span class="keyword">return</span> <label for="r10" class="ident">c</label></code></span>
+<span class="codeline" id="line-311"><code>}</code></span>
+<span class="codeline" id="line-312"><code></code></span>
+<span class="codeline" id="line-313"><code><span class="comment">// WithRegion sets a config Region value returning a Config pointer for</span></code></span>
+<span class="codeline" id="line-314"><code><span class="comment">// chaining.</span></code></span>
+<span class="codeline" id="line-315"><code><span class="keyword">func</span> (<label for="r13" class="ident">c</label> *<a href="#line-33" class="ident">Config</a>) <label for="r14" class="ident"><a href="../../../../../use/github.com/aws/aws-sdk-go/aws..Config.WithRegion.html" class="ident">WithRegion</a></label>(<label for="r15" class="ident">region</label> <a href="../../../../../pkg/builtin.html#name-string" class="ident">string</a>) *<a href="#line-33" class="ident">Config</a> {</code></span>
+<span class="codeline" id="line-316"><code>	<label for="r13" class="ident">c</label>.<a href="#line-70" class="ident">Region</a> = &amp;<label for="r15" class="ident">region</label></code></span>
+<span class="codeline" id="line-317"><code>	<span class="keyword">return</span> <label for="r13" class="ident">c</label></code></span>
+<span class="codeline" id="line-318"><code>}</code></span>
+<span class="codeline" id="line-319"><code></code></span>
+<span class="codeline" id="line-320"><code><span class="comment">// WithDisableSSL sets a config DisableSSL value returning a Config pointer</span></code></span>
+<span class="codeline" id="line-321"><code><span class="comment">// for chaining.</span></code></span>
+<span class="codeline" id="line-322"><code><span class="keyword">func</span> (<label for="r16" class="ident">c</label> *<a href="#line-33" class="ident">Config</a>) <label for="r17" class="ident"><a href="../../../../../use/github.com/aws/aws-sdk-go/aws..Config.WithDisableSSL.html" class="ident">WithDisableSSL</a></label>(<label for="r18" class="ident">disable</label> <a href="../../../../../pkg/builtin.html#name-bool" class="ident">bool</a>) *<a href="#line-33" class="ident">Config</a> {</code></span>
+<span class="codeline" id="line-323"><code>	<label for="r16" class="ident">c</label>.<a href="#line-74" class="ident">DisableSSL</a> = &amp;<label for="r18" class="ident">disable</label></code></span>
+<span class="codeline" id="line-324"><code>	<span class="keyword">return</span> <label for="r16" class="ident">c</label></code></span>
+<span class="codeline" id="line-325"><code>}</code></span>
+<span class="codeline" id="line-326"><code></code></span>
+<span class="codeline" id="line-327"><code><span class="comment">// WithHTTPClient sets a config HTTPClient value returning a Config pointer</span></code></span>
+<span class="codeline" id="line-328"><code><span class="comment">// for chaining.</span></code></span>
+<span class="codeline" id="line-329"><code><span class="keyword">func</span> (<label for="r19" class="ident">c</label> *<a href="#line-33" class="ident">Config</a>) <label for="r20" class="ident"><a href="../../../../../use/github.com/aws/aws-sdk-go/aws..Config.WithHTTPClient.html" class="ident">WithHTTPClient</a></label>(<label for="r21" class="ident">client</label> *<a href="../../../../../pkg/net/http.html" class="ident i0">http</a>.<a href="../../../../net/http/client.go.html#line-58" class="ident">Client</a>) *<a href="#line-33" class="ident">Config</a> {</code></span>
+<span class="codeline" id="line-330"><code>	<label for="r19" class="ident">c</label>.<a href="#line-78" class="ident">HTTPClient</a> = <label for="r21" class="ident">client</label></code></span>
+<span class="codeline" id="line-331"><code>	<span class="keyword">return</span> <label for="r19" class="ident">c</label></code></span>
+<span class="codeline" id="line-332"><code>}</code></span>
+<span class="codeline" id="line-333"><code></code></span>
+<span class="codeline" id="line-334"><code><span class="comment">// WithMaxRetries sets a config MaxRetries value returning a Config pointer</span></code></span>
+<span class="codeline" id="line-335"><code><span class="comment">// for chaining.</span></code></span>
+<span class="codeline" id="line-336"><code><span class="keyword">func</span> (<label for="r22" class="ident">c</label> *<a href="#line-33" class="ident">Config</a>) <label for="r23" class="ident"><a href="../../../../../use/github.com/aws/aws-sdk-go/aws..Config.WithMaxRetries.html" class="ident">WithMaxRetries</a></label>(<label for="r24" class="ident">max</label> <a href="../../../../../pkg/builtin.html#name-int" class="ident">int</a>) *<a href="#line-33" class="ident">Config</a> {</code></span>
+<span class="codeline" id="line-337"><code>	<label for="r22" class="ident">c</label>.<a href="#line-92" class="ident">MaxRetries</a> = &amp;<label for="r24" class="ident">max</label></code></span>
+<span class="codeline" id="line-338"><code>	<span class="keyword">return</span> <label for="r22" class="ident">c</label></code></span>
+<span class="codeline" id="line-339"><code>}</code></span>
+<span class="codeline" id="line-340"><code></code></span>
+<span class="codeline" id="line-341"><code><span class="comment">// WithDisableParamValidation sets a config DisableParamValidation value</span></code></span>
+<span class="codeline" id="line-342"><code><span class="comment">// returning a Config pointer for chaining.</span></code></span>
+<span class="codeline" id="line-343"><code><span class="keyword">func</span> (<label for="r25" class="ident">c</label> *<a href="#line-33" class="ident">Config</a>) <label for="r26" class="ident"><a href="../../../../../use/github.com/aws/aws-sdk-go/aws..Config.WithDisableParamValidation.html" class="ident">WithDisableParamValidation</a></label>(<label for="r27" class="ident">disable</label> <a href="../../../../../pkg/builtin.html#name-bool" class="ident">bool</a>) *<a href="#line-33" class="ident">Config</a> {</code></span>
+<span class="codeline" id="line-344"><code>	<label for="r25" class="ident">c</label>.<a href="#line-112" class="ident">DisableParamValidation</a> = &amp;<label for="r27" class="ident">disable</label></code></span>
+<span class="codeline" id="line-345"><code>	<span class="keyword">return</span> <label for="r25" class="ident">c</label></code></span>
+<span class="codeline" id="line-346"><code>}</code></span>
+<span class="codeline" id="line-347"><code></code></span>
+<span class="codeline" id="line-348"><code><span class="comment">// WithDisableComputeChecksums sets a config DisableComputeChecksums value</span></code></span>
+<span class="codeline" id="line-349"><code><span class="comment">// returning a Config pointer for chaining.</span></code></span>
+<span class="codeline" id="line-350"><code><span class="keyword">func</span> (<label for="r28" class="ident">c</label> *<a href="#line-33" class="ident">Config</a>) <label for="r29" class="ident"><a href="../../../../../use/github.com/aws/aws-sdk-go/aws..Config.WithDisableComputeChecksums.html" class="ident">WithDisableComputeChecksums</a></label>(<label for="r30" class="ident">disable</label> <a href="../../../../../pkg/builtin.html#name-bool" class="ident">bool</a>) *<a href="#line-33" class="ident">Config</a> {</code></span>
+<span class="codeline" id="line-351"><code>	<label for="r28" class="ident">c</label>.<a href="#line-116" class="ident">DisableComputeChecksums</a> = &amp;<label for="r30" class="ident">disable</label></code></span>
+<span class="codeline" id="line-352"><code>	<span class="keyword">return</span> <label for="r28" class="ident">c</label></code></span>
+<span class="codeline" id="line-353"><code>}</code></span>
+<span class="codeline" id="line-354"><code></code></span>
+<span class="codeline" id="line-355"><code><span class="comment">// WithLogLevel sets a config LogLevel value returning a Config pointer for</span></code></span>
+<span class="codeline" id="line-356"><code><span class="comment">// chaining.</span></code></span>
+<span class="codeline" id="line-357"><code><span class="keyword">func</span> (<label for="r31" class="ident">c</label> *<a href="#line-33" class="ident">Config</a>) <label for="r32" class="ident"><a href="../../../../../use/github.com/aws/aws-sdk-go/aws..Config.WithLogLevel.html" class="ident">WithLogLevel</a></label>(<label for="r33" class="ident">level</label> <a href="logger.go.html#line-10" class="ident">LogLevelType</a>) *<a href="#line-33" class="ident">Config</a> {</code></span>
+<span class="codeline" id="line-358"><code>	<label for="r31" class="ident">c</label>.<a href="#line-83" class="ident">LogLevel</a> = &amp;<label for="r33" class="ident">level</label></code></span>
+<span class="codeline" id="line-359"><code>	<span class="keyword">return</span> <label for="r31" class="ident">c</label></code></span>
+<span class="codeline" id="line-360"><code>}</code></span>
+<span class="codeline" id="line-361"><code></code></span>
+<span class="codeline" id="line-362"><code><span class="comment">// WithLogger sets a config Logger value returning a Config pointer for</span></code></span>
+<span class="codeline" id="line-363"><code><span class="comment">// chaining.</span></code></span>
+<span class="codeline" id="line-364"><code><span class="keyword">func</span> (<label for="r34" class="ident">c</label> *<a href="#line-33" class="ident">Config</a>) <label for="r35" class="ident"><a href="../../../../../use/github.com/aws/aws-sdk-go/aws..Config.WithLogger.html" class="ident">WithLogger</a></label>(<label for="r36" class="ident">logger</label> <a href="logger.go.html#line-84" class="ident">Logger</a>) *<a href="#line-33" class="ident">Config</a> {</code></span>
+<span class="codeline" id="line-365"><code>	<label for="r34" class="ident">c</label>.<a href="#line-87" class="ident">Logger</a> = <label for="r36" class="ident">logger</label></code></span>
+<span class="codeline" id="line-366"><code>	<span class="keyword">return</span> <label for="r34" class="ident">c</label></code></span>
+<span class="codeline" id="line-367"><code>}</code></span>
+<span class="codeline" id="line-368"><code></code></span>
+<span class="codeline" id="line-369"><code><span class="comment">// WithS3ForcePathStyle sets a config S3ForcePathStyle value returning a Config</span></code></span>
+<span class="codeline" id="line-370"><code><span class="comment">// pointer for chaining.</span></code></span>
+<span class="codeline" id="line-371"><code><span class="keyword">func</span> (<label for="r37" class="ident">c</label> *<a href="#line-33" class="ident">Config</a>) <label for="r38" class="ident"><a href="../../../../../use/github.com/aws/aws-sdk-go/aws..Config.WithS3ForcePathStyle.html" class="ident">WithS3ForcePathStyle</a></label>(<label for="r39" class="ident">force</label> <a href="../../../../../pkg/builtin.html#name-bool" class="ident">bool</a>) *<a href="#line-33" class="ident">Config</a> {</code></span>
+<span class="codeline" id="line-372"><code>	<label for="r37" class="ident">c</label>.<a href="#line-127" class="ident">S3ForcePathStyle</a> = &amp;<label for="r39" class="ident">force</label></code></span>
+<span class="codeline" id="line-373"><code>	<span class="keyword">return</span> <label for="r37" class="ident">c</label></code></span>
+<span class="codeline" id="line-374"><code>}</code></span>
+<span class="codeline" id="line-375"><code></code></span>
+<span class="codeline" id="line-376"><code><span class="comment">// WithS3Disable100Continue sets a config S3Disable100Continue value returning</span></code></span>
+<span class="codeline" id="line-377"><code><span class="comment">// a Config pointer for chaining.</span></code></span>
+<span class="codeline" id="line-378"><code><span class="keyword">func</span> (<label for="r40" class="ident">c</label> *<a href="#line-33" class="ident">Config</a>) <label for="r41" class="ident"><a href="../../../../../use/github.com/aws/aws-sdk-go/aws..Config.WithS3Disable100Continue.html" class="ident">WithS3Disable100Continue</a></label>(<label for="r42" class="ident">disable</label> <a href="../../../../../pkg/builtin.html#name-bool" class="ident">bool</a>) *<a href="#line-33" class="ident">Config</a> {</code></span>
+<span class="codeline" id="line-379"><code>	<label for="r40" class="ident">c</label>.<a href="#line-143" class="ident">S3Disable100Continue</a> = &amp;<label for="r42" class="ident">disable</label></code></span>
+<span class="codeline" id="line-380"><code>	<span class="keyword">return</span> <label for="r40" class="ident">c</label></code></span>
+<span class="codeline" id="line-381"><code>}</code></span>
+<span class="codeline" id="line-382"><code></code></span>
+<span class="codeline" id="line-383"><code><span class="comment">// WithS3UseAccelerate sets a config S3UseAccelerate value returning a Config</span></code></span>
+<span class="codeline" id="line-384"><code><span class="comment">// pointer for chaining.</span></code></span>
+<span class="codeline" id="line-385"><code><span class="keyword">func</span> (<label for="r43" class="ident">c</label> *<a href="#line-33" class="ident">Config</a>) <label for="r44" class="ident"><a href="../../../../../use/github.com/aws/aws-sdk-go/aws..Config.WithS3UseAccelerate.html" class="ident">WithS3UseAccelerate</a></label>(<label for="r45" class="ident">enable</label> <a href="../../../../../pkg/builtin.html#name-bool" class="ident">bool</a>) *<a href="#line-33" class="ident">Config</a> {</code></span>
+<span class="codeline" id="line-386"><code>	<label for="r43" class="ident">c</label>.<a href="#line-153" class="ident">S3UseAccelerate</a> = &amp;<label for="r45" class="ident">enable</label></code></span>
+<span class="codeline" id="line-387"><code>	<span class="keyword">return</span> <label for="r43" class="ident">c</label></code></span>
+<span class="codeline" id="line-388"><code></code></span>
+<span class="codeline" id="line-389"><code>}</code></span>
+<span class="codeline" id="line-390"><code></code></span>
+<span class="codeline" id="line-391"><code><span class="comment">// WithS3DisableContentMD5Validation sets a config</span></code></span>
+<span class="codeline" id="line-392"><code><span class="comment">// S3DisableContentMD5Validation value returning a Config pointer for chaining.</span></code></span>
+<span class="codeline" id="line-393"><code><span class="keyword">func</span> (<label for="r46" class="ident">c</label> *<a href="#line-33" class="ident">Config</a>) <label for="r47" class="ident"><a href="../../../../../use/github.com/aws/aws-sdk-go/aws..Config.WithS3DisableContentMD5Validation.html" class="ident">WithS3DisableContentMD5Validation</a></label>(<label for="r48" class="ident">enable</label> <a href="../../../../../pkg/builtin.html#name-bool" class="ident">bool</a>) *<a href="#line-33" class="ident">Config</a> {</code></span>
+<span class="codeline" id="line-394"><code>	<label for="r46" class="ident">c</label>.<a href="#line-162" class="ident">S3DisableContentMD5Validation</a> = &amp;<label for="r48" class="ident">enable</label></code></span>
+<span class="codeline" id="line-395"><code>	<span class="keyword">return</span> <label for="r46" class="ident">c</label></code></span>
+<span class="codeline" id="line-396"><code></code></span>
+<span class="codeline" id="line-397"><code>}</code></span>
+<span class="codeline" id="line-398"><code></code></span>
+<span class="codeline" id="line-399"><code><span class="comment">// WithS3UseARNRegion sets a config S3UseARNRegion value and</span></code></span>
+<span class="codeline" id="line-400"><code><span class="comment">// returning a Config pointer for chaining</span></code></span>
+<span class="codeline" id="line-401"><code><span class="keyword">func</span> (<label for="r49" class="ident">c</label> *<a href="#line-33" class="ident">Config</a>) <label for="r50" class="ident"><a href="../../../../../use/github.com/aws/aws-sdk-go/aws..Config.WithS3UseARNRegion.html" class="ident">WithS3UseARNRegion</a></label>(<label for="r51" class="ident">enable</label> <a href="../../../../../pkg/builtin.html#name-bool" class="ident">bool</a>) *<a href="#line-33" class="ident">Config</a> {</code></span>
+<span class="codeline" id="line-402"><code>	<label for="r49" class="ident">c</label>.<a href="#line-166" class="ident">S3UseARNRegion</a> = &amp;<label for="r51" class="ident">enable</label></code></span>
+<span class="codeline" id="line-403"><code>	<span class="keyword">return</span> <label for="r49" class="ident">c</label></code></span>
+<span class="codeline" id="line-404"><code>}</code></span>
+<span class="codeline" id="line-405"><code></code></span>
+<span class="codeline" id="line-406"><code><span class="comment">// WithUseDualStack sets a config UseDualStack value returning a Config</span></code></span>
+<span class="codeline" id="line-407"><code><span class="comment">// pointer for chaining.</span></code></span>
+<span class="codeline" id="line-408"><code><span class="keyword">func</span> (<label for="r52" class="ident">c</label> *<a href="#line-33" class="ident">Config</a>) <label for="r53" class="ident"><a href="../../../../../use/github.com/aws/aws-sdk-go/aws..Config.WithUseDualStack.html" class="ident">WithUseDualStack</a></label>(<label for="r54" class="ident">enable</label> <a href="../../../../../pkg/builtin.html#name-bool" class="ident">bool</a>) *<a href="#line-33" class="ident">Config</a> {</code></span>
+<span class="codeline" id="line-409"><code>	<label for="r52" class="ident">c</label>.<a href="#line-211" class="ident">UseDualStack</a> = &amp;<label for="r54" class="ident">enable</label></code></span>
+<span class="codeline" id="line-410"><code>	<span class="keyword">return</span> <label for="r52" class="ident">c</label></code></span>
+<span class="codeline" id="line-411"><code>}</code></span>
+<span class="codeline" id="line-412"><code></code></span>
+<span class="codeline" id="line-413"><code><span class="comment">// WithEC2MetadataDisableTimeoutOverride sets a config EC2MetadataDisableTimeoutOverride value</span></code></span>
+<span class="codeline" id="line-414"><code><span class="comment">// returning a Config pointer for chaining.</span></code></span>
+<span class="codeline" id="line-415"><code><span class="keyword">func</span> (<label for="r55" class="ident">c</label> *<a href="#line-33" class="ident">Config</a>) <label for="r56" class="ident"><a href="../../../../../use/github.com/aws/aws-sdk-go/aws..Config.WithEC2MetadataDisableTimeoutOverride.html" class="ident">WithEC2MetadataDisableTimeoutOverride</a></label>(<label for="r57" class="ident">enable</label> <a href="../../../../../pkg/builtin.html#name-bool" class="ident">bool</a>) *<a href="#line-33" class="ident">Config</a> {</code></span>
+<span class="codeline" id="line-416"><code>	<label for="r55" class="ident">c</label>.<a href="#line-190" class="ident">EC2MetadataDisableTimeoutOverride</a> = &amp;<label for="r57" class="ident">enable</label></code></span>
+<span class="codeline" id="line-417"><code>	<span class="keyword">return</span> <label for="r55" class="ident">c</label></code></span>
+<span class="codeline" id="line-418"><code>}</code></span>
+<span class="codeline" id="line-419"><code></code></span>
+<span class="codeline" id="line-420"><code><span class="comment">// WithSleepDelay overrides the function used to sleep while waiting for the</span></code></span>
+<span class="codeline" id="line-421"><code><span class="comment">// next retry. Defaults to time.Sleep.</span></code></span>
+<span class="codeline" id="line-422"><code><span class="keyword">func</span> (<label for="r58" class="ident">c</label> *<a href="#line-33" class="ident">Config</a>) <label for="r59" class="ident"><a href="../../../../../use/github.com/aws/aws-sdk-go/aws..Config.WithSleepDelay.html" class="ident">WithSleepDelay</a></label>(<label for="r60" class="ident">fn</label> <span class="keyword">func</span>(<a href="../../../../../pkg/time.html" class="ident i1">time</a>.<a href="../../../../time/time.go.html#line-590" class="ident">Duration</a>)) *<a href="#line-33" class="ident">Config</a> {</code></span>
+<span class="codeline" id="line-423"><code>	<label for="r58" class="ident">c</label>.<a href="#line-222" class="ident">SleepDelay</a> = <label for="r60" class="ident">fn</label></code></span>
+<span class="codeline" id="line-424"><code>	<span class="keyword">return</span> <label for="r58" class="ident">c</label></code></span>
+<span class="codeline" id="line-425"><code>}</code></span>
+<span class="codeline" id="line-426"><code></code></span>
+<span class="codeline" id="line-427"><code><span class="comment">// WithEndpointDiscovery will set whether or not to use endpoint discovery.</span></code></span>
+<span class="codeline" id="line-428"><code><span class="keyword">func</span> (<label for="r61" class="ident">c</label> *<a href="#line-33" class="ident">Config</a>) <label for="r62" class="ident"><a href="../../../../../use/github.com/aws/aws-sdk-go/aws..Config.WithEndpointDiscovery.html" class="ident">WithEndpointDiscovery</a></label>(<label for="r63" class="ident">t</label> <a href="../../../../../pkg/builtin.html#name-bool" class="ident">bool</a>) *<a href="#line-33" class="ident">Config</a> {</code></span>
+<span class="codeline" id="line-429"><code>	<label for="r61" class="ident">c</label>.<a href="#line-252" class="ident">EnableEndpointDiscovery</a> = &amp;<label for="r63" class="ident">t</label></code></span>
+<span class="codeline" id="line-430"><code>	<span class="keyword">return</span> <label for="r61" class="ident">c</label></code></span>
+<span class="codeline" id="line-431"><code>}</code></span>
+<span class="codeline" id="line-432"><code></code></span>
+<span class="codeline" id="line-433"><code><span class="comment">// WithDisableEndpointHostPrefix will set whether or not to use modeled host prefix</span></code></span>
+<span class="codeline" id="line-434"><code><span class="comment">// when making requests.</span></code></span>
+<span class="codeline" id="line-435"><code><span class="keyword">func</span> (<label for="r64" class="ident">c</label> *<a href="#line-33" class="ident">Config</a>) <label for="r65" class="ident"><a href="../../../../../use/github.com/aws/aws-sdk-go/aws..Config.WithDisableEndpointHostPrefix.html" class="ident">WithDisableEndpointHostPrefix</a></label>(<label for="r66" class="ident">t</label> <a href="../../../../../pkg/builtin.html#name-bool" class="ident">bool</a>) *<a href="#line-33" class="ident">Config</a> {</code></span>
+<span class="codeline" id="line-436"><code>	<label for="r64" class="ident">c</label>.<a href="#line-259" class="ident">DisableEndpointHostPrefix</a> = &amp;<label for="r66" class="ident">t</label></code></span>
+<span class="codeline" id="line-437"><code>	<span class="keyword">return</span> <label for="r64" class="ident">c</label></code></span>
+<span class="codeline" id="line-438"><code>}</code></span>
+<span class="codeline" id="line-439"><code></code></span>
+<span class="codeline" id="line-440"><code><span class="comment">// MergeIn merges the passed in configs into the existing config object.</span></code></span>
+<span class="codeline" id="line-441"><code><span class="keyword">func</span> (<label for="r67" class="ident">c</label> *<a href="#line-33" class="ident">Config</a>) <label for="r68" class="ident"><a href="../../../../../use/github.com/aws/aws-sdk-go/aws..Config.MergeIn.html" class="ident">MergeIn</a></label>(<label for="r69" class="ident">cfgs</label> ...*<a href="#line-33" class="ident">Config</a>) {</code></span>
+<span class="codeline" id="line-442"><code>	<span class="keyword">for</span> <label for="r70" class="ident">_</label>, <label for="r71" class="ident">other</label> := <span class="keyword">range</span> <label for="r69" class="ident">cfgs</label> {</code></span>
+<span class="codeline" id="line-443"><code>		<a href="#line-461" class="ident">mergeInConfig</a>(<label for="r67" class="ident">c</label>, <label for="r71" class="ident">other</label>)</code></span>
+<span class="codeline" id="line-444"><code>	}</code></span>
+<span class="codeline" id="line-445"><code>}</code></span>
+<span class="codeline" id="line-446"><code></code></span>
+<span class="codeline" id="line-447"><code><span class="comment">// WithSTSRegionalEndpoint will set whether or not to use regional endpoint flag</span></code></span>
+<span class="codeline" id="line-448"><code><span class="comment">// when resolving the endpoint for a service</span></code></span>
+<span class="codeline" id="line-449"><code><span class="keyword">func</span> (<label for="r72" class="ident">c</label> *<a href="#line-33" class="ident">Config</a>) <label for="r73" class="ident"><a href="../../../../../use/github.com/aws/aws-sdk-go/aws..Config.WithSTSRegionalEndpoint.html" class="ident">WithSTSRegionalEndpoint</a></label>(<label for="r74" class="ident">sre</label> <a href="../../../../../pkg/github.com/aws/aws-sdk-go/aws/endpoints.html" class="ident i3">endpoints</a>.<a href="endpoints/endpoints.go.html#line-60" class="ident">STSRegionalEndpoint</a>) *<a href="#line-33" class="ident">Config</a> {</code></span>
+<span class="codeline" id="line-450"><code>	<label for="r72" class="ident">c</label>.<a href="#line-262" class="ident">STSRegionalEndpoint</a> = <label for="r74" class="ident">sre</label></code></span>
+<span class="codeline" id="line-451"><code>	<span class="keyword">return</span> <label for="r72" class="ident">c</label></code></span>
+<span class="codeline" id="line-452"><code>}</code></span>
+<span class="codeline" id="line-453"><code></code></span>
+<span class="codeline" id="line-454"><code><span class="comment">// WithS3UsEast1RegionalEndpoint will set whether or not to use regional endpoint flag</span></code></span>
+<span class="codeline" id="line-455"><code><span class="comment">// when resolving the endpoint for a service</span></code></span>
+<span class="codeline" id="line-456"><code><span class="keyword">func</span> (<label for="r75" class="ident">c</label> *<a href="#line-33" class="ident">Config</a>) <label for="r76" class="ident"><a href="../../../../../use/github.com/aws/aws-sdk-go/aws..Config.WithS3UsEast1RegionalEndpoint.html" class="ident">WithS3UsEast1RegionalEndpoint</a></label>(<label for="r77" class="ident">sre</label> <a href="../../../../../pkg/github.com/aws/aws-sdk-go/aws/endpoints.html" class="ident i3">endpoints</a>.<a href="endpoints/endpoints.go.html#line-107" class="ident">S3UsEast1RegionalEndpoint</a>) *<a href="#line-33" class="ident">Config</a> {</code></span>
+<span class="codeline" id="line-457"><code>	<label for="r75" class="ident">c</label>.<a href="#line-265" class="ident">S3UsEast1RegionalEndpoint</a> = <label for="r77" class="ident">sre</label></code></span>
+<span class="codeline" id="line-458"><code>	<span class="keyword">return</span> <label for="r75" class="ident">c</label></code></span>
+<span class="codeline" id="line-459"><code>}</code></span>
+<span class="codeline" id="line-460"><code></code></span>
+<span class="codeline" id="line-461"><code><span class="keyword">func</span> <label for="r78" class="ident"><a href="../../../../../pkg/github.com/aws/aws-sdk-go/aws.html#name-mergeInConfig" class="ident">mergeInConfig</a></label>(<label for="r79" class="ident">dst</label> *<a href="#line-33" class="ident">Config</a>, <label for="r80" class="ident">other</label> *<a href="#line-33" class="ident">Config</a>) {</code></span>
+<span class="codeline" id="line-462"><code>	<span class="keyword">if</span> <label for="r80" class="ident">other</label> == <a href="../../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-463"><code>		<span class="keyword">return</span></code></span>
+<span class="codeline" id="line-464"><code>	}</code></span>
+<span class="codeline" id="line-465"><code></code></span>
+<span class="codeline" id="line-466"><code>	<span class="keyword">if</span> <label for="r80" class="ident">other</label>.<a href="#line-37" class="ident">CredentialsChainVerboseErrors</a> != <a href="../../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-467"><code>		<label for="r79" class="ident">dst</label>.<a href="#line-37" class="ident">CredentialsChainVerboseErrors</a> = <label for="r80" class="ident">other</label>.<a href="#line-37" class="ident">CredentialsChainVerboseErrors</a></code></span>
+<span class="codeline" id="line-468"><code>	}</code></span>
+<span class="codeline" id="line-469"><code></code></span>
+<span class="codeline" id="line-470"><code>	<span class="keyword">if</span> <label for="r80" class="ident">other</label>.<a href="#line-42" class="ident">Credentials</a> != <a href="../../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-471"><code>		<label for="r79" class="ident">dst</label>.<a href="#line-42" class="ident">Credentials</a> = <label for="r80" class="ident">other</label>.<a href="#line-42" class="ident">Credentials</a></code></span>
+<span class="codeline" id="line-472"><code>	}</code></span>
+<span class="codeline" id="line-473"><code></code></span>
+<span class="codeline" id="line-474"><code>	<span class="keyword">if</span> <label for="r80" class="ident">other</label>.<a href="#line-50" class="ident">Endpoint</a> != <a href="../../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-475"><code>		<label for="r79" class="ident">dst</label>.<a href="#line-50" class="ident">Endpoint</a> = <label for="r80" class="ident">other</label>.<a href="#line-50" class="ident">Endpoint</a></code></span>
+<span class="codeline" id="line-476"><code>	}</code></span>
+<span class="codeline" id="line-477"><code></code></span>
+<span class="codeline" id="line-478"><code>	<span class="keyword">if</span> <label for="r80" class="ident">other</label>.<a href="#line-54" class="ident">EndpointResolver</a> != <a href="../../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-479"><code>		<label for="r79" class="ident">dst</label>.<a href="#line-54" class="ident">EndpointResolver</a> = <label for="r80" class="ident">other</label>.<a href="#line-54" class="ident">EndpointResolver</a></code></span>
+<span class="codeline" id="line-480"><code>	}</code></span>
+<span class="codeline" id="line-481"><code></code></span>
+<span class="codeline" id="line-482"><code>	<span class="keyword">if</span> <label for="r80" class="ident">other</label>.<a href="#line-70" class="ident">Region</a> != <a href="../../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-483"><code>		<label for="r79" class="ident">dst</label>.<a href="#line-70" class="ident">Region</a> = <label for="r80" class="ident">other</label>.<a href="#line-70" class="ident">Region</a></code></span>
+<span class="codeline" id="line-484"><code>	}</code></span>
+<span class="codeline" id="line-485"><code></code></span>
+<span class="codeline" id="line-486"><code>	<span class="keyword">if</span> <label for="r80" class="ident">other</label>.<a href="#line-74" class="ident">DisableSSL</a> != <a href="../../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-487"><code>		<label for="r79" class="ident">dst</label>.<a href="#line-74" class="ident">DisableSSL</a> = <label for="r80" class="ident">other</label>.<a href="#line-74" class="ident">DisableSSL</a></code></span>
+<span class="codeline" id="line-488"><code>	}</code></span>
+<span class="codeline" id="line-489"><code></code></span>
+<span class="codeline" id="line-490"><code>	<span class="keyword">if</span> <label for="r80" class="ident">other</label>.<a href="#line-78" class="ident">HTTPClient</a> != <a href="../../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-491"><code>		<label for="r79" class="ident">dst</label>.<a href="#line-78" class="ident">HTTPClient</a> = <label for="r80" class="ident">other</label>.<a href="#line-78" class="ident">HTTPClient</a></code></span>
+<span class="codeline" id="line-492"><code>	}</code></span>
+<span class="codeline" id="line-493"><code></code></span>
+<span class="codeline" id="line-494"><code>	<span class="keyword">if</span> <label for="r80" class="ident">other</label>.<a href="#line-83" class="ident">LogLevel</a> != <a href="../../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-495"><code>		<label for="r79" class="ident">dst</label>.<a href="#line-83" class="ident">LogLevel</a> = <label for="r80" class="ident">other</label>.<a href="#line-83" class="ident">LogLevel</a></code></span>
+<span class="codeline" id="line-496"><code>	}</code></span>
+<span class="codeline" id="line-497"><code></code></span>
+<span class="codeline" id="line-498"><code>	<span class="keyword">if</span> <label for="r80" class="ident">other</label>.<a href="#line-87" class="ident">Logger</a> != <a href="../../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-499"><code>		<label for="r79" class="ident">dst</label>.<a href="#line-87" class="ident">Logger</a> = <label for="r80" class="ident">other</label>.<a href="#line-87" class="ident">Logger</a></code></span>
+<span class="codeline" id="line-500"><code>	}</code></span>
+<span class="codeline" id="line-501"><code></code></span>
+<span class="codeline" id="line-502"><code>	<span class="keyword">if</span> <label for="r80" class="ident">other</label>.<a href="#line-92" class="ident">MaxRetries</a> != <a href="../../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-503"><code>		<label for="r79" class="ident">dst</label>.<a href="#line-92" class="ident">MaxRetries</a> = <label for="r80" class="ident">other</label>.<a href="#line-92" class="ident">MaxRetries</a></code></span>
+<span class="codeline" id="line-504"><code>	}</code></span>
+<span class="codeline" id="line-505"><code></code></span>
+<span class="codeline" id="line-506"><code>	<span class="keyword">if</span> <label for="r80" class="ident">other</label>.<a href="#line-108" class="ident">Retryer</a> != <a href="../../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-507"><code>		<label for="r79" class="ident">dst</label>.<a href="#line-108" class="ident">Retryer</a> = <label for="r80" class="ident">other</label>.<a href="#line-108" class="ident">Retryer</a></code></span>
+<span class="codeline" id="line-508"><code>	}</code></span>
+<span class="codeline" id="line-509"><code></code></span>
+<span class="codeline" id="line-510"><code>	<span class="keyword">if</span> <label for="r80" class="ident">other</label>.<a href="#line-112" class="ident">DisableParamValidation</a> != <a href="../../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-511"><code>		<label for="r79" class="ident">dst</label>.<a href="#line-112" class="ident">DisableParamValidation</a> = <label for="r80" class="ident">other</label>.<a href="#line-112" class="ident">DisableParamValidation</a></code></span>
+<span class="codeline" id="line-512"><code>	}</code></span>
+<span class="codeline" id="line-513"><code></code></span>
+<span class="codeline" id="line-514"><code>	<span class="keyword">if</span> <label for="r80" class="ident">other</label>.<a href="#line-116" class="ident">DisableComputeChecksums</a> != <a href="../../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-515"><code>		<label for="r79" class="ident">dst</label>.<a href="#line-116" class="ident">DisableComputeChecksums</a> = <label for="r80" class="ident">other</label>.<a href="#line-116" class="ident">DisableComputeChecksums</a></code></span>
+<span class="codeline" id="line-516"><code>	}</code></span>
+<span class="codeline" id="line-517"><code></code></span>
+<span class="codeline" id="line-518"><code>	<span class="keyword">if</span> <label for="r80" class="ident">other</label>.<a href="#line-127" class="ident">S3ForcePathStyle</a> != <a href="../../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-519"><code>		<label for="r79" class="ident">dst</label>.<a href="#line-127" class="ident">S3ForcePathStyle</a> = <label for="r80" class="ident">other</label>.<a href="#line-127" class="ident">S3ForcePathStyle</a></code></span>
+<span class="codeline" id="line-520"><code>	}</code></span>
+<span class="codeline" id="line-521"><code></code></span>
+<span class="codeline" id="line-522"><code>	<span class="keyword">if</span> <label for="r80" class="ident">other</label>.<a href="#line-143" class="ident">S3Disable100Continue</a> != <a href="../../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-523"><code>		<label for="r79" class="ident">dst</label>.<a href="#line-143" class="ident">S3Disable100Continue</a> = <label for="r80" class="ident">other</label>.<a href="#line-143" class="ident">S3Disable100Continue</a></code></span>
+<span class="codeline" id="line-524"><code>	}</code></span>
+<span class="codeline" id="line-525"><code></code></span>
+<span class="codeline" id="line-526"><code>	<span class="keyword">if</span> <label for="r80" class="ident">other</label>.<a href="#line-153" class="ident">S3UseAccelerate</a> != <a href="../../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-527"><code>		<label for="r79" class="ident">dst</label>.<a href="#line-153" class="ident">S3UseAccelerate</a> = <label for="r80" class="ident">other</label>.<a href="#line-153" class="ident">S3UseAccelerate</a></code></span>
+<span class="codeline" id="line-528"><code>	}</code></span>
+<span class="codeline" id="line-529"><code></code></span>
+<span class="codeline" id="line-530"><code>	<span class="keyword">if</span> <label for="r80" class="ident">other</label>.<a href="#line-162" class="ident">S3DisableContentMD5Validation</a> != <a href="../../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-531"><code>		<label for="r79" class="ident">dst</label>.<a href="#line-162" class="ident">S3DisableContentMD5Validation</a> = <label for="r80" class="ident">other</label>.<a href="#line-162" class="ident">S3DisableContentMD5Validation</a></code></span>
+<span class="codeline" id="line-532"><code>	}</code></span>
+<span class="codeline" id="line-533"><code></code></span>
+<span class="codeline" id="line-534"><code>	<span class="keyword">if</span> <label for="r80" class="ident">other</label>.<a href="#line-166" class="ident">S3UseARNRegion</a> != <a href="../../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-535"><code>		<label for="r79" class="ident">dst</label>.<a href="#line-166" class="ident">S3UseARNRegion</a> = <label for="r80" class="ident">other</label>.<a href="#line-166" class="ident">S3UseARNRegion</a></code></span>
+<span class="codeline" id="line-536"><code>	}</code></span>
+<span class="codeline" id="line-537"><code></code></span>
+<span class="codeline" id="line-538"><code>	<span class="keyword">if</span> <label for="r80" class="ident">other</label>.<a href="#line-211" class="ident">UseDualStack</a> != <a href="../../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-539"><code>		<label for="r79" class="ident">dst</label>.<a href="#line-211" class="ident">UseDualStack</a> = <label for="r80" class="ident">other</label>.<a href="#line-211" class="ident">UseDualStack</a></code></span>
+<span class="codeline" id="line-540"><code>	}</code></span>
+<span class="codeline" id="line-541"><code></code></span>
+<span class="codeline" id="line-542"><code>	<span class="keyword">if</span> <label for="r80" class="ident">other</label>.<a href="#line-190" class="ident">EC2MetadataDisableTimeoutOverride</a> != <a href="../../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-543"><code>		<label for="r79" class="ident">dst</label>.<a href="#line-190" class="ident">EC2MetadataDisableTimeoutOverride</a> = <label for="r80" class="ident">other</label>.<a href="#line-190" class="ident">EC2MetadataDisableTimeoutOverride</a></code></span>
+<span class="codeline" id="line-544"><code>	}</code></span>
+<span class="codeline" id="line-545"><code></code></span>
+<span class="codeline" id="line-546"><code>	<span class="keyword">if</span> <label for="r80" class="ident">other</label>.<a href="#line-222" class="ident">SleepDelay</a> != <a href="../../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-547"><code>		<label for="r79" class="ident">dst</label>.<a href="#line-222" class="ident">SleepDelay</a> = <label for="r80" class="ident">other</label>.<a href="#line-222" class="ident">SleepDelay</a></code></span>
+<span class="codeline" id="line-548"><code>	}</code></span>
+<span class="codeline" id="line-549"><code></code></span>
+<span class="codeline" id="line-550"><code>	<span class="keyword">if</span> <label for="r80" class="ident">other</label>.<a href="#line-237" class="ident">DisableRestProtocolURICleaning</a> != <a href="../../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-551"><code>		<label for="r79" class="ident">dst</label>.<a href="#line-237" class="ident">DisableRestProtocolURICleaning</a> = <label for="r80" class="ident">other</label>.<a href="#line-237" class="ident">DisableRestProtocolURICleaning</a></code></span>
+<span class="codeline" id="line-552"><code>	}</code></span>
+<span class="codeline" id="line-553"><code></code></span>
+<span class="codeline" id="line-554"><code>	<span class="keyword">if</span> <label for="r80" class="ident">other</label>.<a href="#line-61" class="ident">EnforceShouldRetryCheck</a> != <a href="../../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-555"><code>		<label for="r79" class="ident">dst</label>.<a href="#line-61" class="ident">EnforceShouldRetryCheck</a> = <label for="r80" class="ident">other</label>.<a href="#line-61" class="ident">EnforceShouldRetryCheck</a></code></span>
+<span class="codeline" id="line-556"><code>	}</code></span>
+<span class="codeline" id="line-557"><code></code></span>
+<span class="codeline" id="line-558"><code>	<span class="keyword">if</span> <label for="r80" class="ident">other</label>.<a href="#line-252" class="ident">EnableEndpointDiscovery</a> != <a href="../../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-559"><code>		<label for="r79" class="ident">dst</label>.<a href="#line-252" class="ident">EnableEndpointDiscovery</a> = <label for="r80" class="ident">other</label>.<a href="#line-252" class="ident">EnableEndpointDiscovery</a></code></span>
+<span class="codeline" id="line-560"><code>	}</code></span>
+<span class="codeline" id="line-561"><code></code></span>
+<span class="codeline" id="line-562"><code>	<span class="keyword">if</span> <label for="r80" class="ident">other</label>.<a href="#line-259" class="ident">DisableEndpointHostPrefix</a> != <a href="../../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-563"><code>		<label for="r79" class="ident">dst</label>.<a href="#line-259" class="ident">DisableEndpointHostPrefix</a> = <label for="r80" class="ident">other</label>.<a href="#line-259" class="ident">DisableEndpointHostPrefix</a></code></span>
+<span class="codeline" id="line-564"><code>	}</code></span>
+<span class="codeline" id="line-565"><code></code></span>
+<span class="codeline" id="line-566"><code>	<span class="keyword">if</span> <label for="r80" class="ident">other</label>.<a href="#line-262" class="ident">STSRegionalEndpoint</a> != <a href="../../../../../pkg/github.com/aws/aws-sdk-go/aws/endpoints.html" class="ident i3">endpoints</a>.<a href="endpoints/endpoints.go.html#line-78" class="ident">UnsetSTSEndpoint</a> {</code></span>
+<span class="codeline" id="line-567"><code>		<label for="r79" class="ident">dst</label>.<a href="#line-262" class="ident">STSRegionalEndpoint</a> = <label for="r80" class="ident">other</label>.<a href="#line-262" class="ident">STSRegionalEndpoint</a></code></span>
+<span class="codeline" id="line-568"><code>	}</code></span>
+<span class="codeline" id="line-569"><code></code></span>
+<span class="codeline" id="line-570"><code>	<span class="keyword">if</span> <label for="r80" class="ident">other</label>.<a href="#line-265" class="ident">S3UsEast1RegionalEndpoint</a> != <a href="../../../../../pkg/github.com/aws/aws-sdk-go/aws/endpoints.html" class="ident i3">endpoints</a>.<a href="endpoints/endpoints.go.html#line-126" class="ident">UnsetS3UsEast1Endpoint</a> {</code></span>
+<span class="codeline" id="line-571"><code>		<label for="r79" class="ident">dst</label>.<a href="#line-265" class="ident">S3UsEast1RegionalEndpoint</a> = <label for="r80" class="ident">other</label>.<a href="#line-265" class="ident">S3UsEast1RegionalEndpoint</a></code></span>
+<span class="codeline" id="line-572"><code>	}</code></span>
+<span class="codeline" id="line-573"><code>}</code></span>
+<span class="codeline" id="line-574"><code></code></span>
+<span class="codeline" id="line-575"><code><span class="comment">// Copy will return a shallow copy of the Config object. If any additional</span></code></span>
+<span class="codeline" id="line-576"><code><span class="comment">// configurations are provided they will be merged into the new config returned.</span></code></span>
+<span class="codeline" id="line-577"><code><span class="keyword">func</span> (<label for="r81" class="ident">c</label> *<a href="#line-33" class="ident">Config</a>) <label for="r82" class="ident"><a href="../../../../../use/github.com/aws/aws-sdk-go/aws..Config.Copy.html" class="ident">Copy</a></label>(<label for="r83" class="ident">cfgs</label> ...*<a href="#line-33" class="ident">Config</a>) *<a href="#line-33" class="ident">Config</a> {</code></span>
+<span class="codeline" id="line-578"><code>	<label for="r84" class="ident">dst</label> := &amp;<a href="#line-33" class="ident">Config</a>{}</code></span>
+<span class="codeline" id="line-579"><code>	<label for="r84" class="ident">dst</label>.<a href="#line-441" class="ident">MergeIn</a>(<label for="r81" class="ident">c</label>)</code></span>
+<span class="codeline" id="line-580"><code></code></span>
+<span class="codeline" id="line-581"><code>	<span class="keyword">for</span> <label for="r85" class="ident">_</label>, <label for="r86" class="ident">cfg</label> := <span class="keyword">range</span> <label for="r83" class="ident">cfgs</label> {</code></span>
+<span class="codeline" id="line-582"><code>		<label for="r84" class="ident">dst</label>.<a href="#line-441" class="ident">MergeIn</a>(<label for="r86" class="ident">cfg</label>)</code></span>
+<span class="codeline" id="line-583"><code>	}</code></span>
+<span class="codeline" id="line-584"><code></code></span>
+<span class="codeline" id="line-585"><code>	<span class="keyword">return</span> <label for="r84" class="ident">dst</label></code></span>
+<span class="codeline" id="line-586"><code>}</code></span>
+</pre><pre id="footer">
+<table><tr><td><img src="../../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

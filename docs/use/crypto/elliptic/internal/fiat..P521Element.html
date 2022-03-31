@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: crypto/elliptic/internal/fiat.P521Element</title>
+<link href="../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../../../../pkg/crypto/elliptic/internal/fiat.html">crypto/elliptic/internal/fiat</a>.<a href="../../../../src/crypto/elliptic/internal/fiat/p521.go.html#line-17">P521Element</a></b></span>
+
+<span class="title">74 uses</span>
+
+	crypto/elliptic/internal/fiat (current package)
+		<a href="../../../../src/crypto/elliptic/internal/fiat/p521.go.html#line-17">p521.go#L17</a>: type <b>P521Element</b> struct {
+		<a href="../../../../src/crypto/elliptic/internal/fiat/p521.go.html#line-29" class="path-duplicate">p521.go</a><a href="../../../../src/crypto/elliptic/internal/fiat/p521.go.html#line-29">#L29</a>: func (e *<b>P521Element</b>) One() *<b>P521Element</b> {
+		<a href="../../../../src/crypto/elliptic/internal/fiat/p521.go.html#line-30" class="path-duplicate">p521.go</a><a href="../../../../src/crypto/elliptic/internal/fiat/p521.go.html#line-30">#L30</a>: 	*e = <b>P521Element</b>{}
+		<a href="../../../../src/crypto/elliptic/internal/fiat/p521.go.html#line-36" class="path-duplicate">p521.go</a><a href="../../../../src/crypto/elliptic/internal/fiat/p521.go.html#line-36">#L36</a>: func (e *<b>P521Element</b>) Equal(t *<b>P521Element</b>) int {
+		<a href="../../../../src/crypto/elliptic/internal/fiat/p521.go.html#line-42" class="path-duplicate">p521.go</a><a href="../../../../src/crypto/elliptic/internal/fiat/p521.go.html#line-42">#L42</a>: var p521ZeroEncoding = new(<b>P521Element</b>).Bytes()
+		<a href="../../../../src/crypto/elliptic/internal/fiat/p521.go.html#line-45" class="path-duplicate">p521.go</a><a href="../../../../src/crypto/elliptic/internal/fiat/p521.go.html#line-45">#L45</a>: func (e *<b>P521Element</b>) IsZero() int {
+		<a href="../../../../src/crypto/elliptic/internal/fiat/p521.go.html#line-51" class="path-duplicate">p521.go</a><a href="../../../../src/crypto/elliptic/internal/fiat/p521.go.html#line-51">#L51</a>: func (e *<b>P521Element</b>) Set(t *<b>P521Element</b>) *<b>P521Element</b> {
+		<a href="../../../../src/crypto/elliptic/internal/fiat/p521.go.html#line-57" class="path-duplicate">p521.go</a><a href="../../../../src/crypto/elliptic/internal/fiat/p521.go.html#line-57">#L57</a>: func (e *<b>P521Element</b>) Bytes() []byte {
+		<a href="../../../../src/crypto/elliptic/internal/fiat/p521.go.html#line-68" class="path-duplicate">p521.go</a><a href="../../../../src/crypto/elliptic/internal/fiat/p521.go.html#line-68">#L68</a>: func (e *<b>P521Element</b>) SetBytes(v []byte) (*<b>P521Element</b>, error) {
+		<a href="../../../../src/crypto/elliptic/internal/fiat/p521.go.html#line-79" class="path-duplicate">p521.go</a><a href="../../../../src/crypto/elliptic/internal/fiat/p521.go.html#line-79">#L79</a>: func (e *<b>P521Element</b>) Add(t1, t2 *<b>P521Element</b>) *<b>P521Element</b> {
+		<a href="../../../../src/crypto/elliptic/internal/fiat/p521.go.html#line-86" class="path-duplicate">p521.go</a><a href="../../../../src/crypto/elliptic/internal/fiat/p521.go.html#line-86">#L86</a>: func (e *<b>P521Element</b>) Sub(t1, t2 *<b>P521Element</b>) *<b>P521Element</b> {
+		<a href="../../../../src/crypto/elliptic/internal/fiat/p521.go.html#line-93" class="path-duplicate">p521.go</a><a href="../../../../src/crypto/elliptic/internal/fiat/p521.go.html#line-93">#L93</a>: func (e *<b>P521Element</b>) Mul(t1, t2 *<b>P521Element</b>) *<b>P521Element</b> {
+		<a href="../../../../src/crypto/elliptic/internal/fiat/p521.go.html#line-99" class="path-duplicate">p521.go</a><a href="../../../../src/crypto/elliptic/internal/fiat/p521.go.html#line-99">#L99</a>: func (e *<b>P521Element</b>) Square(t *<b>P521Element</b>) *<b>P521Element</b> {
+		<a href="../../../../src/crypto/elliptic/internal/fiat/p521.go.html#line-105" class="path-duplicate">p521.go</a><a href="../../../../src/crypto/elliptic/internal/fiat/p521.go.html#line-105">#L105</a>: func (v *<b>P521Element</b>) Select(a, b *<b>P521Element</b>, cond int) *<b>P521Element</b> {
+		<a href="../../../../src/crypto/elliptic/internal/fiat/p521.go.html#line-113" class="path-duplicate">p521.go</a><a href="../../../../src/crypto/elliptic/internal/fiat/p521.go.html#line-113">#L113</a>: func (e *<b>P521Element</b>) Invert(t *<b>P521Element</b>) *<b>P521Element</b> {
+		<a href="../../../../src/crypto/elliptic/internal/fiat/p521.go.html#line-118" class="path-duplicate">p521.go</a><a href="../../../../src/crypto/elliptic/internal/fiat/p521.go.html#line-118">#L118</a>: 	var t1, t2 = new(<b>P521Element</b>), new(<b>P521Element</b>)
+
+	<a href="../../../../pkg/crypto/elliptic.html">crypto/elliptic</a>
+		<a href="../../../../src/crypto/elliptic/p521.go.html#line-45">p521.go#L45</a>: 	x3 := new(fiat.<b>P521Element</b>).Square(x1)
+		<a href="../../../../src/crypto/elliptic/p521.go.html#line-48" class="path-duplicate">p521.go</a><a href="../../../../src/crypto/elliptic/p521.go.html#line-48">#L48</a>: 	threeX := new(fiat.<b>P521Element</b>).Add(x1, x1)
+		<a href="../../../../src/crypto/elliptic/p521.go.html#line-55" class="path-duplicate">p521.go</a><a href="../../../../src/crypto/elliptic/p521.go.html#line-55">#L55</a>: 	y2 := new(fiat.<b>P521Element</b>).Square(y1)
+		<a href="../../../../src/crypto/elliptic/p521.go.html#line-61" class="path-duplicate">p521.go</a><a href="../../../../src/crypto/elliptic/p521.go.html#line-61">#L61</a>: 	x, y, z *fiat.<b>P521Element</b>
+		<a href="../../../../src/crypto/elliptic/p521.go.html#line-64" class="path-duplicate">p521.go</a><a href="../../../../src/crypto/elliptic/p521.go.html#line-64">#L64</a>: func fiatP521ToBigInt(x *fiat.<b>P521Element</b>) *big.Int {
+		<a href="../../../../src/crypto/elliptic/p521.go.html#line-80" class="path-duplicate">p521.go</a><a href="../../../../src/crypto/elliptic/p521.go.html#line-80">#L80</a>: 	zinv := new(fiat.<b>P521Element</b>).Invert(p.z)
+		<a href="../../../../src/crypto/elliptic/p521.go.html#line-81" class="path-duplicate">p521.go</a><a href="../../../../src/crypto/elliptic/p521.go.html#line-81">#L81</a>: 	zinvsq := new(fiat.<b>P521Element</b>).Mul(zinv, zinv)
+		<a href="../../../../src/crypto/elliptic/p521.go.html#line-83" class="path-duplicate">p521.go</a><a href="../../../../src/crypto/elliptic/p521.go.html#line-83">#L83</a>: 	xx := new(fiat.<b>P521Element</b>).Mul(p.x, zinvsq)
+		<a href="../../../../src/crypto/elliptic/p521.go.html#line-85" class="path-duplicate">p521.go</a><a href="../../../../src/crypto/elliptic/p521.go.html#line-85">#L85</a>: 	yy := new(fiat.<b>P521Element</b>).Mul(p.y, zinvsq)
+		<a href="../../../../src/crypto/elliptic/p521.go.html#line-90" class="path-duplicate">p521.go</a><a href="../../../../src/crypto/elliptic/p521.go.html#line-90">#L90</a>: func bigIntToFiatP521(x *big.Int) *fiat.<b>P521Element</b> {
+		<a href="../../../../src/crypto/elliptic/p521.go.html#line-95" class="path-duplicate">p521.go</a><a href="../../../../src/crypto/elliptic/p521.go.html#line-95">#L95</a>: 	x1, err := new(fiat.<b>P521Element</b>).SetBytes(xBytes)
+		<a href="../../../../src/crypto/elliptic/p521.go.html#line-112" class="path-duplicate">p521.go</a><a href="../../../../src/crypto/elliptic/p521.go.html#line-112">#L112</a>: 			x: new(fiat.<b>P521Element</b>),
+		<a href="../../../../src/crypto/elliptic/p521.go.html#line-113" class="path-duplicate">p521.go</a><a href="../../../../src/crypto/elliptic/p521.go.html#line-113">#L113</a>: 			y: new(fiat.<b>P521Element</b>),
+		<a href="../../../../src/crypto/elliptic/p521.go.html#line-114" class="path-duplicate">p521.go</a><a href="../../../../src/crypto/elliptic/p521.go.html#line-114">#L114</a>: 			z: new(fiat.<b>P521Element</b>),
+		<a href="../../../../src/crypto/elliptic/p521.go.html#line-120" class="path-duplicate">p521.go</a><a href="../../../../src/crypto/elliptic/p521.go.html#line-120">#L120</a>: 		z: new(fiat.<b>P521Element</b>).One(),
+		<a href="../../../../src/crypto/elliptic/p521.go.html#line-136" class="path-duplicate">p521.go</a><a href="../../../../src/crypto/elliptic/p521.go.html#line-136">#L136</a>: 	z1z1 := new(fiat.<b>P521Element</b>).Square(p1.z)
+		<a href="../../../../src/crypto/elliptic/p521.go.html#line-137" class="path-duplicate">p521.go</a><a href="../../../../src/crypto/elliptic/p521.go.html#line-137">#L137</a>: 	z2z2 := new(fiat.<b>P521Element</b>).Square(p2.z)
+		<a href="../../../../src/crypto/elliptic/p521.go.html#line-139" class="path-duplicate">p521.go</a><a href="../../../../src/crypto/elliptic/p521.go.html#line-139">#L139</a>: 	u1 := new(fiat.<b>P521Element</b>).Mul(p1.x, z2z2)
+		<a href="../../../../src/crypto/elliptic/p521.go.html#line-140" class="path-duplicate">p521.go</a><a href="../../../../src/crypto/elliptic/p521.go.html#line-140">#L140</a>: 	u2 := new(fiat.<b>P521Element</b>).Mul(p2.x, z1z1)
+		<a href="../../../../src/crypto/elliptic/p521.go.html#line-141" class="path-duplicate">p521.go</a><a href="../../../../src/crypto/elliptic/p521.go.html#line-141">#L141</a>: 	h := new(fiat.<b>P521Element</b>).Sub(u2, u1)
+		<a href="../../../../src/crypto/elliptic/p521.go.html#line-143" class="path-duplicate">p521.go</a><a href="../../../../src/crypto/elliptic/p521.go.html#line-143">#L143</a>: 	i := new(fiat.<b>P521Element</b>).Add(h, h)
+		<a href="../../../../src/crypto/elliptic/p521.go.html#line-145" class="path-duplicate">p521.go</a><a href="../../../../src/crypto/elliptic/p521.go.html#line-145">#L145</a>: 	j := new(fiat.<b>P521Element</b>).Mul(h, i)
+		<a href="../../../../src/crypto/elliptic/p521.go.html#line-147" class="path-duplicate">p521.go</a><a href="../../../../src/crypto/elliptic/p521.go.html#line-147">#L147</a>: 	s1 := new(fiat.<b>P521Element</b>).Mul(p1.y, p2.z)
+		<a href="../../../../src/crypto/elliptic/p521.go.html#line-149" class="path-duplicate">p521.go</a><a href="../../../../src/crypto/elliptic/p521.go.html#line-149">#L149</a>: 	s2 := new(fiat.<b>P521Element</b>).Mul(p2.y, p1.z)
+		<a href="../../../../src/crypto/elliptic/p521.go.html#line-151" class="path-duplicate">p521.go</a><a href="../../../../src/crypto/elliptic/p521.go.html#line-151">#L151</a>: 	r := new(fiat.<b>P521Element</b>).Sub(s2, s1)
+		<a href="../../../../src/crypto/elliptic/p521.go.html#line-157" class="path-duplicate">p521.go</a><a href="../../../../src/crypto/elliptic/p521.go.html#line-157">#L157</a>: 	v := new(fiat.<b>P521Element</b>).Mul(u1, i)
+		<a href="../../../../src/crypto/elliptic/p521.go.html#line-159" class="path-duplicate">p521.go</a><a href="../../../../src/crypto/elliptic/p521.go.html#line-159">#L159</a>: 	x := new(fiat.<b>P521Element</b>).Set(r)
+		<a href="../../../../src/crypto/elliptic/p521.go.html#line-165" class="path-duplicate">p521.go</a><a href="../../../../src/crypto/elliptic/p521.go.html#line-165">#L165</a>: 	y := new(fiat.<b>P521Element</b>).Set(r)
+		<a href="../../../../src/crypto/elliptic/p521.go.html#line-172" class="path-duplicate">p521.go</a><a href="../../../../src/crypto/elliptic/p521.go.html#line-172">#L172</a>: 	z := new(fiat.<b>P521Element</b>).Add(p1.z, p2.z)
+		<a href="../../../../src/crypto/elliptic/p521.go.html#line-199" class="path-duplicate">p521.go</a><a href="../../../../src/crypto/elliptic/p521.go.html#line-199">#L199</a>: 	delta := new(fiat.<b>P521Element</b>).Square(p.z)
+		<a href="../../../../src/crypto/elliptic/p521.go.html#line-200" class="path-duplicate">p521.go</a><a href="../../../../src/crypto/elliptic/p521.go.html#line-200">#L200</a>: 	gamma := new(fiat.<b>P521Element</b>).Square(p.y)
+		<a href="../../../../src/crypto/elliptic/p521.go.html#line-201" class="path-duplicate">p521.go</a><a href="../../../../src/crypto/elliptic/p521.go.html#line-201">#L201</a>: 	alpha := new(fiat.<b>P521Element</b>).Sub(p.x, delta)
+		<a href="../../../../src/crypto/elliptic/p521.go.html#line-202" class="path-duplicate">p521.go</a><a href="../../../../src/crypto/elliptic/p521.go.html#line-202">#L202</a>: 	alpha2 := new(fiat.<b>P521Element</b>).Add(p.x, delta)
+		<a href="../../../../src/crypto/elliptic/p521.go.html#line-211" class="path-duplicate">p521.go</a><a href="../../../../src/crypto/elliptic/p521.go.html#line-211">#L211</a>: 	beta8 := new(fiat.<b>P521Element</b>).Add(beta, beta)
+		<a href="../../../../src/crypto/elliptic/p521.go.html#line-239" class="path-duplicate">p521.go</a><a href="../../../../src/crypto/elliptic/p521.go.html#line-239">#L239</a>: 		x: new(fiat.<b>P521Element</b>),
+		<a href="../../../../src/crypto/elliptic/p521.go.html#line-240" class="path-duplicate">p521.go</a><a href="../../../../src/crypto/elliptic/p521.go.html#line-240">#L240</a>: 		y: new(fiat.<b>P521Element</b>),
+		<a href="../../../../src/crypto/elliptic/p521.go.html#line-241" class="path-duplicate">p521.go</a><a href="../../../../src/crypto/elliptic/p521.go.html#line-241">#L241</a>: 		z: new(fiat.<b>P521Element</b>),
+		<a href="../../../../src/crypto/elliptic/p521.go.html#line-243" class="path-duplicate">p521.go</a><a href="../../../../src/crypto/elliptic/p521.go.html#line-243">#L243</a>: 		x: new(fiat.<b>P521Element</b>),
+		<a href="../../../../src/crypto/elliptic/p521.go.html#line-244" class="path-duplicate">p521.go</a><a href="../../../../src/crypto/elliptic/p521.go.html#line-244">#L244</a>: 		y: new(fiat.<b>P521Element</b>),
+		<a href="../../../../src/crypto/elliptic/p521.go.html#line-245" class="path-duplicate">p521.go</a><a href="../../../../src/crypto/elliptic/p521.go.html#line-245">#L245</a>: 		z: new(fiat.<b>P521Element</b>),
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

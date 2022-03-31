@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Source: protocol.go in package github.com/uber/jaeger-client-go/thrift</title>
+<link href="../../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre id="header"><code><span class="title">Source File</span>
+	protocol.go
+
+<span class="title">Belonging Package</span>
+	<a href="../../../../../pkg/github.com/uber/jaeger-client-go/thrift.html">github.com/uber/jaeger-client-go/thrift</a>
+</code></pre>
+<style>input[type=radio] {display: none;}
+input[id=r0]:checked ~pre label[for=r0],
+input[id=r1]:checked ~pre label[for=r1],
+input[id=r2]:checked ~pre label[for=r2],
+input[id=r3]:checked ~pre label[for=r3],
+input[id=r4]:checked ~pre label[for=r4],
+input[id=r5]:checked ~pre label[for=r5],
+input[id=r6]:checked ~pre label[for=r6],
+input[id=r7]:checked ~pre label[for=r7],
+input[id=r8]:checked ~pre label[for=r8],
+input[id=r9]:checked ~pre label[for=r9],
+input[id=r10]:checked ~pre label[for=r10],
+input[id=r11]:checked ~pre label[for=r11],
+input[id=r12]:checked ~pre label[for=r12],
+input[id=r13]:checked ~pre label[for=r13],
+input[id=r14]:checked ~pre label[for=r14],
+input[id=r15]:checked ~pre label[for=r15],
+input[id=r16]:checked ~pre label[for=r16],
+input[id=r17]:checked ~pre label[for=r17],
+input[id=r18]:checked ~pre label[for=r18],
+input[id=r19]:checked ~pre label[for=r19],
+input[id=r20]:checked ~pre label[for=r20],
+input[id=r21]:checked ~pre label[for=r21],
+input[id=r22]:checked ~pre label[for=r22],
+input[id=r23]:checked ~pre label[for=r23],
+input[id=r24]:checked ~pre label[for=r24],
+input[id=r25]:checked ~pre label[for=r25],
+input[id=r26]:checked ~pre label[for=r26],
+input[id=r27]:checked ~pre label[for=r27],
+input[id=r28]:checked ~pre label[for=r28],
+input[id=r29]:checked ~pre label[for=r29],
+input[id=r30]:checked ~pre label[for=r30],
+input[id=r31]:checked ~pre label[for=r31]
+{background: #226; color: #ff8;}
+input[id=i0]:checked ~pre .i0,
+input[id=i1]:checked ~pre .i1,
+input[id=i2]:checked ~pre .i2
+{background: brown; color: #eed;}
+</style><input id="r0" type="radio" name="g"/>
+<input id="r1" type="radio" name="g"/>
+<input id="r2" type="radio" name="g"/>
+<input id="r3" type="radio" name="g"/>
+<input id="r4" type="radio" name="g"/>
+<input id="r5" type="radio" name="g"/>
+<input id="r6" type="radio" name="g"/>
+<input id="r7" type="radio" name="g"/>
+<input id="r8" type="radio" name="g"/>
+<input id="r9" type="radio" name="g"/>
+<input id="r10" type="radio" name="g"/>
+<input id="r11" type="radio" name="g"/>
+<input id="r12" type="radio" name="g"/>
+<input id="r13" type="radio" name="g"/>
+<input id="r14" type="radio" name="g"/>
+<input id="r15" type="radio" name="g"/>
+<input id="r16" type="radio" name="g"/>
+<input id="r17" type="radio" name="g"/>
+<input id="r18" type="radio" name="g"/>
+<input id="r19" type="radio" name="g"/>
+<input id="r20" type="radio" name="g"/>
+<input id="r21" type="radio" name="g"/>
+<input id="r22" type="radio" name="g"/>
+<input id="r23" type="radio" name="g"/>
+<input id="r24" type="radio" name="g"/>
+<input id="r25" type="radio" name="g"/>
+<input id="r26" type="radio" name="g"/>
+<input id="r27" type="radio" name="g"/>
+<input id="r28" type="radio" name="g"/>
+<input id="r29" type="radio" name="g"/>
+<input id="r30" type="radio" name="g"/>
+<input id="r31" type="radio" name="g"/>
+<input id="i0" type="radio" name="i"/>
+<input id="i1" type="radio" name="i"/>
+<input id="i2" type="radio" name="i"/>
+
+<pre class="line-numbers">
+<span class="codeline" id="line-1"><code><span class="comment">/*</span></code></span>
+<span class="codeline" id="line-2"><code><span class="comment"> * Licensed to the Apache Software Foundation (ASF) under one</span></code></span>
+<span class="codeline" id="line-3"><code><span class="comment"> * or more contributor license agreements. See the NOTICE file</span></code></span>
+<span class="codeline" id="line-4"><code><span class="comment"> * distributed with this work for additional information</span></code></span>
+<span class="codeline" id="line-5"><code><span class="comment"> * regarding copyright ownership. The ASF licenses this file</span></code></span>
+<span class="codeline" id="line-6"><code><span class="comment"> * to you under the Apache License, Version 2.0 (the</span></code></span>
+<span class="codeline" id="line-7"><code><span class="comment"> * "License"); you may not use this file except in compliance</span></code></span>
+<span class="codeline" id="line-8"><code><span class="comment"> * with the License. You may obtain a copy of the License at</span></code></span>
+<span class="codeline" id="line-9"><code><span class="comment"> *</span></code></span>
+<span class="codeline" id="line-10"><code><span class="comment"> *   http://www.apache.org/licenses/LICENSE-2.0</span></code></span>
+<span class="codeline" id="line-11"><code><span class="comment"> *</span></code></span>
+<span class="codeline" id="line-12"><code><span class="comment"> * Unless required by applicable law or agreed to in writing,</span></code></span>
+<span class="codeline" id="line-13"><code><span class="comment"> * software distributed under the License is distributed on an</span></code></span>
+<span class="codeline" id="line-14"><code><span class="comment"> * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY</span></code></span>
+<span class="codeline" id="line-15"><code><span class="comment"> * KIND, either express or implied. See the License for the</span></code></span>
+<span class="codeline" id="line-16"><code><span class="comment"> * specific language governing permissions and limitations</span></code></span>
+<span class="codeline" id="line-17"><code><span class="comment"> * under the License.</span></code></span>
+<span class="codeline" id="line-18"><code><span class="comment"> */</span></code></span>
+<span class="codeline" id="line-19"><code></code></span>
+<span class="codeline" id="line-20"><code><span class="keyword">package</span> thrift</code></span>
+<span class="codeline" id="line-21"><code></code></span>
+<span class="codeline" id="line-22"><code><span class="keyword">import</span> (</code></span>
+<span class="codeline" id="line-23"><code>	<label for="i0"><span class="lit-string i0">"context"</span></label></code></span>
+<span class="codeline" id="line-24"><code>	<label for="i1"><span class="lit-string i1">"errors"</span></label></code></span>
+<span class="codeline" id="line-25"><code>	<label for="i2"><span class="lit-string i2">"fmt"</span></label></code></span>
+<span class="codeline" id="line-26"><code>)</code></span>
+<span class="codeline" id="line-27"><code></code></span>
+<span class="codeline" id="line-28"><code><span class="keyword">const</span> (</code></span>
+<span class="codeline" id="line-29"><code>	<a href="../../../../../pkg/github.com/uber/jaeger-client-go/thrift.html#name-VERSION_MASK" class="ident">VERSION_MASK</a> = <span class="lit-number">0xffff0000</span></code></span>
+<span class="codeline" id="line-30"><code>	<a href="../../../../../pkg/github.com/uber/jaeger-client-go/thrift.html#name-VERSION_1" class="ident">VERSION_1</a>    = <span class="lit-number">0x80010000</span></code></span>
+<span class="codeline" id="line-31"><code>)</code></span>
+<span class="codeline" id="line-32"><code></code></span>
+<span class="codeline" id="line-33"><code><span class="keyword">type</span> <a href="../../../../../pkg/github.com/uber/jaeger-client-go/thrift.html#name-TProtocol" class="ident">TProtocol</a> <span class="keyword">interface</span> {</code></span>
+<span class="codeline" id="line-34"><code>	<a href="../../../../../imp/github.com/uber/jaeger-client-go/thrift.TProtocol.html#name-WriteMessageBegin" class="ident">WriteMessageBegin</a>(ctx <a href="../../../../../pkg/context.html" class="ident i0">context</a>.<a href="../../../../context/context.go.html#line-62" class="ident">Context</a>, name <a href="../../../../../pkg/builtin.html#name-string" class="ident">string</a>, typeId <a href="messagetype.go.html#line-23" class="ident">TMessageType</a>, seqid <a href="../../../../../pkg/builtin.html#name-int32" class="ident">int32</a>) <a href="../../../../../pkg/builtin.html#name-error" class="ident">error</a></code></span>
+<span class="codeline" id="line-35"><code>	<a href="../../../../../imp/github.com/uber/jaeger-client-go/thrift.TProtocol.html#name-WriteMessageEnd" class="ident">WriteMessageEnd</a>(ctx <a href="../../../../../pkg/context.html" class="ident i0">context</a>.<a href="../../../../context/context.go.html#line-62" class="ident">Context</a>) <a href="../../../../../pkg/builtin.html#name-error" class="ident">error</a></code></span>
+<span class="codeline" id="line-36"><code>	<a href="../../../../../imp/github.com/uber/jaeger-client-go/thrift.TProtocol.html#name-WriteStructBegin" class="ident">WriteStructBegin</a>(ctx <a href="../../../../../pkg/context.html" class="ident i0">context</a>.<a href="../../../../context/context.go.html#line-62" class="ident">Context</a>, name <a href="../../../../../pkg/builtin.html#name-string" class="ident">string</a>) <a href="../../../../../pkg/builtin.html#name-error" class="ident">error</a></code></span>
+<span class="codeline" id="line-37"><code>	<a href="../../../../../imp/github.com/uber/jaeger-client-go/thrift.TProtocol.html#name-WriteStructEnd" class="ident">WriteStructEnd</a>(ctx <a href="../../../../../pkg/context.html" class="ident i0">context</a>.<a href="../../../../context/context.go.html#line-62" class="ident">Context</a>) <a href="../../../../../pkg/builtin.html#name-error" class="ident">error</a></code></span>
+<span class="codeline" id="line-38"><code>	<a href="../../../../../imp/github.com/uber/jaeger-client-go/thrift.TProtocol.html#name-WriteFieldBegin" class="ident">WriteFieldBegin</a>(ctx <a href="../../../../../pkg/context.html" class="ident i0">context</a>.<a href="../../../../context/context.go.html#line-62" class="ident">Context</a>, name <a href="../../../../../pkg/builtin.html#name-string" class="ident">string</a>, typeId <a href="type.go.html#line-23" class="ident">TType</a>, id <a href="../../../../../pkg/builtin.html#name-int16" class="ident">int16</a>) <a href="../../../../../pkg/builtin.html#name-error" class="ident">error</a></code></span>
+<span class="codeline" id="line-39"><code>	<a href="../../../../../imp/github.com/uber/jaeger-client-go/thrift.TProtocol.html#name-WriteFieldEnd" class="ident">WriteFieldEnd</a>(ctx <a href="../../../../../pkg/context.html" class="ident i0">context</a>.<a href="../../../../context/context.go.html#line-62" class="ident">Context</a>) <a href="../../../../../pkg/builtin.html#name-error" class="ident">error</a></code></span>
+<span class="codeline" id="line-40"><code>	<a href="../../../../../imp/github.com/uber/jaeger-client-go/thrift.TProtocol.html#name-WriteFieldStop" class="ident">WriteFieldStop</a>(ctx <a href="../../../../../pkg/context.html" class="ident i0">context</a>.<a href="../../../../context/context.go.html#line-62" class="ident">Context</a>) <a href="../../../../../pkg/builtin.html#name-error" class="ident">error</a></code></span>
+<span class="codeline" id="line-41"><code>	<a href="../../../../../imp/github.com/uber/jaeger-client-go/thrift.TProtocol.html#name-WriteMapBegin" class="ident">WriteMapBegin</a>(ctx <a href="../../../../../pkg/context.html" class="ident i0">context</a>.<a href="../../../../context/context.go.html#line-62" class="ident">Context</a>, keyType <a href="type.go.html#line-23" class="ident">TType</a>, valueType <a href="type.go.html#line-23" class="ident">TType</a>, size <a href="../../../../../pkg/builtin.html#name-int" class="ident">int</a>) <a href="../../../../../pkg/builtin.html#name-error" class="ident">error</a></code></span>
+<span class="codeline" id="line-42"><code>	<a href="../../../../../imp/github.com/uber/jaeger-client-go/thrift.TProtocol.html#name-WriteMapEnd" class="ident">WriteMapEnd</a>(ctx <a href="../../../../../pkg/context.html" class="ident i0">context</a>.<a href="../../../../context/context.go.html#line-62" class="ident">Context</a>) <a href="../../../../../pkg/builtin.html#name-error" class="ident">error</a></code></span>
+<span class="codeline" id="line-43"><code>	<a href="../../../../../imp/github.com/uber/jaeger-client-go/thrift.TProtocol.html#name-WriteListBegin" class="ident">WriteListBegin</a>(ctx <a href="../../../../../pkg/context.html" class="ident i0">context</a>.<a href="../../../../context/context.go.html#line-62" class="ident">Context</a>, elemType <a href="type.go.html#line-23" class="ident">TType</a>, size <a href="../../../../../pkg/builtin.html#name-int" class="ident">int</a>) <a href="../../../../../pkg/builtin.html#name-error" class="ident">error</a></code></span>
+<span class="codeline" id="line-44"><code>	<a href="../../../../../imp/github.com/uber/jaeger-client-go/thrift.TProtocol.html#name-WriteListEnd" class="ident">WriteListEnd</a>(ctx <a href="../../../../../pkg/context.html" class="ident i0">context</a>.<a href="../../../../context/context.go.html#line-62" class="ident">Context</a>) <a href="../../../../../pkg/builtin.html#name-error" class="ident">error</a></code></span>
+<span class="codeline" id="line-45"><code>	<a href="../../../../../imp/github.com/uber/jaeger-client-go/thrift.TProtocol.html#name-WriteSetBegin" class="ident">WriteSetBegin</a>(ctx <a href="../../../../../pkg/context.html" class="ident i0">context</a>.<a href="../../../../context/context.go.html#line-62" class="ident">Context</a>, elemType <a href="type.go.html#line-23" class="ident">TType</a>, size <a href="../../../../../pkg/builtin.html#name-int" class="ident">int</a>) <a href="../../../../../pkg/builtin.html#name-error" class="ident">error</a></code></span>
+<span class="codeline" id="line-46"><code>	<a href="../../../../../imp/github.com/uber/jaeger-client-go/thrift.TProtocol.html#name-WriteSetEnd" class="ident">WriteSetEnd</a>(ctx <a href="../../../../../pkg/context.html" class="ident i0">context</a>.<a href="../../../../context/context.go.html#line-62" class="ident">Context</a>) <a href="../../../../../pkg/builtin.html#name-error" class="ident">error</a></code></span>
+<span class="codeline" id="line-47"><code>	<a href="../../../../../imp/github.com/uber/jaeger-client-go/thrift.TProtocol.html#name-WriteBool" class="ident">WriteBool</a>(ctx <a href="../../../../../pkg/context.html" class="ident i0">context</a>.<a href="../../../../context/context.go.html#line-62" class="ident">Context</a>, value <a href="../../../../../pkg/builtin.html#name-bool" class="ident">bool</a>) <a href="../../../../../pkg/builtin.html#name-error" class="ident">error</a></code></span>
+<span class="codeline" id="line-48"><code>	<a href="../../../../../imp/github.com/uber/jaeger-client-go/thrift.TProtocol.html#name-WriteByte" class="ident">WriteByte</a>(ctx <a href="../../../../../pkg/context.html" class="ident i0">context</a>.<a href="../../../../context/context.go.html#line-62" class="ident">Context</a>, value <a href="../../../../../pkg/builtin.html#name-int8" class="ident">int8</a>) <a href="../../../../../pkg/builtin.html#name-error" class="ident">error</a></code></span>
+<span class="codeline" id="line-49"><code>	<a href="../../../../../imp/github.com/uber/jaeger-client-go/thrift.TProtocol.html#name-WriteI16" class="ident">WriteI16</a>(ctx <a href="../../../../../pkg/context.html" class="ident i0">context</a>.<a href="../../../../context/context.go.html#line-62" class="ident">Context</a>, value <a href="../../../../../pkg/builtin.html#name-int16" class="ident">int16</a>) <a href="../../../../../pkg/builtin.html#name-error" class="ident">error</a></code></span>
+<span class="codeline" id="line-50"><code>	<a href="../../../../../imp/github.com/uber/jaeger-client-go/thrift.TProtocol.html#name-WriteI32" class="ident">WriteI32</a>(ctx <a href="../../../../../pkg/context.html" class="ident i0">context</a>.<a href="../../../../context/context.go.html#line-62" class="ident">Context</a>, value <a href="../../../../../pkg/builtin.html#name-int32" class="ident">int32</a>) <a href="../../../../../pkg/builtin.html#name-error" class="ident">error</a></code></span>
+<span class="codeline" id="line-51"><code>	<a href="../../../../../imp/github.com/uber/jaeger-client-go/thrift.TProtocol.html#name-WriteI64" class="ident">WriteI64</a>(ctx <a href="../../../../../pkg/context.html" class="ident i0">context</a>.<a href="../../../../context/context.go.html#line-62" class="ident">Context</a>, value <a href="../../../../../pkg/builtin.html#name-int64" class="ident">int64</a>) <a href="../../../../../pkg/builtin.html#name-error" class="ident">error</a></code></span>
+<span class="codeline" id="line-52"><code>	<a href="../../../../../imp/github.com/uber/jaeger-client-go/thrift.TProtocol.html#name-WriteDouble" class="ident">WriteDouble</a>(ctx <a href="../../../../../pkg/context.html" class="ident i0">context</a>.<a href="../../../../context/context.go.html#line-62" class="ident">Context</a>, value <a href="../../../../../pkg/builtin.html#name-float64" class="ident">float64</a>) <a href="../../../../../pkg/builtin.html#name-error" class="ident">error</a></code></span>
+<span class="codeline" id="line-53"><code>	<a href="../../../../../imp/github.com/uber/jaeger-client-go/thrift.TProtocol.html#name-WriteString" class="ident">WriteString</a>(ctx <a href="../../../../../pkg/context.html" class="ident i0">context</a>.<a href="../../../../context/context.go.html#line-62" class="ident">Context</a>, value <a href="../../../../../pkg/builtin.html#name-string" class="ident">string</a>) <a href="../../../../../pkg/builtin.html#name-error" class="ident">error</a></code></span>
+<span class="codeline" id="line-54"><code>	<a href="../../../../../imp/github.com/uber/jaeger-client-go/thrift.TProtocol.html#name-WriteBinary" class="ident">WriteBinary</a>(ctx <a href="../../../../../pkg/context.html" class="ident i0">context</a>.<a href="../../../../context/context.go.html#line-62" class="ident">Context</a>, value []<a href="../../../../../pkg/builtin.html#name-byte" class="ident">byte</a>) <a href="../../../../../pkg/builtin.html#name-error" class="ident">error</a></code></span>
+<span class="codeline" id="line-55"><code></code></span>
+<span class="codeline" id="line-56"><code>	<a href="../../../../../imp/github.com/uber/jaeger-client-go/thrift.TProtocol.html#name-ReadMessageBegin" class="ident">ReadMessageBegin</a>(ctx <a href="../../../../../pkg/context.html" class="ident i0">context</a>.<a href="../../../../context/context.go.html#line-62" class="ident">Context</a>) (name <a href="../../../../../pkg/builtin.html#name-string" class="ident">string</a>, typeId <a href="messagetype.go.html#line-23" class="ident">TMessageType</a>, seqid <a href="../../../../../pkg/builtin.html#name-int32" class="ident">int32</a>, err <a href="../../../../../pkg/builtin.html#name-error" class="ident">error</a>)</code></span>
+<span class="codeline" id="line-57"><code>	<a href="../../../../../imp/github.com/uber/jaeger-client-go/thrift.TProtocol.html#name-ReadMessageEnd" class="ident">ReadMessageEnd</a>(ctx <a href="../../../../../pkg/context.html" class="ident i0">context</a>.<a href="../../../../context/context.go.html#line-62" class="ident">Context</a>) <a href="../../../../../pkg/builtin.html#name-error" class="ident">error</a></code></span>
+<span class="codeline" id="line-58"><code>	<a href="../../../../../imp/github.com/uber/jaeger-client-go/thrift.TProtocol.html#name-ReadStructBegin" class="ident">ReadStructBegin</a>(ctx <a href="../../../../../pkg/context.html" class="ident i0">context</a>.<a href="../../../../context/context.go.html#line-62" class="ident">Context</a>) (name <a href="../../../../../pkg/builtin.html#name-string" class="ident">string</a>, err <a href="../../../../../pkg/builtin.html#name-error" class="ident">error</a>)</code></span>
+<span class="codeline" id="line-59"><code>	<a href="../../../../../imp/github.com/uber/jaeger-client-go/thrift.TProtocol.html#name-ReadStructEnd" class="ident">ReadStructEnd</a>(ctx <a href="../../../../../pkg/context.html" class="ident i0">context</a>.<a href="../../../../context/context.go.html#line-62" class="ident">Context</a>) <a href="../../../../../pkg/builtin.html#name-error" class="ident">error</a></code></span>
+<span class="codeline" id="line-60"><code>	<a href="../../../../../imp/github.com/uber/jaeger-client-go/thrift.TProtocol.html#name-ReadFieldBegin" class="ident">ReadFieldBegin</a>(ctx <a href="../../../../../pkg/context.html" class="ident i0">context</a>.<a href="../../../../context/context.go.html#line-62" class="ident">Context</a>) (name <a href="../../../../../pkg/builtin.html#name-string" class="ident">string</a>, typeId <a href="type.go.html#line-23" class="ident">TType</a>, id <a href="../../../../../pkg/builtin.html#name-int16" class="ident">int16</a>, err <a href="../../../../../pkg/builtin.html#name-error" class="ident">error</a>)</code></span>
+<span class="codeline" id="line-61"><code>	<a href="../../../../../imp/github.com/uber/jaeger-client-go/thrift.TProtocol.html#name-ReadFieldEnd" class="ident">ReadFieldEnd</a>(ctx <a href="../../../../../pkg/context.html" class="ident i0">context</a>.<a href="../../../../context/context.go.html#line-62" class="ident">Context</a>) <a href="../../../../../pkg/builtin.html#name-error" class="ident">error</a></code></span>
+<span class="codeline" id="line-62"><code>	<a href="../../../../../imp/github.com/uber/jaeger-client-go/thrift.TProtocol.html#name-ReadMapBegin" class="ident">ReadMapBegin</a>(ctx <a href="../../../../../pkg/context.html" class="ident i0">context</a>.<a href="../../../../context/context.go.html#line-62" class="ident">Context</a>) (keyType <a href="type.go.html#line-23" class="ident">TType</a>, valueType <a href="type.go.html#line-23" class="ident">TType</a>, size <a href="../../../../../pkg/builtin.html#name-int" class="ident">int</a>, err <a href="../../../../../pkg/builtin.html#name-error" class="ident">error</a>)</code></span>
+<span class="codeline" id="line-63"><code>	<a href="../../../../../imp/github.com/uber/jaeger-client-go/thrift.TProtocol.html#name-ReadMapEnd" class="ident">ReadMapEnd</a>(ctx <a href="../../../../../pkg/context.html" class="ident i0">context</a>.<a href="../../../../context/context.go.html#line-62" class="ident">Context</a>) <a href="../../../../../pkg/builtin.html#name-error" class="ident">error</a></code></span>
+<span class="codeline" id="line-64"><code>	<a href="../../../../../imp/github.com/uber/jaeger-client-go/thrift.TProtocol.html#name-ReadListBegin" class="ident">ReadListBegin</a>(ctx <a href="../../../../../pkg/context.html" class="ident i0">context</a>.<a href="../../../../context/context.go.html#line-62" class="ident">Context</a>) (elemType <a href="type.go.html#line-23" class="ident">TType</a>, size <a href="../../../../../pkg/builtin.html#name-int" class="ident">int</a>, err <a href="../../../../../pkg/builtin.html#name-error" class="ident">error</a>)</code></span>
+<span class="codeline" id="line-65"><code>	<a href="../../../../../imp/github.com/uber/jaeger-client-go/thrift.TProtocol.html#name-ReadListEnd" class="ident">ReadListEnd</a>(ctx <a href="../../../../../pkg/context.html" class="ident i0">context</a>.<a href="../../../../context/context.go.html#line-62" class="ident">Context</a>) <a href="../../../../../pkg/builtin.html#name-error" class="ident">error</a></code></span>
+<span class="codeline" id="line-66"><code>	<a href="../../../../../imp/github.com/uber/jaeger-client-go/thrift.TProtocol.html#name-ReadSetBegin" class="ident">ReadSetBegin</a>(ctx <a href="../../../../../pkg/context.html" class="ident i0">context</a>.<a href="../../../../context/context.go.html#line-62" class="ident">Context</a>) (elemType <a href="type.go.html#line-23" class="ident">TType</a>, size <a href="../../../../../pkg/builtin.html#name-int" class="ident">int</a>, err <a href="../../../../../pkg/builtin.html#name-error" class="ident">error</a>)</code></span>
+<span class="codeline" id="line-67"><code>	<a href="../../../../../imp/github.com/uber/jaeger-client-go/thrift.TProtocol.html#name-ReadSetEnd" class="ident">ReadSetEnd</a>(ctx <a href="../../../../../pkg/context.html" class="ident i0">context</a>.<a href="../../../../context/context.go.html#line-62" class="ident">Context</a>) <a href="../../../../../pkg/builtin.html#name-error" class="ident">error</a></code></span>
+<span class="codeline" id="line-68"><code>	<a href="../../../../../imp/github.com/uber/jaeger-client-go/thrift.TProtocol.html#name-ReadBool" class="ident">ReadBool</a>(ctx <a href="../../../../../pkg/context.html" class="ident i0">context</a>.<a href="../../../../context/context.go.html#line-62" class="ident">Context</a>) (value <a href="../../../../../pkg/builtin.html#name-bool" class="ident">bool</a>, err <a href="../../../../../pkg/builtin.html#name-error" class="ident">error</a>)</code></span>
+<span class="codeline" id="line-69"><code>	<a href="../../../../../imp/github.com/uber/jaeger-client-go/thrift.TProtocol.html#name-ReadByte" class="ident">ReadByte</a>(ctx <a href="../../../../../pkg/context.html" class="ident i0">context</a>.<a href="../../../../context/context.go.html#line-62" class="ident">Context</a>) (value <a href="../../../../../pkg/builtin.html#name-int8" class="ident">int8</a>, err <a href="../../../../../pkg/builtin.html#name-error" class="ident">error</a>)</code></span>
+<span class="codeline" id="line-70"><code>	<a href="../../../../../imp/github.com/uber/jaeger-client-go/thrift.TProtocol.html#name-ReadI16" class="ident">ReadI16</a>(ctx <a href="../../../../../pkg/context.html" class="ident i0">context</a>.<a href="../../../../context/context.go.html#line-62" class="ident">Context</a>) (value <a href="../../../../../pkg/builtin.html#name-int16" class="ident">int16</a>, err <a href="../../../../../pkg/builtin.html#name-error" class="ident">error</a>)</code></span>
+<span class="codeline" id="line-71"><code>	<a href="../../../../../imp/github.com/uber/jaeger-client-go/thrift.TProtocol.html#name-ReadI32" class="ident">ReadI32</a>(ctx <a href="../../../../../pkg/context.html" class="ident i0">context</a>.<a href="../../../../context/context.go.html#line-62" class="ident">Context</a>) (value <a href="../../../../../pkg/builtin.html#name-int32" class="ident">int32</a>, err <a href="../../../../../pkg/builtin.html#name-error" class="ident">error</a>)</code></span>
+<span class="codeline" id="line-72"><code>	<a href="../../../../../imp/github.com/uber/jaeger-client-go/thrift.TProtocol.html#name-ReadI64" class="ident">ReadI64</a>(ctx <a href="../../../../../pkg/context.html" class="ident i0">context</a>.<a href="../../../../context/context.go.html#line-62" class="ident">Context</a>) (value <a href="../../../../../pkg/builtin.html#name-int64" class="ident">int64</a>, err <a href="../../../../../pkg/builtin.html#name-error" class="ident">error</a>)</code></span>
+<span class="codeline" id="line-73"><code>	<a href="../../../../../imp/github.com/uber/jaeger-client-go/thrift.TProtocol.html#name-ReadDouble" class="ident">ReadDouble</a>(ctx <a href="../../../../../pkg/context.html" class="ident i0">context</a>.<a href="../../../../context/context.go.html#line-62" class="ident">Context</a>) (value <a href="../../../../../pkg/builtin.html#name-float64" class="ident">float64</a>, err <a href="../../../../../pkg/builtin.html#name-error" class="ident">error</a>)</code></span>
+<span class="codeline" id="line-74"><code>	<a href="../../../../../imp/github.com/uber/jaeger-client-go/thrift.TProtocol.html#name-ReadString" class="ident">ReadString</a>(ctx <a href="../../../../../pkg/context.html" class="ident i0">context</a>.<a href="../../../../context/context.go.html#line-62" class="ident">Context</a>) (value <a href="../../../../../pkg/builtin.html#name-string" class="ident">string</a>, err <a href="../../../../../pkg/builtin.html#name-error" class="ident">error</a>)</code></span>
+<span class="codeline" id="line-75"><code>	<a href="../../../../../imp/github.com/uber/jaeger-client-go/thrift.TProtocol.html#name-ReadBinary" class="ident">ReadBinary</a>(ctx <a href="../../../../../pkg/context.html" class="ident i0">context</a>.<a href="../../../../context/context.go.html#line-62" class="ident">Context</a>) (value []<a href="../../../../../pkg/builtin.html#name-byte" class="ident">byte</a>, err <a href="../../../../../pkg/builtin.html#name-error" class="ident">error</a>)</code></span>
+<span class="codeline" id="line-76"><code></code></span>
+<span class="codeline" id="line-77"><code>	<a href="../../../../../imp/github.com/uber/jaeger-client-go/thrift.TProtocol.html#name-Skip" class="ident">Skip</a>(ctx <a href="../../../../../pkg/context.html" class="ident i0">context</a>.<a href="../../../../context/context.go.html#line-62" class="ident">Context</a>, fieldType <a href="type.go.html#line-23" class="ident">TType</a>) (err <a href="../../../../../pkg/builtin.html#name-error" class="ident">error</a>)</code></span>
+<span class="codeline" id="line-78"><code>	<a href="../../../../../imp/github.com/uber/jaeger-client-go/thrift.TProtocol.html#name-Flush" class="ident">Flush</a>(ctx <a href="../../../../../pkg/context.html" class="ident i0">context</a>.<a href="../../../../context/context.go.html#line-62" class="ident">Context</a>) (err <a href="../../../../../pkg/builtin.html#name-error" class="ident">error</a>)</code></span>
+<span class="codeline" id="line-79"><code></code></span>
+<span class="codeline" id="line-80"><code>	<a href="../../../../../imp/github.com/uber/jaeger-client-go/thrift.TProtocol.html#name-Transport" class="ident">Transport</a>() <a href="transport.go.html#line-43" class="ident">TTransport</a></code></span>
+<span class="codeline" id="line-81"><code>}</code></span>
+<span class="codeline" id="line-82"><code></code></span>
+<span class="codeline" id="line-83"><code><span class="comment">// The maximum recursive depth the skip() function will traverse</span></code></span>
+<span class="codeline" id="line-84"><code><span class="keyword">const</span> <a href="../../../../../pkg/github.com/uber/jaeger-client-go/thrift.html#name-DEFAULT_RECURSION_DEPTH" class="ident">DEFAULT_RECURSION_DEPTH</a> = <span class="lit-number">64</span></code></span>
+<span class="codeline" id="line-85"><code></code></span>
+<span class="codeline" id="line-86"><code><span class="comment">// Skips over the next data element from the provided input TProtocol object.</span></code></span>
+<span class="codeline" id="line-87"><code><span class="keyword">func</span> <label for="r0" class="ident"><a href="../../../../../pkg/github.com/uber/jaeger-client-go/thrift.html#name-SkipDefaultDepth" class="ident">SkipDefaultDepth</a></label>(<label for="r1" class="ident">ctx</label> <a href="../../../../../pkg/context.html" class="ident i0">context</a>.<a href="../../../../context/context.go.html#line-62" class="ident">Context</a>, <label for="r2" class="ident">prot</label> <a href="#line-33" class="ident">TProtocol</a>, <label for="r3" class="ident">typeId</label> <a href="type.go.html#line-23" class="ident">TType</a>) (<label for="r4" class="ident">err</label> <a href="../../../../../pkg/builtin.html#name-error" class="ident">error</a>) {</code></span>
+<span class="codeline" id="line-88"><code>	<span class="keyword">return</span> <a href="#line-92" class="ident">Skip</a>(<label for="r1" class="ident">ctx</label>, <label for="r2" class="ident">prot</label>, <label for="r3" class="ident">typeId</label>, <a href="#line-84" class="ident">DEFAULT_RECURSION_DEPTH</a>)</code></span>
+<span class="codeline" id="line-89"><code>}</code></span>
+<span class="codeline" id="line-90"><code></code></span>
+<span class="codeline" id="line-91"><code><span class="comment">// Skips over the next data element from the provided input TProtocol object.</span></code></span>
+<span class="codeline" id="line-92"><code><span class="keyword">func</span> <label for="r5" class="ident"><a href="../../../../../pkg/github.com/uber/jaeger-client-go/thrift.html#name-Skip" class="ident">Skip</a></label>(<label for="r6" class="ident">ctx</label> <a href="../../../../../pkg/context.html" class="ident i0">context</a>.<a href="../../../../context/context.go.html#line-62" class="ident">Context</a>, <label for="r7" class="ident">self</label> <a href="#line-33" class="ident">TProtocol</a>, <label for="r8" class="ident">fieldType</label> <a href="type.go.html#line-23" class="ident">TType</a>, <label for="r9" class="ident">maxDepth</label> <a href="../../../../../pkg/builtin.html#name-int" class="ident">int</a>) (<label for="r10" class="ident">err</label> <a href="../../../../../pkg/builtin.html#name-error" class="ident">error</a>) {</code></span>
+<span class="codeline" id="line-93"><code></code></span>
+<span class="codeline" id="line-94"><code>	<span class="keyword">if</span> <label for="r9" class="ident">maxDepth</label> &lt;= <span class="lit-number">0</span> {</code></span>
+<span class="codeline" id="line-95"><code>		<span class="keyword">return</span> <a href="protocol_exception.go.html#line-87" class="ident">NewTProtocolExceptionWithType</a>(<a href="protocol_exception.go.html#line-40" class="ident">DEPTH_LIMIT</a>, <a href="../../../../../pkg/errors.html" class="ident i1">errors</a>.<a href="../../../../errors/errors.go.html#line-58" class="ident">New</a>(<span class="lit-string">"Depth limit exceeded"</span>))</code></span>
+<span class="codeline" id="line-96"><code>	}</code></span>
+<span class="codeline" id="line-97"><code></code></span>
+<span class="codeline" id="line-98"><code>	<span class="keyword">switch</span> <label for="r8" class="ident">fieldType</label> {</code></span>
+<span class="codeline" id="line-99"><code>	<span class="keyword">case</span> <a href="type.go.html#line-28" class="ident">BOOL</a>:</code></span>
+<span class="codeline" id="line-100"><code>		_, <label for="r10" class="ident">err</label> = <label for="r7" class="ident">self</label>.<a href="#line-68" class="ident">ReadBool</a>(<label for="r6" class="ident">ctx</label>)</code></span>
+<span class="codeline" id="line-101"><code>		<span class="keyword">return</span></code></span>
+<span class="codeline" id="line-102"><code>	<span class="keyword">case</span> <a href="type.go.html#line-29" class="ident">BYTE</a>:</code></span>
+<span class="codeline" id="line-103"><code>		_, <label for="r10" class="ident">err</label> = <label for="r7" class="ident">self</label>.<a href="#line-69" class="ident">ReadByte</a>(<label for="r6" class="ident">ctx</label>)</code></span>
+<span class="codeline" id="line-104"><code>		<span class="keyword">return</span></code></span>
+<span class="codeline" id="line-105"><code>	<span class="keyword">case</span> <a href="type.go.html#line-32" class="ident">I16</a>:</code></span>
+<span class="codeline" id="line-106"><code>		_, <label for="r10" class="ident">err</label> = <label for="r7" class="ident">self</label>.<a href="#line-70" class="ident">ReadI16</a>(<label for="r6" class="ident">ctx</label>)</code></span>
+<span class="codeline" id="line-107"><code>		<span class="keyword">return</span></code></span>
+<span class="codeline" id="line-108"><code>	<span class="keyword">case</span> <a href="type.go.html#line-33" class="ident">I32</a>:</code></span>
+<span class="codeline" id="line-109"><code>		_, <label for="r10" class="ident">err</label> = <label for="r7" class="ident">self</label>.<a href="#line-71" class="ident">ReadI32</a>(<label for="r6" class="ident">ctx</label>)</code></span>
+<span class="codeline" id="line-110"><code>		<span class="keyword">return</span></code></span>
+<span class="codeline" id="line-111"><code>	<span class="keyword">case</span> <a href="type.go.html#line-34" class="ident">I64</a>:</code></span>
+<span class="codeline" id="line-112"><code>		_, <label for="r10" class="ident">err</label> = <label for="r7" class="ident">self</label>.<a href="#line-72" class="ident">ReadI64</a>(<label for="r6" class="ident">ctx</label>)</code></span>
+<span class="codeline" id="line-113"><code>		<span class="keyword">return</span></code></span>
+<span class="codeline" id="line-114"><code>	<span class="keyword">case</span> <a href="type.go.html#line-31" class="ident">DOUBLE</a>:</code></span>
+<span class="codeline" id="line-115"><code>		_, <label for="r10" class="ident">err</label> = <label for="r7" class="ident">self</label>.<a href="#line-73" class="ident">ReadDouble</a>(<label for="r6" class="ident">ctx</label>)</code></span>
+<span class="codeline" id="line-116"><code>		<span class="keyword">return</span></code></span>
+<span class="codeline" id="line-117"><code>	<span class="keyword">case</span> <a href="type.go.html#line-35" class="ident">STRING</a>:</code></span>
+<span class="codeline" id="line-118"><code>		_, <label for="r10" class="ident">err</label> = <label for="r7" class="ident">self</label>.<a href="#line-74" class="ident">ReadString</a>(<label for="r6" class="ident">ctx</label>)</code></span>
+<span class="codeline" id="line-119"><code>		<span class="keyword">return</span></code></span>
+<span class="codeline" id="line-120"><code>	<span class="keyword">case</span> <a href="type.go.html#line-37" class="ident">STRUCT</a>:</code></span>
+<span class="codeline" id="line-121"><code>		<span class="keyword">if</span> _, <label for="r10" class="ident">err</label> = <label for="r7" class="ident">self</label>.<a href="#line-58" class="ident">ReadStructBegin</a>(<label for="r6" class="ident">ctx</label>); <label for="r10" class="ident">err</label> != <a href="../../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-122"><code>			<span class="keyword">return</span> <label for="r10" class="ident">err</label></code></span>
+<span class="codeline" id="line-123"><code>		}</code></span>
+<span class="codeline" id="line-124"><code>		<span class="keyword">for</span> {</code></span>
+<span class="codeline" id="line-125"><code>			<label for="r11" class="ident">_</label>, <label for="r12" class="ident">typeId</label>, <label for="r13" class="ident">_</label>, <label for="r14" class="ident">_</label> := <label for="r7" class="ident">self</label>.<a href="#line-60" class="ident">ReadFieldBegin</a>(<label for="r6" class="ident">ctx</label>)</code></span>
+<span class="codeline" id="line-126"><code>			<span class="keyword">if</span> <label for="r12" class="ident">typeId</label> == <a href="type.go.html#line-26" class="ident">STOP</a> {</code></span>
+<span class="codeline" id="line-127"><code>				<span class="keyword">break</span></code></span>
+<span class="codeline" id="line-128"><code>			}</code></span>
+<span class="codeline" id="line-129"><code>			<label for="r15" class="ident">err</label> := <label for="r5" class="ident">Skip</label>(<label for="r6" class="ident">ctx</label>, <label for="r7" class="ident">self</label>, <label for="r12" class="ident">typeId</label>, <label for="r9" class="ident">maxDepth</label>-<span class="lit-number">1</span>)</code></span>
+<span class="codeline" id="line-130"><code>			<span class="keyword">if</span> <label for="r15" class="ident">err</label> != <a href="../../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-131"><code>				<span class="keyword">return</span> <label for="r15" class="ident">err</label></code></span>
+<span class="codeline" id="line-132"><code>			}</code></span>
+<span class="codeline" id="line-133"><code>			<label for="r7" class="ident">self</label>.<a href="#line-61" class="ident">ReadFieldEnd</a>(<label for="r6" class="ident">ctx</label>)</code></span>
+<span class="codeline" id="line-134"><code>		}</code></span>
+<span class="codeline" id="line-135"><code>		<span class="keyword">return</span> <label for="r7" class="ident">self</label>.<a href="#line-59" class="ident">ReadStructEnd</a>(<label for="r6" class="ident">ctx</label>)</code></span>
+<span class="codeline" id="line-136"><code>	<span class="keyword">case</span> <a href="type.go.html#line-38" class="ident">MAP</a>:</code></span>
+<span class="codeline" id="line-137"><code>		<label for="r16" class="ident">keyType</label>, <label for="r17" class="ident">valueType</label>, <label for="r18" class="ident">size</label>, <label for="r19" class="ident">err</label> := <label for="r7" class="ident">self</label>.<a href="#line-62" class="ident">ReadMapBegin</a>(<label for="r6" class="ident">ctx</label>)</code></span>
+<span class="codeline" id="line-138"><code>		<span class="keyword">if</span> <label for="r19" class="ident">err</label> != <a href="../../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-139"><code>			<span class="keyword">return</span> <label for="r19" class="ident">err</label></code></span>
+<span class="codeline" id="line-140"><code>		}</code></span>
+<span class="codeline" id="line-141"><code>		<span class="keyword">for</span> <label for="r20" class="ident">i</label> := <span class="lit-number">0</span>; <label for="r20" class="ident">i</label> &lt; <label for="r18" class="ident">size</label>; <label for="r20" class="ident">i</label>++ {</code></span>
+<span class="codeline" id="line-142"><code>			<label for="r21" class="ident">err</label> := <label for="r5" class="ident">Skip</label>(<label for="r6" class="ident">ctx</label>, <label for="r7" class="ident">self</label>, <label for="r16" class="ident">keyType</label>, <label for="r9" class="ident">maxDepth</label>-<span class="lit-number">1</span>)</code></span>
+<span class="codeline" id="line-143"><code>			<span class="keyword">if</span> <label for="r21" class="ident">err</label> != <a href="../../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-144"><code>				<span class="keyword">return</span> <label for="r21" class="ident">err</label></code></span>
+<span class="codeline" id="line-145"><code>			}</code></span>
+<span class="codeline" id="line-146"><code>			<label for="r7" class="ident">self</label>.<a href="#line-77" class="ident">Skip</a>(<label for="r6" class="ident">ctx</label>, <label for="r17" class="ident">valueType</label>)</code></span>
+<span class="codeline" id="line-147"><code>		}</code></span>
+<span class="codeline" id="line-148"><code>		<span class="keyword">return</span> <label for="r7" class="ident">self</label>.<a href="#line-63" class="ident">ReadMapEnd</a>(<label for="r6" class="ident">ctx</label>)</code></span>
+<span class="codeline" id="line-149"><code>	<span class="keyword">case</span> <a href="type.go.html#line-39" class="ident">SET</a>:</code></span>
+<span class="codeline" id="line-150"><code>		<label for="r22" class="ident">elemType</label>, <label for="r23" class="ident">size</label>, <label for="r24" class="ident">err</label> := <label for="r7" class="ident">self</label>.<a href="#line-66" class="ident">ReadSetBegin</a>(<label for="r6" class="ident">ctx</label>)</code></span>
+<span class="codeline" id="line-151"><code>		<span class="keyword">if</span> <label for="r24" class="ident">err</label> != <a href="../../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-152"><code>			<span class="keyword">return</span> <label for="r24" class="ident">err</label></code></span>
+<span class="codeline" id="line-153"><code>		}</code></span>
+<span class="codeline" id="line-154"><code>		<span class="keyword">for</span> <label for="r25" class="ident">i</label> := <span class="lit-number">0</span>; <label for="r25" class="ident">i</label> &lt; <label for="r23" class="ident">size</label>; <label for="r25" class="ident">i</label>++ {</code></span>
+<span class="codeline" id="line-155"><code>			<label for="r26" class="ident">err</label> := <label for="r5" class="ident">Skip</label>(<label for="r6" class="ident">ctx</label>, <label for="r7" class="ident">self</label>, <label for="r22" class="ident">elemType</label>, <label for="r9" class="ident">maxDepth</label>-<span class="lit-number">1</span>)</code></span>
+<span class="codeline" id="line-156"><code>			<span class="keyword">if</span> <label for="r26" class="ident">err</label> != <a href="../../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-157"><code>				<span class="keyword">return</span> <label for="r26" class="ident">err</label></code></span>
+<span class="codeline" id="line-158"><code>			}</code></span>
+<span class="codeline" id="line-159"><code>		}</code></span>
+<span class="codeline" id="line-160"><code>		<span class="keyword">return</span> <label for="r7" class="ident">self</label>.<a href="#line-67" class="ident">ReadSetEnd</a>(<label for="r6" class="ident">ctx</label>)</code></span>
+<span class="codeline" id="line-161"><code>	<span class="keyword">case</span> <a href="type.go.html#line-40" class="ident">LIST</a>:</code></span>
+<span class="codeline" id="line-162"><code>		<label for="r27" class="ident">elemType</label>, <label for="r28" class="ident">size</label>, <label for="r29" class="ident">err</label> := <label for="r7" class="ident">self</label>.<a href="#line-64" class="ident">ReadListBegin</a>(<label for="r6" class="ident">ctx</label>)</code></span>
+<span class="codeline" id="line-163"><code>		<span class="keyword">if</span> <label for="r29" class="ident">err</label> != <a href="../../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-164"><code>			<span class="keyword">return</span> <label for="r29" class="ident">err</label></code></span>
+<span class="codeline" id="line-165"><code>		}</code></span>
+<span class="codeline" id="line-166"><code>		<span class="keyword">for</span> <label for="r30" class="ident">i</label> := <span class="lit-number">0</span>; <label for="r30" class="ident">i</label> &lt; <label for="r28" class="ident">size</label>; <label for="r30" class="ident">i</label>++ {</code></span>
+<span class="codeline" id="line-167"><code>			<label for="r31" class="ident">err</label> := <label for="r5" class="ident">Skip</label>(<label for="r6" class="ident">ctx</label>, <label for="r7" class="ident">self</label>, <label for="r27" class="ident">elemType</label>, <label for="r9" class="ident">maxDepth</label>-<span class="lit-number">1</span>)</code></span>
+<span class="codeline" id="line-168"><code>			<span class="keyword">if</span> <label for="r31" class="ident">err</label> != <a href="../../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-169"><code>				<span class="keyword">return</span> <label for="r31" class="ident">err</label></code></span>
+<span class="codeline" id="line-170"><code>			}</code></span>
+<span class="codeline" id="line-171"><code>		}</code></span>
+<span class="codeline" id="line-172"><code>		<span class="keyword">return</span> <label for="r7" class="ident">self</label>.<a href="#line-65" class="ident">ReadListEnd</a>(<label for="r6" class="ident">ctx</label>)</code></span>
+<span class="codeline" id="line-173"><code>	<span class="keyword">default</span>:</code></span>
+<span class="codeline" id="line-174"><code>		<span class="keyword">return</span> <a href="protocol_exception.go.html#line-87" class="ident">NewTProtocolExceptionWithType</a>(<a href="protocol_exception.go.html#line-35" class="ident">INVALID_DATA</a>, <a href="../../../../../pkg/errors.html" class="ident i1">errors</a>.<a href="../../../../errors/errors.go.html#line-58" class="ident">New</a>(<a href="../../../../../pkg/fmt.html" class="ident i2">fmt</a>.<a href="../../../../fmt/print.go.html#line-217" class="ident">Sprintf</a>(<span class="lit-string">"Unknown data type %d"</span>, <label for="r8" class="ident">fieldType</label>)))</code></span>
+<span class="codeline" id="line-175"><code>	}</code></span>
+<span class="codeline" id="line-176"><code>	<span class="keyword">return</span> <a href="../../../../../pkg/builtin.html#name-nil" class="ident">nil</a></code></span>
+<span class="codeline" id="line-177"><code>}</code></span>
+</pre><pre id="footer">
+<table><tr><td><img src="../../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

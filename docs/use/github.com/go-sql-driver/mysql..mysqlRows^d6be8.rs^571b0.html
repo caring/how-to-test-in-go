@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/go-sql-driver/mysql.mysqlRows.rs</title>
+<link href="../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../pkg/github.com/go-sql-driver/mysql.html">github.com/go-sql-driver/mysql</a>.<a href="../../../src/github.com/go-sql-driver/mysql/rows.go.html#line-24">mysqlRows</a>.<a href="../../../src/github.com/go-sql-driver/mysql/rows.go.html#line-26">rs</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">41 uses</span>
+
+	github.com/go-sql-driver/mysql (current package)
+		<a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-385">connection.go#L385</a>: 				rows.<b>rs</b>.done = true
+		<a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-396" class="path-duplicate">connection.go</a><a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-396">#L396</a>: 			rows.<b>rs</b>.columns, err = mc.readColumns(resLen)
+		<a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-416" class="path-duplicate">connection.go</a><a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-416">#L416</a>: 		rows.<b>rs</b>.columns = []mysqlField{{fieldType: fieldTypeVarChar}}
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-739">packets.go#L739</a>: 	if rows.<b>rs</b>.done {
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-752" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-752">#L752</a>: 		rows.<b>rs</b>.done = true
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-777" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-777">#L777</a>: 					switch rows.<b>rs</b>.columns[i].fieldType {
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-1184" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-1184">#L1184</a>: 			rows.<b>rs</b>.done = true
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-1210" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-1210">#L1210</a>: 		switch rows.<b>rs</b>.columns[i].fieldType {
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-1217" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-1217">#L1217</a>: 			if rows.<b>rs</b>.columns[i].flags&amp;flagUnsigned != 0 {
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-1226" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-1226">#L1226</a>: 			if rows.<b>rs</b>.columns[i].flags&amp;flagUnsigned != 0 {
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-1235" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-1235">#L1235</a>: 			if rows.<b>rs</b>.columns[i].flags&amp;flagUnsigned != 0 {
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-1244" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-1244">#L1244</a>: 			if rows.<b>rs</b>.columns[i].flags&amp;flagUnsigned != 0 {
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-1298" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-1298">#L1298</a>: 			case rows.<b>rs</b>.columns[i].fieldType == fieldTypeTime:
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-1301" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-1301">#L1301</a>: 				switch decimals := rows.<b>rs</b>.columns[i].decimals; decimals {
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-1309" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-1309">#L1309</a>: 						rows.<b>rs</b>.columns[i].decimals,
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-1317" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-1317">#L1317</a>: 				if rows.<b>rs</b>.columns[i].fieldType == fieldTypeDate {
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-1320" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-1320">#L1320</a>: 					switch decimals := rows.<b>rs</b>.columns[i].decimals; decimals {
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-1328" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-1328">#L1328</a>: 							rows.<b>rs</b>.columns[i].decimals,
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-1344" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-1344">#L1344</a>: 			return fmt.Errorf("unknown field type %d", rows.<b>rs</b>.columns[i].fieldType)
+		<a href="../../../src/github.com/go-sql-driver/mysql/rows.go.html#line-26">rows.go#L26</a>: 	<b>rs</b>     resultSet
+		<a href="../../../src/github.com/go-sql-driver/mysql/rows.go.html#line-39" class="path-duplicate">rows.go</a><a href="../../../src/github.com/go-sql-driver/mysql/rows.go.html#line-39">#L39</a>: 	if rows.<b>rs</b>.columnNames != nil {
+		<a href="../../../src/github.com/go-sql-driver/mysql/rows.go.html#line-40" class="path-duplicate">rows.go</a><a href="../../../src/github.com/go-sql-driver/mysql/rows.go.html#line-40">#L40</a>: 		return rows.<b>rs</b>.columnNames
+		<a href="../../../src/github.com/go-sql-driver/mysql/rows.go.html#line-43" class="path-duplicate">rows.go</a><a href="../../../src/github.com/go-sql-driver/mysql/rows.go.html#line-43">#L43</a>: 	columns := make([]string, len(rows.<b>rs</b>.columns))
+		<a href="../../../src/github.com/go-sql-driver/mysql/rows.go.html#line-46" class="path-duplicate">rows.go</a><a href="../../../src/github.com/go-sql-driver/mysql/rows.go.html#line-46">#L46</a>: 			if tableName := rows.<b>rs</b>.columns[i].tableName; len(tableName) &gt; 0 {
+		<a href="../../../src/github.com/go-sql-driver/mysql/rows.go.html#line-47" class="path-duplicate">rows.go</a><a href="../../../src/github.com/go-sql-driver/mysql/rows.go.html#line-47">#L47</a>: 				columns[i] = tableName + "." + rows.<b>rs</b>.columns[i].name
+		<a href="../../../src/github.com/go-sql-driver/mysql/rows.go.html#line-49" class="path-duplicate">rows.go</a><a href="../../../src/github.com/go-sql-driver/mysql/rows.go.html#line-49">#L49</a>: 				columns[i] = rows.<b>rs</b>.columns[i].name
+		<a href="../../../src/github.com/go-sql-driver/mysql/rows.go.html#line-54" class="path-duplicate">rows.go</a><a href="../../../src/github.com/go-sql-driver/mysql/rows.go.html#line-54">#L54</a>: 			columns[i] = rows.<b>rs</b>.columns[i].name
+		<a href="../../../src/github.com/go-sql-driver/mysql/rows.go.html#line-58" class="path-duplicate">rows.go</a><a href="../../../src/github.com/go-sql-driver/mysql/rows.go.html#line-58">#L58</a>: 	rows.<b>rs</b>.columnNames = columns
+		<a href="../../../src/github.com/go-sql-driver/mysql/rows.go.html#line-63" class="path-duplicate">rows.go</a><a href="../../../src/github.com/go-sql-driver/mysql/rows.go.html#line-63">#L63</a>: 	return rows.<b>rs</b>.columns[i].typeDatabaseName()
+		<a href="../../../src/github.com/go-sql-driver/mysql/rows.go.html#line-71" class="path-duplicate">rows.go</a><a href="../../../src/github.com/go-sql-driver/mysql/rows.go.html#line-71">#L71</a>: 	return rows.<b>rs</b>.columns[i].flags&amp;flagNotNULL == 0, true
+		<a href="../../../src/github.com/go-sql-driver/mysql/rows.go.html#line-75" class="path-duplicate">rows.go</a><a href="../../../src/github.com/go-sql-driver/mysql/rows.go.html#line-75">#L75</a>: 	column := rows.<b>rs</b>.columns[i]
+		<a href="../../../src/github.com/go-sql-driver/mysql/rows.go.html#line-97" class="path-duplicate">rows.go</a><a href="../../../src/github.com/go-sql-driver/mysql/rows.go.html#line-97">#L97</a>: 	return rows.<b>rs</b>.columns[i].scanType()
+		<a href="../../../src/github.com/go-sql-driver/mysql/rows.go.html#line-122" class="path-duplicate">rows.go</a><a href="../../../src/github.com/go-sql-driver/mysql/rows.go.html#line-122">#L122</a>: 	if !rows.<b>rs</b>.done {
+		<a href="../../../src/github.com/go-sql-driver/mysql/rows.go.html#line-151" class="path-duplicate">rows.go</a><a href="../../../src/github.com/go-sql-driver/mysql/rows.go.html#line-151">#L151</a>: 	if !rows.<b>rs</b>.done {
+		<a href="../../../src/github.com/go-sql-driver/mysql/rows.go.html#line-155" class="path-duplicate">rows.go</a><a href="../../../src/github.com/go-sql-driver/mysql/rows.go.html#line-155">#L155</a>: 		rows.<b>rs</b>.done = true
+		<a href="../../../src/github.com/go-sql-driver/mysql/rows.go.html#line-162" class="path-duplicate">rows.go</a><a href="../../../src/github.com/go-sql-driver/mysql/rows.go.html#line-162">#L162</a>: 	rows.<b>rs</b> = resultSet{}
+		<a href="../../../src/github.com/go-sql-driver/mysql/rows.go.html#line-177" class="path-duplicate">rows.go</a><a href="../../../src/github.com/go-sql-driver/mysql/rows.go.html#line-177">#L177</a>: 		rows.<b>rs</b>.done = true
+		<a href="../../../src/github.com/go-sql-driver/mysql/rows.go.html#line-187" class="path-duplicate">rows.go</a><a href="../../../src/github.com/go-sql-driver/mysql/rows.go.html#line-187">#L187</a>: 	rows.<b>rs</b>.columns, err = rows.mc.readColumns(resLen)
+		<a href="../../../src/github.com/go-sql-driver/mysql/rows.go.html#line-209" class="path-duplicate">rows.go</a><a href="../../../src/github.com/go-sql-driver/mysql/rows.go.html#line-209">#L209</a>: 	rows.<b>rs</b>.columns, err = rows.mc.readColumns(resLen)
+		<a href="../../../src/github.com/go-sql-driver/mysql/statement.go.html#line-123">statement.go#L123</a>: 		rows.<b>rs</b>.columns, err = mc.readColumns(resLen)
+		<a href="../../../src/github.com/go-sql-driver/mysql/statement.go.html#line-125" class="path-duplicate">statement.go</a><a href="../../../src/github.com/go-sql-driver/mysql/statement.go.html#line-125">#L125</a>: 		rows.<b>rs</b>.done = true
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

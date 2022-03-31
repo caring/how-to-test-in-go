@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: database/sql.Rows.rowsi</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../pkg/database/sql.html">database/sql</a>.<a href="../../src/database/sql/sql.go.html#line-2875">Rows</a>.<a href="../../src/database/sql/sql.go.html#line-2878">rowsi</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">15 uses</span>
+
+	database/sql (current package)
+		<a href="../../src/database/sql/convert.go.html#line-331">convert.go#L331</a>: 				<b>rowsi</b>:       s,
+		<a href="../../src/database/sql/sql.go.html#line-1734">sql.go#L1734</a>: 				<b>rowsi</b>:       rowsi,
+		<a href="../../src/database/sql/sql.go.html#line-1764" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-1764">#L1764</a>: 		<b>rowsi</b>:       rowsi,
+		<a href="../../src/database/sql/sql.go.html#line-2749" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-2749">#L2749</a>: 				<b>rowsi</b>: rowsi,
+		<a href="../../src/database/sql/sql.go.html#line-2878" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-2878">#L2878</a>: 	<b>rowsi</b>       driver.Rows
+		<a href="../../src/database/sql/sql.go.html#line-2964" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-2964">#L2964</a>: 		rs.lastcols = make([]driver.Value, len(rs.<b>rowsi</b>.Columns()))
+		<a href="../../src/database/sql/sql.go.html#line-2967" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-2967">#L2967</a>: 	rs.lasterr = rs.<b>rowsi</b>.Next(rs.lastcols)
+		<a href="../../src/database/sql/sql.go.html#line-2973" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-2973">#L2973</a>: 		nextResultSet, ok := rs.<b>rowsi</b>.(driver.RowsNextResultSet)
+		<a href="../../src/database/sql/sql.go.html#line-3011" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-3011">#L3011</a>: 	nextResultSet, ok := rs.<b>rowsi</b>.(driver.RowsNextResultSet)
+		<a href="../../src/database/sql/sql.go.html#line-3049" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-3049">#L3049</a>: 	if rs.<b>rowsi</b> == nil {
+		<a href="../../src/database/sql/sql.go.html#line-3055" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-3055">#L3055</a>: 	return rs.<b>rowsi</b>.Columns(), nil
+		<a href="../../src/database/sql/sql.go.html#line-3066" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-3066">#L3066</a>: 	if rs.<b>rowsi</b> == nil {
+		<a href="../../src/database/sql/sql.go.html#line-3072" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-3072">#L3072</a>: 	return rowsColumnInfoSetupConnLocked(rs.<b>rowsi</b>), nil
+		<a href="../../src/database/sql/sql.go.html#line-3248" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-3248">#L3248</a>: 			return fmt.Errorf(`sql: Scan error on column index %d, name %q: %w`, i, rs.<b>rowsi</b>.Columns()[i], err)
+		<a href="../../src/database/sql/sql.go.html#line-3280" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-3280">#L3280</a>: 		err = rs.<b>rowsi</b>.Close()
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

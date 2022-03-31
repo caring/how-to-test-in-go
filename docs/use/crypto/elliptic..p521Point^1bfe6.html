@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: crypto/elliptic.p521Point</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../../pkg/crypto/elliptic.html">crypto/elliptic</a>.<a href="../../src/crypto/elliptic/p521.go.html#line-60">p521Point</a></b></span>
+
+<span class="title">13 uses</span>
+
+	crypto/elliptic (current package)
+		<a href="../../src/crypto/elliptic/p521.go.html#line-60">p521.go#L60</a>: type <b>p521Point</b> struct {
+		<a href="../../src/crypto/elliptic/p521.go.html#line-75" class="path-duplicate">p521.go</a><a href="../../src/crypto/elliptic/p521.go.html#line-75">#L75</a>: func (curve p521Curve) affineFromJacobian(p *<b>p521Point</b>) (x, y *big.Int) {
+		<a href="../../src/crypto/elliptic/p521.go.html#line-107" class="path-duplicate">p521.go</a><a href="../../src/crypto/elliptic/p521.go.html#line-107">#L107</a>: func (curve p521Curve) jacobianFromAffine(x, y *big.Int) *<b>p521Point</b> {
+		<a href="../../src/crypto/elliptic/p521.go.html#line-111" class="path-duplicate">p521.go</a><a href="../../src/crypto/elliptic/p521.go.html#line-111">#L111</a>: 		return &amp;<b>p521Point</b>{
+		<a href="../../src/crypto/elliptic/p521.go.html#line-117" class="path-duplicate">p521.go</a><a href="../../src/crypto/elliptic/p521.go.html#line-117">#L117</a>: 	return &amp;<b>p521Point</b>{
+		<a href="../../src/crypto/elliptic/p521.go.html#line-131" class="path-duplicate">p521.go</a><a href="../../src/crypto/elliptic/p521.go.html#line-131">#L131</a>: func (q *<b>p521Point</b>) addJacobian(p1, p2 *<b>p521Point</b>) *<b>p521Point</b> {
+		<a href="../../src/crypto/elliptic/p521.go.html#line-197" class="path-duplicate">p521.go</a><a href="../../src/crypto/elliptic/p521.go.html#line-197">#L197</a>: func (q *<b>p521Point</b>) doubleJacobian(p *<b>p521Point</b>) *<b>p521Point</b> {
+		<a href="../../src/crypto/elliptic/p521.go.html#line-238" class="path-duplicate">p521.go</a><a href="../../src/crypto/elliptic/p521.go.html#line-238">#L238</a>: 	p, t := &amp;<b>p521Point</b>{
+		<a href="../../src/crypto/elliptic/p521.go.html#line-242" class="path-duplicate">p521.go</a><a href="../../src/crypto/elliptic/p521.go.html#line-242">#L242</a>: 	}, &amp;<b>p521Point</b>{
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

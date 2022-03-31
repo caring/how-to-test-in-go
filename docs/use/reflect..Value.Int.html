@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: reflect.Value.Int</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/reflect.html">reflect</a>.<a href="../src/reflect/value.go.html#line-39">Value</a>.<a href="../src/reflect/value.go.html#line-1332">Int</a></b></span><span style="font-size: large;"><i> (method)</i></span>
+
+<span class="title">52 uses</span>
+
+	reflect (current package)
+		<a href="../src/reflect/value.go.html#line-1332">value.go#L1332</a>: func (v Value) <b>Int</b>() int64 {
+		<a href="../src/reflect/value.go.html#line-1459" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-1459">#L1459</a>: 		return v.<b>Int</b>() == 0
+		<a href="../src/reflect/value.go.html#line-3022" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-3022">#L3022</a>: 	return makeInt(v.flag.ro(), uint64(v.<b>Int</b>()), t)
+		<a href="../src/reflect/value.go.html#line-3042" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-3042">#L3042</a>: 	return makeFloat(v.flag.ro(), float64(v.<b>Int</b>()), t)
+		<a href="../src/reflect/value.go.html#line-3069" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-3069">#L3069</a>: 	if x := v.<b>Int</b>(); int64(rune(x)) == x {
+
+	<a href="../pkg/database/sql.html">database/sql</a>
+		<a href="../src/database/sql/convert.go.html#line-508">convert.go#L508</a>: 		return strconv.FormatInt(rv.<b>Int</b>(), 10)
+		<a href="../src/database/sql/convert.go.html#line-524" class="path-duplicate">convert.go</a><a href="../src/database/sql/convert.go.html#line-524">#L524</a>: 		return strconv.AppendInt(buf, rv.<b>Int</b>(), 10), true
+
+	<a href="../pkg/database/sql/driver.html">database/sql/driver</a>
+		<a href="../src/database/sql/driver/types.go.html#line-84">types.go#L84</a>: 		iv := sv.<b>Int</b>()
+		<a href="../src/database/sql/driver/types.go.html#line-112" class="path-duplicate">types.go</a><a href="../src/database/sql/driver/types.go.html#line-112">#L112</a>: 		i64 := rv.<b>Int</b>()
+		<a href="../src/database/sql/driver/types.go.html#line-267" class="path-duplicate">types.go</a><a href="../src/database/sql/driver/types.go.html#line-267">#L267</a>: 		return rv.<b>Int</b>(), nil
+
+	<a href="../pkg/encoding/asn1.html">encoding/asn1</a>
+		<a href="../src/encoding/asn1/marshal.go.html#line-486">marshal.go#L486</a>: 		return int64Encoder(v.<b>Int</b>()), nil
+
+	<a href="../pkg/encoding/binary.html">encoding/binary</a>
+		<a href="../src/encoding/binary/binary.go.html#line-641">binary.go#L641</a>: 			e.int8(int8(v.<b>Int</b>()))
+		<a href="../src/encoding/binary/binary.go.html#line-643" class="path-duplicate">binary.go</a><a href="../src/encoding/binary/binary.go.html#line-643">#L643</a>: 			e.int16(int16(v.<b>Int</b>()))
+		<a href="../src/encoding/binary/binary.go.html#line-645" class="path-duplicate">binary.go</a><a href="../src/encoding/binary/binary.go.html#line-645">#L645</a>: 			e.int32(int32(v.<b>Int</b>()))
+		<a href="../src/encoding/binary/binary.go.html#line-647" class="path-duplicate">binary.go</a><a href="../src/encoding/binary/binary.go.html#line-647">#L647</a>: 			e.int64(v.<b>Int</b>())
+
+	<a href="../pkg/encoding/json.html">encoding/json</a>
+		<a href="../src/encoding/json/encode.go.html#line-348">encode.go#L348</a>: 		return v.<b>Int</b>() == 0
+		<a href="../src/encoding/json/encode.go.html#line-552" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-552">#L552</a>: 	b := strconv.AppendInt(e.scratch[:0], v.<b>Int</b>(), 10)
+		<a href="../src/encoding/json/encode.go.html#line-1021" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-1021">#L1021</a>: 		w.ks = strconv.FormatInt(w.k.<b>Int</b>(), 10)
+
+	<a href="../pkg/encoding/xml.html">encoding/xml</a>
+		<a href="../src/encoding/xml/marshal.go.html#line-757">marshal.go#L757</a>: 		return strconv.FormatInt(val.<b>Int</b>(), 10), nil, nil
+		<a href="../src/encoding/xml/marshal.go.html#line-856" class="path-duplicate">marshal.go</a><a href="../src/encoding/xml/marshal.go.html#line-856">#L856</a>: 				if err := emit(p, strconv.AppendInt(scratch[:0], vf.<b>Int</b>(), 10)); err != nil {
+		<a href="../src/encoding/xml/marshal.go.html#line-1049" class="path-duplicate">marshal.go</a><a href="../src/encoding/xml/marshal.go.html#line-1049">#L1049</a>: 		return v.<b>Int</b>() == 0
+
+	<a href="../pkg/fmt.html">fmt</a>
+		<a href="../src/fmt/print.go.html#line-745">print.go#L745</a>: 		p.fmtInteger(uint64(f.<b>Int</b>()), signed, verb)
+		<a href="../src/fmt/print.go.html#line-897" class="path-duplicate">print.go</a><a href="../src/fmt/print.go.html#line-897">#L897</a>: 				n := v.<b>Int</b>()
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil.html">github.com/aws/aws-sdk-go/private/protocol/json/jsonutil</a>
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/build.go.html#line-209">build.go#L209</a>: 		buf.Write(strconv.AppendInt(scratch[:0], value.<b>Int</b>(), 10))
+
+	<a href="../pkg/github.com/go-sql-driver/mysql.html">github.com/go-sql-driver/mysql</a>
+		<a href="../src/github.com/go-sql-driver/mysql/statement.go.html#line-178">statement.go#L178</a>: 		return rv.<b>Int</b>(), nil
+
+	<a href="../pkg/google.golang.org/protobuf/internal/descfmt.html">google.golang.org/protobuf/internal/descfmt</a>
+		<a href="../src/google.golang.org/protobuf/internal/descfmt/stringer.go.html#line-234">stringer.go#L234</a>: 			isZero = rv.<b>Int</b>() == 0
+
+	<a href="../pkg/google.golang.org/protobuf/internal/impl.html">google.golang.org/protobuf/internal/impl</a>
+		<a href="../src/google.golang.org/protobuf/internal/impl/codec_map.go.html#line-292">codec_map.go#L292</a>: 			return keys[i].<b>Int</b>() &lt; keys[j].<b>Int</b>()
+		<a href="../src/google.golang.org/protobuf/internal/impl/convert.go.html#line-179">convert.go#L179</a>: 	return pref.ValueOfInt32(int32(v.<b>Int</b>()))
+		<a href="../src/google.golang.org/protobuf/internal/impl/convert.go.html#line-203" class="path-duplicate">convert.go</a><a href="../src/google.golang.org/protobuf/internal/impl/convert.go.html#line-203">#L203</a>: 	return pref.ValueOfInt64(int64(v.<b>Int</b>()))
+		<a href="../src/google.golang.org/protobuf/internal/impl/convert.go.html#line-390" class="path-duplicate">convert.go</a><a href="../src/google.golang.org/protobuf/internal/impl/convert.go.html#line-390">#L390</a>: 	return pref.ValueOfEnum(pref.EnumNumber(v.<b>Int</b>()))
+		<a href="../src/google.golang.org/protobuf/internal/impl/legacy_enum.go.html#line-39">legacy_enum.go#L39</a>: 	return et.New(pref.EnumNumber(v.<b>Int</b>()))
+		<a href="../src/google.golang.org/protobuf/internal/impl/legacy_message.go.html#line-229">legacy_message.go#L229</a>: 				pref.FieldNumber(v.FieldByName("Start").<b>Int</b>()),
+		<a href="../src/google.golang.org/protobuf/internal/impl/legacy_message.go.html#line-230" class="path-duplicate">legacy_message.go</a><a href="../src/google.golang.org/protobuf/internal/impl/legacy_message.go.html#line-230">#L230</a>: 				pref.FieldNumber(v.FieldByName("End").<b>Int</b>() + 1),
+		<a href="../src/google.golang.org/protobuf/internal/impl/message_reflect_field.go.html#line-288">message_reflect_field.go#L288</a>: 				return rv.<b>Int</b>() != 0
+		<a href="../src/google.golang.org/protobuf/internal/impl/message_reflect_field.go.html#line-514" class="path-duplicate">message_reflect_field.go</a><a href="../src/google.golang.org/protobuf/internal/impl/message_reflect_field.go.html#line-514">#L514</a>: 		return v.<b>Int</b>() == 0
+
+	<a href="../pkg/internal/fmtsort.html">internal/fmtsort</a>
+		<a href="../src/internal/fmtsort/sort.go.html#line-86">sort.go#L86</a>: 		a, b := aVal.<b>Int</b>(), bVal.<b>Int</b>()
+
+	<a href="../pkg/text/template.html">text/template</a>
+		<a href="../src/text/template/exec.go.html#line-322">exec.go#L322</a>: 		truth = val.<b>Int</b>() != 0
+		<a href="../src/text/template/funcs.go.html#line-190">funcs.go#L190</a>: 		x = index.<b>Int</b>()
+		<a href="../src/text/template/funcs.go.html#line-477" class="path-duplicate">funcs.go</a><a href="../src/text/template/funcs.go.html#line-477">#L477</a>: 				truth = arg1.<b>Int</b>() &gt;= 0 &amp;&amp; uint64(arg1.<b>Int</b>()) == arg.Uint()
+		<a href="../src/text/template/funcs.go.html#line-479" class="path-duplicate">funcs.go</a><a href="../src/text/template/funcs.go.html#line-479">#L479</a>: 				truth = arg.<b>Int</b>() &gt;= 0 &amp;&amp; arg1.Uint() == uint64(arg.<b>Int</b>())
+		<a href="../src/text/template/funcs.go.html#line-494" class="path-duplicate">funcs.go</a><a href="../src/text/template/funcs.go.html#line-494">#L494</a>: 				truth = arg1.<b>Int</b>() == arg.<b>Int</b>()
+		<a href="../src/text/template/funcs.go.html#line-541" class="path-duplicate">funcs.go</a><a href="../src/text/template/funcs.go.html#line-541">#L541</a>: 			truth = arg1.<b>Int</b>() &lt; 0 || uint64(arg1.<b>Int</b>()) &lt; arg2.Uint()
+		<a href="../src/text/template/funcs.go.html#line-543" class="path-duplicate">funcs.go</a><a href="../src/text/template/funcs.go.html#line-543">#L543</a>: 			truth = arg2.<b>Int</b>() &gt;= 0 &amp;&amp; arg1.Uint() &lt; uint64(arg2.<b>Int</b>())
+		<a href="../src/text/template/funcs.go.html#line-554" class="path-duplicate">funcs.go</a><a href="../src/text/template/funcs.go.html#line-554">#L554</a>: 			truth = arg1.<b>Int</b>() &lt; arg2.<b>Int</b>()
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

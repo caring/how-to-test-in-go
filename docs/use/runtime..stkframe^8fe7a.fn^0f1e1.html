@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime.stkframe.fn</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/runtime.html">runtime</a>.<a href="../src/runtime/runtime2.go.html#line-990">stkframe</a>.<a href="../src/runtime/runtime2.go.html#line-991">fn</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">28 uses</span>
+
+	runtime (current package)
+		<a href="../src/runtime/heapdump.go.html#line-257">heapdump.go#L257</a>: 	f := s.<b>fn</b>
+		<a href="../src/runtime/mbitmap.go.html#line-2013">mbitmap.go#L2013</a>: 		if frame.<b>fn</b>.valid() {
+		<a href="../src/runtime/mgcmark.go.html#line-865">mgcmark.go#L865</a>: 		print("scanframe ", funcname(frame.<b>fn</b>), "\n")
+		<a href="../src/runtime/mgcmark.go.html#line-868" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-868">#L868</a>: 	isAsyncPreempt := frame.<b>fn</b>.valid() &amp;&amp; frame.<b>fn</b>.funcID == funcID_asyncPreempt
+		<a href="../src/runtime/mgcmark.go.html#line-869" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-869">#L869</a>: 	isDebugCall := frame.<b>fn</b>.valid() &amp;&amp; frame.<b>fn</b>.funcID == funcID_debugCallV2
+		<a href="../src/runtime/mgcmark.go.html#line-872" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-872">#L872</a>: 			println("conservatively scanning function", funcname(frame.<b>fn</b>), "at PC", hex(frame.continpc))
+		<a href="../src/runtime/panic.go.html#line-759">panic.go#L759</a>: 				f := frame.<b>fn</b>
+		<a href="../src/runtime/panic.go.html#line-782" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-782">#L782</a>: 				if frame.<b>fn</b>.deferreturn == 0 {
+		<a href="../src/runtime/panic.go.html#line-796" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-796">#L796</a>: 				d1.pc = frame.<b>fn</b>.entry + uintptr(frame.<b>fn</b>.deferreturn)
+		<a href="../src/runtime/runtime2.go.html#line-991">runtime2.go#L991</a>: 	<b>fn</b>       funcInfo   // function being run
+		<a href="../src/runtime/stack.go.html#line-643">stack.go#L643</a>: 	f := frame.<b>fn</b>
+		<a href="../src/runtime/stack.go.html#line-1245" class="path-duplicate">stack.go</a><a href="../src/runtime/stack.go.html#line-1245">#L1245</a>: 	f := frame.<b>fn</b>
+		<a href="../src/runtime/traceback.go.html#line-33">traceback.go#L33</a>: 			frame.<b>fn</b> = funcInfo{}
+		<a href="../src/runtime/traceback.go.html#line-44" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-44">#L44</a>: 			frame.<b>fn</b> = f
+		<a href="../src/runtime/traceback.go.html#line-144" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-144">#L144</a>: 	frame.<b>fn</b> = f
+		<a href="../src/runtime/traceback.go.html#line-157" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-157">#L157</a>: 		f = frame.<b>fn</b>
+		<a href="../src/runtime/traceback.go.html#line-194" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-194">#L194</a>: 					frame.<b>fn</b> = findfunc(frame.pc)
+		<a href="../src/runtime/traceback.go.html#line-195" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-195">#L195</a>: 					f = frame.<b>fn</b>
+		<a href="../src/runtime/traceback.go.html#line-333" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-333">#L333</a>: 			if frame.<b>fn</b>.deferreturn != 0 {
+		<a href="../src/runtime/traceback.go.html#line-334" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-334">#L334</a>: 				frame.continpc = frame.<b>fn</b>.entry + uintptr(frame.<b>fn</b>.deferreturn) + 1
+		<a href="../src/runtime/traceback.go.html#line-394" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-394">#L394</a>: 					tracepc = frame.<b>fn</b>.entry + uintptr(inltree[ix].parentPc)
+		<a href="../src/runtime/traceback.go.html#line-449" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-449">#L449</a>: 					tracepc = frame.<b>fn</b>.entry + uintptr(inltree[ix].parentPc)
+		<a href="../src/runtime/traceback.go.html#line-501" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-501">#L501</a>: 		frame.<b>fn</b> = flr
+		<a href="../src/runtime/traceback.go.html#line-514" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-514">#L514</a>: 			frame.<b>fn</b> = f
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

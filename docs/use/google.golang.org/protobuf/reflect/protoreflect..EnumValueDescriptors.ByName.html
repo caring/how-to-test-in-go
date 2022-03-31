@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: google.golang.org/protobuf/reflect/protoreflect.EnumValueDescriptors.ByName</title>
+<link href="../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../../pkg/google.golang.org/protobuf/reflect/protoreflect.html">google.golang.org/protobuf/reflect/protoreflect</a>.<a href="../../../../src/google.golang.org/protobuf/reflect/protoreflect/type.go.html#line-593">EnumValueDescriptors</a>.<a href="../../../../src/google.golang.org/protobuf/reflect/protoreflect/type.go.html#line-600">ByName</a></b></span><span style="font-size: large;"><i> (method)</i></span>
+
+<span class="title">8 uses</span>
+
+	google.golang.org/protobuf/reflect/protoreflect (current package)
+		<a href="../../../../src/google.golang.org/protobuf/reflect/protoreflect/type.go.html#line-600">type.go#L600</a>: 	<b>ByName</b>(s Name) EnumValueDescriptor
+
+	<a href="../../../../pkg/google.golang.org/protobuf/reflect/protoregistry.html">google.golang.org/protobuf/reflect/protoregistry</a>
+		<a href="../../../../src/google.golang.org/protobuf/reflect/protoregistry/registry.go.html#line-275">registry.go#L275</a>: 			if vd := md.Enums().Get(i).Values().<b>ByName</b>(name); vd != nil {
+
+	<a href="../../../../pkg/google.golang.org/protobuf/encoding/protojson.html">google.golang.org/protobuf/encoding/protojson</a>
+		<a href="../../../../src/google.golang.org/protobuf/encoding/protojson/decode.go.html#line-482">decode.go#L482</a>: 		if enumVal := fd.Enum().Values().<b>ByName</b>(pref.Name(s)); enumVal != nil {
+
+	<a href="../../../../pkg/google.golang.org/protobuf/encoding/prototext.html">google.golang.org/protobuf/encoding/prototext</a>
+		<a href="../../../../src/google.golang.org/protobuf/encoding/prototext/decode.go.html#line-346">decode.go#L346</a>: 			if enumVal := fd.Enum().Values().<b>ByName</b>(pref.Name(lit)); enumVal != nil {
+
+	<a href="../../../../pkg/google.golang.org/protobuf/internal/encoding/defval.html">google.golang.org/protobuf/internal/encoding/defval</a>
+		<a href="../../../../src/google.golang.org/protobuf/internal/encoding/defval/default.go.html#line-66">default.go#L66</a>: 			ev := evs.<b>ByName</b>(pref.Name(s))
+
+	<a href="../../../../pkg/google.golang.org/protobuf/internal/impl.html">google.golang.org/protobuf/internal/impl</a>
+		<a href="../../../../src/google.golang.org/protobuf/internal/impl/legacy_export.go.html#line-45">legacy_export.go#L45</a>: 		ev := ed.Values().<b>ByName</b>(name)
+
+	<a href="../../../../pkg/github.com/golang/protobuf/jsonpb.html">github.com/golang/protobuf/jsonpb</a>
+		<a href="../../../../src/github.com/golang/protobuf/jsonpb/decode.go.html#line-485">decode.go#L485</a>: 			vd := fd.Enum().Values().<b>ByName</b>(protoreflect.Name(trimQuote(in)))
+
+	<a href="../../../../pkg/github.com/golang/protobuf/proto.html">github.com/golang/protobuf/proto</a>
+		<a href="../../../../src/github.com/golang/protobuf/proto/text_decode.go.html#line-451">text_decode.go#L451</a>: 		vd := fd.Enum().Values().<b>ByName</b>(protoreflect.Name(tok.value))
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

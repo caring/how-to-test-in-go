@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: net/http.Server.logf</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../pkg/net/http.html">net/http</a>.<a href="../../src/net/http/server.go.html#line-2528">Server</a>.<a href="../../src/net/http/server.go.html#line-3156">logf</a></b></span><span style="font-size: large;"><i> (method)</i></span>
+
+<span class="title">10 uses</span>
+
+	net/http (current package)
+		<a href="../../src/net/http/server.go.html#line-1115">server.go#L1115</a>: 		w.conn.server.<b>logf</b>("http: response.WriteHeader on hijacked connection from %s (%s:%d)", caller.Function, path.Base(caller.File), caller.Line)
+		<a href="../../src/net/http/server.go.html#line-1120" class="path-duplicate">server.go</a><a href="../../src/net/http/server.go.html#line-1120">#L1120</a>: 		w.conn.server.<b>logf</b>("http: superfluous response.WriteHeader call from %s (%s:%d)", caller.Function, path.Base(caller.File), caller.Line)
+		<a href="../../src/net/http/server.go.html#line-1136" class="path-duplicate">server.go</a><a href="../../src/net/http/server.go.html#line-1136">#L1136</a>: 			w.conn.server.<b>logf</b>("http: invalid Content-Length of %q", cl)
+		<a href="../../src/net/http/server.go.html#line-1401" class="path-duplicate">server.go</a><a href="../../src/net/http/server.go.html#line-1401">#L1401</a>: 		w.conn.server.<b>logf</b>("http: WriteHeader called with both Transfer-Encoding of %q and a Content-Length of %d",
+		<a href="../../src/net/http/server.go.html#line-1563" class="path-duplicate">server.go</a><a href="../../src/net/http/server.go.html#line-1563">#L1563</a>: 			w.conn.server.<b>logf</b>("http: response.Write on hijacked connection from %s (%s:%d)", caller.Function, path.Base(caller.File), caller.Line)
+		<a href="../../src/net/http/server.go.html#line-1803" class="path-duplicate">server.go</a><a href="../../src/net/http/server.go.html#line-1803">#L1803</a>: 			c.server.<b>logf</b>("http: panic serving %v: %v\n%s", c.remoteAddr, err, buf)
+		<a href="../../src/net/http/server.go.html#line-1827" class="path-duplicate">server.go</a><a href="../../src/net/http/server.go.html#line-1827">#L1827</a>: 			c.server.<b>logf</b>("http: TLS handshake error from %s: %v", c.rwc.RemoteAddr(), err)
+		<a href="../../src/net/http/server.go.html#line-2874" class="path-duplicate">server.go</a><a href="../../src/net/http/server.go.html#line-2874">#L2874</a>: 				sh.srv.<b>logf</b>("http: URL query contains semicolon, which is no longer a supported separator; parts of the query may be stripped when parsed; see golang.org/issue/25192")
+		<a href="../../src/net/http/server.go.html#line-3018" class="path-duplicate">server.go</a><a href="../../src/net/http/server.go.html#line-3018">#L3018</a>: 				srv.<b>logf</b>("http: Accept error: %v; retrying in %v", err, tempDelay)
+		<a href="../../src/net/http/server.go.html#line-3156" class="path-duplicate">server.go</a><a href="../../src/net/http/server.go.html#line-3156">#L3156</a>: func (s *Server) <b>logf</b>(format string, args ...interface{}) {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

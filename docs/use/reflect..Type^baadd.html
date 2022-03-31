@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: reflect.Type</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../pkg/reflect.html">reflect</a>.<a href="../src/reflect/type.go.html#line-38">Type</a></b></span>
+
+<span class="title">241 uses</span>
+
+	reflect (current package)
+		<a href="../src/reflect/deepequal.go.html#line-18">deepequal.go#L18</a>: 	typ <b>Type</b>
+		<a href="../src/reflect/makefunc.go.html#line-47">makefunc.go#L47</a>: func MakeFunc(typ <b>Type</b>, fn func(args []Value) (results []Value)) Value {
+		<a href="../src/reflect/type.go.html#line-38">type.go#L38</a>: type <b>Type</b> interface {
+		<a href="../src/reflect/type.go.html#line-103" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-103">#L103</a>: 	Implements(u <b>Type</b>) bool
+		<a href="../src/reflect/type.go.html#line-106" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-106">#L106</a>: 	AssignableTo(u <b>Type</b>) bool
+		<a href="../src/reflect/type.go.html#line-112" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-112">#L112</a>: 	ConvertibleTo(u <b>Type</b>) bool
+		<a href="../src/reflect/type.go.html#line-157" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-157">#L157</a>: 	Elem() <b>Type</b>
+		<a href="../src/reflect/type.go.html#line-191" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-191">#L191</a>: 	In(i int) <b>Type</b>
+		<a href="../src/reflect/type.go.html#line-195" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-195">#L195</a>: 	Key() <b>Type</b>
+		<a href="../src/reflect/type.go.html#line-216" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-216">#L216</a>: 	Out(i int) <b>Type</b>
+		<a href="../src/reflect/type.go.html#line-613" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-613">#L613</a>: 	Type  <b>Type</b>  // method type
+		<a href="../src/reflect/type.go.html#line-856" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-856">#L856</a>: 	in := make([]<b>Type</b>, 0, 1+len(ft.in()))
+		<a href="../src/reflect/type.go.html#line-861" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-861">#L861</a>: 	out := make([]<b>Type</b>, 0, len(ft.out()))
+		<a href="../src/reflect/type.go.html#line-936" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-936">#L936</a>: func (t *rtype) Elem() <b>Type</b> {
+		<a href="../src/reflect/type.go.html#line-989" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-989">#L989</a>: func (t *rtype) In(i int) <b>Type</b> {
+		<a href="../src/reflect/type.go.html#line-997" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-997">#L997</a>: func (t *rtype) Key() <b>Type</b> {
+		<a href="../src/reflect/type.go.html#line-1037" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1037">#L1037</a>: func (t *rtype) Out(i int) <b>Type</b> {
+		<a href="../src/reflect/type.go.html#line-1138" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1138">#L1138</a>: 	Type      <b>Type</b>      // field type
+		<a href="../src/reflect/type.go.html#line-1413" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1413">#L1413</a>: func TypeOf(i interface{}) <b>Type</b> {
+		<a href="../src/reflect/type.go.html#line-1423" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1423">#L1423</a>: func PtrTo(t <b>Type</b>) <b>Type</b> {
+		<a href="../src/reflect/type.go.html#line-1478" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1478">#L1478</a>: func (t *rtype) Implements(u <b>Type</b>) bool {
+		<a href="../src/reflect/type.go.html#line-1488" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1488">#L1488</a>: func (t *rtype) AssignableTo(u <b>Type</b>) bool {
+		<a href="../src/reflect/type.go.html#line-1496" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1496">#L1496</a>: func (t *rtype) ConvertibleTo(u <b>Type</b>) bool {
+		<a href="../src/reflect/type.go.html#line-1630" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1630">#L1630</a>: func haveIdenticalType(T, V <b>Type</b>, cmpTags bool) bool {
+		<a href="../src/reflect/type.go.html#line-1824" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1824">#L1824</a>: func ChanOf(dir ChanDir, t <b>Type</b>) <b>Type</b> {
+		<a href="../src/reflect/type.go.html#line-1863" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1863">#L1863</a>: 			return ti.(<b>Type</b>)
+		<a href="../src/reflect/type.go.html#line-1878" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1878">#L1878</a>: 	return ti.(<b>Type</b>)
+		<a href="../src/reflect/type.go.html#line-1887" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1887">#L1887</a>: func MapOf(key, elem <b>Type</b>) <b>Type</b> {
+		<a href="../src/reflect/type.go.html#line-1898" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1898">#L1898</a>: 		return mt.(<b>Type</b>)
+		<a href="../src/reflect/type.go.html#line-1907" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1907">#L1907</a>: 			return ti.(<b>Type</b>)
+		<a href="../src/reflect/type.go.html#line-1951" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1951">#L1951</a>: 	return ti.(<b>Type</b>)
+		<a href="../src/reflect/type.go.html#line-1988" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1988">#L1988</a>: func FuncOf(in, out []<b>Type</b>, variadic bool) <b>Type</b> {
+		<a href="../src/reflect/type.go.html#line-2077" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2077">#L2077</a>: 	addToCache := func(tt *rtype) <b>Type</b> {
+		<a href="../src/reflect/type.go.html#line-2332" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2332">#L2332</a>: func SliceOf(t <b>Type</b>) <b>Type</b> {
+		<a href="../src/reflect/type.go.html#line-2338" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2338">#L2338</a>: 		return slice.(<b>Type</b>)
+		<a href="../src/reflect/type.go.html#line-2347" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2347">#L2347</a>: 			return ti.(<b>Type</b>)
+		<a href="../src/reflect/type.go.html#line-2362" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2362">#L2362</a>: 	return ti.(<b>Type</b>)
+		<a href="../src/reflect/type.go.html#line-2413" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2413">#L2413</a>: func StructOf(fields []StructField) <b>Type</b> {
+		<a href="../src/reflect/type.go.html#line-2690" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2690">#L2690</a>: 		for _, st := range ts.([]<b>Type</b>) {
+		<a href="../src/reflect/type.go.html#line-2702" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2702">#L2702</a>: 		for _, st := range ts.([]<b>Type</b>) {
+		<a href="../src/reflect/type.go.html#line-2710" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2710">#L2710</a>: 	addToCache := func(t <b>Type</b>) <b>Type</b> {
+		<a href="../src/reflect/type.go.html#line-2711" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2711">#L2711</a>: 		var ts []<b>Type</b>
+		<a href="../src/reflect/type.go.html#line-2713" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2713">#L2713</a>: 			ts = ti.([]<b>Type</b>)
+		<a href="../src/reflect/type.go.html#line-2876" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2876">#L2876</a>: func ArrayOf(length int, elem <b>Type</b>) <b>Type</b> {
+		<a href="../src/reflect/type.go.html#line-2886" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2886">#L2886</a>: 		return array.(<b>Type</b>)
+		<a href="../src/reflect/type.go.html#line-2895" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2895">#L2895</a>: 			return ti.(<b>Type</b>)
+		<a href="../src/reflect/type.go.html#line-3005" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-3005">#L3005</a>: 	return ti.(<b>Type</b>)
+		<a href="../src/reflect/type.go.html#line-3021" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-3021">#L3021</a>: func toType(t *rtype) <b>Type</b> {
+		<a href="../src/reflect/value.go.html#line-2259">value.go#L2259</a>: func (v Value) Type() <b>Type</b> {
+		<a href="../src/reflect/value.go.html#line-2354" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2354">#L2354</a>: func typesMustMatch(what string, t1, t2 <b>Type</b>) {
+		<a href="../src/reflect/value.go.html#line-2643" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2643">#L2643</a>: func MakeSlice(typ <b>Type</b>, len, cap int) Value {
+		<a href="../src/reflect/value.go.html#line-2662" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2662">#L2662</a>: func MakeChan(typ <b>Type</b>, buffer int) Value {
+		<a href="../src/reflect/value.go.html#line-2678" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2678">#L2678</a>: func MakeMap(typ <b>Type</b>) Value {
+		<a href="../src/reflect/value.go.html#line-2684" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2684">#L2684</a>: func MakeMapWithSize(typ <b>Type</b>, n int) Value {
+		<a href="../src/reflect/value.go.html#line-2724" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2724">#L2724</a>: func Zero(typ <b>Type</b>) Value {
+		<a href="../src/reflect/value.go.html#line-2750" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2750">#L2750</a>: func New(typ <b>Type</b>) Value {
+		<a href="../src/reflect/value.go.html#line-2767" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2767">#L2767</a>: func NewAt(typ <b>Type</b>, p unsafe.Pointer) Value {
+		<a href="../src/reflect/value.go.html#line-2816" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2816">#L2816</a>: func (v Value) Convert(t <b>Type</b>) Value {
+		<a href="../src/reflect/value.go.html#line-2829" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2829">#L2829</a>: func (v Value) CanConvert(t <b>Type</b>) bool {
+		<a href="../src/reflect/value.go.html#line-2849" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2849">#L2849</a>: func convertOp(dst, src *rtype) func(Value, <b>Type</b>) Value {
+		<a href="../src/reflect/value.go.html#line-2942" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2942">#L2942</a>: func makeInt(f flag, bits uint64, t <b>Type</b>) Value {
+		<a href="../src/reflect/value.go.html#line-2960" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2960">#L2960</a>: func makeFloat(f flag, v float64, t <b>Type</b>) Value {
+		<a href="../src/reflect/value.go.html#line-2973" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2973">#L2973</a>: func makeFloat32(f flag, v float32, t <b>Type</b>) Value {
+		<a href="../src/reflect/value.go.html#line-2982" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2982">#L2982</a>: func makeComplex(f flag, v complex128, t <b>Type</b>) Value {
+		<a href="../src/reflect/value.go.html#line-2994" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2994">#L2994</a>: func makeString(f flag, v string, t <b>Type</b>) Value {
+		<a href="../src/reflect/value.go.html#line-3001" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-3001">#L3001</a>: func makeBytes(f flag, v []byte, t <b>Type</b>) Value {
+		<a href="../src/reflect/value.go.html#line-3008" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-3008">#L3008</a>: func makeRunes(f flag, v []rune, t <b>Type</b>) Value {
+		<a href="../src/reflect/value.go.html#line-3021" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-3021">#L3021</a>: func cvtInt(v Value, t <b>Type</b>) Value {
+		<a href="../src/reflect/value.go.html#line-3026" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-3026">#L3026</a>: func cvtUint(v Value, t <b>Type</b>) Value {
+		<a href="../src/reflect/value.go.html#line-3031" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-3031">#L3031</a>: func cvtFloatInt(v Value, t <b>Type</b>) Value {
+		<a href="../src/reflect/value.go.html#line-3036" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-3036">#L3036</a>: func cvtFloatUint(v Value, t <b>Type</b>) Value {
+		<a href="../src/reflect/value.go.html#line-3041" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-3041">#L3041</a>: func cvtIntFloat(v Value, t <b>Type</b>) Value {
+		<a href="../src/reflect/value.go.html#line-3046" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-3046">#L3046</a>: func cvtUintFloat(v Value, t <b>Type</b>) Value {
+		<a href="../src/reflect/value.go.html#line-3051" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-3051">#L3051</a>: func cvtFloat(v Value, t <b>Type</b>) Value {
+		<a href="../src/reflect/value.go.html#line-3062" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-3062">#L3062</a>: func cvtComplex(v Value, t <b>Type</b>) Value {
+		<a href="../src/reflect/value.go.html#line-3067" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-3067">#L3067</a>: func cvtIntString(v Value, t <b>Type</b>) Value {
+		<a href="../src/reflect/value.go.html#line-3076" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-3076">#L3076</a>: func cvtUintString(v Value, t <b>Type</b>) Value {
+		<a href="../src/reflect/value.go.html#line-3085" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-3085">#L3085</a>: func cvtBytesString(v Value, t <b>Type</b>) Value {
+		<a href="../src/reflect/value.go.html#line-3090" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-3090">#L3090</a>: func cvtStringBytes(v Value, t <b>Type</b>) Value {
+		<a href="../src/reflect/value.go.html#line-3095" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-3095">#L3095</a>: func cvtRunesString(v Value, t <b>Type</b>) Value {
+		<a href="../src/reflect/value.go.html#line-3100" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-3100">#L3100</a>: func cvtStringRunes(v Value, t <b>Type</b>) Value {
+		<a href="../src/reflect/value.go.html#line-3105" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-3105">#L3105</a>: func cvtSliceArrayPtr(v Value, t <b>Type</b>) Value {
+		<a href="../src/reflect/value.go.html#line-3115" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-3115">#L3115</a>: func cvtDirect(v Value, typ <b>Type</b>) Value {
+		<a href="../src/reflect/value.go.html#line-3130" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-3130">#L3130</a>: func cvtT2I(v Value, typ <b>Type</b>) Value {
+		<a href="../src/reflect/value.go.html#line-3142" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-3142">#L3142</a>: func cvtI2I(v Value, typ <b>Type</b>) Value {
+		<a href="../src/reflect/visiblefields.go.html#line-16">visiblefields.go#L16</a>: func VisibleFields(t <b>Type</b>) []StructField {
+		<a href="../src/reflect/visiblefields.go.html#line-25" class="path-duplicate">visiblefields.go</a><a href="../src/reflect/visiblefields.go.html#line-25">#L25</a>: 		visiting: make(map[<b>Type</b>]bool),
+		<a href="../src/reflect/visiblefields.go.html#line-51" class="path-duplicate">visiblefields.go</a><a href="../src/reflect/visiblefields.go.html#line-51">#L51</a>: 	visiting map[<b>Type</b>]bool
+		<a href="../src/reflect/visiblefields.go.html#line-61" class="path-duplicate">visiblefields.go</a><a href="../src/reflect/visiblefields.go.html#line-61">#L61</a>: func (w *visibleFieldsWalker) walk(t <b>Type</b>) {
+
+	<a href="../pkg/database/sql.html">database/sql</a>
+		<a href="../src/database/sql/sql.go.html#line-3088">sql.go#L3088</a>: 	scanType     reflect.<b>Type</b>
+		<a href="../src/database/sql/sql.go.html#line-3114" class="path-duplicate">sql.go</a><a href="../src/database/sql/sql.go.html#line-3114">#L3114</a>: func (ci *ColumnType) ScanType() reflect.<b>Type</b> {
+
+	<a href="../pkg/database/sql/driver.html">database/sql/driver</a>
+		<a href="../src/database/sql/driver/driver.go.html#line-463">driver.go#L463</a>: 	ColumnTypeScanType(index int) reflect.<b>Type</b>
+
+	<a href="../pkg/encoding/asn1.html">encoding/asn1</a>
+		<a href="../src/encoding/asn1/asn1.go.html#line-605">asn1.go#L605</a>: func parseSequenceOf(bytes []byte, sliceType reflect.<b>Type</b>, elemType reflect.<b>Type</b>) (ret reflect.Value, err error) {
+		<a href="../src/encoding/asn1/asn1.go.html#line-1096" class="path-duplicate">asn1.go</a><a href="../src/encoding/asn1/asn1.go.html#line-1096">#L1096</a>: 	Type reflect.<b>Type</b>
+		<a href="../src/encoding/asn1/common.go.html#line-158">common.go#L158</a>: func getUniversalType(t reflect.<b>Type</b>) (matchAny bool, tagNumber int, isCompound, ok bool) {
+
+	<a href="../pkg/encoding/binary.html">encoding/binary</a>
+		<a href="../src/encoding/binary/binary.go.html#line-428">binary.go#L428</a>: func sizeof(t reflect.<b>Type</b>) int {
+
+	<a href="../pkg/encoding/json.html">encoding/json</a>
+		<a href="../src/encoding/json/decode.go.html#line-126">decode.go#L126</a>: 	Type   reflect.<b>Type</b> // type of Go value it could not be assigned to
+		<a href="../src/encoding/json/decode.go.html#line-145" class="path-duplicate">decode.go</a><a href="../src/encoding/json/decode.go.html#line-145">#L145</a>: 	Type  reflect.<b>Type</b>
+		<a href="../src/encoding/json/decode.go.html#line-156" class="path-duplicate">decode.go</a><a href="../src/encoding/json/decode.go.html#line-156">#L156</a>: 	Type reflect.<b>Type</b>
+		<a href="../src/encoding/json/decode.go.html#line-205" class="path-duplicate">decode.go</a><a href="../src/encoding/json/decode.go.html#line-205">#L205</a>: 	Struct     reflect.<b>Type</b>
+		<a href="../src/encoding/json/encode.go.html#line-232">encode.go#L232</a>: 	Type reflect.<b>Type</b>
+		<a href="../src/encoding/json/encode.go.html#line-266" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-266">#L266</a>: 	Type       reflect.<b>Type</b>
+		<a href="../src/encoding/json/encode.go.html#line-381" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-381">#L381</a>: func typeEncoder(t reflect.<b>Type</b>) encoderFunc {
+		<a href="../src/encoding/json/encode.go.html#line-417" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-417">#L417</a>: func newTypeEncoder(t reflect.<b>Type</b>, allowAddr bool) encoderFunc {
+		<a href="../src/encoding/json/encode.go.html#line-770" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-770">#L770</a>: func newStructEncoder(t reflect.<b>Type</b>) encoderFunc {
+		<a href="../src/encoding/json/encode.go.html#line-820" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-820">#L820</a>: func newMapEncoder(t reflect.<b>Type</b>) encoderFunc {
+		<a href="../src/encoding/json/encode.go.html#line-893" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-893">#L893</a>: func newSliceEncoder(t reflect.<b>Type</b>) encoderFunc {
+		<a href="../src/encoding/json/encode.go.html#line-921" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-921">#L921</a>: func newArrayEncoder(t reflect.<b>Type</b>) encoderFunc {
+		<a href="../src/encoding/json/encode.go.html#line-949" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-949">#L949</a>: func newPtrEncoder(t reflect.<b>Type</b>) encoderFunc {
+		<a href="../src/encoding/json/encode.go.html#line-990" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-990">#L990</a>: func typeByIndex(t reflect.<b>Type</b>, index []int) reflect.<b>Type</b> {
+		<a href="../src/encoding/json/encode.go.html#line-1185" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-1185">#L1185</a>: 	typ       reflect.<b>Type</b>
+		<a href="../src/encoding/json/encode.go.html#line-1214" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-1214">#L1214</a>: func typeFields(t reflect.<b>Type</b>) structFields {
+		<a href="../src/encoding/json/encode.go.html#line-1220" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-1220">#L1220</a>: 	var count, nextCount map[reflect.<b>Type</b>]int
+		<a href="../src/encoding/json/encode.go.html#line-1223" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-1223">#L1223</a>: 	visited := map[reflect.<b>Type</b>]bool{}
+		<a href="../src/encoding/json/encode.go.html#line-1233" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-1233">#L1233</a>: 		count, nextCount = nextCount, map[reflect.<b>Type</b>]int{}
+		<a href="../src/encoding/json/encode.go.html#line-1413" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-1413">#L1413</a>: func cachedTypeFields(t reflect.<b>Type</b>) structFields {
+
+	<a href="../pkg/encoding/xml.html">encoding/xml</a>
+		<a href="../src/encoding/xml/marshal.go.html#line-638">marshal.go#L638</a>: func defaultStart(typ reflect.<b>Type</b>, finfo *fieldInfo, startTemplate *StartElement) StartElement {
+		<a href="../src/encoding/xml/marshal.go.html#line-754" class="path-duplicate">marshal.go</a><a href="../src/encoding/xml/marshal.go.html#line-754">#L754</a>: func (p *printer) marshalSimple(typ reflect.<b>Type</b>, val reflect.Value) (string, []byte, error) {
+		<a href="../src/encoding/xml/marshal.go.html#line-1035" class="path-duplicate">marshal.go</a><a href="../src/encoding/xml/marshal.go.html#line-1035">#L1035</a>: 	Type reflect.<b>Type</b>
+		<a href="../src/encoding/xml/typeinfo.go.html#line-53">typeinfo.go#L53</a>: func getTypeInfo(typ reflect.<b>Type</b>) (*typeInfo, error) {
+		<a href="../src/encoding/xml/typeinfo.go.html#line-113" class="path-duplicate">typeinfo.go</a><a href="../src/encoding/xml/typeinfo.go.html#line-113">#L113</a>: func structFieldInfo(typ reflect.<b>Type</b>, f *reflect.StructField) (*fieldInfo, error) {
+		<a href="../src/encoding/xml/typeinfo.go.html#line-231" class="path-duplicate">typeinfo.go</a><a href="../src/encoding/xml/typeinfo.go.html#line-231">#L231</a>: func lookupXMLName(typ reflect.<b>Type</b>) (xmlname *fieldInfo) {
+		<a href="../src/encoding/xml/typeinfo.go.html#line-268" class="path-duplicate">typeinfo.go</a><a href="../src/encoding/xml/typeinfo.go.html#line-268">#L268</a>: func addFieldInfo(typ reflect.<b>Type</b>, tinfo *typeInfo, newf *fieldInfo) error {
+		<a href="../src/encoding/xml/typeinfo.go.html#line-338" class="path-duplicate">typeinfo.go</a><a href="../src/encoding/xml/typeinfo.go.html#line-338">#L338</a>: 	Struct       reflect.<b>Type</b>
+
+	<a href="../pkg/github.com/go-sql-driver/mysql.html">github.com/go-sql-driver/mysql</a>
+		<a href="../src/github.com/go-sql-driver/mysql/fields.go.html#line-128">fields.go#L128</a>: func (mf *mysqlField) scanType() reflect.<b>Type</b> {
+		<a href="../src/github.com/go-sql-driver/mysql/rows.go.html#line-96">rows.go#L96</a>: func (rows *mysqlRows) ColumnTypeScanType(i int) reflect.<b>Type</b> {
+
+	<a href="../pkg/github.com/golang/protobuf/proto.html">github.com/golang/protobuf/proto</a>
+		<a href="../src/github.com/golang/protobuf/proto/properties.go.html#line-91">properties.go#L91</a>: 	Type reflect.<b>Type</b>
+		<a href="../src/github.com/golang/protobuf/proto/properties.go.html#line-196" class="path-duplicate">properties.go</a><a href="../src/github.com/golang/protobuf/proto/properties.go.html#line-196">#L196</a>: func (p *Properties) Init(typ reflect.<b>Type</b>, name, tag string, f *reflect.StructField) {
+		<a href="../src/github.com/golang/protobuf/proto/properties.go.html#line-219" class="path-duplicate">properties.go</a><a href="../src/github.com/golang/protobuf/proto/properties.go.html#line-219">#L219</a>: func GetProperties(t reflect.<b>Type</b>) *StructProperties {
+		<a href="../src/github.com/golang/protobuf/proto/properties.go.html#line-227" class="path-duplicate">properties.go</a><a href="../src/github.com/golang/protobuf/proto/properties.go.html#line-227">#L227</a>: func newProperties(t reflect.<b>Type</b>) *StructProperties {
+		<a href="../src/github.com/golang/protobuf/proto/registry.go.html#line-206">registry.go#L206</a>: func MessageType(s messageName) reflect.<b>Type</b> {
+		<a href="../src/github.com/golang/protobuf/proto/registry.go.html#line-208" class="path-duplicate">registry.go</a><a href="../src/github.com/golang/protobuf/proto/registry.go.html#line-208">#L208</a>: 		return v.(reflect.<b>Type</b>)
+		<a href="../src/github.com/golang/protobuf/proto/registry.go.html#line-212" class="path-duplicate">registry.go</a><a href="../src/github.com/golang/protobuf/proto/registry.go.html#line-212">#L212</a>: 	var t reflect.<b>Type</b>
+		<a href="../src/github.com/golang/protobuf/proto/registry.go.html#line-231" class="path-duplicate">registry.go</a><a href="../src/github.com/golang/protobuf/proto/registry.go.html#line-231">#L231</a>: 		return v.(reflect.<b>Type</b>)
+		<a href="../src/github.com/golang/protobuf/proto/registry.go.html#line-236" class="path-duplicate">registry.go</a><a href="../src/github.com/golang/protobuf/proto/registry.go.html#line-236">#L236</a>: func goTypeForField(fd protoreflect.FieldDescriptor) reflect.<b>Type</b> {
+		<a href="../src/github.com/golang/protobuf/proto/registry.go.html#line-253" class="path-duplicate">registry.go</a><a href="../src/github.com/golang/protobuf/proto/registry.go.html#line-253">#L253</a>: func enumGoType(et protoreflect.EnumType) reflect.<b>Type</b> {
+		<a href="../src/github.com/golang/protobuf/proto/registry.go.html#line-257" class="path-duplicate">registry.go</a><a href="../src/github.com/golang/protobuf/proto/registry.go.html#line-257">#L257</a>: func messageGoType(mt protoreflect.MessageType) reflect.<b>Type</b> {
+
+	<a href="../pkg/google.golang.org/protobuf/internal/descfmt.html">google.golang.org/protobuf/internal/descfmt</a>
+		<a href="../src/google.golang.org/protobuf/internal/descfmt/stringer.go.html#line-108">stringer.go#L108</a>: var descriptorAccessors = map[reflect.<b>Type</b>][]string{
+
+	<a href="../pkg/google.golang.org/protobuf/internal/encoding/tag.html">google.golang.org/protobuf/internal/encoding/tag</a>
+		<a href="../src/google.golang.org/protobuf/internal/encoding/tag/tag.go.html#line-32">tag.go#L32</a>: func Unmarshal(tag string, goType reflect.<b>Type</b>, evs pref.EnumValueDescriptors) pref.FieldDescriptor {
+
+	<a href="../pkg/google.golang.org/protobuf/internal/filetype.html">google.golang.org/protobuf/internal/filetype</a>
+		<a href="../src/google.golang.org/protobuf/internal/filetype/build.go.html#line-217">build.go#L217</a>: 		var goType reflect.<b>Type</b>
+		<a href="../src/google.golang.org/protobuf/internal/filetype/build.go.html#line-245" class="path-duplicate">build.go</a><a href="../src/google.golang.org/protobuf/internal/filetype/build.go.html#line-245">#L245</a>: var goTypeForPBKind = map[pref.Kind]reflect.<b>Type</b>{
+
+	<a href="../pkg/google.golang.org/protobuf/internal/impl.html">google.golang.org/protobuf/internal/impl</a>
+		<a href="../src/google.golang.org/protobuf/internal/impl/codec_field.go.html#line-36">codec_field.go#L36</a>: 	oneofFields := make(map[reflect.<b>Type</b>]*coderFieldInfo)
+		<a href="../src/google.golang.org/protobuf/internal/impl/codec_field.go.html#line-193" class="path-duplicate">codec_field.go</a><a href="../src/google.golang.org/protobuf/internal/impl/codec_field.go.html#line-193">#L193</a>: func makeMessageFieldCoder(fd pref.FieldDescriptor, ft reflect.<b>Type</b>) pointerCoderFuncs {
+		<a href="../src/google.golang.org/protobuf/internal/impl/codec_field.go.html#line-348" class="path-duplicate">codec_field.go</a><a href="../src/google.golang.org/protobuf/internal/impl/codec_field.go.html#line-348">#L348</a>: func makeGroupFieldCoder(fd pref.FieldDescriptor, ft reflect.<b>Type</b>) pointerCoderFuncs {
+		<a href="../src/google.golang.org/protobuf/internal/impl/codec_field.go.html#line-439" class="path-duplicate">codec_field.go</a><a href="../src/google.golang.org/protobuf/internal/impl/codec_field.go.html#line-439">#L439</a>: func makeMessageSliceFieldCoder(fd pref.FieldDescriptor, ft reflect.<b>Type</b>) pointerCoderFuncs {
+		<a href="../src/google.golang.org/protobuf/internal/impl/codec_field.go.html#line-523" class="path-duplicate">codec_field.go</a><a href="../src/google.golang.org/protobuf/internal/impl/codec_field.go.html#line-523">#L523</a>: func sizeMessageSlice(p pointer, goType reflect.<b>Type</b>, tagsize int, _ marshalOptions) int {
+		<a href="../src/google.golang.org/protobuf/internal/impl/codec_field.go.html#line-533" class="path-duplicate">codec_field.go</a><a href="../src/google.golang.org/protobuf/internal/impl/codec_field.go.html#line-533">#L533</a>: func appendMessageSlice(b []byte, p pointer, wiretag uint64, goType reflect.<b>Type</b>, opts marshalOptions) ([]byte, error) {
+		<a href="../src/google.golang.org/protobuf/internal/impl/codec_field.go.html#line-549" class="path-duplicate">codec_field.go</a><a href="../src/google.golang.org/protobuf/internal/impl/codec_field.go.html#line-549">#L549</a>: func consumeMessageSlice(b []byte, p pointer, goType reflect.<b>Type</b>, wtyp protowire.Type, opts unmarshalOptions) (out unmarshalOutput, err error) {
+		<a href="../src/google.golang.org/protobuf/internal/impl/codec_field.go.html#line-571" class="path-duplicate">codec_field.go</a><a href="../src/google.golang.org/protobuf/internal/impl/codec_field.go.html#line-571">#L571</a>: func isInitMessageSlice(p pointer, goType reflect.<b>Type</b>) error {
+		<a href="../src/google.golang.org/protobuf/internal/impl/codec_field.go.html#line-710" class="path-duplicate">codec_field.go</a><a href="../src/google.golang.org/protobuf/internal/impl/codec_field.go.html#line-710">#L710</a>: func makeGroupSliceFieldCoder(fd pref.FieldDescriptor, ft reflect.<b>Type</b>) pointerCoderFuncs {
+		<a href="../src/google.golang.org/protobuf/internal/impl/codec_field.go.html#line-741" class="path-duplicate">codec_field.go</a><a href="../src/google.golang.org/protobuf/internal/impl/codec_field.go.html#line-741">#L741</a>: func sizeGroupSlice(p pointer, messageType reflect.<b>Type</b>, tagsize int, _ marshalOptions) int {
+		<a href="../src/google.golang.org/protobuf/internal/impl/codec_field.go.html#line-751" class="path-duplicate">codec_field.go</a><a href="../src/google.golang.org/protobuf/internal/impl/codec_field.go.html#line-751">#L751</a>: func appendGroupSlice(b []byte, p pointer, wiretag uint64, messageType reflect.<b>Type</b>, opts marshalOptions) ([]byte, error) {
+		<a href="../src/google.golang.org/protobuf/internal/impl/codec_field.go.html#line-766" class="path-duplicate">codec_field.go</a><a href="../src/google.golang.org/protobuf/internal/impl/codec_field.go.html#line-766">#L766</a>: func consumeGroupSlice(b []byte, p pointer, num protowire.Number, wtyp protowire.Type, goType reflect.<b>Type</b>, opts unmarshalOptions) (out unmarshalOutput, err error) {
+		<a href="../src/google.golang.org/protobuf/internal/impl/codec_map.go.html#line-17">codec_map.go#L17</a>: 	goType     reflect.<b>Type</b>
+		<a href="../src/google.golang.org/protobuf/internal/impl/codec_map.go.html#line-27" class="path-duplicate">codec_map.go</a><a href="../src/google.golang.org/protobuf/internal/impl/codec_map.go.html#line-27">#L27</a>: func encoderFuncsForMap(fd pref.FieldDescriptor, ft reflect.<b>Type</b>) (valueMessage *MessageInfo, funcs pointerCoderFuncs) {
+		<a href="../src/google.golang.org/protobuf/internal/impl/codec_message.go.html#line-40">codec_message.go#L40</a>: 	ft         reflect.<b>Type</b>
+		<a href="../src/google.golang.org/protobuf/internal/impl/codec_message.go.html#line-50" class="path-duplicate">codec_message.go</a><a href="../src/google.golang.org/protobuf/internal/impl/codec_message.go.html#line-50">#L50</a>: func (mi *MessageInfo) makeCoderMethods(t reflect.<b>Type</b>, si structInfo) {
+		<a href="../src/google.golang.org/protobuf/internal/impl/codec_tables.go.html#line-37">codec_tables.go#L37</a>: func fieldCoder(fd pref.FieldDescriptor, ft reflect.<b>Type</b>) (*MessageInfo, pointerCoderFuncs) {
+		<a href="../src/google.golang.org/protobuf/internal/impl/convert.go.html#line-53">convert.go#L53</a>: func NewConverter(t reflect.<b>Type</b>, fd pref.FieldDescriptor) Converter {
+		<a href="../src/google.golang.org/protobuf/internal/impl/convert.go.html#line-90" class="path-duplicate">convert.go</a><a href="../src/google.golang.org/protobuf/internal/impl/convert.go.html#line-90">#L90</a>: func newSingularConverter(t reflect.<b>Type</b>, fd pref.FieldDescriptor) Converter {
+		<a href="../src/google.golang.org/protobuf/internal/impl/convert.go.html#line-147" class="path-duplicate">convert.go</a><a href="../src/google.golang.org/protobuf/internal/impl/convert.go.html#line-147">#L147</a>: 	goType reflect.<b>Type</b>
+		<a href="../src/google.golang.org/protobuf/internal/impl/convert.go.html#line-171" class="path-duplicate">convert.go</a><a href="../src/google.golang.org/protobuf/internal/impl/convert.go.html#line-171">#L171</a>: 	goType reflect.<b>Type</b>
+		<a href="../src/google.golang.org/protobuf/internal/impl/convert.go.html#line-195" class="path-duplicate">convert.go</a><a href="../src/google.golang.org/protobuf/internal/impl/convert.go.html#line-195">#L195</a>: 	goType reflect.<b>Type</b>
+		<a href="../src/google.golang.org/protobuf/internal/impl/convert.go.html#line-219" class="path-duplicate">convert.go</a><a href="../src/google.golang.org/protobuf/internal/impl/convert.go.html#line-219">#L219</a>: 	goType reflect.<b>Type</b>
+		<a href="../src/google.golang.org/protobuf/internal/impl/convert.go.html#line-243" class="path-duplicate">convert.go</a><a href="../src/google.golang.org/protobuf/internal/impl/convert.go.html#line-243">#L243</a>: 	goType reflect.<b>Type</b>
+		<a href="../src/google.golang.org/protobuf/internal/impl/convert.go.html#line-267" class="path-duplicate">convert.go</a><a href="../src/google.golang.org/protobuf/internal/impl/convert.go.html#line-267">#L267</a>: 	goType reflect.<b>Type</b>
+		<a href="../src/google.golang.org/protobuf/internal/impl/convert.go.html#line-291" class="path-duplicate">convert.go</a><a href="../src/google.golang.org/protobuf/internal/impl/convert.go.html#line-291">#L291</a>: 	goType reflect.<b>Type</b>
+		<a href="../src/google.golang.org/protobuf/internal/impl/convert.go.html#line-315" class="path-duplicate">convert.go</a><a href="../src/google.golang.org/protobuf/internal/impl/convert.go.html#line-315">#L315</a>: 	goType reflect.<b>Type</b>
+		<a href="../src/google.golang.org/protobuf/internal/impl/convert.go.html#line-345" class="path-duplicate">convert.go</a><a href="../src/google.golang.org/protobuf/internal/impl/convert.go.html#line-345">#L345</a>: 	goType reflect.<b>Type</b>
+		<a href="../src/google.golang.org/protobuf/internal/impl/convert.go.html#line-372" class="path-duplicate">convert.go</a><a href="../src/google.golang.org/protobuf/internal/impl/convert.go.html#line-372">#L372</a>: 	goType reflect.<b>Type</b>
+		<a href="../src/google.golang.org/protobuf/internal/impl/convert.go.html#line-376" class="path-duplicate">convert.go</a><a href="../src/google.golang.org/protobuf/internal/impl/convert.go.html#line-376">#L376</a>: func newEnumConverter(goType reflect.<b>Type</b>, fd pref.FieldDescriptor) Converter {
+		<a href="../src/google.golang.org/protobuf/internal/impl/convert.go.html#line-415" class="path-duplicate">convert.go</a><a href="../src/google.golang.org/protobuf/internal/impl/convert.go.html#line-415">#L415</a>: 	goType reflect.<b>Type</b>
+		<a href="../src/google.golang.org/protobuf/internal/impl/convert.go.html#line-418" class="path-duplicate">convert.go</a><a href="../src/google.golang.org/protobuf/internal/impl/convert.go.html#line-418">#L418</a>: func newMessageConverter(goType reflect.<b>Type</b>) Converter {
+		<a href="../src/google.golang.org/protobuf/internal/impl/convert_list.go.html#line-14">convert_list.go#L14</a>: func newListConverter(t reflect.<b>Type</b>, fd pref.FieldDescriptor) Converter {
+		<a href="../src/google.golang.org/protobuf/internal/impl/convert_list.go.html#line-25" class="path-duplicate">convert_list.go</a><a href="../src/google.golang.org/protobuf/internal/impl/convert_list.go.html#line-25">#L25</a>: 	goType reflect.<b>Type</b> // []T
+		<a href="../src/google.golang.org/protobuf/internal/impl/convert_list.go.html#line-67" class="path-duplicate">convert_list.go</a><a href="../src/google.golang.org/protobuf/internal/impl/convert_list.go.html#line-67">#L67</a>: 	goType reflect.<b>Type</b> // *[]T
+		<a href="../src/google.golang.org/protobuf/internal/impl/convert_map.go.html#line-15">convert_map.go#L15</a>: 	goType           reflect.<b>Type</b> // map[K]V
+		<a href="../src/google.golang.org/protobuf/internal/impl/convert_map.go.html#line-19" class="path-duplicate">convert_map.go</a><a href="../src/google.golang.org/protobuf/internal/impl/convert_map.go.html#line-19">#L19</a>: func newMapConverter(t reflect.<b>Type</b>, fd pref.FieldDescriptor) *mapConverter {
+		<a href="../src/google.golang.org/protobuf/internal/impl/enum.go.html#line-14">enum.go#L14</a>: 	GoReflectType reflect.<b>Type</b> // int32 kind
+		<a href="../src/google.golang.org/protobuf/internal/impl/extension.go.html#line-38">extension.go#L38</a>: 	goType reflect.<b>Type</b>
+		<a href="../src/google.golang.org/protobuf/internal/impl/extension.go.html#line-86" class="path-duplicate">extension.go</a><a href="../src/google.golang.org/protobuf/internal/impl/extension.go.html#line-86">#L86</a>: func InitExtensionInfo(xi *ExtensionInfo, xd pref.ExtensionDescriptor, goType reflect.<b>Type</b>) {
+		<a href="../src/google.golang.org/protobuf/internal/impl/legacy_enum.go.html#line-46">legacy_enum.go#L46</a>: func legacyLoadEnumType(t reflect.<b>Type</b>) pref.EnumType {
+		<a href="../src/google.golang.org/protobuf/internal/impl/legacy_enum.go.html#line-67" class="path-duplicate">legacy_enum.go</a><a href="../src/google.golang.org/protobuf/internal/impl/legacy_enum.go.html#line-67">#L67</a>: 	goType reflect.<b>Type</b>
+		<a href="../src/google.golang.org/protobuf/internal/impl/legacy_enum.go.html#line-86" class="path-duplicate">legacy_enum.go</a><a href="../src/google.golang.org/protobuf/internal/impl/legacy_enum.go.html#line-86">#L86</a>: 	goTyp reflect.<b>Type</b>
+		<a href="../src/google.golang.org/protobuf/internal/impl/legacy_enum.go.html#line-118" class="path-duplicate">legacy_enum.go</a><a href="../src/google.golang.org/protobuf/internal/impl/legacy_enum.go.html#line-118">#L118</a>: func LegacyLoadEnumDesc(t reflect.<b>Type</b>) pref.EnumDescriptor {
+		<a href="../src/google.golang.org/protobuf/internal/impl/legacy_enum.go.html#line-161" class="path-duplicate">legacy_enum.go</a><a href="../src/google.golang.org/protobuf/internal/impl/legacy_enum.go.html#line-161">#L161</a>: func aberrantLoadEnumDesc(t reflect.<b>Type</b>) pref.EnumDescriptor {
+		<a href="../src/google.golang.org/protobuf/internal/impl/legacy_enum.go.html#line-195" class="path-duplicate">legacy_enum.go</a><a href="../src/google.golang.org/protobuf/internal/impl/legacy_enum.go.html#line-195">#L195</a>: func AberrantDeriveFullName(t reflect.<b>Type</b>) pref.FullName {
+		<a href="../src/google.golang.org/protobuf/internal/impl/legacy_message.go.html#line-38">legacy_message.go#L38</a>: func legacyLoadMessageType(t reflect.<b>Type</b>, name pref.FullName) protoreflect.MessageType {
+		<a href="../src/google.golang.org/protobuf/internal/impl/legacy_message.go.html#line-50" class="path-duplicate">legacy_message.go</a><a href="../src/google.golang.org/protobuf/internal/impl/legacy_message.go.html#line-50">#L50</a>: func legacyLoadMessageInfo(t reflect.<b>Type</b>, name pref.FullName) *MessageInfo {
+		<a href="../src/google.golang.org/protobuf/internal/impl/legacy_message.go.html#line-92" class="path-duplicate">legacy_message.go</a><a href="../src/google.golang.org/protobuf/internal/impl/legacy_message.go.html#line-92">#L92</a>: func LegacyLoadMessageDesc(t reflect.<b>Type</b>) pref.MessageDescriptor {
+		<a href="../src/google.golang.org/protobuf/internal/impl/legacy_message.go.html#line-95" class="path-duplicate">legacy_message.go</a><a href="../src/google.golang.org/protobuf/internal/impl/legacy_message.go.html#line-95">#L95</a>: func legacyLoadMessageDesc(t reflect.<b>Type</b>, name pref.FullName) pref.MessageDescriptor {
+		<a href="../src/google.golang.org/protobuf/internal/impl/legacy_message.go.html#line-159" class="path-duplicate">legacy_message.go</a><a href="../src/google.golang.org/protobuf/internal/impl/legacy_message.go.html#line-159">#L159</a>: 	aberrantMessageDescCache map[reflect.<b>Type</b>]protoreflect.MessageDescriptor
+		<a href="../src/google.golang.org/protobuf/internal/impl/legacy_message.go.html#line-167" class="path-duplicate">legacy_message.go</a><a href="../src/google.golang.org/protobuf/internal/impl/legacy_message.go.html#line-167">#L167</a>: func aberrantLoadMessageDesc(t reflect.<b>Type</b>, name pref.FullName) pref.MessageDescriptor {
+		<a href="../src/google.golang.org/protobuf/internal/impl/legacy_message.go.html#line-171" class="path-duplicate">legacy_message.go</a><a href="../src/google.golang.org/protobuf/internal/impl/legacy_message.go.html#line-171">#L171</a>: 		aberrantMessageDescCache = make(map[reflect.<b>Type</b>]protoreflect.MessageDescriptor)
+		<a href="../src/google.golang.org/protobuf/internal/impl/legacy_message.go.html#line-175" class="path-duplicate">legacy_message.go</a><a href="../src/google.golang.org/protobuf/internal/impl/legacy_message.go.html#line-175">#L175</a>: func aberrantLoadMessageDescReentrant(t reflect.<b>Type</b>, name pref.FullName) pref.MessageDescriptor {
+		<a href="../src/google.golang.org/protobuf/internal/impl/legacy_message.go.html#line-210" class="path-duplicate">legacy_message.go</a><a href="../src/google.golang.org/protobuf/internal/impl/legacy_message.go.html#line-210">#L210</a>: 	var oneofWrappers []reflect.<b>Type</b>
+		<a href="../src/google.golang.org/protobuf/internal/impl/legacy_message.go.html#line-270" class="path-duplicate">legacy_message.go</a><a href="../src/google.golang.org/protobuf/internal/impl/legacy_message.go.html#line-270">#L270</a>: func aberrantDeriveMessageName(t reflect.<b>Type</b>, name pref.FullName) pref.FullName {
+		<a href="../src/google.golang.org/protobuf/internal/impl/legacy_message.go.html#line-289" class="path-duplicate">legacy_message.go</a><a href="../src/google.golang.org/protobuf/internal/impl/legacy_message.go.html#line-289">#L289</a>: func aberrantAppendField(md *filedesc.Message, goType reflect.<b>Type</b>, tag, tagKey, tagVal string) {
+		<a href="../src/google.golang.org/protobuf/internal/impl/legacy_message.go.html#line-463" class="path-duplicate">legacy_message.go</a><a href="../src/google.golang.org/protobuf/internal/impl/legacy_message.go.html#line-463">#L463</a>: 	t reflect.<b>Type</b>
+		<a href="../src/google.golang.org/protobuf/internal/impl/legacy_message.go.html#line-475" class="path-duplicate">legacy_message.go</a><a href="../src/google.golang.org/protobuf/internal/impl/legacy_message.go.html#line-475">#L475</a>: func (mt aberrantMessageType) GoType() reflect.<b>Type</b> {
+		<a href="../src/google.golang.org/protobuf/internal/impl/message.go.html#line-29">message.go#L29</a>: 	GoReflectType reflect.<b>Type</b> // pointer to struct
+		<a href="../src/google.golang.org/protobuf/internal/impl/message.go.html#line-56" class="path-duplicate">message.go</a><a href="../src/google.golang.org/protobuf/internal/impl/message.go.html#line-56">#L56</a>: func getMessageInfo(mt reflect.<b>Type</b>) *MessageInfo {
+		<a href="../src/google.golang.org/protobuf/internal/impl/message.go.html#line-129" class="path-duplicate">message.go</a><a href="../src/google.golang.org/protobuf/internal/impl/message.go.html#line-129">#L129</a>: 	sizecacheType   reflect.<b>Type</b>
+		<a href="../src/google.golang.org/protobuf/internal/impl/message.go.html#line-131" class="path-duplicate">message.go</a><a href="../src/google.golang.org/protobuf/internal/impl/message.go.html#line-131">#L131</a>: 	weakType        reflect.<b>Type</b>
+		<a href="../src/google.golang.org/protobuf/internal/impl/message.go.html#line-133" class="path-duplicate">message.go</a><a href="../src/google.golang.org/protobuf/internal/impl/message.go.html#line-133">#L133</a>: 	unknownType     reflect.<b>Type</b>
+		<a href="../src/google.golang.org/protobuf/internal/impl/message.go.html#line-135" class="path-duplicate">message.go</a><a href="../src/google.golang.org/protobuf/internal/impl/message.go.html#line-135">#L135</a>: 	extensionType   reflect.<b>Type</b>
+		<a href="../src/google.golang.org/protobuf/internal/impl/message.go.html#line-139" class="path-duplicate">message.go</a><a href="../src/google.golang.org/protobuf/internal/impl/message.go.html#line-139">#L139</a>: 	oneofWrappersByType   map[reflect.<b>Type</b>]pref.FieldNumber
+		<a href="../src/google.golang.org/protobuf/internal/impl/message.go.html#line-140" class="path-duplicate">message.go</a><a href="../src/google.golang.org/protobuf/internal/impl/message.go.html#line-140">#L140</a>: 	oneofWrappersByNumber map[pref.FieldNumber]reflect.<b>Type</b>
+		<a href="../src/google.golang.org/protobuf/internal/impl/message.go.html#line-143" class="path-duplicate">message.go</a><a href="../src/google.golang.org/protobuf/internal/impl/message.go.html#line-143">#L143</a>: func (mi *MessageInfo) makeStructInfo(t reflect.<b>Type</b>) structInfo {
+		<a href="../src/google.golang.org/protobuf/internal/impl/message.go.html#line-152" class="path-duplicate">message.go</a><a href="../src/google.golang.org/protobuf/internal/impl/message.go.html#line-152">#L152</a>: 		oneofWrappersByType:   map[reflect.<b>Type</b>]pref.FieldNumber{},
+		<a href="../src/google.golang.org/protobuf/internal/impl/message.go.html#line-153" class="path-duplicate">message.go</a><a href="../src/google.golang.org/protobuf/internal/impl/message.go.html#line-153">#L153</a>: 		oneofWrappersByNumber: map[pref.FieldNumber]reflect.<b>Type</b>{},
+		<a href="../src/google.golang.org/protobuf/internal/impl/message_reflect.go.html#line-41">message_reflect.go#L41</a>: func (mi *MessageInfo) makeReflectFuncs(t reflect.<b>Type</b>, si structInfo) {
+		<a href="../src/google.golang.org/protobuf/internal/impl/message_reflect.go.html#line-116" class="path-duplicate">message_reflect.go</a><a href="../src/google.golang.org/protobuf/internal/impl/message_reflect.go.html#line-116">#L116</a>: func (mi *MessageInfo) makeUnknownFieldsFunc(t reflect.<b>Type</b>, si structInfo) {
+		<a href="../src/google.golang.org/protobuf/internal/impl/message_reflect.go.html#line-166" class="path-duplicate">message_reflect.go</a><a href="../src/google.golang.org/protobuf/internal/impl/message_reflect.go.html#line-166">#L166</a>: func (mi *MessageInfo) makeExtensionFieldsFunc(t reflect.<b>Type</b>, si structInfo) {
+		<a href="../src/google.golang.org/protobuf/internal/impl/message_reflect.go.html#line-185" class="path-duplicate">message_reflect.go</a><a href="../src/google.golang.org/protobuf/internal/impl/message_reflect.go.html#line-185">#L185</a>: 		var ft reflect.<b>Type</b>
+		<a href="../src/google.golang.org/protobuf/internal/impl/message_reflect_field.go.html#line-64">message_reflect_field.go#L64</a>: func fieldInfoForOneof(fd pref.FieldDescriptor, fs reflect.StructField, x exporter, ot reflect.<b>Type</b>) fieldInfo {
+		<a href="../src/google.golang.org/protobuf/internal/impl/pointer_unsafe.go.html#line-76">pointer_unsafe.go#L76</a>: func (p pointer) AsValueOf(t reflect.<b>Type</b>) reflect.Value {
+		<a href="../src/google.golang.org/protobuf/internal/impl/pointer_unsafe.go.html#line-82" class="path-duplicate">pointer_unsafe.go</a><a href="../src/google.golang.org/protobuf/internal/impl/pointer_unsafe.go.html#line-82">#L82</a>: func (p pointer) AsIfaceOf(t reflect.<b>Type</b>) interface{} {
+		<a href="../src/google.golang.org/protobuf/internal/impl/validate.go.html#line-109">validate.go#L109</a>: func newFieldValidationInfo(mi *MessageInfo, si structInfo, fd pref.FieldDescriptor, ft reflect.<b>Type</b>) validationInfo {
+		<a href="../src/google.golang.org/protobuf/internal/impl/validate.go.html#line-145" class="path-duplicate">validate.go</a><a href="../src/google.golang.org/protobuf/internal/impl/validate.go.html#line-145">#L145</a>: func newValidationInfo(fd pref.FieldDescriptor, ft reflect.<b>Type</b>) validationInfo {
+
+	<a href="../pkg/text/template.html">text/template</a>
+		<a href="../src/text/template/exec.go.html#line-738">exec.go#L738</a>: func canBeNil(typ reflect.<b>Type</b>) bool {
+		<a href="../src/text/template/exec.go.html#line-749" class="path-duplicate">exec.go</a><a href="../src/text/template/exec.go.html#line-749">#L749</a>: func (s *state) validateType(value reflect.Value, typ reflect.<b>Type</b>) reflect.Value {
+		<a href="../src/text/template/exec.go.html#line-791" class="path-duplicate">exec.go</a><a href="../src/text/template/exec.go.html#line-791">#L791</a>: func (s *state) evalArg(dot reflect.Value, typ reflect.<b>Type</b>, n parse.Node) reflect.Value {
+		<a href="../src/text/template/exec.go.html#line-838" class="path-duplicate">exec.go</a><a href="../src/text/template/exec.go.html#line-838">#L838</a>: func (s *state) evalBool(typ reflect.<b>Type</b>, n parse.Node) reflect.Value {
+		<a href="../src/text/template/exec.go.html#line-849" class="path-duplicate">exec.go</a><a href="../src/text/template/exec.go.html#line-849">#L849</a>: func (s *state) evalString(typ reflect.<b>Type</b>, n parse.Node) reflect.Value {
+		<a href="../src/text/template/exec.go.html#line-860" class="path-duplicate">exec.go</a><a href="../src/text/template/exec.go.html#line-860">#L860</a>: func (s *state) evalInteger(typ reflect.<b>Type</b>, n parse.Node) reflect.Value {
+		<a href="../src/text/template/exec.go.html#line-871" class="path-duplicate">exec.go</a><a href="../src/text/template/exec.go.html#line-871">#L871</a>: func (s *state) evalUnsignedInteger(typ reflect.<b>Type</b>, n parse.Node) reflect.Value {
+		<a href="../src/text/template/exec.go.html#line-882" class="path-duplicate">exec.go</a><a href="../src/text/template/exec.go.html#line-882">#L882</a>: func (s *state) evalFloat(typ reflect.<b>Type</b>, n parse.Node) reflect.Value {
+		<a href="../src/text/template/exec.go.html#line-893" class="path-duplicate">exec.go</a><a href="../src/text/template/exec.go.html#line-893">#L893</a>: func (s *state) evalComplex(typ reflect.<b>Type</b>, n parse.Node) reflect.Value {
+		<a href="../src/text/template/funcs.go.html#line-113">funcs.go#L113</a>: func goodFunc(typ reflect.<b>Type</b>) bool {
+		<a href="../src/text/template/funcs.go.html#line-158" class="path-duplicate">funcs.go</a><a href="../src/text/template/funcs.go.html#line-158">#L158</a>: func prepareArg(value reflect.Value, argType reflect.<b>Type</b>) (reflect.Value, error) {
+		<a href="../src/text/template/funcs.go.html#line-328" class="path-duplicate">funcs.go</a><a href="../src/text/template/funcs.go.html#line-328">#L328</a>: 	var dddType reflect.<b>Type</b>
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

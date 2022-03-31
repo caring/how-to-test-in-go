@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Package: github.com/uber/jaeger-client-go/utils</title>
+<link href="../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre id="package-details"><code><span style="font-size:xx-large;">package <b>utils</b></span>
+
+<span class="title">Import Path</span>
+	<a href="../../../../index.html#pkg-github.com/uber/jaeger-client-go/utils">github.com/uber/jaeger-client-go/utils</a><i> (on <a href="https://pkg.go.dev/github.com/uber/jaeger-client-go/utils" target="_blank">go.dev</a>)</i>
+
+<span class="title">Dependency Relation</span>
+	imports <a href="../../../../dep/github.com/uber/jaeger-client-go/utils.html">20 packages</a>, and imported by <a href="../../../../dep/github.com/uber/jaeger-client-go/utils.html#imported-by">one package</a>
+
+<div id="files"><span class="title">Involved Source Files</span>
+
+	<span class="nodocs">      <a href="../../../../src/github.com/uber/jaeger-client-go/utils/http_json.go.html">http_json.go</a></span>
+	<span class="nodocs">      <a href="../../../../src/github.com/uber/jaeger-client-go/utils/localip.go.html">localip.go</a></span>
+	<span class="nodocs">      <a href="../../../../src/github.com/uber/jaeger-client-go/utils/rand.go.html">rand.go</a></span>
+	<span class="nodocs">      <a href="../../../../src/github.com/uber/jaeger-client-go/utils/rate_limiter.go.html">rate_limiter.go</a></span>
+	<span class="nodocs">      <a href="../../../../src/github.com/uber/jaeger-client-go/utils/reconnecting_udp_conn.go.html">reconnecting_udp_conn.go</a></span>
+	<span class="nodocs">      <a href="../../../../src/github.com/uber/jaeger-client-go/utils/udp_client.go.html">udp_client.go</a></span>
+	<span class="nodocs">      <a href="../../../../src/github.com/uber/jaeger-client-go/utils/utils.go.html">utils.go</a></span></div>
+<div id="exported-types"><span class="title">Package-Level Type Names<span class="title-stat"><i> (total 9, in which 4 are exported)</i></span></span>
+
+<div id="exported-types-buttons" class="js-on">	/* sort exporteds by: <label id="sort-types-by-alphabet" class="button">alphabet</label> | <label id="sort-types-by-popularity" class="button">popularity</label> */</div><div class="anchor type-res" id="name-AgentClientUDP" data-popularity="400">	<input type='checkbox' class="fold" id="AgentClientUDP-fold-content"><label for="AgentClientUDP-fold-content"> <a href="../../../../use/github.com/uber/jaeger-client-go/utils..AgentClientUDP.html">type</a> <a href="../../../../src/github.com/uber/jaeger-client-go/utils/udp_client.go.html#line-37">AgentClientUDP</a> <i>(struct)</i></label><span id='AgentClientUDP-fold-content-docs' class="fold-docs">
+		AgentClientUDP is a UDP client to Jaeger agent that implements agent.Agent interface.
+
+		<input type='checkbox' class="fold" id="AgentClientUDP-fold-fields"><label for="AgentClientUDP-fold-fields">Fields (<i>total 6, in which 2 are exported</i>)</label><span id='AgentClientUDP-fold-fields-items' class="fold-items"><span>
+			<span class="nodocs"><a href="../../../../src/github.com/uber/jaeger-client-go/utils/udp_client.go.html#line-38">Agent</a> <i><a href="thrift-gen/agent.html">agent</a>.<a href="thrift-gen/agent.html#name-Agent">Agent</a></i></span></span><span>
+			<span class="nodocs"><a href="../../../../src/github.com/uber/jaeger-client-go/utils/udp_client.go.html#line-39">Closer</a> <i><a href="../../../io.html">io</a>.<a href="../../../io.html#name-Closer">Closer</a></i></span></span>
+			<input type='checkbox' class="showhide" id="AgentClientUDP-showhide-fields"><i><label for="AgentClientUDP-showhide-fields" class="show-inline">/* 4 unexporteds ... */</label><label for="AgentClientUDP-showhide-fields" class="hide-inline">/* 4 unexporteds: */</label></i><span class="hidden"><i>
+			<span class="nodocs"><a href="../../../../src/github.com/uber/jaeger-client-go/utils/udp_client.go.html#line-42">client</a> <i>*<a href="thrift-gen/agent.html">agent</a>.<a href="thrift-gen/agent.html#name-AgentClient">AgentClient</a></i></span></i></span><span class="hidden"><i>
+			<span class="nodocs"><a href="../../../../src/github.com/uber/jaeger-client-go/utils/udp_client.go.html#line-41">connUDP</a> <i><a href="#name-udpConn">udpConn</a></i></span></i></span><span class="hidden"><i>
+			<input type='checkbox' class="fold" id="AgentClientUDP-fold-field-maxPacketSize"><label for="AgentClientUDP-fold-field-maxPacketSize"><a href="../../../../src/github.com/uber/jaeger-client-go/utils/udp_client.go.html#line-43">maxPacketSize</a> <i><a href="../../../builtin.html#name-int">int</a></i></label><span id='AgentClientUDP-fold-field-maxPacketSize-docs' class="fold-docs">
+				// max size of datagram in bytes
+</span></i></span><span class="hidden"><i>
+			<input type='checkbox' class="fold" id="AgentClientUDP-fold-field-thriftBuffer"><label for="AgentClientUDP-fold-field-thriftBuffer"><a href="../../../../src/github.com/uber/jaeger-client-go/utils/udp_client.go.html#line-44">thriftBuffer</a> <i>*<a href="thrift.html">thrift</a>.<a href="thrift.html#name-TMemoryBuffer">TMemoryBuffer</a></i></label><span id='AgentClientUDP-fold-field-thriftBuffer-docs' class="fold-docs">
+				// buffer used to calculate byte size of a span
+</span></i></span></span>
+		<input type='checkbox' class="fold" id="AgentClientUDP-fold-methods"><label for="AgentClientUDP-fold-methods">Methods (<i>total 3, all are exported</i>)</label><span id='AgentClientUDP-fold-methods-items' class="fold-items"><span>
+			<input type='checkbox' class="fold" id="AgentClientUDP-fold-method-Close"><label for="AgentClientUDP-fold-method-Close">(*AgentClientUDP) <a href="../../../../src/github.com/uber/jaeger-client-go/utils/udp_client.go.html#line-147">Close</a>() <a href="../../../builtin.html#name-error">error</a></label><span id='AgentClientUDP-fold-method-Close-docs' class="fold-docs">
+				Close implements Close() of io.Closer and closes the underlying UDP connection.
+</span></span><span>
+			<input type='checkbox' class="fold" id="AgentClientUDP-fold-method-EmitBatch"><label for="AgentClientUDP-fold-method-EmitBatch">(*AgentClientUDP) <a href="../../../../src/github.com/uber/jaeger-client-go/utils/udp_client.go.html#line-133">EmitBatch</a>(ctx <a href="../../../context.html">context</a>.<a href="../../../context.html#name-Context">Context</a>, batch *<a href="thrift-gen/jaeger.html">jaeger</a>.<a href="thrift-gen/jaeger.html#name-Batch">Batch</a>) <a href="../../../builtin.html#name-error">error</a></label><span id='AgentClientUDP-fold-method-EmitBatch-docs' class="fold-docs">
+				EmitBatch implements EmitBatch() of Agent interface
+</span></span><span>
+			<input type='checkbox' class="fold" id="AgentClientUDP-fold-method-EmitZipkinBatch"><label for="AgentClientUDP-fold-method-EmitZipkinBatch">(*AgentClientUDP) <a href="../../../../src/github.com/uber/jaeger-client-go/utils/udp_client.go.html#line-128">EmitZipkinBatch</a>(<a href="../../../context.html">context</a>.<a href="../../../context.html#name-Context">Context</a>, []*<a href="thrift-gen/zipkincore.html">zipkincore</a>.<a href="thrift-gen/zipkincore.html#name-Span">Span</a>) <a href="../../../builtin.html#name-error">error</a></label><span id='AgentClientUDP-fold-method-EmitZipkinBatch-docs' class="fold-docs">
+				EmitZipkinBatch implements EmitZipkinBatch() of Agent interface
+</span></span></span>
+		<input type='checkbox' class="fold" id="AgentClientUDP-fold-impls"><label for="AgentClientUDP-fold-impls">Implements (<i>at least 2, both are exported</i>)</label><span id='AgentClientUDP-fold-impls-items' class="fold-items"><span>
+			*AgentClientUDP : github.com/uber/jaeger-client-go/thrift-gen/agent.<a href="thrift-gen/agent.html#name-Agent">Agent</a></span><span>
+			*AgentClientUDP : io.<a href="../../../io.html#name-Closer">Closer</a></span></span>
+		<input type='checkbox' class="fold" id="AgentClientUDP-fold-results"><label for="AgentClientUDP-fold-results">As Outputs Of (<i>at least 2, both are exported</i>)</label><span id='AgentClientUDP-fold-results-items' class="fold-items"><span>
+			func <a href="#name-NewAgentClientUDP">NewAgentClientUDP</a>(hostPort <a href="../../../builtin.html#name-string">string</a>, maxPacketSize <a href="../../../builtin.html#name-int">int</a>) (*<b>AgentClientUDP</b>, <a href="../../../builtin.html#name-error">error</a>)</span><span>
+			func <a href="#name-NewAgentClientUDPWithParams">NewAgentClientUDPWithParams</a>(params <a href="#name-AgentClientUDPParams">AgentClientUDPParams</a>) (*<b>AgentClientUDP</b>, <a href="../../../builtin.html#name-error">error</a>)</span></span>
+
+</span></div><div class="anchor type-res" id="name-AgentClientUDPParams" data-popularity="35">	<input type='checkbox' class="fold" id="AgentClientUDPParams-fold-content"><label for="AgentClientUDPParams-fold-content"> <a href="../../../../use/github.com/uber/jaeger-client-go/utils..AgentClientUDPParams.html">type</a> <a href="../../../../src/github.com/uber/jaeger-client-go/utils/udp_client.go.html#line-55">AgentClientUDPParams</a> <i>(struct)</i></label><span id='AgentClientUDPParams-fold-content-docs' class="fold-docs">
+		AgentClientUDPParams allows specifying options for initializing an AgentClientUDP. An instance of this struct should
+		be passed to NewAgentClientUDPWithParams.
+
+		<input type='checkbox' class="fold" id="AgentClientUDPParams-fold-fields"><label for="AgentClientUDPParams-fold-fields">Fields (<i>total 5, all are exported</i>)</label><span id='AgentClientUDPParams-fold-fields-items' class="fold-items"><span>
+			<span class="nodocs"><a href="../../../../src/github.com/uber/jaeger-client-go/utils/udp_client.go.html#line-60">AttemptReconnectInterval</a> <i><a href="../../../time.html">time</a>.<a href="../../../time.html#name-Duration">Duration</a></i></span></span><span>
+			<span class="nodocs"><a href="../../../../src/github.com/uber/jaeger-client-go/utils/udp_client.go.html#line-59">DisableAttemptReconnecting</a> <i><a href="../../../builtin.html#name-bool">bool</a></i></span></span><span>
+			<span class="nodocs"><a href="../../../../src/github.com/uber/jaeger-client-go/utils/udp_client.go.html#line-56">HostPort</a> <i><a href="../../../builtin.html#name-string">string</a></i></span></span><span>
+			<span class="nodocs"><a href="../../../../src/github.com/uber/jaeger-client-go/utils/udp_client.go.html#line-58">Logger</a> <i><a href="log.html">log</a>.<a href="log.html#name-Logger">Logger</a></i></span></span><span>
+			<span class="nodocs"><a href="../../../../src/github.com/uber/jaeger-client-go/utils/udp_client.go.html#line-57">MaxPacketSize</a> <i><a href="../../../builtin.html#name-int">int</a></i></span></span></span>
+		<input type='checkbox' class="fold" id="AgentClientUDPParams-fold-params"><label for="AgentClientUDPParams-fold-params">As Inputs Of (<i>at least one exported</i>)</label><span id='AgentClientUDPParams-fold-params-items' class="fold-items"><span>
+			func <a href="#name-NewAgentClientUDPWithParams">NewAgentClientUDPWithParams</a>(params <b>AgentClientUDPParams</b>) (*<a href="#name-AgentClientUDP">AgentClientUDP</a>, <a href="../../../builtin.html#name-error">error</a>)</span></span>
+
+</span></div><div class="anchor type-res" id="name-RateLimiter" data-popularity="200">	<input type='checkbox' class="fold" id="RateLimiter-fold-content"><label for="RateLimiter-fold-content"> <a href="../../../../use/github.com/uber/jaeger-client-go/utils..RateLimiter.html">type</a> <a href="../../../../src/github.com/uber/jaeger-client-go/utils/rate_limiter.go.html#line-27">RateLimiter</a> <b><i>(interface)</i></b></label><span id='RateLimiter-fold-content-docs' class="fold-docs">
+		RateLimiter is a filter used to check if a message that is worth itemCost units is within the rate limits.
+
+		TODO (breaking change) remove this interface in favor of public struct below
+
+		Deprecated, use ReconfigurableRateLimiter.
+
+		<input type='checkbox' class="fold" id="RateLimiter-fold-methods"><label for="RateLimiter-fold-methods">Methods (<i>only one, which is exported</i>)</label><span id='RateLimiter-fold-methods-items' class="fold-items"><span>
+			<span class="nodocs">( RateLimiter) <a href="../../../../src/github.com/uber/jaeger-client-go/utils/rate_limiter.go.html#line-28">CheckCredit</a>(itemCost <a href="../../../builtin.html#name-float64">float64</a>) <a href="../../../builtin.html#name-bool">bool</a></span></span></span>
+		<input type='checkbox' class="fold" id="RateLimiter-fold-impledby"><label for="RateLimiter-fold-impledby">Implemented By (<i>at least one exported</i>)</label><span id='RateLimiter-fold-impledby-items' class="fold-items"><span>
+			*<a href="#name-ReconfigurableRateLimiter">ReconfigurableRateLimiter</a></span></span>
+
+</span></div><div class="anchor type-res" id="name-ReconfigurableRateLimiter" data-popularity="275">	<input type='checkbox' class="fold" id="ReconfigurableRateLimiter-fold-content"><label for="ReconfigurableRateLimiter-fold-content"> <a href="../../../../use/github.com/uber/jaeger-client-go/utils..ReconfigurableRateLimiter.html">type</a> <a href="../../../../src/github.com/uber/jaeger-client-go/utils/rate_limiter.go.html#line-45">ReconfigurableRateLimiter</a> <i>(struct)</i></label><span id='ReconfigurableRateLimiter-fold-content-docs' class="fold-docs">
+		ReconfigurableRateLimiter is a rate limiter based on leaky bucket algorithm, formulated in terms of a
+		credits balance that is replenished every time CheckCredit() method is called (tick) by the amount proportional
+		to the time elapsed since the last tick, up to max of creditsPerSecond. A call to CheckCredit() takes a cost
+		of an item we want to pay with the balance. If the balance exceeds the cost of the item, the item is "purchased"
+		and the balance reduced, indicated by returned value of true. Otherwise the balance is unchanged and return false.
+
+		This can be used to limit a rate of messages emitted by a service by instantiating the Rate Limiter with the
+		max number of messages a service is allowed to emit per second, and calling CheckCredit(1.0) for each message
+		to determine if the message is within the rate limit.
+
+		It can also be used to limit the rate of traffic in bytes, by setting creditsPerSecond to desired throughput
+		as bytes/second, and calling CheckCredit() with the actual message size.
+
+		TODO (breaking change) rename to RateLimiter once the interface is removed
+
+		<input type='checkbox' class="fold" id="ReconfigurableRateLimiter-fold-fields"><label for="ReconfigurableRateLimiter-fold-fields">Fields (<i>total 6, none are exported</i>)</label><span id='ReconfigurableRateLimiter-fold-fields-items' class="fold-items">
+			<input type='checkbox' class="showhide" id="ReconfigurableRateLimiter-showhide-fields"><i><label for="ReconfigurableRateLimiter-showhide-fields" class="show-inline">/* 6 unexporteds ... */</label><label for="ReconfigurableRateLimiter-showhide-fields" class="hide-inline">/* 6 unexporteds: */</label></i><span class="hidden"><i>
+			<span class="nodocs"><a href="../../../../src/github.com/uber/jaeger-client-go/utils/rate_limiter.go.html#line-49">balance</a> <i><a href="../../../builtin.html#name-float64">float64</a></i></span></i></span><span class="hidden"><i>
+			<span class="nodocs"><a href="../../../../src/github.com/uber/jaeger-client-go/utils/rate_limiter.go.html#line-48">creditsPerSecond</a> <i><a href="../../../builtin.html#name-float64">float64</a></i></span></i></span><span class="hidden"><i>
+			<span class="nodocs"><a href="../../../../src/github.com/uber/jaeger-client-go/utils/rate_limiter.go.html#line-51">lastTick</a> <i><a href="../../../time.html">time</a>.<a href="../../../time.html#name-Time">Time</a></i></span></i></span><span class="hidden"><i>
+			<span class="nodocs"><a href="../../../../src/github.com/uber/jaeger-client-go/utils/rate_limiter.go.html#line-46">lock</a> <i><a href="../../../sync.html">sync</a>.<a href="../../../sync.html#name-Mutex">Mutex</a></i></span></i></span><span class="hidden"><i>
+			<span class="nodocs"><a href="../../../../src/github.com/uber/jaeger-client-go/utils/rate_limiter.go.html#line-50">maxBalance</a> <i><a href="../../../builtin.html#name-float64">float64</a></i></span></i></span><span class="hidden"><i>
+			<span class="nodocs"><a href="../../../../src/github.com/uber/jaeger-client-go/utils/rate_limiter.go.html#line-53">timeNow</a> <i>func() <a href="../../../time.html">time</a>.<a href="../../../time.html#name-Time">Time</a></i></span></i></span></span>
+		<input type='checkbox' class="fold" id="ReconfigurableRateLimiter-fold-methods"><label for="ReconfigurableRateLimiter-fold-methods">Methods (<i>total 3, in which 2 are exported</i>)</label><span id='ReconfigurableRateLimiter-fold-methods-items' class="fold-items"><span>
+			<input type='checkbox' class="fold" id="ReconfigurableRateLimiter-fold-method-CheckCredit"><label for="ReconfigurableRateLimiter-fold-method-CheckCredit">(*ReconfigurableRateLimiter) <a href="../../../../src/github.com/uber/jaeger-client-go/utils/rate_limiter.go.html#line-69">CheckCredit</a>(itemCost <a href="../../../builtin.html#name-float64">float64</a>) <a href="../../../builtin.html#name-bool">bool</a></label><span id='ReconfigurableRateLimiter-fold-method-CheckCredit-docs' class="fold-docs">
+				CheckCredit tries to reduce the current balance by itemCost provided that the current balance
+				is not lest than itemCost.
+</span></span><span>
+			<input type='checkbox' class="fold" id="ReconfigurableRateLimiter-fold-method-Update"><label for="ReconfigurableRateLimiter-fold-method-Update">(*ReconfigurableRateLimiter) <a href="../../../../src/github.com/uber/jaeger-client-go/utils/rate_limiter.go.html#line-104">Update</a>(creditsPerSecond, maxBalance <a href="../../../builtin.html#name-float64">float64</a>)</label><span id='ReconfigurableRateLimiter-fold-method-Update-docs' class="fold-docs">
+				Update changes the main parameters of the rate limiter in-place, while retaining
+				the current accumulated balance (pro-rated to the new maxBalance value). Using this method
+				instead of creating a new rate limiter helps to avoid thundering herd when sampling
+				strategies are updated.
+</span></span>
+			<input type='checkbox' class="showhide" id="ReconfigurableRateLimiter-showhide-methods"><i><label for="ReconfigurableRateLimiter-showhide-methods" class="show-inline">/* one unexported ... */</label><label for="ReconfigurableRateLimiter-showhide-methods" class="hide-inline">/* one unexported: */</label></i><span class="hidden"><i>
+			<input type='checkbox' class="fold" id="ReconfigurableRateLimiter-fold-method-updateBalance"><label for="ReconfigurableRateLimiter-fold-method-updateBalance">(*ReconfigurableRateLimiter) <a href="../../../../src/github.com/uber/jaeger-client-go/utils/rate_limiter.go.html#line-88">updateBalance</a>()</label><span id='ReconfigurableRateLimiter-fold-method-updateBalance-docs' class="fold-docs">
+				updateBalance recalculates current balance based on time elapsed. Must be called while holding a lock.
+</span></i></span></span>
+		<input type='checkbox' class="fold" id="ReconfigurableRateLimiter-fold-impls"><label for="ReconfigurableRateLimiter-fold-impls">Implements (<i>at least one exported</i>)</label><span id='ReconfigurableRateLimiter-fold-impls-items' class="fold-items"><span>
+			*ReconfigurableRateLimiter : <a href="#name-RateLimiter">RateLimiter</a></span></span>
+		<input type='checkbox' class="fold" id="ReconfigurableRateLimiter-fold-results"><label for="ReconfigurableRateLimiter-fold-results">As Outputs Of (<i>at least one exported</i>)</label><span id='ReconfigurableRateLimiter-fold-results-items' class="fold-items"><span>
+			func <a href="#name-NewRateLimiter">NewRateLimiter</a>(creditsPerSecond, maxBalance <a href="../../../builtin.html#name-float64">float64</a>) *<b>ReconfigurableRateLimiter</b></span></span>
+
+</span></div></div><div>	<input type='checkbox' class="showhide" id="unexported-typenames-showhide"><i><label for="unexported-typenames-showhide" class="show-inline">/* 5 unexporteds ... */</label><label for="unexported-typenames-showhide" class="hide-inline">/* 5 unexporteds: */</label></i><div class="anchor type-res hidden" id="name-dialFunc" data-popularity="35">	<input type='checkbox' class="fold" id="dialFunc-fold-content"><label for="dialFunc-fold-content"> <a href="../../../../use/github.com/uber/jaeger-client-go/utils..dialFunc^1392b.html">type</a> <a href="../../../../src/github.com/uber/jaeger-client-go/utils/reconnecting_udp_conn.go.html#line-43">dialFunc</a> <i>(func)</i></label><span id='dialFunc-fold-content-docs' class="fold-docs">
+
+		<input type='checkbox' class="fold" id="dialFunc-fold-params"><label for="dialFunc-fold-params">As Inputs Of (<i>at least one unexported</i>)</label><span id='dialFunc-fold-params-items' class="fold-items">
+			<input type='checkbox' checked class="showhide" id="dialFunc-showhide-outputofs"><i><label for="dialFunc-showhide-outputofs" class="show-inline">/* at least one unexported ... */</label><label for="dialFunc-showhide-outputofs" class="hide-inline">/* at least one unexported: */</label></i><span class="hidden"><i>
+			func <a href="#name-newReconnectingUDPConn">newReconnectingUDPConn</a>(hostPort <a href="../../../builtin.html#name-string">string</a>, resolveTimeout <a href="../../../time.html">time</a>.<a href="../../../time.html#name-Duration">Duration</a>, resolveFunc <a href="#name-resolveFunc">resolveFunc</a>, dialFunc <b>dialFunc</b>, logger <a href="log.html">log</a>.<a href="log.html#name-Logger">Logger</a>) (*<a href="#name-reconnectingUDPConn">reconnectingUDPConn</a>, <a href="../../../builtin.html#name-error">error</a>)</i></span></span>
+
+</span></div><div class="anchor type-res hidden" id="name-lockedSource" data-popularity="150">	<input type='checkbox' class="fold" id="lockedSource-fold-content"><label for="lockedSource-fold-content"> <a href="../../../../use/github.com/uber/jaeger-client-go/utils..lockedSource^83d7b.html">type</a> <a href="../../../../src/github.com/uber/jaeger-client-go/utils/rand.go.html#line-24">lockedSource</a> <i>(struct)</i></label><span id='lockedSource-fold-content-docs' class="fold-docs">
+		lockedSource allows a random number generator to be used by multiple goroutines concurrently.
+		The code is very similar to math/rand.lockedSource, which is unfortunately not exposed.
+
+		<input type='checkbox' class="fold" id="lockedSource-fold-fields"><label for="lockedSource-fold-fields">Fields (<i>total 2, neither is exported</i>)</label><span id='lockedSource-fold-fields-items' class="fold-items">
+			<input type='checkbox' checked class="showhide" id="lockedSource-showhide-fields"><i><label for="lockedSource-showhide-fields" class="show-inline">/* 2 unexporteds ... */</label><label for="lockedSource-showhide-fields" class="hide-inline">/* 2 unexporteds: */</label></i><span class="hidden"><i>
+			<span class="nodocs"><a href="../../../../src/github.com/uber/jaeger-client-go/utils/rand.go.html#line-25">mut</a> <i><a href="../../../sync.html">sync</a>.<a href="../../../sync.html#name-Mutex">Mutex</a></i></span></i></span><span class="hidden"><i>
+			<span class="nodocs"><a href="../../../../src/github.com/uber/jaeger-client-go/utils/rand.go.html#line-26">src</a> <i><a href="../../../math/rand.html">rand</a>.<a href="../../../math/rand.html#name-Source">Source</a></i></span></i></span></span>
+		<input type='checkbox' class="fold" id="lockedSource-fold-methods"><label for="lockedSource-fold-methods">Methods (<i>total 2, both are exported</i>)</label><span id='lockedSource-fold-methods-items' class="fold-items"><span>
+			<span class="nodocs">(*lockedSource) <a href="../../../../src/github.com/uber/jaeger-client-go/utils/rand.go.html#line-34">Int63</a>() (n <a href="../../../builtin.html#name-int64">int64</a>)</span></span><span>
+			<input type='checkbox' class="fold" id="lockedSource-fold-method-Seed"><label for="lockedSource-fold-method-Seed">(*lockedSource) <a href="../../../../src/github.com/uber/jaeger-client-go/utils/rand.go.html#line-42">Seed</a>(seed <a href="../../../builtin.html#name-int64">int64</a>)</label><span id='lockedSource-fold-method-Seed-docs' class="fold-docs">
+				Seed implements Seed() of Source
+</span></span></span>
+		<input type='checkbox' class="fold" id="lockedSource-fold-impls"><label for="lockedSource-fold-impls">Implements (<i>at least one exported</i>)</label><span id='lockedSource-fold-impls-items' class="fold-items"><span>
+			*lockedSource : math/rand.<a href="../../../math/rand.html#name-Source">Source</a></span></span>
+
+</span></div><div class="anchor type-res hidden" id="name-reconnectingUDPConn" data-popularity="575">	<input type='checkbox' class="fold" id="reconnectingUDPConn-fold-content"><label for="reconnectingUDPConn-fold-content"> <a href="../../../../use/github.com/uber/jaeger-client-go/utils..reconnectingUDPConn^4d905.html">type</a> <a href="../../../../src/github.com/uber/jaeger-client-go/utils/reconnecting_udp_conn.go.html#line-29">reconnectingUDPConn</a> <i>(struct)</i></label><span id='reconnectingUDPConn-fold-content-docs' class="fold-docs">
+		reconnectingUDPConn is an implementation of udpConn that resolves hostPort every resolveTimeout, if the resolved address is
+		different than the current conn then the new address is dialed and the conn is swapped.
+
+		<input type='checkbox' class="fold" id="reconnectingUDPConn-fold-fields"><label for="reconnectingUDPConn-fold-fields">Fields (<i>total 9, none are exported</i>)</label><span id='reconnectingUDPConn-fold-fields-items' class="fold-items">
+			<input type='checkbox' checked class="showhide" id="reconnectingUDPConn-showhide-fields"><i><label for="reconnectingUDPConn-showhide-fields" class="show-inline">/* 9 unexporteds ... */</label><label for="reconnectingUDPConn-showhide-fields" class="hide-inline">/* 9 unexporteds: */</label></i><span class="hidden"><i>
+			<span class="nodocs"><a href="../../../../src/github.com/uber/jaeger-client-go/utils/reconnecting_udp_conn.go.html#line-34">bufferBytes</a> <i><a href="../../../builtin.html#name-int64">int64</a></i></span></i></span><span class="hidden"><i>
+			<span class="nodocs"><a href="../../../../src/github.com/uber/jaeger-client-go/utils/reconnecting_udp_conn.go.html#line-39">closeChan</a> <i>chan struct{}</i></span></i></span><span class="hidden"><i>
+			<span class="nodocs"><a href="../../../../src/github.com/uber/jaeger-client-go/utils/reconnecting_udp_conn.go.html#line-37">conn</a> <i>*<a href="../../../net.html">net</a>.<a href="../../../net.html#name-UDPConn">UDPConn</a></i></span></i></span><span class="hidden"><i>
+			<span class="nodocs"><a href="../../../../src/github.com/uber/jaeger-client-go/utils/reconnecting_udp_conn.go.html#line-36">connMtx</a> <i><a href="../../../sync.html">sync</a>.<a href="../../../sync.html#name-RWMutex">RWMutex</a></i></span></i></span><span class="hidden"><i>
+			<span class="nodocs"><a href="../../../../src/github.com/uber/jaeger-client-go/utils/reconnecting_udp_conn.go.html#line-38">destAddr</a> <i>*<a href="../../../net.html">net</a>.<a href="../../../net.html#name-UDPAddr">UDPAddr</a></i></span></i></span><span class="hidden"><i>
+			<span class="nodocs"><a href="../../../../src/github.com/uber/jaeger-client-go/utils/reconnecting_udp_conn.go.html#line-32">dialFunc</a> <i><a href="#name-dialFunc">dialFunc</a></i></span></i></span><span class="hidden"><i>
+			<span class="nodocs"><a href="../../../../src/github.com/uber/jaeger-client-go/utils/reconnecting_udp_conn.go.html#line-30">hostPort</a> <i><a href="../../../builtin.html#name-string">string</a></i></span></i></span><span class="hidden"><i>
+			<span class="nodocs"><a href="../../../../src/github.com/uber/jaeger-client-go/utils/reconnecting_udp_conn.go.html#line-33">logger</a> <i><a href="log.html">log</a>.<a href="log.html#name-Logger">Logger</a></i></span></i></span><span class="hidden"><i>
+			<span class="nodocs"><a href="../../../../src/github.com/uber/jaeger-client-go/utils/reconnecting_udp_conn.go.html#line-31">resolveFunc</a> <i><a href="#name-resolveFunc">resolveFunc</a></i></span></i></span></span>
+		<input type='checkbox' class="fold" id="reconnectingUDPConn-fold-methods"><label for="reconnectingUDPConn-fold-methods">Methods (<i>total 6, in which 3 are exported</i>)</label><span id='reconnectingUDPConn-fold-methods-items' class="fold-items"><span>
+			<input type='checkbox' class="fold" id="reconnectingUDPConn-fold-method-Close"><label for="reconnectingUDPConn-fold-method-Close">(*reconnectingUDPConn) <a href="../../../../src/github.com/uber/jaeger-client-go/utils/reconnecting_udp_conn.go.html#line-159">Close</a>() <a href="../../../builtin.html#name-error">error</a></label><span id='reconnectingUDPConn-fold-method-Close-docs' class="fold-docs">
+				Close stops the reconnectLoop, then closes the connection via net.udpConn 's implementation
+</span></span><span>
+			<input type='checkbox' class="fold" id="reconnectingUDPConn-fold-method-SetWriteBuffer"><label for="reconnectingUDPConn-fold-method-SetWriteBuffer">(*reconnectingUDPConn) <a href="../../../../src/github.com/uber/jaeger-client-go/utils/reconnecting_udp_conn.go.html#line-175">SetWriteBuffer</a>(bytes <a href="../../../builtin.html#name-int">int</a>) <a href="../../../builtin.html#name-error">error</a></label><span id='reconnectingUDPConn-fold-method-SetWriteBuffer-docs' class="fold-docs">
+				SetWriteBuffer defers to the net.udpConn SetWriteBuffer implementation wrapped with a RLock. if no conn is currently held
+				and SetWriteBuffer is called store bufferBytes to be set for new conns
+</span></span><span>
+			<input type='checkbox' class="fold" id="reconnectingUDPConn-fold-method-Write"><label for="reconnectingUDPConn-fold-method-Write">(*reconnectingUDPConn) <a href="../../../../src/github.com/uber/jaeger-client-go/utils/reconnecting_udp_conn.go.html#line-130">Write</a>(b []<a href="../../../builtin.html#name-byte">byte</a>) (<a href="../../../builtin.html#name-int">int</a>, <a href="../../../builtin.html#name-error">error</a>)</label><span id='reconnectingUDPConn-fold-method-Write-docs' class="fold-docs">
+				Write calls net.udpConn.Write, if it fails an attempt is made to connect to a new addr, if that succeeds the write is retried before returning
+</span></span>
+			<input type='checkbox' checked class="showhide" id="reconnectingUDPConn-showhide-methods"><i><label for="reconnectingUDPConn-showhide-methods" class="show-inline">/* 3 unexporteds ... */</label><label for="reconnectingUDPConn-showhide-methods" class="hide-inline">/* 3 unexporteds: */</label></i><span class="hidden"><i>
+			<span class="nodocs">(*reconnectingUDPConn) <a href="../../../../src/github.com/uber/jaeger-client-go/utils/reconnecting_udp_conn.go.html#line-103">attemptDialNewAddr</a>(newAddr *<a href="../../../net.html">net</a>.<a href="../../../net.html#name-UDPAddr">UDPAddr</a>) <a href="../../../builtin.html#name-error">error</a></span></i></span><span class="hidden"><i>
+			<span class="nodocs">(*reconnectingUDPConn) <a href="../../../../src/github.com/uber/jaeger-client-go/utils/reconnecting_udp_conn.go.html#line-81">attemptResolveAndDial</a>() <a href="../../../builtin.html#name-error">error</a></span></i></span><span class="hidden"><i>
+			<span class="nodocs">(*reconnectingUDPConn) <a href="../../../../src/github.com/uber/jaeger-client-go/utils/reconnecting_udp_conn.go.html#line-65">reconnectLoop</a>(resolveTimeout <a href="../../../time.html">time</a>.<a href="../../../time.html#name-Duration">Duration</a>)</span></i></span></span>
+		<input type='checkbox' class="fold" id="reconnectingUDPConn-fold-impls"><label for="reconnectingUDPConn-fold-impls">Implements (<i>at least 4, in which 3 are exported</i>)</label><span id='reconnectingUDPConn-fold-impls-items' class="fold-items"><span>
+			*reconnectingUDPConn : io.<a href="../../../io.html#name-Closer">Closer</a></span><span>
+			*reconnectingUDPConn : io.<a href="../../../io.html#name-WriteCloser">WriteCloser</a></span><span>
+			*reconnectingUDPConn : io.<a href="../../../io.html#name-Writer">Writer</a></span>
+			<input type='checkbox' checked class="showhide" id="reconnectingUDPConn-showhide-impls"><i><label for="reconnectingUDPConn-showhide-impls" class="show-inline">/* at least one unexported ... */</label><label for="reconnectingUDPConn-showhide-impls" class="hide-inline">/* at least one unexported: */</label></i><span class="hidden"><i>
+			*reconnectingUDPConn : <a href="#name-udpConn">udpConn</a></i></span></span>
+		<input type='checkbox' class="fold" id="reconnectingUDPConn-fold-results"><label for="reconnectingUDPConn-fold-results">As Outputs Of (<i>at least one unexported</i>)</label><span id='reconnectingUDPConn-fold-results-items' class="fold-items">
+			<input type='checkbox' checked class="showhide" id="reconnectingUDPConn-showhide-inputofs"><i><label for="reconnectingUDPConn-showhide-inputofs" class="show-inline">/* at least one unexported ... */</label><label for="reconnectingUDPConn-showhide-inputofs" class="hide-inline">/* at least one unexported: */</label></i><span class="hidden"><i>
+			func <a href="#name-newReconnectingUDPConn">newReconnectingUDPConn</a>(hostPort <a href="../../../builtin.html#name-string">string</a>, resolveTimeout <a href="../../../time.html">time</a>.<a href="../../../time.html#name-Duration">Duration</a>, resolveFunc <a href="#name-resolveFunc">resolveFunc</a>, dialFunc <a href="#name-dialFunc">dialFunc</a>, logger <a href="log.html">log</a>.<a href="log.html#name-Logger">Logger</a>) (*<b>reconnectingUDPConn</b>, <a href="../../../builtin.html#name-error">error</a>)</i></span></span>
+
+</span></div><div class="anchor type-res hidden" id="name-resolveFunc" data-popularity="35">	<input type='checkbox' class="fold" id="resolveFunc-fold-content"><label for="resolveFunc-fold-content"> <a href="../../../../use/github.com/uber/jaeger-client-go/utils..resolveFunc^ffe81.html">type</a> <a href="../../../../src/github.com/uber/jaeger-client-go/utils/reconnecting_udp_conn.go.html#line-42">resolveFunc</a> <i>(func)</i></label><span id='resolveFunc-fold-content-docs' class="fold-docs">
+
+		<input type='checkbox' class="fold" id="resolveFunc-fold-params"><label for="resolveFunc-fold-params">As Inputs Of (<i>at least one unexported</i>)</label><span id='resolveFunc-fold-params-items' class="fold-items">
+			<input type='checkbox' checked class="showhide" id="resolveFunc-showhide-outputofs"><i><label for="resolveFunc-showhide-outputofs" class="show-inline">/* at least one unexported ... */</label><label for="resolveFunc-showhide-outputofs" class="hide-inline">/* at least one unexported: */</label></i><span class="hidden"><i>
+			func <a href="#name-newReconnectingUDPConn">newReconnectingUDPConn</a>(hostPort <a href="../../../builtin.html#name-string">string</a>, resolveTimeout <a href="../../../time.html">time</a>.<a href="../../../time.html#name-Duration">Duration</a>, resolveFunc <b>resolveFunc</b>, dialFunc <a href="#name-dialFunc">dialFunc</a>, logger <a href="log.html">log</a>.<a href="log.html#name-Logger">Logger</a>) (*<a href="#name-reconnectingUDPConn">reconnectingUDPConn</a>, <a href="../../../builtin.html#name-error">error</a>)</i></span></span>
+
+</span></div><div class="anchor type-res hidden" id="name-udpConn" data-popularity="1200">	<input type='checkbox' class="fold" id="udpConn-fold-content"><label for="udpConn-fold-content"> <a href="../../../../use/github.com/uber/jaeger-client-go/utils..udpConn^cf83f.html">type</a> <a href="../../../../src/github.com/uber/jaeger-client-go/utils/udp_client.go.html#line-47">udpConn</a> <b><i>(interface)</i></b></label><span id='udpConn-fold-content-docs' class="fold-docs">
+
+		<input type='checkbox' class="fold" id="udpConn-fold-methods"><label for="udpConn-fold-methods">Methods (<i>total 3, all are exported</i>)</label><span id='udpConn-fold-methods-items' class="fold-items"><span>
+			<span class="nodocs">( udpConn) <a href="../../../../src/github.com/uber/jaeger-client-go/utils/udp_client.go.html#line-50">Close</a>() <a href="../../../builtin.html#name-error">error</a></span></span><span>
+			<span class="nodocs">( udpConn) <a href="../../../../src/github.com/uber/jaeger-client-go/utils/udp_client.go.html#line-49">SetWriteBuffer</a>(<a href="../../../builtin.html#name-int">int</a>) <a href="../../../builtin.html#name-error">error</a></span></span><span>
+			<span class="nodocs">( udpConn) <a href="../../../../src/github.com/uber/jaeger-client-go/utils/udp_client.go.html#line-48">Write</a>([]<a href="../../../builtin.html#name-byte">byte</a>) (<a href="../../../builtin.html#name-int">int</a>, <a href="../../../builtin.html#name-error">error</a>)</span></span></span>
+		<input type='checkbox' class="fold" id="udpConn-fold-impledby"><label for="udpConn-fold-impledby">Implemented By (<i>at least 6, in which 4 are exported</i>)</label><span id='udpConn-fold-impledby-items' class="fold-items"><span>
+			*net.<a href="../../../net.html#name-IPConn">IPConn</a></span><span>
+			*net.<a href="../../../net.html#name-TCPConn">TCPConn</a></span><span>
+			*net.<a href="../../../net.html#name-UDPConn">UDPConn</a></span><span>
+			*net.<a href="../../../net.html#name-UnixConn">UnixConn</a></span>
+			<input type='checkbox' checked class="showhide" id="udpConn-showhide-impedBys"><i><label for="udpConn-showhide-impedBys" class="show-inline">/* 2+ unexporteds ... */</label><label for="udpConn-showhide-impedBys" class="hide-inline">/* 2+ unexporteds: */</label></i><span class="hidden"><i>
+			*<a href="#name-reconnectingUDPConn">reconnectingUDPConn</a></i></span><span class="hidden"><i>
+			*net.<a href="../../../net.html#name-conn">conn</a></i></span></span>
+		<input type='checkbox' class="fold" id="udpConn-fold-impls"><label for="udpConn-fold-impls">Implements (<i>at least 3, all are exported</i>)</label><span id='udpConn-fold-impls-items' class="fold-items"><span>
+			 udpConn : io.<a href="../../../io.html#name-Closer">Closer</a></span><span>
+			 udpConn : io.<a href="../../../io.html#name-WriteCloser">WriteCloser</a></span><span>
+			 udpConn : io.<a href="../../../io.html#name-Writer">Writer</a></span></span>
+
+</span></div></div>
+<div id="exported-functions"><span class="title">Package-Level Functions<span class="title-stat"><i> (total 13, in which 11 are exported)</i></span></span>
+
+<div class="anchor value-res" id="name-GetJSON">	<input type='checkbox' class="fold" id="GetJSON-fold-content"><label for="GetJSON-fold-content"> <a href="../../../../use/github.com/uber/jaeger-client-go/utils..GetJSON.html">func</a> <a href="../../../../src/github.com/uber/jaeger-client-go/utils/http_json.go.html#line-26">GetJSON</a>(url <a href="../../../builtin.html#name-string">string</a>, out interface{}) <a href="../../../builtin.html#name-error">error</a></label><span id='GetJSON-fold-content-docs' class="fold-docs">
+		GetJSON makes an HTTP call to the specified URL and parses the returned JSON into `out`.
+
+</span></div><div class="anchor value-res" id="name-HostIP">	<input type='checkbox' class="fold" id="HostIP-fold-content"><label for="HostIP-fold-content"> <a href="../../../../use/github.com/uber/jaeger-client-go/utils..HostIP.html">func</a> <a href="../../../../src/github.com/uber/jaeger-client-go/utils/localip.go.html#line-54">HostIP</a>() (<a href="../../../net.html">net</a>.<a href="../../../net.html#name-IP">IP</a>, <a href="../../../builtin.html#name-error">error</a>)</label><span id='HostIP-fold-content-docs' class="fold-docs">
+		HostIP tries to find an IP that can be used by other machines to reach this machine.
+
+</span></div><div class="anchor value-res" id="name-NewAgentClientUDP">	<input type='checkbox' class="fold" id="NewAgentClientUDP-fold-content"><label for="NewAgentClientUDP-fold-content"> <a href="../../../../use/github.com/uber/jaeger-client-go/utils..NewAgentClientUDP.html">func</a> <a href="../../../../src/github.com/uber/jaeger-client-go/utils/udp_client.go.html#line-120">NewAgentClientUDP</a>(hostPort <a href="../../../builtin.html#name-string">string</a>, maxPacketSize <a href="../../../builtin.html#name-int">int</a>) (*<a href="#name-AgentClientUDP">AgentClientUDP</a>, <a href="../../../builtin.html#name-error">error</a>)</label><span id='NewAgentClientUDP-fold-content-docs' class="fold-docs">
+		NewAgentClientUDP creates a client that sends spans to Jaeger Agent over UDP.
+
+</span></div><div class="anchor value-res" id="name-NewAgentClientUDPWithParams">	<input type='checkbox' class="fold" id="NewAgentClientUDPWithParams-fold-content"><label for="NewAgentClientUDPWithParams-fold-content"> <a href="../../../../use/github.com/uber/jaeger-client-go/utils..NewAgentClientUDPWithParams.html">func</a> <a href="../../../../src/github.com/uber/jaeger-client-go/utils/udp_client.go.html#line-64">NewAgentClientUDPWithParams</a>(params <a href="#name-AgentClientUDPParams">AgentClientUDPParams</a>) (*<a href="#name-AgentClientUDP">AgentClientUDP</a>, <a href="../../../builtin.html#name-error">error</a>)</label><span id='NewAgentClientUDPWithParams-fold-content-docs' class="fold-docs">
+		NewAgentClientUDPWithParams creates a client that sends spans to Jaeger Agent over UDP.
+
+</span></div><div class="anchor value-res" id="name-NewRand">	<input type='checkbox' class="fold" id="NewRand-fold-content"><label for="NewRand-fold-content"> <a href="../../../../use/github.com/uber/jaeger-client-go/utils..NewRand.html">func</a> <a href="../../../../src/github.com/uber/jaeger-client-go/utils/rand.go.html#line-30">NewRand</a>(seed <a href="../../../builtin.html#name-int64">int64</a>) *<a href="../../../math/rand.html">rand</a>.<a href="../../../math/rand.html#name-Rand">Rand</a></label><span id='NewRand-fold-content-docs' class="fold-docs">
+		NewRand returns a rand.Rand that is threadsafe.
+
+</span></div><div class="anchor value-res" id="name-NewRateLimiter">	<input type='checkbox' class="fold" id="NewRateLimiter-fold-content"><label for="NewRateLimiter-fold-content"> <a href="../../../../use/github.com/uber/jaeger-client-go/utils..NewRateLimiter.html">func</a> <a href="../../../../src/github.com/uber/jaeger-client-go/utils/rate_limiter.go.html#line-57">NewRateLimiter</a>(creditsPerSecond, maxBalance <a href="../../../builtin.html#name-float64">float64</a>) *<a href="#name-ReconfigurableRateLimiter">ReconfigurableRateLimiter</a></label><span id='NewRateLimiter-fold-content-docs' class="fold-docs">
+		NewRateLimiter creates a new ReconfigurableRateLimiter.
+
+</span></div><div class="anchor value-res" id="name-PackIPAsUint32">	<input type='checkbox' class="fold" id="PackIPAsUint32-fold-content"><label for="PackIPAsUint32-fold-content"> <a href="../../../../use/github.com/uber/jaeger-client-go/utils..PackIPAsUint32.html">func</a> <a href="../../../../src/github.com/uber/jaeger-client-go/utils/utils.go.html#line-71">PackIPAsUint32</a>(ip <a href="../../../net.html">net</a>.<a href="../../../net.html#name-IP">IP</a>) <a href="../../../builtin.html#name-uint32">uint32</a></label><span id='PackIPAsUint32-fold-content-docs' class="fold-docs">
+		PackIPAsUint32 packs an IPv4 as uint32
+
+</span></div><div class="anchor value-res" id="name-ParseIPToUint32">	<input type='checkbox' class="fold" id="ParseIPToUint32-fold-content"><label for="ParseIPToUint32-fold-content"> <a href="../../../../use/github.com/uber/jaeger-client-go/utils..ParseIPToUint32.html">func</a> <a href="../../../../src/github.com/uber/jaeger-client-go/utils/utils.go.html#line-38">ParseIPToUint32</a>(ip <a href="../../../builtin.html#name-string">string</a>) (<a href="../../../builtin.html#name-uint32">uint32</a>, <a href="../../../builtin.html#name-error">error</a>)</label><span id='ParseIPToUint32-fold-content-docs' class="fold-docs">
+		ParseIPToUint32 converts a string ip (e.g. "x.y.z.w") to an uint32
+
+</span></div><div class="anchor value-res" id="name-ParsePort">	<input type='checkbox' class="fold" id="ParsePort-fold-content"><label for="ParsePort-fold-content"> <a href="../../../../use/github.com/uber/jaeger-client-go/utils..ParsePort.html">func</a> <a href="../../../../src/github.com/uber/jaeger-client-go/utils/utils.go.html#line-65">ParsePort</a>(portString <a href="../../../builtin.html#name-string">string</a>) (<a href="../../../builtin.html#name-uint16">uint16</a>, <a href="../../../builtin.html#name-error">error</a>)</label><span id='ParsePort-fold-content-docs' class="fold-docs">
+		ParsePort converts port number from string to uin16
+
+</span></div><div class="anchor value-res" id="name-ReadJSON">	<input type='checkbox' class="fold" id="ReadJSON-fold-content"><label for="ReadJSON-fold-content"> <a href="../../../../use/github.com/uber/jaeger-client-go/utils..ReadJSON.html">func</a> <a href="../../../../src/github.com/uber/jaeger-client-go/utils/http_json.go.html#line-35">ReadJSON</a>(resp *<a href="../../../net/http.html">http</a>.<a href="../../../net/http.html#name-Response">Response</a>, out interface{}) <a href="../../../builtin.html#name-error">error</a></label><span id='ReadJSON-fold-content-docs' class="fold-docs">
+		ReadJSON reads JSON from http.Response and parses it into `out`
+
+</span></div><div class="anchor value-res" id="name-TimeToMicrosecondsSinceEpochInt64">	<input type='checkbox' class="fold" id="TimeToMicrosecondsSinceEpochInt64-fold-content"><label for="TimeToMicrosecondsSinceEpochInt64-fold-content"> <a href="../../../../use/github.com/uber/jaeger-client-go/utils..TimeToMicrosecondsSinceEpochInt64.html">func</a> <a href="../../../../src/github.com/uber/jaeger-client-go/utils/utils.go.html#line-81">TimeToMicrosecondsSinceEpochInt64</a>(t <a href="../../../time.html">time</a>.<a href="../../../time.html#name-Time">Time</a>) <a href="../../../builtin.html#name-int64">int64</a></label><span id='TimeToMicrosecondsSinceEpochInt64-fold-content-docs' class="fold-docs">
+		TimeToMicrosecondsSinceEpochInt64 converts Go time.Time to a long
+		representing time since epoch in microseconds, which is used expected
+		in the Jaeger spans encoded as Thrift.
+
+</span></div>	<input type='checkbox' class="showhide" id="unexported-functions-showhide"><i><label for="unexported-functions-showhide" class="show-inline">/* 2 unexporteds ... */</label><label for="unexported-functions-showhide" class="hide-inline">/* 2 unexporteds: */</label></i><div class="anchor value-res hidden" id="name-newReconnectingUDPConn"><i>	<input type='checkbox' class="fold" id="newReconnectingUDPConn-fold-content"><label for="newReconnectingUDPConn-fold-content"> <a href="../../../../use/github.com/uber/jaeger-client-go/utils..newReconnectingUDPConn^54630.html">func</a> <a href="../../../../src/github.com/uber/jaeger-client-go/utils/reconnecting_udp_conn.go.html#line-47">newReconnectingUDPConn</a>(hostPort <a href="../../../builtin.html#name-string">string</a>, resolveTimeout <a href="../../../time.html">time</a>.<a href="../../../time.html#name-Duration">Duration</a>, resolveFunc <a href="#name-resolveFunc">resolveFunc</a>, dialFunc <a href="#name-dialFunc">dialFunc</a>, logger <a href="log.html">log</a>.<a href="log.html#name-Logger">Logger</a>) (*<a href="#name-reconnectingUDPConn">reconnectingUDPConn</a>, <a href="../../../builtin.html#name-error">error</a>)</label><span id='newReconnectingUDPConn-fold-content-docs' class="fold-docs">
+		newReconnectingUDPConn returns a new udpConn that resolves hostPort every resolveTimeout, if the resolved address is
+		different than the current conn then the new address is dialed and the conn is swapped.
+
+</span></i></div><div class="anchor value-res hidden" id="name-scoreAddr"><i>	<input type='checkbox' class="fold" id="scoreAddr-fold-content"><label for="scoreAddr-fold-content"> <a href="../../../../use/github.com/uber/jaeger-client-go/utils..scoreAddr^8be01.html">func</a> <a href="../../../../src/github.com/uber/jaeger-client-go/utils/localip.go.html#line-30">scoreAddr</a>(iface <a href="../../../net.html">net</a>.<a href="../../../net.html#name-Interface">Interface</a>, addr <a href="../../../net.html">net</a>.<a href="../../../net.html#name-Addr">Addr</a>) (<a href="../../../builtin.html#name-int">int</a>, <a href="../../../net.html">net</a>.<a href="../../../net.html#name-IP">IP</a>)</label><span id='scoreAddr-fold-content-docs' class="fold-docs">
+		scoreAddr scores how likely the given addr is to be a remote address and returns the
+		IP to use when listening. Any address which receives a negative score should not be used.
+		Scores are calculated as:
+		-1 for any unknown IP addresses.
+		+300 for IPv4 addresses
+		+100 for non-local addresses, extra +100 for "up" interaces.
+
+</span></i></div></div>
+<div id="exported-variables"><span class="title">Package-Level Variables<span class="title-stat"><i> (total 3, all are exported)</i></span></span>
+
+<div class="anchor value-res" id="name-ErrEmptyIP">	<input type='checkbox' class="fold" id="ErrEmptyIP-fold-content"><label for="ErrEmptyIP-fold-content">  <a href="../../../../use/github.com/uber/jaeger-client-go/utils..ErrEmptyIP.html">var</a> <a href="../../../../src/github.com/uber/jaeger-client-go/utils/utils.go.html#line-28">ErrEmptyIP</a> <a href="../../../builtin.html#name-error">error</a></label><span id='ErrEmptyIP-fold-content-docs' class="fold-docs">
+		ErrEmptyIP an error for empty ip strings
+
+</span></div><div class="anchor value-res" id="name-ErrNotFourOctets">	<input type='checkbox' class="fold" id="ErrNotFourOctets-fold-content"><label for="ErrNotFourOctets-fold-content">  <a href="../../../../use/github.com/uber/jaeger-client-go/utils..ErrNotFourOctets.html">var</a> <a href="../../../../src/github.com/uber/jaeger-client-go/utils/utils.go.html#line-34">ErrNotFourOctets</a> <a href="../../../builtin.html#name-error">error</a></label><span id='ErrNotFourOctets-fold-content-docs' class="fold-docs">
+		ErrNotFourOctets an error for the wrong number of octets after splitting a string
+
+</span></div><div class="anchor value-res" id="name-ErrNotHostColonPort">	<input type='checkbox' class="fold" id="ErrNotHostColonPort-fold-content"><label for="ErrNotHostColonPort-fold-content">  <a href="../../../../use/github.com/uber/jaeger-client-go/utils..ErrNotHostColonPort.html">var</a> <a href="../../../../src/github.com/uber/jaeger-client-go/utils/utils.go.html#line-31">ErrNotHostColonPort</a> <a href="../../../builtin.html#name-error">error</a></label><span id='ErrNotHostColonPort-fold-content-docs' class="fold-docs">
+		ErrNotHostColonPort an error for invalid host port string
+
+</span></div></div>
+<div id="exported-constants"><span class="title">Package-Level Constants<span class="title-stat"><i> (only one, which is exported)</i></span></span>
+
+<div class="anchor value-res" id="name-UDPPacketMaxLength">	<input type='checkbox' class="fold" id="UDPPacketMaxLength-fold-content"><label for="UDPPacketMaxLength-fold-content"><a href="../../../../use/github.com/uber/jaeger-client-go/utils..UDPPacketMaxLength.html">const</a> <a href="../../../../src/github.com/uber/jaeger-client-go/utils/udp_client.go.html#line-34">UDPPacketMaxLength</a> = 65000</label><span id='UDPPacketMaxLength-fold-content-docs' class="fold-docs">
+		UDPPacketMaxLength is the max size of UDP packet we want to send, synced with jaeger-agent
+
+</span></div></div></code></pre><pre id="footer">
+<table><tr><td><img src="../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

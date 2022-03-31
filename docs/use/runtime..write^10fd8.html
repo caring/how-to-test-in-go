@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime.write</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">func <b><a href="../pkg/runtime.html">runtime</a>.<a href="../src/runtime/time_nofake.go.html#line-26">write</a></b></span>
+
+<span class="title">20 uses</span>
+
+	runtime (current package)
+		<a href="../src/runtime/heapdump.go.html#line-87">heapdump.go#L87</a>: 	<b>write</b>(dumpfd, unsafe.Pointer(&amp;buf), int32(nbuf))
+		<a href="../src/runtime/heapdump.go.html#line-89" class="path-duplicate">heapdump.go</a><a href="../src/runtime/heapdump.go.html#line-89">#L89</a>: 		<b>write</b>(dumpfd, data, int32(len))
+		<a href="../src/runtime/heapdump.go.html#line-102" class="path-duplicate">heapdump.go</a><a href="../src/runtime/heapdump.go.html#line-102">#L102</a>: 	<b>write</b>(dumpfd, unsafe.Pointer(&amp;buf), int32(nbuf))
+		<a href="../src/runtime/netpoll_kqueue.go.html#line-90">netpoll_kqueue.go#L90</a>: 			n := <b>write</b>(netpollBreakWr, unsafe.Pointer(&amp;b), 1)
+		<a href="../src/runtime/os_darwin.go.html#line-116">os_darwin.go#L116</a>: 	<b>write</b>(uintptr(sigNoteWrite), unsafe.Pointer(&amp;b), 1)
+		<a href="../src/runtime/os_darwin.go.html#line-210" class="path-duplicate">os_darwin.go</a><a href="../src/runtime/os_darwin.go.html#line-210">#L210</a>: 		<b>write</b>(2, unsafe.Pointer(&amp;failthreadcreate[0]), int32(len(failthreadcreate)))
+		<a href="../src/runtime/os_darwin.go.html#line-217" class="path-duplicate">os_darwin.go</a><a href="../src/runtime/os_darwin.go.html#line-217">#L217</a>: 		<b>write</b>(2, unsafe.Pointer(&amp;failthreadcreate[0]), int32(len(failthreadcreate)))
+		<a href="../src/runtime/os_darwin.go.html#line-224" class="path-duplicate">os_darwin.go</a><a href="../src/runtime/os_darwin.go.html#line-224">#L224</a>: 		<b>write</b>(2, unsafe.Pointer(&amp;failthreadcreate[0]), int32(len(failthreadcreate)))
+		<a href="../src/runtime/os_darwin.go.html#line-235" class="path-duplicate">os_darwin.go</a><a href="../src/runtime/os_darwin.go.html#line-235">#L235</a>: 		<b>write</b>(2, unsafe.Pointer(&amp;failthreadcreate[0]), int32(len(failthreadcreate)))
+		<a href="../src/runtime/os_darwin.go.html#line-255" class="path-duplicate">os_darwin.go</a><a href="../src/runtime/os_darwin.go.html#line-255">#L255</a>: 		<b>write</b>(2, unsafe.Pointer(&amp;failthreadcreate[0]), int32(len(failthreadcreate)))
+		<a href="../src/runtime/os_darwin.go.html#line-265" class="path-duplicate">os_darwin.go</a><a href="../src/runtime/os_darwin.go.html#line-265">#L265</a>: 		<b>write</b>(2, unsafe.Pointer(&amp;failthreadcreate[0]), int32(len(failthreadcreate)))
+		<a href="../src/runtime/os_darwin.go.html#line-273" class="path-duplicate">os_darwin.go</a><a href="../src/runtime/os_darwin.go.html#line-273">#L273</a>: 		<b>write</b>(2, unsafe.Pointer(&amp;failthreadcreate[0]), int32(len(failthreadcreate)))
+		<a href="../src/runtime/os_darwin.go.html#line-284" class="path-duplicate">os_darwin.go</a><a href="../src/runtime/os_darwin.go.html#line-284">#L284</a>: 		<b>write</b>(2, unsafe.Pointer(&amp;failthreadcreate[0]), int32(len(failthreadcreate)))
+		<a href="../src/runtime/proc.go.html#line-500">proc.go#L500</a>: 	<b>write</b>(2, sp.str, int32(sp.len))
+		<a href="../src/runtime/proc.go.html#line-509" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-509">#L509</a>: 	<b>write</b>(2, sp.str, int32(sp.len))
+		<a href="../src/runtime/proc.go.html#line-1938" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1938">#L1938</a>: 		<b>write</b>(2, unsafe.Pointer(&amp;earlycgocallback[0]), int32(len(earlycgocallback)))
+		<a href="../src/runtime/signal_unix.go.html#line-944">signal_unix.go#L944</a>: 		<b>write</b>(2, s.str, int32(s.len))
+		<a href="../src/runtime/stubs.go.html#line-66">stubs.go#L66</a>: 	<b>write</b>(2, sp.str, int32(sp.len))
+		<a href="../src/runtime/time_nofake.go.html#line-26">time_nofake.go#L26</a>: func <b>write</b>(fd uintptr, p unsafe.Pointer, n int32) int32 {
+		<a href="../src/runtime/write_err.go.html#line-13">write_err.go#L13</a>: 	<b>write</b>(2, unsafe.Pointer(&amp;b[0]), int32(len(b)))
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

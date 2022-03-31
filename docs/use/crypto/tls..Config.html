@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: crypto/tls.Config</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../../pkg/crypto/tls.html">crypto/tls</a>.<a href="../../src/crypto/tls/common.go.html#line-517">Config</a></b></span>
+
+<span class="title">91 uses</span>
+
+	crypto/tls (current package)
+		<a href="../../src/crypto/tls/common.go.html#line-443">common.go#L443</a>: 	config *<b>Config</b>
+		<a href="../../src/crypto/tls/common.go.html#line-517" class="path-duplicate">common.go</a><a href="../../src/crypto/tls/common.go.html#line-517">#L517</a>: type <b>Config</b> struct {
+		<a href="../../src/crypto/tls/common.go.html#line-587" class="path-duplicate">common.go</a><a href="../../src/crypto/tls/common.go.html#line-587">#L587</a>: 	GetConfigForClient func(*ClientHelloInfo) (*<b>Config</b>, error)
+		<a href="../../src/crypto/tls/common.go.html#line-758" class="path-duplicate">common.go</a><a href="../../src/crypto/tls/common.go.html#line-758">#L758</a>: func (c *<b>Config</b>) ticketKeyFromBytes(b [32]byte) (key ticketKey) {
+		<a href="../../src/crypto/tls/common.go.html#line-773" class="path-duplicate">common.go</a><a href="../../src/crypto/tls/common.go.html#line-773">#L773</a>: func (c *<b>Config</b>) Clone() *<b>Config</b> {
+		<a href="../../src/crypto/tls/common.go.html#line-779" class="path-duplicate">common.go</a><a href="../../src/crypto/tls/common.go.html#line-779">#L779</a>: 	return &amp;<b>Config</b>{
+		<a href="../../src/crypto/tls/common.go.html#line-817" class="path-duplicate">common.go</a><a href="../../src/crypto/tls/common.go.html#line-817">#L817</a>: func (c *<b>Config</b>) initLegacySessionTicketKeyRLocked() {
+		<a href="../../src/crypto/tls/common.go.html#line-854" class="path-duplicate">common.go</a><a href="../../src/crypto/tls/common.go.html#line-854">#L854</a>: func (c *<b>Config</b>) ticketKeys(configForClient *<b>Config</b>) []ticketKey {
+		<a href="../../src/crypto/tls/common.go.html#line-922" class="path-duplicate">common.go</a><a href="../../src/crypto/tls/common.go.html#line-922">#L922</a>: func (c *<b>Config</b>) SetSessionTicketKeys(keys [][32]byte) {
+		<a href="../../src/crypto/tls/common.go.html#line-937" class="path-duplicate">common.go</a><a href="../../src/crypto/tls/common.go.html#line-937">#L937</a>: func (c *<b>Config</b>) rand() io.Reader {
+		<a href="../../src/crypto/tls/common.go.html#line-945" class="path-duplicate">common.go</a><a href="../../src/crypto/tls/common.go.html#line-945">#L945</a>: func (c *<b>Config</b>) time() time.Time {
+		<a href="../../src/crypto/tls/common.go.html#line-953" class="path-duplicate">common.go</a><a href="../../src/crypto/tls/common.go.html#line-953">#L953</a>: func (c *<b>Config</b>) cipherSuites() []uint16 {
+		<a href="../../src/crypto/tls/common.go.html#line-967" class="path-duplicate">common.go</a><a href="../../src/crypto/tls/common.go.html#line-967">#L967</a>: func (c *<b>Config</b>) supportedVersions() []uint16 {
+		<a href="../../src/crypto/tls/common.go.html#line-981" class="path-duplicate">common.go</a><a href="../../src/crypto/tls/common.go.html#line-981">#L981</a>: func (c *<b>Config</b>) maxSupportedVersion() uint16 {
+		<a href="../../src/crypto/tls/common.go.html#line-1005" class="path-duplicate">common.go</a><a href="../../src/crypto/tls/common.go.html#line-1005">#L1005</a>: func (c *<b>Config</b>) curvePreferences() []CurveID {
+		<a href="../../src/crypto/tls/common.go.html#line-1012" class="path-duplicate">common.go</a><a href="../../src/crypto/tls/common.go.html#line-1012">#L1012</a>: func (c *<b>Config</b>) supportsCurve(curve CurveID) bool {
+		<a href="../../src/crypto/tls/common.go.html#line-1023" class="path-duplicate">common.go</a><a href="../../src/crypto/tls/common.go.html#line-1023">#L1023</a>: func (c *<b>Config</b>) mutualVersion(peerVersions []uint16) (uint16, bool) {
+		<a href="../../src/crypto/tls/common.go.html#line-1039" class="path-duplicate">common.go</a><a href="../../src/crypto/tls/common.go.html#line-1039">#L1039</a>: func (c *<b>Config</b>) getCertificate(clientHello *ClientHelloInfo) (*Certificate, error) {
+		<a href="../../src/crypto/tls/common.go.html#line-1101" class="path-duplicate">common.go</a><a href="../../src/crypto/tls/common.go.html#line-1101">#L1101</a>: 		config = &amp;<b>Config</b>{}
+		<a href="../../src/crypto/tls/common.go.html#line-1282" class="path-duplicate">common.go</a><a href="../../src/crypto/tls/common.go.html#line-1282">#L1282</a>: func (c *<b>Config</b>) BuildNameToCertificate() {
+		<a href="../../src/crypto/tls/common.go.html#line-1309" class="path-duplicate">common.go</a><a href="../../src/crypto/tls/common.go.html#line-1309">#L1309</a>: func (c *<b>Config</b>) writeKeyLog(label string, clientRandom, secret []byte) error {
+		<a href="../../src/crypto/tls/common.go.html#line-1441" class="path-duplicate">common.go</a><a href="../../src/crypto/tls/common.go.html#line-1441">#L1441</a>: var emptyConfig <b>Config</b>
+		<a href="../../src/crypto/tls/common.go.html#line-1443" class="path-duplicate">common.go</a><a href="../../src/crypto/tls/common.go.html#line-1443">#L1443</a>: func defaultConfig() *<b>Config</b> {
+		<a href="../../src/crypto/tls/conn.go.html#line-42">conn.go#L42</a>: 	config         *<b>Config</b> // configuration passed to constructor
+		<a href="../../src/crypto/tls/handshake_client.go.html#line-986">handshake_client.go#L986</a>: func clientSessionCacheKey(serverAddr net.Addr, config *<b>Config</b>) string {
+		<a href="../../src/crypto/tls/handshake_server.go.html#line-142">handshake_server.go#L142</a>: 	var configForClient *<b>Config</b>
+		<a href="../../src/crypto/tls/handshake_server.go.html#line-308" class="path-duplicate">handshake_server.go</a><a href="../../src/crypto/tls/handshake_server.go.html#line-308">#L308</a>: func supportsECDHE(c *<b>Config</b>, supportedCurves []CurveID, supportedPoints []uint8) bool {
+		<a href="../../src/crypto/tls/key_agreement.go.html#line-26">key_agreement.go#L26</a>: 	generateServerKeyExchange(*<b>Config</b>, *Certificate, *clientHelloMsg, *serverHelloMsg) (*serverKeyExchangeMsg, error)
+		<a href="../../src/crypto/tls/key_agreement.go.html#line-27" class="path-duplicate">key_agreement.go</a><a href="../../src/crypto/tls/key_agreement.go.html#line-27">#L27</a>: 	processClientKeyExchange(*<b>Config</b>, *Certificate, *clientKeyExchangeMsg, uint16) ([]byte, error)
+		<a href="../../src/crypto/tls/key_agreement.go.html#line-33" class="path-duplicate">key_agreement.go</a><a href="../../src/crypto/tls/key_agreement.go.html#line-33">#L33</a>: 	processServerKeyExchange(*<b>Config</b>, *clientHelloMsg, *serverHelloMsg, *x509.Certificate, *serverKeyExchangeMsg) error
+		<a href="../../src/crypto/tls/key_agreement.go.html#line-34" class="path-duplicate">key_agreement.go</a><a href="../../src/crypto/tls/key_agreement.go.html#line-34">#L34</a>: 	generateClientKeyExchange(*<b>Config</b>, *clientHelloMsg, *x509.Certificate) ([]byte, *clientKeyExchangeMsg, error)
+		<a href="../../src/crypto/tls/key_agreement.go.html#line-44" class="path-duplicate">key_agreement.go</a><a href="../../src/crypto/tls/key_agreement.go.html#line-44">#L44</a>: func (ka rsaKeyAgreement) generateServerKeyExchange(config *<b>Config</b>, cert *Certificate, clientHello *clientHelloMsg, hello *serverHelloMsg) (*serverKeyExchangeMsg, error) {
+		<a href="../../src/crypto/tls/key_agreement.go.html#line-48" class="path-duplicate">key_agreement.go</a><a href="../../src/crypto/tls/key_agreement.go.html#line-48">#L48</a>: func (ka rsaKeyAgreement) processClientKeyExchange(config *<b>Config</b>, cert *Certificate, ckx *clientKeyExchangeMsg, version uint16) ([]byte, error) {
+		<a href="../../src/crypto/tls/key_agreement.go.html#line-76" class="path-duplicate">key_agreement.go</a><a href="../../src/crypto/tls/key_agreement.go.html#line-76">#L76</a>: func (ka rsaKeyAgreement) processServerKeyExchange(config *<b>Config</b>, clientHello *clientHelloMsg, serverHello *serverHelloMsg, cert *x509.Certificate, skx *serverKeyExchangeMsg) error {
+		<a href="../../src/crypto/tls/key_agreement.go.html#line-80" class="path-duplicate">key_agreement.go</a><a href="../../src/crypto/tls/key_agreement.go.html#line-80">#L80</a>: func (ka rsaKeyAgreement) generateClientKeyExchange(config *<b>Config</b>, clientHello *clientHelloMsg, cert *x509.Certificate) ([]byte, *clientKeyExchangeMsg, error) {
+		<a href="../../src/crypto/tls/key_agreement.go.html#line-168" class="path-duplicate">key_agreement.go</a><a href="../../src/crypto/tls/key_agreement.go.html#line-168">#L168</a>: func (ka *ecdheKeyAgreement) generateServerKeyExchange(config *<b>Config</b>, cert *Certificate, clientHello *clientHelloMsg, hello *serverHelloMsg) (*serverKeyExchangeMsg, error) {
+		<a href="../../src/crypto/tls/key_agreement.go.html#line-257" class="path-duplicate">key_agreement.go</a><a href="../../src/crypto/tls/key_agreement.go.html#line-257">#L257</a>: func (ka *ecdheKeyAgreement) processClientKeyExchange(config *<b>Config</b>, cert *Certificate, ckx *clientKeyExchangeMsg, version uint16) ([]byte, error) {
+		<a href="../../src/crypto/tls/key_agreement.go.html#line-270" class="path-duplicate">key_agreement.go</a><a href="../../src/crypto/tls/key_agreement.go.html#line-270">#L270</a>: func (ka *ecdheKeyAgreement) processServerKeyExchange(config *<b>Config</b>, clientHello *clientHelloMsg, serverHello *serverHelloMsg, cert *x509.Certificate, skx *serverKeyExchangeMsg) error {
+		<a href="../../src/crypto/tls/key_agreement.go.html#line-351" class="path-duplicate">key_agreement.go</a><a href="../../src/crypto/tls/key_agreement.go.html#line-351">#L351</a>: func (ka *ecdheKeyAgreement) generateClientKeyExchange(config *<b>Config</b>, clientHello *clientHelloMsg, cert *x509.Certificate) ([]byte, *clientKeyExchangeMsg, error) {
+		<a href="../../src/crypto/tls/tls.go.html#line-34">tls.go#L34</a>: func Server(conn net.Conn, config *<b>Config</b>) *Conn {
+		<a href="../../src/crypto/tls/tls.go.html#line-47" class="path-duplicate">tls.go</a><a href="../../src/crypto/tls/tls.go.html#line-47">#L47</a>: func Client(conn net.Conn, config *<b>Config</b>) *Conn {
+		<a href="../../src/crypto/tls/tls.go.html#line-60" class="path-duplicate">tls.go</a><a href="../../src/crypto/tls/tls.go.html#line-60">#L60</a>: 	config *<b>Config</b>
+		<a href="../../src/crypto/tls/tls.go.html#line-77" class="path-duplicate">tls.go</a><a href="../../src/crypto/tls/tls.go.html#line-77">#L77</a>: func NewListener(inner net.Listener, config *<b>Config</b>) net.Listener {
+		<a href="../../src/crypto/tls/tls.go.html#line-88" class="path-duplicate">tls.go</a><a href="../../src/crypto/tls/tls.go.html#line-88">#L88</a>: func Listen(network, laddr string, config *<b>Config</b>) (net.Listener, error) {
+		<a href="../../src/crypto/tls/tls.go.html#line-116" class="path-duplicate">tls.go</a><a href="../../src/crypto/tls/tls.go.html#line-116">#L116</a>: func DialWithDialer(dialer *net.Dialer, network, addr string, config *<b>Config</b>) (*Conn, error) {
+		<a href="../../src/crypto/tls/tls.go.html#line-120" class="path-duplicate">tls.go</a><a href="../../src/crypto/tls/tls.go.html#line-120">#L120</a>: func dial(ctx context.Context, netDialer *net.Dialer, network, addr string, config *<b>Config</b>) (*Conn, error) {
+		<a href="../../src/crypto/tls/tls.go.html#line-170" class="path-duplicate">tls.go</a><a href="../../src/crypto/tls/tls.go.html#line-170">#L170</a>: func Dial(network, addr string, config *<b>Config</b>) (*Conn, error) {
+		<a href="../../src/crypto/tls/tls.go.html#line-186" class="path-duplicate">tls.go</a><a href="../../src/crypto/tls/tls.go.html#line-186">#L186</a>: 	Config *<b>Config</b>
+
+	<a href="../../pkg/github.com/aws/aws-sdk-go/aws/session.html">github.com/aws/aws-sdk-go/aws/session</a>
+		<a href="../../src/github.com/aws/aws-sdk-go/aws/session/session.go.html#line-509">session.go#L509</a>: 		t.TLSClientConfig = &amp;tls.<b>Config</b>{}
+
+	<a href="../../pkg/github.com/go-sql-driver/mysql.html">github.com/go-sql-driver/mysql</a>
+		<a href="../../src/github.com/go-sql-driver/mysql/dsn.go.html#line-49">dsn.go#L49</a>: 	tls              *tls.<b>Config</b>       // TLS configuration
+		<a href="../../src/github.com/go-sql-driver/mysql/dsn.go.html#line-126" class="path-duplicate">dsn.go</a><a href="../../src/github.com/go-sql-driver/mysql/dsn.go.html#line-126">#L126</a>: 		cfg.tls = &amp;tls.<b>Config</b>{}
+		<a href="../../src/github.com/go-sql-driver/mysql/dsn.go.html#line-128" class="path-duplicate">dsn.go</a><a href="../../src/github.com/go-sql-driver/mysql/dsn.go.html#line-128">#L128</a>: 		cfg.tls = &amp;tls.<b>Config</b>{InsecureSkipVerify: true}
+		<a href="../../src/github.com/go-sql-driver/mysql/utils.go.html#line-29">utils.go#L29</a>: 	tlsConfigRegistry map[string]*tls.<b>Config</b>
+		<a href="../../src/github.com/go-sql-driver/mysql/utils.go.html#line-58" class="path-duplicate">utils.go</a><a href="../../src/github.com/go-sql-driver/mysql/utils.go.html#line-58">#L58</a>: func RegisterTLSConfig(key string, config *tls.<b>Config</b>) error {
+		<a href="../../src/github.com/go-sql-driver/mysql/utils.go.html#line-65" class="path-duplicate">utils.go</a><a href="../../src/github.com/go-sql-driver/mysql/utils.go.html#line-65">#L65</a>: 		tlsConfigRegistry = make(map[string]*tls.<b>Config</b>)
+		<a href="../../src/github.com/go-sql-driver/mysql/utils.go.html#line-82" class="path-duplicate">utils.go</a><a href="../../src/github.com/go-sql-driver/mysql/utils.go.html#line-82">#L82</a>: func getTLSConfigClone(key string) (config *tls.<b>Config</b>) {
+
+	<a href="../../pkg/github.com/uber/jaeger-client-go/thrift.html">github.com/uber/jaeger-client-go/thrift</a>
+		<a href="../../src/github.com/uber/jaeger-client-go/thrift/configuration.go.html#line-122">configuration.go#L122</a>: 	TLSConfig *tls.<b>Config</b>
+		<a href="../../src/github.com/uber/jaeger-client-go/thrift/configuration.go.html#line-199" class="path-duplicate">configuration.go</a><a href="../../src/github.com/uber/jaeger-client-go/thrift/configuration.go.html#line-199">#L199</a>: func (tc *TConfiguration) GetTLSConfig() *tls.<b>Config</b> {
+
+	<a href="../../pkg/golang.org/x/net/http2.html">golang.org/x/net/http2</a>
+		<a href="../../src/golang.org/x/net/http2/server.go.html#line-233">server.go#L233</a>: 		s.TLSConfig = new(tls.<b>Config</b>)
+		<a href="../../src/golang.org/x/net/http2/transport.go.html#line-68">transport.go#L68</a>: 	DialTLS func(network, addr string, cfg *tls.<b>Config</b>) (net.Conn, error)
+		<a href="../../src/golang.org/x/net/http2/transport.go.html#line-72" class="path-duplicate">transport.go</a><a href="../../src/golang.org/x/net/http2/transport.go.html#line-72">#L72</a>: 	TLSClientConfig *tls.<b>Config</b>
+		<a href="../../src/golang.org/x/net/http2/transport.go.html#line-182" class="path-duplicate">transport.go</a><a href="../../src/golang.org/x/net/http2/transport.go.html#line-182">#L182</a>: 		t1.TLSClientConfig = new(tls.<b>Config</b>)
+		<a href="../../src/golang.org/x/net/http2/transport.go.html#line-579" class="path-duplicate">transport.go</a><a href="../../src/golang.org/x/net/http2/transport.go.html#line-579">#L579</a>: func (t *Transport) newTLSConfig(host string) *tls.<b>Config</b> {
+		<a href="../../src/golang.org/x/net/http2/transport.go.html#line-580" class="path-duplicate">transport.go</a><a href="../../src/golang.org/x/net/http2/transport.go.html#line-580">#L580</a>: 	cfg := new(tls.<b>Config</b>)
+		<a href="../../src/golang.org/x/net/http2/transport.go.html#line-593" class="path-duplicate">transport.go</a><a href="../../src/golang.org/x/net/http2/transport.go.html#line-593">#L593</a>: func (t *Transport) dialTLS() func(string, string, *tls.<b>Config</b>) (net.Conn, error) {
+		<a href="../../src/golang.org/x/net/http2/transport.go.html#line-600" class="path-duplicate">transport.go</a><a href="../../src/golang.org/x/net/http2/transport.go.html#line-600">#L600</a>: func (t *Transport) dialTLSDefault(network, addr string, cfg *tls.<b>Config</b>) (net.Conn, error) {
+
+	<a href="../../pkg/google.golang.org/grpc/credentials.html">google.golang.org/grpc/credentials</a>
+		<a href="../../src/google.golang.org/grpc/credentials/tls.go.html#line-62">tls.go#L62</a>: 	config *tls.<b>Config</b>
+		<a href="../../src/google.golang.org/grpc/credentials/tls.go.html#line-142" class="path-duplicate">tls.go</a><a href="../../src/google.golang.org/grpc/credentials/tls.go.html#line-142">#L142</a>: func NewTLS(c *tls.<b>Config</b>) TransportCredentials {
+		<a href="../../src/google.golang.org/grpc/credentials/tls.go.html#line-157" class="path-duplicate">tls.go</a><a href="../../src/google.golang.org/grpc/credentials/tls.go.html#line-157">#L157</a>: 	return NewTLS(&amp;tls.<b>Config</b>{ServerName: serverNameOverride, RootCAs: cp})
+		<a href="../../src/google.golang.org/grpc/credentials/tls.go.html#line-177" class="path-duplicate">tls.go</a><a href="../../src/google.golang.org/grpc/credentials/tls.go.html#line-177">#L177</a>: 	return NewTLS(&amp;tls.<b>Config</b>{ServerName: serverNameOverride, RootCAs: cp}), nil
+		<a href="../../src/google.golang.org/grpc/credentials/tls.go.html#line-182" class="path-duplicate">tls.go</a><a href="../../src/google.golang.org/grpc/credentials/tls.go.html#line-182">#L182</a>: 	return NewTLS(&amp;tls.<b>Config</b>{Certificates: []tls.Certificate{*cert}})
+		<a href="../../src/google.golang.org/grpc/credentials/tls.go.html#line-192" class="path-duplicate">tls.go</a><a href="../../src/google.golang.org/grpc/credentials/tls.go.html#line-192">#L192</a>: 	return NewTLS(&amp;tls.<b>Config</b>{Certificates: []tls.Certificate{cert}}), nil
+
+	<a href="../../pkg/google.golang.org/grpc/internal/credentials.html">google.golang.org/grpc/internal/credentials</a>
+		<a href="../../src/google.golang.org/grpc/internal/credentials/util.go.html#line-46">util.go#L46</a>: func CloneTLSConfig(cfg *tls.<b>Config</b>) *tls.<b>Config</b> {
+		<a href="../../src/google.golang.org/grpc/internal/credentials/util.go.html#line-48" class="path-duplicate">util.go</a><a href="../../src/google.golang.org/grpc/internal/credentials/util.go.html#line-48">#L48</a>: 		return &amp;tls.<b>Config</b>{}
+
+	<a href="../../pkg/net/http.html">net/http</a>
+		<a href="../../src/net/http/h2_bundle.go.html#line-2956">h2_bundle.go#L2956</a>: func (t *http2Transport) dialTLSWithContext(ctx context.Context, network, addr string, cfg *tls.<b>Config</b>) (*tls.Conn, error) {
+		<a href="../../src/net/http/h2_bundle.go.html#line-3902" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-3902">#L3902</a>: 		s.TLSConfig = new(tls.<b>Config</b>)
+		<a href="../../src/net/http/h2_bundle.go.html#line-6709" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-6709">#L6709</a>: 	DialTLS func(network, addr string, cfg *tls.<b>Config</b>) (net.Conn, error)
+		<a href="../../src/net/http/h2_bundle.go.html#line-6713" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-6713">#L6713</a>: 	TLSClientConfig *tls.<b>Config</b>
+		<a href="../../src/net/http/h2_bundle.go.html#line-6823" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-6823">#L6823</a>: 		t1.TLSClientConfig = new(tls.<b>Config</b>)
+		<a href="../../src/net/http/h2_bundle.go.html#line-7208" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-7208">#L7208</a>: func (t *http2Transport) newTLSConfig(host string) *tls.<b>Config</b> {
+		<a href="../../src/net/http/h2_bundle.go.html#line-7209" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-7209">#L7209</a>: 	cfg := new(tls.<b>Config</b>)
+		<a href="../../src/net/http/h2_bundle.go.html#line-7222" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-7222">#L7222</a>: func (t *http2Transport) dialTLS(ctx context.Context) func(string, string, *tls.<b>Config</b>) (net.Conn, error) {
+		<a href="../../src/net/http/h2_bundle.go.html#line-7226" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-7226">#L7226</a>: 	return func(network, addr string, cfg *tls.<b>Config</b>) (net.Conn, error) {
+		<a href="../../src/net/http/server.go.html#line-2544">server.go#L2544</a>: 	TLSConfig *tls.<b>Config</b>
+		<a href="../../src/net/http/transport.go.html#line-169">transport.go#L169</a>: 	TLSClientConfig *tls.<b>Config</b>
+		<a href="../../src/net/http/transport.go.html#line-2856" class="path-duplicate">transport.go</a><a href="../../src/net/http/transport.go.html#line-2856">#L2856</a>: func cloneTLSConfig(cfg *tls.<b>Config</b>) *tls.<b>Config</b> {
+		<a href="../../src/net/http/transport.go.html#line-2858" class="path-duplicate">transport.go</a><a href="../../src/net/http/transport.go.html#line-2858">#L2858</a>: 		return &amp;tls.<b>Config</b>{}
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

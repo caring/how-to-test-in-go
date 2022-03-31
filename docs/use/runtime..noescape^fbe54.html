@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime.noescape</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">func <b><a href="../pkg/runtime.html">runtime</a>.<a href="../src/runtime/stubs.go.html#line-164">noescape</a></b></span>
+
+<span class="title">46 uses</span>
+
+	runtime (current package)
+		<a href="../src/runtime/alg.go.html#line-277">alg.go#L277</a>: 	return strhash(<b>noescape</b>(unsafe.Pointer(&amp;s)), seed)
+		<a href="../src/runtime/alg.go.html#line-286" class="path-duplicate">alg.go</a><a href="../src/runtime/alg.go.html#line-286">#L286</a>: 	return memhash32(<b>noescape</b>(unsafe.Pointer(&amp;i)), seed)
+		<a href="../src/runtime/alg.go.html#line-290" class="path-duplicate">alg.go</a><a href="../src/runtime/alg.go.html#line-290">#L290</a>: 	return memhash64(<b>noescape</b>(unsafe.Pointer(&amp;i)), seed)
+		<a href="../src/runtime/alg.go.html#line-294" class="path-duplicate">alg.go</a><a href="../src/runtime/alg.go.html#line-294">#L294</a>: 	return nilinterhash(<b>noescape</b>(unsafe.Pointer(&amp;i)), seed)
+		<a href="../src/runtime/alg.go.html#line-300" class="path-duplicate">alg.go</a><a href="../src/runtime/alg.go.html#line-300">#L300</a>: 	return interhash(<b>noescape</b>(unsafe.Pointer(&amp;i)), seed)
+		<a href="../src/runtime/atomic_pointer.go.html#line-35">atomic_pointer.go#L35</a>: 	atomic.StorepNoWB(<b>noescape</b>(ptr), new)
+		<a href="../src/runtime/atomic_pointer.go.html#line-63" class="path-duplicate">atomic_pointer.go</a><a href="../src/runtime/atomic_pointer.go.html#line-63">#L63</a>: 	old := unsafe.Pointer(sync_atomic_SwapUintptr((*uintptr)(<b>noescape</b>(unsafe.Pointer(ptr))), uintptr(new)))
+		<a href="../src/runtime/atomic_pointer.go.html#line-76" class="path-duplicate">atomic_pointer.go</a><a href="../src/runtime/atomic_pointer.go.html#line-76">#L76</a>: 	return sync_atomic_CompareAndSwapUintptr((*uintptr)(<b>noescape</b>(unsafe.Pointer(ptr))), uintptr(old), uintptr(new))
+		<a href="../src/runtime/cgocall.go.html#line-305">cgocall.go#L305</a>: 	*(*unsafe.Pointer)(unsafe.Pointer(&amp;cb)) = <b>noescape</b>(unsafe.Pointer(&amp;cbFV))
+		<a href="../src/runtime/debugcall.go.html#line-243">debugcall.go#L243</a>: 	*(*unsafe.Pointer)(unsafe.Pointer(&amp;dispatchF)) = <b>noescape</b>(unsafe.Pointer(&amp;dispatchFV))
+		<a href="../src/runtime/heapdump.go.html#line-375">heapdump.go#L375</a>: 	gentraceback(pc, sp, lr, gp, 0, nil, 0x7fffffff, dumpframe, <b>noescape</b>(unsafe.Pointer(&amp;child)), 0)
+		<a href="../src/runtime/map_fast32.go.html#line-28">map_fast32.go#L28</a>: 		hash := t.hasher(<b>noescape</b>(unsafe.Pointer(&amp;key)), uintptr(h.hash0))
+		<a href="../src/runtime/map_fast32.go.html#line-68" class="path-duplicate">map_fast32.go</a><a href="../src/runtime/map_fast32.go.html#line-68">#L68</a>: 		hash := t.hasher(<b>noescape</b>(unsafe.Pointer(&amp;key)), uintptr(h.hash0))
+		<a href="../src/runtime/map_fast32.go.html#line-103" class="path-duplicate">map_fast32.go</a><a href="../src/runtime/map_fast32.go.html#line-103">#L103</a>: 	hash := t.hasher(<b>noescape</b>(unsafe.Pointer(&amp;key)), uintptr(h.hash0))
+		<a href="../src/runtime/map_fast32.go.html#line-193" class="path-duplicate">map_fast32.go</a><a href="../src/runtime/map_fast32.go.html#line-193">#L193</a>: 	hash := t.hasher(<b>noescape</b>(unsafe.Pointer(&amp;key)), uintptr(h.hash0))
+		<a href="../src/runtime/map_fast32.go.html#line-284" class="path-duplicate">map_fast32.go</a><a href="../src/runtime/map_fast32.go.html#line-284">#L284</a>: 	hash := t.hasher(<b>noescape</b>(unsafe.Pointer(&amp;key)), uintptr(h.hash0))
+		<a href="../src/runtime/map_fast64.go.html#line-28">map_fast64.go#L28</a>: 		hash := t.hasher(<b>noescape</b>(unsafe.Pointer(&amp;key)), uintptr(h.hash0))
+		<a href="../src/runtime/map_fast64.go.html#line-68" class="path-duplicate">map_fast64.go</a><a href="../src/runtime/map_fast64.go.html#line-68">#L68</a>: 		hash := t.hasher(<b>noescape</b>(unsafe.Pointer(&amp;key)), uintptr(h.hash0))
+		<a href="../src/runtime/map_fast64.go.html#line-103" class="path-duplicate">map_fast64.go</a><a href="../src/runtime/map_fast64.go.html#line-103">#L103</a>: 	hash := t.hasher(<b>noescape</b>(unsafe.Pointer(&amp;key)), uintptr(h.hash0))
+		<a href="../src/runtime/map_fast64.go.html#line-193" class="path-duplicate">map_fast64.go</a><a href="../src/runtime/map_fast64.go.html#line-193">#L193</a>: 	hash := t.hasher(<b>noescape</b>(unsafe.Pointer(&amp;key)), uintptr(h.hash0))
+		<a href="../src/runtime/map_fast64.go.html#line-284" class="path-duplicate">map_fast64.go</a><a href="../src/runtime/map_fast64.go.html#line-284">#L284</a>: 	hash := t.hasher(<b>noescape</b>(unsafe.Pointer(&amp;key)), uintptr(h.hash0))
+		<a href="../src/runtime/map_faststr.go.html#line-79">map_faststr.go#L79</a>: 	hash := t.hasher(<b>noescape</b>(unsafe.Pointer(&amp;ky)), uintptr(h.hash0))
+		<a href="../src/runtime/map_faststr.go.html#line-174" class="path-duplicate">map_faststr.go</a><a href="../src/runtime/map_faststr.go.html#line-174">#L174</a>: 	hash := t.hasher(<b>noescape</b>(unsafe.Pointer(&amp;ky)), uintptr(h.hash0))
+		<a href="../src/runtime/map_faststr.go.html#line-214" class="path-duplicate">map_faststr.go</a><a href="../src/runtime/map_faststr.go.html#line-214">#L214</a>: 	hash := t.hasher(<b>noescape</b>(unsafe.Pointer(&amp;s)), uintptr(h.hash0))
+		<a href="../src/runtime/map_faststr.go.html#line-313" class="path-duplicate">map_faststr.go</a><a href="../src/runtime/map_faststr.go.html#line-313">#L313</a>: 	hash := t.hasher(<b>noescape</b>(unsafe.Pointer(&amp;ky)), uintptr(h.hash0))
+		<a href="../src/runtime/mbitmap.go.html#line-2012">mbitmap.go#L2012</a>: 		gentraceback(_g_.m.curg.sched.pc, _g_.m.curg.sched.sp, 0, _g_.m.curg, 0, nil, 1000, getgcmaskcb, <b>noescape</b>(unsafe.Pointer(&amp;frame)), 0)
+		<a href="../src/runtime/mgc.go.html#line-1700">mgc.go#L1700</a>: 	p2 := uintptr(<b>noescape</b>(p))
+		<a href="../src/runtime/netpoll.go.html#line-320">netpoll.go#L320</a>: 		atomic.StorepNoWB(<b>noescape</b>(unsafe.Pointer(&amp;wg)), nil) // full memory barrier between stores to rd/wd and load of rg/wg in netpollunblock
+		<a href="../src/runtime/netpoll.go.html#line-347" class="path-duplicate">netpoll.go</a><a href="../src/runtime/netpoll.go.html#line-347">#L347</a>: 	atomic.StorepNoWB(<b>noescape</b>(unsafe.Pointer(&amp;rg)), nil) // full memory barrier between store to closing and read of rg/wg in netpollunblock
+		<a href="../src/runtime/netpoll_kqueue.go.html#line-155">netpoll_kqueue.go#L155</a>: 				read(int32(netpollBreakRd), <b>noescape</b>(unsafe.Pointer(&amp;tmp[0])), int32(len(tmp)))
+		<a href="../src/runtime/panic.go.html#line-619">panic.go#L619</a>: 	gp._panic = (*_panic)(<b>noescape</b>(unsafe.Pointer(&amp;p)))
+		<a href="../src/runtime/panic.go.html#line-640" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-640">#L640</a>: 		d._panic = (*_panic)(<b>noescape</b>(unsafe.Pointer(&amp;p)))
+		<a href="../src/runtime/panic.go.html#line-992" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-992">#L992</a>: 	gp._panic = (*_panic)(<b>noescape</b>(unsafe.Pointer(&amp;p)))
+		<a href="../src/runtime/panic.go.html#line-1034" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-1034">#L1034</a>: 		d._panic = (*_panic)(<b>noescape</b>(unsafe.Pointer(&amp;p)))
+		<a href="../src/runtime/proc.go.html#line-1356">proc.go#L1356</a>: 		_g_.stack.hi = uintptr(<b>noescape</b>(unsafe.Pointer(&amp;size)))
+		<a href="../src/runtime/signal_unix.go.html#line-546">signal_unix.go#L546</a>: 	if sig == _SIGTRAP &amp;&amp; testSigtrap != nil &amp;&amp; testSigtrap(info, (*sigctxt)(<b>noescape</b>(unsafe.Pointer(c))), gp) {
+		<a href="../src/runtime/stack.go.html#line-760">stack.go#L760</a>: 	tracebackdefers(gp, adjustframe, <b>noescape</b>(unsafe.Pointer(adjinfo)))
+		<a href="../src/runtime/stack.go.html#line-918" class="path-duplicate">stack.go</a><a href="../src/runtime/stack.go.html#line-918">#L918</a>: 	gentraceback(^uintptr(0), ^uintptr(0), 0, gp, 0, nil, 0x7fffffff, adjustframe, <b>noescape</b>(unsafe.Pointer(&amp;adjinfo)), 0)
+		<a href="../src/runtime/stack.go.html#line-1334" class="path-duplicate">stack.go</a><a href="../src/runtime/stack.go.html#line-1334">#L1334</a>: 			*(*slice)(unsafe.Pointer(&amp;objs)) = slice{array: <b>noescape</b>(p), len: int(n), cap: int(n)}
+		<a href="../src/runtime/stubs.go.html#line-164">stubs.go#L164</a>: func <b>noescape</b>(p unsafe.Pointer) unsafe.Pointer {
+		<a href="../src/runtime/sys_darwin.go.html#line-219">sys_darwin.go#L219</a>: 	errno = libcCall(unsafe.Pointer(abi.FuncPCABI0(pipe_trampoline)), <b>noescape</b>(unsafe.Pointer(&amp;p)))
+		<a href="../src/runtime/traceback.go.html#line-53">traceback.go#L53</a>: 		if !callback((*stkframe)(<b>noescape</b>(unsafe.Pointer(&amp;frame))), v) {
+		<a href="../src/runtime/traceback.go.html#line-350" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-350">#L350</a>: 			if !callback((*stkframe)(<b>noescape</b>(unsafe.Pointer(&amp;frame))), v) {
+		<a href="../src/runtime/traceback.go.html#line-1395" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-1395">#L1395</a>: 	call(cgoSymbolizer, <b>noescape</b>(unsafe.Pointer(arg)))
+		<a href="../src/runtime/traceback.go.html#line-1411" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-1411">#L1411</a>: 		buf:     (*uintptr)(<b>noescape</b>(unsafe.Pointer(&amp;buf[0]))),
+		<a href="../src/runtime/traceback.go.html#line-1417" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-1417">#L1417</a>: 	call(cgoTraceback, <b>noescape</b>(unsafe.Pointer(&amp;arg)))
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

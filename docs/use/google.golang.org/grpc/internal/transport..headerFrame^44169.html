@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: google.golang.org/grpc/internal/transport.headerFrame</title>
+<link href="../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../../../../pkg/google.golang.org/grpc/internal/transport.html">google.golang.org/grpc/internal/transport</a>.<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-111">headerFrame</a></b></span>
+
+<span class="title">15 uses</span>
+
+	google.golang.org/grpc/internal/transport (current package)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-111">controlbuf.go#L111</a>: type <b>headerFrame</b> struct {
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-122" class="path-duplicate">controlbuf.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-122">#L122</a>: func (h *<b>headerFrame</b>) isTransportResponseFrame() bool {
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-426" class="path-duplicate">controlbuf.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-426">#L426</a>: 		hdr, ok := head.it.(*<b>headerFrame</b>)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-625" class="path-duplicate">controlbuf.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-625">#L625</a>: func (l *loopyWriter) headerHandler(h *<b>headerFrame</b>) error {
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-662" class="path-duplicate">controlbuf.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-662">#L662</a>: 	hdr := str.itl.dequeue().(*<b>headerFrame</b>)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-824" class="path-duplicate">controlbuf.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-824">#L824</a>: 	case *<b>headerFrame</b>:
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-895" class="path-duplicate">controlbuf.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-895">#L895</a>: 		} else if trailer, ok := str.itl.peek().(*<b>headerFrame</b>); ok { // the next item is trailers.
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-964" class="path-duplicate">controlbuf.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-964">#L964</a>: 	} else if trailer, ok := str.itl.peek().(*<b>headerFrame</b>); ok { // The next item is trailers.
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-673">http2_client.go#L673</a>: 	hdr := &amp;<b>headerFrame</b>{
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-717" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-717">#L717</a>: 		h := it.(*<b>headerFrame</b>)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-735" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-735">#L735</a>: 		hdrFrame := it.(*<b>headerFrame</b>)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-915">http2_server.go#L915</a>: 	hdrFrame := it.(*<b>headerFrame</b>)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-963" class="path-duplicate">http2_server.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-963">#L963</a>: 	success, err := t.controlBuf.executeAndPut(t.checkForHeaderListSize, &amp;<b>headerFrame</b>{
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1026" class="path-duplicate">http2_server.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1026">#L1026</a>: 	trailingHeader := &amp;<b>headerFrame</b>{
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1252" class="path-duplicate">http2_server.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1252">#L1252</a>: func (t *http2Server) finishStream(s *Stream, rst bool, rstCode http2.ErrCode, hdr *<b>headerFrame</b>, eosReceived bool) {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

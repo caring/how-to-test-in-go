@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: go.uber.org/multierr.Append</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">func <b><a href="../../pkg/go.uber.org/multierr.html">go.uber.org/multierr</a>.<a href="../../src/go.uber.org/multierr/error.go.html#line-455">Append</a></b></span>
+
+<span class="title">13 uses</span>
+
+	go.uber.org/multierr (current package)
+		<a href="../../src/go.uber.org/multierr/error.go.html#line-455">error.go#L455</a>: func <b>Append</b>(left error, right error) error {
+		<a href="../../src/go.uber.org/multierr/error.go.html#line-527" class="path-duplicate">error.go</a><a href="../../src/go.uber.org/multierr/error.go.html#line-527">#L527</a>: 	*into = <b>Append</b>(*into, err)
+
+	<a href="../../pkg/go.uber.org/zap.html">go.uber.org/zap</a>
+		<a href="../../src/go.uber.org/zap/sugar.go.html#line-301">sugar.go#L301</a>: 		err = multierr.<b>Append</b>(err, enc.AppendObject(ps[i]))
+		<a href="../../src/go.uber.org/zap/writer.go.html#line-74">writer.go#L74</a>: 			openErr = multierr.<b>Append</b>(openErr, fmt.Errorf("couldn't open sink %q: %v", path, err))
+
+	<a href="../../pkg/go.uber.org/zap/zapcore.html">go.uber.org/zap/zapcore</a>
+		<a href="../../src/go.uber.org/zap/zapcore/entry.go.html#line-216">entry.go#L216</a>: 		err = multierr.<b>Append</b>(err, ce.cores[i].Write(ce.Entry, fields))
+		<a href="../../src/go.uber.org/zap/zapcore/hook.go.html#line-65">hook.go#L65</a>: 		err = multierr.<b>Append</b>(err, h.funcs[i](ent))
+		<a href="../../src/go.uber.org/zap/zapcore/tee.go.html#line-70">tee.go#L70</a>: 		err = multierr.<b>Append</b>(err, mc[i].Write(ent, fields))
+		<a href="../../src/go.uber.org/zap/zapcore/tee.go.html#line-78" class="path-duplicate">tee.go</a><a href="../../src/go.uber.org/zap/zapcore/tee.go.html#line-78">#L78</a>: 		err = multierr.<b>Append</b>(err, mc[i].Sync())
+		<a href="../../src/go.uber.org/zap/zapcore/write_syncer.go.html#line-107">write_syncer.go#L107</a>: 		writeErr = multierr.<b>Append</b>(writeErr, err)
+		<a href="../../src/go.uber.org/zap/zapcore/write_syncer.go.html#line-120" class="path-duplicate">write_syncer.go</a><a href="../../src/go.uber.org/zap/zapcore/write_syncer.go.html#line-120">#L120</a>: 		err = multierr.<b>Append</b>(err, w.Sync())
+
+	<a href="../../pkg/github.com/caring/gopkg-logging.html">github.com/caring/gopkg-logging</a>
+		<a href="../../src/github.com/caring/gopkg-logging/logger.go.html#line-149">logger.go#L149</a>: 	err = multierr.<b>Append</b>(err, l.reportingLogger.Sync())
+		<a href="../../src/github.com/caring/gopkg-logging/logger.go.html#line-150" class="path-duplicate">logger.go</a><a href="../../src/github.com/caring/gopkg-logging/logger.go.html#line-150">#L150</a>: 	return multierr.<b>Append</b>(err, l.monitorLogger.Sync())
+		<a href="../../src/github.com/caring/gopkg-logging/logger.go.html#line-158" class="path-duplicate">logger.go</a><a href="../../src/github.com/caring/gopkg-logging/logger.go.html#line-158">#L158</a>: 		err = multierr.<b>Append</b>(err, c.Close())
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

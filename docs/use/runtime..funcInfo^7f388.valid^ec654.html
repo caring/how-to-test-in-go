@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime.funcInfo.valid</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/runtime.html">runtime</a>.<a href="../src/runtime/symtab.go.html#line-705">funcInfo</a>.<a href="../src/runtime/symtab.go.html#line-710">valid</a></b></span><span style="font-size: large;"><i> (method)</i></span>
+
+<span class="title">38 uses</span>
+
+	runtime (current package)
+		<a href="../src/runtime/debugcall.go.html#line-45">debugcall.go#L45</a>: 		if !f.<b>valid</b>() {
+		<a href="../src/runtime/debuglog.go.html#line-805">debuglog.go#L805</a>: 	if returnPC &amp;&amp; (!fn.<b>valid</b>() || pc &gt; fn.entry) {
+		<a href="../src/runtime/debuglog.go.html#line-812" class="path-duplicate">debuglog.go</a><a href="../src/runtime/debuglog.go.html#line-812">#L812</a>: 	if !fn.<b>valid</b>() {
+		<a href="../src/runtime/heapdump.go.html#line-607">heapdump.go#L607</a>: 		if !f.<b>valid</b>() {
+		<a href="../src/runtime/mbitmap.go.html#line-2013">mbitmap.go#L2013</a>: 		if frame.fn.<b>valid</b>() {
+		<a href="../src/runtime/mgcmark.go.html#line-868">mgcmark.go#L868</a>: 	isAsyncPreempt := frame.fn.<b>valid</b>() &amp;&amp; frame.fn.funcID == funcID_asyncPreempt
+		<a href="../src/runtime/mgcmark.go.html#line-869" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-869">#L869</a>: 	isDebugCall := frame.fn.<b>valid</b>() &amp;&amp; frame.fn.funcID == funcID_debugCallV2
+		<a href="../src/runtime/panic.go.html#line-1470">panic.go#L1470</a>: 	if gp.m.incgo || findfunc(pc).<b>valid</b>() {
+		<a href="../src/runtime/panic.go.html#line-1475" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-1475">#L1475</a>: 	if findfunc(lr).<b>valid</b>() {
+		<a href="../src/runtime/panic.go.html#line-1494" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-1494">#L1494</a>: 	if !f.<b>valid</b>() {
+		<a href="../src/runtime/plugin.go.html#line-113">plugin.go#L113</a>: 		if f2.<b>valid</b>() {
+		<a href="../src/runtime/preempt.go.html#line-385">preempt.go#L385</a>: 	if !f.<b>valid</b>() {
+		<a href="../src/runtime/print.go.html#line-295">print.go#L295</a>: 		if fn.<b>valid</b>() {
+		<a href="../src/runtime/proc.go.html#line-3581">proc.go#L3581</a>: 		if !f.<b>valid</b>() {
+		<a href="../src/runtime/proc.go.html#line-4696" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4696">#L4696</a>: 		if f := findfunc(pc); f.<b>valid</b>() {
+		<a href="../src/runtime/stack.go.html#line-612">stack.go#L612</a>: 			if f.<b>valid</b>() &amp;&amp; 0 &lt; p &amp;&amp; p &lt; minLegalPointer &amp;&amp; debug.invalidptr != 0 {
+		<a href="../src/runtime/stack.go.html#line-970" class="path-duplicate">stack.go</a><a href="../src/runtime/stack.go.html#line-970">#L970</a>: 		if f.<b>valid</b>() {
+		<a href="../src/runtime/stack.go.html#line-1065" class="path-duplicate">stack.go</a><a href="../src/runtime/stack.go.html#line-1065">#L1065</a>: 	if f := findfunc(gp.sched.pc); f.<b>valid</b>() {
+		<a href="../src/runtime/stack.go.html#line-1172" class="path-duplicate">stack.go</a><a href="../src/runtime/stack.go.html#line-1172">#L1172</a>: 	if f.<b>valid</b>() &amp;&amp; f.funcID == funcID_gcBgMarkWorker {
+		<a href="../src/runtime/symtab.go.html#line-91">symtab.go#L91</a>: 		if !funcInfo.<b>valid</b>() {
+		<a href="../src/runtime/symtab.go.html#line-150" class="path-duplicate">symtab.go</a><a href="../src/runtime/symtab.go.html#line-150">#L150</a>: 	if frame.funcInfo.<b>valid</b>() {
+		<a href="../src/runtime/symtab.go.html#line-172" class="path-duplicate">symtab.go</a><a href="../src/runtime/symtab.go.html#line-172">#L172</a>: 	if !f.<b>valid</b>() {
+		<a href="../src/runtime/symtab.go.html#line-627" class="path-duplicate">symtab.go</a><a href="../src/runtime/symtab.go.html#line-627">#L627</a>: 	if !f.<b>valid</b>() {
+		<a href="../src/runtime/symtab.go.html#line-710" class="path-duplicate">symtab.go</a><a href="../src/runtime/symtab.go.html#line-710">#L710</a>: func (f funcInfo) <b>valid</b>() bool {
+		<a href="../src/runtime/symtab.go.html#line-820" class="path-duplicate">symtab.go</a><a href="../src/runtime/symtab.go.html#line-820">#L820</a>: 	if !f.<b>valid</b>() {
+		<a href="../src/runtime/symtab.go.html#line-887" class="path-duplicate">symtab.go</a><a href="../src/runtime/symtab.go.html#line-887">#L887</a>: 	if !f.<b>valid</b>() || f.nameoff == 0 {
+		<a href="../src/runtime/symtab.go.html#line-914" class="path-duplicate">symtab.go</a><a href="../src/runtime/symtab.go.html#line-914">#L914</a>: 	if !f.<b>valid</b>() {
+		<a href="../src/runtime/symtab.go.html#line-926" class="path-duplicate">symtab.go</a><a href="../src/runtime/symtab.go.html#line-926">#L926</a>: 	if !f.<b>valid</b>() {
+		<a href="../src/runtime/symtab.go.html#line-939" class="path-duplicate">symtab.go</a><a href="../src/runtime/symtab.go.html#line-939">#L939</a>: 	if !f.<b>valid</b>() {
+		<a href="../src/runtime/traceback.go.html#line-40">traceback.go#L40</a>: 			if !f.<b>valid</b>() {
+		<a href="../src/runtime/traceback.go.html#line-134" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-134">#L134</a>: 	if !f.<b>valid</b>() {
+		<a href="../src/runtime/traceback.go.html#line-256" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-256">#L256</a>: 			if !flr.<b>valid</b>() {
+		<a href="../src/runtime/traceback.go.html#line-496" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-496">#L496</a>: 		if !flr.<b>valid</b>() {
+		<a href="../src/runtime/traceback.go.html#line-515" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-515">#L515</a>: 			if !f.<b>valid</b>() {
+		<a href="../src/runtime/traceback.go.html#line-757" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-757">#L757</a>: 	if f.<b>valid</b>() &amp;&amp; showframe(f, gp, false, funcID_normal, funcID_normal) &amp;&amp; gp.goid != 1 {
+		<a href="../src/runtime/traceback.go.html#line-855" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-855">#L855</a>: 	if f.<b>valid</b>() &amp;&amp; showfuncinfo(f, false, funcID_normal, funcID_normal) &amp;&amp; ancestor.goid != 1 {
+		<a href="../src/runtime/traceback.go.html#line-922" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-922">#L922</a>: 	if !f.<b>valid</b>() {
+		<a href="../src/runtime/traceback.go.html#line-1102" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-1102">#L1102</a>: 	if !f.<b>valid</b>() {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/uber/jaeger-client-go/log/zap.loggingSpan.logger</title>
+<link href="../../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../../../pkg/github.com/uber/jaeger-client-go/log/zap.html">github.com/uber/jaeger-client-go/log/zap</a>.<a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-89">loggingSpan</a>.<a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-90">logger</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">15 uses</span>
+
+	github.com/uber/jaeger-client-go/log/zap (current package)
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-90">tracer.go#L90</a>: 	<b>logger</b>   *zap.Logger
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-97" class="path-duplicate">tracer.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-97">#L97</a>: 		<b>logger</b>:   logger,
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-103" class="path-duplicate">tracer.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-103">#L103</a>: 	l.<b>logger</b>.Info("Finish", Span(l.delegate), stack)
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-108" class="path-duplicate">tracer.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-108">#L108</a>: 	l.<b>logger</b>.Info("FinishWithOptions", Span(l.delegate))
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-113" class="path-duplicate">tracer.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-113">#L113</a>: 	l.<b>logger</b>.Debug("Context")
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-118" class="path-duplicate">tracer.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-118">#L118</a>: 	l.<b>logger</b>.Debug("SetOperationName", zap.String("operation_name", operationName))
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-123" class="path-duplicate">tracer.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-123">#L123</a>: 	l.<b>logger</b>.Debug("SetTag", zap.String("key", key), zap.Any("value", value))
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-128" class="path-duplicate">tracer.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-128">#L128</a>: 	l.<b>logger</b>.Debug("LogFields", zap.Array("fields", logFields(fields)))
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-133" class="path-duplicate">tracer.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-133">#L133</a>: 	l.<b>logger</b>.Debug("LogKV", zap.Any("keyValues", alternatingKeyValues))
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-138" class="path-duplicate">tracer.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-138">#L138</a>: 	l.<b>logger</b>.Debug("SetBaggageItem", zap.String("key", restrictedKey), zap.String("value", value))
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-143" class="path-duplicate">tracer.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-143">#L143</a>: 	l.<b>logger</b>.Debug("BaggageItem", zap.String("key", restrictedKey))
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-148" class="path-duplicate">tracer.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-148">#L148</a>: 	l.<b>logger</b>.Debug("Tracer")
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-153" class="path-duplicate">tracer.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-153">#L153</a>: 	l.<b>logger</b>.Debug("Deprecated: LogEvent", zap.String("event", event))
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-158" class="path-duplicate">tracer.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-158">#L158</a>: 	l.<b>logger</b>.Debug("Deprecated: LogEventWithPayload", zap.String("event", event), zap.Any("payload", payload))
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-163" class="path-duplicate">tracer.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-163">#L163</a>: 	l.<b>logger</b>.Debug("Deprecated: Log",
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

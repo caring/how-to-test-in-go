@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Package: github.com/opentracing/opentracing-go/ext</title>
+<link href="../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre id="package-details"><code><span style="font-size:xx-large;">package <b>ext</b></span>
+
+<span class="title">Import Path</span>
+	<a href="../../../../index.html#pkg-github.com/opentracing/opentracing-go/ext">github.com/opentracing/opentracing-go/ext</a><i> (on <a href="https://pkg.go.dev/github.com/opentracing/opentracing-go/ext" target="_blank">go.dev</a>)</i>
+
+<span class="title">Dependency Relation</span>
+	imports <a href="../../../../dep/github.com/opentracing/opentracing-go/ext.html">2 packages</a>, and imported by <a href="../../../../dep/github.com/opentracing/opentracing-go/ext.html#imported-by">one package</a>
+
+<div id="files"><span class="title">Involved Source Files</span>
+
+	<span class="nodocs">      <a href="../../../../src/github.com/opentracing/opentracing-go/ext/field.go.html">field.go</a></span>
+	<span class="nodocs">      <a href="../../../../src/github.com/opentracing/opentracing-go/ext/tags.go.html">tags.go</a></span></div>
+<div id="exported-types"><span class="title">Package-Level Type Names<span class="title-stat"><i> (total 8, in which 6 are exported)</i></span></span>
+
+<div id="exported-types-buttons" class="js-on">	/* sort exporteds by: <label id="sort-types-by-alphabet" class="button">alphabet</label> | <label id="sort-types-by-popularity" class="button">popularity</label> */</div><div class="anchor type-res" id="name-BoolTagName" data-popularity="55">	<input type='checkbox' class="fold" id="BoolTagName-fold-content"><label for="BoolTagName-fold-content"> <a href="../../../../use/github.com/opentracing/opentracing-go/ext..BoolTagName.html">type</a> <a href="../../../../src/github.com/opentracing/opentracing-go/ext/tags.go.html#line-197">BoolTagName</a> <a href="../../../builtin.html#name-string">string</a> <i>(basic type)</i></label><span id='BoolTagName-fold-content-docs' class="fold-docs">
+		BoolTagName is a common tag name to be set to a bool value
+
+		<input type='checkbox' class="fold" id="BoolTagName-fold-methods"><label for="BoolTagName-fold-methods">Methods (<i>only one, which is exported</i>)</label><span id='BoolTagName-fold-methods-items' class="fold-items"><span>
+			<input type='checkbox' class="fold" id="BoolTagName-fold-method-Set"><label for="BoolTagName-fold-method-Set">( BoolTagName) <a href="../../../../src/github.com/opentracing/opentracing-go/ext/tags.go.html#line-200">Set</a>(span <a href="../opentracing-go.html">opentracing</a>.<a href="../opentracing-go.html#name-Span">Span</a>, value <a href="../../../builtin.html#name-bool">bool</a>)</label><span id='BoolTagName-fold-method-Set-docs' class="fold-docs">
+				Set adds a bool tag to the `span`
+</span></span></span>
+		<input type='checkbox' class="fold" id="BoolTagName-fold-values"><label for="BoolTagName-fold-values">As Types Of (<i>only one, which is exported</i>)</label><span id='BoolTagName-fold-values-items' class="fold-items"><span>
+			  var <a href="#name-Error">Error</a></span></span>
+
+</span></div><div class="anchor type-res" id="name-IPv4TagName" data-popularity="105">	<input type='checkbox' class="fold" id="IPv4TagName-fold-content"><label for="IPv4TagName-fold-content"> <a href="../../../../use/github.com/opentracing/opentracing-go/ext..IPv4TagName.html">type</a> <a href="../../../../src/github.com/opentracing/opentracing-go/ext/tags.go.html#line-205">IPv4TagName</a> <a href="../../../builtin.html#name-string">string</a> <i>(basic type)</i></label><span id='IPv4TagName-fold-content-docs' class="fold-docs">
+		IPv4TagName is a common tag name to be set to an ipv4 value
+
+		<input type='checkbox' class="fold" id="IPv4TagName-fold-methods"><label for="IPv4TagName-fold-methods">Methods (<i>total 2, both are exported</i>)</label><span id='IPv4TagName-fold-methods-items' class="fold-items"><span>
+			<input type='checkbox' class="fold" id="IPv4TagName-fold-method-Set"><label for="IPv4TagName-fold-method-Set">( IPv4TagName) <a href="../../../../src/github.com/opentracing/opentracing-go/ext/tags.go.html#line-208">Set</a>(span <a href="../opentracing-go.html">opentracing</a>.<a href="../opentracing-go.html#name-Span">Span</a>, value <a href="../../../builtin.html#name-uint32">uint32</a>)</label><span id='IPv4TagName-fold-method-Set-docs' class="fold-docs">
+				Set adds IP v4 host address of the peer as an uint32 value to the `span`, keep this for backward and zipkin compatibility
+</span></span><span>
+			<input type='checkbox' class="fold" id="IPv4TagName-fold-method-SetString"><label for="IPv4TagName-fold-method-SetString">( IPv4TagName) <a href="../../../../src/github.com/opentracing/opentracing-go/ext/tags.go.html#line-213">SetString</a>(span <a href="../opentracing-go.html">opentracing</a>.<a href="../opentracing-go.html#name-Span">Span</a>, value <a href="../../../builtin.html#name-string">string</a>)</label><span id='IPv4TagName-fold-method-SetString-docs' class="fold-docs">
+				SetString records IP v4 host address of the peer as a .-separated tuple to the `span`. E.g., "127.0.0.1"
+</span></span></span>
+		<input type='checkbox' class="fold" id="IPv4TagName-fold-values"><label for="IPv4TagName-fold-values">As Types Of (<i>only one, which is exported</i>)</label><span id='IPv4TagName-fold-values-items' class="fold-items"><span>
+			  var <a href="#name-PeerHostIPv4">PeerHostIPv4</a></span></span>
+
+</span></div><div class="anchor type-res" id="name-SpanKindEnum" data-popularity="15">	<input type='checkbox' class="fold" id="SpanKindEnum-fold-content"><label for="SpanKindEnum-fold-content"> <a href="../../../../use/github.com/opentracing/opentracing-go/ext..SpanKindEnum.html">type</a> <a href="../../../../src/github.com/opentracing/opentracing-go/ext/tags.go.html#line-136">SpanKindEnum</a> <a href="../../../builtin.html#name-string">string</a> <i>(basic type)</i></label><span id='SpanKindEnum-fold-content-docs' class="fold-docs">
+		SpanKindEnum represents common span types
+
+		<input type='checkbox' class="fold" id="SpanKindEnum-fold-values"><label for="SpanKindEnum-fold-values">As Types Of (<i>total 4, all are exported</i>)</label><span id='SpanKindEnum-fold-values-items' class="fold-items"><span>
+			  var <a href="#name-SpanKindConsumerEnum">SpanKindConsumerEnum</a></span><span>
+			  var <a href="#name-SpanKindProducerEnum">SpanKindProducerEnum</a></span><span>
+			  var <a href="#name-SpanKindRPCClientEnum">SpanKindRPCClientEnum</a></span><span>
+			  var <a href="#name-SpanKindRPCServerEnum">SpanKindRPCServerEnum</a></span></span>
+
+</span></div><div class="anchor type-res" id="name-StringTagName" data-popularity="65">	<input type='checkbox' class="fold" id="StringTagName-fold-content"><label for="StringTagName-fold-content"> <a href="../../../../use/github.com/opentracing/opentracing-go/ext..StringTagName.html">type</a> <a href="../../../../src/github.com/opentracing/opentracing-go/ext/tags.go.html#line-167">StringTagName</a> <a href="../../../builtin.html#name-string">string</a> <i>(basic type)</i></label><span id='StringTagName-fold-content-docs' class="fold-docs">
+		StringTagName is a common tag name to be set to a string value
+
+		<input type='checkbox' class="fold" id="StringTagName-fold-methods"><label for="StringTagName-fold-methods">Methods (<i>only one, which is exported</i>)</label><span id='StringTagName-fold-methods-items' class="fold-items"><span>
+			<input type='checkbox' class="fold" id="StringTagName-fold-method-Set"><label for="StringTagName-fold-method-Set">( StringTagName) <a href="../../../../src/github.com/opentracing/opentracing-go/ext/tags.go.html#line-170">Set</a>(span <a href="../opentracing-go.html">opentracing</a>.<a href="../opentracing-go.html#name-Span">Span</a>, value <a href="../../../builtin.html#name-string">string</a>)</label><span id='StringTagName-fold-method-Set-docs' class="fold-docs">
+				Set adds a string tag to the `span`
+</span></span></span>
+		<input type='checkbox' class="fold" id="StringTagName-fold-values"><label for="StringTagName-fold-values">As Types Of (<i>total 12, all are exported</i>)</label><span id='StringTagName-fold-values-items' class="fold-items"><span>
+			  var <a href="#name-Component">Component</a></span><span>
+			  var <a href="#name-DBInstance">DBInstance</a></span><span>
+			  var <a href="#name-DBStatement">DBStatement</a></span><span>
+			  var <a href="#name-DBType">DBType</a></span><span>
+			  var <a href="#name-DBUser">DBUser</a></span><span>
+			  var <a href="#name-HTTPMethod">HTTPMethod</a></span><span>
+			  var <a href="#name-HTTPUrl">HTTPUrl</a></span><span>
+			  var <a href="#name-MessageBusDestination">MessageBusDestination</a></span><span>
+			  var <a href="#name-PeerAddress">PeerAddress</a></span><span>
+			  var <a href="#name-PeerHostIPv6">PeerHostIPv6</a></span><span>
+			  var <a href="#name-PeerHostname">PeerHostname</a></span><span>
+			  var <a href="#name-PeerService">PeerService</a></span></span>
+
+</span></div><div class="anchor type-res" id="name-Uint16TagName" data-popularity="65">	<input type='checkbox' class="fold" id="Uint16TagName-fold-content"><label for="Uint16TagName-fold-content"> <a href="../../../../use/github.com/opentracing/opentracing-go/ext..Uint16TagName.html">type</a> <a href="../../../../src/github.com/opentracing/opentracing-go/ext/tags.go.html#line-187">Uint16TagName</a> <a href="../../../builtin.html#name-string">string</a> <i>(basic type)</i></label><span id='Uint16TagName-fold-content-docs' class="fold-docs">
+		Uint16TagName is a common tag name to be set to a uint16 value
+
+		<input type='checkbox' class="fold" id="Uint16TagName-fold-methods"><label for="Uint16TagName-fold-methods">Methods (<i>only one, which is exported</i>)</label><span id='Uint16TagName-fold-methods-items' class="fold-items"><span>
+			<input type='checkbox' class="fold" id="Uint16TagName-fold-method-Set"><label for="Uint16TagName-fold-method-Set">( Uint16TagName) <a href="../../../../src/github.com/opentracing/opentracing-go/ext/tags.go.html#line-190">Set</a>(span <a href="../opentracing-go.html">opentracing</a>.<a href="../opentracing-go.html#name-Span">Span</a>, value <a href="../../../builtin.html#name-uint16">uint16</a>)</label><span id='Uint16TagName-fold-method-Set-docs' class="fold-docs">
+				Set adds a uint16 tag to the `span`
+</span></span></span>
+		<input type='checkbox' class="fold" id="Uint16TagName-fold-values"><label for="Uint16TagName-fold-values">As Types Of (<i>total 3, all are exported</i>)</label><span id='Uint16TagName-fold-values-items' class="fold-items"><span>
+			  var <a href="#name-HTTPStatusCode">HTTPStatusCode</a></span><span>
+			  var <a href="#name-PeerPort">PeerPort</a></span><span>
+			  var <a href="#name-SamplingPriority">SamplingPriority</a></span></span>
+
+</span></div><div class="anchor type-res" id="name-Uint32TagName" data-popularity="50">	<input type='checkbox' class="fold" id="Uint32TagName-fold-content"><label for="Uint32TagName-fold-content"> <a href="../../../../use/github.com/opentracing/opentracing-go/ext..Uint32TagName.html">type</a> <a href="../../../../src/github.com/opentracing/opentracing-go/ext/tags.go.html#line-177">Uint32TagName</a> <a href="../../../builtin.html#name-string">string</a> <i>(basic type)</i></label><span id='Uint32TagName-fold-content-docs' class="fold-docs">
+		Uint32TagName is a common tag name to be set to a uint32 value
+
+		<input type='checkbox' class="fold" id="Uint32TagName-fold-methods"><label for="Uint32TagName-fold-methods">Methods (<i>only one, which is exported</i>)</label><span id='Uint32TagName-fold-methods-items' class="fold-items"><span>
+			<input type='checkbox' class="fold" id="Uint32TagName-fold-method-Set"><label for="Uint32TagName-fold-method-Set">( Uint32TagName) <a href="../../../../src/github.com/opentracing/opentracing-go/ext/tags.go.html#line-180">Set</a>(span <a href="../opentracing-go.html">opentracing</a>.<a href="../opentracing-go.html#name-Span">Span</a>, value <a href="../../../builtin.html#name-uint32">uint32</a>)</label><span id='Uint32TagName-fold-method-Set-docs' class="fold-docs">
+				Set adds a uint32 tag to the `span`
+</span></span></span>
+
+</span></div></div><div>	<input type='checkbox' class="showhide" id="unexported-typenames-showhide"><i><label for="unexported-typenames-showhide" class="show-inline">/* 2 unexporteds ... */</label><label for="unexported-typenames-showhide" class="hide-inline">/* 2 unexporteds: */</label></i><div class="anchor type-res hidden" id="name-rpcServerOption" data-popularity="100">	<input type='checkbox' class="fold" id="rpcServerOption-fold-content"><label for="rpcServerOption-fold-content"> <a href="../../../../use/github.com/opentracing/opentracing-go/ext..rpcServerOption^052fd.html">type</a> <a href="../../../../src/github.com/opentracing/opentracing-go/ext/tags.go.html#line-145">rpcServerOption</a> <i>(struct)</i></label><span id='rpcServerOption-fold-content-docs' class="fold-docs">
+
+		<input type='checkbox' class="fold" id="rpcServerOption-fold-fields"><label for="rpcServerOption-fold-fields">Fields (<i>only one, which is unexported</i>)</label><span id='rpcServerOption-fold-fields-items' class="fold-items">
+			<input type='checkbox' checked class="showhide" id="rpcServerOption-showhide-fields"><i><label for="rpcServerOption-showhide-fields" class="show-inline">/* one unexported ... */</label><label for="rpcServerOption-showhide-fields" class="hide-inline">/* one unexported: */</label></i><span class="hidden"><i>
+			<span class="nodocs"><a href="../../../../src/github.com/opentracing/opentracing-go/ext/tags.go.html#line-146">clientContext</a> <i><a href="../opentracing-go.html">opentracing</a>.<a href="../opentracing-go.html#name-SpanContext">SpanContext</a></i></span></i></span></span>
+		<input type='checkbox' class="fold" id="rpcServerOption-fold-methods"><label for="rpcServerOption-fold-methods">Methods (<i>only one, which is exported</i>)</label><span id='rpcServerOption-fold-methods-items' class="fold-items"><span>
+			<span class="nodocs">( rpcServerOption) <a href="../../../../src/github.com/opentracing/opentracing-go/ext/tags.go.html#line-149">Apply</a>(o *<a href="../opentracing-go.html">opentracing</a>.<a href="../opentracing-go.html#name-StartSpanOptions">StartSpanOptions</a>)</span></span></span>
+		<input type='checkbox' class="fold" id="rpcServerOption-fold-impls"><label for="rpcServerOption-fold-impls">Implements (<i>at least one exported</i>)</label><span id='rpcServerOption-fold-impls-items' class="fold-items"><span>
+			 rpcServerOption : github.com/opentracing/opentracing-go.<a href="../opentracing-go.html#name-StartSpanOption">StartSpanOption</a></span></span>
+
+</span></div><div class="anchor type-res hidden" id="name-spanKindTagName" data-popularity="55">	<input type='checkbox' class="fold" id="spanKindTagName-fold-content"><label for="spanKindTagName-fold-content"> <a href="../../../../use/github.com/opentracing/opentracing-go/ext..spanKindTagName^45c6c.html">type</a> <a href="../../../../src/github.com/opentracing/opentracing-go/ext/tags.go.html#line-138">spanKindTagName</a> <a href="../../../builtin.html#name-string">string</a> <i>(basic type)</i></label><span id='spanKindTagName-fold-content-docs' class="fold-docs">
+
+		<input type='checkbox' class="fold" id="spanKindTagName-fold-methods"><label for="spanKindTagName-fold-methods">Methods (<i>only one, which is exported</i>)</label><span id='spanKindTagName-fold-methods-items' class="fold-items"><span>
+			<input type='checkbox' class="fold" id="spanKindTagName-fold-method-Set"><label for="spanKindTagName-fold-method-Set">( spanKindTagName) <a href="../../../../src/github.com/opentracing/opentracing-go/ext/tags.go.html#line-141">Set</a>(span <a href="../opentracing-go.html">opentracing</a>.<a href="../opentracing-go.html#name-Span">Span</a>, value <a href="#name-SpanKindEnum">SpanKindEnum</a>)</label><span id='spanKindTagName-fold-method-Set-docs' class="fold-docs">
+				Set adds a string tag to the `span`
+</span></span></span>
+		<input type='checkbox' class="fold" id="spanKindTagName-fold-values"><label for="spanKindTagName-fold-values">As Types Of (<i>only one, which is exported</i>)</label><span id='spanKindTagName-fold-values-items' class="fold-items"><span>
+			  var <a href="#name-SpanKind">SpanKind</a></span></span>
+
+</span></div></div>
+<div id="exported-functions"><span class="title">Package-Level Functions<span class="title-stat"><i> (total 2, both are exported)</i></span></span>
+
+<div class="anchor value-res" id="name-LogError">	<input type='checkbox' class="fold" id="LogError-fold-content"><label for="LogError-fold-content"> <a href="../../../../use/github.com/opentracing/opentracing-go/ext..LogError.html">func</a> <a href="../../../../src/github.com/opentracing/opentracing-go/ext/field.go.html#line-9">LogError</a>(span <a href="../opentracing-go.html">opentracing</a>.<a href="../opentracing-go.html#name-Span">Span</a>, err <a href="../../../builtin.html#name-error">error</a>, fields ...<a href="log.html">log</a>.<a href="log.html#name-Field">Field</a>)</label><span id='LogError-fold-content-docs' class="fold-docs">
+		LogError sets the error=true tag on the Span and logs err as an "error" event.
+
+</span></div><div class="anchor value-res" id="name-RPCServerOption">	<input type='checkbox' class="fold" id="RPCServerOption-fold-content"><label for="RPCServerOption-fold-content"> <a href="../../../../use/github.com/opentracing/opentracing-go/ext..RPCServerOption.html">func</a> <a href="../../../../src/github.com/opentracing/opentracing-go/ext/tags.go.html#line-160">RPCServerOption</a>(client <a href="../opentracing-go.html">opentracing</a>.<a href="../opentracing-go.html#name-SpanContext">SpanContext</a>) <a href="../opentracing-go.html">opentracing</a>.<a href="../opentracing-go.html#name-StartSpanOption">StartSpanOption</a></label><span id='RPCServerOption-fold-content-docs' class="fold-docs">
+		RPCServerOption returns a StartSpanOption appropriate for an RPC server span
+		with `client` representing the metadata for the remote peer Span if available.
+		In case client == nil, due to the client not being instrumented, this RPC
+		server span will be a root span.
+
+</span></div></div>
+<div id="exported-variables"><span class="title">Package-Level Variables<span class="title-stat"><i> (total 26, all are exported)</i></span></span>
+
+<div class="anchor value-res" id="name-Component">	<input type='checkbox' class="fold" id="Component-fold-content"><label for="Component-fold-content">  <a href="../../../../use/github.com/opentracing/opentracing-go/ext..Component.html">var</a> <a href="../../../../src/github.com/opentracing/opentracing-go/ext/tags.go.html#line-50">Component</a> <a href="#name-StringTagName">StringTagName</a></label><span id='Component-fold-content-docs' class="fold-docs">
+		Component is a low-cardinality identifier of the module, library,
+		or package that is generating a span.
+
+</span></div><div class="anchor value-res" id="name-DBInstance">	<input type='checkbox' class="fold" id="DBInstance-fold-content"><label for="DBInstance-fold-content">  <a href="../../../../use/github.com/opentracing/opentracing-go/ext..DBInstance.html">var</a> <a href="../../../../src/github.com/opentracing/opentracing-go/ext/tags.go.html#line-105">DBInstance</a> <a href="#name-StringTagName">StringTagName</a></label><span id='DBInstance-fold-content-docs' class="fold-docs">
+		DBInstance is database instance name.
+
+</span></div><div class="anchor value-res" id="name-DBStatement">	<input type='checkbox' class="fold" id="DBStatement-fold-content"><label for="DBStatement-fold-content">  <a href="../../../../use/github.com/opentracing/opentracing-go/ext..DBStatement.html">var</a> <a href="../../../../src/github.com/opentracing/opentracing-go/ext/tags.go.html#line-109">DBStatement</a> <a href="#name-StringTagName">StringTagName</a></label><span id='DBStatement-fold-content-docs' class="fold-docs">
+		DBStatement is a database statement for the given database type.
+		It can be a query or a prepared statement (i.e., before substitution).
+
+</span></div><div class="anchor value-res" id="name-DBType">	<input type='checkbox' class="fold" id="DBType-fold-content"><label for="DBType-fold-content">  <a href="../../../../use/github.com/opentracing/opentracing-go/ext..DBType.html">var</a> <a href="../../../../src/github.com/opentracing/opentracing-go/ext/tags.go.html#line-113">DBType</a> <a href="#name-StringTagName">StringTagName</a></label><span id='DBType-fold-content-docs' class="fold-docs">
+		DBType is a database type. For any SQL database, "sql".
+		For others, the lower-case database category, e.g. "redis"
+
+</span></div><div class="anchor value-res" id="name-DBUser">	<input type='checkbox' class="fold" id="DBUser-fold-content"><label for="DBUser-fold-content">  <a href="../../../../use/github.com/opentracing/opentracing-go/ext..DBUser.html">var</a> <a href="../../../../src/github.com/opentracing/opentracing-go/ext/tags.go.html#line-116">DBUser</a> <a href="#name-StringTagName">StringTagName</a></label><span id='DBUser-fold-content-docs' class="fold-docs">
+		DBUser is a username for accessing database.
+
+</span></div><div class="anchor value-res" id="name-Error">	<input type='checkbox' class="fold" id="Error-fold-content"><label for="Error-fold-content">  <a href="../../../../use/github.com/opentracing/opentracing-go/ext..Error.html">var</a> <a href="../../../../src/github.com/opentracing/opentracing-go/ext/tags.go.html#line-130">Error</a> <a href="#name-BoolTagName">BoolTagName</a></label><span id='Error-fold-content-docs' class="fold-docs">
+		Error indicates that operation represented by the span resulted in an error.
+
+</span></div><div class="anchor value-res" id="name-HTTPMethod">	<input type='checkbox' class="fold" id="HTTPMethod-fold-content"><label for="HTTPMethod-fold-content">  <a href="../../../../use/github.com/opentracing/opentracing-go/ext..HTTPMethod.html">var</a> <a href="../../../../src/github.com/opentracing/opentracing-go/ext/tags.go.html#line-94">HTTPMethod</a> <a href="#name-StringTagName">StringTagName</a></label><span id='HTTPMethod-fold-content-docs' class="fold-docs">
+		HTTPMethod is the HTTP method of the request, and is case-insensitive.
+
+</span></div><div class="anchor value-res" id="name-HTTPStatusCode">	<input type='checkbox' class="fold" id="HTTPStatusCode-fold-content"><label for="HTTPStatusCode-fold-content">  <a href="../../../../use/github.com/opentracing/opentracing-go/ext..HTTPStatusCode.html">var</a> <a href="../../../../src/github.com/opentracing/opentracing-go/ext/tags.go.html#line-98">HTTPStatusCode</a> <a href="#name-Uint16TagName">Uint16TagName</a></label><span id='HTTPStatusCode-fold-content-docs' class="fold-docs">
+		HTTPStatusCode is the numeric HTTP status code (200, 404, etc) of the
+		HTTP response.
+
+</span></div><div class="anchor value-res" id="name-HTTPUrl">	<input type='checkbox' class="fold" id="HTTPUrl-fold-content"><label for="HTTPUrl-fold-content">  <a href="../../../../use/github.com/opentracing/opentracing-go/ext..HTTPUrl.html">var</a> <a href="../../../../src/github.com/opentracing/opentracing-go/ext/tags.go.html#line-91">HTTPUrl</a> <a href="#name-StringTagName">StringTagName</a></label><span id='HTTPUrl-fold-content-docs' class="fold-docs">
+		HTTPUrl should be the URL of the request being handled in this segment
+		of the trace, in standard URI format. The protocol is optional.
+
+</span></div><div class="anchor value-res" id="name-MessageBusDestination">	<input type='checkbox' class="fold" id="MessageBusDestination-fold-content"><label for="MessageBusDestination-fold-content">  <a href="../../../../use/github.com/opentracing/opentracing-go/ext..MessageBusDestination.html">var</a> <a href="../../../../src/github.com/opentracing/opentracing-go/ext/tags.go.html#line-123">MessageBusDestination</a> <a href="#name-StringTagName">StringTagName</a></label><span id='MessageBusDestination-fold-content-docs' class="fold-docs">
+		MessageBusDestination is an address at which messages can be exchanged
+
+</span></div><div class="anchor value-res" id="name-PeerAddress">	<input type='checkbox' class="fold" id="PeerAddress-fold-content"><label for="PeerAddress-fold-content">  <a href="../../../../use/github.com/opentracing/opentracing-go/ext..PeerAddress.html">var</a> <a href="../../../../src/github.com/opentracing/opentracing-go/ext/tags.go.html#line-71">PeerAddress</a> <a href="#name-StringTagName">StringTagName</a></label><span id='PeerAddress-fold-content-docs' class="fold-docs">
+		PeerAddress records the address name of the peer. This may be a "ip:port",
+		a bare "hostname", a FQDN or even a database DSN substring
+		like "mysql://username@127.0.0.1:3306/dbname"
+
+</span></div><div class="anchor value-res" id="name-PeerHostIPv4">	<input type='checkbox' class="fold" id="PeerHostIPv4-fold-content"><label for="PeerHostIPv4-fold-content">  <a href="../../../../use/github.com/opentracing/opentracing-go/ext..PeerHostIPv4.html">var</a> <a href="../../../../src/github.com/opentracing/opentracing-go/ext/tags.go.html#line-77">PeerHostIPv4</a> <a href="#name-IPv4TagName">IPv4TagName</a></label><span id='PeerHostIPv4-fold-content-docs' class="fold-docs">
+		PeerHostIPv4 records IP v4 host address of the peer
+
+</span></div><div class="anchor value-res" id="name-PeerHostIPv6">	<input type='checkbox' class="fold" id="PeerHostIPv6-fold-content"><label for="PeerHostIPv6-fold-content">  <a href="../../../../use/github.com/opentracing/opentracing-go/ext..PeerHostIPv6.html">var</a> <a href="../../../../src/github.com/opentracing/opentracing-go/ext/tags.go.html#line-80">PeerHostIPv6</a> <a href="#name-StringTagName">StringTagName</a></label><span id='PeerHostIPv6-fold-content-docs' class="fold-docs">
+		PeerHostIPv6 records IP v6 host address of the peer
+
+</span></div><div class="anchor value-res" id="name-PeerHostname">	<input type='checkbox' class="fold" id="PeerHostname-fold-content"><label for="PeerHostname-fold-content">  <a href="../../../../use/github.com/opentracing/opentracing-go/ext..PeerHostname.html">var</a> <a href="../../../../src/github.com/opentracing/opentracing-go/ext/tags.go.html#line-74">PeerHostname</a> <a href="#name-StringTagName">StringTagName</a></label><span id='PeerHostname-fold-content-docs' class="fold-docs">
+		PeerHostname records the host name of the peer
+
+</span></div><div class="anchor value-res" id="name-PeerPort">	<input type='checkbox' class="fold" id="PeerPort-fold-content"><label for="PeerPort-fold-content">  <a href="../../../../use/github.com/opentracing/opentracing-go/ext..PeerPort.html">var</a> <a href="../../../../src/github.com/opentracing/opentracing-go/ext/tags.go.html#line-83">PeerPort</a> <a href="#name-Uint16TagName">Uint16TagName</a></label><span id='PeerPort-fold-content-docs' class="fold-docs">
+		PeerPort records port number of the peer
+
+</span></div><div class="anchor value-res" id="name-PeerService">	<input type='checkbox' class="fold" id="PeerService-fold-content"><label for="PeerService-fold-content">  <a href="../../../../use/github.com/opentracing/opentracing-go/ext..PeerService.html">var</a> <a href="../../../../src/github.com/opentracing/opentracing-go/ext/tags.go.html#line-66">PeerService</a> <a href="#name-StringTagName">StringTagName</a></label><span id='PeerService-fold-content-docs' class="fold-docs">
+		PeerService records the service name of the peer.
+
+</span></div><div class="anchor value-res" id="name-SamplingPriority">	<input type='checkbox' class="fold" id="SamplingPriority-fold-content"><label for="SamplingPriority-fold-content">  <a href="../../../../use/github.com/opentracing/opentracing-go/ext..SamplingPriority.html">var</a> <a href="../../../../src/github.com/opentracing/opentracing-go/ext/tags.go.html#line-57">SamplingPriority</a> <a href="#name-Uint16TagName">Uint16TagName</a></label><span id='SamplingPriority-fold-content-docs' class="fold-docs">
+		SamplingPriority determines the priority of sampling this Span.
+
+</span></div><div class="anchor value-res" id="name-SpanKind">	<input type='checkbox' class="fold" id="SpanKind-fold-content"><label for="SpanKind-fold-content">  <a href="../../../../use/github.com/opentracing/opentracing-go/ext..SpanKind.html">var</a> <a href="../../../../src/github.com/opentracing/opentracing-go/ext/tags.go.html#line-22">SpanKind</a> <a href="#name-spanKindTagName">spanKindTagName</a></label><span id='SpanKind-fold-content-docs' class="fold-docs">
+		SpanKind hints at relationship between spans, e.g. client/server
+
+</span></div><div class="anchor value-res" id="name-SpanKindConsumer">	<input type='checkbox' class="fold" id="SpanKindConsumer-fold-content"><label for="SpanKindConsumer-fold-content">  <a href="../../../../use/github.com/opentracing/opentracing-go/ext..SpanKindConsumer.html">var</a> <a href="../../../../src/github.com/opentracing/opentracing-go/ext/tags.go.html#line-42">SpanKindConsumer</a> <a href="../opentracing-go.html">opentracing</a>.<a href="../opentracing-go.html#name-Tag">Tag</a></label><span id='SpanKindConsumer-fold-content-docs' class="fold-docs">
+		These constants define common tag names recommended for better portability across
+		tracing systems and languages/platforms.
+
+		The tag names are defined as typed strings, so that in addition to the usual use
+
+		    span.setTag(TagName, value)
+
+		they also support value type validation via this additional syntax:
+
+		   TagName.Set(span, value)
+
+</span></div><div class="anchor value-res" id="name-SpanKindConsumerEnum">	<input type='checkbox' class="fold" id="SpanKindConsumerEnum-fold-content"><label for="SpanKindConsumerEnum-fold-content">  <a href="../../../../use/github.com/opentracing/opentracing-go/ext..SpanKindConsumerEnum.html">var</a> <a href="../../../../src/github.com/opentracing/opentracing-go/ext/tags.go.html#line-41">SpanKindConsumerEnum</a> <a href="#name-SpanKindEnum">SpanKindEnum</a></label><span id='SpanKindConsumerEnum-fold-content-docs' class="fold-docs">
+		SpanKindConsumer marks a span representing the consumer-side of a
+		message bus
+
+</span></div><div class="anchor value-res" id="name-SpanKindProducer">	<input type='checkbox' class="fold" id="SpanKindProducer-fold-content"><label for="SpanKindProducer-fold-content">  <a href="../../../../use/github.com/opentracing/opentracing-go/ext..SpanKindProducer.html">var</a> <a href="../../../../src/github.com/opentracing/opentracing-go/ext/tags.go.html#line-37">SpanKindProducer</a> <a href="../opentracing-go.html">opentracing</a>.<a href="../opentracing-go.html#name-Tag">Tag</a></label><span id='SpanKindProducer-fold-content-docs' class="fold-docs">
+		These constants define common tag names recommended for better portability across
+		tracing systems and languages/platforms.
+
+		The tag names are defined as typed strings, so that in addition to the usual use
+
+		    span.setTag(TagName, value)
+
+		they also support value type validation via this additional syntax:
+
+		   TagName.Set(span, value)
+
+</span></div><div class="anchor value-res" id="name-SpanKindProducerEnum">	<input type='checkbox' class="fold" id="SpanKindProducerEnum-fold-content"><label for="SpanKindProducerEnum-fold-content">  <a href="../../../../use/github.com/opentracing/opentracing-go/ext..SpanKindProducerEnum.html">var</a> <a href="../../../../src/github.com/opentracing/opentracing-go/ext/tags.go.html#line-36">SpanKindProducerEnum</a> <a href="#name-SpanKindEnum">SpanKindEnum</a></label><span id='SpanKindProducerEnum-fold-content-docs' class="fold-docs">
+		SpanKindProducer marks a span representing the producer-side of a
+		message bus
+
+</span></div><div class="anchor value-res" id="name-SpanKindRPCClient">	<input type='checkbox' class="fold" id="SpanKindRPCClient-fold-content"><label for="SpanKindRPCClient-fold-content">  <a href="../../../../use/github.com/opentracing/opentracing-go/ext..SpanKindRPCClient.html">var</a> <a href="../../../../src/github.com/opentracing/opentracing-go/ext/tags.go.html#line-27">SpanKindRPCClient</a> <a href="../opentracing-go.html">opentracing</a>.<a href="../opentracing-go.html#name-Tag">Tag</a></label><span id='SpanKindRPCClient-fold-content-docs' class="fold-docs">
+		These constants define common tag names recommended for better portability across
+		tracing systems and languages/platforms.
+
+		The tag names are defined as typed strings, so that in addition to the usual use
+
+		    span.setTag(TagName, value)
+
+		they also support value type validation via this additional syntax:
+
+		   TagName.Set(span, value)
+
+</span></div><div class="anchor value-res" id="name-SpanKindRPCClientEnum">	<input type='checkbox' class="fold" id="SpanKindRPCClientEnum-fold-content"><label for="SpanKindRPCClientEnum-fold-content">  <a href="../../../../use/github.com/opentracing/opentracing-go/ext..SpanKindRPCClientEnum.html">var</a> <a href="../../../../src/github.com/opentracing/opentracing-go/ext/tags.go.html#line-26">SpanKindRPCClientEnum</a> <a href="#name-SpanKindEnum">SpanKindEnum</a></label><span id='SpanKindRPCClientEnum-fold-content-docs' class="fold-docs">
+		SpanKindRPCClient marks a span representing the client-side of an RPC
+		or other remote call
+
+</span></div><div class="anchor value-res" id="name-SpanKindRPCServer">	<input type='checkbox' class="fold" id="SpanKindRPCServer-fold-content"><label for="SpanKindRPCServer-fold-content">  <a href="../../../../use/github.com/opentracing/opentracing-go/ext..SpanKindRPCServer.html">var</a> <a href="../../../../src/github.com/opentracing/opentracing-go/ext/tags.go.html#line-32">SpanKindRPCServer</a> <a href="../opentracing-go.html">opentracing</a>.<a href="../opentracing-go.html#name-Tag">Tag</a></label><span id='SpanKindRPCServer-fold-content-docs' class="fold-docs">
+		These constants define common tag names recommended for better portability across
+		tracing systems and languages/platforms.
+
+		The tag names are defined as typed strings, so that in addition to the usual use
+
+		    span.setTag(TagName, value)
+
+		they also support value type validation via this additional syntax:
+
+		   TagName.Set(span, value)
+
+</span></div><div class="anchor value-res" id="name-SpanKindRPCServerEnum">	<input type='checkbox' class="fold" id="SpanKindRPCServerEnum-fold-content"><label for="SpanKindRPCServerEnum-fold-content">  <a href="../../../../use/github.com/opentracing/opentracing-go/ext..SpanKindRPCServerEnum.html">var</a> <a href="../../../../src/github.com/opentracing/opentracing-go/ext/tags.go.html#line-31">SpanKindRPCServerEnum</a> <a href="#name-SpanKindEnum">SpanKindEnum</a></label><span id='SpanKindRPCServerEnum-fold-content-docs' class="fold-docs">
+		SpanKindRPCServer marks a span representing the server-side of an RPC
+		or other remote call
+
+</span></div></div></code></pre><pre id="footer">
+<table><tr><td><img src="../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

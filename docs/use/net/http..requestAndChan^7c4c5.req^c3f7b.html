@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: net/http.requestAndChan.req</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../pkg/net/http.html">net/http</a>.<a href="../../src/net/http/transport.go.html#line-2464">requestAndChan</a>.<a href="../../src/net/http/transport.go.html#line-2466">req</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">10 uses</span>
+
+	net/http (current package)
+		<a href="../../src/net/http/transport.go.html#line-2098">transport.go#L2098</a>: 		trace := httptrace.ContextClientTrace(rc.<b>req</b>.Context())
+		<a href="../../src/net/http/transport.go.html#line-2127" class="path-duplicate">transport.go</a><a href="../../src/net/http/transport.go.html#line-2127">#L2127</a>: 		hasBody := rc.<b>req</b>.Method != "HEAD" &amp;&amp; resp.ContentLength != 0
+		<a href="../../src/net/http/transport.go.html#line-2129" class="path-duplicate">transport.go</a><a href="../../src/net/http/transport.go.html#line-2129">#L2129</a>: 		if resp.Close || rc.<b>req</b>.Close || resp.StatusCode &lt;= 199 || bodyWritable {
+		<a href="../../src/net/http/transport.go.html#line-2218" class="path-duplicate">transport.go</a><a href="../../src/net/http/transport.go.html#line-2218">#L2218</a>: 		case &lt;-rc.<b>req</b>.Cancel:
+		<a href="../../src/net/http/transport.go.html#line-2220" class="path-duplicate">transport.go</a><a href="../../src/net/http/transport.go.html#line-2220">#L2220</a>: 			pc.t.CancelRequest(rc.<b>req</b>)
+		<a href="../../src/net/http/transport.go.html#line-2221" class="path-duplicate">transport.go</a><a href="../../src/net/http/transport.go.html#line-2221">#L2221</a>: 		case &lt;-rc.<b>req</b>.Context().Done():
+		<a href="../../src/net/http/transport.go.html#line-2223" class="path-duplicate">transport.go</a><a href="../../src/net/http/transport.go.html#line-2223">#L2223</a>: 			pc.t.cancelRequest(rc.cancelKey, rc.<b>req</b>.Context().Err())
+		<a href="../../src/net/http/transport.go.html#line-2280" class="path-duplicate">transport.go</a><a href="../../src/net/http/transport.go.html#line-2280">#L2280</a>: 		resp, err = ReadResponse(pc.br, rc.<b>req</b>)
+		<a href="../../src/net/http/transport.go.html#line-2466" class="path-duplicate">transport.go</a><a href="../../src/net/http/transport.go.html#line-2466">#L2466</a>: 	<b>req</b>       *Request
+		<a href="../../src/net/http/transport.go.html#line-2599" class="path-duplicate">transport.go</a><a href="../../src/net/http/transport.go.html#line-2599">#L2599</a>: 		<b>req</b>:        req.Request,
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

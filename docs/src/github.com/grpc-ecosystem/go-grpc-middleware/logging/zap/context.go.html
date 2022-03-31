@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Source: context.go in package github.com/grpc-ecosystem/go-grpc-middleware/logging/zap</title>
+<link href="../../../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre id="header"><code><span class="title">Source File</span>
+	context.go
+
+<span class="title">Belonging Package</span>
+	<a href="../../../../../../pkg/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap.html">github.com/grpc-ecosystem/go-grpc-middleware/logging/zap</a>
+</code></pre>
+<style>input[type=radio] {display: none;}
+input[id=r0]:checked ~pre label[for=r0],
+input[id=r1]:checked ~pre label[for=r1],
+input[id=r2]:checked ~pre label[for=r2],
+input[id=r3]:checked ~pre label[for=r3],
+input[id=r4]:checked ~pre label[for=r4]
+{background: #226; color: #ff8;}
+input[id=i0]:checked ~pre .i0,
+input[id=i1]:checked ~pre .i1,
+input[id=i2]:checked ~pre .i2,
+input[id=i3]:checked ~pre .i3
+{background: brown; color: #eed;}
+</style><input id="r0" type="radio" name="g"/>
+<input id="r1" type="radio" name="g"/>
+<input id="r2" type="radio" name="g"/>
+<input id="r3" type="radio" name="g"/>
+<input id="r4" type="radio" name="g"/>
+<input id="i0" type="radio" name="i"/>
+<input id="i1" type="radio" name="i"/>
+<input id="i2" type="radio" name="i"/>
+<input id="i3" type="radio" name="i"/>
+
+<pre class="line-numbers">
+<span class="codeline" id="line-1"><code><span class="keyword">package</span> grpc_zap</code></span>
+<span class="codeline" id="line-2"><code></code></span>
+<span class="codeline" id="line-3"><code><span class="keyword">import</span> (</code></span>
+<span class="codeline" id="line-4"><code>	<label for="i0"><span class="lit-string i0">"context"</span></label></code></span>
+<span class="codeline" id="line-5"><code></code></span>
+<span class="codeline" id="line-6"><code>	<label for="i1"><span class="lit-string i1">"github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/ctxzap"</span></label></code></span>
+<span class="codeline" id="line-7"><code>	<label for="i2"><span class="lit-string i2">"go.uber.org/zap"</span></label></code></span>
+<span class="codeline" id="line-8"><code>	<label for="i3"><span class="lit-string i3">"go.uber.org/zap/zapcore"</span></label></code></span>
+<span class="codeline" id="line-9"><code>)</code></span>
+<span class="codeline" id="line-10"><code></code></span>
+<span class="codeline" id="line-11"><code><span class="comment">// AddFields adds zap fields to the logger.</span></code></span>
+<span class="codeline" id="line-12"><code><span class="comment">// Deprecated: should use the ctxzap.AddFields instead</span></code></span>
+<span class="codeline" id="line-13"><code><span class="keyword">func</span> <label for="r0" class="ident"><a href="../../../../../../pkg/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap.html#name-AddFields" class="ident">AddFields</a></label>(<label for="r1" class="ident">ctx</label> <a href="../../../../../../pkg/context.html" class="ident i0">context</a>.<a href="../../../../../context/context.go.html#line-62" class="ident">Context</a>, <label for="r2" class="ident">fields</label> ...<a href="../../../../../../pkg/go.uber.org/zap/zapcore.html" class="ident i3">zapcore</a>.<a href="../../../../../go.uber.org/zap/zapcore/field.go.html#line-100" class="ident">Field</a>) {</code></span>
+<span class="codeline" id="line-14"><code>	<a href="../../../../../../pkg/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/ctxzap.html" class="ident i1">ctxzap</a>.<a href="ctxzap/context.go.html#line-24" class="ident">AddFields</a>(<label for="r1" class="ident">ctx</label>, <label for="r2" class="ident">fields</label>...)</code></span>
+<span class="codeline" id="line-15"><code>}</code></span>
+<span class="codeline" id="line-16"><code></code></span>
+<span class="codeline" id="line-17"><code><span class="comment">// Extract takes the call-scoped Logger from grpc_zap middleware.</span></code></span>
+<span class="codeline" id="line-18"><code><span class="comment">// Deprecated: should use the ctxzap.Extract instead</span></code></span>
+<span class="codeline" id="line-19"><code><span class="keyword">func</span> <label for="r3" class="ident"><a href="../../../../../../pkg/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap.html#name-Extract" class="ident">Extract</a></label>(<label for="r4" class="ident">ctx</label> <a href="../../../../../../pkg/context.html" class="ident i0">context</a>.<a href="../../../../../context/context.go.html#line-62" class="ident">Context</a>) *<a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i2">zap</a>.<a href="../../../../../go.uber.org/zap/logger.go.html#line-41" class="ident">Logger</a> {</code></span>
+<span class="codeline" id="line-20"><code>	<span class="keyword">return</span> <a href="../../../../../../pkg/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/ctxzap.html" class="ident i1">ctxzap</a>.<a href="ctxzap/context.go.html#line-36" class="ident">Extract</a>(<label for="r4" class="ident">ctx</label>)</code></span>
+<span class="codeline" id="line-21"><code>}</code></span>
+</pre><pre id="footer">
+<table><tr><td><img src="../../../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

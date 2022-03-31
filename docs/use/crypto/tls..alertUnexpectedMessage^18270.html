@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: crypto/tls.alertUnexpectedMessage</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">const <b><a href="../../pkg/crypto/tls.html">crypto/tls</a>.<a href="../../src/crypto/tls/alert.go.html#line-19">alertUnexpectedMessage</a></b></span>
+
+<span class="title">43 uses</span>
+
+	crypto/tls (current package)
+		<a href="../../src/crypto/tls/alert.go.html#line-19">alert.go#L19</a>: 	<b>alertUnexpectedMessage</b>            alert = 10
+		<a href="../../src/crypto/tls/alert.go.html#line-55" class="path-duplicate">alert.go</a><a href="../../src/crypto/tls/alert.go.html#line-55">#L55</a>: 	<b>alertUnexpectedMessage</b>:            "unexpected message",
+		<a href="../../src/crypto/tls/conn.go.html#line-396">conn.go#L396</a>: 				return nil, 0, <b>alertUnexpectedMessage</b>
+		<a href="../../src/crypto/tls/conn.go.html#line-409" class="path-duplicate">conn.go</a><a href="../../src/crypto/tls/conn.go.html#line-409">#L409</a>: 					return nil, 0, <b>alertUnexpectedMessage</b>
+		<a href="../../src/crypto/tls/conn.go.html#line-670" class="path-duplicate">conn.go</a><a href="../../src/crypto/tls/conn.go.html#line-670">#L670</a>: 		return c.in.setErrorLocked(c.sendAlert(<b>alertUnexpectedMessage</b>))
+		<a href="../../src/crypto/tls/conn.go.html#line-680" class="path-duplicate">conn.go</a><a href="../../src/crypto/tls/conn.go.html#line-680">#L680</a>: 		return c.in.setErrorLocked(c.sendAlert(<b>alertUnexpectedMessage</b>))
+		<a href="../../src/crypto/tls/conn.go.html#line-685" class="path-duplicate">conn.go</a><a href="../../src/crypto/tls/conn.go.html#line-685">#L685</a>: 		return c.in.setErrorLocked(c.sendAlert(<b>alertUnexpectedMessage</b>))
+		<a href="../../src/crypto/tls/conn.go.html#line-689" class="path-duplicate">conn.go</a><a href="../../src/crypto/tls/conn.go.html#line-689">#L689</a>: 			return c.in.setErrorLocked(c.sendAlert(<b>alertUnexpectedMessage</b>))
+		<a href="../../src/crypto/tls/conn.go.html#line-704" class="path-duplicate">conn.go</a><a href="../../src/crypto/tls/conn.go.html#line-704">#L704</a>: 			return c.in.setErrorLocked(c.sendAlert(<b>alertUnexpectedMessage</b>))
+		<a href="../../src/crypto/tls/conn.go.html#line-713" class="path-duplicate">conn.go</a><a href="../../src/crypto/tls/conn.go.html#line-713">#L713</a>: 			return c.in.setErrorLocked(c.sendAlert(<b>alertUnexpectedMessage</b>))
+		<a href="../../src/crypto/tls/conn.go.html#line-724" class="path-duplicate">conn.go</a><a href="../../src/crypto/tls/conn.go.html#line-724">#L724</a>: 			return c.in.setErrorLocked(c.sendAlert(<b>alertUnexpectedMessage</b>))
+		<a href="../../src/crypto/tls/conn.go.html#line-732" class="path-duplicate">conn.go</a><a href="../../src/crypto/tls/conn.go.html#line-732">#L732</a>: 			return c.in.setErrorLocked(c.sendAlert(<b>alertUnexpectedMessage</b>))
+		<a href="../../src/crypto/tls/conn.go.html#line-746" class="path-duplicate">conn.go</a><a href="../../src/crypto/tls/conn.go.html#line-746">#L746</a>: 			return c.in.setErrorLocked(c.sendAlert(<b>alertUnexpectedMessage</b>))
+		<a href="../../src/crypto/tls/conn.go.html#line-759" class="path-duplicate">conn.go</a><a href="../../src/crypto/tls/conn.go.html#line-759">#L759</a>: 		c.sendAlert(<b>alertUnexpectedMessage</b>)
+		<a href="../../src/crypto/tls/conn.go.html#line-1075" class="path-duplicate">conn.go</a><a href="../../src/crypto/tls/conn.go.html#line-1075">#L1075</a>: 		return nil, c.in.setErrorLocked(c.sendAlert(<b>alertUnexpectedMessage</b>))
+		<a href="../../src/crypto/tls/conn.go.html#line-1084" class="path-duplicate">conn.go</a><a href="../../src/crypto/tls/conn.go.html#line-1084">#L1084</a>: 		return nil, c.in.setErrorLocked(c.sendAlert(<b>alertUnexpectedMessage</b>))
+		<a href="../../src/crypto/tls/conn.go.html#line-1168" class="path-duplicate">conn.go</a><a href="../../src/crypto/tls/conn.go.html#line-1168">#L1168</a>: 		c.sendAlert(<b>alertUnexpectedMessage</b>)
+		<a href="../../src/crypto/tls/conn.go.html#line-1214" class="path-duplicate">conn.go</a><a href="../../src/crypto/tls/conn.go.html#line-1214">#L1214</a>: 		c.sendAlert(<b>alertUnexpectedMessage</b>)
+		<a href="../../src/crypto/tls/conn.go.html#line-1224" class="path-duplicate">conn.go</a><a href="../../src/crypto/tls/conn.go.html#line-1224">#L1224</a>: 		c.sendAlert(<b>alertUnexpectedMessage</b>)
+		<a href="../../src/crypto/tls/handshake_client.go.html#line-186">handshake_client.go#L186</a>: 		c.sendAlert(<b>alertUnexpectedMessage</b>)
+		<a href="../../src/crypto/tls/handshake_client.go.html#line-477" class="path-duplicate">handshake_client.go</a><a href="../../src/crypto/tls/handshake_client.go.html#line-477">#L477</a>: 		c.sendAlert(<b>alertUnexpectedMessage</b>)
+		<a href="../../src/crypto/tls/handshake_client.go.html#line-497" class="path-duplicate">handshake_client.go</a><a href="../../src/crypto/tls/handshake_client.go.html#line-497">#L497</a>: 			c.sendAlert(<b>alertUnexpectedMessage</b>)
+		<a href="../../src/crypto/tls/handshake_client.go.html#line-536" class="path-duplicate">handshake_client.go</a><a href="../../src/crypto/tls/handshake_client.go.html#line-536">#L536</a>: 			c.sendAlert(<b>alertUnexpectedMessage</b>)
+		<a href="../../src/crypto/tls/handshake_client.go.html#line-567" class="path-duplicate">handshake_client.go</a><a href="../../src/crypto/tls/handshake_client.go.html#line-567">#L567</a>: 		c.sendAlert(<b>alertUnexpectedMessage</b>)
+		<a href="../../src/crypto/tls/handshake_client.go.html#line-692" class="path-duplicate">handshake_client.go</a><a href="../../src/crypto/tls/handshake_client.go.html#line-692">#L692</a>: 		c.sendAlert(<b>alertUnexpectedMessage</b>)
+		<a href="../../src/crypto/tls/handshake_client.go.html#line-780" class="path-duplicate">handshake_client.go</a><a href="../../src/crypto/tls/handshake_client.go.html#line-780">#L780</a>: 		c.sendAlert(<b>alertUnexpectedMessage</b>)
+		<a href="../../src/crypto/tls/handshake_client.go.html#line-807" class="path-duplicate">handshake_client.go</a><a href="../../src/crypto/tls/handshake_client.go.html#line-807">#L807</a>: 		c.sendAlert(<b>alertUnexpectedMessage</b>)
+		<a href="../../src/crypto/tls/handshake_client_tls13.go.html#line-275">handshake_client_tls13.go#L275</a>: 		c.sendAlert(<b>alertUnexpectedMessage</b>)
+		<a href="../../src/crypto/tls/handshake_client_tls13.go.html#line-291" class="path-duplicate">handshake_client_tls13.go</a><a href="../../src/crypto/tls/handshake_client_tls13.go.html#line-291">#L291</a>: 		c.sendAlert(<b>alertUnexpectedMessage</b>)
+		<a href="../../src/crypto/tls/handshake_client_tls13.go.html#line-394" class="path-duplicate">handshake_client_tls13.go</a><a href="../../src/crypto/tls/handshake_client_tls13.go.html#line-394">#L394</a>: 		c.sendAlert(<b>alertUnexpectedMessage</b>)
+		<a href="../../src/crypto/tls/handshake_client_tls13.go.html#line-445" class="path-duplicate">handshake_client_tls13.go</a><a href="../../src/crypto/tls/handshake_client_tls13.go.html#line-445">#L445</a>: 		c.sendAlert(<b>alertUnexpectedMessage</b>)
+		<a href="../../src/crypto/tls/handshake_client_tls13.go.html#line-468" class="path-duplicate">handshake_client_tls13.go</a><a href="../../src/crypto/tls/handshake_client_tls13.go.html#line-468">#L468</a>: 		c.sendAlert(<b>alertUnexpectedMessage</b>)
+		<a href="../../src/crypto/tls/handshake_client_tls13.go.html#line-507" class="path-duplicate">handshake_client_tls13.go</a><a href="../../src/crypto/tls/handshake_client_tls13.go.html#line-507">#L507</a>: 		c.sendAlert(<b>alertUnexpectedMessage</b>)
+		<a href="../../src/crypto/tls/handshake_client_tls13.go.html#line-636" class="path-duplicate">handshake_client_tls13.go</a><a href="../../src/crypto/tls/handshake_client_tls13.go.html#line-636">#L636</a>: 		c.sendAlert(<b>alertUnexpectedMessage</b>)
+		<a href="../../src/crypto/tls/handshake_server.go.html#line-138">handshake_server.go#L138</a>: 		c.sendAlert(<b>alertUnexpectedMessage</b>)
+		<a href="../../src/crypto/tls/handshake_server.go.html#line-583" class="path-duplicate">handshake_server.go</a><a href="../../src/crypto/tls/handshake_server.go.html#line-583">#L583</a>: 			c.sendAlert(<b>alertUnexpectedMessage</b>)
+		<a href="../../src/crypto/tls/handshake_server.go.html#line-612" class="path-duplicate">handshake_server.go</a><a href="../../src/crypto/tls/handshake_server.go.html#line-612">#L612</a>: 		c.sendAlert(<b>alertUnexpectedMessage</b>)
+		<a href="../../src/crypto/tls/handshake_server.go.html#line-641" class="path-duplicate">handshake_server.go</a><a href="../../src/crypto/tls/handshake_server.go.html#line-641">#L641</a>: 			c.sendAlert(<b>alertUnexpectedMessage</b>)
+		<a href="../../src/crypto/tls/handshake_server.go.html#line-716" class="path-duplicate">handshake_server.go</a><a href="../../src/crypto/tls/handshake_server.go.html#line-716">#L716</a>: 		c.sendAlert(<b>alertUnexpectedMessage</b>)
+		<a href="../../src/crypto/tls/handshake_server_tls13.go.html#line-432">handshake_server_tls13.go#L432</a>: 		c.sendAlert(<b>alertUnexpectedMessage</b>)
+		<a href="../../src/crypto/tls/handshake_server_tls13.go.html#line-776" class="path-duplicate">handshake_server_tls13.go</a><a href="../../src/crypto/tls/handshake_server_tls13.go.html#line-776">#L776</a>: 		c.sendAlert(<b>alertUnexpectedMessage</b>)
+		<a href="../../src/crypto/tls/handshake_server_tls13.go.html#line-800" class="path-duplicate">handshake_server_tls13.go</a><a href="../../src/crypto/tls/handshake_server_tls13.go.html#line-800">#L800</a>: 			c.sendAlert(<b>alertUnexpectedMessage</b>)
+		<a href="../../src/crypto/tls/handshake_server_tls13.go.html#line-846" class="path-duplicate">handshake_server_tls13.go</a><a href="../../src/crypto/tls/handshake_server_tls13.go.html#line-846">#L846</a>: 		c.sendAlert(<b>alertUnexpectedMessage</b>)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

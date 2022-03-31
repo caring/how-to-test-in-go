@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Package: github.com/uber/jaeger-client-go/log</title>
+<link href="../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre id="package-details"><code><span style="font-size:xx-large;">package <b>log</b></span>
+
+<span class="title">Import Path</span>
+	<a href="../../../../index.html#pkg-github.com/uber/jaeger-client-go/log">github.com/uber/jaeger-client-go/log</a><i> (on <a href="https://pkg.go.dev/github.com/uber/jaeger-client-go/log" target="_blank">go.dev</a>)</i>
+
+<span class="title">Dependency Relation</span>
+	imports <a href="../../../../dep/github.com/uber/jaeger-client-go/log.html">4 packages</a>, and imported by <a href="../../../../dep/github.com/uber/jaeger-client-go/log.html#imported-by">2 packages</a>
+
+<div id="files"><span class="title">Involved Source Files</span>
+
+	<span class="nodocs">      <a href="../../../../src/github.com/uber/jaeger-client-go/log/logger.go.html">logger.go</a></span></div>
+<div id="exported-types"><span class="title">Package-Level Type Names<span class="title-stat"><i> (total 6, in which 3 are exported)</i></span></span>
+
+<div id="exported-types-buttons" class="js-on">	/* sort exporteds by: <label id="sort-types-by-alphabet" class="button">alphabet</label> | <label id="sort-types-by-popularity" class="button">popularity</label> */</div><div class="anchor type-res" id="name-BytesBufferLogger" data-popularity="600">	<input type='checkbox' class="fold" id="BytesBufferLogger-fold-content"><label for="BytesBufferLogger-fold-content"> <a href="../../../../use/github.com/uber/jaeger-client-go/log..BytesBufferLogger.html">type</a> <a href="../../../../src/github.com/uber/jaeger-client-go/log/logger.go.html#line-65">BytesBufferLogger</a> <i>(struct)</i></label><span id='BytesBufferLogger-fold-content-docs' class="fold-docs">
+		BytesBufferLogger implements Logger backed by a bytes.Buffer.
+
+		<input type='checkbox' class="fold" id="BytesBufferLogger-fold-fields"><label for="BytesBufferLogger-fold-fields">Fields (<i>total 2, neither is exported</i>)</label><span id='BytesBufferLogger-fold-fields-items' class="fold-items">
+			<input type='checkbox' class="showhide" id="BytesBufferLogger-showhide-fields"><i><label for="BytesBufferLogger-showhide-fields" class="show-inline">/* 2 unexporteds ... */</label><label for="BytesBufferLogger-showhide-fields" class="hide-inline">/* 2 unexporteds: */</label></i><span class="hidden"><i>
+			<span class="nodocs"><a href="../../../../src/github.com/uber/jaeger-client-go/log/logger.go.html#line-67">buf</a> <i><a href="../../../bytes.html">bytes</a>.<a href="../../../bytes.html#name-Buffer">Buffer</a></i></span></i></span><span class="hidden"><i>
+			<span class="nodocs"><a href="../../../../src/github.com/uber/jaeger-client-go/log/logger.go.html#line-66">mux</a> <i><a href="../../../sync.html">sync</a>.<a href="../../../sync.html#name-Mutex">Mutex</a></i></span></i></span></span>
+		<input type='checkbox' class="fold" id="BytesBufferLogger-fold-methods"><label for="BytesBufferLogger-fold-methods">Methods (<i>total 5, all are exported</i>)</label><span id='BytesBufferLogger-fold-methods-items' class="fold-items"><span>
+			<input type='checkbox' class="fold" id="BytesBufferLogger-fold-method-Debugf"><label for="BytesBufferLogger-fold-method-Debugf">(*BytesBufferLogger) <a href="../../../../src/github.com/uber/jaeger-client-go/log/logger.go.html#line-85">Debugf</a>(msg <a href="../../../builtin.html#name-string">string</a>, args ...interface{})</label><span id='BytesBufferLogger-fold-method-Debugf-docs' class="fold-docs">
+				Debugf implements Logger.
+</span></span><span>
+			<input type='checkbox' class="fold" id="BytesBufferLogger-fold-method-Error"><label for="BytesBufferLogger-fold-method-Error">(*BytesBufferLogger) <a href="../../../../src/github.com/uber/jaeger-client-go/log/logger.go.html#line-71">Error</a>(msg <a href="../../../builtin.html#name-string">string</a>)</label><span id='BytesBufferLogger-fold-method-Error-docs' class="fold-docs">
+				Error implements Logger.
+</span></span><span>
+			<input type='checkbox' class="fold" id="BytesBufferLogger-fold-method-Flush"><label for="BytesBufferLogger-fold-method-Flush">(*BytesBufferLogger) <a href="../../../../src/github.com/uber/jaeger-client-go/log/logger.go.html#line-99">Flush</a>()</label><span id='BytesBufferLogger-fold-method-Flush-docs' class="fold-docs">
+				Flush empties the underlying buffer.
+</span></span><span>
+			<input type='checkbox' class="fold" id="BytesBufferLogger-fold-method-Infof"><label for="BytesBufferLogger-fold-method-Infof">(*BytesBufferLogger) <a href="../../../../src/github.com/uber/jaeger-client-go/log/logger.go.html#line-78">Infof</a>(msg <a href="../../../builtin.html#name-string">string</a>, args ...interface{})</label><span id='BytesBufferLogger-fold-method-Infof-docs' class="fold-docs">
+				Infof implements Logger.
+</span></span><span>
+			<input type='checkbox' class="fold" id="BytesBufferLogger-fold-method-String"><label for="BytesBufferLogger-fold-method-String">(*BytesBufferLogger) <a href="../../../../src/github.com/uber/jaeger-client-go/log/logger.go.html#line-92">String</a>() <a href="../../../builtin.html#name-string">string</a></label><span id='BytesBufferLogger-fold-method-String-docs' class="fold-docs">
+				String returns string representation of the underlying buffer.
+</span></span></span>
+		<input type='checkbox' class="fold" id="BytesBufferLogger-fold-impls"><label for="BytesBufferLogger-fold-impls">Implements (<i>at least 7, in which 5 are exported</i>)</label><span id='BytesBufferLogger-fold-impls-items' class="fold-items"><span>
+			*BytesBufferLogger : <a href="#name-DebugLogger">DebugLogger</a></span><span>
+			*BytesBufferLogger : <a href="#name-Logger">Logger</a></span><span>
+			*BytesBufferLogger : github.com/uber/jaeger-client-go.<a href="../jaeger-client-go.html#name-Logger">Logger</a></span><span>
+			*BytesBufferLogger : fmt.<a href="../../../fmt.html#name-Stringer">Stringer</a></span><span>
+			*BytesBufferLogger : net/http.<a href="../../../net/http.html#name-Flusher">Flusher</a></span>
+			<input type='checkbox' class="showhide" id="BytesBufferLogger-showhide-impls"><i><label for="BytesBufferLogger-showhide-impls" class="show-inline">/* 2+ unexporteds ... */</label><label for="BytesBufferLogger-showhide-impls" class="hide-inline">/* 2+ unexporteds: */</label></i><span class="hidden"><i>
+			*BytesBufferLogger : context.<a href="../../../context.html#name-stringer">stringer</a></i></span><span class="hidden"><i>
+			*BytesBufferLogger : runtime.<a href="../../../runtime.html#name-stringer">stringer</a></i></span></span>
+
+</span></div><div class="anchor type-res" id="name-DebugLogger" data-popularity="1110">	<input type='checkbox' class="fold" id="DebugLogger-fold-content"><label for="DebugLogger-fold-content"> <a href="../../../../use/github.com/uber/jaeger-client-go/log..DebugLogger.html">type</a> <a href="../../../../src/github.com/uber/jaeger-client-go/log/logger.go.html#line-106">DebugLogger</a> <b><i>(interface)</i></b></label><span id='DebugLogger-fold-content-docs' class="fold-docs">
+		DebugLogger is an interface which adds a debug logging level
+
+		<input type='checkbox' class="fold" id="DebugLogger-fold-methods"><label for="DebugLogger-fold-methods">Methods (<i>total 3, all are exported</i>)</label><span id='DebugLogger-fold-methods-items' class="fold-items"><span>
+			<input type='checkbox' class="fold" id="DebugLogger-fold-method-Debugf"><label for="DebugLogger-fold-method-Debugf">( DebugLogger) <a href="../../../../src/github.com/uber/jaeger-client-go/log/logger.go.html#line-110">Debugf</a>(msg <a href="../../../builtin.html#name-string">string</a>, args ...interface{})</label><span id='DebugLogger-fold-method-Debugf-docs' class="fold-docs">
+				Debugf logs a message at debug priority
+</span></span><span>
+			<input type='checkbox' class="fold" id="DebugLogger-fold-method-Error"><label for="DebugLogger-fold-method-Error">( DebugLogger) <a href="../../../../src/github.com/uber/jaeger-client-go/log/logger.go.html#line-30">Error</a>(msg <a href="../../../builtin.html#name-string">string</a>)</label><span id='DebugLogger-fold-method-Error-docs' class="fold-docs">
+				Error logs a message at error priority
+</span></span><span>
+			<input type='checkbox' class="fold" id="DebugLogger-fold-method-Infof"><label for="DebugLogger-fold-method-Infof">( DebugLogger) <a href="../../../../src/github.com/uber/jaeger-client-go/log/logger.go.html#line-33">Infof</a>(msg <a href="../../../builtin.html#name-string">string</a>, args ...interface{})</label><span id='DebugLogger-fold-method-Infof-docs' class="fold-docs">
+				Infof logs a message at info priority
+</span></span></span>
+		<input type='checkbox' class="fold" id="DebugLogger-fold-impledby"><label for="DebugLogger-fold-impledby">Implemented By (<i>at least 5, in which 2 are exported</i>)</label><span id='DebugLogger-fold-impledby-items' class="fold-items"><span>
+			*<a href="#name-BytesBufferLogger">BytesBufferLogger</a></span><span>
+			*github.com/uber/jaeger-client-go/log/zap.<a href="log/zap.html#name-Logger">Logger</a></span>
+			<input type='checkbox' class="showhide" id="DebugLogger-showhide-impedBys"><i><label for="DebugLogger-showhide-impedBys" class="show-inline">/* 3+ unexporteds ... */</label><label for="DebugLogger-showhide-impedBys" class="hide-inline">/* 3+ unexporteds: */</label></i><span class="hidden"><i>
+			 <a href="#name-debugDisabledLogAdapter">debugDisabledLogAdapter</a></i></span><span class="hidden"><i>
+			*<a href="#name-nullLogger">nullLogger</a></i></span><span class="hidden"><i>
+			*<a href="#name-stdLogger">stdLogger</a></i></span></span>
+		<input type='checkbox' class="fold" id="DebugLogger-fold-impls"><label for="DebugLogger-fold-impls">Implements (<i>at least 2, both are exported</i>)</label><span id='DebugLogger-fold-impls-items' class="fold-items"><span>
+			 DebugLogger : <a href="#name-Logger">Logger</a></span><span>
+			 DebugLogger : github.com/uber/jaeger-client-go.<a href="../jaeger-client-go.html#name-Logger">Logger</a></span></span>
+		<input type='checkbox' class="fold" id="DebugLogger-fold-results"><label for="DebugLogger-fold-results">As Outputs Of (<i>at least one exported</i>)</label><span id='DebugLogger-fold-results-items' class="fold-items"><span>
+			func <a href="#name-DebugLogAdapter">DebugLogAdapter</a>(logger <a href="#name-Logger">Logger</a>) <b>DebugLogger</b></span></span>
+		<input type='checkbox' class="fold" id="DebugLogger-fold-params"><label for="DebugLogger-fold-params">As Inputs Of (<i>at least one unexported</i>)</label><span id='DebugLogger-fold-params-items' class="fold-items">
+			<input type='checkbox' class="showhide" id="DebugLogger-showhide-outputofs"><i><label for="DebugLogger-showhide-outputofs" class="show-inline">/* at least one unexported ... */</label><label for="DebugLogger-showhide-outputofs" class="hide-inline">/* at least one unexported: */</label></i><span class="hidden"><i>
+			func github.com/uber/jaeger-client-go.<a href="../jaeger-client-go.html#name-newHTTPSamplingStrategyFetcher">newHTTPSamplingStrategyFetcher</a>(serverURL <a href="../../../builtin.html#name-string">string</a>, logger <b>DebugLogger</b>) *<a href="../jaeger-client-go.html">jaeger</a>.<a href="../jaeger-client-go.html#name-httpSamplingStrategyFetcher">httpSamplingStrategyFetcher</a></i></span></span>
+
+</span></div><div class="anchor type-res" id="name-Logger" data-popularity="1570">	<input type='checkbox' class="fold" id="Logger-fold-content"><label for="Logger-fold-content"> <a href="../../../../use/github.com/uber/jaeger-client-go/log..Logger.html">type</a> <a href="../../../../src/github.com/uber/jaeger-client-go/log/logger.go.html#line-28">Logger</a> <b><i>(interface)</i></b></label><span id='Logger-fold-content-docs' class="fold-docs">
+		Logger provides an abstract interface for logging from Reporters.
+		Applications can provide their own implementation of this interface to adapt
+		reporters logging to whatever logging library they prefer (stdlib log,
+		logrus, go-logging, etc).
+
+		<input type='checkbox' class="fold" id="Logger-fold-methods"><label for="Logger-fold-methods">Methods (<i>total 2, both are exported</i>)</label><span id='Logger-fold-methods-items' class="fold-items"><span>
+			<input type='checkbox' class="fold" id="Logger-fold-method-Error"><label for="Logger-fold-method-Error">( Logger) <a href="../../../../src/github.com/uber/jaeger-client-go/log/logger.go.html#line-30">Error</a>(msg <a href="../../../builtin.html#name-string">string</a>)</label><span id='Logger-fold-method-Error-docs' class="fold-docs">
+				Error logs a message at error priority
+</span></span><span>
+			<input type='checkbox' class="fold" id="Logger-fold-method-Infof"><label for="Logger-fold-method-Infof">( Logger) <a href="../../../../src/github.com/uber/jaeger-client-go/log/logger.go.html#line-33">Infof</a>(msg <a href="../../../builtin.html#name-string">string</a>, args ...interface{})</label><span id='Logger-fold-method-Infof-docs' class="fold-docs">
+				Infof logs a message at info priority
+</span></span></span>
+		<input type='checkbox' class="fold" id="Logger-fold-impledby"><label for="Logger-fold-impledby">Implemented By (<i>at least 9, in which 4 are exported</i>)</label><span id='Logger-fold-impledby-items' class="fold-items"><span>
+			*<a href="#name-BytesBufferLogger">BytesBufferLogger</a></span><span>
+			 <a href="#name-DebugLogger">DebugLogger</a> <i>(interface)</i></span><span>
+			*github.com/uber/jaeger-client-go/log/zap.<a href="log/zap.html#name-Logger">Logger</a></span><span>
+			 github.com/uber/jaeger-client-go.<a href="../jaeger-client-go.html#name-Logger">Logger</a> <i>(interface)</i></span>
+			<input type='checkbox' class="showhide" id="Logger-showhide-impedBys"><i><label for="Logger-showhide-impedBys" class="show-inline">/* 5+ unexporteds ... */</label><label for="Logger-showhide-impedBys" class="hide-inline">/* 5+ unexporteds: */</label></i><span class="hidden"><i>
+			 <a href="#name-debugDisabledLogAdapter">debugDisabledLogAdapter</a></i></span><span class="hidden"><i>
+			*<a href="#name-nullLogger">nullLogger</a></i></span><span class="hidden"><i>
+			*<a href="#name-stdLogger">stdLogger</a></i></span><span class="hidden"><i>
+			*github.com/uber/jaeger-client-go.<a href="../jaeger-client-go.html#name-nullLogger">nullLogger</a></i></span><span class="hidden"><i>
+			*github.com/uber/jaeger-client-go.<a href="../jaeger-client-go.html#name-stdLogger">stdLogger</a></i></span></span>
+		<input type='checkbox' class="fold" id="Logger-fold-impls"><label for="Logger-fold-impls">Implements (<i>at least one exported</i>)</label><span id='Logger-fold-impls-items' class="fold-items"><span>
+			 Logger : github.com/uber/jaeger-client-go.<a href="../jaeger-client-go.html#name-Logger">Logger</a></span></span>
+		<input type='checkbox' class="fold" id="Logger-fold-params"><label for="Logger-fold-params">As Inputs Of (<i>at least 2, in which 1 are exported</i>)</label><span id='Logger-fold-params-items' class="fold-items"><span>
+			func <a href="#name-DebugLogAdapter">DebugLogAdapter</a>(logger <b>Logger</b>) <a href="#name-DebugLogger">DebugLogger</a></span>
+			<input type='checkbox' class="showhide" id="Logger-showhide-outputofs"><i><label for="Logger-showhide-outputofs" class="show-inline">/* at least one unexported ... */</label><label for="Logger-showhide-outputofs" class="hide-inline">/* at least one unexported: */</label></i><span class="hidden"><i>
+			func github.com/uber/jaeger-client-go/utils.<a href="utils.html#name-newReconnectingUDPConn">newReconnectingUDPConn</a>(hostPort <a href="../../../builtin.html#name-string">string</a>, resolveTimeout <a href="../../../time.html">time</a>.<a href="../../../time.html#name-Duration">Duration</a>, resolveFunc <a href="utils.html">utils</a>.<a href="utils.html#name-resolveFunc">resolveFunc</a>, dialFunc <a href="utils.html">utils</a>.<a href="utils.html#name-dialFunc">dialFunc</a>, logger <b>Logger</b>) (*<a href="utils.html">utils</a>.<a href="utils.html#name-reconnectingUDPConn">reconnectingUDPConn</a>, <a href="../../../builtin.html#name-error">error</a>)</i></span></span>
+
+</span></div></div><div>	<input type='checkbox' class="showhide" id="unexported-typenames-showhide"><i><label for="unexported-typenames-showhide" class="show-inline">/* 3 unexporteds ... */</label><label for="unexported-typenames-showhide" class="hide-inline">/* 3 unexporteds: */</label></i><div class="anchor type-res hidden" id="name-debugDisabledLogAdapter" data-popularity="300">	<input type='checkbox' class="fold" id="debugDisabledLogAdapter-fold-content"><label for="debugDisabledLogAdapter-fold-content"> <a href="../../../../use/github.com/uber/jaeger-client-go/log..debugDisabledLogAdapter^aa085.html">type</a> <a href="../../../../src/github.com/uber/jaeger-client-go/log/logger.go.html#line-127">debugDisabledLogAdapter</a> <i>(struct)</i></label><span id='debugDisabledLogAdapter-fold-content-docs' class="fold-docs">
+
+		<input type='checkbox' class="fold" id="debugDisabledLogAdapter-fold-fields"><label for="debugDisabledLogAdapter-fold-fields">Fields (<i>only one, which is unexported</i>)</label><span id='debugDisabledLogAdapter-fold-fields-items' class="fold-items">
+			<input type='checkbox' checked class="showhide" id="debugDisabledLogAdapter-showhide-fields"><i><label for="debugDisabledLogAdapter-showhide-fields" class="show-inline">/* one unexported ... */</label><label for="debugDisabledLogAdapter-showhide-fields" class="hide-inline">/* one unexported: */</label></i><span class="hidden"><i>
+			<span class="nodocs"><a href="../../../../src/github.com/uber/jaeger-client-go/log/logger.go.html#line-128">logger</a> <i><a href="#name-Logger">Logger</a></i></span></i></span></span>
+		<input type='checkbox' class="fold" id="debugDisabledLogAdapter-fold-methods"><label for="debugDisabledLogAdapter-fold-methods">Methods (<i>total 3, all are exported</i>)</label><span id='debugDisabledLogAdapter-fold-methods-items' class="fold-items"><span>
+			<input type='checkbox' class="fold" id="debugDisabledLogAdapter-fold-method-Debugf"><label for="debugDisabledLogAdapter-fold-method-Debugf">( debugDisabledLogAdapter) <a href="../../../../src/github.com/uber/jaeger-client-go/log/logger.go.html#line-140">Debugf</a>(msg <a href="../../../builtin.html#name-string">string</a>, args ...interface{})</label><span id='debugDisabledLogAdapter-fold-method-Debugf-docs' class="fold-docs">
+				Debugf is a nop
+</span></span><span>
+			<span class="nodocs">( debugDisabledLogAdapter) <a href="../../../../src/github.com/uber/jaeger-client-go/log/logger.go.html#line-131">Error</a>(msg <a href="../../../builtin.html#name-string">string</a>)</span></span><span>
+			<span class="nodocs">( debugDisabledLogAdapter) <a href="../../../../src/github.com/uber/jaeger-client-go/log/logger.go.html#line-135">Infof</a>(msg <a href="../../../builtin.html#name-string">string</a>, args ...interface{})</span></span></span>
+		<input type='checkbox' class="fold" id="debugDisabledLogAdapter-fold-impls"><label for="debugDisabledLogAdapter-fold-impls">Implements (<i>at least 3, all are exported</i>)</label><span id='debugDisabledLogAdapter-fold-impls-items' class="fold-items"><span>
+			 debugDisabledLogAdapter : <a href="#name-DebugLogger">DebugLogger</a></span><span>
+			 debugDisabledLogAdapter : <a href="#name-Logger">Logger</a></span><span>
+			 debugDisabledLogAdapter : github.com/uber/jaeger-client-go.<a href="../jaeger-client-go.html#name-Logger">Logger</a></span></span>
+
+</span></div><div class="anchor type-res hidden" id="name-nullLogger" data-popularity="305">	<input type='checkbox' class="fold" id="nullLogger-fold-content"><label for="nullLogger-fold-content"> <a href="../../../../use/github.com/uber/jaeger-client-go/log..nullLogger^4d34a.html">type</a> <a href="../../../../src/github.com/uber/jaeger-client-go/log/logger.go.html#line-58">nullLogger</a> <i>(struct)</i></label><span id='nullLogger-fold-content-docs' class="fold-docs">
+
+		<input type='checkbox' class="fold" id="nullLogger-fold-methods"><label for="nullLogger-fold-methods">Methods (<i>total 3, all are exported</i>)</label><span id='nullLogger-fold-methods-items' class="fold-items"><span>
+			<span class="nodocs">(*nullLogger) <a href="../../../../src/github.com/uber/jaeger-client-go/log/logger.go.html#line-62">Debugf</a>(msg <a href="../../../builtin.html#name-string">string</a>, args ...interface{})</span></span><span>
+			<span class="nodocs">(*nullLogger) <a href="../../../../src/github.com/uber/jaeger-client-go/log/logger.go.html#line-60">Error</a>(msg <a href="../../../builtin.html#name-string">string</a>)</span></span><span>
+			<span class="nodocs">(*nullLogger) <a href="../../../../src/github.com/uber/jaeger-client-go/log/logger.go.html#line-61">Infof</a>(msg <a href="../../../builtin.html#name-string">string</a>, args ...interface{})</span></span></span>
+		<input type='checkbox' class="fold" id="nullLogger-fold-impls"><label for="nullLogger-fold-impls">Implements (<i>at least 3, all are exported</i>)</label><span id='nullLogger-fold-impls-items' class="fold-items"><span>
+			*nullLogger : <a href="#name-DebugLogger">DebugLogger</a></span><span>
+			*nullLogger : <a href="#name-Logger">Logger</a></span><span>
+			*nullLogger : github.com/uber/jaeger-client-go.<a href="../jaeger-client-go.html#name-Logger">Logger</a></span></span>
+		<input type='checkbox' class="fold" id="nullLogger-fold-values"><label for="nullLogger-fold-values">As Types Of (<i>only one, which is exported</i>)</label><span id='nullLogger-fold-values-items' class="fold-items"><span>
+			  var <a href="#name-NullLogger">NullLogger</a> *nullLogger</span></span>
+
+</span></div><div class="anchor type-res hidden" id="name-stdLogger" data-popularity="305">	<input type='checkbox' class="fold" id="stdLogger-fold-content"><label for="stdLogger-fold-content"> <a href="../../../../use/github.com/uber/jaeger-client-go/log..stdLogger^b67be.html">type</a> <a href="../../../../src/github.com/uber/jaeger-client-go/log/logger.go.html#line-39">stdLogger</a> <i>(struct)</i></label><span id='stdLogger-fold-content-docs' class="fold-docs">
+
+		<input type='checkbox' class="fold" id="stdLogger-fold-methods"><label for="stdLogger-fold-methods">Methods (<i>total 3, all are exported</i>)</label><span id='stdLogger-fold-methods-items' class="fold-items"><span>
+			<input type='checkbox' class="fold" id="stdLogger-fold-method-Debugf"><label for="stdLogger-fold-method-Debugf">(*stdLogger) <a href="../../../../src/github.com/uber/jaeger-client-go/log/logger.go.html#line-51">Debugf</a>(msg <a href="../../../builtin.html#name-string">string</a>, args ...interface{})</label><span id='stdLogger-fold-method-Debugf-docs' class="fold-docs">
+				Debugf logs a message at debug priority
+</span></span><span>
+			<span class="nodocs">(*stdLogger) <a href="../../../../src/github.com/uber/jaeger-client-go/log/logger.go.html#line-41">Error</a>(msg <a href="../../../builtin.html#name-string">string</a>)</span></span><span>
+			<input type='checkbox' class="fold" id="stdLogger-fold-method-Infof"><label for="stdLogger-fold-method-Infof">(*stdLogger) <a href="../../../../src/github.com/uber/jaeger-client-go/log/logger.go.html#line-46">Infof</a>(msg <a href="../../../builtin.html#name-string">string</a>, args ...interface{})</label><span id='stdLogger-fold-method-Infof-docs' class="fold-docs">
+				Infof logs a message at info priority
+</span></span></span>
+		<input type='checkbox' class="fold" id="stdLogger-fold-impls"><label for="stdLogger-fold-impls">Implements (<i>at least 3, all are exported</i>)</label><span id='stdLogger-fold-impls-items' class="fold-items"><span>
+			*stdLogger : <a href="#name-DebugLogger">DebugLogger</a></span><span>
+			*stdLogger : <a href="#name-Logger">Logger</a></span><span>
+			*stdLogger : github.com/uber/jaeger-client-go.<a href="../jaeger-client-go.html#name-Logger">Logger</a></span></span>
+		<input type='checkbox' class="fold" id="stdLogger-fold-values"><label for="stdLogger-fold-values">As Types Of (<i>only one, which is exported</i>)</label><span id='stdLogger-fold-values-items' class="fold-items"><span>
+			  var <a href="#name-StdLogger">StdLogger</a> *stdLogger</span></span>
+
+</span></div></div>
+<div id="exported-functions"><span class="title">Package-Level Functions<span class="title-stat"><i> (only one, which is exported)</i></span></span>
+
+<div class="anchor value-res" id="name-DebugLogAdapter">	<input type='checkbox' class="fold" id="DebugLogAdapter-fold-content"><label for="DebugLogAdapter-fold-content"> <a href="../../../../use/github.com/uber/jaeger-client-go/log..DebugLogAdapter.html">func</a> <a href="../../../../src/github.com/uber/jaeger-client-go/log/logger.go.html#line-116">DebugLogAdapter</a>(logger <a href="#name-Logger">Logger</a>) <a href="#name-DebugLogger">DebugLogger</a></label><span id='DebugLogAdapter-fold-content-docs' class="fold-docs">
+		DebugLogAdapter is a log adapter that converts a Logger into a DebugLogger
+		If the provided Logger doesn't satisfy the interface, a logger with debug
+		disabled is returned
+
+</span></div></div>
+<div id="exported-variables"><span class="title">Package-Level Variables<span class="title-stat"><i> (total 2, both are exported)</i></span></span>
+
+<div class="anchor value-res" id="name-NullLogger">	<input type='checkbox' class="fold" id="NullLogger-fold-content"><label for="NullLogger-fold-content">  <a href="../../../../use/github.com/uber/jaeger-client-go/log..NullLogger.html">var</a> <a href="../../../../src/github.com/uber/jaeger-client-go/log/logger.go.html#line-56">NullLogger</a> *<a href="#name-nullLogger">nullLogger</a></label><span id='NullLogger-fold-content-docs' class="fold-docs">
+		NullLogger is implementation of the Logger interface that is no-op
+
+</span></div><div class="anchor value-res" id="name-StdLogger">	<input type='checkbox' class="fold" id="StdLogger-fold-content"><label for="StdLogger-fold-content">  <a href="../../../../use/github.com/uber/jaeger-client-go/log..StdLogger.html">var</a> <a href="../../../../src/github.com/uber/jaeger-client-go/log/logger.go.html#line-37">StdLogger</a> *<a href="#name-stdLogger">stdLogger</a></label><span id='StdLogger-fold-content-docs' class="fold-docs">
+		StdLogger is implementation of the Logger interface that delegates to default `log` package
+
+</span></div></div></code></pre><pre id="footer">
+<table><tr><td><img src="../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

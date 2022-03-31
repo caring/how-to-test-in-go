@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime.memstats</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">var <b><a href="../pkg/runtime.html">runtime</a>.<a href="../src/runtime/mstats.go.html#line-104">memstats</a></b></span>
+
+<span class="title">205 uses</span>
+
+	runtime (current package)
+		<a href="../src/runtime/heapdump.go.html#line-713">heapdump.go#L713</a>: 		sysFree(unsafe.Pointer(&amp;tmpbuf[0]), uintptr(len(tmpbuf)), &amp;<b>memstats</b>.other_sys)
+		<a href="../src/runtime/heapdump.go.html#line-731" class="path-duplicate">heapdump.go</a><a href="../src/runtime/heapdump.go.html#line-731">#L731</a>: 			sysFree(unsafe.Pointer(&amp;tmpbuf[0]), uintptr(len(tmpbuf)), &amp;<b>memstats</b>.other_sys)
+		<a href="../src/runtime/heapdump.go.html#line-734" class="path-duplicate">heapdump.go</a><a href="../src/runtime/heapdump.go.html#line-734">#L734</a>: 		p := sysAlloc(n, &amp;<b>memstats</b>.other_sys)
+		<a href="../src/runtime/iface.go.html#line-66">iface.go#L66</a>: 	m = (*itab)(persistentalloc(unsafe.Sizeof(itab{})+uintptr(len(inter.mhdr)-1)*sys.PtrSize, 0, &amp;<b>memstats</b>.other_sys))
+		<a href="../src/runtime/malloc.go.html#line-439">malloc.go#L439</a>: 		<b>memstats</b>.by_size[i].size = uint32(class_to_size[i])
+		<a href="../src/runtime/malloc.go.html#line-642" class="path-duplicate">malloc.go</a><a href="../src/runtime/malloc.go.html#line-642">#L642</a>: 	v = h.arena.alloc(n, heapArenaBytes, &amp;<b>memstats</b>.heap_sys)
+		<a href="../src/runtime/malloc.go.html#line-752" class="path-duplicate">malloc.go</a><a href="../src/runtime/malloc.go.html#line-752">#L752</a>: 		r = (*heapArena)(h.heapArenaAlloc.alloc(unsafe.Sizeof(*r), sys.PtrSize, &amp;<b>memstats</b>.gcMiscSys))
+		<a href="../src/runtime/malloc.go.html#line-754" class="path-duplicate">malloc.go</a><a href="../src/runtime/malloc.go.html#line-754">#L754</a>: 			r = (*heapArena)(persistentalloc(unsafe.Sizeof(*r), sys.PtrSize, &amp;<b>memstats</b>.gcMiscSys))
+		<a href="../src/runtime/malloc.go.html#line-766" class="path-duplicate">malloc.go</a><a href="../src/runtime/malloc.go.html#line-766">#L766</a>: 			newArray := (*notInHeap)(persistentalloc(size, sys.PtrSize, &amp;<b>memstats</b>.gcMiscSys))
+		<a href="../src/runtime/malloc.go.html#line-939" class="path-duplicate">malloc.go</a><a href="../src/runtime/malloc.go.html#line-939">#L939</a>: 			return persistentalloc(size, align, &amp;<b>memstats</b>.other_sys)
+		<a href="../src/runtime/malloc.go.html#line-1412" class="path-duplicate">malloc.go</a><a href="../src/runtime/malloc.go.html#line-1412">#L1412</a>: 		persistent.base = (*notInHeap)(sysAlloc(persistentChunkSize, &amp;<b>memstats</b>.other_sys))
+		<a href="../src/runtime/malloc.go.html#line-1437" class="path-duplicate">malloc.go</a><a href="../src/runtime/malloc.go.html#line-1437">#L1437</a>: 	if sysStat != &amp;<b>memstats</b>.other_sys {
+		<a href="../src/runtime/malloc.go.html#line-1439" class="path-duplicate">malloc.go</a><a href="../src/runtime/malloc.go.html#line-1439">#L1439</a>: 		<b>memstats</b>.other_sys.add(-int64(size))
+		<a href="../src/runtime/mbitmap.go.html#line-1022">mbitmap.go#L1022</a>: 				debugPtrmask.data = (*byte)(persistentalloc(1&lt;&lt;20, 1, &amp;<b>memstats</b>.other_sys))
+		<a href="../src/runtime/mbitmap.go.html#line-1560" class="path-duplicate">mbitmap.go</a><a href="../src/runtime/mbitmap.go.html#line-1560">#L1560</a>: 	x := (*[1 &lt;&lt; 30]byte)(persistentalloc(n+1, 1, &amp;<b>memstats</b>.buckhash_sys))[:n+1]
+		<a href="../src/runtime/mcache.go.html#line-177">mcache.go#L177</a>: 	stats := <b>memstats</b>.heapStats.acquire()
+		<a href="../src/runtime/mcache.go.html#line-185" class="path-duplicate">mcache.go</a><a href="../src/runtime/mcache.go.html#line-185">#L185</a>: 	<b>memstats</b>.heapStats.release()
+		<a href="../src/runtime/mcache.go.html#line-231" class="path-duplicate">mcache.go</a><a href="../src/runtime/mcache.go.html#line-231">#L231</a>: 	stats := <b>memstats</b>.heapStats.acquire()
+		<a href="../src/runtime/mcache.go.html#line-234" class="path-duplicate">mcache.go</a><a href="../src/runtime/mcache.go.html#line-234">#L234</a>: 	<b>memstats</b>.heapStats.release()
+		<a href="../src/runtime/mcache.go.html#line-265" class="path-duplicate">mcache.go</a><a href="../src/runtime/mcache.go.html#line-265">#L265</a>: 			stats := <b>memstats</b>.heapStats.acquire()
+		<a href="../src/runtime/mcache.go.html#line-267" class="path-duplicate">mcache.go</a><a href="../src/runtime/mcache.go.html#line-267">#L267</a>: 			<b>memstats</b>.heapStats.release()
+		<a href="../src/runtime/mcache.go.html#line-288" class="path-duplicate">mcache.go</a><a href="../src/runtime/mcache.go.html#line-288">#L288</a>: 	stats := <b>memstats</b>.heapStats.acquire()
+		<a href="../src/runtime/mcache.go.html#line-291" class="path-duplicate">mcache.go</a><a href="../src/runtime/mcache.go.html#line-291">#L291</a>: 	<b>memstats</b>.heapStats.release()
+		<a href="../src/runtime/mcheckmark.go.html#line-46">mcheckmark.go#L46</a>: 			bitmap = (*checkmarksMap)(persistentalloc(unsafe.Sizeof(*bitmap), 0, &amp;<b>memstats</b>.gcMiscSys))
+		<a href="../src/runtime/metrics.go.html#line-168">metrics.go#L168</a>: 				hist.counts[0] = atomic.Load64(&amp;<b>memstats</b>.gcPauseDist.underflow)
+		<a href="../src/runtime/metrics.go.html#line-169" class="path-duplicate">metrics.go</a><a href="../src/runtime/metrics.go.html#line-169">#L169</a>: 				for i := range <b>memstats</b>.gcPauseDist.counts {
+		<a href="../src/runtime/metrics.go.html#line-170" class="path-duplicate">metrics.go</a><a href="../src/runtime/metrics.go.html#line-170">#L170</a>: 					hist.counts[i+1] = atomic.Load64(&amp;<b>memstats</b>.gcPauseDist.counts[i])
+		<a href="../src/runtime/metrics.go.html#line-388" class="path-duplicate">metrics.go</a><a href="../src/runtime/metrics.go.html#line-388">#L388</a>: 	<b>memstats</b>.heapStats.read(&amp;a.heapStatsDelta)
+		<a href="../src/runtime/metrics.go.html#line-430" class="path-duplicate">metrics.go</a><a href="../src/runtime/metrics.go.html#line-430">#L430</a>: 	a.stacksSys = <b>memstats</b>.stacks_sys.load()
+		<a href="../src/runtime/metrics.go.html#line-431" class="path-duplicate">metrics.go</a><a href="../src/runtime/metrics.go.html#line-431">#L431</a>: 	a.buckHashSys = <b>memstats</b>.buckhash_sys.load()
+		<a href="../src/runtime/metrics.go.html#line-432" class="path-duplicate">metrics.go</a><a href="../src/runtime/metrics.go.html#line-432">#L432</a>: 	a.gcMiscSys = <b>memstats</b>.gcMiscSys.load()
+		<a href="../src/runtime/metrics.go.html#line-433" class="path-duplicate">metrics.go</a><a href="../src/runtime/metrics.go.html#line-433">#L433</a>: 	a.otherSys = <b>memstats</b>.other_sys.load()
+		<a href="../src/runtime/metrics.go.html#line-435" class="path-duplicate">metrics.go</a><a href="../src/runtime/metrics.go.html#line-435">#L435</a>: 	a.gcCyclesDone = uint64(<b>memstats</b>.numgc)
+		<a href="../src/runtime/metrics.go.html#line-436" class="path-duplicate">metrics.go</a><a href="../src/runtime/metrics.go.html#line-436">#L436</a>: 	a.gcCyclesForced = uint64(<b>memstats</b>.numforcedgc)
+		<a href="../src/runtime/metrics.go.html#line-440" class="path-duplicate">metrics.go</a><a href="../src/runtime/metrics.go.html#line-440">#L440</a>: 		a.mSpanSys = <b>memstats</b>.mspan_sys.load()
+		<a href="../src/runtime/metrics.go.html#line-442" class="path-duplicate">metrics.go</a><a href="../src/runtime/metrics.go.html#line-442">#L442</a>: 		a.mCacheSys = <b>memstats</b>.mcache_sys.load()
+		<a href="../src/runtime/mfinal.go.html#line-92">mfinal.go#L92</a>: 			finc = (*finblock)(persistentalloc(_FinBlockSize, 0, &amp;<b>memstats</b>.gcMiscSys))
+		<a href="../src/runtime/mgc.go.html#line-186">mgc.go#L186</a>: 	<b>memstats</b>.enablegc = true // now that runtime is initialized, GC is okay
+		<a href="../src/runtime/mgc.go.html#line-542" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-542">#L542</a>: 	if !<b>memstats</b>.enablegc || panicking != 0 || gcphase != _GCoff {
+		<a href="../src/runtime/mgc.go.html#line-556" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-556">#L556</a>: 		lastgc := int64(atomic.Load64(&amp;<b>memstats</b>.last_gc_nanotime))
+		<a href="../src/runtime/mgc.go.html#line-725" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-725">#L725</a>: 		<b>memstats</b>.gcPauseDist.record(now - work.pauseStart)
+		<a href="../src/runtime/mgc.go.html#line-873" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-873">#L873</a>: 			<b>memstats</b>.gcPauseDist.record(now - work.pauseStart)
+		<a href="../src/runtime/mgc.go.html#line-975" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-975">#L975</a>: 	<b>memstats</b>.last_heap_inuse = <b>memstats</b>.heap_inuse
+		<a href="../src/runtime/mgc.go.html#line-986" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-986">#L986</a>: 	<b>memstats</b>.gcPauseDist.record(now - work.pauseStart)
+		<a href="../src/runtime/mgc.go.html#line-987" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-987">#L987</a>: 	atomic.Store64(&amp;<b>memstats</b>.last_gc_unix, uint64(unixNow)) // must be Unix time to make sense to user
+		<a href="../src/runtime/mgc.go.html#line-988" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-988">#L988</a>: 	atomic.Store64(&amp;<b>memstats</b>.last_gc_nanotime, uint64(now)) // monotonic time for us
+		<a href="../src/runtime/mgc.go.html#line-989" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-989">#L989</a>: 	<b>memstats</b>.pause_ns[<b>memstats</b>.numgc%uint32(len(<b>memstats</b>.pause_ns))] = uint64(work.pauseNS)
+		<a href="../src/runtime/mgc.go.html#line-990" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-990">#L990</a>: 	<b>memstats</b>.pause_end[<b>memstats</b>.numgc%uint32(len(<b>memstats</b>.pause_end))] = uint64(unixNow)
+		<a href="../src/runtime/mgc.go.html#line-991" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-991">#L991</a>: 	<b>memstats</b>.pause_total_ns += uint64(work.pauseNS)
+		<a href="../src/runtime/mgc.go.html#line-1004" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-1004">#L1004</a>: 	<b>memstats</b>.gc_cpu_fraction = float64(work.totaltime) / float64(totalCpu)
+		<a href="../src/runtime/mgc.go.html#line-1011" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-1011">#L1011</a>: 		<b>memstats</b>.numforcedgc++
+		<a href="../src/runtime/mgc.go.html#line-1016" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-1016">#L1016</a>: 	<b>memstats</b>.numgc++
+		<a href="../src/runtime/mgc.go.html#line-1063" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-1063">#L1063</a>: 		util := int(<b>memstats</b>.gc_cpu_fraction * 100)
+		<a href="../src/runtime/mgc.go.html#line-1067" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-1067">#L1067</a>: 		print("gc ", <b>memstats</b>.numgc,
+		<a href="../src/runtime/mgcscavenge.go.html#line-103">mgcscavenge.go#L103</a>: 	return <b>memstats</b>.heap_sys.load() - atomic.Load64(&amp;<b>memstats</b>.heap_released)
+		<a href="../src/runtime/mgcscavenge.go.html#line-127" class="path-duplicate">mgcscavenge.go</a><a href="../src/runtime/mgcscavenge.go.html#line-127">#L127</a>: 	retainedGoal := uint64(float64(<b>memstats</b>.last_heap_inuse) * goalRatio)
+		<a href="../src/runtime/mgcscavenge.go.html#line-432" class="path-duplicate">mgcscavenge.go</a><a href="../src/runtime/mgcscavenge.go.html#line-432">#L432</a>: 		atomic.Load64(&amp;<b>memstats</b>.heap_released)&gt;&gt;10, " KiB total, ",
+		<a href="../src/runtime/mgcscavenge.go.html#line-433" class="path-duplicate">mgcscavenge.go</a><a href="../src/runtime/mgcscavenge.go.html#line-433">#L433</a>: 		(atomic.Load64(&amp;<b>memstats</b>.heap_inuse)*100)/heapRetained(), "% util",
+		<a href="../src/runtime/mgcscavenge.go.html#line-733" class="path-duplicate">mgcscavenge.go</a><a href="../src/runtime/mgcscavenge.go.html#line-733">#L733</a>: 	atomic.Xadd64(&amp;<b>memstats</b>.heap_released, nbytes)
+		<a href="../src/runtime/mgcscavenge.go.html#line-736" class="path-duplicate">mgcscavenge.go</a><a href="../src/runtime/mgcscavenge.go.html#line-736">#L736</a>: 	stats := <b>memstats</b>.heapStats.acquire()
+		<a href="../src/runtime/mgcscavenge.go.html#line-739" class="path-duplicate">mgcscavenge.go</a><a href="../src/runtime/mgcscavenge.go.html#line-739">#L739</a>: 	<b>memstats</b>.heapStats.release()
+		<a href="../src/runtime/mgcsweep.go.html#line-583">mgcsweep.go#L583</a>: 			stats := <b>memstats</b>.heapStats.acquire()
+		<a href="../src/runtime/mgcsweep.go.html#line-585" class="path-duplicate">mgcsweep.go</a><a href="../src/runtime/mgcsweep.go.html#line-585">#L585</a>: 			<b>memstats</b>.heapStats.release()
+		<a href="../src/runtime/mgcsweep.go.html#line-630" class="path-duplicate">mgcsweep.go</a><a href="../src/runtime/mgcsweep.go.html#line-630">#L630</a>: 			stats := <b>memstats</b>.heapStats.acquire()
+		<a href="../src/runtime/mgcsweep.go.html#line-633" class="path-duplicate">mgcsweep.go</a><a href="../src/runtime/mgcsweep.go.html#line-633">#L633</a>: 			<b>memstats</b>.heapStats.release()
+		<a href="../src/runtime/mheap.go.html#line-506">mheap.go#L506</a>: 		sp.array = sysAlloc(uintptr(n)*sys.PtrSize, &amp;<b>memstats</b>.other_sys)
+		<a href="../src/runtime/mheap.go.html#line-518" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-518">#L518</a>: 			sysFree(unsafe.Pointer(&amp;oldAllspans[0]), uintptr(cap(oldAllspans))*unsafe.Sizeof(oldAllspans[0]), &amp;<b>memstats</b>.other_sys)
+		<a href="../src/runtime/mheap.go.html#line-704" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-704">#L704</a>: 	h.spanalloc.init(unsafe.Sizeof(mspan{}), recordspan, unsafe.Pointer(h), &amp;<b>memstats</b>.mspan_sys)
+		<a href="../src/runtime/mheap.go.html#line-705" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-705">#L705</a>: 	h.cachealloc.init(unsafe.Sizeof(mcache{}), nil, nil, &amp;<b>memstats</b>.mcache_sys)
+		<a href="../src/runtime/mheap.go.html#line-706" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-706">#L706</a>: 	h.specialfinalizeralloc.init(unsafe.Sizeof(specialfinalizer{}), nil, nil, &amp;<b>memstats</b>.other_sys)
+		<a href="../src/runtime/mheap.go.html#line-707" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-707">#L707</a>: 	h.specialprofilealloc.init(unsafe.Sizeof(specialprofile{}), nil, nil, &amp;<b>memstats</b>.other_sys)
+		<a href="../src/runtime/mheap.go.html#line-708" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-708">#L708</a>: 	h.specialReachableAlloc.init(unsafe.Sizeof(specialReachable{}), nil, nil, &amp;<b>memstats</b>.other_sys)
+		<a href="../src/runtime/mheap.go.html#line-709" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-709">#L709</a>: 	h.arenaHintAlloc.init(unsafe.Sizeof(arenaHint{}), nil, nil, &amp;<b>memstats</b>.other_sys)
+		<a href="../src/runtime/mheap.go.html#line-726" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-726">#L726</a>: 	h.pages.init(&amp;h.lock, &amp;<b>memstats</b>.gcMiscSys)
+		<a href="../src/runtime/mheap.go.html#line-1269" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1269">#L1269</a>: 		atomic.Xadd64(&amp;<b>memstats</b>.heap_released, -int64(scav))
+		<a href="../src/runtime/mheap.go.html#line-1273" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1273">#L1273</a>: 		atomic.Xadd64(&amp;<b>memstats</b>.heap_inuse, int64(nbytes))
+		<a href="../src/runtime/mheap.go.html#line-1277" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1277">#L1277</a>: 		<b>memstats</b>.heap_sys.add(-int64(nbytes))
+		<a href="../src/runtime/mheap.go.html#line-1280" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1280">#L1280</a>: 	stats := <b>memstats</b>.heapStats.acquire()
+		<a href="../src/runtime/mheap.go.html#line-1293" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1293">#L1293</a>: 	<b>memstats</b>.heapStats.release()
+		<a href="../src/runtime/mheap.go.html#line-1349" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1349">#L1349</a>: 			print("runtime: out of memory: cannot allocate ", ask, "-byte block (", <b>memstats</b>.heap_sys, " in use)\n")
+		<a href="../src/runtime/mheap.go.html#line-1365" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1365">#L1365</a>: 				sysMap(unsafe.Pointer(h.curArena.base), size, &amp;<b>memstats</b>.heap_sys)
+		<a href="../src/runtime/mheap.go.html#line-1367" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1367">#L1367</a>: 				atomic.Xadd64(&amp;<b>memstats</b>.heap_released, int64(size))
+		<a href="../src/runtime/mheap.go.html#line-1368" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1368">#L1368</a>: 				stats := <b>memstats</b>.heapStats.acquire()
+		<a href="../src/runtime/mheap.go.html#line-1370" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1370">#L1370</a>: 				<b>memstats</b>.heapStats.release()
+		<a href="../src/runtime/mheap.go.html#line-1393" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1393">#L1393</a>: 	sysMap(unsafe.Pointer(v), nBase-v, &amp;<b>memstats</b>.heap_sys)
+		<a href="../src/runtime/mheap.go.html#line-1401" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1401">#L1401</a>: 	atomic.Xadd64(&amp;<b>memstats</b>.heap_released, int64(nBase-v))
+		<a href="../src/runtime/mheap.go.html#line-1402" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1402">#L1402</a>: 	stats := <b>memstats</b>.heapStats.acquire()
+		<a href="../src/runtime/mheap.go.html#line-1404" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1404">#L1404</a>: 	<b>memstats</b>.heapStats.release()
+		<a href="../src/runtime/mheap.go.html#line-1485" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1485">#L1485</a>: 		atomic.Xadd64(&amp;<b>memstats</b>.heap_inuse, -int64(nbytes))
+		<a href="../src/runtime/mheap.go.html#line-1489" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1489">#L1489</a>: 		<b>memstats</b>.heap_sys.add(int64(nbytes))
+		<a href="../src/runtime/mheap.go.html#line-1492" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1492">#L1492</a>: 	stats := <b>memstats</b>.heapStats.acquire()
+		<a href="../src/runtime/mheap.go.html#line-1503" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1503">#L1503</a>: 	<b>memstats</b>.heapStats.release()
+		<a href="../src/runtime/mheap.go.html#line-2089" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-2089">#L2089</a>: 		result = (*gcBitsArena)(sysAlloc(gcBitsChunkBytes, &amp;<b>memstats</b>.gcMiscSys))
+		<a href="../src/runtime/mprof.go.html#line-173">mprof.go#L173</a>: 	b := (*bucket)(persistentalloc(size, 0, &amp;<b>memstats</b>.buckhash_sys))
+		<a href="../src/runtime/mprof.go.html#line-207" class="path-duplicate">mprof.go</a><a href="../src/runtime/mprof.go.html#line-207">#L207</a>: 		buckhash = (*[buckHashSize]*bucket)(sysAlloc(unsafe.Sizeof(*buckhash), &amp;<b>memstats</b>.buckhash_sys))
+		<a href="../src/runtime/mspanset.go.html#line-105">mspanset.go#L105</a>: 			newSpine := persistentalloc(newCap*sys.PtrSize, cpu.CacheLineSize, &amp;<b>memstats</b>.gcMiscSys)
+		<a href="../src/runtime/mspanset.go.html#line-286" class="path-duplicate">mspanset.go</a><a href="../src/runtime/mspanset.go.html#line-286">#L286</a>: 	return (*spanSetBlock)(persistentalloc(unsafe.Sizeof(spanSetBlock{}), cpu.CacheLineSize, &amp;<b>memstats</b>.gcMiscSys))
+		<a href="../src/runtime/mstats.go.html#line-104">mstats.go#L104</a>: var <b>memstats</b> mstats
+		<a href="../src/runtime/mstats.go.html#line-380" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-380">#L380</a>: 	if offset := unsafe.Offsetof(<b>memstats</b>.heapStats); offset%8 != 0 {
+		<a href="../src/runtime/mstats.go.html#line-384" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-384">#L384</a>: 	if offset := unsafe.Offsetof(<b>memstats</b>.gcPauseDist); offset%8 != 0 {
+		<a href="../src/runtime/mstats.go.html#line-415" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-415">#L415</a>: 	stats.Alloc = <b>memstats</b>.alloc
+		<a href="../src/runtime/mstats.go.html#line-416" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-416">#L416</a>: 	stats.TotalAlloc = <b>memstats</b>.total_alloc
+		<a href="../src/runtime/mstats.go.html#line-417" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-417">#L417</a>: 	stats.Sys = <b>memstats</b>.sys
+		<a href="../src/runtime/mstats.go.html#line-418" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-418">#L418</a>: 	stats.Mallocs = <b>memstats</b>.nmalloc
+		<a href="../src/runtime/mstats.go.html#line-419" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-419">#L419</a>: 	stats.Frees = <b>memstats</b>.nfree
+		<a href="../src/runtime/mstats.go.html#line-420" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-420">#L420</a>: 	stats.HeapAlloc = <b>memstats</b>.alloc
+		<a href="../src/runtime/mstats.go.html#line-421" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-421">#L421</a>: 	stats.HeapSys = <b>memstats</b>.heap_sys.load()
+		<a href="../src/runtime/mstats.go.html#line-438" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-438">#L438</a>: 	stats.HeapIdle = <b>memstats</b>.heap_sys.load() - <b>memstats</b>.heap_inuse
+		<a href="../src/runtime/mstats.go.html#line-439" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-439">#L439</a>: 	stats.HeapInuse = <b>memstats</b>.heap_inuse
+		<a href="../src/runtime/mstats.go.html#line-440" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-440">#L440</a>: 	stats.HeapReleased = <b>memstats</b>.heap_released
+		<a href="../src/runtime/mstats.go.html#line-441" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-441">#L441</a>: 	stats.HeapObjects = <b>memstats</b>.heap_objects
+		<a href="../src/runtime/mstats.go.html#line-442" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-442">#L442</a>: 	stats.StackInuse = <b>memstats</b>.stacks_inuse
+		<a href="../src/runtime/mstats.go.html#line-445" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-445">#L445</a>: 	stats.StackSys = <b>memstats</b>.stacks_inuse + <b>memstats</b>.stacks_sys.load()
+		<a href="../src/runtime/mstats.go.html#line-446" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-446">#L446</a>: 	stats.MSpanInuse = <b>memstats</b>.mspan_inuse
+		<a href="../src/runtime/mstats.go.html#line-447" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-447">#L447</a>: 	stats.MSpanSys = <b>memstats</b>.mspan_sys.load()
+		<a href="../src/runtime/mstats.go.html#line-448" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-448">#L448</a>: 	stats.MCacheInuse = <b>memstats</b>.mcache_inuse
+		<a href="../src/runtime/mstats.go.html#line-449" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-449">#L449</a>: 	stats.MCacheSys = <b>memstats</b>.mcache_sys.load()
+		<a href="../src/runtime/mstats.go.html#line-450" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-450">#L450</a>: 	stats.BuckHashSys = <b>memstats</b>.buckhash_sys.load()
+		<a href="../src/runtime/mstats.go.html#line-454" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-454">#L454</a>: 	stats.GCSys = <b>memstats</b>.gcMiscSys.load() + <b>memstats</b>.gcWorkBufInUse + <b>memstats</b>.gcProgPtrScalarBitsInUse
+		<a href="../src/runtime/mstats.go.html#line-455" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-455">#L455</a>: 	stats.OtherSys = <b>memstats</b>.other_sys.load()
+		<a href="../src/runtime/mstats.go.html#line-457" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-457">#L457</a>: 	stats.LastGC = <b>memstats</b>.last_gc_unix
+		<a href="../src/runtime/mstats.go.html#line-458" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-458">#L458</a>: 	stats.PauseTotalNs = <b>memstats</b>.pause_total_ns
+		<a href="../src/runtime/mstats.go.html#line-459" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-459">#L459</a>: 	stats.PauseNs = <b>memstats</b>.pause_ns
+		<a href="../src/runtime/mstats.go.html#line-460" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-460">#L460</a>: 	stats.PauseEnd = <b>memstats</b>.pause_end
+		<a href="../src/runtime/mstats.go.html#line-461" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-461">#L461</a>: 	stats.NumGC = <b>memstats</b>.numgc
+		<a href="../src/runtime/mstats.go.html#line-462" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-462">#L462</a>: 	stats.NumForcedGC = <b>memstats</b>.numforcedgc
+		<a href="../src/runtime/mstats.go.html#line-463" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-463">#L463</a>: 	stats.GCCPUFraction = <b>memstats</b>.gc_cpu_fraction
+		<a href="../src/runtime/mstats.go.html#line-475" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-475">#L475</a>: 	if l := len(<b>memstats</b>.by_size); l &lt; bySizeLen {
+		<a href="../src/runtime/mstats.go.html#line-479" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-479">#L479</a>: 		stats.BySize[i].Size = <b>memstats</b>.by_size[i].size
+		<a href="../src/runtime/mstats.go.html#line-480" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-480">#L480</a>: 		stats.BySize[i].Mallocs = <b>memstats</b>.by_size[i].nmalloc
+		<a href="../src/runtime/mstats.go.html#line-481" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-481">#L481</a>: 		stats.BySize[i].Frees = <b>memstats</b>.by_size[i].nfree
+		<a href="../src/runtime/mstats.go.html#line-498" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-498">#L498</a>: 	if cap(p) &lt; len(<b>memstats</b>.pause_ns)+3 {
+		<a href="../src/runtime/mstats.go.html#line-505" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-505">#L505</a>: 	n := <b>memstats</b>.numgc
+		<a href="../src/runtime/mstats.go.html#line-506" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-506">#L506</a>: 	if n &gt; uint32(len(<b>memstats</b>.pause_ns)) {
+		<a href="../src/runtime/mstats.go.html#line-507" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-507">#L507</a>: 		n = uint32(len(<b>memstats</b>.pause_ns))
+		<a href="../src/runtime/mstats.go.html#line-516" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-516">#L516</a>: 		j := (<b>memstats</b>.numgc - 1 - i) % uint32(len(<b>memstats</b>.pause_ns))
+		<a href="../src/runtime/mstats.go.html#line-517" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-517">#L517</a>: 		p[i] = <b>memstats</b>.pause_ns[j]
+		<a href="../src/runtime/mstats.go.html#line-518" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-518">#L518</a>: 		p[n+i] = <b>memstats</b>.pause_end[j]
+		<a href="../src/runtime/mstats.go.html#line-521" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-521">#L521</a>: 	p[n+n] = <b>memstats</b>.last_gc_unix
+		<a href="../src/runtime/mstats.go.html#line-522" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-522">#L522</a>: 	p[n+n+1] = uint64(<b>memstats</b>.numgc)
+		<a href="../src/runtime/mstats.go.html#line-523" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-523">#L523</a>: 	p[n+n+2] = <b>memstats</b>.pause_total_ns
+		<a href="../src/runtime/mstats.go.html#line-542" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-542">#L542</a>: 	<b>memstats</b>.mcache_inuse = uint64(mheap_.cachealloc.inuse)
+		<a href="../src/runtime/mstats.go.html#line-543" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-543">#L543</a>: 	<b>memstats</b>.mspan_inuse = uint64(mheap_.spanalloc.inuse)
+		<a href="../src/runtime/mstats.go.html#line-544" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-544">#L544</a>: 	<b>memstats</b>.sys = <b>memstats</b>.heap_sys.load() + <b>memstats</b>.stacks_sys.load() + <b>memstats</b>.mspan_sys.load() +
+		<a href="../src/runtime/mstats.go.html#line-545" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-545">#L545</a>: 		<b>memstats</b>.mcache_sys.load() + <b>memstats</b>.buckhash_sys.load() + <b>memstats</b>.gcMiscSys.load() +
+		<a href="../src/runtime/mstats.go.html#line-546" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-546">#L546</a>: 		<b>memstats</b>.other_sys.load()
+		<a href="../src/runtime/mstats.go.html#line-555" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-555">#L555</a>: 	<b>memstats</b>.alloc = 0
+		<a href="../src/runtime/mstats.go.html#line-556" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-556">#L556</a>: 	<b>memstats</b>.total_alloc = 0
+		<a href="../src/runtime/mstats.go.html#line-557" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-557">#L557</a>: 	<b>memstats</b>.nmalloc = 0
+		<a href="../src/runtime/mstats.go.html#line-558" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-558">#L558</a>: 	<b>memstats</b>.nfree = 0
+		<a href="../src/runtime/mstats.go.html#line-559" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-559">#L559</a>: 	for i := 0; i &lt; len(<b>memstats</b>.by_size); i++ {
+		<a href="../src/runtime/mstats.go.html#line-560" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-560">#L560</a>: 		<b>memstats</b>.by_size[i].nmalloc = 0
+		<a href="../src/runtime/mstats.go.html#line-561" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-561">#L561</a>: 		<b>memstats</b>.by_size[i].nfree = 0
+		<a href="../src/runtime/mstats.go.html#line-565" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-565">#L565</a>: 	<b>memstats</b>.heapStats.unsafeRead(&amp;consStats)
+		<a href="../src/runtime/mstats.go.html#line-569" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-569">#L569</a>: 	<b>memstats</b>.nmalloc += uint64(consStats.largeAllocCount)
+		<a href="../src/runtime/mstats.go.html#line-571" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-571">#L571</a>: 	<b>memstats</b>.nfree += uint64(consStats.largeFreeCount)
+		<a href="../src/runtime/mstats.go.html#line-578" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-578">#L578</a>: 		<b>memstats</b>.nmalloc += a
+		<a href="../src/runtime/mstats.go.html#line-579" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-579">#L579</a>: 		<b>memstats</b>.by_size[i].nmalloc = a
+		<a href="../src/runtime/mstats.go.html#line-584" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-584">#L584</a>: 		<b>memstats</b>.nfree += f
+		<a href="../src/runtime/mstats.go.html#line-585" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-585">#L585</a>: 		<b>memstats</b>.by_size[i].nfree = f
+		<a href="../src/runtime/mstats.go.html#line-589" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-589">#L589</a>: 	<b>memstats</b>.nfree += uint64(consStats.tinyAllocCount)
+		<a href="../src/runtime/mstats.go.html#line-590" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-590">#L590</a>: 	<b>memstats</b>.nmalloc += uint64(consStats.tinyAllocCount)
+		<a href="../src/runtime/mstats.go.html#line-593" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-593">#L593</a>: 	<b>memstats</b>.total_alloc = totalAlloc
+		<a href="../src/runtime/mstats.go.html#line-594" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-594">#L594</a>: 	<b>memstats</b>.alloc = totalAlloc - totalFree
+		<a href="../src/runtime/mstats.go.html#line-595" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-595">#L595</a>: 	<b>memstats</b>.heap_objects = <b>memstats</b>.nmalloc - <b>memstats</b>.nfree
+		<a href="../src/runtime/mstats.go.html#line-597" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-597">#L597</a>: 	<b>memstats</b>.stacks_inuse = uint64(consStats.inStacks)
+		<a href="../src/runtime/mstats.go.html#line-598" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-598">#L598</a>: 	<b>memstats</b>.gcWorkBufInUse = uint64(consStats.inWorkBufs)
+		<a href="../src/runtime/mstats.go.html#line-599" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-599">#L599</a>: 	<b>memstats</b>.gcProgPtrScalarBitsInUse = uint64(consStats.inPtrScalarBits)
+		<a href="../src/runtime/mstats.go.html#line-602" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-602">#L602</a>: 	<b>memstats</b>.sys += <b>memstats</b>.stacks_inuse + <b>memstats</b>.gcWorkBufInUse + <b>memstats</b>.gcProgPtrScalarBitsInUse
+		<a href="../src/runtime/mstats.go.html#line-616" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-616">#L616</a>: 	if <b>memstats</b>.heap_inuse != uint64(consStats.inHeap) {
+		<a href="../src/runtime/mstats.go.html#line-617" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-617">#L617</a>: 		print("runtime: heap_inuse=", <b>memstats</b>.heap_inuse, "\n")
+		<a href="../src/runtime/mstats.go.html#line-621" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-621">#L621</a>: 	if <b>memstats</b>.heap_released != uint64(consStats.released) {
+		<a href="../src/runtime/mstats.go.html#line-622" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-622">#L622</a>: 		print("runtime: heap_released=", <b>memstats</b>.heap_released, "\n")
+		<a href="../src/runtime/mstats.go.html#line-626" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-626">#L626</a>: 	globalRetained := <b>memstats</b>.heap_sys.load() - <b>memstats</b>.heap_released
+		<a href="../src/runtime/netpoll.go.html#line-555">netpoll.go#L555</a>: 		mem := persistentalloc(n*pdSize, 0, &amp;<b>memstats</b>.other_sys)
+		<a href="../src/runtime/os_darwin.go.html#line-269">os_darwin.go#L269</a>: 	<b>memstats</b>.stacks_sys.add(int64(stacksize))
+		<a href="../src/runtime/proc.go.html#line-673">proc.go#L673</a>: 	lockInit(&amp;<b>memstats</b>.heapStats.noPLock, lockRankLeafRank)
+		<a href="../src/runtime/stack.go.html#line-354">stack.go#L354</a>: 		v := sysAlloc(uintptr(n), &amp;<b>memstats</b>.stacks_sys)
+		<a href="../src/runtime/stack.go.html#line-455" class="path-duplicate">stack.go</a><a href="../src/runtime/stack.go.html#line-455">#L455</a>: 			sysFree(v, n, &amp;<b>memstats</b>.stacks_sys)
+		<a href="../src/runtime/trace.go.html#line-365">trace.go#L365</a>: 		sysFree(unsafe.Pointer(buf), unsafe.Sizeof(*buf.ptr()), &amp;<b>memstats</b>.other_sys)
+		<a href="../src/runtime/trace.go.html#line-644" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-644">#L644</a>: 		buf = traceBufPtr(sysAlloc(unsafe.Sizeof(traceBuf{}), &amp;<b>memstats</b>.other_sys))
+		<a href="../src/runtime/trace.go.html#line-948" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-948">#L948</a>: 		block := (*traceAllocBlock)(sysAlloc(unsafe.Sizeof(traceAllocBlock{}), &amp;<b>memstats</b>.other_sys))
+		<a href="../src/runtime/trace.go.html#line-966" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-966">#L966</a>: 		sysFree(unsafe.Pointer(block), unsafe.Sizeof(traceAllocBlock{}), &amp;<b>memstats</b>.other_sys)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

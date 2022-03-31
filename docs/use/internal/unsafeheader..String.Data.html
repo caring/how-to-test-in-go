@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: internal/unsafeheader.String.Data</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../pkg/internal/unsafeheader.html">internal/unsafeheader</a>.<a href="../../src/internal/unsafeheader/unsafeheader.go.html#line-34">String</a>.<a href="../../src/internal/unsafeheader/unsafeheader.go.html#line-35">Data</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">10 uses</span>
+
+	internal/unsafeheader (current package)
+		<a href="../../src/internal/unsafeheader/unsafeheader.go.html#line-35">unsafeheader.go#L35</a>: 	<b>Data</b> unsafe.Pointer
+
+	<a href="../../pkg/internal/reflectlite.html">internal/reflectlite</a>
+		<a href="../../src/internal/reflectlite/type.go.html#line-347">type.go#L347</a>: 	hdr.<b>Data</b> = unsafe.Pointer(n.data(1+i, "non-empty string"))
+		<a href="../../src/internal/reflectlite/type.go.html#line-359" class="path-duplicate">type.go</a><a href="../../src/internal/reflectlite/type.go.html#line-359">#L359</a>: 	hdr.<b>Data</b> = unsafe.Pointer(n.data(1+i+l+i2, "non-empty string"))
+
+	<a href="../../pkg/os.html">os</a>
+		<a href="../../src/os/file.go.html#line-253">file.go#L253</a>: 	hdr.Data = (*unsafeheader.String)(unsafe.Pointer(&amp;s)).<b>Data</b>
+
+	<a href="../../pkg/reflect.html">reflect</a>
+		<a href="../../src/reflect/type.go.html#line-526">type.go#L526</a>: 	hdr.<b>Data</b> = unsafe.Pointer(n.data(1+i, "non-empty string"))
+		<a href="../../src/reflect/type.go.html#line-538" class="path-duplicate">type.go</a><a href="../../src/reflect/type.go.html#line-538">#L538</a>: 	hdr.<b>Data</b> = unsafe.Pointer(n.data(1+i+l+i2, "non-empty string"))
+		<a href="../../src/reflect/value.go.html#line-1323">value.go#L1323</a>: 		p := arrayAt(s.<b>Data</b>, i, 1, "i &lt; s.Len")
+		<a href="../../src/reflect/value.go.html#line-2140" class="path-duplicate">value.go</a><a href="../../src/reflect/value.go.html#line-2140">#L2140</a>: 			t = unsafeheader.String{<b>Data</b>: arrayAt(s.<b>Data</b>, i, 1, "i &lt; s.Len"), Len: j - i}
+		<a href="../../src/reflect/value.go.html#line-2470" class="path-duplicate">value.go</a><a href="../../src/reflect/value.go.html#line-2470">#L2470</a>: 		ss.Data = sh.<b>Data</b>
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

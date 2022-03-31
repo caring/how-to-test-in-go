@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime._SIG_DFL</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">const <b><a href="../pkg/runtime.html">runtime</a>.<a href="../src/runtime/signal_unix.go.html#line-38">_SIG_DFL</a></b></span>
+
+<span class="title">11 uses</span>
+
+	runtime (current package)
+		<a href="../src/runtime/signal_unix.go.html#line-38">signal_unix.go#L38</a>: 	<b>_SIG_DFL</b> uintptr = 0
+		<a href="../src/runtime/signal_unix.go.html#line-137" class="path-duplicate">signal_unix.go</a><a href="../src/runtime/signal_unix.go.html#line-137">#L137</a>: 			if fwdSig[i] != <b>_SIG_DFL</b> &amp;&amp; fwdSig[i] != _SIG_IGN {
+		<a href="../src/runtime/signal_unix.go.html#line-260" class="path-duplicate">signal_unix.go</a><a href="../src/runtime/signal_unix.go.html#line-260">#L260</a>: 			setsig(i, <b>_SIG_DFL</b>)
+		<a href="../src/runtime/signal_unix.go.html#line-302" class="path-duplicate">signal_unix.go</a><a href="../src/runtime/signal_unix.go.html#line-302">#L302</a>: 				if h == <b>_SIG_DFL</b> {
+		<a href="../src/runtime/signal_unix.go.html#line-781" class="path-duplicate">signal_unix.go</a><a href="../src/runtime/signal_unix.go.html#line-781">#L781</a>: 	setsig(sig, <b>_SIG_DFL</b>)
+		<a href="../src/runtime/signal_unix.go.html#line-803" class="path-duplicate">signal_unix.go</a><a href="../src/runtime/signal_unix.go.html#line-803">#L803</a>: 		handler = <b>_SIG_DFL</b>
+		<a href="../src/runtime/signal_unix.go.html#line-829" class="path-duplicate">signal_unix.go</a><a href="../src/runtime/signal_unix.go.html#line-829">#L829</a>: 	if GOOS != "freebsd" &amp;&amp; (isarchive || islibrary) &amp;&amp; handler == <b>_SIG_DFL</b> &amp;&amp; c.sigcode() != _SI_USER {
+		<a href="../src/runtime/signal_unix.go.html#line-976" class="path-duplicate">signal_unix.go</a><a href="../src/runtime/signal_unix.go.html#line-976">#L976</a>: 		if fwdFn == _SIG_IGN || (fwdFn == <b>_SIG_DFL</b> &amp;&amp; flags&amp;_SigIgn != 0) {
+		<a href="../src/runtime/signal_unix.go.html#line-981" class="path-duplicate">signal_unix.go</a><a href="../src/runtime/signal_unix.go.html#line-981">#L981</a>: 		if fwdFn == <b>_SIG_DFL</b> {
+		<a href="../src/runtime/signal_unix.go.html#line-982" class="path-duplicate">signal_unix.go</a><a href="../src/runtime/signal_unix.go.html#line-982">#L982</a>: 			setsig(sig, <b>_SIG_DFL</b>)
+		<a href="../src/runtime/signal_unix.go.html#line-999" class="path-duplicate">signal_unix.go</a><a href="../src/runtime/signal_unix.go.html#line-999">#L999</a>: 	if fwdFn == <b>_SIG_DFL</b> {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

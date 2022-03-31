@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: time.Weekday</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../pkg/time.html">time</a>.<a href="../src/time/time.go.html#line-308">Weekday</a></b></span>
+
+<span class="title">6 uses</span>
+
+	time (current package)
+		<a href="../src/time/time.go.html#line-308">time.go#L308</a>: type <b>Weekday</b> int
+		<a href="../src/time/time.go.html#line-311" class="path-duplicate">time.go</a><a href="../src/time/time.go.html#line-311">#L311</a>: 	Sunday <b>Weekday</b> = iota
+		<a href="../src/time/time.go.html#line-321" class="path-duplicate">time.go</a><a href="../src/time/time.go.html#line-321">#L321</a>: func (d <b>Weekday</b>) String() string {
+		<a href="../src/time/time.go.html#line-506" class="path-duplicate">time.go</a><a href="../src/time/time.go.html#line-506">#L506</a>: func (t Time) Weekday() <b>Weekday</b> {
+		<a href="../src/time/time.go.html#line-511" class="path-duplicate">time.go</a><a href="../src/time/time.go.html#line-511">#L511</a>: func absWeekday(abs uint64) <b>Weekday</b> {
+		<a href="../src/time/time.go.html#line-514" class="path-duplicate">time.go</a><a href="../src/time/time.go.html#line-514">#L514</a>: 	return <b>Weekday</b>(int(sec) / secondsPerDay)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

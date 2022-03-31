@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: strings.IndexRune</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">func <b><a href="../pkg/strings.html">strings</a>.<a href="../src/strings/strings.go.html#line-121">IndexRune</a></b></span>
+
+<span class="title">12 uses</span>
+
+	strings (current package)
+		<a href="../src/strings/strings.go.html#line-72">strings.go#L72</a>: 	return <b>IndexRune</b>(s, r) &gt;= 0
+		<a href="../src/strings/strings.go.html#line-121" class="path-duplicate">strings.go</a><a href="../src/strings/strings.go.html#line-121">#L121</a>: func <b>IndexRune</b>(s string, r rune) int {
+		<a href="../src/strings/strings.go.html#line-152" class="path-duplicate">strings.go</a><a href="../src/strings/strings.go.html#line-152">#L152</a>: 		return <b>IndexRune</b>(s, r)
+		<a href="../src/strings/strings.go.html#line-165" class="path-duplicate">strings.go</a><a href="../src/strings/strings.go.html#line-165">#L165</a>: 		if <b>IndexRune</b>(chars, c) &gt;= 0 {
+		<a href="../src/strings/strings.go.html#line-185" class="path-duplicate">strings.go</a><a href="../src/strings/strings.go.html#line-185">#L185</a>: 		if <b>IndexRune</b>(chars, rc) &gt;= 0 {
+		<a href="../src/strings/strings.go.html#line-217" class="path-duplicate">strings.go</a><a href="../src/strings/strings.go.html#line-217">#L217</a>: 		if <b>IndexRune</b>(chars, r) &gt;= 0 {
+		<a href="../src/strings/strings.go.html#line-831" class="path-duplicate">strings.go</a><a href="../src/strings/strings.go.html#line-831">#L831</a>: 	return func(r rune) bool { return <b>IndexRune</b>(cutset, r) &gt;= 0 }
+
+	<a href="../pkg/encoding/xml.html">encoding/xml</a>
+		<a href="../src/encoding/xml/xml.go.html#line-2055">xml.go#L2055</a>: 	idx = strings.<b>IndexRune</b>(v[1:], rune(v[0]))
+
+	<a href="../pkg/html/template.html">html/template</a>
+		<a href="../src/html/template/attr.go.html#line-146">attr.go#L146</a>: 	} else if colon := strings.<b>IndexRune</b>(name, ':'); colon != -1 {
+		<a href="../src/html/template/url.go.html#line-49">url.go#L49</a>: 	if i := strings.<b>IndexRune</b>(s, ':'); i &gt;= 0 &amp;&amp; !strings.ContainsRune(s[:i], '/') {
+
+	<a href="../pkg/regexp/syntax.html">regexp/syntax</a>
+		<a href="../src/regexp/syntax/parse.go.html#line-1029">parse.go#L1029</a>: 		end := strings.<b>IndexRune</b>(t, '&gt;')
+		<a href="../src/regexp/syntax/parse.go.html#line-1543" class="path-duplicate">parse.go</a><a href="../src/regexp/syntax/parse.go.html#line-1543">#L1543</a>: 		end := strings.<b>IndexRune</b>(s, '}')
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/uber/jaeger-client-go/thrift-gen/jaeger.Log</title>
+<link href="../../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../../../../../pkg/github.com/uber/jaeger-client-go/thrift-gen/jaeger.html">github.com/uber/jaeger-client-go/thrift-gen/jaeger</a>.<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-537">Log</a></b></span>
+
+<span class="title">22 uses</span>
+
+	github.com/uber/jaeger-client-go/thrift-gen/jaeger (current package)
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-537">jaeger.go#L537</a>: type <b>Log</b> struct {
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-542" class="path-duplicate">jaeger.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-542">#L542</a>: func NewLog() *<b>Log</b> {
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-543" class="path-duplicate">jaeger.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-543">#L543</a>:   return &amp;<b>Log</b>{}
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-547" class="path-duplicate">jaeger.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-547">#L547</a>: func (p *<b>Log</b>) GetTimestamp() int64 {
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-551" class="path-duplicate">jaeger.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-551">#L551</a>: func (p *<b>Log</b>) GetFields() []*Tag {
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-554" class="path-duplicate">jaeger.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-554">#L554</a>: func (p *<b>Log</b>) Read(ctx context.Context, iprot thrift.TProtocol) error {
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-612" class="path-duplicate">jaeger.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-612">#L612</a>: func (p *<b>Log</b>)  ReadField1(ctx context.Context, iprot thrift.TProtocol) error {
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-621" class="path-duplicate">jaeger.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-621">#L621</a>: func (p *<b>Log</b>)  ReadField2(ctx context.Context, iprot thrift.TProtocol) error {
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-641" class="path-duplicate">jaeger.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-641">#L641</a>: func (p *<b>Log</b>) Write(ctx context.Context, oprot thrift.TProtocol) error {
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-655" class="path-duplicate">jaeger.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-655">#L655</a>: func (p *<b>Log</b>) writeField1(ctx context.Context, oprot thrift.TProtocol) (err error) {
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-665" class="path-duplicate">jaeger.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-665">#L665</a>: func (p *<b>Log</b>) writeField2(ctx context.Context, oprot thrift.TProtocol) (err error) {
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-684" class="path-duplicate">jaeger.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-684">#L684</a>: func (p *<b>Log</b>) Equals(other *<b>Log</b>) bool {
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-699" class="path-duplicate">jaeger.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-699">#L699</a>: func (p *<b>Log</b>) String() string {
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-962" class="path-duplicate">jaeger.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-962">#L962</a>:   Logs []*<b>Log</b> `thrift:"logs,11" db:"logs" json:"logs,omitempty"`
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-1011" class="path-duplicate">jaeger.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-1011">#L1011</a>: var Span_Logs_DEFAULT []*<b>Log</b>
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-1013" class="path-duplicate">jaeger.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-1013">#L1013</a>: func (p *Span) GetLogs() []*<b>Log</b> {
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-1323" class="path-duplicate">jaeger.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-1323">#L1323</a>:   tSlice := make([]*<b>Log</b>, 0, size)
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-1326" class="path-duplicate">jaeger.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-1326">#L1326</a>:     _elem4 := &amp;<b>Log</b>{}
+
+	<a href="../../../../../pkg/github.com/uber/jaeger-client-go.html">github.com/uber/jaeger-client-go</a>
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/jaeger_thrift_span.go.html#line-77">jaeger_thrift_span.go#L77</a>: func buildLogs(logs []opentracing.LogRecord) []*j.<b>Log</b> {
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/jaeger_thrift_span.go.html#line-78" class="path-duplicate">jaeger_thrift_span.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/jaeger_thrift_span.go.html#line-78">#L78</a>: 	jLogs := make([]*j.<b>Log</b>, 0, len(logs))
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/jaeger_thrift_span.go.html#line-80" class="path-duplicate">jaeger_thrift_span.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/jaeger_thrift_span.go.html#line-80">#L80</a>: 		jLog := &amp;j.<b>Log</b>{
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

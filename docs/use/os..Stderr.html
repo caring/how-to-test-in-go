@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: os.Stderr</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">var <b><a href="../pkg/os.html">os</a>.<a href="../src/os/file.go.html#line-68">Stderr</a></b></span>
+
+<span class="title">20 uses</span>
+
+	os (current package)
+		<a href="../src/os/file.go.html#line-68">file.go#L68</a>: 	<b>Stderr</b> = NewFile(uintptr(syscall.Stderr), "/dev/stderr")
+
+	<a href="../pkg/crypto/x509.html">crypto/x509</a>
+		<a href="../src/crypto/x509/root_darwin.go.html#line-49">root_darwin.go#L49</a>: 					fmt.Fprintf(os.<b>Stderr</b>, "crypto/x509: domain %d, certificate #%d: %v\n", domain, i, err)
+		<a href="../src/crypto/x509/root_darwin.go.html#line-64" class="path-duplicate">root_darwin.go</a><a href="../src/crypto/x509/root_darwin.go.html#line-64">#L64</a>: 						fmt.Fprintf(os.<b>Stderr</b>, "crypto/x509: trust settings for %v: %v\n", cert.Subject, err)
+		<a href="../src/crypto/x509/root_darwin.go.html#line-69" class="path-duplicate">root_darwin.go</a><a href="../src/crypto/x509/root_darwin.go.html#line-69">#L69</a>: 					fmt.Fprintf(os.<b>Stderr</b>, "crypto/x509: trust settings for %v: %d\n", cert.Subject, result)
+		<a href="../src/crypto/x509/root_darwin.go.html#line-101" class="path-duplicate">root_darwin.go</a><a href="../src/crypto/x509/root_darwin.go.html#line-101">#L101</a>: 					fmt.Fprintf(os.<b>Stderr</b>, "crypto/x509: unknown trust setting for %v: %d\n", cert.Subject, result)
+		<a href="../src/crypto/x509/root_darwin.go.html#line-155" class="path-duplicate">root_darwin.go</a><a href="../src/crypto/x509/root_darwin.go.html#line-155">#L155</a>: 			fmt.Fprintf(os.<b>Stderr</b>, "crypto/x509: SecTrustSettingsCopyTrustSettings for SecTrustSettingsDomainUser failed: %s\n", err)
+		<a href="../src/crypto/x509/root_darwin.go.html#line-172" class="path-duplicate">root_darwin.go</a><a href="../src/crypto/x509/root_darwin.go.html#line-172">#L172</a>: 			fmt.Fprintf(os.<b>Stderr</b>, "crypto/x509: SecTrustSettingsCopyTrustSettings for SecTrustSettingsDomainAdmin failed: %s\n", err)
+
+	<a href="../pkg/flag.html">flag</a>
+		<a href="../src/flag/flag.go.html#line-369">flag.go#L369</a>: 		return os.<b>Stderr</b>
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/credentials/processcreds.html">github.com/aws/aws-sdk-go/aws/credentials/processcreds</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/credentials/processcreds/provider.go.html#line-347">provider.go#L347</a>: 	p.command.Stderr = os.<b>Stderr</b>    // display stderr on console for MFA
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/credentials/stscreds.html">github.com/aws/aws-sdk-go/aws/credentials/stscreds</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/credentials/stscreds/assume_role_provider.go.html#line-108">assume_role_provider.go#L108</a>: 	fmt.Fprintf(os.<b>Stderr</b>, "Assume Role MFA token code: ")
+
+	<a href="../pkg/github.com/go-sql-driver/mysql.html">github.com/go-sql-driver/mysql</a>
+		<a href="../src/github.com/go-sql-driver/mysql/errors.go.html#line-40">errors.go#L40</a>: var errLog = Logger(log.New(os.<b>Stderr</b>, "[mysql] ", log.Ldate|log.Ltime|log.Lshortfile))
+
+	<a href="../pkg/github.com/uber/jaeger-client-go/thrift.html">github.com/uber/jaeger-client-go/thrift</a>
+		<a href="../src/github.com/uber/jaeger-client-go/thrift/logger.go.html#line-47">logger.go#L47</a>: 		logger = log.New(os.<b>Stderr</b>, "", log.LstdFlags)
+
+	<a href="../pkg/go.uber.org/zap.html">go.uber.org/zap</a>
+		<a href="../src/go.uber.org/zap/global.go.html#line-136">global.go#L136</a>: 		log.SetOutput(os.<b>Stderr</b>)
+		<a href="../src/go.uber.org/zap/logger.go.html#line-70">logger.go#L70</a>: 		errorOutput: zapcore.Lock(os.<b>Stderr</b>),
+		<a href="../src/go.uber.org/zap/sink.go.html#line-137">sink.go#L137</a>: 		return nopCloserSink{os.<b>Stderr</b>}, nil
+
+	<a href="../pkg/google.golang.org/grpc/grpclog.html">google.golang.org/grpc/grpclog</a>
+		<a href="../src/google.golang.org/grpc/grpclog/loggerv2.go.html#line-150">loggerv2.go#L150</a>: 		errorW = os.<b>Stderr</b>
+		<a href="../src/google.golang.org/grpc/grpclog/loggerv2.go.html#line-152" class="path-duplicate">loggerv2.go</a><a href="../src/google.golang.org/grpc/grpclog/loggerv2.go.html#line-152">#L152</a>: 		warningW = os.<b>Stderr</b>
+		<a href="../src/google.golang.org/grpc/grpclog/loggerv2.go.html#line-154" class="path-duplicate">loggerv2.go</a><a href="../src/google.golang.org/grpc/grpclog/loggerv2.go.html#line-154">#L154</a>: 		infoW = os.<b>Stderr</b>
+
+	<a href="../pkg/google.golang.org/protobuf/reflect/protoregistry.html">google.golang.org/protobuf/reflect/protoregistry</a>
+		<a href="../src/google.golang.org/protobuf/reflect/protoregistry/registry.go.html#line-56">registry.go#L56</a>: 		fmt.Fprintf(os.<b>Stderr</b>, "WARNING: %v\nSee %v\n\n", err, faq)
+
+	<a href="../pkg/log.html">log</a>
+		<a href="../src/log/log.go.html#line-76">log.go#L76</a>: var std = New(os.<b>Stderr</b>, "", LstdFlags)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

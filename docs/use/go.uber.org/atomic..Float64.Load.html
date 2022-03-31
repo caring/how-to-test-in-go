@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: go.uber.org/atomic.Float64.Load</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../pkg/go.uber.org/atomic.html">go.uber.org/atomic</a>.<a href="../../src/go.uber.org/atomic/float64.go.html#line-31">Float64</a>.<a href="../../src/go.uber.org/atomic/float64.go.html#line-49">Load</a></b></span><span style="font-size: large;"><i> (method)</i></span>
+
+<span class="title">4 uses</span>
+
+	go.uber.org/atomic (current package)
+		<a href="../../src/go.uber.org/atomic/float64.go.html#line-49">float64.go#L49</a>: func (x *Float64) <b>Load</b>() float64 {
+		<a href="../../src/go.uber.org/atomic/float64.go.html#line-65" class="path-duplicate">float64.go</a><a href="../../src/go.uber.org/atomic/float64.go.html#line-65">#L65</a>: 	return json.Marshal(x.<b>Load</b>())
+		<a href="../../src/go.uber.org/atomic/float64_ext.go.html#line-30">float64_ext.go#L30</a>: 		old := f.<b>Load</b>()
+		<a href="../../src/go.uber.org/atomic/float64_ext.go.html#line-46" class="path-duplicate">float64_ext.go</a><a href="../../src/go.uber.org/atomic/float64_ext.go.html#line-46">#L46</a>: 	return strconv.FormatFloat(f.<b>Load</b>(), 'g', -1, 64)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

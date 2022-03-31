@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime.m.spinning</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/runtime.html">runtime</a>.<a href="../src/runtime/runtime2.go.html#line-511">m</a>.<a href="../src/runtime/runtime2.go.html#line-535">spinning</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">22 uses</span>
+
+	runtime (current package)
+		<a href="../src/runtime/proc.go.html#line-2401">proc.go#L2401</a>: 	if _g_.m.<b>spinning</b> {
+		<a href="../src/runtime/proc.go.html#line-2415" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2415">#L2415</a>: 	getg().m.<b>spinning</b> = true
+		<a href="../src/runtime/proc.go.html#line-2492" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2492">#L2492</a>: 	if nmp.<b>spinning</b> {
+		<a href="../src/runtime/proc.go.html#line-2502" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2502">#L2502</a>: 	nmp.<b>spinning</b> = spinning
+		<a href="../src/runtime/proc.go.html#line-2642" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2642">#L2642</a>: 	if _g_.m.<b>spinning</b> {
+		<a href="../src/runtime/proc.go.html#line-2643" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2643">#L2643</a>: 		_g_.m.<b>spinning</b> = false
+		<a href="../src/runtime/proc.go.html#line-2773" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2773">#L2773</a>: 	if _g_.m.<b>spinning</b> || 2*atomic.Load(&amp;sched.nmspinning) &lt; procs-atomic.Load(&amp;sched.npidle) {
+		<a href="../src/runtime/proc.go.html#line-2774" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2774">#L2774</a>: 		if !_g_.m.<b>spinning</b> {
+		<a href="../src/runtime/proc.go.html#line-2775" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2775">#L2775</a>: 			_g_.m.<b>spinning</b> = true
+		<a href="../src/runtime/proc.go.html#line-2877" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2877">#L2877</a>: 	wasSpinning := _g_.m.<b>spinning</b>
+		<a href="../src/runtime/proc.go.html#line-2878" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2878">#L2878</a>: 	if _g_.m.<b>spinning</b> {
+		<a href="../src/runtime/proc.go.html#line-2879" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2879">#L2879</a>: 		_g_.m.<b>spinning</b> = false
+		<a href="../src/runtime/proc.go.html#line-2894" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2894">#L2894</a>: 			_g_.m.<b>spinning</b> = true
+		<a href="../src/runtime/proc.go.html#line-2903" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2903">#L2903</a>: 			_g_.m.<b>spinning</b> = true
+		<a href="../src/runtime/proc.go.html#line-2930" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2930">#L2930</a>: 		if _g_.m.<b>spinning</b> {
+		<a href="../src/runtime/proc.go.html#line-2973" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2973">#L2973</a>: 				_g_.m.<b>spinning</b> = true
+		<a href="../src/runtime/proc.go.html#line-3205" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3205">#L3205</a>: 	if !_g_.m.<b>spinning</b> {
+		<a href="../src/runtime/proc.go.html#line-3208" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3208">#L3208</a>: 	_g_.m.<b>spinning</b> = false
+		<a href="../src/runtime/proc.go.html#line-3324" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3324">#L3324</a>: 	if _g_.m.<b>spinning</b> &amp;&amp; (pp.runnext != 0 || pp.runqhead != pp.runqtail) {
+		<a href="../src/runtime/proc.go.html#line-3373" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3373">#L3373</a>: 	if _g_.m.<b>spinning</b> {
+		<a href="../src/runtime/proc.go.html#line-5663" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5663">#L5663</a>: 		print("  M", mp.id, ": p=", id1, " curg=", id2, " mallocing=", mp.mallocing, " throwing=", mp.throwing, " preemptoff=", mp.preemptoff, ""+" locks=", mp.locks, " dying=", mp.dying, " spinning=", mp.<b>spinning</b>, " blocked=", mp.blocked, " lockedg=", id3, "\n")
+		<a href="../src/runtime/runtime2.go.html#line-535">runtime2.go#L535</a>: 	<b>spinning</b>      bool // m is out of work and is actively looking for work
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

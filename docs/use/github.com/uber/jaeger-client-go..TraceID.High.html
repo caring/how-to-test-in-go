@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/uber/jaeger-client-go.TraceID.High</title>
+<link href="../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../pkg/github.com/uber/jaeger-client-go.html">github.com/uber/jaeger-client-go</a>.<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-41">TraceID</a>.<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-42">High</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">11 uses</span>
+
+	github.com/uber/jaeger-client-go (current package)
+		<a href="../../../src/github.com/uber/jaeger-client-go/jaeger_thrift_span.go.html#line-35">jaeger_thrift_span.go#L35</a>: 		TraceIdHigh:   int64(span.context.traceID.<b>High</b>),
+		<a href="../../../src/github.com/uber/jaeger-client-go/jaeger_thrift_span.go.html#line-178" class="path-duplicate">jaeger_thrift_span.go</a><a href="../../../src/github.com/uber/jaeger-client-go/jaeger_thrift_span.go.html#line-178">#L178</a>: 		TraceIdHigh: int64(ctx.traceID.<b>High</b>),
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-42">span_context.go#L42</a>: 	<b>High</b>, Low uint64
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-219" class="path-duplicate">span_context.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-219">#L219</a>: 	if c.traceID.<b>High</b> == 0 {
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-222" class="path-duplicate">span_context.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-222">#L222</a>: 	return fmt.Sprintf("%016x%016x:%016x:%016x:%x", c.traceID.<b>High</b>, c.traceID.Low, uint64(c.spanID), uint64(c.parentID), flags)
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-369" class="path-duplicate">span_context.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-369">#L369</a>: 	if t.<b>High</b> == 0 {
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-372" class="path-duplicate">span_context.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-372">#L372</a>: 	return fmt.Sprintf("%016x%016x", t.<b>High</b>, t.Low)
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-394" class="path-duplicate">span_context.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-394">#L394</a>: 	return TraceID{<b>High</b>: hi, Low: lo}, nil
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-399" class="path-duplicate">span_context.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-399">#L399</a>: 	return t.<b>High</b> != 0 || t.Low != 0
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-276">tracer.go#L276</a>: 				ctx.traceID.<b>High</b> = t.options.highTraceIDGenerator()
+		<a href="../../../src/github.com/uber/jaeger-client-go/zipkin_thrift_span.go.html#line-52">zipkin_thrift_span.go#L52</a>: 	traceIDHigh := int64(span.context.traceID.<b>High</b>)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

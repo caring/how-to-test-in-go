@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Source: doc.go in package github.com/grpc-ecosystem/go-grpc-middleware</title>
+<link href="../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre id="header"><code><span class="title">Source File</span>
+	doc.go
+
+<span class="title">Belonging Package</span>
+	<a href="../../../../pkg/github.com/grpc-ecosystem/go-grpc-middleware.html">github.com/grpc-ecosystem/go-grpc-middleware</a>
+</code></pre>
+
+<pre class="line-numbers">
+<span class="codeline" id="line-1"><code><span class="comment">// Copyright 2016 Michal Witkowski. All Rights Reserved.</span></code></span>
+<span class="codeline" id="line-2"><code><span class="comment">// See LICENSE for licensing terms.</span></code></span>
+<span class="codeline" id="line-3"><code></code></span>
+<div class="anchor" id="doc"><span class="codeline" id="line-4"><code><span class="comment">/*</span></code></span>
+<span class="codeline" id="line-5"><code><span class="comment">`grpc_middleware` is a collection of gRPC middleware packages: interceptors, helpers and tools.</span></code></span>
+<span class="codeline" id="line-6"><code></code></span>
+<span class="codeline" id="line-7"><code><span class="comment">Middleware</span></code></span>
+<span class="codeline" id="line-8"><code></code></span>
+<span class="codeline" id="line-9"><code><span class="comment">gRPC is a fantastic RPC middleware, which sees a lot of adoption in the Golang world. However, the</span></code></span>
+<span class="codeline" id="line-10"><code><span class="comment">upstream gRPC codebase is relatively bare bones.</span></code></span>
+<span class="codeline" id="line-11"><code></code></span>
+<span class="codeline" id="line-12"><code><span class="comment">This package, and most of its child packages provides commonly needed middleware for gRPC:</span></code></span>
+<span class="codeline" id="line-13"><code><span class="comment">client-side interceptors for retires, server-side interceptors for input validation and auth,</span></code></span>
+<span class="codeline" id="line-14"><code><span class="comment">functions for chaining said interceptors, metadata convenience methods and more.</span></code></span>
+<span class="codeline" id="line-15"><code></code></span>
+<span class="codeline" id="line-16"><code><span class="comment">Chaining</span></code></span>
+<span class="codeline" id="line-17"><code></code></span>
+<span class="codeline" id="line-18"><code><span class="comment">By default, gRPC doesn't allow one to have more than one interceptor either on the client nor on</span></code></span>
+<span class="codeline" id="line-19"><code><span class="comment">the server side. `grpc_middleware` provides convenient chaining methods</span></code></span>
+<span class="codeline" id="line-20"><code></code></span>
+<span class="codeline" id="line-21"><code><span class="comment">Simple way of turning a multiple interceptors into a single interceptor. Here's an example for</span></code></span>
+<span class="codeline" id="line-22"><code><span class="comment">server chaining:</span></code></span>
+<span class="codeline" id="line-23"><code></code></span>
+<span class="codeline" id="line-24"><code><span class="comment">	myServer := grpc.NewServer(</span></code></span>
+<span class="codeline" id="line-25"><code><span class="comment">	    grpc.StreamInterceptor(grpc_middleware.ChainStreamServer(loggingStream, monitoringStream, authStream)),</span></code></span>
+<span class="codeline" id="line-26"><code><span class="comment">	    grpc.UnaryInterceptor(grpc_middleware.ChainUnaryServer(loggingUnary, monitoringUnary, authUnary),</span></code></span>
+<span class="codeline" id="line-27"><code><span class="comment">	)</span></code></span>
+<span class="codeline" id="line-28"><code></code></span>
+<span class="codeline" id="line-29"><code><span class="comment">These interceptors will be executed from left to right: logging, monitoring and auth.</span></code></span>
+<span class="codeline" id="line-30"><code></code></span>
+<span class="codeline" id="line-31"><code><span class="comment">Here's an example for client side chaining:</span></code></span>
+<span class="codeline" id="line-32"><code></code></span>
+<span class="codeline" id="line-33"><code><span class="comment">	clientConn, err = grpc.Dial(</span></code></span>
+<span class="codeline" id="line-34"><code><span class="comment">	    address,</span></code></span>
+<span class="codeline" id="line-35"><code><span class="comment">	        grpc.WithUnaryInterceptor(grpc_middleware.ChainUnaryClient(monitoringClientUnary, retryUnary)),</span></code></span>
+<span class="codeline" id="line-36"><code><span class="comment">	        grpc.WithStreamInterceptor(grpc_middleware.ChainStreamClient(monitoringClientStream, retryStream)),</span></code></span>
+<span class="codeline" id="line-37"><code><span class="comment">	)</span></code></span>
+<span class="codeline" id="line-38"><code><span class="comment">	client = pb_testproto.NewTestServiceClient(clientConn)</span></code></span>
+<span class="codeline" id="line-39"><code><span class="comment">	resp, err := client.PingEmpty(s.ctx, &amp;myservice.Request{Msg: "hello"})</span></code></span>
+<span class="codeline" id="line-40"><code></code></span>
+<span class="codeline" id="line-41"><code><span class="comment">These interceptors will be executed from left to right: monitoring and then retry logic.</span></code></span>
+<span class="codeline" id="line-42"><code></code></span>
+<span class="codeline" id="line-43"><code><span class="comment">The retry interceptor will call every interceptor that follows it whenever when a retry happens.</span></code></span>
+<span class="codeline" id="line-44"><code></code></span>
+<span class="codeline" id="line-45"><code><span class="comment">Writing Your Own</span></code></span>
+<span class="codeline" id="line-46"><code></code></span>
+<span class="codeline" id="line-47"><code><span class="comment">Implementing your own interceptor is pretty trivial: there are interfaces for that. But the interesting</span></code></span>
+<span class="codeline" id="line-48"><code><span class="comment">bit exposing common data to handlers (and other middleware), similarly to HTTP Middleware design.</span></code></span>
+<span class="codeline" id="line-49"><code><span class="comment">For example, you may want to pass the identity of the caller from the auth interceptor all the way</span></code></span>
+<span class="codeline" id="line-50"><code><span class="comment">to the handling function.</span></code></span>
+<span class="codeline" id="line-51"><code></code></span>
+<span class="codeline" id="line-52"><code><span class="comment">For example, a client side interceptor example for auth looks like:</span></code></span>
+<span class="codeline" id="line-53"><code></code></span>
+<span class="codeline" id="line-54"><code><span class="comment">	func FakeAuthUnaryInterceptor(ctx context.Context, req interface{}, info *grpc.UnaryServerInfo, handler grpc.UnaryHandler) (interface{}, error) {</span></code></span>
+<span class="codeline" id="line-55"><code><span class="comment">	   newCtx := context.WithValue(ctx, "user_id", "john@example.com")</span></code></span>
+<span class="codeline" id="line-56"><code><span class="comment">	   return handler(newCtx, req)</span></code></span>
+<span class="codeline" id="line-57"><code><span class="comment">	}</span></code></span>
+<span class="codeline" id="line-58"><code></code></span>
+<span class="codeline" id="line-59"><code><span class="comment">Unfortunately, it's not as easy for streaming RPCs. These have the `context.Context` embedded within</span></code></span>
+<span class="codeline" id="line-60"><code><span class="comment">the `grpc.ServerStream` object. To pass values through context, a wrapper (`WrappedServerStream`) is</span></code></span>
+<span class="codeline" id="line-61"><code><span class="comment">needed. For example:</span></code></span>
+<span class="codeline" id="line-62"><code></code></span>
+<span class="codeline" id="line-63"><code><span class="comment">	func FakeAuthStreamingInterceptor(srv interface{}, stream grpc.ServerStream, info *grpc.StreamServerInfo, handler grpc.StreamHandler) error {</span></code></span>
+<span class="codeline" id="line-64"><code><span class="comment">	   newStream := grpc_middleware.WrapServerStream(stream)</span></code></span>
+<span class="codeline" id="line-65"><code><span class="comment">	   newStream.WrappedContext = context.WithValue(ctx, "user_id", "john@example.com")</span></code></span>
+<span class="codeline" id="line-66"><code><span class="comment">	   return handler(srv, stream)</span></code></span>
+<span class="codeline" id="line-67"><code><span class="comment">	}</span></code></span>
+<span class="codeline" id="line-68"><code><span class="comment">*/</span></code></span></div><span class="codeline" id="line-69"><code><span class="keyword">package</span> grpc_middleware</code></span>
+</pre><pre id="footer">
+<table><tr><td><img src="../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

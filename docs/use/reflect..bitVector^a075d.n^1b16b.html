@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: reflect.bitVector.n</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/reflect.html">reflect</a>.<a href="../src/reflect/type.go.html#line-3105">bitVector</a>.<a href="../src/reflect/type.go.html#line-3106">n</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">9 uses</span>
+
+	reflect (current package)
+		<a href="../src/reflect/type.go.html#line-3072">type.go#L3072</a>: 		ptrdata: uintptr(abi.stackPtrs.<b>n</b>) * ptrSize,
+		<a href="../src/reflect/type.go.html#line-3074" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-3074">#L3074</a>: 	if abi.stackPtrs.<b>n</b> &gt; 0 {
+		<a href="../src/reflect/type.go.html#line-3106" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-3106">#L3106</a>: 	<b>n</b>    uint32 // number of bits
+		<a href="../src/reflect/type.go.html#line-3112" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-3112">#L3112</a>: 	if bv.<b>n</b>%8 == 0 {
+		<a href="../src/reflect/type.go.html#line-3115" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-3115">#L3115</a>: 	bv.data[bv.<b>n</b>/8] |= bit &lt;&lt; (bv.<b>n</b> % 8)
+		<a href="../src/reflect/type.go.html#line-3116" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-3116">#L3116</a>: 	bv.<b>n</b>++
+		<a href="../src/reflect/type.go.html#line-3127" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-3127">#L3127</a>: 		for bv.<b>n</b> &lt; uint32(offset/uintptr(ptrSize)) {
+		<a href="../src/reflect/type.go.html#line-3134" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-3134">#L3134</a>: 		for bv.<b>n</b> &lt; uint32(offset/uintptr(ptrSize)) {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

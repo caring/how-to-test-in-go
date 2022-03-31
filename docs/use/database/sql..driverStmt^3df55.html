@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: database/sql.driverStmt</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../../pkg/database/sql.html">database/sql</a>.<a href="../../src/database/sql/sql.go.html#line-662">driverStmt</a></b></span>
+
+<span class="title">23 uses</span>
+
+	database/sql (current package)
+		<a href="../../src/database/sql/convert.go.html#line-107">convert.go#L107</a>: func driverArgsConnLocked(ci driver.Conn, ds *<b>driverStmt</b>, args []interface{}) ([]driver.NamedValue, error) {
+		<a href="../../src/database/sql/sql.go.html#line-519">sql.go#L519</a>: 	openStmt    map[*<b>driverStmt</b>]bool
+		<a href="../../src/database/sql/sql.go.html#line-532" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-532">#L532</a>: func (dc *driverConn) removeOpenStmt(ds *<b>driverStmt</b>) {
+		<a href="../../src/database/sql/sql.go.html#line-577" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-577">#L577</a>: func (dc *driverConn) prepareLocked(ctx context.Context, cg stmtConnGrabber, query string) (*<b>driverStmt</b>, error) {
+		<a href="../../src/database/sql/sql.go.html#line-582" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-582">#L582</a>: 	ds := &amp;<b>driverStmt</b>{Locker: dc, si: si}
+		<a href="../../src/database/sql/sql.go.html#line-594" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-594">#L594</a>: 		dc.openStmt = make(map[*<b>driverStmt</b>]bool)
+		<a href="../../src/database/sql/sql.go.html#line-633" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-633">#L633</a>: 	var openStmt []*<b>driverStmt</b>
+		<a href="../../src/database/sql/sql.go.html#line-635" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-635">#L635</a>: 		openStmt = make([]*<b>driverStmt</b>, 0, len(dc.openStmt))
+		<a href="../../src/database/sql/sql.go.html#line-662" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-662">#L662</a>: type <b>driverStmt</b> struct {
+		<a href="../../src/database/sql/sql.go.html#line-671" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-671">#L671</a>: func (ds *<b>driverStmt</b>) Close() error {
+		<a href="../../src/database/sql/sql.go.html#line-1391" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-1391">#L1391</a>: func (db *DB) noteUnusedDriverStatement(c *driverConn, ds *<b>driverStmt</b>) {
+		<a href="../../src/database/sql/sql.go.html#line-1566" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-1566">#L1566</a>: 	var ds *<b>driverStmt</b>
+		<a href="../../src/database/sql/sql.go.html#line-1663" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-1663">#L1663</a>: 	ds := &amp;<b>driverStmt</b>{Locker: dc, si: si}
+		<a href="../../src/database/sql/sql.go.html#line-1751" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-1751">#L1751</a>: 	ds := &amp;<b>driverStmt</b>{Locker: dc, si: si}
+		<a href="../../src/database/sql/sql.go.html#line-2393" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-2393">#L2393</a>: 			var ds *<b>driverStmt</b>
+		<a href="../../src/database/sql/sql.go.html#line-2408" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-2408">#L2408</a>: 		cgds: &amp;<b>driverStmt</b>{
+		<a href="../../src/database/sql/sql.go.html#line-2507" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-2507">#L2507</a>: 	ds *<b>driverStmt</b>
+		<a href="../../src/database/sql/sql.go.html#line-2551" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-2551">#L2551</a>: 	cgds *<b>driverStmt</b>
+		<a href="../../src/database/sql/sql.go.html#line-2613" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-2613">#L2613</a>: func resultFromStatement(ctx context.Context, ci driver.Conn, ds *<b>driverStmt</b>, args ...interface{}) (Result, error) {
+		<a href="../../src/database/sql/sql.go.html#line-2658" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-2658">#L2658</a>: func (s *Stmt) connStmt(ctx context.Context, strategy connReuseStrategy) (dc *driverConn, releaseConn func(error), ds *<b>driverStmt</b>, err error) {
+		<a href="../../src/database/sql/sql.go.html#line-2711" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-2711">#L2711</a>: func (s *Stmt) prepareOnConnLocked(ctx context.Context, dc *driverConn) (*<b>driverStmt</b>, error) {
+		<a href="../../src/database/sql/sql.go.html#line-2787" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-2787">#L2787</a>: func rowsiFromStatement(ctx context.Context, ci driver.Conn, ds *<b>driverStmt</b>, args ...interface{}) (driver.Rows, error) {
+		<a href="../../src/database/sql/sql.go.html#line-2880" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-2880">#L2880</a>: 	closeStmt   *<b>driverStmt</b> // if non-nil, statement to Close on close
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

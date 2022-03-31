@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/uber/jaeger-client-go.SamplerOption</title>
+<link href="../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../../../pkg/github.com/uber/jaeger-client-go.html">github.com/uber/jaeger-client-go</a>.<a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote_options.go.html#line-24">SamplerOption</a></b></span>
+
+<span class="title">13 uses</span>
+
+	github.com/uber/jaeger-client-go (current package)
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote.go.html#line-79">sampler_remote.go#L79</a>: 	opts ...<b>SamplerOption</b>,
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote_options.go.html#line-24">sampler_remote_options.go#L24</a>: type <b>SamplerOption</b> func(options *samplerOptions)
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote_options.go.html#line-49" class="path-duplicate">sampler_remote_options.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote_options.go.html#line-49">#L49</a>: func (SamplerOptionsFactory) Metrics(m *Metrics) <b>SamplerOption</b> {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote_options.go.html#line-57" class="path-duplicate">sampler_remote_options.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote_options.go.html#line-57">#L57</a>: func (SamplerOptionsFactory) MaxOperations(maxOperations int) <b>SamplerOption</b> {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote_options.go.html#line-65" class="path-duplicate">sampler_remote_options.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote_options.go.html#line-65">#L65</a>: func (SamplerOptionsFactory) OperationNameLateBinding(enable bool) <b>SamplerOption</b> {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote_options.go.html#line-73" class="path-duplicate">sampler_remote_options.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote_options.go.html#line-73">#L73</a>: func (SamplerOptionsFactory) InitialSampler(sampler Sampler) <b>SamplerOption</b> {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote_options.go.html#line-80" class="path-duplicate">sampler_remote_options.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote_options.go.html#line-80">#L80</a>: func (SamplerOptionsFactory) Logger(logger Logger) <b>SamplerOption</b> {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote_options.go.html#line-88" class="path-duplicate">sampler_remote_options.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote_options.go.html#line-88">#L88</a>: func (SamplerOptionsFactory) SamplingServerURL(samplingServerURL string) <b>SamplerOption</b> {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote_options.go.html#line-96" class="path-duplicate">sampler_remote_options.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote_options.go.html#line-96">#L96</a>: func (SamplerOptionsFactory) SamplingRefreshInterval(samplingRefreshInterval time.Duration) <b>SamplerOption</b> {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote_options.go.html#line-103" class="path-duplicate">sampler_remote_options.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote_options.go.html#line-103">#L103</a>: func (SamplerOptionsFactory) SamplingStrategyFetcher(fetcher SamplingStrategyFetcher) <b>SamplerOption</b> {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote_options.go.html#line-110" class="path-duplicate">sampler_remote_options.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote_options.go.html#line-110">#L110</a>: func (SamplerOptionsFactory) SamplingStrategyParser(parser SamplingStrategyParser) <b>SamplerOption</b> {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote_options.go.html#line-117" class="path-duplicate">sampler_remote_options.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote_options.go.html#line-117">#L117</a>: func (SamplerOptionsFactory) Updaters(updaters ...SamplerUpdater) <b>SamplerOption</b> {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote_options.go.html#line-123" class="path-duplicate">sampler_remote_options.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote_options.go.html#line-123">#L123</a>: func (o *samplerOptions) applyOptionsAndDefaults(opts ...<b>SamplerOption</b>) *samplerOptions {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

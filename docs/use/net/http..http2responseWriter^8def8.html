@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: net/http.http2responseWriter</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../../pkg/net/http.html">net/http</a>.<a href="../../src/net/http/h2_bundle.go.html#line-6023">http2responseWriter</a></b></span>
+
+<span class="title">18 uses</span>
+
+	net/http (current package)
+		<a href="../../src/net/http/h2_bundle.go.html#line-5672">h2_bundle.go#L5672</a>: func (sc *http2serverConn) newWriterAndRequest(st *http2stream, f *http2MetaHeadersFrame) (*<b>http2responseWriter</b>, *Request, error) {
+		<a href="../../src/net/http/h2_bundle.go.html#line-5742" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-5742">#L5742</a>: func (sc *http2serverConn) newWriterAndRequestNoBody(st *http2stream, rp http2requestParam) (*<b>http2responseWriter</b>, *Request, error) {
+		<a href="../../src/net/http/h2_bundle.go.html#line-5823" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-5823">#L5823</a>: 	rw := &amp;<b>http2responseWriter</b>{rws: rws}
+		<a href="../../src/net/http/h2_bundle.go.html#line-5828" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-5828">#L5828</a>: func (sc *http2serverConn) runHandler(rw *<b>http2responseWriter</b>, req *Request, handler func(ResponseWriter, *Request)) {
+		<a href="../../src/net/http/h2_bundle.go.html#line-6023" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-6023">#L6023</a>: type <b>http2responseWriter</b> struct {
+		<a href="../../src/net/http/h2_bundle.go.html#line-6029" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-6029">#L6029</a>: 	_ CloseNotifier     = (*<b>http2responseWriter</b>)(nil)
+		<a href="../../src/net/http/h2_bundle.go.html#line-6030" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-6030">#L6030</a>: 	_ Flusher           = (*<b>http2responseWriter</b>)(nil)
+		<a href="../../src/net/http/h2_bundle.go.html#line-6031" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-6031">#L6031</a>: 	_ http2stringWriter = (*<b>http2responseWriter</b>)(nil)
+		<a href="../../src/net/http/h2_bundle.go.html#line-6256" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-6256">#L6256</a>: func (w *<b>http2responseWriter</b>) Flush() {
+		<a href="../../src/net/http/h2_bundle.go.html#line-6275" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-6275">#L6275</a>: func (w *<b>http2responseWriter</b>) CloseNotify() &lt;-chan bool {
+		<a href="../../src/net/http/h2_bundle.go.html#line-6295" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-6295">#L6295</a>: func (w *<b>http2responseWriter</b>) Header() Header {
+		<a href="../../src/net/http/h2_bundle.go.html#line-6324" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-6324">#L6324</a>: func (w *<b>http2responseWriter</b>) WriteHeader(code int) {
+		<a href="../../src/net/http/h2_bundle.go.html#line-6361" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-6361">#L6361</a>: func (w *<b>http2responseWriter</b>) Write(p []byte) (n int, err error) {
+		<a href="../../src/net/http/h2_bundle.go.html#line-6365" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-6365">#L6365</a>: func (w *<b>http2responseWriter</b>) WriteString(s string) (n int, err error) {
+		<a href="../../src/net/http/h2_bundle.go.html#line-6370" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-6370">#L6370</a>: func (w *<b>http2responseWriter</b>) write(lenData int, dataB []byte, dataS string) (n int, err error) {
+		<a href="../../src/net/http/h2_bundle.go.html#line-6394" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-6394">#L6394</a>: func (w *<b>http2responseWriter</b>) handlerDone() {
+		<a href="../../src/net/http/h2_bundle.go.html#line-6417" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-6417">#L6417</a>: var _ Pusher = (*<b>http2responseWriter</b>)(nil)
+		<a href="../../src/net/http/h2_bundle.go.html#line-6419" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-6419">#L6419</a>: func (w *<b>http2responseWriter</b>) Push(target string, opts *PushOptions) error {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

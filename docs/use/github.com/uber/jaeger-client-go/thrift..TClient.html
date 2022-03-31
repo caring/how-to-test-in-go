@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/uber/jaeger-client-go/thrift.TClient</title>
+<link href="../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift.html">github.com/uber/jaeger-client-go/thrift</a>.<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/client.go.html#line-15">TClient</a></b></span>
+
+<span class="title">13 uses</span>
+
+	github.com/uber/jaeger-client-go/thrift (current package)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/client.go.html#line-15">client.go#L15</a>: type <b>TClient</b> interface {
+
+	<a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift-gen/agent.html">github.com/uber/jaeger-client-go/thrift-gen/agent</a>
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/agent/agent.go.html#line-35">agent.go#L35</a>:   c thrift.<b>TClient</b>
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/agent/agent.go.html#line-51" class="path-duplicate">agent.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/agent/agent.go.html#line-51">#L51</a>: func NewAgentClient(c thrift.<b>TClient</b>) *AgentClient {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/agent/agent.go.html#line-57" class="path-duplicate">agent.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/agent/agent.go.html#line-57">#L57</a>: func (p *AgentClient) Client_() thrift.<b>TClient</b> {
+
+	<a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift-gen/jaeger.html">github.com/uber/jaeger-client-go/thrift-gen/jaeger</a>
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-2296">jaeger.go#L2296</a>:   c thrift.<b>TClient</b>
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-2312" class="path-duplicate">jaeger.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-2312">#L2312</a>: func NewCollectorClient(c thrift.<b>TClient</b>) *CollectorClient {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-2318" class="path-duplicate">jaeger.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-2318">#L2318</a>: func (p *CollectorClient) Client_() thrift.<b>TClient</b> {
+
+	<a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift-gen/sampling.html">github.com/uber/jaeger-client-go/thrift-gen/sampling</a>
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-959">sampling.go#L959</a>:   c thrift.<b>TClient</b>
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-975" class="path-duplicate">sampling.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-975">#L975</a>: func NewSamplingManagerClient(c thrift.<b>TClient</b>) *SamplingManagerClient {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-981" class="path-duplicate">sampling.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-981">#L981</a>: func (p *SamplingManagerClient) Client_() thrift.<b>TClient</b> {
+
+	<a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift-gen/zipkincore.html">github.com/uber/jaeger-client-go/thrift-gen/zipkincore</a>
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-1451">zipkincore.go#L1451</a>:   c thrift.<b>TClient</b>
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-1467" class="path-duplicate">zipkincore.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-1467">#L1467</a>: func NewZipkinCollectorClient(c thrift.<b>TClient</b>) *ZipkinCollectorClient {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-1473" class="path-duplicate">zipkincore.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-1473">#L1473</a>: func (p *ZipkinCollectorClient) Client_() thrift.<b>TClient</b> {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

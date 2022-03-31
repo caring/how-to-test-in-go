@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: google.golang.org/grpc/internal/transport.http2Client.Close</title>
+<link href="../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../../pkg/google.golang.org/grpc/internal/transport.html">google.golang.org/grpc/internal/transport</a>.<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-59">http2Client</a>.<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-879">Close</a></b></span><span style="font-size: large;"><i> (method, <a href="../../../../imp/google.golang.org/grpc/internal/transport.http2Client^3be51.html#name-Close">view implemented interface methods</a>)</i></span>
+
+<span class="title">13 uses</span>
+
+	google.golang.org/grpc/internal/transport (current package)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-370">http2_client.go#L370</a>: 		t.<b>Close</b>(err)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-375" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-375">#L375</a>: 		t.<b>Close</b>(err)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-395" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-395">#L395</a>: 		t.<b>Close</b>(err)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-402" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-402">#L402</a>: 			t.<b>Close</b>(err)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-879" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-879">#L879</a>: func (t *http2Client) <b>Close</b>(err error) {
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-944" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-944">#L944</a>: 		t.<b>Close</b>(ErrConnClosing)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1192" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1192">#L1192</a>: 		t.<b>Close</b>(connectionErrorf(true, nil, "received goaway with non-zero even-numbered numbered stream id: %v", id))
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1210" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1210">#L1210</a>: 			t.<b>Close</b>(connectionErrorf(true, nil, "received goaway with stream id: %v, which exceeds stream id of previous goaway: %v", id, t.prevGoAwayID))
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1240" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1240">#L1240</a>: 		t.<b>Close</b>(connectionErrorf(true, nil, "received goaway and there are no active streams"))
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1480" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1480">#L1480</a>: 		t.<b>Close</b>(err) // this kicks off resetTransport, so must be last before return
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1490" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1490">#L1490</a>: 		t.<b>Close</b>(connectionErrorf(true, nil, "initial http2 frame from server is not a settings frame: %T", frame))
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1526" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1526">#L1526</a>: 				t.<b>Close</b>(connectionErrorf(true, err, "error reading from server: %v", err))
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1585" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1585">#L1585</a>: 				t.<b>Close</b>(connectionErrorf(true, nil, "keepalive ping failed to receive ACK within timeout"))
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

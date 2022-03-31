@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: google.golang.org/grpc.ServerOption</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../../pkg/google.golang.org/grpc.html">google.golang.org/grpc</a>.<a href="../../src/google.golang.org/grpc/server.go.html#line-179">ServerOption</a></b></span>
+
+<span class="title">30 uses</span>
+
+	google.golang.org/grpc (current package)
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-179">server.go#L179</a>: type <b>ServerOption</b> interface {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-215" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-215">#L215</a>: func WriteBufferSize(s int) <b>ServerOption</b> {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-226" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-226">#L226</a>: func ReadBufferSize(s int) <b>ServerOption</b> {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-234" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-234">#L234</a>: func InitialWindowSize(s int32) <b>ServerOption</b> {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-242" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-242">#L242</a>: func InitialConnWindowSize(s int32) <b>ServerOption</b> {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-249" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-249">#L249</a>: func KeepaliveParams(kp keepalive.ServerParameters) <b>ServerOption</b> {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-261" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-261">#L261</a>: func KeepaliveEnforcementPolicy(kep keepalive.EnforcementPolicy) <b>ServerOption</b> {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-276" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-276">#L276</a>: func CustomCodec(codec Codec) <b>ServerOption</b> {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-305" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-305">#L305</a>: func ForceServerCodec(codec encoding.Codec) <b>ServerOption</b> {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-319" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-319">#L319</a>: func RPCCompressor(cp Compressor) <b>ServerOption</b> {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-331" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-331">#L331</a>: func RPCDecompressor(dc Decompressor) <b>ServerOption</b> {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-341" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-341">#L341</a>: func MaxMsgSize(m int) <b>ServerOption</b> {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-347" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-347">#L347</a>: func MaxRecvMsgSize(m int) <b>ServerOption</b> {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-355" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-355">#L355</a>: func MaxSendMsgSize(m int) <b>ServerOption</b> {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-363" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-363">#L363</a>: func MaxConcurrentStreams(n uint32) <b>ServerOption</b> {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-370" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-370">#L370</a>: func Creds(c credentials.TransportCredentials) <b>ServerOption</b> {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-379" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-379">#L379</a>: func UnaryInterceptor(i UnaryServerInterceptor) <b>ServerOption</b> {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-392" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-392">#L392</a>: func ChainUnaryInterceptor(interceptors ...UnaryServerInterceptor) <b>ServerOption</b> {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-400" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-400">#L400</a>: func StreamInterceptor(i StreamServerInterceptor) <b>ServerOption</b> {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-413" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-413">#L413</a>: func ChainStreamInterceptor(interceptors ...StreamServerInterceptor) <b>ServerOption</b> {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-426" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-426">#L426</a>: func InTapHandle(h tap.ServerInHandle) <b>ServerOption</b> {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-436" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-436">#L436</a>: func StatsHandler(h stats.Handler) <b>ServerOption</b> {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-448" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-448">#L448</a>: func UnknownServiceHandler(streamHandler StreamHandler) <b>ServerOption</b> {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-469" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-469">#L469</a>: func ConnectionTimeout(d time.Duration) <b>ServerOption</b> {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-477" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-477">#L477</a>: func MaxHeaderListSize(s uint32) <b>ServerOption</b> {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-490" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-490">#L490</a>: func HeaderTableSize(s uint32) <b>ServerOption</b> {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-505" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-505">#L505</a>: func NumStreamWorkers(numServerWorkers uint32) <b>ServerOption</b> {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-561" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-561">#L561</a>: func NewServer(opt ...<b>ServerOption</b>) *Server {
+
+	<a href="../../pkg/github.com/grpc-ecosystem/go-grpc-middleware.html">github.com/grpc-ecosystem/go-grpc-middleware</a>
+		<a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/chain.go.html#line-112">chain.go#L112</a>: func WithUnaryServerChain(interceptors ...grpc.UnaryServerInterceptor) grpc.<b>ServerOption</b> {
+		<a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/chain.go.html#line-118" class="path-duplicate">chain.go</a><a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/chain.go.html#line-118">#L118</a>: func WithStreamServerChain(interceptors ...grpc.StreamServerInterceptor) grpc.<b>ServerOption</b> {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

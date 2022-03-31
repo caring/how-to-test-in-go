@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/uber/jaeger-client-go/thrift.TCompactProtocol.trans</title>
+<link href="../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift.html">github.com/uber/jaeger-client-go/thrift</a>.<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-103">TCompactProtocol</a>.<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-104">trans</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">16 uses</span>
+
+	github.com/uber/jaeger-client-go/thrift (current package)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-104">compact_protocol.go#L104</a>: 	<b>trans</b>         TRichTransport
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-141" class="path-duplicate">compact_protocol.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-141">#L141</a>: 		p.<b>trans</b> = et
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-143" class="path-duplicate">compact_protocol.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-143">#L143</a>: 		p.<b>trans</b> = NewTRichTransport(trans)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-327" class="path-duplicate">compact_protocol.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-327">#L327</a>: 	_, err := p.<b>trans</b>.Write(buf)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-339" class="path-duplicate">compact_protocol.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-339">#L339</a>: 	_, e = p.<b>trans</b>.WriteString(value)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-350" class="path-duplicate">compact_protocol.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-350">#L350</a>: 		_, e = p.<b>trans</b>.Write(bin)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-592" class="path-duplicate">compact_protocol.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-592">#L592</a>: 	_, e := io.ReadFull(p.<b>trans</b>, longBits)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-615" class="path-duplicate">compact_protocol.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-615">#L615</a>: 		read, e := io.ReadFull(p.<b>trans</b>, buf)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-619" class="path-duplicate">compact_protocol.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-619">#L619</a>: 	buf, e := safeReadBytes(length, p.<b>trans</b>)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-637" class="path-duplicate">compact_protocol.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-637">#L637</a>: 	buf, e := safeReadBytes(length, p.<b>trans</b>)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-642" class="path-duplicate">compact_protocol.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-642">#L642</a>: 	return NewTProtocolException(p.<b>trans</b>.Flush(ctx))
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-691" class="path-duplicate">compact_protocol.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-691">#L691</a>: 	return p.<b>trans</b>.Write(i32buf[0:idx])
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-710" class="path-duplicate">compact_protocol.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-710">#L710</a>: 	return p.<b>trans</b>.Write(varint64out[0:idx])
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-736" class="path-duplicate">compact_protocol.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-736">#L736</a>: 	return p.<b>trans</b>.WriteByte(b)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-778" class="path-duplicate">compact_protocol.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-778">#L778</a>: 	return p.<b>trans</b>.ReadByte()
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-857" class="path-duplicate">compact_protocol.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-857">#L857</a>: 	PropagateTConfiguration(p.<b>trans</b>, conf)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

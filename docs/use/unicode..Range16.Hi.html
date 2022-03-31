@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: unicode.Range16.Hi</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/unicode.html">unicode</a>.<a href="../src/unicode/letter.go.html#line-29">Range16</a>.<a href="../src/unicode/letter.go.html#line-31">Hi</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">8 uses</span>
+
+	unicode (current package)
+		<a href="../src/unicode/letter.go.html#line-31">letter.go#L31</a>: 	<b>Hi</b>     uint16
+		<a href="../src/unicode/letter.go.html#line-96" class="path-duplicate">letter.go</a><a href="../src/unicode/letter.go.html#line-96">#L96</a>: 			if r &lt;= range_.<b>Hi</b> {
+		<a href="../src/unicode/letter.go.html#line-109" class="path-duplicate">letter.go</a><a href="../src/unicode/letter.go.html#line-109">#L109</a>: 		if range_.Lo &lt;= r &amp;&amp; r &lt;= range_.<b>Hi</b> {
+		<a href="../src/unicode/letter.go.html#line-158" class="path-duplicate">letter.go</a><a href="../src/unicode/letter.go.html#line-158">#L158</a>: 	if len(r16) &gt; 0 &amp;&amp; uint32(r) &lt;= uint32(r16[len(r16)-1].<b>Hi</b>) {
+		<a href="../src/unicode/letter.go.html#line-171" class="path-duplicate">letter.go</a><a href="../src/unicode/letter.go.html#line-171">#L171</a>: 	if off := rangeTab.LatinOffset; len(r16) &gt; off &amp;&amp; uint32(r) &lt;= uint32(r16[len(r16)-1].<b>Hi</b>) {
+
+	<a href="../pkg/regexp/syntax.html">regexp/syntax</a>
+		<a href="../src/regexp/syntax/parse.go.html#line-1498">parse.go#L1498</a>: 	R16: []unicode.Range16{{Lo: 0, <b>Hi</b>: 1&lt;&lt;16 - 1, Stride: 1}},
+		<a href="../src/regexp/syntax/parse.go.html#line-1832" class="path-duplicate">parse.go</a><a href="../src/regexp/syntax/parse.go.html#line-1832">#L1832</a>: 		lo, hi, stride := rune(xr.Lo), rune(xr.<b>Hi</b>), rune(xr.Stride)
+		<a href="../src/regexp/syntax/parse.go.html#line-1858" class="path-duplicate">parse.go</a><a href="../src/regexp/syntax/parse.go.html#line-1858">#L1858</a>: 		lo, hi, stride := rune(xr.Lo), rune(xr.<b>Hi</b>), rune(xr.Stride)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

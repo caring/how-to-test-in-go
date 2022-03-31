@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: internal/abi.RegArgs.Ints</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../pkg/internal/abi.html">internal/abi</a>.<a href="../../src/internal/abi/abi.go.html#line-18">RegArgs</a>.<a href="../../src/internal/abi/abi.go.html#line-19">Ints</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">18 uses</span>
+
+	internal/abi (current package)
+		<a href="../../src/internal/abi/abi.go.html#line-19">abi.go#L19</a>: 	<b>Ints</b>   [IntArgRegs]uintptr  // untyped integer registers
+		<a href="../../src/internal/abi/abi.go.html#line-38" class="path-duplicate">abi.go</a><a href="../../src/internal/abi/abi.go.html#line-38">#L38</a>: 	for _, x := range r.<b>Ints</b> {
+
+	<a href="../../pkg/reflect.html">reflect</a>
+		<a href="../../src/reflect/makefunc.go.html#line-168">makefunc.go#L168</a>: 	for i, arg := range args.<b>Ints</b> {
+		<a href="../../src/reflect/value.go.html#line-478">value.go#L478</a>: 			storeRcvr(rcvr, unsafe.Pointer(&amp;regArgs.<b>Ints</b>[st.ireg]))
+		<a href="../../src/reflect/value.go.html#line-518" class="path-duplicate">value.go</a><a href="../../src/reflect/value.go.html#line-518">#L518</a>: 					memmove(unsafe.Pointer(&amp;regArgs.<b>Ints</b>[st.ireg]), offset, st.size)
+		<a href="../../src/reflect/value.go.html#line-524" class="path-duplicate">value.go</a><a href="../../src/reflect/value.go.html#line-524">#L524</a>: 					regArgs.<b>Ints</b>[st.ireg] = uintptr(v.ptr)
+		<a href="../../src/reflect/value.go.html#line-627" class="path-duplicate">value.go</a><a href="../../src/reflect/value.go.html#line-627">#L627</a>: 					memmove(offset, unsafe.Pointer(&amp;regArgs.<b>Ints</b>[st.ireg]), st.size)
+		<a href="../../src/reflect/value.go.html#line-715" class="path-duplicate">value.go</a><a href="../../src/reflect/value.go.html#line-715">#L715</a>: 						memmove(offset, unsafe.Pointer(&amp;regs.<b>Ints</b>[st.ireg]), st.size)
+		<a href="../../src/reflect/value.go.html#line-801" class="path-duplicate">value.go</a><a href="../../src/reflect/value.go.html#line-801">#L801</a>: 						memmove(unsafe.Pointer(&amp;regs.<b>Ints</b>[st.ireg]), offset, st.size)
+		<a href="../../src/reflect/value.go.html#line-808" class="path-duplicate">value.go</a><a href="../../src/reflect/value.go.html#line-808">#L808</a>: 						regs.<b>Ints</b>[st.ireg] = uintptr(v.ptr)
+		<a href="../../src/reflect/value.go.html#line-952" class="path-duplicate">value.go</a><a href="../../src/reflect/value.go.html#line-952">#L952</a>: 		storeRcvr(rcvr, unsafe.Pointer(&amp;methodRegs.<b>Ints</b>))
+		<a href="../../src/reflect/value.go.html#line-1002" class="path-duplicate">value.go</a><a href="../../src/reflect/value.go.html#line-1002">#L1002</a>: 					memmove(unsafe.Pointer(&amp;methodRegs.<b>Ints</b>[mStep.ireg]), from, mStep.size)
+		<a href="../../src/reflect/value.go.html#line-1020" class="path-duplicate">value.go</a><a href="../../src/reflect/value.go.html#line-1020">#L1020</a>: 					memmove(to, unsafe.Pointer(&amp;valueRegs.<b>Ints</b>[vStep.ireg]), vStep.size)
+		<a href="../../src/reflect/value.go.html#line-1047" class="path-duplicate">value.go</a><a href="../../src/reflect/value.go.html#line-1047">#L1047</a>: 				methodRegs.<b>Ints</b>[mStep.ireg] = valueRegs.<b>Ints</b>[vStep.ireg]
+
+	<a href="../../pkg/runtime.html">runtime</a>
+		<a href="../../src/runtime/mbarrier.go.html#line-234">mbarrier.go#L234</a>: 	for i := range regs.<b>Ints</b> {
+		<a href="../../src/runtime/mbarrier.go.html#line-236" class="path-duplicate">mbarrier.go</a><a href="../../src/runtime/mbarrier.go.html#line-236">#L236</a>: 			regs.Ptrs[i] = unsafe.Pointer(regs.<b>Ints</b>[i])
+		<a href="../../src/runtime/mfinal.go.html#line-219">mfinal.go#L219</a>: 					r = unsafe.Pointer(&amp;regs.<b>Ints</b>)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

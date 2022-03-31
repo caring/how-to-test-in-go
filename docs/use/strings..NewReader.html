@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: strings.NewReader</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">func <b><a href="../pkg/strings.html">strings</a>.<a href="../src/strings/reader.go.html#line-160">NewReader</a></b></span>
+
+<span class="title">15 uses</span>
+
+	strings (current package)
+		<a href="../src/strings/reader.go.html#line-160">reader.go#L160</a>: func <b>NewReader</b>(s string) *Reader { return &amp;Reader{s, 0, -1} }
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/credentials/ec2rolecreds.html">github.com/aws/aws-sdk-go/aws/credentials/ec2rolecreds</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/credentials/ec2rolecreds/ec2_role_provider.go.html#line-148">ec2_role_provider.go#L148</a>: 	s := bufio.NewScanner(strings.<b>NewReader</b>(resp))
+		<a href="../src/github.com/aws/aws-sdk-go/aws/credentials/ec2rolecreds/ec2_role_provider.go.html#line-175" class="path-duplicate">ec2_role_provider.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/credentials/ec2rolecreds/ec2_role_provider.go.html#line-175">#L175</a>: 	if err := json.NewDecoder(strings.<b>NewReader</b>(resp)).Decode(&amp;respCreds); err != nil {
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/ec2metadata.html">github.com/aws/aws-sdk-go/aws/ec2metadata</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/ec2metadata/api.go.html#line-146">api.go#L146</a>: 	if err := json.NewDecoder(strings.<b>NewReader</b>(resp)).Decode(&amp;doc); err != nil {
+		<a href="../src/github.com/aws/aws-sdk-go/aws/ec2metadata/api.go.html#line-170" class="path-duplicate">api.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/ec2metadata/api.go.html#line-170">#L170</a>: 	if err := json.NewDecoder(strings.<b>NewReader</b>(resp)).Decode(&amp;info); err != nil {
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/request.html">github.com/aws/aws-sdk-go/aws/request</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/request/request.go.html#line-280">request.go#L280</a>: 	r.SetReaderBody(strings.<b>NewReader</b>(s))
+
+	<a href="../pkg/github.com/golang/protobuf/jsonpb.html">github.com/golang/protobuf/jsonpb</a>
+		<a href="../src/github.com/golang/protobuf/jsonpb/decode.go.html#line-39">decode.go#L39</a>: 	return new(Unmarshaler).Unmarshal(strings.<b>NewReader</b>(s), m)
+
+	<a href="../pkg/math/big.html">math/big</a>
+		<a href="../src/math/big/floatconv.go.html#line-272">floatconv.go#L272</a>: 	r := strings.<b>NewReader</b>(s)
+		<a href="../src/math/big/int.go.html#line-425">int.go#L425</a>: 	return z.setFromScanner(strings.<b>NewReader</b>(s), base)
+		<a href="../src/math/big/ratconv.go.html#line-69">ratconv.go#L69</a>: 		r := strings.<b>NewReader</b>(s[sep+1:])
+		<a href="../src/math/big/ratconv.go.html#line-85" class="path-duplicate">ratconv.go</a><a href="../src/math/big/ratconv.go.html#line-85">#L85</a>: 	r := strings.<b>NewReader</b>(s)
+
+	<a href="../pkg/net/http.html">net/http</a>
+		<a href="../src/net/http/client.go.html#line-285">client.go#L285</a>: 		resp.Body = io.NopCloser(strings.<b>NewReader</b>(""))
+		<a href="../src/net/http/client.go.html#line-896" class="path-duplicate">client.go</a><a href="../src/net/http/client.go.html#line-896">#L896</a>: 	return c.Post(url, "application/x-www-form-urlencoded", strings.<b>NewReader</b>(data.Encode()))
+
+	<a href="../pkg/net/http/httputil.html">net/http/httputil</a>
+		<a href="../src/net/http/httputil/dump.go.html#line-139">dump.go#L139</a>: 		case dr.c &lt;- strings.<b>NewReader</b>("HTTP/1.1 204 No Content\r\nConnection: close\r\n\r\n"):
+		<a href="../src/net/http/httputil/dump.go.html#line-305" class="path-duplicate">dump.go</a><a href="../src/net/http/httputil/dump.go.html#line-305">#L305</a>: var emptyBody = io.NopCloser(strings.<b>NewReader</b>(""))
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

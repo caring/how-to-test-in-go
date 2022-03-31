@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/uber/jaeger-client-go.Tag</title>
+<link href="../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../../../pkg/github.com/uber/jaeger-client-go.html">github.com/uber/jaeger-client-go</a>.<a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-73">Tag</a></b></span>
+
+<span class="title">37 uses</span>
+
+	github.com/uber/jaeger-client-go (current package)
+		<a href="../../../src/github.com/uber/jaeger-client-go/jaeger_thrift_span.go.html#line-68">jaeger_thrift_span.go#L68</a>: func buildTags(tags []<b>Tag</b>, maxTagValueLength int) []*j.Tag {
+		<a href="../../../src/github.com/uber/jaeger-client-go/jaeger_thrift_span.go.html#line-89" class="path-duplicate">jaeger_thrift_span.go</a><a href="../../../src/github.com/uber/jaeger-client-go/jaeger_thrift_span.go.html#line-89">#L89</a>: func buildTag(tag *<b>Tag</b>, maxTagValueLength int) *j.Tag {
+		<a href="../../../src/github.com/uber/jaeger-client-go/process.go.html#line-21">process.go#L21</a>: 	Tags    []<b>Tag</b>
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-38">sampler.go#L38</a>: 	IsSampled(id TraceID, operation string) (sampled bool, tags []<b>Tag</b>)
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-56" class="path-duplicate">sampler.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-56">#L56</a>: 	tags     []<b>Tag</b>
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-61" class="path-duplicate">sampler.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-61">#L61</a>: 	tags := []<b>Tag</b>{
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-74" class="path-duplicate">sampler.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-74">#L74</a>: func (s *ConstSampler) IsSampled(id TraceID, operation string) (bool, []<b>Tag</b>) {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-104" class="path-duplicate">sampler.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-104">#L104</a>: 	tags             []<b>Tag</b>
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-131" class="path-duplicate">sampler.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-131">#L131</a>: 	s.tags = []<b>Tag</b>{
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-144" class="path-duplicate">sampler.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-144">#L144</a>: func (s *ProbabilisticSampler) IsSampled(id TraceID, operation string) (bool, []<b>Tag</b>) {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-185" class="path-duplicate">sampler.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-185">#L185</a>: 	tags               []<b>Tag</b>
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-202" class="path-duplicate">sampler.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-202">#L202</a>: 	s.tags = []<b>Tag</b>{
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-210" class="path-duplicate">sampler.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-210">#L210</a>: func (s *RateLimitingSampler) IsSampled(id TraceID, operation string) (bool, []<b>Tag</b>) {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-252" class="path-duplicate">sampler.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-252">#L252</a>: 	tags                 []<b>Tag</b>
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-284" class="path-duplicate">sampler.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-284">#L284</a>: 		s.tags = []<b>Tag</b>{
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-292" class="path-duplicate">sampler.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-292">#L292</a>: func (s *GuaranteedThroughputProbabilisticSampler) IsSampled(id TraceID, operation string) (bool, []<b>Tag</b>) {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-393" class="path-duplicate">sampler.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-393">#L393</a>: func (s *PerOperationSampler) IsSampled(id TraceID, operation string) (bool, []<b>Tag</b>) {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-397" class="path-duplicate">sampler.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-397">#L397</a>: func (s *PerOperationSampler) trySampling(span *Span, operationName string) (bool, []<b>Tag</b>) {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-400" class="path-duplicate">sampler.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-400">#L400</a>: 	var tags []<b>Tag</b>
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote.go.html#line-93">sampler_remote.go#L93</a>: func (s *RemotelyControlledSampler) IsSampled(id TraceID, operation string) (bool, []<b>Tag</b>) {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler_v2.go.html#line-21">sampler_v2.go#L21</a>: 	Tags      []<b>Tag</b>
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler_v2.go.html#line-59" class="path-duplicate">sampler_v2.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler_v2.go.html#line-59">#L59</a>: func (SamplerV2Base) IsSampled(id TraceID, operation string) (sampled bool, tags []<b>Tag</b>) {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler_v2.go.html#line-72" class="path-duplicate">sampler_v2.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler_v2.go.html#line-72">#L72</a>: 	delegate func(id TraceID, operation string) (sampled bool, tags []<b>Tag</b>)
+		<a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-57">span.go#L57</a>: 	tags []<b>Tag</b>
+		<a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-73" class="path-duplicate">span.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-73">#L73</a>: type <b>Tag</b> struct {
+		<a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-80" class="path-duplicate">span.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-80">#L80</a>: func NewTag(key string, value interface{}) <b>Tag</b> {
+		<a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-81" class="path-duplicate">span.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-81">#L81</a>: 	return <b>Tag</b>{key: key, value: value}
+		<a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-194" class="path-duplicate">span.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-194">#L194</a>: 	s.tags = append(s.tags, <b>Tag</b>{key: key, value: value})
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-66">tracer.go#L66</a>: 	tags    []<b>Tag</b>
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-147" class="path-duplicate">tracer.go</a><a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-147">#L147</a>: 	t.tags = append(t.tags, <b>Tag</b>{key: JaegerClientVersionTagKey, value: JaegerClientVersion})
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-149" class="path-duplicate">tracer.go</a><a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-149">#L149</a>: 		t.tags = append(t.tags, <b>Tag</b>{key: TracerHostnameTagKey, value: hostname})
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-160" class="path-duplicate">tracer.go</a><a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-160">#L160</a>: 		t.tags = append(t.tags, <b>Tag</b>{key: TracerIPTagKey, value: ip.String()})
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-269" class="path-duplicate">tracer.go</a><a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-269">#L269</a>: 	var internalTags []<b>Tag</b>
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-285" class="path-duplicate">tracer.go</a><a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-285">#L285</a>: 				internalTags = append(internalTags, <b>Tag</b>{key: JaegerDebugHeader, value: parent.debugID})
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-331" class="path-duplicate">tracer.go</a><a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-331">#L331</a>: 			sp.tags = make([]<b>Tag</b>, 0, tagsTotalLength)
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer_options.go.html#line-168">tracer_options.go#L168</a>: 		tracer.tags = append(tracer.tags, <b>Tag</b>{key: key, value: value})
+		<a href="../../../src/github.com/uber/jaeger-client-go/zipkin_thrift_span.go.html#line-254">zipkin_thrift_span.go#L254</a>: 	filteredTags := make([]<b>Tag</b>, 0, len(s.tags))
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

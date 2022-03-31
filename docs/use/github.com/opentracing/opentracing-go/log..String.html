@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/opentracing/opentracing-go/log.String</title>
+<link href="../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">func <b><a href="../../../../pkg/github.com/opentracing/opentracing-go/log.html">github.com/opentracing/opentracing-go/log</a>.<a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-41">String</a></b></span>
+
+<span class="title">17 uses</span>
+
+	github.com/opentracing/opentracing-go/log (current package)
+		<a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-41">field.go#L41</a>: func <b>String</b>(key, val string) Field {
+		<a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-148" class="path-duplicate">field.go</a><a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-148">#L148</a>: 	return <b>String</b>("event", val)
+		<a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-153" class="path-duplicate">field.go</a><a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-153">#L153</a>: 	return <b>String</b>("message", val)
+		<a href="../../../../src/github.com/opentracing/opentracing-go/log/util.go.html#line-26">util.go#L26</a>: 			fields[i] = <b>String</b>(key, typedVal)
+		<a href="../../../../src/github.com/opentracing/opentracing-go/log/util.go.html#line-53" class="path-duplicate">util.go</a><a href="../../../../src/github.com/opentracing/opentracing-go/log/util.go.html#line-53">#L53</a>: 				fields[i] = <b>String</b>(key, "nil")
+		<a href="../../../../src/github.com/opentracing/opentracing-go/log/util.go.html#line-57" class="path-duplicate">util.go</a><a href="../../../../src/github.com/opentracing/opentracing-go/log/util.go.html#line-57">#L57</a>: 			fields[i] = <b>String</b>(key, fmt.Sprint(typedVal))
+
+	<a href="../../../../pkg/github.com/opentracing/opentracing-go.html">github.com/opentracing/opentracing-go</a>
+		<a href="../../../../src/github.com/opentracing/opentracing-go/span.go.html#line-180">span.go#L180</a>: 			log.<b>String</b>("event", ld.Event),
+		<a href="../../../../src/github.com/opentracing/opentracing-go/span.go.html#line-184" class="path-duplicate">span.go</a><a href="../../../../src/github.com/opentracing/opentracing-go/span.go.html#line-184">#L184</a>: 			log.<b>String</b>("event", ld.Event),
+
+	<a href="../../../../pkg/github.com/uber/jaeger-client-go.html">github.com/uber/jaeger-client-go</a>
+		<a href="../../../../src/github.com/uber/jaeger-client-go/baggage_setter.go.html#line-63">baggage_setter.go#L63</a>: 		log.<b>String</b>("event", "baggage"),
+		<a href="../../../../src/github.com/uber/jaeger-client-go/baggage_setter.go.html#line-64" class="path-duplicate">baggage_setter.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/baggage_setter.go.html#line-64">#L64</a>: 		log.<b>String</b>("key", key),
+		<a href="../../../../src/github.com/uber/jaeger-client-go/baggage_setter.go.html#line-65" class="path-duplicate">baggage_setter.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/baggage_setter.go.html#line-65">#L65</a>: 		log.<b>String</b>("value", value),
+		<a href="../../../../src/github.com/uber/jaeger-client-go/baggage_setter.go.html#line-68" class="path-duplicate">baggage_setter.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/baggage_setter.go.html#line-68">#L68</a>: 		fields = append(fields, log.<b>String</b>("override", "true"))
+		<a href="../../../../src/github.com/uber/jaeger-client-go/baggage_setter.go.html#line-71" class="path-duplicate">baggage_setter.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/baggage_setter.go.html#line-71">#L71</a>: 		fields = append(fields, log.<b>String</b>("truncated", "true"))
+		<a href="../../../../src/github.com/uber/jaeger-client-go/baggage_setter.go.html#line-74" class="path-duplicate">baggage_setter.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/baggage_setter.go.html#line-74">#L74</a>: 		fields = append(fields, log.<b>String</b>("invalid", "true"))
+		<a href="../../../../src/github.com/uber/jaeger-client-go/span.go.html#line-226">span.go#L226</a>: 		s.LogFields(log.Error(err), log.<b>String</b>("function", "LogKV"))
+		<a href="../../../../src/github.com/uber/jaeger-client-go/span.go.html#line-302" class="path-duplicate">span.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/span.go.html#line-302">#L302</a>: 			log.<b>String</b>("event", "dropped Span logs"),
+		<a href="../../../../src/github.com/uber/jaeger-client-go/span.go.html#line-304" class="path-duplicate">span.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/span.go.html#line-304">#L304</a>: 			log.<b>String</b>("component", "jaeger-client"),
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

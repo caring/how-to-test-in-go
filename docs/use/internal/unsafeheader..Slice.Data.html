@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: internal/unsafeheader.Slice.Data</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../pkg/internal/unsafeheader.html">internal/unsafeheader</a>.<a href="../../src/internal/unsafeheader/unsafeheader.go.html#line-22">Slice</a>.<a href="../../src/internal/unsafeheader/unsafeheader.go.html#line-23">Data</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">19 uses</span>
+
+	internal/unsafeheader (current package)
+		<a href="../../src/internal/unsafeheader/unsafeheader.go.html#line-23">unsafeheader.go#L23</a>: 	<b>Data</b> unsafe.Pointer
+
+	<a href="../../pkg/internal/reflectlite.html">internal/reflectlite</a>
+		<a href="../../src/internal/reflectlite/swapper.go.html#line-71">swapper.go#L71</a>: 		val1 := arrayAt(s.<b>Data</b>, i, size, "i &lt; s.Len")
+		<a href="../../src/internal/reflectlite/swapper.go.html#line-72" class="path-duplicate">swapper.go</a><a href="../../src/internal/reflectlite/swapper.go.html#line-72">#L72</a>: 		val2 := arrayAt(s.<b>Data</b>, j, size, "j &lt; s.Len")
+
+	<a href="../../pkg/os.html">os</a>
+		<a href="../../src/os/file.go.html#line-253">file.go#L253</a>: 	hdr.<b>Data</b> = (*unsafeheader.String)(unsafe.Pointer(&amp;s)).Data
+
+	<a href="../../pkg/reflect.html">reflect</a>
+		<a href="../../src/reflect/swapper.go.html#line-71">swapper.go#L71</a>: 		val1 := arrayAt(s.<b>Data</b>, i, size, "i &lt; s.Len")
+		<a href="../../src/reflect/swapper.go.html#line-72" class="path-duplicate">swapper.go</a><a href="../../src/reflect/swapper.go.html#line-72">#L72</a>: 		val2 := arrayAt(s.<b>Data</b>, j, size, "j &lt; s.Len")
+		<a href="../../src/reflect/value.go.html#line-1314">value.go#L1314</a>: 		val := arrayAt(s.<b>Data</b>, i, typ.size, "i &lt; s.Len")
+		<a href="../../src/reflect/value.go.html#line-2130" class="path-duplicate">value.go</a><a href="../../src/reflect/value.go.html#line-2130">#L2130</a>: 		base = s.<b>Data</b>
+		<a href="../../src/reflect/value.go.html#line-2157" class="path-duplicate">value.go</a><a href="../../src/reflect/value.go.html#line-2157">#L2157</a>: 		s.<b>Data</b> = arrayAt(base, i, typ.elem.Size(), "i &lt; cap")
+		<a href="../../src/reflect/value.go.html#line-2160" class="path-duplicate">value.go</a><a href="../../src/reflect/value.go.html#line-2160">#L2160</a>: 		s.<b>Data</b> = base
+		<a href="../../src/reflect/value.go.html#line-2192" class="path-duplicate">value.go</a><a href="../../src/reflect/value.go.html#line-2192">#L2192</a>: 		base = s.<b>Data</b>
+		<a href="../../src/reflect/value.go.html#line-2209" class="path-duplicate">value.go</a><a href="../../src/reflect/value.go.html#line-2209">#L2209</a>: 		s.<b>Data</b> = arrayAt(base, i, typ.elem.Size(), "i &lt; k &lt;= cap")
+		<a href="../../src/reflect/value.go.html#line-2212" class="path-duplicate">value.go</a><a href="../../src/reflect/value.go.html#line-2212">#L2212</a>: 		s.<b>Data</b> = base
+		<a href="../../src/reflect/value.go.html#line-2456" class="path-duplicate">value.go</a><a href="../../src/reflect/value.go.html#line-2456">#L2456</a>: 		ds.<b>Data</b> = dst.ptr
+		<a href="../../src/reflect/value.go.html#line-2463" class="path-duplicate">value.go</a><a href="../../src/reflect/value.go.html#line-2463">#L2463</a>: 		ss.<b>Data</b> = src.ptr
+		<a href="../../src/reflect/value.go.html#line-2470" class="path-duplicate">value.go</a><a href="../../src/reflect/value.go.html#line-2470">#L2470</a>: 		ss.<b>Data</b> = sh.Data
+		<a href="../../src/reflect/value.go.html#line-2657" class="path-duplicate">value.go</a><a href="../../src/reflect/value.go.html#line-2657">#L2657</a>: 	s := unsafeheader.Slice{<b>Data</b>: unsafe_NewArray(typ.Elem().(*rtype), cap), Len: len, Cap: cap}
+		<a href="../../src/reflect/value.go.html#line-3111" class="path-duplicate">value.go</a><a href="../../src/reflect/value.go.html#line-3111">#L3111</a>: 	return Value{t.common(), h.<b>Data</b>, v.flag&amp;^(flagIndir|flagAddr|flagKindMask) | flag(Ptr)}
+
+	<a href="../../pkg/syscall.html">syscall</a>
+		<a href="../../src/syscall/syscall_unix.go.html#line-69">syscall_unix.go#L69</a>: 	hdr.<b>Data</b> = unsafe.Pointer(addr)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

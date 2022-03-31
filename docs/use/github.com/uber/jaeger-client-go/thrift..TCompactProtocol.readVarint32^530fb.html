@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/uber/jaeger-client-go/thrift.TCompactProtocol.readVarint32</title>
+<link href="../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift.html">github.com/uber/jaeger-client-go/thrift</a>.<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-103">TCompactProtocol</a>.<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-750">readVarint32</a></b></span><span style="font-size: large;"><i> (method)</i></span>
+
+<span class="title">12 uses</span>
+
+	github.com/uber/jaeger-client-go/thrift (current package)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-396">compact_protocol.go#L396</a>: 	seqId, e := p.<b>readVarint32</b>()
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-475" class="path-duplicate">compact_protocol.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-475">#L475</a>: 	size32, e := p.<b>readVarint32</b>()
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-511" class="path-duplicate">compact_protocol.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-511">#L511</a>: 		size2, e := p.<b>readVarint32</b>()
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-571" class="path-duplicate">compact_protocol.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-571">#L571</a>: 	v, e := p.<b>readVarint32</b>()
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-601" class="path-duplicate">compact_protocol.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-601">#L601</a>: 	length, e := p.<b>readVarint32</b>()
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-625" class="path-duplicate">compact_protocol.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-625">#L625</a>: 	length, e := p.<b>readVarint32</b>()
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-750" class="path-duplicate">compact_protocol.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-750">#L750</a>: func (p *TCompactProtocol) <b>readVarint32</b>() (int32, error) {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-444">header_transport.go#L444</a>: 	protoID, err := hp.<b>readVarint32</b>()
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-451" class="path-duplicate">header_transport.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-451">#L451</a>: 	transformCount, err = hp.<b>readVarint32</b>()
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-463" class="path-duplicate">header_transport.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-463">#L463</a>: 			id, err := hp.<b>readVarint32</b>()
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-483" class="path-duplicate">header_transport.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-483">#L483</a>: 		infoType, err := hp.<b>readVarint32</b>()
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-491" class="path-duplicate">header_transport.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-491">#L491</a>: 			count, err := hp.<b>readVarint32</b>()
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

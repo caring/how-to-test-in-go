@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime.gcWork.scanWork</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/runtime.html">runtime</a>.<a href="../src/runtime/mgcwork.go.html#line-55">gcWork</a>.<a href="../src/runtime/mgcwork.go.html#line-82">scanWork</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">23 uses</span>
+
+	runtime (current package)
+		<a href="../src/runtime/mgcmark.go.html#line-990">mgcmark.go#L990</a>: 	initScanWork := gcw.<b>scanWork</b>
+		<a href="../src/runtime/mgcmark.go.html#line-1052" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-1052">#L1052</a>: 		if gcw.<b>scanWork</b> &gt;= gcCreditSlack {
+		<a href="../src/runtime/mgcmark.go.html#line-1053" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-1053">#L1053</a>: 			atomic.Xaddint64(&amp;gcController.scanWork, gcw.<b>scanWork</b>)
+		<a href="../src/runtime/mgcmark.go.html#line-1055" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-1055">#L1055</a>: 				gcFlushBgCredit(gcw.<b>scanWork</b> - initScanWork)
+		<a href="../src/runtime/mgcmark.go.html#line-1058" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-1058">#L1058</a>: 			checkWork -= gcw.<b>scanWork</b>
+		<a href="../src/runtime/mgcmark.go.html#line-1059" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-1059">#L1059</a>: 			gcw.<b>scanWork</b> = 0
+		<a href="../src/runtime/mgcmark.go.html#line-1072" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-1072">#L1072</a>: 	if gcw.<b>scanWork</b> &gt; 0 {
+		<a href="../src/runtime/mgcmark.go.html#line-1073" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-1073">#L1073</a>: 		atomic.Xaddint64(&amp;gcController.scanWork, gcw.<b>scanWork</b>)
+		<a href="../src/runtime/mgcmark.go.html#line-1075" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-1075">#L1075</a>: 			gcFlushBgCredit(gcw.<b>scanWork</b> - initScanWork)
+		<a href="../src/runtime/mgcmark.go.html#line-1077" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-1077">#L1077</a>: 		gcw.<b>scanWork</b> = 0
+		<a href="../src/runtime/mgcmark.go.html#line-1101" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-1101">#L1101</a>: 	workFlushed := -gcw.<b>scanWork</b>
+		<a href="../src/runtime/mgcmark.go.html#line-1104" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-1104">#L1104</a>: 	for !gp.preempt &amp;&amp; workFlushed+gcw.<b>scanWork</b> &lt; scanWork {
+		<a href="../src/runtime/mgcmark.go.html#line-1144" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-1144">#L1144</a>: 		if gcw.<b>scanWork</b> &gt;= gcCreditSlack {
+		<a href="../src/runtime/mgcmark.go.html#line-1145" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-1145">#L1145</a>: 			atomic.Xaddint64(&amp;gcController.scanWork, gcw.<b>scanWork</b>)
+		<a href="../src/runtime/mgcmark.go.html#line-1146" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-1146">#L1146</a>: 			workFlushed += gcw.<b>scanWork</b>
+		<a href="../src/runtime/mgcmark.go.html#line-1147" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-1147">#L1147</a>: 			gcw.<b>scanWork</b> = 0
+		<a href="../src/runtime/mgcmark.go.html#line-1155" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-1155">#L1155</a>: 	return workFlushed + gcw.<b>scanWork</b>
+		<a href="../src/runtime/mgcmark.go.html#line-1286" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-1286">#L1286</a>: 	gcw.<b>scanWork</b> += int64(i)
+		<a href="../src/runtime/mgcmark.go.html#line-1525" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-1525">#L1525</a>: 	gcw.<b>scanWork</b> += int64(scanSize)
+		<a href="../src/runtime/mgcwork.go.html#line-82">mgcwork.go#L82</a>: 	<b>scanWork</b> int64
+		<a href="../src/runtime/mgcwork.go.html#line-277" class="path-duplicate">mgcwork.go</a><a href="../src/runtime/mgcwork.go.html#line-277">#L277</a>: 	if w.<b>scanWork</b> != 0 {
+		<a href="../src/runtime/mgcwork.go.html#line-278" class="path-duplicate">mgcwork.go</a><a href="../src/runtime/mgcwork.go.html#line-278">#L278</a>: 		atomic.Xaddint64(&amp;gcController.scanWork, w.<b>scanWork</b>)
+		<a href="../src/runtime/mgcwork.go.html#line-279" class="path-duplicate">mgcwork.go</a><a href="../src/runtime/mgcwork.go.html#line-279">#L279</a>: 		w.<b>scanWork</b> = 0
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

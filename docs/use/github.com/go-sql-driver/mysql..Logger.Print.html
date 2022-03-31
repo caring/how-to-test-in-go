@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/go-sql-driver/mysql.Logger.Print</title>
+<link href="../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../pkg/github.com/go-sql-driver/mysql.html">github.com/go-sql-driver/mysql</a>.<a href="../../../src/github.com/go-sql-driver/mysql/errors.go.html#line-43">Logger</a>.<a href="../../../src/github.com/go-sql-driver/mysql/errors.go.html#line-44">Print</a></b></span><span style="font-size: large;"><i> (method)</i></span>
+
+<span class="title">26 uses</span>
+
+	github.com/go-sql-driver/mysql (current package)
+		<a href="../../../src/github.com/go-sql-driver/mysql/auth.go.html#line-293">auth.go#L293</a>: 		errLog.<b>Print</b>("unknown auth plugin:", plugin)
+		<a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-108">connection.go#L108</a>: 		errLog.<b>Print</b>(ErrInvalidConn)
+		<a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-150" class="path-duplicate">connection.go</a><a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-150">#L150</a>: 		errLog.<b>Print</b>(err)
+		<a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-166" class="path-duplicate">connection.go</a><a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-166">#L166</a>: 		errLog.<b>Print</b>(ErrInvalidConn)
+		<a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-173" class="path-duplicate">connection.go</a><a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-173">#L173</a>: 		errLog.<b>Print</b>(err)
+		<a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-207" class="path-duplicate">connection.go</a><a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-207">#L207</a>: 		errLog.<b>Print</b>(err)
+		<a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-299" class="path-duplicate">connection.go</a><a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-299">#L299</a>: 		errLog.<b>Print</b>(ErrInvalidConn)
+		<a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-360" class="path-duplicate">connection.go</a><a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-360">#L360</a>: 		errLog.<b>Print</b>(ErrInvalidConn)
+		<a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-454" class="path-duplicate">connection.go</a><a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-454">#L454</a>: 		errLog.<b>Print</b>(ErrInvalidConn)
+		<a href="../../../src/github.com/go-sql-driver/mysql/connector.go.html#line-95">connector.go#L95</a>: 		errLog.<b>Print</b>("could not use requested auth plugin '"+plugin+"': ", err.Error())
+		<a href="../../../src/github.com/go-sql-driver/mysql/errors.go.html#line-44">errors.go#L44</a>: 	<b>Print</b>(v ...interface{})
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-37">packets.go#L37</a>: 			errLog.<b>Print</b>(err)
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-59" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-59">#L59</a>: 				errLog.<b>Print</b>(ErrMalformPkt)
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-73" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-73">#L73</a>: 			errLog.<b>Print</b>(err)
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-123" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-123">#L123</a>: 			errLog.<b>Print</b>("closing bad idle connection: ", err)
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-165" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-165">#L165</a>: 			errLog.<b>Print</b>(ErrMalformPkt)
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-175" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-175">#L175</a>: 			errLog.<b>Print</b>(err)
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-326" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-326">#L326</a>: 		errLog.<b>Print</b>(err)
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-408" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-408">#L408</a>: 		errLog.<b>Print</b>(err)
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-428" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-428">#L428</a>: 		errLog.<b>Print</b>(err)
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-447" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-447">#L447</a>: 		errLog.<b>Print</b>(err)
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-468" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-468">#L468</a>: 		errLog.<b>Print</b>(err)
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-941" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-941">#L941</a>: 		errLog.<b>Print</b>(err)
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-1140" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-1140">#L1140</a>: 				errLog.<b>Print</b>(err)
+		<a href="../../../src/github.com/go-sql-driver/mysql/statement.go.html#line-54">statement.go#L54</a>: 		errLog.<b>Print</b>(ErrInvalidConn)
+		<a href="../../../src/github.com/go-sql-driver/mysql/statement.go.html#line-102" class="path-duplicate">statement.go</a><a href="../../../src/github.com/go-sql-driver/mysql/statement.go.html#line-102">#L102</a>: 		errLog.<b>Print</b>(ErrInvalidConn)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

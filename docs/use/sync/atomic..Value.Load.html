@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: sync/atomic.Value.Load</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../pkg/sync/atomic.html">sync/atomic</a>.<a href="../../src/sync/atomic/value.go.html#line-16">Value</a>.<a href="../../src/sync/atomic/value.go.html#line-28">Load</a></b></span><span style="font-size: large;"><i> (method)</i></span>
+
+<span class="title">36 uses</span>
+
+	sync/atomic (current package)
+		<a href="../../src/sync/atomic/value.go.html#line-28">value.go#L28</a>: func (v *Value) <b>Load</b>() (val interface{}) {
+
+	<a href="../../pkg/sync.html">sync</a>
+		<a href="../../src/sync/map.go.html#line-104">map.go#L104</a>: 	read, _ := m.read.<b>Load</b>().(readOnly)
+		<a href="../../src/sync/map.go.html#line-111" class="path-duplicate">map.go</a><a href="../../src/sync/map.go.html#line-111">#L111</a>: 		read, _ = m.read.<b>Load</b>().(readOnly)
+		<a href="../../src/sync/map.go.html#line-138" class="path-duplicate">map.go</a><a href="../../src/sync/map.go.html#line-138">#L138</a>: 	read, _ := m.read.<b>Load</b>().(readOnly)
+		<a href="../../src/sync/map.go.html#line-144" class="path-duplicate">map.go</a><a href="../../src/sync/map.go.html#line-144">#L144</a>: 	read, _ = m.read.<b>Load</b>().(readOnly)
+		<a href="../../src/sync/map.go.html#line-202" class="path-duplicate">map.go</a><a href="../../src/sync/map.go.html#line-202">#L202</a>: 	read, _ := m.read.<b>Load</b>().(readOnly)
+		<a href="../../src/sync/map.go.html#line-211" class="path-duplicate">map.go</a><a href="../../src/sync/map.go.html#line-211">#L211</a>: 	read, _ = m.read.<b>Load</b>().(readOnly)
+		<a href="../../src/sync/map.go.html#line-270" class="path-duplicate">map.go</a><a href="../../src/sync/map.go.html#line-270">#L270</a>: 	read, _ := m.read.<b>Load</b>().(readOnly)
+		<a href="../../src/sync/map.go.html#line-274" class="path-duplicate">map.go</a><a href="../../src/sync/map.go.html#line-274">#L274</a>: 		read, _ = m.read.<b>Load</b>().(readOnly)
+		<a href="../../src/sync/map.go.html#line-324" class="path-duplicate">map.go</a><a href="../../src/sync/map.go.html#line-324">#L324</a>: 	read, _ := m.read.<b>Load</b>().(readOnly)
+		<a href="../../src/sync/map.go.html#line-331" class="path-duplicate">map.go</a><a href="../../src/sync/map.go.html#line-331">#L331</a>: 		read, _ = m.read.<b>Load</b>().(readOnly)
+		<a href="../../src/sync/map.go.html#line-367" class="path-duplicate">map.go</a><a href="../../src/sync/map.go.html#line-367">#L367</a>: 	read, _ := m.read.<b>Load</b>().(readOnly)
+
+	<a href="../../pkg/context.html">context</a>
+		<a href="../../src/context/context.go.html#line-306">context.go#L306</a>: 	pdone, _ := p.done.<b>Load</b>().(chan struct{})
+		<a href="../../src/context/context.go.html#line-359" class="path-duplicate">context.go</a><a href="../../src/context/context.go.html#line-359">#L359</a>: 	d := c.done.<b>Load</b>()
+		<a href="../../src/context/context.go.html#line-365" class="path-duplicate">context.go</a><a href="../../src/context/context.go.html#line-365">#L365</a>: 	d = c.done.<b>Load</b>()
+		<a href="../../src/context/context.go.html#line-407" class="path-duplicate">context.go</a><a href="../../src/context/context.go.html#line-407">#L407</a>: 	d, _ := c.done.<b>Load</b>().(chan struct{})
+
+	<a href="../../pkg/github.com/aws/aws-sdk-go/aws/credentials.html">github.com/aws/aws-sdk-go/aws/credentials</a>
+		<a href="../../src/github.com/aws/aws-sdk-go/aws/credentials/credentials.go.html#line-236">credentials.go#L236</a>: 	if curCreds := c.creds.<b>Load</b>(); !c.isExpired(curCreds) {
+		<a href="../../src/github.com/aws/aws-sdk-go/aws/credentials/credentials.go.html#line-256" class="path-duplicate">credentials.go</a><a href="../../src/github.com/aws/aws-sdk-go/aws/credentials/credentials.go.html#line-256">#L256</a>: 	if curCreds := c.creds.<b>Load</b>(); !c.isExpired(curCreds) {
+		<a href="../../src/github.com/aws/aws-sdk-go/aws/credentials/credentials.go.html#line-300" class="path-duplicate">credentials.go</a><a href="../../src/github.com/aws/aws-sdk-go/aws/credentials/credentials.go.html#line-300">#L300</a>: 	return c.isExpired(c.creds.<b>Load</b>())
+		<a href="../../src/github.com/aws/aws-sdk-go/aws/credentials/credentials.go.html#line-315" class="path-duplicate">credentials.go</a><a href="../../src/github.com/aws/aws-sdk-go/aws/credentials/credentials.go.html#line-315">#L315</a>: 			fmt.Sprintf("provider %s does not support ExpiresAt()", c.creds.<b>Load</b>().(Value).ProviderName),
+		<a href="../../src/github.com/aws/aws-sdk-go/aws/credentials/credentials.go.html#line-318" class="path-duplicate">credentials.go</a><a href="../../src/github.com/aws/aws-sdk-go/aws/credentials/credentials.go.html#line-318">#L318</a>: 	if c.creds.<b>Load</b>().(Value) == (Value{}) {
+
+	<a href="../../pkg/github.com/aws/aws-sdk-go/aws/ec2metadata.html">github.com/aws/aws-sdk-go/aws/ec2metadata</a>
+		<a href="../../src/github.com/aws/aws-sdk-go/aws/ec2metadata/token_provider.go.html#line-44">token_provider.go#L44</a>: 	if ec2Token, ok := t.token.<b>Load</b>().(ec2Token); ok &amp;&amp; !ec2Token.IsExpired() {
+		<a href="../../src/github.com/aws/aws-sdk-go/aws/ec2metadata/token_provider.go.html#line-80" class="path-duplicate">token_provider.go</a><a href="../../src/github.com/aws/aws-sdk-go/aws/ec2metadata/token_provider.go.html#line-80">#L80</a>: 	if ec2Token, ok := t.token.<b>Load</b>().(ec2Token); ok {
+
+	<a href="../../pkg/github.com/go-sql-driver/mysql.html">github.com/go-sql-driver/mysql</a>
+		<a href="../../src/github.com/go-sql-driver/mysql/utils.go.html#line-836">utils.go#L836</a>: 	if v := ae.value.<b>Load</b>(); v != nil {
+
+	<a href="../../pkg/go.uber.org/atomic.html">go.uber.org/atomic</a>
+		<a href="../../src/go.uber.org/atomic/error.go.html#line-45">error.go#L45</a>: 	return unpackError(x.v.<b>Load</b>())
+		<a href="../../src/go.uber.org/atomic/string.go.html#line-45">string.go#L45</a>: 	if v := x.v.<b>Load</b>(); v != nil {
+
+	<a href="../../pkg/google.golang.org/grpc.html">google.golang.org/grpc</a>
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-294">stream.go#L294</a>: 		cs.retryThrottler = cc.retryThrottler.<b>Load</b>().(*retryThrottler)
+
+	<a href="../../pkg/google.golang.org/grpc/internal/transport.html">google.golang.org/grpc/internal/transport</a>
+		<a href="../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-314">controlbuf.go#L314</a>: 	ch, _ := c.trfChan.<b>Load</b>().(chan struct{})
+		<a href="../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-392" class="path-duplicate">controlbuf.go</a><a href="../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-392">#L392</a>: 					ch := c.trfChan.<b>Load</b>().(chan struct{})
+		<a href="../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-437" class="path-duplicate">controlbuf.go</a><a href="../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-437">#L437</a>: 	ch, _ := c.trfChan.<b>Load</b>().(chan struct{})
+
+	<a href="../../pkg/internal/testlog.html">internal/testlog</a>
+		<a href="../../src/internal/testlog/log.go.html#line-34">log.go#L34</a>: 	if logger.<b>Load</b>() != nil {
+		<a href="../../src/internal/testlog/log.go.html#line-43" class="path-duplicate">log.go</a><a href="../../src/internal/testlog/log.go.html#line-43">#L43</a>: 	impl := logger.<b>Load</b>()
+
+	<a href="../../pkg/net/http.html">net/http</a>
+		<a href="../../src/net/http/server.go.html#line-746">server.go#L746</a>: 	res, _ := cr.conn.curReq.<b>Load</b>().(*response)
+		<a href="../../src/net/http/transport.go.html#line-372">transport.go#L372</a>: 	altProto, _ := t.altProto.<b>Load</b>().(map[string]RoundTripper)
+		<a href="../../src/net/http/transport.go.html#line-499" class="path-duplicate">transport.go</a><a href="../../src/net/http/transport.go.html#line-499">#L499</a>: 	altProto, _ := t.altProto.<b>Load</b>().(map[string]RoundTripper)
+		<a href="../../src/net/http/transport.go.html#line-744" class="path-duplicate">transport.go</a><a href="../../src/net/http/transport.go.html#line-744">#L744</a>: 	oldMap, _ := t.altProto.<b>Load</b>().(map[string]RoundTripper)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

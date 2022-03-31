@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime.cgo_yield</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">var <b><a href="../pkg/runtime.html">runtime</a>.<a href="../src/runtime/cgo.go.html#line-54">cgo_yield</a></b></span>
+
+<span class="title">12 uses</span>
+
+	runtime (current package)
+		<a href="../src/runtime/cgo.go.html#line-54">cgo.go#L54</a>: var <b>cgo_yield</b> = &amp;_cgo_yield
+		<a href="../src/runtime/lock_sema.go.html#line-181">lock_sema.go#L181</a>: 	if *<b>cgo_yield</b> == nil {
+		<a href="../src/runtime/lock_sema.go.html#line-188" class="path-duplicate">lock_sema.go</a><a href="../src/runtime/lock_sema.go.html#line-188">#L188</a>: 			asmcgocall(*<b>cgo_yield</b>, nil)
+		<a href="../src/runtime/lock_sema.go.html#line-213" class="path-duplicate">lock_sema.go</a><a href="../src/runtime/lock_sema.go.html#line-213">#L213</a>: 		if *<b>cgo_yield</b> == nil {
+		<a href="../src/runtime/lock_sema.go.html#line-219" class="path-duplicate">lock_sema.go</a><a href="../src/runtime/lock_sema.go.html#line-219">#L219</a>: 				asmcgocall(*<b>cgo_yield</b>, nil)
+		<a href="../src/runtime/lock_sema.go.html#line-230" class="path-duplicate">lock_sema.go</a><a href="../src/runtime/lock_sema.go.html#line-230">#L230</a>: 		if *<b>cgo_yield</b> != nil &amp;&amp; ns &gt; 10e6 {
+		<a href="../src/runtime/lock_sema.go.html#line-239" class="path-duplicate">lock_sema.go</a><a href="../src/runtime/lock_sema.go.html#line-239">#L239</a>: 		if *<b>cgo_yield</b> != nil {
+		<a href="../src/runtime/lock_sema.go.html#line-240" class="path-duplicate">lock_sema.go</a><a href="../src/runtime/lock_sema.go.html#line-240">#L240</a>: 			asmcgocall(*<b>cgo_yield</b>, nil)
+		<a href="../src/runtime/proc.go.html#line-2729">proc.go#L2729</a>: 	if *<b>cgo_yield</b> != nil {
+		<a href="../src/runtime/proc.go.html#line-2730" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2730">#L2730</a>: 		asmcgocall(*<b>cgo_yield</b>, nil)
+		<a href="../src/runtime/proc.go.html#line-5397" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5397">#L5397</a>: 		if *<b>cgo_yield</b> != nil {
+		<a href="../src/runtime/proc.go.html#line-5398" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5398">#L5398</a>: 			asmcgocall(*<b>cgo_yield</b>, nil)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

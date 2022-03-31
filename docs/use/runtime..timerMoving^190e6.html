@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime.timerMoving</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">const <b><a href="../pkg/runtime.html">runtime</a>.<a href="../src/runtime/time.go.html#line-159">timerMoving</a></b></span>
+
+<span class="title">19 uses</span>
+
+	runtime (current package)
+		<a href="../src/runtime/time.go.html#line-159">time.go#L159</a>: 	<b>timerMoving</b>
+		<a href="../src/runtime/time.go.html#line-349" class="path-duplicate">time.go</a><a href="../src/runtime/time.go.html#line-349">#L349</a>: 		case timerRunning, <b>timerMoving</b>:
+		<a href="../src/runtime/time.go.html#line-470" class="path-duplicate">time.go</a><a href="../src/runtime/time.go.html#line-470">#L470</a>: 		case timerRunning, timerRemoving, <b>timerMoving</b>:
+		<a href="../src/runtime/time.go.html#line-576" class="path-duplicate">time.go</a><a href="../src/runtime/time.go.html#line-576">#L576</a>: 			if !atomic.Cas(&amp;t.status, s, <b>timerMoving</b>) {
+		<a href="../src/runtime/time.go.html#line-584" class="path-duplicate">time.go</a><a href="../src/runtime/time.go.html#line-584">#L584</a>: 			if !atomic.Cas(&amp;t.status, <b>timerMoving</b>, timerWaiting) {
+		<a href="../src/runtime/time.go.html#line-604" class="path-duplicate">time.go</a><a href="../src/runtime/time.go.html#line-604">#L604</a>: 				if !atomic.Cas(&amp;t.status, s, <b>timerMoving</b>) {
+		<a href="../src/runtime/time.go.html#line-609" class="path-duplicate">time.go</a><a href="../src/runtime/time.go.html#line-609">#L609</a>: 				if !atomic.Cas(&amp;t.status, <b>timerMoving</b>, timerWaiting) {
+		<a href="../src/runtime/time.go.html#line-614" class="path-duplicate">time.go</a><a href="../src/runtime/time.go.html#line-614">#L614</a>: 				if !atomic.Cas(&amp;t.status, s, <b>timerMoving</b>) {
+		<a href="../src/runtime/time.go.html#line-620" class="path-duplicate">time.go</a><a href="../src/runtime/time.go.html#line-620">#L620</a>: 				if !atomic.Cas(&amp;t.status, <b>timerMoving</b>, timerWaiting) {
+		<a href="../src/runtime/time.go.html#line-637" class="path-duplicate">time.go</a><a href="../src/runtime/time.go.html#line-637">#L637</a>: 			case timerRunning, timerRemoving, <b>timerMoving</b>:
+		<a href="../src/runtime/time.go.html#line-689" class="path-duplicate">time.go</a><a href="../src/runtime/time.go.html#line-689">#L689</a>: 			if atomic.Cas(&amp;t.status, s, <b>timerMoving</b>) {
+		<a href="../src/runtime/time.go.html#line-702" class="path-duplicate">time.go</a><a href="../src/runtime/time.go.html#line-702">#L702</a>: 		case timerNoStatus, timerRunning, timerRemoving, timerRemoved, <b>timerMoving</b>:
+		<a href="../src/runtime/time.go.html#line-729" class="path-duplicate">time.go</a><a href="../src/runtime/time.go.html#line-729">#L729</a>: 		if !atomic.Cas(&amp;t.status, <b>timerMoving</b>, timerWaiting) {
+		<a href="../src/runtime/time.go.html#line-791" class="path-duplicate">time.go</a><a href="../src/runtime/time.go.html#line-791">#L791</a>: 			if !atomic.Cas(&amp;t.status, s, <b>timerMoving</b>) {
+		<a href="../src/runtime/time.go.html#line-797" class="path-duplicate">time.go</a><a href="../src/runtime/time.go.html#line-797">#L797</a>: 			if !atomic.Cas(&amp;t.status, <b>timerMoving</b>, timerWaiting) {
+		<a href="../src/runtime/time.go.html#line-808" class="path-duplicate">time.go</a><a href="../src/runtime/time.go.html#line-808">#L808</a>: 		case timerRunning, timerRemoving, <b>timerMoving</b>:
+		<a href="../src/runtime/time.go.html#line-906" class="path-duplicate">time.go</a><a href="../src/runtime/time.go.html#line-906">#L906</a>: 				if atomic.Cas(&amp;t.status, s, <b>timerMoving</b>) {
+		<a href="../src/runtime/time.go.html#line-912" class="path-duplicate">time.go</a><a href="../src/runtime/time.go.html#line-912">#L912</a>: 					if !atomic.Cas(&amp;t.status, <b>timerMoving</b>, timerWaiting) {
+		<a href="../src/runtime/time.go.html#line-933" class="path-duplicate">time.go</a><a href="../src/runtime/time.go.html#line-933">#L933</a>: 			case timerRunning, timerRemoving, <b>timerMoving</b>:
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: regexp/syntax.appendRange</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">func <b><a href="../../pkg/regexp/syntax.html">regexp/syntax</a>.<a href="../../src/regexp/syntax/parse.go.html#line-1729">appendRange</a></b></span>
+
+<span class="title">21 uses</span>
+
+	regexp/syntax (current package)
+		<a href="../../src/regexp/syntax/parse.go.html#line-1670">parse.go#L1670</a>: 			class = <b>appendRange</b>(class, lo, hi)
+		<a href="../../src/regexp/syntax/parse.go.html#line-1725" class="path-duplicate">parse.go</a><a href="../../src/regexp/syntax/parse.go.html#line-1725">#L1725</a>: 	return <b>appendRange</b>(r, x, x)
+		<a href="../../src/regexp/syntax/parse.go.html#line-1729" class="path-duplicate">parse.go</a><a href="../../src/regexp/syntax/parse.go.html#line-1729">#L1729</a>: func <b>appendRange</b>(r []rune, lo, hi rune) []rune {
+		<a href="../../src/regexp/syntax/parse.go.html#line-1766" class="path-duplicate">parse.go</a><a href="../../src/regexp/syntax/parse.go.html#line-1766">#L1766</a>: 		return <b>appendRange</b>(r, lo, hi)
+		<a href="../../src/regexp/syntax/parse.go.html#line-1770" class="path-duplicate">parse.go</a><a href="../../src/regexp/syntax/parse.go.html#line-1770">#L1770</a>: 		return <b>appendRange</b>(r, lo, hi)
+		<a href="../../src/regexp/syntax/parse.go.html#line-1774" class="path-duplicate">parse.go</a><a href="../../src/regexp/syntax/parse.go.html#line-1774">#L1774</a>: 		r = <b>appendRange</b>(r, lo, minFold-1)
+		<a href="../../src/regexp/syntax/parse.go.html#line-1779" class="path-duplicate">parse.go</a><a href="../../src/regexp/syntax/parse.go.html#line-1779">#L1779</a>: 		r = <b>appendRange</b>(r, maxFold+1, hi)
+		<a href="../../src/regexp/syntax/parse.go.html#line-1785" class="path-duplicate">parse.go</a><a href="../../src/regexp/syntax/parse.go.html#line-1785">#L1785</a>: 		r = <b>appendRange</b>(r, c, c)
+		<a href="../../src/regexp/syntax/parse.go.html#line-1788" class="path-duplicate">parse.go</a><a href="../../src/regexp/syntax/parse.go.html#line-1788">#L1788</a>: 			r = <b>appendRange</b>(r, f, f)
+		<a href="../../src/regexp/syntax/parse.go.html#line-1799" class="path-duplicate">parse.go</a><a href="../../src/regexp/syntax/parse.go.html#line-1799">#L1799</a>: 		r = <b>appendRange</b>(r, x[i], x[i+1])
+		<a href="../../src/regexp/syntax/parse.go.html#line-1819" class="path-duplicate">parse.go</a><a href="../../src/regexp/syntax/parse.go.html#line-1819">#L1819</a>: 			r = <b>appendRange</b>(r, nextLo, lo-1)
+		<a href="../../src/regexp/syntax/parse.go.html#line-1824" class="path-duplicate">parse.go</a><a href="../../src/regexp/syntax/parse.go.html#line-1824">#L1824</a>: 		r = <b>appendRange</b>(r, nextLo, unicode.MaxRune)
+		<a href="../../src/regexp/syntax/parse.go.html#line-1834" class="path-duplicate">parse.go</a><a href="../../src/regexp/syntax/parse.go.html#line-1834">#L1834</a>: 			r = <b>appendRange</b>(r, lo, hi)
+		<a href="../../src/regexp/syntax/parse.go.html#line-1838" class="path-duplicate">parse.go</a><a href="../../src/regexp/syntax/parse.go.html#line-1838">#L1838</a>: 			r = <b>appendRange</b>(r, c, c)
+		<a href="../../src/regexp/syntax/parse.go.html#line-1844" class="path-duplicate">parse.go</a><a href="../../src/regexp/syntax/parse.go.html#line-1844">#L1844</a>: 			r = <b>appendRange</b>(r, lo, hi)
+		<a href="../../src/regexp/syntax/parse.go.html#line-1848" class="path-duplicate">parse.go</a><a href="../../src/regexp/syntax/parse.go.html#line-1848">#L1848</a>: 			r = <b>appendRange</b>(r, c, c)
+		<a href="../../src/regexp/syntax/parse.go.html#line-1861" class="path-duplicate">parse.go</a><a href="../../src/regexp/syntax/parse.go.html#line-1861">#L1861</a>: 				r = <b>appendRange</b>(r, nextLo, lo-1)
+		<a href="../../src/regexp/syntax/parse.go.html#line-1868" class="path-duplicate">parse.go</a><a href="../../src/regexp/syntax/parse.go.html#line-1868">#L1868</a>: 				r = <b>appendRange</b>(r, nextLo, c-1)
+		<a href="../../src/regexp/syntax/parse.go.html#line-1877" class="path-duplicate">parse.go</a><a href="../../src/regexp/syntax/parse.go.html#line-1877">#L1877</a>: 				r = <b>appendRange</b>(r, nextLo, lo-1)
+		<a href="../../src/regexp/syntax/parse.go.html#line-1884" class="path-duplicate">parse.go</a><a href="../../src/regexp/syntax/parse.go.html#line-1884">#L1884</a>: 				r = <b>appendRange</b>(r, nextLo, c-1)
+		<a href="../../src/regexp/syntax/parse.go.html#line-1890" class="path-duplicate">parse.go</a><a href="../../src/regexp/syntax/parse.go.html#line-1890">#L1890</a>: 		r = <b>appendRange</b>(r, nextLo, unicode.MaxRune)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: net/url.URL.Path</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../pkg/net/url.html">net/url</a>.<a href="../../src/net/url/url.go.html#line-358">URL</a>.<a href="../../src/net/url/url.go.html#line-363">Path</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">61 uses</span>
+
+	net/url (current package)
+		<a href="../../src/net/url/url.go.html#line-363">url.go#L363</a>: 	<b>Path</b>        string    // path (relative paths may omit leading slash)
+		<a href="../../src/net/url/url.go.html#line-522" class="path-duplicate">url.go</a><a href="../../src/net/url/url.go.html#line-522">#L522</a>: 		url.<b>Path</b> = "*"
+		<a href="../../src/net/url/url.go.html#line-681" class="path-duplicate">url.go</a><a href="../../src/net/url/url.go.html#line-681">#L681</a>: 	u.<b>Path</b> = path
+		<a href="../../src/net/url/url.go.html#line-703" class="path-duplicate">url.go</a><a href="../../src/net/url/url.go.html#line-703">#L703</a>: 		if err == nil &amp;&amp; p == u.<b>Path</b> {
+		<a href="../../src/net/url/url.go.html#line-707" class="path-duplicate">url.go</a><a href="../../src/net/url/url.go.html#line-707">#L707</a>: 	if u.<b>Path</b> == "*" {
+		<a href="../../src/net/url/url.go.html#line-710" class="path-duplicate">url.go</a><a href="../../src/net/url/url.go.html#line-710">#L710</a>: 	return escape(u.<b>Path</b>, encodePath)
+		<a href="../../src/net/url/url.go.html#line-821" class="path-duplicate">url.go</a><a href="../../src/net/url/url.go.html#line-821">#L821</a>: 			if u.Host != "" || u.<b>Path</b> != "" || u.User != nil {
+		<a href="../../src/net/url/url.go.html#line-1109" class="path-duplicate">url.go</a><a href="../../src/net/url/url.go.html#line-1109">#L1109</a>: 		url.<b>Path</b> = ""
+		<a href="../../src/net/url/url.go.html#line-1112" class="path-duplicate">url.go</a><a href="../../src/net/url/url.go.html#line-1112">#L1112</a>: 	if ref.<b>Path</b> == "" &amp;&amp; ref.RawQuery == "" {
+
+	<a href="../../pkg/net/http.html">net/http</a>
+		<a href="../../src/net/http/fs.go.html#line-161">fs.go#L161</a>: 		url := url.URL{<b>Path</b>: name}
+		<a href="../../src/net/http/fs.go.html#line-592" class="path-duplicate">fs.go</a><a href="../../src/net/http/fs.go.html#line-592">#L592</a>: 	if strings.HasSuffix(r.URL.<b>Path</b>, indexPage) {
+		<a href="../../src/net/http/fs.go.html#line-615" class="path-duplicate">fs.go</a><a href="../../src/net/http/fs.go.html#line-615">#L615</a>: 		url := r.URL.<b>Path</b>
+		<a href="../../src/net/http/fs.go.html#line-630" class="path-duplicate">fs.go</a><a href="../../src/net/http/fs.go.html#line-630">#L630</a>: 		url := r.URL.<b>Path</b>
+		<a href="../../src/net/http/fs.go.html#line-715" class="path-duplicate">fs.go</a><a href="../../src/net/http/fs.go.html#line-715">#L715</a>: 	if containsDotDot(r.URL.<b>Path</b>) {
+		<a href="../../src/net/http/fs.go.html#line-843" class="path-duplicate">fs.go</a><a href="../../src/net/http/fs.go.html#line-843">#L843</a>: 	upath := r.URL.<b>Path</b>
+		<a href="../../src/net/http/fs.go.html#line-846" class="path-duplicate">fs.go</a><a href="../../src/net/http/fs.go.html#line-846">#L846</a>: 		r.URL.<b>Path</b> = upath
+		<a href="../../src/net/http/request.go.html#line-497">request.go#L497</a>: 	return r.Method == "PRI" &amp;&amp; len(r.Header) == 0 &amp;&amp; r.URL.<b>Path</b> == "*" &amp;&amp; r.Proto == "HTTP/2.0"
+		<a href="../../src/net/http/request.go.html#line-587" class="path-duplicate">request.go</a><a href="../../src/net/http/request.go.html#line-587">#L587</a>: 	} else if r.Method == "CONNECT" &amp;&amp; r.URL.<b>Path</b> == "" {
+		<a href="../../src/net/http/server.go.html#line-2081">server.go#L2081</a>: 		p := strings.TrimPrefix(r.URL.<b>Path</b>, prefix)
+		<a href="../../src/net/http/server.go.html#line-2083" class="path-duplicate">server.go</a><a href="../../src/net/http/server.go.html#line-2083">#L2083</a>: 		if len(p) &lt; len(r.URL.<b>Path</b>) &amp;&amp; (r.URL.RawPath == "" || len(rp) &lt; len(r.URL.RawPath)) {
+		<a href="../../src/net/http/server.go.html#line-2088" class="path-duplicate">server.go</a><a href="../../src/net/http/server.go.html#line-2088">#L2088</a>: 			r2.URL.<b>Path</b> = p
+		<a href="../../src/net/http/server.go.html#line-2115" class="path-duplicate">server.go</a><a href="../../src/net/http/server.go.html#line-2115">#L2115</a>: 			oldpath := r.URL.<b>Path</b>
+		<a href="../../src/net/http/server.go.html#line-2317" class="path-duplicate">server.go</a><a href="../../src/net/http/server.go.html#line-2317">#L2317</a>: 	u = &amp;url.URL{<b>Path</b>: path, RawQuery: u.RawQuery}
+		<a href="../../src/net/http/server.go.html#line-2368" class="path-duplicate">server.go</a><a href="../../src/net/http/server.go.html#line-2368">#L2368</a>: 		if u, ok := mux.redirectToPathSlash(r.URL.Host, r.URL.<b>Path</b>, r.URL); ok {
+		<a href="../../src/net/http/server.go.html#line-2369" class="path-duplicate">server.go</a><a href="../../src/net/http/server.go.html#line-2369">#L2369</a>: 			return RedirectHandler(u.String(), StatusMovedPermanently), u.<b>Path</b>
+		<a href="../../src/net/http/server.go.html#line-2372" class="path-duplicate">server.go</a><a href="../../src/net/http/server.go.html#line-2372">#L2372</a>: 		return mux.handler(r.Host, r.URL.<b>Path</b>)
+		<a href="../../src/net/http/server.go.html#line-2378" class="path-duplicate">server.go</a><a href="../../src/net/http/server.go.html#line-2378">#L2378</a>: 	path := cleanPath(r.URL.<b>Path</b>)
+		<a href="../../src/net/http/server.go.html#line-2383" class="path-duplicate">server.go</a><a href="../../src/net/http/server.go.html#line-2383">#L2383</a>: 		return RedirectHandler(u.String(), StatusMovedPermanently), u.<b>Path</b>
+		<a href="../../src/net/http/server.go.html#line-2386" class="path-duplicate">server.go</a><a href="../../src/net/http/server.go.html#line-2386">#L2386</a>: 	if path != r.URL.<b>Path</b> {
+		<a href="../../src/net/http/server.go.html#line-2388" class="path-duplicate">server.go</a><a href="../../src/net/http/server.go.html#line-2388">#L2388</a>: 		u := &amp;url.URL{<b>Path</b>: path, RawQuery: r.URL.RawQuery}
+		<a href="../../src/net/http/server.go.html#line-2392" class="path-duplicate">server.go</a><a href="../../src/net/http/server.go.html#line-2392">#L2392</a>: 	return mux.handler(host, r.URL.<b>Path</b>)
+
+	<a href="../../pkg/net/http/httputil.html">net/http/httputil</a>
+		<a href="../../src/net/http/httputil/reverseproxy.go.html#line-117">reverseproxy.go#L117</a>: 		return singleJoiningSlash(a.<b>Path</b>, b.<b>Path</b>), ""
+		<a href="../../src/net/http/httputil/reverseproxy.go.html#line-129" class="path-duplicate">reverseproxy.go</a><a href="../../src/net/http/httputil/reverseproxy.go.html#line-129">#L129</a>: 		return a.<b>Path</b> + b.<b>Path</b>[1:], apath + bpath[1:]
+		<a href="../../src/net/http/httputil/reverseproxy.go.html#line-131" class="path-duplicate">reverseproxy.go</a><a href="../../src/net/http/httputil/reverseproxy.go.html#line-131">#L131</a>: 		return a.<b>Path</b> + "/" + b.<b>Path</b>, apath + "/" + bpath
+		<a href="../../src/net/http/httputil/reverseproxy.go.html#line-133" class="path-duplicate">reverseproxy.go</a><a href="../../src/net/http/httputil/reverseproxy.go.html#line-133">#L133</a>: 	return a.<b>Path</b> + b.<b>Path</b>, apath + bpath
+		<a href="../../src/net/http/httputil/reverseproxy.go.html#line-148" class="path-duplicate">reverseproxy.go</a><a href="../../src/net/http/httputil/reverseproxy.go.html#line-148">#L148</a>: 		req.URL.<b>Path</b>, req.URL.RawPath = joinURLPath(target, req.URL)
+
+	<a href="../../pkg/github.com/aws/aws-sdk-go/private/protocol/rest.html">github.com/aws/aws-sdk-go/private/protocol/rest</a>
+		<a href="../../src/github.com/aws/aws-sdk-go/private/protocol/rest/build.go.html#line-71">build.go#L71</a>: 	r.HTTPRequest.URL.RawPath = r.HTTPRequest.URL.<b>Path</b>
+		<a href="../../src/github.com/aws/aws-sdk-go/private/protocol/rest/build.go.html#line-202" class="path-duplicate">build.go</a><a href="../../src/github.com/aws/aws-sdk-go/private/protocol/rest/build.go.html#line-202">#L202</a>: 	u.<b>Path</b> = strings.Replace(u.<b>Path</b>, "{"+name+"}", value, -1)
+		<a href="../../src/github.com/aws/aws-sdk-go/private/protocol/rest/build.go.html#line-203" class="path-duplicate">build.go</a><a href="../../src/github.com/aws/aws-sdk-go/private/protocol/rest/build.go.html#line-203">#L203</a>: 	u.<b>Path</b> = strings.Replace(u.<b>Path</b>, "{"+name+"+}", value, -1)
+		<a href="../../src/github.com/aws/aws-sdk-go/private/protocol/rest/build.go.html#line-241" class="path-duplicate">build.go</a><a href="../../src/github.com/aws/aws-sdk-go/private/protocol/rest/build.go.html#line-241">#L241</a>: 	hasSlash := strings.HasSuffix(u.<b>Path</b>, "/")
+		<a href="../../src/github.com/aws/aws-sdk-go/private/protocol/rest/build.go.html#line-244" class="path-duplicate">build.go</a><a href="../../src/github.com/aws/aws-sdk-go/private/protocol/rest/build.go.html#line-244">#L244</a>: 	u.<b>Path</b> = path.Clean(u.<b>Path</b>)
+		<a href="../../src/github.com/aws/aws-sdk-go/private/protocol/rest/build.go.html#line-247" class="path-duplicate">build.go</a><a href="../../src/github.com/aws/aws-sdk-go/private/protocol/rest/build.go.html#line-247">#L247</a>: 	if hasSlash &amp;&amp; !strings.HasSuffix(u.<b>Path</b>, "/") {
+		<a href="../../src/github.com/aws/aws-sdk-go/private/protocol/rest/build.go.html#line-248" class="path-duplicate">build.go</a><a href="../../src/github.com/aws/aws-sdk-go/private/protocol/rest/build.go.html#line-248">#L248</a>: 		u.<b>Path</b> += "/"
+
+	<a href="../../pkg/github.com/caring/test/1-mocks.html">github.com/caring/test/1-mocks</a>
+		<a href="../../src/github.com/caring/test/1-mocks/http.go.html#line-66">http.go#L66</a>: 	if !strings.HasPrefix(r.URL.<b>Path</b>, "/fizzbuzz/") {
+		<a href="../../src/github.com/caring/test/1-mocks/http.go.html#line-68" class="path-duplicate">http.go</a><a href="../../src/github.com/caring/test/1-mocks/http.go.html#line-68">#L68</a>: 		result.Error = "not found: " + r.URL.<b>Path</b>
+		<a href="../../src/github.com/caring/test/1-mocks/http.go.html#line-82" class="path-duplicate">http.go</a><a href="../../src/github.com/caring/test/1-mocks/http.go.html#line-82">#L82</a>: 	idStr := strings.TrimPrefix(r.URL.<b>Path</b>, "/fizzbuzz/")
+
+	<a href="../../pkg/go.uber.org/zap.html">go.uber.org/zap</a>
+		<a href="../../src/go.uber.org/zap/sink.go.html#line-133">sink.go#L133</a>: 	switch u.<b>Path</b> {
+		<a href="../../src/go.uber.org/zap/sink.go.html#line-139" class="path-duplicate">sink.go</a><a href="../../src/go.uber.org/zap/sink.go.html#line-139">#L139</a>: 	return os.OpenFile(u.<b>Path</b>, os.O_WRONLY|os.O_APPEND|os.O_CREATE, 0644)
+
+	<a href="../../pkg/golang.org/x/net/trace.html">golang.org/x/net/trace</a>
+		<a href="../../src/golang.org/x/net/trace/trace.go.html#line-121">trace.go#L121</a>: 	_, pat := http.DefaultServeMux.Handler(&amp;http.Request{URL: &amp;url.URL{<b>Path</b>: debugRequestsPath}})
+
+	<a href="../../pkg/google.golang.org/grpc.html">google.golang.org/grpc</a>
+		<a href="../../src/google.golang.org/grpc/clientconn.go.html#line-1676">clientconn.go#L1676</a>: 	endpoint := u.<b>Path</b>
+
+	<a href="../../pkg/google.golang.org/grpc/internal/credentials.html">google.golang.org/grpc/internal/credentials</a>
+		<a href="../../src/google.golang.org/grpc/internal/credentials/spiffe.go.html#line-59">spiffe.go#L59</a>: 		if len(uri.Host) == 0 || len(uri.<b>Path</b>) == 0 {
+
+	<a href="../../pkg/google.golang.org/grpc/internal/resolver/unix.html">google.golang.org/grpc/internal/resolver/unix</a>
+		<a href="../../src/google.golang.org/grpc/internal/resolver/unix/unix.go.html#line-46">unix.go#L46</a>: 	endpoint := target.URL.<b>Path</b>
+
+	<a href="../../pkg/google.golang.org/grpc/internal/transport.html">google.golang.org/grpc/internal/transport</a>
+		<a href="../../src/google.golang.org/grpc/internal/transport/handler_server.go.html#line-360">handler_server.go#L360</a>: 		method:         req.URL.<b>Path</b>,
+		<a href="../../src/google.golang.org/grpc/internal/transport/http_util.go.html#line-415">http_util.go#L415</a>: 		addr := t.<b>Path</b>
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

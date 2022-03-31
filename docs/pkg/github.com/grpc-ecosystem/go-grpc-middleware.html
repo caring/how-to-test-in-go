@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Package: github.com/grpc-ecosystem/go-grpc-middleware</title>
+<link href="../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre id="package-details"><code><span style="font-size:xx-large;">package <b>grpc_middleware</b></span>
+
+<span class="title">Import Path</span>
+	<a href="../../../index.html#pkg-github.com/grpc-ecosystem/go-grpc-middleware">github.com/grpc-ecosystem/go-grpc-middleware</a><i> (on <a href="https://pkg.go.dev/github.com/grpc-ecosystem/go-grpc-middleware" target="_blank">go.dev</a>)</i>
+
+<span class="title">Dependency Relation</span>
+	imports <a href="../../../dep/github.com/grpc-ecosystem/go-grpc-middleware.html">2 packages</a>, and imported by <a href="../../../dep/github.com/grpc-ecosystem/go-grpc-middleware.html#imported-by">2 packages</a>
+
+<div id="files"><span class="title">Involved Source Files</span>
+
+	<span class="nodocs">      <a href="../../../src/github.com/grpc-ecosystem/go-grpc-middleware/chain.go.html">chain.go</a></span>
+	<input type='checkbox' checked class="fold" id="file-1-fold-content"><label for="file-1-fold-content">   <a href="../../../src/github.com/grpc-ecosystem/go-grpc-middleware/doc.go.html#doc">#d</a> <a href="../../../src/github.com/grpc-ecosystem/go-grpc-middleware/doc.go.html">doc.go</a></label><span id='file-1-fold-content-items' class="fold-items">
+		`grpc_middleware` is a collection of gRPC middleware packages: interceptors, helpers and tools.
+
+		Middleware
+
+		gRPC is a fantastic RPC middleware, which sees a lot of adoption in the Golang world. However, the
+		upstream gRPC codebase is relatively bare bones.
+
+		This package, and most of its child packages provides commonly needed middleware for gRPC:
+		client-side interceptors for retires, server-side interceptors for input validation and auth,
+		functions for chaining said interceptors, metadata convenience methods and more.
+
+		Chaining
+
+		By default, gRPC doesn't allow one to have more than one interceptor either on the client nor on
+		the server side. `grpc_middleware` provides convenient chaining methods
+
+		Simple way of turning a multiple interceptors into a single interceptor. Here's an example for
+		server chaining:
+
+		myServer := grpc.NewServer(
+		    grpc.StreamInterceptor(grpc_middleware.ChainStreamServer(loggingStream, monitoringStream, authStream)),
+		    grpc.UnaryInterceptor(grpc_middleware.ChainUnaryServer(loggingUnary, monitoringUnary, authUnary),
+		)
+
+		These interceptors will be executed from left to right: logging, monitoring and auth.
+
+		Here's an example for client side chaining:
+
+		clientConn, err = grpc.Dial(
+		    address,
+		        grpc.WithUnaryInterceptor(grpc_middleware.ChainUnaryClient(monitoringClientUnary, retryUnary)),
+		        grpc.WithStreamInterceptor(grpc_middleware.ChainStreamClient(monitoringClientStream, retryStream)),
+		)
+		client = pb_testproto.NewTestServiceClient(clientConn)
+		resp, err := client.PingEmpty(s.ctx, &amp;myservice.Request{Msg: "hello"})
+
+		These interceptors will be executed from left to right: monitoring and then retry logic.
+
+		The retry interceptor will call every interceptor that follows it whenever when a retry happens.
+
+		Writing Your Own
+
+		Implementing your own interceptor is pretty trivial: there are interfaces for that. But the interesting
+		bit exposing common data to handlers (and other middleware), similarly to HTTP Middleware design.
+		For example, you may want to pass the identity of the caller from the auth interceptor all the way
+		to the handling function.
+
+		For example, a client side interceptor example for auth looks like:
+
+		func FakeAuthUnaryInterceptor(ctx context.Context, req interface{}, info *grpc.UnaryServerInfo, handler grpc.UnaryHandler) (interface{}, error) {
+		   newCtx := context.WithValue(ctx, "user_id", "john@example.com")
+		   return handler(newCtx, req)
+		}
+
+		Unfortunately, it's not as easy for streaming RPCs. These have the `context.Context` embedded within
+		the `grpc.ServerStream` object. To pass values through context, a wrapper (`WrappedServerStream`) is
+		needed. For example:
+
+		func FakeAuthStreamingInterceptor(srv interface{}, stream grpc.ServerStream, info *grpc.StreamServerInfo, handler grpc.StreamHandler) error {
+		   newStream := grpc_middleware.WrapServerStream(stream)
+		   newStream.WrappedContext = context.WithValue(ctx, "user_id", "john@example.com")
+		   return handler(srv, stream)
+		}
+</span>
+	<span class="nodocs">      <a href="../../../src/github.com/grpc-ecosystem/go-grpc-middleware/wrappers.go.html">wrappers.go</a></span></div>
+<div id="exported-types"><span class="title">Package-Level Type Names<span class="title-stat"><i> (only one, which is exported)</i></span></span>
+
+<div id="exported-types-buttons" class="js-on">	/* sort exporteds by: <label id="sort-types-by-alphabet" class="button">alphabet</label> | <label id="sort-types-by-popularity" class="button">popularity</label> */</div><div class="anchor type-res" id="name-WrappedServerStream" data-popularity="475">	<input type='checkbox' class="fold" id="WrappedServerStream-fold-content"><label for="WrappedServerStream-fold-content"> <a href="../../../use/github.com/grpc-ecosystem/go-grpc-middleware..WrappedServerStream.html">type</a> <a href="../../../src/github.com/grpc-ecosystem/go-grpc-middleware/wrappers.go.html#line-13">WrappedServerStream</a> <i>(struct)</i></label><span id='WrappedServerStream-fold-content-docs' class="fold-docs">
+		WrappedServerStream is a thin wrapper around grpc.ServerStream that allows modifying context.
+
+		<input type='checkbox' class="fold" id="WrappedServerStream-fold-fields"><label for="WrappedServerStream-fold-fields">Fields (<i>total 2, both are exported</i>)</label><span id='WrappedServerStream-fold-fields-items' class="fold-items"><span>
+			<span class="nodocs"><a href="../../../src/github.com/grpc-ecosystem/go-grpc-middleware/wrappers.go.html#line-14">ServerStream</a> <i><a href="../../google.golang.org/grpc.html">grpc</a>.<a href="../../google.golang.org/grpc.html#name-ServerStream">ServerStream</a></i></span></span><span>
+			<input type='checkbox' class="fold" id="WrappedServerStream-fold-field-WrappedContext"><label for="WrappedServerStream-fold-field-WrappedContext"><a href="../../../src/github.com/grpc-ecosystem/go-grpc-middleware/wrappers.go.html#line-16">WrappedContext</a> <i><a href="../../context.html">context</a>.<a href="../../context.html#name-Context">Context</a></i></label><span id='WrappedServerStream-fold-field-WrappedContext-docs' class="fold-docs">
+				WrappedContext is the wrapper's own Context. You can assign it.
+</span></span></span>
+		<input type='checkbox' class="fold" id="WrappedServerStream-fold-methods"><label for="WrappedServerStream-fold-methods">Methods (<i>total 6, all are exported</i>)</label><span id='WrappedServerStream-fold-methods-items' class="fold-items"><span>
+			<input type='checkbox' class="fold" id="WrappedServerStream-fold-method-Context"><label for="WrappedServerStream-fold-method-Context">(*WrappedServerStream) <a href="../../../src/github.com/grpc-ecosystem/go-grpc-middleware/wrappers.go.html#line-20">Context</a>() <a href="../../context.html">context</a>.<a href="../../context.html#name-Context">Context</a></label><span id='WrappedServerStream-fold-method-Context-docs' class="fold-docs">
+				Context returns the wrapper's WrappedContext, overwriting the nested grpc.ServerStream.Context()
+</span></span><span>
+			<input type='checkbox' class="fold" id="WrappedServerStream-fold-method-RecvMsg"><label for="WrappedServerStream-fold-method-RecvMsg">( WrappedServerStream) <a href="../../../src/google.golang.org/grpc/stream.go.html#line-1407">RecvMsg</a>(m interface{}) <a href="../../builtin.html#name-error">error</a></label><span id='WrappedServerStream-fold-method-RecvMsg-docs' class="fold-docs">
+				RecvMsg blocks until it receives a message into m or the stream is
+				done. It returns io.EOF when the client has performed a CloseSend. On
+				any non-EOF error, the stream is aborted and the error contains the
+				RPC status.
+
+				It is safe to have a goroutine calling SendMsg and another goroutine
+				calling RecvMsg on the same stream at the same time, but it is not
+				safe to call RecvMsg on the same stream in different goroutines.
+</span></span><span>
+			<input type='checkbox' class="fold" id="WrappedServerStream-fold-method-SendHeader"><label for="WrappedServerStream-fold-method-SendHeader">( WrappedServerStream) <a href="../../../src/google.golang.org/grpc/stream.go.html#line-1378">SendHeader</a>(<a href="../../google.golang.org/grpc/metadata.html">metadata</a>.<a href="../../google.golang.org/grpc/metadata.html#name-MD">MD</a>) <a href="../../builtin.html#name-error">error</a></label><span id='WrappedServerStream-fold-method-SendHeader-docs' class="fold-docs">
+				SendHeader sends the header metadata.
+				The provided md and headers set by SetHeader() will be sent.
+				It fails if called multiple times.
+</span></span><span>
+			<input type='checkbox' class="fold" id="WrappedServerStream-fold-method-SendMsg"><label for="WrappedServerStream-fold-method-SendMsg">( WrappedServerStream) <a href="../../../src/google.golang.org/grpc/stream.go.html#line-1398">SendMsg</a>(m interface{}) <a href="../../builtin.html#name-error">error</a></label><span id='WrappedServerStream-fold-method-SendMsg-docs' class="fold-docs">
+				SendMsg sends a message. On error, SendMsg aborts the stream and the
+				error is returned directly.
+
+				SendMsg blocks until:
+				  - There is sufficient flow control to schedule m with the transport, or
+				  - The stream is done, or
+				  - The stream breaks.
+
+				SendMsg does not wait until the message is received by the client. An
+				untimely stream closure may result in lost messages.
+
+				It is safe to have a goroutine calling SendMsg and another goroutine
+				calling RecvMsg on the same stream at the same time, but it is not safe
+				to call SendMsg on the same stream in different goroutines.
+</span></span><span>
+			<input type='checkbox' class="fold" id="WrappedServerStream-fold-method-SetHeader"><label for="WrappedServerStream-fold-method-SetHeader">( WrappedServerStream) <a href="../../../src/google.golang.org/grpc/stream.go.html#line-1374">SetHeader</a>(<a href="../../google.golang.org/grpc/metadata.html">metadata</a>.<a href="../../google.golang.org/grpc/metadata.html#name-MD">MD</a>) <a href="../../builtin.html#name-error">error</a></label><span id='WrappedServerStream-fold-method-SetHeader-docs' class="fold-docs">
+				SetHeader sets the header metadata. It may be called multiple times.
+				When call multiple times, all the provided metadata will be merged.
+				All the metadata will be sent out when one of the following happens:
+				 - ServerStream.SendHeader() is called;
+				 - The first response is sent out;
+				 - An RPC status is sent out (error or success).
+</span></span><span>
+			<input type='checkbox' class="fold" id="WrappedServerStream-fold-method-SetTrailer"><label for="WrappedServerStream-fold-method-SetTrailer">( WrappedServerStream) <a href="../../../src/google.golang.org/grpc/stream.go.html#line-1381">SetTrailer</a>(<a href="../../google.golang.org/grpc/metadata.html">metadata</a>.<a href="../../google.golang.org/grpc/metadata.html#name-MD">MD</a>)</label><span id='WrappedServerStream-fold-method-SetTrailer-docs' class="fold-docs">
+				SetTrailer sets the trailer metadata which will be sent with the RPC status.
+				When called more than once, all the provided metadata will be merged.
+</span></span></span>
+		<input type='checkbox' class="fold" id="WrappedServerStream-fold-impls"><label for="WrappedServerStream-fold-impls">Implements (<i>at least 2, both are exported</i>)</label><span id='WrappedServerStream-fold-impls-items' class="fold-items"><span>
+			*WrappedServerStream : google.golang.org/grpc.<a href="../../google.golang.org/grpc.html#name-ServerStream">ServerStream</a></span><span>
+			*WrappedServerStream : google.golang.org/grpc.<a href="../../google.golang.org/grpc.html#name-Stream">Stream</a></span></span>
+		<input type='checkbox' class="fold" id="WrappedServerStream-fold-results"><label for="WrappedServerStream-fold-results">As Outputs Of (<i>at least one exported</i>)</label><span id='WrappedServerStream-fold-results-items' class="fold-items"><span>
+			func <a href="#name-WrapServerStream">WrapServerStream</a>(stream <a href="../../google.golang.org/grpc.html">grpc</a>.<a href="../../google.golang.org/grpc.html#name-ServerStream">ServerStream</a>) *<b>WrappedServerStream</b></span></span>
+
+</span></div></div>
+<div id="exported-functions"><span class="title">Package-Level Functions<span class="title-stat"><i> (total 7, all are exported)</i></span></span>
+
+<div class="anchor value-res" id="name-ChainStreamClient">	<input type='checkbox' class="fold" id="ChainStreamClient-fold-content"><label for="ChainStreamClient-fold-content"> <a href="../../../use/github.com/grpc-ecosystem/go-grpc-middleware..ChainStreamClient.html">func</a> <a href="../../../src/github.com/grpc-ecosystem/go-grpc-middleware/chain.go.html#line-89">ChainStreamClient</a>(interceptors ...<a href="../../google.golang.org/grpc.html">grpc</a>.<a href="../../google.golang.org/grpc.html#name-StreamClientInterceptor">StreamClientInterceptor</a>) <a href="../../google.golang.org/grpc.html">grpc</a>.<a href="../../google.golang.org/grpc.html#name-StreamClientInterceptor">StreamClientInterceptor</a></label><span id='ChainStreamClient-fold-content-docs' class="fold-docs">
+		ChainStreamClient creates a single interceptor out of a chain of many interceptors.
+
+		Execution is done in left-to-right order, including passing of context.
+		For example ChainStreamClient(one, two, three) will execute one before two before three.
+
+</span></div><div class="anchor value-res" id="name-ChainStreamServer">	<input type='checkbox' class="fold" id="ChainStreamServer-fold-content"><label for="ChainStreamServer-fold-content"> <a href="../../../use/github.com/grpc-ecosystem/go-grpc-middleware..ChainStreamServer.html">func</a> <a href="../../../src/github.com/grpc-ecosystem/go-grpc-middleware/chain.go.html#line-43">ChainStreamServer</a>(interceptors ...<a href="../../google.golang.org/grpc.html">grpc</a>.<a href="../../google.golang.org/grpc.html#name-StreamServerInterceptor">StreamServerInterceptor</a>) <a href="../../google.golang.org/grpc.html">grpc</a>.<a href="../../google.golang.org/grpc.html#name-StreamServerInterceptor">StreamServerInterceptor</a></label><span id='ChainStreamServer-fold-content-docs' class="fold-docs">
+		ChainStreamServer creates a single interceptor out of a chain of many interceptors.
+
+		Execution is done in left-to-right order, including passing of context.
+		For example ChainUnaryServer(one, two, three) will execute one before two before three.
+		If you want to pass context between interceptors, use WrapServerStream.
+
+</span></div><div class="anchor value-res" id="name-ChainUnaryClient">	<input type='checkbox' class="fold" id="ChainUnaryClient-fold-content"><label for="ChainUnaryClient-fold-content"> <a href="../../../use/github.com/grpc-ecosystem/go-grpc-middleware..ChainUnaryClient.html">func</a> <a href="../../../src/github.com/grpc-ecosystem/go-grpc-middleware/chain.go.html#line-66">ChainUnaryClient</a>(interceptors ...<a href="../../google.golang.org/grpc.html">grpc</a>.<a href="../../google.golang.org/grpc.html#name-UnaryClientInterceptor">UnaryClientInterceptor</a>) <a href="../../google.golang.org/grpc.html">grpc</a>.<a href="../../google.golang.org/grpc.html#name-UnaryClientInterceptor">UnaryClientInterceptor</a></label><span id='ChainUnaryClient-fold-content-docs' class="fold-docs">
+		ChainUnaryClient creates a single interceptor out of a chain of many interceptors.
+
+		Execution is done in left-to-right order, including passing of context.
+		For example ChainUnaryClient(one, two, three) will execute one before two before three.
+
+</span></div><div class="anchor value-res" id="name-ChainUnaryServer">	<input type='checkbox' class="fold" id="ChainUnaryServer-fold-content"><label for="ChainUnaryServer-fold-content"> <a href="../../../use/github.com/grpc-ecosystem/go-grpc-middleware..ChainUnaryServer.html">func</a> <a href="../../../src/github.com/grpc-ecosystem/go-grpc-middleware/chain.go.html#line-19">ChainUnaryServer</a>(interceptors ...<a href="../../google.golang.org/grpc.html">grpc</a>.<a href="../../google.golang.org/grpc.html#name-UnaryServerInterceptor">UnaryServerInterceptor</a>) <a href="../../google.golang.org/grpc.html">grpc</a>.<a href="../../google.golang.org/grpc.html#name-UnaryServerInterceptor">UnaryServerInterceptor</a></label><span id='ChainUnaryServer-fold-content-docs' class="fold-docs">
+		ChainUnaryServer creates a single interceptor out of a chain of many interceptors.
+
+		Execution is done in left-to-right order, including passing of context.
+		For example ChainUnaryServer(one, two, three) will execute one before two before three, and three
+		will see context changes of one and two.
+
+</span></div><div class="anchor value-res" id="name-WithStreamServerChain">	<input type='checkbox' class="fold" id="WithStreamServerChain-fold-content"><label for="WithStreamServerChain-fold-content"> <a href="../../../use/github.com/grpc-ecosystem/go-grpc-middleware..WithStreamServerChain.html">func</a> <a href="../../../src/github.com/grpc-ecosystem/go-grpc-middleware/chain.go.html#line-118">WithStreamServerChain</a>(interceptors ...<a href="../../google.golang.org/grpc.html">grpc</a>.<a href="../../google.golang.org/grpc.html#name-StreamServerInterceptor">StreamServerInterceptor</a>) <a href="../../google.golang.org/grpc.html">grpc</a>.<a href="../../google.golang.org/grpc.html#name-ServerOption">ServerOption</a></label><span id='WithStreamServerChain-fold-content-docs' class="fold-docs">
+		WithStreamServerChain is a grpc.Server config option that accepts multiple stream interceptors.
+		Basically syntactic sugar.
+
+</span></div><div class="anchor value-res" id="name-WithUnaryServerChain">	<input type='checkbox' class="fold" id="WithUnaryServerChain-fold-content"><label for="WithUnaryServerChain-fold-content"> <a href="../../../use/github.com/grpc-ecosystem/go-grpc-middleware..WithUnaryServerChain.html">func</a> <a href="../../../src/github.com/grpc-ecosystem/go-grpc-middleware/chain.go.html#line-112">WithUnaryServerChain</a>(interceptors ...<a href="../../google.golang.org/grpc.html">grpc</a>.<a href="../../google.golang.org/grpc.html#name-UnaryServerInterceptor">UnaryServerInterceptor</a>) <a href="../../google.golang.org/grpc.html">grpc</a>.<a href="../../google.golang.org/grpc.html#name-ServerOption">ServerOption</a></label><span id='WithUnaryServerChain-fold-content-docs' class="fold-docs">
+		Chain creates a single interceptor out of a chain of many interceptors.
+
+		WithUnaryServerChain is a grpc.Server config option that accepts multiple unary interceptors.
+		Basically syntactic sugar.
+
+</span></div><div class="anchor value-res" id="name-WrapServerStream">	<input type='checkbox' class="fold" id="WrapServerStream-fold-content"><label for="WrapServerStream-fold-content"> <a href="../../../use/github.com/grpc-ecosystem/go-grpc-middleware..WrapServerStream.html">func</a> <a href="../../../src/github.com/grpc-ecosystem/go-grpc-middleware/wrappers.go.html#line-25">WrapServerStream</a>(stream <a href="../../google.golang.org/grpc.html">grpc</a>.<a href="../../google.golang.org/grpc.html#name-ServerStream">ServerStream</a>) *<a href="#name-WrappedServerStream">WrappedServerStream</a></label><span id='WrapServerStream-fold-content-docs' class="fold-docs">
+		WrapServerStream returns a ServerStream that has the ability to overwrite context.
+
+</span></div></div></code></pre><pre id="footer">
+<table><tr><td><img src="../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

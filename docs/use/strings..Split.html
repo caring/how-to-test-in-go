@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: strings.Split</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">func <b><a href="../pkg/strings.html">strings</a>.<a href="../src/strings/strings.go.html#line-299">Split</a></b></span>
+
+<span class="title">45 uses</span>
+
+	strings (current package)
+		<a href="../src/strings/strings.go.html#line-299">strings.go#L299</a>: func <b>Split</b>(s, sep string) []string { return genSplit(s, sep, 0, -1) }
+
+	<a href="../pkg/crypto/tls.html">crypto/tls</a>
+		<a href="../src/crypto/tls/common.go.html#line-1063">common.go#L1063</a>: 			labels := strings.<b>Split</b>(name, ".")
+
+	<a href="../pkg/crypto/x509.html">crypto/x509</a>
+		<a href="../src/crypto/x509/verify.go.html#line-897">verify.go#L897</a>: 	for i, part := range strings.<b>Split</b>(host, ".") {
+		<a href="../src/crypto/x509/verify.go.html#line-948" class="path-duplicate">verify.go</a><a href="../src/crypto/x509/verify.go.html#line-948">#L948</a>: 	patternParts := strings.<b>Split</b>(pattern, ".")
+		<a href="../src/crypto/x509/verify.go.html#line-949" class="path-duplicate">verify.go</a><a href="../src/crypto/x509/verify.go.html#line-949">#L949</a>: 	hostParts := strings.<b>Split</b>(host, ".")
+
+	<a href="../pkg/encoding/xml.html">encoding/xml</a>
+		<a href="../src/encoding/xml/typeinfo.go.html#line-123">typeinfo.go#L123</a>: 	tokens := strings.<b>Split</b>(tag, ",")
+		<a href="../src/encoding/xml/typeinfo.go.html#line-199" class="path-duplicate">typeinfo.go</a><a href="../src/encoding/xml/typeinfo.go.html#line-199">#L199</a>: 	parents := strings.<b>Split</b>(tag, "&gt;")
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/awsutil.html">github.com/aws/aws-sdk-go/aws/awsutil</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/path_value.go.html#line-17">path_value.go#L17</a>: 	pathparts := strings.<b>Split</b>(path, "||")
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/path_value.go.html#line-29" class="path-duplicate">path_value.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/path_value.go.html#line-29">#L29</a>: 	components := strings.<b>Split</b>(path, ".")
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/signer/v4.html">github.com/aws/aws-sdk-go/aws/signer/v4</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/signer/v4/uri_path.go.html#line-14">uri_path.go#L14</a>: 		uri = "/" + strings.Join(strings.<b>Split</b>(u.Opaque, "/")[3:], "/")
+		<a href="../src/github.com/aws/aws-sdk-go/aws/signer/v4/v4.go.html#line-557">v4.go#L557</a>: 		ps := strings.<b>Split</b>(auth, ", ")
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/private/protocol.html">github.com/aws/aws-sdk-go/private/protocol</a>
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/host.go.html#line-25">host.go#L25</a>: 	labels := strings.<b>Split</b>(host, ".")
+
+	<a href="../pkg/github.com/go-sql-driver/mysql.html">github.com/go-sql-driver/mysql</a>
+		<a href="../src/github.com/go-sql-driver/mysql/connection.go.html#line-55">connection.go#L55</a>: 			charsets := strings.<b>Split</b>(val, ",")
+		<a href="../src/github.com/go-sql-driver/mysql/dsn.go.html#line-370">dsn.go#L370</a>: 	for _, v := range strings.<b>Split</b>(params, "&amp;") {
+
+	<a href="../pkg/github.com/uber/jaeger-client-go.html">github.com/uber/jaeger-client-go</a>
+		<a href="../src/github.com/uber/jaeger-client-go/propagation.go.html#line-304">propagation.go#L304</a>: 	for _, kvpair := range strings.<b>Split</b>(value, ",") {
+		<a href="../src/github.com/uber/jaeger-client-go/propagation.go.html#line-305" class="path-duplicate">propagation.go</a><a href="../src/github.com/uber/jaeger-client-go/propagation.go.html#line-305">#L305</a>: 		kv := strings.<b>Split</b>(strings.TrimSpace(kvpair), "=")
+		<a href="../src/github.com/uber/jaeger-client-go/span_context.go.html#line-231">span_context.go#L231</a>: 	parts := strings.<b>Split</b>(value, ":")
+
+	<a href="../pkg/github.com/uber/jaeger-client-go/utils.html">github.com/uber/jaeger-client-go/utils</a>
+		<a href="../src/github.com/uber/jaeger-client-go/utils/utils.go.html#line-47">utils.go#L47</a>: 	octets := strings.<b>Split</b>(ip, ".")
+
+	<a href="../pkg/github.com/uber/jaeger-lib/metrics.html">github.com/uber/jaeger-lib/metrics</a>
+		<a href="../src/github.com/uber/jaeger-lib/metrics/metrics.go.html#line-67">metrics.go#L67</a>: 			tagPairs := strings.<b>Split</b>(tagString, ",")
+		<a href="../src/github.com/uber/jaeger-lib/metrics/metrics.go.html#line-69" class="path-duplicate">metrics.go</a><a href="../src/github.com/uber/jaeger-lib/metrics/metrics.go.html#line-69">#L69</a>: 				tag := strings.<b>Split</b>(tagPair, "=")
+		<a href="../src/github.com/uber/jaeger-lib/metrics/metrics.go.html#line-85" class="path-duplicate">metrics.go</a><a href="../src/github.com/uber/jaeger-lib/metrics/metrics.go.html#line-85">#L85</a>: 				bucketValues := strings.<b>Split</b>(bucketString, ",")
+
+	<a href="../pkg/golang.org/x/net/http2.html">golang.org/x/net/http2</a>
+		<a href="../src/golang.org/x/net/http2/server.go.html#line-2081">server.go#L2081</a>: 		for _, key := range strings.<b>Split</b>(v, ",") {
+		<a href="../src/golang.org/x/net/http2/server.go.html#line-2934" class="path-duplicate">server.go</a><a href="../src/golang.org/x/net/http2/server.go.html#line-2934">#L2934</a>: 	for _, f := range strings.<b>Split</b>(v, ",") {
+
+	<a href="../pkg/golang.org/x/net/idna.html">golang.org/x/net/idna</a>
+		<a href="../src/golang.org/x/net/idna/idna10.0.0.go.html#line-561">idna10.0.0.go#L561</a>: 		l.slice = strings.<b>Split</b>(l.orig, ".")
+
+	<a href="../pkg/google.golang.org/grpc/internal/binarylog.html">google.golang.org/grpc/internal/binarylog</a>
+		<a href="../src/google.golang.org/grpc/internal/binarylog/env_config.go.html#line-50">env_config.go#L50</a>: 	methods := strings.<b>Split</b>(s, ",")
+
+	<a href="../pkg/google.golang.org/protobuf/encoding/protojson.html">google.golang.org/protobuf/encoding/protojson</a>
+		<a href="../src/google.golang.org/protobuf/encoding/protojson/well_known_types.go.html#line-876">well_known_types.go#L876</a>: 	paths := strings.<b>Split</b>(str, ",")
+
+	<a href="../pkg/google.golang.org/protobuf/internal/descfmt.html">google.golang.org/protobuf/internal/descfmt</a>
+		<a href="../src/google.golang.org/protobuf/internal/descfmt/stringer.go.html#line-290">stringer.go#L290</a>: 			ss = append(ss, r[0]+formatColon(0)+strings.Join(strings.<b>Split</b>(r[1], "\n"), "\n\t"))
+
+	<a href="../pkg/google.golang.org/protobuf/internal/impl.html">google.golang.org/protobuf/internal/impl</a>
+		<a href="../src/google.golang.org/protobuf/internal/impl/legacy_enum.go.html#line-212">legacy_enum.go#L212</a>: 	ss := append(strings.<b>Split</b>(prefix, "."), suffix)
+		<a href="../src/google.golang.org/protobuf/internal/impl/legacy_message.go.html#line-201">legacy_message.go#L201</a>: 			for _, s := range strings.<b>Split</b>(tag, ",") {
+		<a href="../src/google.golang.org/protobuf/internal/impl/message.go.html#line-180">message.go#L180</a>: 			for _, s := range strings.<b>Split</b>(f.Tag.Get("protobuf"), ",") {
+		<a href="../src/google.golang.org/protobuf/internal/impl/message.go.html#line-208" class="path-duplicate">message.go</a><a href="../src/google.golang.org/protobuf/internal/impl/message.go.html#line-208">#L208</a>: 		for _, s := range strings.<b>Split</b>(f.Tag.Get("protobuf"), ",") {
+
+	<a href="../pkg/mime.html">mime</a>
+		<a href="../src/mime/type_unix.go.html#line-45">type_unix.go#L45</a>: 		fields := strings.<b>Split</b>(scanner.Text(), ":")
+
+	<a href="../pkg/net/http.html">net/http</a>
+		<a href="../src/net/http/cookie.go.html#line-65">cookie.go#L65</a>: 		parts := strings.<b>Split</b>(textproto.TrimString(line), ";")
+		<a href="../src/net/http/fs.go.html#line-53">fs.go#L53</a>: 	parts := strings.<b>Split</b>(name, string(filepath.Separator))
+		<a href="../src/net/http/fs.go.html#line-879" class="path-duplicate">fs.go</a><a href="../src/net/http/fs.go.html#line-879">#L879</a>: 	for _, ra := range strings.<b>Split</b>(s[len(b):], ",") {
+		<a href="../src/net/http/h2_bundle.go.html#line-5762">h2_bundle.go#L5762</a>: 		for _, key := range strings.<b>Split</b>(v, ",") {
+		<a href="../src/net/http/h2_bundle.go.html#line-6619" class="path-duplicate">h2_bundle.go</a><a href="../src/net/http/h2_bundle.go.html#line-6619">#L6619</a>: 	for _, f := range strings.<b>Split</b>(v, ",") {
+		<a href="../src/net/http/server.go.html#line-1479">server.go#L1479</a>: 	for _, f := range strings.<b>Split</b>(v, ",") {
+
+	<a href="../pkg/net/http/httputil.html">net/http/httputil</a>
+		<a href="../src/net/http/httputil/reverseproxy.go.html#line-400">reverseproxy.go#L400</a>: 		for _, sf := range strings.<b>Split</b>(f, ",") {
+
+	<a href="../pkg/path/filepath.html">path/filepath</a>
+		<a href="../src/path/filepath/path_unix.go.html#line-35">path_unix.go#L35</a>: 	return strings.<b>Split</b>(path, string(ListSeparator))
+
+	<a href="../pkg/text/template.html">text/template</a>
+		<a href="../src/text/template/option.go.html#line-54">option.go#L54</a>: 	elems := strings.<b>Split</b>(opt, "=")
+
+	<a href="../pkg/text/template/parse.html">text/template/parse</a>
+		<a href="../src/text/template/parse/node.go.html#line-395">node.go#L395</a>: 	return &amp;VariableNode{tr: t, NodeType: NodeVariable, Pos: pos, Ident: strings.<b>Split</b>(ident, ".")}
+		<a href="../src/text/template/parse/node.go.html#line-500" class="path-duplicate">node.go</a><a href="../src/text/template/parse/node.go.html#line-500">#L500</a>: 	return &amp;FieldNode{tr: t, NodeType: NodeField, Pos: pos, Ident: strings.<b>Split</b>(ident[1:], ".")} // [1:] to drop leading period
+
+	<a href="../pkg/vendor/golang.org/x/net/http/httpproxy.html">vendor/golang.org/x/net/http/httpproxy</a>
+		<a href="../src/vendor/golang.org/x/net/http/httpproxy/proxy.go.html#line-216">proxy.go#L216</a>: 	for _, p := range strings.<b>Split</b>(c.NoProxy, ",") {
+
+	<a href="../pkg/vendor/golang.org/x/net/idna.html">vendor/golang.org/x/net/idna</a>
+		<a href="../src/vendor/golang.org/x/net/idna/idna10.0.0.go.html#line-594">idna10.0.0.go#L594</a>: 		l.slice = strings.<b>Split</b>(l.orig, ".")
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

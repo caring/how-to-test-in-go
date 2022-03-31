@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: net/http.http2asciiEqualFold</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">func <b><a href="../../pkg/net/http.html">net/http</a>.<a href="../../src/net/http/h2_bundle.go.html#line-58">http2asciiEqualFold</a></b></span>
+
+<span class="title">18 uses</span>
+
+	net/http (current package)
+		<a href="../../src/net/http/h2_bundle.go.html#line-58">h2_bundle.go#L58</a>: func <b>http2asciiEqualFold</b>(s, t string) bool {
+		<a href="../../src/net/http/h2_bundle.go.html#line-6473" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-6473">#L6473</a>: 		if <b>http2asciiEqualFold</b>(k, "content-length") ||
+		<a href="../../src/net/http/h2_bundle.go.html#line-6474" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-6474">#L6474</a>: 			<b>http2asciiEqualFold</b>(k, "content-encoding") ||
+		<a href="../../src/net/http/h2_bundle.go.html#line-6475" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-6475">#L6475</a>: 			<b>http2asciiEqualFold</b>(k, "trailer") ||
+		<a href="../../src/net/http/h2_bundle.go.html#line-6476" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-6476">#L6476</a>: 			<b>http2asciiEqualFold</b>(k, "te") ||
+		<a href="../../src/net/http/h2_bundle.go.html#line-6477" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-6477">#L6477</a>: 			<b>http2asciiEqualFold</b>(k, "expect") ||
+		<a href="../../src/net/http/h2_bundle.go.html#line-6478" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-6478">#L6478</a>: 			<b>http2asciiEqualFold</b>(k, "host") {
+		<a href="../../src/net/http/h2_bundle.go.html#line-7610" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-7610">#L7610</a>: 	if vv := req.Header["Connection"]; len(vv) &gt; 0 &amp;&amp; (len(vv) &gt; 1 || vv[0] != "" &amp;&amp; !<b>http2asciiEqualFold</b>(vv[0], "close") &amp;&amp; !<b>http2asciiEqualFold</b>(vv[0], "keep-alive")) {
+		<a href="../../src/net/http/h2_bundle.go.html#line-8312" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-8312">#L8312</a>: 			if <b>http2asciiEqualFold</b>(k, "host") || <b>http2asciiEqualFold</b>(k, "content-length") {
+		<a href="../../src/net/http/h2_bundle.go.html#line-8316" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-8316">#L8316</a>: 			} else if <b>http2asciiEqualFold</b>(k, "connection") ||
+		<a href="../../src/net/http/h2_bundle.go.html#line-8317" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-8317">#L8317</a>: 				<b>http2asciiEqualFold</b>(k, "proxy-connection") ||
+		<a href="../../src/net/http/h2_bundle.go.html#line-8318" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-8318">#L8318</a>: 				<b>http2asciiEqualFold</b>(k, "transfer-encoding") ||
+		<a href="../../src/net/http/h2_bundle.go.html#line-8319" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-8319">#L8319</a>: 				<b>http2asciiEqualFold</b>(k, "upgrade") ||
+		<a href="../../src/net/http/h2_bundle.go.html#line-8320" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-8320">#L8320</a>: 				<b>http2asciiEqualFold</b>(k, "keep-alive") {
+		<a href="../../src/net/http/h2_bundle.go.html#line-8326" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-8326">#L8326</a>: 			} else if <b>http2asciiEqualFold</b>(k, "user-agent") {
+		<a href="../../src/net/http/h2_bundle.go.html#line-8339" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-8339">#L8339</a>: 			} else if <b>http2asciiEqualFold</b>(k, "cookie") {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

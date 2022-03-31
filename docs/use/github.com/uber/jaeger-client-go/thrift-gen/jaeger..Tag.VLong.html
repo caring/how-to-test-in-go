@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/uber/jaeger-client-go/thrift-gen/jaeger.Tag.VLong</title>
+<link href="../../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../../../pkg/github.com/uber/jaeger-client-go/thrift-gen/jaeger.html">github.com/uber/jaeger-client-go/thrift-gen/jaeger</a>.<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-145">Tag</a>.<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-151">VLong</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">26 uses</span>
+
+	github.com/uber/jaeger-client-go/thrift-gen/jaeger (current package)
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-151">jaeger.go#L151</a>:   <b>VLong</b> *int64 `thrift:"vLong,6" db:"vLong" json:"vLong,omitempty"`
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-193" class="path-duplicate">jaeger.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-193">#L193</a>: return *p.<b>VLong</b>
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-213" class="path-duplicate">jaeger.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-213">#L213</a>:   return p.<b>VLong</b> != nil
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-378" class="path-duplicate">jaeger.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-378">#L378</a>:   p.<b>VLong</b> = &amp;v
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-471" class="path-duplicate">jaeger.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-471">#L471</a>:     if err := oprot.WriteI64(ctx, int64(*p.<b>VLong</b>)); err != nil {
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-517" class="path-duplicate">jaeger.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-517">#L517</a>:   if p.<b>VLong</b> != other.<b>VLong</b> {
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-518" class="path-duplicate">jaeger.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-518">#L518</a>:     if p.<b>VLong</b> == nil || other.<b>VLong</b> == nil {
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-521" class="path-duplicate">jaeger.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-521">#L521</a>:     if (*p.<b>VLong</b>) != (*other.<b>VLong</b>) { return false }
+
+	<a href="../../../../../pkg/github.com/uber/jaeger-client-go.html">github.com/uber/jaeger-client-go</a>
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/jaeger_tag.go.html#line-46">jaeger_tag.go#L46</a>: 	*t = append(*t, &amp;j.Tag{Key: key, VType: j.TagType_LONG, <b>VLong</b>: &amp;vLong})
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/jaeger_tag.go.html#line-51" class="path-duplicate">jaeger_tag.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/jaeger_tag.go.html#line-51">#L51</a>: 	*t = append(*t, &amp;j.Tag{Key: key, VType: j.TagType_LONG, <b>VLong</b>: &amp;vLong})
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/jaeger_tag.go.html#line-55" class="path-duplicate">jaeger_tag.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/jaeger_tag.go.html#line-55">#L55</a>: 	*t = append(*t, &amp;j.Tag{Key: key, VType: j.TagType_LONG, <b>VLong</b>: &amp;value})
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/jaeger_tag.go.html#line-60" class="path-duplicate">jaeger_tag.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/jaeger_tag.go.html#line-60">#L60</a>: 	*t = append(*t, &amp;j.Tag{Key: key, VType: j.TagType_LONG, <b>VLong</b>: &amp;vLong})
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/jaeger_tag.go.html#line-65" class="path-duplicate">jaeger_tag.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/jaeger_tag.go.html#line-65">#L65</a>: 	*t = append(*t, &amp;j.Tag{Key: key, VType: j.TagType_LONG, <b>VLong</b>: &amp;vLong})
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/jaeger_thrift_span.go.html#line-104">jaeger_thrift_span.go#L104</a>: 		jTag.<b>VLong</b> = &amp;vLong
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/jaeger_thrift_span.go.html#line-108" class="path-duplicate">jaeger_thrift_span.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/jaeger_thrift_span.go.html#line-108">#L108</a>: 		jTag.<b>VLong</b> = &amp;vLong
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/jaeger_thrift_span.go.html#line-112" class="path-duplicate">jaeger_thrift_span.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/jaeger_thrift_span.go.html#line-112">#L112</a>: 		jTag.<b>VLong</b> = &amp;vLong
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/jaeger_thrift_span.go.html#line-116" class="path-duplicate">jaeger_thrift_span.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/jaeger_thrift_span.go.html#line-116">#L116</a>: 		jTag.<b>VLong</b> = &amp;vLong
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/jaeger_thrift_span.go.html#line-120" class="path-duplicate">jaeger_thrift_span.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/jaeger_thrift_span.go.html#line-120">#L120</a>: 		jTag.<b>VLong</b> = &amp;vLong
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/jaeger_thrift_span.go.html#line-124" class="path-duplicate">jaeger_thrift_span.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/jaeger_thrift_span.go.html#line-124">#L124</a>: 		jTag.<b>VLong</b> = &amp;vLong
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/jaeger_thrift_span.go.html#line-128" class="path-duplicate">jaeger_thrift_span.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/jaeger_thrift_span.go.html#line-128">#L128</a>: 		jTag.<b>VLong</b> = &amp;vLong
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/jaeger_thrift_span.go.html#line-132" class="path-duplicate">jaeger_thrift_span.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/jaeger_thrift_span.go.html#line-132">#L132</a>: 		jTag.<b>VLong</b> = &amp;vLong
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/jaeger_thrift_span.go.html#line-136" class="path-duplicate">jaeger_thrift_span.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/jaeger_thrift_span.go.html#line-136">#L136</a>: 		jTag.<b>VLong</b> = &amp;vLong
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/jaeger_thrift_span.go.html#line-140" class="path-duplicate">jaeger_thrift_span.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/jaeger_thrift_span.go.html#line-140">#L140</a>: 		jTag.<b>VLong</b> = &amp;vLong
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime.injectglist</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">func <b><a href="../pkg/runtime.html">runtime</a>.<a href="../src/runtime/proc.go.html#line-3227">injectglist</a></b></span>
+
+<span class="title">11 uses</span>
+
+	runtime (current package)
+		<a href="../src/runtime/mgc.go.html#line-1017">mgc.go#L1017</a>: 	<b>injectglist</b>(&amp;work.sweepWaiters.list)
+		<a href="../src/runtime/mgcmark.go.html#line-581">mgcmark.go#L581</a>: 	<b>injectglist</b>(&amp;list)
+		<a href="../src/runtime/mgcscavenge.go.html#line-215">mgcscavenge.go#L215</a>: 		<b>injectglist</b>(&amp;list)
+		<a href="../src/runtime/proc.go.html#line-1247">proc.go#L1247</a>: 		<b>injectglist</b>(&amp;list)
+		<a href="../src/runtime/proc.go.html#line-2758" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2758">#L2758</a>: 			<b>injectglist</b>(&amp;list)
+		<a href="../src/runtime/proc.go.html#line-2960" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2960">#L2960</a>: 			<b>injectglist</b>(&amp;list)
+		<a href="../src/runtime/proc.go.html#line-2965" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2965">#L2965</a>: 				<b>injectglist</b>(&amp;list)
+		<a href="../src/runtime/proc.go.html#line-3002" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3002">#L3002</a>: 			<b>injectglist</b>(&amp;list)
+		<a href="../src/runtime/proc.go.html#line-3227" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3227">#L3227</a>: func <b>injectglist</b>(glist *gList) {
+		<a href="../src/runtime/proc.go.html#line-5414" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5414">#L5414</a>: 				<b>injectglist</b>(&amp;list)
+		<a href="../src/runtime/proc.go.html#line-5456" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5456">#L5456</a>: 			<b>injectglist</b>(&amp;list)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

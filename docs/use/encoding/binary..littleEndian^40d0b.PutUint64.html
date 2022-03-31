@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: encoding/binary.littleEndian.PutUint64</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../pkg/encoding/binary.html">encoding/binary</a>.<a href="../../src/encoding/binary/binary.go.html#line-50">littleEndian</a>.<a href="../../src/encoding/binary/binary.go.html#line-82">PutUint64</a></b></span><span style="font-size: large;"><i> (method, <a href="../../imp/encoding/binary.littleEndian^40d0b.html#name-PutUint64">view implemented interface methods</a>)</i></span>
+
+<span class="title">13 uses</span>
+
+	encoding/binary (current package)
+		<a href="../../src/encoding/binary/binary.go.html#line-82">binary.go#L82</a>: func (littleEndian) <b>PutUint64</b>(b []byte, v uint64) {
+
+	<a href="../../pkg/crypto/ed25519/internal/edwards25519/field.html">crypto/ed25519/internal/edwards25519/field</a>
+		<a href="../../src/crypto/ed25519/internal/edwards25519/field/fe.go.html#line-234">fe.go#L234</a>: 		binary.LittleEndian.<b>PutUint64</b>(buf[:], l&lt;&lt;uint(bitsOffset%8))
+
+	<a href="../../pkg/crypto/md5.html">crypto/md5</a>
+		<a href="../../src/crypto/md5/md5.go.html#line-172">md5.go#L172</a>: 	binary.LittleEndian.<b>PutUint64</b>(tmp[1+pad:], d.len&lt;&lt;3) // append length in bits
+
+	<a href="../../pkg/github.com/go-sql-driver/mysql.html">github.com/go-sql-driver/mysql</a>
+		<a href="../../src/github.com/go-sql-driver/mysql/packets.go.html#line-1018">packets.go#L1018</a>: 					binary.LittleEndian.<b>PutUint64</b>(
+		<a href="../../src/github.com/go-sql-driver/mysql/packets.go.html#line-1034" class="path-duplicate">packets.go</a><a href="../../src/github.com/go-sql-driver/mysql/packets.go.html#line-1034">#L1034</a>: 					binary.LittleEndian.<b>PutUint64</b>(
+		<a href="../../src/github.com/go-sql-driver/mysql/packets.go.html#line-1050" class="path-duplicate">packets.go</a><a href="../../src/github.com/go-sql-driver/mysql/packets.go.html#line-1050">#L1050</a>: 					binary.LittleEndian.<b>PutUint64</b>(
+
+	<a href="../../pkg/github.com/uber/jaeger-client-go/thrift.html">github.com/uber/jaeger-client-go/thrift</a>
+		<a href="../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-326">compact_protocol.go#L326</a>: 	binary.LittleEndian.<b>PutUint64</b>(buf, math.Float64bits(value))
+		<a href="../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-726" class="path-duplicate">compact_protocol.go</a><a href="../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-726">#L726</a>: 	binary.LittleEndian.<b>PutUint64</b>(buf, n)
+		<a href="../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-730" class="path-duplicate">compact_protocol.go</a><a href="../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-730">#L730</a>: 	binary.LittleEndian.<b>PutUint64</b>(buf, uint64(n))
+
+	<a href="../../pkg/google.golang.org/protobuf/internal/detrand.html">google.golang.org/protobuf/internal/detrand</a>
+		<a href="../../src/google.golang.org/protobuf/internal/detrand/rand.go.html#line-60">rand.go#L60</a>: 	binary.LittleEndian.<b>PutUint64</b>(buf[:8], uint64(fi.Size()))
+
+	<a href="../../pkg/vendor/golang.org/x/crypto/chacha20poly1305.html">vendor/golang.org/x/crypto/chacha20poly1305</a>
+		<a href="../../src/vendor/golang.org/x/crypto/chacha20poly1305/chacha20poly1305_generic.go.html#line-26">chacha20poly1305_generic.go#L26</a>: 	binary.LittleEndian.<b>PutUint64</b>(buf[:], uint64(n))
+
+	<a href="../../pkg/vendor/golang.org/x/crypto/poly1305.html">vendor/golang.org/x/crypto/poly1305</a>
+		<a href="../../src/vendor/golang.org/x/crypto/poly1305/sum_generic.go.html#line-308">sum_generic.go#L308</a>: 	binary.LittleEndian.<b>PutUint64</b>(out[0:8], h0)
+		<a href="../../src/vendor/golang.org/x/crypto/poly1305/sum_generic.go.html#line-309" class="path-duplicate">sum_generic.go</a><a href="../../src/vendor/golang.org/x/crypto/poly1305/sum_generic.go.html#line-309">#L309</a>: 	binary.LittleEndian.<b>PutUint64</b>(out[8:16], h1)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

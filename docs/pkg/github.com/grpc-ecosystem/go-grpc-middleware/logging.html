@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Package: github.com/grpc-ecosystem/go-grpc-middleware/logging</title>
+<link href="../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre id="package-details"><code><span style="font-size:xx-large;">package <b>grpc_logging</b></span>
+
+<span class="title">Import Path</span>
+	<a href="../../../../index.html#pkg-github.com/grpc-ecosystem/go-grpc-middleware/logging">github.com/grpc-ecosystem/go-grpc-middleware/logging</a><i> (on <a href="https://pkg.go.dev/github.com/grpc-ecosystem/go-grpc-middleware/logging" target="_blank">go.dev</a>)</i>
+
+<span class="title">Dependency Relation</span>
+	imports <a href="../../../../dep/github.com/grpc-ecosystem/go-grpc-middleware/logging.html">5 packages</a>, and imported by <a href="../../../../dep/github.com/grpc-ecosystem/go-grpc-middleware/logging.html#imported-by">one package</a>
+
+<div id="files"><span class="title">Involved Source Files</span>
+
+	<span class="nodocs">      <a href="../../../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/common.go.html">common.go</a></span>
+	<input type='checkbox' checked class="fold" id="file-1-fold-content"><label for="file-1-fold-content">   <a href="../../../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/doc.go.html#doc">#d</a> <a href="../../../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/doc.go.html">doc.go</a></label><span id='file-1-fold-content-items' class="fold-items">
+		grpc_logging is a "parent" package for gRPC logging middlewares.
+
+		General functionality of all middleware
+
+		The gRPC logging middleware populates request-scoped data to `grpc_ctxtags.Tags` that relate to the current gRPC call
+		(e.g. service and method names).
+
+		Once the gRPC logging middleware has added the gRPC specific Tags to the ctx they will then be written with the logs
+		that are made using the `ctx_logrus` or `ctx_zap` loggers.
+
+		All logging middleware will emit a final log statement. It is based on the error returned by the handler function,
+		the gRPC status code, an error (if any) and it will emit at a level controlled via `WithLevels`.
+
+		This parent package
+
+		This particular package is intended for use by other middleware, logging or otherwise. It contains interfaces that other
+		logging middlewares *could* share . This allows code to be shared between different implementations.
+
+		Field names
+
+		All field names of loggers follow the OpenTracing semantics definitions, with `grpc.` prefix if needed:
+		https://github.com/opentracing/specification/blob/master/semantic_conventions.md
+
+		Implementations
+
+		There are three implementations at the moment: logrus, zap and kit
+
+		See relevant packages below.</span></div>
+<div id="exported-types"><span class="title">Package-Level Type Names<span class="title-stat"><i> (total 5, all are exported)</i></span></span>
+
+<div id="exported-types-buttons" class="js-on">	/* sort exporteds by: <label id="sort-types-by-alphabet" class="button">alphabet</label> | <label id="sort-types-by-popularity" class="button">popularity</label> */</div><div class="anchor type-res" id="name-ClientPayloadLoggingDecider" data-popularity="70">	<input type='checkbox' class="fold" id="ClientPayloadLoggingDecider-fold-content"><label for="ClientPayloadLoggingDecider-fold-content"> <a href="../../../../use/github.com/grpc-ecosystem/go-grpc-middleware/logging..ClientPayloadLoggingDecider.html">type</a> <a href="../../../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/common.go.html#line-38">ClientPayloadLoggingDecider</a> <i>(func)</i></label><span id='ClientPayloadLoggingDecider-fold-content-docs' class="fold-docs">
+		ClientPayloadLoggingDecider is a user-provided function for deciding whether to log the client-side
+		request/response payloads
+
+		<input type='checkbox' class="fold" id="ClientPayloadLoggingDecider-fold-params"><label for="ClientPayloadLoggingDecider-fold-params">As Inputs Of (<i>at least 2, both are exported</i>)</label><span id='ClientPayloadLoggingDecider-fold-params-items' class="fold-items"><span>
+			func github.com/grpc-ecosystem/go-grpc-middleware/logging/zap.<a href="logging/zap.html#name-PayloadStreamClientInterceptor">PayloadStreamClientInterceptor</a>(logger *<a href="../../../go.uber.org/zap.html">zap</a>.<a href="../../../go.uber.org/zap.html#name-Logger">Logger</a>, decider <b>ClientPayloadLoggingDecider</b>) <a href="../../../google.golang.org/grpc.html">grpc</a>.<a href="../../../google.golang.org/grpc.html#name-StreamClientInterceptor">StreamClientInterceptor</a></span><span>
+			func github.com/grpc-ecosystem/go-grpc-middleware/logging/zap.<a href="logging/zap.html#name-PayloadUnaryClientInterceptor">PayloadUnaryClientInterceptor</a>(logger *<a href="../../../go.uber.org/zap.html">zap</a>.<a href="../../../go.uber.org/zap.html#name-Logger">Logger</a>, decider <b>ClientPayloadLoggingDecider</b>) <a href="../../../google.golang.org/grpc.html">grpc</a>.<a href="../../../google.golang.org/grpc.html#name-UnaryClientInterceptor">UnaryClientInterceptor</a></span></span>
+
+</span></div><div class="anchor type-res" id="name-Decider" data-popularity="35">	<input type='checkbox' class="fold" id="Decider-fold-content"><label for="Decider-fold-content"> <a href="../../../../use/github.com/grpc-ecosystem/go-grpc-middleware/logging..Decider.html">type</a> <a href="../../../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/common.go.html#line-24">Decider</a> <i>(func)</i></label><span id='Decider-fold-content-docs' class="fold-docs">
+		Decider function defines rules for suppressing any interceptor logs
+
+		<input type='checkbox' class="fold" id="Decider-fold-params"><label for="Decider-fold-params">As Inputs Of (<i>at least one exported</i>)</label><span id='Decider-fold-params-items' class="fold-items"><span>
+			func github.com/grpc-ecosystem/go-grpc-middleware/logging/zap.<a href="logging/zap.html#name-WithDecider">WithDecider</a>(f <b>Decider</b>) <a href="logging/zap.html">grpc_zap</a>.<a href="logging/zap.html#name-Option">Option</a></span></span>
+
+</span></div><div class="anchor type-res" id="name-ErrorToCode" data-popularity="35">	<input type='checkbox' class="fold" id="ErrorToCode-fold-content"><label for="ErrorToCode-fold-content"> <a href="../../../../use/github.com/grpc-ecosystem/go-grpc-middleware/logging..ErrorToCode.html">type</a> <a href="../../../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/common.go.html#line-17">ErrorToCode</a> <i>(func)</i></label><span id='ErrorToCode-fold-content-docs' class="fold-docs">
+		ErrorToCode function determines the error code of an error
+		This makes using custom errors with grpc middleware easier
+
+		<input type='checkbox' class="fold" id="ErrorToCode-fold-params"><label for="ErrorToCode-fold-params">As Inputs Of (<i>at least one exported</i>)</label><span id='ErrorToCode-fold-params-items' class="fold-items"><span>
+			func github.com/grpc-ecosystem/go-grpc-middleware/logging/zap.<a href="logging/zap.html#name-WithCodes">WithCodes</a>(f <b>ErrorToCode</b>) <a href="logging/zap.html">grpc_zap</a>.<a href="logging/zap.html#name-Option">Option</a></span></span>
+
+</span></div><div class="anchor type-res" id="name-JsonPbMarshaler" data-popularity="505">	<input type='checkbox' class="fold" id="JsonPbMarshaler-fold-content"><label for="JsonPbMarshaler-fold-content"> <a href="../../../../use/github.com/grpc-ecosystem/go-grpc-middleware/logging..JsonPbMarshaler^19f43.html">type</a> <a href="../../../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/common.go.html#line-41">JsonPbMarshaler</a> <b><i>(interface)</i></b></label><span id='JsonPbMarshaler-fold-content-docs' class="fold-docs">
+		JsonPbMarshaller is a marshaller that serializes protobuf messages.
+
+		<input type='checkbox' class="fold" id="JsonPbMarshaler-fold-methods"><label for="JsonPbMarshaler-fold-methods">Methods (<i>only one, which is exported</i>)</label><span id='JsonPbMarshaler-fold-methods-items' class="fold-items"><span>
+			<span class="nodocs">( JsonPbMarshaler) <a href="../../../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/common.go.html#line-42">Marshal</a>(out <a href="../../../io.html">io</a>.<a href="../../../io.html#name-Writer">Writer</a>, pb <a href="../../golang/protobuf/proto.html">proto</a>.<a href="../../golang/protobuf/proto.html#name-Message">Message</a>) <a href="../../../builtin.html#name-error">error</a></span></span></span>
+		<input type='checkbox' class="fold" id="JsonPbMarshaler-fold-impledby"><label for="JsonPbMarshaler-fold-impledby">Implemented By (<i>at least 3, in which 2 are exported</i>)</label><span id='JsonPbMarshaler-fold-impledby-items' class="fold-items"><span>
+			*github.com/golang/protobuf/jsonpb.<a href="../../golang/protobuf/jsonpb.html#name-Marshaler">Marshaler</a></span><span>
+			*github.com/golang/protobuf/proto.<a href="../../golang/protobuf/proto.html#name-TextMarshaler">TextMarshaler</a></span>
+			<input type='checkbox' class="showhide" id="JsonPbMarshaler-showhide-impedBys"><i><label for="JsonPbMarshaler-showhide-impedBys" class="show-inline">/* at least one unexported ... */</label><label for="JsonPbMarshaler-showhide-impedBys" class="hide-inline">/* at least one unexported: */</label></i><span class="hidden"><i>
+			 github.com/golang/protobuf/jsonpb.<a href="../../golang/protobuf/jsonpb.html#name-jsonWriter">jsonWriter</a></i></span></span>
+		<input type='checkbox' class="fold" id="JsonPbMarshaler-fold-values"><label for="JsonPbMarshaler-fold-values">As Types Of (<i>only one, which is exported</i>)</label><span id='JsonPbMarshaler-fold-values-items' class="fold-items"><span>
+			  var github.com/grpc-ecosystem/go-grpc-middleware/logging/zap.<a href="logging/zap.html#name-JsonPbMarshaller">JsonPbMarshaller</a></span></span>
+
+</span></div><div class="anchor type-res" id="name-ServerPayloadLoggingDecider" data-popularity="70">	<input type='checkbox' class="fold" id="ServerPayloadLoggingDecider-fold-content"><label for="ServerPayloadLoggingDecider-fold-content"> <a href="../../../../use/github.com/grpc-ecosystem/go-grpc-middleware/logging..ServerPayloadLoggingDecider.html">type</a> <a href="../../../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/common.go.html#line-34">ServerPayloadLoggingDecider</a> <i>(func)</i></label><span id='ServerPayloadLoggingDecider-fold-content-docs' class="fold-docs">
+		ServerPayloadLoggingDecider is a user-provided function for deciding whether to log the server-side
+		request/response payloads
+
+		<input type='checkbox' class="fold" id="ServerPayloadLoggingDecider-fold-params"><label for="ServerPayloadLoggingDecider-fold-params">As Inputs Of (<i>at least 2, both are exported</i>)</label><span id='ServerPayloadLoggingDecider-fold-params-items' class="fold-items"><span>
+			func github.com/grpc-ecosystem/go-grpc-middleware/logging/zap.<a href="logging/zap.html#name-PayloadStreamServerInterceptor">PayloadStreamServerInterceptor</a>(logger *<a href="../../../go.uber.org/zap.html">zap</a>.<a href="../../../go.uber.org/zap.html#name-Logger">Logger</a>, decider <b>ServerPayloadLoggingDecider</b>) <a href="../../../google.golang.org/grpc.html">grpc</a>.<a href="../../../google.golang.org/grpc.html#name-StreamServerInterceptor">StreamServerInterceptor</a></span><span>
+			func github.com/grpc-ecosystem/go-grpc-middleware/logging/zap.<a href="logging/zap.html#name-PayloadUnaryServerInterceptor">PayloadUnaryServerInterceptor</a>(logger *<a href="../../../go.uber.org/zap.html">zap</a>.<a href="../../../go.uber.org/zap.html#name-Logger">Logger</a>, decider <b>ServerPayloadLoggingDecider</b>) <a href="../../../google.golang.org/grpc.html">grpc</a>.<a href="../../../google.golang.org/grpc.html#name-UnaryServerInterceptor">UnaryServerInterceptor</a></span></span>
+
+</span></div></div>
+<div id="exported-functions"><span class="title">Package-Level Functions<span class="title-stat"><i> (total 2, both are exported)</i></span></span>
+
+<div class="anchor value-res" id="name-DefaultDeciderMethod">	<input type='checkbox' class="fold" id="DefaultDeciderMethod-fold-content"><label for="DefaultDeciderMethod-fold-content"> <a href="../../../../use/github.com/grpc-ecosystem/go-grpc-middleware/logging..DefaultDeciderMethod.html">func</a> <a href="../../../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/common.go.html#line-28">DefaultDeciderMethod</a>(fullMethodName <a href="../../../builtin.html#name-string">string</a>, err <a href="../../../builtin.html#name-error">error</a>) <a href="../../../builtin.html#name-bool">bool</a></label><span id='DefaultDeciderMethod-fold-content-docs' class="fold-docs">
+		DefaultDeciderMethod is the default implementation of decider to see if you should log the call
+		by default this if always true so all calls are logged
+
+</span></div><div class="anchor value-res" id="name-DefaultErrorToCode">	<span class="nodocs"> <a href="../../../../use/github.com/grpc-ecosystem/go-grpc-middleware/logging..DefaultErrorToCode.html">func</a> <a href="../../../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/common.go.html#line-19">DefaultErrorToCode</a>(err <a href="../../../builtin.html#name-error">error</a>) <a href="../../../google.golang.org/grpc/codes.html">codes</a>.<a href="../../../google.golang.org/grpc/codes.html#name-Code">Code</a></span></div></div></code></pre><pre id="footer">
+<table><tr><td><img src="../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

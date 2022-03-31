@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime.eface._type</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/runtime.html">runtime</a>.<a href="../src/runtime/runtime2.go.html#line-207">eface</a>.<a href="../src/runtime/runtime2.go.html#line-208">_type</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">34 uses</span>
+
+	runtime (current package)
+		<a href="../src/runtime/alg.go.html#line-119">alg.go#L119</a>: 	t := a.<b>_type</b>
+		<a href="../src/runtime/alg.go.html#line-241" class="path-duplicate">alg.go</a><a href="../src/runtime/alg.go.html#line-241">#L241</a>: 	return x.<b>_type</b> == y.<b>_type</b> &amp;&amp; efaceeq(x.<b>_type</b>, x.data, y.data)
+		<a href="../src/runtime/cgocall.go.html#line-390">cgocall.go#L390</a>: 	t := ep.<b>_type</b>
+		<a href="../src/runtime/cgocall.go.html#line-402" class="path-duplicate">cgocall.go</a><a href="../src/runtime/cgocall.go.html#line-402">#L402</a>: 		switch aep.<b>_type</b>.kind &amp; kindMask {
+		<a href="../src/runtime/cgocall.go.html#line-414" class="path-duplicate">cgocall.go</a><a href="../src/runtime/cgocall.go.html#line-414">#L414</a>: 			t = ep.<b>_type</b>
+		<a href="../src/runtime/cgocall.go.html#line-420" class="path-duplicate">cgocall.go</a><a href="../src/runtime/cgocall.go.html#line-420">#L420</a>: 			t = ep.<b>_type</b>
+		<a href="../src/runtime/cgocall.go.html#line-629" class="path-duplicate">cgocall.go</a><a href="../src/runtime/cgocall.go.html#line-629">#L629</a>: 	t := ep.<b>_type</b>
+		<a href="../src/runtime/debuglog.go.html#line-278">debuglog.go#L278</a>: 		switch v.<b>_type</b>.kind &amp; kindMask {
+		<a href="../src/runtime/error.go.html#line-258">error.go#L258</a>: 	typestring := eface.<b>_type</b>.string()
+		<a href="../src/runtime/error.go.html#line-260" class="path-duplicate">error.go</a><a href="../src/runtime/error.go.html#line-260">#L260</a>: 	switch eface.<b>_type</b>.kind {
+		<a href="../src/runtime/heapdump.go.html#line-398">heapdump.go#L398</a>: 		dumpint(uint64(uintptr(unsafe.Pointer(eface.<b>_type</b>))))
+		<a href="../src/runtime/iface.go.html#line-304">iface.go#L304</a>: 	uint16Type *_type = efaceOf(&amp;uint16Eface).<b>_type</b>
+		<a href="../src/runtime/iface.go.html#line-305" class="path-duplicate">iface.go</a><a href="../src/runtime/iface.go.html#line-305">#L305</a>: 	uint32Type *_type = efaceOf(&amp;uint32Eface).<b>_type</b>
+		<a href="../src/runtime/iface.go.html#line-306" class="path-duplicate">iface.go</a><a href="../src/runtime/iface.go.html#line-306">#L306</a>: 	uint64Type *_type = efaceOf(&amp;uint64Eface).<b>_type</b>
+		<a href="../src/runtime/iface.go.html#line-307" class="path-duplicate">iface.go</a><a href="../src/runtime/iface.go.html#line-307">#L307</a>: 	stringType *_type = efaceOf(&amp;stringEface).<b>_type</b>
+		<a href="../src/runtime/iface.go.html#line-308" class="path-duplicate">iface.go</a><a href="../src/runtime/iface.go.html#line-308">#L308</a>: 	sliceType  *_type = efaceOf(&amp;sliceEface).<b>_type</b>
+		<a href="../src/runtime/iface.go.html#line-329" class="path-duplicate">iface.go</a><a href="../src/runtime/iface.go.html#line-329">#L329</a>: 	e.<b>_type</b> = t
+		<a href="../src/runtime/iface.go.html#line-400" class="path-duplicate">iface.go</a><a href="../src/runtime/iface.go.html#line-400">#L400</a>: 	e.<b>_type</b> = t
+		<a href="../src/runtime/iface.go.html#line-486" class="path-duplicate">iface.go</a><a href="../src/runtime/iface.go.html#line-486">#L486</a>: 	t := e.<b>_type</b>
+		<a href="../src/runtime/iface.go.html#line-501" class="path-duplicate">iface.go</a><a href="../src/runtime/iface.go.html#line-501">#L501</a>: 	*dst = iface{assertE2I(inter, e.<b>_type</b>), e.data}
+		<a href="../src/runtime/iface.go.html#line-506" class="path-duplicate">iface.go</a><a href="../src/runtime/iface.go.html#line-506">#L506</a>: 	*dst = iface{assertE2I(inter, e.<b>_type</b>), e.data}
+		<a href="../src/runtime/mbitmap.go.html#line-1947">mbitmap.go#L1947</a>: 	typ := (*ptrtype)(unsafe.Pointer(efaceOf(&amp;x).<b>_type</b>)).elem
+		<a href="../src/runtime/mbitmap.go.html#line-1961" class="path-duplicate">mbitmap.go</a><a href="../src/runtime/mbitmap.go.html#line-1961">#L1961</a>: 	t := e.<b>_type</b>
+		<a href="../src/runtime/mfinal.go.html#line-234">mfinal.go#L234</a>: 					(*eface)(r).<b>_type</b> = &amp;f.ot.typ
+		<a href="../src/runtime/mfinal.go.html#line-239" class="path-duplicate">mfinal.go</a><a href="../src/runtime/mfinal.go.html#line-239">#L239</a>: 						(*iface)(r).tab = assertE2I(ityp, (*eface)(r).<b>_type</b>)
+		<a href="../src/runtime/mfinal.go.html#line-339" class="path-duplicate">mfinal.go</a><a href="../src/runtime/mfinal.go.html#line-339">#L339</a>: 	etyp := e.<b>_type</b>
+		<a href="../src/runtime/mfinal.go.html#line-388" class="path-duplicate">mfinal.go</a><a href="../src/runtime/mfinal.go.html#line-388">#L388</a>: 	ftyp := f.<b>_type</b>
+		<a href="../src/runtime/netpoll.go.html#line-576">netpoll.go#L576</a>: 	x.<b>_type</b> = pdType
+		<a href="../src/runtime/netpoll.go.html#line-583" class="path-duplicate">netpoll.go</a><a href="../src/runtime/netpoll.go.html#line-583">#L583</a>: 	pdType  *_type      = efaceOf(&amp;pdEface).<b>_type</b>
+		<a href="../src/runtime/print.go.html#line-257">print.go#L257</a>: 	print("(", e.<b>_type</b>, ",", e.data, ")")
+		<a href="../src/runtime/runtime2.go.html#line-208">runtime2.go#L208</a>: 	<b>_type</b> *_type
+		<a href="../src/runtime/stack.go.html#line-1348">stack.go#L1348</a>: 	abiRegArgsType           *_type      = efaceOf(&amp;abiRegArgsEface).<b>_type</b>
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

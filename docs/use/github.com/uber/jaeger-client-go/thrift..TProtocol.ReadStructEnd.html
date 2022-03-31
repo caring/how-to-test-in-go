@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/uber/jaeger-client-go/thrift.TProtocol.ReadStructEnd</title>
+<link href="../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift.html">github.com/uber/jaeger-client-go/thrift</a>.<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/protocol.go.html#line-33">TProtocol</a>.<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/protocol.go.html#line-59">ReadStructEnd</a></b></span><span style="font-size: large;"><i> (method)</i></span>
+
+<span class="title">30 uses</span>
+
+	github.com/uber/jaeger-client-go/thrift (current package)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/application_exception.go.html#line-136">application_exception.go#L136</a>: 	if err := iprot.<b>ReadStructEnd</b>(ctx); err != nil {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_protocol.go.html#line-270">header_protocol.go#L270</a>: 	return p.protocol.<b>ReadStructEnd</b>(ctx)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/protocol.go.html#line-59">protocol.go#L59</a>: 	<b>ReadStructEnd</b>(ctx context.Context) error
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/protocol.go.html#line-135" class="path-duplicate">protocol.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/protocol.go.html#line-135">#L135</a>: 		return self.<b>ReadStructEnd</b>(ctx)
+
+	<a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift-gen/agent.html">github.com/uber/jaeger-client-go/thrift-gen/agent</a>
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/agent/agent.go.html#line-233">agent.go#L233</a>:   if err := iprot.<b>ReadStructEnd</b>(ctx); err != nil {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/agent/agent.go.html#line-351" class="path-duplicate">agent.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/agent/agent.go.html#line-351">#L351</a>:   if err := iprot.<b>ReadStructEnd</b>(ctx); err != nil {
+
+	<a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift-gen/jaeger.html">github.com/uber/jaeger-client-go/thrift-gen/jaeger</a>
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-316">jaeger.go#L316</a>:   if err := iprot.<b>ReadStructEnd</b>(ctx); err != nil {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-600" class="path-duplicate">jaeger.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-600">#L600</a>:   if err := iprot.<b>ReadStructEnd</b>(ctx); err != nil {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-808" class="path-duplicate">jaeger.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-808">#L808</a>:   if err := iprot.<b>ReadStructEnd</b>(ctx); err != nil {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-1176" class="path-duplicate">jaeger.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-1176">#L1176</a>:   if err := iprot.<b>ReadStructEnd</b>(ctx); err != nil {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-1612" class="path-duplicate">jaeger.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-1612">#L1612</a>:   if err := iprot.<b>ReadStructEnd</b>(ctx); err != nil {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-1801" class="path-duplicate">jaeger.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-1801">#L1801</a>:   if err := iprot.<b>ReadStructEnd</b>(ctx); err != nil {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-2026" class="path-duplicate">jaeger.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-2026">#L2026</a>:   if err := iprot.<b>ReadStructEnd</b>(ctx); err != nil {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-2231" class="path-duplicate">jaeger.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-2231">#L2231</a>:   if err := iprot.<b>ReadStructEnd</b>(ctx); err != nil {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-2515" class="path-duplicate">jaeger.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-2515">#L2515</a>:   if err := iprot.<b>ReadStructEnd</b>(ctx); err != nil {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-2631" class="path-duplicate">jaeger.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-2631">#L2631</a>:   if err := iprot.<b>ReadStructEnd</b>(ctx); err != nil {
+
+	<a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift-gen/sampling.html">github.com/uber/jaeger-client-go/thrift-gen/sampling</a>
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-123">sampling.go#L123</a>:   if err := iprot.<b>ReadStructEnd</b>(ctx); err != nil {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-229" class="path-duplicate">sampling.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-229">#L229</a>:   if err := iprot.<b>ReadStructEnd</b>(ctx); err != nil {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-360" class="path-duplicate">sampling.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-360">#L360</a>:   if err := iprot.<b>ReadStructEnd</b>(ctx); err != nil {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-549" class="path-duplicate">sampling.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-549">#L549</a>:   if err := iprot.<b>ReadStructEnd</b>(ctx); err != nil {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-824" class="path-duplicate">sampling.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-824">#L824</a>:   if err := iprot.<b>ReadStructEnd</b>(ctx); err != nil {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-1178" class="path-duplicate">sampling.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-1178">#L1178</a>:   if err := iprot.<b>ReadStructEnd</b>(ctx); err != nil {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-1276" class="path-duplicate">sampling.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-1276">#L1276</a>:   if err := iprot.<b>ReadStructEnd</b>(ctx); err != nil {
+
+	<a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift-gen/zipkincore.html">github.com/uber/jaeger-client-go/thrift-gen/zipkincore</a>
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-205">zipkincore.go#L205</a>:   if err := iprot.<b>ReadStructEnd</b>(ctx); err != nil {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-417" class="path-duplicate">zipkincore.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-417">#L417</a>:   if err := iprot.<b>ReadStructEnd</b>(ctx); err != nil {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-636" class="path-duplicate">zipkincore.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-636">#L636</a>:   if err := iprot.<b>ReadStructEnd</b>(ctx); err != nil {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-1016" class="path-duplicate">zipkincore.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-1016">#L1016</a>:   if err := iprot.<b>ReadStructEnd</b>(ctx); err != nil {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-1386" class="path-duplicate">zipkincore.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-1386">#L1386</a>:   if err := iprot.<b>ReadStructEnd</b>(ctx); err != nil {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-1670" class="path-duplicate">zipkincore.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-1670">#L1670</a>:   if err := iprot.<b>ReadStructEnd</b>(ctx); err != nil {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-1786" class="path-duplicate">zipkincore.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-1786">#L1786</a>:   if err := iprot.<b>ReadStructEnd</b>(ctx); err != nil {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Package: github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/ctxzap</title>
+<link href="../../../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre id="package-details"><code><span style="font-size:xx-large;">package <b>ctxzap</b></span>
+
+<span class="title">Import Path</span>
+	<a href="../../../../../../index.html#pkg-github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/ctxzap">github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/ctxzap</a><i> (on <a href="https://pkg.go.dev/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/ctxzap" target="_blank">go.dev</a>)</i>
+
+<span class="title">Dependency Relation</span>
+	imports <a href="../../../../../../dep/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/ctxzap.html">4 packages</a>, and imported by <a href="../../../../../../dep/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/ctxzap.html#imported-by">one package</a>
+
+<div id="files"><span class="title">Involved Source Files</span>
+
+	<span class="nodocs">      <a href="../../../../../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/ctxzap/context.go.html">context.go</a></span>
+	<input type='checkbox' checked class="fold" id="file-1-fold-content"><label for="file-1-fold-content">   <a href="../../../../../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/ctxzap/doc.go.html#doc">#d</a> <a href="../../../../../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/ctxzap/doc.go.html">doc.go</a></label><span id='file-1-fold-content-items' class="fold-items">
+		`ctxzap` is a ctxlogger that is backed by Zap
+
+		It accepts a user-configured `zap.Logger` that will be used for logging. The same `zap.Logger` will
+		be populated into the `context.Context` passed into gRPC handler code.
+
+		You can use `ctxzap.Extract` to log into a request-scoped `zap.Logger` instance in your handler code.
+
+		As `ctxzap.Extract` will iterate all tags on from `grpc_ctxtags` it is therefore expensive so it is advised that you
+		extract once at the start of the function from the context and reuse it for the remainder of the function (see examples).
+
+		Please see examples and tests for examples of use.</span></div>
+<div id="exported-types"><span class="title">Package-Level Type Names<span class="title-stat"><i> (total 2, neither is exported)</i></span></span>
+
+<div id="exported-types-buttons" class="js-on">	/* sort exporteds by: <label id="sort-types-by-alphabet" class="button">alphabet</label> | <label id="sort-types-by-popularity" class="button">popularity</label> */</div></div><div>	<input type='checkbox' class="showhide" id="unexported-typenames-showhide"><i><label for="unexported-typenames-showhide" class="show-inline">/* 2 unexporteds ... */</label><label for="unexported-typenames-showhide" class="hide-inline">/* 2 unexporteds: */</label></i><div class="anchor type-res hidden" id="name-ctxLogger" data-popularity="0">	<input type='checkbox' class="fold" id="ctxLogger-fold-content"><label for="ctxLogger-fold-content"> <a href="../../../../../../use/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/ctxzap..ctxLogger^8e662.html">type</a> <a href="../../../../../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/ctxzap/context.go.html#line-13">ctxLogger</a> <i>(struct)</i></label><span id='ctxLogger-fold-content-docs' class="fold-docs">
+
+		<input type='checkbox' class="fold" id="ctxLogger-fold-fields"><label for="ctxLogger-fold-fields">Fields (<i>total 2, neither is exported</i>)</label><span id='ctxLogger-fold-fields-items' class="fold-items">
+			<input type='checkbox' checked class="showhide" id="ctxLogger-showhide-fields"><i><label for="ctxLogger-showhide-fields" class="show-inline">/* 2 unexporteds ... */</label><label for="ctxLogger-showhide-fields" class="hide-inline">/* 2 unexporteds: */</label></i><span class="hidden"><i>
+			<span class="nodocs"><a href="../../../../../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/ctxzap/context.go.html#line-15">fields</a> <i>[]<a href="../../../../../go.uber.org/zap/zapcore.html">zapcore</a>.<a href="../../../../../go.uber.org/zap/zapcore.html#name-Field">Field</a></i></span></i></span><span class="hidden"><i>
+			<span class="nodocs"><a href="../../../../../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/ctxzap/context.go.html#line-14">logger</a> <i>*<a href="../../../../../go.uber.org/zap.html">zap</a>.<a href="../../../../../go.uber.org/zap.html#name-Logger">Logger</a></i></span></i></span></span>
+
+</span></div><div class="anchor type-res hidden" id="name-ctxMarker" data-popularity="5">	<input type='checkbox' class="fold" id="ctxMarker-fold-content"><label for="ctxMarker-fold-content"> <a href="../../../../../../use/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/ctxzap..ctxMarker^a2d78.html">type</a> <a href="../../../../../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/ctxzap/context.go.html#line-11">ctxMarker</a> <i>(struct)</i></label><span id='ctxMarker-fold-content-docs' class="fold-docs">
+
+		<input type='checkbox' class="fold" id="ctxMarker-fold-values"><label for="ctxMarker-fold-values">As Types Of (<i>only one, which is unexported</i>)</label><span id='ctxMarker-fold-values-items' class="fold-items">
+			<input type='checkbox' checked class="showhide" id="ctxMarker-showhide-values"><i><label for="ctxMarker-showhide-values" class="show-inline">/* one unexported ... */</label><label for="ctxMarker-showhide-values" class="hide-inline">/* one unexported: */</label></i><span class="hidden"><i>
+			  var <a href="#name-ctxMarkerKey">ctxMarkerKey</a> *ctxMarker</i></span></span>
+
+</span></div></div>
+<div id="exported-functions"><span class="title">Package-Level Functions<span class="title-stat"><i> (total 4, all are exported)</i></span></span>
+
+<div class="anchor value-res" id="name-AddFields">	<input type='checkbox' class="fold" id="AddFields-fold-content"><label for="AddFields-fold-content"> <a href="../../../../../../use/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/ctxzap..AddFields.html">func</a> <a href="../../../../../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/ctxzap/context.go.html#line-24">AddFields</a>(ctx <a href="../../../../../context.html">context</a>.<a href="../../../../../context.html#name-Context">Context</a>, fields ...<a href="../../../../../go.uber.org/zap/zapcore.html">zapcore</a>.<a href="../../../../../go.uber.org/zap/zapcore.html#name-Field">Field</a>)</label><span id='AddFields-fold-content-docs' class="fold-docs">
+		AddFields adds zap fields to the logger.
+
+</span></div><div class="anchor value-res" id="name-Extract">	<input type='checkbox' class="fold" id="Extract-fold-content"><label for="Extract-fold-content"> <a href="../../../../../../use/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/ctxzap..Extract.html">func</a> <a href="../../../../../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/ctxzap/context.go.html#line-36">Extract</a>(ctx <a href="../../../../../context.html">context</a>.<a href="../../../../../context.html#name-Context">Context</a>) *<a href="../../../../../go.uber.org/zap.html">zap</a>.<a href="../../../../../go.uber.org/zap.html#name-Logger">Logger</a></label><span id='Extract-fold-content-docs' class="fold-docs">
+		Extract takes the call-scoped Logger from grpc_zap middleware.
+
+		It always returns a Logger that has all the grpc_ctxtags updated.
+
+</span></div><div class="anchor value-res" id="name-TagsToFields">	<input type='checkbox' class="fold" id="TagsToFields-fold-content"><label for="TagsToFields-fold-content"> <a href="../../../../../../use/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/ctxzap..TagsToFields.html">func</a> <a href="../../../../../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/ctxzap/context.go.html#line-49">TagsToFields</a>(ctx <a href="../../../../../context.html">context</a>.<a href="../../../../../context.html#name-Context">Context</a>) []<a href="../../../../../go.uber.org/zap/zapcore.html">zapcore</a>.<a href="../../../../../go.uber.org/zap/zapcore.html#name-Field">Field</a></label><span id='TagsToFields-fold-content-docs' class="fold-docs">
+		TagsToFields transforms the Tags on the supplied context into zap fields.
+
+</span></div><div class="anchor value-res" id="name-ToContext">	<input type='checkbox' class="fold" id="ToContext-fold-content"><label for="ToContext-fold-content"> <a href="../../../../../../use/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/ctxzap..ToContext.html">func</a> <a href="../../../../../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/ctxzap/context.go.html#line-60">ToContext</a>(ctx <a href="../../../../../context.html">context</a>.<a href="../../../../../context.html#name-Context">Context</a>, logger *<a href="../../../../../go.uber.org/zap.html">zap</a>.<a href="../../../../../go.uber.org/zap.html#name-Logger">Logger</a>) <a href="../../../../../context.html">context</a>.<a href="../../../../../context.html#name-Context">Context</a></label><span id='ToContext-fold-content-docs' class="fold-docs">
+		ToContext adds the zap.Logger to the context for extraction later.
+		Returning the new context that has been created.
+
+</span></div></div>
+<div id="exported-variables"><span class="title">Package-Level Variables<span class="title-stat"><i> (total 2, neither is exported)</i></span></span>
+
+	<input type='checkbox' class="showhide" id="unexported-variables-showhide"><i><label for="unexported-variables-showhide" class="show-inline">/* 2 unexporteds ... */</label><label for="unexported-variables-showhide" class="hide-inline">/* 2 unexporteds: */</label></i><div class="anchor value-res hidden" id="name-ctxMarkerKey"><i>	<span class="nodocs">  <a href="../../../../../../use/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/ctxzap..ctxMarkerKey^61a26.html">var</a> <a href="../../../../../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/ctxzap/context.go.html#line-19">ctxMarkerKey</a> *<a href="#name-ctxMarker">ctxMarker</a></span></i></div><div class="anchor value-res hidden" id="name-nullLogger"><i>	<span class="nodocs">  <a href="../../../../../../use/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/ctxzap..nullLogger^4d34a.html">var</a> <a href="../../../../../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/ctxzap/context.go.html#line-20">nullLogger</a> *<a href="../../../../../go.uber.org/zap.html">zap</a>.<a href="../../../../../go.uber.org/zap.html#name-Logger">Logger</a></span></i></div></div></code></pre><pre id="footer">
+<table><tr><td><img src="../../../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

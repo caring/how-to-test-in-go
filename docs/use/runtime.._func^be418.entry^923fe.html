@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime._func.entry</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/runtime.html">runtime</a>.<a href="../src/runtime/runtime2.go.html#line-860">_func</a>.<a href="../src/runtime/runtime2.go.html#line-861">entry</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">41 uses</span>
+
+	runtime (current package)
+		<a href="../src/runtime/debugcall.go.html#line-81">debugcall.go#L81</a>: 		if pc != f.<b>entry</b> {
+		<a href="../src/runtime/debuglog.go.html#line-805">debuglog.go#L805</a>: 	if returnPC &amp;&amp; (!fn.valid() || pc &gt; fn.<b>entry</b>) {
+		<a href="../src/runtime/debuglog.go.html#line-817" class="path-duplicate">debuglog.go</a><a href="../src/runtime/debuglog.go.html#line-817">#L817</a>: 		print(" [", name, "+", hex(pc-fn.<b>entry</b>),
+		<a href="../src/runtime/heapdump.go.html#line-262">heapdump.go#L262</a>: 	if pc != f.<b>entry</b> {
+		<a href="../src/runtime/heapdump.go.html#line-287" class="path-duplicate">heapdump.go</a><a href="../src/runtime/heapdump.go.html#line-287">#L287</a>: 	dumpint(uint64(f.<b>entry</b>))
+		<a href="../src/runtime/heapdump.go.html#line-633" class="path-duplicate">heapdump.go</a><a href="../src/runtime/heapdump.go.html#line-633">#L633</a>: 			if i &gt; 0 &amp;&amp; pc &gt; f.<b>entry</b> {
+		<a href="../src/runtime/panic.go.html#line-796">panic.go#L796</a>: 				d1.pc = frame.fn.<b>entry</b> + uintptr(frame.fn.deferreturn)
+		<a href="../src/runtime/plugin.go.html#line-115">plugin.go#L115</a>: 			entry2 = f2.<b>entry</b>
+		<a href="../src/runtime/preempt.go.html#line-453">preempt.go#L453</a>: 		return true, f.<b>entry</b>
+		<a href="../src/runtime/print.go.html#line-296">print.go#L296</a>: 			print("&lt;", funcname(fn), "+", hex(val-fn.<b>entry</b>), "&gt; ")
+		<a href="../src/runtime/runtime2.go.html#line-861">runtime2.go#L861</a>: 	<b>entry</b>   uintptr // start pc
+		<a href="../src/runtime/stack.go.html#line-972">stack.go#L972</a>: 			pcoff = gp.sched.pc - f.<b>entry</b>
+		<a href="../src/runtime/stack.go.html#line-1247" class="path-duplicate">stack.go</a><a href="../src/runtime/stack.go.html#line-1247">#L1247</a>: 	if targetpc != f.<b>entry</b> {
+		<a href="../src/runtime/symtab.go.html#line-208">symtab.go#L208</a>: 		tracepc = f.<b>entry</b> + uintptr(inltree[ix].parentPc)
+		<a href="../src/runtime/symtab.go.html#line-275" class="path-duplicate">symtab.go</a><a href="../src/runtime/symtab.go.html#line-275">#L275</a>: 	return funcInfo{fn, findmoduledatap(fn.<b>entry</b>)}
+		<a href="../src/runtime/symtab.go.html#line-640" class="path-duplicate">symtab.go</a><a href="../src/runtime/symtab.go.html#line-640">#L640</a>: 				entry: f.<b>entry</b>, // entry of the real (the outermost) function.
+		<a href="../src/runtime/symtab.go.html#line-657" class="path-duplicate">symtab.go</a><a href="../src/runtime/symtab.go.html#line-657">#L657</a>: 	if fn.<b>entry</b> == 0 { // inlined version
+		<a href="../src/runtime/symtab.go.html#line-667" class="path-duplicate">symtab.go</a><a href="../src/runtime/symtab.go.html#line-667">#L667</a>: 	if fn.<b>entry</b> == 0 { // inlined version
+		<a href="../src/runtime/symtab.go.html#line-671" class="path-duplicate">symtab.go</a><a href="../src/runtime/symtab.go.html#line-671">#L671</a>: 	return fn.<b>entry</b>
+		<a href="../src/runtime/symtab.go.html#line-680" class="path-duplicate">symtab.go</a><a href="../src/runtime/symtab.go.html#line-680">#L680</a>: 	if fn.<b>entry</b> == 0 { // inlined version
+		<a href="../src/runtime/symtab.go.html#line-822" class="path-duplicate">symtab.go</a><a href="../src/runtime/symtab.go.html#line-822">#L822</a>: 			print("runtime: no module data for ", hex(f.<b>entry</b>), "\n")
+		<a href="../src/runtime/symtab.go.html#line-829" class="path-duplicate">symtab.go</a><a href="../src/runtime/symtab.go.html#line-829">#L829</a>: 	pc := f.<b>entry</b>
+		<a href="../src/runtime/symtab.go.html#line-834" class="path-duplicate">symtab.go</a><a href="../src/runtime/symtab.go.html#line-834">#L834</a>: 		p, ok = step(p, &amp;pc, &amp;val, pc == f.<b>entry</b>)
+		<a href="../src/runtime/symtab.go.html#line-871" class="path-duplicate">symtab.go</a><a href="../src/runtime/symtab.go.html#line-871">#L871</a>: 	pc = f.<b>entry</b>
+		<a href="../src/runtime/symtab.go.html#line-875" class="path-duplicate">symtab.go</a><a href="../src/runtime/symtab.go.html#line-875">#L875</a>: 		p, ok = step(p, &amp;pc, &amp;val, pc == f.<b>entry</b>)
+		<a href="../src/runtime/symtab.go.html#line-959" class="path-duplicate">symtab.go</a><a href="../src/runtime/symtab.go.html#line-959">#L959</a>: 		print("invalid spdelta ", funcname(f), " ", hex(f.<b>entry</b>), " ", hex(targetpc), " ", hex(f.pcsp), " ", x, "\n")
+		<a href="../src/runtime/symtab.go.html#line-968" class="path-duplicate">symtab.go</a><a href="../src/runtime/symtab.go.html#line-968">#L968</a>: 	pc := f.<b>entry</b>
+		<a href="../src/runtime/symtab.go.html#line-973" class="path-duplicate">symtab.go</a><a href="../src/runtime/symtab.go.html#line-973">#L973</a>: 		p, ok = step(p, &amp;pc, &amp;val, pc == f.<b>entry</b>)
+		<a href="../src/runtime/traceback.go.html#line-334">traceback.go#L334</a>: 				frame.continpc = frame.fn.<b>entry</b> + uintptr(frame.fn.deferreturn) + 1
+		<a href="../src/runtime/traceback.go.html#line-370" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-370">#L370</a>: 			if (n == 0 &amp;&amp; flags&amp;_TraceTrap != 0) || waspanic || pc == f.<b>entry</b> {
+		<a href="../src/runtime/traceback.go.html#line-394" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-394">#L394</a>: 					tracepc = frame.fn.<b>entry</b> + uintptr(inltree[ix].parentPc)
+		<a href="../src/runtime/traceback.go.html#line-421" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-421">#L421</a>: 			if (n &gt; 0 || flags&amp;_TraceTrap == 0) &amp;&amp; frame.pc &gt; f.<b>entry</b> &amp;&amp; !waspanic {
+		<a href="../src/runtime/traceback.go.html#line-449" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-449">#L449</a>: 					tracepc = frame.fn.<b>entry</b> + uintptr(inltree[ix].parentPc)
+		<a href="../src/runtime/traceback.go.html#line-467" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-467">#L467</a>: 				if frame.pc &gt; f.<b>entry</b> {
+		<a href="../src/runtime/traceback.go.html#line-468" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-468">#L468</a>: 					print(" +", hex(frame.pc-f.<b>entry</b>))
+		<a href="../src/runtime/traceback.go.html#line-705" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-705">#L705</a>: 			if mv.fn != f.<b>entry</b> {
+		<a href="../src/runtime/traceback.go.html#line-765" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-765">#L765</a>: 	if pc &gt; f.<b>entry</b> {
+		<a href="../src/runtime/traceback.go.html#line-770" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-770">#L770</a>: 	if pc &gt; f.<b>entry</b> {
+		<a href="../src/runtime/traceback.go.html#line-771" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-771">#L771</a>: 		print(" +", hex(pc-f.<b>entry</b>))
+		<a href="../src/runtime/traceback.go.html#line-879" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-879">#L879</a>: 	if pc &gt; f.<b>entry</b> {
+		<a href="../src/runtime/traceback.go.html#line-880" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-880">#L880</a>: 		print(" +", hex(pc-f.<b>entry</b>))
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: google.golang.org/grpc.ccResolverWrapper.cc</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../pkg/google.golang.org/grpc.html">google.golang.org/grpc</a>.<a href="../../src/google.golang.org/grpc/resolver_conn_wrapper.go.html#line-36">ccResolverWrapper</a>.<a href="../../src/google.golang.org/grpc/resolver_conn_wrapper.go.html#line-37">cc</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">14 uses</span>
+
+	google.golang.org/grpc (current package)
+		<a href="../../src/google.golang.org/grpc/resolver_conn_wrapper.go.html#line-37">resolver_conn_wrapper.go#L37</a>: 	<b>cc</b>         *ClientConn
+		<a href="../../src/google.golang.org/grpc/resolver_conn_wrapper.go.html#line-50" class="path-duplicate">resolver_conn_wrapper.go</a><a href="../../src/google.golang.org/grpc/resolver_conn_wrapper.go.html#line-50">#L50</a>: 		<b>cc</b>:   cc,
+		<a href="../../src/google.golang.org/grpc/resolver_conn_wrapper.go.html#line-100" class="path-duplicate">resolver_conn_wrapper.go</a><a href="../../src/google.golang.org/grpc/resolver_conn_wrapper.go.html#line-100">#L100</a>: 	channelz.Infof(logger, ccr.<b>cc</b>.channelzID, "ccResolverWrapper: sending update to cc: %v", s)
+		<a href="../../src/google.golang.org/grpc/resolver_conn_wrapper.go.html#line-105" class="path-duplicate">resolver_conn_wrapper.go</a><a href="../../src/google.golang.org/grpc/resolver_conn_wrapper.go.html#line-105">#L105</a>: 	if err := ccr.<b>cc</b>.updateResolverState(ccr.curState, nil); err == balancer.ErrBadResolverState {
+		<a href="../../src/google.golang.org/grpc/resolver_conn_wrapper.go.html#line-117" class="path-duplicate">resolver_conn_wrapper.go</a><a href="../../src/google.golang.org/grpc/resolver_conn_wrapper.go.html#line-117">#L117</a>: 	channelz.Warningf(logger, ccr.<b>cc</b>.channelzID, "ccResolverWrapper: reporting error to cc: %v", err)
+		<a href="../../src/google.golang.org/grpc/resolver_conn_wrapper.go.html#line-118" class="path-duplicate">resolver_conn_wrapper.go</a><a href="../../src/google.golang.org/grpc/resolver_conn_wrapper.go.html#line-118">#L118</a>: 	ccr.<b>cc</b>.updateResolverState(resolver.State{}, err)
+		<a href="../../src/google.golang.org/grpc/resolver_conn_wrapper.go.html#line-128" class="path-duplicate">resolver_conn_wrapper.go</a><a href="../../src/google.golang.org/grpc/resolver_conn_wrapper.go.html#line-128">#L128</a>: 	channelz.Infof(logger, ccr.<b>cc</b>.channelzID, "ccResolverWrapper: sending new addresses to cc: %v", addrs)
+		<a href="../../src/google.golang.org/grpc/resolver_conn_wrapper.go.html#line-133" class="path-duplicate">resolver_conn_wrapper.go</a><a href="../../src/google.golang.org/grpc/resolver_conn_wrapper.go.html#line-133">#L133</a>: 	ccr.<b>cc</b>.updateResolverState(ccr.curState, nil)
+		<a href="../../src/google.golang.org/grpc/resolver_conn_wrapper.go.html#line-144" class="path-duplicate">resolver_conn_wrapper.go</a><a href="../../src/google.golang.org/grpc/resolver_conn_wrapper.go.html#line-144">#L144</a>: 	channelz.Infof(logger, ccr.<b>cc</b>.channelzID, "ccResolverWrapper: got new service config: %v", sc)
+		<a href="../../src/google.golang.org/grpc/resolver_conn_wrapper.go.html#line-145" class="path-duplicate">resolver_conn_wrapper.go</a><a href="../../src/google.golang.org/grpc/resolver_conn_wrapper.go.html#line-145">#L145</a>: 	if ccr.<b>cc</b>.dopts.disableServiceConfig {
+		<a href="../../src/google.golang.org/grpc/resolver_conn_wrapper.go.html#line-146" class="path-duplicate">resolver_conn_wrapper.go</a><a href="../../src/google.golang.org/grpc/resolver_conn_wrapper.go.html#line-146">#L146</a>: 		channelz.Info(logger, ccr.<b>cc</b>.channelzID, "Service config lookups disabled; ignoring config")
+		<a href="../../src/google.golang.org/grpc/resolver_conn_wrapper.go.html#line-151" class="path-duplicate">resolver_conn_wrapper.go</a><a href="../../src/google.golang.org/grpc/resolver_conn_wrapper.go.html#line-151">#L151</a>: 		channelz.Warningf(logger, ccr.<b>cc</b>.channelzID, "ccResolverWrapper: error parsing service config: %v", scpr.Err)
+		<a href="../../src/google.golang.org/grpc/resolver_conn_wrapper.go.html#line-158" class="path-duplicate">resolver_conn_wrapper.go</a><a href="../../src/google.golang.org/grpc/resolver_conn_wrapper.go.html#line-158">#L158</a>: 	ccr.<b>cc</b>.updateResolverState(ccr.curState, nil)
+		<a href="../../src/google.golang.org/grpc/resolver_conn_wrapper.go.html#line-183" class="path-duplicate">resolver_conn_wrapper.go</a><a href="../../src/google.golang.org/grpc/resolver_conn_wrapper.go.html#line-183">#L183</a>: 	channelz.AddTraceEvent(logger, ccr.<b>cc</b>.channelzID, 0, &amp;channelz.TraceEventDesc{
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

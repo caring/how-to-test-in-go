@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: reflect.New</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">func <b><a href="../pkg/reflect.html">reflect</a>.<a href="../src/reflect/value.go.html#line-2750">New</a></b></span>
+
+<span class="title">62 uses</span>
+
+	reflect (current package)
+		<a href="../src/reflect/type.go.html#line-2650">type.go#L2650</a>: 		tt := <b>New</b>(StructOf([]StructField{
+		<a href="../src/reflect/value.go.html#line-2750">value.go#L2750</a>: func <b>New</b>(typ Type) Value {
+		<a href="../src/reflect/value.go.html#line-2995" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2995">#L2995</a>: 	ret := <b>New</b>(t).Elem()
+		<a href="../src/reflect/value.go.html#line-3002" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-3002">#L3002</a>: 	ret := <b>New</b>(t).Elem()
+		<a href="../src/reflect/value.go.html#line-3009" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-3009">#L3009</a>: 	ret := <b>New</b>(t).Elem()
+
+	<a href="../pkg/database/sql.html">database/sql</a>
+		<a href="../src/database/sql/convert.go.html#line-427">convert.go#L427</a>: 		dv.Set(reflect.<b>New</b>(dv.Type().Elem()))
+
+	<a href="../pkg/encoding/asn1.html">encoding/asn1</a>
+		<a href="../src/encoding/asn1/marshal.go.html#line-593">marshal.go#L593</a>: 		defaultValue := reflect.<b>New</b>(v.Type()).Elem()
+
+	<a href="../pkg/encoding/json.html">encoding/json</a>
+		<a href="../src/encoding/json/decode.go.html#line-475">decode.go#L475</a>: 			v.Set(reflect.<b>New</b>(v.Type().Elem()))
+		<a href="../src/encoding/json/decode.go.html#line-695" class="path-duplicate">decode.go</a><a href="../src/encoding/json/decode.go.html#line-695">#L695</a>: 				mapElem = reflect.<b>New</b>(elemType).Elem()
+		<a href="../src/encoding/json/decode.go.html#line-735" class="path-duplicate">decode.go</a><a href="../src/encoding/json/decode.go.html#line-735">#L735</a>: 							subv.Set(reflect.<b>New</b>(subv.Type().Elem()))
+		<a href="../src/encoding/json/decode.go.html#line-786" class="path-duplicate">decode.go</a><a href="../src/encoding/json/decode.go.html#line-786">#L786</a>: 				kv = reflect.<b>New</b>(kt)
+
+	<a href="../pkg/encoding/xml.html">encoding/xml</a>
+		<a href="../src/encoding/xml/read.go.html#line-249">read.go#L249</a>: 			val.Set(reflect.<b>New</b>(val.Type().Elem()))
+		<a href="../src/encoding/xml/read.go.html#line-334" class="path-duplicate">read.go</a><a href="../src/encoding/xml/read.go.html#line-334">#L334</a>: 			val.Set(reflect.<b>New</b>(val.Type().Elem()))
+		<a href="../src/encoding/xml/read.go.html#line-607" class="path-duplicate">read.go</a><a href="../src/encoding/xml/read.go.html#line-607">#L607</a>: 			dst.Set(reflect.<b>New</b>(dst.Type().Elem()))
+		<a href="../src/encoding/xml/typeinfo.go.html#line-366">typeinfo.go#L366</a>: 					v.Set(reflect.<b>New</b>(v.Type().Elem()))
+
+	<a href="../pkg/flag.html">flag</a>
+		<a href="../src/flag/flag.go.html#line-460">flag.go#L460</a>: 		z = reflect.<b>New</b>(typ.Elem())
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/awsutil.html">github.com/aws/aws-sdk-go/aws/awsutil</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/copy.go.html#line-27">copy.go#L27</a>: 	dsti := reflect.<b>New</b>(reflect.TypeOf(src).Elem())
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/copy.go.html#line-54" class="path-duplicate">copy.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/copy.go.html#line-54">#L54</a>: 					dst.Set(reflect.<b>New</b>(e))
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/copy.go.html#line-56" class="path-duplicate">copy.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/copy.go.html#line-56">#L56</a>: 					tempValue := reflect.<b>New</b>(e)
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/copy.go.html#line-96" class="path-duplicate">copy.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/copy.go.html#line-96">#L96</a>: 			v2 := reflect.<b>New</b>(v.Type()).Elem()
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/path_value.go.html#line-89">path_value.go#L89</a>: 				value.Set(reflect.<b>New</b>(value.Type().Elem()))
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/request.html">github.com/aws/aws-sdk-go/aws/request</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/request/request_pagination.go.html#line-229">request_pagination.go#L229</a>: 	data := reflect.<b>New</b>(reflect.TypeOf(r.Data).Elem()).Interface()
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/private/protocol.html">github.com/aws/aws-sdk-go/private/protocol</a>
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/idempotency.go.html#line-46">idempotency.go#L46</a>: 			v.Set(reflect.<b>New</b>(v.Type().Elem()))
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil.html">github.com/aws/aws-sdk-go/private/protocol/json/jsonutil</a>
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/unmarshal.go.html#line-127">unmarshal.go#L127</a>: 			s := reflect.<b>New</b>(value.Type().Elem())
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/unmarshal.go.html#line-212" class="path-duplicate">unmarshal.go</a><a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/unmarshal.go.html#line-212">#L212</a>: 		vvalue := reflect.<b>New</b>(value.Type().Elem()).Elem()
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/private/protocol/xml/xmlutil.html">github.com/aws/aws-sdk-go/private/protocol/xml/xmlutil</a>
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/xml/xmlutil/unmarshal.go.html#line-119">unmarshal.go#L119</a>: 			s := reflect.<b>New</b>(r.Type().Elem())
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/xml/xmlutil/unmarshal.go.html#line-241" class="path-duplicate">unmarshal.go</a><a href="../src/github.com/aws/aws-sdk-go/private/protocol/xml/xmlutil/unmarshal.go.html#line-241">#L241</a>: 			valueR := reflect.<b>New</b>(r.Type().Elem()).Elem()
+
+	<a href="../pkg/github.com/golang/protobuf/proto.html">github.com/golang/protobuf/proto</a>
+		<a href="../src/github.com/golang/protobuf/proto/extensions.go.html#line-174">extensions.go#L174</a>: 		rv2 := reflect.<b>New</b>(rv.Type())
+
+	<a href="../pkg/google.golang.org/protobuf/internal/filedesc.html">google.golang.org/protobuf/internal/filedesc</a>
+		<a href="../src/google.golang.org/protobuf/internal/filedesc/desc_lazy.go.html#line-694">desc_lazy.go#L694</a>: 			opts = reflect.<b>New</b>(reflect.TypeOf(*p).Elem()).Interface().(pref.ProtoMessage)
+
+	<a href="../pkg/google.golang.org/protobuf/internal/impl.html">google.golang.org/protobuf/internal/impl</a>
+		<a href="../src/google.golang.org/protobuf/internal/impl/codec_field.go.html#line-62">codec_field.go#L62</a>: 				vw = reflect.<b>New</b>(ot)
+		<a href="../src/google.golang.org/protobuf/internal/impl/codec_field.go.html#line-105" class="path-duplicate">codec_field.go</a><a href="../src/google.golang.org/protobuf/internal/impl/codec_field.go.html#line-105">#L105</a>: 			dst.AsValueOf(ft).Elem().Set(reflect.<b>New</b>(src.AsValueOf(ft).Elem().Elem().Elem().Type()))
+		<a href="../src/google.golang.org/protobuf/internal/impl/codec_field.go.html#line-218" class="path-duplicate">codec_field.go</a><a href="../src/google.golang.org/protobuf/internal/impl/codec_field.go.html#line-218">#L218</a>: 					mp.Set(reflect.<b>New</b>(ft.Elem()))
+		<a href="../src/google.golang.org/protobuf/internal/impl/codec_field.go.html#line-250" class="path-duplicate">codec_field.go</a><a href="../src/google.golang.org/protobuf/internal/impl/codec_field.go.html#line-250">#L250</a>: 		p.SetPointer(pointerOfValue(reflect.<b>New</b>(f.mi.GoReflectType.Elem())))
+		<a href="../src/google.golang.org/protobuf/internal/impl/codec_field.go.html#line-374" class="path-duplicate">codec_field.go</a><a href="../src/google.golang.org/protobuf/internal/impl/codec_field.go.html#line-374">#L374</a>: 					mp.Set(reflect.<b>New</b>(ft.Elem()))
+		<a href="../src/google.golang.org/protobuf/internal/impl/codec_field.go.html#line-403" class="path-duplicate">codec_field.go</a><a href="../src/google.golang.org/protobuf/internal/impl/codec_field.go.html#line-403">#L403</a>: 		p.SetPointer(pointerOfValue(reflect.<b>New</b>(f.mi.GoReflectType.Elem())))
+		<a href="../src/google.golang.org/protobuf/internal/impl/codec_field.go.html#line-501" class="path-duplicate">codec_field.go</a><a href="../src/google.golang.org/protobuf/internal/impl/codec_field.go.html#line-501">#L501</a>: 	m := reflect.<b>New</b>(f.mi.GoReflectType.Elem()).Interface()
+		<a href="../src/google.golang.org/protobuf/internal/impl/codec_field.go.html#line-557" class="path-duplicate">codec_field.go</a><a href="../src/google.golang.org/protobuf/internal/impl/codec_field.go.html#line-557">#L557</a>: 	mp := reflect.<b>New</b>(goType.Elem())
+		<a href="../src/google.golang.org/protobuf/internal/impl/codec_field.go.html#line-774" class="path-duplicate">codec_field.go</a><a href="../src/google.golang.org/protobuf/internal/impl/codec_field.go.html#line-774">#L774</a>: 	mp := reflect.<b>New</b>(goType.Elem())
+		<a href="../src/google.golang.org/protobuf/internal/impl/codec_field.go.html#line-815" class="path-duplicate">codec_field.go</a><a href="../src/google.golang.org/protobuf/internal/impl/codec_field.go.html#line-815">#L815</a>: 	m := reflect.<b>New</b>(f.mi.GoReflectType.Elem()).Interface()
+		<a href="../src/google.golang.org/protobuf/internal/impl/codec_map.go.html#line-181">codec_map.go#L181</a>: 		val = reflect.<b>New</b>(f.mi.GoReflectType.Elem())
+		<a href="../src/google.golang.org/protobuf/internal/impl/codec_map.go.html#line-380" class="path-duplicate">codec_map.go</a><a href="../src/google.golang.org/protobuf/internal/impl/codec_map.go.html#line-380">#L380</a>: 		val := reflect.<b>New</b>(f.ft.Elem().Elem())
+		<a href="../src/google.golang.org/protobuf/internal/impl/convert.go.html#line-483">convert.go#L483</a>: 		return c.PBValueOf(reflect.<b>New</b>(c.goType).Elem())
+		<a href="../src/google.golang.org/protobuf/internal/impl/convert.go.html#line-485" class="path-duplicate">convert.go</a><a href="../src/google.golang.org/protobuf/internal/impl/convert.go.html#line-485">#L485</a>: 	return c.PBValueOf(reflect.<b>New</b>(c.goType.Elem()))
+		<a href="../src/google.golang.org/protobuf/internal/impl/convert_list.go.html#line-33">convert_list.go#L33</a>: 	pv := reflect.<b>New</b>(c.goType)
+		<a href="../src/google.golang.org/protobuf/internal/impl/convert_list.go.html#line-59" class="path-duplicate">convert_list.go</a><a href="../src/google.golang.org/protobuf/internal/impl/convert_list.go.html#line-59">#L59</a>: 	return pref.ValueOfList(&amp;listReflect{reflect.<b>New</b>(c.goType), c.c})
+		<a href="../src/google.golang.org/protobuf/internal/impl/convert_list.go.html#line-95" class="path-duplicate">convert_list.go</a><a href="../src/google.golang.org/protobuf/internal/impl/convert_list.go.html#line-95">#L95</a>: 	return c.PBValueOf(reflect.<b>New</b>(c.goType.Elem()))
+		<a href="../src/google.golang.org/protobuf/internal/impl/legacy_enum.go.html#line-102">legacy_enum.go#L102</a>: 	v := reflect.<b>New</b>(e.goTyp).Elem()
+		<a href="../src/google.golang.org/protobuf/internal/impl/legacy_message.go.html#line-468">legacy_message.go#L468</a>: 		return aberrantMessage{reflect.<b>New</b>(mt.t.Elem())}
+		<a href="../src/google.golang.org/protobuf/internal/impl/legacy_message.go.html#line-514" class="path-duplicate">legacy_message.go</a><a href="../src/google.golang.org/protobuf/internal/impl/legacy_message.go.html#line-514">#L514</a>: 		return aberrantMessage{reflect.<b>New</b>(m.v.Type().Elem())}
+		<a href="../src/google.golang.org/protobuf/internal/impl/merge.go.html#line-135">merge.go#L135</a>: 			dst.SetPointer(pointerOfValue(reflect.<b>New</b>(f.mi.GoReflectType.Elem())))
+		<a href="../src/google.golang.org/protobuf/internal/impl/merge.go.html#line-142" class="path-duplicate">merge.go</a><a href="../src/google.golang.org/protobuf/internal/impl/merge.go.html#line-142">#L142</a>: 			dm.Set(reflect.<b>New</b>(f.ft.Elem()))
+		<a href="../src/google.golang.org/protobuf/internal/impl/merge.go.html#line-150" class="path-duplicate">merge.go</a><a href="../src/google.golang.org/protobuf/internal/impl/merge.go.html#line-150">#L150</a>: 		dm := reflect.<b>New</b>(f.ft.Elem().Elem())
+		<a href="../src/google.golang.org/protobuf/internal/impl/message.go.html#line-222">message.go#L222</a>: 	return mi.MessageOf(reflect.<b>New</b>(mi.GoReflectType.Elem()).Interface())
+		<a href="../src/google.golang.org/protobuf/internal/impl/message_reflect_field.go.html#line-119">message_reflect_field.go#L119</a>: 				rv.Set(reflect.<b>New</b>(ot))
+		<a href="../src/google.golang.org/protobuf/internal/impl/message_reflect_field.go.html#line-130" class="path-duplicate">message_reflect_field.go</a><a href="../src/google.golang.org/protobuf/internal/impl/message_reflect_field.go.html#line-130">#L130</a>: 				rv.Set(reflect.<b>New</b>(ot))
+		<a href="../src/google.golang.org/protobuf/internal/impl/message_reflect_field.go.html#line-322" class="path-duplicate">message_reflect_field.go</a><a href="../src/google.golang.org/protobuf/internal/impl/message_reflect_field.go.html#line-322">#L322</a>: 					rv.Set(reflect.<b>New</b>(ft))
+
+	<a href="../pkg/text/template.html">text/template</a>
+		<a href="../src/text/template/exec.go.html#line-841">exec.go#L841</a>: 		value := reflect.<b>New</b>(typ).Elem()
+		<a href="../src/text/template/exec.go.html#line-852" class="path-duplicate">exec.go</a><a href="../src/text/template/exec.go.html#line-852">#L852</a>: 		value := reflect.<b>New</b>(typ).Elem()
+		<a href="../src/text/template/exec.go.html#line-863" class="path-duplicate">exec.go</a><a href="../src/text/template/exec.go.html#line-863">#L863</a>: 		value := reflect.<b>New</b>(typ).Elem()
+		<a href="../src/text/template/exec.go.html#line-874" class="path-duplicate">exec.go</a><a href="../src/text/template/exec.go.html#line-874">#L874</a>: 		value := reflect.<b>New</b>(typ).Elem()
+		<a href="../src/text/template/exec.go.html#line-885" class="path-duplicate">exec.go</a><a href="../src/text/template/exec.go.html#line-885">#L885</a>: 		value := reflect.<b>New</b>(typ).Elem()
+		<a href="../src/text/template/exec.go.html#line-895" class="path-duplicate">exec.go</a><a href="../src/text/template/exec.go.html#line-895">#L895</a>: 		value := reflect.<b>New</b>(typ).Elem()
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

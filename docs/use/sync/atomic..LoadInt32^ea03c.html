@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: sync/atomic.LoadInt32</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">func <b><a href="../../pkg/sync/atomic.html">sync/atomic</a>.<a href="../../src/sync/atomic/doc.go.html#line-111">LoadInt32</a></b></span>
+
+<span class="title">20 uses</span>
+
+	sync/atomic (current package)
+		<a href="../../src/sync/atomic/doc.go.html#line-111">doc.go#L111</a>: func <b>LoadInt32</b>(addr *int32) (val int32)
+
+	<a href="../../pkg/crypto/tls.html">crypto/tls</a>
+		<a href="../../src/crypto/tls/conn.go.html#line-1102">conn.go#L1102</a>: 		x := atomic.<b>LoadInt32</b>(&amp;c.activeCall)
+		<a href="../../src/crypto/tls/conn.go.html#line-1311" class="path-duplicate">conn.go</a><a href="../../src/crypto/tls/conn.go.html#line-1311">#L1311</a>: 		x = atomic.<b>LoadInt32</b>(&amp;c.activeCall)
+
+	<a href="../../pkg/database/sql.html">database/sql</a>
+		<a href="../../src/database/sql/sql.go.html#line-1939">sql.go#L1939</a>: 	if atomic.<b>LoadInt32</b>(&amp;c.done) != 0 {
+		<a href="../../src/database/sql/sql.go.html#line-2161" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-2161">#L2161</a>: 	return atomic.<b>LoadInt32</b>(&amp;tx.done) != 0
+		<a href="../../src/database/sql/sql.go.html#line-2230" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-2230">#L2230</a>: 		if atomic.<b>LoadInt32</b>(&amp;tx.done) == 1 {
+
+	<a href="../../pkg/github.com/uber/jaeger-client-go/thrift.html">github.com/uber/jaeger-client-go/thrift</a>
+		<a href="../../src/github.com/uber/jaeger-client-go/thrift/simple_server.go.html#line-187">simple_server.go#L187</a>: 	closed := atomic.<b>LoadInt32</b>(&amp;p.closed)
+		<a href="../../src/github.com/uber/jaeger-client-go/thrift/simple_server.go.html#line-232" class="path-duplicate">simple_server.go</a><a href="../../src/github.com/uber/jaeger-client-go/thrift/simple_server.go.html#line-232">#L232</a>: 	if atomic.<b>LoadInt32</b>(&amp;p.closed) != 0 {
+		<a href="../../src/github.com/uber/jaeger-client-go/thrift/simple_server.go.html#line-292" class="path-duplicate">simple_server.go</a><a href="../../src/github.com/uber/jaeger-client-go/thrift/simple_server.go.html#line-292">#L292</a>: 		if atomic.<b>LoadInt32</b>(&amp;p.closed) != 0 {
+
+	<a href="../../pkg/go.uber.org/atomic.html">go.uber.org/atomic</a>
+		<a href="../../src/go.uber.org/atomic/int32.go.html#line-45">int32.go#L45</a>: 	return atomic.<b>LoadInt32</b>(&amp;i.v)
+
+	<a href="../../pkg/google.golang.org/grpc/internal/channelz.html">google.golang.org/grpc/internal/channelz</a>
+		<a href="../../src/google.golang.org/grpc/internal/channelz/funcs.go.html#line-74">funcs.go#L74</a>: 	i := atomic.<b>LoadInt32</b>(&amp;maxTraceEntry)
+		<a href="../../src/google.golang.org/grpc/internal/channelz/types.go.html#line-304">types.go#L304</a>: 	i := atomic.<b>LoadInt32</b>(&amp;c.traceRefCount)
+		<a href="../../src/google.golang.org/grpc/internal/channelz/types.go.html#line-412" class="path-duplicate">types.go</a><a href="../../src/google.golang.org/grpc/internal/channelz/types.go.html#line-412">#L412</a>: 	i := atomic.<b>LoadInt32</b>(&amp;sc.traceRefCount)
+
+	<a href="../../pkg/google.golang.org/grpc/internal/grpcsync.html">google.golang.org/grpc/internal/grpcsync</a>
+		<a href="../../src/google.golang.org/grpc/internal/grpcsync/event.go.html#line-55">event.go#L55</a>: 	return atomic.<b>LoadInt32</b>(&amp;e.fired) == 1
+
+	<a href="../../pkg/google.golang.org/grpc/internal/transport.html">google.golang.org/grpc/internal/transport</a>
+		<a href="../../src/google.golang.org/grpc/internal/transport/flowcontrol.go.html#line-55">flowcontrol.go#L55</a>: 		if atomic.<b>LoadInt32</b>(&amp;w.quota) &gt; 0 {
+
+	<a href="../../pkg/google.golang.org/protobuf/internal/impl.html">google.golang.org/protobuf/internal/impl</a>
+		<a href="../../src/google.golang.org/protobuf/internal/impl/encode.go.html#line-52">encode.go#L52</a>: 		if size := atomic.<b>LoadInt32</b>(p.Apply(mi.sizecacheOffset).Int32()); size &gt;= 0 {
+
+	<a href="../../pkg/internal/poll.html">internal/poll</a>
+		<a href="../../src/internal/poll/fd_unix.go.html#line-485">fd_unix.go#L485</a>: 	if syscall.F_DUPFD_CLOEXEC != 0 &amp;&amp; atomic.<b>LoadInt32</b>(&amp;tryDupCloexec) == 1 {
+
+	<a href="../../pkg/net/http.html">net/http</a>
+		<a href="../../src/net/http/server.go.html#line-526">server.go#L526</a>: func (b *atomicBool) isSet() bool { return atomic.<b>LoadInt32</b>((*int32)(b)) != 0 }
+		<a href="../../src/net/http/server.go.html#line-2873" class="path-duplicate">server.go</a><a href="../../src/net/http/server.go.html#line-2873">#L2873</a>: 			if atomic.<b>LoadInt32</b>(&amp;allowQuerySemicolonsInUse) == 0 {
+		<a href="../../src/net/http/server.go.html#line-3132" class="path-duplicate">server.go</a><a href="../../src/net/http/server.go.html#line-3132">#L3132</a>: 	return atomic.<b>LoadInt32</b>(&amp;s.disableKeepAlives) == 0 &amp;&amp; !s.shuttingDown()
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

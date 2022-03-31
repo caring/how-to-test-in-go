@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/uber/jaeger-client-go/thrift-gen/zipkincore.AnnotationType</title>
+<link href="../../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../../../../../pkg/github.com/uber/jaeger-client-go/thrift-gen/zipkincore.html">github.com/uber/jaeger-client-go/thrift-gen/zipkincore</a>.<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-22">AnnotationType</a></b></span>
+
+<span class="title">21 uses</span>
+
+	github.com/uber/jaeger-client-go/thrift-gen/zipkincore (current package)
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-22">zipkincore.go#L22</a>: type <b>AnnotationType</b> int64
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-24" class="path-duplicate">zipkincore.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-24">#L24</a>:   AnnotationType_BOOL <b>AnnotationType</b> = 0
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-25" class="path-duplicate">zipkincore.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-25">#L25</a>:   AnnotationType_BYTES <b>AnnotationType</b> = 1
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-26" class="path-duplicate">zipkincore.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-26">#L26</a>:   AnnotationType_I16 <b>AnnotationType</b> = 2
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-27" class="path-duplicate">zipkincore.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-27">#L27</a>:   AnnotationType_I32 <b>AnnotationType</b> = 3
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-28" class="path-duplicate">zipkincore.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-28">#L28</a>:   AnnotationType_I64 <b>AnnotationType</b> = 4
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-29" class="path-duplicate">zipkincore.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-29">#L29</a>:   AnnotationType_DOUBLE <b>AnnotationType</b> = 5
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-30" class="path-duplicate">zipkincore.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-30">#L30</a>:   AnnotationType_STRING <b>AnnotationType</b> = 6
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-33" class="path-duplicate">zipkincore.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-33">#L33</a>: func (p <b>AnnotationType</b>) String() string {
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-46" class="path-duplicate">zipkincore.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-46">#L46</a>: func AnnotationTypeFromString(s string) (<b>AnnotationType</b>, error) {
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-56" class="path-duplicate">zipkincore.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-56">#L56</a>:   return <b>AnnotationType</b>(0), fmt.Errorf("not a valid AnnotationType string")
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-60" class="path-duplicate">zipkincore.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-60">#L60</a>: func AnnotationTypePtr(v <b>AnnotationType</b>) *<b>AnnotationType</b> { return &amp;v }
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-62" class="path-duplicate">zipkincore.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-62">#L62</a>: func (p <b>AnnotationType</b>) MarshalText() ([]byte, error) {
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-66" class="path-duplicate">zipkincore.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-66">#L66</a>: func (p *<b>AnnotationType</b>) UnmarshalText(text []byte) error {
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-75" class="path-duplicate">zipkincore.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-75">#L75</a>: func (p *<b>AnnotationType</b>) Scan(value interface{}) error {
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-80" class="path-duplicate">zipkincore.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-80">#L80</a>: *p = <b>AnnotationType</b>(v)
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-84" class="path-duplicate">zipkincore.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-84">#L84</a>: func (p * <b>AnnotationType</b>) Value() (driver.Value, error) {
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-543" class="path-duplicate">zipkincore.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-543">#L543</a>:   AnnotationType <b>AnnotationType</b> `thrift:"annotation_type,3" db:"annotation_type" json:"annotation_type"`
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-560" class="path-duplicate">zipkincore.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-560">#L560</a>: func (p *BinaryAnnotation) GetAnnotationType() <b>AnnotationType</b> {
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-664" class="path-duplicate">zipkincore.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-664">#L664</a>:   temp := <b>AnnotationType</b>(v)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

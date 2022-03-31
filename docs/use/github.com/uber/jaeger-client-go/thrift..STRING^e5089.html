@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/uber/jaeger-client-go/thrift.STRING</title>
+<link href="../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">const <b><a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift.html">github.com/uber/jaeger-client-go/thrift</a>.<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/type.go.html#line-35">STRING</a></b></span>
+
+<span class="title">33 uses</span>
+
+	github.com/uber/jaeger-client-go/thrift (current package)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/application_exception.go.html#line-108">application_exception.go#L108</a>: 			if ttype == <b>STRING</b> {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/application_exception.go.html#line-149" class="path-duplicate">application_exception.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/application_exception.go.html#line-149">#L149</a>: 		err = oprot.WriteFieldBegin(ctx, "message", <b>STRING</b>, 1)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-70">compact_protocol.go#L70</a>: 		<b>STRING</b>: COMPACT_BINARY,
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-838" class="path-duplicate">compact_protocol.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-838">#L838</a>: 		return <b>STRING</b>, nil
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/protocol.go.html#line-117">protocol.go#L117</a>: 	case <b>STRING</b>:
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/type.go.html#line-35">type.go#L35</a>: 	<b>STRING</b> = 11
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/type.go.html#line-55" class="path-duplicate">type.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/type.go.html#line-55">#L55</a>: 	<b>STRING</b>: "STRING",
+
+	<a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift-gen/jaeger.html">github.com/uber/jaeger-client-go/thrift-gen/jaeger</a>
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-236">jaeger.go#L236</a>:       if fieldTypeId == thrift.<b>STRING</b> {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-258" class="path-duplicate">jaeger.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-258">#L258</a>:       if fieldTypeId == thrift.<b>STRING</b> {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-298" class="path-duplicate">jaeger.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-298">#L298</a>:       if fieldTypeId == thrift.<b>STRING</b> {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-412" class="path-duplicate">jaeger.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-412">#L412</a>:   if err := oprot.WriteFieldBegin(ctx, "key", thrift.<b>STRING</b>, 1); err != nil {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-433" class="path-duplicate">jaeger.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-433">#L433</a>:     if err := oprot.WriteFieldBegin(ctx, "vStr", thrift.<b>STRING</b>, 3); err != nil {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-481" class="path-duplicate">jaeger.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-481">#L481</a>:     if err := oprot.WriteFieldBegin(ctx, "vBinary", thrift.<b>STRING</b>, 7); err != nil {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-1094" class="path-duplicate">jaeger.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-1094">#L1094</a>:       if fieldTypeId == thrift.<b>STRING</b> {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-1402" class="path-duplicate">jaeger.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-1402">#L1402</a>:   if err := oprot.WriteFieldBegin(ctx, "operationName", thrift.<b>STRING</b>, 5); err != nil {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-1583" class="path-duplicate">jaeger.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-1583">#L1583</a>:       if fieldTypeId == thrift.<b>STRING</b> {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-1665" class="path-duplicate">jaeger.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-1665">#L1665</a>:   if err := oprot.WriteFieldBegin(ctx, "serviceName", thrift.<b>STRING</b>, 1); err != nil {
+
+	<a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift-gen/sampling.html">github.com/uber/jaeger-client-go/thrift-gen/sampling</a>
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-330">sampling.go#L330</a>:       if fieldTypeId == thrift.<b>STRING</b> {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-404" class="path-duplicate">sampling.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-404">#L404</a>:   if err := oprot.WriteFieldBegin(ctx, "operation", thrift.<b>STRING</b>, 1); err != nil {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-1160" class="path-duplicate">sampling.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-1160">#L1160</a>:       if fieldTypeId == thrift.<b>STRING</b> {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-1207" class="path-duplicate">sampling.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-1207">#L1207</a>:   if err := oprot.WriteFieldBegin(ctx, "serviceName", thrift.<b>STRING</b>, 1); err != nil {
+
+	<a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift-gen/zipkincore.html">github.com/uber/jaeger-client-go/thrift-gen/zipkincore</a>
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-177">zipkincore.go#L177</a>:       if fieldTypeId == thrift.<b>STRING</b> {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-187" class="path-duplicate">zipkincore.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-187">#L187</a>:       if fieldTypeId == thrift.<b>STRING</b> {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-284" class="path-duplicate">zipkincore.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-284">#L284</a>:   if err := oprot.WriteFieldBegin(ctx, "service_name", thrift.<b>STRING</b>, 3); err != nil {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-295" class="path-duplicate">zipkincore.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-295">#L295</a>:     if err := oprot.WriteFieldBegin(ctx, "ipv6", thrift.<b>STRING</b>, 4); err != nil {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-389" class="path-duplicate">zipkincore.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-389">#L389</a>:       if fieldTypeId == thrift.<b>STRING</b> {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-475" class="path-duplicate">zipkincore.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-475">#L475</a>:   if err := oprot.WriteFieldBegin(ctx, "value", thrift.<b>STRING</b>, 2); err != nil {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-588" class="path-duplicate">zipkincore.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-588">#L588</a>:       if fieldTypeId == thrift.<b>STRING</b> {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-598" class="path-duplicate">zipkincore.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-598">#L598</a>:       if fieldTypeId == thrift.<b>STRING</b> {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-695" class="path-duplicate">zipkincore.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-695">#L695</a>:   if err := oprot.WriteFieldBegin(ctx, "key", thrift.<b>STRING</b>, 1); err != nil {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-705" class="path-duplicate">zipkincore.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-705">#L705</a>:   if err := oprot.WriteFieldBegin(ctx, "value", thrift.<b>STRING</b>, 2); err != nil {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-918" class="path-duplicate">zipkincore.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-918">#L918</a>:       if fieldTypeId == thrift.<b>STRING</b> {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-1167" class="path-duplicate">zipkincore.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-1167">#L1167</a>:   if err := oprot.WriteFieldBegin(ctx, "name", thrift.<b>STRING</b>, 3); err != nil {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

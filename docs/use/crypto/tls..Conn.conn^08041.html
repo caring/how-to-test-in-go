@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: crypto/tls.Conn.conn</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../pkg/crypto/tls.html">crypto/tls</a>.<a href="../../src/crypto/tls/conn.go.html#line-27">Conn</a>.<a href="../../src/crypto/tls/conn.go.html#line-29">conn</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">19 uses</span>
+
+	crypto/tls (current package)
+		<a href="../../src/crypto/tls/conn.go.html#line-29">conn.go#L29</a>: 	<b>conn</b>        net.Conn
+		<a href="../../src/crypto/tls/conn.go.html#line-126" class="path-duplicate">conn.go</a><a href="../../src/crypto/tls/conn.go.html#line-126">#L126</a>: 	return c.<b>conn</b>.LocalAddr()
+		<a href="../../src/crypto/tls/conn.go.html#line-131" class="path-duplicate">conn.go</a><a href="../../src/crypto/tls/conn.go.html#line-131">#L131</a>: 	return c.<b>conn</b>.RemoteAddr()
+		<a href="../../src/crypto/tls/conn.go.html#line-138" class="path-duplicate">conn.go</a><a href="../../src/crypto/tls/conn.go.html#line-138">#L138</a>: 	return c.<b>conn</b>.SetDeadline(t)
+		<a href="../../src/crypto/tls/conn.go.html#line-144" class="path-duplicate">conn.go</a><a href="../../src/crypto/tls/conn.go.html#line-144">#L144</a>: 	return c.<b>conn</b>.SetReadDeadline(t)
+		<a href="../../src/crypto/tls/conn.go.html#line-151" class="path-duplicate">conn.go</a><a href="../../src/crypto/tls/conn.go.html#line-151">#L151</a>: 	return c.<b>conn</b>.SetWriteDeadline(t)
+		<a href="../../src/crypto/tls/conn.go.html#line-606" class="path-duplicate">conn.go</a><a href="../../src/crypto/tls/conn.go.html#line-606">#L606</a>: 	if err := c.readFromUntil(c.<b>conn</b>, recordHeaderLen); err != nil {
+		<a href="../../src/crypto/tls/conn.go.html#line-643" class="path-duplicate">conn.go</a><a href="../../src/crypto/tls/conn.go.html#line-643">#L643</a>: 			return c.in.setErrorLocked(c.newRecordHeaderError(c.<b>conn</b>, "first record does not look like a TLS handshake"))
+		<a href="../../src/crypto/tls/conn.go.html#line-651" class="path-duplicate">conn.go</a><a href="../../src/crypto/tls/conn.go.html#line-651">#L651</a>: 	if err := c.readFromUntil(c.<b>conn</b>, recordHeaderLen+n); err != nil {
+		<a href="../../src/crypto/tls/conn.go.html#line-912" class="path-duplicate">conn.go</a><a href="../../src/crypto/tls/conn.go.html#line-912">#L912</a>: 	n, err := c.<b>conn</b>.Write(data)
+		<a href="../../src/crypto/tls/conn.go.html#line-922" class="path-duplicate">conn.go</a><a href="../../src/crypto/tls/conn.go.html#line-922">#L922</a>: 	n, err := c.<b>conn</b>.Write(c.sendBuf)
+		<a href="../../src/crypto/tls/conn.go.html#line-1326" class="path-duplicate">conn.go</a><a href="../../src/crypto/tls/conn.go.html#line-1326">#L1326</a>: 		return c.<b>conn</b>.Close()
+		<a href="../../src/crypto/tls/conn.go.html#line-1336" class="path-duplicate">conn.go</a><a href="../../src/crypto/tls/conn.go.html#line-1336">#L1336</a>: 	if err := c.<b>conn</b>.Close(); err != nil {
+		<a href="../../src/crypto/tls/conn.go.html#line-1424" class="path-duplicate">conn.go</a><a href="../../src/crypto/tls/conn.go.html#line-1424">#L1424</a>: 				_ = c.<b>conn</b>.Close()
+		<a href="../../src/crypto/tls/handshake_client.go.html#line-265">handshake_client.go#L265</a>: 	cacheKey = clientSessionCacheKey(c.<b>conn</b>.RemoteAddr(), c.config)
+		<a href="../../src/crypto/tls/handshake_client_tls13.go.html#line-678">handshake_client_tls13.go#L678</a>: 	cacheKey := clientSessionCacheKey(c.<b>conn</b>.RemoteAddr(), c.config)
+		<a href="../../src/crypto/tls/handshake_server.go.html#line-871">handshake_server.go#L871</a>: 		Conn:              c.<b>conn</b>,
+		<a href="../../src/crypto/tls/tls.go.html#line-36">tls.go#L36</a>: 		<b>conn</b>:   conn,
+		<a href="../../src/crypto/tls/tls.go.html#line-49" class="path-duplicate">tls.go</a><a href="../../src/crypto/tls/tls.go.html#line-49">#L49</a>: 		<b>conn</b>:     conn,
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

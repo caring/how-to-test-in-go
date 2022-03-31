@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: net/http.Client</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../../pkg/net/http.html">net/http</a>.<a href="../../src/net/http/client.go.html#line-58">Client</a></b></span>
+
+<span class="title">21 uses</span>
+
+	net/http (current package)
+		<a href="../../src/net/http/client.go.html#line-58">client.go#L58</a>: type <b>Client</b> struct {
+		<a href="../../src/net/http/client.go.html#line-110" class="path-duplicate">client.go</a><a href="../../src/net/http/client.go.html#line-110">#L110</a>: var DefaultClient = &amp;<b>Client</b>{}
+		<a href="../../src/net/http/client.go.html#line-170" class="path-duplicate">client.go</a><a href="../../src/net/http/client.go.html#line-170">#L170</a>: func (c *<b>Client</b>) send(req *Request, deadline time.Time) (resp *Response, didTimeout func() bool, err error) {
+		<a href="../../src/net/http/client.go.html#line-188" class="path-duplicate">client.go</a><a href="../../src/net/http/client.go.html#line-188">#L188</a>: func (c *<b>Client</b>) deadline() time.Time {
+		<a href="../../src/net/http/client.go.html#line-195" class="path-duplicate">client.go</a><a href="../../src/net/http/client.go.html#line-195">#L195</a>: func (c *<b>Client</b>) transport() RoundTripper {
+		<a href="../../src/net/http/client.go.html#line-475" class="path-duplicate">client.go</a><a href="../../src/net/http/client.go.html#line-475">#L475</a>: func (c *<b>Client</b>) Get(url string) (resp *Response, err error) {
+		<a href="../../src/net/http/client.go.html#line-493" class="path-duplicate">client.go</a><a href="../../src/net/http/client.go.html#line-493">#L493</a>: func (c *<b>Client</b>) checkRedirect(req *Request, via []*Request) error {
+		<a href="../../src/net/http/client.go.html#line-592" class="path-duplicate">client.go</a><a href="../../src/net/http/client.go.html#line-592">#L592</a>: func (c *<b>Client</b>) Do(req *Request) (*Response, error) {
+		<a href="../../src/net/http/client.go.html#line-598" class="path-duplicate">client.go</a><a href="../../src/net/http/client.go.html#line-598">#L598</a>: func (c *<b>Client</b>) do(req *Request) (retres *Response, reterr error) {
+		<a href="../../src/net/http/client.go.html#line-750" class="path-duplicate">client.go</a><a href="../../src/net/http/client.go.html#line-750">#L750</a>: func (c *<b>Client</b>) makeHeadersCopier(ireq *Request) func(*Request) {
+		<a href="../../src/net/http/client.go.html#line-852" class="path-duplicate">client.go</a><a href="../../src/net/http/client.go.html#line-852">#L852</a>: func (c *<b>Client</b>) Post(url, contentType string, body io.Reader) (resp *Response, err error) {
+		<a href="../../src/net/http/client.go.html#line-895" class="path-duplicate">client.go</a><a href="../../src/net/http/client.go.html#line-895">#L895</a>: func (c *<b>Client</b>) PostForm(url string, data url.Values) (resp *Response, err error) {
+		<a href="../../src/net/http/client.go.html#line-929" class="path-duplicate">client.go</a><a href="../../src/net/http/client.go.html#line-929">#L929</a>: func (c *<b>Client</b>) Head(url string) (resp *Response, err error) {
+		<a href="../../src/net/http/client.go.html#line-944" class="path-duplicate">client.go</a><a href="../../src/net/http/client.go.html#line-944">#L944</a>: func (c *<b>Client</b>) CloseIdleConnections() {
+
+	<a href="../../pkg/github.com/aws/aws-sdk-go/aws.html">github.com/aws/aws-sdk-go/aws</a>
+		<a href="../../src/github.com/aws/aws-sdk-go/aws/config.go.html#line-78">config.go#L78</a>: 	HTTPClient *http.<b>Client</b>
+		<a href="../../src/github.com/aws/aws-sdk-go/aws/config.go.html#line-329" class="path-duplicate">config.go</a><a href="../../src/github.com/aws/aws-sdk-go/aws/config.go.html#line-329">#L329</a>: func (c *Config) WithHTTPClient(client *http.<b>Client</b>) *Config {
+
+	<a href="../../pkg/github.com/aws/aws-sdk-go/aws/ec2metadata.html">github.com/aws/aws-sdk-go/aws/ec2metadata</a>
+		<a href="../../src/github.com/aws/aws-sdk-go/aws/ec2metadata/service.go.html#line-79">service.go#L79</a>: 		cfg.HTTPClient = &amp;http.<b>Client</b>{
+		<a href="../../src/github.com/aws/aws-sdk-go/aws/ec2metadata/service.go.html#line-146" class="path-duplicate">service.go</a><a href="../../src/github.com/aws/aws-sdk-go/aws/ec2metadata/service.go.html#line-146">#L146</a>: func httpClientZero(c *http.<b>Client</b>) bool {
+
+	<a href="../../pkg/github.com/caring/test/1-mocks.html">github.com/caring/test/1-mocks</a>
+		<a href="../../src/github.com/caring/test/1-mocks/http.go.html#line-21">http.go#L21</a>: 	client := &amp;http.<b>Client</b>{}
+
+	<a href="../../pkg/github.com/uber/jaeger-client-go.html">github.com/uber/jaeger-client-go</a>
+		<a href="../../src/github.com/uber/jaeger-client-go/sampler_remote.go.html#line-304">sampler_remote.go#L304</a>: 	httpClient http.<b>Client</b>
+		<a href="../../src/github.com/uber/jaeger-client-go/sampler_remote.go.html#line-314" class="path-duplicate">sampler_remote.go</a><a href="../../src/github.com/uber/jaeger-client-go/sampler_remote.go.html#line-314">#L314</a>: 		httpClient: http.<b>Client</b>{
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

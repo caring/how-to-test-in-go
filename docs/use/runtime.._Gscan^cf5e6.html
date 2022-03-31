@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime._Gscan</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">const <b><a href="../pkg/runtime.html">runtime</a>.<a href="../src/runtime/runtime2.go.html#line-98">_Gscan</a></b></span>
+
+<span class="title">36 uses</span>
+
+	runtime (current package)
+		<a href="../src/runtime/mgcmark.go.html#line-695">mgcmark.go#L695</a>: 	if readgstatus(gp)&amp;<b>_Gscan</b> == 0 {
+		<a href="../src/runtime/mgcmark.go.html#line-700" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-700">#L700</a>: 	switch readgstatus(gp) &amp;^ <b>_Gscan</b> {
+		<a href="../src/runtime/panic.go.html#line-1438">panic.go#L1438</a>: 	if status&amp;^<b>_Gscan</b> != _Grunning || gp.syscallsp != 0 {
+		<a href="../src/runtime/preempt.go.html#line-125">preempt.go#L125</a>: 			if s&amp;<b>_Gscan</b> != 0 {
+		<a href="../src/runtime/preempt.go.html#line-167" class="path-duplicate">preempt.go</a><a href="../src/runtime/preempt.go.html#line-167">#L167</a>: 			if !castogscanstatus(gp, s, s|<b>_Gscan</b>) {
+		<a href="../src/runtime/preempt.go.html#line-270" class="path-duplicate">preempt.go</a><a href="../src/runtime/preempt.go.html#line-270">#L270</a>: 	case _Grunnable | <b>_Gscan</b>,
+		<a href="../src/runtime/preempt.go.html#line-271" class="path-duplicate">preempt.go</a><a href="../src/runtime/preempt.go.html#line-271">#L271</a>: 		_Gwaiting | <b>_Gscan</b>,
+		<a href="../src/runtime/preempt.go.html#line-272" class="path-duplicate">preempt.go</a><a href="../src/runtime/preempt.go.html#line-272">#L272</a>: 		_Gsyscall | <b>_Gscan</b>:
+		<a href="../src/runtime/preempt.go.html#line-273" class="path-duplicate">preempt.go</a><a href="../src/runtime/preempt.go.html#line-273">#L273</a>: 		casfrom_Gscanstatus(gp, s, s&amp;^<b>_Gscan</b>)
+		<a href="../src/runtime/preempt.go.html#line-344" class="path-duplicate">preempt.go</a><a href="../src/runtime/preempt.go.html#line-344">#L344</a>: 	return (gp.preempt || gp.m.p != 0 &amp;&amp; gp.m.p.ptr().preempt) &amp;&amp; readgstatus(gp)&amp;^<b>_Gscan</b> == _Grunning
+		<a href="../src/runtime/proc.go.html#line-841">proc.go#L841</a>: 	if status&amp;^<b>_Gscan</b> != _Gwaiting {
+		<a href="../src/runtime/proc.go.html#line-910" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-910">#L910</a>: 		if newval == oldval&amp;^<b>_Gscan</b> {
+		<a href="../src/runtime/proc.go.html#line-930" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-930">#L930</a>: 		if newval == oldval|<b>_Gscan</b> {
+		<a href="../src/runtime/proc.go.html#line-950" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-950">#L950</a>: 	if (oldval&amp;<b>_Gscan</b> != 0) || (newval&amp;<b>_Gscan</b> != 0) || oldval == newval {
+		<a href="../src/runtime/proc.go.html#line-1023" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1023">#L1023</a>: 		oldstatus := readgstatus(gp) &amp;^ <b>_Gscan</b>
+		<a href="../src/runtime/proc.go.html#line-1038" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1038">#L1038</a>: 	if old != _Grunning || new != <b>_Gscan</b>|_Gpreempted {
+		<a href="../src/runtime/proc.go.html#line-1042" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1042">#L1042</a>: 	for !atomic.Cas(&amp;gp.atomicstatus, _Grunning, <b>_Gscan</b>|_Gpreempted) {
+		<a href="../src/runtime/proc.go.html#line-2604" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2604">#L2604</a>: 	if status&amp;^<b>_Gscan</b> != _Grunnable {
+		<a href="../src/runtime/proc.go.html#line-3521" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3521">#L3521</a>: 	if status&amp;^<b>_Gscan</b> != _Grunning {
+		<a href="../src/runtime/proc.go.html#line-3570" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3570">#L3570</a>: 	if status&amp;^<b>_Gscan</b> != _Grunning {
+		<a href="../src/runtime/proc.go.html#line-3596" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3596">#L3596</a>: 	casGToPreemptScan(gp, _Grunning, <b>_Gscan</b>|_Gpreempted)
+		<a href="../src/runtime/proc.go.html#line-3598" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3598">#L3598</a>: 	casfrom_Gscanstatus(gp, <b>_Gscan</b>|_Gpreempted, _Gpreempted)
+		<a href="../src/runtime/proc.go.html#line-5253" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5253">#L5253</a>: 		switch s &amp;^ <b>_Gscan</b> {
+		<a href="../src/runtime/runtime2.go.html#line-98">runtime2.go#L98</a>: 	<b>_Gscan</b>          = 0x1000
+		<a href="../src/runtime/runtime2.go.html#line-99" class="path-duplicate">runtime2.go</a><a href="../src/runtime/runtime2.go.html#line-99">#L99</a>: 	_Gscanrunnable  = <b>_Gscan</b> + _Grunnable  // 0x1001
+		<a href="../src/runtime/runtime2.go.html#line-100" class="path-duplicate">runtime2.go</a><a href="../src/runtime/runtime2.go.html#line-100">#L100</a>: 	_Gscanrunning   = <b>_Gscan</b> + _Grunning   // 0x1002
+		<a href="../src/runtime/runtime2.go.html#line-101" class="path-duplicate">runtime2.go</a><a href="../src/runtime/runtime2.go.html#line-101">#L101</a>: 	_Gscansyscall   = <b>_Gscan</b> + _Gsyscall   // 0x1003
+		<a href="../src/runtime/runtime2.go.html#line-102" class="path-duplicate">runtime2.go</a><a href="../src/runtime/runtime2.go.html#line-102">#L102</a>: 	_Gscanwaiting   = <b>_Gscan</b> + _Gwaiting   // 0x1004
+		<a href="../src/runtime/runtime2.go.html#line-103" class="path-duplicate">runtime2.go</a><a href="../src/runtime/runtime2.go.html#line-103">#L103</a>: 	_Gscanpreempted = <b>_Gscan</b> + _Gpreempted // 0x1009
+		<a href="../src/runtime/signal_unix.go.html#line-664">signal_unix.go#L664</a>: 		if crashing &gt; 0 &amp;&amp; gp != _g_.m.curg &amp;&amp; _g_.m.curg != nil &amp;&amp; readgstatus(_g_.m.curg)&amp;^<b>_Gscan</b> == _Grunning {
+		<a href="../src/runtime/stack.go.html#line-1149">stack.go#L1149</a>: 	if s := readgstatus(gp); s&amp;<b>_Gscan</b> == 0 {
+		<a href="../src/runtime/traceback.go.html#line-815">traceback.go#L815</a>: 	if readgstatus(gp)&amp;^<b>_Gscan</b> == _Gsyscall {
+		<a href="../src/runtime/traceback.go.html#line-973" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-973">#L973</a>: 	isScan := gpstatus&amp;<b>_Gscan</b> != 0
+		<a href="../src/runtime/traceback.go.html#line-974" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-974">#L974</a>: 	gpstatus &amp;^= <b>_Gscan</b> // drop the scan bit
+		<a href="../src/runtime/traceback.go.html#line-1035" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-1035">#L1035</a>: 		if gp.m != getg().m &amp;&amp; readgstatus(gp)&amp;^<b>_Gscan</b> == _Grunning {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

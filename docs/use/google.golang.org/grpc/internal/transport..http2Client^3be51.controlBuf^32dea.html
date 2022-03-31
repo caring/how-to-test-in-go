@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: google.golang.org/grpc/internal/transport.http2Client.controlBuf</title>
+<link href="../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../../pkg/google.golang.org/grpc/internal/transport.html">google.golang.org/grpc/internal/transport</a>.<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-59">http2Client</a>.<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-81">controlBuf</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">24 uses</span>
+
+	google.golang.org/grpc/internal/transport (current package)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-81">http2_client.go#L81</a>: 	<b>controlBuf</b> *controlBuffer
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-333" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-333">#L333</a>: 	t.<b>controlBuf</b> = newControlBuffer(t.ctxDone)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-413" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-413">#L413</a>: 		t.loopy = newLoopyWriter(clientSide, t.framer, t.<b>controlBuf</b>, t.bdpEst)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-423" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-423">#L423</a>: 		t.<b>controlBuf</b>.finish()
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-746" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-746">#L746</a>: 		success, err := t.<b>controlBuf</b>.executeAndPut(func(it interface{}) bool {
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-864" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-864">#L864</a>: 	t.<b>controlBuf</b>.executeAndPut(addBackStreamQuota, cleanup)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-898" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-898">#L898</a>: 	t.<b>controlBuf</b>.finish()
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-947" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-947">#L947</a>: 	t.<b>controlBuf</b>.put(&amp;incomingGoAway{})
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-972" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-972">#L972</a>: 	return t.<b>controlBuf</b>.put(df)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-987" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-987">#L987</a>: 		t.<b>controlBuf</b>.put(&amp;outgoingWindowUpdate{streamID: s.id, increment: w})
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-996" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-996">#L996</a>: 		t.<b>controlBuf</b>.put(&amp;outgoingWindowUpdate{streamID: s.id, increment: w})
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1013" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1013">#L1013</a>: 	t.<b>controlBuf</b>.executeAndPut(updateIWS, &amp;outgoingWindowUpdate{streamID: 0, increment: t.fc.newLimit(n)})
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1014" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1014">#L1014</a>: 	t.<b>controlBuf</b>.put(&amp;outgoingSettings{
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1040" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1040">#L1040</a>: 		t.<b>controlBuf</b>.put(&amp;outgoingWindowUpdate{
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1050" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1050">#L1050</a>: 			t.<b>controlBuf</b>.put(&amp;outgoingWindowUpdate{
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1056" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1056">#L1056</a>: 		t.<b>controlBuf</b>.put(bdpPing)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1070" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1070">#L1070</a>: 				t.<b>controlBuf</b>.put(&amp;outgoingWindowUpdate{s.id, w})
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1157" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1157">#L1157</a>: 	t.<b>controlBuf</b>.executeAndPut(func(interface{}) bool {
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1175" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1175">#L1175</a>: 	t.<b>controlBuf</b>.put(pingAck)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1216" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1216">#L1216</a>: 		t.<b>controlBuf</b>.put(&amp;incomingGoAway{})
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1270" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1270">#L1270</a>: 	t.<b>controlBuf</b>.put(&amp;incomingWindowUpdate{
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1498" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1498">#L1498</a>: 		t.<b>controlBuf</b>.throttle()
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1619" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1619">#L1619</a>: 				t.<b>controlBuf</b>.put(p)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1687" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1687">#L1687</a>: 	t.<b>controlBuf</b>.put(&amp;outFlowControlSizeRequest{resp})
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

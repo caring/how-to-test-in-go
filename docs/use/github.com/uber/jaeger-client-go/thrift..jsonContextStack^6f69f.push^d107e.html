@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/uber/jaeger-client-go/thrift.jsonContextStack.push</title>
+<link href="../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift.html">github.com/uber/jaeger-client-go/thrift</a>.<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/simple_json_protocol.go.html#line-65">jsonContextStack</a>.<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/simple_json_protocol.go.html#line-67">push</a></b></span><span style="font-size: large;"><i> (method)</i></span>
+
+<span class="title">14 uses</span>
+
+	github.com/uber/jaeger-client-go/thrift (current package)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/simple_json_protocol.go.html#line-67">simple_json_protocol.go#L67</a>: func (s *jsonContextStack) <b>push</b>(v _ParseContext) {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/simple_json_protocol.go.html#line-113" class="path-duplicate">simple_json_protocol.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/simple_json_protocol.go.html#line-113">#L113</a>: 	v.parseContextStack.<b>push</b>(_CONTEXT_IN_TOPLEVEL)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/simple_json_protocol.go.html#line-114" class="path-duplicate">simple_json_protocol.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/simple_json_protocol.go.html#line-114">#L114</a>: 	v.dumpContext.<b>push</b>(_CONTEXT_IN_TOPLEVEL)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/simple_json_protocol.go.html#line-605" class="path-duplicate">simple_json_protocol.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/simple_json_protocol.go.html#line-605">#L605</a>: 		p.dumpContext.<b>push</b>(_CONTEXT_IN_LIST)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/simple_json_protocol.go.html#line-608" class="path-duplicate">simple_json_protocol.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/simple_json_protocol.go.html#line-608">#L608</a>: 		p.dumpContext.<b>push</b>(_CONTEXT_IN_OBJECT_NEXT_VALUE)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/simple_json_protocol.go.html#line-611" class="path-duplicate">simple_json_protocol.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/simple_json_protocol.go.html#line-611">#L611</a>: 		p.dumpContext.<b>push</b>(_CONTEXT_IN_OBJECT_NEXT_VALUE)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/simple_json_protocol.go.html#line-614" class="path-duplicate">simple_json_protocol.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/simple_json_protocol.go.html#line-614">#L614</a>: 		p.dumpContext.<b>push</b>(_CONTEXT_IN_OBJECT_NEXT_KEY)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/simple_json_protocol.go.html#line-722" class="path-duplicate">simple_json_protocol.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/simple_json_protocol.go.html#line-722">#L722</a>: 	p.dumpContext.<b>push</b>(_CONTEXT_IN_OBJECT_FIRST)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/simple_json_protocol.go.html#line-747" class="path-duplicate">simple_json_protocol.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/simple_json_protocol.go.html#line-747">#L747</a>: 	p.dumpContext.<b>push</b>(_CONTEXT_IN_LIST_FIRST)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/simple_json_protocol.go.html#line-849" class="path-duplicate">simple_json_protocol.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/simple_json_protocol.go.html#line-849">#L849</a>: 		p.parseContextStack.<b>push</b>(_CONTEXT_IN_LIST)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/simple_json_protocol.go.html#line-852" class="path-duplicate">simple_json_protocol.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/simple_json_protocol.go.html#line-852">#L852</a>: 		p.parseContextStack.<b>push</b>(_CONTEXT_IN_OBJECT_NEXT_VALUE)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/simple_json_protocol.go.html#line-855" class="path-duplicate">simple_json_protocol.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/simple_json_protocol.go.html#line-855">#L855</a>: 		p.parseContextStack.<b>push</b>(_CONTEXT_IN_OBJECT_NEXT_KEY)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/simple_json_protocol.go.html#line-1008" class="path-duplicate">simple_json_protocol.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/simple_json_protocol.go.html#line-1008">#L1008</a>: 		p.parseContextStack.<b>push</b>(_CONTEXT_IN_OBJECT_FIRST)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/simple_json_protocol.go.html#line-1053" class="path-duplicate">simple_json_protocol.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/simple_json_protocol.go.html#line-1053">#L1053</a>: 		p.parseContextStack.<b>push</b>(_CONTEXT_IN_LIST_FIRST)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

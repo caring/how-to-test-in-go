@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: net/http.http2Transport</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../../pkg/net/http.html">net/http</a>.<a href="../../src/net/http/h2_bundle.go.html#line-6701">http2Transport</a></b></span>
+
+<span class="title">29 uses</span>
+
+	net/http (current package)
+		<a href="../../src/net/http/client.go.html#line-320">client.go#L320</a>: 	case *<b>http2Transport</b>, http2noDialH2RoundTripper:
+		<a href="../../src/net/http/h2_bundle.go.html#line-760">h2_bundle.go#L760</a>: 	t *<b>http2Transport</b>
+		<a href="../../src/net/http/h2_bundle.go.html#line-877" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-877">#L877</a>: func (p *http2clientConnPool) addConnIfNeeded(key string, t *<b>http2Transport</b>, c *tls.Conn) (used bool, err error) {
+		<a href="../../src/net/http/h2_bundle.go.html#line-913" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-913">#L913</a>: func (c *http2addConnCall) run(t *<b>http2Transport</b>, key string, tc *tls.Conn) {
+		<a href="../../src/net/http/h2_bundle.go.html#line-2956" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-2956">#L2956</a>: func (t *<b>http2Transport</b>) dialTLSWithContext(ctx context.Context, network, addr string, cfg *tls.Config) (*tls.Conn, error) {
+		<a href="../../src/net/http/h2_bundle.go.html#line-6701" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-6701">#L6701</a>: type <b>http2Transport</b> struct {
+		<a href="../../src/net/http/h2_bundle.go.html#line-6774" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-6774">#L6774</a>: func (t *<b>http2Transport</b>) maxHeaderListSize() uint32 {
+		<a href="../../src/net/http/h2_bundle.go.html#line-6784" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-6784">#L6784</a>: func (t *<b>http2Transport</b>) disableCompression() bool {
+		<a href="../../src/net/http/h2_bundle.go.html#line-6788" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-6788">#L6788</a>: func (t *<b>http2Transport</b>) pingTimeout() time.Duration {
+		<a href="../../src/net/http/h2_bundle.go.html#line-6808" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-6808">#L6808</a>: func http2ConfigureTransports(t1 *Transport) (*<b>http2Transport</b>, error) {
+		<a href="../../src/net/http/h2_bundle.go.html#line-6812" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-6812">#L6812</a>: func http2configureTransports(t1 *Transport) (*<b>http2Transport</b>, error) {
+		<a href="../../src/net/http/h2_bundle.go.html#line-6814" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-6814">#L6814</a>: 	t2 := &amp;<b>http2Transport</b>{
+		<a href="../../src/net/http/h2_bundle.go.html#line-6855" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-6855">#L6855</a>: func (t *<b>http2Transport</b>) connPool() http2ClientConnPool {
+		<a href="../../src/net/http/h2_bundle.go.html#line-6860" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-6860">#L6860</a>: func (t *<b>http2Transport</b>) initConnPool() {
+		<a href="../../src/net/http/h2_bundle.go.html#line-6871" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-6871">#L6871</a>: 	t             *<b>http2Transport</b>
+		<a href="../../src/net/http/h2_bundle.go.html#line-7066" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-7066">#L7066</a>: func (t *<b>http2Transport</b>) RoundTrip(req *Request) (*Response, error) {
+		<a href="../../src/net/http/h2_bundle.go.html#line-7092" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-7092">#L7092</a>: func (t *<b>http2Transport</b>) RoundTripOpt(req *Request, opt http2RoundTripOpt) (*Response, error) {
+		<a href="../../src/net/http/h2_bundle.go.html#line-7134" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-7134">#L7134</a>: func (t *<b>http2Transport</b>) CloseIdleConnections() {
+		<a href="../../src/net/http/h2_bundle.go.html#line-7196" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-7196">#L7196</a>: func (t *<b>http2Transport</b>) dialClientConn(ctx context.Context, addr string, singleUse bool) (*http2ClientConn, error) {
+		<a href="../../src/net/http/h2_bundle.go.html#line-7208" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-7208">#L7208</a>: func (t *<b>http2Transport</b>) newTLSConfig(host string) *tls.Config {
+		<a href="../../src/net/http/h2_bundle.go.html#line-7222" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-7222">#L7222</a>: func (t *<b>http2Transport</b>) dialTLS(ctx context.Context) func(string, string, *tls.Config) (net.Conn, error) {
+		<a href="../../src/net/http/h2_bundle.go.html#line-7244" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-7244">#L7244</a>: func (t *<b>http2Transport</b>) disableKeepAlives() bool {
+		<a href="../../src/net/http/h2_bundle.go.html#line-7248" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-7248">#L7248</a>: func (t *<b>http2Transport</b>) expectContinueTimeout() time.Duration {
+		<a href="../../src/net/http/h2_bundle.go.html#line-7255" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-7255">#L7255</a>: func (t *<b>http2Transport</b>) NewClientConn(c net.Conn) (*http2ClientConn, error) {
+		<a href="../../src/net/http/h2_bundle.go.html#line-7259" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-7259">#L7259</a>: func (t *<b>http2Transport</b>) newClientConn(c net.Conn, singleUse bool) (*http2ClientConn, error) {
+		<a href="../../src/net/http/h2_bundle.go.html#line-9364" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-9364">#L9364</a>: func (t *<b>http2Transport</b>) vlogf(format string, args ...interface{}) {
+		<a href="../../src/net/http/h2_bundle.go.html#line-9370" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-9370">#L9370</a>: func (t *<b>http2Transport</b>) logf(format string, args ...interface{}) {
+		<a href="../../src/net/http/h2_bundle.go.html#line-9450" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-9450">#L9450</a>: type http2noDialH2RoundTripper struct{ *<b>http2Transport</b> }
+		<a href="../../src/net/http/h2_bundle.go.html#line-9460" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-9460">#L9460</a>: func (t *<b>http2Transport</b>) idleConnTimeout() time.Duration {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

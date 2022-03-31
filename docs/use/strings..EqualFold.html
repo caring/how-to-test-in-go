@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: strings.EqualFold</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">func <b><a href="../pkg/strings.html">strings</a>.<a href="../src/strings/strings.go.html#line-970">EqualFold</a></b></span>
+
+<span class="title">44 uses</span>
+
+	strings (current package)
+		<a href="../src/strings/strings.go.html#line-970">strings.go#L970</a>: func <b>EqualFold</b>(s, t string) bool {
+
+	<a href="../pkg/crypto/x509.html">crypto/x509</a>
+		<a href="../src/crypto/x509/verify.go.html#line-400">verify.go#L400</a>: 		return mailbox.local == constraintMailbox.local &amp;&amp; strings.<b>EqualFold</b>(mailbox.domain, constraintMailbox.domain), nil
+		<a href="../src/crypto/x509/verify.go.html#line-486" class="path-duplicate">verify.go</a><a href="../src/crypto/x509/verify.go.html#line-486">#L486</a>: 		if !strings.<b>EqualFold</b>(constraintLabel, domainLabels[i]) {
+
+	<a href="../pkg/encoding/xml.html">encoding/xml</a>
+		<a href="../src/encoding/xml/marshal.go.html#line-352">marshal.go#L352</a>: 	if len(prefix) &gt;= 3 &amp;&amp; strings.<b>EqualFold</b>(prefix[:3], "xml") {
+		<a href="../src/encoding/xml/xml.go.html#line-638">xml.go#L638</a>: 			if enc != "" &amp;&amp; enc != "utf-8" &amp;&amp; enc != "UTF-8" &amp;&amp; !strings.<b>EqualFold</b>(enc, "utf-8") {
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/awsutil.html">github.com/aws/aws-sdk-go/aws/awsutil</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/path_value.go.html#line-73">path_value.go#L73</a>: 				} else if !caseSensitive &amp;&amp; strings.<b>EqualFold</b>(name, c) {
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/csm.html">github.com/aws/aws-sdk-go/aws/csm</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/csm/enable.go.html#line-25">enable.go#L25</a>: 	if len(host) == 0 || strings.<b>EqualFold</b>(host, "localhost") {
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/endpoints.html">github.com/aws/aws-sdk-go/aws/endpoints</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/endpoints/endpoints.go.html#line-96">endpoints.go#L96</a>: 	case strings.<b>EqualFold</b>(s, "legacy"):
+		<a href="../src/github.com/aws/aws-sdk-go/aws/endpoints/endpoints.go.html#line-98" class="path-duplicate">endpoints.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/endpoints/endpoints.go.html#line-98">#L98</a>: 	case strings.<b>EqualFold</b>(s, "regional"):
+		<a href="../src/github.com/aws/aws-sdk-go/aws/endpoints/endpoints.go.html#line-144" class="path-duplicate">endpoints.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/endpoints/endpoints.go.html#line-144">#L144</a>: 	case strings.<b>EqualFold</b>(s, "legacy"):
+		<a href="../src/github.com/aws/aws-sdk-go/aws/endpoints/endpoints.go.html#line-146" class="path-duplicate">endpoints.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/endpoints/endpoints.go.html#line-146">#L146</a>: 	case strings.<b>EqualFold</b>(s, "regional"):
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/session.html">github.com/aws/aws-sdk-go/aws/session</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/session/env_config.go.html#line-324">env_config.go#L324</a>: 		case strings.<b>EqualFold</b>(s3UseARNRegion, "false"):
+		<a href="../src/github.com/aws/aws-sdk-go/aws/session/env_config.go.html#line-326" class="path-duplicate">env_config.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/session/env_config.go.html#line-326">#L326</a>: 		case strings.<b>EqualFold</b>(s3UseARNRegion, "true"):
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/internal/strings.html">github.com/aws/aws-sdk-go/internal/strings</a>
+		<a href="../src/github.com/aws/aws-sdk-go/internal/strings/strings.go.html#line-10">strings.go#L10</a>: 	return len(s) &gt;= len(prefix) &amp;&amp; strings.<b>EqualFold</b>(s[0:len(prefix)], prefix)
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil.html">github.com/aws/aws-sdk-go/private/protocol/json/jsonutil</a>
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/unmarshal.go.html#line-157">unmarshal.go#L157</a>: 					if strings.<b>EqualFold</b>(kn, name) {
+
+	<a href="../pkg/golang.org/x/net/http2.html">golang.org/x/net/http2</a>
+		<a href="../src/golang.org/x/net/http2/transport.go.html#line-1008">transport.go#L1008</a>: 	if vv := req.Header["Connection"]; len(vv) &gt; 0 &amp;&amp; (len(vv) &gt; 1 || vv[0] != "" &amp;&amp; !strings.<b>EqualFold</b>(vv[0], "close") &amp;&amp; !strings.<b>EqualFold</b>(vv[0], "keep-alive")) {
+		<a href="../src/golang.org/x/net/http2/transport.go.html#line-1534" class="path-duplicate">transport.go</a><a href="../src/golang.org/x/net/http2/transport.go.html#line-1534">#L1534</a>: 			if strings.<b>EqualFold</b>(k, "host") || strings.<b>EqualFold</b>(k, "content-length") {
+		<a href="../src/golang.org/x/net/http2/transport.go.html#line-1538" class="path-duplicate">transport.go</a><a href="../src/golang.org/x/net/http2/transport.go.html#line-1538">#L1538</a>: 			} else if strings.<b>EqualFold</b>(k, "connection") || strings.<b>EqualFold</b>(k, "proxy-connection") ||
+		<a href="../src/golang.org/x/net/http2/transport.go.html#line-1539" class="path-duplicate">transport.go</a><a href="../src/golang.org/x/net/http2/transport.go.html#line-1539">#L1539</a>: 				strings.<b>EqualFold</b>(k, "transfer-encoding") || strings.<b>EqualFold</b>(k, "upgrade") ||
+		<a href="../src/golang.org/x/net/http2/transport.go.html#line-1540" class="path-duplicate">transport.go</a><a href="../src/golang.org/x/net/http2/transport.go.html#line-1540">#L1540</a>: 				strings.<b>EqualFold</b>(k, "keep-alive") {
+		<a href="../src/golang.org/x/net/http2/transport.go.html#line-1546" class="path-duplicate">transport.go</a><a href="../src/golang.org/x/net/http2/transport.go.html#line-1546">#L1546</a>: 			} else if strings.<b>EqualFold</b>(k, "user-agent") {
+		<a href="../src/golang.org/x/net/http2/transport.go.html#line-1559" class="path-duplicate">transport.go</a><a href="../src/golang.org/x/net/http2/transport.go.html#line-1559">#L1559</a>: 			} else if strings.<b>EqualFold</b>(k, "cookie") {
+
+	<a href="../pkg/google.golang.org/grpc.html">google.golang.org/grpc</a>
+		<a href="../src/google.golang.org/grpc/clientconn.go.html#line-708">clientconn.go#L708</a>: 	if strings.<b>EqualFold</b>(cc.curBalancerName, name) {
+
+	<a href="../pkg/google.golang.org/grpc/grpclog.html">google.golang.org/grpc/grpclog</a>
+		<a href="../src/google.golang.org/grpc/grpclog/loggerv2.go.html#line-163">loggerv2.go#L163</a>: 	jsonFormat := strings.<b>EqualFold</b>(os.Getenv("GRPC_GO_LOG_FORMATTER"), "json")
+
+	<a href="../pkg/google.golang.org/grpc/internal/envconfig.html">google.golang.org/grpc/internal/envconfig</a>
+		<a href="../src/google.golang.org/grpc/internal/envconfig/envconfig.go.html#line-34">envconfig.go#L34</a>: 	TXTErrIgnore = !strings.<b>EqualFold</b>(os.Getenv(txtErrIgnoreStr), "false")
+		<a href="../src/google.golang.org/grpc/internal/envconfig/xds.go.html#line-66">xds.go#L66</a>: 	XDSRingHash = !strings.<b>EqualFold</b>(os.Getenv(ringHashSupportEnv), "false")
+		<a href="../src/google.golang.org/grpc/internal/envconfig/xds.go.html#line-73" class="path-duplicate">xds.go</a><a href="../src/google.golang.org/grpc/internal/envconfig/xds.go.html#line-73">#L73</a>: 	XDSClientSideSecurity = !strings.<b>EqualFold</b>(os.Getenv(clientSideSecuritySupportEnv), "false")
+		<a href="../src/google.golang.org/grpc/internal/envconfig/xds.go.html#line-79" class="path-duplicate">xds.go</a><a href="../src/google.golang.org/grpc/internal/envconfig/xds.go.html#line-79">#L79</a>: 	XDSAggregateAndDNS = strings.<b>EqualFold</b>(os.Getenv(aggregateAndDNSSupportEnv), "true")
+		<a href="../src/google.golang.org/grpc/internal/envconfig/xds.go.html#line-84" class="path-duplicate">xds.go</a><a href="../src/google.golang.org/grpc/internal/envconfig/xds.go.html#line-84">#L84</a>: 	XDSRBAC = !strings.<b>EqualFold</b>(os.Getenv(rbacSupportEnv), "false")
+		<a href="../src/google.golang.org/grpc/internal/envconfig/xds.go.html#line-87" class="path-duplicate">xds.go</a><a href="../src/google.golang.org/grpc/internal/envconfig/xds.go.html#line-87">#L87</a>: 	XDSFederation = strings.<b>EqualFold</b>(os.Getenv(federationEnv), "true")
+		<a href="../src/google.golang.org/grpc/internal/envconfig/xds.go.html#line-93" class="path-duplicate">xds.go</a><a href="../src/google.golang.org/grpc/internal/envconfig/xds.go.html#line-93">#L93</a>: 	XDSRLS = strings.<b>EqualFold</b>(os.Getenv(rlsInXDSEnv), "true")
+
+	<a href="../pkg/html/template.html">html/template</a>
+		<a href="../src/html/template/url.go.html#line-52">url.go#L52</a>: 		if !strings.<b>EqualFold</b>(protocol, "http") &amp;&amp; !strings.<b>EqualFold</b>(protocol, "https") &amp;&amp; !strings.<b>EqualFold</b>(protocol, "mailto") {
+
+	<a href="../pkg/mime.html">mime</a>
+		<a href="../src/mime/encodedword.go.html#line-181">encodedword.go#L181</a>: 	return strings.<b>EqualFold</b>(charset, "UTF-8")
+		<a href="../src/mime/encodedword.go.html#line-327" class="path-duplicate">encodedword.go</a><a href="../src/mime/encodedword.go.html#line-327">#L327</a>: 	case strings.<b>EqualFold</b>("utf-8", charset):
+		<a href="../src/mime/encodedword.go.html#line-329" class="path-duplicate">encodedword.go</a><a href="../src/mime/encodedword.go.html#line-329">#L329</a>: 	case strings.<b>EqualFold</b>("iso-8859-1", charset):
+		<a href="../src/mime/encodedword.go.html#line-333" class="path-duplicate">encodedword.go</a><a href="../src/mime/encodedword.go.html#line-333">#L333</a>: 	case strings.<b>EqualFold</b>("us-ascii", charset):
+
+	<a href="../pkg/mime/multipart.html">mime/multipart</a>
+		<a href="../src/mime/multipart/multipart.go.html#line-144">multipart.go#L144</a>: 		if strings.<b>EqualFold</b>(bp.Header.Get(cte), "quoted-printable") {
+
+	<a href="../pkg/os/exec.html">os/exec</a>
+		<a href="../src/os/exec/exec.go.html#line-783">exec.go#L783</a>: 		if strings.<b>EqualFold</b>(k, "SYSTEMROOT") {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

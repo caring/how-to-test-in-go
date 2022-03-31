@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: google.golang.org/grpc/resolver.Address.Attributes</title>
+<link href="../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../pkg/google.golang.org/grpc/resolver.html">google.golang.org/grpc/resolver</a>.<a href="../../../src/google.golang.org/grpc/resolver/resolver.go.html#line-102">Address</a>.<a href="../../../src/google.golang.org/grpc/resolver/resolver.go.html#line-121">Attributes</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">14 uses</span>
+
+	google.golang.org/grpc/resolver (current package)
+		<a href="../../../src/google.golang.org/grpc/resolver/map.go.html#line-49">map.go#L49</a>: 			entry.addr.<b>Attributes</b>.Equal(addr.<b>Attributes</b>) {
+		<a href="../../../src/google.golang.org/grpc/resolver/resolver.go.html#line-121">resolver.go#L121</a>: 	<b>Attributes</b> *attributes.Attributes
+		<a href="../../../src/google.golang.org/grpc/resolver/resolver.go.html#line-144" class="path-duplicate">resolver.go</a><a href="../../../src/google.golang.org/grpc/resolver/resolver.go.html#line-144">#L144</a>: 		a.<b>Attributes</b>.Equal(o.<b>Attributes</b>) &amp;&amp;
+
+	<a href="../../../pkg/google.golang.org/grpc/internal.html">google.golang.org/grpc/internal</a>
+		<a href="../../../src/google.golang.org/grpc/internal/xds_handshake_cluster.go.html#line-31">xds_handshake_cluster.go#L31</a>: 	addr.<b>Attributes</b> = addr.<b>Attributes</b>.WithValue(handshakeClusterNameKey{}, clusterName)
+
+	<a href="../../../pkg/google.golang.org/grpc/internal/metadata.html">google.golang.org/grpc/internal/metadata</a>
+		<a href="../../../src/google.golang.org/grpc/internal/metadata/metadata.go.html#line-59">metadata.go#L59</a>: 	attrs := addr.<b>Attributes</b>
+		<a href="../../../src/google.golang.org/grpc/internal/metadata/metadata.go.html#line-72" class="path-duplicate">metadata.go</a><a href="../../../src/google.golang.org/grpc/internal/metadata/metadata.go.html#line-72">#L72</a>: 	addr.<b>Attributes</b> = addr.<b>Attributes</b>.WithValue(mdKey, mdValue(md))
+
+	<a href="../../../pkg/google.golang.org/grpc/internal/transport.html">google.golang.org/grpc/internal/transport</a>
+		<a href="../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-208">http2_client.go#L208</a>: 	connectCtx = icredentials.NewClientHandshakeInfoContext(connectCtx, credentials.ClientHandshakeInfo{Attributes: addr.<b>Attributes</b>})
+
+	<a href="../../../pkg/google.golang.org/grpc/internal/transport/networktype.html">google.golang.org/grpc/internal/transport/networktype</a>
+		<a href="../../../src/google.golang.org/grpc/internal/transport/networktype/networktype.go.html#line-34">networktype.go#L34</a>: 	address.<b>Attributes</b> = address.<b>Attributes</b>.WithValue(key, networkType)
+		<a href="../../../src/google.golang.org/grpc/internal/transport/networktype/networktype.go.html#line-41" class="path-duplicate">networktype.go</a><a href="../../../src/google.golang.org/grpc/internal/transport/networktype/networktype.go.html#line-41">#L41</a>: 	v := address.<b>Attributes</b>.Value(key)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

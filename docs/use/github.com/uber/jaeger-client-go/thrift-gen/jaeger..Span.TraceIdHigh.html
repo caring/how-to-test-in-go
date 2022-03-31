@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/uber/jaeger-client-go/thrift-gen/jaeger.Span.TraceIdHigh</title>
+<link href="../../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../../../pkg/github.com/uber/jaeger-client-go/thrift-gen/jaeger.html">github.com/uber/jaeger-client-go/thrift-gen/jaeger</a>.<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-951">Span</a>.<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-953">TraceIdHigh</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">7 uses</span>
+
+	github.com/uber/jaeger-client-go/thrift-gen/jaeger (current package)
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-953">jaeger.go#L953</a>:   <b>TraceIdHigh</b> int64 `thrift:"traceIdHigh,2,required" db:"traceIdHigh" json:"traceIdHigh"`
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-975" class="path-duplicate">jaeger.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-975">#L975</a>:   return p.<b>TraceIdHigh</b>
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-1219" class="path-duplicate">jaeger.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-1219">#L1219</a>:   p.<b>TraceIdHigh</b> = v
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-1374" class="path-duplicate">jaeger.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-1374">#L1374</a>:   if err := oprot.WriteI64(ctx, int64(p.<b>TraceIdHigh</b>)); err != nil {
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-1511" class="path-duplicate">jaeger.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-1511">#L1511</a>:   if p.<b>TraceIdHigh</b> != other.<b>TraceIdHigh</b> { return false }
+
+	<a href="../../../../../pkg/github.com/uber/jaeger-client-go.html">github.com/uber/jaeger-client-go</a>
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/jaeger_thrift_span.go.html#line-35">jaeger_thrift_span.go#L35</a>: 		<b>TraceIdHigh</b>:   int64(span.context.traceID.High),
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

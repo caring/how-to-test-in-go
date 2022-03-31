@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: internal/itoa.Itoa</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">func <b><a href="../../pkg/internal/itoa.html">internal/itoa</a>.<a href="../../src/internal/itoa/itoa.go.html#line-10">Itoa</a></b></span>
+
+<span class="title">12 uses</span>
+
+	internal/itoa (current package)
+		<a href="../../src/internal/itoa/itoa.go.html#line-10">itoa.go#L10</a>: func <b>Itoa</b>(val int) string {
+
+	<a href="../../pkg/net.html">net</a>
+		<a href="../../src/net/dnsclient_unix.go.html#line-518">dnsclient_unix.go#L518</a>: 	return "hostLookupOrder=" + itoa.<b>Itoa</b>(int(o)) + "??"
+		<a href="../../src/net/tcpsock.go.html#line-35">tcpsock.go#L35</a>: 		return JoinHostPort(ip+"%"+a.Zone, itoa.<b>Itoa</b>(a.Port))
+		<a href="../../src/net/tcpsock.go.html#line-37" class="path-duplicate">tcpsock.go</a><a href="../../src/net/tcpsock.go.html#line-37">#L37</a>: 	return JoinHostPort(ip, itoa.<b>Itoa</b>(a.Port))
+		<a href="../../src/net/udpsock.go.html#line-38">udpsock.go#L38</a>: 		return JoinHostPort(ip+"%"+a.Zone, itoa.<b>Itoa</b>(a.Port))
+		<a href="../../src/net/udpsock.go.html#line-40" class="path-duplicate">udpsock.go</a><a href="../../src/net/udpsock.go.html#line-40">#L40</a>: 	return JoinHostPort(ip, itoa.<b>Itoa</b>(a.Port))
+
+	<a href="../../pkg/os.html">os</a>
+		<a href="../../src/os/exec_posix.go.html#line-111">exec_posix.go#L111</a>: 			res = "exit status " + itoa.<b>Itoa</b>(code) // unix
+		<a href="../../src/os/exec_posix.go.html#line-118" class="path-duplicate">exec_posix.go</a><a href="../../src/os/exec_posix.go.html#line-118">#L118</a>: 			res += " (trap " + itoa.<b>Itoa</b>(status.TrapCause()) + ")"
+
+	<a href="../../pkg/reflect.html">reflect</a>
+		<a href="../../src/reflect/value.go.html#line-3109">value.go#L3109</a>: 		panic("reflect: cannot convert slice with length " + itoa.<b>Itoa</b>(h.Len) + " to pointer to array with length " + itoa.<b>Itoa</b>(n))
+
+	<a href="../../pkg/syscall.html">syscall</a>
+		<a href="../../src/syscall/syscall_unix.go.html#line-125">syscall_unix.go#L125</a>: 	return "errno " + itoa.<b>Itoa</b>(int(e))
+		<a href="../../src/syscall/syscall_unix.go.html#line-185" class="path-duplicate">syscall_unix.go</a><a href="../../src/syscall/syscall_unix.go.html#line-185">#L185</a>: 	return "signal " + itoa.<b>Itoa</b>(int(s))
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

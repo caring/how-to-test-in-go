@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Package: github.com/caring/gopkg-errors</title>
+<link href="../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre id="package-details"><code><span style="font-size:xx-large;">package <b>errors</b></span>
+
+<span class="title">Import Path</span>
+	<a href="../../../index.html#pkg-github.com/caring/gopkg-errors">github.com/caring/gopkg-errors</a><i> (on <a href="https://pkg.go.dev/github.com/caring/gopkg-errors" target="_blank">go.dev</a>)</i>
+
+<span class="title">Dependency Relation</span>
+	imports <a href="../../../dep/github.com/caring/gopkg-errors.html">11 packages</a>, and imported by <a href="../../../dep/github.com/caring/gopkg-errors.html#imported-by">2 packages</a>
+
+<div id="files"><span class="title">Involved Source Files</span>
+
+	<span class="nodocs">      <a href="../../../src/github.com/caring/gopkg-errors/chain.go.html">chain.go</a></span>
+	<span class="nodocs">      <a href="../../../src/github.com/caring/gopkg-errors/errors.go.html">errors.go</a></span>
+	<span class="nodocs">      <a href="../../../src/github.com/caring/gopkg-errors/fundamental.go.html">fundamental.go</a></span>
+	<span class="nodocs">      <a href="../../../src/github.com/caring/gopkg-errors/grpc.go.html">grpc.go</a></span>
+	<span class="nodocs">      <a href="../../../src/github.com/caring/gopkg-errors/http.go.html">http.go</a></span>
+	<span class="nodocs">      <a href="../../../src/github.com/caring/gopkg-errors/stack.go.html">stack.go</a></span>
+	<span class="nodocs">      <a href="../../../src/github.com/caring/gopkg-errors/withmessage.go.html">withmessage.go</a></span>
+	<span class="nodocs">      <a href="../../../src/github.com/caring/gopkg-errors/withstack.go.html">withstack.go</a></span></div>
+<div id="exported-types"><span class="title">Package-Level Type Names<span class="title-stat"><i> (total 8, in which 2 are exported)</i></span></span>
+
+<div id="exported-types-buttons" class="js-on">	/* sort exporteds by: <label id="sort-types-by-alphabet" class="button">alphabet</label> | <label id="sort-types-by-popularity" class="button">popularity</label> */</div><div class="anchor type-res" id="name-Frame" data-popularity="400">	<input type='checkbox' class="fold" id="Frame-fold-content"><label for="Frame-fold-content"> <a href="../../../use/github.com/caring/gopkg-errors..Frame.html">type</a> <a href="../../../src/github.com/caring/gopkg-errors/stack.go.html#line-15">Frame</a> <a href="../../builtin.html#name-uintptr">uintptr</a> <i>(basic type)</i></label><span id='Frame-fold-content-docs' class="fold-docs">
+		Frame represents a program counter inside a stack frame.
+		For historical reasons if Frame is interpreted as a uintptr
+		its value represents the program counter + 1.
+
+		<input type='checkbox' class="fold" id="Frame-fold-methods"><label for="Frame-fold-methods">Methods (<i>total 6, in which 2 are exported</i>)</label><span id='Frame-fold-methods-items' class="fold-items"><span>
+			<input type='checkbox' class="fold" id="Frame-fold-method-Format"><label for="Frame-fold-method-Format">( Frame) <a href="../../../src/github.com/caring/gopkg-errors/stack.go.html#line-64">Format</a>(s <a href="../../fmt.html">fmt</a>.<a href="../../fmt.html#name-State">State</a>, verb <a href="../../builtin.html#name-rune">rune</a>)</label><span id='Frame-fold-method-Format-docs' class="fold-docs">
+				Format formats the frame according to the fmt.Formatter interface.
+
+				   %s    source file
+				   %d    source line
+				   %n    function name
+				   %v    equivalent to %s:%d
+
+				Format accepts flags that alter the printing of some verbs, as follows:
+
+				   %+s   function name and path of source file relative to the compile time
+				         GOPATH separated by \n\t (&lt;funcname&gt;\n\t&lt;path&gt;)
+				   %+v   equivalent to %+s:%d
+</span></span><span>
+			<input type='checkbox' class="fold" id="Frame-fold-method-MarshalText"><label for="Frame-fold-method-MarshalText">( Frame) <a href="../../../src/github.com/caring/gopkg-errors/stack.go.html#line-88">MarshalText</a>() ([]<a href="../../builtin.html#name-byte">byte</a>, <a href="../../builtin.html#name-error">error</a>)</label><span id='Frame-fold-method-MarshalText-docs' class="fold-docs">
+				MarshalText formats a stacktrace Frame as a text string. The output is the
+				same as that of fmt.Sprintf("%+v", f), but without newlines or tabs.
+</span></span>
+			<input type='checkbox' class="showhide" id="Frame-showhide-methods"><i><label for="Frame-showhide-methods" class="show-inline">/* 4 unexporteds ... */</label><label for="Frame-showhide-methods" class="hide-inline">/* 4 unexporteds: */</label></i><span class="hidden"><i>
+			<input type='checkbox' class="fold" id="Frame-fold-method-file"><label for="Frame-fold-method-file">( Frame) <a href="../../../src/github.com/caring/gopkg-errors/stack.go.html#line-23">file</a>() <a href="../../builtin.html#name-string">string</a></label><span id='Frame-fold-method-file-docs' class="fold-docs">
+				file returns the full path to the file that contains the
+				function for this Frame's pc.
+</span></i></span><span class="hidden"><i>
+			<input type='checkbox' class="fold" id="Frame-fold-method-line"><label for="Frame-fold-method-line">( Frame) <a href="../../../src/github.com/caring/gopkg-errors/stack.go.html#line-34">line</a>() <a href="../../builtin.html#name-int">int</a></label><span id='Frame-fold-method-line-docs' class="fold-docs">
+				line returns the line number of source code of the
+				function for this Frame's pc.
+</span></i></span><span class="hidden"><i>
+			<input type='checkbox' class="fold" id="Frame-fold-method-name"><label for="Frame-fold-method-name">( Frame) <a href="../../../src/github.com/caring/gopkg-errors/stack.go.html#line-44">name</a>() <a href="../../builtin.html#name-string">string</a></label><span id='Frame-fold-method-name-docs' class="fold-docs">
+				name returns the name of this function, if known.
+</span></i></span><span class="hidden"><i>
+			<input type='checkbox' class="fold" id="Frame-fold-method-pc"><label for="Frame-fold-method-pc">( Frame) <a href="../../../src/github.com/caring/gopkg-errors/stack.go.html#line-19">pc</a>() <a href="../../builtin.html#name-uintptr">uintptr</a></label><span id='Frame-fold-method-pc-docs' class="fold-docs">
+				pc returns the program counter for this frame;
+				multiple frames may have the same PC value.
+</span></i></span></span>
+		<input type='checkbox' class="fold" id="Frame-fold-impls"><label for="Frame-fold-impls">Implements (<i>at least 2, both are exported</i>)</label><span id='Frame-fold-impls-items' class="fold-items"><span>
+			 Frame : encoding.<a href="../../encoding.html#name-TextMarshaler">TextMarshaler</a></span><span>
+			 Frame : fmt.<a href="../../fmt.html#name-Formatter">Formatter</a></span></span>
+
+</span></div><div class="anchor type-res" id="name-StackTrace" data-popularity="150">	<input type='checkbox' class="fold" id="StackTrace-fold-content"><label for="StackTrace-fold-content"> <a href="../../../use/github.com/caring/gopkg-errors..StackTrace.html">type</a> <a href="../../../src/github.com/caring/gopkg-errors/stack.go.html#line-97">StackTrace</a> <i>([])</i></label><span id='StackTrace-fold-content-docs' class="fold-docs">
+		StackTrace is stack of Frames from innermost (newest) to outermost (oldest).
+
+		<input type='checkbox' class="fold" id="StackTrace-fold-methods"><label for="StackTrace-fold-methods">Methods (<i>total 2, in which 1 are exported</i>)</label><span id='StackTrace-fold-methods-items' class="fold-items"><span>
+			<input type='checkbox' class="fold" id="StackTrace-fold-method-Format"><label for="StackTrace-fold-method-Format">( StackTrace) <a href="../../../src/github.com/caring/gopkg-errors/stack.go.html#line-107">Format</a>(s <a href="../../fmt.html">fmt</a>.<a href="../../fmt.html#name-State">State</a>, verb <a href="../../builtin.html#name-rune">rune</a>)</label><span id='StackTrace-fold-method-Format-docs' class="fold-docs">
+				Format formats the stack of Frames according to the fmt.Formatter interface.
+
+				   %s	lists source files for each Frame in the stack
+				   %v	lists the source file and line number for each Frame in the stack
+
+				Format accepts flags that alter the printing of some verbs, as follows:
+
+				   %+v   Prints filename, function, and line number for each Frame in the stack.
+</span></span>
+			<input type='checkbox' class="showhide" id="StackTrace-showhide-methods"><i><label for="StackTrace-showhide-methods" class="show-inline">/* one unexported ... */</label><label for="StackTrace-showhide-methods" class="hide-inline">/* one unexported: */</label></i><span class="hidden"><i>
+			<input type='checkbox' class="fold" id="StackTrace-fold-method-formatSlice"><label for="StackTrace-fold-method-formatSlice">( StackTrace) <a href="../../../src/github.com/caring/gopkg-errors/stack.go.html#line-128">formatSlice</a>(s <a href="../../fmt.html">fmt</a>.<a href="../../fmt.html#name-State">State</a>, verb <a href="../../builtin.html#name-rune">rune</a>)</label><span id='StackTrace-fold-method-formatSlice-docs' class="fold-docs">
+				formatSlice will format this StackTrace into the given buffer as a slice of
+				Frame, only valid when called with '%s' or '%v'.
+</span></i></span></span>
+		<input type='checkbox' class="fold" id="StackTrace-fold-impls"><label for="StackTrace-fold-impls">Implements (<i>at least one exported</i>)</label><span id='StackTrace-fold-impls-items' class="fold-items"><span>
+			 StackTrace : fmt.<a href="../../fmt.html#name-Formatter">Formatter</a></span></span>
+
+</span></div></div><div>	<input type='checkbox' class="showhide" id="unexported-typenames-showhide"><i><label for="unexported-typenames-showhide" class="show-inline">/* 6 unexporteds ... */</label><label for="unexported-typenames-showhide" class="hide-inline">/* 6 unexporteds: */</label></i><div class="anchor type-res hidden" id="name-fundamental" data-popularity="250">	<input type='checkbox' class="fold" id="fundamental-fold-content"><label for="fundamental-fold-content"> <a href="../../../use/github.com/caring/gopkg-errors..fundamental^c215c.html">type</a> <a href="../../../src/github.com/caring/gopkg-errors/fundamental.go.html#line-9">fundamental</a> <i>(struct)</i></label><span id='fundamental-fold-content-docs' class="fold-docs">
+		fundamental is an error that has a message and a stack, but no caller.
+
+		<input type='checkbox' class="fold" id="fundamental-fold-fields"><label for="fundamental-fold-fields">Fields (<i>total 2, neither is exported</i>)</label><span id='fundamental-fold-fields-items' class="fold-items">
+			<input type='checkbox' checked class="showhide" id="fundamental-showhide-fields"><i><label for="fundamental-showhide-fields" class="show-inline">/* 2 unexporteds ... */</label><label for="fundamental-showhide-fields" class="hide-inline">/* 2 unexporteds: */</label></i><span class="hidden"><i>
+			<span class="nodocs"><a href="../../../src/github.com/caring/gopkg-errors/fundamental.go.html#line-10">msg</a> <i><a href="../../builtin.html#name-string">string</a></i></span></i></span><span class="hidden"><i>
+			<span class="nodocs"><a href="../../../src/github.com/caring/gopkg-errors/fundamental.go.html#line-11">stack</a> <i>*<a href="#name-stack">stack</a></i></span></i></span></span>
+		<input type='checkbox' class="fold" id="fundamental-fold-methods"><label for="fundamental-fold-methods">Methods (<i>total 3, all are exported</i>)</label><span id='fundamental-fold-methods-items' class="fold-items"><span>
+			<input type='checkbox' class="fold" id="fundamental-fold-method-Error"><label for="fundamental-fold-method-Error">(*fundamental) <a href="../../../src/github.com/caring/gopkg-errors/fundamental.go.html#line-15">Error</a>() <a href="../../builtin.html#name-string">string</a></label><span id='fundamental-fold-method-Error-docs' class="fold-docs">
+				Error() required to implement error interface
+</span></span><span>
+			<input type='checkbox' class="fold" id="fundamental-fold-method-Format"><label for="fundamental-fold-method-Format">(*fundamental) <a href="../../../src/github.com/caring/gopkg-errors/fundamental.go.html#line-20">Format</a>(s <a href="../../fmt.html">fmt</a>.<a href="../../fmt.html#name-State">State</a>, verb <a href="../../builtin.html#name-rune">rune</a>)</label><span id='fundamental-fold-method-Format-docs' class="fold-docs">
+				Format is a custom formatter - limits what verbs can be used against this
+</span></span><span>
+			<span class="nodocs">( fundamental) <a href="../../../src/github.com/caring/gopkg-errors/stack.go.html#line-155">StackTrace</a>() <a href="#name-StackTrace">StackTrace</a></span></span></span>
+		<input type='checkbox' class="fold" id="fundamental-fold-impls"><label for="fundamental-fold-impls">Implements (<i>at least 2, both are exported</i>)</label><span id='fundamental-fold-impls-items' class="fold-items"><span>
+			*fundamental : <a href="../../builtin.html#name-error">error</a></span><span>
+			*fundamental : fmt.<a href="../../fmt.html#name-Formatter">Formatter</a></span></span>
+
+</span></div><div class="anchor type-res hidden" id="name-stack" data-popularity="225">	<input type='checkbox' class="fold" id="stack-fold-content"><label for="stack-fold-content"> <a href="../../../use/github.com/caring/gopkg-errors..stack^6ee08.html">type</a> <a href="../../../src/github.com/caring/gopkg-errors/stack.go.html#line-140">stack</a> <i>([])</i></label><span id='stack-fold-content-docs' class="fold-docs">
+		stack represents a stack of program counters.
+
+		<input type='checkbox' class="fold" id="stack-fold-methods"><label for="stack-fold-methods">Methods (<i>total 2, both are exported</i>)</label><span id='stack-fold-methods-items' class="fold-items"><span>
+			<span class="nodocs">(*stack) <a href="../../../src/github.com/caring/gopkg-errors/stack.go.html#line-142">Format</a>(st <a href="../../fmt.html">fmt</a>.<a href="../../fmt.html#name-State">State</a>, verb <a href="../../builtin.html#name-rune">rune</a>)</span></span><span>
+			<span class="nodocs">(*stack) <a href="../../../src/github.com/caring/gopkg-errors/stack.go.html#line-155">StackTrace</a>() <a href="#name-StackTrace">StackTrace</a></span></span></span>
+		<input type='checkbox' class="fold" id="stack-fold-impls"><label for="stack-fold-impls">Implements (<i>at least one exported</i>)</label><span id='stack-fold-impls-items' class="fold-items"><span>
+			*stack : fmt.<a href="../../fmt.html#name-Formatter">Formatter</a></span></span>
+		<input type='checkbox' class="fold" id="stack-fold-results"><label for="stack-fold-results">As Outputs Of (<i>at least one unexported</i>)</label><span id='stack-fold-results-items' class="fold-items">
+			<input type='checkbox' checked class="showhide" id="stack-showhide-inputofs"><i><label for="stack-showhide-inputofs" class="show-inline">/* at least one unexported ... */</label><label for="stack-showhide-inputofs" class="hide-inline">/* at least one unexported: */</label></i><span class="hidden"><i>
+			func <a href="#name-callers">callers</a>() *<b>stack</b></i></span></span>
+
+</span></div><div class="anchor type-res hidden" id="name-withGrpcStatus" data-popularity="675">	<input type='checkbox' class="fold" id="withGrpcStatus-fold-content"><label for="withGrpcStatus-fold-content"> <a href="../../../use/github.com/caring/gopkg-errors..withGrpcStatus^5cea6.html">type</a> <a href="../../../src/github.com/caring/gopkg-errors/grpc.go.html#line-153">withGrpcStatus</a> <i>(struct)</i></label><span id='withGrpcStatus-fold-content-docs' class="fold-docs">
+
+		<input type='checkbox' class="fold" id="withGrpcStatus-fold-fields"><label for="withGrpcStatus-fold-fields">Fields (<i>total 3, none are exported</i>)</label><span id='withGrpcStatus-fold-fields-items' class="fold-items">
+			<input type='checkbox' checked class="showhide" id="withGrpcStatus-showhide-fields"><i><label for="withGrpcStatus-showhide-fields" class="show-inline">/* 3 unexporteds ... */</label><label for="withGrpcStatus-showhide-fields" class="hide-inline">/* 3 unexporteds: */</label></i><span class="hidden"><i>
+			<span class="nodocs"><a href="../../../src/github.com/caring/gopkg-errors/grpc.go.html#line-154">cause</a> <i><a href="../../builtin.html#name-error">error</a></i></span></i></span><span class="hidden"><i>
+			<span class="nodocs"><a href="../../../src/github.com/caring/gopkg-errors/grpc.go.html#line-155">grpcCode</a> <i><a href="../../google.golang.org/grpc/codes.html">codes</a>.<a href="../../google.golang.org/grpc/codes.html#name-Code">Code</a></i></span></i></span><span class="hidden"><i>
+			<span class="nodocs"><a href="../../../src/github.com/caring/gopkg-errors/grpc.go.html#line-156">grpcStatus</a> <i>*<a href="../../google.golang.org/grpc/status.html">status</a>.<a href="../../google.golang.org/grpc/status.html#name-Status">Status</a></i></span></i></span></span>
+		<input type='checkbox' class="fold" id="withGrpcStatus-fold-methods"><label for="withGrpcStatus-fold-methods">Methods (<i>total 7, all are exported</i>)</label><span id='withGrpcStatus-fold-methods-items' class="fold-items"><span>
+			<span class="nodocs">(*withGrpcStatus) <a href="../../../src/github.com/caring/gopkg-errors/grpc.go.html#line-214">Cause</a>() <a href="../../builtin.html#name-error">error</a></span></span><span>
+			<span class="nodocs">(*withGrpcStatus) <a href="../../../src/github.com/caring/gopkg-errors/grpc.go.html#line-202">Error</a>() <a href="../../builtin.html#name-string">string</a></span></span><span>
+			<span class="nodocs">(*withGrpcStatus) <a href="../../../src/github.com/caring/gopkg-errors/grpc.go.html#line-206">ErrorCode</a>() <a href="../../google.golang.org/grpc/codes.html">codes</a>.<a href="../../google.golang.org/grpc/codes.html#name-Code">Code</a></span></span><span>
+			<span class="nodocs">(*withGrpcStatus) <a href="../../../src/github.com/caring/gopkg-errors/grpc.go.html#line-222">Format</a>(s <a href="../../fmt.html">fmt</a>.<a href="../../fmt.html#name-State">State</a>, verb <a href="../../builtin.html#name-rune">rune</a>)</span></span><span>
+			<span class="nodocs">(*withGrpcStatus) <a href="../../../src/github.com/caring/gopkg-errors/grpc.go.html#line-198">GRPCStatus</a>() *<a href="../../google.golang.org/grpc/status.html">status</a>.<a href="../../google.golang.org/grpc/status.html#name-Status">Status</a></span></span><span>
+			<span class="nodocs">(*withGrpcStatus) <a href="../../../src/github.com/caring/gopkg-errors/grpc.go.html#line-210">String</a>() <a href="../../builtin.html#name-string">string</a></span></span><span>
+			<span class="nodocs">(*withGrpcStatus) <a href="../../../src/github.com/caring/gopkg-errors/grpc.go.html#line-218">Unwrap</a>() <a href="../../builtin.html#name-error">error</a></span></span></span>
+		<input type='checkbox' class="fold" id="withGrpcStatus-fold-impls"><label for="withGrpcStatus-fold-impls">Implements (<i>at least 5, in which 3 are exported</i>)</label><span id='withGrpcStatus-fold-impls-items' class="fold-items"><span>
+			*withGrpcStatus : <a href="../../builtin.html#name-error">error</a></span><span>
+			*withGrpcStatus : fmt.<a href="../../fmt.html#name-Formatter">Formatter</a></span><span>
+			*withGrpcStatus : fmt.<a href="../../fmt.html#name-Stringer">Stringer</a></span>
+			<input type='checkbox' checked class="showhide" id="withGrpcStatus-showhide-impls"><i><label for="withGrpcStatus-showhide-impls" class="show-inline">/* 2+ unexporteds ... */</label><label for="withGrpcStatus-showhide-impls" class="hide-inline">/* 2+ unexporteds: */</label></i><span class="hidden"><i>
+			*withGrpcStatus : context.<a href="../../context.html#name-stringer">stringer</a></i></span><span class="hidden"><i>
+			*withGrpcStatus : runtime.<a href="../../runtime.html#name-stringer">stringer</a></i></span></span>
+		<input type='checkbox' class="fold" id="withGrpcStatus-fold-results"><label for="withGrpcStatus-fold-results">As Outputs Of (<i>at least one exported</i>)</label><span id='withGrpcStatus-fold-results-items' class="fold-items"><span>
+			func <a href="#name-WithGrpcStatus">WithGrpcStatus</a>(err <a href="../../builtin.html#name-error">error</a>, code <a href="../../google.golang.org/grpc/codes.html">codes</a>.<a href="../../google.golang.org/grpc/codes.html#name-Code">Code</a>) *<b>withGrpcStatus</b></span></span>
+
+</span></div><div class="anchor type-res hidden" id="name-withhttpCode" data-popularity="700">	<input type='checkbox' class="fold" id="withhttpCode-fold-content"><label for="withhttpCode-fold-content"> <a href="../../../use/github.com/caring/gopkg-errors..withhttpCode^2f367.html">type</a> <a href="../../../src/github.com/caring/gopkg-errors/http.go.html#line-80">withhttpCode</a> <i>(struct)</i></label><span id='withhttpCode-fold-content-docs' class="fold-docs">
+
+		<input type='checkbox' class="fold" id="withhttpCode-fold-fields"><label for="withhttpCode-fold-fields">Fields (<i>total 2, neither is exported</i>)</label><span id='withhttpCode-fold-fields-items' class="fold-items">
+			<input type='checkbox' checked class="showhide" id="withhttpCode-showhide-fields"><i><label for="withhttpCode-showhide-fields" class="show-inline">/* 2 unexporteds ... */</label><label for="withhttpCode-showhide-fields" class="hide-inline">/* 2 unexporteds: */</label></i><span class="hidden"><i>
+			<span class="nodocs"><a href="../../../src/github.com/caring/gopkg-errors/http.go.html#line-81">cause</a> <i><a href="../../builtin.html#name-error">error</a></i></span></i></span><span class="hidden"><i>
+			<span class="nodocs"><a href="../../../src/github.com/caring/gopkg-errors/http.go.html#line-82">httpCode</a> <i><a href="../../builtin.html#name-int">int</a></i></span></i></span></span>
+		<input type='checkbox' class="fold" id="withhttpCode-fold-methods"><label for="withhttpCode-fold-methods">Methods (<i>total 6, all are exported</i>)</label><span id='withhttpCode-fold-methods-items' class="fold-items"><span>
+			<span class="nodocs">(*withhttpCode) <a href="../../../src/github.com/caring/gopkg-errors/http.go.html#line-97">Cause</a>() <a href="../../builtin.html#name-error">error</a></span></span><span>
+			<span class="nodocs">(*withhttpCode) <a href="../../../src/github.com/caring/gopkg-errors/http.go.html#line-85">Error</a>() <a href="../../builtin.html#name-string">string</a></span></span><span>
+			<span class="nodocs">(*withhttpCode) <a href="../../../src/github.com/caring/gopkg-errors/http.go.html#line-89">ErrorCode</a>() <a href="../../builtin.html#name-int">int</a></span></span><span>
+			<span class="nodocs">(*withhttpCode) <a href="../../../src/github.com/caring/gopkg-errors/http.go.html#line-105">Format</a>(s <a href="../../fmt.html">fmt</a>.<a href="../../fmt.html#name-State">State</a>, verb <a href="../../builtin.html#name-rune">rune</a>)</span></span><span>
+			<span class="nodocs">(*withhttpCode) <a href="../../../src/github.com/caring/gopkg-errors/http.go.html#line-93">String</a>() <a href="../../builtin.html#name-string">string</a></span></span><span>
+			<span class="nodocs">(*withhttpCode) <a href="../../../src/github.com/caring/gopkg-errors/http.go.html#line-101">Unwrap</a>() <a href="../../builtin.html#name-error">error</a></span></span></span>
+		<input type='checkbox' class="fold" id="withhttpCode-fold-impls"><label for="withhttpCode-fold-impls">Implements (<i>at least 5, in which 3 are exported</i>)</label><span id='withhttpCode-fold-impls-items' class="fold-items"><span>
+			*withhttpCode : <a href="../../builtin.html#name-error">error</a></span><span>
+			*withhttpCode : fmt.<a href="../../fmt.html#name-Formatter">Formatter</a></span><span>
+			*withhttpCode : fmt.<a href="../../fmt.html#name-Stringer">Stringer</a></span>
+			<input type='checkbox' checked class="showhide" id="withhttpCode-showhide-impls"><i><label for="withhttpCode-showhide-impls" class="show-inline">/* 2+ unexporteds ... */</label><label for="withhttpCode-showhide-impls" class="hide-inline">/* 2+ unexporteds: */</label></i><span class="hidden"><i>
+			*withhttpCode : context.<a href="../../context.html#name-stringer">stringer</a></i></span><span class="hidden"><i>
+			*withhttpCode : runtime.<a href="../../runtime.html#name-stringer">stringer</a></i></span></span>
+		<input type='checkbox' class="fold" id="withhttpCode-fold-results"><label for="withhttpCode-fold-results">As Outputs Of (<i>at least 2, both are exported</i>)</label><span id='withhttpCode-fold-results-items' class="fold-items"><span>
+			func <a href="#name-FromHTTP">FromHTTP</a>(resp *<a href="../../net/http.html">http</a>.<a href="../../net/http.html#name-Response">Response</a>) *<b>withhttpCode</b></span><span>
+			func <a href="#name-WithHTTPStatus">WithHTTPStatus</a>(err <a href="../../builtin.html#name-error">error</a>, code <a href="../../builtin.html#name-int">int</a>) *<b>withhttpCode</b></span></span>
+
+</span></div><div class="anchor type-res hidden" id="name-withMessage" data-popularity="300">	<input type='checkbox' class="fold" id="withMessage-fold-content"><label for="withMessage-fold-content"> <a href="../../../use/github.com/caring/gopkg-errors..withMessage^2677b.html">type</a> <a href="../../../src/github.com/caring/gopkg-errors/withmessage.go.html#line-32">withMessage</a> <i>(struct)</i></label><span id='withMessage-fold-content-docs' class="fold-docs">
+
+		<input type='checkbox' class="fold" id="withMessage-fold-fields"><label for="withMessage-fold-fields">Fields (<i>total 2, neither is exported</i>)</label><span id='withMessage-fold-fields-items' class="fold-items">
+			<input type='checkbox' checked class="showhide" id="withMessage-showhide-fields"><i><label for="withMessage-showhide-fields" class="show-inline">/* 2 unexporteds ... */</label><label for="withMessage-showhide-fields" class="hide-inline">/* 2 unexporteds: */</label></i><span class="hidden"><i>
+			<span class="nodocs"><a href="../../../src/github.com/caring/gopkg-errors/withmessage.go.html#line-33">cause</a> <i><a href="../../builtin.html#name-error">error</a></i></span></i></span><span class="hidden"><i>
+			<span class="nodocs"><a href="../../../src/github.com/caring/gopkg-errors/withmessage.go.html#line-34">msg</a> <i><a href="../../builtin.html#name-string">string</a></i></span></i></span></span>
+		<input type='checkbox' class="fold" id="withMessage-fold-methods"><label for="withMessage-fold-methods">Methods (<i>total 4, all are exported</i>)</label><span id='withMessage-fold-methods-items' class="fold-items"><span>
+			<span class="nodocs">(*withMessage) <a href="../../../src/github.com/caring/gopkg-errors/withmessage.go.html#line-41">Cause</a>() <a href="../../builtin.html#name-error">error</a></span></span><span>
+			<span class="nodocs">(*withMessage) <a href="../../../src/github.com/caring/gopkg-errors/withmessage.go.html#line-37">Error</a>() <a href="../../builtin.html#name-string">string</a></span></span><span>
+			<span class="nodocs">(*withMessage) <a href="../../../src/github.com/caring/gopkg-errors/withmessage.go.html#line-50">Format</a>(s <a href="../../fmt.html">fmt</a>.<a href="../../fmt.html#name-State">State</a>, verb <a href="../../builtin.html#name-rune">rune</a>)</span></span><span>
+			<input type='checkbox' class="fold" id="withMessage-fold-method-Unwrap"><label for="withMessage-fold-method-Unwrap">(*withMessage) <a href="../../../src/github.com/caring/gopkg-errors/withmessage.go.html#line-46">Unwrap</a>() <a href="../../builtin.html#name-error">error</a></label><span id='withMessage-fold-method-Unwrap-docs' class="fold-docs">
+				Unwrap provides compatibility for Go 1.13 error chains.
+</span></span></span>
+		<input type='checkbox' class="fold" id="withMessage-fold-impls"><label for="withMessage-fold-impls">Implements (<i>at least 2, both are exported</i>)</label><span id='withMessage-fold-impls-items' class="fold-items"><span>
+			*withMessage : <a href="../../builtin.html#name-error">error</a></span><span>
+			*withMessage : fmt.<a href="../../fmt.html#name-Formatter">Formatter</a></span></span>
+
+</span></div><div class="anchor type-res hidden" id="name-withStack" data-popularity="350">	<input type='checkbox' class="fold" id="withStack-fold-content"><label for="withStack-fold-content"> <a href="../../../use/github.com/caring/gopkg-errors..withStack^e8268.html">type</a> <a href="../../../src/github.com/caring/gopkg-errors/withstack.go.html#line-20">withStack</a> <i>(struct)</i></label><span id='withStack-fold-content-docs' class="fold-docs">
+
+		<input type='checkbox' class="fold" id="withStack-fold-fields"><label for="withStack-fold-fields">Fields (<i>total 2, neither is exported</i>)</label><span id='withStack-fold-fields-items' class="fold-items">
+			<input type='checkbox' checked class="showhide" id="withStack-showhide-fields"><i><label for="withStack-showhide-fields" class="show-inline">/* 2 unexporteds ... */</label><label for="withStack-showhide-fields" class="hide-inline">/* 2 unexporteds: */</label></i><span class="hidden"><i>
+			<span class="nodocs"><a href="../../../src/github.com/caring/gopkg-errors/withstack.go.html#line-21">error</a> <i><a href="../../builtin.html#name-error">error</a></i></span></i></span><span class="hidden"><i>
+			<span class="nodocs"><a href="../../../src/github.com/caring/gopkg-errors/withstack.go.html#line-22">stack</a> <i>*<a href="#name-stack">stack</a></i></span></i></span></span>
+		<input type='checkbox' class="fold" id="withStack-fold-methods"><label for="withStack-fold-methods">Methods (<i>total 5, all are exported</i>)</label><span id='withStack-fold-methods-items' class="fold-items"><span>
+			<span class="nodocs">(*withStack) <a href="../../../src/github.com/caring/gopkg-errors/withstack.go.html#line-25">Cause</a>() <a href="../../builtin.html#name-error">error</a></span></span><span>
+			<span class="nodocs">( withStack) <a href="../../builtin.html#name-error">Error</a>() <a href="../../builtin.html">builtin</a>.<a href="../../builtin.html#name-string">string</a></span></span><span>
+			<span class="nodocs">(*withStack) <a href="../../../src/github.com/caring/gopkg-errors/withstack.go.html#line-34">Format</a>(s <a href="../../fmt.html">fmt</a>.<a href="../../fmt.html#name-State">State</a>, verb <a href="../../builtin.html#name-rune">rune</a>)</span></span><span>
+			<span class="nodocs">( withStack) <a href="../../../src/github.com/caring/gopkg-errors/stack.go.html#line-155">StackTrace</a>() <a href="#name-StackTrace">StackTrace</a></span></span><span>
+			<input type='checkbox' class="fold" id="withStack-fold-method-Unwrap"><label for="withStack-fold-method-Unwrap">(*withStack) <a href="../../../src/github.com/caring/gopkg-errors/withstack.go.html#line-30">Unwrap</a>() <a href="../../builtin.html#name-error">error</a></label><span id='withStack-fold-method-Unwrap-docs' class="fold-docs">
+				Unwrap provides compatibility for Go 1.13 error chains.
+</span></span></span>
+		<input type='checkbox' class="fold" id="withStack-fold-impls"><label for="withStack-fold-impls">Implements (<i>at least 2, both are exported</i>)</label><span id='withStack-fold-impls-items' class="fold-items"><span>
+			 withStack : <a href="../../builtin.html#name-error">error</a></span><span>
+			*withStack : fmt.<a href="../../fmt.html#name-Formatter">Formatter</a></span></span>
+
+</span></div></div>
+<div id="exported-functions"><span class="title">Package-Level Functions<span class="title-stat"><i> (total 20, in which 18 are exported)</i></span></span>
+
+<div class="anchor value-res" id="name-As">	<input type='checkbox' class="fold" id="As-fold-content"><label for="As-fold-content"> <a href="../../../use/github.com/caring/gopkg-errors..As.html">func</a> <a href="../../../src/github.com/caring/gopkg-errors/chain.go.html#line-50">As</a>(err <a href="../../builtin.html#name-error">error</a>, target interface{}) <a href="../../builtin.html#name-bool">bool</a></label><span id='As-fold-content-docs' class="fold-docs">
+		As finds the first error in err's chain that matches target, and if so, sets
+		target to that error value and returns true.
+
+		The chain consists of err itself followed by the sequence of errors obtained by
+		repeatedly calling Unwrap.
+
+		An error matches target if the error's concrete value is assignable to the value
+		pointed to by target, or if the error has a method As(interface{}) bool such that
+		As(target) returns true. In the latter case, the As method is responsible for
+		setting target.
+
+		The form...
+
+			var perr *os.PathError
+			if errors.As(err, &amp;perr) {
+				fmt.Println(perr.Path)
+			}
+
+		... is preferable to
+
+			if perr, ok := err.(*os.PathError); ok {
+				fmt.Println(perr.Path)
+			}
+
+		As will panic if target is not a non-nil pointer to either a type that implements
+		error, or to any interface type. As returns false if err is nil.
+
+</span></div><div class="anchor value-res" id="name-Cause">	<input type='checkbox' class="fold" id="Cause-fold-content"><label for="Cause-fold-content"> <a href="../../../use/github.com/caring/gopkg-errors..Cause.html">func</a> <a href="../../../src/github.com/caring/gopkg-errors/errors.go.html#line-99">Cause</a>(err <a href="../../builtin.html#name-error">error</a>) <a href="../../builtin.html#name-error">error</a></label><span id='Cause-fold-content-docs' class="fold-docs">
+		Cause returns the underlying cause of the error, if possible.
+		An error value has a cause if it implements the following
+		interface:
+
+		    type causer interface {
+		           Cause() error
+		    }
+
+		If the error does not implement Cause, the original error will
+		be returned. If the error is nil, nil will be returned without further
+		investigation.
+
+</span></div><div class="anchor value-res" id="name-Errorf">	<input type='checkbox' class="fold" id="Errorf-fold-content"><label for="Errorf-fold-content"> <a href="../../../use/github.com/caring/gopkg-errors..Errorf.html">func</a> <a href="../../../src/github.com/caring/gopkg-errors/errors.go.html#line-47">Errorf</a>(format <a href="../../builtin.html#name-string">string</a>, args ...interface{}) <a href="../../builtin.html#name-error">error</a></label><span id='Errorf-fold-content-docs' class="fold-docs">
+		Errorf formats according to a format specifier and returns the string
+		as a value that satisfies error.
+		Errorf also records the stack trace at the point it was called.
+
+</span></div><div class="anchor value-res" id="name-FromGrpcError">	<input type='checkbox' class="fold" id="FromGrpcError-fold-content"><label for="FromGrpcError-fold-content"> <a href="../../../use/github.com/caring/gopkg-errors..FromGrpcError.html">func</a> <a href="../../../src/github.com/caring/gopkg-errors/grpc.go.html#line-161">FromGrpcError</a>(origErr *<a href="../../google.golang.org/grpc/status.html">status</a>.<a href="../../google.golang.org/grpc/status.html#name-Status">Status</a>) <a href="../../builtin.html#name-error">error</a></label><span id='FromGrpcError-fold-content-docs' class="fold-docs">
+		FromGrpcError takes a grpc error passed in, and gets the status
+		of it to create a WithGrpcStatus error type
+
+</span></div><div class="anchor value-res" id="name-FromHTTP">	<input type='checkbox' class="fold" id="FromHTTP-fold-content"><label for="FromHTTP-fold-content"> <a href="../../../use/github.com/caring/gopkg-errors..FromHTTP.html">func</a> <a href="../../../src/github.com/caring/gopkg-errors/http.go.html#line-57">FromHTTP</a>(resp *<a href="../../net/http.html">http</a>.<a href="../../net/http.html#name-Response">Response</a>) *<a href="#name-withhttpCode">withhttpCode</a></label><span id='FromHTTP-fold-content-docs' class="fold-docs">
+		FromHTTP reads an error from the http response. This assumes that errors are
+		coming in as JSON formatted the way that can be marshaled into a WithHttpStatus
+		error type
+
+</span></div><div class="anchor value-res" id="name-GrpcFromHttp">	<input type='checkbox' class="fold" id="GrpcFromHttp-fold-content"><label for="GrpcFromHttp-fold-content"> <a href="../../../use/github.com/caring/gopkg-errors..GrpcFromHttp.html">func</a> <a href="../../../src/github.com/caring/gopkg-errors/grpc.go.html#line-14">GrpcFromHttp</a>(httpCode <a href="../../builtin.html#name-int">int</a>) <a href="../../google.golang.org/grpc/codes.html">codes</a>.<a href="../../google.golang.org/grpc/codes.html#name-Code">Code</a></label><span id='GrpcFromHttp-fold-content-docs' class="fold-docs">
+		GrpcFromHttp converts a HTTP error code to a gRPC code
+
+</span></div><div class="anchor value-res" id="name-HTTPFromGrpc">	<input type='checkbox' class="fold" id="HTTPFromGrpc-fold-content"><label for="HTTPFromGrpc-fold-content"> <a href="../../../use/github.com/caring/gopkg-errors..HTTPFromGrpc.html">func</a> <a href="../../../src/github.com/caring/gopkg-errors/http.go.html#line-17">HTTPFromGrpc</a>(grpcCode <a href="../../google.golang.org/grpc/codes.html">codes</a>.<a href="../../google.golang.org/grpc/codes.html#name-Code">Code</a>) <a href="../../builtin.html#name-int">int</a></label><span id='HTTPFromGrpc-fold-content-docs' class="fold-docs">
+		HTTPFromGrpc converts a gRPC error code to an HTTP code. See:
+		https://grpc.github.io/grpc/core/md_doc_statuscodes.html
+		https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+
+</span></div><div class="anchor value-res" id="name-Is">	<input type='checkbox' class="fold" id="Is-fold-content"><label for="Is-fold-content"> <a href="../../../use/github.com/caring/gopkg-errors..Is.html">func</a> <a href="../../../src/github.com/caring/gopkg-errors/chain.go.html#line-22">Is</a>(err, target <a href="../../builtin.html#name-error">error</a>) <a href="../../builtin.html#name-bool">bool</a></label><span id='Is-fold-content-docs' class="fold-docs">
+		Is reports whether any error in err's chain matches target.
+
+		The chain consists of err itself followed by the sequence of errors obtained by
+		repeatedly calling Unwrap.
+
+		It should be used in preference to simple equality checks:
+
+			if errors.Is(err, os.ErrExist)
+
+		is preferable to
+
+			if err == os.ErrExist
+
+		An error is considered to match a target if it is equal to that target or if
+		it implements a method Is(error) bool such that Is(target) returns true.
+
+</span></div><div class="anchor value-res" id="name-New">	<input type='checkbox' class="fold" id="New-fold-content"><label for="New-fold-content"> <a href="../../../use/github.com/caring/gopkg-errors..New.html">func</a> <a href="../../../src/github.com/caring/gopkg-errors/errors.go.html#line-37">New</a>(message <a href="../../builtin.html#name-string">string</a>) <a href="../../builtin.html#name-error">error</a></label><span id='New-fold-content-docs' class="fold-docs">
+		New returns an error with the supplied message.
+		New also records the stack trace at the point it was called.
+
+</span></div><div class="anchor value-res" id="name-ToHTTP">	<input type='checkbox' class="fold" id="ToHTTP-fold-content"><label for="ToHTTP-fold-content"> <a href="../../../use/github.com/caring/gopkg-errors..ToHTTP.html">func</a> <a href="../../../src/github.com/caring/gopkg-errors/http.go.html#line-48">ToHTTP</a>(in *<a href="../../google.golang.org/grpc/status.html">status</a>.<a href="../../google.golang.org/grpc/status.html#name-Status">Status</a>, w <a href="../../net/http.html">http</a>.<a href="../../net/http.html#name-ResponseWriter">ResponseWriter</a>) <a href="../../builtin.html#name-error">error</a></label><span id='ToHTTP-fold-content-docs' class="fold-docs">
+		ToHTTP writes the error to the http response.
+
+</span></div><div class="anchor value-res" id="name-Unwrap">	<input type='checkbox' class="fold" id="Unwrap-fold-content"><label for="Unwrap-fold-content"> <a href="../../../use/github.com/caring/gopkg-errors..Unwrap.html">func</a> <a href="../../../src/github.com/caring/gopkg-errors/chain.go.html#line-55">Unwrap</a>(err <a href="../../builtin.html#name-error">error</a>) <a href="../../builtin.html#name-error">error</a></label><span id='Unwrap-fold-content-docs' class="fold-docs">
+		Unwrap returns the result of calling the Unwrap method on err, if err's
+		type contains an Unwrap method returning error.
+		Otherwise, Unwrap returns nil.
+
+</span></div><div class="anchor value-res" id="name-WithGrpcStatus">	<input type='checkbox' class="fold" id="WithGrpcStatus-fold-content"><label for="WithGrpcStatus-fold-content"> <a href="../../../use/github.com/caring/gopkg-errors..WithGrpcStatus.html">func</a> <a href="../../../src/github.com/caring/gopkg-errors/grpc.go.html#line-182">WithGrpcStatus</a>(err <a href="../../builtin.html#name-error">error</a>, code <a href="../../google.golang.org/grpc/codes.html">codes</a>.<a href="../../google.golang.org/grpc/codes.html#name-Code">Code</a>) *<a href="#name-withGrpcStatus">withGrpcStatus</a></label><span id='WithGrpcStatus-fold-content-docs' class="fold-docs">
+		WithGrpcStatus annotates err with the grpc code and a status.
+		If err is nil, WithMessage returns nil.
+
+</span></div><div class="anchor value-res" id="name-WithHTTPStatus">	<input type='checkbox' class="fold" id="WithHTTPStatus-fold-content"><label for="WithHTTPStatus-fold-content"> <a href="../../../use/github.com/caring/gopkg-errors..WithHTTPStatus.html">func</a> <a href="../../../src/github.com/caring/gopkg-errors/http.go.html#line-70">WithHTTPStatus</a>(err <a href="../../builtin.html#name-error">error</a>, code <a href="../../builtin.html#name-int">int</a>) *<a href="#name-withhttpCode">withhttpCode</a></label><span id='WithHTTPStatus-fold-content-docs' class="fold-docs">
+		WithHTTPStatus annotates an error with an http code
+
+</span></div><div class="anchor value-res" id="name-WithMessage">	<input type='checkbox' class="fold" id="WithMessage-fold-content"><label for="WithMessage-fold-content"> <a href="../../../use/github.com/caring/gopkg-errors..WithMessage.html">func</a> <a href="../../../src/github.com/caring/gopkg-errors/withmessage.go.html#line-10">WithMessage</a>(err <a href="../../builtin.html#name-error">error</a>, message <a href="../../builtin.html#name-string">string</a>) <a href="../../builtin.html#name-error">error</a></label><span id='WithMessage-fold-content-docs' class="fold-docs">
+		WithMessage annotates err with a new message.
+		If err is nil, WithMessage returns nil.
+
+</span></div><div class="anchor value-res" id="name-WithMessagef">	<input type='checkbox' class="fold" id="WithMessagef-fold-content"><label for="WithMessagef-fold-content"> <a href="../../../use/github.com/caring/gopkg-errors..WithMessagef.html">func</a> <a href="../../../src/github.com/caring/gopkg-errors/withmessage.go.html#line-22">WithMessagef</a>(err <a href="../../builtin.html#name-error">error</a>, format <a href="../../builtin.html#name-string">string</a>, args ...interface{}) <a href="../../builtin.html#name-error">error</a></label><span id='WithMessagef-fold-content-docs' class="fold-docs">
+		WithMessagef annotates err with the format specifier.
+		If err is nil, WithMessagef returns nil.
+
+</span></div><div class="anchor value-res" id="name-WithStack">	<input type='checkbox' class="fold" id="WithStack-fold-content"><label for="WithStack-fold-content"> <a href="../../../use/github.com/caring/gopkg-errors..WithStack.html">func</a> <a href="../../../src/github.com/caring/gopkg-errors/withstack.go.html#line-10">WithStack</a>(err <a href="../../builtin.html#name-error">error</a>) <a href="../../builtin.html#name-error">error</a></label><span id='WithStack-fold-content-docs' class="fold-docs">
+		WithStack annotates err with a stack trace at the point WithStack was called.
+		If err is nil, WithStack returns nil.
+
+</span></div><div class="anchor value-res" id="name-Wrap">	<input type='checkbox' class="fold" id="Wrap-fold-content"><label for="Wrap-fold-content"> <a href="../../../use/github.com/caring/gopkg-errors..Wrap.html">func</a> <a href="../../../src/github.com/caring/gopkg-errors/errors.go.html#line-57">Wrap</a>(err <a href="../../builtin.html#name-error">error</a>, message <a href="../../builtin.html#name-string">string</a>) <a href="../../builtin.html#name-error">error</a></label><span id='Wrap-fold-content-docs' class="fold-docs">
+		Wrap returns an error annotating err with a stack trace
+		at the point Wrap is called, and the supplied message.
+		If err is nil, Wrap returns nil.
+
+</span></div><div class="anchor value-res" id="name-Wrapf">	<input type='checkbox' class="fold" id="Wrapf-fold-content"><label for="Wrapf-fold-content"> <a href="../../../use/github.com/caring/gopkg-errors..Wrapf.html">func</a> <a href="../../../src/github.com/caring/gopkg-errors/errors.go.html#line-74">Wrapf</a>(err <a href="../../builtin.html#name-error">error</a>, format <a href="../../builtin.html#name-string">string</a>, args ...interface{}) <a href="../../builtin.html#name-error">error</a></label><span id='Wrapf-fold-content-docs' class="fold-docs">
+		Wrapf returns an error annotating err with a stack trace
+		at the point Wrapf is called, and the format specifier.
+		If err is nil, Wrapf returns nil.
+
+</span></div>	<input type='checkbox' class="showhide" id="unexported-functions-showhide"><i><label for="unexported-functions-showhide" class="show-inline">/* 2 unexporteds ... */</label><label for="unexported-functions-showhide" class="hide-inline">/* 2 unexporteds: */</label></i><div class="anchor value-res hidden" id="name-callers"><i>	<span class="nodocs"> <a href="../../../use/github.com/caring/gopkg-errors..callers^e39c4.html">func</a> <a href="../../../src/github.com/caring/gopkg-errors/stack.go.html#line-163">callers</a>() *<a href="#name-stack">stack</a></span></i></div><div class="anchor value-res hidden" id="name-funcname"><i>	<input type='checkbox' class="fold" id="funcname-fold-content"><label for="funcname-fold-content"> <a href="../../../use/github.com/caring/gopkg-errors..funcname^bb693.html">func</a> <a href="../../../src/github.com/caring/gopkg-errors/stack.go.html#line-172">funcname</a>(name <a href="../../builtin.html#name-string">string</a>) <a href="../../builtin.html#name-string">string</a></label><span id='funcname-fold-content-docs' class="fold-docs">
+		funcname removes the path prefix component of a function's name reported by func.Name().
+
+</span></i></div></div></code></pre><pre id="footer">
+<table><tr><td><img src="../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: database/sql.DB.mu</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../pkg/database/sql.html">database/sql</a>.<a href="../../src/database/sql/sql.go.html#line-456">DB</a>.<a href="../../src/database/sql/sql.go.html#line-467">mu</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">50 uses</span>
+
+	database/sql (current package)
+		<a href="../../src/database/sql/sql.go.html#line-467">sql.go#L467</a>: 	<b>mu</b>           sync.Mutex // protects following fields
+		<a href="../../src/database/sql/sql.go.html#line-621" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-621">#L621</a>: 	dc.db.<b>mu</b>.Lock()
+		<a href="../../src/database/sql/sql.go.html#line-624" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-624">#L624</a>: 	dc.db.<b>mu</b>.Unlock()
+		<a href="../../src/database/sql/sql.go.html#line-650" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-650">#L650</a>: 	dc.db.<b>mu</b>.Lock()
+		<a href="../../src/database/sql/sql.go.html#line-653" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-653">#L653</a>: 	dc.db.<b>mu</b>.Unlock()
+		<a href="../../src/database/sql/sql.go.html#line-696" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-696">#L696</a>: 	db.<b>mu</b>.Lock()
+		<a href="../../src/database/sql/sql.go.html#line-697" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-697">#L697</a>: 	defer db.<b>mu</b>.Unlock()
+		<a href="../../src/database/sql/sql.go.html#line-718" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-718">#L718</a>: 	db.<b>mu</b>.Lock()
+		<a href="../../src/database/sql/sql.go.html#line-720" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-720">#L720</a>: 	db.<b>mu</b>.Unlock()
+		<a href="../../src/database/sql/sql.go.html#line-884" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-884">#L884</a>: 	db.<b>mu</b>.Lock()
+		<a href="../../src/database/sql/sql.go.html#line-886" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-886">#L886</a>: 		db.<b>mu</b>.Unlock()
+		<a href="../../src/database/sql/sql.go.html#line-902" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-902">#L902</a>: 	db.<b>mu</b>.Unlock()
+		<a href="../../src/database/sql/sql.go.html#line-960" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-960">#L960</a>: 	db.<b>mu</b>.Lock()
+		<a href="../../src/database/sql/sql.go.html#line-979" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-979">#L979</a>: 	db.<b>mu</b>.Unlock()
+		<a href="../../src/database/sql/sql.go.html#line-994" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-994">#L994</a>: 	db.<b>mu</b>.Lock()
+		<a href="../../src/database/sql/sql.go.html#line-1000" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-1000">#L1000</a>: 	db.<b>mu</b>.Unlock()
+		<a href="../../src/database/sql/sql.go.html#line-1015" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-1015">#L1015</a>: 	db.<b>mu</b>.Lock()
+		<a href="../../src/database/sql/sql.go.html#line-1025" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-1025">#L1025</a>: 	db.<b>mu</b>.Unlock()
+		<a href="../../src/database/sql/sql.go.html#line-1037" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-1037">#L1037</a>: 	db.<b>mu</b>.Lock()
+		<a href="../../src/database/sql/sql.go.html#line-1038" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-1038">#L1038</a>: 	defer db.<b>mu</b>.Unlock()
+		<a href="../../src/database/sql/sql.go.html#line-1073" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-1073">#L1073</a>: 		db.<b>mu</b>.Lock()
+		<a href="../../src/database/sql/sql.go.html#line-1078" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-1078">#L1078</a>: 			db.<b>mu</b>.Unlock()
+		<a href="../../src/database/sql/sql.go.html#line-1083" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-1083">#L1083</a>: 		db.<b>mu</b>.Unlock()
+		<a href="../../src/database/sql/sql.go.html#line-1153" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-1153">#L1153</a>: 	db.<b>mu</b>.Lock()
+		<a href="../../src/database/sql/sql.go.html#line-1154" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-1154">#L1154</a>: 	defer db.<b>mu</b>.Unlock()
+		<a href="../../src/database/sql/sql.go.html#line-1211" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-1211">#L1211</a>: 	db.<b>mu</b>.Lock()
+		<a href="../../src/database/sql/sql.go.html#line-1212" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-1212">#L1212</a>: 	defer db.<b>mu</b>.Unlock()
+		<a href="../../src/database/sql/sql.go.html#line-1260" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-1260">#L1260</a>: 	db.<b>mu</b>.Lock()
+		<a href="../../src/database/sql/sql.go.html#line-1262" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-1262">#L1262</a>: 		db.<b>mu</b>.Unlock()
+		<a href="../../src/database/sql/sql.go.html#line-1269" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-1269">#L1269</a>: 		db.<b>mu</b>.Unlock()
+		<a href="../../src/database/sql/sql.go.html#line-1283" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-1283">#L1283</a>: 			db.<b>mu</b>.Unlock()
+		<a href="../../src/database/sql/sql.go.html#line-1287" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-1287">#L1287</a>: 		db.<b>mu</b>.Unlock()
+		<a href="../../src/database/sql/sql.go.html#line-1307" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-1307">#L1307</a>: 		db.<b>mu</b>.Unlock()
+		<a href="../../src/database/sql/sql.go.html#line-1316" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-1316">#L1316</a>: 			db.<b>mu</b>.Lock()
+		<a href="../../src/database/sql/sql.go.html#line-1318" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-1318">#L1318</a>: 			db.<b>mu</b>.Unlock()
+		<a href="../../src/database/sql/sql.go.html#line-1343" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-1343">#L1343</a>: 				db.<b>mu</b>.Lock()
+		<a href="../../src/database/sql/sql.go.html#line-1345" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-1345">#L1345</a>: 				db.<b>mu</b>.Unlock()
+		<a href="../../src/database/sql/sql.go.html#line-1363" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-1363">#L1363</a>: 	db.<b>mu</b>.Unlock()
+		<a href="../../src/database/sql/sql.go.html#line-1366" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-1366">#L1366</a>: 		db.<b>mu</b>.Lock()
+		<a href="../../src/database/sql/sql.go.html#line-1369" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-1369">#L1369</a>: 		db.<b>mu</b>.Unlock()
+		<a href="../../src/database/sql/sql.go.html#line-1372" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-1372">#L1372</a>: 	db.<b>mu</b>.Lock()
+		<a href="../../src/database/sql/sql.go.html#line-1381" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-1381">#L1381</a>: 	db.<b>mu</b>.Unlock()
+		<a href="../../src/database/sql/sql.go.html#line-1392" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-1392">#L1392</a>: 	db.<b>mu</b>.Lock()
+		<a href="../../src/database/sql/sql.go.html#line-1393" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-1393">#L1393</a>: 	defer db.<b>mu</b>.Unlock()
+		<a href="../../src/database/sql/sql.go.html#line-1420" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-1420">#L1420</a>: 	db.<b>mu</b>.Lock()
+		<a href="../../src/database/sql/sql.go.html#line-1422" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-1422">#L1422</a>: 		db.<b>mu</b>.Unlock()
+		<a href="../../src/database/sql/sql.go.html#line-1450" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-1450">#L1450</a>: 		db.<b>mu</b>.Unlock()
+		<a href="../../src/database/sql/sql.go.html#line-1458" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-1458">#L1458</a>: 	db.<b>mu</b>.Unlock()
+		<a href="../../src/database/sql/sql.go.html#line-2643" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-2643">#L2643</a>: 	s.db.<b>mu</b>.Lock()
+		<a href="../../src/database/sql/sql.go.html#line-2651" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-2651">#L2651</a>: 	s.db.<b>mu</b>.Unlock()
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

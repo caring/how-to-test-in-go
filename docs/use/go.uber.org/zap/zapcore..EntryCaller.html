@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: go.uber.org/zap/zapcore.EntryCaller</title>
+<link href="../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../../../pkg/go.uber.org/zap/zapcore.html">go.uber.org/zap/zapcore</a>.<a href="../../../src/go.uber.org/zap/zapcore/entry.go.html#line-72">EntryCaller</a></b></span>
+
+<span class="title">11 uses</span>
+
+	go.uber.org/zap/zapcore (current package)
+		<a href="../../../src/go.uber.org/zap/zapcore/encoder.go.html#line-223">encoder.go#L223</a>: type CallerEncoder func(<b>EntryCaller</b>, PrimitiveArrayEncoder)
+		<a href="../../../src/go.uber.org/zap/zapcore/encoder.go.html#line-227" class="path-duplicate">encoder.go</a><a href="../../../src/go.uber.org/zap/zapcore/encoder.go.html#line-227">#L227</a>: func FullCallerEncoder(caller <b>EntryCaller</b>, enc PrimitiveArrayEncoder) {
+		<a href="../../../src/go.uber.org/zap/zapcore/encoder.go.html#line-234" class="path-duplicate">encoder.go</a><a href="../../../src/go.uber.org/zap/zapcore/encoder.go.html#line-234">#L234</a>: func ShortCallerEncoder(caller <b>EntryCaller</b>, enc PrimitiveArrayEncoder) {
+		<a href="../../../src/go.uber.org/zap/zapcore/entry.go.html#line-59">entry.go#L59</a>: func NewEntryCaller(pc uintptr, file string, line int, ok bool) <b>EntryCaller</b> {
+		<a href="../../../src/go.uber.org/zap/zapcore/entry.go.html#line-61" class="path-duplicate">entry.go</a><a href="../../../src/go.uber.org/zap/zapcore/entry.go.html#line-61">#L61</a>: 		return <b>EntryCaller</b>{}
+		<a href="../../../src/go.uber.org/zap/zapcore/entry.go.html#line-63" class="path-duplicate">entry.go</a><a href="../../../src/go.uber.org/zap/zapcore/entry.go.html#line-63">#L63</a>: 	return <b>EntryCaller</b>{
+		<a href="../../../src/go.uber.org/zap/zapcore/entry.go.html#line-72" class="path-duplicate">entry.go</a><a href="../../../src/go.uber.org/zap/zapcore/entry.go.html#line-72">#L72</a>: type <b>EntryCaller</b> struct {
+		<a href="../../../src/go.uber.org/zap/zapcore/entry.go.html#line-80" class="path-duplicate">entry.go</a><a href="../../../src/go.uber.org/zap/zapcore/entry.go.html#line-80">#L80</a>: func (ec <b>EntryCaller</b>) String() string {
+		<a href="../../../src/go.uber.org/zap/zapcore/entry.go.html#line-86" class="path-duplicate">entry.go</a><a href="../../../src/go.uber.org/zap/zapcore/entry.go.html#line-86">#L86</a>: func (ec <b>EntryCaller</b>) FullPath() string {
+		<a href="../../../src/go.uber.org/zap/zapcore/entry.go.html#line-101" class="path-duplicate">entry.go</a><a href="../../../src/go.uber.org/zap/zapcore/entry.go.html#line-101">#L101</a>: func (ec <b>EntryCaller</b>) TrimmedPath() string {
+		<a href="../../../src/go.uber.org/zap/zapcore/entry.go.html#line-149" class="path-duplicate">entry.go</a><a href="../../../src/go.uber.org/zap/zapcore/entry.go.html#line-149">#L149</a>: 	Caller     <b>EntryCaller</b>
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

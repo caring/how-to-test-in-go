@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: go.uber.org/zap.Logger.Info</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../pkg/go.uber.org/zap.html">go.uber.org/zap</a>.<a href="../../src/go.uber.org/zap/logger.go.html#line-41">Logger</a>.<a href="../../src/go.uber.org/zap/logger.go.html#line-185">Info</a></b></span><span style="font-size: large;"><i> (method)</i></span>
+
+<span class="title">17 uses</span>
+
+	go.uber.org/zap (current package)
+		<a href="../../src/go.uber.org/zap/global.go.html#line-79">global.go#L79</a>: 	f := logger.<b>Info</b>
+		<a href="../../src/go.uber.org/zap/global.go.html#line-145" class="path-duplicate">global.go</a><a href="../../src/go.uber.org/zap/global.go.html#line-145">#L145</a>: 		return logger.<b>Info</b>, nil
+		<a href="../../src/go.uber.org/zap/logger.go.html#line-185">logger.go#L185</a>: func (log *Logger) <b>Info</b>(msg string, fields ...Field) {
+
+	<a href="../../pkg/github.com/caring/gopkg-logging.html">github.com/caring/gopkg-logging</a>
+		<a href="../../src/github.com/caring/gopkg-logging/logger.go.html#line-210">logger.go#L210</a>: 	l.reportingLogger.<b>Info</b>(message, f...)
+		<a href="../../src/github.com/caring/gopkg-logging/logger.go.html#line-217" class="path-duplicate">logger.go</a><a href="../../src/github.com/caring/gopkg-logging/logger.go.html#line-217">#L217</a>: 	l.monitorLogger.<b>Info</b>(message, f...)
+
+	<a href="../../pkg/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap.html">github.com/grpc-ecosystem/go-grpc-middleware/logging/zap</a>
+		<a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/grpclogger.go.html#line-38">grpclogger.go#L38</a>: 	l.logger.<b>Info</b>(fmt.Sprint(args...))
+		<a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/grpclogger.go.html#line-42" class="path-duplicate">grpclogger.go</a><a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/grpclogger.go.html#line-42">#L42</a>: 	l.logger.<b>Info</b>(fmt.Sprintf(format, args...))
+		<a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/grpclogger.go.html#line-46" class="path-duplicate">grpclogger.go</a><a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/grpclogger.go.html#line-46">#L46</a>: 	l.logger.<b>Info</b>(fmt.Sprint(args...))
+		<a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/grpclogger.go.html#line-69" class="path-duplicate">grpclogger.go</a><a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/grpclogger.go.html#line-69">#L69</a>: 	l.logger.<b>Info</b>(fmt.Sprint(args...))
+		<a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/grpclogger.go.html#line-73" class="path-duplicate">grpclogger.go</a><a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/grpclogger.go.html#line-73">#L73</a>: 	l.logger.<b>Info</b>(fmt.Sprint(args...))
+		<a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/grpclogger.go.html#line-77" class="path-duplicate">grpclogger.go</a><a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/grpclogger.go.html#line-77">#L77</a>: 	l.logger.<b>Info</b>(fmt.Sprintf(format, args...))
+
+	<a href="../../pkg/github.com/uber/jaeger-client-go/log/zap.html">github.com/uber/jaeger-client-go/log/zap</a>
+		<a href="../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-34">tracer.go#L34</a>: 		logger.<b>Info</b>("loggingTracer created",
+		<a href="../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-38" class="path-duplicate">tracer.go</a><a href="../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-38">#L38</a>: 		logger.<b>Info</b>("Non Jaeger Tracer supplied to loggingTracer")
+		<a href="../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-58" class="path-duplicate">tracer.go</a><a href="../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-58">#L58</a>: 		l.logger.<b>Info</b>("StartSpan", fields...)
+		<a href="../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-62" class="path-duplicate">tracer.go</a><a href="../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-62">#L62</a>: 	l.logger.<b>Info</b>("StartSpan", fields...)
+		<a href="../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-103" class="path-duplicate">tracer.go</a><a href="../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-103">#L103</a>: 	l.logger.<b>Info</b>("Finish", Span(l.delegate), stack)
+		<a href="../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-108" class="path-duplicate">tracer.go</a><a href="../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-108">#L108</a>: 	l.logger.<b>Info</b>("FinishWithOptions", Span(l.delegate))
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

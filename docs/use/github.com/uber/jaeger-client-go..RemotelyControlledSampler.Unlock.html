@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/uber/jaeger-client-go.RemotelyControlledSampler.Unlock</title>
+<link href="../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../pkg/github.com/uber/jaeger-client-go.html">github.com/uber/jaeger-client-go</a>.<a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote.go.html#line-63">RemotelyControlledSampler</a>.<a href="../../../src/sync/rwmutex.go.html#line-131">Unlock</a></b></span><span style="font-size: large;"><i> (method, <a href="../../../imp/github.com/uber/jaeger-client-go.RemotelyControlledSampler.html#name-Unlock">view implemented interface methods</a>)</i></span>
+
+<span class="title">120 uses</span>
+
+	github.com/uber/jaeger-client-go (current package)
+		<a href="../../../src/github.com/uber/jaeger-client-go/jaeger_thrift_span.go.html#line-30">jaeger_thrift_span.go#L30</a>: 	defer span.<b>Unlock</b>()
+		<a href="../../../src/github.com/uber/jaeger-client-go/jaeger_thrift_span.go.html#line-53" class="path-duplicate">jaeger_thrift_span.go</a><a href="../../../src/github.com/uber/jaeger-client-go/jaeger_thrift_span.go.html#line-53">#L53</a>: 	defer span.<b>Unlock</b>()
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-438">sampler.go#L438</a>: 	defer s.<b>Unlock</b>()
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-457" class="path-duplicate">sampler.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-457">#L457</a>: 	defer s.<b>Unlock</b>()
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-494" class="path-duplicate">sampler.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-494">#L494</a>: 	defer s.<b>Unlock</b>()
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote.go.html#line-171">sampler_remote.go#L171</a>: 	defer s.<b>Unlock</b>()
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote.go.html#line-192" class="path-duplicate">sampler_remote.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote.go.html#line-192">#L192</a>: 	defer s.<b>Unlock</b>()
+		<a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-89">span.go#L89</a>: 	s.<b>Unlock</b>()
+		<a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-125" class="path-duplicate">span.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-125">#L125</a>: 			defer s.<b>Unlock</b>()
+		<a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-135" class="path-duplicate">span.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-135">#L135</a>: 	defer s.<b>Unlock</b>()
+		<a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-142" class="path-duplicate">span.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-142">#L142</a>: 	defer s.<b>Unlock</b>()
+		<a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-149" class="path-duplicate">span.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-149">#L149</a>: 	defer s.<b>Unlock</b>()
+		<a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-156" class="path-duplicate">span.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-156">#L156</a>: 	defer s.<b>Unlock</b>()
+		<a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-167" class="path-duplicate">span.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-167">#L167</a>: 	defer s.<b>Unlock</b>()
+		<a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-180" class="path-duplicate">span.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-180">#L180</a>: 	defer s.<b>Unlock</b>()
+		<a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-200" class="path-duplicate">span.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-200">#L200</a>: 	defer s.<b>Unlock</b>()
+		<a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-245" class="path-duplicate">span.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-245">#L245</a>: 	defer s.<b>Unlock</b>()
+		<a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-327" class="path-duplicate">span.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-327">#L327</a>: 	defer s.<b>Unlock</b>()
+		<a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-355" class="path-duplicate">span.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-355">#L355</a>: 	s.<b>Unlock</b>()
+		<a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-372" class="path-duplicate">span.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-372">#L372</a>: 		s.<b>Unlock</b>()
+		<a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-382" class="path-duplicate">span.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-382">#L382</a>: 	defer s.<b>Unlock</b>()
+		<a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-456" class="path-duplicate">span.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-456">#L456</a>: 				defer s.<b>Unlock</b>()
+		<a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-501" class="path-duplicate">span.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-501">#L501</a>: 	defer s.<b>Unlock</b>()
+		<a href="../../../src/github.com/uber/jaeger-client-go/zipkin_thrift_span.go.html#line-249">zipkin_thrift_span.go#L249</a>: 	defer s.<b>Unlock</b>()
+
+	<a href="../../../pkg/github.com/uber/jaeger-client-go/utils.html">github.com/uber/jaeger-client-go/utils</a>
+		<a href="../../../src/github.com/uber/jaeger-client-go/utils/reconnecting_udp_conn.go.html#line-120">reconnecting_udp_conn.go#L120</a>: 	c.connMtx.<b>Unlock</b>()
+		<a href="../../../src/github.com/uber/jaeger-client-go/utils/reconnecting_udp_conn.go.html#line-164" class="path-duplicate">reconnecting_udp_conn.go</a><a href="../../../src/github.com/uber/jaeger-client-go/utils/reconnecting_udp_conn.go.html#line-164">#L164</a>: 	defer c.connMtx.<b>Unlock</b>()
+
+	<a href="../../../pkg/github.com/go-sql-driver/mysql.html">github.com/go-sql-driver/mysql</a>
+		<a href="../../../src/github.com/go-sql-driver/mysql/auth.go.html#line-64">auth.go#L64</a>: 	serverPubKeyLock.<b>Unlock</b>()
+		<a href="../../../src/github.com/go-sql-driver/mysql/auth.go.html#line-73" class="path-duplicate">auth.go</a><a href="../../../src/github.com/go-sql-driver/mysql/auth.go.html#line-73">#L73</a>: 	serverPubKeyLock.<b>Unlock</b>()
+		<a href="../../../src/github.com/go-sql-driver/mysql/driver.go.html#line-51">driver.go#L51</a>: 	defer dialsLock.<b>Unlock</b>()
+		<a href="../../../src/github.com/go-sql-driver/mysql/infile.go.html#line-45">infile.go#L45</a>: 	fileRegisterLock.<b>Unlock</b>()
+		<a href="../../../src/github.com/go-sql-driver/mysql/infile.go.html#line-52" class="path-duplicate">infile.go</a><a href="../../../src/github.com/go-sql-driver/mysql/infile.go.html#line-52">#L52</a>: 	fileRegisterLock.<b>Unlock</b>()
+		<a href="../../../src/github.com/go-sql-driver/mysql/infile.go.html#line-78" class="path-duplicate">infile.go</a><a href="../../../src/github.com/go-sql-driver/mysql/infile.go.html#line-78">#L78</a>: 	readerRegisterLock.<b>Unlock</b>()
+		<a href="../../../src/github.com/go-sql-driver/mysql/infile.go.html#line-86" class="path-duplicate">infile.go</a><a href="../../../src/github.com/go-sql-driver/mysql/infile.go.html#line-86">#L86</a>: 	readerRegisterLock.<b>Unlock</b>()
+		<a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-69">utils.go#L69</a>: 	tlsConfigLock.<b>Unlock</b>()
+		<a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-79" class="path-duplicate">utils.go</a><a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-79">#L79</a>: 	tlsConfigLock.<b>Unlock</b>()
+
+	<a href="../../../pkg/crypto/tls.html">crypto/tls</a>
+		<a href="../../../src/crypto/tls/common.go.html#line-829">common.go#L829</a>: 	defer c.mutex.<b>Unlock</b>()
+		<a href="../../../src/crypto/tls/common.go.html#line-889" class="path-duplicate">common.go</a><a href="../../../src/crypto/tls/common.go.html#line-889">#L889</a>: 	defer c.mutex.<b>Unlock</b>()
+		<a href="../../../src/crypto/tls/common.go.html#line-934" class="path-duplicate">common.go</a><a href="../../../src/crypto/tls/common.go.html#line-934">#L934</a>: 	c.mutex.<b>Unlock</b>()
+
+	<a href="../../../pkg/database/sql.html">database/sql</a>
+		<a href="../../../src/database/sql/convert.go.html#line-343">convert.go#L343</a>: 			rows.closemu.<b>Unlock</b>()
+		<a href="../../../src/database/sql/sql.go.html#line-46">sql.go#L46</a>: 	defer driversMu.<b>Unlock</b>()
+		<a href="../../../src/database/sql/sql.go.html#line-58" class="path-duplicate">sql.go</a><a href="../../../src/database/sql/sql.go.html#line-58">#L58</a>: 	defer driversMu.<b>Unlock</b>()
+		<a href="../../../src/database/sql/sql.go.html#line-2074" class="path-duplicate">sql.go</a><a href="../../../src/database/sql/sql.go.html#line-2074">#L2074</a>: 	defer c.closemu.<b>Unlock</b>()
+		<a href="../../../src/database/sql/sql.go.html#line-2245" class="path-duplicate">sql.go</a><a href="../../../src/database/sql/sql.go.html#line-2245">#L2245</a>: 	tx.closemu.<b>Unlock</b>()
+		<a href="../../../src/database/sql/sql.go.html#line-2277" class="path-duplicate">sql.go</a><a href="../../../src/database/sql/sql.go.html#line-2277">#L2277</a>: 	tx.closemu.<b>Unlock</b>()
+		<a href="../../../src/database/sql/sql.go.html#line-2832" class="path-duplicate">sql.go</a><a href="../../../src/database/sql/sql.go.html#line-2832">#L2832</a>: 	defer s.closemu.<b>Unlock</b>()
+		<a href="../../../src/database/sql/sql.go.html#line-3268" class="path-duplicate">sql.go</a><a href="../../../src/database/sql/sql.go.html#line-3268">#L3268</a>: 	defer rs.closemu.<b>Unlock</b>()
+
+	<a href="../../../pkg/go.uber.org/zap.html">go.uber.org/zap</a>
+		<a href="../../../src/go.uber.org/zap/encoder.go.html#line-53">encoder.go#L53</a>: 	defer _encoderMutex.<b>Unlock</b>()
+		<a href="../../../src/go.uber.org/zap/global.go.html#line-70">global.go#L70</a>: 	_globalMu.<b>Unlock</b>()
+		<a href="../../../src/go.uber.org/zap/sink.go.html#line-48">sink.go#L48</a>: 	defer _sinkMutex.<b>Unlock</b>()
+		<a href="../../../src/go.uber.org/zap/sink.go.html#line-82" class="path-duplicate">sink.go</a><a href="../../../src/go.uber.org/zap/sink.go.html#line-82">#L82</a>: 	defer _sinkMutex.<b>Unlock</b>()
+
+	<a href="../../../pkg/go/token.html">go/token</a>
+		<a href="../../../src/go/token/position.go.html#line-429">position.go#L429</a>: 	defer s.mutex.<b>Unlock</b>()
+		<a href="../../../src/go/token/position.go.html#line-488" class="path-duplicate">position.go</a><a href="../../../src/go/token/position.go.html#line-488">#L488</a>: 			s.mutex.<b>Unlock</b>()
+		<a href="../../../src/go/token/serialize.go.html#line-44">serialize.go#L44</a>: 	s.mutex.<b>Unlock</b>()
+		<a href="../../../src/go/token/serialize.go.html#line-68" class="path-duplicate">serialize.go</a><a href="../../../src/go/token/serialize.go.html#line-68">#L68</a>: 	s.mutex.<b>Unlock</b>()
+
+	<a href="../../../pkg/golang.org/x/net/trace.html">golang.org/x/net/trace</a>
+		<a href="../../../src/golang.org/x/net/trace/events.go.html#line-158">events.go#L158</a>: 	defer famMu.<b>Unlock</b>()
+		<a href="../../../src/golang.org/x/net/trace/events.go.html#line-175" class="path-duplicate">events.go</a><a href="../../../src/golang.org/x/net/trace/events.go.html#line-175">#L175</a>: 	f.mu.<b>Unlock</b>()
+		<a href="../../../src/golang.org/x/net/trace/events.go.html#line-180" class="path-duplicate">events.go</a><a href="../../../src/golang.org/x/net/trace/events.go.html#line-180">#L180</a>: 	defer f.mu.<b>Unlock</b>()
+		<a href="../../../src/golang.org/x/net/trace/events.go.html#line-341" class="path-duplicate">events.go</a><a href="../../../src/golang.org/x/net/trace/events.go.html#line-341">#L341</a>: 	el.mu.<b>Unlock</b>()
+		<a href="../../../src/golang.org/x/net/trace/trace.go.html#line-379">trace.go#L379</a>: 		activeMu.<b>Unlock</b>()
+		<a href="../../../src/golang.org/x/net/trace/trace.go.html#line-401" class="path-duplicate">trace.go</a><a href="../../../src/golang.org/x/net/trace/trace.go.html#line-401">#L401</a>: 	tr.mu.<b>Unlock</b>()
+		<a href="../../../src/golang.org/x/net/trace/trace.go.html#line-428" class="path-duplicate">trace.go</a><a href="../../../src/golang.org/x/net/trace/trace.go.html#line-428">#L428</a>: 	f.LatencyMu.<b>Unlock</b>()
+		<a href="../../../src/golang.org/x/net/trace/trace.go.html#line-474" class="path-duplicate">trace.go</a><a href="../../../src/golang.org/x/net/trace/trace.go.html#line-474">#L474</a>: 	ts.mu.<b>Unlock</b>()
+		<a href="../../../src/golang.org/x/net/trace/trace.go.html#line-480" class="path-duplicate">trace.go</a><a href="../../../src/golang.org/x/net/trace/trace.go.html#line-480">#L480</a>: 	ts.mu.<b>Unlock</b>()
+		<a href="../../../src/golang.org/x/net/trace/trace.go.html#line-554" class="path-duplicate">trace.go</a><a href="../../../src/golang.org/x/net/trace/trace.go.html#line-554">#L554</a>: 	defer completedMu.<b>Unlock</b>()
+		<a href="../../../src/golang.org/x/net/trace/trace.go.html#line-604" class="path-duplicate">trace.go</a><a href="../../../src/golang.org/x/net/trace/trace.go.html#line-604">#L604</a>: 	defer b.mu.<b>Unlock</b>()
+		<a href="../../../src/golang.org/x/net/trace/trace.go.html#line-755" class="path-duplicate">trace.go</a><a href="../../../src/golang.org/x/net/trace/trace.go.html#line-755">#L755</a>: 	tr.mu.<b>Unlock</b>()
+		<a href="../../../src/golang.org/x/net/trace/trace.go.html#line-826" class="path-duplicate">trace.go</a><a href="../../../src/golang.org/x/net/trace/trace.go.html#line-826">#L826</a>: 	tr.mu.<b>Unlock</b>()
+		<a href="../../../src/golang.org/x/net/trace/trace.go.html#line-840" class="path-duplicate">trace.go</a><a href="../../../src/golang.org/x/net/trace/trace.go.html#line-840">#L840</a>: 	tr.mu.<b>Unlock</b>()
+		<a href="../../../src/golang.org/x/net/trace/trace.go.html#line-846" class="path-duplicate">trace.go</a><a href="../../../src/golang.org/x/net/trace/trace.go.html#line-846">#L846</a>: 	tr.mu.<b>Unlock</b>()
+		<a href="../../../src/golang.org/x/net/trace/trace.go.html#line-852" class="path-duplicate">trace.go</a><a href="../../../src/golang.org/x/net/trace/trace.go.html#line-852">#L852</a>: 	tr.mu.<b>Unlock</b>()
+		<a href="../../../src/golang.org/x/net/trace/trace.go.html#line-861" class="path-duplicate">trace.go</a><a href="../../../src/golang.org/x/net/trace/trace.go.html#line-861">#L861</a>: 	tr.mu.<b>Unlock</b>()
+
+	<a href="../../../pkg/google.golang.org/grpc.html">google.golang.org/grpc</a>
+		<a href="../../../src/google.golang.org/grpc/clientconn.go.html#line-301">clientconn.go#L301</a>: 	cc.mu.<b>Unlock</b>()
+		<a href="../../../src/google.golang.org/grpc/clientconn.go.html#line-540" class="path-duplicate">clientconn.go</a><a href="../../../src/google.golang.org/grpc/clientconn.go.html#line-540">#L540</a>: 	defer cc.mu.<b>Unlock</b>()
+		<a href="../../../src/google.golang.org/grpc/clientconn.go.html#line-561" class="path-duplicate">clientconn.go</a><a href="../../../src/google.golang.org/grpc/clientconn.go.html#line-561">#L561</a>: 			cc.mu.<b>Unlock</b>()
+		<a href="../../../src/google.golang.org/grpc/clientconn.go.html#line-616" class="path-duplicate">clientconn.go</a><a href="../../../src/google.golang.org/grpc/clientconn.go.html#line-616">#L616</a>: 		cc.mu.<b>Unlock</b>()
+		<a href="../../../src/google.golang.org/grpc/clientconn.go.html#line-631" class="path-duplicate">clientconn.go</a><a href="../../../src/google.golang.org/grpc/clientconn.go.html#line-631">#L631</a>: 		cc.mu.<b>Unlock</b>()
+		<a href="../../../src/google.golang.org/grpc/clientconn.go.html#line-666" class="path-duplicate">clientconn.go</a><a href="../../../src/google.golang.org/grpc/clientconn.go.html#line-666">#L666</a>: 				cc.mu.<b>Unlock</b>()
+		<a href="../../../src/google.golang.org/grpc/clientconn.go.html#line-679" class="path-duplicate">clientconn.go</a><a href="../../../src/google.golang.org/grpc/clientconn.go.html#line-679">#L679</a>: 	cc.mu.<b>Unlock</b>()
+		<a href="../../../src/google.golang.org/grpc/clientconn.go.html#line-721" class="path-duplicate">clientconn.go</a><a href="../../../src/google.golang.org/grpc/clientconn.go.html#line-721">#L721</a>: 		cc.mu.<b>Unlock</b>()
+		<a href="../../../src/google.golang.org/grpc/clientconn.go.html#line-742" class="path-duplicate">clientconn.go</a><a href="../../../src/google.golang.org/grpc/clientconn.go.html#line-742">#L742</a>: 		cc.mu.<b>Unlock</b>()
+		<a href="../../../src/google.golang.org/grpc/clientconn.go.html#line-748" class="path-duplicate">clientconn.go</a><a href="../../../src/google.golang.org/grpc/clientconn.go.html#line-748">#L748</a>: 	cc.mu.<b>Unlock</b>()
+		<a href="../../../src/google.golang.org/grpc/clientconn.go.html#line-768" class="path-duplicate">clientconn.go</a><a href="../../../src/google.golang.org/grpc/clientconn.go.html#line-768">#L768</a>: 		cc.mu.<b>Unlock</b>()
+		<a href="../../../src/google.golang.org/grpc/clientconn.go.html#line-783" class="path-duplicate">clientconn.go</a><a href="../../../src/google.golang.org/grpc/clientconn.go.html#line-783">#L783</a>: 	cc.mu.<b>Unlock</b>()
+		<a href="../../../src/google.golang.org/grpc/clientconn.go.html#line-792" class="path-duplicate">clientconn.go</a><a href="../../../src/google.golang.org/grpc/clientconn.go.html#line-792">#L792</a>: 		cc.mu.<b>Unlock</b>()
+		<a href="../../../src/google.golang.org/grpc/clientconn.go.html#line-796" class="path-duplicate">clientconn.go</a><a href="../../../src/google.golang.org/grpc/clientconn.go.html#line-796">#L796</a>: 	cc.mu.<b>Unlock</b>()
+		<a href="../../../src/google.golang.org/grpc/clientconn.go.html#line-1051" class="path-duplicate">clientconn.go</a><a href="../../../src/google.golang.org/grpc/clientconn.go.html#line-1051">#L1051</a>: 	cc.mu.<b>Unlock</b>()
+		<a href="../../../src/google.golang.org/grpc/clientconn.go.html#line-1063" class="path-duplicate">clientconn.go</a><a href="../../../src/google.golang.org/grpc/clientconn.go.html#line-1063">#L1063</a>: 		cc.mu.<b>Unlock</b>()
+		<a href="../../../src/google.golang.org/grpc/clientconn.go.html#line-1074" class="path-duplicate">clientconn.go</a><a href="../../../src/google.golang.org/grpc/clientconn.go.html#line-1074">#L1074</a>: 	cc.mu.<b>Unlock</b>()
+		<a href="../../../src/google.golang.org/grpc/clientconn.go.html#line-1157" class="path-duplicate">clientconn.go</a><a href="../../../src/google.golang.org/grpc/clientconn.go.html#line-1157">#L1157</a>: 		ac.cc.mu.<b>Unlock</b>()
+
+	<a href="../../../pkg/google.golang.org/grpc/internal/channelz.html">google.golang.org/grpc/internal/channelz</a>
+		<a href="../../../src/google.golang.org/grpc/internal/channelz/funcs.go.html#line-88">funcs.go#L88</a>: 	d.mu.<b>Unlock</b>()
+		<a href="../../../src/google.golang.org/grpc/internal/channelz/funcs.go.html#line-125" class="path-duplicate">funcs.go</a><a href="../../../src/google.golang.org/grpc/internal/channelz/funcs.go.html#line-125">#L125</a>: 				cm.mu.<b>Unlock</b>()
+		<a href="../../../src/google.golang.org/grpc/internal/channelz/funcs.go.html#line-129" class="path-duplicate">funcs.go</a><a href="../../../src/google.golang.org/grpc/internal/channelz/funcs.go.html#line-129">#L129</a>: 			cm.mu.<b>Unlock</b>()
+		<a href="../../../src/google.golang.org/grpc/internal/channelz/funcs.go.html#line-135" class="path-duplicate">funcs.go</a><a href="../../../src/google.golang.org/grpc/internal/channelz/funcs.go.html#line-135">#L135</a>: 		cm.mu.<b>Unlock</b>()
+		<a href="../../../src/google.golang.org/grpc/internal/channelz/funcs.go.html#line-333" class="path-duplicate">funcs.go</a><a href="../../../src/google.golang.org/grpc/internal/channelz/funcs.go.html#line-333">#L333</a>: 	c.mu.<b>Unlock</b>()
+		<a href="../../../src/google.golang.org/grpc/internal/channelz/funcs.go.html#line-346" class="path-duplicate">funcs.go</a><a href="../../../src/google.golang.org/grpc/internal/channelz/funcs.go.html#line-346">#L346</a>: 	c.mu.<b>Unlock</b>()
+		<a href="../../../src/google.golang.org/grpc/internal/channelz/funcs.go.html#line-355" class="path-duplicate">funcs.go</a><a href="../../../src/google.golang.org/grpc/internal/channelz/funcs.go.html#line-355">#L355</a>: 	c.mu.<b>Unlock</b>()
+		<a href="../../../src/google.golang.org/grpc/internal/channelz/funcs.go.html#line-363" class="path-duplicate">funcs.go</a><a href="../../../src/google.golang.org/grpc/internal/channelz/funcs.go.html#line-363">#L363</a>: 	c.mu.<b>Unlock</b>()
+		<a href="../../../src/google.golang.org/grpc/internal/channelz/funcs.go.html#line-371" class="path-duplicate">funcs.go</a><a href="../../../src/google.golang.org/grpc/internal/channelz/funcs.go.html#line-371">#L371</a>: 	c.mu.<b>Unlock</b>()
+		<a href="../../../src/google.golang.org/grpc/internal/channelz/funcs.go.html#line-381" class="path-duplicate">funcs.go</a><a href="../../../src/google.golang.org/grpc/internal/channelz/funcs.go.html#line-381">#L381</a>: 	c.mu.<b>Unlock</b>()
+		<a href="../../../src/google.golang.org/grpc/internal/channelz/funcs.go.html#line-451" class="path-duplicate">funcs.go</a><a href="../../../src/google.golang.org/grpc/internal/channelz/funcs.go.html#line-451">#L451</a>: 		c.mu.<b>Unlock</b>()
+		<a href="../../../src/google.golang.org/grpc/internal/channelz/funcs.go.html#line-476" class="path-duplicate">funcs.go</a><a href="../../../src/google.golang.org/grpc/internal/channelz/funcs.go.html#line-476">#L476</a>: 	c.mu.<b>Unlock</b>()
+		<a href="../../../src/google.golang.org/grpc/internal/channelz/types.go.html#line-648">types.go#L648</a>: 				c.cm.mu.<b>Unlock</b>()
+
+	<a href="../../../pkg/google.golang.org/grpc/internal/resolver.html">google.golang.org/grpc/internal/resolver</a>
+		<a href="../../../src/google.golang.org/grpc/internal/resolver/config_selector.go.html#line-158">config_selector.go#L158</a>: 	defer scs.mu.<b>Unlock</b>()
+
+	<a href="../../../pkg/google.golang.org/protobuf/reflect/protoregistry.html">google.golang.org/protobuf/reflect/protoregistry</a>
+		<a href="../../../src/google.golang.org/protobuf/reflect/protoregistry/registry.go.html#line-115">registry.go#L115</a>: 		defer globalMutex.<b>Unlock</b>()
+		<a href="../../../src/google.golang.org/protobuf/reflect/protoregistry/registry.go.html#line-501" class="path-duplicate">registry.go</a><a href="../../../src/google.golang.org/protobuf/reflect/protoregistry/registry.go.html#line-501">#L501</a>: 		defer globalMutex.<b>Unlock</b>()
+		<a href="../../../src/google.golang.org/protobuf/reflect/protoregistry/registry.go.html#line-521" class="path-duplicate">registry.go</a><a href="../../../src/google.golang.org/protobuf/reflect/protoregistry/registry.go.html#line-521">#L521</a>: 		defer globalMutex.<b>Unlock</b>()
+		<a href="../../../src/google.golang.org/protobuf/reflect/protoregistry/registry.go.html#line-544" class="path-duplicate">registry.go</a><a href="../../../src/google.golang.org/protobuf/reflect/protoregistry/registry.go.html#line-544">#L544</a>: 		defer globalMutex.<b>Unlock</b>()
+
+	<a href="../../../pkg/net.html">net</a>
+		<a href="../../../src/net/dnsclient_unix.go.html#line-380">dnsclient_unix.go#L380</a>: 	conf.mu.<b>Unlock</b>()
+		<a href="../../../src/net/interface.go.html#line-196">interface.go#L196</a>: 	defer zc.<b>Unlock</b>()
+
+	<a href="../../../pkg/net/http.html">net/http</a>
+		<a href="../../../src/net/http/server.go.html#line-2432">server.go#L2432</a>: 	defer mux.mu.<b>Unlock</b>()
+
+	<a href="../../../pkg/os.html">os</a>
+		<a href="../../../src/os/exec_unix.go.html#line-34">exec_unix.go#L34</a>: 		p.sigMu.<b>Unlock</b>()
+
+	<a href="../../../pkg/sync.html">sync</a>
+		<a href="../../../src/sync/rwmutex.go.html#line-131">rwmutex.go#L131</a>: func (rw *RWMutex) <b>Unlock</b>() {
+
+	<a href="../../../pkg/syscall.html">syscall</a>
+		<a href="../../../src/syscall/env_unix.go.html#line-65">env_unix.go#L65</a>: 	defer envLock.<b>Unlock</b>()
+		<a href="../../../src/syscall/env_unix.go.html#line-117" class="path-duplicate">env_unix.go</a><a href="../../../src/syscall/env_unix.go.html#line-117">#L117</a>: 	defer envLock.<b>Unlock</b>()
+		<a href="../../../src/syscall/env_unix.go.html#line-136" class="path-duplicate">env_unix.go</a><a href="../../../src/syscall/env_unix.go.html#line-136">#L136</a>: 	defer envLock.<b>Unlock</b>()
+		<a href="../../../src/syscall/exec_unix.go.html#line-205">exec_unix.go#L205</a>: 		ForkLock.<b>Unlock</b>()
+		<a href="../../../src/syscall/exec_unix.go.html#line-214" class="path-duplicate">exec_unix.go</a><a href="../../../src/syscall/exec_unix.go.html#line-214">#L214</a>: 		ForkLock.<b>Unlock</b>()
+		<a href="../../../src/syscall/exec_unix.go.html#line-217" class="path-duplicate">exec_unix.go</a><a href="../../../src/syscall/exec_unix.go.html#line-217">#L217</a>: 	ForkLock.<b>Unlock</b>()
+
+	<a href="../../../pkg/text/template.html">text/template</a>
+		<a href="../../../src/text/template/template.go.html#line-132">template.go#L132</a>: 	defer t.muTmpl.<b>Unlock</b>()
+		<a href="../../../src/text/template/template.go.html#line-180" class="path-duplicate">template.go</a><a href="../../../src/text/template/template.go.html#line-180">#L180</a>: 	defer t.muFuncs.<b>Unlock</b>()
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

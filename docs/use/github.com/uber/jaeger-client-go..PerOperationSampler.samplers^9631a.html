@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/uber/jaeger-client-go.PerOperationSampler.samplers</title>
+<link href="../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../pkg/github.com/uber/jaeger-client-go.html">github.com/uber/jaeger-client-go</a>.<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-331">PerOperationSampler</a>.<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-334">samplers</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">11 uses</span>
+
+	github.com/uber/jaeger-client-go (current package)
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-334">sampler.go#L334</a>: 	<b>samplers</b>       map[string]*GuaranteedThroughputProbabilisticSampler
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-383" class="path-duplicate">sampler.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-383">#L383</a>: 		<b>samplers</b>:                 samplers,
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-431" class="path-duplicate">sampler.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-431">#L431</a>: 	sampler, ok := s.<b>samplers</b>[operation]
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-441" class="path-duplicate">sampler.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-441">#L441</a>: 	sampler, ok = s.<b>samplers</b>[operation]
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-446" class="path-duplicate">sampler.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-446">#L446</a>: 	if len(s.<b>samplers</b>) &gt;= s.maxOperations {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-450" class="path-duplicate">sampler.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-450">#L450</a>: 	s.<b>samplers</b>[operation] = newSampler
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-458" class="path-duplicate">sampler.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-458">#L458</a>: 	for _, sampler := range s.<b>samplers</b> {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-471" class="path-duplicate">sampler.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-471">#L471</a>: 	fmt.Fprintf(&amp;sb, "numOperations=%d,\n", len(s.<b>samplers</b>))
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-473" class="path-duplicate">sampler.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-473">#L473</a>: 	for operationName, sampler := range s.<b>samplers</b> {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-500" class="path-duplicate">sampler.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-500">#L500</a>: 		if sampler, ok := s.<b>samplers</b>[operation]; ok {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-515" class="path-duplicate">sampler.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-515">#L515</a>: 	s.<b>samplers</b> = newSamplers
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

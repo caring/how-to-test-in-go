@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime.mheap.lock</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/runtime.html">runtime</a>.<a href="../src/runtime/mheap.go.html#line-62">mheap</a>.<a href="../src/runtime/mheap.go.html#line-65">lock</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">58 uses</span>
+
+	runtime (current package)
+		<a href="../src/runtime/malloc.go.html#line-637">malloc.go#L637</a>: 	assertLockHeld(&amp;h.<b>lock</b>)
+		<a href="../src/runtime/mcache.go.html#line-87">mcache.go#L87</a>: 		lock(&amp;mheap_.<b>lock</b>)
+		<a href="../src/runtime/mcache.go.html#line-90" class="path-duplicate">mcache.go</a><a href="../src/runtime/mcache.go.html#line-90">#L90</a>: 		unlock(&amp;mheap_.<b>lock</b>)
+		<a href="../src/runtime/mcache.go.html#line-115" class="path-duplicate">mcache.go</a><a href="../src/runtime/mcache.go.html#line-115">#L115</a>: 		lock(&amp;mheap_.<b>lock</b>)
+		<a href="../src/runtime/mcache.go.html#line-117" class="path-duplicate">mcache.go</a><a href="../src/runtime/mcache.go.html#line-117">#L117</a>: 		unlock(&amp;mheap_.<b>lock</b>)
+		<a href="../src/runtime/metrics.go.html#line-439">metrics.go#L439</a>: 		lock(&amp;mheap_.<b>lock</b>)
+		<a href="../src/runtime/metrics.go.html#line-444" class="path-duplicate">metrics.go</a><a href="../src/runtime/metrics.go.html#line-444">#L444</a>: 		unlock(&amp;mheap_.<b>lock</b>)
+		<a href="../src/runtime/mgc.go.html#line-1462">mgc.go#L1462</a>: 	lock(&amp;mheap_.<b>lock</b>)
+		<a href="../src/runtime/mgc.go.html#line-1469" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-1469">#L1469</a>: 	unlock(&amp;mheap_.<b>lock</b>)
+		<a href="../src/runtime/mgc.go.html#line-1476" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-1476">#L1476</a>: 		lock(&amp;mheap_.<b>lock</b>)
+		<a href="../src/runtime/mgc.go.html#line-1478" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-1478">#L1478</a>: 		unlock(&amp;mheap_.<b>lock</b>)
+		<a href="../src/runtime/mgc.go.html#line-1524" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-1524">#L1524</a>: 	lock(&amp;mheap_.<b>lock</b>)
+		<a href="../src/runtime/mgc.go.html#line-1526" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-1526">#L1526</a>: 	unlock(&amp;mheap_.<b>lock</b>)
+		<a href="../src/runtime/mgcpacer.go.html#line-651">mgcpacer.go#L651</a>: 	assertWorldStoppedOrLockHeld(&amp;mheap_.<b>lock</b>)
+		<a href="../src/runtime/mgcpacer.go.html#line-792" class="path-duplicate">mgcpacer.go</a><a href="../src/runtime/mgcpacer.go.html#line-792">#L792</a>: 	assertWorldStoppedOrLockHeld(&amp;mheap_.<b>lock</b>)
+		<a href="../src/runtime/mgcpacer.go.html#line-807" class="path-duplicate">mgcpacer.go</a><a href="../src/runtime/mgcpacer.go.html#line-807">#L807</a>: 	assertWorldStoppedOrLockHeld(&amp;mheap_.<b>lock</b>)
+		<a href="../src/runtime/mgcpacer.go.html#line-825" class="path-duplicate">mgcpacer.go</a><a href="../src/runtime/mgcpacer.go.html#line-825">#L825</a>: 		lock(&amp;mheap_.<b>lock</b>)
+		<a href="../src/runtime/mgcpacer.go.html#line-827" class="path-duplicate">mgcpacer.go</a><a href="../src/runtime/mgcpacer.go.html#line-827">#L827</a>: 		unlock(&amp;mheap_.<b>lock</b>)
+		<a href="../src/runtime/mgcscavenge.go.html#line-293">mgcscavenge.go#L293</a>: 			lock(&amp;mheap_.<b>lock</b>)
+		<a href="../src/runtime/mgcscavenge.go.html#line-298" class="path-duplicate">mgcscavenge.go</a><a href="../src/runtime/mgcscavenge.go.html#line-298">#L298</a>: 				unlock(&amp;mheap_.<b>lock</b>)
+		<a href="../src/runtime/mgcscavenge.go.html#line-308" class="path-duplicate">mgcscavenge.go</a><a href="../src/runtime/mgcscavenge.go.html#line-308">#L308</a>: 			unlock(&amp;mheap_.<b>lock</b>)
+		<a href="../src/runtime/mgcsweep.go.html#line-324">mgcsweep.go#L324</a>: 			lock(&amp;mheap_.<b>lock</b>)
+		<a href="../src/runtime/mgcsweep.go.html#line-326" class="path-duplicate">mgcsweep.go</a><a href="../src/runtime/mgcsweep.go.html#line-326">#L326</a>: 			unlock(&amp;mheap_.<b>lock</b>)
+		<a href="../src/runtime/mgcwork.go.html#line-116">mgcwork.go#L116</a>: 	lockWithRankMayAcquire(&amp;mheap_.<b>lock</b>, lockRankMheap)
+		<a href="../src/runtime/mgcwork.go.html#line-359" class="path-duplicate">mgcwork.go</a><a href="../src/runtime/mgcwork.go.html#line-359">#L359</a>: 	lockWithRankMayAcquire(&amp;mheap_.<b>lock</b>, lockRankMheap)
+		<a href="../src/runtime/mheap.go.html#line-65">mheap.go#L65</a>: 	<b>lock</b>  mutex
+		<a href="../src/runtime/mheap.go.html#line-497" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-497">#L497</a>: 	assertLockHeld(&amp;h.<b>lock</b>)
+		<a href="../src/runtime/mheap.go.html#line-701" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-701">#L701</a>: 	lockInit(&amp;h.<b>lock</b>, lockRankMheap)
+		<a href="../src/runtime/mheap.go.html#line-726" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-726">#L726</a>: 	h.pages.init(&amp;h.<b>lock</b>, &amp;memstats.gcMiscSys)
+		<a href="../src/runtime/mheap.go.html#line-781" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-781">#L781</a>: 			lock(&amp;h.<b>lock</b>)
+		<a href="../src/runtime/mheap.go.html#line-796" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-796">#L796</a>: 		unlock(&amp;h.<b>lock</b>)
+		<a href="../src/runtime/mheap.go.html#line-817" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-817">#L817</a>: 	assertLockHeld(&amp;h.<b>lock</b>)
+		<a href="../src/runtime/mheap.go.html#line-848" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-848">#L848</a>: 						unlock(&amp;h.<b>lock</b>)
+		<a href="../src/runtime/mheap.go.html#line-852" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-852">#L852</a>: 						lock(&amp;h.<b>lock</b>)
+		<a href="../src/runtime/mheap.go.html#line-869" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-869">#L869</a>: 		unlock(&amp;h.<b>lock</b>)
+		<a href="../src/runtime/mheap.go.html#line-872" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-872">#L872</a>: 		lock(&amp;h.<b>lock</b>)
+		<a href="../src/runtime/mheap.go.html#line-875" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-875">#L875</a>: 	assertLockHeld(&amp;h.<b>lock</b>) // Must be locked on return.
+		<a href="../src/runtime/mheap.go.html#line-1067" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1067">#L1067</a>: 	assertLockHeld(&amp;h.<b>lock</b>)
+		<a href="../src/runtime/mheap.go.html#line-1099" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1099">#L1099</a>: 	assertLockHeld(&amp;h.<b>lock</b>)
+		<a href="../src/runtime/mheap.go.html#line-1149" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1149">#L1149</a>: 			lock(&amp;h.<b>lock</b>)
+		<a href="../src/runtime/mheap.go.html#line-1151" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1151">#L1151</a>: 			unlock(&amp;h.<b>lock</b>)
+		<a href="../src/runtime/mheap.go.html#line-1168" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1168">#L1168</a>: 	lock(&amp;h.<b>lock</b>)
+		<a href="../src/runtime/mheap.go.html#line-1180" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1180">#L1180</a>: 				unlock(&amp;h.<b>lock</b>)
+		<a href="../src/runtime/mheap.go.html#line-1211" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1211">#L1211</a>: 	unlock(&amp;h.<b>lock</b>)
+		<a href="../src/runtime/mheap.go.html#line-1329" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1329">#L1329</a>: 	assertLockHeld(&amp;h.<b>lock</b>)
+		<a href="../src/runtime/mheap.go.html#line-1428" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1428">#L1428</a>: 		lock(&amp;h.<b>lock</b>)
+		<a href="../src/runtime/mheap.go.html#line-1436" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1436">#L1436</a>: 		unlock(&amp;h.<b>lock</b>)
+		<a href="../src/runtime/mheap.go.html#line-1453" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1453">#L1453</a>: 	lock(&amp;h.<b>lock</b>)
+		<a href="../src/runtime/mheap.go.html#line-1455" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1455">#L1455</a>: 	unlock(&amp;h.<b>lock</b>)
+		<a href="../src/runtime/mheap.go.html#line-1459" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1459">#L1459</a>: 	assertLockHeld(&amp;h.<b>lock</b>)
+		<a href="../src/runtime/mheap.go.html#line-1522" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1522">#L1522</a>: 	lock(&amp;h.<b>lock</b>)
+		<a href="../src/runtime/mheap.go.html#line-1528" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1528">#L1528</a>: 	unlock(&amp;h.<b>lock</b>)
+		<a href="../src/runtime/mstats.go.html#line-503">mstats.go#L503</a>: 	lock(&amp;mheap_.<b>lock</b>)
+		<a href="../src/runtime/mstats.go.html#line-524" class="path-duplicate">mstats.go</a><a href="../src/runtime/mstats.go.html#line-524">#L524</a>: 	unlock(&amp;mheap_.<b>lock</b>)
+		<a href="../src/runtime/proc.go.html#line-4955">proc.go#L4955</a>: 		lock(&amp;mheap_.<b>lock</b>)
+		<a href="../src/runtime/proc.go.html#line-4957" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4957">#L4957</a>: 		unlock(&amp;mheap_.<b>lock</b>)
+		<a href="../src/runtime/stack.go.html#line-197">stack.go#L197</a>: 	lockWithRankMayAcquire(&amp;mheap_.<b>lock</b>, lockRankMheap)
+		<a href="../src/runtime/stack.go.html#line-405" class="path-duplicate">stack.go</a><a href="../src/runtime/stack.go.html#line-405">#L405</a>: 		lockWithRankMayAcquire(&amp;mheap_.<b>lock</b>, lockRankMheap)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

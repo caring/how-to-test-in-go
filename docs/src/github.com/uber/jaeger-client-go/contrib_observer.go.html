@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Source: contrib_observer.go in package github.com/uber/jaeger-client-go</title>
+<link href="../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre id="header"><code><span class="title">Source File</span>
+	contrib_observer.go
+
+<span class="title">Belonging Package</span>
+	<a href="../../../../pkg/github.com/uber/jaeger-client-go.html">github.com/uber/jaeger-client-go</a>
+</code></pre>
+<style>input[type=radio] {display: none;}
+input[id=r0]:checked ~pre label[for=r0],
+input[id=r1]:checked ~pre label[for=r1],
+input[id=r2]:checked ~pre label[for=r2],
+input[id=r3]:checked ~pre label[for=r3],
+input[id=r4]:checked ~pre label[for=r4],
+input[id=r5]:checked ~pre label[for=r5]
+{background: #226; color: #ff8;}
+input[id=i0]:checked ~pre .i0
+{background: brown; color: #eed;}
+</style><input id="r0" type="radio" name="g"/>
+<input id="r1" type="radio" name="g"/>
+<input id="r2" type="radio" name="g"/>
+<input id="r3" type="radio" name="g"/>
+<input id="r4" type="radio" name="g"/>
+<input id="r5" type="radio" name="g"/>
+<input id="i0" type="radio" name="i"/>
+
+<pre class="line-numbers">
+<span class="codeline" id="line-1"><code><span class="comment">// Copyright (c) 2017 Uber Technologies, Inc.</span></code></span>
+<span class="codeline" id="line-2"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-3"><code><span class="comment">// Licensed under the Apache License, Version 2.0 (the "License");</span></code></span>
+<span class="codeline" id="line-4"><code><span class="comment">// you may not use this file except in compliance with the License.</span></code></span>
+<span class="codeline" id="line-5"><code><span class="comment">// You may obtain a copy of the License at</span></code></span>
+<span class="codeline" id="line-6"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-7"><code><span class="comment">// http://www.apache.org/licenses/LICENSE-2.0</span></code></span>
+<span class="codeline" id="line-8"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-9"><code><span class="comment">// Unless required by applicable law or agreed to in writing, software</span></code></span>
+<span class="codeline" id="line-10"><code><span class="comment">// distributed under the License is distributed on an "AS IS" BASIS,</span></code></span>
+<span class="codeline" id="line-11"><code><span class="comment">// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></code></span>
+<span class="codeline" id="line-12"><code><span class="comment">// See the License for the specific language governing permissions and</span></code></span>
+<span class="codeline" id="line-13"><code><span class="comment">// limitations under the License.</span></code></span>
+<span class="codeline" id="line-14"><code></code></span>
+<span class="codeline" id="line-15"><code><span class="keyword">package</span> jaeger</code></span>
+<span class="codeline" id="line-16"><code></code></span>
+<span class="codeline" id="line-17"><code><span class="keyword">import</span> (</code></span>
+<span class="codeline" id="line-18"><code>	<a href="../../../../pkg/github.com/opentracing/opentracing-go.html" class="ident i0">opentracing</a> <label for="i0"><span class="lit-string i0">"github.com/opentracing/opentracing-go"</span></label></code></span>
+<span class="codeline" id="line-19"><code>)</code></span>
+<span class="codeline" id="line-20"><code></code></span>
+<span class="codeline" id="line-21"><code><span class="comment">// ContribObserver can be registered with the Tracer to receive notifications</span></code></span>
+<span class="codeline" id="line-22"><code><span class="comment">// about new Spans. Modelled after github.com/opentracing-contrib/go-observer.</span></code></span>
+<span class="codeline" id="line-23"><code><span class="keyword">type</span> <a href="../../../../pkg/github.com/uber/jaeger-client-go.html#name-ContribObserver" class="ident">ContribObserver</a> <span class="keyword">interface</span> {</code></span>
+<span class="codeline" id="line-24"><code>	<span class="comment">// Create and return a span observer. Called when a span starts.</span></code></span>
+<span class="codeline" id="line-25"><code><span class="comment">	// If the Observer is not interested in the given span, it must return (nil, false).</span></code></span>
+<span class="codeline" id="line-26"><code><span class="comment">	// E.g :</span></code></span>
+<span class="codeline" id="line-27"><code><span class="comment">	//     func StartSpan(opName string, opts ...opentracing.StartSpanOption) {</span></code></span>
+<span class="codeline" id="line-28"><code><span class="comment">	//         var sp opentracing.Span</span></code></span>
+<span class="codeline" id="line-29"><code><span class="comment">	//         sso := opentracing.StartSpanOptions{}</span></code></span>
+<span class="codeline" id="line-30"><code><span class="comment">	//         if spanObserver, ok := Observer.OnStartSpan(span, opName, sso); ok {</span></code></span>
+<span class="codeline" id="line-31"><code><span class="comment">	//             // we have a valid SpanObserver</span></code></span>
+<span class="codeline" id="line-32"><code><span class="comment">	//         }</span></code></span>
+<span class="codeline" id="line-33"><code><span class="comment">	//         ...</span></code></span>
+<span class="codeline" id="line-34"><code><span class="comment">	//     }</span></code></span>
+<span class="codeline" id="line-35"><code>	<a href="../../../../imp/github.com/uber/jaeger-client-go.ContribObserver.html#name-OnStartSpan" class="ident">OnStartSpan</a>(sp <a href="../../../../pkg/github.com/opentracing/opentracing-go.html" class="ident i0">opentracing</a>.<a href="../../opentracing/opentracing-go/span.go.html#line-27" class="ident">Span</a>, operationName <a href="../../../../pkg/builtin.html#name-string" class="ident">string</a>, options <a href="../../../../pkg/github.com/opentracing/opentracing-go.html" class="ident i0">opentracing</a>.<a href="../../opentracing/opentracing-go/tracer.go.html#line-132" class="ident">StartSpanOptions</a>) (<a href="#line-42" class="ident">ContribSpanObserver</a>, <a href="../../../../pkg/builtin.html#name-bool" class="ident">bool</a>)</code></span>
+<span class="codeline" id="line-36"><code>}</code></span>
+<span class="codeline" id="line-37"><code></code></span>
+<span class="codeline" id="line-38"><code><span class="comment">// ContribSpanObserver is created by the Observer and receives notifications</span></code></span>
+<span class="codeline" id="line-39"><code><span class="comment">// about other Span events. This interface is meant to match</span></code></span>
+<span class="codeline" id="line-40"><code><span class="comment">// github.com/opentracing-contrib/go-observer, via duck typing, without</span></code></span>
+<span class="codeline" id="line-41"><code><span class="comment">// directly importing the go-observer package.</span></code></span>
+<span class="codeline" id="line-42"><code><span class="keyword">type</span> <a href="../../../../pkg/github.com/uber/jaeger-client-go.html#name-ContribSpanObserver" class="ident">ContribSpanObserver</a> <span class="keyword">interface</span> {</code></span>
+<span class="codeline" id="line-43"><code>	<a href="../../../../imp/github.com/uber/jaeger-client-go.ContribSpanObserver.html#name-OnSetOperationName" class="ident">OnSetOperationName</a>(operationName <a href="../../../../pkg/builtin.html#name-string" class="ident">string</a>)</code></span>
+<span class="codeline" id="line-44"><code>	<a href="../../../../imp/github.com/uber/jaeger-client-go.ContribSpanObserver.html#name-OnSetTag" class="ident">OnSetTag</a>(key <a href="../../../../pkg/builtin.html#name-string" class="ident">string</a>, value <span class="keyword">interface</span>{})</code></span>
+<span class="codeline" id="line-45"><code>	<a href="../../../../imp/github.com/uber/jaeger-client-go.ContribSpanObserver.html#name-OnFinish" class="ident">OnFinish</a>(options <a href="../../../../pkg/github.com/opentracing/opentracing-go.html" class="ident i0">opentracing</a>.<a href="../../opentracing/opentracing-go/span.go.html#line-134" class="ident">FinishOptions</a>)</code></span>
+<span class="codeline" id="line-46"><code>}</code></span>
+<span class="codeline" id="line-47"><code></code></span>
+<span class="codeline" id="line-48"><code><span class="comment">// wrapper observer for the old observers (see observer.go)</span></code></span>
+<span class="codeline" id="line-49"><code><span class="keyword">type</span> <a href="../../../../pkg/github.com/uber/jaeger-client-go.html#name-oldObserver" class="ident">oldObserver</a> <span class="keyword">struct</span> {</code></span>
+<span class="codeline" id="line-50"><code>	<a href="../../../../use/github.com/uber/jaeger-client-go..oldObserver^783a4.obs^d39ed.html" class="ident">obs</a> <a href="observer.go.html#line-23" class="ident">Observer</a></code></span>
+<span class="codeline" id="line-51"><code>}</code></span>
+<span class="codeline" id="line-52"><code></code></span>
+<span class="codeline" id="line-53"><code><span class="keyword">func</span> (<label for="r0" class="ident">o</label> *<a href="#line-49" class="ident">oldObserver</a>) <label for="r1" class="ident"><a href="../../../../use/github.com/uber/jaeger-client-go..oldObserver^783a4.OnStartSpan.html" class="ident">OnStartSpan</a></label>(<label for="r2" class="ident">sp</label> <a href="../../../../pkg/github.com/opentracing/opentracing-go.html" class="ident i0">opentracing</a>.<a href="../../opentracing/opentracing-go/span.go.html#line-27" class="ident">Span</a>, <label for="r3" class="ident">operationName</label> <a href="../../../../pkg/builtin.html#name-string" class="ident">string</a>, <label for="r4" class="ident">options</label> <a href="../../../../pkg/github.com/opentracing/opentracing-go.html" class="ident i0">opentracing</a>.<a href="../../opentracing/opentracing-go/tracer.go.html#line-132" class="ident">StartSpanOptions</a>) (<a href="#line-42" class="ident">ContribSpanObserver</a>, <a href="../../../../pkg/builtin.html#name-bool" class="ident">bool</a>) {</code></span>
+<span class="codeline" id="line-54"><code>	<label for="r5" class="ident">spanObserver</label> := <label for="r0" class="ident">o</label>.<a href="#line-50" class="ident">obs</a>.<a href="observer.go.html#line-24" class="ident">OnStartSpan</a>(<label for="r3" class="ident">operationName</label>, <label for="r4" class="ident">options</label>)</code></span>
+<span class="codeline" id="line-55"><code>	<span class="keyword">return</span> <label for="r5" class="ident">spanObserver</label>, <label for="r5" class="ident">spanObserver</label> != <a href="../../../../pkg/builtin.html#name-nil" class="ident">nil</a></code></span>
+<span class="codeline" id="line-56"><code>}</code></span>
+</pre><pre id="footer">
+<table><tr><td><img src="../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

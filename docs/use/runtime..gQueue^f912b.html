@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime.gQueue</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../pkg/runtime.html">runtime</a>.<a href="../src/runtime/proc.go.html#line-6209">gQueue</a></b></span>
+
+<span class="title">25 uses</span>
+
+	runtime (current package)
+		<a href="../src/runtime/mgc.go.html#line-375">mgc.go#L375</a>: 		q    <b>gQueue</b>
+		<a href="../src/runtime/mgcmark.go.html#line-286">mgcmark.go#L286</a>: 	q := <b>gQueue</b>{list.head, list.head}
+		<a href="../src/runtime/proc.go.html#line-3249">proc.go#L3249</a>: 	var q <b>gQueue</b>
+		<a href="../src/runtime/proc.go.html#line-3270" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3270">#L3270</a>: 	var globq <b>gQueue</b>
+		<a href="../src/runtime/proc.go.html#line-4445" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4445">#L4445</a>: 			stackQ   <b>gQueue</b>
+		<a href="../src/runtime/proc.go.html#line-4446" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4446">#L4446</a>: 			noStackQ <b>gQueue</b>
+		<a href="../src/runtime/proc.go.html#line-4515" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4515">#L4515</a>: 		stackQ   <b>gQueue</b>
+		<a href="../src/runtime/proc.go.html#line-4516" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4516">#L4516</a>: 		noStackQ <b>gQueue</b>
+		<a href="../src/runtime/proc.go.html#line-5775" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5775">#L5775</a>: func globrunqputbatch(batch *<b>gQueue</b>, n int32) {
+		<a href="../src/runtime/proc.go.html#line-5780" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5780">#L5780</a>: 	*batch = <b>gQueue</b>{}
+		<a href="../src/runtime/proc.go.html#line-6016" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-6016">#L6016</a>: 	var q <b>gQueue</b>
+		<a href="../src/runtime/proc.go.html#line-6031" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-6031">#L6031</a>: func runqputbatch(pp *p, q *<b>gQueue</b>, qsize int) {
+		<a href="../src/runtime/proc.go.html#line-6092" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-6092">#L6092</a>: func runqdrain(_p_ *p) (drainQ <b>gQueue</b>, n uint32) {
+		<a href="../src/runtime/proc.go.html#line-6209" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-6209">#L6209</a>: type <b>gQueue</b> struct {
+		<a href="../src/runtime/proc.go.html#line-6215" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-6215">#L6215</a>: func (q *<b>gQueue</b>) empty() bool {
+		<a href="../src/runtime/proc.go.html#line-6220" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-6220">#L6220</a>: func (q *<b>gQueue</b>) push(gp *g) {
+		<a href="../src/runtime/proc.go.html#line-6229" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-6229">#L6229</a>: func (q *<b>gQueue</b>) pushBack(gp *g) {
+		<a href="../src/runtime/proc.go.html#line-6241" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-6241">#L6241</a>: func (q *<b>gQueue</b>) pushBackAll(q2 <b>gQueue</b>) {
+		<a href="../src/runtime/proc.go.html#line-6256" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-6256">#L6256</a>: func (q *<b>gQueue</b>) pop() *g {
+		<a href="../src/runtime/proc.go.html#line-6268" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-6268">#L6268</a>: func (q *<b>gQueue</b>) popList() gList {
+		<a href="../src/runtime/proc.go.html#line-6270" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-6270">#L6270</a>: 	*q = <b>gQueue</b>{}
+		<a href="../src/runtime/proc.go.html#line-6292" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-6292">#L6292</a>: func (l *gList) pushAll(q <b>gQueue</b>) {
+		<a href="../src/runtime/runtime2.go.html#line-771">runtime2.go#L771</a>: 	runq     <b>gQueue</b>
+		<a href="../src/runtime/runtime2.go.html#line-782" class="path-duplicate">runtime2.go</a><a href="../src/runtime/runtime2.go.html#line-782">#L782</a>: 		runnable <b>gQueue</b> // pending runnable Gs
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

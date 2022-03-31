@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: reflect.ptrType.elem</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/reflect.html">reflect</a>.<a href="../src/reflect/type.go.html#line-416">ptrType</a>.<a href="../src/reflect/type.go.html#line-418">elem</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">9 uses</span>
+
+	reflect (current package)
+		<a href="../src/reflect/type.go.html#line-418">type.go#L418</a>: 	<b>elem</b> *rtype // pointer element (pointed at) type
+		<a href="../src/reflect/type.go.html#line-949" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-949">#L949</a>: 		return toType(tt.<b>elem</b>)
+		<a href="../src/reflect/type.go.html#line-1441" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1441">#L1441</a>: 		if p.<b>elem</b> != t {
+		<a href="../src/reflect/type.go.html#line-1464" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1464">#L1464</a>: 	pp.<b>elem</b> = t
+		<a href="../src/reflect/type.go.html#line-2553" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2553">#L2553</a>: 				if unt := ptr.<b>elem</b>.uncommon(); unt != nil {
+		<a href="../src/reflect/type.go.html#line-2563" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2563">#L2563</a>: 							mtyp: resolveReflectType(ptr.<b>elem</b>.typeOff(m.mtyp)),
+		<a href="../src/reflect/type.go.html#line-2564" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2564">#L2564</a>: 							ifn:  resolveReflectText(ptr.<b>elem</b>.textOff(m.ifn)),
+		<a href="../src/reflect/type.go.html#line-2565" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2565">#L2565</a>: 							tfn:  resolveReflectText(ptr.<b>elem</b>.textOff(m.tfn)),
+		<a href="../src/reflect/value.go.html#line-1186">value.go#L1186</a>: 		typ := tt.<b>elem</b>
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

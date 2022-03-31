@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime/internal/atomic.Cas</title>
+<link href="../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">func <b><a href="../../../pkg/runtime/internal/atomic.html">runtime/internal/atomic</a>.<a href="../../../src/runtime/internal/atomic/stubs.go.html#line-13">Cas</a></b></span>
+
+<span class="title">76 uses</span>
+
+	runtime/internal/atomic (current package)
+		<a href="../../../src/runtime/internal/atomic/stubs.go.html#line-13">stubs.go#L13</a>: func <b>Cas</b>(ptr *uint32, old, new uint32) bool
+
+	<a href="../../../pkg/runtime.html">runtime</a>
+		<a href="../../../src/runtime/chan.go.html#line-788">chan.go#L788</a>: 		if sgp.isSelect &amp;&amp; !atomic.<b>Cas</b>(&amp;sgp.g.selectDone, 0, 1) {
+		<a href="../../../src/runtime/cpuprof.go.html#line-93">cpuprof.go#L93</a>: 	for !atomic.<b>Cas</b>(&amp;prof.signalLock, 0, 1) {
+		<a href="../../../src/runtime/cpuprof.go.html#line-135" class="path-duplicate">cpuprof.go</a><a href="../../../src/runtime/cpuprof.go.html#line-135">#L135</a>: 	for !atomic.<b>Cas</b>(&amp;prof.signalLock, 0, 1) {
+		<a href="../../../src/runtime/debuglog.go.html#line-66">debuglog.go#L66</a>: 			if atomic.Load(&amp;l1.owned) == 0 &amp;&amp; atomic.<b>Cas</b>(&amp;l1.owned, 0, 1) {
+		<a href="../../../src/runtime/mfinal.go.html#line-156">mfinal.go#L156</a>: 	if fingCreate == 0 &amp;&amp; atomic.<b>Cas</b>(&amp;fingCreate, 0, 1) {
+		<a href="../../../src/runtime/mgcsweep.go.html#line-71">mgcsweep.go#L71</a>: 	for sOld &lt; sNew &amp;&amp; !atomic.<b>Cas</b>((*uint32)(s), uint32(sOld), uint32(sNew)) {
+		<a href="../../../src/runtime/mgcsweep.go.html#line-219" class="path-duplicate">mgcsweep.go</a><a href="../../../src/runtime/mgcsweep.go.html#line-219">#L219</a>: 	if !atomic.<b>Cas</b>(&amp;s.sweepgen, l.sweepGen-2, l.sweepGen-1) {
+		<a href="../../../src/runtime/mgcsweep.go.html#line-274" class="path-duplicate">mgcsweep.go</a><a href="../../../src/runtime/mgcsweep.go.html#line-274">#L274</a>: 			noMoreWork = atomic.<b>Cas</b>(&amp;mheap_.sweepDrained, 0, 1)
+		<a href="../../../src/runtime/netpoll_kqueue.go.html#line-87">netpoll_kqueue.go#L87</a>: 	if atomic.<b>Cas</b>(&amp;netpollWakeSig, 0, 1) {
+		<a href="../../../src/runtime/proc.go.html#line-911">proc.go#L911</a>: 			success = atomic.<b>Cas</b>(&amp;gp.atomicstatus, oldval, newval)
+		<a href="../../../src/runtime/proc.go.html#line-931" class="path-duplicate">proc.go</a><a href="../../../src/runtime/proc.go.html#line-931">#L931</a>: 			r := atomic.<b>Cas</b>(&amp;gp.atomicstatus, oldval, newval)
+		<a href="../../../src/runtime/proc.go.html#line-966" class="path-duplicate">proc.go</a><a href="../../../src/runtime/proc.go.html#line-966">#L966</a>: 	for i := 0; !atomic.<b>Cas</b>(&amp;gp.atomicstatus, oldval, newval); i++ {
+		<a href="../../../src/runtime/proc.go.html#line-1027" class="path-duplicate">proc.go</a><a href="../../../src/runtime/proc.go.html#line-1027">#L1027</a>: 		if atomic.<b>Cas</b>(&amp;gp.atomicstatus, oldstatus, _Gcopystack) {
+		<a href="../../../src/runtime/proc.go.html#line-1042" class="path-duplicate">proc.go</a><a href="../../../src/runtime/proc.go.html#line-1042">#L1042</a>: 	for !atomic.<b>Cas</b>(&amp;gp.atomicstatus, _Grunning, _Gscan|_Gpreempted) {
+		<a href="../../../src/runtime/proc.go.html#line-1053" class="path-duplicate">proc.go</a><a href="../../../src/runtime/proc.go.html#line-1053">#L1053</a>: 	return atomic.<b>Cas</b>(&amp;gp.atomicstatus, _Gpreempted, _Gwaiting)
+		<a href="../../../src/runtime/proc.go.html#line-1182" class="path-duplicate">proc.go</a><a href="../../../src/runtime/proc.go.html#line-1182">#L1182</a>: 		if s == _Psyscall &amp;&amp; atomic.<b>Cas</b>(&amp;p.status, s, _Pgcstop) {
+		<a href="../../../src/runtime/proc.go.html#line-1601" class="path-duplicate">proc.go</a><a href="../../../src/runtime/proc.go.html#line-1601">#L1601</a>: 		if atomic.<b>Cas</b>(&amp;p.runSafePointFn, 1, 0) {
+		<a href="../../../src/runtime/proc.go.html#line-1617" class="path-duplicate">proc.go</a><a href="../../../src/runtime/proc.go.html#line-1617">#L1617</a>: 		if s == _Psyscall &amp;&amp; p.runSafePointFn == 1 &amp;&amp; atomic.<b>Cas</b>(&amp;p.status, s, _Pidle) {
+		<a href="../../../src/runtime/proc.go.html#line-1811" class="path-duplicate">proc.go</a><a href="../../../src/runtime/proc.go.html#line-1811">#L1811</a>: 	if !atomic.<b>Cas</b>(&amp;p.runSafePointFn, 1, 0) {
+		<a href="../../../src/runtime/proc.go.html#line-2267" class="path-duplicate">proc.go</a><a href="../../../src/runtime/proc.go.html#line-2267">#L2267</a>: 	if !atomic.<b>Cas</b>(&amp;newmHandoff.haveTemplateThread, 0, 1) {
+		<a href="../../../src/runtime/proc.go.html#line-2529" class="path-duplicate">proc.go</a><a href="../../../src/runtime/proc.go.html#line-2529">#L2529</a>: 	if atomic.Load(&amp;sched.nmspinning)+atomic.Load(&amp;sched.npidle) == 0 &amp;&amp; atomic.<b>Cas</b>(&amp;sched.nmspinning, 0, 1) { // TODO: fast atomic
+		<a href="../../../src/runtime/proc.go.html#line-2543" class="path-duplicate">proc.go</a><a href="../../../src/runtime/proc.go.html#line-2543">#L2543</a>: 	if _p_.runSafePointFn != 0 &amp;&amp; atomic.<b>Cas</b>(&amp;_p_.runSafePointFn, 1, 0) {
+		<a href="../../../src/runtime/proc.go.html#line-2581" class="path-duplicate">proc.go</a><a href="../../../src/runtime/proc.go.html#line-2581">#L2581</a>: 	if atomic.Load(&amp;sched.nmspinning) != 0 || !atomic.<b>Cas</b>(&amp;sched.nmspinning, 0, 1) {
+		<a href="../../../src/runtime/proc.go.html#line-3847" class="path-duplicate">proc.go</a><a href="../../../src/runtime/proc.go.html#line-3847">#L3847</a>: 	if sched.stopwait &gt; 0 &amp;&amp; atomic.<b>Cas</b>(&amp;_p_.status, _Psyscall, _Pgcstop) {
+		<a href="../../../src/runtime/proc.go.html#line-4006" class="path-duplicate">proc.go</a><a href="../../../src/runtime/proc.go.html#line-4006">#L4006</a>: 	if oldp != nil &amp;&amp; oldp.status == _Psyscall &amp;&amp; atomic.<b>Cas</b>(&amp;oldp.status, _Psyscall, _Pidle) {
+		<a href="../../../src/runtime/proc.go.html#line-4838" class="path-duplicate">proc.go</a><a href="../../../src/runtime/proc.go.html#line-4838">#L4838</a>: 	for !atomic.<b>Cas</b>(&amp;prof.signalLock, 0, 1) {
+		<a href="../../../src/runtime/proc.go.html#line-5530" class="path-duplicate">proc.go</a><a href="../../../src/runtime/proc.go.html#line-5530">#L5530</a>: 			if atomic.<b>Cas</b>(&amp;_p_.status, s, _Pidle) {
+		<a href="../../../src/runtime/runtime1.go.html#line-215">runtime1.go#L215</a>: 	if !atomic.<b>Cas</b>(&amp;z, 1, 2) {
+		<a href="../../../src/runtime/runtime1.go.html#line-223" class="path-duplicate">runtime1.go</a><a href="../../../src/runtime/runtime1.go.html#line-223">#L223</a>: 	if atomic.<b>Cas</b>(&amp;z, 5, 6) {
+		<a href="../../../src/runtime/runtime1.go.html#line-231" class="path-duplicate">runtime1.go</a><a href="../../../src/runtime/runtime1.go.html#line-231">#L231</a>: 	if !atomic.<b>Cas</b>(&amp;z, 0xffffffff, 0xfffffffe) {
+		<a href="../../../src/runtime/sema.go.html#line-227">sema.go#L227</a>: 		if atomic.<b>Cas</b>(addr, v, v-1) {
+		<a href="../../../src/runtime/signal_unix.go.html#line-195">signal_unix.go#L195</a>: 		if atomic.<b>Cas</b>(&amp;handlingSig[sig], 0, 1) {
+		<a href="../../../src/runtime/signal_unix.go.html#line-272" class="path-duplicate">signal_unix.go</a><a href="../../../src/runtime/signal_unix.go.html#line-272">#L272</a>: 		if atomic.<b>Cas</b>(&amp;handlingSig[_SIGPROF], 0, 1) {
+		<a href="../../../src/runtime/signal_unix.go.html#line-300" class="path-duplicate">signal_unix.go</a><a href="../../../src/runtime/signal_unix.go.html#line-300">#L300</a>: 			if atomic.<b>Cas</b>(&amp;handlingSig[_SIGPROF], 1, 0) {
+		<a href="../../../src/runtime/signal_unix.go.html#line-360" class="path-duplicate">signal_unix.go</a><a href="../../../src/runtime/signal_unix.go.html#line-360">#L360</a>: 	if atomic.<b>Cas</b>(&amp;mp.signalPending, 0, 1) {
+		<a href="../../../src/runtime/sigqueue.go.html#line-94">sigqueue.go#L94</a>: 		if atomic.<b>Cas</b>(&amp;sig.mask[s/32], mask, mask|bit) {
+		<a href="../../../src/runtime/sigqueue.go.html#line-106" class="path-duplicate">sigqueue.go</a><a href="../../../src/runtime/sigqueue.go.html#line-106">#L106</a>: 			if atomic.<b>Cas</b>(&amp;sig.state, sigIdle, sigSending) {
+		<a href="../../../src/runtime/sigqueue.go.html#line-113" class="path-duplicate">sigqueue.go</a><a href="../../../src/runtime/sigqueue.go.html#line-113">#L113</a>: 			if atomic.<b>Cas</b>(&amp;sig.state, sigReceiving, sigIdle) {
+		<a href="../../../src/runtime/sigqueue.go.html#line-139" class="path-duplicate">sigqueue.go</a><a href="../../../src/runtime/sigqueue.go.html#line-139">#L139</a>: 	if atomic.<b>Cas</b>(&amp;sig.state, sigReceiving, sigFixup) {
+		<a href="../../../src/runtime/sigqueue.go.html#line-164" class="path-duplicate">sigqueue.go</a><a href="../../../src/runtime/sigqueue.go.html#line-164">#L164</a>: 				if atomic.<b>Cas</b>(&amp;sig.state, sigIdle, sigReceiving) {
+		<a href="../../../src/runtime/sigqueue.go.html#line-171" class="path-duplicate">sigqueue.go</a><a href="../../../src/runtime/sigqueue.go.html#line-171">#L171</a>: 					if !atomic.<b>Cas</b>(&amp;sig.state, sigFixup, sigIdle) {
+		<a href="../../../src/runtime/sigqueue.go.html#line-183" class="path-duplicate">sigqueue.go</a><a href="../../../src/runtime/sigqueue.go.html#line-183">#L183</a>: 				if atomic.<b>Cas</b>(&amp;sig.state, sigSending, sigIdle) {
+		<a href="../../../src/runtime/time.go.html#line-313">time.go#L313</a>: 			if atomic.<b>Cas</b>(&amp;t.status, s, timerModifying) {
+		<a href="../../../src/runtime/time.go.html#line-318" class="path-duplicate">time.go</a><a href="../../../src/runtime/time.go.html#line-318">#L318</a>: 				if !atomic.<b>Cas</b>(&amp;t.status, timerModifying, timerDeleted) {
+		<a href="../../../src/runtime/time.go.html#line-332" class="path-duplicate">time.go</a><a href="../../../src/runtime/time.go.html#line-332">#L332</a>: 			if atomic.<b>Cas</b>(&amp;t.status, s, timerModifying) {
+		<a href="../../../src/runtime/time.go.html#line-336" class="path-duplicate">time.go</a><a href="../../../src/runtime/time.go.html#line-336">#L336</a>: 				if !atomic.<b>Cas</b>(&amp;t.status, timerModifying, timerDeleted) {
+		<a href="../../../src/runtime/time.go.html#line-442" class="path-duplicate">time.go</a><a href="../../../src/runtime/time.go.html#line-442">#L442</a>: 			if atomic.<b>Cas</b>(&amp;t.status, status, timerModifying) {
+		<a href="../../../src/runtime/time.go.html#line-454" class="path-duplicate">time.go</a><a href="../../../src/runtime/time.go.html#line-454">#L454</a>: 			if atomic.<b>Cas</b>(&amp;t.status, status, timerModifying) {
+		<a href="../../../src/runtime/time.go.html#line-464" class="path-duplicate">time.go</a><a href="../../../src/runtime/time.go.html#line-464">#L464</a>: 			if atomic.<b>Cas</b>(&amp;t.status, status, timerModifying) {
+		<a href="../../../src/runtime/time.go.html#line-494" class="path-duplicate">time.go</a><a href="../../../src/runtime/time.go.html#line-494">#L494</a>: 		if !atomic.<b>Cas</b>(&amp;t.status, timerModifying, timerWaiting) {
+		<a href="../../../src/runtime/time.go.html#line-519" class="path-duplicate">time.go</a><a href="../../../src/runtime/time.go.html#line-519">#L519</a>: 		if !atomic.<b>Cas</b>(&amp;t.status, timerModifying, newStatus) {
+		<a href="../../../src/runtime/time.go.html#line-567" class="path-duplicate">time.go</a><a href="../../../src/runtime/time.go.html#line-567">#L567</a>: 			if !atomic.<b>Cas</b>(&amp;t.status, s, timerRemoving) {
+		<a href="../../../src/runtime/time.go.html#line-571" class="path-duplicate">time.go</a><a href="../../../src/runtime/time.go.html#line-571">#L571</a>: 			if !atomic.<b>Cas</b>(&amp;t.status, timerRemoving, timerRemoved) {
+		<a href="../../../src/runtime/time.go.html#line-576" class="path-duplicate">time.go</a><a href="../../../src/runtime/time.go.html#line-576">#L576</a>: 			if !atomic.<b>Cas</b>(&amp;t.status, s, timerMoving) {
+		<a href="../../../src/runtime/time.go.html#line-584" class="path-duplicate">time.go</a><a href="../../../src/runtime/time.go.html#line-584">#L584</a>: 			if !atomic.<b>Cas</b>(&amp;t.status, timerMoving, timerWaiting) {
+		<a href="../../../src/runtime/time.go.html#line-604" class="path-duplicate">time.go</a><a href="../../../src/runtime/time.go.html#line-604">#L604</a>: 				if !atomic.<b>Cas</b>(&amp;t.status, s, timerMoving) {
+		<a href="../../../src/runtime/time.go.html#line-609" class="path-duplicate">time.go</a><a href="../../../src/runtime/time.go.html#line-609">#L609</a>: 				if !atomic.<b>Cas</b>(&amp;t.status, timerMoving, timerWaiting) {
+		<a href="../../../src/runtime/time.go.html#line-614" class="path-duplicate">time.go</a><a href="../../../src/runtime/time.go.html#line-614">#L614</a>: 				if !atomic.<b>Cas</b>(&amp;t.status, s, timerMoving) {
+		<a href="../../../src/runtime/time.go.html#line-620" class="path-duplicate">time.go</a><a href="../../../src/runtime/time.go.html#line-620">#L620</a>: 				if !atomic.<b>Cas</b>(&amp;t.status, timerMoving, timerWaiting) {
+		<a href="../../../src/runtime/time.go.html#line-625" class="path-duplicate">time.go</a><a href="../../../src/runtime/time.go.html#line-625">#L625</a>: 				if !atomic.<b>Cas</b>(&amp;t.status, s, timerRemoved) {
+		<a href="../../../src/runtime/time.go.html#line-678" class="path-duplicate">time.go</a><a href="../../../src/runtime/time.go.html#line-678">#L678</a>: 			if atomic.<b>Cas</b>(&amp;t.status, s, timerRemoving) {
+		<a href="../../../src/runtime/time.go.html#line-680" class="path-duplicate">time.go</a><a href="../../../src/runtime/time.go.html#line-680">#L680</a>: 				if !atomic.<b>Cas</b>(&amp;t.status, timerRemoving, timerRemoved) {
+		<a href="../../../src/runtime/time.go.html#line-689" class="path-duplicate">time.go</a><a href="../../../src/runtime/time.go.html#line-689">#L689</a>: 			if atomic.<b>Cas</b>(&amp;t.status, s, timerMoving) {
+		<a href="../../../src/runtime/time.go.html#line-729" class="path-duplicate">time.go</a><a href="../../../src/runtime/time.go.html#line-729">#L729</a>: 		if !atomic.<b>Cas</b>(&amp;t.status, timerMoving, timerWaiting) {
+		<a href="../../../src/runtime/time.go.html#line-769" class="path-duplicate">time.go</a><a href="../../../src/runtime/time.go.html#line-769">#L769</a>: 			if !atomic.<b>Cas</b>(&amp;t.status, s, timerRunning) {
+		<a href="../../../src/runtime/time.go.html#line-778" class="path-duplicate">time.go</a><a href="../../../src/runtime/time.go.html#line-778">#L778</a>: 			if !atomic.<b>Cas</b>(&amp;t.status, s, timerRemoving) {
+		<a href="../../../src/runtime/time.go.html#line-782" class="path-duplicate">time.go</a><a href="../../../src/runtime/time.go.html#line-782">#L782</a>: 			if !atomic.<b>Cas</b>(&amp;t.status, timerRemoving, timerRemoved) {
+		<a href="../../../src/runtime/time.go.html#line-791" class="path-duplicate">time.go</a><a href="../../../src/runtime/time.go.html#line-791">#L791</a>: 			if !atomic.<b>Cas</b>(&amp;t.status, s, timerMoving) {
+		<a href="../../../src/runtime/time.go.html#line-797" class="path-duplicate">time.go</a><a href="../../../src/runtime/time.go.html#line-797">#L797</a>: 			if !atomic.<b>Cas</b>(&amp;t.status, timerMoving, timerWaiting) {
+		<a href="../../../src/runtime/time.go.html#line-843" class="path-duplicate">time.go</a><a href="../../../src/runtime/time.go.html#line-843">#L843</a>: 		if !atomic.<b>Cas</b>(&amp;t.status, timerRunning, timerWaiting) {
+		<a href="../../../src/runtime/time.go.html#line-850" class="path-duplicate">time.go</a><a href="../../../src/runtime/time.go.html#line-850">#L850</a>: 		if !atomic.<b>Cas</b>(&amp;t.status, timerRunning, timerNoStatus) {
+		<a href="../../../src/runtime/time.go.html#line-906" class="path-duplicate">time.go</a><a href="../../../src/runtime/time.go.html#line-906">#L906</a>: 				if atomic.<b>Cas</b>(&amp;t.status, s, timerMoving) {
+		<a href="../../../src/runtime/time.go.html#line-912" class="path-duplicate">time.go</a><a href="../../../src/runtime/time.go.html#line-912">#L912</a>: 					if !atomic.<b>Cas</b>(&amp;t.status, timerMoving, timerWaiting) {
+		<a href="../../../src/runtime/time.go.html#line-918" class="path-duplicate">time.go</a><a href="../../../src/runtime/time.go.html#line-918">#L918</a>: 				if atomic.<b>Cas</b>(&amp;t.status, s, timerRemoving) {
+		<a href="../../../src/runtime/time.go.html#line-921" class="path-duplicate">time.go</a><a href="../../../src/runtime/time.go.html#line-921">#L921</a>: 					if !atomic.<b>Cas</b>(&amp;t.status, timerRemoving, timerRemoved) {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

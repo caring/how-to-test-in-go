@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/aws/aws-sdk-go/aws/session.setFromEnvVal</title>
+<link href="../../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">func <b><a href="../../../../../pkg/github.com/aws/aws-sdk-go/aws/session.html">github.com/aws/aws-sdk-go/aws/session</a>.<a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/env_config.go.html#line-338">setFromEnvVal</a></b></span>
+
+<span class="title">17 uses</span>
+
+	github.com/aws/aws-sdk-go/aws/session (current package)
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/env_config.go.html#line-244">env_config.go#L244</a>: 	<b>setFromEnvVal</b>(&amp;creds.AccessKeyID, credAccessEnvKey)
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/env_config.go.html#line-245" class="path-duplicate">env_config.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/env_config.go.html#line-245">#L245</a>: 	<b>setFromEnvVal</b>(&amp;creds.SecretAccessKey, credSecretEnvKey)
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/env_config.go.html#line-246" class="path-duplicate">env_config.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/env_config.go.html#line-246">#L246</a>: 	<b>setFromEnvVal</b>(&amp;creds.SessionToken, credSessionEnvKey)
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/env_config.go.html#line-254" class="path-duplicate">env_config.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/env_config.go.html#line-254">#L254</a>: 	<b>setFromEnvVal</b>(&amp;cfg.RoleARN, roleARNEnvKey)
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/env_config.go.html#line-255" class="path-duplicate">env_config.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/env_config.go.html#line-255">#L255</a>: 	<b>setFromEnvVal</b>(&amp;cfg.RoleSessionName, roleSessionNameEnvKey)
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/env_config.go.html#line-258" class="path-duplicate">env_config.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/env_config.go.html#line-258">#L258</a>: 	<b>setFromEnvVal</b>(&amp;cfg.WebIdentityTokenFilePath, webIdentityTokenFilePathEnvKey)
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/env_config.go.html#line-261" class="path-duplicate">env_config.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/env_config.go.html#line-261">#L261</a>: 	<b>setFromEnvVal</b>(&amp;cfg.csmEnabled, csmEnabledEnvKey)
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/env_config.go.html#line-262" class="path-duplicate">env_config.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/env_config.go.html#line-262">#L262</a>: 	<b>setFromEnvVal</b>(&amp;cfg.CSMHost, csmHostEnvKey)
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/env_config.go.html#line-263" class="path-duplicate">env_config.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/env_config.go.html#line-263">#L263</a>: 	<b>setFromEnvVal</b>(&amp;cfg.CSMPort, csmPortEnvKey)
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/env_config.go.html#line-264" class="path-duplicate">env_config.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/env_config.go.html#line-264">#L264</a>: 	<b>setFromEnvVal</b>(&amp;cfg.CSMClientID, csmClientIDEnvKey)
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/env_config.go.html#line-278" class="path-duplicate">env_config.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/env_config.go.html#line-278">#L278</a>: 	<b>setFromEnvVal</b>(&amp;cfg.Region, regionKeys)
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/env_config.go.html#line-279" class="path-duplicate">env_config.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/env_config.go.html#line-279">#L279</a>: 	<b>setFromEnvVal</b>(&amp;cfg.Profile, profileKeys)
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/env_config.go.html#line-282" class="path-duplicate">env_config.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/env_config.go.html#line-282">#L282</a>: 	<b>setFromEnvVal</b>(&amp;cfg.enableEndpointDiscovery, enableEndpointDiscoveryEnvKey)
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/env_config.go.html#line-287" class="path-duplicate">env_config.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/env_config.go.html#line-287">#L287</a>: 	<b>setFromEnvVal</b>(&amp;cfg.SharedCredentialsFile, sharedCredsFileEnvKey)
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/env_config.go.html#line-288" class="path-duplicate">env_config.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/env_config.go.html#line-288">#L288</a>: 	<b>setFromEnvVal</b>(&amp;cfg.SharedConfigFile, sharedConfigFileEnvKey)
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/env_config.go.html#line-321" class="path-duplicate">env_config.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/env_config.go.html#line-321">#L321</a>: 	<b>setFromEnvVal</b>(&amp;s3UseARNRegion, s3UseARNRegionEnvKey)
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/env_config.go.html#line-338" class="path-duplicate">env_config.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/env_config.go.html#line-338">#L338</a>: func <b>setFromEnvVal</b>(dst *string, keys []string) {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

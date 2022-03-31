@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: strings.HasPrefix</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">func <b><a href="../pkg/strings.html">strings</a>.<a href="../src/strings/strings.go.html#line-444">HasPrefix</a></b></span>
+
+<span class="title">91 uses</span>
+
+	strings (current package)
+		<a href="../src/strings/replace.go.html#line-246">replace.go#L246</a>: 		} else if node.prefix != "" &amp;&amp; <b>HasPrefix</b>(s, node.prefix) {
+		<a href="../src/strings/search.go.html#line-73">search.go#L73</a>: 		if <b>HasPrefix</b>(pattern, pattern[i+1:]) {
+		<a href="../src/strings/strings.go.html#line-444">strings.go#L444</a>: func <b>HasPrefix</b>(s, prefix string) bool {
+		<a href="../src/strings/strings.go.html#line-903" class="path-duplicate">strings.go</a><a href="../src/strings/strings.go.html#line-903">#L903</a>: 	if <b>HasPrefix</b>(s, prefix) {
+
+	<a href="../pkg/crypto/x509.html">crypto/x509</a>
+		<a href="../src/crypto/x509/verify.go.html#line-430">verify.go#L430</a>: 	if strings.<b>HasPrefix</b>(host, "[") &amp;&amp; strings.HasSuffix(host, "]") ||
+
+	<a href="../pkg/encoding/asn1.html">encoding/asn1</a>
+		<a href="../src/encoding/asn1/common.go.html#line-125">common.go#L125</a>: 		case strings.<b>HasPrefix</b>(part, "default:"):
+		<a href="../src/encoding/asn1/common.go.html#line-131" class="path-duplicate">common.go</a><a href="../src/encoding/asn1/common.go.html#line-131">#L131</a>: 		case strings.<b>HasPrefix</b>(part, "tag:"):
+
+	<a href="../pkg/flag.html">flag</a>
+		<a href="../src/flag/flag.go.html#line-863">flag.go#L863</a>: 	if strings.<b>HasPrefix</b>(name, "-") {
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/awsutil.html">github.com/aws/aws-sdk-go/aws/awsutil</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/prettify.go.html#line-31">prettify.go#L31</a>: 		} else if strings.<b>HasPrefix</b>(strtype, "io.") {
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/private/protocol.html">github.com/aws/aws-sdk-go/private/protocol</a>
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/protocol.go.html#line-25">protocol.go#L25</a>: 	if !strings.<b>HasPrefix</b>(r.HTTPResponse.Proto, "HTTP") {
+
+	<a href="../pkg/github.com/caring/test/1-mocks.html">github.com/caring/test/1-mocks</a>
+		<a href="../src/github.com/caring/test/1-mocks/http.go.html#line-66">http.go#L66</a>: 	if !strings.<b>HasPrefix</b>(r.URL.Path, "/fizzbuzz/") {
+
+	<a href="../pkg/github.com/golang/protobuf/jsonpb.html">github.com/golang/protobuf/jsonpb</a>
+		<a href="../src/github.com/golang/protobuf/jsonpb/decode.go.html#line-349">decode.go#L349</a>: 		if !strings.<b>HasPrefix</b>(name, "[") || !strings.HasSuffix(name, "]") {
+
+	<a href="../pkg/github.com/golang/protobuf/proto.html">github.com/golang/protobuf/proto</a>
+		<a href="../src/github.com/golang/protobuf/proto/properties.go.html#line-145">properties.go#L145</a>: 		case strings.<b>HasPrefix</b>(s, "name="):
+		<a href="../src/github.com/golang/protobuf/proto/properties.go.html#line-147" class="path-duplicate">properties.go</a><a href="../src/github.com/golang/protobuf/proto/properties.go.html#line-147">#L147</a>: 		case strings.<b>HasPrefix</b>(s, "json="):
+		<a href="../src/github.com/golang/protobuf/proto/properties.go.html#line-149" class="path-duplicate">properties.go</a><a href="../src/github.com/golang/protobuf/proto/properties.go.html#line-149">#L149</a>: 		case strings.<b>HasPrefix</b>(s, "enum="):
+		<a href="../src/github.com/golang/protobuf/proto/properties.go.html#line-151" class="path-duplicate">properties.go</a><a href="../src/github.com/golang/protobuf/proto/properties.go.html#line-151">#L151</a>: 		case strings.<b>HasPrefix</b>(s, "weak="):
+		<a href="../src/github.com/golang/protobuf/proto/properties.go.html#line-183" class="path-duplicate">properties.go</a><a href="../src/github.com/golang/protobuf/proto/properties.go.html#line-183">#L183</a>: 		case strings.<b>HasPrefix</b>(s, "def="):
+		<a href="../src/github.com/golang/protobuf/proto/properties.go.html#line-250" class="path-duplicate">properties.go</a><a href="../src/github.com/golang/protobuf/proto/properties.go.html#line-250">#L250</a>: 		if tagField == "" &amp;&amp; tagOneof == "" &amp;&amp; !strings.<b>HasPrefix</b>(p.Name, "XXX_") {
+		<a href="../src/github.com/golang/protobuf/proto/text_decode.go.html#line-393">text_decode.go#L393</a>: 		if strings.<b>HasPrefix</b>(tok.value, "0x") {
+		<a href="../src/github.com/golang/protobuf/proto/text_decode.go.html#line-406" class="path-duplicate">text_decode.go</a><a href="../src/github.com/golang/protobuf/proto/text_decode.go.html#line-406">#L406</a>: 		if strings.<b>HasPrefix</b>(tok.value, "0x") {
+
+	<a href="../pkg/github.com/jmespath/go-jmespath.html">github.com/jmespath/go-jmespath</a>
+		<a href="../src/github.com/jmespath/go-jmespath/functions.go.html#line-425">functions.go#L425</a>: 	return strings.<b>HasPrefix</b>(search, prefix), nil
+
+	<a href="../pkg/github.com/uber/jaeger-client-go.html">github.com/uber/jaeger-client-go</a>
+		<a href="../src/github.com/uber/jaeger-client-go/propagation.go.html#line-155">propagation.go#L155</a>: 		} else if strings.<b>HasPrefix</b>(key, p.headerKeys.TraceBaggageHeaderPrefix) {
+
+	<a href="../pkg/go.uber.org/zap.html">go.uber.org/zap</a>
+		<a href="../src/go.uber.org/zap/stacktrace.go.html#line-96">stacktrace.go#L96</a>: 		if strings.<b>HasPrefix</b>(function, prefix) {
+
+	<a href="../pkg/golang.org/x/net/http/httpguts.html">golang.org/x/net/http/httpguts</a>
+		<a href="../src/golang.org/x/net/http/httpguts/guts.go.html#line-22">guts.go#L22</a>: 	if strings.<b>HasPrefix</b>(name, "If-") || badTrailer[name] {
+
+	<a href="../pkg/golang.org/x/net/http2.html">golang.org/x/net/http2</a>
+		<a href="../src/golang.org/x/net/http2/frame.go.html#line-1503">frame.go#L1503</a>: 		isPseudo := strings.<b>HasPrefix</b>(hf.Name, ":")
+		<a href="../src/golang.org/x/net/http2/server.go.html#line-2560">server.go#L2560</a>: 		if !strings.<b>HasPrefix</b>(k, TrailerPrefix) {
+		<a href="../src/golang.org/x/net/http2/server.go.html#line-2771" class="path-duplicate">server.go</a><a href="../src/golang.org/x/net/http2/server.go.html#line-2771">#L2771</a>: 		if !strings.<b>HasPrefix</b>(target, "/") {
+		<a href="../src/golang.org/x/net/http2/server.go.html#line-2785" class="path-duplicate">server.go</a><a href="../src/golang.org/x/net/http2/server.go.html#line-2785">#L2785</a>: 		if strings.<b>HasPrefix</b>(k, ":") {
+		<a href="../src/golang.org/x/net/http2/transport.go.html#line-457">transport.go#L457</a>: 	if strings.<b>HasPrefix</b>(host, "[") &amp;&amp; strings.HasSuffix(host, "]") {
+
+	<a href="../pkg/golang.org/x/net/idna.html">golang.org/x/net/idna</a>
+		<a href="../src/golang.org/x/net/idna/idna10.0.0.go.html#line-332">idna10.0.0.go#L332</a>: 		if strings.<b>HasPrefix</b>(label, acePrefix) {
+
+	<a href="../pkg/golang.org/x/net/trace.html">golang.org/x/net/trace</a>
+		<a href="../src/golang.org/x/net/trace/events.go.html#line-383">events.go#L383</a>: 		if strings.<b>HasPrefix</b>(name, "runtime.") {
+
+	<a href="../pkg/google.golang.org/grpc.html">google.golang.org/grpc</a>
+		<a href="../src/google.golang.org/grpc/clientconn.go.html#line-1718">clientconn.go#L1718</a>: 	case strings.<b>HasPrefix</b>(target, "unix:") || strings.<b>HasPrefix</b>(target, "unix-abstract:"):
+		<a href="../src/google.golang.org/grpc/clientconn.go.html#line-1722" class="path-duplicate">clientconn.go</a><a href="../src/google.golang.org/grpc/clientconn.go.html#line-1722">#L1722</a>: 	case strings.<b>HasPrefix</b>(endpoint, ":"):
+
+	<a href="../pkg/google.golang.org/grpc/internal/binarylog.html">google.golang.org/grpc/internal/binarylog</a>
+		<a href="../src/google.golang.org/grpc/internal/binarylog/method_logger.go.html#line-379">method_logger.go#L379</a>: 	return strings.<b>HasPrefix</b>(key, "grpc-")
+
+	<a href="../pkg/google.golang.org/grpc/internal/grpcutil.html">google.golang.org/grpc/internal/grpcutil</a>
+		<a href="../src/google.golang.org/grpc/internal/grpcutil/method.go.html#line-30">method.go#L30</a>: 	if !strings.<b>HasPrefix</b>(methodName, "/") {
+		<a href="../src/google.golang.org/grpc/internal/grpcutil/method.go.html#line-61" class="path-duplicate">method.go</a><a href="../src/google.golang.org/grpc/internal/grpcutil/method.go.html#line-61">#L61</a>: 	if !strings.<b>HasPrefix</b>(contentType, baseContentType) {
+
+	<a href="../pkg/google.golang.org/grpc/internal/resolver/dns.html">google.golang.org/grpc/internal/resolver/dns</a>
+		<a href="../src/google.golang.org/grpc/internal/resolver/dns/dns_resolver.go.html#line-311">dns_resolver.go#L311</a>: 	if !strings.<b>HasPrefix</b>(res, txtAttribute) {
+
+	<a href="../pkg/google.golang.org/grpc/internal/transport.html">google.golang.org/grpc/internal/transport</a>
+		<a href="../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-157">http2_client.go#L157</a>: 		if networkType == "unix" &amp;&amp; !strings.<b>HasPrefix</b>(address, "\x00") {
+
+	<a href="../pkg/google.golang.org/protobuf/encoding/protojson.html">google.golang.org/protobuf/encoding/protojson</a>
+		<a href="../src/google.golang.org/protobuf/encoding/protojson/decode.go.html#line-163">decode.go#L163</a>: 		if strings.<b>HasPrefix</b>(name, "[") &amp;&amp; strings.HasSuffix(name, "]") {
+
+	<a href="../pkg/google.golang.org/protobuf/internal/encoding/tag.html">google.golang.org/protobuf/internal/encoding/tag</a>
+		<a href="../src/google.golang.org/protobuf/internal/encoding/tag/tag.go.html#line-41">tag.go#L41</a>: 		case strings.<b>HasPrefix</b>(s, "name="):
+		<a href="../src/google.golang.org/protobuf/internal/encoding/tag/tag.go.html#line-102" class="path-duplicate">tag.go</a><a href="../src/google.golang.org/protobuf/internal/encoding/tag/tag.go.html#line-102">#L102</a>: 		case strings.<b>HasPrefix</b>(s, "enum="):
+		<a href="../src/google.golang.org/protobuf/internal/encoding/tag/tag.go.html#line-104" class="path-duplicate">tag.go</a><a href="../src/google.golang.org/protobuf/internal/encoding/tag/tag.go.html#line-104">#L104</a>: 		case strings.<b>HasPrefix</b>(s, "json="):
+		<a href="../src/google.golang.org/protobuf/internal/encoding/tag/tag.go.html#line-112" class="path-duplicate">tag.go</a><a href="../src/google.golang.org/protobuf/internal/encoding/tag/tag.go.html#line-112">#L112</a>: 		case strings.<b>HasPrefix</b>(s, "weak="):
+		<a href="../src/google.golang.org/protobuf/internal/encoding/tag/tag.go.html#line-115" class="path-duplicate">tag.go</a><a href="../src/google.golang.org/protobuf/internal/encoding/tag/tag.go.html#line-115">#L115</a>: 		case strings.<b>HasPrefix</b>(s, "def="):
+
+	<a href="../pkg/google.golang.org/protobuf/internal/impl.html">google.golang.org/protobuf/internal/impl</a>
+		<a href="../src/google.golang.org/protobuf/internal/impl/legacy_message.go.html#line-133">legacy_message.go#L133</a>: 				if f.Tag.Get("protobuf") != "" || f.Tag.Get("protobuf_oneof") != "" || strings.<b>HasPrefix</b>(f.Name, "XXX_") {
+
+	<a href="../pkg/google.golang.org/protobuf/reflect/protodesc.html">google.golang.org/protobuf/reflect/protodesc</a>
+		<a href="../src/google.golang.org/protobuf/reflect/protodesc/proto.go.html#line-248">proto.go#L248</a>: 	if strings.<b>HasPrefix</b>(string(d.FullName()), unknownPrefix) {
+
+	<a href="../pkg/html/template.html">html/template</a>
+		<a href="../src/html/template/attr.go.html#line-141">attr.go#L141</a>: 	if strings.<b>HasPrefix</b>(name, "data-") {
+		<a href="../src/html/template/attr.go.html#line-157" class="path-duplicate">attr.go</a><a href="../src/html/template/attr.go.html#line-157">#L157</a>: 	if strings.<b>HasPrefix</b>(name, "on") {
+
+	<a href="../pkg/mime.html">mime</a>
+		<a href="../src/mime/encodedword.go.html#line-201">encodedword.go#L201</a>: 	if len(word) &lt; 8 || !strings.<b>HasPrefix</b>(word, "=?") || !strings.HasSuffix(word, "?=") || strings.Count(word, "?") != 4 {
+		<a href="../src/mime/mediatype.go.html#line-112">mediatype.go#L112</a>: 	if !strings.<b>HasPrefix</b>(rest, "/") {
+		<a href="../src/mime/mediatype.go.html#line-328" class="path-duplicate">mediatype.go</a><a href="../src/mime/mediatype.go.html#line-328">#L328</a>: 	if !strings.<b>HasPrefix</b>(rest, ";") {
+		<a href="../src/mime/mediatype.go.html#line-341" class="path-duplicate">mediatype.go</a><a href="../src/mime/mediatype.go.html#line-341">#L341</a>: 	if !strings.<b>HasPrefix</b>(rest, "=") {
+		<a href="../src/mime/type.go.html#line-168">type.go#L168</a>: 	if !strings.<b>HasPrefix</b>(ext, ".") {
+		<a href="../src/mime/type.go.html#line-180" class="path-duplicate">type.go</a><a href="../src/mime/type.go.html#line-180">#L180</a>: 	if strings.<b>HasPrefix</b>(mimeType, "text/") &amp;&amp; param["charset"] == "" {
+
+	<a href="../pkg/net/http.html">net/http</a>
+		<a href="../src/net/http/fs.go.html#line-347">fs.go#L347</a>: 	if strings.<b>HasPrefix</b>(s, "W/") {
+		<a href="../src/net/http/fs.go.html#line-844" class="path-duplicate">fs.go</a><a href="../src/net/http/fs.go.html#line-844">#L844</a>: 	if !strings.<b>HasPrefix</b>(upath, "/") {
+		<a href="../src/net/http/fs.go.html#line-874" class="path-duplicate">fs.go</a><a href="../src/net/http/fs.go.html#line-874">#L874</a>: 	if !strings.<b>HasPrefix</b>(s, b) {
+		<a href="../src/net/http/h2_bundle.go.html#line-2824">h2_bundle.go#L2824</a>: 		isPseudo := strings.<b>HasPrefix</b>(hf.Name, ":")
+		<a href="../src/net/http/h2_bundle.go.html#line-6241" class="path-duplicate">h2_bundle.go</a><a href="../src/net/http/h2_bundle.go.html#line-6241">#L6241</a>: 		if !strings.<b>HasPrefix</b>(k, http2TrailerPrefix) {
+		<a href="../src/net/http/h2_bundle.go.html#line-6452" class="path-duplicate">h2_bundle.go</a><a href="../src/net/http/h2_bundle.go.html#line-6452">#L6452</a>: 		if !strings.<b>HasPrefix</b>(target, "/") {
+		<a href="../src/net/http/h2_bundle.go.html#line-6466" class="path-duplicate">h2_bundle.go</a><a href="../src/net/http/h2_bundle.go.html#line-6466">#L6466</a>: 		if strings.<b>HasPrefix</b>(k, ":") {
+		<a href="../src/net/http/h2_bundle.go.html#line-7085" class="path-duplicate">h2_bundle.go</a><a href="../src/net/http/h2_bundle.go.html#line-7085">#L7085</a>: 	if strings.<b>HasPrefix</b>(host, "[") &amp;&amp; strings.HasSuffix(host, "]") {
+		<a href="../src/net/http/request.go.html#line-768">request.go#L768</a>: 	if !strings.<b>HasPrefix</b>(host, "[") {
+		<a href="../src/net/http/request.go.html#line-793" class="path-duplicate">request.go</a><a href="../src/net/http/request.go.html#line-793">#L793</a>: 	if !strings.<b>HasPrefix</b>(vers, "HTTP/") {
+		<a href="../src/net/http/request.go.html#line-1061" class="path-duplicate">request.go</a><a href="../src/net/http/request.go.html#line-1061">#L1061</a>: 	justAuthority := req.Method == "CONNECT" &amp;&amp; !strings.<b>HasPrefix</b>(rawurl, "/")
+		<a href="../src/net/http/server.go.html#line-506">server.go#L506</a>: 		if strings.<b>HasPrefix</b>(k, TrailerPrefix) {
+		<a href="../src/net/http/server.go.html#line-1102" class="path-duplicate">server.go</a><a href="../src/net/http/server.go.html#line-1102">#L1102</a>: 		if !strings.<b>HasPrefix</b>(frame.Function, "net/http.") {
+		<a href="../src/net/http/server.go.html#line-1238" class="path-duplicate">server.go</a><a href="../src/net/http/server.go.html#line-1238">#L1238</a>: 		if strings.<b>HasPrefix</b>(k, TrailerPrefix) {
+		<a href="../src/net/http/server.go.html#line-2264" class="path-duplicate">server.go</a><a href="../src/net/http/server.go.html#line-2264">#L2264</a>: 		if len(p) == len(np)+1 &amp;&amp; strings.<b>HasPrefix</b>(p, np) {
+		<a href="../src/net/http/server.go.html#line-2298" class="path-duplicate">server.go</a><a href="../src/net/http/server.go.html#line-2298">#L2298</a>: 		if strings.<b>HasPrefix</b>(path, e.pattern) {
+
+	<a href="../pkg/net/http/httputil.html">net/http/httputil</a>
+		<a href="../src/net/http/httputil/dump.go.html#line-246">dump.go#L246</a>: 	absRequestURI := strings.<b>HasPrefix</b>(req.RequestURI, "http://") || strings.<b>HasPrefix</b>(req.RequestURI, "https://")
+		<a href="../src/net/http/httputil/reverseproxy.go.html#line-105">reverseproxy.go#L105</a>: 	bslash := strings.<b>HasPrefix</b>(b, "/")
+		<a href="../src/net/http/httputil/reverseproxy.go.html#line-125" class="path-duplicate">reverseproxy.go</a><a href="../src/net/http/httputil/reverseproxy.go.html#line-125">#L125</a>: 	bslash := strings.<b>HasPrefix</b>(bpath, "/")
+
+	<a href="../pkg/net/url.html">net/url</a>
+		<a href="../src/net/url/url.go.html#line-540">url.go#L540</a>: 	if !strings.<b>HasPrefix</b>(rest, "/") {
+		<a href="../src/net/url/url.go.html#line-564" class="path-duplicate">url.go</a><a href="../src/net/url/url.go.html#line-564">#L564</a>: 	if (url.Scheme != "" || !viaRequest &amp;&amp; !strings.<b>HasPrefix</b>(rest, "///")) &amp;&amp; strings.<b>HasPrefix</b>(rest, "//") {
+		<a href="../src/net/url/url.go.html#line-620" class="path-duplicate">url.go</a><a href="../src/net/url/url.go.html#line-620">#L620</a>: 	if strings.<b>HasPrefix</b>(host, "[") {
+		<a href="../src/net/url/url.go.html#line-1144" class="path-duplicate">url.go</a><a href="../src/net/url/url.go.html#line-1144">#L1144</a>: 		if strings.<b>HasPrefix</b>(result, "//") {
+		<a href="../src/net/url/url.go.html#line-1182" class="path-duplicate">url.go</a><a href="../src/net/url/url.go.html#line-1182">#L1182</a>: 	if strings.<b>HasPrefix</b>(host, "[") &amp;&amp; strings.HasSuffix(host, "]") {
+
+	<a href="../pkg/path/filepath.html">path/filepath</a>
+		<a href="../src/path/filepath/path_unix.go.html#line-14">path_unix.go#L14</a>: 	return strings.<b>HasPrefix</b>(path, "/")
+		<a href="../src/path/filepath/path_unix.go.html#line-28" class="path-duplicate">path_unix.go</a><a href="../src/path/filepath/path_unix.go.html#line-28">#L28</a>: 	return strings.<b>HasPrefix</b>(p, prefix)
+
+	<a href="../pkg/regexp.html">regexp</a>
+		<a href="../src/regexp/regexp.go.html#line-399">regexp.go#L399</a>: 	return strings.<b>HasPrefix</b>(i.str, re.prefix)
+
+	<a href="../pkg/text/template/parse.html">text/template/parse</a>
+		<a href="../src/text/template/parse/lex.go.html#line-280">lex.go#L280</a>: 	if hasRightTrimMarker(l.input[l.pos:]) &amp;&amp; strings.<b>HasPrefix</b>(l.input[l.pos+trimMarkerLen:], l.rightDelim) { // With trim marker.
+		<a href="../src/text/template/parse/lex.go.html#line-283" class="path-duplicate">lex.go</a><a href="../src/text/template/parse/lex.go.html#line-283">#L283</a>: 	if strings.<b>HasPrefix</b>(l.input[l.pos:], l.rightDelim) { // Without trim marker.
+		<a href="../src/text/template/parse/lex.go.html#line-302" class="path-duplicate">lex.go</a><a href="../src/text/template/parse/lex.go.html#line-302">#L302</a>: 	if strings.<b>HasPrefix</b>(l.input[l.pos+afterMarker:], leftComment) {
+		<a href="../src/text/template/parse/lex.go.html#line-439" class="path-duplicate">lex.go</a><a href="../src/text/template/parse/lex.go.html#line-439">#L439</a>: 	if hasRightTrimMarker(l.input[l.pos-1:]) &amp;&amp; strings.<b>HasPrefix</b>(l.input[l.pos-1+trimMarkerLen:], l.rightDelim) {
+
+	<a href="../pkg/vendor/golang.org/x/net/http/httpguts.html">vendor/golang.org/x/net/http/httpguts</a>
+		<a href="../src/vendor/golang.org/x/net/http/httpguts/guts.go.html#line-22">guts.go#L22</a>: 	if strings.<b>HasPrefix</b>(name, "If-") || badTrailer[name] {
+
+	<a href="../pkg/vendor/golang.org/x/net/http/httpproxy.html">vendor/golang.org/x/net/http/httpproxy</a>
+		<a href="../src/vendor/golang.org/x/net/http/httpproxy/proxy.go.html#line-262">proxy.go#L262</a>: 		if strings.<b>HasPrefix</b>(phost, "*.") {
+
+	<a href="../pkg/vendor/golang.org/x/net/idna.html">vendor/golang.org/x/net/idna</a>
+		<a href="../src/vendor/golang.org/x/net/idna/idna10.0.0.go.html#line-365">idna10.0.0.go#L365</a>: 		if strings.<b>HasPrefix</b>(label, acePrefix) {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

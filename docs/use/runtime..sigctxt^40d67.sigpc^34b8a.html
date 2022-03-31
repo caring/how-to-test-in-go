@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime.sigctxt.sigpc</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/runtime.html">runtime</a>.<a href="../src/runtime/signal_darwin_amd64.go.html#line-9">sigctxt</a>.<a href="../src/runtime/signal_amd64.go.html#line-42">sigpc</a></b></span><span style="font-size: large;"><i> (method)</i></span>
+
+<span class="title">10 uses</span>
+
+	runtime (current package)
+		<a href="../src/runtime/signal_amd64.go.html#line-42">signal_amd64.go#L42</a>: func (c *sigctxt) <b>sigpc</b>() uintptr { return uintptr(c.rip()) }
+		<a href="../src/runtime/signal_unix.go.html#line-330">signal_unix.go#L330</a>: 		if ok, newpc := isAsyncSafePoint(gp, ctxt.<b>sigpc</b>(), ctxt.sigsp(), ctxt.siglr()); ok {
+		<a href="../src/runtime/signal_unix.go.html#line-386" class="path-duplicate">signal_unix.go</a><a href="../src/runtime/signal_unix.go.html#line-386">#L386</a>: 		if !iscgo &amp;&amp; inVDSOPage(c.<b>sigpc</b>()) {
+		<a href="../src/runtime/signal_unix.go.html#line-425" class="path-duplicate">signal_unix.go</a><a href="../src/runtime/signal_unix.go.html#line-425">#L425</a>: 			sigprofNonGoPC(c.<b>sigpc</b>())
+		<a href="../src/runtime/signal_unix.go.html#line-542" class="path-duplicate">signal_unix.go</a><a href="../src/runtime/signal_unix.go.html#line-542">#L542</a>: 		sigprof(c.<b>sigpc</b>(), c.sigsp(), c.siglr(), gp, _g_.m)
+		<a href="../src/runtime/signal_unix.go.html#line-571" class="path-duplicate">signal_unix.go</a><a href="../src/runtime/signal_unix.go.html#line-571">#L571</a>: 	if isAbortPC(c.<b>sigpc</b>()) {
+		<a href="../src/runtime/signal_unix.go.html#line-588" class="path-duplicate">signal_unix.go</a><a href="../src/runtime/signal_unix.go.html#line-588">#L588</a>: 		gp.sigpc = c.<b>sigpc</b>()
+		<a href="../src/runtime/signal_unix.go.html#line-629" class="path-duplicate">signal_unix.go</a><a href="../src/runtime/signal_unix.go.html#line-629">#L629</a>: 	print("PC=", hex(c.<b>sigpc</b>()), " m=", _g_.m.id, " sigcode=", c.sigcode(), "\n")
+		<a href="../src/runtime/signal_unix.go.html#line-647" class="path-duplicate">signal_unix.go</a><a href="../src/runtime/signal_unix.go.html#line-647">#L647</a>: 		pc := c.<b>sigpc</b>()
+		<a href="../src/runtime/signal_unix.go.html#line-663" class="path-duplicate">signal_unix.go</a><a href="../src/runtime/signal_unix.go.html#line-663">#L663</a>: 		tracebacktrap(c.<b>sigpc</b>(), c.sigsp(), c.siglr(), gp)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

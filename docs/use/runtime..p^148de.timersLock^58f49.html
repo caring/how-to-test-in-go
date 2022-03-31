@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime.p.timersLock</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/runtime.html">runtime</a>.<a href="../src/runtime/runtime2.go.html#line-604">p</a>.<a href="../src/runtime/runtime2.go.html#line-719">timersLock</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">16 uses</span>
+
+	runtime (current package)
+		<a href="../src/runtime/proc.go.html#line-3459">proc.go#L3459</a>: 	lock(&amp;pp.<b>timersLock</b>)
+		<a href="../src/runtime/proc.go.html#line-3483" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3483">#L3483</a>: 	unlock(&amp;pp.<b>timersLock</b>)
+		<a href="../src/runtime/proc.go.html#line-4888" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4888">#L4888</a>: 	lockInit(&amp;pp.<b>timersLock</b>, lockRankTimers)
+		<a href="../src/runtime/proc.go.html#line-4924" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4924">#L4924</a>: 		lock(&amp;plocal.<b>timersLock</b>)
+		<a href="../src/runtime/proc.go.html#line-4925" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4925">#L4925</a>: 		lock(&amp;pp.<b>timersLock</b>)
+		<a href="../src/runtime/proc.go.html#line-4931" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4931">#L4931</a>: 		unlock(&amp;pp.<b>timersLock</b>)
+		<a href="../src/runtime/proc.go.html#line-4932" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4932">#L4932</a>: 		unlock(&amp;plocal.<b>timersLock</b>)
+		<a href="../src/runtime/proc.go.html#line-5871" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5871">#L5871</a>: 	lock(&amp;pp.<b>timersLock</b>)
+		<a href="../src/runtime/proc.go.html#line-5875" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5875">#L5875</a>: 	unlock(&amp;pp.<b>timersLock</b>)
+		<a href="../src/runtime/runtime2.go.html#line-719">runtime2.go#L719</a>: 	<b>timersLock</b> mutex
+		<a href="../src/runtime/time.go.html#line-270">time.go#L270</a>: 	lock(&amp;pp.<b>timersLock</b>)
+		<a href="../src/runtime/time.go.html#line-273" class="path-duplicate">time.go</a><a href="../src/runtime/time.go.html#line-273">#L273</a>: 	unlock(&amp;pp.<b>timersLock</b>)
+		<a href="../src/runtime/time.go.html#line-491" class="path-duplicate">time.go</a><a href="../src/runtime/time.go.html#line-491">#L491</a>: 		lock(&amp;pp.<b>timersLock</b>)
+		<a href="../src/runtime/time.go.html#line-493" class="path-duplicate">time.go</a><a href="../src/runtime/time.go.html#line-493">#L493</a>: 		unlock(&amp;pp.<b>timersLock</b>)
+		<a href="../src/runtime/time.go.html#line-864" class="path-duplicate">time.go</a><a href="../src/runtime/time.go.html#line-864">#L864</a>: 	unlock(&amp;pp.<b>timersLock</b>)
+		<a href="../src/runtime/time.go.html#line-868" class="path-duplicate">time.go</a><a href="../src/runtime/time.go.html#line-868">#L868</a>: 	lock(&amp;pp.<b>timersLock</b>)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

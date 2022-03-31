@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime.pallocSum</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../pkg/runtime.html">runtime</a>.<a href="../src/runtime/mpagealloc.go.html#line-922">pallocSum</a></b></span>
+
+<span class="title">15 uses</span>
+
+	runtime (current package)
+		<a href="../src/runtime/mpagealloc.go.html#line-197">mpagealloc.go#L197</a>: 	summary [summaryLevels][]<b>pallocSum</b>
+		<a href="../src/runtime/mpagealloc.go.html#line-905" class="path-duplicate">mpagealloc.go</a><a href="../src/runtime/mpagealloc.go.html#line-905">#L905</a>: 	pallocSumBytes = unsafe.Sizeof(<b>pallocSum</b>(0))
+		<a href="../src/runtime/mpagealloc.go.html#line-912" class="path-duplicate">mpagealloc.go</a><a href="../src/runtime/mpagealloc.go.html#line-912">#L912</a>: 	freeChunkSum = <b>pallocSum</b>(uint64(pallocChunkPages) |
+		<a href="../src/runtime/mpagealloc.go.html#line-922" class="path-duplicate">mpagealloc.go</a><a href="../src/runtime/mpagealloc.go.html#line-922">#L922</a>: type <b>pallocSum</b> uint64
+		<a href="../src/runtime/mpagealloc.go.html#line-925" class="path-duplicate">mpagealloc.go</a><a href="../src/runtime/mpagealloc.go.html#line-925">#L925</a>: func packPallocSum(start, max, end uint) <b>pallocSum</b> {
+		<a href="../src/runtime/mpagealloc.go.html#line-927" class="path-duplicate">mpagealloc.go</a><a href="../src/runtime/mpagealloc.go.html#line-927">#L927</a>: 		return <b>pallocSum</b>(uint64(1 &lt;&lt; 63))
+		<a href="../src/runtime/mpagealloc.go.html#line-929" class="path-duplicate">mpagealloc.go</a><a href="../src/runtime/mpagealloc.go.html#line-929">#L929</a>: 	return <b>pallocSum</b>((uint64(start) &amp; (maxPackedValue - 1)) |
+		<a href="../src/runtime/mpagealloc.go.html#line-935" class="path-duplicate">mpagealloc.go</a><a href="../src/runtime/mpagealloc.go.html#line-935">#L935</a>: func (p <b>pallocSum</b>) start() uint {
+		<a href="../src/runtime/mpagealloc.go.html#line-943" class="path-duplicate">mpagealloc.go</a><a href="../src/runtime/mpagealloc.go.html#line-943">#L943</a>: func (p <b>pallocSum</b>) max() uint {
+		<a href="../src/runtime/mpagealloc.go.html#line-951" class="path-duplicate">mpagealloc.go</a><a href="../src/runtime/mpagealloc.go.html#line-951">#L951</a>: func (p <b>pallocSum</b>) end() uint {
+		<a href="../src/runtime/mpagealloc.go.html#line-959" class="path-duplicate">mpagealloc.go</a><a href="../src/runtime/mpagealloc.go.html#line-959">#L959</a>: func (p <b>pallocSum</b>) unpack() (uint, uint, uint) {
+		<a href="../src/runtime/mpagealloc.go.html#line-970" class="path-duplicate">mpagealloc.go</a><a href="../src/runtime/mpagealloc.go.html#line-970">#L970</a>: func mergeSummaries(sums []<b>pallocSum</b>, logMaxPagesPerSum uint) <b>pallocSum</b> {
+		<a href="../src/runtime/mpagealloc_64bit.go.html#line-84">mpagealloc_64bit.go#L84</a>: 		p.summary[l] = *(*[]<b>pallocSum</b>)(unsafe.Pointer(&amp;sl))
+		<a href="../src/runtime/mpallocbits.go.html#line-124">mpallocbits.go#L124</a>: func (b *pallocBits) summarize() <b>pallocSum</b> {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

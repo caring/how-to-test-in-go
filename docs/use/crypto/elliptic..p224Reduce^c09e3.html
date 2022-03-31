@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: crypto/elliptic.p224Reduce</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">func <b><a href="../../pkg/crypto/elliptic.html">crypto/elliptic</a>.<a href="../../src/crypto/elliptic/p224.go.html#line-312">p224Reduce</a></b></span>
+
+<span class="title">22 uses</span>
+
+	crypto/elliptic (current package)
+		<a href="../../src/crypto/elliptic/p224.go.html#line-70">p224.go#L70</a>: 	<b>p224Reduce</b>(&amp;x3)
+		<a href="../../src/crypto/elliptic/p224.go.html#line-312" class="path-duplicate">p224.go</a><a href="../../src/crypto/elliptic/p224.go.html#line-312">#L312</a>: func <b>p224Reduce</b>(a *p224FieldElement) {
+		<a href="../../src/crypto/elliptic/p224.go.html#line-545" class="path-duplicate">p224.go</a><a href="../../src/crypto/elliptic/p224.go.html#line-545">#L545</a>: 	<b>p224Reduce</b>(&amp;h)
+		<a href="../../src/crypto/elliptic/p224.go.html#line-551" class="path-duplicate">p224.go</a><a href="../../src/crypto/elliptic/p224.go.html#line-551">#L551</a>: 	<b>p224Reduce</b>(&amp;i)
+		<a href="../../src/crypto/elliptic/p224.go.html#line-557" class="path-duplicate">p224.go</a><a href="../../src/crypto/elliptic/p224.go.html#line-557">#L557</a>: 	<b>p224Reduce</b>(&amp;r)
+		<a href="../../src/crypto/elliptic/p224.go.html#line-566" class="path-duplicate">p224.go</a><a href="../../src/crypto/elliptic/p224.go.html#line-566">#L566</a>: 	<b>p224Reduce</b>(&amp;r)
+		<a href="../../src/crypto/elliptic/p224.go.html#line-572" class="path-duplicate">p224.go</a><a href="../../src/crypto/elliptic/p224.go.html#line-572">#L572</a>: 	<b>p224Reduce</b>(&amp;z2z2)
+		<a href="../../src/crypto/elliptic/p224.go.html#line-575" class="path-duplicate">p224.go</a><a href="../../src/crypto/elliptic/p224.go.html#line-575">#L575</a>: 	<b>p224Reduce</b>(z3)
+		<a href="../../src/crypto/elliptic/p224.go.html#line-582" class="path-duplicate">p224.go</a><a href="../../src/crypto/elliptic/p224.go.html#line-582">#L582</a>: 	<b>p224Reduce</b>(&amp;z1z1)
+		<a href="../../src/crypto/elliptic/p224.go.html#line-585" class="path-duplicate">p224.go</a><a href="../../src/crypto/elliptic/p224.go.html#line-585">#L585</a>: 	<b>p224Reduce</b>(x3)
+		<a href="../../src/crypto/elliptic/p224.go.html#line-592" class="path-duplicate">p224.go</a><a href="../../src/crypto/elliptic/p224.go.html#line-592">#L592</a>: 	<b>p224Reduce</b>(&amp;z1z1)
+		<a href="../../src/crypto/elliptic/p224.go.html#line-595" class="path-duplicate">p224.go</a><a href="../../src/crypto/elliptic/p224.go.html#line-595">#L595</a>: 	<b>p224Reduce</b>(y3)
+		<a href="../../src/crypto/elliptic/p224.go.html#line-619" class="path-duplicate">p224.go</a><a href="../../src/crypto/elliptic/p224.go.html#line-619">#L619</a>: 	<b>p224Reduce</b>(&amp;t)
+		<a href="../../src/crypto/elliptic/p224.go.html#line-621" class="path-duplicate">p224.go</a><a href="../../src/crypto/elliptic/p224.go.html#line-621">#L621</a>: 	<b>p224Reduce</b>(&amp;alpha)
+		<a href="../../src/crypto/elliptic/p224.go.html#line-626" class="path-duplicate">p224.go</a><a href="../../src/crypto/elliptic/p224.go.html#line-626">#L626</a>: 	<b>p224Reduce</b>(z3)
+		<a href="../../src/crypto/elliptic/p224.go.html#line-629" class="path-duplicate">p224.go</a><a href="../../src/crypto/elliptic/p224.go.html#line-629">#L629</a>: 	<b>p224Reduce</b>(z3)
+		<a href="../../src/crypto/elliptic/p224.go.html#line-631" class="path-duplicate">p224.go</a><a href="../../src/crypto/elliptic/p224.go.html#line-631">#L631</a>: 	<b>p224Reduce</b>(z3)
+		<a href="../../src/crypto/elliptic/p224.go.html#line-637" class="path-duplicate">p224.go</a><a href="../../src/crypto/elliptic/p224.go.html#line-637">#L637</a>: 	<b>p224Reduce</b>(&amp;delta)
+		<a href="../../src/crypto/elliptic/p224.go.html#line-640" class="path-duplicate">p224.go</a><a href="../../src/crypto/elliptic/p224.go.html#line-640">#L640</a>: 	<b>p224Reduce</b>(x3)
+		<a href="../../src/crypto/elliptic/p224.go.html#line-647" class="path-duplicate">p224.go</a><a href="../../src/crypto/elliptic/p224.go.html#line-647">#L647</a>: 	<b>p224Reduce</b>(&amp;beta)
+		<a href="../../src/crypto/elliptic/p224.go.html#line-652" class="path-duplicate">p224.go</a><a href="../../src/crypto/elliptic/p224.go.html#line-652">#L652</a>: 	<b>p224Reduce</b>(&amp;gamma)
+		<a href="../../src/crypto/elliptic/p224.go.html#line-655" class="path-duplicate">p224.go</a><a href="../../src/crypto/elliptic/p224.go.html#line-655">#L655</a>: 	<b>p224Reduce</b>(y3)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

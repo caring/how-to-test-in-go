@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/uber/jaeger-client-go/thrift.TClient.Call</title>
+<link href="../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift.html">github.com/uber/jaeger-client-go/thrift</a>.<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/client.go.html#line-15">TClient</a>.<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/client.go.html#line-16">Call</a></b></span><span style="font-size: large;"><i> (method)</i></span>
+
+<span class="title">6 uses</span>
+
+	github.com/uber/jaeger-client-go/thrift (current package)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/client.go.html#line-16">client.go#L16</a>: 	<b>Call</b>(ctx context.Context, method string, args, result TStruct) (ResponseMeta, error)
+
+	<a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift-gen/agent.html">github.com/uber/jaeger-client-go/thrift-gen/agent</a>
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/agent/agent.go.html#line-75">agent.go#L75</a>:   if _, err := p.Client_().<b>Call</b>(ctx, "emitZipkinBatch", &amp;_args0, nil); err != nil {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/agent/agent.go.html#line-87" class="path-duplicate">agent.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/agent/agent.go.html#line-87">#L87</a>:   if _, err := p.Client_().<b>Call</b>(ctx, "emitBatch", &amp;_args1, nil); err != nil {
+
+	<a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift-gen/jaeger.html">github.com/uber/jaeger-client-go/thrift-gen/jaeger</a>
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-2337">jaeger.go#L2337</a>:   _meta13, _err = p.Client_().<b>Call</b>(ctx, "submitBatches", &amp;_args12, &amp;_result14)
+
+	<a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift-gen/sampling.html">github.com/uber/jaeger-client-go/thrift-gen/sampling</a>
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-1000">sampling.go#L1000</a>:   _meta3, _err = p.Client_().<b>Call</b>(ctx, "getSamplingStrategy", &amp;_args2, &amp;_result4)
+
+	<a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift-gen/zipkincore.html">github.com/uber/jaeger-client-go/thrift-gen/zipkincore</a>
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-1492">zipkincore.go#L1492</a>:   _meta5, _err = p.Client_().<b>Call</b>(ctx, "submitZipkinBatch", &amp;_args4, &amp;_result6)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

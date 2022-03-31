@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: google.golang.org/grpc/metadata.MD</title>
+<link href="../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../../../pkg/google.golang.org/grpc/metadata.html">google.golang.org/grpc/metadata</a>.<a href="../../../src/google.golang.org/grpc/metadata/metadata.go.html#line-39">MD</a></b></span>
+
+<span class="title">86 uses</span>
+
+	google.golang.org/grpc/metadata (current package)
+		<a href="../../../src/google.golang.org/grpc/metadata/metadata.go.html#line-39">metadata.go#L39</a>: type <b>MD</b> map[string][]string
+		<a href="../../../src/google.golang.org/grpc/metadata/metadata.go.html#line-52" class="path-duplicate">metadata.go</a><a href="../../../src/google.golang.org/grpc/metadata/metadata.go.html#line-52">#L52</a>: func New(m map[string]string) <b>MD</b> {
+		<a href="../../../src/google.golang.org/grpc/metadata/metadata.go.html#line-53" class="path-duplicate">metadata.go</a><a href="../../../src/google.golang.org/grpc/metadata/metadata.go.html#line-53">#L53</a>: 	md := <b>MD</b>{}
+		<a href="../../../src/google.golang.org/grpc/metadata/metadata.go.html#line-73" class="path-duplicate">metadata.go</a><a href="../../../src/google.golang.org/grpc/metadata/metadata.go.html#line-73">#L73</a>: func Pairs(kv ...string) <b>MD</b> {
+		<a href="../../../src/google.golang.org/grpc/metadata/metadata.go.html#line-77" class="path-duplicate">metadata.go</a><a href="../../../src/google.golang.org/grpc/metadata/metadata.go.html#line-77">#L77</a>: 	md := <b>MD</b>{}
+		<a href="../../../src/google.golang.org/grpc/metadata/metadata.go.html#line-86" class="path-duplicate">metadata.go</a><a href="../../../src/google.golang.org/grpc/metadata/metadata.go.html#line-86">#L86</a>: func (md <b>MD</b>) Len() int {
+		<a href="../../../src/google.golang.org/grpc/metadata/metadata.go.html#line-91" class="path-duplicate">metadata.go</a><a href="../../../src/google.golang.org/grpc/metadata/metadata.go.html#line-91">#L91</a>: func (md <b>MD</b>) Copy() <b>MD</b> {
+		<a href="../../../src/google.golang.org/grpc/metadata/metadata.go.html#line-98" class="path-duplicate">metadata.go</a><a href="../../../src/google.golang.org/grpc/metadata/metadata.go.html#line-98">#L98</a>: func (md <b>MD</b>) Get(k string) []string {
+		<a href="../../../src/google.golang.org/grpc/metadata/metadata.go.html#line-106" class="path-duplicate">metadata.go</a><a href="../../../src/google.golang.org/grpc/metadata/metadata.go.html#line-106">#L106</a>: func (md <b>MD</b>) Set(k string, vals ...string) {
+		<a href="../../../src/google.golang.org/grpc/metadata/metadata.go.html#line-118" class="path-duplicate">metadata.go</a><a href="../../../src/google.golang.org/grpc/metadata/metadata.go.html#line-118">#L118</a>: func (md <b>MD</b>) Append(k string, vals ...string) {
+		<a href="../../../src/google.golang.org/grpc/metadata/metadata.go.html#line-128" class="path-duplicate">metadata.go</a><a href="../../../src/google.golang.org/grpc/metadata/metadata.go.html#line-128">#L128</a>: func (md <b>MD</b>) Delete(k string) {
+		<a href="../../../src/google.golang.org/grpc/metadata/metadata.go.html#line-137" class="path-duplicate">metadata.go</a><a href="../../../src/google.golang.org/grpc/metadata/metadata.go.html#line-137">#L137</a>: func Join(mds ...<b>MD</b>) <b>MD</b> {
+		<a href="../../../src/google.golang.org/grpc/metadata/metadata.go.html#line-138" class="path-duplicate">metadata.go</a><a href="../../../src/google.golang.org/grpc/metadata/metadata.go.html#line-138">#L138</a>: 	out := <b>MD</b>{}
+		<a href="../../../src/google.golang.org/grpc/metadata/metadata.go.html#line-151" class="path-duplicate">metadata.go</a><a href="../../../src/google.golang.org/grpc/metadata/metadata.go.html#line-151">#L151</a>: func NewIncomingContext(ctx context.Context, md <b>MD</b>) context.Context {
+		<a href="../../../src/google.golang.org/grpc/metadata/metadata.go.html#line-158" class="path-duplicate">metadata.go</a><a href="../../../src/google.golang.org/grpc/metadata/metadata.go.html#line-158">#L158</a>: func NewOutgoingContext(ctx context.Context, md <b>MD</b>) context.Context {
+		<a href="../../../src/google.golang.org/grpc/metadata/metadata.go.html#line-180" class="path-duplicate">metadata.go</a><a href="../../../src/google.golang.org/grpc/metadata/metadata.go.html#line-180">#L180</a>: func FromIncomingContext(ctx context.Context) (<b>MD</b>, bool) {
+		<a href="../../../src/google.golang.org/grpc/metadata/metadata.go.html#line-181" class="path-duplicate">metadata.go</a><a href="../../../src/google.golang.org/grpc/metadata/metadata.go.html#line-181">#L181</a>: 	md, ok := ctx.Value(mdIncomingKey{}).(<b>MD</b>)
+		<a href="../../../src/google.golang.org/grpc/metadata/metadata.go.html#line-185" class="path-duplicate">metadata.go</a><a href="../../../src/google.golang.org/grpc/metadata/metadata.go.html#line-185">#L185</a>: 	out := <b>MD</b>{}
+		<a href="../../../src/google.golang.org/grpc/metadata/metadata.go.html#line-205" class="path-duplicate">metadata.go</a><a href="../../../src/google.golang.org/grpc/metadata/metadata.go.html#line-205">#L205</a>: func FromOutgoingContextRaw(ctx context.Context) (<b>MD</b>, [][]string, bool) {
+		<a href="../../../src/google.golang.org/grpc/metadata/metadata.go.html#line-217" class="path-duplicate">metadata.go</a><a href="../../../src/google.golang.org/grpc/metadata/metadata.go.html#line-217">#L217</a>: func FromOutgoingContext(ctx context.Context) (<b>MD</b>, bool) {
+		<a href="../../../src/google.golang.org/grpc/metadata/metadata.go.html#line-223" class="path-duplicate">metadata.go</a><a href="../../../src/google.golang.org/grpc/metadata/metadata.go.html#line-223">#L223</a>: 	out := <b>MD</b>{}
+		<a href="../../../src/google.golang.org/grpc/metadata/metadata.go.html#line-245" class="path-duplicate">metadata.go</a><a href="../../../src/google.golang.org/grpc/metadata/metadata.go.html#line-245">#L245</a>: 	md    <b>MD</b>
+
+	<a href="../../../pkg/google.golang.org/grpc.html">google.golang.org/grpc</a>
+		<a href="../../../src/google.golang.org/grpc/rpc_util.go.html#line-194">rpc_util.go#L194</a>: func Header(md *metadata.<b>MD</b>) CallOption {
+		<a href="../../../src/google.golang.org/grpc/rpc_util.go.html#line-206" class="path-duplicate">rpc_util.go</a><a href="../../../src/google.golang.org/grpc/rpc_util.go.html#line-206">#L206</a>: 	HeaderAddr *metadata.<b>MD</b>
+		<a href="../../../src/google.golang.org/grpc/rpc_util.go.html#line-216" class="path-duplicate">rpc_util.go</a><a href="../../../src/google.golang.org/grpc/rpc_util.go.html#line-216">#L216</a>: func Trailer(md *metadata.<b>MD</b>) CallOption {
+		<a href="../../../src/google.golang.org/grpc/rpc_util.go.html#line-228" class="path-duplicate">rpc_util.go</a><a href="../../../src/google.golang.org/grpc/rpc_util.go.html#line-228">#L228</a>: 	TrailerAddr *metadata.<b>MD</b>
+		<a href="../../../src/google.golang.org/grpc/server.go.html#line-1678">server.go#L1678</a>: 	SetHeader(md metadata.<b>MD</b>) error
+		<a href="../../../src/google.golang.org/grpc/server.go.html#line-1679" class="path-duplicate">server.go</a><a href="../../../src/google.golang.org/grpc/server.go.html#line-1679">#L1679</a>: 	SendHeader(md metadata.<b>MD</b>) error
+		<a href="../../../src/google.golang.org/grpc/server.go.html#line-1680" class="path-duplicate">server.go</a><a href="../../../src/google.golang.org/grpc/server.go.html#line-1680">#L1680</a>: 	SetTrailer(md metadata.<b>MD</b>) error
+		<a href="../../../src/google.golang.org/grpc/server.go.html#line-1814" class="path-duplicate">server.go</a><a href="../../../src/google.golang.org/grpc/server.go.html#line-1814">#L1814</a>: func SetHeader(ctx context.Context, md metadata.<b>MD</b>) error {
+		<a href="../../../src/google.golang.org/grpc/server.go.html#line-1827" class="path-duplicate">server.go</a><a href="../../../src/google.golang.org/grpc/server.go.html#line-1827">#L1827</a>: func SendHeader(ctx context.Context, md metadata.<b>MD</b>) error {
+		<a href="../../../src/google.golang.org/grpc/server.go.html#line-1840" class="path-duplicate">server.go</a><a href="../../../src/google.golang.org/grpc/server.go.html#line-1840">#L1840</a>: func SetTrailer(ctx context.Context, md metadata.<b>MD</b>) error {
+		<a href="../../../src/google.golang.org/grpc/stream.go.html#line-90">stream.go#L90</a>: 	Header() (metadata.<b>MD</b>, error)
+		<a href="../../../src/google.golang.org/grpc/stream.go.html#line-94" class="path-duplicate">stream.go</a><a href="../../../src/google.golang.org/grpc/stream.go.html#line-94">#L94</a>: 	Trailer() metadata.<b>MD</b>
+		<a href="../../../src/google.golang.org/grpc/stream.go.html#line-705" class="path-duplicate">stream.go</a><a href="../../../src/google.golang.org/grpc/stream.go.html#line-705">#L705</a>: func (cs *clientStream) Header() (metadata.<b>MD</b>, error) {
+		<a href="../../../src/google.golang.org/grpc/stream.go.html#line-706" class="path-duplicate">stream.go</a><a href="../../../src/google.golang.org/grpc/stream.go.html#line-706">#L706</a>: 	var m metadata.<b>MD</b>
+		<a href="../../../src/google.golang.org/grpc/stream.go.html#line-732" class="path-duplicate">stream.go</a><a href="../../../src/google.golang.org/grpc/stream.go.html#line-732">#L732</a>: func (cs *clientStream) Trailer() metadata.<b>MD</b> {
+		<a href="../../../src/google.golang.org/grpc/stream.go.html#line-1033" class="path-duplicate">stream.go</a><a href="../../../src/google.golang.org/grpc/stream.go.html#line-1033">#L1033</a>: 	var tr metadata.<b>MD</b>
+		<a href="../../../src/google.golang.org/grpc/stream.go.html#line-1208" class="path-duplicate">stream.go</a><a href="../../../src/google.golang.org/grpc/stream.go.html#line-1208">#L1208</a>: func (as *addrConnStream) Header() (metadata.<b>MD</b>, error) {
+		<a href="../../../src/google.golang.org/grpc/stream.go.html#line-1216" class="path-duplicate">stream.go</a><a href="../../../src/google.golang.org/grpc/stream.go.html#line-1216">#L1216</a>: func (as *addrConnStream) Trailer() metadata.<b>MD</b> {
+		<a href="../../../src/google.golang.org/grpc/stream.go.html#line-1374" class="path-duplicate">stream.go</a><a href="../../../src/google.golang.org/grpc/stream.go.html#line-1374">#L1374</a>: 	SetHeader(metadata.<b>MD</b>) error
+		<a href="../../../src/google.golang.org/grpc/stream.go.html#line-1378" class="path-duplicate">stream.go</a><a href="../../../src/google.golang.org/grpc/stream.go.html#line-1378">#L1378</a>: 	SendHeader(metadata.<b>MD</b>) error
+		<a href="../../../src/google.golang.org/grpc/stream.go.html#line-1381" class="path-duplicate">stream.go</a><a href="../../../src/google.golang.org/grpc/stream.go.html#line-1381">#L1381</a>: 	SetTrailer(metadata.<b>MD</b>)
+		<a href="../../../src/google.golang.org/grpc/stream.go.html#line-1445" class="path-duplicate">stream.go</a><a href="../../../src/google.golang.org/grpc/stream.go.html#line-1445">#L1445</a>: func (ss *serverStream) SetHeader(md metadata.<b>MD</b>) error {
+		<a href="../../../src/google.golang.org/grpc/stream.go.html#line-1452" class="path-duplicate">stream.go</a><a href="../../../src/google.golang.org/grpc/stream.go.html#line-1452">#L1452</a>: func (ss *serverStream) SendHeader(md metadata.<b>MD</b>) error {
+		<a href="../../../src/google.golang.org/grpc/stream.go.html#line-1464" class="path-duplicate">stream.go</a><a href="../../../src/google.golang.org/grpc/stream.go.html#line-1464">#L1464</a>: func (ss *serverStream) SetTrailer(md metadata.<b>MD</b>) {
+
+	<a href="../../../pkg/google.golang.org/grpc/balancer.html">google.golang.org/grpc/balancer</a>
+		<a href="../../../src/google.golang.org/grpc/balancer/balancer.go.html#line-238">balancer.go#L238</a>: 	Trailer metadata.<b>MD</b>
+
+	<a href="../../../pkg/google.golang.org/grpc/internal/balancerload.html">google.golang.org/grpc/internal/balancerload</a>
+		<a href="../../../src/google.golang.org/grpc/internal/balancerload/load.go.html#line-28">load.go#L28</a>: 	Parse(md metadata.<b>MD</b>) interface{}
+		<a href="../../../src/google.golang.org/grpc/internal/balancerload/load.go.html#line-41" class="path-duplicate">load.go</a><a href="../../../src/google.golang.org/grpc/internal/balancerload/load.go.html#line-41">#L41</a>: func Parse(md metadata.<b>MD</b>) interface{} {
+
+	<a href="../../../pkg/google.golang.org/grpc/internal/binarylog.html">google.golang.org/grpc/internal/binarylog</a>
+		<a href="../../../src/google.golang.org/grpc/internal/binarylog/method_logger.go.html#line-141">method_logger.go#L141</a>: 	Header       metadata.<b>MD</b>
+		<a href="../../../src/google.golang.org/grpc/internal/binarylog/method_logger.go.html#line-180" class="path-duplicate">method_logger.go</a><a href="../../../src/google.golang.org/grpc/internal/binarylog/method_logger.go.html#line-180">#L180</a>: 	Header       metadata.<b>MD</b>
+		<a href="../../../src/google.golang.org/grpc/internal/binarylog/method_logger.go.html#line-306" class="path-duplicate">method_logger.go</a><a href="../../../src/google.golang.org/grpc/internal/binarylog/method_logger.go.html#line-306">#L306</a>: 	Trailer      metadata.<b>MD</b>
+		<a href="../../../src/google.golang.org/grpc/internal/binarylog/method_logger.go.html#line-382" class="path-duplicate">method_logger.go</a><a href="../../../src/google.golang.org/grpc/internal/binarylog/method_logger.go.html#line-382">#L382</a>: func mdToMetadataProto(md metadata.<b>MD</b>) *pb.Metadata {
+
+	<a href="../../../pkg/google.golang.org/grpc/internal/grpcutil.html">google.golang.org/grpc/internal/grpcutil</a>
+		<a href="../../../src/google.golang.org/grpc/internal/grpcutil/metadata.go.html#line-30">metadata.go#L30</a>: func WithExtraMetadata(ctx context.Context, md metadata.<b>MD</b>) context.Context {
+		<a href="../../../src/google.golang.org/grpc/internal/grpcutil/metadata.go.html#line-37" class="path-duplicate">metadata.go</a><a href="../../../src/google.golang.org/grpc/internal/grpcutil/metadata.go.html#line-37">#L37</a>: func ExtraMetadata(ctx context.Context) (md metadata.<b>MD</b>, ok bool) {
+		<a href="../../../src/google.golang.org/grpc/internal/grpcutil/metadata.go.html#line-38" class="path-duplicate">metadata.go</a><a href="../../../src/google.golang.org/grpc/internal/grpcutil/metadata.go.html#line-38">#L38</a>: 	md, ok = ctx.Value(mdExtraKey{}).(metadata.<b>MD</b>)
+
+	<a href="../../../pkg/google.golang.org/grpc/internal/metadata.html">google.golang.org/grpc/internal/metadata</a>
+		<a href="../../../src/google.golang.org/grpc/internal/metadata/metadata.go.html#line-33">metadata.go#L33</a>: type mdValue metadata.<b>MD</b>
+		<a href="../../../src/google.golang.org/grpc/internal/metadata/metadata.go.html#line-58" class="path-duplicate">metadata.go</a><a href="../../../src/google.golang.org/grpc/internal/metadata/metadata.go.html#line-58">#L58</a>: func Get(addr resolver.Address) metadata.<b>MD</b> {
+		<a href="../../../src/google.golang.org/grpc/internal/metadata/metadata.go.html#line-64" class="path-duplicate">metadata.go</a><a href="../../../src/google.golang.org/grpc/internal/metadata/metadata.go.html#line-64">#L64</a>: 	return metadata.<b>MD</b>(md)
+		<a href="../../../src/google.golang.org/grpc/internal/metadata/metadata.go.html#line-71" class="path-duplicate">metadata.go</a><a href="../../../src/google.golang.org/grpc/internal/metadata/metadata.go.html#line-71">#L71</a>: func Set(addr resolver.Address, md metadata.<b>MD</b>) resolver.Address {
+
+	<a href="../../../pkg/google.golang.org/grpc/internal/resolver.html">google.golang.org/grpc/internal/resolver</a>
+		<a href="../../../src/google.golang.org/grpc/internal/resolver/config_selector.go.html#line-63">config_selector.go#L63</a>: 	Header() (metadata.<b>MD</b>, error)
+		<a href="../../../src/google.golang.org/grpc/internal/resolver/config_selector.go.html#line-67" class="path-duplicate">config_selector.go</a><a href="../../../src/google.golang.org/grpc/internal/resolver/config_selector.go.html#line-67">#L67</a>: 	Trailer() metadata.<b>MD</b>
+
+	<a href="../../../pkg/google.golang.org/grpc/internal/transport.html">google.golang.org/grpc/internal/transport</a>
+		<a href="../../../src/google.golang.org/grpc/internal/transport/handler_server.go.html#line-121">handler_server.go#L121</a>: 	headerMD metadata.<b>MD</b>
+		<a href="../../../src/google.golang.org/grpc/internal/transport/handler_server.go.html#line-301" class="path-duplicate">handler_server.go</a><a href="../../../src/google.golang.org/grpc/internal/transport/handler_server.go.html#line-301">#L301</a>: func (ht *serverHandlerTransport) WriteHeader(s *Stream, md metadata.<b>MD</b>) error {
+		<a href="../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-65">http2_client.go#L65</a>: 	md         metadata.<b>MD</b>
+		<a href="../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-328" class="path-duplicate">http2_client.go</a><a href="../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-328">#L328</a>: 	if md, ok := addr.Metadata.(*metadata.<b>MD</b>); ok {
+		<a href="../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1441" class="path-duplicate">http2_client.go</a><a href="../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1441">#L1441</a>: 				Header:      metadata.<b>MD</b>(mdata).Copy(),
+		<a href="../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1449" class="path-duplicate">http2_client.go</a><a href="../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1449">#L1449</a>: 				Trailer:    metadata.<b>MD</b>(mdata).Copy(),
+		<a href="../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-572">http2_server.go#L572</a>: 			Header:      metadata.<b>MD</b>(mdata).Copy(),
+		<a href="../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-898" class="path-duplicate">http2_server.go</a><a href="../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-898">#L898</a>: func appendHeaderFieldsFromMD(headerFields []hpack.HeaderField, md metadata.<b>MD</b>) []hpack.HeaderField {
+		<a href="../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-929" class="path-duplicate">http2_server.go</a><a href="../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-929">#L929</a>: func (t *http2Server) WriteHeader(s *Stream, md metadata.<b>MD</b>) error {
+		<a href="../../../src/google.golang.org/grpc/internal/transport/transport.go.html#line-272">transport.go#L272</a>: 	header  metadata.<b>MD</b>
+		<a href="../../../src/google.golang.org/grpc/internal/transport/transport.go.html#line-273" class="path-duplicate">transport.go</a><a href="../../../src/google.golang.org/grpc/internal/transport/transport.go.html#line-273">#L273</a>: 	trailer metadata.<b>MD</b> // the key-value map of trailer metadata.
+		<a href="../../../src/google.golang.org/grpc/internal/transport/transport.go.html#line-361" class="path-duplicate">transport.go</a><a href="../../../src/google.golang.org/grpc/internal/transport/transport.go.html#line-361">#L361</a>: func (s *Stream) Header() (metadata.<b>MD</b>, error) {
+		<a href="../../../src/google.golang.org/grpc/internal/transport/transport.go.html#line-387" class="path-duplicate">transport.go</a><a href="../../../src/google.golang.org/grpc/internal/transport/transport.go.html#line-387">#L387</a>: func (s *Stream) Trailer() metadata.<b>MD</b> {
+		<a href="../../../src/google.golang.org/grpc/internal/transport/transport.go.html#line-421" class="path-duplicate">transport.go</a><a href="../../../src/google.golang.org/grpc/internal/transport/transport.go.html#line-421">#L421</a>: func (s *Stream) SetHeader(md metadata.<b>MD</b>) error {
+		<a href="../../../src/google.golang.org/grpc/internal/transport/transport.go.html#line-437" class="path-duplicate">transport.go</a><a href="../../../src/google.golang.org/grpc/internal/transport/transport.go.html#line-437">#L437</a>: func (s *Stream) SendHeader(md metadata.<b>MD</b>) error {
+		<a href="../../../src/google.golang.org/grpc/internal/transport/transport.go.html#line-444" class="path-duplicate">transport.go</a><a href="../../../src/google.golang.org/grpc/internal/transport/transport.go.html#line-444">#L444</a>: func (s *Stream) SetTrailer(md metadata.<b>MD</b>) error {
+		<a href="../../../src/google.golang.org/grpc/internal/transport/transport.go.html#line-680" class="path-duplicate">transport.go</a><a href="../../../src/google.golang.org/grpc/internal/transport/transport.go.html#line-680">#L680</a>: 	WriteHeader(s *Stream, md metadata.<b>MD</b>) error
+
+	<a href="../../../pkg/google.golang.org/grpc/stats.html">google.golang.org/grpc/stats</a>
+		<a href="../../../src/google.golang.org/grpc/stats/stats.go.html#line-92">stats.go#L92</a>: 	Header metadata.<b>MD</b>
+		<a href="../../../src/google.golang.org/grpc/stats/stats.go.html#line-116" class="path-duplicate">stats.go</a><a href="../../../src/google.golang.org/grpc/stats/stats.go.html#line-116">#L116</a>: 	Trailer metadata.<b>MD</b>
+		<a href="../../../src/google.golang.org/grpc/stats/stats.go.html#line-152" class="path-duplicate">stats.go</a><a href="../../../src/google.golang.org/grpc/stats/stats.go.html#line-152">#L152</a>: 	Header metadata.<b>MD</b>
+		<a href="../../../src/google.golang.org/grpc/stats/stats.go.html#line-179" class="path-duplicate">stats.go</a><a href="../../../src/google.golang.org/grpc/stats/stats.go.html#line-179">#L179</a>: 	Trailer metadata.<b>MD</b>
+		<a href="../../../src/google.golang.org/grpc/stats/stats.go.html#line-198" class="path-duplicate">stats.go</a><a href="../../../src/google.golang.org/grpc/stats/stats.go.html#line-198">#L198</a>: 	Trailer metadata.<b>MD</b>
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

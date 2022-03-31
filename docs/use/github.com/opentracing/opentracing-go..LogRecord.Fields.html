@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/opentracing/opentracing-go.LogRecord.Fields</title>
+<link href="../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../pkg/github.com/opentracing/opentracing-go.html">github.com/opentracing/opentracing-go</a>.<a href="../../../src/github.com/opentracing/opentracing-go/span.go.html#line-127">LogRecord</a>.<a href="../../../src/github.com/opentracing/opentracing-go/span.go.html#line-129">Fields</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">8 uses</span>
+
+	github.com/opentracing/opentracing-go (current package)
+		<a href="../../../src/github.com/opentracing/opentracing-go/span.go.html#line-129">span.go#L129</a>: 	<b>Fields</b>    []log.Field
+		<a href="../../../src/github.com/opentracing/opentracing-go/span.go.html#line-179" class="path-duplicate">span.go</a><a href="../../../src/github.com/opentracing/opentracing-go/span.go.html#line-179">#L179</a>: 		rval.<b>Fields</b> = []log.Field{
+		<a href="../../../src/github.com/opentracing/opentracing-go/span.go.html#line-183" class="path-duplicate">span.go</a><a href="../../../src/github.com/opentracing/opentracing-go/span.go.html#line-183">#L183</a>: 		rval.<b>Fields</b> = []log.Field{
+
+	<a href="../../../pkg/github.com/uber/jaeger-client-go.html">github.com/uber/jaeger-client-go</a>
+		<a href="../../../src/github.com/uber/jaeger-client-go/jaeger_thrift_span.go.html#line-82">jaeger_thrift_span.go#L82</a>: 			Fields:    ConvertLogsToJaegerTags(log.<b>Fields</b>),
+		<a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-210">span.go#L210</a>: 		<b>Fields</b>:    fields,
+		<a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-301" class="path-duplicate">span.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-301">#L301</a>: 		<b>Fields</b>: []log.Field{
+		<a href="../../../src/github.com/uber/jaeger-client-go/zipkin_thrift_span.go.html#line-104">zipkin_thrift_span.go#L104</a>: 		if content, err := spanlog.MaterializeWithJSON(log.<b>Fields</b>); err == nil {
+
+	<a href="../../../pkg/github.com/uber/jaeger-client-go/log/zap.html">github.com/uber/jaeger-client-go/log/zap</a>
+		<a href="../../../src/github.com/uber/jaeger-client-go/log/zap/field.go.html#line-113">field.go#L113</a>: 	enc.AddArray("fields", logFields(l.<b>Fields</b>))
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

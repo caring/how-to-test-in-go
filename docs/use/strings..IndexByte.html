@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: strings.IndexByte</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">func <b><a href="../pkg/strings.html">strings</a>.<a href="../src/strings/strings.go.html#line-113">IndexByte</a></b></span>
+
+<span class="title">37 uses</span>
+
+	strings (current package)
+		<a href="../src/strings/strings.go.html#line-113">strings.go#L113</a>: func <b>IndexByte</b>(s string, c byte) int {
+		<a href="../src/strings/strings.go.html#line-124" class="path-duplicate">strings.go</a><a href="../src/strings/strings.go.html#line-124">#L124</a>: 		return <b>IndexByte</b>(s, byte(r))
+		<a href="../src/strings/strings.go.html#line-1030" class="path-duplicate">strings.go</a><a href="../src/strings/strings.go.html#line-1030">#L1030</a>: 		return <b>IndexByte</b>(s, substr[0])
+		<a href="../src/strings/strings.go.html#line-1052" class="path-duplicate">strings.go</a><a href="../src/strings/strings.go.html#line-1052">#L1052</a>: 				o := <b>IndexByte</b>(s[i+1:t], c0)
+		<a href="../src/strings/strings.go.html#line-1081" class="path-duplicate">strings.go</a><a href="../src/strings/strings.go.html#line-1081">#L1081</a>: 			o := <b>IndexByte</b>(s[i+1:t], c0)
+
+	<a href="../pkg/encoding/asn1.html">encoding/asn1</a>
+		<a href="../src/encoding/asn1/common.go.html#line-99">common.go#L99</a>: 		i := strings.<b>IndexByte</b>(str, ',')
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/request.html">github.com/aws/aws-sdk-go/aws/request</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/request/request.go.html#line-657">request.go#L657</a>: 	colon := strings.<b>IndexByte</b>(hostport, ':')
+		<a href="../src/github.com/aws/aws-sdk-go/aws/request/request.go.html#line-661" class="path-duplicate">request.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/request/request.go.html#line-661">#L661</a>: 	if i := strings.<b>IndexByte</b>(hostport, ']'); i != -1 {
+		<a href="../src/github.com/aws/aws-sdk-go/aws/request/request.go.html#line-672" class="path-duplicate">request.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/request/request.go.html#line-672">#L672</a>: 	colon := strings.<b>IndexByte</b>(hostport, ':')
+
+	<a href="../pkg/github.com/go-sql-driver/mysql.html">github.com/go-sql-driver/mysql</a>
+		<a href="../src/github.com/go-sql-driver/mysql/connection.go.html#line-214">connection.go#L214</a>: 		q := strings.<b>IndexByte</b>(query[i:], '?')
+
+	<a href="../pkg/github.com/golang/protobuf/proto.html">github.com/golang/protobuf/proto</a>
+		<a href="../src/github.com/golang/protobuf/proto/properties.go.html#line-140">properties.go#L140</a>: 		i := strings.<b>IndexByte</b>(tag, ',')
+
+	<a href="../pkg/go.uber.org/multierr.html">go.uber.org/multierr</a>
+		<a href="../src/go.uber.org/multierr/error.go.html#line-323">error.go#L323</a>: 		idx := strings.<b>IndexByte</b>(s, '\n')
+
+	<a href="../pkg/golang.org/x/net/http/httpguts.html">golang.org/x/net/http/httpguts</a>
+		<a href="../src/golang.org/x/net/http/httpguts/httplex.go.html#line-141">httplex.go#L141</a>: 	if comma := strings.<b>IndexByte</b>(v, ','); comma != -1 {
+
+	<a href="../pkg/golang.org/x/net/http2.html">golang.org/x/net/http2</a>
+		<a href="../src/golang.org/x/net/http2/transport.go.html#line-1565">transport.go#L1565</a>: 						p := strings.<b>IndexByte</b>(v, ';')
+
+	<a href="../pkg/golang.org/x/net/idna.html">golang.org/x/net/idna</a>
+		<a href="../src/golang.org/x/net/idna/idna10.0.0.go.html#line-536">idna10.0.0.go#L536</a>: 	p := strings.<b>IndexByte</b>(l.orig[l.curStart:], '.')
+
+	<a href="../pkg/google.golang.org/protobuf/internal/encoding/tag.html">google.golang.org/protobuf/internal/encoding/tag</a>
+		<a href="../src/google.golang.org/protobuf/internal/encoding/tag/tag.go.html#line-36">tag.go#L36</a>: 		i := strings.<b>IndexByte</b>(tag, ',')
+
+	<a href="../pkg/google.golang.org/protobuf/reflect/protoregistry.html">google.golang.org/protobuf/reflect/protoregistry</a>
+		<a href="../src/google.golang.org/protobuf/reflect/protoregistry/registry.go.html#line-301">registry.go#L301</a>: 	if i := strings.<b>IndexByte</b>(string(*s), '.'); i &gt;= 0 {
+
+	<a href="../pkg/html.html">html</a>
+		<a href="../src/html/escape.go.html#line-189">escape.go#L189</a>: 	i := strings.<b>IndexByte</b>(s, '&amp;')
+		<a href="../src/html/escape.go.html#line-201" class="path-duplicate">escape.go</a><a href="../src/html/escape.go.html#line-201">#L201</a>: 			i = strings.<b>IndexByte</b>(s[src:], '&amp;')
+
+	<a href="../pkg/mime.html">mime</a>
+		<a href="../src/mime/encodedword.go.html#line-207">encodedword.go#L207</a>: 	split := strings.<b>IndexByte</b>(word, '?')
+		<a href="../src/mime/mediatype.go.html#line-22">mediatype.go#L22</a>: 	if slash := strings.<b>IndexByte</b>(t, '/'); slash == -1 {
+
+	<a href="../pkg/net/http.html">net/http</a>
+		<a href="../src/net/http/cookie.go.html#line-382">cookie.go#L382</a>: 	if strings.<b>IndexByte</b>(v, ' ') &gt;= 0 || strings.<b>IndexByte</b>(v, ',') &gt;= 0 {
+		<a href="../src/net/http/h2_bundle.go.html#line-8345">h2_bundle.go#L8345</a>: 						p := strings.<b>IndexByte</b>(v, ';')
+		<a href="../src/net/http/request.go.html#line-960">request.go#L960</a>: 	s := strings.<b>IndexByte</b>(cs, ':')
+		<a href="../src/net/http/response.go.html#line-168">response.go#L168</a>: 	if i := strings.<b>IndexByte</b>(line, ' '); i == -1 {
+		<a href="../src/net/http/response.go.html#line-175" class="path-duplicate">response.go</a><a href="../src/net/http/response.go.html#line-175">#L175</a>: 	if i := strings.<b>IndexByte</b>(resp.Status, ' '); i != -1 {
+		<a href="../src/net/http/server.go.html#line-2276">server.go#L2276</a>: 	if strings.<b>IndexByte</b>(h, ':') == -1 {
+
+	<a href="../pkg/net/url.html">net/url</a>
+		<a href="../src/net/url/url.go.html#line-459">url.go#L459</a>: 	i := strings.<b>IndexByte</b>(s, sep)
+		<a href="../src/net/url/url.go.html#line-843" class="path-duplicate">url.go</a><a href="../src/net/url/url.go.html#line-843">#L843</a>: 			if i := strings.<b>IndexByte</b>(path, ':'); i &gt; -1 &amp;&amp; strings.<b>IndexByte</b>(path[:i], '/') == -1 {
+		<a href="../src/net/url/url.go.html#line-1026" class="path-duplicate">url.go</a><a href="../src/net/url/url.go.html#line-1026">#L1026</a>: 		i = strings.<b>IndexByte</b>(remaining, '/')
+
+	<a href="../pkg/vendor/golang.org/x/net/http/httpguts.html">vendor/golang.org/x/net/http/httpguts</a>
+		<a href="../src/vendor/golang.org/x/net/http/httpguts/httplex.go.html#line-140">httplex.go#L140</a>: 	for comma := strings.<b>IndexByte</b>(v, ','); comma != -1; comma = strings.<b>IndexByte</b>(v, ',') {
+
+	<a href="../pkg/vendor/golang.org/x/net/idna.html">vendor/golang.org/x/net/idna</a>
+		<a href="../src/vendor/golang.org/x/net/idna/idna10.0.0.go.html#line-569">idna10.0.0.go#L569</a>: 	p := strings.<b>IndexByte</b>(l.orig[l.curStart:], '.')
+
+	<a href="../pkg/vendor/golang.org/x/sys/cpu.html">vendor/golang.org/x/sys/cpu</a>
+		<a href="../src/vendor/golang.org/x/sys/cpu/cpu.go.html#line-223">cpu.go#L223</a>: 		i := strings.<b>IndexByte</b>(env, ',')
+		<a href="../src/vendor/golang.org/x/sys/cpu/cpu.go.html#line-232" class="path-duplicate">cpu.go</a><a href="../src/vendor/golang.org/x/sys/cpu/cpu.go.html#line-232">#L232</a>: 		i = strings.<b>IndexByte</b>(field, '=')
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

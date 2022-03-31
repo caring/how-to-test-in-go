@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: syscall.SCM_RIGHTS</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">const <b><a href="../pkg/syscall.html">syscall</a>.<a href="../src/syscall/zerrors_darwin_amd64.go.html#line-860">SCM_RIGHTS</a></b></span>
+
+<span class="title">4 uses</span>
+
+	syscall (current package)
+		<a href="../src/syscall/sockcmsg_unix.go.html#line-70">sockcmsg_unix.go#L70</a>: 	h.Type = <b>SCM_RIGHTS</b>
+		<a href="../src/syscall/sockcmsg_unix.go.html#line-84" class="path-duplicate">sockcmsg_unix.go</a><a href="../src/syscall/sockcmsg_unix.go.html#line-84">#L84</a>: 	if m.Header.Type != <b>SCM_RIGHTS</b> {
+		<a href="../src/syscall/zerrors_darwin_amd64.go.html#line-860">zerrors_darwin_amd64.go#L860</a>: 	<b>SCM_RIGHTS</b>                        = 0x1
+
+	<a href="../pkg/net.html">net</a>
+		<a href="../src/net/unixsock_readmsg_cloexec.go.html#line-21">unixsock_readmsg_cloexec.go#L21</a>: 		if scm.Header.Level == syscall.SOL_SOCKET &amp;&amp; scm.Header.Type == syscall.<b>SCM_RIGHTS</b> {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

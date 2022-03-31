@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/uber/jaeger-client-go/thrift.TProcessorFunction</title>
+<link href="../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift.html">github.com/uber/jaeger-client-go/thrift</a>.<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/processor_factory.go.html#line-40">TProcessorFunction</a></b></span>
+
+<span class="title">27 uses</span>
+
+	github.com/uber/jaeger-client-go/thrift (current package)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/processor_factory.go.html#line-30">processor_factory.go#L30</a>: 	ProcessorMap() map[string]<b>TProcessorFunction</b>
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/processor_factory.go.html#line-37" class="path-duplicate">processor_factory.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/processor_factory.go.html#line-37">#L37</a>: 	AddToProcessorMap(string, <b>TProcessorFunction</b>)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/processor_factory.go.html#line-40" class="path-duplicate">processor_factory.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/processor_factory.go.html#line-40">#L40</a>: type <b>TProcessorFunction</b> interface {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/processor_factory.go.html#line-67" class="path-duplicate">processor_factory.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/processor_factory.go.html#line-67">#L67</a>: 	GetProcessorFunction(trans TTransport) <b>TProcessorFunction</b>
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/processor_factory.go.html#line-71" class="path-duplicate">processor_factory.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/processor_factory.go.html#line-71">#L71</a>: 	processor <b>TProcessorFunction</b>
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/processor_factory.go.html#line-74" class="path-duplicate">processor_factory.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/processor_factory.go.html#line-74">#L74</a>: func NewTProcessorFunctionFactory(p <b>TProcessorFunction</b>) TProcessorFunctionFactory {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/processor_factory.go.html#line-78" class="path-duplicate">processor_factory.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/processor_factory.go.html#line-78">#L78</a>: func (p *tProcessorFunctionFactory) GetProcessorFunction(trans TTransport) <b>TProcessorFunction</b> {
+
+	<a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift-gen/agent.html">github.com/uber/jaeger-client-go/thrift-gen/agent</a>
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/agent/agent.go.html#line-94">agent.go#L94</a>:   processorMap map[string]thrift.<b>TProcessorFunction</b>
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/agent/agent.go.html#line-98" class="path-duplicate">agent.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/agent/agent.go.html#line-98">#L98</a>: func (p *AgentProcessor) AddToProcessorMap(key string, processor thrift.<b>TProcessorFunction</b>) {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/agent/agent.go.html#line-102" class="path-duplicate">agent.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/agent/agent.go.html#line-102">#L102</a>: func (p *AgentProcessor) GetProcessorFunction(key string) (processor thrift.<b>TProcessorFunction</b>, ok bool) {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/agent/agent.go.html#line-107" class="path-duplicate">agent.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/agent/agent.go.html#line-107">#L107</a>: func (p *AgentProcessor) ProcessorMap() map[string]thrift.<b>TProcessorFunction</b> {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/agent/agent.go.html#line-113" class="path-duplicate">agent.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/agent/agent.go.html#line-113">#L113</a>:   self2 := &amp;AgentProcessor{handler:handler, processorMap:make(map[string]thrift.<b>TProcessorFunction</b>)}
+
+	<a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift-gen/jaeger.html">github.com/uber/jaeger-client-go/thrift-gen/jaeger</a>
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-2346">jaeger.go#L2346</a>:   processorMap map[string]thrift.<b>TProcessorFunction</b>
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-2350" class="path-duplicate">jaeger.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-2350">#L2350</a>: func (p *CollectorProcessor) AddToProcessorMap(key string, processor thrift.<b>TProcessorFunction</b>) {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-2354" class="path-duplicate">jaeger.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-2354">#L2354</a>: func (p *CollectorProcessor) GetProcessorFunction(key string) (processor thrift.<b>TProcessorFunction</b>, ok bool) {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-2359" class="path-duplicate">jaeger.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-2359">#L2359</a>: func (p *CollectorProcessor) ProcessorMap() map[string]thrift.<b>TProcessorFunction</b> {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-2365" class="path-duplicate">jaeger.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-2365">#L2365</a>:   self15 := &amp;CollectorProcessor{handler:handler, processorMap:make(map[string]thrift.<b>TProcessorFunction</b>)}
+
+	<a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift-gen/sampling.html">github.com/uber/jaeger-client-go/thrift-gen/sampling</a>
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-1009">sampling.go#L1009</a>:   processorMap map[string]thrift.<b>TProcessorFunction</b>
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-1013" class="path-duplicate">sampling.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-1013">#L1013</a>: func (p *SamplingManagerProcessor) AddToProcessorMap(key string, processor thrift.<b>TProcessorFunction</b>) {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-1017" class="path-duplicate">sampling.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-1017">#L1017</a>: func (p *SamplingManagerProcessor) GetProcessorFunction(key string) (processor thrift.<b>TProcessorFunction</b>, ok bool) {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-1022" class="path-duplicate">sampling.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-1022">#L1022</a>: func (p *SamplingManagerProcessor) ProcessorMap() map[string]thrift.<b>TProcessorFunction</b> {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-1028" class="path-duplicate">sampling.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-1028">#L1028</a>:   self5 := &amp;SamplingManagerProcessor{handler:handler, processorMap:make(map[string]thrift.<b>TProcessorFunction</b>)}
+
+	<a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift-gen/zipkincore.html">github.com/uber/jaeger-client-go/thrift-gen/zipkincore</a>
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-1501">zipkincore.go#L1501</a>:   processorMap map[string]thrift.<b>TProcessorFunction</b>
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-1505" class="path-duplicate">zipkincore.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-1505">#L1505</a>: func (p *ZipkinCollectorProcessor) AddToProcessorMap(key string, processor thrift.<b>TProcessorFunction</b>) {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-1509" class="path-duplicate">zipkincore.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-1509">#L1509</a>: func (p *ZipkinCollectorProcessor) GetProcessorFunction(key string) (processor thrift.<b>TProcessorFunction</b>, ok bool) {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-1514" class="path-duplicate">zipkincore.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-1514">#L1514</a>: func (p *ZipkinCollectorProcessor) ProcessorMap() map[string]thrift.<b>TProcessorFunction</b> {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-1520" class="path-duplicate">zipkincore.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-1520">#L1520</a>:   self7 := &amp;ZipkinCollectorProcessor{handler:handler, processorMap:make(map[string]thrift.<b>TProcessorFunction</b>)}
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

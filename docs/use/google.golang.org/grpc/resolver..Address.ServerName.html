@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: google.golang.org/grpc/resolver.Address.ServerName</title>
+<link href="../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../pkg/google.golang.org/grpc/resolver.html">google.golang.org/grpc/resolver</a>.<a href="../../../src/google.golang.org/grpc/resolver/resolver.go.html#line-102">Address</a>.<a href="../../../src/google.golang.org/grpc/resolver/resolver.go.html#line-117">ServerName</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">11 uses</span>
+
+	google.golang.org/grpc/resolver (current package)
+		<a href="../../../src/google.golang.org/grpc/resolver/map.go.html#line-48">map.go#L48</a>: 		if entry.addr.<b>ServerName</b> == addr.<b>ServerName</b> &amp;&amp;
+		<a href="../../../src/google.golang.org/grpc/resolver/resolver.go.html#line-117">resolver.go#L117</a>: 	<b>ServerName</b> string
+		<a href="../../../src/google.golang.org/grpc/resolver/resolver.go.html#line-143" class="path-duplicate">resolver.go</a><a href="../../../src/google.golang.org/grpc/resolver/resolver.go.html#line-143">#L143</a>: 	return a.Addr == o.Addr &amp;&amp; a.<b>ServerName</b> == o.<b>ServerName</b> &amp;&amp;
+
+	<a href="../../../pkg/google.golang.org/grpc.html">google.golang.org/grpc</a>
+		<a href="../../../src/google.golang.org/grpc/clientconn.go.html#line-889">clientconn.go#L889</a>: 		a.<b>ServerName</b> = ac.cc.getServerName(a)
+		<a href="../../../src/google.golang.org/grpc/clientconn.go.html#line-917" class="path-duplicate">clientconn.go</a><a href="../../../src/google.golang.org/grpc/clientconn.go.html#line-917">#L917</a>: 	if addr.<b>ServerName</b> != "" {
+		<a href="../../../src/google.golang.org/grpc/clientconn.go.html#line-918" class="path-duplicate">clientconn.go</a><a href="../../../src/google.golang.org/grpc/clientconn.go.html#line-918">#L918</a>: 		return addr.<b>ServerName</b>
+		<a href="../../../src/google.golang.org/grpc/clientconn.go.html#line-1279" class="path-duplicate">clientconn.go</a><a href="../../../src/google.golang.org/grpc/clientconn.go.html#line-1279">#L1279</a>: 	addr.<b>ServerName</b> = ac.cc.getServerName(addr)
+
+	<a href="../../../pkg/google.golang.org/grpc/internal/resolver/dns.html">google.golang.org/grpc/internal/resolver/dns</a>
+		<a href="../../../src/google.golang.org/grpc/internal/resolver/dns/dns_resolver.go.html#line-274">dns_resolver.go#L274</a>: 			newAddrs = append(newAddrs, resolver.Address{Addr: addr, <b>ServerName</b>: s.Target})
+
+	<a href="../../../pkg/google.golang.org/grpc/internal/transport.html">google.golang.org/grpc/internal/transport</a>
+		<a href="../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-261">http2_client.go#L261</a>: 		conn, authInfo, err = transportCreds.ClientHandshake(connectCtx, addr.<b>ServerName</b>, rawConn)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

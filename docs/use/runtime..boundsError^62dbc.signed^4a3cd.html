@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime.boundsError.signed</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/runtime.html">runtime</a>.<a href="../src/runtime/error.go.html#line-112">boundsError</a>.<a href="../src/runtime/error.go.html#line-119">signed</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">20 uses</span>
+
+	runtime (current package)
+		<a href="../src/runtime/error.go.html#line-119">error.go#L119</a>: 	<b>signed</b> bool
+		<a href="../src/runtime/error.go.html#line-182" class="path-duplicate">error.go</a><a href="../src/runtime/error.go.html#line-182">#L182</a>: 	if e.<b>signed</b> &amp;&amp; e.x &lt; 0 {
+		<a href="../src/runtime/error.go.html#line-198" class="path-duplicate">error.go</a><a href="../src/runtime/error.go.html#line-198">#L198</a>: 			b = appendIntStr(b, e.x, e.<b>signed</b>)
+		<a href="../src/runtime/panic.go.html#line-90">panic.go#L90</a>: 	panic(boundsError{x: int64(x), <b>signed</b>: true, y: y, code: boundsIndex})
+		<a href="../src/runtime/panic.go.html#line-94" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-94">#L94</a>: 	panic(boundsError{x: int64(x), <b>signed</b>: false, y: y, code: boundsIndex})
+		<a href="../src/runtime/panic.go.html#line-100" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-100">#L100</a>: 	panic(boundsError{x: int64(x), <b>signed</b>: true, y: y, code: boundsSliceAlen})
+		<a href="../src/runtime/panic.go.html#line-104" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-104">#L104</a>: 	panic(boundsError{x: int64(x), <b>signed</b>: false, y: y, code: boundsSliceAlen})
+		<a href="../src/runtime/panic.go.html#line-108" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-108">#L108</a>: 	panic(boundsError{x: int64(x), <b>signed</b>: true, y: y, code: boundsSliceAcap})
+		<a href="../src/runtime/panic.go.html#line-112" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-112">#L112</a>: 	panic(boundsError{x: int64(x), <b>signed</b>: false, y: y, code: boundsSliceAcap})
+		<a href="../src/runtime/panic.go.html#line-118" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-118">#L118</a>: 	panic(boundsError{x: int64(x), <b>signed</b>: true, y: y, code: boundsSliceB})
+		<a href="../src/runtime/panic.go.html#line-122" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-122">#L122</a>: 	panic(boundsError{x: int64(x), <b>signed</b>: false, y: y, code: boundsSliceB})
+		<a href="../src/runtime/panic.go.html#line-128" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-128">#L128</a>: 	panic(boundsError{x: int64(x), <b>signed</b>: true, y: y, code: boundsSlice3Alen})
+		<a href="../src/runtime/panic.go.html#line-132" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-132">#L132</a>: 	panic(boundsError{x: int64(x), <b>signed</b>: false, y: y, code: boundsSlice3Alen})
+		<a href="../src/runtime/panic.go.html#line-136" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-136">#L136</a>: 	panic(boundsError{x: int64(x), <b>signed</b>: true, y: y, code: boundsSlice3Acap})
+		<a href="../src/runtime/panic.go.html#line-140" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-140">#L140</a>: 	panic(boundsError{x: int64(x), <b>signed</b>: false, y: y, code: boundsSlice3Acap})
+		<a href="../src/runtime/panic.go.html#line-146" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-146">#L146</a>: 	panic(boundsError{x: int64(x), <b>signed</b>: true, y: y, code: boundsSlice3B})
+		<a href="../src/runtime/panic.go.html#line-150" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-150">#L150</a>: 	panic(boundsError{x: int64(x), <b>signed</b>: false, y: y, code: boundsSlice3B})
+		<a href="../src/runtime/panic.go.html#line-156" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-156">#L156</a>: 	panic(boundsError{x: int64(x), <b>signed</b>: true, y: y, code: boundsSlice3C})
+		<a href="../src/runtime/panic.go.html#line-160" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-160">#L160</a>: 	panic(boundsError{x: int64(x), <b>signed</b>: false, y: y, code: boundsSlice3C})
+		<a href="../src/runtime/panic.go.html#line-166" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-166">#L166</a>: 	panic(boundsError{x: int64(x), <b>signed</b>: true, y: y, code: boundsConvert})
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

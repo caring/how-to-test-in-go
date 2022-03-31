@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: context.CancelFunc</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../pkg/context.html">context</a>.<a href="../src/context/context.go.html#line-224">CancelFunc</a></b></span>
+
+<span class="title">29 uses</span>
+
+	context (current package)
+		<a href="../src/context/context.go.html#line-224">context.go#L224</a>: type <b>CancelFunc</b> func()
+		<a href="../src/context/context.go.html#line-232" class="path-duplicate">context.go</a><a href="../src/context/context.go.html#line-232">#L232</a>: func WithCancel(parent Context) (ctx Context, cancel <b>CancelFunc</b>) {
+		<a href="../src/context/context.go.html#line-434" class="path-duplicate">context.go</a><a href="../src/context/context.go.html#line-434">#L434</a>: func WithDeadline(parent Context, d time.Time) (Context, <b>CancelFunc</b>) {
+		<a href="../src/context/context.go.html#line-506" class="path-duplicate">context.go</a><a href="../src/context/context.go.html#line-506">#L506</a>: func WithTimeout(parent Context, timeout time.Duration) (Context, <b>CancelFunc</b>) {
+
+	<a href="../pkg/crypto/tls.html">crypto/tls</a>
+		<a href="../src/crypto/tls/tls.go.html#line-122">tls.go#L122</a>: 		var cancel context.<b>CancelFunc</b>
+		<a href="../src/crypto/tls/tls.go.html#line-128" class="path-duplicate">tls.go</a><a href="../src/crypto/tls/tls.go.html#line-128">#L128</a>: 		var cancel context.<b>CancelFunc</b>
+
+	<a href="../pkg/github.com/caring/gopkg-logging/internal/writer.html">github.com/caring/gopkg-logging/internal/writer</a>
+		<a href="../src/github.com/caring/gopkg-logging/internal/writer/buffer.go.html#line-15">buffer.go#L15</a>: 	cancel       context.<b>CancelFunc</b>
+
+	<a href="../pkg/github.com/go-sql-driver/mysql.html">github.com/go-sql-driver/mysql</a>
+		<a href="../src/github.com/go-sql-driver/mysql/connector.go.html#line-42">connector.go#L42</a>: 			var cancel context.<b>CancelFunc</b>
+
+	<a href="../pkg/github.com/uber/jaeger-client-go/thrift-gen/jaeger.html">github.com/uber/jaeger-client-go/thrift-gen/jaeger</a>
+		<a href="../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-2408">jaeger.go#L2408</a>:     var cancel context.<b>CancelFunc</b>
+		<a href="../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-2414" class="path-duplicate">jaeger.go</a><a href="../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-2414">#L2414</a>:     go func(ctx context.Context, cancel context.<b>CancelFunc</b>) {
+
+	<a href="../pkg/github.com/uber/jaeger-client-go/thrift-gen/sampling.html">github.com/uber/jaeger-client-go/thrift-gen/sampling</a>
+		<a href="../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-1071">sampling.go#L1071</a>:     var cancel context.<b>CancelFunc</b>
+		<a href="../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-1077" class="path-duplicate">sampling.go</a><a href="../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-1077">#L1077</a>:     go func(ctx context.Context, cancel context.<b>CancelFunc</b>) {
+
+	<a href="../pkg/github.com/uber/jaeger-client-go/thrift-gen/zipkincore.html">github.com/uber/jaeger-client-go/thrift-gen/zipkincore</a>
+		<a href="../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-1563">zipkincore.go#L1563</a>:     var cancel context.<b>CancelFunc</b>
+		<a href="../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-1569" class="path-duplicate">zipkincore.go</a><a href="../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-1569">#L1569</a>:     go func(ctx context.Context, cancel context.<b>CancelFunc</b>) {
+
+	<a href="../pkg/google.golang.org/grpc.html">google.golang.org/grpc</a>
+		<a href="../src/google.golang.org/grpc/clientconn.go.html#line-217">clientconn.go#L217</a>: 		var cancel context.<b>CancelFunc</b>
+		<a href="../src/google.golang.org/grpc/clientconn.go.html#line-468" class="path-duplicate">clientconn.go</a><a href="../src/google.golang.org/grpc/clientconn.go.html#line-468">#L468</a>: 	cancel context.<b>CancelFunc</b>
+		<a href="../src/google.golang.org/grpc/clientconn.go.html#line-1110" class="path-duplicate">clientconn.go</a><a href="../src/google.golang.org/grpc/clientconn.go.html#line-1110">#L1110</a>: 	cancel context.<b>CancelFunc</b>
+		<a href="../src/google.golang.org/grpc/stream.go.html#line-226">stream.go#L226</a>: 	var cancel context.<b>CancelFunc</b>
+		<a href="../src/google.golang.org/grpc/stream.go.html#line-447" class="path-duplicate">stream.go</a><a href="../src/google.golang.org/grpc/stream.go.html#line-447">#L447</a>: 	cancel context.<b>CancelFunc</b> // cancels all attempts
+		<a href="../src/google.golang.org/grpc/stream.go.html#line-1190" class="path-duplicate">stream.go</a><a href="../src/google.golang.org/grpc/stream.go.html#line-1190">#L1190</a>: 	cancel    context.<b>CancelFunc</b>
+
+	<a href="../pkg/google.golang.org/grpc/internal/resolver/dns.html">google.golang.org/grpc/internal/resolver/dns</a>
+		<a href="../src/google.golang.org/grpc/internal/resolver/dns/dns_resolver.go.html#line-181">dns_resolver.go#L181</a>: 	cancel   context.<b>CancelFunc</b>
+
+	<a href="../pkg/google.golang.org/grpc/internal/transport.html">google.golang.org/grpc/internal/transport</a>
+		<a href="../src/google.golang.org/grpc/internal/transport/handler_server.go.html#line-333">handler_server.go#L333</a>: 	var cancel context.<b>CancelFunc</b>
+		<a href="../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-62">http2_client.go#L62</a>: 	cancel     context.<b>CancelFunc</b>
+		<a href="../src/google.golang.org/grpc/internal/transport/transport.go.html#line-243">transport.go#L243</a>: 	cancel       context.<b>CancelFunc</b> // always nil for client side Stream
+
+	<a href="../pkg/net.html">net</a>
+		<a href="../src/net/dial.go.html#line-545">dial.go#L545</a>: 				var cancel context.<b>CancelFunc</b>
+
+	<a href="../pkg/net/http.html">net/http</a>
+		<a href="../src/net/http/server.go.html#line-254">server.go#L254</a>: 	cancelCtx context.<b>CancelFunc</b>
+		<a href="../src/net/http/server.go.html#line-422" class="path-duplicate">server.go</a><a href="../src/net/http/server.go.html#line-422">#L422</a>: 	cancelCtx        context.<b>CancelFunc</b> // when ServeHTTP exits
+		<a href="../src/net/http/server.go.html#line-3319" class="path-duplicate">server.go</a><a href="../src/net/http/server.go.html#line-3319">#L3319</a>: 		var cancelCtx context.<b>CancelFunc</b>
+
+	<a href="../pkg/net/http/httputil.html">net/http/httputil</a>
+		<a href="../src/net/http/httputil/reverseproxy.go.html#line-221">reverseproxy.go#L221</a>: 		var cancel context.<b>CancelFunc</b>
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: strconv.FormatFloat</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">func <b><a href="../pkg/strconv.html">strconv</a>.<a href="../src/strconv/ftoa.go.html#line-47">FormatFloat</a></b></span>
+
+<span class="title">19 uses</span>
+
+	strconv (current package)
+		<a href="../src/strconv/ctoa.go.html#line-21">ctoa.go#L21</a>: 	im := <b>FormatFloat</b>(imag(c), fmt, prec, bitSize)
+		<a href="../src/strconv/ctoa.go.html#line-26" class="path-duplicate">ctoa.go</a><a href="../src/strconv/ctoa.go.html#line-26">#L26</a>: 	return "(" + <b>FormatFloat</b>(real(c), fmt, prec, bitSize) + im + "i)"
+		<a href="../src/strconv/ftoa.go.html#line-47">ftoa.go#L47</a>: func <b>FormatFloat</b>(f float64, fmt byte, prec, bitSize int) string {
+
+	<a href="../pkg/database/sql.html">database/sql</a>
+		<a href="../src/database/sql/convert.go.html#line-512">convert.go#L512</a>: 		return strconv.<b>FormatFloat</b>(rv.Float(), 'g', -1, 64)
+		<a href="../src/database/sql/convert.go.html#line-514" class="path-duplicate">convert.go</a><a href="../src/database/sql/convert.go.html#line-514">#L514</a>: 		return strconv.<b>FormatFloat</b>(rv.Float(), 'g', -1, 32)
+
+	<a href="../pkg/encoding/json.html">encoding/json</a>
+		<a href="../src/encoding/json/encode.go.html#line-578">encode.go#L578</a>: 		e.error(&amp;UnsupportedValueError{v, strconv.<b>FormatFloat</b>(f, 'g', -1, int(bits))})
+
+	<a href="../pkg/encoding/xml.html">encoding/xml</a>
+		<a href="../src/encoding/xml/marshal.go.html#line-761">marshal.go#L761</a>: 		return strconv.<b>FormatFloat</b>(val.Float(), 'g', -1, val.Type().Bits()), nil, nil
+
+	<a href="../pkg/flag.html">flag</a>
+		<a href="../src/flag/flag.go.html#line-258">flag.go#L258</a>: func (f *float64Value) String() string { return strconv.<b>FormatFloat</b>(float64(*f), 'g', -1, 64) }
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil.html">github.com/aws/aws-sdk-go/private/protocol/json/jsonutil</a>
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/build.go.html#line-213">build.go#L213</a>: 			return &amp;json.UnsupportedValueError{Value: v, Str: strconv.<b>FormatFloat</b>(f, 'f', -1, 64)}
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/private/protocol/query/queryutil.html">github.com/aws/aws-sdk-go/private/protocol/query/queryutil</a>
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/query/queryutil/queryutil.go.html#line-231">queryutil.go#L231</a>: 		v.Set(name, strconv.<b>FormatFloat</b>(value, 'f', -1, 64))
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/query/queryutil/queryutil.go.html#line-233" class="path-duplicate">queryutil.go</a><a href="../src/github.com/aws/aws-sdk-go/private/protocol/query/queryutil/queryutil.go.html#line-233">#L233</a>: 		v.Set(name, strconv.<b>FormatFloat</b>(float64(value), 'f', -1, 32))
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/private/protocol/rest.html">github.com/aws/aws-sdk-go/private/protocol/rest</a>
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/rest/build.go.html#line-283">build.go#L283</a>: 		str = strconv.<b>FormatFloat</b>(value, 'f', -1, 64)
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/private/protocol/xml/xmlutil.html">github.com/aws/aws-sdk-go/private/protocol/xml/xmlutil</a>
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/xml/xmlutil/build.go.html#line-292">build.go#L292</a>: 		str = strconv.<b>FormatFloat</b>(converted, 'f', -1, 64)
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/xml/xmlutil/build.go.html#line-294" class="path-duplicate">build.go</a><a href="../src/github.com/aws/aws-sdk-go/private/protocol/xml/xmlutil/build.go.html#line-294">#L294</a>: 		str = strconv.<b>FormatFloat</b>(float64(converted), 'f', -1, 32)
+
+	<a href="../pkg/github.com/uber/jaeger-client-go/thrift.html">github.com/uber/jaeger-client-go/thrift</a>
+		<a href="../src/github.com/uber/jaeger-client-go/thrift/numeric.go.html#line-65">numeric.go#L65</a>: 	sValue := strconv.<b>FormatFloat</b>(dValue, 'g', 10, 64)
+		<a href="../src/github.com/uber/jaeger-client-go/thrift/simple_json_protocol.go.html#line-669">simple_json_protocol.go#L669</a>: 		v = strconv.<b>FormatFloat</b>(value, 'g', -1, 64)
+
+	<a href="../pkg/go.uber.org/atomic.html">go.uber.org/atomic</a>
+		<a href="../src/go.uber.org/atomic/float64_ext.go.html#line-46">float64_ext.go#L46</a>: 	return strconv.<b>FormatFloat</b>(f.Load(), 'g', -1, 64)
+
+	<a href="../pkg/google.golang.org/protobuf/internal/encoding/defval.html">google.golang.org/protobuf/internal/encoding/defval</a>
+		<a href="../src/google.golang.org/protobuf/internal/encoding/defval/default.go.html#line-158">default.go#L158</a>: 				return strconv.<b>FormatFloat</b>(f, 'g', -1, 32), nil
+		<a href="../src/google.golang.org/protobuf/internal/encoding/defval/default.go.html#line-160" class="path-duplicate">default.go</a><a href="../src/google.golang.org/protobuf/internal/encoding/defval/default.go.html#line-160">#L160</a>: 				return strconv.<b>FormatFloat</b>(f, 'g', -1, 64), nil
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

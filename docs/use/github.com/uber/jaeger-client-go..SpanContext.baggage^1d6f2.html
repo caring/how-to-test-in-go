@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/uber/jaeger-client-go.SpanContext.baggage</title>
+<link href="../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../pkg/github.com/uber/jaeger-client-go.html">github.com/uber/jaeger-client-go</a>.<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-49">SpanContext</a>.<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-63">baggage</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">28 uses</span>
+
+	github.com/uber/jaeger-client-go (current package)
+		<a href="../../../src/github.com/uber/jaeger-client-go/baggage_setter.go.html#line-52">baggage_setter.go#L52</a>: 	prevItem = span.context.<b>baggage</b>[key]
+		<a href="../../../src/github.com/uber/jaeger-client-go/propagation.go.html#line-122">propagation.go#L122</a>: 	for k, v := range sc.<b>baggage</b> {
+		<a href="../../../src/github.com/uber/jaeger-client-go/propagation.go.html#line-172" class="path-duplicate">propagation.go</a><a href="../../../src/github.com/uber/jaeger-client-go/propagation.go.html#line-172">#L172</a>: 	ctx.<b>baggage</b> = baggage
+		<a href="../../../src/github.com/uber/jaeger-client-go/propagation.go.html#line-201" class="path-duplicate">propagation.go</a><a href="../../../src/github.com/uber/jaeger-client-go/propagation.go.html#line-201">#L201</a>: 	if err := binary.Write(carrier, binary.BigEndian, int32(len(sc.<b>baggage</b>))); err != nil {
+		<a href="../../../src/github.com/uber/jaeger-client-go/propagation.go.html#line-204" class="path-duplicate">propagation.go</a><a href="../../../src/github.com/uber/jaeger-client-go/propagation.go.html#line-204">#L204</a>: 	for k, v := range sc.<b>baggage</b> {
+		<a href="../../../src/github.com/uber/jaeger-client-go/propagation.go.html#line-258" class="path-duplicate">propagation.go</a><a href="../../../src/github.com/uber/jaeger-client-go/propagation.go.html#line-258">#L258</a>: 		ctx.<b>baggage</b> = make(map[string]string, iNumBaggage)
+		<a href="../../../src/github.com/uber/jaeger-client-go/propagation.go.html#line-285" class="path-duplicate">propagation.go</a><a href="../../../src/github.com/uber/jaeger-client-go/propagation.go.html#line-285">#L285</a>: 			ctx.<b>baggage</b>[key] = buf.String()
+		<a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-336">span.go#L336</a>: 	return s.context.<b>baggage</b>[key]
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-63">span_context.go#L63</a>: 	<b>baggage</b> map[string]string
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-170" class="path-duplicate">span_context.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-170">#L170</a>: 	for k, v := range c.<b>baggage</b> {
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-296" class="path-duplicate">span_context.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-296">#L296</a>: 		<b>baggage</b>:       baggage}
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-306" class="path-duplicate">span_context.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-306">#L306</a>: 	if l := len(ctx.<b>baggage</b>); l &gt; 0 {
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-307" class="path-duplicate">span_context.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-307">#L307</a>: 		c.<b>baggage</b> = make(map[string]string, l)
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-308" class="path-duplicate">span_context.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-308">#L308</a>: 		for k, v := range ctx.<b>baggage</b> {
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-309" class="path-duplicate">span_context.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-309">#L309</a>: 			c.<b>baggage</b>[k] = v
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-312" class="path-duplicate">span_context.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-312">#L312</a>: 		c.<b>baggage</b> = nil
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-330" class="path-duplicate">span_context.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-330">#L330</a>: 		if _, ok := c.<b>baggage</b>[key]; !ok {
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-333" class="path-duplicate">span_context.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-333">#L333</a>: 		newBaggage = make(map[string]string, len(c.<b>baggage</b>))
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-334" class="path-duplicate">span_context.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-334">#L334</a>: 		for k, v := range c.<b>baggage</b> {
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-340" class="path-duplicate">span_context.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-340">#L340</a>: 	if c.<b>baggage</b> == nil {
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-343" class="path-duplicate">span_context.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-343">#L343</a>: 		newBaggage = make(map[string]string, len(c.<b>baggage</b>)+1)
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-344" class="path-duplicate">span_context.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-344">#L344</a>: 		for k, v := range c.<b>baggage</b> {
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-222">tracer.go#L222</a>: 		return !ctx.IsValid() &amp;&amp; !ctx.isDebugIDContainerOnly() &amp;&amp; len(ctx.<b>baggage</b>) == 0
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-305" class="path-duplicate">tracer.go</a><a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-305">#L305</a>: 			if l := len(parent.<b>baggage</b>); l &gt; 0 {
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-306" class="path-duplicate">tracer.go</a><a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-306">#L306</a>: 				ctx.<b>baggage</b> = make(map[string]string, len(parent.<b>baggage</b>))
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-307" class="path-duplicate">tracer.go</a><a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-307">#L307</a>: 				for k, v := range parent.<b>baggage</b> {
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-308" class="path-duplicate">tracer.go</a><a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-308">#L308</a>: 					ctx.<b>baggage</b>[k] = v
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

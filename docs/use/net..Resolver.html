@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: net.Resolver</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../pkg/net.html">net</a>.<a href="../src/net/lookup.go.html#line-119">Resolver</a></b></span>
+
+<span class="title">41 uses</span>
+
+	net (current package)
+		<a href="../src/net/conf.go.html#line-124">conf.go#L124</a>: func (c *conf) hostLookupOrder(r *<b>Resolver</b>, hostname string) (ret hostLookupOrder) {
+		<a href="../src/net/dial.go.html#line-83">dial.go#L83</a>: 	Resolver *<b>Resolver</b>
+		<a href="../src/net/dial.go.html#line-128" class="path-duplicate">dial.go</a><a href="../src/net/dial.go.html#line-128">#L128</a>: func (d *Dialer) resolver() *<b>Resolver</b> {
+		<a href="../src/net/dial.go.html#line-202" class="path-duplicate">dial.go</a><a href="../src/net/dial.go.html#line-202">#L202</a>: func (r *<b>Resolver</b>) resolveAddrList(ctx context.Context, op, network, addr string, hint Addr) (addrList, error) {
+		<a href="../src/net/dnsclient_unix.go.html#line-145">dnsclient_unix.go#L145</a>: func (r *<b>Resolver</b>) exchange(ctx context.Context, server string, q dnsmessage.Question, timeout time.Duration, useTCP bool) (dnsmessage.Parser, dnsmessage.Header, error) {
+		<a href="../src/net/dnsclient_unix.go.html#line-242" class="path-duplicate">dnsclient_unix.go</a><a href="../src/net/dnsclient_unix.go.html#line-242">#L242</a>: func (r *<b>Resolver</b>) tryOneName(ctx context.Context, cfg *dnsConfig, name string, qtype dnsmessage.Type) (dnsmessage.Parser, string, error) {
+		<a href="../src/net/dnsclient_unix.go.html#line-396" class="path-duplicate">dnsclient_unix.go</a><a href="../src/net/dnsclient_unix.go.html#line-396">#L396</a>: func (r *<b>Resolver</b>) lookup(ctx context.Context, name string, qtype dnsmessage.Type) (dnsmessage.Parser, string, error) {
+		<a href="../src/net/dnsclient_unix.go.html#line-527" class="path-duplicate">dnsclient_unix.go</a><a href="../src/net/dnsclient_unix.go.html#line-527">#L527</a>: func (r *<b>Resolver</b>) goLookupHost(ctx context.Context, name string) (addrs []string, err error) {
+		<a href="../src/net/dnsclient_unix.go.html#line-531" class="path-duplicate">dnsclient_unix.go</a><a href="../src/net/dnsclient_unix.go.html#line-531">#L531</a>: func (r *<b>Resolver</b>) goLookupHostOrder(ctx context.Context, name string, order hostLookupOrder) (addrs []string, err error) {
+		<a href="../src/net/dnsclient_unix.go.html#line-565" class="path-duplicate">dnsclient_unix.go</a><a href="../src/net/dnsclient_unix.go.html#line-565">#L565</a>: func (r *<b>Resolver</b>) goLookupIP(ctx context.Context, network, host string) (addrs []IPAddr, err error) {
+		<a href="../src/net/dnsclient_unix.go.html#line-571" class="path-duplicate">dnsclient_unix.go</a><a href="../src/net/dnsclient_unix.go.html#line-571">#L571</a>: func (r *<b>Resolver</b>) goLookupIPCNAMEOrder(ctx context.Context, network, name string, order hostLookupOrder) (addrs []IPAddr, cname dnsmessage.Name, err error) {
+		<a href="../src/net/dnsclient_unix.go.html#line-741" class="path-duplicate">dnsclient_unix.go</a><a href="../src/net/dnsclient_unix.go.html#line-741">#L741</a>: func (r *<b>Resolver</b>) goLookupCNAME(ctx context.Context, host string) (string, error) {
+		<a href="../src/net/dnsclient_unix.go.html#line-752" class="path-duplicate">dnsclient_unix.go</a><a href="../src/net/dnsclient_unix.go.html#line-752">#L752</a>: func (r *<b>Resolver</b>) goLookupPTR(ctx context.Context, addr string) ([]string, error) {
+		<a href="../src/net/ipsock.go.html#line-248">ipsock.go#L248</a>: func (r *<b>Resolver</b>) internetAddrList(ctx context.Context, net, addr string) (addrList, error) {
+		<a href="../src/net/lookup.go.html#line-114">lookup.go#L114</a>: var DefaultResolver = &amp;<b>Resolver</b>{}
+		<a href="../src/net/lookup.go.html#line-119" class="path-duplicate">lookup.go</a><a href="../src/net/lookup.go.html#line-119">#L119</a>: type <b>Resolver</b> struct {
+		<a href="../src/net/lookup.go.html#line-157" class="path-duplicate">lookup.go</a><a href="../src/net/lookup.go.html#line-157">#L157</a>: func (r *<b>Resolver</b>) preferGo() bool     { return r != nil &amp;&amp; r.PreferGo }
+		<a href="../src/net/lookup.go.html#line-158" class="path-duplicate">lookup.go</a><a href="../src/net/lookup.go.html#line-158">#L158</a>: func (r *<b>Resolver</b>) strictErrors() bool { return r != nil &amp;&amp; r.StrictErrors }
+		<a href="../src/net/lookup.go.html#line-160" class="path-duplicate">lookup.go</a><a href="../src/net/lookup.go.html#line-160">#L160</a>: func (r *<b>Resolver</b>) getLookupGroup() *singleflight.Group {
+		<a href="../src/net/lookup.go.html#line-178" class="path-duplicate">lookup.go</a><a href="../src/net/lookup.go.html#line-178">#L178</a>: func (r *<b>Resolver</b>) LookupHost(ctx context.Context, host string) (addrs []string, err error) {
+		<a href="../src/net/lookup.go.html#line-206" class="path-duplicate">lookup.go</a><a href="../src/net/lookup.go.html#line-206">#L206</a>: func (r *<b>Resolver</b>) LookupIPAddr(ctx context.Context, host string) ([]IPAddr, error) {
+		<a href="../src/net/lookup.go.html#line-214" class="path-duplicate">lookup.go</a><a href="../src/net/lookup.go.html#line-214">#L214</a>: func (r *<b>Resolver</b>) LookupIP(ctx context.Context, network, host string) ([]IP, error) {
+		<a href="../src/net/lookup.go.html#line-264" class="path-duplicate">lookup.go</a><a href="../src/net/lookup.go.html#line-264">#L264</a>: func (r *<b>Resolver</b>) lookupIPAddr(ctx context.Context, network, host string) ([]IPAddr, error) {
+		<a href="../src/net/lookup.go.html#line-367" class="path-duplicate">lookup.go</a><a href="../src/net/lookup.go.html#line-367">#L367</a>: func (r *<b>Resolver</b>) LookupPort(ctx context.Context, network, service string) (port int, err error) {
+		<a href="../src/net/lookup.go.html#line-421" class="path-duplicate">lookup.go</a><a href="../src/net/lookup.go.html#line-421">#L421</a>: func (r *<b>Resolver</b>) LookupCNAME(ctx context.Context, host string) (string, error) {
+		<a href="../src/net/lookup.go.html#line-464" class="path-duplicate">lookup.go</a><a href="../src/net/lookup.go.html#line-464">#L464</a>: func (r *<b>Resolver</b>) LookupSRV(ctx context.Context, service, proto, name string) (string, []*SRV, error) {
+		<a href="../src/net/lookup.go.html#line-507" class="path-duplicate">lookup.go</a><a href="../src/net/lookup.go.html#line-507">#L507</a>: func (r *<b>Resolver</b>) LookupMX(ctx context.Context, name string) ([]*MX, error) {
+		<a href="../src/net/lookup.go.html#line-549" class="path-duplicate">lookup.go</a><a href="../src/net/lookup.go.html#line-549">#L549</a>: func (r *<b>Resolver</b>) LookupNS(ctx context.Context, name string) ([]*NS, error) {
+		<a href="../src/net/lookup.go.html#line-579" class="path-duplicate">lookup.go</a><a href="../src/net/lookup.go.html#line-579">#L579</a>: func (r *<b>Resolver</b>) LookupTXT(ctx context.Context, name string) ([]string, error) {
+		<a href="../src/net/lookup.go.html#line-605" class="path-duplicate">lookup.go</a><a href="../src/net/lookup.go.html#line-605">#L605</a>: func (r *<b>Resolver</b>) LookupAddr(ctx context.Context, addr string) ([]string, error) {
+		<a href="../src/net/lookup_unix.go.html#line-59">lookup_unix.go#L59</a>: func (r *<b>Resolver</b>) dial(ctx context.Context, network, server string) (Conn, error) {
+		<a href="../src/net/lookup_unix.go.html#line-79" class="path-duplicate">lookup_unix.go</a><a href="../src/net/lookup_unix.go.html#line-79">#L79</a>: func (r *<b>Resolver</b>) lookupHost(ctx context.Context, host string) (addrs []string, err error) {
+		<a href="../src/net/lookup_unix.go.html#line-91" class="path-duplicate">lookup_unix.go</a><a href="../src/net/lookup_unix.go.html#line-91">#L91</a>: func (r *<b>Resolver</b>) lookupIP(ctx context.Context, network, host string) (addrs []IPAddr, err error) {
+		<a href="../src/net/lookup_unix.go.html#line-107" class="path-duplicate">lookup_unix.go</a><a href="../src/net/lookup_unix.go.html#line-107">#L107</a>: func (r *<b>Resolver</b>) lookupPort(ctx context.Context, network, service string) (int, error) {
+		<a href="../src/net/lookup_unix.go.html#line-123" class="path-duplicate">lookup_unix.go</a><a href="../src/net/lookup_unix.go.html#line-123">#L123</a>: func (r *<b>Resolver</b>) lookupCNAME(ctx context.Context, name string) (string, error) {
+		<a href="../src/net/lookup_unix.go.html#line-132" class="path-duplicate">lookup_unix.go</a><a href="../src/net/lookup_unix.go.html#line-132">#L132</a>: func (r *<b>Resolver</b>) lookupSRV(ctx context.Context, service, proto, name string) (string, []*SRV, error) {
+		<a href="../src/net/lookup_unix.go.html#line-184" class="path-duplicate">lookup_unix.go</a><a href="../src/net/lookup_unix.go.html#line-184">#L184</a>: func (r *<b>Resolver</b>) lookupMX(ctx context.Context, name string) ([]*MX, error) {
+		<a href="../src/net/lookup_unix.go.html#line-227" class="path-duplicate">lookup_unix.go</a><a href="../src/net/lookup_unix.go.html#line-227">#L227</a>: func (r *<b>Resolver</b>) lookupNS(ctx context.Context, name string) ([]*NS, error) {
+		<a href="../src/net/lookup_unix.go.html#line-268" class="path-duplicate">lookup_unix.go</a><a href="../src/net/lookup_unix.go.html#line-268">#L268</a>: func (r *<b>Resolver</b>) lookupTXT(ctx context.Context, name string) ([]string, error) {
+		<a href="../src/net/lookup_unix.go.html#line-323" class="path-duplicate">lookup_unix.go</a><a href="../src/net/lookup_unix.go.html#line-323">#L323</a>: func (r *<b>Resolver</b>) lookupAddr(ctx context.Context, addr string) ([]string, error) {
+
+	<a href="../pkg/google.golang.org/grpc/internal/resolver/dns.html">google.golang.org/grpc/internal/resolver/dns</a>
+		<a href="../src/google.golang.org/grpc/internal/resolver/dns/dns_resolver.go.html#line-104">dns_resolver.go#L104</a>: 	return &amp;net.<b>Resolver</b>{
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Source: process.go in package github.com/uber/jaeger-client-go</title>
+<link href="../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre id="header"><code><span class="title">Source File</span>
+	process.go
+
+<span class="title">Belonging Package</span>
+	<a href="../../../../pkg/github.com/uber/jaeger-client-go.html">github.com/uber/jaeger-client-go</a>
+</code></pre>
+
+<pre class="line-numbers">
+<span class="codeline" id="line-1"><code><span class="comment">// Copyright (c) 2018 The Jaeger Authors.</span></code></span>
+<span class="codeline" id="line-2"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-3"><code><span class="comment">// Licensed under the Apache License, Version 2.0 (the "License");</span></code></span>
+<span class="codeline" id="line-4"><code><span class="comment">// you may not use this file except in compliance with the License.</span></code></span>
+<span class="codeline" id="line-5"><code><span class="comment">// You may obtain a copy of the License at</span></code></span>
+<span class="codeline" id="line-6"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-7"><code><span class="comment">// http://www.apache.org/licenses/LICENSE-2.0</span></code></span>
+<span class="codeline" id="line-8"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-9"><code><span class="comment">// Unless required by applicable law or agreed to in writing, software</span></code></span>
+<span class="codeline" id="line-10"><code><span class="comment">// distributed under the License is distributed on an "AS IS" BASIS,</span></code></span>
+<span class="codeline" id="line-11"><code><span class="comment">// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></code></span>
+<span class="codeline" id="line-12"><code><span class="comment">// See the License for the specific language governing permissions and</span></code></span>
+<span class="codeline" id="line-13"><code><span class="comment">// limitations under the License.</span></code></span>
+<span class="codeline" id="line-14"><code></code></span>
+<span class="codeline" id="line-15"><code><span class="keyword">package</span> jaeger</code></span>
+<span class="codeline" id="line-16"><code></code></span>
+<span class="codeline" id="line-17"><code><span class="comment">// Process holds process specific metadata that's relevant to this client.</span></code></span>
+<span class="codeline" id="line-18"><code><span class="keyword">type</span> <a href="../../../../pkg/github.com/uber/jaeger-client-go.html#name-Process" class="ident">Process</a> <span class="keyword">struct</span> {</code></span>
+<span class="codeline" id="line-19"><code>	<a href="../../../../use/github.com/uber/jaeger-client-go..Process.Service.html" class="ident">Service</a> <a href="../../../../pkg/builtin.html#name-string" class="ident">string</a></code></span>
+<span class="codeline" id="line-20"><code>	<a href="../../../../use/github.com/uber/jaeger-client-go..Process.UUID.html" class="ident">UUID</a>    <a href="../../../../pkg/builtin.html#name-string" class="ident">string</a></code></span>
+<span class="codeline" id="line-21"><code>	<a href="../../../../use/github.com/uber/jaeger-client-go..Process.Tags.html" class="ident">Tags</a>    []<a href="span.go.html#line-73" class="ident">Tag</a></code></span>
+<span class="codeline" id="line-22"><code>}</code></span>
+<span class="codeline" id="line-23"><code></code></span>
+<span class="codeline" id="line-24"><code><span class="comment">// ProcessSetter sets a process. This can be used by any class that requires</span></code></span>
+<span class="codeline" id="line-25"><code><span class="comment">// the process to be set as part of initialization.</span></code></span>
+<span class="codeline" id="line-26"><code><span class="comment">// See internal/throttler/remote/throttler.go for an example.</span></code></span>
+<span class="codeline" id="line-27"><code><span class="keyword">type</span> <a href="../../../../pkg/github.com/uber/jaeger-client-go.html#name-ProcessSetter" class="ident">ProcessSetter</a> <span class="keyword">interface</span> {</code></span>
+<span class="codeline" id="line-28"><code>	<a href="../../../../imp/github.com/uber/jaeger-client-go.ProcessSetter.html#name-SetProcess" class="ident">SetProcess</a>(process <a href="#line-18" class="ident">Process</a>)</code></span>
+<span class="codeline" id="line-29"><code>}</code></span>
+</pre><pre id="footer">
+<table><tr><td><img src="../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

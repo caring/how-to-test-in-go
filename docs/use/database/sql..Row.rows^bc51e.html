@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: database/sql.Row.rows</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../pkg/database/sql.html">database/sql</a>.<a href="../../src/database/sql/sql.go.html#line-3297">Row</a>.<a href="../../src/database/sql/sql.go.html#line-3300">rows</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">10 uses</span>
+
+	database/sql (current package)
+		<a href="../../src/database/sql/sql.go.html#line-1779">sql.go#L1779</a>: 	return &amp;Row{<b>rows</b>: rows, err: err}
+		<a href="../../src/database/sql/sql.go.html#line-1983" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-1983">#L1983</a>: 	return &amp;Row{<b>rows</b>: rows, err: err}
+		<a href="../../src/database/sql/sql.go.html#line-2488" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-2488">#L2488</a>: 	return &amp;Row{<b>rows</b>: rows, err: err}
+		<a href="../../src/database/sql/sql.go.html#line-2808" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-2808">#L2808</a>: 	return &amp;Row{<b>rows</b>: rows}
+		<a href="../../src/database/sql/sql.go.html#line-3300" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-3300">#L3300</a>: 	<b>rows</b> *Rows
+		<a href="../../src/database/sql/sql.go.html#line-3326" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-3326">#L3326</a>: 	defer r.<b>rows</b>.Close()
+		<a href="../../src/database/sql/sql.go.html#line-3333" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-3333">#L3333</a>: 	if !r.<b>rows</b>.Next() {
+		<a href="../../src/database/sql/sql.go.html#line-3334" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-3334">#L3334</a>: 		if err := r.<b>rows</b>.Err(); err != nil {
+		<a href="../../src/database/sql/sql.go.html#line-3339" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-3339">#L3339</a>: 	err := r.<b>rows</b>.Scan(dest...)
+		<a href="../../src/database/sql/sql.go.html#line-3344" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-3344">#L3344</a>: 	return r.<b>rows</b>.Close()
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

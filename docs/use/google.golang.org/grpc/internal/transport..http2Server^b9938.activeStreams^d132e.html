@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: google.golang.org/grpc/internal/transport.http2Server.activeStreams</title>
+<link href="../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../../pkg/google.golang.org/grpc/internal/transport.html">google.golang.org/grpc/internal/transport</a>.<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-66">http2Server</a>.<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-112">activeStreams</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">16 uses</span>
+
+	google.golang.org/grpc/internal/transport (current package)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-112">http2_server.go#L112</a>: 	<b>activeStreams</b> map[uint32]*Stream
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-254" class="path-duplicate">http2_server.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-254">#L254</a>: 		<b>activeStreams</b>:     make(map[uint32]*Stream),
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-506" class="path-duplicate">http2_server.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-506">#L506</a>: 	if uint32(len(t.<b>activeStreams</b>)) &gt;= t.maxStreams {
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-551" class="path-duplicate">http2_server.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-551">#L551</a>: 	t.<b>activeStreams</b>[streamID] = s
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-552" class="path-duplicate">http2_server.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-552">#L552</a>: 	if len(t.<b>activeStreams</b>) == 1 {
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-613" class="path-duplicate">http2_server.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-613">#L613</a>: 				s := t.<b>activeStreams</b>[se.StreamID]
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-666" class="path-duplicate">http2_server.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-666">#L666</a>: 	if t.<b>activeStreams</b> == nil {
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-670" class="path-duplicate">http2_server.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-670">#L670</a>: 	s, ok := t.<b>activeStreams</b>[f.Header().StreamID]
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-704" class="path-duplicate">http2_server.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-704">#L704</a>: 	for _, s := range t.<b>activeStreams</b> {
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-867" class="path-duplicate">http2_server.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-867">#L867</a>: 	ns := len(t.<b>activeStreams</b>)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1205" class="path-duplicate">http2_server.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1205">#L1205</a>: 	streams := t.<b>activeStreams</b>
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1206" class="path-duplicate">http2_server.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1206">#L1206</a>: 	t.<b>activeStreams</b> = nil
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1234" class="path-duplicate">http2_server.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1234">#L1234</a>: 	if _, ok := t.<b>activeStreams</b>[s.id]; ok {
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1235" class="path-duplicate">http2_server.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1235">#L1235</a>: 		delete(t.<b>activeStreams</b>, s.id)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1236" class="path-duplicate">http2_server.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1236">#L1236</a>: 		if len(t.<b>activeStreams</b>) == 0 {
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1314" class="path-duplicate">http2_server.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1314">#L1314</a>: 		if len(t.<b>activeStreams</b>) == 0 {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

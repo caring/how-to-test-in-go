@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Source: factory.go in package github.com/uber/jaeger-lib/metrics</title>
+<link href="../../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre id="header"><code><span class="title">Source File</span>
+	factory.go
+
+<span class="title">Belonging Package</span>
+	<a href="../../../../../pkg/github.com/uber/jaeger-lib/metrics.html">github.com/uber/jaeger-lib/metrics</a>
+</code></pre>
+<style>input[type=radio] {display: none;}
+input[id=r0]:checked ~pre label[for=r0],
+input[id=r1]:checked ~pre label[for=r1],
+input[id=r2]:checked ~pre label[for=r2],
+input[id=r3]:checked ~pre label[for=r3],
+input[id=r4]:checked ~pre label[for=r4],
+input[id=r5]:checked ~pre label[for=r5],
+input[id=r6]:checked ~pre label[for=r6],
+input[id=r7]:checked ~pre label[for=r7],
+input[id=r8]:checked ~pre label[for=r8],
+input[id=r9]:checked ~pre label[for=r9]
+{background: #226; color: #ff8;}
+input[id=i0]:checked ~pre .i0
+{background: brown; color: #eed;}
+</style><input id="r0" type="radio" name="g"/>
+<input id="r1" type="radio" name="g"/>
+<input id="r2" type="radio" name="g"/>
+<input id="r3" type="radio" name="g"/>
+<input id="r4" type="radio" name="g"/>
+<input id="r5" type="radio" name="g"/>
+<input id="r6" type="radio" name="g"/>
+<input id="r7" type="radio" name="g"/>
+<input id="r8" type="radio" name="g"/>
+<input id="r9" type="radio" name="g"/>
+<input id="i0" type="radio" name="i"/>
+
+<pre class="line-numbers">
+<span class="codeline" id="line-1"><code><span class="comment">// Copyright (c) 2017 Uber Technologies, Inc.</span></code></span>
+<span class="codeline" id="line-2"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-3"><code><span class="comment">// Licensed under the Apache License, Version 2.0 (the "License");</span></code></span>
+<span class="codeline" id="line-4"><code><span class="comment">// you may not use this file except in compliance with the License.</span></code></span>
+<span class="codeline" id="line-5"><code><span class="comment">// You may obtain a copy of the License at</span></code></span>
+<span class="codeline" id="line-6"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-7"><code><span class="comment">// http://www.apache.org/licenses/LICENSE-2.0</span></code></span>
+<span class="codeline" id="line-8"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-9"><code><span class="comment">// Unless required by applicable law or agreed to in writing, software</span></code></span>
+<span class="codeline" id="line-10"><code><span class="comment">// distributed under the License is distributed on an "AS IS" BASIS,</span></code></span>
+<span class="codeline" id="line-11"><code><span class="comment">// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></code></span>
+<span class="codeline" id="line-12"><code><span class="comment">// See the License for the specific language governing permissions and</span></code></span>
+<span class="codeline" id="line-13"><code><span class="comment">// limitations under the License.</span></code></span>
+<span class="codeline" id="line-14"><code></code></span>
+<span class="codeline" id="line-15"><code><span class="keyword">package</span> metrics</code></span>
+<span class="codeline" id="line-16"><code></code></span>
+<span class="codeline" id="line-17"><code><span class="keyword">import</span> (</code></span>
+<span class="codeline" id="line-18"><code>	<label for="i0"><span class="lit-string i0">"time"</span></label></code></span>
+<span class="codeline" id="line-19"><code>)</code></span>
+<span class="codeline" id="line-20"><code></code></span>
+<span class="codeline" id="line-21"><code><span class="comment">// NSOptions defines the name and tags map associated with a factory namespace</span></code></span>
+<span class="codeline" id="line-22"><code><span class="keyword">type</span> <a href="../../../../../pkg/github.com/uber/jaeger-lib/metrics.html#name-NSOptions" class="ident">NSOptions</a> <span class="keyword">struct</span> {</code></span>
+<span class="codeline" id="line-23"><code>	<a href="../../../../../use/github.com/uber/jaeger-lib/metrics..NSOptions.Name.html" class="ident">Name</a> <a href="../../../../../pkg/builtin.html#name-string" class="ident">string</a></code></span>
+<span class="codeline" id="line-24"><code>	<a href="../../../../../use/github.com/uber/jaeger-lib/metrics..NSOptions.Tags.html" class="ident">Tags</a> <span class="keyword">map</span>[<a href="../../../../../pkg/builtin.html#name-string" class="ident">string</a>]<a href="../../../../../pkg/builtin.html#name-string" class="ident">string</a></code></span>
+<span class="codeline" id="line-25"><code>}</code></span>
+<span class="codeline" id="line-26"><code></code></span>
+<span class="codeline" id="line-27"><code><span class="comment">// Options defines the information associated with a metric</span></code></span>
+<span class="codeline" id="line-28"><code><span class="keyword">type</span> <a href="../../../../../pkg/github.com/uber/jaeger-lib/metrics.html#name-Options" class="ident">Options</a> <span class="keyword">struct</span> {</code></span>
+<span class="codeline" id="line-29"><code>	<a href="../../../../../use/github.com/uber/jaeger-lib/metrics..Options.Name.html" class="ident">Name</a> <a href="../../../../../pkg/builtin.html#name-string" class="ident">string</a></code></span>
+<span class="codeline" id="line-30"><code>	<a href="../../../../../use/github.com/uber/jaeger-lib/metrics..Options.Tags.html" class="ident">Tags</a> <span class="keyword">map</span>[<a href="../../../../../pkg/builtin.html#name-string" class="ident">string</a>]<a href="../../../../../pkg/builtin.html#name-string" class="ident">string</a></code></span>
+<span class="codeline" id="line-31"><code>	<a href="../../../../../use/github.com/uber/jaeger-lib/metrics..Options.Help.html" class="ident">Help</a> <a href="../../../../../pkg/builtin.html#name-string" class="ident">string</a></code></span>
+<span class="codeline" id="line-32"><code>}</code></span>
+<span class="codeline" id="line-33"><code></code></span>
+<span class="codeline" id="line-34"><code><span class="comment">// TimerOptions defines the information associated with a metric</span></code></span>
+<span class="codeline" id="line-35"><code><span class="keyword">type</span> <a href="../../../../../pkg/github.com/uber/jaeger-lib/metrics.html#name-TimerOptions" class="ident">TimerOptions</a> <span class="keyword">struct</span> {</code></span>
+<span class="codeline" id="line-36"><code>	<a href="../../../../../use/github.com/uber/jaeger-lib/metrics..TimerOptions.Name.html" class="ident">Name</a>    <a href="../../../../../pkg/builtin.html#name-string" class="ident">string</a></code></span>
+<span class="codeline" id="line-37"><code>	<a href="../../../../../use/github.com/uber/jaeger-lib/metrics..TimerOptions.Tags.html" class="ident">Tags</a>    <span class="keyword">map</span>[<a href="../../../../../pkg/builtin.html#name-string" class="ident">string</a>]<a href="../../../../../pkg/builtin.html#name-string" class="ident">string</a></code></span>
+<span class="codeline" id="line-38"><code>	<a href="../../../../../use/github.com/uber/jaeger-lib/metrics..TimerOptions.Help.html" class="ident">Help</a>    <a href="../../../../../pkg/builtin.html#name-string" class="ident">string</a></code></span>
+<span class="codeline" id="line-39"><code>	<a href="../../../../../use/github.com/uber/jaeger-lib/metrics..TimerOptions.Buckets.html" class="ident">Buckets</a> []<a href="../../../../../pkg/time.html" class="ident i0">time</a>.<a href="../../../../time/time.go.html#line-590" class="ident">Duration</a></code></span>
+<span class="codeline" id="line-40"><code>}</code></span>
+<span class="codeline" id="line-41"><code></code></span>
+<span class="codeline" id="line-42"><code><span class="comment">// HistogramOptions defines the information associated with a metric</span></code></span>
+<span class="codeline" id="line-43"><code><span class="keyword">type</span> <a href="../../../../../pkg/github.com/uber/jaeger-lib/metrics.html#name-HistogramOptions" class="ident">HistogramOptions</a> <span class="keyword">struct</span> {</code></span>
+<span class="codeline" id="line-44"><code>	<a href="../../../../../use/github.com/uber/jaeger-lib/metrics..HistogramOptions.Name.html" class="ident">Name</a>    <a href="../../../../../pkg/builtin.html#name-string" class="ident">string</a></code></span>
+<span class="codeline" id="line-45"><code>	<a href="../../../../../use/github.com/uber/jaeger-lib/metrics..HistogramOptions.Tags.html" class="ident">Tags</a>    <span class="keyword">map</span>[<a href="../../../../../pkg/builtin.html#name-string" class="ident">string</a>]<a href="../../../../../pkg/builtin.html#name-string" class="ident">string</a></code></span>
+<span class="codeline" id="line-46"><code>	<a href="../../../../../use/github.com/uber/jaeger-lib/metrics..HistogramOptions.Help.html" class="ident">Help</a>    <a href="../../../../../pkg/builtin.html#name-string" class="ident">string</a></code></span>
+<span class="codeline" id="line-47"><code>	<a href="../../../../../use/github.com/uber/jaeger-lib/metrics..HistogramOptions.Buckets.html" class="ident">Buckets</a> []<a href="../../../../../pkg/builtin.html#name-float64" class="ident">float64</a></code></span>
+<span class="codeline" id="line-48"><code>}</code></span>
+<span class="codeline" id="line-49"><code></code></span>
+<span class="codeline" id="line-50"><code><span class="comment">// Factory creates new metrics</span></code></span>
+<span class="codeline" id="line-51"><code><span class="keyword">type</span> <a href="../../../../../pkg/github.com/uber/jaeger-lib/metrics.html#name-Factory" class="ident">Factory</a> <span class="keyword">interface</span> {</code></span>
+<span class="codeline" id="line-52"><code>	<a href="../../../../../imp/github.com/uber/jaeger-lib/metrics.Factory.html#name-Counter" class="ident">Counter</a>(metric <a href="#line-28" class="ident">Options</a>) <a href="counter.go.html#line-18" class="ident">Counter</a></code></span>
+<span class="codeline" id="line-53"><code>	<a href="../../../../../imp/github.com/uber/jaeger-lib/metrics.Factory.html#name-Timer" class="ident">Timer</a>(metric <a href="#line-35" class="ident">TimerOptions</a>) <a href="timer.go.html#line-23" class="ident">Timer</a></code></span>
+<span class="codeline" id="line-54"><code>	<a href="../../../../../imp/github.com/uber/jaeger-lib/metrics.Factory.html#name-Gauge" class="ident">Gauge</a>(metric <a href="#line-28" class="ident">Options</a>) <a href="gauge.go.html#line-18" class="ident">Gauge</a></code></span>
+<span class="codeline" id="line-55"><code>	<a href="../../../../../imp/github.com/uber/jaeger-lib/metrics.Factory.html#name-Histogram" class="ident">Histogram</a>(metric <a href="#line-43" class="ident">HistogramOptions</a>) <a href="histogram.go.html#line-18" class="ident">Histogram</a></code></span>
+<span class="codeline" id="line-56"><code></code></span>
+<span class="codeline" id="line-57"><code>	<span class="comment">// Namespace returns a nested metrics factory.</span></code></span>
+<span class="codeline" id="line-58"><code>	<a href="../../../../../imp/github.com/uber/jaeger-lib/metrics.Factory.html#name-Namespace" class="ident">Namespace</a>(scope <a href="#line-22" class="ident">NSOptions</a>) <a href="#line-51" class="ident">Factory</a></code></span>
+<span class="codeline" id="line-59"><code>}</code></span>
+<span class="codeline" id="line-60"><code></code></span>
+<span class="codeline" id="line-61"><code><span class="comment">// NullFactory is a metrics factory that returns NullCounter, NullTimer, and NullGauge.</span></code></span>
+<span class="codeline" id="line-62"><code><span class="keyword">var</span> <a href="../../../../../pkg/github.com/uber/jaeger-lib/metrics.html#name-NullFactory" class="ident">NullFactory</a> <a href="#line-51" class="ident">Factory</a> = <a href="#line-64" class="ident">nullFactory</a>{}</code></span>
+<span class="codeline" id="line-63"><code></code></span>
+<span class="codeline" id="line-64"><code><span class="keyword">type</span> <a href="../../../../../pkg/github.com/uber/jaeger-lib/metrics.html#name-nullFactory" class="ident">nullFactory</a> <span class="keyword">struct</span>{}</code></span>
+<span class="codeline" id="line-65"><code></code></span>
+<span class="codeline" id="line-66"><code><span class="keyword">func</span> (<a href="#line-64" class="ident">nullFactory</a>) <label for="r0" class="ident"><a href="../../../../../use/github.com/uber/jaeger-lib/metrics..nullFactory^c9c4d.Counter.html" class="ident">Counter</a></label>(<label for="r1" class="ident">options</label> <a href="#line-28" class="ident">Options</a>) <a href="counter.go.html#line-18" class="ident">Counter</a> {</code></span>
+<span class="codeline" id="line-67"><code>	<span class="keyword">return</span> <a href="counter.go.html#line-24" class="ident">NullCounter</a></code></span>
+<span class="codeline" id="line-68"><code>}</code></span>
+<span class="codeline" id="line-69"><code><span class="keyword">func</span> (<a href="#line-64" class="ident">nullFactory</a>) <label for="r2" class="ident"><a href="../../../../../use/github.com/uber/jaeger-lib/metrics..nullFactory^c9c4d.Timer.html" class="ident">Timer</a></label>(<label for="r3" class="ident">options</label> <a href="#line-35" class="ident">TimerOptions</a>) <a href="timer.go.html#line-23" class="ident">Timer</a> {</code></span>
+<span class="codeline" id="line-70"><code>	<span class="keyword">return</span> <a href="timer.go.html#line-29" class="ident">NullTimer</a></code></span>
+<span class="codeline" id="line-71"><code>}</code></span>
+<span class="codeline" id="line-72"><code><span class="keyword">func</span> (<a href="#line-64" class="ident">nullFactory</a>) <label for="r4" class="ident"><a href="../../../../../use/github.com/uber/jaeger-lib/metrics..nullFactory^c9c4d.Gauge.html" class="ident">Gauge</a></label>(<label for="r5" class="ident">options</label> <a href="#line-28" class="ident">Options</a>) <a href="gauge.go.html#line-18" class="ident">Gauge</a> {</code></span>
+<span class="codeline" id="line-73"><code>	<span class="keyword">return</span> <a href="gauge.go.html#line-24" class="ident">NullGauge</a></code></span>
+<span class="codeline" id="line-74"><code>}</code></span>
+<span class="codeline" id="line-75"><code><span class="keyword">func</span> (<a href="#line-64" class="ident">nullFactory</a>) <label for="r6" class="ident"><a href="../../../../../use/github.com/uber/jaeger-lib/metrics..nullFactory^c9c4d.Histogram.html" class="ident">Histogram</a></label>(<label for="r7" class="ident">options</label> <a href="#line-43" class="ident">HistogramOptions</a>) <a href="histogram.go.html#line-18" class="ident">Histogram</a> {</code></span>
+<span class="codeline" id="line-76"><code>	<span class="keyword">return</span> <a href="histogram.go.html#line-24" class="ident">NullHistogram</a></code></span>
+<span class="codeline" id="line-77"><code>}</code></span>
+<span class="codeline" id="line-78"><code><span class="keyword">func</span> (<a href="#line-64" class="ident">nullFactory</a>) <label for="r8" class="ident"><a href="../../../../../use/github.com/uber/jaeger-lib/metrics..nullFactory^c9c4d.Namespace.html" class="ident">Namespace</a></label>(<label for="r9" class="ident">scope</label> <a href="#line-22" class="ident">NSOptions</a>) <a href="#line-51" class="ident">Factory</a> { <span class="keyword">return</span> <a href="#line-62" class="ident">NullFactory</a> }</code></span>
+</pre><pre id="footer">
+<table><tr><td><img src="../../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

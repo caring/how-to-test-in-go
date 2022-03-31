@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Source: error.go in package github.com/aws/aws-sdk-go/aws/awserr</title>
+<link href="../../../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre id="header"><code><span class="title">Source File</span>
+	error.go
+
+<span class="title">Belonging Package</span>
+	<a href="../../../../../../pkg/github.com/aws/aws-sdk-go/aws/awserr.html">github.com/aws/aws-sdk-go/aws/awserr</a>
+</code></pre>
+<style>input[type=radio] {display: none;}
+input[id=r0]:checked ~pre label[for=r0],
+input[id=r1]:checked ~pre label[for=r1],
+input[id=r2]:checked ~pre label[for=r2],
+input[id=r3]:checked ~pre label[for=r3],
+input[id=r4]:checked ~pre label[for=r4],
+input[id=r5]:checked ~pre label[for=r5],
+input[id=r6]:checked ~pre label[for=r6],
+input[id=r7]:checked ~pre label[for=r7],
+input[id=r8]:checked ~pre label[for=r8],
+input[id=r9]:checked ~pre label[for=r9],
+input[id=r10]:checked ~pre label[for=r10],
+input[id=r11]:checked ~pre label[for=r11],
+input[id=r12]:checked ~pre label[for=r12],
+input[id=r13]:checked ~pre label[for=r13],
+input[id=r14]:checked ~pre label[for=r14],
+input[id=r15]:checked ~pre label[for=r15],
+input[id=r16]:checked ~pre label[for=r16]
+{background: #226; color: #ff8;}
+{background: brown; color: #eed;}
+</style><input id="r0" type="radio" name="g"/>
+<input id="r1" type="radio" name="g"/>
+<input id="r2" type="radio" name="g"/>
+<input id="r3" type="radio" name="g"/>
+<input id="r4" type="radio" name="g"/>
+<input id="r5" type="radio" name="g"/>
+<input id="r6" type="radio" name="g"/>
+<input id="r7" type="radio" name="g"/>
+<input id="r8" type="radio" name="g"/>
+<input id="r9" type="radio" name="g"/>
+<input id="r10" type="radio" name="g"/>
+<input id="r11" type="radio" name="g"/>
+<input id="r12" type="radio" name="g"/>
+<input id="r13" type="radio" name="g"/>
+<input id="r14" type="radio" name="g"/>
+<input id="r15" type="radio" name="g"/>
+<input id="r16" type="radio" name="g"/>
+
+<pre class="line-numbers">
+<div class="anchor" id="doc"><span class="codeline" id="line-1"><code><span class="comment">// Package awserr represents API error interface accessors for the SDK.</span></code></span></div><span class="codeline" id="line-2"><code><span class="keyword">package</span> awserr</code></span>
+<span class="codeline" id="line-3"><code></code></span>
+<span class="codeline" id="line-4"><code><span class="comment">// An Error wraps lower level errors with code, message and an original error.</span></code></span>
+<span class="codeline" id="line-5"><code><span class="comment">// The underlying concrete error type may also satisfy other interfaces which</span></code></span>
+<span class="codeline" id="line-6"><code><span class="comment">// can be to used to obtain more specific information about the error.</span></code></span>
+<span class="codeline" id="line-7"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-8"><code><span class="comment">// Calling Error() or String() will always include the full information about</span></code></span>
+<span class="codeline" id="line-9"><code><span class="comment">// an error based on its underlying type.</span></code></span>
+<span class="codeline" id="line-10"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-11"><code><span class="comment">// Example:</span></code></span>
+<span class="codeline" id="line-12"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-13"><code><span class="comment">//     output, err := s3manage.Upload(svc, input, opts)</span></code></span>
+<span class="codeline" id="line-14"><code><span class="comment">//     if err != nil {</span></code></span>
+<span class="codeline" id="line-15"><code><span class="comment">//         if awsErr, ok := err.(awserr.Error); ok {</span></code></span>
+<span class="codeline" id="line-16"><code><span class="comment">//             // Get error details</span></code></span>
+<span class="codeline" id="line-17"><code><span class="comment">//             log.Println("Error:", awsErr.Code(), awsErr.Message())</span></code></span>
+<span class="codeline" id="line-18"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-19"><code><span class="comment">//             // Prints out full error message, including original error if there was one.</span></code></span>
+<span class="codeline" id="line-20"><code><span class="comment">//             log.Println("Error:", awsErr.Error())</span></code></span>
+<span class="codeline" id="line-21"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-22"><code><span class="comment">//             // Get original error</span></code></span>
+<span class="codeline" id="line-23"><code><span class="comment">//             if origErr := awsErr.OrigErr(); origErr != nil {</span></code></span>
+<span class="codeline" id="line-24"><code><span class="comment">//                 // operate on original error.</span></code></span>
+<span class="codeline" id="line-25"><code><span class="comment">//             }</span></code></span>
+<span class="codeline" id="line-26"><code><span class="comment">//         } else {</span></code></span>
+<span class="codeline" id="line-27"><code><span class="comment">//             fmt.Println(err.Error())</span></code></span>
+<span class="codeline" id="line-28"><code><span class="comment">//         }</span></code></span>
+<span class="codeline" id="line-29"><code><span class="comment">//     }</span></code></span>
+<span class="codeline" id="line-30"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-31"><code><span class="keyword">type</span> <a href="../../../../../../pkg/github.com/aws/aws-sdk-go/aws/awserr.html#name-Error" class="ident">Error</a> <span class="keyword">interface</span> {</code></span>
+<span class="codeline" id="line-32"><code>	<span class="comment">// Satisfy the generic error interface.</span></code></span>
+<span class="codeline" id="line-33"><code>	<a href="../../../../../../pkg/builtin.html#name-error" class="ident">error</a></code></span>
+<span class="codeline" id="line-34"><code></code></span>
+<span class="codeline" id="line-35"><code>	<span class="comment">// Returns the short phrase depicting the classification of the error.</span></code></span>
+<span class="codeline" id="line-36"><code>	Code() <a href="../../../../../../pkg/builtin.html#name-string" class="ident">string</a></code></span>
+<span class="codeline" id="line-37"><code></code></span>
+<span class="codeline" id="line-38"><code>	<span class="comment">// Returns the error details message.</span></code></span>
+<span class="codeline" id="line-39"><code>	Message() <a href="../../../../../../pkg/builtin.html#name-string" class="ident">string</a></code></span>
+<span class="codeline" id="line-40"><code></code></span>
+<span class="codeline" id="line-41"><code>	<span class="comment">// Returns the original error if one was set.  Nil is returned if not set.</span></code></span>
+<span class="codeline" id="line-42"><code>	OrigErr() <a href="../../../../../../pkg/builtin.html#name-error" class="ident">error</a></code></span>
+<span class="codeline" id="line-43"><code>}</code></span>
+<span class="codeline" id="line-44"><code></code></span>
+<span class="codeline" id="line-45"><code><span class="comment">// BatchError is a batch of errors which also wraps lower level errors with</span></code></span>
+<span class="codeline" id="line-46"><code><span class="comment">// code, message, and original errors. Calling Error() will include all errors</span></code></span>
+<span class="codeline" id="line-47"><code><span class="comment">// that occurred in the batch.</span></code></span>
+<span class="codeline" id="line-48"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-49"><code><span class="comment">// Deprecated: Replaced with BatchedErrors. Only defined for backwards</span></code></span>
+<span class="codeline" id="line-50"><code><span class="comment">// compatibility.</span></code></span>
+<span class="codeline" id="line-51"><code><span class="keyword">type</span> <a href="../../../../../../pkg/github.com/aws/aws-sdk-go/aws/awserr.html#name-BatchError" class="ident">BatchError</a> <span class="keyword">interface</span> {</code></span>
+<span class="codeline" id="line-52"><code>	<span class="comment">// Satisfy the generic error interface.</span></code></span>
+<span class="codeline" id="line-53"><code>	<a href="../../../../../../pkg/builtin.html#name-error" class="ident">error</a></code></span>
+<span class="codeline" id="line-54"><code></code></span>
+<span class="codeline" id="line-55"><code>	<span class="comment">// Returns the short phrase depicting the classification of the error.</span></code></span>
+<span class="codeline" id="line-56"><code>	Code() <a href="../../../../../../pkg/builtin.html#name-string" class="ident">string</a></code></span>
+<span class="codeline" id="line-57"><code></code></span>
+<span class="codeline" id="line-58"><code>	<span class="comment">// Returns the error details message.</span></code></span>
+<span class="codeline" id="line-59"><code>	Message() <a href="../../../../../../pkg/builtin.html#name-string" class="ident">string</a></code></span>
+<span class="codeline" id="line-60"><code></code></span>
+<span class="codeline" id="line-61"><code>	<span class="comment">// Returns the original error if one was set.  Nil is returned if not set.</span></code></span>
+<span class="codeline" id="line-62"><code>	OrigErrs() []<a href="../../../../../../pkg/builtin.html#name-error" class="ident">error</a></code></span>
+<span class="codeline" id="line-63"><code>}</code></span>
+<span class="codeline" id="line-64"><code></code></span>
+<span class="codeline" id="line-65"><code><span class="comment">// BatchedErrors is a batch of errors which also wraps lower level errors with</span></code></span>
+<span class="codeline" id="line-66"><code><span class="comment">// code, message, and original errors. Calling Error() will include all errors</span></code></span>
+<span class="codeline" id="line-67"><code><span class="comment">// that occurred in the batch.</span></code></span>
+<span class="codeline" id="line-68"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-69"><code><span class="comment">// Replaces BatchError</span></code></span>
+<span class="codeline" id="line-70"><code><span class="keyword">type</span> <a href="../../../../../../pkg/github.com/aws/aws-sdk-go/aws/awserr.html#name-BatchedErrors" class="ident">BatchedErrors</a> <span class="keyword">interface</span> {</code></span>
+<span class="codeline" id="line-71"><code>	<span class="comment">// Satisfy the base Error interface.</span></code></span>
+<span class="codeline" id="line-72"><code>	<a href="#line-31" class="ident">Error</a></code></span>
+<span class="codeline" id="line-73"><code></code></span>
+<span class="codeline" id="line-74"><code>	<span class="comment">// Returns the original error if one was set.  Nil is returned if not set.</span></code></span>
+<span class="codeline" id="line-75"><code>	<a href="../../../../../../imp/github.com/aws/aws-sdk-go/aws/awserr.BatchedErrors.html#name-OrigErrs" class="ident">OrigErrs</a>() []<a href="../../../../../../pkg/builtin.html#name-error" class="ident">error</a></code></span>
+<span class="codeline" id="line-76"><code>}</code></span>
+<span class="codeline" id="line-77"><code></code></span>
+<span class="codeline" id="line-78"><code><span class="comment">// New returns an Error object described by the code, message, and origErr.</span></code></span>
+<span class="codeline" id="line-79"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-80"><code><span class="comment">// If origErr satisfies the Error interface it will not be wrapped within a new</span></code></span>
+<span class="codeline" id="line-81"><code><span class="comment">// Error object and will instead be returned.</span></code></span>
+<span class="codeline" id="line-82"><code><span class="keyword">func</span> <label for="r0" class="ident"><a href="../../../../../../pkg/github.com/aws/aws-sdk-go/aws/awserr.html#name-New" class="ident">New</a></label>(<label for="r1" class="ident">code</label>, <label for="r2" class="ident">message</label> <a href="../../../../../../pkg/builtin.html#name-string" class="ident">string</a>, <label for="r3" class="ident">origErr</label> <a href="../../../../../../pkg/builtin.html#name-error" class="ident">error</a>) <a href="#line-31" class="ident">Error</a> {</code></span>
+<span class="codeline" id="line-83"><code>	<span class="keyword">var</span> <label for="r4" class="ident">errs</label> []<a href="../../../../../../pkg/builtin.html#name-error" class="ident">error</a></code></span>
+<span class="codeline" id="line-84"><code>	<span class="keyword">if</span> <label for="r3" class="ident">origErr</label> != <a href="../../../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-85"><code>		<label for="r4" class="ident">errs</label> = <a href="../../../../../../pkg/builtin.html#name-append" class="ident">append</a>(<label for="r4" class="ident">errs</label>, <label for="r3" class="ident">origErr</label>)</code></span>
+<span class="codeline" id="line-86"><code>	}</code></span>
+<span class="codeline" id="line-87"><code>	<span class="keyword">return</span> <a href="types.go.html#line-50" class="ident">newBaseError</a>(<label for="r1" class="ident">code</label>, <label for="r2" class="ident">message</label>, <label for="r4" class="ident">errs</label>)</code></span>
+<span class="codeline" id="line-88"><code>}</code></span>
+<span class="codeline" id="line-89"><code></code></span>
+<span class="codeline" id="line-90"><code><span class="comment">// NewBatchError returns an BatchedErrors with a collection of errors as an</span></code></span>
+<span class="codeline" id="line-91"><code><span class="comment">// array of errors.</span></code></span>
+<span class="codeline" id="line-92"><code><span class="keyword">func</span> <label for="r5" class="ident"><a href="../../../../../../pkg/github.com/aws/aws-sdk-go/aws/awserr.html#name-NewBatchError" class="ident">NewBatchError</a></label>(<label for="r6" class="ident">code</label>, <label for="r7" class="ident">message</label> <a href="../../../../../../pkg/builtin.html#name-string" class="ident">string</a>, <label for="r8" class="ident">errs</label> []<a href="../../../../../../pkg/builtin.html#name-error" class="ident">error</a>) <a href="#line-70" class="ident">BatchedErrors</a> {</code></span>
+<span class="codeline" id="line-93"><code>	<span class="keyword">return</span> <a href="types.go.html#line-50" class="ident">newBaseError</a>(<label for="r6" class="ident">code</label>, <label for="r7" class="ident">message</label>, <label for="r8" class="ident">errs</label>)</code></span>
+<span class="codeline" id="line-94"><code>}</code></span>
+<span class="codeline" id="line-95"><code></code></span>
+<span class="codeline" id="line-96"><code><span class="comment">// A RequestFailure is an interface to extract request failure information from</span></code></span>
+<span class="codeline" id="line-97"><code><span class="comment">// an Error such as the request ID of the failed request returned by a service.</span></code></span>
+<span class="codeline" id="line-98"><code><span class="comment">// RequestFailures may not always have a requestID value if the request failed</span></code></span>
+<span class="codeline" id="line-99"><code><span class="comment">// prior to reaching the service such as a connection error.</span></code></span>
+<span class="codeline" id="line-100"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-101"><code><span class="comment">// Example:</span></code></span>
+<span class="codeline" id="line-102"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-103"><code><span class="comment">//     output, err := s3manage.Upload(svc, input, opts)</span></code></span>
+<span class="codeline" id="line-104"><code><span class="comment">//     if err != nil {</span></code></span>
+<span class="codeline" id="line-105"><code><span class="comment">//         if reqerr, ok := err.(RequestFailure); ok {</span></code></span>
+<span class="codeline" id="line-106"><code><span class="comment">//             log.Println("Request failed", reqerr.Code(), reqerr.Message(), reqerr.RequestID())</span></code></span>
+<span class="codeline" id="line-107"><code><span class="comment">//         } else {</span></code></span>
+<span class="codeline" id="line-108"><code><span class="comment">//             log.Println("Error:", err.Error())</span></code></span>
+<span class="codeline" id="line-109"><code><span class="comment">//         }</span></code></span>
+<span class="codeline" id="line-110"><code><span class="comment">//     }</span></code></span>
+<span class="codeline" id="line-111"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-112"><code><span class="comment">// Combined with awserr.Error:</span></code></span>
+<span class="codeline" id="line-113"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-114"><code><span class="comment">//    output, err := s3manage.Upload(svc, input, opts)</span></code></span>
+<span class="codeline" id="line-115"><code><span class="comment">//    if err != nil {</span></code></span>
+<span class="codeline" id="line-116"><code><span class="comment">//        if awsErr, ok := err.(awserr.Error); ok {</span></code></span>
+<span class="codeline" id="line-117"><code><span class="comment">//            // Generic AWS Error with Code, Message, and original error (if any)</span></code></span>
+<span class="codeline" id="line-118"><code><span class="comment">//            fmt.Println(awsErr.Code(), awsErr.Message(), awsErr.OrigErr())</span></code></span>
+<span class="codeline" id="line-119"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-120"><code><span class="comment">//            if reqErr, ok := err.(awserr.RequestFailure); ok {</span></code></span>
+<span class="codeline" id="line-121"><code><span class="comment">//                // A service error occurred</span></code></span>
+<span class="codeline" id="line-122"><code><span class="comment">//                fmt.Println(reqErr.StatusCode(), reqErr.RequestID())</span></code></span>
+<span class="codeline" id="line-123"><code><span class="comment">//            }</span></code></span>
+<span class="codeline" id="line-124"><code><span class="comment">//        } else {</span></code></span>
+<span class="codeline" id="line-125"><code><span class="comment">//            fmt.Println(err.Error())</span></code></span>
+<span class="codeline" id="line-126"><code><span class="comment">//        }</span></code></span>
+<span class="codeline" id="line-127"><code><span class="comment">//    }</span></code></span>
+<span class="codeline" id="line-128"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-129"><code><span class="keyword">type</span> <a href="../../../../../../pkg/github.com/aws/aws-sdk-go/aws/awserr.html#name-RequestFailure" class="ident">RequestFailure</a> <span class="keyword">interface</span> {</code></span>
+<span class="codeline" id="line-130"><code>	<a href="#line-31" class="ident">Error</a></code></span>
+<span class="codeline" id="line-131"><code></code></span>
+<span class="codeline" id="line-132"><code>	<span class="comment">// The status code of the HTTP response.</span></code></span>
+<span class="codeline" id="line-133"><code>	<a href="../../../../../../imp/github.com/aws/aws-sdk-go/aws/awserr.RequestFailure.html#name-StatusCode" class="ident">StatusCode</a>() <a href="../../../../../../pkg/builtin.html#name-int" class="ident">int</a></code></span>
+<span class="codeline" id="line-134"><code></code></span>
+<span class="codeline" id="line-135"><code>	<span class="comment">// The request ID returned by the service for a request failure. This will</span></code></span>
+<span class="codeline" id="line-136"><code><span class="comment">	// be empty if no request ID is available such as the request failed due</span></code></span>
+<span class="codeline" id="line-137"><code><span class="comment">	// to a connection error.</span></code></span>
+<span class="codeline" id="line-138"><code>	<a href="../../../../../../imp/github.com/aws/aws-sdk-go/aws/awserr.RequestFailure.html#name-RequestID" class="ident">RequestID</a>() <a href="../../../../../../pkg/builtin.html#name-string" class="ident">string</a></code></span>
+<span class="codeline" id="line-139"><code>}</code></span>
+<span class="codeline" id="line-140"><code></code></span>
+<span class="codeline" id="line-141"><code><span class="comment">// NewRequestFailure returns a wrapped error with additional information for</span></code></span>
+<span class="codeline" id="line-142"><code><span class="comment">// request status code, and service requestID.</span></code></span>
+<span class="codeline" id="line-143"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-144"><code><span class="comment">// Should be used to wrap all request which involve service requests. Even if</span></code></span>
+<span class="codeline" id="line-145"><code><span class="comment">// the request failed without a service response, but had an HTTP status code</span></code></span>
+<span class="codeline" id="line-146"><code><span class="comment">// that may be meaningful.</span></code></span>
+<span class="codeline" id="line-147"><code><span class="keyword">func</span> <label for="r9" class="ident"><a href="../../../../../../pkg/github.com/aws/aws-sdk-go/aws/awserr.html#name-NewRequestFailure" class="ident">NewRequestFailure</a></label>(<label for="r10" class="ident">err</label> <a href="#line-31" class="ident">Error</a>, <label for="r11" class="ident">statusCode</label> <a href="../../../../../../pkg/builtin.html#name-int" class="ident">int</a>, <label for="r12" class="ident">reqID</label> <a href="../../../../../../pkg/builtin.html#name-string" class="ident">string</a>) <a href="#line-129" class="ident">RequestFailure</a> {</code></span>
+<span class="codeline" id="line-148"><code>	<span class="keyword">return</span> <a href="types.go.html#line-136" class="ident">newRequestError</a>(<label for="r10" class="ident">err</label>, <label for="r11" class="ident">statusCode</label>, <label for="r12" class="ident">reqID</label>)</code></span>
+<span class="codeline" id="line-149"><code>}</code></span>
+<span class="codeline" id="line-150"><code></code></span>
+<span class="codeline" id="line-151"><code><span class="comment">// UnmarshalError provides the interface for the SDK failing to unmarshal data.</span></code></span>
+<span class="codeline" id="line-152"><code><span class="keyword">type</span> <a href="../../../../../../pkg/github.com/aws/aws-sdk-go/aws/awserr.html#name-UnmarshalError" class="ident">UnmarshalError</a> <span class="keyword">interface</span> {</code></span>
+<span class="codeline" id="line-153"><code>	<a href="types.go.html#line-116" class="ident">awsError</a></code></span>
+<span class="codeline" id="line-154"><code>	<a href="../../../../../../imp/github.com/aws/aws-sdk-go/aws/awserr.UnmarshalError.html#name-Bytes" class="ident">Bytes</a>() []<a href="../../../../../../pkg/builtin.html#name-byte" class="ident">byte</a></code></span>
+<span class="codeline" id="line-155"><code>}</code></span>
+<span class="codeline" id="line-156"><code></code></span>
+<span class="codeline" id="line-157"><code><span class="comment">// NewUnmarshalError returns an initialized UnmarshalError error wrapper adding</span></code></span>
+<span class="codeline" id="line-158"><code><span class="comment">// the bytes that fail to unmarshal to the error.</span></code></span>
+<span class="codeline" id="line-159"><code><span class="keyword">func</span> <label for="r13" class="ident"><a href="../../../../../../pkg/github.com/aws/aws-sdk-go/aws/awserr.html#name-NewUnmarshalError" class="ident">NewUnmarshalError</a></label>(<label for="r14" class="ident">err</label> <a href="../../../../../../pkg/builtin.html#name-error" class="ident">error</a>, <label for="r15" class="ident">msg</label> <a href="../../../../../../pkg/builtin.html#name-string" class="ident">string</a>, <label for="r16" class="ident">bytes</label> []<a href="../../../../../../pkg/builtin.html#name-byte" class="ident">byte</a>) <a href="#line-152" class="ident">UnmarshalError</a> {</code></span>
+<span class="codeline" id="line-160"><code>	<span class="keyword">return</span> &amp;<a href="types.go.html#line-177" class="ident">unmarshalError</a>{</code></span>
+<span class="codeline" id="line-161"><code>		<a href="types.go.html#line-178" class="ident">awsError</a>: <a href="#line-82" class="ident">New</a>(<span class="lit-string">"UnmarshalError"</span>, <label for="r15" class="ident">msg</label>, <label for="r14" class="ident">err</label>),</code></span>
+<span class="codeline" id="line-162"><code>		<a href="types.go.html#line-179" class="ident">bytes</a>:    <label for="r16" class="ident">bytes</label>,</code></span>
+<span class="codeline" id="line-163"><code>	}</code></span>
+<span class="codeline" id="line-164"><code>}</code></span>
+</pre><pre id="footer">
+<table><tr><td><img src="../../../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

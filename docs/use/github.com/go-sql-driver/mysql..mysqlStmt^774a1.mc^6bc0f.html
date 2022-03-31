@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/go-sql-driver/mysql.mysqlStmt.mc</title>
+<link href="../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../pkg/github.com/go-sql-driver/mysql.html">github.com/go-sql-driver/mysql</a>.<a href="../../../src/github.com/go-sql-driver/mysql/statement.go.html#line-19">mysqlStmt</a>.<a href="../../../src/github.com/go-sql-driver/mysql/statement.go.html#line-20">mc</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">24 uses</span>
+
+	github.com/go-sql-driver/mysql (current package)
+		<a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-178">connection.go#L178</a>: 		<b>mc</b>: mc,
+		<a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-554" class="path-duplicate">connection.go</a><a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-554">#L554</a>: 	if err := stmt.<b>mc</b>.watchCancel(ctx); err != nil {
+		<a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-560" class="path-duplicate">connection.go</a><a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-560">#L560</a>: 		stmt.<b>mc</b>.finish()
+		<a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-563" class="path-duplicate">connection.go</a><a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-563">#L563</a>: 	rows.finish = stmt.<b>mc</b>.finish
+		<a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-573" class="path-duplicate">connection.go</a><a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-573">#L573</a>: 	if err := stmt.<b>mc</b>.watchCancel(ctx); err != nil {
+		<a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-576" class="path-duplicate">connection.go</a><a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-576">#L576</a>: 	defer stmt.<b>mc</b>.finish()
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-830">packets.go#L830</a>: 	data, err := stmt.<b>mc</b>.readPacket()
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-834" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-834">#L834</a>: 			return 0, stmt.<b>mc</b>.handleErrorPacket(data)
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-857" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-857">#L857</a>: 	maxLen := stmt.<b>mc</b>.maxAllowedPacket - 1
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-878" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-878">#L878</a>: 		stmt.<b>mc</b>.sequence = 0
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-893" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-893">#L893</a>: 		err := stmt.<b>mc</b>.writePacket(data[:4+pktLen])
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-903" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-903">#L903</a>: 	stmt.<b>mc</b>.sequence = 0
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-919" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-919">#L919</a>: 	mc := stmt.<b>mc</b>
+		<a href="../../../src/github.com/go-sql-driver/mysql/statement.go.html#line-20">statement.go#L20</a>: 	<b>mc</b>         *mysqlConn
+		<a href="../../../src/github.com/go-sql-driver/mysql/statement.go.html#line-26" class="path-duplicate">statement.go</a><a href="../../../src/github.com/go-sql-driver/mysql/statement.go.html#line-26">#L26</a>: 	if stmt.<b>mc</b> == nil || stmt.<b>mc</b>.closed.IsSet() {
+		<a href="../../../src/github.com/go-sql-driver/mysql/statement.go.html#line-34" class="path-duplicate">statement.go</a><a href="../../../src/github.com/go-sql-driver/mysql/statement.go.html#line-34">#L34</a>: 	err := stmt.<b>mc</b>.writeCommandPacketUint32(comStmtClose, stmt.id)
+		<a href="../../../src/github.com/go-sql-driver/mysql/statement.go.html#line-35" class="path-duplicate">statement.go</a><a href="../../../src/github.com/go-sql-driver/mysql/statement.go.html#line-35">#L35</a>: 	stmt.<b>mc</b> = nil
+		<a href="../../../src/github.com/go-sql-driver/mysql/statement.go.html#line-53" class="path-duplicate">statement.go</a><a href="../../../src/github.com/go-sql-driver/mysql/statement.go.html#line-53">#L53</a>: 	if stmt.<b>mc</b>.closed.IsSet() {
+		<a href="../../../src/github.com/go-sql-driver/mysql/statement.go.html#line-60" class="path-duplicate">statement.go</a><a href="../../../src/github.com/go-sql-driver/mysql/statement.go.html#line-60">#L60</a>: 		return nil, stmt.<b>mc</b>.markBadConn(err)
+		<a href="../../../src/github.com/go-sql-driver/mysql/statement.go.html#line-63" class="path-duplicate">statement.go</a><a href="../../../src/github.com/go-sql-driver/mysql/statement.go.html#line-63">#L63</a>: 	mc := stmt.<b>mc</b>
+		<a href="../../../src/github.com/go-sql-driver/mysql/statement.go.html#line-101" class="path-duplicate">statement.go</a><a href="../../../src/github.com/go-sql-driver/mysql/statement.go.html#line-101">#L101</a>: 	if stmt.<b>mc</b>.closed.IsSet() {
+		<a href="../../../src/github.com/go-sql-driver/mysql/statement.go.html#line-108" class="path-duplicate">statement.go</a><a href="../../../src/github.com/go-sql-driver/mysql/statement.go.html#line-108">#L108</a>: 		return nil, stmt.<b>mc</b>.markBadConn(err)
+		<a href="../../../src/github.com/go-sql-driver/mysql/statement.go.html#line-111" class="path-duplicate">statement.go</a><a href="../../../src/github.com/go-sql-driver/mysql/statement.go.html#line-111">#L111</a>: 	mc := stmt.<b>mc</b>
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: reflect.structType.Elem</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/reflect.html">reflect</a>.<a href="../src/reflect/type.go.html#line-443">structType</a>.<a href="../src/reflect/type.go.html#line-936">Elem</a></b></span><span style="font-size: large;"><i> (method, <a href="../imp/reflect.structType^4a0e8.html#name-Elem">view implemented interface methods</a>)</i></span>
+
+<span class="title">30 uses</span>
+
+	reflect (current package)
+		<a href="../src/reflect/type.go.html#line-936">type.go#L936</a>: func (t *rtype) <b>Elem</b>() Type {
+		<a href="../src/reflect/type.go.html#line-1339" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1339">#L1339</a>: 						ntyp = ntyp.<b>Elem</b>().common()
+		<a href="../src/reflect/type.go.html#line-1602" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1602">#L1602</a>: 	return V.ChanDir() == BothDir &amp;&amp; (T.Name() == "" || V.Name() == "") &amp;&amp; haveIdenticalType(T.<b>Elem</b>(), V.<b>Elem</b>(), true)
+		<a href="../src/reflect/type.go.html#line-1661" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1661">#L1661</a>: 		return T.Len() == V.Len() &amp;&amp; haveIdenticalType(T.<b>Elem</b>(), V.<b>Elem</b>(), cmpTags)
+		<a href="../src/reflect/type.go.html#line-1664" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1664">#L1664</a>: 		return V.ChanDir() == T.ChanDir() &amp;&amp; haveIdenticalType(T.<b>Elem</b>(), V.<b>Elem</b>(), cmpTags)
+		<a href="../src/reflect/type.go.html#line-1695" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1695">#L1695</a>: 		return haveIdenticalType(T.Key(), V.Key(), cmpTags) &amp;&amp; haveIdenticalType(T.<b>Elem</b>(), V.<b>Elem</b>(), cmpTags)
+		<a href="../src/reflect/type.go.html#line-1698" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1698">#L1698</a>: 		return haveIdenticalType(T.<b>Elem</b>(), V.<b>Elem</b>(), cmpTags)
+		<a href="../src/reflect/type.go.html#line-2462" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2462">#L2462</a>: 				elem := ft.<b>Elem</b>()
+		<a href="../src/reflect/value.go.html#line-292">value.go#L292</a>: 	if v.typ.<b>Elem</b>().Kind() != Uint8 {
+		<a href="../src/reflect/value.go.html#line-303" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-303">#L303</a>: 	if v.typ.<b>Elem</b>().Kind() != Int32 {
+		<a href="../src/reflect/value.go.html#line-1235" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-1235">#L1235</a>: 			if v.Kind() == Ptr &amp;&amp; v.typ.<b>Elem</b>().Kind() == Struct {
+		<a href="../src/reflect/value.go.html#line-1943" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-1943">#L1943</a>: 	if v.typ.<b>Elem</b>().Kind() != Uint8 {
+		<a href="../src/reflect/value.go.html#line-1954" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-1954">#L1954</a>: 	if v.typ.<b>Elem</b>().Kind() != Int32 {
+		<a href="../src/reflect/value.go.html#line-2441" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2441">#L2441</a>: 		stringCopy = sk == String &amp;&amp; dst.typ.<b>Elem</b>().Kind() == Uint8
+		<a href="../src/reflect/value.go.html#line-2448" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2448">#L2448</a>: 	de := dst.typ.<b>Elem</b>()
+		<a href="../src/reflect/value.go.html#line-2450" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2450">#L2450</a>: 		se := src.typ.<b>Elem</b>()
+		<a href="../src/reflect/value.go.html#line-2888" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2888">#L2888</a>: 		if dst.Kind() == Slice &amp;&amp; dst.<b>Elem</b>().PkgPath() == "" {
+		<a href="../src/reflect/value.go.html#line-2889" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2889">#L2889</a>: 			switch dst.<b>Elem</b>().Kind() {
+		<a href="../src/reflect/value.go.html#line-2898" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2898">#L2898</a>: 		if dst.Kind() == String &amp;&amp; src.<b>Elem</b>().PkgPath() == "" {
+		<a href="../src/reflect/value.go.html#line-2899" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2899">#L2899</a>: 			switch src.<b>Elem</b>().Kind() {
+		<a href="../src/reflect/value.go.html#line-2908" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2908">#L2908</a>: 		if dst.Kind() == Ptr &amp;&amp; dst.<b>Elem</b>().Kind() == Array &amp;&amp; src.<b>Elem</b>() == dst.<b>Elem</b>().Elem() {
+		<a href="../src/reflect/value.go.html#line-2926" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2926">#L2926</a>: 		haveIdenticalUnderlyingType(dst.<b>Elem</b>().common(), src.<b>Elem</b>().common(), false) {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

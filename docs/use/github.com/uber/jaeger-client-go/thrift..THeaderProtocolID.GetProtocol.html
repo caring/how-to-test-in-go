@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/uber/jaeger-client-go/thrift.THeaderProtocolID.GetProtocol</title>
+<link href="../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift.html">github.com/uber/jaeger-client-go/thrift</a>.<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-69">THeaderProtocolID</a>.<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-88">GetProtocol</a></b></span><span style="font-size: large;"><i> (method)</i></span>
+
+<span class="title">5 uses</span>
+
+	github.com/uber/jaeger-client-go/thrift (current package)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_protocol.go.html#line-63">header_protocol.go#L63</a>: 	p, _ := t.cfg.GetTHeaderProtocolID().<b>GetProtocol</b>(t)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_protocol.go.html#line-131" class="path-duplicate">header_protocol.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_protocol.go.html#line-131">#L131</a>: 	newProto, err := p.transport.Protocol().<b>GetProtocol</b>(p.transport)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_protocol.go.html#line-235" class="path-duplicate">header_protocol.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_protocol.go.html#line-235">#L235</a>: 	newProto, err = p.transport.Protocol().<b>GetProtocol</b>(p.transport)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-83">header_transport.go#L83</a>: 	_, err := id.<b>GetProtocol</b>(globalMemoryBuffer)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-88" class="path-duplicate">header_transport.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-88">#L88</a>: func (id THeaderProtocolID) <b>GetProtocol</b>(trans TTransport) (TProtocol, error) {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

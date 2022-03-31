@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: io/ioutil.NopCloser</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">func <b><a href="../../pkg/io/ioutil.html">io/ioutil</a>.<a href="../../src/io/ioutil/ioutil.go.html#line-76">NopCloser</a></b></span>
+
+<span class="title">10 uses</span>
+
+	io/ioutil (current package)
+		<a href="../../src/io/ioutil/ioutil.go.html#line-76">ioutil.go#L76</a>: func <b>NopCloser</b>(r io.Reader) io.ReadCloser {
+
+	<a href="../../pkg/github.com/aws/aws-sdk-go/aws/corehandlers.html">github.com/aws/aws-sdk-go/aws/corehandlers</a>
+		<a href="../../src/github.com/aws/aws-sdk-go/aws/corehandlers/handlers.go.html#line-148">handlers.go#L148</a>: 				Body:       ioutil.<b>NopCloser</b>(bytes.NewReader([]byte{})),
+		<a href="../../src/github.com/aws/aws-sdk-go/aws/corehandlers/handlers.go.html#line-159" class="path-duplicate">handlers.go</a><a href="../../src/github.com/aws/aws-sdk-go/aws/corehandlers/handlers.go.html#line-159">#L159</a>: 			Body:       ioutil.<b>NopCloser</b>(bytes.NewReader([]byte{})),
+
+	<a href="../../pkg/github.com/aws/aws-sdk-go/aws/signer/v4.html">github.com/aws/aws-sdk-go/aws/signer/v4</a>
+		<a href="../../src/github.com/aws/aws-sdk-go/aws/signer/v4/v4.go.html#line-362">v4.go#L362</a>: 				reader = ioutil.<b>NopCloser</b>(body)
+
+	<a href="../../pkg/github.com/aws/aws-sdk-go/private/protocol.html">github.com/aws/aws-sdk-go/private/protocol</a>
+		<a href="../../src/github.com/aws/aws-sdk-go/private/protocol/payload.go.html#line-35">payload.go#L35</a>: 			Body:       ioutil.<b>NopCloser</b>(r),
+
+	<a href="../../pkg/github.com/aws/aws-sdk-go/private/protocol/jsonrpc.html">github.com/aws/aws-sdk-go/private/protocol/jsonrpc</a>
+		<a href="../../src/github.com/aws/aws-sdk-go/private/protocol/jsonrpc/unmarshal_error.go.html#line-45">unmarshal_error.go#L45</a>: 	body := ioutil.<b>NopCloser</b>(&amp;buf)
+
+	<a href="../../pkg/github.com/aws/aws-sdk-go/private/protocol/rest.html">github.com/aws/aws-sdk-go/private/protocol/rest</a>
+		<a href="../../src/github.com/aws/aws-sdk-go/private/protocol/rest/unmarshal.go.html#line-98">unmarshal.go#L98</a>: 							payload.Set(reflect.ValueOf(ioutil.<b>NopCloser</b>(bytes.NewReader(b))))
+
+	<a href="../../pkg/github.com/uber/jaeger-client-go/thrift.html">github.com/uber/jaeger-client-go/thrift</a>
+		<a href="../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-377">header_transport.go#L377</a>: 	t.frameReader = ioutil.<b>NopCloser</b>(&amp;t.frameBuffer)
+
+	<a href="../../pkg/golang.org/x/net/http2.html">golang.org/x/net/http2</a>
+		<a href="../../src/golang.org/x/net/http2/transport.go.html#line-2540">transport.go#L2540</a>: var noBody io.ReadCloser = ioutil.<b>NopCloser</b>(bytes.NewReader(nil))
+
+	<a href="../../pkg/net/http.html">net/http</a>
+		<a href="../../src/net/http/h2_bundle.go.html#line-9374">h2_bundle.go#L9374</a>: var http2noBody io.ReadCloser = ioutil.<b>NopCloser</b>(bytes.NewReader(nil))
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

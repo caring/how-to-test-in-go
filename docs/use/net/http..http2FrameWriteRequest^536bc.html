@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: net/http.http2FrameWriteRequest</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../../pkg/net/http.html">net/http</a>.<a href="../../src/net/http/h2_bundle.go.html#line-9917">http2FrameWriteRequest</a></b></span>
+
+<span class="title">47 uses</span>
+
+	net/http (current package)
+		<a href="../../src/net/http/h2_bundle.go.html#line-4037">h2_bundle.go#L4037</a>: 		wantWriteFrameCh:            make(chan <b>http2FrameWriteRequest</b>, 8),
+		<a href="../../src/net/http/h2_bundle.go.html#line-4162" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-4162">#L4162</a>: 	wantWriteFrameCh chan <b>http2FrameWriteRequest</b> // from handlers -&gt; serve
+		<a href="../../src/net/http/h2_bundle.go.html#line-4435" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-4435">#L4435</a>: 	wr  <b>http2FrameWriteRequest</b> // what was written (or attempted)
+		<a href="../../src/net/http/h2_bundle.go.html#line-4443" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-4443">#L4443</a>: func (sc *http2serverConn) writeFrameAsync(wr <b>http2FrameWriteRequest</b>) {
+		<a href="../../src/net/http/h2_bundle.go.html#line-4489" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-4489">#L4489</a>: 	sc.writeFrame(<b>http2FrameWriteRequest</b>{
+		<a href="../../src/net/http/h2_bundle.go.html#line-4683" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-4683">#L4683</a>: 	err := sc.writeFrameFromHandler(<b>http2FrameWriteRequest</b>{
+		<a href="../../src/net/http/h2_bundle.go.html#line-4726" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-4726">#L4726</a>: func (sc *http2serverConn) writeFrameFromHandler(wr <b>http2FrameWriteRequest</b>) error {
+		<a href="../../src/net/http/h2_bundle.go.html#line-4746" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-4746">#L4746</a>: func (sc *http2serverConn) writeFrame(wr <b>http2FrameWriteRequest</b>) {
+		<a href="../../src/net/http/h2_bundle.go.html#line-4810" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-4810">#L4810</a>: func (sc *http2serverConn) startFrameWrite(wr <b>http2FrameWriteRequest</b>) {
+		<a href="../../src/net/http/h2_bundle.go.html#line-4933" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-4933">#L4933</a>: 			sc.startFrameWrite(<b>http2FrameWriteRequest</b>{
+		<a href="../../src/net/http/h2_bundle.go.html#line-4943" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-4943">#L4943</a>: 			sc.startFrameWrite(<b>http2FrameWriteRequest</b>{write: http2writeSettingsAck{}})
+		<a href="../../src/net/http/h2_bundle.go.html#line-4956" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-4956">#L4956</a>: 			sc.startFrameWrite(<b>http2FrameWriteRequest</b>{write: http2flushFrameWriter{}})
+		<a href="../../src/net/http/h2_bundle.go.html#line-5017" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-5017">#L5017</a>: 	sc.writeFrame(<b>http2FrameWriteRequest</b>{write: se})
+		<a href="../../src/net/http/h2_bundle.go.html#line-5134" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-5134">#L5134</a>: 	sc.writeFrame(<b>http2FrameWriteRequest</b>{write: http2writePingAck{f}})
+		<a href="../../src/net/http/h2_bundle.go.html#line-5465" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-5465">#L5465</a>: 	st.sc.writeFrameFromHandler(<b>http2FrameWriteRequest</b>{write: http2streamError(st.id, http2ErrCodeInternal)})
+		<a href="../../src/net/http/h2_bundle.go.html#line-5834" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-5834">#L5834</a>: 			sc.writeFrameFromHandler(<b>http2FrameWriteRequest</b>{
+		<a href="../../src/net/http/h2_bundle.go.html#line-5875" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-5875">#L5875</a>: 	if err := sc.writeFrameFromHandler(<b>http2FrameWriteRequest</b>{
+		<a href="../../src/net/http/h2_bundle.go.html#line-5898" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-5898">#L5898</a>: 	sc.writeFrameFromHandler(<b>http2FrameWriteRequest</b>{
+		<a href="../../src/net/http/h2_bundle.go.html#line-5963" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-5963">#L5963</a>: 	sc.writeFrame(<b>http2FrameWriteRequest</b>{
+		<a href="../../src/net/http/h2_bundle.go.html#line-6595" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-6595">#L6595</a>: 	sc.writeFrame(<b>http2FrameWriteRequest</b>{
+		<a href="../../src/net/http/h2_bundle.go.html#line-9900" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-9900">#L9900</a>: 	Push(wr <b>http2FrameWriteRequest</b>)
+		<a href="../../src/net/http/h2_bundle.go.html#line-9906" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-9906">#L9906</a>: 	Pop() (wr <b>http2FrameWriteRequest</b>, ok bool)
+		<a href="../../src/net/http/h2_bundle.go.html#line-9917" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-9917">#L9917</a>: type <b>http2FrameWriteRequest</b> struct {
+		<a href="../../src/net/http/h2_bundle.go.html#line-9936" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-9936">#L9936</a>: func (wr <b>http2FrameWriteRequest</b>) StreamID() uint32 {
+		<a href="../../src/net/http/h2_bundle.go.html#line-9952" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-9952">#L9952</a>: func (wr <b>http2FrameWriteRequest</b>) isControl() bool {
+		<a href="../../src/net/http/h2_bundle.go.html#line-9958" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-9958">#L9958</a>: func (wr <b>http2FrameWriteRequest</b>) DataSize() int {
+		<a href="../../src/net/http/h2_bundle.go.html#line-9975" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-9975">#L9975</a>: func (wr <b>http2FrameWriteRequest</b>) Consume(n int32) (<b>http2FrameWriteRequest</b>, <b>http2FrameWriteRequest</b>, int) {
+		<a href="../../src/net/http/h2_bundle.go.html#line-9976" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-9976">#L9976</a>: 	var empty <b>http2FrameWriteRequest</b>
+		<a href="../../src/net/http/h2_bundle.go.html#line-9997" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-9997">#L9997</a>: 		consumed := <b>http2FrameWriteRequest</b>{
+		<a href="../../src/net/http/h2_bundle.go.html#line-10011" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-10011">#L10011</a>: 		rest := <b>http2FrameWriteRequest</b>{
+		<a href="../../src/net/http/h2_bundle.go.html#line-10030" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-10030">#L10030</a>: func (wr <b>http2FrameWriteRequest</b>) String() string {
+		<a href="../../src/net/http/h2_bundle.go.html#line-10042" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-10042">#L10042</a>: func (wr *<b>http2FrameWriteRequest</b>) replyToWriter(err error) {
+		<a href="../../src/net/http/h2_bundle.go.html#line-10056" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-10056">#L10056</a>: 	s []<b>http2FrameWriteRequest</b>
+		<a href="../../src/net/http/h2_bundle.go.html#line-10061" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-10061">#L10061</a>: func (q *http2writeQueue) push(wr <b>http2FrameWriteRequest</b>) {
+		<a href="../../src/net/http/h2_bundle.go.html#line-10065" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-10065">#L10065</a>: func (q *http2writeQueue) shift() <b>http2FrameWriteRequest</b> {
+		<a href="../../src/net/http/h2_bundle.go.html#line-10072" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-10072">#L10072</a>: 	q.s[len(q.s)-1] = <b>http2FrameWriteRequest</b>{}
+		<a href="../../src/net/http/h2_bundle.go.html#line-10081" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-10081">#L10081</a>: func (q *http2writeQueue) consume(n int32) (<b>http2FrameWriteRequest</b>, bool) {
+		<a href="../../src/net/http/h2_bundle.go.html#line-10083" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-10083">#L10083</a>: 		return <b>http2FrameWriteRequest</b>{}, false
+		<a href="../../src/net/http/h2_bundle.go.html#line-10088" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-10088">#L10088</a>: 		return <b>http2FrameWriteRequest</b>{}, false
+		<a href="../../src/net/http/h2_bundle.go.html#line-10104" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-10104">#L10104</a>: 		q.s[i] = <b>http2FrameWriteRequest</b>{}
+		<a href="../../src/net/http/h2_bundle.go.html#line-10496" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-10496">#L10496</a>: func (ws *http2priorityWriteScheduler) Push(wr <b>http2FrameWriteRequest</b>) {
+		<a href="../../src/net/http/h2_bundle.go.html#line-10517" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-10517">#L10517</a>: func (ws *http2priorityWriteScheduler) Pop() (wr <b>http2FrameWriteRequest</b>, ok bool) {
+		<a href="../../src/net/http/h2_bundle.go.html#line-10604" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-10604">#L10604</a>: func (ws *http2randomWriteScheduler) Push(wr <b>http2FrameWriteRequest</b>) {
+		<a href="../../src/net/http/h2_bundle.go.html#line-10618" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-10618">#L10618</a>: func (ws *http2randomWriteScheduler) Pop() (<b>http2FrameWriteRequest</b>, bool) {
+		<a href="../../src/net/http/h2_bundle.go.html#line-10633" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-10633">#L10633</a>: 	return <b>http2FrameWriteRequest</b>{}, false
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

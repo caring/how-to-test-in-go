@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/go-sql-driver/mysql.Config.Loc</title>
+<link href="../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../pkg/github.com/go-sql-driver/mysql.html">github.com/go-sql-driver/mysql</a>.<a href="../../../src/github.com/go-sql-driver/mysql/dsn.go.html#line-36">Config</a>.<a href="../../../src/github.com/go-sql-driver/mysql/dsn.go.html#line-44">Loc</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">10 uses</span>
+
+	github.com/go-sql-driver/mysql (current package)
+		<a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-249">connection.go#L249</a>: 				buf, err = appendDateTime(buf, v.In(mc.cfg.<b>Loc</b>))
+		<a href="../../../src/github.com/go-sql-driver/mysql/dsn.go.html#line-44">dsn.go#L44</a>: 	<b>Loc</b>              *time.Location    // Location for time.Time values
+		<a href="../../../src/github.com/go-sql-driver/mysql/dsn.go.html#line-71" class="path-duplicate">dsn.go</a><a href="../../../src/github.com/go-sql-driver/mysql/dsn.go.html#line-71">#L71</a>: 		<b>Loc</b>:                  time.UTC,
+		<a href="../../../src/github.com/go-sql-driver/mysql/dsn.go.html#line-235" class="path-duplicate">dsn.go</a><a href="../../../src/github.com/go-sql-driver/mysql/dsn.go.html#line-235">#L235</a>: 	if cfg.<b>Loc</b> != time.UTC &amp;&amp; cfg.<b>Loc</b> != nil {
+		<a href="../../../src/github.com/go-sql-driver/mysql/dsn.go.html#line-236" class="path-duplicate">dsn.go</a><a href="../../../src/github.com/go-sql-driver/mysql/dsn.go.html#line-236">#L236</a>: 		writeDSNParam(&amp;buf, &amp;hasParam, "loc", url.QueryEscape(cfg.<b>Loc</b>.String()))
+		<a href="../../../src/github.com/go-sql-driver/mysql/dsn.go.html#line-455" class="path-duplicate">dsn.go</a><a href="../../../src/github.com/go-sql-driver/mysql/dsn.go.html#line-455">#L455</a>: 			cfg.<b>Loc</b>, err = time.LoadLocation(value)
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-782">packets.go#L782</a>: 							mc.cfg.<b>Loc</b>,
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-1119" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-1119">#L1119</a>: 					b, err = appendDateTime(b, v.In(mc.cfg.<b>Loc</b>))
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-1314" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-1314">#L1314</a>: 				dest[i], err = parseBinaryDateTime(num, data[pos:], rows.mc.cfg.<b>Loc</b>)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

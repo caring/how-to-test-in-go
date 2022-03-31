@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime.efaceOf</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">func <b><a href="../pkg/runtime.html">runtime</a>.<a href="../src/runtime/runtime2.go.html#line-212">efaceOf</a></b></span>
+
+<span class="title">20 uses</span>
+
+	runtime (current package)
+		<a href="../src/runtime/cgocall.go.html#line-389">cgocall.go#L389</a>: 	ep := <b>efaceOf</b>(&amp;ptr)
+		<a href="../src/runtime/cgocall.go.html#line-401" class="path-duplicate">cgocall.go</a><a href="../src/runtime/cgocall.go.html#line-401">#L401</a>: 		aep := <b>efaceOf</b>(&amp;arg)
+		<a href="../src/runtime/cgocall.go.html#line-628" class="path-duplicate">cgocall.go</a><a href="../src/runtime/cgocall.go.html#line-628">#L628</a>: 	ep := <b>efaceOf</b>(&amp;val)
+		<a href="../src/runtime/debuglog.go.html#line-277">debuglog.go#L277</a>: 		v := <b>efaceOf</b>(&amp;x)
+		<a href="../src/runtime/error.go.html#line-257">error.go#L257</a>: 	eface := <b>efaceOf</b>(&amp;i)
+		<a href="../src/runtime/heapdump.go.html#line-397">heapdump.go#L397</a>: 		eface := <b>efaceOf</b>(&amp;p.arg)
+		<a href="../src/runtime/iface.go.html#line-304">iface.go#L304</a>: 	uint16Type *_type = <b>efaceOf</b>(&amp;uint16Eface)._type
+		<a href="../src/runtime/iface.go.html#line-305" class="path-duplicate">iface.go</a><a href="../src/runtime/iface.go.html#line-305">#L305</a>: 	uint32Type *_type = <b>efaceOf</b>(&amp;uint32Eface)._type
+		<a href="../src/runtime/iface.go.html#line-306" class="path-duplicate">iface.go</a><a href="../src/runtime/iface.go.html#line-306">#L306</a>: 	uint64Type *_type = <b>efaceOf</b>(&amp;uint64Eface)._type
+		<a href="../src/runtime/iface.go.html#line-307" class="path-duplicate">iface.go</a><a href="../src/runtime/iface.go.html#line-307">#L307</a>: 	stringType *_type = <b>efaceOf</b>(&amp;stringEface)._type
+		<a href="../src/runtime/iface.go.html#line-308" class="path-duplicate">iface.go</a><a href="../src/runtime/iface.go.html#line-308">#L308</a>: 	sliceType  *_type = <b>efaceOf</b>(&amp;sliceEface)._type
+		<a href="../src/runtime/mbitmap.go.html#line-1947">mbitmap.go#L1947</a>: 	typ := (*ptrtype)(unsafe.Pointer(<b>efaceOf</b>(&amp;x)._type)).elem
+		<a href="../src/runtime/mbitmap.go.html#line-1959" class="path-duplicate">mbitmap.go</a><a href="../src/runtime/mbitmap.go.html#line-1959">#L1959</a>: 	e := *<b>efaceOf</b>(&amp;ep)
+		<a href="../src/runtime/mfinal.go.html#line-338">mfinal.go#L338</a>: 	e := <b>efaceOf</b>(&amp;obj)
+		<a href="../src/runtime/mfinal.go.html#line-387" class="path-duplicate">mfinal.go</a><a href="../src/runtime/mfinal.go.html#line-387">#L387</a>: 	f := <b>efaceOf</b>(&amp;finalizer)
+		<a href="../src/runtime/mfinal.go.html#line-424" class="path-duplicate">mfinal.go</a><a href="../src/runtime/mfinal.go.html#line-424">#L424</a>: 		if iface := assertE2I2(ityp, *<b>efaceOf</b>(&amp;obj)); iface.tab != nil {
+		<a href="../src/runtime/netpoll.go.html#line-583">netpoll.go#L583</a>: 	pdType  *_type      = <b>efaceOf</b>(&amp;pdEface)._type
+		<a href="../src/runtime/proc.go.html#line-478">proc.go#L478</a>: 	return *(*uintptr)(<b>efaceOf</b>(&amp;f).data)
+		<a href="../src/runtime/runtime2.go.html#line-212">runtime2.go#L212</a>: func <b>efaceOf</b>(ep *interface{}) *eface {
+		<a href="../src/runtime/stack.go.html#line-1348">stack.go#L1348</a>: 	abiRegArgsType           *_type      = <b>efaceOf</b>(&amp;abiRegArgsEface)._type
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

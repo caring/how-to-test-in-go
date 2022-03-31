@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/uber/jaeger-client-go.samplingState</title>
+<link href="../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../../../pkg/github.com/uber/jaeger-client-go.html">github.com/uber/jaeger-client-go</a>.<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-78">samplingState</a></b></span>
+
+<span class="title">23 uses</span>
+
+	github.com/uber/jaeger-client-go (current package)
+		<a href="../../../src/github.com/uber/jaeger-client-go/propagation.go.html#line-231">propagation.go#L231</a>: 	ctx.samplingState = &amp;<b>samplingState</b>{}
+		<a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-476">span.go#L476</a>: func setSamplingPriority(state *<b>samplingState</b>, operationName string, tracer *Tracer, value interface{}) bool {
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-72">span_context.go#L72</a>: 	samplingState *<b>samplingState</b>
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-78" class="path-duplicate">span_context.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-78">#L78</a>: type <b>samplingState</b> struct {
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-95" class="path-duplicate">span_context.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-95">#L95</a>: func (s *<b>samplingState</b>) isLocalRootSpan(id SpanID) bool {
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-99" class="path-duplicate">span_context.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-99">#L99</a>: func (s *<b>samplingState</b>) setFlag(newFlag int32) {
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-107" class="path-duplicate">span_context.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-107">#L107</a>: func (s *<b>samplingState</b>) unsetFlag(newFlag int32) {
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-115" class="path-duplicate">span_context.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-115">#L115</a>: func (s *<b>samplingState</b>) setSampled() {
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-119" class="path-duplicate">span_context.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-119">#L119</a>: func (s *<b>samplingState</b>) unsetSampled() {
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-123" class="path-duplicate">span_context.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-123">#L123</a>: func (s *<b>samplingState</b>) setDebugAndSampled() {
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-127" class="path-duplicate">span_context.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-127">#L127</a>: func (s *<b>samplingState</b>) setFirehose() {
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-131" class="path-duplicate">span_context.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-131">#L131</a>: func (s *<b>samplingState</b>) setFlags(flags byte) {
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-135" class="path-duplicate">span_context.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-135">#L135</a>: func (s *<b>samplingState</b>) setFinal() {
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-139" class="path-duplicate">span_context.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-139">#L139</a>: func (s *<b>samplingState</b>) flags() byte {
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-143" class="path-duplicate">span_context.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-143">#L143</a>: func (s *<b>samplingState</b>) isSampled() bool {
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-147" class="path-duplicate">span_context.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-147">#L147</a>: func (s *<b>samplingState</b>) isDebug() bool {
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-151" class="path-duplicate">span_context.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-151">#L151</a>: func (s *<b>samplingState</b>) isFirehose() bool {
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-155" class="path-duplicate">span_context.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-155">#L155</a>: func (s *<b>samplingState</b>) isFinal() bool {
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-159" class="path-duplicate">span_context.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-159">#L159</a>: func (s *<b>samplingState</b>) extendedStateForKey(key interface{}, initValue func() interface{}) interface{} {
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-249" class="path-duplicate">span_context.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-249">#L249</a>: 	context.samplingState = &amp;<b>samplingState</b>{}
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-286" class="path-duplicate">span_context.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-286">#L286</a>: 	samplingState := &amp;<b>samplingState</b>{}
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-280">tracer.go#L280</a>: 			ctx.samplingState = &amp;<b>samplingState</b>{
+		<a href="../../../src/github.com/uber/jaeger-client-go/zipkin.go.html#line-74">zipkin.go#L74</a>: 	ctx.samplingState = &amp;<b>samplingState</b>{}
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

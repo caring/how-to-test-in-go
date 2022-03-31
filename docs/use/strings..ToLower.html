@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: strings.ToLower</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">func <b><a href="../pkg/strings.html">strings</a>.<a href="../src/strings/strings.go.html#line-580">ToLower</a></b></span>
+
+<span class="title">68 uses</span>
+
+	strings (current package)
+		<a href="../src/strings/strings.go.html#line-580">strings.go#L580</a>: func <b>ToLower</b>(s string) string {
+
+	<a href="../pkg/crypto/tls.html">crypto/tls</a>
+		<a href="../src/crypto/tls/common.go.html#line-1058">common.go#L1058</a>: 		name := strings.<b>ToLower</b>(clientHello.ServerName)
+
+	<a href="../pkg/encoding/xml.html">encoding/xml</a>
+		<a href="../src/encoding/xml/xml.go.html#line-526">xml.go#L526</a>: 	name := strings.<b>ToLower</b>(d.stk.name.Local)
+		<a href="../src/encoding/xml/xml.go.html#line-528" class="path-duplicate">xml.go</a><a href="../src/encoding/xml/xml.go.html#line-528">#L528</a>: 		if strings.<b>ToLower</b>(s) == name {
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/awsutil.html">github.com/aws/aws-sdk-go/aws/awsutil</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/path_value.go.html#line-36">path_value.go#L36</a>: 		} else if caseSensitive &amp;&amp; c != "*" &amp;&amp; strings.<b>ToLower</b>(c[0:1]) == c[0:1] {
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/prettify.go.html#line-42">prettify.go#L42</a>: 			if name[0:1] == strings.<b>ToLower</b>(name[0:1]) {
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/string_value.go.html#line-30">string_value.go#L30</a>: 			if ft.Name[0:1] == strings.<b>ToLower</b>(ft.Name[0:1]) {
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/ec2metadata.html">github.com/aws/aws-sdk-go/aws/ec2metadata</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/ec2metadata/service.go.html#line-124">service.go#L124</a>: 	if strings.<b>ToLower</b>(os.Getenv(disableServiceEnvVar)) == "true" {
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/request.html">github.com/aws/aws-sdk-go/aws/request</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/request/request.go.html#line-692">request.go#L692</a>: 	lowerCaseScheme := strings.<b>ToLower</b>(scheme)
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/signer/v4.html">github.com/aws/aws-sdk-go/aws/signer/v4</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/signer/v4/v4.go.html#line-618">v4.go#L618</a>: 		lowerCaseKey := strings.<b>ToLower</b>(k)
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/private/protocol/rest.html">github.com/aws/aws-sdk-go/private/protocol/rest</a>
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/rest/build.go.html#line-75">build.go#L75</a>: 		if n := v.Type().Field(i).Name; n[0:1] == strings.<b>ToLower</b>(n[0:1]) {
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/rest/unmarshal.go.html#line-119">unmarshal.go#L119</a>: 		if n := field.Name; n[0:1] == strings.<b>ToLower</b>(n[0:1]) {
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/rest/unmarshal.go.html#line-174" class="path-duplicate">unmarshal.go</a><a href="../src/github.com/aws/aws-sdk-go/private/protocol/rest/unmarshal.go.html#line-174">#L174</a>: 					k = strings.<b>ToLower</b>(k)
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/private/protocol/xml/xmlutil.html">github.com/aws/aws-sdk-go/private/protocol/xml/xmlutil</a>
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/xml/xmlutil/unmarshal.go.html#line-136">unmarshal.go#L136</a>: 		if c := field.Name[0:1]; strings.<b>ToLower</b>(c) == c {
+
+	<a href="../pkg/github.com/go-sql-driver/mysql.html">github.com/go-sql-driver/mysql</a>
+		<a href="../src/github.com/go-sql-driver/mysql/dsn.go.html#line-519">dsn.go#L519</a>: 			} else if vl := strings.<b>ToLower</b>(value); vl == "skip-verify" || vl == "preferred" {
+		<a href="../src/github.com/go-sql-driver/mysql/utils.go.html#line-59">utils.go#L59</a>: 	if _, isBool := readBool(key); isBool || strings.<b>ToLower</b>(key) == "skip-verify" || strings.<b>ToLower</b>(key) == "preferred" {
+
+	<a href="../pkg/github.com/golang/protobuf/proto.html">github.com/golang/protobuf/proto</a>
+		<a href="../src/github.com/golang/protobuf/proto/text_decode.go.html#line-122">text_decode.go#L122</a>: 			gd := fds.ByName(protoreflect.Name(strings.<b>ToLower</b>(string(name))))
+
+	<a href="../pkg/github.com/uber/jaeger-client-go.html">github.com/uber/jaeger-client-go</a>
+		<a href="../src/github.com/uber/jaeger-client-go/propagation.go.html#line-139">propagation.go#L139</a>: 		key := strings.<b>ToLower</b>(rawKey) // TODO not necessary for plain TextMap
+
+	<a href="../pkg/go.uber.org/zap.html">go.uber.org/zap</a>
+		<a href="../src/go.uber.org/zap/sink.go.html#line-144">sink.go#L144</a>: 	s = strings.<b>ToLower</b>(s)
+
+	<a href="../pkg/golang.org/x/net/http2.html">golang.org/x/net/http2</a>
+		<a href="../src/golang.org/x/net/http2/headermap.go.html#line-87">headermap.go#L87</a>: 	return strings.<b>ToLower</b>(v)
+		<a href="../src/golang.org/x/net/http2/server.go.html#line-2792">server.go#L2792</a>: 		switch strings.<b>ToLower</b>(k) {
+		<a href="../src/golang.org/x/net/http2/transport.go.html#line-1618">transport.go#L1618</a>: 		name = strings.<b>ToLower</b>(name)
+		<a href="../src/golang.org/x/net/http2/transport.go.html#line-1668" class="path-duplicate">transport.go</a><a href="../src/golang.org/x/net/http2/transport.go.html#line-1668">#L1668</a>: 		lowKey := strings.<b>ToLower</b>(k)
+
+	<a href="../pkg/google.golang.org/grpc.html">google.golang.org/grpc</a>
+		<a href="../src/google.golang.org/grpc/rpc_util.go.html#line-413">rpc_util.go#L413</a>: 	return ContentSubtypeCallOption{ContentSubtype: strings.<b>ToLower</b>(contentSubtype)}
+		<a href="../src/google.golang.org/grpc/rpc_util.go.html#line-866" class="path-duplicate">rpc_util.go</a><a href="../src/google.golang.org/grpc/rpc_util.go.html#line-866">#L866</a>: 				c.contentSubtype = strings.<b>ToLower</b>(ec.Name())
+
+	<a href="../pkg/google.golang.org/grpc/balancer.html">google.golang.org/grpc/balancer</a>
+		<a href="../src/google.golang.org/grpc/balancer/balancer.go.html#line-53">balancer.go#L53</a>: 	m[strings.<b>ToLower</b>(b.Name())] = b
+		<a href="../src/google.golang.org/grpc/balancer/balancer.go.html#line-72" class="path-duplicate">balancer.go</a><a href="../src/google.golang.org/grpc/balancer/balancer.go.html#line-72">#L72</a>: 	if b, ok := m[strings.<b>ToLower</b>(name)]; ok {
+
+	<a href="../pkg/google.golang.org/grpc/encoding.html">google.golang.org/grpc/encoding</a>
+		<a href="../src/google.golang.org/grpc/encoding/encoding.go.html#line-120">encoding.go#L120</a>: 	contentSubtype := strings.<b>ToLower</b>(codec.Name())
+
+	<a href="../pkg/google.golang.org/grpc/internal/transport.html">google.golang.org/grpc/internal/transport</a>
+		<a href="../src/google.golang.org/grpc/internal/transport/handler_server.go.html#line-93">handler_server.go#L93</a>: 		k = strings.<b>ToLower</b>(k)
+		<a href="../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-542">http2_client.go#L542</a>: 					k = strings.<b>ToLower</b>(v)
+		<a href="../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-595" class="path-duplicate">http2_client.go</a><a href="../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-595">#L595</a>: 			k = strings.<b>ToLower</b>(k)
+		<a href="../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-621" class="path-duplicate">http2_client.go</a><a href="../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-621">#L621</a>: 			k = strings.<b>ToLower</b>(k)
+
+	<a href="../pkg/google.golang.org/grpc/metadata.html">google.golang.org/grpc/metadata</a>
+		<a href="../src/google.golang.org/grpc/metadata/metadata.go.html#line-55">metadata.go#L55</a>: 		key := strings.<b>ToLower</b>(k)
+		<a href="../src/google.golang.org/grpc/metadata/metadata.go.html#line-79" class="path-duplicate">metadata.go</a><a href="../src/google.golang.org/grpc/metadata/metadata.go.html#line-79">#L79</a>: 		key := strings.<b>ToLower</b>(kv[i])
+		<a href="../src/google.golang.org/grpc/metadata/metadata.go.html#line-99" class="path-duplicate">metadata.go</a><a href="../src/google.golang.org/grpc/metadata/metadata.go.html#line-99">#L99</a>: 	k = strings.<b>ToLower</b>(k)
+		<a href="../src/google.golang.org/grpc/metadata/metadata.go.html#line-110" class="path-duplicate">metadata.go</a><a href="../src/google.golang.org/grpc/metadata/metadata.go.html#line-110">#L110</a>: 	k = strings.<b>ToLower</b>(k)
+		<a href="../src/google.golang.org/grpc/metadata/metadata.go.html#line-122" class="path-duplicate">metadata.go</a><a href="../src/google.golang.org/grpc/metadata/metadata.go.html#line-122">#L122</a>: 	k = strings.<b>ToLower</b>(k)
+		<a href="../src/google.golang.org/grpc/metadata/metadata.go.html#line-129" class="path-duplicate">metadata.go</a><a href="../src/google.golang.org/grpc/metadata/metadata.go.html#line-129">#L129</a>: 	k = strings.<b>ToLower</b>(k)
+		<a href="../src/google.golang.org/grpc/metadata/metadata.go.html#line-190" class="path-duplicate">metadata.go</a><a href="../src/google.golang.org/grpc/metadata/metadata.go.html#line-190">#L190</a>: 		key := strings.<b>ToLower</b>(k)
+		<a href="../src/google.golang.org/grpc/metadata/metadata.go.html#line-228" class="path-duplicate">metadata.go</a><a href="../src/google.golang.org/grpc/metadata/metadata.go.html#line-228">#L228</a>: 		key := strings.<b>ToLower</b>(k)
+		<a href="../src/google.golang.org/grpc/metadata/metadata.go.html#line-237" class="path-duplicate">metadata.go</a><a href="../src/google.golang.org/grpc/metadata/metadata.go.html#line-237">#L237</a>: 			key := strings.<b>ToLower</b>(added[i])
+
+	<a href="../pkg/google.golang.org/protobuf/internal/encoding/tag.html">google.golang.org/protobuf/internal/encoding/tag</a>
+		<a href="../src/google.golang.org/protobuf/internal/encoding/tag/tag.go.html#line-130">tag.go#L130</a>: 		f.L0.FullName = pref.FullName(strings.<b>ToLower</b>(string(f.L0.FullName)))
+
+	<a href="../pkg/google.golang.org/protobuf/internal/encoding/text.html">google.golang.org/protobuf/internal/encoding/text</a>
+		<a href="../src/google.golang.org/protobuf/internal/encoding/text/decode_token.go.html#line-315">decode_token.go#L315</a>: 		if f, ok := floatLits[strings.<b>ToLower</b>(string(t.raw))]; ok {
+		<a href="../src/google.golang.org/protobuf/internal/encoding/text/decode_token.go.html#line-338" class="path-duplicate">decode_token.go</a><a href="../src/google.golang.org/protobuf/internal/encoding/text/decode_token.go.html#line-338">#L338</a>: 		if f, ok := floatLits[strings.<b>ToLower</b>(string(t.raw))]; ok {
+
+	<a href="../pkg/google.golang.org/protobuf/reflect/protodesc.html">google.golang.org/protobuf/reflect/protodesc</a>
+		<a href="../src/google.golang.org/protobuf/reflect/protodesc/desc_validate.go.html#line-56">desc_validate.go#L56</a>: 			prefix := strings.Replace(strings.<b>ToLower</b>(string(e.Name())), "_", "", -1)
+		<a href="../src/google.golang.org/protobuf/reflect/protodesc/desc_validate.go.html#line-123" class="path-duplicate">desc_validate.go</a><a href="../src/google.golang.org/protobuf/reflect/protodesc/desc_validate.go.html#line-123">#L123</a>: 				s := strings.Replace(strings.<b>ToLower</b>(string(f1.Name())), "_", "", -1)
+		<a href="../src/google.golang.org/protobuf/reflect/protodesc/desc_validate.go.html#line-325" class="path-duplicate">desc_validate.go</a><a href="../src/google.golang.org/protobuf/reflect/protodesc/desc_validate.go.html#line-325">#L325</a>: 	case fd.Name() != protoreflect.Name(strings.<b>ToLower</b>(string(md.Name()))):
+
+	<a href="../pkg/html/template.html">html/template</a>
+		<a href="../src/html/template/html.go.html#line-241">html.go#L241</a>: 	s = strings.<b>ToLower</b>(s)
+		<a href="../src/html/template/js.go.html#line-404">js.go#L404</a>: 	mimeType = strings.<b>ToLower</b>(mimeType)
+		<a href="../src/html/template/transition.go.html#line-110">transition.go#L110</a>: 	attrName := strings.<b>ToLower</b>(string(s[i:j]))
+		<a href="../src/html/template/transition.go.html#line-578" class="path-duplicate">transition.go</a><a href="../src/html/template/transition.go.html#line-578">#L578</a>: 	return j, elementNameMap[strings.<b>ToLower</b>(string(s[i:j]))]
+
+	<a href="../pkg/mime.html">mime</a>
+		<a href="../src/mime/encodedword.go.html#line-345">encodedword.go#L345</a>: 		r, err := d.CharsetReader(strings.<b>ToLower</b>(charset), bytes.NewReader(content))
+		<a href="../src/mime/mediatype.go.html#line-26">mediatype.go#L26</a>: 		b.WriteString(strings.<b>ToLower</b>(t))
+		<a href="../src/mime/mediatype.go.html#line-32" class="path-duplicate">mediatype.go</a><a href="../src/mime/mediatype.go.html#line-32">#L32</a>: 		b.WriteString(strings.<b>ToLower</b>(major))
+		<a href="../src/mime/mediatype.go.html#line-34" class="path-duplicate">mediatype.go</a><a href="../src/mime/mediatype.go.html#line-34">#L34</a>: 		b.WriteString(strings.<b>ToLower</b>(sub))
+		<a href="../src/mime/mediatype.go.html#line-50" class="path-duplicate">mediatype.go</a><a href="../src/mime/mediatype.go.html#line-50">#L50</a>: 		b.WriteString(strings.<b>ToLower</b>(attribute))
+		<a href="../src/mime/mediatype.go.html#line-145" class="path-duplicate">mediatype.go</a><a href="../src/mime/mediatype.go.html#line-145">#L145</a>: 	mediatype = strings.TrimSpace(strings.<b>ToLower</b>(v[0:i]))
+		<a href="../src/mime/mediatype.go.html#line-248" class="path-duplicate">mediatype.go</a><a href="../src/mime/mediatype.go.html#line-248">#L248</a>: 	charset := strings.<b>ToLower</b>(sv[0])
+		<a href="../src/mime/mediatype.go.html#line-335" class="path-duplicate">mediatype.go</a><a href="../src/mime/mediatype.go.html#line-335">#L335</a>: 	param = strings.<b>ToLower</b>(param)
+		<a href="../src/mime/type.go.html#line-129">type.go#L129</a>: 			si, _ := mimeTypesLower.Load(strings.<b>ToLower</b>(ext))
+		<a href="../src/mime/type.go.html#line-184" class="path-duplicate">type.go</a><a href="../src/mime/type.go.html#line-184">#L184</a>: 	extLower := strings.<b>ToLower</b>(extension)
+
+	<a href="../pkg/net/http.html">net/http</a>
+		<a href="../src/net/http/h2_bundle.go.html#line-95">h2_bundle.go#L95</a>: 	return strings.<b>ToLower</b>(s), true
+
+	<a href="../pkg/net/http/internal/ascii.html">net/http/internal/ascii</a>
+		<a href="../src/net/http/internal/ascii/print.go.html#line-60">print.go#L60</a>: 	return strings.<b>ToLower</b>(s), true
+
+	<a href="../pkg/net/url.html">net/url</a>
+		<a href="../src/net/url/url.go.html#line-531">url.go#L531</a>: 	url.Scheme = strings.<b>ToLower</b>(url.Scheme)
+
+	<a href="../pkg/os/exec.html">os/exec</a>
+		<a href="../src/os/exec/exec.go.html#line-758">exec.go#L758</a>: 			k = strings.<b>ToLower</b>(k)
+
+	<a href="../pkg/vendor/golang.org/x/net/http/httpproxy.html">vendor/golang.org/x/net/http/httpproxy</a>
+		<a href="../src/vendor/golang.org/x/net/http/httpproxy/proxy.go.html#line-191">proxy.go#L191</a>: 	addr = strings.<b>ToLower</b>(strings.TrimSpace(host))
+		<a href="../src/vendor/golang.org/x/net/http/httpproxy/proxy.go.html#line-217" class="path-duplicate">proxy.go</a><a href="../src/vendor/golang.org/x/net/http/httpproxy/proxy.go.html#line-217">#L217</a>: 		p = strings.<b>ToLower</b>(strings.TrimSpace(p))
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

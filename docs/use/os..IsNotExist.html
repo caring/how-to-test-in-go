@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: os.IsNotExist</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">func <b><a href="../pkg/os.html">os</a>.<a href="../src/os/error.go.html#line-92">IsNotExist</a></b></span>
+
+<span class="title">16 uses</span>
+
+	os (current package)
+		<a href="../src/os/dir_darwin.go.html#line-75">dir_darwin.go#L75</a>: 			if <b>IsNotExist</b>(err) {
+		<a href="../src/os/dir_darwin.go.html#line-86" class="path-duplicate">dir_darwin.go</a><a href="../src/os/dir_darwin.go.html#line-86">#L86</a>: 			if <b>IsNotExist</b>(err) {
+		<a href="../src/os/error.go.html#line-92">error.go#L92</a>: func <b>IsNotExist</b>(err error) bool {
+		<a href="../src/os/file_unix.go.html#line-209">file_unix.go#L209</a>: 		if _, err := Stat(name); <b>IsNotExist</b>(err) {
+		<a href="../src/os/removeall_at.go.html#line-31">removeall_at.go#L31</a>: 	if err == nil || <b>IsNotExist</b>(err) {
+		<a href="../src/os/removeall_at.go.html#line-40" class="path-duplicate">removeall_at.go</a><a href="../src/os/removeall_at.go.html#line-40">#L40</a>: 	if <b>IsNotExist</b>(err) {
+		<a href="../src/os/removeall_at.go.html#line-63" class="path-duplicate">removeall_at.go</a><a href="../src/os/removeall_at.go.html#line-63">#L63</a>: 	if err == nil || <b>IsNotExist</b>(err) {
+		<a href="../src/os/removeall_at.go.html#line-81" class="path-duplicate">removeall_at.go</a><a href="../src/os/removeall_at.go.html#line-81">#L81</a>: 		if <b>IsNotExist</b>(statErr) {
+		<a href="../src/os/removeall_at.go.html#line-100" class="path-duplicate">removeall_at.go</a><a href="../src/os/removeall_at.go.html#line-100">#L100</a>: 			if <b>IsNotExist</b>(err) {
+		<a href="../src/os/removeall_at.go.html#line-114" class="path-duplicate">removeall_at.go</a><a href="../src/os/removeall_at.go.html#line-114">#L114</a>: 				if <b>IsNotExist</b>(readErr) {
+		<a href="../src/os/removeall_at.go.html#line-156" class="path-duplicate">removeall_at.go</a><a href="../src/os/removeall_at.go.html#line-156">#L156</a>: 	if unlinkError == nil || <b>IsNotExist</b>(unlinkError) {
+		<a href="../src/os/tempfile.go.html#line-104">tempfile.go#L104</a>: 		if <b>IsNotExist</b>(err) {
+		<a href="../src/os/tempfile.go.html#line-105" class="path-duplicate">tempfile.go</a><a href="../src/os/tempfile.go.html#line-105">#L105</a>: 			if _, err := Stat(dir); <b>IsNotExist</b>(err) {
+
+	<a href="../pkg/net.html">net</a>
+		<a href="../src/net/conf.go.html#line-102">conf.go#L102</a>: 	if confVal.resolv.err != nil &amp;&amp; !os.<b>IsNotExist</b>(confVal.resolv.err) &amp;&amp;
+		<a href="../src/net/conf.go.html#line-149" class="path-duplicate">conf.go</a><a href="../src/net/conf.go.html#line-149">#L149</a>: 		if os.<b>IsNotExist</b>(c.resolv.err) {
+		<a href="../src/net/conf.go.html#line-201" class="path-duplicate">conf.go</a><a href="../src/net/conf.go.html#line-201">#L201</a>: 	if os.<b>IsNotExist</b>(nss.err) || (nss.err == nil &amp;&amp; len(srcs) == 0) {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

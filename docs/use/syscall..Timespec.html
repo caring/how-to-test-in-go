@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: syscall.Timespec</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../pkg/syscall.html">syscall</a>.<a href="../src/syscall/ztypes_darwin_amd64.go.html#line-24">Timespec</a></b></span>
+
+<span class="title">20 uses</span>
+
+	syscall (current package)
+		<a href="../src/syscall/syscall.go.html#line-81">syscall.go#L81</a>: func (ts *<b>Timespec</b>) Unix() (sec int64, nsec int64) {
+		<a href="../src/syscall/syscall.go.html#line-91" class="path-duplicate">syscall.go</a><a href="../src/syscall/syscall.go.html#line-91">#L91</a>: func (ts *<b>Timespec</b>) Nano() int64 {
+		<a href="../src/syscall/syscall_bsd.go.html#line-455">syscall_bsd.go#L455</a>: func Kevent(kq int, changes, events []Kevent_t, timeout *<b>Timespec</b>) (n int, err error) {
+		<a href="../src/syscall/syscall_bsd.go.html#line-523" class="path-duplicate">syscall_bsd.go</a><a href="../src/syscall/syscall_bsd.go.html#line-523">#L523</a>: func UtimesNano(path string, ts []<b>Timespec</b>) error {
+		<a href="../src/syscall/syscall_bsd.go.html#line-532" class="path-duplicate">syscall_bsd.go</a><a href="../src/syscall/syscall_bsd.go.html#line-532">#L532</a>: 	err = utimensat(_AT_FDCWD, path, (*[2]<b>Timespec</b>)(unsafe.Pointer(&amp;ts[0])), 0)
+		<a href="../src/syscall/syscall_darwin.go.html#line-125">syscall_darwin.go#L125</a>: func setattrlistTimes(path string, times []<b>Timespec</b>) error {
+		<a href="../src/syscall/syscall_darwin.go.html#line-136" class="path-duplicate">syscall_darwin.go</a><a href="../src/syscall/syscall_darwin.go.html#line-136">#L136</a>: 	attributes := [2]<b>Timespec</b>{times[1], times[0]}
+		<a href="../src/syscall/syscall_darwin.go.html#line-157" class="path-duplicate">syscall_darwin.go</a><a href="../src/syscall/syscall_darwin.go.html#line-157">#L157</a>: func utimensat(dirfd int, path string, times *[2]<b>Timespec</b>, flag int) error {
+		<a href="../src/syscall/syscall_darwin_amd64.go.html#line-12">syscall_darwin_amd64.go#L12</a>: func setTimespec(sec, nsec int64) <b>Timespec</b> {
+		<a href="../src/syscall/syscall_darwin_amd64.go.html#line-13" class="path-duplicate">syscall_darwin_amd64.go</a><a href="../src/syscall/syscall_darwin_amd64.go.html#line-13">#L13</a>: 	return <b>Timespec</b>{Sec: sec, Nsec: nsec}
+		<a href="../src/syscall/timestruct.go.html#line-11">timestruct.go#L11</a>: func TimespecToNsec(ts <b>Timespec</b>) int64 { return ts.Nano() }
+		<a href="../src/syscall/timestruct.go.html#line-14" class="path-duplicate">timestruct.go</a><a href="../src/syscall/timestruct.go.html#line-14">#L14</a>: func NsecToTimespec(nsec int64) <b>Timespec</b> {
+		<a href="../src/syscall/zsyscall_darwin_amd64.go.html#line-271">zsyscall_darwin_amd64.go#L271</a>: func kevent(kq int, change unsafe.Pointer, nchange int, event unsafe.Pointer, nevent int, timeout *<b>Timespec</b>) (n int, err error) {
+		<a href="../src/syscall/ztypes_darwin_amd64.go.html#line-24">ztypes_darwin_amd64.go#L24</a>: type <b>Timespec</b> struct {
+		<a href="../src/syscall/ztypes_darwin_amd64.go.html#line-75" class="path-duplicate">ztypes_darwin_amd64.go</a><a href="../src/syscall/ztypes_darwin_amd64.go.html#line-75">#L75</a>: 	Atimespec     <b>Timespec</b>
+		<a href="../src/syscall/ztypes_darwin_amd64.go.html#line-76" class="path-duplicate">ztypes_darwin_amd64.go</a><a href="../src/syscall/ztypes_darwin_amd64.go.html#line-76">#L76</a>: 	Mtimespec     <b>Timespec</b>
+		<a href="../src/syscall/ztypes_darwin_amd64.go.html#line-77" class="path-duplicate">ztypes_darwin_amd64.go</a><a href="../src/syscall/ztypes_darwin_amd64.go.html#line-77">#L77</a>: 	Ctimespec     <b>Timespec</b>
+		<a href="../src/syscall/ztypes_darwin_amd64.go.html#line-78" class="path-duplicate">ztypes_darwin_amd64.go</a><a href="../src/syscall/ztypes_darwin_amd64.go.html#line-78">#L78</a>: 	Birthtimespec <b>Timespec</b>
+
+	<a href="../pkg/os.html">os</a>
+		<a href="../src/os/file_posix.go.html#line-182">file_posix.go#L182</a>: 	var utimes [2]syscall.<b>Timespec</b>
+		<a href="../src/os/stat_darwin.go.html#line-44">stat_darwin.go#L44</a>: func timespecToTime(ts syscall.<b>Timespec</b>) time.Time {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

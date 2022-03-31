@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/uber/jaeger-client-go/thrift.TProtocol.ReadFieldBegin</title>
+<link href="../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift.html">github.com/uber/jaeger-client-go/thrift</a>.<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/protocol.go.html#line-33">TProtocol</a>.<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/protocol.go.html#line-60">ReadFieldBegin</a></b></span><span style="font-size: large;"><i> (method)</i></span>
+
+<span class="title">30 uses</span>
+
+	github.com/uber/jaeger-client-go/thrift (current package)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/application_exception.go.html#line-99">application_exception.go#L99</a>: 		_, ttype, id, err := iprot.<b>ReadFieldBegin</b>(ctx)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_protocol.go.html#line-274">header_protocol.go#L274</a>: 	return p.protocol.<b>ReadFieldBegin</b>(ctx)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/protocol.go.html#line-60">protocol.go#L60</a>: 	<b>ReadFieldBegin</b>(ctx context.Context) (name string, typeId TType, id int16, err error)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/protocol.go.html#line-125" class="path-duplicate">protocol.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/protocol.go.html#line-125">#L125</a>: 			_, typeId, _, _ := self.<b>ReadFieldBegin</b>(ctx)
+
+	<a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift-gen/agent.html">github.com/uber/jaeger-client-go/thrift-gen/agent</a>
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/agent/agent.go.html#line-208">agent.go#L208</a>:     _, fieldTypeId, fieldId, err := iprot.<b>ReadFieldBegin</b>(ctx)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/agent/agent.go.html#line-326" class="path-duplicate">agent.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/agent/agent.go.html#line-326">#L326</a>:     _, fieldTypeId, fieldId, err := iprot.<b>ReadFieldBegin</b>(ctx)
+
+	<a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift-gen/jaeger.html">github.com/uber/jaeger-client-go/thrift-gen/jaeger</a>
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-229">jaeger.go#L229</a>:     _, fieldTypeId, fieldId, err := iprot.<b>ReadFieldBegin</b>(ctx)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-563" class="path-duplicate">jaeger.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-563">#L563</a>:     _, fieldTypeId, fieldId, err := iprot.<b>ReadFieldBegin</b>(ctx)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-749" class="path-duplicate">jaeger.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-749">#L749</a>:     _, fieldTypeId, fieldId, err := iprot.<b>ReadFieldBegin</b>(ctx)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-1043" class="path-duplicate">jaeger.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-1043">#L1043</a>:     _, fieldTypeId, fieldId, err := iprot.<b>ReadFieldBegin</b>(ctx)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-1576" class="path-duplicate">jaeger.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-1576">#L1576</a>:     _, fieldTypeId, fieldId, err := iprot.<b>ReadFieldBegin</b>(ctx)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-1753" class="path-duplicate">jaeger.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-1753">#L1753</a>:     _, fieldTypeId, fieldId, err := iprot.<b>ReadFieldBegin</b>(ctx)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-1969" class="path-duplicate">jaeger.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-1969">#L1969</a>:     _, fieldTypeId, fieldId, err := iprot.<b>ReadFieldBegin</b>(ctx)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-2205" class="path-duplicate">jaeger.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-2205">#L2205</a>:     _, fieldTypeId, fieldId, err := iprot.<b>ReadFieldBegin</b>(ctx)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-2490" class="path-duplicate">jaeger.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-2490">#L2490</a>:     _, fieldTypeId, fieldId, err := iprot.<b>ReadFieldBegin</b>(ctx)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-2606" class="path-duplicate">jaeger.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-2606">#L2606</a>:     _, fieldTypeId, fieldId, err := iprot.<b>ReadFieldBegin</b>(ctx)
+
+	<a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift-gen/sampling.html">github.com/uber/jaeger-client-go/thrift-gen/sampling</a>
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-97">sampling.go#L97</a>:     _, fieldTypeId, fieldId, err := iprot.<b>ReadFieldBegin</b>(ctx)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-203" class="path-duplicate">sampling.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-203">#L203</a>:     _, fieldTypeId, fieldId, err := iprot.<b>ReadFieldBegin</b>(ctx)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-323" class="path-duplicate">sampling.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-323">#L323</a>:     _, fieldTypeId, fieldId, err := iprot.<b>ReadFieldBegin</b>(ctx)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-491" class="path-duplicate">sampling.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-491">#L491</a>:     _, fieldTypeId, fieldId, err := iprot.<b>ReadFieldBegin</b>(ctx)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-768" class="path-duplicate">sampling.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-768">#L768</a>:     _, fieldTypeId, fieldId, err := iprot.<b>ReadFieldBegin</b>(ctx)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-1153" class="path-duplicate">sampling.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-1153">#L1153</a>:     _, fieldTypeId, fieldId, err := iprot.<b>ReadFieldBegin</b>(ctx)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-1251" class="path-duplicate">sampling.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-1251">#L1251</a>:     _, fieldTypeId, fieldId, err := iprot.<b>ReadFieldBegin</b>(ctx)
+
+	<a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift-gen/zipkincore.html">github.com/uber/jaeger-client-go/thrift-gen/zipkincore</a>
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-150">zipkincore.go#L150</a>:     _, fieldTypeId, fieldId, err := iprot.<b>ReadFieldBegin</b>(ctx)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-372" class="path-duplicate">zipkincore.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-372">#L372</a>:     _, fieldTypeId, fieldId, err := iprot.<b>ReadFieldBegin</b>(ctx)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-581" class="path-duplicate">zipkincore.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-581">#L581</a>:     _, fieldTypeId, fieldId, err := iprot.<b>ReadFieldBegin</b>(ctx)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-901" class="path-duplicate">zipkincore.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-901">#L901</a>:     _, fieldTypeId, fieldId, err := iprot.<b>ReadFieldBegin</b>(ctx)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-1360" class="path-duplicate">zipkincore.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-1360">#L1360</a>:     _, fieldTypeId, fieldId, err := iprot.<b>ReadFieldBegin</b>(ctx)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-1645" class="path-duplicate">zipkincore.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-1645">#L1645</a>:     _, fieldTypeId, fieldId, err := iprot.<b>ReadFieldBegin</b>(ctx)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-1761" class="path-duplicate">zipkincore.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-1761">#L1761</a>:     _, fieldTypeId, fieldId, err := iprot.<b>ReadFieldBegin</b>(ctx)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

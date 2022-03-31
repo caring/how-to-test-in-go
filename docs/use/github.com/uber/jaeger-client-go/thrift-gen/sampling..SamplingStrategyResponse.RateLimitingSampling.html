@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/uber/jaeger-client-go/thrift-gen/sampling.SamplingStrategyResponse.RateLimitingSampling</title>
+<link href="../../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../../../pkg/github.com/uber/jaeger-client-go/thrift-gen/sampling.html">github.com/uber/jaeger-client-go/thrift-gen/sampling</a>.<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-712">SamplingStrategyResponse</a>.<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-715">RateLimitingSampling</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">10 uses</span>
+
+	github.com/uber/jaeger-client-go/thrift-gen/sampling (current package)
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-715">sampling.go#L715</a>:   <b>RateLimitingSampling</b> *RateLimitingSamplingStrategy `thrift:"rateLimitingSampling,3" db:"rateLimitingSampling" json:"rateLimitingSampling,omitempty"`
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-739" class="path-duplicate">sampling.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-739">#L739</a>: return p.<b>RateLimitingSampling</b>
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-753" class="path-duplicate">sampling.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-753">#L753</a>:   return p.<b>RateLimitingSampling</b> != nil
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-852" class="path-duplicate">sampling.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-852">#L852</a>:   p.<b>RateLimitingSampling</b> = &amp;RateLimitingSamplingStrategy{}
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-853" class="path-duplicate">sampling.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-853">#L853</a>:   if err := p.<b>RateLimitingSampling</b>.Read(ctx, iprot); err != nil {
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-854" class="path-duplicate">sampling.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-854">#L854</a>:     return thrift.PrependError(fmt.Sprintf("%T error reading struct: ", p.<b>RateLimitingSampling</b>), err)
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-910" class="path-duplicate">sampling.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-910">#L910</a>:     if err := p.<b>RateLimitingSampling</b>.Write(ctx, oprot); err != nil {
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-911" class="path-duplicate">sampling.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-911">#L911</a>:       return thrift.PrependError(fmt.Sprintf("%T error writing struct: ", p.<b>RateLimitingSampling</b>), err)
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-940" class="path-duplicate">sampling.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-940">#L940</a>:   if !p.<b>RateLimitingSampling</b>.Equals(other.<b>RateLimitingSampling</b>) { return false }
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: google.golang.org/grpc/internal/transport.goAway</title>
+<link href="../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../../../../pkg/google.golang.org/grpc/internal/transport.html">google.golang.org/grpc/internal/transport</a>.<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-189">goAway</a></b></span>
+
+<span class="title">9 uses</span>
+
+	google.golang.org/grpc/internal/transport (current package)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-189">controlbuf.go#L189</a>: type <b>goAway</b> struct {
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-196" class="path-duplicate">controlbuf.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-196">#L196</a>: func (*<b>goAway</b>) isTransportResponseFrame() bool { return false }
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-482" class="path-duplicate">controlbuf.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-482">#L482</a>: 	ssGoAwayHandler func(*<b>goAway</b>) (bool, error)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-802" class="path-duplicate">controlbuf.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-802">#L802</a>: func (l *loopyWriter) goAwayHandler(g *<b>goAway</b>) error {
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-838" class="path-duplicate">controlbuf.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-838">#L838</a>: 	case *<b>goAway</b>:
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-887">http2_server.go#L887</a>: 		t.controlBuf.put(&amp;<b>goAway</b>{code: http2.ErrCodeEnhanceYourCalm, debugData: []byte("too_many_pings"), closeConn: true})
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1294" class="path-duplicate">http2_server.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1294">#L1294</a>: 	t.controlBuf.put(&amp;<b>goAway</b>{code: http2.ErrCodeNo, debugData: []byte{}, headsUp: true})
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1301" class="path-duplicate">http2_server.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1301">#L1301</a>: func (t *http2Server) outgoingGoAwayHandler(g *<b>goAway</b>) (bool, error) {
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1353" class="path-duplicate">http2_server.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1353">#L1353</a>: 		t.controlBuf.put(&amp;<b>goAway</b>{code: g.code, debugData: g.debugData})
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

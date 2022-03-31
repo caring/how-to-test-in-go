@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime.timer.f</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/runtime.html">runtime</a>.<a href="../src/runtime/time.go.html#line-17">timer</a>.<a href="../src/runtime/time.go.html#line-30">f</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">20 uses</span>
+
+	runtime (current package)
+		<a href="../src/runtime/mgcscavenge.go.html#line-260">mgcscavenge.go#L260</a>: 	scavenge.timer.<b>f</b> = func(_ interface{}, _ uintptr) {
+		<a href="../src/runtime/netpoll.go.html#line-282">netpoll.go#L282</a>: 	if pd.rt.<b>f</b> == nil {
+		<a href="../src/runtime/netpoll.go.html#line-284" class="path-duplicate">netpoll.go</a><a href="../src/runtime/netpoll.go.html#line-284">#L284</a>: 			pd.rt.<b>f</b> = rtf
+		<a href="../src/runtime/netpoll.go.html#line-298" class="path-duplicate">netpoll.go</a><a href="../src/runtime/netpoll.go.html#line-298">#L298</a>: 			pd.rt.<b>f</b> = nil
+		<a href="../src/runtime/netpoll.go.html#line-301" class="path-duplicate">netpoll.go</a><a href="../src/runtime/netpoll.go.html#line-301">#L301</a>: 	if pd.wt.<b>f</b> == nil {
+		<a href="../src/runtime/netpoll.go.html#line-303" class="path-duplicate">netpoll.go</a><a href="../src/runtime/netpoll.go.html#line-303">#L303</a>: 			pd.wt.<b>f</b> = netpollWriteDeadline
+		<a href="../src/runtime/netpoll.go.html#line-314" class="path-duplicate">netpoll.go</a><a href="../src/runtime/netpoll.go.html#line-314">#L314</a>: 			pd.wt.<b>f</b> = nil
+		<a href="../src/runtime/netpoll.go.html#line-350" class="path-duplicate">netpoll.go</a><a href="../src/runtime/netpoll.go.html#line-350">#L350</a>: 	if pd.rt.<b>f</b> != nil {
+		<a href="../src/runtime/netpoll.go.html#line-352" class="path-duplicate">netpoll.go</a><a href="../src/runtime/netpoll.go.html#line-352">#L352</a>: 		pd.rt.<b>f</b> = nil
+		<a href="../src/runtime/netpoll.go.html#line-354" class="path-duplicate">netpoll.go</a><a href="../src/runtime/netpoll.go.html#line-354">#L354</a>: 	if pd.wt.<b>f</b> != nil {
+		<a href="../src/runtime/netpoll.go.html#line-356" class="path-duplicate">netpoll.go</a><a href="../src/runtime/netpoll.go.html#line-356">#L356</a>: 		pd.wt.<b>f</b> = nil
+		<a href="../src/runtime/netpoll.go.html#line-508" class="path-duplicate">netpoll.go</a><a href="../src/runtime/netpoll.go.html#line-508">#L508</a>: 		if pd.rd &lt;= 0 || pd.rt.<b>f</b> == nil {
+		<a href="../src/runtime/netpoll.go.html#line-512" class="path-duplicate">netpoll.go</a><a href="../src/runtime/netpoll.go.html#line-512">#L512</a>: 		atomic.StorepNoWB(unsafe.Pointer(&amp;pd.rt.<b>f</b>), nil) // full memory barrier between store to rd and load of rg in netpollunblock
+		<a href="../src/runtime/netpoll.go.html#line-517" class="path-duplicate">netpoll.go</a><a href="../src/runtime/netpoll.go.html#line-517">#L517</a>: 		if pd.wd &lt;= 0 || pd.wt.<b>f</b> == nil &amp;&amp; !read {
+		<a href="../src/runtime/netpoll.go.html#line-521" class="path-duplicate">netpoll.go</a><a href="../src/runtime/netpoll.go.html#line-521">#L521</a>: 		atomic.StorepNoWB(unsafe.Pointer(&amp;pd.wt.<b>f</b>), nil) // full memory barrier between store to wd and load of wg in netpollunblock
+		<a href="../src/runtime/time.go.html#line-30">time.go#L30</a>: 	<b>f</b>      func(interface{}, uintptr)
+		<a href="../src/runtime/time.go.html#line-187" class="path-duplicate">time.go</a><a href="../src/runtime/time.go.html#line-187">#L187</a>: 	t.<b>f</b> = goroutineReady
+		<a href="../src/runtime/time.go.html#line-484" class="path-duplicate">time.go</a><a href="../src/runtime/time.go.html#line-484">#L484</a>: 	t.<b>f</b> = f
+		<a href="../src/runtime/time.go.html#line-539" class="path-duplicate">time.go</a><a href="../src/runtime/time.go.html#line-539">#L539</a>: 	return modtimer(t, when, t.period, t.<b>f</b>, t.arg, t.seq)
+		<a href="../src/runtime/time.go.html#line-831" class="path-duplicate">time.go</a><a href="../src/runtime/time.go.html#line-831">#L831</a>: 	f := t.<b>f</b>
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

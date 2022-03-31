@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: fmt.Sprint</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">func <b><a href="../pkg/fmt.html">fmt</a>.<a href="../src/fmt/print.go.html#line-247">Sprint</a></b></span>
+
+<span class="title">42 uses</span>
+
+	fmt (current package)
+		<a href="../src/fmt/print.go.html#line-247">print.go#L247</a>: func <b>Sprint</b>(a ...interface{}) string {
+
+	<a href="../pkg/crypto/x509/pkix.html">crypto/x509/pkix</a>
+		<a href="../src/crypto/x509/pkix/pkix.go.html#line-64">pkix.go#L64</a>: 			valueString := fmt.<b>Sprint</b>(tv.Value)
+
+	<a href="../pkg/github.com/caring/test/0-begin-here.html">github.com/caring/test/0-begin-here</a>
+		<a href="../src/github.com/caring/test/0-begin-here/fizzbuzz.go.html#line-10">fizzbuzz.go#L10</a>: 		panic(fmt.<b>Sprint</b>("n is negative. got = ", n))
+
+	<a href="../pkg/github.com/golang/protobuf/jsonpb.html">github.com/golang/protobuf/jsonpb</a>
+		<a href="../src/github.com/golang/protobuf/jsonpb/encode.go.html#line-484">encode.go#L484</a>: 			s := fmt.<b>Sprint</b>(entry.key.Interface())
+
+	<a href="../pkg/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap.html">github.com/grpc-ecosystem/go-grpc-middleware/logging/zap</a>
+		<a href="../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/grpclogger.go.html#line-26">grpclogger.go#L26</a>: 	l.logger.Fatal(fmt.<b>Sprint</b>(args...))
+		<a href="../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/grpclogger.go.html#line-34" class="path-duplicate">grpclogger.go</a><a href="../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/grpclogger.go.html#line-34">#L34</a>: 	l.logger.Fatal(fmt.<b>Sprint</b>(args...))
+		<a href="../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/grpclogger.go.html#line-38" class="path-duplicate">grpclogger.go</a><a href="../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/grpclogger.go.html#line-38">#L38</a>: 	l.logger.Info(fmt.<b>Sprint</b>(args...))
+		<a href="../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/grpclogger.go.html#line-46" class="path-duplicate">grpclogger.go</a><a href="../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/grpclogger.go.html#line-46">#L46</a>: 	l.logger.Info(fmt.<b>Sprint</b>(args...))
+		<a href="../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/grpclogger.go.html#line-69" class="path-duplicate">grpclogger.go</a><a href="../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/grpclogger.go.html#line-69">#L69</a>: 	l.logger.Info(fmt.<b>Sprint</b>(args...))
+		<a href="../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/grpclogger.go.html#line-73" class="path-duplicate">grpclogger.go</a><a href="../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/grpclogger.go.html#line-73">#L73</a>: 	l.logger.Info(fmt.<b>Sprint</b>(args...))
+		<a href="../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/grpclogger.go.html#line-81" class="path-duplicate">grpclogger.go</a><a href="../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/grpclogger.go.html#line-81">#L81</a>: 	l.logger.Warn(fmt.<b>Sprint</b>(args...))
+		<a href="../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/grpclogger.go.html#line-85" class="path-duplicate">grpclogger.go</a><a href="../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/grpclogger.go.html#line-85">#L85</a>: 	l.logger.Warn(fmt.<b>Sprint</b>(args...))
+		<a href="../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/grpclogger.go.html#line-93" class="path-duplicate">grpclogger.go</a><a href="../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/grpclogger.go.html#line-93">#L93</a>: 	l.logger.Error(fmt.<b>Sprint</b>(args...))
+		<a href="../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/grpclogger.go.html#line-97" class="path-duplicate">grpclogger.go</a><a href="../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/grpclogger.go.html#line-97">#L97</a>: 	l.logger.Error(fmt.<b>Sprint</b>(args...))
+		<a href="../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/grpclogger.go.html#line-105" class="path-duplicate">grpclogger.go</a><a href="../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/grpclogger.go.html#line-105">#L105</a>: 	l.logger.Fatal(fmt.<b>Sprint</b>(args...))
+		<a href="../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/grpclogger.go.html#line-109" class="path-duplicate">grpclogger.go</a><a href="../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/grpclogger.go.html#line-109">#L109</a>: 	l.logger.Fatal(fmt.<b>Sprint</b>(args...))
+
+	<a href="../pkg/github.com/opentracing/opentracing-go/log.html">github.com/opentracing/opentracing-go/log</a>
+		<a href="../src/github.com/opentracing/opentracing-go/log/field.go.html#line-281">field.go#L281</a>: 	return fmt.<b>Sprint</b>(lf.key, ":", lf.Value())
+		<a href="../src/github.com/opentracing/opentracing-go/log/util.go.html#line-57">util.go#L57</a>: 			fields[i] = String(key, fmt.<b>Sprint</b>(typedVal))
+
+	<a href="../pkg/github.com/uber/jaeger-client-go/log/zap.html">github.com/uber/jaeger-client-go/log/zap</a>
+		<a href="../src/github.com/uber/jaeger-client-go/log/zap/field.go.html#line-131">field.go#L131</a>: 	enc.AddString("value", fmt.<b>Sprint</b>(lf.Value()))
+
+	<a href="../pkg/go.uber.org/zap.html">go.uber.org/zap</a>
+		<a href="../src/go.uber.org/zap/sugar.go.html#line-228">sugar.go#L228</a>: 		msg = fmt.<b>Sprint</b>(fmtArgs...)
+
+	<a href="../pkg/google.golang.org/grpc/grpclog.html">google.golang.org/grpc/grpclog</a>
+		<a href="../src/google.golang.org/grpc/grpclog/loggerv2.go.html#line-187">loggerv2.go#L187</a>: 	g.output(infoLog, fmt.<b>Sprint</b>(args...))
+		<a href="../src/google.golang.org/grpc/grpclog/loggerv2.go.html#line-199" class="path-duplicate">loggerv2.go</a><a href="../src/google.golang.org/grpc/grpclog/loggerv2.go.html#line-199">#L199</a>: 	g.output(warningLog, fmt.<b>Sprint</b>(args...))
+		<a href="../src/google.golang.org/grpc/grpclog/loggerv2.go.html#line-211" class="path-duplicate">loggerv2.go</a><a href="../src/google.golang.org/grpc/grpclog/loggerv2.go.html#line-211">#L211</a>: 	g.output(errorLog, fmt.<b>Sprint</b>(args...))
+		<a href="../src/google.golang.org/grpc/grpclog/loggerv2.go.html#line-223" class="path-duplicate">loggerv2.go</a><a href="../src/google.golang.org/grpc/grpclog/loggerv2.go.html#line-223">#L223</a>: 	g.output(fatalLog, fmt.<b>Sprint</b>(args...))
+
+	<a href="../pkg/google.golang.org/grpc/internal/channelz.html">google.golang.org/grpc/internal/channelz</a>
+		<a href="../src/google.golang.org/grpc/internal/channelz/logging.go.html#line-33">logging.go#L33</a>: 			Desc:     fmt.<b>Sprint</b>(args...),
+		<a href="../src/google.golang.org/grpc/internal/channelz/logging.go.html#line-58" class="path-duplicate">logging.go</a><a href="../src/google.golang.org/grpc/internal/channelz/logging.go.html#line-58">#L58</a>: 			Desc:     fmt.<b>Sprint</b>(args...),
+		<a href="../src/google.golang.org/grpc/internal/channelz/logging.go.html#line-83" class="path-duplicate">logging.go</a><a href="../src/google.golang.org/grpc/internal/channelz/logging.go.html#line-83">#L83</a>: 			Desc:     fmt.<b>Sprint</b>(args...),
+
+	<a href="../pkg/google.golang.org/protobuf/internal/descfmt.html">google.golang.org/protobuf/internal/descfmt</a>
+		<a href="../src/google.golang.org/protobuf/internal/descfmt/stringer.go.html#line-55">stringer.go#L55</a>: 			ss = append(ss, fmt.<b>Sprint</b>(vs.Get(i)))
+		<a href="../src/google.golang.org/protobuf/internal/descfmt/stringer.go.html#line-60" class="path-duplicate">stringer.go</a><a href="../src/google.golang.org/protobuf/internal/descfmt/stringer.go.html#line-60">#L60</a>: 			ss = append(ss, fmt.<b>Sprint</b>(vs.Get(i)))
+		<a href="../src/google.golang.org/protobuf/internal/descfmt/stringer.go.html#line-262" class="path-duplicate">stringer.go</a><a href="../src/google.golang.org/protobuf/internal/descfmt/stringer.go.html#line-262">#L262</a>: 			s = fmt.<b>Sprint</b>(v)
+
+	<a href="../pkg/google.golang.org/protobuf/reflect/protoreflect.html">google.golang.org/protobuf/reflect/protoreflect</a>
+		<a href="../src/google.golang.org/protobuf/reflect/protoreflect/value_union.go.html#line-290">value_union.go#L290</a>: 		return fmt.<b>Sprint</b>(v.Interface())
+
+	<a href="../pkg/html/template.html">html/template</a>
+		<a href="../src/html/template/content.go.html#line-184">content.go#L184</a>: 	return fmt.<b>Sprint</b>(args[:i]...), contentTypePlain
+		<a href="../src/html/template/escape.go.html#line-58">escape.go#L58</a>: 	return fmt.<b>Sprint</b>(args...)
+		<a href="../src/html/template/js.go.html#line-162">js.go#L162</a>: 		a = fmt.<b>Sprint</b>(args...)
+
+	<a href="../pkg/log.html">log</a>
+		<a href="../src/log/log.go.html#line-196">log.go#L196</a>: func (l *Logger) Print(v ...interface{}) { l.Output(2, fmt.<b>Sprint</b>(v...)) }
+		<a href="../src/log/log.go.html#line-204" class="path-duplicate">log.go</a><a href="../src/log/log.go.html#line-204">#L204</a>: 	l.Output(2, fmt.<b>Sprint</b>(v...))
+		<a href="../src/log/log.go.html#line-222" class="path-duplicate">log.go</a><a href="../src/log/log.go.html#line-222">#L222</a>: 	s := fmt.<b>Sprint</b>(v...)
+		<a href="../src/log/log.go.html#line-317" class="path-duplicate">log.go</a><a href="../src/log/log.go.html#line-317">#L317</a>: 	std.Output(2, fmt.<b>Sprint</b>(v...))
+		<a href="../src/log/log.go.html#line-334" class="path-duplicate">log.go</a><a href="../src/log/log.go.html#line-334">#L334</a>: 	std.Output(2, fmt.<b>Sprint</b>(v...))
+		<a href="../src/log/log.go.html#line-352" class="path-duplicate">log.go</a><a href="../src/log/log.go.html#line-352">#L352</a>: 	s := fmt.<b>Sprint</b>(v...)
+
+	<a href="../pkg/text/template.html">text/template</a>
+		<a href="../src/text/template/funcs.go.html#line-51">funcs.go#L51</a>: 		"print":    fmt.<b>Sprint</b>,
+		<a href="../src/text/template/funcs.go.html#line-768" class="path-duplicate">funcs.go</a><a href="../src/text/template/funcs.go.html#line-768">#L768</a>: 		s = fmt.<b>Sprint</b>(args...)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

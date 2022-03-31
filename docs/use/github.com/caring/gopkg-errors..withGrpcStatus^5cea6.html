@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/caring/gopkg-errors.withGrpcStatus</title>
+<link href="../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../../../pkg/github.com/caring/gopkg-errors.html">github.com/caring/gopkg-errors</a>.<a href="../../../src/github.com/caring/gopkg-errors/grpc.go.html#line-153">withGrpcStatus</a></b></span>
+
+<span class="title">11 uses</span>
+
+	github.com/caring/gopkg-errors (current package)
+		<a href="../../../src/github.com/caring/gopkg-errors/grpc.go.html#line-153">grpc.go#L153</a>: type <b>withGrpcStatus</b> struct {
+		<a href="../../../src/github.com/caring/gopkg-errors/grpc.go.html#line-169" class="path-duplicate">grpc.go</a><a href="../../../src/github.com/caring/gopkg-errors/grpc.go.html#line-169">#L169</a>: 	err := &amp;<b>withGrpcStatus</b>{
+		<a href="../../../src/github.com/caring/gopkg-errors/grpc.go.html#line-182" class="path-duplicate">grpc.go</a><a href="../../../src/github.com/caring/gopkg-errors/grpc.go.html#line-182">#L182</a>: func WithGrpcStatus(err error, code codes.Code) *<b>withGrpcStatus</b> {
+		<a href="../../../src/github.com/caring/gopkg-errors/grpc.go.html#line-191" class="path-duplicate">grpc.go</a><a href="../../../src/github.com/caring/gopkg-errors/grpc.go.html#line-191">#L191</a>: 	return &amp;<b>withGrpcStatus</b>{
+		<a href="../../../src/github.com/caring/gopkg-errors/grpc.go.html#line-198" class="path-duplicate">grpc.go</a><a href="../../../src/github.com/caring/gopkg-errors/grpc.go.html#line-198">#L198</a>: func (w *<b>withGrpcStatus</b>) GRPCStatus() *status.Status {
+		<a href="../../../src/github.com/caring/gopkg-errors/grpc.go.html#line-202" class="path-duplicate">grpc.go</a><a href="../../../src/github.com/caring/gopkg-errors/grpc.go.html#line-202">#L202</a>: func (w *<b>withGrpcStatus</b>) Error() string {
+		<a href="../../../src/github.com/caring/gopkg-errors/grpc.go.html#line-206" class="path-duplicate">grpc.go</a><a href="../../../src/github.com/caring/gopkg-errors/grpc.go.html#line-206">#L206</a>: func (w *<b>withGrpcStatus</b>) ErrorCode() codes.Code {
+		<a href="../../../src/github.com/caring/gopkg-errors/grpc.go.html#line-210" class="path-duplicate">grpc.go</a><a href="../../../src/github.com/caring/gopkg-errors/grpc.go.html#line-210">#L210</a>: func (w *<b>withGrpcStatus</b>) String() string {
+		<a href="../../../src/github.com/caring/gopkg-errors/grpc.go.html#line-214" class="path-duplicate">grpc.go</a><a href="../../../src/github.com/caring/gopkg-errors/grpc.go.html#line-214">#L214</a>: func (w *<b>withGrpcStatus</b>) Cause() error {
+		<a href="../../../src/github.com/caring/gopkg-errors/grpc.go.html#line-218" class="path-duplicate">grpc.go</a><a href="../../../src/github.com/caring/gopkg-errors/grpc.go.html#line-218">#L218</a>: func (w *<b>withGrpcStatus</b>) Unwrap() error {
+		<a href="../../../src/github.com/caring/gopkg-errors/grpc.go.html#line-222" class="path-duplicate">grpc.go</a><a href="../../../src/github.com/caring/gopkg-errors/grpc.go.html#line-222">#L222</a>: func (w *<b>withGrpcStatus</b>) Format(s fmt.State, verb rune) {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

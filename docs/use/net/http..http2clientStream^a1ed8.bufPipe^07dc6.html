@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: net/http.http2clientStream.bufPipe</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../pkg/net/http.html">net/http</a>.<a href="../../src/net/http/h2_bundle.go.html#line-6928">http2clientStream</a>.<a href="../../src/net/http/h2_bundle.go.html#line-6937">bufPipe</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">11 uses</span>
+
+	net/http (current package)
+		<a href="../../src/net/http/h2_bundle.go.html#line-6937">h2_bundle.go#L6937</a>: 	<b>bufPipe</b>       http2pipe // buffered pipe with the flow-controlled response payload
+		<a href="../../src/net/http/h2_bundle.go.html#line-7971" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-7971">#L7971</a>: 		cs.<b>bufPipe</b>.CloseWithError(err) // no-op if already closed
+		<a href="../../src/net/http/h2_bundle.go.html#line-7976" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-7976">#L7976</a>: 		cs.<b>bufPipe</b>.CloseWithError(http2errRequestCanceled)
+		<a href="../../src/net/http/h2_bundle.go.html#line-8835" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-8835">#L8835</a>: 	cs.<b>bufPipe</b>.setBuffer(&amp;http2dataBuffer{expected: res.ContentLength})
+		<a href="../../src/net/http/h2_bundle.go.html#line-8890" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-8890">#L8890</a>: 	n, err = b.cs.<b>bufPipe</b>.Read(p)
+		<a href="../../src/net/http/h2_bundle.go.html#line-8924" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-8924">#L8924</a>: 		v := int(cs.inflow.available()) + cs.<b>bufPipe</b>.Len()
+		<a href="../../src/net/http/h2_bundle.go.html#line-8952" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-8952">#L8952</a>: 	unread := cs.<b>bufPipe</b>.Len()
+		<a href="../../src/net/http/h2_bundle.go.html#line-8972" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-8972">#L8972</a>: 	cs.<b>bufPipe</b>.BreakWithError(http2errClosedResponseBody)
+		<a href="../../src/net/http/h2_bundle.go.html#line-9059" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-9059">#L9059</a>: 			if _, err = cs.<b>bufPipe</b>.Write(data); err != nil {
+		<a href="../../src/net/http/h2_bundle.go.html#line-9102" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-9102">#L9102</a>: 		cs.<b>bufPipe</b>.closeWithErrorAndCode(io.EOF, cs.copyTrailers)
+		<a href="../../src/net/http/h2_bundle.go.html#line-9260" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-9260">#L9260</a>: 	cs.<b>bufPipe</b>.CloseWithError(serr)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

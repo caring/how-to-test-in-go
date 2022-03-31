@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: time.NewTicker</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">func <b><a href="../pkg/time.html">time</a>.<a href="../src/time/tick.go.html#line-22">NewTicker</a></b></span>
+
+<span class="title">10 uses</span>
+
+	time (current package)
+		<a href="../src/time/tick.go.html#line-22">tick.go#L22</a>: func <b>NewTicker</b>(d Duration) *Ticker {
+		<a href="../src/time/tick.go.html#line-68" class="path-duplicate">tick.go</a><a href="../src/time/tick.go.html#line-68">#L68</a>: 	return <b>NewTicker</b>(d).C
+
+	<a href="../pkg/github.com/caring/gopkg-logging/internal/writer.html">github.com/caring/gopkg-logging/internal/writer</a>
+		<a href="../src/github.com/caring/gopkg-logging/internal/writer/buffer.go.html#line-45">buffer.go#L45</a>: 	ticker := time.<b>NewTicker</b>(flushInterval)
+
+	<a href="../pkg/github.com/uber/jaeger-client-go.html">github.com/uber/jaeger-client-go</a>
+		<a href="../src/github.com/uber/jaeger-client-go/reporter.go.html#line-294">reporter.go#L294</a>: 	timer := time.<b>NewTicker</b>(r.bufferFlushInterval)
+		<a href="../src/github.com/uber/jaeger-client-go/sampler_remote.go.html#line-146">sampler_remote.go#L146</a>: 	ticker := time.<b>NewTicker</b>(s.samplingRefreshInterval)
+
+	<a href="../pkg/github.com/uber/jaeger-client-go/thrift-gen/jaeger.html">github.com/uber/jaeger-client-go/thrift-gen/jaeger</a>
+		<a href="../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-2415">jaeger.go#L2415</a>:       ticker := time.<b>NewTicker</b>(thrift.ServerConnectivityCheckInterval)
+
+	<a href="../pkg/github.com/uber/jaeger-client-go/thrift-gen/sampling.html">github.com/uber/jaeger-client-go/thrift-gen/sampling</a>
+		<a href="../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-1078">sampling.go#L1078</a>:       ticker := time.<b>NewTicker</b>(thrift.ServerConnectivityCheckInterval)
+
+	<a href="../pkg/github.com/uber/jaeger-client-go/thrift-gen/zipkincore.html">github.com/uber/jaeger-client-go/thrift-gen/zipkincore</a>
+		<a href="../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-1570">zipkincore.go#L1570</a>:       ticker := time.<b>NewTicker</b>(thrift.ServerConnectivityCheckInterval)
+
+	<a href="../pkg/github.com/uber/jaeger-client-go/utils.html">github.com/uber/jaeger-client-go/utils</a>
+		<a href="../src/github.com/uber/jaeger-client-go/utils/reconnecting_udp_conn.go.html#line-66">reconnecting_udp_conn.go#L66</a>: 	ticker := time.<b>NewTicker</b>(resolveTimeout)
+
+	<a href="../pkg/google.golang.org/grpc/internal/binarylog.html">google.golang.org/grpc/internal/binarylog</a>
+		<a href="../src/google.golang.org/grpc/internal/binarylog/sink.go.html#line-118">sink.go#L118</a>: 	fs.writeTicker = time.<b>NewTicker</b>(bufFlushDuration)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

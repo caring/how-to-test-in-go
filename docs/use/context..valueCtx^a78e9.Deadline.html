@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: context.valueCtx.Deadline</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/context.html">context</a>.<a href="../src/context/context.go.html#line-538">valueCtx</a>.<a href="../src/context/context.go.html#line-66">Deadline</a></b></span><span style="font-size: large;"><i> (method, <a href="../imp/context.valueCtx^a78e9.html#name-Deadline">view implemented interface methods</a>)</i></span>
+
+<span class="title">22 uses</span>
+
+	context (current package)
+		<a href="../src/context/context.go.html#line-66">context.go#L66</a>: 	<b>Deadline</b>() (deadline time.Time, ok bool)
+		<a href="../src/context/context.go.html#line-438" class="path-duplicate">context.go</a><a href="../src/context/context.go.html#line-438">#L438</a>: 	if cur, ok := parent.<b>Deadline</b>(); ok &amp;&amp; cur.Before(d) {
+
+	<a href="../pkg/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap.html">github.com/grpc-ecosystem/go-grpc-middleware/logging/zap</a>
+		<a href="../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/server_interceptors.go.html#line-90">server_interceptors.go#L90</a>: 	if d, ok := ctx.<b>Deadline</b>(); ok {
+
+	<a href="../pkg/github.com/uber/jaeger-client-go/thrift.html">github.com/uber/jaeger-client-go/thrift</a>
+		<a href="../src/github.com/uber/jaeger-client-go/thrift/binary_protocol.go.html#line-513">binary_protocol.go#L513</a>: 	_, deadlineSet := ctx.<b>Deadline</b>()
+		<a href="../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-364">compact_protocol.go#L364</a>: 	_, deadlineSet := ctx.<b>Deadline</b>()
+		<a href="../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-337">header_transport.go#L337</a>: 	_, deadlineSet := ctx.<b>Deadline</b>()
+
+	<a href="../pkg/google.golang.org/grpc.html">google.golang.org/grpc</a>
+		<a href="../src/google.golang.org/grpc/dialoptions.go.html#line-394">dialoptions.go#L394</a>: 			if deadline, ok := ctx.<b>Deadline</b>(); ok {
+		<a href="../src/google.golang.org/grpc/server.go.html#line-995">server.go#L995</a>: 	if dl, ok := stream.Context().<b>Deadline</b>(); ok {
+		<a href="../src/google.golang.org/grpc/server.go.html#line-1193" class="path-duplicate">server.go</a><a href="../src/google.golang.org/grpc/server.go.html#line-1193">#L1193</a>: 		if deadline, ok := ctx.<b>Deadline</b>(); ok {
+		<a href="../src/google.golang.org/grpc/server.go.html#line-1486" class="path-duplicate">server.go</a><a href="../src/google.golang.org/grpc/server.go.html#line-1486">#L1486</a>: 		if deadline, ok := ctx.<b>Deadline</b>(); ok {
+		<a href="../src/google.golang.org/grpc/stream.go.html#line-317">stream.go#L317</a>: 		if deadline, ok := ctx.<b>Deadline</b>(); ok {
+		<a href="../src/google.golang.org/grpc/stream.go.html#line-373" class="path-duplicate">stream.go</a><a href="../src/google.golang.org/grpc/stream.go.html#line-373">#L373</a>: 		if deadline, ok := ctx.<b>Deadline</b>(); ok {
+
+	<a href="../pkg/google.golang.org/grpc/internal/transport.html">google.golang.org/grpc/internal/transport</a>
+		<a href="../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-259">http2_client.go#L259</a>: 		deadline, _ := connectCtx.<b>Deadline</b>()
+		<a href="../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-509" class="path-duplicate">http2_client.go</a><a href="../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-509">#L509</a>: 	if dl, ok := ctx.<b>Deadline</b>(); ok {
+		<a href="../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1107" class="path-duplicate">http2_client.go</a><a href="../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1107">#L1107</a>: 		if d, ok := s.ctx.<b>Deadline</b>(); ok &amp;&amp; !d.After(time.Now()) {
+
+	<a href="../pkg/net.html">net</a>
+		<a href="../src/net/dial.go.html#line-122">dial.go#L122</a>: 	if d, ok := ctx.<b>Deadline</b>(); ok {
+		<a href="../src/net/dial.go.html#line-378" class="path-duplicate">dial.go</a><a href="../src/net/dial.go.html#line-378">#L378</a>: 		if d, ok := ctx.<b>Deadline</b>(); !ok || deadline.Before(d) {
+		<a href="../src/net/dial.go.html#line-535" class="path-duplicate">dial.go</a><a href="../src/net/dial.go.html#line-535">#L535</a>: 		if deadline, hasDeadline := ctx.<b>Deadline</b>(); hasDeadline {
+		<a href="../src/net/dnsclient_unix.go.html#line-165">dnsclient_unix.go#L165</a>: 		if d, ok := ctx.<b>Deadline</b>(); ok &amp;&amp; !d.IsZero() {
+		<a href="../src/net/fd_unix.go.html#line-89">fd_unix.go#L89</a>: 	if deadline, hasDeadline := ctx.<b>Deadline</b>(); hasDeadline {
+
+	<a href="../pkg/net/http.html">net/http</a>
+		<a href="../src/net/http/client.go.html#line-301">client.go#L301</a>: 	d, ok := ctx.<b>Deadline</b>()
+		<a href="../src/net/http/socks_bundle.go.html#line-32">socks_bundle.go#L32</a>: 	if deadline, ok := ctx.<b>Deadline</b>(); ok &amp;&amp; !deadline.IsZero() {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

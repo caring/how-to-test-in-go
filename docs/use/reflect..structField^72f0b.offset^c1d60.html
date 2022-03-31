@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: reflect.structField.offset</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/reflect.html">reflect</a>.<a href="../src/reflect/type.go.html#line-428">structField</a>.<a href="../src/reflect/type.go.html#line-434">offset</a></b></span><span style="font-size: large;"><i> (method)</i></span>
+
+<span class="title">11 uses</span>
+
+	reflect (current package)
+		<a href="../src/reflect/abi.go.html#line-240">abi.go#L240</a>: 			if !a.regAssign(f.typ, offset+f.<b>offset</b>()) {
+		<a href="../src/reflect/type.go.html#line-434">type.go#L434</a>: func (f *structField) <b>offset</b>() uintptr {
+		<a href="../src/reflect/type.go.html#line-1245" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1245">#L1245</a>: 	f.Offset = p.<b>offset</b>()
+		<a href="../src/reflect/type.go.html#line-2761" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2761">#L2761</a>: 			if ft.<b>offset</b>() &gt; off {
+		<a href="../src/reflect/type.go.html#line-2762" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2762">#L2762</a>: 				n := (ft.<b>offset</b>() - off) / ptrSize
+		<a href="../src/reflect/type.go.html#line-2768" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2768">#L2768</a>: 				off = ft.<b>offset</b>()
+		<a href="../src/reflect/type.go.html#line-2790" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2790">#L2790</a>: 				pi := add(p, ft.<b>offset</b>(), "&amp;x.field safe")
+		<a href="../src/reflect/type.go.html#line-2791" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2791">#L2791</a>: 				qi := add(q, ft.<b>offset</b>(), "&amp;x.field safe")
+		<a href="../src/reflect/type.go.html#line-2861" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2861">#L2861</a>: 		return f.<b>offset</b>() + f.typ.ptrdata
+		<a href="../src/reflect/type.go.html#line-3152" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-3152">#L3152</a>: 			addTypeBits(bv, offset+f.<b>offset</b>(), f.typ)
+		<a href="../src/reflect/value.go.html#line-1222">value.go#L1222</a>: 	ptr := add(v.ptr, field.<b>offset</b>(), "same as non-reflect &amp;v.field")
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

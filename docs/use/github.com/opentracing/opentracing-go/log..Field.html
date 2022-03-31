@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/opentracing/opentracing-go/log.Field</title>
+<link href="../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../../../../pkg/github.com/opentracing/opentracing-go/log.html">github.com/opentracing/opentracing-go/log</a>.<a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-32">Field</a></b></span>
+
+<span class="title">52 uses</span>
+
+	github.com/opentracing/opentracing-go/log (current package)
+		<a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-32">field.go#L32</a>: type <b>Field</b> struct {
+		<a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-41" class="path-duplicate">field.go</a><a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-41">#L41</a>: func String(key, val string) <b>Field</b> {
+		<a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-42" class="path-duplicate">field.go</a><a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-42">#L42</a>: 	return <b>Field</b>{
+		<a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-50" class="path-duplicate">field.go</a><a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-50">#L50</a>: func Bool(key string, val bool) <b>Field</b> {
+		<a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-55" class="path-duplicate">field.go</a><a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-55">#L55</a>: 	return <b>Field</b>{
+		<a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-63" class="path-duplicate">field.go</a><a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-63">#L63</a>: func Int(key string, val int) <b>Field</b> {
+		<a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-64" class="path-duplicate">field.go</a><a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-64">#L64</a>: 	return <b>Field</b>{
+		<a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-72" class="path-duplicate">field.go</a><a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-72">#L72</a>: func Int32(key string, val int32) <b>Field</b> {
+		<a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-73" class="path-duplicate">field.go</a><a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-73">#L73</a>: 	return <b>Field</b>{
+		<a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-81" class="path-duplicate">field.go</a><a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-81">#L81</a>: func Int64(key string, val int64) <b>Field</b> {
+		<a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-82" class="path-duplicate">field.go</a><a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-82">#L82</a>: 	return <b>Field</b>{
+		<a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-90" class="path-duplicate">field.go</a><a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-90">#L90</a>: func Uint32(key string, val uint32) <b>Field</b> {
+		<a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-91" class="path-duplicate">field.go</a><a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-91">#L91</a>: 	return <b>Field</b>{
+		<a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-99" class="path-duplicate">field.go</a><a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-99">#L99</a>: func Uint64(key string, val uint64) <b>Field</b> {
+		<a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-100" class="path-duplicate">field.go</a><a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-100">#L100</a>: 	return <b>Field</b>{
+		<a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-108" class="path-duplicate">field.go</a><a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-108">#L108</a>: func Float32(key string, val float32) <b>Field</b> {
+		<a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-109" class="path-duplicate">field.go</a><a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-109">#L109</a>: 	return <b>Field</b>{
+		<a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-117" class="path-duplicate">field.go</a><a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-117">#L117</a>: func Float64(key string, val float64) <b>Field</b> {
+		<a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-118" class="path-duplicate">field.go</a><a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-118">#L118</a>: 	return <b>Field</b>{
+		<a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-126" class="path-duplicate">field.go</a><a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-126">#L126</a>: func Error(err error) <b>Field</b> {
+		<a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-127" class="path-duplicate">field.go</a><a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-127">#L127</a>: 	return <b>Field</b>{
+		<a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-138" class="path-duplicate">field.go</a><a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-138">#L138</a>: func Object(key string, obj interface{}) <b>Field</b> {
+		<a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-139" class="path-duplicate">field.go</a><a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-139">#L139</a>: 	return <b>Field</b>{
+		<a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-147" class="path-duplicate">field.go</a><a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-147">#L147</a>: func Event(val string) <b>Field</b> {
+		<a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-152" class="path-duplicate">field.go</a><a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-152">#L152</a>: func Message(val string) <b>Field</b> {
+		<a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-162" class="path-duplicate">field.go</a><a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-162">#L162</a>: func Lazy(ll LazyLogger) <b>Field</b> {
+		<a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-163" class="path-duplicate">field.go</a><a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-163">#L163</a>: 	return <b>Field</b>{
+		<a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-182" class="path-duplicate">field.go</a><a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-182">#L182</a>: func Noop() <b>Field</b> {
+		<a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-183" class="path-duplicate">field.go</a><a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-183">#L183</a>: 	return <b>Field</b>{
+		<a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-209" class="path-duplicate">field.go</a><a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-209">#L209</a>: func (lf <b>Field</b>) Marshal(visitor Encoder) {
+		<a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-245" class="path-duplicate">field.go</a><a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-245">#L245</a>: func (lf <b>Field</b>) Key() string {
+		<a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-250" class="path-duplicate">field.go</a><a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-250">#L250</a>: func (lf <b>Field</b>) Value() interface{} {
+		<a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-280" class="path-duplicate">field.go</a><a href="../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-280">#L280</a>: func (lf <b>Field</b>) String() string {
+		<a href="../../../../src/github.com/opentracing/opentracing-go/log/util.go.html#line-10">util.go#L10</a>: func InterleavedKVToFields(keyValues ...interface{}) ([]<b>Field</b>, error) {
+		<a href="../../../../src/github.com/opentracing/opentracing-go/log/util.go.html#line-14" class="path-duplicate">util.go</a><a href="../../../../src/github.com/opentracing/opentracing-go/log/util.go.html#line-14">#L14</a>: 	fields := make([]<b>Field</b>, len(keyValues)/2)
+
+	<a href="../../../../pkg/github.com/opentracing/opentracing-go.html">github.com/opentracing/opentracing-go</a>
+		<a href="../../../../src/github.com/opentracing/opentracing-go/noop.go.html#line-41">noop.go#L41</a>: func (n noopSpan) LogFields(fields ...log.<b>Field</b>)                         {}
+		<a href="../../../../src/github.com/opentracing/opentracing-go/span.go.html#line-70">span.go#L70</a>: 	LogFields(fields ...log.<b>Field</b>)
+		<a href="../../../../src/github.com/opentracing/opentracing-go/span.go.html#line-129" class="path-duplicate">span.go</a><a href="../../../../src/github.com/opentracing/opentracing-go/span.go.html#line-129">#L129</a>: 	Fields    []log.<b>Field</b>
+		<a href="../../../../src/github.com/opentracing/opentracing-go/span.go.html#line-179" class="path-duplicate">span.go</a><a href="../../../../src/github.com/opentracing/opentracing-go/span.go.html#line-179">#L179</a>: 		rval.Fields = []log.<b>Field</b>{
+		<a href="../../../../src/github.com/opentracing/opentracing-go/span.go.html#line-183" class="path-duplicate">span.go</a><a href="../../../../src/github.com/opentracing/opentracing-go/span.go.html#line-183">#L183</a>: 		rval.Fields = []log.<b>Field</b>{
+
+	<a href="../../../../pkg/github.com/opentracing/opentracing-go/ext.html">github.com/opentracing/opentracing-go/ext</a>
+		<a href="../../../../src/github.com/opentracing/opentracing-go/ext/field.go.html#line-9">field.go#L9</a>: func LogError(span opentracing.Span, err error, fields ...log.<b>Field</b>) {
+		<a href="../../../../src/github.com/opentracing/opentracing-go/ext/field.go.html#line-11" class="path-duplicate">field.go</a><a href="../../../../src/github.com/opentracing/opentracing-go/ext/field.go.html#line-11">#L11</a>: 	ef := []log.<b>Field</b>{
+
+	<a href="../../../../pkg/github.com/uber/jaeger-client-go.html">github.com/uber/jaeger-client-go</a>
+		<a href="../../../../src/github.com/uber/jaeger-client-go/baggage_setter.go.html#line-62">baggage_setter.go#L62</a>: 	fields := []log.<b>Field</b>{
+		<a href="../../../../src/github.com/uber/jaeger-client-go/jaeger_tag.go.html#line-28">jaeger_tag.go#L28</a>: func ConvertLogsToJaegerTags(logFields []log.<b>Field</b>) []*j.Tag {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/span.go.html#line-198">span.go#L198</a>: func (s *Span) LogFields(fields ...log.<b>Field</b>) {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/span.go.html#line-208" class="path-duplicate">span.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/span.go.html#line-208">#L208</a>: func (s *Span) logFieldsNoLocking(fields ...log.<b>Field</b>) {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/span.go.html#line-301" class="path-duplicate">span.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/span.go.html#line-301">#L301</a>: 		Fields: []log.<b>Field</b>{
+
+	<a href="../../../../pkg/github.com/uber/jaeger-client-go/internal/spanlog.html">github.com/uber/jaeger-client-go/internal/spanlog</a>
+		<a href="../../../../src/github.com/uber/jaeger-client-go/internal/spanlog/json.go.html#line-28">json.go#L28</a>: func MaterializeWithJSON(logFields []log.<b>Field</b>) ([]byte, error) {
+
+	<a href="../../../../pkg/github.com/uber/jaeger-client-go/log/zap.html">github.com/uber/jaeger-client-go/log/zap</a>
+		<a href="../../../../src/github.com/uber/jaeger-client-go/log/zap/field.go.html#line-126">field.go#L126</a>: type logField log.<b>Field</b>
+		<a href="../../../../src/github.com/uber/jaeger-client-go/log/zap/field.go.html#line-129" class="path-duplicate">field.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/log/zap/field.go.html#line-129">#L129</a>: 	lf := log.<b>Field</b>(l)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/log/zap/field.go.html#line-135" class="path-duplicate">field.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/log/zap/field.go.html#line-135">#L135</a>: type logFields []log.<b>Field</b>
+		<a href="../../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-127">tracer.go#L127</a>: func (l loggingSpan) LogFields(fields ...log.<b>Field</b>) {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

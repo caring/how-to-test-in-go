@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/opentracing/opentracing-go.LogData.Timestamp</title>
+<link href="../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../pkg/github.com/opentracing/opentracing-go.html">github.com/opentracing/opentracing-go</a>.<a href="../../../src/github.com/opentracing/opentracing-go/span.go.html#line-161">LogData</a>.<a href="../../../src/github.com/opentracing/opentracing-go/span.go.html#line-162">Timestamp</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">6 uses</span>
+
+	github.com/opentracing/opentracing-go (current package)
+		<a href="../../../src/github.com/opentracing/opentracing-go/span.go.html#line-162">span.go#L162</a>: 	<b>Timestamp</b> time.Time
+		<a href="../../../src/github.com/opentracing/opentracing-go/span.go.html#line-170" class="path-duplicate">span.go</a><a href="../../../src/github.com/opentracing/opentracing-go/span.go.html#line-170">#L170</a>: 	if ld.<b>Timestamp</b>.IsZero() {
+		<a href="../../../src/github.com/opentracing/opentracing-go/span.go.html#line-173" class="path-duplicate">span.go</a><a href="../../../src/github.com/opentracing/opentracing-go/span.go.html#line-173">#L173</a>: 		literalTimestamp = ld.<b>Timestamp</b>
+
+	<a href="../../../pkg/github.com/uber/jaeger-client-go.html">github.com/uber/jaeger-client-go</a>
+		<a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-247">span.go#L247</a>: 		if ld.<b>Timestamp</b>.IsZero() {
+		<a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-248" class="path-duplicate">span.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-248">#L248</a>: 			ld.<b>Timestamp</b> = s.tracer.timeNow()
+
+	<a href="../../../pkg/github.com/uber/jaeger-client-go/log/zap.html">github.com/uber/jaeger-client-go/log/zap</a>
+		<a href="../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-165">tracer.go#L165</a>: 		zap.Time("ts", data.<b>Timestamp</b>),
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

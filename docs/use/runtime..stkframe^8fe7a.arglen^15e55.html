@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime.stkframe.arglen</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/runtime.html">runtime</a>.<a href="../src/runtime/runtime2.go.html#line-990">stkframe</a>.<a href="../src/runtime/runtime2.go.html#line-999">arglen</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">12 uses</span>
+
+	runtime (current package)
+		<a href="../src/runtime/heapdump.go.html#line-330">heapdump.go#L330</a>: 	child.arglen = s.<b>arglen</b>
+		<a href="../src/runtime/mgcmark.go.html#line-891">mgcmark.go#L891</a>: 		if frame.<b>arglen</b> != 0 {
+		<a href="../src/runtime/mgcmark.go.html#line-894" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-894">#L894</a>: 			scanConservative(frame.argp, frame.<b>arglen</b>, nil, gcw, state)
+		<a href="../src/runtime/runtime2.go.html#line-999">runtime2.go#L999</a>: 	<b>arglen</b>   uintptr    // number of bytes at argp
+		<a href="../src/runtime/stack.go.html#line-1295">stack.go#L1295</a>: 	if frame.<b>arglen</b> &gt; 0 {
+		<a href="../src/runtime/stack.go.html#line-1301" class="path-duplicate">stack.go</a><a href="../src/runtime/stack.go.html#line-1301">#L1301</a>: 			n := int32(frame.<b>arglen</b> / sys.PtrSize)
+		<a href="../src/runtime/stack.go.html#line-1308" class="path-duplicate">stack.go</a><a href="../src/runtime/stack.go.html#line-1308">#L1308</a>: 				print("runtime: frame ", funcname(f), " untyped args ", hex(frame.argp), "+", hex(frame.<b>arglen</b>), "\n")
+		<a href="../src/runtime/traceback.go.html#line-35">traceback.go#L35</a>: 			frame.<b>arglen</b> = 0
+		<a href="../src/runtime/traceback.go.html#line-47" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-47">#L47</a>: 			frame.<b>arglen</b>, frame.argmap, ok = getArgInfoFast(f, true)
+		<a href="../src/runtime/traceback.go.html#line-49" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-49">#L49</a>: 				frame.<b>arglen</b>, frame.argmap = getArgInfo(&amp;frame, f, true, fn)
+		<a href="../src/runtime/traceback.go.html#line-315" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-315">#L315</a>: 			frame.<b>arglen</b>, frame.argmap, ok = getArgInfoFast(f, callback != nil)
+		<a href="../src/runtime/traceback.go.html#line-317" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-317">#L317</a>: 				frame.<b>arglen</b>, frame.argmap = getArgInfo(&amp;frame, f, callback != nil, ctxt)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

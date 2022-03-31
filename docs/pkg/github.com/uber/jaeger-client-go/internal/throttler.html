@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Package: github.com/uber/jaeger-client-go/internal/throttler</title>
+<link href="../../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre id="package-details"><code><span style="font-size:xx-large;">package <b>throttler</b></span>
+
+<span class="title">Import Path</span>
+	<a href="../../../../../index.html#pkg-github.com/uber/jaeger-client-go/internal/throttler">github.com/uber/jaeger-client-go/internal/throttler</a><i> (on <a href="https://pkg.go.dev/github.com/uber/jaeger-client-go/internal/throttler" target="_blank">go.dev</a>)</i>
+
+<span class="title">Dependency Relation</span>
+	imports 0 packages, and imported by <a href="../../../../../dep/github.com/uber/jaeger-client-go/internal/throttler.html#imported-by">one package</a>
+
+<div id="files"><span class="title">Involved Source Files</span>
+
+	<span class="nodocs">      <a href="../../../../../src/github.com/uber/jaeger-client-go/internal/throttler/throttler.go.html">throttler.go</a></span></div>
+<div id="exported-types"><span class="title">Package-Level Type Names<span class="title-stat"><i> (total 2, both are exported)</i></span></span>
+
+<div id="exported-types-buttons" class="js-on">	/* sort exporteds by: <label id="sort-types-by-alphabet" class="button">alphabet</label> | <label id="sort-types-by-popularity" class="button">popularity</label> */</div><div class="anchor type-res" id="name-DefaultThrottler" data-popularity="100">	<input type='checkbox' class="fold" id="DefaultThrottler-fold-content"><label for="DefaultThrottler-fold-content"> <a href="../../../../../use/github.com/uber/jaeger-client-go/internal/throttler..DefaultThrottler.html">type</a> <a href="../../../../../src/github.com/uber/jaeger-client-go/internal/throttler/throttler.go.html#line-27">DefaultThrottler</a> <i>(struct)</i></label><span id='DefaultThrottler-fold-content-docs' class="fold-docs">
+		DefaultThrottler doesn't throttle at all.
+
+		<input type='checkbox' class="fold" id="DefaultThrottler-fold-methods"><label for="DefaultThrottler-fold-methods">Methods (<i>only one, which is exported</i>)</label><span id='DefaultThrottler-fold-methods-items' class="fold-items"><span>
+			<input type='checkbox' class="fold" id="DefaultThrottler-fold-method-IsAllowed"><label for="DefaultThrottler-fold-method-IsAllowed">( DefaultThrottler) <a href="../../../../../src/github.com/uber/jaeger-client-go/internal/throttler/throttler.go.html#line-30">IsAllowed</a>(operation <a href="../../../../builtin.html#name-string">string</a>) <a href="../../../../builtin.html#name-bool">bool</a></label><span id='DefaultThrottler-fold-method-IsAllowed-docs' class="fold-docs">
+				IsAllowed implements Throttler#IsAllowed.
+</span></span></span>
+		<input type='checkbox' class="fold" id="DefaultThrottler-fold-impls"><label for="DefaultThrottler-fold-impls">Implements (<i>at least one exported</i>)</label><span id='DefaultThrottler-fold-impls-items' class="fold-items"><span>
+			 DefaultThrottler : <a href="#name-Throttler">Throttler</a></span></span>
+
+</span></div><div class="anchor type-res" id="name-Throttler" data-popularity="200">	<input type='checkbox' class="fold" id="Throttler-fold-content"><label for="Throttler-fold-content"> <a href="../../../../../use/github.com/uber/jaeger-client-go/internal/throttler..Throttler.html">type</a> <a href="../../../../../src/github.com/uber/jaeger-client-go/internal/throttler/throttler.go.html#line-20">Throttler</a> <b><i>(interface)</i></b></label><span id='Throttler-fold-content-docs' class="fold-docs">
+		Throttler is used to rate limits operations. For example, given how debug spans
+		are always sampled, a throttler can be enabled per client to rate limit the amount
+		of debug spans a client can start.
+
+		<input type='checkbox' class="fold" id="Throttler-fold-methods"><label for="Throttler-fold-methods">Methods (<i>only one, which is exported</i>)</label><span id='Throttler-fold-methods-items' class="fold-items"><span>
+			<input type='checkbox' class="fold" id="Throttler-fold-method-IsAllowed"><label for="Throttler-fold-method-IsAllowed">( Throttler) <a href="../../../../../src/github.com/uber/jaeger-client-go/internal/throttler/throttler.go.html#line-23">IsAllowed</a>(operation <a href="../../../../builtin.html#name-string">string</a>) <a href="../../../../builtin.html#name-bool">bool</a></label><span id='Throttler-fold-method-IsAllowed-docs' class="fold-docs">
+				IsAllowed determines whether the operation should be allowed and not be
+				throttled.
+</span></span></span>
+		<input type='checkbox' class="fold" id="Throttler-fold-impledby"><label for="Throttler-fold-impledby">Implemented By (<i>at least one exported</i>)</label><span id='Throttler-fold-impledby-items' class="fold-items"><span>
+			 <a href="#name-DefaultThrottler">DefaultThrottler</a></span></span>
+
+</span></div></div></code></pre><pre id="footer">
+<table><tr><td><img src="../../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

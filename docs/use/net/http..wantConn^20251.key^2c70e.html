@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: net/http.wantConn.key</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../pkg/net/http.html">net/http</a>.<a href="../../src/net/http/transport.go.html#line-1184">wantConn</a>.<a href="../../src/net/http/transport.go.html#line-1186">key</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">12 uses</span>
+
+	net/http (current package)
+		<a href="../../src/net/http/transport.go.html#line-1030">transport.go#L1030</a>: 	if list, ok := t.idleConn[w.<b>key</b>]; ok {
+		<a href="../../src/net/http/transport.go.html#line-1070" class="path-duplicate">transport.go</a><a href="../../src/net/http/transport.go.html#line-1070">#L1070</a>: 			t.idleConn[w.<b>key</b>] = list
+		<a href="../../src/net/http/transport.go.html#line-1072" class="path-duplicate">transport.go</a><a href="../../src/net/http/transport.go.html#line-1072">#L1072</a>: 			delete(t.idleConn, w.<b>key</b>)
+		<a href="../../src/net/http/transport.go.html#line-1083" class="path-duplicate">transport.go</a><a href="../../src/net/http/transport.go.html#line-1083">#L1083</a>: 	q := t.idleConnWait[w.<b>key</b>]
+		<a href="../../src/net/http/transport.go.html#line-1086" class="path-duplicate">transport.go</a><a href="../../src/net/http/transport.go.html#line-1086">#L1086</a>: 	t.idleConnWait[w.<b>key</b>] = q
+		<a href="../../src/net/http/transport.go.html#line-1186" class="path-duplicate">transport.go</a><a href="../../src/net/http/transport.go.html#line-1186">#L1186</a>: 	<b>key</b>   connectMethodKey // cm.key()
+		<a href="../../src/net/http/transport.go.html#line-1338" class="path-duplicate">transport.go</a><a href="../../src/net/http/transport.go.html#line-1338">#L1338</a>: 		<b>key</b>:        cm.key(),
+		<a href="../../src/net/http/transport.go.html#line-1422" class="path-duplicate">transport.go</a><a href="../../src/net/http/transport.go.html#line-1422">#L1422</a>: 	if n := t.connsPerHost[w.<b>key</b>]; n &lt; t.MaxConnsPerHost {
+		<a href="../../src/net/http/transport.go.html#line-1426" class="path-duplicate">transport.go</a><a href="../../src/net/http/transport.go.html#line-1426">#L1426</a>: 		t.connsPerHost[w.<b>key</b>] = n + 1
+		<a href="../../src/net/http/transport.go.html#line-1434" class="path-duplicate">transport.go</a><a href="../../src/net/http/transport.go.html#line-1434">#L1434</a>: 	q := t.connsPerHostWait[w.<b>key</b>]
+		<a href="../../src/net/http/transport.go.html#line-1437" class="path-duplicate">transport.go</a><a href="../../src/net/http/transport.go.html#line-1437">#L1437</a>: 	t.connsPerHostWait[w.<b>key</b>] = q
+		<a href="../../src/net/http/transport.go.html#line-1455" class="path-duplicate">transport.go</a><a href="../../src/net/http/transport.go.html#line-1455">#L1455</a>: 		t.decConnsPerHost(w.<b>key</b>)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

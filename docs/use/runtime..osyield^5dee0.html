@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime.osyield</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">func <b><a href="../pkg/runtime.html">runtime</a>.<a href="../src/runtime/os_darwin.go.html#line-347">osyield</a></b></span>
+
+<span class="title">31 uses</span>
+
+	runtime (current package)
+		<a href="../src/runtime/cpuprof.go.html#line-94">cpuprof.go#L94</a>: 		<b>osyield</b>()
+		<a href="../src/runtime/cpuprof.go.html#line-136" class="path-duplicate">cpuprof.go</a><a href="../src/runtime/cpuprof.go.html#line-136">#L136</a>: 		<b>osyield</b>()
+		<a href="../src/runtime/lock_sema.go.html#line-72">lock_sema.go#L72</a>: 			<b>osyield</b>()
+		<a href="../src/runtime/mgcsweep.go.html#line-377">mgcsweep.go#L377</a>: 		<b>osyield</b>()
+		<a href="../src/runtime/os_darwin.go.html#line-347">os_darwin.go#L347</a>: func <b>osyield</b>() {
+		<a href="../src/runtime/preempt.go.html#line-250">preempt.go#L250</a>: 			<b>osyield</b>()
+		<a href="../src/runtime/proc.go.html#line-978">proc.go#L978</a>: 			<b>osyield</b>()
+		<a href="../src/runtime/proc.go.html#line-1678" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1678">#L1678</a>: 		<b>osyield</b>()
+		<a href="../src/runtime/proc.go.html#line-1703" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1703">#L1703</a>: 			<b>osyield</b>()
+		<a href="../src/runtime/proc.go.html#line-1782" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1782">#L1782</a>: 			<b>osyield</b>()
+		<a href="../src/runtime/proc.go.html#line-2347" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2347">#L2347</a>: 	<b>osyield</b>()
+		<a href="../src/runtime/proc.go.html#line-3971" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3971">#L3971</a>: 			<b>osyield</b>()
+		<a href="../src/runtime/proc.go.html#line-4023" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4023">#L4023</a>: 						<b>osyield</b>()
+		<a href="../src/runtime/proc.go.html#line-4207" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4207">#L4207</a>: 			<b>osyield</b>()
+		<a href="../src/runtime/proc.go.html#line-4839" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4839">#L4839</a>: 		<b>osyield</b>()
+		<a href="../src/runtime/proc.go.html#line-6160" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-6160">#L6160</a>: 							<b>osyield</b>()
+		<a href="../src/runtime/signal_unix.go.html#line-776">signal_unix.go#L776</a>: 	<b>osyield</b>()
+		<a href="../src/runtime/signal_unix.go.html#line-777" class="path-duplicate">signal_unix.go</a><a href="../src/runtime/signal_unix.go.html#line-777">#L777</a>: 	<b>osyield</b>()
+		<a href="../src/runtime/signal_unix.go.html#line-778" class="path-duplicate">signal_unix.go</a><a href="../src/runtime/signal_unix.go.html#line-778">#L778</a>: 	<b>osyield</b>()
+		<a href="../src/runtime/signal_unix.go.html#line-784" class="path-duplicate">signal_unix.go</a><a href="../src/runtime/signal_unix.go.html#line-784">#L784</a>: 	<b>osyield</b>()
+		<a href="../src/runtime/signal_unix.go.html#line-785" class="path-duplicate">signal_unix.go</a><a href="../src/runtime/signal_unix.go.html#line-785">#L785</a>: 	<b>osyield</b>()
+		<a href="../src/runtime/signal_unix.go.html#line-786" class="path-duplicate">signal_unix.go</a><a href="../src/runtime/signal_unix.go.html#line-786">#L786</a>: 	<b>osyield</b>()
+		<a href="../src/runtime/time.go.html#line-352">time.go#L352</a>: 			<b>osyield</b>()
+		<a href="../src/runtime/time.go.html#line-360" class="path-duplicate">time.go</a><a href="../src/runtime/time.go.html#line-360">#L360</a>: 			<b>osyield</b>()
+		<a href="../src/runtime/time.go.html#line-473" class="path-duplicate">time.go</a><a href="../src/runtime/time.go.html#line-473">#L473</a>: 			<b>osyield</b>()
+		<a href="../src/runtime/time.go.html#line-477" class="path-duplicate">time.go</a><a href="../src/runtime/time.go.html#line-477">#L477</a>: 			<b>osyield</b>()
+		<a href="../src/runtime/time.go.html#line-633" class="path-duplicate">time.go</a><a href="../src/runtime/time.go.html#line-633">#L633</a>: 				<b>osyield</b>()
+		<a href="../src/runtime/time.go.html#line-708" class="path-duplicate">time.go</a><a href="../src/runtime/time.go.html#line-708">#L708</a>: 			<b>osyield</b>()
+		<a href="../src/runtime/time.go.html#line-803" class="path-duplicate">time.go</a><a href="../src/runtime/time.go.html#line-803">#L803</a>: 			<b>osyield</b>()
+		<a href="../src/runtime/time.go.html#line-929" class="path-duplicate">time.go</a><a href="../src/runtime/time.go.html#line-929">#L929</a>: 				<b>osyield</b>()
+		<a href="../src/runtime/trace.go.html#line-328">trace.go#L328</a>: 		<b>osyield</b>()
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

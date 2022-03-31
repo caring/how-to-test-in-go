@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime._panic</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../pkg/runtime.html">runtime</a>.<a href="../src/runtime/runtime2.go.html#line-978">_panic</a></b></span>
+
+<span class="title">15 uses</span>
+
+	runtime (current package)
+		<a href="../src/runtime/panic.go.html#line-616">panic.go#L616</a>: 	var p <b>_panic</b>
+		<a href="../src/runtime/panic.go.html#line-619" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-619">#L619</a>: 	gp._panic = (*<b>_panic</b>)(noescape(unsafe.Pointer(&amp;p)))
+		<a href="../src/runtime/panic.go.html#line-640" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-640">#L640</a>: 		d._panic = (*<b>_panic</b>)(noescape(unsafe.Pointer(&amp;p)))
+		<a href="../src/runtime/panic.go.html#line-692" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-692">#L692</a>: func preprintpanics(p *<b>_panic</b>) {
+		<a href="../src/runtime/panic.go.html#line-711" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-711">#L711</a>: func printpanics(p *<b>_panic</b>) {
+		<a href="../src/runtime/panic.go.html#line-915" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-915">#L915</a>: func reflectcallSave(p *<b>_panic</b>, fn, arg unsafe.Pointer, argsize uint32) {
+		<a href="../src/runtime/panic.go.html#line-941" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-941">#L941</a>: func deferCallSave(p *<b>_panic</b>, fn func()) {
+		<a href="../src/runtime/panic.go.html#line-989" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-989">#L989</a>: 	var p <b>_panic</b>
+		<a href="../src/runtime/panic.go.html#line-992" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-992">#L992</a>: 	gp._panic = (*<b>_panic</b>)(noescape(unsafe.Pointer(&amp;p)))
+		<a href="../src/runtime/panic.go.html#line-1034" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-1034">#L1034</a>: 		d._panic = (*<b>_panic</b>)(noescape(unsafe.Pointer(&amp;p)))
+		<a href="../src/runtime/panic.go.html#line-1271" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-1271">#L1271</a>: func fatalpanic(msgs *<b>_panic</b>) {
+		<a href="../src/runtime/runtime2.go.html#line-415">runtime2.go#L415</a>: 	_panic    *<b>_panic</b> // innermost panic - offset known to liblink
+		<a href="../src/runtime/runtime2.go.html#line-954" class="path-duplicate">runtime2.go</a><a href="../src/runtime/runtime2.go.html#line-954">#L954</a>: 	_panic    *<b>_panic</b>  // panic that is running defer
+		<a href="../src/runtime/runtime2.go.html#line-978" class="path-duplicate">runtime2.go</a><a href="../src/runtime/runtime2.go.html#line-978">#L978</a>: type <b>_panic</b> struct {
+		<a href="../src/runtime/runtime2.go.html#line-981" class="path-duplicate">runtime2.go</a><a href="../src/runtime/runtime2.go.html#line-981">#L981</a>: 	link      *<b>_panic</b>        // link to earlier panic
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

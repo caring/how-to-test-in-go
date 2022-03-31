@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/go-sql-driver/mysql.mysqlConn.buf</title>
+<link href="../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../pkg/github.com/go-sql-driver/mysql.html">github.com/go-sql-driver/mysql</a>.<a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-23">mysqlConn</a>.<a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-24">buf</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">17 uses</span>
+
+	github.com/go-sql-driver/mysql (current package)
+		<a href="../../../src/github.com/go-sql-driver/mysql/auth.go.html#line-363">auth.go#L363</a>: 						data, err := mc.<b>buf</b>.takeSmallBuffer(4 + 1)
+		<a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-24">connection.go#L24</a>: 	<b>buf</b>              buffer
+		<a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-204" class="path-duplicate">connection.go</a><a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-204">#L204</a>: 	buf, err := mc.<b>buf</b>.takeCompleteBuffer()
+		<a href="../../../src/github.com/go-sql-driver/mysql/connector.go.html#line-74">connector.go#L74</a>: 	mc.<b>buf</b> = newBuffer(mc.netConn)
+		<a href="../../../src/github.com/go-sql-driver/mysql/connector.go.html#line-77" class="path-duplicate">connector.go</a><a href="../../../src/github.com/go-sql-driver/mysql/connector.go.html#line-77">#L77</a>: 	mc.<b>buf</b>.timeout = mc.cfg.ReadTimeout
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-32">packets.go#L32</a>: 		data, err := mc.<b>buf</b>.readNext(4)
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-68" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-68">#L68</a>: 		data, err = mc.<b>buf</b>.readNext(pktLen)
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-323" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-323">#L323</a>: 	data, err := mc.<b>buf</b>.takeSmallBuffer(pktLen + 4)
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-373" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-373">#L373</a>: 		mc.<b>buf</b>.nc = tlsConn
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-405" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-405">#L405</a>: 	data, err := mc.<b>buf</b>.takeSmallBuffer(pktLen)
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-425" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-425">#L425</a>: 	data, err := mc.<b>buf</b>.takeSmallBuffer(4 + 1)
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-444" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-444">#L444</a>: 	data, err := mc.<b>buf</b>.takeBuffer(pktLen + 4)
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-465" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-465">#L465</a>: 	data, err := mc.<b>buf</b>.takeSmallBuffer(4 + 1 + 4)
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-934" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-934">#L934</a>: 		data, err = mc.<b>buf</b>.takeBuffer(minPktLen)
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-936" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-936">#L936</a>: 		data, err = mc.<b>buf</b>.takeCompleteBuffer()
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-1139" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-1139">#L1139</a>: 			if err = mc.<b>buf</b>.store(data); err != nil {
+		<a href="../../../src/github.com/go-sql-driver/mysql/rows.go.html#line-119">rows.go#L119</a>: 	mc.<b>buf</b>.flip()
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

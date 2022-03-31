@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime.gcBlackenEnabled</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">var <b><a href="../pkg/runtime.html">runtime</a>.<a href="../src/runtime/mgc.go.html#line-208">gcBlackenEnabled</a></b></span>
+
+<span class="title">17 uses</span>
+
+	runtime (current package)
+		<a href="../src/runtime/malloc.go.html#line-951">malloc.go#L951</a>: 	if <b>gcBlackenEnabled</b> != 0 {
+		<a href="../src/runtime/mcache.go.html#line-200">mcache.go#L200</a>: 	if <b>gcBlackenEnabled</b> != 0 {
+		<a href="../src/runtime/mcache.go.html#line-242" class="path-duplicate">mcache.go</a><a href="../src/runtime/mcache.go.html#line-242">#L242</a>: 	if <b>gcBlackenEnabled</b> != 0 {
+		<a href="../src/runtime/mcache.go.html#line-294" class="path-duplicate">mcache.go</a><a href="../src/runtime/mcache.go.html#line-294">#L294</a>: 	if <b>gcBlackenEnabled</b> != 0 {
+		<a href="../src/runtime/mgc.go.html#line-208">mgc.go#L208</a>: var <b>gcBlackenEnabled</b> uint32
+		<a href="../src/runtime/mgc.go.html#line-710" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-710">#L710</a>: 	atomic.Store(&amp;<b>gcBlackenEnabled</b>, 1)
+		<a href="../src/runtime/mgc.go.html#line-881" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-881">#L881</a>: 	atomic.Store(&amp;<b>gcBlackenEnabled</b>, 0)
+		<a href="../src/runtime/mgc.go.html#line-1238" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-1238">#L1238</a>: 		if <b>gcBlackenEnabled</b> == 0 {
+		<a href="../src/runtime/mgcmark.go.html#line-508">mgcmark.go#L508</a>: 	if atomic.Load(&amp;<b>gcBlackenEnabled</b>) == 0 {
+		<a href="../src/runtime/mgcmark.go.html#line-596" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-596">#L596</a>: 	if atomic.Load(&amp;<b>gcBlackenEnabled</b>) == 0 {
+		<a href="../src/runtime/mgcpacer.go.html#line-565">mgcpacer.go#L565</a>: 	if <b>gcBlackenEnabled</b> == 0 {
+		<a href="../src/runtime/proc.go.html#line-2523">proc.go#L2523</a>: 	if <b>gcBlackenEnabled</b> != 0 &amp;&amp; gcMarkWorkAvailable(_p_) {
+		<a href="../src/runtime/proc.go.html#line-2801" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2801">#L2801</a>: 	if <b>gcBlackenEnabled</b> != 0 &amp;&amp; gcMarkWorkAvailable(_p_) {
+		<a href="../src/runtime/proc.go.html#line-3130" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3130">#L3130</a>: 	if atomic.Load(&amp;<b>gcBlackenEnabled</b>) == 0 {
+		<a href="../src/runtime/proc.go.html#line-3163" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3163">#L3163</a>: 	if <b>gcBlackenEnabled</b> == 0 {
+		<a href="../src/runtime/proc.go.html#line-3345" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3345">#L3345</a>: 	if gp == nil &amp;&amp; <b>gcBlackenEnabled</b> != 0 {
+		<a href="../src/runtime/proc.go.html#line-3654" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3654">#L3654</a>: 	if <b>gcBlackenEnabled</b> != 0 &amp;&amp; gp.gcAssistBytes &gt; 0 {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime.gcsema</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">var <b><a href="../pkg/runtime.html">runtime</a>.<a href="../src/runtime/proc.go.html#line-1139">gcsema</a></b></span>
+
+<span class="title">7 uses</span>
+
+	runtime (current package)
+		<a href="../src/runtime/mgc.go.html#line-622">mgc.go#L622</a>: 	semacquire(&amp;<b>gcsema</b>)
+		<a href="../src/runtime/mgc.go.html#line-1100" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-1100">#L1100</a>: 	semrelease(&amp;<b>gcsema</b>)
+		<a href="../src/runtime/mgc.go.html#line-1651" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-1651">#L1651</a>: 	semacquire(&amp;<b>gcsema</b>)
+		<a href="../src/runtime/mgc.go.html#line-1668" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-1668">#L1668</a>: 	semrelease(&amp;<b>gcsema</b>)
+		<a href="../src/runtime/proc.go.html#line-1120">proc.go#L1120</a>: 	semacquire(&amp;<b>gcsema</b>)
+		<a href="../src/runtime/proc.go.html#line-1127" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1127">#L1127</a>: 	semrelease(&amp;<b>gcsema</b>)
+		<a href="../src/runtime/proc.go.html#line-1139" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1139">#L1139</a>: var <b>gcsema</b> uint32 = 1
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

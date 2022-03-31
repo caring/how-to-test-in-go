@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: net.JoinHostPort</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">func <b><a href="../pkg/net.html">net</a>.<a href="../src/net/ipsock.go.html#line-235">JoinHostPort</a></b></span>
+
+<span class="title">18 uses</span>
+
+	net (current package)
+		<a href="../src/net/dnsconfig_unix.go.html#line-79">dnsconfig_unix.go#L79</a>: 					conf.servers = append(conf.servers, <b>JoinHostPort</b>(f[1], "53"))
+		<a href="../src/net/dnsconfig_unix.go.html#line-81" class="path-duplicate">dnsconfig_unix.go</a><a href="../src/net/dnsconfig_unix.go.html#line-81">#L81</a>: 					conf.servers = append(conf.servers, <b>JoinHostPort</b>(f[1], "53"))
+		<a href="../src/net/ipsock.go.html#line-235">ipsock.go#L235</a>: func <b>JoinHostPort</b>(host, port string) string {
+		<a href="../src/net/tcpsock.go.html#line-35">tcpsock.go#L35</a>: 		return <b>JoinHostPort</b>(ip+"%"+a.Zone, itoa.Itoa(a.Port))
+		<a href="../src/net/tcpsock.go.html#line-37" class="path-duplicate">tcpsock.go</a><a href="../src/net/tcpsock.go.html#line-37">#L37</a>: 	return <b>JoinHostPort</b>(ip, itoa.Itoa(a.Port))
+		<a href="../src/net/udpsock.go.html#line-38">udpsock.go#L38</a>: 		return <b>JoinHostPort</b>(ip+"%"+a.Zone, itoa.Itoa(a.Port))
+		<a href="../src/net/udpsock.go.html#line-40" class="path-duplicate">udpsock.go</a><a href="../src/net/udpsock.go.html#line-40">#L40</a>: 	return <b>JoinHostPort</b>(ip, itoa.Itoa(a.Port))
+
+	<a href="../pkg/net/http.html">net/http</a>
+		<a href="../src/net/http/h2_bundle.go.html#line-7088">h2_bundle.go#L7088</a>: 	return net.<b>JoinHostPort</b>(host, port)
+		<a href="../src/net/http/request.go.html#line-762">request.go#L762</a>: 	return net.<b>JoinHostPort</b>(a, port)
+		<a href="../src/net/http/socks_bundle.go.html#line-255">socks_bundle.go#L255</a>: 		return net.<b>JoinHostPort</b>(a.Name, port)
+		<a href="../src/net/http/socks_bundle.go.html#line-257" class="path-duplicate">socks_bundle.go</a><a href="../src/net/http/socks_bundle.go.html#line-257">#L257</a>: 	return net.<b>JoinHostPort</b>(a.IP.String(), port)
+		<a href="../src/net/http/transport.go.html#line-2732">transport.go#L2732</a>: 	return net.<b>JoinHostPort</b>(addr, port)
+
+	<a href="../pkg/github.com/go-sql-driver/mysql.html">github.com/go-sql-driver/mysql</a>
+		<a href="../src/github.com/go-sql-driver/mysql/dsn.go.html#line-557">dsn.go#L557</a>: 		return net.<b>JoinHostPort</b>(addr, "3306")
+
+	<a href="../pkg/golang.org/x/net/http/httpguts.html">golang.org/x/net/http/httpguts</a>
+		<a href="../src/golang.org/x/net/http/httpguts/httplex.go.html#line-345">httplex.go#L345</a>: 	return net.<b>JoinHostPort</b>(host, port), nil
+
+	<a href="../pkg/golang.org/x/net/http2.html">golang.org/x/net/http2</a>
+		<a href="../src/golang.org/x/net/http2/transport.go.html#line-460">transport.go#L460</a>: 	return net.<b>JoinHostPort</b>(host, port)
+
+	<a href="../pkg/google.golang.org/grpc/internal/resolver/dns.html">google.golang.org/grpc/internal/resolver/dns</a>
+		<a href="../src/google.golang.org/grpc/internal/resolver/dns/dns_resolver.go.html#line-102">dns_resolver.go#L102</a>: 	authorityWithPort := net.<b>JoinHostPort</b>(host, port)
+
+	<a href="../pkg/vendor/golang.org/x/net/http/httpguts.html">vendor/golang.org/x/net/http/httpguts</a>
+		<a href="../src/vendor/golang.org/x/net/http/httpguts/httplex.go.html#line-347">httplex.go#L347</a>: 	return net.<b>JoinHostPort</b>(host, port), nil
+
+	<a href="../pkg/vendor/golang.org/x/net/http/httpproxy.html">vendor/golang.org/x/net/http/httpproxy</a>
+		<a href="../src/vendor/golang.org/x/net/http/httpproxy/proxy.go.html#line-290">proxy.go#L290</a>: 	return net.<b>JoinHostPort</b>(addr, port)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

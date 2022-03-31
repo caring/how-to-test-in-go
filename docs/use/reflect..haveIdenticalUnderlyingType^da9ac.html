@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: reflect.haveIdenticalUnderlyingType</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">func <b><a href="../pkg/reflect.html">reflect</a>.<a href="../src/reflect/type.go.html#line-1642">haveIdenticalUnderlyingType</a></b></span>
+
+<span class="title">11 uses</span>
+
+	reflect (current package)
+		<a href="../src/reflect/type.go.html#line-1627">type.go#L1627</a>: 	return <b>haveIdenticalUnderlyingType</b>(T, V, true)
+		<a href="../src/reflect/type.go.html#line-1639" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1639">#L1639</a>: 	return <b>haveIdenticalUnderlyingType</b>(T.common(), V.common(), false)
+		<a href="../src/reflect/type.go.html#line-1642" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1642">#L1642</a>: func <b>haveIdenticalUnderlyingType</b>(T, V *rtype, cmpTags bool) bool {
+		<a href="../src/reflect/type.go.html#line-2060" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2060">#L2060</a>: 			if <b>haveIdenticalUnderlyingType</b>(&amp;ft.rtype, t, true) {
+		<a href="../src/reflect/type.go.html#line-2071" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2071">#L2071</a>: 			if <b>haveIdenticalUnderlyingType</b>(&amp;ft.rtype, t, true) {
+		<a href="../src/reflect/type.go.html#line-2089" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2089">#L2089</a>: 		if <b>haveIdenticalUnderlyingType</b>(&amp;ft.rtype, tt, true) {
+		<a href="../src/reflect/type.go.html#line-2692" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2692">#L2692</a>: 			if <b>haveIdenticalUnderlyingType</b>(&amp;typ.rtype, t, true) {
+		<a href="../src/reflect/type.go.html#line-2704" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2704">#L2704</a>: 			if <b>haveIdenticalUnderlyingType</b>(&amp;typ.rtype, t, true) {
+		<a href="../src/reflect/type.go.html#line-2721" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2721">#L2721</a>: 		if <b>haveIdenticalUnderlyingType</b>(&amp;typ.rtype, t, true) {
+		<a href="../src/reflect/value.go.html#line-2919">value.go#L2919</a>: 	if <b>haveIdenticalUnderlyingType</b>(dst, src, false) {
+		<a href="../src/reflect/value.go.html#line-2926" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2926">#L2926</a>: 		<b>haveIdenticalUnderlyingType</b>(dst.Elem().common(), src.Elem().common(), false) {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

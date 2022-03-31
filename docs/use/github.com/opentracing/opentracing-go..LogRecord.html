@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/opentracing/opentracing-go.LogRecord</title>
+<link href="../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../../../pkg/github.com/opentracing/opentracing-go.html">github.com/opentracing/opentracing-go</a>.<a href="../../../src/github.com/opentracing/opentracing-go/span.go.html#line-127">LogRecord</a></b></span>
+
+<span class="title">15 uses</span>
+
+	github.com/opentracing/opentracing-go (current package)
+		<a href="../../../src/github.com/opentracing/opentracing-go/span.go.html#line-127">span.go#L127</a>: type <b>LogRecord</b> struct {
+		<a href="../../../src/github.com/opentracing/opentracing-go/span.go.html#line-154" class="path-duplicate">span.go</a><a href="../../../src/github.com/opentracing/opentracing-go/span.go.html#line-154">#L154</a>: 	LogRecords []<b>LogRecord</b>
+		<a href="../../../src/github.com/opentracing/opentracing-go/span.go.html#line-168" class="path-duplicate">span.go</a><a href="../../../src/github.com/opentracing/opentracing-go/span.go.html#line-168">#L168</a>: func (ld *LogData) ToLogRecord() <b>LogRecord</b> {
+		<a href="../../../src/github.com/opentracing/opentracing-go/span.go.html#line-175" class="path-duplicate">span.go</a><a href="../../../src/github.com/opentracing/opentracing-go/span.go.html#line-175">#L175</a>: 	rval := <b>LogRecord</b>{
+
+	<a href="../../../pkg/github.com/uber/jaeger-client-go.html">github.com/uber/jaeger-client-go</a>
+		<a href="../../../src/github.com/uber/jaeger-client-go/jaeger_thrift_span.go.html#line-77">jaeger_thrift_span.go#L77</a>: func buildLogs(logs []opentracing.<b>LogRecord</b>) []*j.Log {
+		<a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-60">span.go#L60</a>: 	logs []opentracing.<b>LogRecord</b>
+		<a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-165" class="path-duplicate">span.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-165">#L165</a>: func (s *Span) Logs() []opentracing.<b>LogRecord</b> {
+		<a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-169" class="path-duplicate">span.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-169">#L169</a>: 	logs := append([]opentracing.<b>LogRecord</b>(nil), s.logs...)
+		<a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-209" class="path-duplicate">span.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-209">#L209</a>: 	lr := opentracing.<b>LogRecord</b>{
+		<a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-255" class="path-duplicate">span.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-255">#L255</a>: func (s *Span) appendLogNoLocking(lr opentracing.<b>LogRecord</b>) {
+		<a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-272" class="path-duplicate">span.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-272">#L272</a>: func rotateLogBuffer(buf []opentracing.<b>LogRecord</b>, pos int) {
+		<a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-287" class="path-duplicate">span.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-287">#L287</a>: func fixLogs(logs []opentracing.<b>LogRecord</b>, numDroppedLogs int) {
+		<a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-298" class="path-duplicate">span.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-298">#L298</a>: 	logs[numOld] = opentracing.<b>LogRecord</b>{
+
+	<a href="../../../pkg/github.com/uber/jaeger-client-go/log/zap.html">github.com/uber/jaeger-client-go/log/zap</a>
+		<a href="../../../src/github.com/uber/jaeger-client-go/log/zap/field.go.html#line-109">field.go#L109</a>: type logRecord opentracing.<b>LogRecord</b>
+		<a href="../../../src/github.com/uber/jaeger-client-go/log/zap/field.go.html#line-117" class="path-duplicate">field.go</a><a href="../../../src/github.com/uber/jaeger-client-go/log/zap/field.go.html#line-117">#L117</a>: type logRecords []opentracing.<b>LogRecord</b>
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

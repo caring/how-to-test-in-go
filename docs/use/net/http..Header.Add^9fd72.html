@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: net/http.Header.Add</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../pkg/net/http.html">net/http</a>.<a href="../../src/net/http/header.go.html#line-22">Header</a>.<a href="../../src/net/http/header.go.html#line-28">Add</a></b></span><span style="font-size: large;"><i> (method)</i></span>
+
+<span class="title">20 uses</span>
+
+	net/http (current package)
+		<a href="../../src/net/http/cookie.go.html#line-172">cookie.go#L172</a>: 		w.Header().<b>Add</b>("Set-Cookie", v)
+		<a href="../../src/net/http/h2_bundle.go.html#line-5709">h2_bundle.go#L5709</a>: 		rp.header.<b>Add</b>(sc.canonicalHeader(hf.Name), hf.Value)
+		<a href="../../src/net/http/header.go.html#line-28">header.go#L28</a>: func (h Header) <b>Add</b>(key, value string) {
+		<a href="../../src/net/http/server.go.html#line-518">server.go#L518</a>: 			t.<b>Add</b>(k, v)
+		<a href="../../src/net/http/transfer.go.html#line-685">transfer.go#L685</a>: 		header.<b>Add</b>("Content-Length", first)
+
+	<a href="../../pkg/net/http/httputil.html">net/http/httputil</a>
+		<a href="../../src/net/http/httputil/reverseproxy.go.html#line-165">reverseproxy.go#L165</a>: 			dst.<b>Add</b>(k, v)
+		<a href="../../src/net/http/httputil/reverseproxy.go.html#line-333" class="path-duplicate">reverseproxy.go</a><a href="../../src/net/http/httputil/reverseproxy.go.html#line-333">#L333</a>: 		rw.Header().<b>Add</b>("Trailer", strings.Join(trailerKeys, ", "))
+		<a href="../../src/net/http/httputil/reverseproxy.go.html#line-369" class="path-duplicate">reverseproxy.go</a><a href="../../src/net/http/httputil/reverseproxy.go.html#line-369">#L369</a>: 			rw.Header().<b>Add</b>(k, v)
+
+	<a href="../../pkg/github.com/aws/aws-sdk-go/aws/request.html">github.com/aws/aws-sdk-go/aws/request</a>
+		<a href="../../src/github.com/aws/aws-sdk-go/aws/request/http_request.go.html#line-19">http_request.go#L19</a>: 			req.Header.<b>Add</b>(k, vv)
+
+	<a href="../../pkg/github.com/aws/aws-sdk-go/private/protocol/jsonrpc.html">github.com/aws/aws-sdk-go/private/protocol/jsonrpc</a>
+		<a href="../../src/github.com/aws/aws-sdk-go/private/protocol/jsonrpc/jsonrpc.go.html#line-58">jsonrpc.go#L58</a>: 		req.HTTPRequest.Header.<b>Add</b>("X-Amz-Target", target)
+
+	<a href="../../pkg/github.com/aws/aws-sdk-go/private/protocol/rest.html">github.com/aws/aws-sdk-go/private/protocol/rest</a>
+		<a href="../../src/github.com/aws/aws-sdk-go/private/protocol/rest/build.go.html#line-171">build.go#L171</a>: 	header.<b>Add</b>(name, str)
+		<a href="../../src/github.com/aws/aws-sdk-go/private/protocol/rest/build.go.html#line-189" class="path-duplicate">build.go</a><a href="../../src/github.com/aws/aws-sdk-go/private/protocol/rest/build.go.html#line-189">#L189</a>: 		header.<b>Add</b>(prefix+keyStr, str)
+
+	<a href="../../pkg/github.com/caring/test/1-mocks.html">github.com/caring/test/1-mocks</a>
+		<a href="../../src/github.com/caring/test/1-mocks/http.go.html#line-20">http.go#L20</a>: 	request.Header.<b>Add</b>("Accept", "application/json")
+
+	<a href="../../pkg/golang.org/x/net/http2.html">golang.org/x/net/http2</a>
+		<a href="../../src/golang.org/x/net/http2/server.go.html#line-2028">server.go#L2028</a>: 		rp.header.<b>Add</b>(sc.canonicalHeader(hf.Name), hf.Value)
+
+	<a href="../../pkg/google.golang.org/grpc/internal/transport.html">google.golang.org/grpc/internal/transport</a>
+		<a href="../../src/google.golang.org/grpc/internal/transport/handler_server.go.html#line-224">handler_server.go#L224</a>: 					h.<b>Add</b>(http2.TrailerPrefix+k, encodeMetadataHeader(k, v))
+		<a href="../../src/google.golang.org/grpc/internal/transport/handler_server.go.html#line-262" class="path-duplicate">handler_server.go</a><a href="../../src/google.golang.org/grpc/internal/transport/handler_server.go.html#line-262">#L262</a>: 	h.<b>Add</b>("Trailer", "Grpc-Status")
+		<a href="../../src/google.golang.org/grpc/internal/transport/handler_server.go.html#line-263" class="path-duplicate">handler_server.go</a><a href="../../src/google.golang.org/grpc/internal/transport/handler_server.go.html#line-263">#L263</a>: 	h.<b>Add</b>("Trailer", "Grpc-Message")
+		<a href="../../src/google.golang.org/grpc/internal/transport/handler_server.go.html#line-264" class="path-duplicate">handler_server.go</a><a href="../../src/google.golang.org/grpc/internal/transport/handler_server.go.html#line-264">#L264</a>: 	h.<b>Add</b>("Trailer", "Grpc-Status-Details-Bin")
+		<a href="../../src/google.golang.org/grpc/internal/transport/handler_server.go.html#line-282" class="path-duplicate">handler_server.go</a><a href="../../src/google.golang.org/grpc/internal/transport/handler_server.go.html#line-282">#L282</a>: 			h.<b>Add</b>(k, encodeMetadataHeader(k, v))
+		<a href="../../src/google.golang.org/grpc/internal/transport/proxy.go.html#line-88">proxy.go#L88</a>: 		req.Header.<b>Add</b>(proxyAuthHeaderKey, "Basic "+basicAuth(u, p))
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

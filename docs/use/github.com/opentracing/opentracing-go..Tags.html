@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/opentracing/opentracing-go.Tags</title>
+<link href="../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../../../pkg/github.com/opentracing/opentracing-go.html">github.com/opentracing/opentracing-go</a>.<a href="../../../src/github.com/opentracing/opentracing-go/tracer.go.html#line-267">Tags</a></b></span>
+
+<span class="title">5 uses</span>
+
+	github.com/opentracing/opentracing-go (current package)
+		<a href="../../../src/github.com/opentracing/opentracing-go/tracer.go.html#line-267">tracer.go#L267</a>: type <b>Tags</b> map[string]interface{}
+		<a href="../../../src/github.com/opentracing/opentracing-go/tracer.go.html#line-270" class="path-duplicate">tracer.go</a><a href="../../../src/github.com/opentracing/opentracing-go/tracer.go.html#line-270">#L270</a>: func (t <b>Tags</b>) Apply(o *StartSpanOptions) {
+
+	<a href="../../../pkg/github.com/uber/jaeger-client-go.html">github.com/uber/jaeger-client-go</a>
+		<a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-154">span.go#L154</a>: func (s *Span) Tags() opentracing.<b>Tags</b> {
+		<a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-157" class="path-duplicate">span.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-157">#L157</a>: 	var result = make(opentracing.<b>Tags</b>, len(s.tags))
+
+	<a href="../../../pkg/github.com/uber/jaeger-client-go/log/zap.html">github.com/uber/jaeger-client-go/log/zap</a>
+		<a href="../../../src/github.com/uber/jaeger-client-go/log/zap/field.go.html#line-144">field.go#L144</a>: type tags opentracing.<b>Tags</b>
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

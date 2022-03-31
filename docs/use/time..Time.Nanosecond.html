@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: time.Time.Nanosecond</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/time.html">time</a>.<a href="../src/time/time.go.html#line-127">Time</a>.<a href="../src/time/time.go.html#line-576">Nanosecond</a></b></span><span style="font-size: large;"><i> (method)</i></span>
+
+<span class="title">9 uses</span>
+
+	time (current package)
+		<a href="../src/time/format.go.html#line-549">format.go#L549</a>: 	buf = appendInt(buf, t.<b>Nanosecond</b>(), 0)
+		<a href="../src/time/format.go.html#line-763" class="path-duplicate">format.go</a><a href="../src/time/format.go.html#line-763">#L763</a>: 			b = formatNano(b, uint(t.<b>Nanosecond</b>()), std)
+		<a href="../src/time/time.go.html#line-576">time.go#L576</a>: func (t Time) <b>Nanosecond</b>() int {
+
+	<a href="../pkg/github.com/go-sql-driver/mysql.html">github.com/go-sql-driver/mysql</a>
+		<a href="../src/github.com/go-sql-driver/mysql/utils.go.html#line-282">utils.go#L282</a>: 	nsec := t.<b>Nanosecond</b>()
+
+	<a href="../pkg/github.com/golang/protobuf/jsonpb.html">github.com/golang/protobuf/jsonpb</a>
+		<a href="../src/github.com/golang/protobuf/jsonpb/decode.go.html#line-242">decode.go#L242</a>: 		nsec := t.<b>Nanosecond</b>()
+
+	<a href="../pkg/github.com/golang/protobuf/ptypes.html">github.com/golang/protobuf/ptypes</a>
+		<a href="../src/github.com/golang/protobuf/ptypes/timestamp.go.html#line-68">timestamp.go#L68</a>: 		Nanos:   int32(t.<b>Nanosecond</b>()),
+
+	<a href="../pkg/google.golang.org/protobuf/encoding/protojson.html">google.golang.org/protobuf/encoding/protojson</a>
+		<a href="../src/google.golang.org/protobuf/encoding/protojson/well_known_types.go.html#line-833">well_known_types.go#L833</a>: 	m.Set(fdNanos, pref.ValueOfInt32(int32(t.<b>Nanosecond</b>())))
+
+	<a href="../pkg/google.golang.org/protobuf/types/known/timestamppb.html">google.golang.org/protobuf/types/known/timestamppb</a>
+		<a href="../src/google.golang.org/protobuf/types/known/timestamppb/timestamp.pb.go.html#line-202">timestamp.pb.go#L202</a>: 	return &amp;Timestamp{Seconds: int64(t.Unix()), Nanos: int32(t.<b>Nanosecond</b>())}
+
+	<a href="../pkg/log.html">log</a>
+		<a href="../src/log/log.go.html#line-129">log.go#L129</a>: 				itoa(buf, t.<b>Nanosecond</b>()/1e3, 6)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: syscall.Iovec</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../pkg/syscall.html">syscall</a>.<a href="../src/syscall/ztypes_darwin_amd64.go.html#line-211">Iovec</a></b></span>
+
+<span class="title">13 uses</span>
+
+	syscall (current package)
+		<a href="../src/syscall/syscall_bsd.go.html#line-379">syscall_bsd.go#L379</a>: 	var iov <b>Iovec</b>
+		<a href="../src/syscall/syscall_bsd.go.html#line-427" class="path-duplicate">syscall_bsd.go</a><a href="../src/syscall/syscall_bsd.go.html#line-427">#L427</a>: 	var iov <b>Iovec</b>
+		<a href="../src/syscall/syscall_darwin_amd64.go.html#line-35">syscall_darwin_amd64.go#L35</a>: func (iov *<b>Iovec</b>) SetLen(length int) {
+		<a href="../src/syscall/zsyscall_darwin_amd64.go.html#line-1649">zsyscall_darwin_amd64.go#L1649</a>: func writev(fd int, iovecs []<b>Iovec</b>) (cnt uintptr, err error) {
+		<a href="../src/syscall/ztypes_darwin_amd64.go.html#line-211">ztypes_darwin_amd64.go#L211</a>: type <b>Iovec</b> struct {
+		<a href="../src/syscall/ztypes_darwin_amd64.go.html#line-230" class="path-duplicate">ztypes_darwin_amd64.go</a><a href="../src/syscall/ztypes_darwin_amd64.go.html#line-230">#L230</a>: 	Iov        *<b>Iovec</b>
+
+	<a href="../pkg/internal/poll.html">internal/poll</a>
+		<a href="../src/internal/poll/fd_unix.go.html#line-29">fd_unix.go#L29</a>: 	iovecs *[]syscall.<b>Iovec</b>
+		<a href="../src/internal/poll/fd_writev_darwin.go.html#line-17">fd_writev_darwin.go#L17</a>: func writev(fd int, iovecs []syscall.<b>Iovec</b>) (uintptr, error)
+		<a href="../src/internal/poll/iovec_unix.go.html#line-12">iovec_unix.go#L12</a>: func newIovecWithBase(base *byte) syscall.<b>Iovec</b> {
+		<a href="../src/internal/poll/iovec_unix.go.html#line-13" class="path-duplicate">iovec_unix.go</a><a href="../src/internal/poll/iovec_unix.go.html#line-13">#L13</a>: 	return syscall.<b>Iovec</b>{Base: base}
+		<a href="../src/internal/poll/writev.go.html#line-25">writev.go#L25</a>: 	var iovecs []syscall.<b>Iovec</b>
+		<a href="../src/internal/poll/writev.go.html#line-56" class="path-duplicate">writev.go</a><a href="../src/internal/poll/writev.go.html#line-56">#L56</a>: 			fd.iovecs = new([]syscall.<b>Iovec</b>)
+		<a href="../src/internal/poll/writev.go.html#line-69" class="path-duplicate">writev.go</a><a href="../src/internal/poll/writev.go.html#line-69">#L69</a>: 			iovecs[i] = syscall.<b>Iovec</b>{}
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

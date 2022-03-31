@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: internal/poll.FD.pd</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../pkg/internal/poll.html">internal/poll</a>.<a href="../../src/internal/poll/fd_unix.go.html#line-18">FD</a>.<a href="../../src/internal/poll/fd_unix.go.html#line-26">pd</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">36 uses</span>
+
+	internal/poll (current package)
+		<a href="../../src/internal/poll/fd_poll_runtime.go.html#line-158">fd_poll_runtime.go#L158</a>: 	if fd.<b>pd</b>.runtimeCtx == 0 {
+		<a href="../../src/internal/poll/fd_poll_runtime.go.html#line-161" class="path-duplicate">fd_poll_runtime.go</a><a href="../../src/internal/poll/fd_poll_runtime.go.html#line-161">#L161</a>: 	runtime_pollSetDeadline(fd.<b>pd</b>.runtimeCtx, d, mode)
+		<a href="../../src/internal/poll/fd_unix.go.html#line-26">fd_unix.go#L26</a>: 	<b>pd</b> pollDesc
+		<a href="../../src/internal/poll/fd_unix.go.html#line-63" class="path-duplicate">fd_unix.go</a><a href="../../src/internal/poll/fd_unix.go.html#line-63">#L63</a>: 	err := fd.<b>pd</b>.init(fd)
+		<a href="../../src/internal/poll/fd_unix.go.html#line-77" class="path-duplicate">fd_unix.go</a><a href="../../src/internal/poll/fd_unix.go.html#line-77">#L77</a>: 	fd.<b>pd</b>.close()
+		<a href="../../src/internal/poll/fd_unix.go.html#line-103" class="path-duplicate">fd_unix.go</a><a href="../../src/internal/poll/fd_unix.go.html#line-103">#L103</a>: 	fd.<b>pd</b>.evict()
+		<a href="../../src/internal/poll/fd_unix.go.html#line-156" class="path-duplicate">fd_unix.go</a><a href="../../src/internal/poll/fd_unix.go.html#line-156">#L156</a>: 	if err := fd.<b>pd</b>.prepareRead(fd.isFile); err != nil {
+		<a href="../../src/internal/poll/fd_unix.go.html#line-166" class="path-duplicate">fd_unix.go</a><a href="../../src/internal/poll/fd_unix.go.html#line-166">#L166</a>: 			if err == syscall.EAGAIN &amp;&amp; fd.<b>pd</b>.pollable() {
+		<a href="../../src/internal/poll/fd_unix.go.html#line-167" class="path-duplicate">fd_unix.go</a><a href="../../src/internal/poll/fd_unix.go.html#line-167">#L167</a>: 				if err = fd.<b>pd</b>.waitRead(fd.isFile); err == nil {
+		<a href="../../src/internal/poll/fd_unix.go.html#line-212" class="path-duplicate">fd_unix.go</a><a href="../../src/internal/poll/fd_unix.go.html#line-212">#L212</a>: 	if err := fd.<b>pd</b>.prepareRead(fd.isFile); err != nil {
+		<a href="../../src/internal/poll/fd_unix.go.html#line-222" class="path-duplicate">fd_unix.go</a><a href="../../src/internal/poll/fd_unix.go.html#line-222">#L222</a>: 			if err == syscall.EAGAIN &amp;&amp; fd.<b>pd</b>.pollable() {
+		<a href="../../src/internal/poll/fd_unix.go.html#line-223" class="path-duplicate">fd_unix.go</a><a href="../../src/internal/poll/fd_unix.go.html#line-223">#L223</a>: 				if err = fd.<b>pd</b>.waitRead(fd.isFile); err == nil {
+		<a href="../../src/internal/poll/fd_unix.go.html#line-239" class="path-duplicate">fd_unix.go</a><a href="../../src/internal/poll/fd_unix.go.html#line-239">#L239</a>: 	if err := fd.<b>pd</b>.prepareRead(fd.isFile); err != nil {
+		<a href="../../src/internal/poll/fd_unix.go.html#line-249" class="path-duplicate">fd_unix.go</a><a href="../../src/internal/poll/fd_unix.go.html#line-249">#L249</a>: 			if err == syscall.EAGAIN &amp;&amp; fd.<b>pd</b>.pollable() {
+		<a href="../../src/internal/poll/fd_unix.go.html#line-250" class="path-duplicate">fd_unix.go</a><a href="../../src/internal/poll/fd_unix.go.html#line-250">#L250</a>: 				if err = fd.<b>pd</b>.waitRead(fd.isFile); err == nil {
+		<a href="../../src/internal/poll/fd_unix.go.html#line-266" class="path-duplicate">fd_unix.go</a><a href="../../src/internal/poll/fd_unix.go.html#line-266">#L266</a>: 	if err := fd.<b>pd</b>.prepareWrite(fd.isFile); err != nil {
+		<a href="../../src/internal/poll/fd_unix.go.html#line-282" class="path-duplicate">fd_unix.go</a><a href="../../src/internal/poll/fd_unix.go.html#line-282">#L282</a>: 		if err == syscall.EAGAIN &amp;&amp; fd.<b>pd</b>.pollable() {
+		<a href="../../src/internal/poll/fd_unix.go.html#line-283" class="path-duplicate">fd_unix.go</a><a href="../../src/internal/poll/fd_unix.go.html#line-283">#L283</a>: 			if err = fd.<b>pd</b>.waitWrite(fd.isFile); err == nil {
+		<a href="../../src/internal/poll/fd_unix.go.html#line-336" class="path-duplicate">fd_unix.go</a><a href="../../src/internal/poll/fd_unix.go.html#line-336">#L336</a>: 	if err := fd.<b>pd</b>.prepareWrite(fd.isFile); err != nil {
+		<a href="../../src/internal/poll/fd_unix.go.html#line-344" class="path-duplicate">fd_unix.go</a><a href="../../src/internal/poll/fd_unix.go.html#line-344">#L344</a>: 		if err == syscall.EAGAIN &amp;&amp; fd.<b>pd</b>.pollable() {
+		<a href="../../src/internal/poll/fd_unix.go.html#line-345" class="path-duplicate">fd_unix.go</a><a href="../../src/internal/poll/fd_unix.go.html#line-345">#L345</a>: 			if err = fd.<b>pd</b>.waitWrite(fd.isFile); err == nil {
+		<a href="../../src/internal/poll/fd_unix.go.html#line-362" class="path-duplicate">fd_unix.go</a><a href="../../src/internal/poll/fd_unix.go.html#line-362">#L362</a>: 	if err := fd.<b>pd</b>.prepareWrite(fd.isFile); err != nil {
+		<a href="../../src/internal/poll/fd_unix.go.html#line-370" class="path-duplicate">fd_unix.go</a><a href="../../src/internal/poll/fd_unix.go.html#line-370">#L370</a>: 		if err == syscall.EAGAIN &amp;&amp; fd.<b>pd</b>.pollable() {
+		<a href="../../src/internal/poll/fd_unix.go.html#line-371" class="path-duplicate">fd_unix.go</a><a href="../../src/internal/poll/fd_unix.go.html#line-371">#L371</a>: 			if err = fd.<b>pd</b>.waitWrite(fd.isFile); err == nil {
+		<a href="../../src/internal/poll/fd_unix.go.html#line-389" class="path-duplicate">fd_unix.go</a><a href="../../src/internal/poll/fd_unix.go.html#line-389">#L389</a>: 	if err := fd.<b>pd</b>.prepareRead(fd.isFile); err != nil {
+		<a href="../../src/internal/poll/fd_unix.go.html#line-401" class="path-duplicate">fd_unix.go</a><a href="../../src/internal/poll/fd_unix.go.html#line-401">#L401</a>: 			if fd.<b>pd</b>.pollable() {
+		<a href="../../src/internal/poll/fd_unix.go.html#line-402" class="path-duplicate">fd_unix.go</a><a href="../../src/internal/poll/fd_unix.go.html#line-402">#L402</a>: 				if err = fd.<b>pd</b>.waitRead(fd.isFile); err == nil {
+		<a href="../../src/internal/poll/fd_unix.go.html#line-437" class="path-duplicate">fd_unix.go</a><a href="../../src/internal/poll/fd_unix.go.html#line-437">#L437</a>: 			if err == syscall.EAGAIN &amp;&amp; fd.<b>pd</b>.pollable() {
+		<a href="../../src/internal/poll/fd_unix.go.html#line-438" class="path-duplicate">fd_unix.go</a><a href="../../src/internal/poll/fd_unix.go.html#line-438">#L438</a>: 				if err = fd.<b>pd</b>.waitRead(fd.isFile); err == nil {
+		<a href="../../src/internal/poll/fd_unix.go.html#line-529" class="path-duplicate">fd_unix.go</a><a href="../../src/internal/poll/fd_unix.go.html#line-529">#L529</a>: 	return fd.<b>pd</b>.waitWrite(fd.isFile)
+		<a href="../../src/internal/poll/fd_unix.go.html#line-547" class="path-duplicate">fd_unix.go</a><a href="../../src/internal/poll/fd_unix.go.html#line-547">#L547</a>: 	if err := fd.<b>pd</b>.prepareRead(fd.isFile); err != nil {
+		<a href="../../src/internal/poll/fd_unix.go.html#line-554" class="path-duplicate">fd_unix.go</a><a href="../../src/internal/poll/fd_unix.go.html#line-554">#L554</a>: 		if err := fd.<b>pd</b>.waitRead(fd.isFile); err != nil {
+		<a href="../../src/internal/poll/fd_unix.go.html#line-566" class="path-duplicate">fd_unix.go</a><a href="../../src/internal/poll/fd_unix.go.html#line-566">#L566</a>: 	if err := fd.<b>pd</b>.prepareWrite(fd.isFile); err != nil {
+		<a href="../../src/internal/poll/fd_unix.go.html#line-573" class="path-duplicate">fd_unix.go</a><a href="../../src/internal/poll/fd_unix.go.html#line-573">#L573</a>: 		if err := fd.<b>pd</b>.waitWrite(fd.isFile); err != nil {
+		<a href="../../src/internal/poll/writev.go.html#line-21">writev.go#L21</a>: 	if err := fd.<b>pd</b>.prepareWrite(fd.isFile); err != nil {
+		<a href="../../src/internal/poll/writev.go.html#line-76" class="path-duplicate">writev.go</a><a href="../../src/internal/poll/writev.go.html#line-76">#L76</a>: 				if err = fd.<b>pd</b>.waitWrite(fd.isFile); err == nil {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

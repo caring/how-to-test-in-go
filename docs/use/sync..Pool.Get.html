@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: sync.Pool.Get</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/sync.html">sync</a>.<a href="../src/sync/pool.go.html#line-44">Pool</a>.<a href="../src/sync/pool.go.html#line-124">Get</a></b></span><span style="font-size: large;"><i> (method)</i></span>
+
+<span class="title">66 uses</span>
+
+	sync (current package)
+		<a href="../src/sync/pool.go.html#line-124">pool.go#L124</a>: func (p *Pool) <b>Get</b>() interface{} {
+
+	<a href="../pkg/crypto/tls.html">crypto/tls</a>
+		<a href="../src/crypto/tls/conn.go.html#line-939">conn.go#L939</a>: 	outBufPtr := outBufPool.<b>Get</b>().(*[]byte)
+
+	<a href="../pkg/encoding/json.html">encoding/json</a>
+		<a href="../src/encoding/json/encode.go.html#line-305">encode.go#L305</a>: 	if v := encodeStatePool.<b>Get</b>(); v != nil {
+		<a href="../src/encoding/json/scanner.go.html#line-92">scanner.go#L92</a>: 	scan := scannerPool.<b>Get</b>().(*scanner)
+
+	<a href="../pkg/fmt.html">fmt</a>
+		<a href="../src/fmt/print.go.html#line-137">print.go#L137</a>: 	p := ppFree.<b>Get</b>().(*pp)
+		<a href="../src/fmt/scan.go.html#line-384">scan.go#L384</a>: 	s = ssFree.<b>Get</b>().(*ss)
+
+	<a href="../pkg/github.com/uber/jaeger-client-go.html">github.com/uber/jaeger-client-go</a>
+		<a href="../src/github.com/uber/jaeger-client-go/propagation.go.html#line-259">propagation.go#L259</a>: 		buf := p.buffers.<b>Get</b>().(*bytes.Buffer)
+		<a href="../src/github.com/uber/jaeger-client-go/span_allocator.go.html#line-38">span_allocator.go#L38</a>: 	return pool.spanPool.<b>Get</b>().(*Span)
+		<a href="../src/github.com/uber/jaeger-client-go/tracer.go.html#line-134">tracer.go#L134</a>: 			generator := pool.<b>Get</b>().(rand.Source)
+
+	<a href="../pkg/github.com/uber/jaeger-client-go/thrift.html">github.com/uber/jaeger-client-go/thrift</a>
+		<a href="../src/github.com/uber/jaeger-client-go/thrift/serializer.go.html#line-127">serializer.go#L127</a>: 	s := t.pool.<b>Get</b>().(*TSerializer)
+		<a href="../src/github.com/uber/jaeger-client-go/thrift/serializer.go.html#line-133" class="path-duplicate">serializer.go</a><a href="../src/github.com/uber/jaeger-client-go/thrift/serializer.go.html#line-133">#L133</a>: 	s := t.pool.<b>Get</b>().(*TSerializer)
+
+	<a href="../pkg/go.uber.org/multierr.html">go.uber.org/multierr</a>
+		<a href="../src/go.uber.org/multierr/error.go.html#line-274">error.go#L274</a>: 	buff := _bufferPool.<b>Get</b>().(*bytes.Buffer)
+
+	<a href="../pkg/go.uber.org/zap.html">go.uber.org/zap</a>
+		<a href="../src/go.uber.org/zap/error.go.html#line-63">error.go#L63</a>: 		elem := _errArrayElemPool.<b>Get</b>().(*errArrayElem)
+		<a href="../src/go.uber.org/zap/stacktrace.go.html#line-49">stacktrace.go#L49</a>: 	programCounters := _stacktracePool.<b>Get</b>().(*programCounters)
+
+	<a href="../pkg/go.uber.org/zap/buffer.html">go.uber.org/zap/buffer</a>
+		<a href="../src/go.uber.org/zap/buffer/pool.go.html#line-41">pool.go#L41</a>: 	buf := p.p.<b>Get</b>().(*Buffer)
+
+	<a href="../pkg/go.uber.org/zap/zapcore.html">go.uber.org/zap/zapcore</a>
+		<a href="../src/go.uber.org/zap/zapcore/console_encoder.go.html#line-38">console_encoder.go#L38</a>: 	return _sliceEncoderPool.<b>Get</b>().(*sliceArrayEncoder)
+		<a href="../src/go.uber.org/zap/zapcore/entry.go.html#line-45">entry.go#L45</a>: 	ce := _cePool.<b>Get</b>().(*CheckedEntry)
+		<a href="../src/go.uber.org/zap/zapcore/error.go.html#line-99">error.go#L99</a>: 	e := _errArrayElemPool.<b>Get</b>().(*errArrayElem)
+		<a href="../src/go.uber.org/zap/zapcore/json_encoder.go.html#line-43">json_encoder.go#L43</a>: 	return _jsonPool.<b>Get</b>().(*jsonEncoder)
+
+	<a href="../pkg/golang.org/x/net/http2.html">golang.org/x/net/http2</a>
+		<a href="../src/golang.org/x/net/http2/databuffer.go.html#line-47">databuffer.go#L47</a>: 	return dataChunkPools[i].<b>Get</b>().([]byte)
+		<a href="../src/golang.org/x/net/http2/frame.go.html#line-231">frame.go#L231</a>: 	bufp := fhBytes.<b>Get</b>().(*[]byte)
+		<a href="../src/golang.org/x/net/http2/gotrack.go.html#line-52">gotrack.go#L52</a>: 	bp := littleBuf.<b>Get</b>().(*[]byte)
+		<a href="../src/golang.org/x/net/http2/http2.go.html#line-276">http2.go#L276</a>: 		bw := bufWriterPool.<b>Get</b>().(*bufio.Writer)
+		<a href="../src/golang.org/x/net/http2/server.go.html#line-999">server.go#L999</a>: 	ch := errChanPool.<b>Get</b>().(chan error)
+		<a href="../src/golang.org/x/net/http2/server.go.html#line-1000" class="path-duplicate">server.go</a><a href="../src/golang.org/x/net/http2/server.go.html#line-1000">#L1000</a>: 	writeArg := writeDataPool.<b>Get</b>().(*writeData)
+		<a href="../src/golang.org/x/net/http2/server.go.html#line-2132" class="path-duplicate">server.go</a><a href="../src/golang.org/x/net/http2/server.go.html#line-2132">#L2132</a>: 	rws := responseWriterStatePool.<b>Get</b>().(*responseWriterState)
+		<a href="../src/golang.org/x/net/http2/server.go.html#line-2192" class="path-duplicate">server.go</a><a href="../src/golang.org/x/net/http2/server.go.html#line-2192">#L2192</a>: 		errc = errChanPool.<b>Get</b>().(chan error)
+		<a href="../src/golang.org/x/net/http2/server.go.html#line-2569" class="path-duplicate">server.go</a><a href="../src/golang.org/x/net/http2/server.go.html#line-2569">#L2569</a>: 		sorter := sorterPool.<b>Get</b>().(*sorter)
+		<a href="../src/golang.org/x/net/http2/server.go.html#line-2813" class="path-duplicate">server.go</a><a href="../src/golang.org/x/net/http2/server.go.html#line-2813">#L2813</a>: 		done:   errChanPool.<b>Get</b>().(chan error),
+		<a href="../src/golang.org/x/net/http2/write.go.html#line-335">write.go#L335</a>: 		sorter := sorterPool.<b>Get</b>().(*sorter)
+
+	<a href="../pkg/golang.org/x/net/http2/hpack.html">golang.org/x/net/http2/hpack</a>
+		<a href="../src/golang.org/x/net/http2/hpack/hpack.go.html#line-493">hpack.go#L493</a>: 		buf := bufPool.<b>Get</b>().(*bytes.Buffer)
+		<a href="../src/golang.org/x/net/http2/hpack/huffman.go.html#line-22">huffman.go#L22</a>: 	buf := bufPool.<b>Get</b>().(*bytes.Buffer)
+		<a href="../src/golang.org/x/net/http2/hpack/huffman.go.html#line-33" class="path-duplicate">huffman.go</a><a href="../src/golang.org/x/net/http2/hpack/huffman.go.html#line-33">#L33</a>: 	buf := bufPool.<b>Get</b>().(*bytes.Buffer)
+
+	<a href="../pkg/google.golang.org/grpc.html">google.golang.org/grpc</a>
+		<a href="../src/google.golang.org/grpc/rpc_util.go.html#line-91">rpc_util.go#L91</a>: 	z := c.pool.<b>Get</b>().(*gzip.Writer)
+		<a href="../src/google.golang.org/grpc/rpc_util.go.html#line-127" class="path-duplicate">rpc_util.go</a><a href="../src/google.golang.org/grpc/rpc_util.go.html#line-127">#L127</a>: 	switch maybeZ := d.pool.<b>Get</b>().(type) {
+
+	<a href="../pkg/google.golang.org/grpc/internal/transport.html">google.golang.org/grpc/internal/transport</a>
+		<a href="../src/google.golang.org/grpc/internal/transport/transport.go.html#line-62">transport.go#L62</a>: 	return p.pool.<b>Get</b>().(*bytes.Buffer)
+
+	<a href="../pkg/google.golang.org/protobuf/internal/filedesc.html">google.golang.org/protobuf/internal/filedesc</a>
+		<a href="../src/google.golang.org/protobuf/internal/filedesc/desc_init.go.html#line-454">desc_init.go#L454</a>: 	return nameBuilderPool.<b>Get</b>().(*strs.Builder)
+
+	<a href="../pkg/google.golang.org/protobuf/internal/order.html">google.golang.org/protobuf/internal/order</a>
+		<a href="../src/google.golang.org/protobuf/internal/order/range.go.html#line-40">range.go#L40</a>: 	p := messageFieldPool.<b>Get</b>().(*[]messageField)
+		<a href="../src/google.golang.org/protobuf/internal/order/range.go.html#line-91" class="path-duplicate">range.go</a><a href="../src/google.golang.org/protobuf/internal/order/range.go.html#line-91">#L91</a>: 	p := mapEntryPool.<b>Get</b>().(*[]mapEntry)
+
+	<a href="../pkg/io.html">io</a>
+		<a href="../src/io/io.go.html#line-595">io.go#L595</a>: 	bufp := blackHolePool.<b>Get</b>().(*[]byte)
+
+	<a href="../pkg/math/big.html">math/big</a>
+		<a href="../src/math/big/nat.go.html#line-638">nat.go#L638</a>: 	if v := natPool.<b>Get</b>(); v != nil {
+
+	<a href="../pkg/net/http.html">net/http</a>
+		<a href="../src/net/http/h2_bundle.go.html#line-1063">h2_bundle.go#L1063</a>: 	return http2dataChunkPools[i].<b>Get</b>().([]byte)
+		<a href="../src/net/http/h2_bundle.go.html#line-1549" class="path-duplicate">h2_bundle.go</a><a href="../src/net/http/h2_bundle.go.html#line-1549">#L1549</a>: 	bufp := http2fhBytes.<b>Get</b>().(*[]byte)
+		<a href="../src/net/http/h2_bundle.go.html#line-3000" class="path-duplicate">h2_bundle.go</a><a href="../src/net/http/h2_bundle.go.html#line-3000">#L3000</a>: 	bp := http2littleBuf.<b>Get</b>().(*[]byte)
+		<a href="../src/net/http/h2_bundle.go.html#line-3440" class="path-duplicate">h2_bundle.go</a><a href="../src/net/http/h2_bundle.go.html#line-3440">#L3440</a>: 		bw := http2bufWriterPool.<b>Get</b>().(*bufio.Writer)
+		<a href="../src/net/http/h2_bundle.go.html#line-4680" class="path-duplicate">h2_bundle.go</a><a href="../src/net/http/h2_bundle.go.html#line-4680">#L4680</a>: 	ch := http2errChanPool.<b>Get</b>().(chan error)
+		<a href="../src/net/http/h2_bundle.go.html#line-4681" class="path-duplicate">h2_bundle.go</a><a href="../src/net/http/h2_bundle.go.html#line-4681">#L4681</a>: 	writeArg := http2writeDataPool.<b>Get</b>().(*http2writeData)
+		<a href="../src/net/http/h2_bundle.go.html#line-5813" class="path-duplicate">h2_bundle.go</a><a href="../src/net/http/h2_bundle.go.html#line-5813">#L5813</a>: 	rws := http2responseWriterStatePool.<b>Get</b>().(*http2responseWriterState)
+		<a href="../src/net/http/h2_bundle.go.html#line-5873" class="path-duplicate">h2_bundle.go</a><a href="../src/net/http/h2_bundle.go.html#line-5873">#L5873</a>: 		errc = http2errChanPool.<b>Get</b>().(chan error)
+		<a href="../src/net/http/h2_bundle.go.html#line-6250" class="path-duplicate">h2_bundle.go</a><a href="../src/net/http/h2_bundle.go.html#line-6250">#L6250</a>: 		sorter := http2sorterPool.<b>Get</b>().(*http2sorter)
+		<a href="../src/net/http/h2_bundle.go.html#line-6498" class="path-duplicate">h2_bundle.go</a><a href="../src/net/http/h2_bundle.go.html#line-6498">#L6498</a>: 		done:   http2errChanPool.<b>Get</b>().(chan error),
+		<a href="../src/net/http/h2_bundle.go.html#line-8094" class="path-duplicate">h2_bundle.go</a><a href="../src/net/http/h2_bundle.go.html#line-8094">#L8094</a>: 	if bp, ok := http2bufPool.<b>Get</b>().(*[]byte); ok &amp;&amp; len(*bp) &gt;= scratchLen {
+		<a href="../src/net/http/h2_bundle.go.html#line-9841" class="path-duplicate">h2_bundle.go</a><a href="../src/net/http/h2_bundle.go.html#line-9841">#L9841</a>: 		sorter := http2sorterPool.<b>Get</b>().(*http2sorter)
+		<a href="../src/net/http/header.go.html#line-165">header.go#L165</a>: 	hs = headerSorterPool.<b>Get</b>().(*headerSorter)
+		<a href="../src/net/http/request.go.html#line-994">request.go#L994</a>: 	if v := textprotoReaderPool.<b>Get</b>(); v != nil {
+		<a href="../src/net/http/server.go.html#line-568">server.go#L568</a>: 	bufp := copyBufPool.<b>Get</b>().(*[]byte)
+		<a href="../src/net/http/server.go.html#line-818" class="path-duplicate">server.go</a><a href="../src/net/http/server.go.html#line-818">#L818</a>: 	if v := bufioReaderPool.<b>Get</b>(); v != nil {
+		<a href="../src/net/http/server.go.html#line-836" class="path-duplicate">server.go</a><a href="../src/net/http/server.go.html#line-836">#L836</a>: 		if v := pool.<b>Get</b>(); v != nil {
+
+	<a href="../pkg/reflect.html">reflect</a>
+		<a href="../src/reflect/value.go.html#line-448">value.go#L448</a>: 			stackArgs = framePool.<b>Get</b>().(unsafe.Pointer)
+		<a href="../src/reflect/value.go.html#line-942" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-942">#L942</a>: 	methodFrame := methodFramePool.<b>Get</b>().(unsafe.Pointer)
+
+	<a href="../pkg/regexp.html">regexp</a>
+		<a href="../src/regexp/backtrack.go.html#line-50">backtrack.go#L50</a>: 	b, ok := bitStatePool.<b>Get</b>().(*bitState)
+		<a href="../src/regexp/exec.go.html#line-384">exec.go#L384</a>: 	m, ok := onePassPool.<b>Get</b>().(*onePassMachine)
+		<a href="../src/regexp/regexp.go.html#line-235">regexp.go#L235</a>: 	m, ok := matchPool[re.mpool].<b>Get</b>().(*machine)
+
+	<a href="../pkg/vendor/golang.org/x/net/http2/hpack.html">vendor/golang.org/x/net/http2/hpack</a>
+		<a href="../src/vendor/golang.org/x/net/http2/hpack/hpack.go.html#line-493">hpack.go#L493</a>: 		buf := bufPool.<b>Get</b>().(*bytes.Buffer)
+		<a href="../src/vendor/golang.org/x/net/http2/hpack/huffman.go.html#line-22">huffman.go#L22</a>: 	buf := bufPool.<b>Get</b>().(*bytes.Buffer)
+		<a href="../src/vendor/golang.org/x/net/http2/hpack/huffman.go.html#line-33" class="path-duplicate">huffman.go</a><a href="../src/vendor/golang.org/x/net/http2/hpack/huffman.go.html#line-33">#L33</a>: 	buf := bufPool.<b>Get</b>().(*bytes.Buffer)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

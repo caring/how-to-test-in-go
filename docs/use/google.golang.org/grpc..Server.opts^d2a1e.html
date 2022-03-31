@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: google.golang.org/grpc.Server.opts</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../pkg/google.golang.org/grpc.html">google.golang.org/grpc</a>.<a href="../../src/google.golang.org/grpc/server.go.html#line-117">Server</a>.<a href="../../src/google.golang.org/grpc/server.go.html#line-118">opts</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">61 uses</span>
+
+	google.golang.org/grpc (current package)
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-71">server.go#L71</a>: 		return srv.<b>opts</b>.creds
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-118" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-118">#L118</a>: 	<b>opts</b> serverOptions
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-546" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-546">#L546</a>: 	s.serverWorkerChannels = make([]chan *serverWorkerData, s.<b>opts</b>.numServerWorkers)
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-547" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-547">#L547</a>: 	for i := uint32(0); i &lt; s.<b>opts</b>.numServerWorkers; i++ {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-554" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-554">#L554</a>: 	for i := uint32(0); i &lt; s.<b>opts</b>.numServerWorkers; i++ {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-568" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-568">#L568</a>: 		<b>opts</b>:     opts,
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-583" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-583">#L583</a>: 	if s.<b>opts</b>.numServerWorkers &gt; 0 {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-834" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-834">#L834</a>: 	rawConn.SetDeadline(time.Now().Add(s.<b>opts</b>.connectionTimeout))
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-865" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-865">#L865</a>: 		MaxStreams:            s.<b>opts</b>.maxConcurrentStreams,
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-866" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-866">#L866</a>: 		ConnectionTimeout:     s.<b>opts</b>.connectionTimeout,
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-867" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-867">#L867</a>: 		Credentials:           s.<b>opts</b>.creds,
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-868" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-868">#L868</a>: 		InTapHandle:           s.<b>opts</b>.inTapHandle,
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-869" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-869">#L869</a>: 		StatsHandler:          s.<b>opts</b>.statsHandler,
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-870" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-870">#L870</a>: 		KeepaliveParams:       s.<b>opts</b>.keepaliveParams,
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-871" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-871">#L871</a>: 		KeepalivePolicy:       s.<b>opts</b>.keepalivePolicy,
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-872" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-872">#L872</a>: 		InitialWindowSize:     s.<b>opts</b>.initialWindowSize,
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-873" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-873">#L873</a>: 		InitialConnWindowSize: s.<b>opts</b>.initialConnWindowSize,
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-874" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-874">#L874</a>: 		WriteBufferSize:       s.<b>opts</b>.writeBufferSize,
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-875" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-875">#L875</a>: 		ReadBufferSize:        s.<b>opts</b>.readBufferSize,
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-877" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-877">#L877</a>: 		MaxHeaderListSize:     s.<b>opts</b>.maxHeaderListSize,
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-878" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-878">#L878</a>: 		HeaderTableSize:       s.<b>opts</b>.headerTableSize,
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-907" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-907">#L907</a>: 		if s.<b>opts</b>.numServerWorkers &gt; 0 {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-910" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-910">#L910</a>: 			case s.serverWorkerChannels[atomic.AddUint32(&amp;roundRobinCounter, 1)%s.<b>opts</b>.numServerWorkers] &lt;- data:
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-965" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-965">#L965</a>: 	st, err := transport.NewServerHandlerTransport(w, r, s.<b>opts</b>.statsHandler)
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1074" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1074">#L1074</a>: 	if len(payload) &gt; s.<b>opts</b>.maxSendMessageSize {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1075" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1075">#L1075</a>: 		return status.Errorf(codes.ResourceExhausted, "grpc: trying to send message larger than max (%d vs. %d)", len(payload), s.<b>opts</b>.maxSendMessageSize)
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1078" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1078">#L1078</a>: 	if err == nil &amp;&amp; s.<b>opts</b>.statsHandler != nil {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1079" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1079">#L1079</a>: 		s.<b>opts</b>.statsHandler.HandleRPC(stream.Context(), outPayload(false, msg, data, payload, time.Now()))
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1088" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1088">#L1088</a>: 	interceptors := s.<b>opts</b>.chainUnaryInts
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1089" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1089">#L1089</a>: 	if s.<b>opts</b>.unaryInt != nil {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1090" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1090">#L1090</a>: 		interceptors = append([]UnaryServerInterceptor{s.<b>opts</b>.unaryInt}, s.<b>opts</b>.chainUnaryInts...)
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1102" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1102">#L1102</a>: 	s.<b>opts</b>.unaryInt = chainedInt
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1126" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1126">#L1126</a>: 	sh := s.<b>opts</b>.statsHandler
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1218" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1218">#L1218</a>: 	if rc := stream.RecvCompress(); s.<b>opts</b>.dc != nil &amp;&amp; s.<b>opts</b>.dc.Type() == rc {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1219" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1219">#L1219</a>: 		dc = s.<b>opts</b>.dc
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1233" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1233">#L1233</a>: 	if s.<b>opts</b>.cp != nil {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1234" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1234">#L1234</a>: 		cp = s.<b>opts</b>.cp
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1248" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1248">#L1248</a>: 	d, err := recvAndDecompress(&amp;parser{r: stream}, stream, dc, s.<b>opts</b>.maxReceiveMessageSize, payInfo, decomp)
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1282" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1282">#L1282</a>: 	reply, appErr := md.Handler(info.serviceImpl, ctx, df, s.<b>opts</b>.unaryInt)
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1378" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1378">#L1378</a>: 	interceptors := s.<b>opts</b>.chainStreamInts
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1379" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1379">#L1379</a>: 	if s.<b>opts</b>.streamInt != nil {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1380" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1380">#L1380</a>: 		interceptors = append([]StreamServerInterceptor{s.<b>opts</b>.streamInt}, s.<b>opts</b>.chainStreamInts...)
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1392" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1392">#L1392</a>: 	s.<b>opts</b>.streamInt = chainedInt
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1419" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1419">#L1419</a>: 	sh := s.<b>opts</b>.statsHandler
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1437" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1437">#L1437</a>: 		maxReceiveMessageSize: s.<b>opts</b>.maxReceiveMessageSize,
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1438" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1438">#L1438</a>: 		maxSendMessageSize:    s.<b>opts</b>.maxSendMessageSize,
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1503" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1503">#L1503</a>: 	if rc := stream.RecvCompress(); s.<b>opts</b>.dc != nil &amp;&amp; s.<b>opts</b>.dc.Type() == rc {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1504" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1504">#L1504</a>: 		ss.dc = s.<b>opts</b>.dc
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1518" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1518">#L1518</a>: 	if s.<b>opts</b>.cp != nil {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1519" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1519">#L1519</a>: 		ss.cp = s.<b>opts</b>.cp
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1520" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1520">#L1520</a>: 		stream.SetSendCompress(s.<b>opts</b>.cp.Type())
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1539" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1539">#L1539</a>: 	if s.<b>opts</b>.streamInt == nil {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1547" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1547">#L1547</a>: 		appErr = s.<b>opts</b>.streamInt(server, ss, info, sd.Handler)
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1625" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1625">#L1625</a>: 	if unknownDesc := s.<b>opts</b>.unknownStreamDesc; unknownDesc != nil {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1732" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1732">#L1732</a>: 	if s.<b>opts</b>.numServerWorkers &gt; 0 {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1795" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1795">#L1795</a>: 	if s.<b>opts</b>.codec != nil {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1796" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1796">#L1796</a>: 		return s.<b>opts</b>.codec
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

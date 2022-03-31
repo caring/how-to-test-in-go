@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime.note</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../pkg/runtime.html">runtime</a>.<a href="../src/runtime/runtime2.go.html#line-190">note</a></b></span>
+
+<span class="title">18 uses</span>
+
+	runtime (current package)
+		<a href="../src/runtime/lock_sema.go.html#line-133">lock_sema.go#L133</a>: func noteclear(n *<b>note</b>) {
+		<a href="../src/runtime/lock_sema.go.html#line-143" class="path-duplicate">lock_sema.go</a><a href="../src/runtime/lock_sema.go.html#line-143">#L143</a>: func notewakeup(n *<b>note</b>) {
+		<a href="../src/runtime/lock_sema.go.html#line-166" class="path-duplicate">lock_sema.go</a><a href="../src/runtime/lock_sema.go.html#line-166">#L166</a>: func notesleep(n *<b>note</b>) {
+		<a href="../src/runtime/lock_sema.go.html#line-195" class="path-duplicate">lock_sema.go</a><a href="../src/runtime/lock_sema.go.html#line-195">#L195</a>: func notetsleep_internal(n *<b>note</b>, ns int64, gp *g, deadline int64) bool {
+		<a href="../src/runtime/lock_sema.go.html#line-278" class="path-duplicate">lock_sema.go</a><a href="../src/runtime/lock_sema.go.html#line-278">#L278</a>: func notetsleep(n *<b>note</b>, ns int64) bool {
+		<a href="../src/runtime/lock_sema.go.html#line-289" class="path-duplicate">lock_sema.go</a><a href="../src/runtime/lock_sema.go.html#line-289">#L289</a>: func notetsleepg(n *<b>note</b>, ns int64) bool {
+		<a href="../src/runtime/mgc.go.html#line-351">mgc.go#L351</a>: 	bgMarkReady <b>note</b>   // signal background mark worker has started
+		<a href="../src/runtime/os_darwin.go.html#line-94">os_darwin.go#L94</a>: func sigNoteSetup(*<b>note</b>) {
+		<a href="../src/runtime/os_darwin.go.html#line-114" class="path-duplicate">os_darwin.go</a><a href="../src/runtime/os_darwin.go.html#line-114">#L114</a>: func sigNoteWakeup(*<b>note</b>) {
+		<a href="../src/runtime/os_darwin.go.html#line-120" class="path-duplicate">os_darwin.go</a><a href="../src/runtime/os_darwin.go.html#line-120">#L120</a>: func sigNoteSleep(*<b>note</b>) {
+		<a href="../src/runtime/proc.go.html#line-2186">proc.go#L2186</a>: 	wake    <b>note</b>
+		<a href="../src/runtime/profbuf.go.html#line-103">profbuf.go#L103</a>: 	wait        <b>note</b>
+		<a href="../src/runtime/runtime2.go.html#line-190">runtime2.go#L190</a>: type <b>note</b> struct {
+		<a href="../src/runtime/runtime2.go.html#line-549" class="path-duplicate">runtime2.go</a><a href="../src/runtime/runtime2.go.html#line-549">#L549</a>: 	park          <b>note</b>
+		<a href="../src/runtime/runtime2.go.html#line-808" class="path-duplicate">runtime2.go</a><a href="../src/runtime/runtime2.go.html#line-808">#L808</a>: 	stopnote   <b>note</b>
+		<a href="../src/runtime/runtime2.go.html#line-810" class="path-duplicate">runtime2.go</a><a href="../src/runtime/runtime2.go.html#line-810">#L810</a>: 	sysmonnote <b>note</b>
+		<a href="../src/runtime/runtime2.go.html#line-820" class="path-duplicate">runtime2.go</a><a href="../src/runtime/runtime2.go.html#line-820">#L820</a>: 	safePointNote <b>note</b>
+		<a href="../src/runtime/sigqueue.go.html#line-53">sigqueue.go#L53</a>: 	note       <b>note</b>
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

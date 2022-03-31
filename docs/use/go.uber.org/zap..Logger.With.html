@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: go.uber.org/zap.Logger.With</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../pkg/go.uber.org/zap.html">go.uber.org/zap</a>.<a href="../../src/go.uber.org/zap/logger.go.html#line-41">Logger</a>.<a href="../../src/go.uber.org/zap/logger.go.html#line-159">With</a></b></span><span style="font-size: large;"><i> (method)</i></span>
+
+<span class="title">18 uses</span>
+
+	go.uber.org/zap (current package)
+		<a href="../../src/go.uber.org/zap/logger.go.html#line-159">logger.go#L159</a>: func (log *Logger) <b>With</b>(fields ...Field) *Logger {
+		<a href="../../src/go.uber.org/zap/sugar.go.html#line-92">sugar.go#L92</a>: 	return &amp;SugaredLogger{base: s.base.<b>With</b>(s.sweetenFields(args)...)}
+
+	<a href="../../pkg/github.com/caring/gopkg-logging.html">github.com/caring/gopkg-logging</a>
+		<a href="../../src/github.com/caring/gopkg-logging/middleware.go.html#line-13">middleware.go#L13</a>: 	populatedL := l.GetInternalLogger().<b>With</b>(l.getZapFields()...)
+		<a href="../../src/github.com/caring/gopkg-logging/middleware.go.html#line-22" class="path-duplicate">middleware.go</a><a href="../../src/github.com/caring/gopkg-logging/middleware.go.html#line-22">#L22</a>: 	populatedL := l.GetInternalLogger().<b>With</b>(l.getZapFields()...)
+		<a href="../../src/github.com/caring/gopkg-logging/middleware.go.html#line-31" class="path-duplicate">middleware.go</a><a href="../../src/github.com/caring/gopkg-logging/middleware.go.html#line-31">#L31</a>: 	populatedL := l.GetInternalLogger().<b>With</b>(l.getZapFields()...)
+		<a href="../../src/github.com/caring/gopkg-logging/middleware.go.html#line-37" class="path-duplicate">middleware.go</a><a href="../../src/github.com/caring/gopkg-logging/middleware.go.html#line-37">#L37</a>: 	populatedL := l.GetInternalLogger().<b>With</b>(l.getZapFields()...)
+		<a href="../../src/github.com/caring/gopkg-logging/middleware.go.html#line-45" class="path-duplicate">middleware.go</a><a href="../../src/github.com/caring/gopkg-logging/middleware.go.html#line-45">#L45</a>: 	populatedL := l.GetInternalLogger().<b>With</b>(l.getZapFields()...)
+		<a href="../../src/github.com/caring/gopkg-logging/middleware.go.html#line-51" class="path-duplicate">middleware.go</a><a href="../../src/github.com/caring/gopkg-logging/middleware.go.html#line-51">#L51</a>: 	populatedL := l.GetInternalLogger().<b>With</b>(l.getZapFields()...)
+
+	<a href="../../pkg/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap.html">github.com/grpc-ecosystem/go-grpc-middleware/logging/zap</a>
+		<a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/client_interceptors.go.html#line-28">client_interceptors.go#L28</a>: 		logFinalClientLine(o, logger.<b>With</b>(fields...), startTime, err, "finished client unary call")
+		<a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/client_interceptors.go.html#line-40" class="path-duplicate">client_interceptors.go</a><a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/client_interceptors.go.html#line-40">#L40</a>: 		logFinalClientLine(o, logger.<b>With</b>(fields...), startTime, err, "finished client streaming call")
+		<a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/grpclogger.go.html#line-17">grpclogger.go#L17</a>: 	zgl := &amp;zapGrpcLogger{logger.<b>With</b>(SystemField, zap.Bool("grpc_log", true))}
+		<a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/grpclogger.go.html#line-57" class="path-duplicate">grpclogger.go</a><a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/grpclogger.go.html#line-57">#L57</a>: 		logger:    logger.<b>With</b>(SystemField, zap.Bool("grpc_log", true)),
+		<a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/payload_interceptors.go.html#line-33">payload_interceptors.go#L33</a>: 		logEntry := logger.<b>With</b>(append(serverCallFields(info.FullMethod), ctxzap.TagsToFields(ctx)...)...)
+		<a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/payload_interceptors.go.html#line-52" class="path-duplicate">payload_interceptors.go</a><a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/payload_interceptors.go.html#line-52">#L52</a>: 		logEntry := logger.<b>With</b>(append(serverCallFields(info.FullMethod), ctxzap.TagsToFields(stream.Context())...)...)
+		<a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/payload_interceptors.go.html#line-64" class="path-duplicate">payload_interceptors.go</a><a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/payload_interceptors.go.html#line-64">#L64</a>: 		logEntry := logger.<b>With</b>(newClientLoggerFields(ctx, method)...)
+		<a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/payload_interceptors.go.html#line-80" class="path-duplicate">payload_interceptors.go</a><a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/payload_interceptors.go.html#line-80">#L80</a>: 		logEntry := logger.<b>With</b>(newClientLoggerFields(ctx, method)...)
+		<a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/server_interceptors.go.html#line-93">server_interceptors.go#L93</a>: 	callLog := logger.<b>With</b>(append(f, serverCallFields(fullMethodString)...)...)
+
+	<a href="../../pkg/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/ctxzap.html">github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/ctxzap</a>
+		<a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/ctxzap/context.go.html#line-45">context.go#L45</a>: 	return l.logger.<b>With</b>(fields...)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

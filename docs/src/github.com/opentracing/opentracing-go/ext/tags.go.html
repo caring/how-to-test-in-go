@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Source: tags.go in package github.com/opentracing/opentracing-go/ext</title>
+<link href="../../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre id="header"><code><span class="title">Source File</span>
+	tags.go
+
+<span class="title">Belonging Package</span>
+	<a href="../../../../../pkg/github.com/opentracing/opentracing-go/ext.html">github.com/opentracing/opentracing-go/ext</a>
+</code></pre>
+<style>input[type=radio] {display: none;}
+input[id=r0]:checked ~pre label[for=r0],
+input[id=r1]:checked ~pre label[for=r1],
+input[id=r2]:checked ~pre label[for=r2],
+input[id=r3]:checked ~pre label[for=r3],
+input[id=r4]:checked ~pre label[for=r4],
+input[id=r5]:checked ~pre label[for=r5],
+input[id=r6]:checked ~pre label[for=r6],
+input[id=r7]:checked ~pre label[for=r7],
+input[id=r8]:checked ~pre label[for=r8],
+input[id=r9]:checked ~pre label[for=r9],
+input[id=r10]:checked ~pre label[for=r10],
+input[id=r11]:checked ~pre label[for=r11],
+input[id=r12]:checked ~pre label[for=r12],
+input[id=r13]:checked ~pre label[for=r13],
+input[id=r14]:checked ~pre label[for=r14],
+input[id=r15]:checked ~pre label[for=r15],
+input[id=r16]:checked ~pre label[for=r16],
+input[id=r17]:checked ~pre label[for=r17],
+input[id=r18]:checked ~pre label[for=r18],
+input[id=r19]:checked ~pre label[for=r19],
+input[id=r20]:checked ~pre label[for=r20],
+input[id=r21]:checked ~pre label[for=r21],
+input[id=r22]:checked ~pre label[for=r22],
+input[id=r23]:checked ~pre label[for=r23],
+input[id=r24]:checked ~pre label[for=r24],
+input[id=r25]:checked ~pre label[for=r25],
+input[id=r26]:checked ~pre label[for=r26],
+input[id=r27]:checked ~pre label[for=r27],
+input[id=r28]:checked ~pre label[for=r28],
+input[id=r29]:checked ~pre label[for=r29],
+input[id=r30]:checked ~pre label[for=r30],
+input[id=r31]:checked ~pre label[for=r31],
+input[id=r32]:checked ~pre label[for=r32]
+{background: #226; color: #ff8;}
+input[id=i0]:checked ~pre .i0
+{background: brown; color: #eed;}
+</style><input id="r0" type="radio" name="g"/>
+<input id="r1" type="radio" name="g"/>
+<input id="r2" type="radio" name="g"/>
+<input id="r3" type="radio" name="g"/>
+<input id="r4" type="radio" name="g"/>
+<input id="r5" type="radio" name="g"/>
+<input id="r6" type="radio" name="g"/>
+<input id="r7" type="radio" name="g"/>
+<input id="r8" type="radio" name="g"/>
+<input id="r9" type="radio" name="g"/>
+<input id="r10" type="radio" name="g"/>
+<input id="r11" type="radio" name="g"/>
+<input id="r12" type="radio" name="g"/>
+<input id="r13" type="radio" name="g"/>
+<input id="r14" type="radio" name="g"/>
+<input id="r15" type="radio" name="g"/>
+<input id="r16" type="radio" name="g"/>
+<input id="r17" type="radio" name="g"/>
+<input id="r18" type="radio" name="g"/>
+<input id="r19" type="radio" name="g"/>
+<input id="r20" type="radio" name="g"/>
+<input id="r21" type="radio" name="g"/>
+<input id="r22" type="radio" name="g"/>
+<input id="r23" type="radio" name="g"/>
+<input id="r24" type="radio" name="g"/>
+<input id="r25" type="radio" name="g"/>
+<input id="r26" type="radio" name="g"/>
+<input id="r27" type="radio" name="g"/>
+<input id="r28" type="radio" name="g"/>
+<input id="r29" type="radio" name="g"/>
+<input id="r30" type="radio" name="g"/>
+<input id="r31" type="radio" name="g"/>
+<input id="r32" type="radio" name="g"/>
+<input id="i0" type="radio" name="i"/>
+
+<pre class="line-numbers">
+<span class="codeline" id="line-1"><code><span class="keyword">package</span> ext</code></span>
+<span class="codeline" id="line-2"><code></code></span>
+<span class="codeline" id="line-3"><code><span class="keyword">import</span> <label for="i0"><span class="lit-string i0">"github.com/opentracing/opentracing-go"</span></label></code></span>
+<span class="codeline" id="line-4"><code></code></span>
+<span class="codeline" id="line-5"><code><span class="comment">// These constants define common tag names recommended for better portability across</span></code></span>
+<span class="codeline" id="line-6"><code><span class="comment">// tracing systems and languages/platforms.</span></code></span>
+<span class="codeline" id="line-7"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-8"><code><span class="comment">// The tag names are defined as typed strings, so that in addition to the usual use</span></code></span>
+<span class="codeline" id="line-9"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-10"><code><span class="comment">//     span.setTag(TagName, value)</span></code></span>
+<span class="codeline" id="line-11"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-12"><code><span class="comment">// they also support value type validation via this additional syntax:</span></code></span>
+<span class="codeline" id="line-13"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-14"><code><span class="comment">//    TagName.Set(span, value)</span></code></span>
+<span class="codeline" id="line-15"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-16"><code><span class="keyword">var</span> (</code></span>
+<span class="codeline" id="line-17"><code>	<span class="comment">//////////////////////////////////////////////////////////////////////</span></code></span>
+<span class="codeline" id="line-18"><code><span class="comment">	// SpanKind (client/server or producer/consumer)</span></code></span>
+<span class="codeline" id="line-19"><code><span class="comment">	//////////////////////////////////////////////////////////////////////</span></code></span>
+<span class="codeline" id="line-20"><code></code></span>
+<span class="codeline" id="line-21"><code>	<span class="comment">// SpanKind hints at relationship between spans, e.g. client/server</span></code></span>
+<span class="codeline" id="line-22"><code>	<a href="../../../../../pkg/github.com/opentracing/opentracing-go/ext.html#name-SpanKind" class="ident">SpanKind</a> = <a href="#line-138" class="ident">spanKindTagName</a>(<span class="lit-string">"span.kind"</span>)</code></span>
+<span class="codeline" id="line-23"><code></code></span>
+<span class="codeline" id="line-24"><code>	<span class="comment">// SpanKindRPCClient marks a span representing the client-side of an RPC</span></code></span>
+<span class="codeline" id="line-25"><code><span class="comment">	// or other remote call</span></code></span>
+<span class="codeline" id="line-26"><code>	<a href="../../../../../pkg/github.com/opentracing/opentracing-go/ext.html#name-SpanKindRPCClientEnum" class="ident">SpanKindRPCClientEnum</a> = <a href="#line-136" class="ident">SpanKindEnum</a>(<span class="lit-string">"client"</span>)</code></span>
+<span class="codeline" id="line-27"><code>	<a href="../../../../../pkg/github.com/opentracing/opentracing-go/ext.html#name-SpanKindRPCClient" class="ident">SpanKindRPCClient</a>     = <a href="../../../../../pkg/github.com/opentracing/opentracing-go.html" class="ident i0">opentracing</a>.<a href="../tracer.go.html#line-288" class="ident">Tag</a>{<a href="../tracer.go.html#line-289" class="ident">Key</a>: <a href="../../../../../pkg/builtin.html#name-string" class="ident">string</a>(<a href="#line-22" class="ident">SpanKind</a>), <a href="../tracer.go.html#line-290" class="ident">Value</a>: <a href="#line-26" class="ident">SpanKindRPCClientEnum</a>}</code></span>
+<span class="codeline" id="line-28"><code></code></span>
+<span class="codeline" id="line-29"><code>	<span class="comment">// SpanKindRPCServer marks a span representing the server-side of an RPC</span></code></span>
+<span class="codeline" id="line-30"><code><span class="comment">	// or other remote call</span></code></span>
+<span class="codeline" id="line-31"><code>	<a href="../../../../../pkg/github.com/opentracing/opentracing-go/ext.html#name-SpanKindRPCServerEnum" class="ident">SpanKindRPCServerEnum</a> = <a href="#line-136" class="ident">SpanKindEnum</a>(<span class="lit-string">"server"</span>)</code></span>
+<span class="codeline" id="line-32"><code>	<a href="../../../../../pkg/github.com/opentracing/opentracing-go/ext.html#name-SpanKindRPCServer" class="ident">SpanKindRPCServer</a>     = <a href="../../../../../pkg/github.com/opentracing/opentracing-go.html" class="ident i0">opentracing</a>.<a href="../tracer.go.html#line-288" class="ident">Tag</a>{<a href="../tracer.go.html#line-289" class="ident">Key</a>: <a href="../../../../../pkg/builtin.html#name-string" class="ident">string</a>(<a href="#line-22" class="ident">SpanKind</a>), <a href="../tracer.go.html#line-290" class="ident">Value</a>: <a href="#line-31" class="ident">SpanKindRPCServerEnum</a>}</code></span>
+<span class="codeline" id="line-33"><code></code></span>
+<span class="codeline" id="line-34"><code>	<span class="comment">// SpanKindProducer marks a span representing the producer-side of a</span></code></span>
+<span class="codeline" id="line-35"><code><span class="comment">	// message bus</span></code></span>
+<span class="codeline" id="line-36"><code>	<a href="../../../../../pkg/github.com/opentracing/opentracing-go/ext.html#name-SpanKindProducerEnum" class="ident">SpanKindProducerEnum</a> = <a href="#line-136" class="ident">SpanKindEnum</a>(<span class="lit-string">"producer"</span>)</code></span>
+<span class="codeline" id="line-37"><code>	<a href="../../../../../pkg/github.com/opentracing/opentracing-go/ext.html#name-SpanKindProducer" class="ident">SpanKindProducer</a>     = <a href="../../../../../pkg/github.com/opentracing/opentracing-go.html" class="ident i0">opentracing</a>.<a href="../tracer.go.html#line-288" class="ident">Tag</a>{<a href="../tracer.go.html#line-289" class="ident">Key</a>: <a href="../../../../../pkg/builtin.html#name-string" class="ident">string</a>(<a href="#line-22" class="ident">SpanKind</a>), <a href="../tracer.go.html#line-290" class="ident">Value</a>: <a href="#line-36" class="ident">SpanKindProducerEnum</a>}</code></span>
+<span class="codeline" id="line-38"><code></code></span>
+<span class="codeline" id="line-39"><code>	<span class="comment">// SpanKindConsumer marks a span representing the consumer-side of a</span></code></span>
+<span class="codeline" id="line-40"><code><span class="comment">	// message bus</span></code></span>
+<span class="codeline" id="line-41"><code>	<a href="../../../../../pkg/github.com/opentracing/opentracing-go/ext.html#name-SpanKindConsumerEnum" class="ident">SpanKindConsumerEnum</a> = <a href="#line-136" class="ident">SpanKindEnum</a>(<span class="lit-string">"consumer"</span>)</code></span>
+<span class="codeline" id="line-42"><code>	<a href="../../../../../pkg/github.com/opentracing/opentracing-go/ext.html#name-SpanKindConsumer" class="ident">SpanKindConsumer</a>     = <a href="../../../../../pkg/github.com/opentracing/opentracing-go.html" class="ident i0">opentracing</a>.<a href="../tracer.go.html#line-288" class="ident">Tag</a>{<a href="../tracer.go.html#line-289" class="ident">Key</a>: <a href="../../../../../pkg/builtin.html#name-string" class="ident">string</a>(<a href="#line-22" class="ident">SpanKind</a>), <a href="../tracer.go.html#line-290" class="ident">Value</a>: <a href="#line-41" class="ident">SpanKindConsumerEnum</a>}</code></span>
+<span class="codeline" id="line-43"><code></code></span>
+<span class="codeline" id="line-44"><code>	<span class="comment">//////////////////////////////////////////////////////////////////////</span></code></span>
+<span class="codeline" id="line-45"><code><span class="comment">	// Component name</span></code></span>
+<span class="codeline" id="line-46"><code><span class="comment">	//////////////////////////////////////////////////////////////////////</span></code></span>
+<span class="codeline" id="line-47"><code></code></span>
+<span class="codeline" id="line-48"><code>	<span class="comment">// Component is a low-cardinality identifier of the module, library,</span></code></span>
+<span class="codeline" id="line-49"><code><span class="comment">	// or package that is generating a span.</span></code></span>
+<span class="codeline" id="line-50"><code>	<a href="../../../../../pkg/github.com/opentracing/opentracing-go/ext.html#name-Component" class="ident">Component</a> = <a href="#line-167" class="ident">StringTagName</a>(<span class="lit-string">"component"</span>)</code></span>
+<span class="codeline" id="line-51"><code></code></span>
+<span class="codeline" id="line-52"><code>	<span class="comment">//////////////////////////////////////////////////////////////////////</span></code></span>
+<span class="codeline" id="line-53"><code><span class="comment">	// Sampling hint</span></code></span>
+<span class="codeline" id="line-54"><code><span class="comment">	//////////////////////////////////////////////////////////////////////</span></code></span>
+<span class="codeline" id="line-55"><code></code></span>
+<span class="codeline" id="line-56"><code>	<span class="comment">// SamplingPriority determines the priority of sampling this Span.</span></code></span>
+<span class="codeline" id="line-57"><code>	<a href="../../../../../pkg/github.com/opentracing/opentracing-go/ext.html#name-SamplingPriority" class="ident">SamplingPriority</a> = <a href="#line-187" class="ident">Uint16TagName</a>(<span class="lit-string">"sampling.priority"</span>)</code></span>
+<span class="codeline" id="line-58"><code></code></span>
+<span class="codeline" id="line-59"><code>	<span class="comment">//////////////////////////////////////////////////////////////////////</span></code></span>
+<span class="codeline" id="line-60"><code><span class="comment">	// Peer tags. These tags can be emitted by either client-side or</span></code></span>
+<span class="codeline" id="line-61"><code><span class="comment">	// server-side to describe the other side/service in a peer-to-peer</span></code></span>
+<span class="codeline" id="line-62"><code><span class="comment">	// communications, like an RPC call.</span></code></span>
+<span class="codeline" id="line-63"><code><span class="comment">	//////////////////////////////////////////////////////////////////////</span></code></span>
+<span class="codeline" id="line-64"><code></code></span>
+<span class="codeline" id="line-65"><code>	<span class="comment">// PeerService records the service name of the peer.</span></code></span>
+<span class="codeline" id="line-66"><code>	<a href="../../../../../pkg/github.com/opentracing/opentracing-go/ext.html#name-PeerService" class="ident">PeerService</a> = <a href="#line-167" class="ident">StringTagName</a>(<span class="lit-string">"peer.service"</span>)</code></span>
+<span class="codeline" id="line-67"><code></code></span>
+<span class="codeline" id="line-68"><code>	<span class="comment">// PeerAddress records the address name of the peer. This may be a "ip:port",</span></code></span>
+<span class="codeline" id="line-69"><code><span class="comment">	// a bare "hostname", a FQDN or even a database DSN substring</span></code></span>
+<span class="codeline" id="line-70"><code><span class="comment">	// like "mysql://username@127.0.0.1:3306/dbname"</span></code></span>
+<span class="codeline" id="line-71"><code>	<a href="../../../../../pkg/github.com/opentracing/opentracing-go/ext.html#name-PeerAddress" class="ident">PeerAddress</a> = <a href="#line-167" class="ident">StringTagName</a>(<span class="lit-string">"peer.address"</span>)</code></span>
+<span class="codeline" id="line-72"><code></code></span>
+<span class="codeline" id="line-73"><code>	<span class="comment">// PeerHostname records the host name of the peer</span></code></span>
+<span class="codeline" id="line-74"><code>	<a href="../../../../../pkg/github.com/opentracing/opentracing-go/ext.html#name-PeerHostname" class="ident">PeerHostname</a> = <a href="#line-167" class="ident">StringTagName</a>(<span class="lit-string">"peer.hostname"</span>)</code></span>
+<span class="codeline" id="line-75"><code></code></span>
+<span class="codeline" id="line-76"><code>	<span class="comment">// PeerHostIPv4 records IP v4 host address of the peer</span></code></span>
+<span class="codeline" id="line-77"><code>	<a href="../../../../../pkg/github.com/opentracing/opentracing-go/ext.html#name-PeerHostIPv4" class="ident">PeerHostIPv4</a> = <a href="#line-205" class="ident">IPv4TagName</a>(<span class="lit-string">"peer.ipv4"</span>)</code></span>
+<span class="codeline" id="line-78"><code></code></span>
+<span class="codeline" id="line-79"><code>	<span class="comment">// PeerHostIPv6 records IP v6 host address of the peer</span></code></span>
+<span class="codeline" id="line-80"><code>	<a href="../../../../../pkg/github.com/opentracing/opentracing-go/ext.html#name-PeerHostIPv6" class="ident">PeerHostIPv6</a> = <a href="#line-167" class="ident">StringTagName</a>(<span class="lit-string">"peer.ipv6"</span>)</code></span>
+<span class="codeline" id="line-81"><code></code></span>
+<span class="codeline" id="line-82"><code>	<span class="comment">// PeerPort records port number of the peer</span></code></span>
+<span class="codeline" id="line-83"><code>	<a href="../../../../../pkg/github.com/opentracing/opentracing-go/ext.html#name-PeerPort" class="ident">PeerPort</a> = <a href="#line-187" class="ident">Uint16TagName</a>(<span class="lit-string">"peer.port"</span>)</code></span>
+<span class="codeline" id="line-84"><code></code></span>
+<span class="codeline" id="line-85"><code>	<span class="comment">//////////////////////////////////////////////////////////////////////</span></code></span>
+<span class="codeline" id="line-86"><code><span class="comment">	// HTTP Tags</span></code></span>
+<span class="codeline" id="line-87"><code><span class="comment">	//////////////////////////////////////////////////////////////////////</span></code></span>
+<span class="codeline" id="line-88"><code></code></span>
+<span class="codeline" id="line-89"><code>	<span class="comment">// HTTPUrl should be the URL of the request being handled in this segment</span></code></span>
+<span class="codeline" id="line-90"><code><span class="comment">	// of the trace, in standard URI format. The protocol is optional.</span></code></span>
+<span class="codeline" id="line-91"><code>	<a href="../../../../../pkg/github.com/opentracing/opentracing-go/ext.html#name-HTTPUrl" class="ident">HTTPUrl</a> = <a href="#line-167" class="ident">StringTagName</a>(<span class="lit-string">"http.url"</span>)</code></span>
+<span class="codeline" id="line-92"><code></code></span>
+<span class="codeline" id="line-93"><code>	<span class="comment">// HTTPMethod is the HTTP method of the request, and is case-insensitive.</span></code></span>
+<span class="codeline" id="line-94"><code>	<a href="../../../../../pkg/github.com/opentracing/opentracing-go/ext.html#name-HTTPMethod" class="ident">HTTPMethod</a> = <a href="#line-167" class="ident">StringTagName</a>(<span class="lit-string">"http.method"</span>)</code></span>
+<span class="codeline" id="line-95"><code></code></span>
+<span class="codeline" id="line-96"><code>	<span class="comment">// HTTPStatusCode is the numeric HTTP status code (200, 404, etc) of the</span></code></span>
+<span class="codeline" id="line-97"><code><span class="comment">	// HTTP response.</span></code></span>
+<span class="codeline" id="line-98"><code>	<a href="../../../../../pkg/github.com/opentracing/opentracing-go/ext.html#name-HTTPStatusCode" class="ident">HTTPStatusCode</a> = <a href="#line-187" class="ident">Uint16TagName</a>(<span class="lit-string">"http.status_code"</span>)</code></span>
+<span class="codeline" id="line-99"><code></code></span>
+<span class="codeline" id="line-100"><code>	<span class="comment">//////////////////////////////////////////////////////////////////////</span></code></span>
+<span class="codeline" id="line-101"><code><span class="comment">	// DB Tags</span></code></span>
+<span class="codeline" id="line-102"><code><span class="comment">	//////////////////////////////////////////////////////////////////////</span></code></span>
+<span class="codeline" id="line-103"><code></code></span>
+<span class="codeline" id="line-104"><code>	<span class="comment">// DBInstance is database instance name.</span></code></span>
+<span class="codeline" id="line-105"><code>	<a href="../../../../../pkg/github.com/opentracing/opentracing-go/ext.html#name-DBInstance" class="ident">DBInstance</a> = <a href="#line-167" class="ident">StringTagName</a>(<span class="lit-string">"db.instance"</span>)</code></span>
+<span class="codeline" id="line-106"><code></code></span>
+<span class="codeline" id="line-107"><code>	<span class="comment">// DBStatement is a database statement for the given database type.</span></code></span>
+<span class="codeline" id="line-108"><code><span class="comment">	// It can be a query or a prepared statement (i.e., before substitution).</span></code></span>
+<span class="codeline" id="line-109"><code>	<a href="../../../../../pkg/github.com/opentracing/opentracing-go/ext.html#name-DBStatement" class="ident">DBStatement</a> = <a href="#line-167" class="ident">StringTagName</a>(<span class="lit-string">"db.statement"</span>)</code></span>
+<span class="codeline" id="line-110"><code></code></span>
+<span class="codeline" id="line-111"><code>	<span class="comment">// DBType is a database type. For any SQL database, "sql".</span></code></span>
+<span class="codeline" id="line-112"><code><span class="comment">	// For others, the lower-case database category, e.g. "redis"</span></code></span>
+<span class="codeline" id="line-113"><code>	<a href="../../../../../pkg/github.com/opentracing/opentracing-go/ext.html#name-DBType" class="ident">DBType</a> = <a href="#line-167" class="ident">StringTagName</a>(<span class="lit-string">"db.type"</span>)</code></span>
+<span class="codeline" id="line-114"><code></code></span>
+<span class="codeline" id="line-115"><code>	<span class="comment">// DBUser is a username for accessing database.</span></code></span>
+<span class="codeline" id="line-116"><code>	<a href="../../../../../pkg/github.com/opentracing/opentracing-go/ext.html#name-DBUser" class="ident">DBUser</a> = <a href="#line-167" class="ident">StringTagName</a>(<span class="lit-string">"db.user"</span>)</code></span>
+<span class="codeline" id="line-117"><code></code></span>
+<span class="codeline" id="line-118"><code>	<span class="comment">//////////////////////////////////////////////////////////////////////</span></code></span>
+<span class="codeline" id="line-119"><code><span class="comment">	// Message Bus Tag</span></code></span>
+<span class="codeline" id="line-120"><code><span class="comment">	//////////////////////////////////////////////////////////////////////</span></code></span>
+<span class="codeline" id="line-121"><code></code></span>
+<span class="codeline" id="line-122"><code>	<span class="comment">// MessageBusDestination is an address at which messages can be exchanged</span></code></span>
+<span class="codeline" id="line-123"><code>	<a href="../../../../../pkg/github.com/opentracing/opentracing-go/ext.html#name-MessageBusDestination" class="ident">MessageBusDestination</a> = <a href="#line-167" class="ident">StringTagName</a>(<span class="lit-string">"message_bus.destination"</span>)</code></span>
+<span class="codeline" id="line-124"><code></code></span>
+<span class="codeline" id="line-125"><code>	<span class="comment">//////////////////////////////////////////////////////////////////////</span></code></span>
+<span class="codeline" id="line-126"><code><span class="comment">	// Error Tag</span></code></span>
+<span class="codeline" id="line-127"><code><span class="comment">	//////////////////////////////////////////////////////////////////////</span></code></span>
+<span class="codeline" id="line-128"><code></code></span>
+<span class="codeline" id="line-129"><code>	<span class="comment">// Error indicates that operation represented by the span resulted in an error.</span></code></span>
+<span class="codeline" id="line-130"><code>	<a href="../../../../../pkg/github.com/opentracing/opentracing-go/ext.html#name-Error" class="ident">Error</a> = <a href="#line-197" class="ident">BoolTagName</a>(<span class="lit-string">"error"</span>)</code></span>
+<span class="codeline" id="line-131"><code>)</code></span>
+<span class="codeline" id="line-132"><code></code></span>
+<span class="codeline" id="line-133"><code><span class="comment">// ---</span></code></span>
+<span class="codeline" id="line-134"><code></code></span>
+<span class="codeline" id="line-135"><code><span class="comment">// SpanKindEnum represents common span types</span></code></span>
+<span class="codeline" id="line-136"><code><span class="keyword">type</span> <a href="../../../../../pkg/github.com/opentracing/opentracing-go/ext.html#name-SpanKindEnum" class="ident">SpanKindEnum</a> <a href="../../../../../pkg/builtin.html#name-string" class="ident">string</a></code></span>
+<span class="codeline" id="line-137"><code></code></span>
+<span class="codeline" id="line-138"><code><span class="keyword">type</span> <a href="../../../../../pkg/github.com/opentracing/opentracing-go/ext.html#name-spanKindTagName" class="ident">spanKindTagName</a> <a href="../../../../../pkg/builtin.html#name-string" class="ident">string</a></code></span>
+<span class="codeline" id="line-139"><code></code></span>
+<span class="codeline" id="line-140"><code><span class="comment">// Set adds a string tag to the `span`</span></code></span>
+<span class="codeline" id="line-141"><code><span class="keyword">func</span> (<label for="r0" class="ident">tag</label> <a href="#line-138" class="ident">spanKindTagName</a>) <label for="r1" class="ident"><a href="../../../../../use/github.com/opentracing/opentracing-go/ext..spanKindTagName^45c6c.Set.html" class="ident">Set</a></label>(<label for="r2" class="ident">span</label> <a href="../../../../../pkg/github.com/opentracing/opentracing-go.html" class="ident i0">opentracing</a>.<a href="../span.go.html#line-27" class="ident">Span</a>, <label for="r3" class="ident">value</label> <a href="#line-136" class="ident">SpanKindEnum</a>) {</code></span>
+<span class="codeline" id="line-142"><code>	<label for="r2" class="ident">span</label>.<a href="../span.go.html#line-58" class="ident">SetTag</a>(<a href="../../../../../pkg/builtin.html#name-string" class="ident">string</a>(<label for="r0" class="ident">tag</label>), <label for="r3" class="ident">value</label>)</code></span>
+<span class="codeline" id="line-143"><code>}</code></span>
+<span class="codeline" id="line-144"><code></code></span>
+<span class="codeline" id="line-145"><code><span class="keyword">type</span> <a href="../../../../../pkg/github.com/opentracing/opentracing-go/ext.html#name-rpcServerOption" class="ident">rpcServerOption</a> <span class="keyword">struct</span> {</code></span>
+<span class="codeline" id="line-146"><code>	<a href="../../../../../use/github.com/opentracing/opentracing-go/ext..rpcServerOption^052fd.clientContext^5b11c.html" class="ident">clientContext</a> <a href="../../../../../pkg/github.com/opentracing/opentracing-go.html" class="ident i0">opentracing</a>.<a href="../span.go.html#line-11" class="ident">SpanContext</a></code></span>
+<span class="codeline" id="line-147"><code>}</code></span>
+<span class="codeline" id="line-148"><code></code></span>
+<span class="codeline" id="line-149"><code><span class="keyword">func</span> (<label for="r4" class="ident">r</label> <a href="#line-145" class="ident">rpcServerOption</a>) <label for="r5" class="ident"><a href="../../../../../use/github.com/opentracing/opentracing-go/ext..rpcServerOption^052fd.Apply.html" class="ident">Apply</a></label>(<label for="r6" class="ident">o</label> *<a href="../../../../../pkg/github.com/opentracing/opentracing-go.html" class="ident i0">opentracing</a>.<a href="../tracer.go.html#line-132" class="ident">StartSpanOptions</a>) {</code></span>
+<span class="codeline" id="line-150"><code>	<span class="keyword">if</span> <label for="r4" class="ident">r</label>.<a href="#line-146" class="ident">clientContext</a> != <a href="../../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-151"><code>		<a href="../../../../../pkg/github.com/opentracing/opentracing-go.html" class="ident i0">opentracing</a>.<a href="../tracer.go.html#line-236" class="ident">ChildOf</a>(<label for="r4" class="ident">r</label>.<a href="#line-146" class="ident">clientContext</a>).<a href="../tracer.go.html#line-226" class="ident">Apply</a>(<label for="r6" class="ident">o</label>)</code></span>
+<span class="codeline" id="line-152"><code>	}</code></span>
+<span class="codeline" id="line-153"><code>	<a href="#line-32" class="ident">SpanKindRPCServer</a>.<a href="../tracer.go.html#line-294" class="ident">Apply</a>(<label for="r6" class="ident">o</label>)</code></span>
+<span class="codeline" id="line-154"><code>}</code></span>
+<span class="codeline" id="line-155"><code></code></span>
+<span class="codeline" id="line-156"><code><span class="comment">// RPCServerOption returns a StartSpanOption appropriate for an RPC server span</span></code></span>
+<span class="codeline" id="line-157"><code><span class="comment">// with `client` representing the metadata for the remote peer Span if available.</span></code></span>
+<span class="codeline" id="line-158"><code><span class="comment">// In case client == nil, due to the client not being instrumented, this RPC</span></code></span>
+<span class="codeline" id="line-159"><code><span class="comment">// server span will be a root span.</span></code></span>
+<span class="codeline" id="line-160"><code><span class="keyword">func</span> <label for="r7" class="ident"><a href="../../../../../pkg/github.com/opentracing/opentracing-go/ext.html#name-RPCServerOption" class="ident">RPCServerOption</a></label>(<label for="r8" class="ident">client</label> <a href="../../../../../pkg/github.com/opentracing/opentracing-go.html" class="ident i0">opentracing</a>.<a href="../span.go.html#line-11" class="ident">SpanContext</a>) <a href="../../../../../pkg/github.com/opentracing/opentracing-go.html" class="ident i0">opentracing</a>.<a href="../tracer.go.html#line-153" class="ident">StartSpanOption</a> {</code></span>
+<span class="codeline" id="line-161"><code>	<span class="keyword">return</span> <a href="#line-145" class="ident">rpcServerOption</a>{<label for="r8" class="ident">client</label>}</code></span>
+<span class="codeline" id="line-162"><code>}</code></span>
+<span class="codeline" id="line-163"><code></code></span>
+<span class="codeline" id="line-164"><code><span class="comment">// ---</span></code></span>
+<span class="codeline" id="line-165"><code></code></span>
+<span class="codeline" id="line-166"><code><span class="comment">// StringTagName is a common tag name to be set to a string value</span></code></span>
+<span class="codeline" id="line-167"><code><span class="keyword">type</span> <a href="../../../../../pkg/github.com/opentracing/opentracing-go/ext.html#name-StringTagName" class="ident">StringTagName</a> <a href="../../../../../pkg/builtin.html#name-string" class="ident">string</a></code></span>
+<span class="codeline" id="line-168"><code></code></span>
+<span class="codeline" id="line-169"><code><span class="comment">// Set adds a string tag to the `span`</span></code></span>
+<span class="codeline" id="line-170"><code><span class="keyword">func</span> (<label for="r9" class="ident">tag</label> <a href="#line-167" class="ident">StringTagName</a>) <label for="r10" class="ident"><a href="../../../../../use/github.com/opentracing/opentracing-go/ext..StringTagName.Set.html" class="ident">Set</a></label>(<label for="r11" class="ident">span</label> <a href="../../../../../pkg/github.com/opentracing/opentracing-go.html" class="ident i0">opentracing</a>.<a href="../span.go.html#line-27" class="ident">Span</a>, <label for="r12" class="ident">value</label> <a href="../../../../../pkg/builtin.html#name-string" class="ident">string</a>) {</code></span>
+<span class="codeline" id="line-171"><code>	<label for="r11" class="ident">span</label>.<a href="../span.go.html#line-58" class="ident">SetTag</a>(<a href="../../../../../pkg/builtin.html#name-string" class="ident">string</a>(<label for="r9" class="ident">tag</label>), <label for="r12" class="ident">value</label>)</code></span>
+<span class="codeline" id="line-172"><code>}</code></span>
+<span class="codeline" id="line-173"><code></code></span>
+<span class="codeline" id="line-174"><code><span class="comment">// ---</span></code></span>
+<span class="codeline" id="line-175"><code></code></span>
+<span class="codeline" id="line-176"><code><span class="comment">// Uint32TagName is a common tag name to be set to a uint32 value</span></code></span>
+<span class="codeline" id="line-177"><code><span class="keyword">type</span> <a href="../../../../../pkg/github.com/opentracing/opentracing-go/ext.html#name-Uint32TagName" class="ident">Uint32TagName</a> <a href="../../../../../pkg/builtin.html#name-string" class="ident">string</a></code></span>
+<span class="codeline" id="line-178"><code></code></span>
+<span class="codeline" id="line-179"><code><span class="comment">// Set adds a uint32 tag to the `span`</span></code></span>
+<span class="codeline" id="line-180"><code><span class="keyword">func</span> (<label for="r13" class="ident">tag</label> <a href="#line-177" class="ident">Uint32TagName</a>) <label for="r14" class="ident"><a href="../../../../../use/github.com/opentracing/opentracing-go/ext..Uint32TagName.Set.html" class="ident">Set</a></label>(<label for="r15" class="ident">span</label> <a href="../../../../../pkg/github.com/opentracing/opentracing-go.html" class="ident i0">opentracing</a>.<a href="../span.go.html#line-27" class="ident">Span</a>, <label for="r16" class="ident">value</label> <a href="../../../../../pkg/builtin.html#name-uint32" class="ident">uint32</a>) {</code></span>
+<span class="codeline" id="line-181"><code>	<label for="r15" class="ident">span</label>.<a href="../span.go.html#line-58" class="ident">SetTag</a>(<a href="../../../../../pkg/builtin.html#name-string" class="ident">string</a>(<label for="r13" class="ident">tag</label>), <label for="r16" class="ident">value</label>)</code></span>
+<span class="codeline" id="line-182"><code>}</code></span>
+<span class="codeline" id="line-183"><code></code></span>
+<span class="codeline" id="line-184"><code><span class="comment">// ---</span></code></span>
+<span class="codeline" id="line-185"><code></code></span>
+<span class="codeline" id="line-186"><code><span class="comment">// Uint16TagName is a common tag name to be set to a uint16 value</span></code></span>
+<span class="codeline" id="line-187"><code><span class="keyword">type</span> <a href="../../../../../pkg/github.com/opentracing/opentracing-go/ext.html#name-Uint16TagName" class="ident">Uint16TagName</a> <a href="../../../../../pkg/builtin.html#name-string" class="ident">string</a></code></span>
+<span class="codeline" id="line-188"><code></code></span>
+<span class="codeline" id="line-189"><code><span class="comment">// Set adds a uint16 tag to the `span`</span></code></span>
+<span class="codeline" id="line-190"><code><span class="keyword">func</span> (<label for="r17" class="ident">tag</label> <a href="#line-187" class="ident">Uint16TagName</a>) <label for="r18" class="ident"><a href="../../../../../use/github.com/opentracing/opentracing-go/ext..Uint16TagName.Set.html" class="ident">Set</a></label>(<label for="r19" class="ident">span</label> <a href="../../../../../pkg/github.com/opentracing/opentracing-go.html" class="ident i0">opentracing</a>.<a href="../span.go.html#line-27" class="ident">Span</a>, <label for="r20" class="ident">value</label> <a href="../../../../../pkg/builtin.html#name-uint16" class="ident">uint16</a>) {</code></span>
+<span class="codeline" id="line-191"><code>	<label for="r19" class="ident">span</label>.<a href="../span.go.html#line-58" class="ident">SetTag</a>(<a href="../../../../../pkg/builtin.html#name-string" class="ident">string</a>(<label for="r17" class="ident">tag</label>), <label for="r20" class="ident">value</label>)</code></span>
+<span class="codeline" id="line-192"><code>}</code></span>
+<span class="codeline" id="line-193"><code></code></span>
+<span class="codeline" id="line-194"><code><span class="comment">// ---</span></code></span>
+<span class="codeline" id="line-195"><code></code></span>
+<span class="codeline" id="line-196"><code><span class="comment">// BoolTagName is a common tag name to be set to a bool value</span></code></span>
+<span class="codeline" id="line-197"><code><span class="keyword">type</span> <a href="../../../../../pkg/github.com/opentracing/opentracing-go/ext.html#name-BoolTagName" class="ident">BoolTagName</a> <a href="../../../../../pkg/builtin.html#name-string" class="ident">string</a></code></span>
+<span class="codeline" id="line-198"><code></code></span>
+<span class="codeline" id="line-199"><code><span class="comment">// Set adds a bool tag to the `span`</span></code></span>
+<span class="codeline" id="line-200"><code><span class="keyword">func</span> (<label for="r21" class="ident">tag</label> <a href="#line-197" class="ident">BoolTagName</a>) <label for="r22" class="ident"><a href="../../../../../use/github.com/opentracing/opentracing-go/ext..BoolTagName.Set.html" class="ident">Set</a></label>(<label for="r23" class="ident">span</label> <a href="../../../../../pkg/github.com/opentracing/opentracing-go.html" class="ident i0">opentracing</a>.<a href="../span.go.html#line-27" class="ident">Span</a>, <label for="r24" class="ident">value</label> <a href="../../../../../pkg/builtin.html#name-bool" class="ident">bool</a>) {</code></span>
+<span class="codeline" id="line-201"><code>	<label for="r23" class="ident">span</label>.<a href="../span.go.html#line-58" class="ident">SetTag</a>(<a href="../../../../../pkg/builtin.html#name-string" class="ident">string</a>(<label for="r21" class="ident">tag</label>), <label for="r24" class="ident">value</label>)</code></span>
+<span class="codeline" id="line-202"><code>}</code></span>
+<span class="codeline" id="line-203"><code></code></span>
+<span class="codeline" id="line-204"><code><span class="comment">// IPv4TagName is a common tag name to be set to an ipv4 value</span></code></span>
+<span class="codeline" id="line-205"><code><span class="keyword">type</span> <a href="../../../../../pkg/github.com/opentracing/opentracing-go/ext.html#name-IPv4TagName" class="ident">IPv4TagName</a> <a href="../../../../../pkg/builtin.html#name-string" class="ident">string</a></code></span>
+<span class="codeline" id="line-206"><code></code></span>
+<span class="codeline" id="line-207"><code><span class="comment">// Set adds IP v4 host address of the peer as an uint32 value to the `span`, keep this for backward and zipkin compatibility</span></code></span>
+<span class="codeline" id="line-208"><code><span class="keyword">func</span> (<label for="r25" class="ident">tag</label> <a href="#line-205" class="ident">IPv4TagName</a>) <label for="r26" class="ident"><a href="../../../../../use/github.com/opentracing/opentracing-go/ext..IPv4TagName.Set.html" class="ident">Set</a></label>(<label for="r27" class="ident">span</label> <a href="../../../../../pkg/github.com/opentracing/opentracing-go.html" class="ident i0">opentracing</a>.<a href="../span.go.html#line-27" class="ident">Span</a>, <label for="r28" class="ident">value</label> <a href="../../../../../pkg/builtin.html#name-uint32" class="ident">uint32</a>) {</code></span>
+<span class="codeline" id="line-209"><code>	<label for="r27" class="ident">span</label>.<a href="../span.go.html#line-58" class="ident">SetTag</a>(<a href="../../../../../pkg/builtin.html#name-string" class="ident">string</a>(<label for="r25" class="ident">tag</label>), <label for="r28" class="ident">value</label>)</code></span>
+<span class="codeline" id="line-210"><code>}</code></span>
+<span class="codeline" id="line-211"><code></code></span>
+<span class="codeline" id="line-212"><code><span class="comment">// SetString records IP v4 host address of the peer as a .-separated tuple to the `span`. E.g., "127.0.0.1"</span></code></span>
+<span class="codeline" id="line-213"><code><span class="keyword">func</span> (<label for="r29" class="ident">tag</label> <a href="#line-205" class="ident">IPv4TagName</a>) <label for="r30" class="ident"><a href="../../../../../use/github.com/opentracing/opentracing-go/ext..IPv4TagName.SetString.html" class="ident">SetString</a></label>(<label for="r31" class="ident">span</label> <a href="../../../../../pkg/github.com/opentracing/opentracing-go.html" class="ident i0">opentracing</a>.<a href="../span.go.html#line-27" class="ident">Span</a>, <label for="r32" class="ident">value</label> <a href="../../../../../pkg/builtin.html#name-string" class="ident">string</a>) {</code></span>
+<span class="codeline" id="line-214"><code>	<label for="r31" class="ident">span</label>.<a href="../span.go.html#line-58" class="ident">SetTag</a>(<a href="../../../../../pkg/builtin.html#name-string" class="ident">string</a>(<label for="r29" class="ident">tag</label>), <label for="r32" class="ident">value</label>)</code></span>
+<span class="codeline" id="line-215"><code>}</code></span>
+</pre><pre id="footer">
+<table><tr><td><img src="../../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

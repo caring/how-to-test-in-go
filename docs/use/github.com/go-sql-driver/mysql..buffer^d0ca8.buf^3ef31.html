@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/go-sql-driver/mysql.buffer.buf</title>
+<link href="../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../pkg/github.com/go-sql-driver/mysql.html">github.com/go-sql-driver/mysql</a>.<a href="../../../src/github.com/go-sql-driver/mysql/buffer.go.html#line-26">buffer</a>.<a href="../../../src/github.com/go-sql-driver/mysql/buffer.go.html#line-27">buf</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">14 uses</span>
+
+	github.com/go-sql-driver/mysql (current package)
+		<a href="../../../src/github.com/go-sql-driver/mysql/buffer.go.html#line-27">buffer.go#L27</a>: 	<b>buf</b>     []byte // buf is a byte buffer who's length and capacity are equal.
+		<a href="../../../src/github.com/go-sql-driver/mysql/buffer.go.html#line-40" class="path-duplicate">buffer.go</a><a href="../../../src/github.com/go-sql-driver/mysql/buffer.go.html#line-40">#L40</a>: 		<b>buf</b>:  fg,
+		<a href="../../../src/github.com/go-sql-driver/mysql/buffer.go.html#line-77" class="path-duplicate">buffer.go</a><a href="../../../src/github.com/go-sql-driver/mysql/buffer.go.html#line-77">#L77</a>: 		copy(dest[:n], b.<b>buf</b>[b.idx:])
+		<a href="../../../src/github.com/go-sql-driver/mysql/buffer.go.html#line-80" class="path-duplicate">buffer.go</a><a href="../../../src/github.com/go-sql-driver/mysql/buffer.go.html#line-80">#L80</a>: 	b.<b>buf</b> = dest
+		<a href="../../../src/github.com/go-sql-driver/mysql/buffer.go.html#line-90" class="path-duplicate">buffer.go</a><a href="../../../src/github.com/go-sql-driver/mysql/buffer.go.html#line-90">#L90</a>: 		nn, err := b.nc.Read(b.<b>buf</b>[n:])
+		<a href="../../../src/github.com/go-sql-driver/mysql/buffer.go.html#line-127" class="path-duplicate">buffer.go</a><a href="../../../src/github.com/go-sql-driver/mysql/buffer.go.html#line-127">#L127</a>: 	return b.<b>buf</b>[offset:b.idx], nil
+		<a href="../../../src/github.com/go-sql-driver/mysql/buffer.go.html#line-140" class="path-duplicate">buffer.go</a><a href="../../../src/github.com/go-sql-driver/mysql/buffer.go.html#line-140">#L140</a>: 	if length &lt;= cap(b.<b>buf</b>) {
+		<a href="../../../src/github.com/go-sql-driver/mysql/buffer.go.html#line-141" class="path-duplicate">buffer.go</a><a href="../../../src/github.com/go-sql-driver/mysql/buffer.go.html#line-141">#L141</a>: 		return b.<b>buf</b>[:length], nil
+		<a href="../../../src/github.com/go-sql-driver/mysql/buffer.go.html#line-145" class="path-duplicate">buffer.go</a><a href="../../../src/github.com/go-sql-driver/mysql/buffer.go.html#line-145">#L145</a>: 		b.<b>buf</b> = make([]byte, length)
+		<a href="../../../src/github.com/go-sql-driver/mysql/buffer.go.html#line-146" class="path-duplicate">buffer.go</a><a href="../../../src/github.com/go-sql-driver/mysql/buffer.go.html#line-146">#L146</a>: 		return b.<b>buf</b>, nil
+		<a href="../../../src/github.com/go-sql-driver/mysql/buffer.go.html#line-160" class="path-duplicate">buffer.go</a><a href="../../../src/github.com/go-sql-driver/mysql/buffer.go.html#line-160">#L160</a>: 	return b.<b>buf</b>[:length], nil
+		<a href="../../../src/github.com/go-sql-driver/mysql/buffer.go.html#line-171" class="path-duplicate">buffer.go</a><a href="../../../src/github.com/go-sql-driver/mysql/buffer.go.html#line-171">#L171</a>: 	return b.<b>buf</b>, nil
+		<a href="../../../src/github.com/go-sql-driver/mysql/buffer.go.html#line-178" class="path-duplicate">buffer.go</a><a href="../../../src/github.com/go-sql-driver/mysql/buffer.go.html#line-178">#L178</a>: 	} else if cap(buf) &lt;= maxPacketSize &amp;&amp; cap(buf) &gt; cap(b.<b>buf</b>) {
+		<a href="../../../src/github.com/go-sql-driver/mysql/buffer.go.html#line-179" class="path-duplicate">buffer.go</a><a href="../../../src/github.com/go-sql-driver/mysql/buffer.go.html#line-179">#L179</a>: 		b.<b>buf</b> = buf[:cap(buf)]
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

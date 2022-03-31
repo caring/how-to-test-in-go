@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: google.golang.org/grpc/internal/transport.loopyWriter</title>
+<link href="../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../../../../pkg/google.golang.org/grpc/internal/transport.html">google.golang.org/grpc/internal/transport</a>.<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-461">loopyWriter</a></b></span>
+
+<span class="title">24 uses</span>
+
+	google.golang.org/grpc/internal/transport (current package)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-461">controlbuf.go#L461</a>: type <b>loopyWriter</b> struct {
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-485" class="path-duplicate">controlbuf.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-485">#L485</a>: func newLoopyWriter(s side, fr *framer, cbuf *controlBuffer, bdpEst *bdpEstimator) *<b>loopyWriter</b> {
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-487" class="path-duplicate">controlbuf.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-487">#L487</a>: 	l := &amp;<b>loopyWriter</b>{
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-520" class="path-duplicate">controlbuf.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-520">#L520</a>: func (l *<b>loopyWriter</b>) run() (err error) {
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-581" class="path-duplicate">controlbuf.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-581">#L581</a>: func (l *<b>loopyWriter</b>) outgoingWindowUpdateHandler(w *outgoingWindowUpdate) error {
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-585" class="path-duplicate">controlbuf.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-585">#L585</a>: func (l *<b>loopyWriter</b>) incomingWindowUpdateHandler(w *incomingWindowUpdate) error {
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-603" class="path-duplicate">controlbuf.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-603">#L603</a>: func (l *<b>loopyWriter</b>) outgoingSettingsHandler(s *outgoingSettings) error {
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-607" class="path-duplicate">controlbuf.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-607">#L607</a>: func (l *<b>loopyWriter</b>) incomingSettingsHandler(s *incomingSettings) error {
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-614" class="path-duplicate">controlbuf.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-614">#L614</a>: func (l *<b>loopyWriter</b>) registerStreamHandler(h *registerStream) error {
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-625" class="path-duplicate">controlbuf.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-625">#L625</a>: func (l *<b>loopyWriter</b>) headerHandler(h *headerFrame) error {
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-661" class="path-duplicate">controlbuf.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-661">#L661</a>: func (l *<b>loopyWriter</b>) originateStream(str *outStream) error {
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-677" class="path-duplicate">controlbuf.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-677">#L677</a>: func (l *<b>loopyWriter</b>) writeHeader(streamID uint32, endStream bool, hf []hpack.HeaderField, onWrite func()) error {
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-723" class="path-duplicate">controlbuf.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-723">#L723</a>: func (l *<b>loopyWriter</b>) preprocessData(df *dataFrame) error {
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-738" class="path-duplicate">controlbuf.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-738">#L738</a>: func (l *<b>loopyWriter</b>) pingHandler(p *ping) error {
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-746" class="path-duplicate">controlbuf.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-746">#L746</a>: func (l *<b>loopyWriter</b>) outFlowControlSizeRequestHandler(o *outFlowControlSizeRequest) error {
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-751" class="path-duplicate">controlbuf.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-751">#L751</a>: func (l *<b>loopyWriter</b>) cleanupStreamHandler(c *cleanupStream) error {
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-771" class="path-duplicate">controlbuf.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-771">#L771</a>: func (l *<b>loopyWriter</b>) earlyAbortStreamHandler(eas *earlyAbortStream) error {
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-792" class="path-duplicate">controlbuf.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-792">#L792</a>: func (l *<b>loopyWriter</b>) incomingGoAwayHandler(*incomingGoAway) error {
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-802" class="path-duplicate">controlbuf.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-802">#L802</a>: func (l *<b>loopyWriter</b>) goAwayHandler(g *goAway) error {
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-814" class="path-duplicate">controlbuf.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-814">#L814</a>: func (l *<b>loopyWriter</b>) handle(i interface{}) error {
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-847" class="path-duplicate">controlbuf.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-847">#L847</a>: func (l *<b>loopyWriter</b>) applySettings(ss []http2.Setting) error {
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-872" class="path-duplicate">controlbuf.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-872">#L872</a>: func (l *<b>loopyWriter</b>) processData() (bool, error) {
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-67">http2_client.go#L67</a>: 	loopy      *<b>loopyWriter</b>
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-71">http2_server.go#L71</a>: 	loopy       *<b>loopyWriter</b>
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

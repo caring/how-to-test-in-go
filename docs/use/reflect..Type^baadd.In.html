@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: reflect.Type.In</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/reflect.html">reflect</a>.<a href="../src/reflect/type.go.html#line-38">Type</a>.<a href="../src/reflect/type.go.html#line-191">In</a></b></span><span style="font-size: large;"><i> (method)</i></span>
+
+<span class="title">13 uses</span>
+
+	reflect (current package)
+		<a href="../src/reflect/type.go.html#line-191">type.go#L191</a>: 	<b>In</b>(i int) Type
+
+	<a href="../pkg/github.com/golang/protobuf/proto.html">github.com/golang/protobuf/proto</a>
+		<a href="../src/github.com/golang/protobuf/proto/properties.go.html#line-264">properties.go#L264</a>: 			oneofWrappers = fn.Func.Call([]reflect.Value{reflect.Zero(fn.Type.<b>In</b>(0))})[3].Interface().([]interface{})
+		<a href="../src/github.com/golang/protobuf/proto/properties.go.html#line-267" class="path-duplicate">properties.go</a><a href="../src/github.com/golang/protobuf/proto/properties.go.html#line-267">#L267</a>: 			oneofWrappers = fn.Func.Call([]reflect.Value{reflect.Zero(fn.Type.<b>In</b>(0))})[0].Interface().([]interface{})
+
+	<a href="../pkg/google.golang.org/protobuf/internal/descfmt.html">google.golang.org/protobuf/internal/descfmt</a>
+		<a href="../src/google.golang.org/protobuf/internal/descfmt/stringer.go.html#line-124">stringer.go#L124</a>: 	rt := rv.MethodByName("ProtoType").Type().<b>In</b>(0)
+
+	<a href="../pkg/google.golang.org/protobuf/internal/impl.html">google.golang.org/protobuf/internal/impl</a>
+		<a href="../src/google.golang.org/protobuf/internal/impl/legacy_message.go.html#line-213">legacy_message.go#L213</a>: 			for _, v := range fn.Func.Call([]reflect.Value{reflect.Zero(fn.Type.<b>In</b>(0))}) {
+		<a href="../src/google.golang.org/protobuf/internal/impl/legacy_message.go.html#line-225" class="path-duplicate">legacy_message.go</a><a href="../src/google.golang.org/protobuf/internal/impl/legacy_message.go.html#line-225">#L225</a>: 		vs := fn.Func.Call([]reflect.Value{reflect.Zero(fn.Type.<b>In</b>(0))})[0]
+		<a href="../src/google.golang.org/protobuf/internal/impl/message.go.html#line-198">message.go#L198</a>: 			for _, v := range fn.Func.Call([]reflect.Value{reflect.Zero(fn.Type.<b>In</b>(0))}) {
+
+	<a href="../pkg/text/template.html">text/template</a>
+		<a href="../src/text/template/exec.go.html#line-699">exec.go#L699</a>: 		argv[i] = s.evalArg(dot, typ.<b>In</b>(i), args[i])
+		<a href="../src/text/template/exec.go.html#line-703" class="path-duplicate">exec.go</a><a href="../src/text/template/exec.go.html#line-703">#L703</a>: 		argType := typ.<b>In</b>(typ.NumIn() - 1).Elem() // Argument is a slice.
+		<a href="../src/text/template/exec.go.html#line-710" class="path-duplicate">exec.go</a><a href="../src/text/template/exec.go.html#line-710">#L710</a>: 		t := typ.<b>In</b>(typ.NumIn() - 1)
+		<a href="../src/text/template/exec.go.html#line-715" class="path-duplicate">exec.go</a><a href="../src/text/template/exec.go.html#line-715">#L715</a>: 				t = typ.<b>In</b>(numIn - 1)
+		<a href="../src/text/template/funcs.go.html#line-333">funcs.go#L333</a>: 		dddType = typ.<b>In</b>(numIn - 1).Elem()
+		<a href="../src/text/template/funcs.go.html#line-345" class="path-duplicate">funcs.go</a><a href="../src/text/template/funcs.go.html#line-345">#L345</a>: 			argType = typ.<b>In</b>(i)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

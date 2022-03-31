@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime.getcallerpc</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">func <b><a href="../pkg/runtime.html">runtime</a>.<a href="../src/runtime/stubs.go.html#line-288">getcallerpc</a></b></span>
+
+<span class="title">84 uses</span>
+
+	runtime (current package)
+		<a href="../src/runtime/chan.go.html#line-143">chan.go#L143</a>: 	chansend(c, elem, true, <b>getcallerpc</b>())
+		<a href="../src/runtime/chan.go.html#line-367" class="path-duplicate">chan.go</a><a href="../src/runtime/chan.go.html#line-367">#L367</a>: 		callerpc := <b>getcallerpc</b>()
+		<a href="../src/runtime/chan.go.html#line-687" class="path-duplicate">chan.go</a><a href="../src/runtime/chan.go.html#line-687">#L687</a>: 	return chansend(c, elem, false, <b>getcallerpc</b>())
+		<a href="../src/runtime/chan.go.html#line-713" class="path-duplicate">chan.go</a><a href="../src/runtime/chan.go.html#line-713">#L713</a>: 	return chansend(c, elem, !nb, <b>getcallerpc</b>())
+		<a href="../src/runtime/debugcall.go.html#line-105">debugcall.go#L105</a>: 	callerpc := <b>getcallerpc</b>()
+		<a href="../src/runtime/error.go.html#line-305">error.go#L305</a>: 	pc := <b>getcallerpc</b>()
+		<a href="../src/runtime/iface.go.html#line-320">iface.go#L320</a>: 		raceReadObjectPC(t, elem, <b>getcallerpc</b>(), funcPC(convT2E))
+		<a href="../src/runtime/iface.go.html#line-393" class="path-duplicate">iface.go</a><a href="../src/runtime/iface.go.html#line-393">#L393</a>: 		raceReadObjectPC(t, elem, <b>getcallerpc</b>(), funcPC(convT2Enoptr))
+		<a href="../src/runtime/iface.go.html#line-408" class="path-duplicate">iface.go</a><a href="../src/runtime/iface.go.html#line-408">#L408</a>: 		raceReadObjectPC(t, elem, <b>getcallerpc</b>(), funcPC(convT2I))
+		<a href="../src/runtime/iface.go.html#line-423" class="path-duplicate">iface.go</a><a href="../src/runtime/iface.go.html#line-423">#L423</a>: 		raceReadObjectPC(t, elem, <b>getcallerpc</b>(), funcPC(convT2Inoptr))
+		<a href="../src/runtime/map.go.html#line-396">map.go#L396</a>: 		callerpc := <b>getcallerpc</b>()
+		<a href="../src/runtime/map.go.html#line-454" class="path-duplicate">map.go</a><a href="../src/runtime/map.go.html#line-454">#L454</a>: 		callerpc := <b>getcallerpc</b>()
+		<a href="../src/runtime/map.go.html#line-576" class="path-duplicate">map.go</a><a href="../src/runtime/map.go.html#line-576">#L576</a>: 		callerpc := <b>getcallerpc</b>()
+		<a href="../src/runtime/map.go.html#line-687" class="path-duplicate">map.go</a><a href="../src/runtime/map.go.html#line-687">#L687</a>: 		callerpc := <b>getcallerpc</b>()
+		<a href="../src/runtime/map.go.html#line-804" class="path-duplicate">map.go</a><a href="../src/runtime/map.go.html#line-804">#L804</a>: 		callerpc := <b>getcallerpc</b>()
+		<a href="../src/runtime/map.go.html#line-854" class="path-duplicate">map.go</a><a href="../src/runtime/map.go.html#line-854">#L854</a>: 		callerpc := <b>getcallerpc</b>()
+		<a href="../src/runtime/map.go.html#line-980" class="path-duplicate">map.go</a><a href="../src/runtime/map.go.html#line-980">#L980</a>: 		callerpc := <b>getcallerpc</b>()
+		<a href="../src/runtime/map.go.html#line-1365" class="path-duplicate">map.go</a><a href="../src/runtime/map.go.html#line-1365">#L1365</a>: 		callerpc := <b>getcallerpc</b>()
+		<a href="../src/runtime/map.go.html#line-1377" class="path-duplicate">map.go</a><a href="../src/runtime/map.go.html#line-1377">#L1377</a>: 		callerpc := <b>getcallerpc</b>()
+		<a href="../src/runtime/map_fast32.go.html#line-14">map_fast32.go#L14</a>: 		callerpc := <b>getcallerpc</b>()
+		<a href="../src/runtime/map_fast32.go.html#line-54" class="path-duplicate">map_fast32.go</a><a href="../src/runtime/map_fast32.go.html#line-54">#L54</a>: 		callerpc := <b>getcallerpc</b>()
+		<a href="../src/runtime/map_fast32.go.html#line-97" class="path-duplicate">map_fast32.go</a><a href="../src/runtime/map_fast32.go.html#line-97">#L97</a>: 		callerpc := <b>getcallerpc</b>()
+		<a href="../src/runtime/map_fast32.go.html#line-187" class="path-duplicate">map_fast32.go</a><a href="../src/runtime/map_fast32.go.html#line-187">#L187</a>: 		callerpc := <b>getcallerpc</b>()
+		<a href="../src/runtime/map_fast32.go.html#line-274" class="path-duplicate">map_fast32.go</a><a href="../src/runtime/map_fast32.go.html#line-274">#L274</a>: 		callerpc := <b>getcallerpc</b>()
+		<a href="../src/runtime/map_fast64.go.html#line-14">map_fast64.go#L14</a>: 		callerpc := <b>getcallerpc</b>()
+		<a href="../src/runtime/map_fast64.go.html#line-54" class="path-duplicate">map_fast64.go</a><a href="../src/runtime/map_fast64.go.html#line-54">#L54</a>: 		callerpc := <b>getcallerpc</b>()
+		<a href="../src/runtime/map_fast64.go.html#line-97" class="path-duplicate">map_fast64.go</a><a href="../src/runtime/map_fast64.go.html#line-97">#L97</a>: 		callerpc := <b>getcallerpc</b>()
+		<a href="../src/runtime/map_fast64.go.html#line-187" class="path-duplicate">map_fast64.go</a><a href="../src/runtime/map_fast64.go.html#line-187">#L187</a>: 		callerpc := <b>getcallerpc</b>()
+		<a href="../src/runtime/map_fast64.go.html#line-274" class="path-duplicate">map_fast64.go</a><a href="../src/runtime/map_fast64.go.html#line-274">#L274</a>: 		callerpc := <b>getcallerpc</b>()
+		<a href="../src/runtime/map_faststr.go.html#line-14">map_faststr.go#L14</a>: 		callerpc := <b>getcallerpc</b>()
+		<a href="../src/runtime/map_faststr.go.html#line-109" class="path-duplicate">map_faststr.go</a><a href="../src/runtime/map_faststr.go.html#line-109">#L109</a>: 		callerpc := <b>getcallerpc</b>()
+		<a href="../src/runtime/map_faststr.go.html#line-207" class="path-duplicate">map_faststr.go</a><a href="../src/runtime/map_faststr.go.html#line-207">#L207</a>: 		callerpc := <b>getcallerpc</b>()
+		<a href="../src/runtime/map_faststr.go.html#line-302" class="path-duplicate">map_faststr.go</a><a href="../src/runtime/map_faststr.go.html#line-302">#L302</a>: 		callerpc := <b>getcallerpc</b>()
+		<a href="../src/runtime/mbarrier.go.html#line-180">mbarrier.go#L180</a>: 		raceWriteObjectPC(typ, dst, <b>getcallerpc</b>(), funcPC(reflect_typedmemmove))
+		<a href="../src/runtime/mbarrier.go.html#line-181" class="path-duplicate">mbarrier.go</a><a href="../src/runtime/mbarrier.go.html#line-181">#L181</a>: 		raceReadObjectPC(typ, src, <b>getcallerpc</b>(), funcPC(reflect_typedmemmove))
+		<a href="../src/runtime/mbarrier.go.html#line-256" class="path-duplicate">mbarrier.go</a><a href="../src/runtime/mbarrier.go.html#line-256">#L256</a>: 		callerpc := <b>getcallerpc</b>()
+		<a href="../src/runtime/mprof.go.html#line-624">mprof.go#L624</a>: 		racewriterangepc(unsafe.Pointer(&amp;r.Stack0[0]), unsafe.Sizeof(r.Stack0), <b>getcallerpc</b>(), funcPC(MemProfile))
+		<a href="../src/runtime/mprof.go.html#line-677" class="path-duplicate">mprof.go</a><a href="../src/runtime/mprof.go.html#line-677">#L677</a>: 				racewriterangepc(unsafe.Pointer(&amp;r.Stack0[0]), unsafe.Sizeof(r.Stack0), <b>getcallerpc</b>(), funcPC(BlockProfile))
+		<a href="../src/runtime/mprof.go.html#line-778" class="path-duplicate">mprof.go</a><a href="../src/runtime/mprof.go.html#line-778">#L778</a>: 		pc := <b>getcallerpc</b>()
+		<a href="../src/runtime/mprof.go.html#line-845" class="path-duplicate">mprof.go</a><a href="../src/runtime/mprof.go.html#line-845">#L845</a>: 		pc := <b>getcallerpc</b>()
+		<a href="../src/runtime/mprof.go.html#line-885" class="path-duplicate">mprof.go</a><a href="../src/runtime/mprof.go.html#line-885">#L885</a>: 		pc := <b>getcallerpc</b>()
+		<a href="../src/runtime/mprof.go.html#line-905" class="path-duplicate">mprof.go</a><a href="../src/runtime/mprof.go.html#line-905">#L905</a>: 	pc := <b>getcallerpc</b>()
+		<a href="../src/runtime/panic.go.html#line-89">panic.go#L89</a>: 	panicCheck1(<b>getcallerpc</b>(), "index out of range")
+		<a href="../src/runtime/panic.go.html#line-93" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-93">#L93</a>: 	panicCheck1(<b>getcallerpc</b>(), "index out of range")
+		<a href="../src/runtime/panic.go.html#line-99" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-99">#L99</a>: 	panicCheck1(<b>getcallerpc</b>(), "slice bounds out of range")
+		<a href="../src/runtime/panic.go.html#line-103" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-103">#L103</a>: 	panicCheck1(<b>getcallerpc</b>(), "slice bounds out of range")
+		<a href="../src/runtime/panic.go.html#line-107" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-107">#L107</a>: 	panicCheck1(<b>getcallerpc</b>(), "slice bounds out of range")
+		<a href="../src/runtime/panic.go.html#line-111" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-111">#L111</a>: 	panicCheck1(<b>getcallerpc</b>(), "slice bounds out of range")
+		<a href="../src/runtime/panic.go.html#line-117" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-117">#L117</a>: 	panicCheck1(<b>getcallerpc</b>(), "slice bounds out of range")
+		<a href="../src/runtime/panic.go.html#line-121" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-121">#L121</a>: 	panicCheck1(<b>getcallerpc</b>(), "slice bounds out of range")
+		<a href="../src/runtime/panic.go.html#line-127" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-127">#L127</a>: 	panicCheck1(<b>getcallerpc</b>(), "slice bounds out of range")
+		<a href="../src/runtime/panic.go.html#line-131" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-131">#L131</a>: 	panicCheck1(<b>getcallerpc</b>(), "slice bounds out of range")
+		<a href="../src/runtime/panic.go.html#line-135" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-135">#L135</a>: 	panicCheck1(<b>getcallerpc</b>(), "slice bounds out of range")
+		<a href="../src/runtime/panic.go.html#line-139" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-139">#L139</a>: 	panicCheck1(<b>getcallerpc</b>(), "slice bounds out of range")
+		<a href="../src/runtime/panic.go.html#line-145" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-145">#L145</a>: 	panicCheck1(<b>getcallerpc</b>(), "slice bounds out of range")
+		<a href="../src/runtime/panic.go.html#line-149" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-149">#L149</a>: 	panicCheck1(<b>getcallerpc</b>(), "slice bounds out of range")
+		<a href="../src/runtime/panic.go.html#line-155" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-155">#L155</a>: 	panicCheck1(<b>getcallerpc</b>(), "slice bounds out of range")
+		<a href="../src/runtime/panic.go.html#line-159" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-159">#L159</a>: 	panicCheck1(<b>getcallerpc</b>(), "slice bounds out of range")
+		<a href="../src/runtime/panic.go.html#line-165" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-165">#L165</a>: 	panicCheck1(<b>getcallerpc</b>(), "slice length too short to convert to pointer to array")
+		<a href="../src/runtime/panic.go.html#line-192" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-192">#L192</a>: 	panicCheck1(<b>getcallerpc</b>(), "negative shift amount")
+		<a href="../src/runtime/panic.go.html#line-251" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-251">#L251</a>: 	callerpc := <b>getcallerpc</b>()
+		<a href="../src/runtime/panic.go.html#line-306" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-306">#L306</a>: 	d.pc = <b>getcallerpc</b>()
+		<a href="../src/runtime/panic.go.html#line-621" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-621">#L621</a>: 	addOneOpenDeferFrame(gp, <b>getcallerpc</b>(), unsafe.Pointer(getcallersp()))
+		<a href="../src/runtime/panic.go.html#line-653" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-653">#L653</a>: 				addOneOpenDeferFrame(gp, <b>getcallerpc</b>(), unsafe.Pointer(getcallersp()))
+		<a href="../src/runtime/panic.go.html#line-921" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-921">#L921</a>: 		p.pc = <b>getcallerpc</b>()
+		<a href="../src/runtime/panic.go.html#line-947" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-947">#L947</a>: 		p.pc = <b>getcallerpc</b>()
+		<a href="../src/runtime/panic.go.html#line-998" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-998">#L998</a>: 	addOneOpenDeferFrame(gp, <b>getcallerpc</b>(), unsafe.Pointer(getcallersp()))
+		<a href="../src/runtime/panic.go.html#line-1245" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-1245">#L1245</a>: 	pc := <b>getcallerpc</b>()
+		<a href="../src/runtime/panic.go.html#line-1272" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-1272">#L1272</a>: 	pc := <b>getcallerpc</b>()
+		<a href="../src/runtime/proc.go.html#line-1394">proc.go#L1394</a>: 	_g_.sched.pc = <b>getcallerpc</b>()
+		<a href="../src/runtime/proc.go.html#line-3830" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3830">#L3830</a>: 	reentersyscall(<b>getcallerpc</b>(), getcallersp())
+		<a href="../src/runtime/proc.go.html#line-3873" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3873">#L3873</a>: 	pc := <b>getcallerpc</b>()
+		<a href="../src/runtime/proc.go.html#line-3898" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3898">#L3898</a>: 	save(<b>getcallerpc</b>(), getcallersp())
+		<a href="../src/runtime/proc.go.html#line-4253" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4253">#L4253</a>: 	pc := <b>getcallerpc</b>()
+		<a href="../src/runtime/select.go.html#line-30">select.go#L30</a>: 	*pc = <b>getcallerpc</b>()
+		<a href="../src/runtime/slice.go.html#line-70">slice.go#L70</a>: 		callerpc := <b>getcallerpc</b>()
+		<a href="../src/runtime/slice.go.html#line-164" class="path-duplicate">slice.go</a><a href="../src/runtime/slice.go.html#line-164">#L164</a>: 		callerpc := <b>getcallerpc</b>()
+		<a href="../src/runtime/slice.go.html#line-300" class="path-duplicate">slice.go</a><a href="../src/runtime/slice.go.html#line-300">#L300</a>: 		callerpc := <b>getcallerpc</b>()
+		<a href="../src/runtime/string.go.html#line-90">string.go#L90</a>: 			<b>getcallerpc</b>(),
+		<a href="../src/runtime/string.go.html#line-154" class="path-duplicate">string.go</a><a href="../src/runtime/string.go.html#line-154">#L154</a>: 			<b>getcallerpc</b>(),
+		<a href="../src/runtime/string.go.html#line-205" class="path-duplicate">string.go</a><a href="../src/runtime/string.go.html#line-205">#L205</a>: 			<b>getcallerpc</b>(),
+		<a href="../src/runtime/stubs.go.html#line-288">stubs.go#L288</a>: func <b>getcallerpc</b>() uintptr
+		<a href="../src/runtime/sys_libc.go.html#line-26">sys_libc.go#L26</a>: 		mp.libcallpc = <b>getcallerpc</b>()
+		<a href="../src/runtime/traceback.go.html#line-887">traceback.go#L887</a>: 	pc := <b>getcallerpc</b>()
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

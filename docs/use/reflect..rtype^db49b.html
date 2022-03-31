@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: reflect.rtype</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../pkg/reflect.html">reflect</a>.<a href="../src/reflect/type.go.html#line-311">rtype</a></b></span>
+
+<span class="title">166 uses</span>
+
+	reflect (current package)
+		<a href="../src/reflect/abi.go.html#line-124">abi.go#L124</a>: func (a *abiSeq) addArg(t *<b>rtype</b>) *abiStep {
+		<a href="../src/reflect/abi.go.html#line-165" class="path-duplicate">abi.go</a><a href="../src/reflect/abi.go.html#line-165">#L165</a>: func (a *abiSeq) addRcvr(rcvr *<b>rtype</b>) (*abiStep, bool) {
+		<a href="../src/reflect/abi.go.html#line-198" class="path-duplicate">abi.go</a><a href="../src/reflect/abi.go.html#line-198">#L198</a>: func (a *abiSeq) regAssign(t *<b>rtype</b>, offset uintptr) bool {
+		<a href="../src/reflect/abi.go.html#line-387" class="path-duplicate">abi.go</a><a href="../src/reflect/abi.go.html#line-387">#L387</a>: func newAbiDesc(t *funcType, rcvr *<b>rtype</b>) abiDesc {
+		<a href="../src/reflect/makefunc.go.html#line-112">makefunc.go#L112</a>: 	ftyp := (*funcType)(unsafe.Pointer(v.Type().(*<b>rtype</b>)))
+		<a href="../src/reflect/swapper.go.html#line-33">swapper.go#L33</a>: 	typ := v.Type().Elem().(*<b>rtype</b>)
+		<a href="../src/reflect/type.go.html#line-218">type.go#L218</a>: 	common() *<b>rtype</b>
+		<a href="../src/reflect/type.go.html#line-311" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-311">#L311</a>: type <b>rtype</b> struct {
+		<a href="../src/reflect/type.go.html#line-358" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-358">#L358</a>: 	<b>rtype</b>
+		<a href="../src/reflect/type.go.html#line-359" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-359">#L359</a>: 	elem  *<b>rtype</b> // array element type
+		<a href="../src/reflect/type.go.html#line-360" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-360">#L360</a>: 	slice *<b>rtype</b> // slice type
+		<a href="../src/reflect/type.go.html#line-366" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-366">#L366</a>: 	<b>rtype</b>
+		<a href="../src/reflect/type.go.html#line-367" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-367">#L367</a>: 	elem *<b>rtype</b>  // channel element type
+		<a href="../src/reflect/type.go.html#line-383" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-383">#L383</a>: 	<b>rtype</b>
+		<a href="../src/reflect/type.go.html#line-396" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-396">#L396</a>: 	<b>rtype</b>
+		<a href="../src/reflect/type.go.html#line-403" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-403">#L403</a>: 	<b>rtype</b>
+		<a href="../src/reflect/type.go.html#line-404" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-404">#L404</a>: 	key    *<b>rtype</b> // map key type
+		<a href="../src/reflect/type.go.html#line-405" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-405">#L405</a>: 	elem   *<b>rtype</b> // map element (value) type
+		<a href="../src/reflect/type.go.html#line-406" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-406">#L406</a>: 	bucket *<b>rtype</b> // internal bucket structure
+		<a href="../src/reflect/type.go.html#line-417" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-417">#L417</a>: 	<b>rtype</b>
+		<a href="../src/reflect/type.go.html#line-418" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-418">#L418</a>: 	elem *<b>rtype</b> // pointer element (pointed at) type
+		<a href="../src/reflect/type.go.html#line-423" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-423">#L423</a>: 	<b>rtype</b>
+		<a href="../src/reflect/type.go.html#line-424" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-424">#L424</a>: 	elem *<b>rtype</b> // slice element type
+		<a href="../src/reflect/type.go.html#line-430" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-430">#L430</a>: 	typ         *<b>rtype</b>  // type of field
+		<a href="../src/reflect/type.go.html#line-444" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-444">#L444</a>: 	<b>rtype</b>
+		<a href="../src/reflect/type.go.html#line-709" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-709">#L709</a>: func resolveReflectType(t *<b>rtype</b>) typeOff {
+		<a href="../src/reflect/type.go.html#line-724" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-724">#L724</a>: func (t *<b>rtype</b>) nameOff(off nameOff) name {
+		<a href="../src/reflect/type.go.html#line-728" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-728">#L728</a>: func (t *<b>rtype</b>) typeOff(off typeOff) *<b>rtype</b> {
+		<a href="../src/reflect/type.go.html#line-729" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-729">#L729</a>: 	return (*<b>rtype</b>)(resolveTypeOff(unsafe.Pointer(t), int32(off)))
+		<a href="../src/reflect/type.go.html#line-732" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-732">#L732</a>: func (t *<b>rtype</b>) textOff(off textOff) unsafe.Pointer {
+		<a href="../src/reflect/type.go.html#line-736" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-736">#L736</a>: func (t *<b>rtype</b>) uncommon() *uncommonType {
+		<a href="../src/reflect/type.go.html#line-787" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-787">#L787</a>: 			<b>rtype</b>
+		<a href="../src/reflect/type.go.html#line-794" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-794">#L794</a>: func (t *<b>rtype</b>) String() string {
+		<a href="../src/reflect/type.go.html#line-802" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-802">#L802</a>: func (t *<b>rtype</b>) Size() uintptr { return t.size }
+		<a href="../src/reflect/type.go.html#line-804" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-804">#L804</a>: func (t *<b>rtype</b>) Bits() int {
+		<a href="../src/reflect/type.go.html#line-815" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-815">#L815</a>: func (t *<b>rtype</b>) Align() int { return int(t.align) }
+		<a href="../src/reflect/type.go.html#line-817" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-817">#L817</a>: func (t *<b>rtype</b>) FieldAlign() int { return int(t.fieldAlign) }
+		<a href="../src/reflect/type.go.html#line-819" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-819">#L819</a>: func (t *<b>rtype</b>) Kind() Kind { return Kind(t.kind &amp; kindMask) }
+		<a href="../src/reflect/type.go.html#line-821" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-821">#L821</a>: func (t *<b>rtype</b>) pointers() bool { return t.ptrdata != 0 }
+		<a href="../src/reflect/type.go.html#line-823" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-823">#L823</a>: func (t *<b>rtype</b>) common() *<b>rtype</b> { return t }
+		<a href="../src/reflect/type.go.html#line-825" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-825">#L825</a>: func (t *<b>rtype</b>) exportedMethods() []method {
+		<a href="../src/reflect/type.go.html#line-833" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-833">#L833</a>: func (t *<b>rtype</b>) NumMethod() int {
+		<a href="../src/reflect/type.go.html#line-841" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-841">#L841</a>: func (t *<b>rtype</b>) Method(i int) (m Method) {
+		<a href="../src/reflect/type.go.html#line-869" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-869">#L869</a>: 	m.Func = Value{mt.(*<b>rtype</b>), fn, fl}
+		<a href="../src/reflect/type.go.html#line-875" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-875">#L875</a>: func (t *<b>rtype</b>) MethodByName(name string) (m Method, ok bool) {
+		<a href="../src/reflect/type.go.html#line-893" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-893">#L893</a>: func (t *<b>rtype</b>) PkgPath() string {
+		<a href="../src/reflect/type.go.html#line-904" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-904">#L904</a>: func (t *<b>rtype</b>) hasName() bool {
+		<a href="../src/reflect/type.go.html#line-908" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-908">#L908</a>: func (t *<b>rtype</b>) Name() string {
+		<a href="../src/reflect/type.go.html#line-920" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-920">#L920</a>: func (t *<b>rtype</b>) ChanDir() ChanDir {
+		<a href="../src/reflect/type.go.html#line-928" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-928">#L928</a>: func (t *<b>rtype</b>) IsVariadic() bool {
+		<a href="../src/reflect/type.go.html#line-936" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-936">#L936</a>: func (t *<b>rtype</b>) Elem() Type {
+		<a href="../src/reflect/type.go.html#line-957" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-957">#L957</a>: func (t *<b>rtype</b>) Field(i int) StructField {
+		<a href="../src/reflect/type.go.html#line-965" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-965">#L965</a>: func (t *<b>rtype</b>) FieldByIndex(index []int) StructField {
+		<a href="../src/reflect/type.go.html#line-973" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-973">#L973</a>: func (t *<b>rtype</b>) FieldByName(name string) (StructField, bool) {
+		<a href="../src/reflect/type.go.html#line-981" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-981">#L981</a>: func (t *<b>rtype</b>) FieldByNameFunc(match func(string) bool) (StructField, bool) {
+		<a href="../src/reflect/type.go.html#line-989" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-989">#L989</a>: func (t *<b>rtype</b>) In(i int) Type {
+		<a href="../src/reflect/type.go.html#line-997" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-997">#L997</a>: func (t *<b>rtype</b>) Key() Type {
+		<a href="../src/reflect/type.go.html#line-1005" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1005">#L1005</a>: func (t *<b>rtype</b>) Len() int {
+		<a href="../src/reflect/type.go.html#line-1013" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1013">#L1013</a>: func (t *<b>rtype</b>) NumField() int {
+		<a href="../src/reflect/type.go.html#line-1021" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1021">#L1021</a>: func (t *<b>rtype</b>) NumIn() int {
+		<a href="../src/reflect/type.go.html#line-1029" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1029">#L1029</a>: func (t *<b>rtype</b>) NumOut() int {
+		<a href="../src/reflect/type.go.html#line-1037" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1037">#L1037</a>: func (t *<b>rtype</b>) Out(i int) Type {
+		<a href="../src/reflect/type.go.html#line-1045" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1045">#L1045</a>: func (t *funcType) in() []*<b>rtype</b> {
+		<a href="../src/reflect/type.go.html#line-1053" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1053">#L1053</a>: 	return (*[1 &lt;&lt; 20]*<b>rtype</b>)(add(unsafe.Pointer(t), uadd, "t.inCount &gt; 0"))[:t.inCount:t.inCount]
+		<a href="../src/reflect/type.go.html#line-1056" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1056">#L1056</a>: func (t *funcType) out() []*<b>rtype</b> {
+		<a href="../src/reflect/type.go.html#line-1065" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1065">#L1065</a>: 	return (*[1 &lt;&lt; 20]*<b>rtype</b>)(add(unsafe.Pointer(t), uadd, "outCount &gt; 0"))[t.inCount : t.inCount+outCount : t.inCount+outCount]
+		<a href="../src/reflect/type.go.html#line-1334" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1334">#L1334</a>: 				var ntyp *<b>rtype</b>
+		<a href="../src/reflect/type.go.html#line-1424" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1424">#L1424</a>: 	return t.(*<b>rtype</b>).ptrTo()
+		<a href="../src/reflect/type.go.html#line-1427" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1427">#L1427</a>: func (t *<b>rtype</b>) ptrTo() *<b>rtype</b> {
+		<a href="../src/reflect/type.go.html#line-1478" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1478">#L1478</a>: func (t *<b>rtype</b>) Implements(u Type) bool {
+		<a href="../src/reflect/type.go.html#line-1485" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1485">#L1485</a>: 	return implements(u.(*<b>rtype</b>), t)
+		<a href="../src/reflect/type.go.html#line-1488" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1488">#L1488</a>: func (t *<b>rtype</b>) AssignableTo(u Type) bool {
+		<a href="../src/reflect/type.go.html#line-1492" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1492">#L1492</a>: 	uu := u.(*<b>rtype</b>)
+		<a href="../src/reflect/type.go.html#line-1496" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1496">#L1496</a>: func (t *<b>rtype</b>) ConvertibleTo(u Type) bool {
+		<a href="../src/reflect/type.go.html#line-1500" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1500">#L1500</a>: 	uu := u.(*<b>rtype</b>)
+		<a href="../src/reflect/type.go.html#line-1504" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1504">#L1504</a>: func (t *<b>rtype</b>) Comparable() bool {
+		<a href="../src/reflect/type.go.html#line-1509" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1509">#L1509</a>: func implements(T, V *<b>rtype</b>) bool {
+		<a href="../src/reflect/type.go.html#line-1597" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1597">#L1597</a>: func specialChannelAssignability(T, V *<b>rtype</b>) bool {
+		<a href="../src/reflect/type.go.html#line-1610" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1610">#L1610</a>: func directlyAssignable(T, V *<b>rtype</b>) bool {
+		<a href="../src/reflect/type.go.html#line-1642" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1642">#L1642</a>: func haveIdenticalUnderlyingType(T, V *<b>rtype</b>, cmpTags bool) bool {
+		<a href="../src/reflect/type.go.html#line-1752" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1752">#L1752</a>: func rtypeOff(section unsafe.Pointer, off int32) *<b>rtype</b> {
+		<a href="../src/reflect/type.go.html#line-1753" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1753">#L1753</a>: 	return (*<b>rtype</b>)(add(section, uintptr(off), "sizeof(rtype) &gt; 0"))
+		<a href="../src/reflect/type.go.html#line-1760" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1760">#L1760</a>: func typesByString(s string) []*<b>rtype</b> {
+		<a href="../src/reflect/type.go.html#line-1762" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1762">#L1762</a>: 	var ret []*<b>rtype</b>
+		<a href="../src/reflect/type.go.html#line-1803" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1803">#L1803</a>: 	t1    *<b>rtype</b>
+		<a href="../src/reflect/type.go.html#line-1804" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1804">#L1804</a>: 	t2    *<b>rtype</b>
+		<a href="../src/reflect/type.go.html#line-1825" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1825">#L1825</a>: 	typ := t.(*<b>rtype</b>)
+		<a href="../src/reflect/type.go.html#line-1830" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1830">#L1830</a>: 		return ch.(*<b>rtype</b>)
+		<a href="../src/reflect/type.go.html#line-1888" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1888">#L1888</a>: 	ktyp := key.(*<b>rtype</b>)
+		<a href="../src/reflect/type.go.html#line-1889" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1889">#L1889</a>: 	etyp := elem.(*<b>rtype</b>)
+		<a href="../src/reflect/type.go.html#line-1958" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1958">#L1958</a>: 	args [4]*<b>rtype</b>
+		<a href="../src/reflect/type.go.html#line-1962" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1962">#L1962</a>: 	args [8]*<b>rtype</b>
+		<a href="../src/reflect/type.go.html#line-1966" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1966">#L1966</a>: 	args [16]*<b>rtype</b>
+		<a href="../src/reflect/type.go.html#line-1970" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1970">#L1970</a>: 	args [32]*<b>rtype</b>
+		<a href="../src/reflect/type.go.html#line-1974" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1974">#L1974</a>: 	args [64]*<b>rtype</b>
+		<a href="../src/reflect/type.go.html#line-1978" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1978">#L1978</a>: 	args [128]*<b>rtype</b>
+		<a href="../src/reflect/type.go.html#line-1999" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1999">#L1999</a>: 	var args []*<b>rtype</b>
+		<a href="../src/reflect/type.go.html#line-2033" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2033">#L2033</a>: 		t := in.(*<b>rtype</b>)
+		<a href="../src/reflect/type.go.html#line-2042" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2042">#L2042</a>: 		t := out.(*<b>rtype</b>)
+		<a href="../src/reflect/type.go.html#line-2059" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2059">#L2059</a>: 		for _, t := range ts.([]*<b>rtype</b>) {
+		<a href="../src/reflect/type.go.html#line-2070" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2070">#L2070</a>: 		for _, t := range ts.([]*<b>rtype</b>) {
+		<a href="../src/reflect/type.go.html#line-2077" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2077">#L2077</a>: 	addToCache := func(tt *<b>rtype</b>) Type {
+		<a href="../src/reflect/type.go.html#line-2078" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2078">#L2078</a>: 		var rts []*<b>rtype</b>
+		<a href="../src/reflect/type.go.html#line-2080" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2080">#L2080</a>: 			rts = rti.([]*<b>rtype</b>)
+		<a href="../src/reflect/type.go.html#line-2136" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2136">#L2136</a>: func isReflexive(t *<b>rtype</b>) bool {
+		<a href="../src/reflect/type.go.html#line-2160" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2160">#L2160</a>: func needKeyUpdate(t *<b>rtype</b>) bool {
+		<a href="../src/reflect/type.go.html#line-2187" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2187">#L2187</a>: func hashMightPanic(t *<b>rtype</b>) bool {
+		<a href="../src/reflect/type.go.html#line-2217" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2217">#L2217</a>: func bucketOf(ktyp, etyp *<b>rtype</b>) *<b>rtype</b> {
+		<a href="../src/reflect/type.go.html#line-2219" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2219">#L2219</a>: 		ktyp = PtrTo(ktyp).(*<b>rtype</b>)
+		<a href="../src/reflect/type.go.html#line-2222" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2222">#L2222</a>: 		etyp = PtrTo(etyp).(*<b>rtype</b>)
+		<a href="../src/reflect/type.go.html#line-2266" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2266">#L2266</a>: 	b := &amp;<b>rtype</b>{
+		<a href="../src/reflect/type.go.html#line-2281" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2281">#L2281</a>: func (t *<b>rtype</b>) gcSlice(begin, end uintptr) []byte {
+		<a href="../src/reflect/type.go.html#line-2287" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2287">#L2287</a>: func emitGCMask(out []byte, base uintptr, typ *<b>rtype</b>, n uintptr) {
+		<a href="../src/reflect/type.go.html#line-2306" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2306">#L2306</a>: func appendGCProg(dst []byte, typ *<b>rtype</b>) []byte {
+		<a href="../src/reflect/type.go.html#line-2333" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2333">#L2333</a>: 	typ := t.(*<b>rtype</b>)
+		<a href="../src/reflect/type.go.html#line-2845" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2845">#L2845</a>: func typeptrdata(t *<b>rtype</b>) uintptr {
+		<a href="../src/reflect/type.go.html#line-2881" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2881">#L2881</a>: 	typ := elem.(*<b>rtype</b>)
+		<a href="../src/reflect/type.go.html#line-2925" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2925">#L2925</a>: 	array.slice = SliceOf(elem).(*<b>rtype</b>)
+		<a href="../src/reflect/type.go.html#line-3021" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-3021">#L3021</a>: func toType(t *<b>rtype</b>) Type {
+		<a href="../src/reflect/type.go.html#line-3030" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-3030">#L3030</a>: 	rcvr *<b>rtype</b>    // receiver type, or nil if none
+		<a href="../src/reflect/type.go.html#line-3034" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-3034">#L3034</a>: 	t         *<b>rtype</b>
+		<a href="../src/reflect/type.go.html#line-3048" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-3048">#L3048</a>: func funcLayout(t *funcType, rcvr *<b>rtype</b>) (frametype *<b>rtype</b>, framePool *sync.Pool, abi abiDesc) {
+		<a href="../src/reflect/type.go.html#line-3065" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-3065">#L3065</a>: 	x := &amp;<b>rtype</b>{
+		<a href="../src/reflect/type.go.html#line-3100" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-3100">#L3100</a>: func ifaceIndir(t *<b>rtype</b>) bool {
+		<a href="../src/reflect/type.go.html#line-3119" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-3119">#L3119</a>: func addTypeBits(bv *bitVector, offset uintptr, t *<b>rtype</b>) {
+		<a href="../src/reflect/value.go.html#line-41">value.go#L41</a>: 	typ *<b>rtype</b>
+		<a href="../src/reflect/value.go.html#line-197" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-197">#L197</a>: 	typ  *<b>rtype</b>
+		<a href="../src/reflect/value.go.html#line-205" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-205">#L205</a>: 		ityp *<b>rtype</b> // static interface type
+		<a href="../src/reflect/value.go.html#line-206" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-206">#L206</a>: 		typ  *<b>rtype</b> // dynamic concrete type
+		<a href="../src/reflect/value.go.html#line-365" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-365">#L365</a>: 		rcvrtype *<b>rtype</b>
+		<a href="../src/reflect/value.go.html#line-490" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-490">#L490</a>: 		targ := t.In(i).(*<b>rtype</b>)
+		<a href="../src/reflect/value.go.html#line-847" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-847">#L847</a>: func methodReceiver(op string, v Value, methodIndex int) (rcvrtype *<b>rtype</b>, t *funcType, fn unsafe.Pointer) {
+		<a href="../src/reflect/value.go.html#line-1282" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-1282">#L1282</a>: var uint8Type = TypeOf(uint8(0)).(*<b>rtype</b>)
+		<a href="../src/reflect/value.go.html#line-1659" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-1659">#L1659</a>: func copyVal(typ *<b>rtype</b>, fl flag, ptr unsafe.Pointer) Value {
+		<a href="../src/reflect/value.go.html#line-2482" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2482">#L2482</a>: 	typ *<b>rtype</b>         // channel type
+		<a href="../src/reflect/value.go.html#line-2638" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2638">#L2638</a>: func unsafe_New(*<b>rtype</b>) unsafe.Pointer
+		<a href="../src/reflect/value.go.html#line-2639" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2639">#L2639</a>: func unsafe_NewArray(*<b>rtype</b>, int) unsafe.Pointer
+		<a href="../src/reflect/value.go.html#line-2657" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2657">#L2657</a>: 	s := unsafeheader.Slice{Data: unsafe_NewArray(typ.Elem().(*<b>rtype</b>), cap), Len: len, Cap: cap}
+		<a href="../src/reflect/value.go.html#line-2658" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2658">#L2658</a>: 	return Value{typ.(*<b>rtype</b>), unsafe.Pointer(&amp;s), flagIndir | flag(Slice)}
+		<a href="../src/reflect/value.go.html#line-2672" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2672">#L2672</a>: 	t := typ.(*<b>rtype</b>)
+		<a href="../src/reflect/value.go.html#line-2688" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2688">#L2688</a>: 	t := typ.(*<b>rtype</b>)
+		<a href="../src/reflect/value.go.html#line-2728" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2728">#L2728</a>: 	t := typ.(*<b>rtype</b>)
+		<a href="../src/reflect/value.go.html#line-2754" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2754">#L2754</a>: 	t := typ.(*<b>rtype</b>)
+		<a href="../src/reflect/value.go.html#line-2769" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2769">#L2769</a>: 	t := typ.(*<b>rtype</b>)
+		<a href="../src/reflect/value.go.html#line-2777" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2777">#L2777</a>: func (v Value) assignTo(context string, dst *<b>rtype</b>, target unsafe.Pointer) Value {
+		<a href="../src/reflect/value.go.html#line-2849" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2849">#L2849</a>: func convertOp(dst, src *<b>rtype</b>) func(Value, Type) Value {
+		<a href="../src/reflect/value.go.html#line-3136" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-3136">#L3136</a>: 		ifaceE2I(typ.(*<b>rtype</b>), x, target)
+		<a href="../src/reflect/value.go.html#line-3170" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-3170">#L3170</a>: func makechan(typ *<b>rtype</b>, size int) (ch unsafe.Pointer)
+		<a href="../src/reflect/value.go.html#line-3171" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-3171">#L3171</a>: func makemap(t *<b>rtype</b>, cap int) (m unsafe.Pointer)
+		<a href="../src/reflect/value.go.html#line-3174" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-3174">#L3174</a>: func mapaccess(t *<b>rtype</b>, m unsafe.Pointer, key unsafe.Pointer) (val unsafe.Pointer)
+		<a href="../src/reflect/value.go.html#line-3177" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-3177">#L3177</a>: func mapassign(t *<b>rtype</b>, m unsafe.Pointer, key, val unsafe.Pointer)
+		<a href="../src/reflect/value.go.html#line-3180" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-3180">#L3180</a>: func mapdelete(t *<b>rtype</b>, m unsafe.Pointer, key unsafe.Pointer)
+		<a href="../src/reflect/value.go.html#line-3185" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-3185">#L3185</a>: func mapiterinit(t *<b>rtype</b>, m unsafe.Pointer) unsafe.Pointer
+		<a href="../src/reflect/value.go.html#line-3224" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-3224">#L3224</a>: func call(stackArgsType *<b>rtype</b>, f, stackArgs unsafe.Pointer, stackArgsSize, stackRetOffset, frameSize uint32, regArgs *abi.RegArgs)
+		<a href="../src/reflect/value.go.html#line-3226" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-3226">#L3226</a>: func ifaceE2I(t *<b>rtype</b>, src interface{}, dst unsafe.Pointer)
+		<a href="../src/reflect/value.go.html#line-3234" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-3234">#L3234</a>: func typedmemmove(t *<b>rtype</b>, dst, src unsafe.Pointer)
+		<a href="../src/reflect/value.go.html#line-3239" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-3239">#L3239</a>: func typedmemmovepartial(t *<b>rtype</b>, dst, src unsafe.Pointer, off, size uintptr)
+		<a href="../src/reflect/value.go.html#line-3243" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-3243">#L3243</a>: func typedmemclr(t *<b>rtype</b>, ptr unsafe.Pointer)
+		<a href="../src/reflect/value.go.html#line-3248" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-3248">#L3248</a>: func typedmemclrpartial(t *<b>rtype</b>, ptr unsafe.Pointer, off, size uintptr)
+		<a href="../src/reflect/value.go.html#line-3253" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-3253">#L3253</a>: func typedslicecopy(elemType *<b>rtype</b>, dst, src unsafeheader.Slice) int
+		<a href="../src/reflect/value.go.html#line-3256" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-3256">#L3256</a>: func typehash(t *<b>rtype</b>, p unsafe.Pointer, h uintptr) uintptr
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: go.uber.org/zap.Logger.WithOptions</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../pkg/go.uber.org/zap.html">go.uber.org/zap</a>.<a href="../../src/go.uber.org/zap/logger.go.html#line-41">Logger</a>.<a href="../../src/go.uber.org/zap/logger.go.html#line-149">WithOptions</a></b></span><span style="font-size: large;"><i> (method)</i></span>
+
+<span class="title">9 uses</span>
+
+	go.uber.org/zap (current package)
+		<a href="../../src/go.uber.org/zap/config.go.html#line-191">config.go#L191</a>: 		log = log.<b>WithOptions</b>(opts...)
+		<a href="../../src/go.uber.org/zap/global.go.html#line-78">global.go#L78</a>: 	logger := l.<b>WithOptions</b>(AddCallerSkip(_stdLogDefaultDepth + _loggerWriterDepth))
+		<a href="../../src/go.uber.org/zap/global.go.html#line-86" class="path-duplicate">global.go</a><a href="../../src/go.uber.org/zap/global.go.html#line-86">#L86</a>: 	logger := l.<b>WithOptions</b>(AddCallerSkip(_stdLogDefaultDepth + _loggerWriterDepth))
+		<a href="../../src/go.uber.org/zap/global.go.html#line-127" class="path-duplicate">global.go</a><a href="../../src/go.uber.org/zap/global.go.html#line-127">#L127</a>: 	logger := l.<b>WithOptions</b>(AddCallerSkip(_stdLogDefaultDepth + _loggerWriterDepth))
+		<a href="../../src/go.uber.org/zap/logger.go.html#line-73">logger.go#L73</a>: 	return log.<b>WithOptions</b>(options...)
+		<a href="../../src/go.uber.org/zap/logger.go.html#line-119" class="path-duplicate">logger.go</a><a href="../../src/go.uber.org/zap/logger.go.html#line-119">#L119</a>: 	return New(core).<b>WithOptions</b>(options...)
+		<a href="../../src/go.uber.org/zap/logger.go.html#line-149" class="path-duplicate">logger.go</a><a href="../../src/go.uber.org/zap/logger.go.html#line-149">#L149</a>: func (log *Logger) <b>WithOptions</b>(opts ...Option) *Logger {
+
+	<a href="../../pkg/github.com/caring/gopkg-logging.html">github.com/caring/gopkg-logging</a>
+		<a href="../../src/github.com/caring/gopkg-logging/logger.go.html#line-101">logger.go#L101</a>: 		l.monitorLogger = zapL.<b>WithOptions</b>(zap.WrapCore(func(zapcore.Core) zapcore.Core {
+		<a href="../../src/github.com/caring/gopkg-logging/logger.go.html#line-119" class="path-duplicate">logger.go</a><a href="../../src/github.com/caring/gopkg-logging/logger.go.html#line-119">#L119</a>: 			l.reportingLogger = zapL.<b>WithOptions</b>(zap.WrapCore(func(zapcore.Core) zapcore.Core {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

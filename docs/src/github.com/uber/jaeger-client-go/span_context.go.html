@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Source: span_context.go in package github.com/uber/jaeger-client-go</title>
+<link href="../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre id="header"><code><span class="title">Source File</span>
+	span_context.go
+
+<span class="title">Belonging Package</span>
+	<a href="../../../../pkg/github.com/uber/jaeger-client-go.html">github.com/uber/jaeger-client-go</a>
+</code></pre>
+<style>input[type=radio] {display: none;}
+input[id=r0]:checked ~pre label[for=r0],
+input[id=r1]:checked ~pre label[for=r1],
+input[id=r2]:checked ~pre label[for=r2],
+input[id=r3]:checked ~pre label[for=r3],
+input[id=r4]:checked ~pre label[for=r4],
+input[id=r5]:checked ~pre label[for=r5],
+input[id=r6]:checked ~pre label[for=r6],
+input[id=r7]:checked ~pre label[for=r7],
+input[id=r8]:checked ~pre label[for=r8],
+input[id=r9]:checked ~pre label[for=r9],
+input[id=r10]:checked ~pre label[for=r10],
+input[id=r11]:checked ~pre label[for=r11],
+input[id=r12]:checked ~pre label[for=r12],
+input[id=r13]:checked ~pre label[for=r13],
+input[id=r14]:checked ~pre label[for=r14],
+input[id=r15]:checked ~pre label[for=r15],
+input[id=r16]:checked ~pre label[for=r16],
+input[id=r17]:checked ~pre label[for=r17],
+input[id=r18]:checked ~pre label[for=r18],
+input[id=r19]:checked ~pre label[for=r19],
+input[id=r20]:checked ~pre label[for=r20],
+input[id=r21]:checked ~pre label[for=r21],
+input[id=r22]:checked ~pre label[for=r22],
+input[id=r23]:checked ~pre label[for=r23],
+input[id=r24]:checked ~pre label[for=r24],
+input[id=r25]:checked ~pre label[for=r25],
+input[id=r26]:checked ~pre label[for=r26],
+input[id=r27]:checked ~pre label[for=r27],
+input[id=r28]:checked ~pre label[for=r28],
+input[id=r29]:checked ~pre label[for=r29],
+input[id=r30]:checked ~pre label[for=r30],
+input[id=r31]:checked ~pre label[for=r31],
+input[id=r32]:checked ~pre label[for=r32],
+input[id=r33]:checked ~pre label[for=r33],
+input[id=r34]:checked ~pre label[for=r34],
+input[id=r35]:checked ~pre label[for=r35],
+input[id=r36]:checked ~pre label[for=r36],
+input[id=r37]:checked ~pre label[for=r37],
+input[id=r38]:checked ~pre label[for=r38],
+input[id=r39]:checked ~pre label[for=r39],
+input[id=r40]:checked ~pre label[for=r40],
+input[id=r41]:checked ~pre label[for=r41],
+input[id=r42]:checked ~pre label[for=r42],
+input[id=r43]:checked ~pre label[for=r43],
+input[id=r44]:checked ~pre label[for=r44],
+input[id=r45]:checked ~pre label[for=r45],
+input[id=r46]:checked ~pre label[for=r46],
+input[id=r47]:checked ~pre label[for=r47],
+input[id=r48]:checked ~pre label[for=r48],
+input[id=r49]:checked ~pre label[for=r49],
+input[id=r50]:checked ~pre label[for=r50],
+input[id=r51]:checked ~pre label[for=r51],
+input[id=r52]:checked ~pre label[for=r52],
+input[id=r53]:checked ~pre label[for=r53],
+input[id=r54]:checked ~pre label[for=r54],
+input[id=r55]:checked ~pre label[for=r55],
+input[id=r56]:checked ~pre label[for=r56],
+input[id=r57]:checked ~pre label[for=r57],
+input[id=r58]:checked ~pre label[for=r58],
+input[id=r59]:checked ~pre label[for=r59],
+input[id=r60]:checked ~pre label[for=r60],
+input[id=r61]:checked ~pre label[for=r61],
+input[id=r62]:checked ~pre label[for=r62],
+input[id=r63]:checked ~pre label[for=r63],
+input[id=r64]:checked ~pre label[for=r64],
+input[id=r65]:checked ~pre label[for=r65],
+input[id=r66]:checked ~pre label[for=r66],
+input[id=r67]:checked ~pre label[for=r67],
+input[id=r68]:checked ~pre label[for=r68],
+input[id=r69]:checked ~pre label[for=r69],
+input[id=r70]:checked ~pre label[for=r70],
+input[id=r71]:checked ~pre label[for=r71],
+input[id=r72]:checked ~pre label[for=r72],
+input[id=r73]:checked ~pre label[for=r73],
+input[id=r74]:checked ~pre label[for=r74],
+input[id=r75]:checked ~pre label[for=r75],
+input[id=r76]:checked ~pre label[for=r76],
+input[id=r77]:checked ~pre label[for=r77],
+input[id=r78]:checked ~pre label[for=r78],
+input[id=r79]:checked ~pre label[for=r79],
+input[id=r80]:checked ~pre label[for=r80],
+input[id=r81]:checked ~pre label[for=r81],
+input[id=r82]:checked ~pre label[for=r82],
+input[id=r83]:checked ~pre label[for=r83],
+input[id=r84]:checked ~pre label[for=r84],
+input[id=r85]:checked ~pre label[for=r85],
+input[id=r86]:checked ~pre label[for=r86],
+input[id=r87]:checked ~pre label[for=r87],
+input[id=r88]:checked ~pre label[for=r88],
+input[id=r89]:checked ~pre label[for=r89],
+input[id=r90]:checked ~pre label[for=r90],
+input[id=r91]:checked ~pre label[for=r91],
+input[id=r92]:checked ~pre label[for=r92],
+input[id=r93]:checked ~pre label[for=r93],
+input[id=r94]:checked ~pre label[for=r94],
+input[id=r95]:checked ~pre label[for=r95],
+input[id=r96]:checked ~pre label[for=r96],
+input[id=r97]:checked ~pre label[for=r97],
+input[id=r98]:checked ~pre label[for=r98],
+input[id=r99]:checked ~pre label[for=r99],
+input[id=r100]:checked ~pre label[for=r100],
+input[id=r101]:checked ~pre label[for=r101],
+input[id=r102]:checked ~pre label[for=r102],
+input[id=r103]:checked ~pre label[for=r103],
+input[id=r104]:checked ~pre label[for=r104],
+input[id=r105]:checked ~pre label[for=r105],
+input[id=r106]:checked ~pre label[for=r106],
+input[id=r107]:checked ~pre label[for=r107],
+input[id=r108]:checked ~pre label[for=r108],
+input[id=r109]:checked ~pre label[for=r109],
+input[id=r110]:checked ~pre label[for=r110],
+input[id=r111]:checked ~pre label[for=r111],
+input[id=r112]:checked ~pre label[for=r112],
+input[id=r113]:checked ~pre label[for=r113],
+input[id=r114]:checked ~pre label[for=r114],
+input[id=r115]:checked ~pre label[for=r115],
+input[id=r116]:checked ~pre label[for=r116],
+input[id=r117]:checked ~pre label[for=r117],
+input[id=r118]:checked ~pre label[for=r118],
+input[id=r119]:checked ~pre label[for=r119],
+input[id=r120]:checked ~pre label[for=r120],
+input[id=r121]:checked ~pre label[for=r121],
+input[id=r122]:checked ~pre label[for=r122],
+input[id=r123]:checked ~pre label[for=r123],
+input[id=r124]:checked ~pre label[for=r124],
+input[id=r125]:checked ~pre label[for=r125],
+input[id=r126]:checked ~pre label[for=r126],
+input[id=r127]:checked ~pre label[for=r127],
+input[id=r128]:checked ~pre label[for=r128],
+input[id=r129]:checked ~pre label[for=r129]
+{background: #226; color: #ff8;}
+input[id=i0]:checked ~pre .i0,
+input[id=i1]:checked ~pre .i1,
+input[id=i2]:checked ~pre .i2,
+input[id=i3]:checked ~pre .i3,
+input[id=i4]:checked ~pre .i4,
+input[id=i5]:checked ~pre .i5
+{background: brown; color: #eed;}
+</style><input id="r0" type="radio" name="g"/>
+<input id="r1" type="radio" name="g"/>
+<input id="r2" type="radio" name="g"/>
+<input id="r3" type="radio" name="g"/>
+<input id="r4" type="radio" name="g"/>
+<input id="r5" type="radio" name="g"/>
+<input id="r6" type="radio" name="g"/>
+<input id="r7" type="radio" name="g"/>
+<input id="r8" type="radio" name="g"/>
+<input id="r9" type="radio" name="g"/>
+<input id="r10" type="radio" name="g"/>
+<input id="r11" type="radio" name="g"/>
+<input id="r12" type="radio" name="g"/>
+<input id="r13" type="radio" name="g"/>
+<input id="r14" type="radio" name="g"/>
+<input id="r15" type="radio" name="g"/>
+<input id="r16" type="radio" name="g"/>
+<input id="r17" type="radio" name="g"/>
+<input id="r18" type="radio" name="g"/>
+<input id="r19" type="radio" name="g"/>
+<input id="r20" type="radio" name="g"/>
+<input id="r21" type="radio" name="g"/>
+<input id="r22" type="radio" name="g"/>
+<input id="r23" type="radio" name="g"/>
+<input id="r24" type="radio" name="g"/>
+<input id="r25" type="radio" name="g"/>
+<input id="r26" type="radio" name="g"/>
+<input id="r27" type="radio" name="g"/>
+<input id="r28" type="radio" name="g"/>
+<input id="r29" type="radio" name="g"/>
+<input id="r30" type="radio" name="g"/>
+<input id="r31" type="radio" name="g"/>
+<input id="r32" type="radio" name="g"/>
+<input id="r33" type="radio" name="g"/>
+<input id="r34" type="radio" name="g"/>
+<input id="r35" type="radio" name="g"/>
+<input id="r36" type="radio" name="g"/>
+<input id="r37" type="radio" name="g"/>
+<input id="r38" type="radio" name="g"/>
+<input id="r39" type="radio" name="g"/>
+<input id="r40" type="radio" name="g"/>
+<input id="r41" type="radio" name="g"/>
+<input id="r42" type="radio" name="g"/>
+<input id="r43" type="radio" name="g"/>
+<input id="r44" type="radio" name="g"/>
+<input id="r45" type="radio" name="g"/>
+<input id="r46" type="radio" name="g"/>
+<input id="r47" type="radio" name="g"/>
+<input id="r48" type="radio" name="g"/>
+<input id="r49" type="radio" name="g"/>
+<input id="r50" type="radio" name="g"/>
+<input id="r51" type="radio" name="g"/>
+<input id="r52" type="radio" name="g"/>
+<input id="r53" type="radio" name="g"/>
+<input id="r54" type="radio" name="g"/>
+<input id="r55" type="radio" name="g"/>
+<input id="r56" type="radio" name="g"/>
+<input id="r57" type="radio" name="g"/>
+<input id="r58" type="radio" name="g"/>
+<input id="r59" type="radio" name="g"/>
+<input id="r60" type="radio" name="g"/>
+<input id="r61" type="radio" name="g"/>
+<input id="r62" type="radio" name="g"/>
+<input id="r63" type="radio" name="g"/>
+<input id="r64" type="radio" name="g"/>
+<input id="r65" type="radio" name="g"/>
+<input id="r66" type="radio" name="g"/>
+<input id="r67" type="radio" name="g"/>
+<input id="r68" type="radio" name="g"/>
+<input id="r69" type="radio" name="g"/>
+<input id="r70" type="radio" name="g"/>
+<input id="r71" type="radio" name="g"/>
+<input id="r72" type="radio" name="g"/>
+<input id="r73" type="radio" name="g"/>
+<input id="r74" type="radio" name="g"/>
+<input id="r75" type="radio" name="g"/>
+<input id="r76" type="radio" name="g"/>
+<input id="r77" type="radio" name="g"/>
+<input id="r78" type="radio" name="g"/>
+<input id="r79" type="radio" name="g"/>
+<input id="r80" type="radio" name="g"/>
+<input id="r81" type="radio" name="g"/>
+<input id="r82" type="radio" name="g"/>
+<input id="r83" type="radio" name="g"/>
+<input id="r84" type="radio" name="g"/>
+<input id="r85" type="radio" name="g"/>
+<input id="r86" type="radio" name="g"/>
+<input id="r87" type="radio" name="g"/>
+<input id="r88" type="radio" name="g"/>
+<input id="r89" type="radio" name="g"/>
+<input id="r90" type="radio" name="g"/>
+<input id="r91" type="radio" name="g"/>
+<input id="r92" type="radio" name="g"/>
+<input id="r93" type="radio" name="g"/>
+<input id="r94" type="radio" name="g"/>
+<input id="r95" type="radio" name="g"/>
+<input id="r96" type="radio" name="g"/>
+<input id="r97" type="radio" name="g"/>
+<input id="r98" type="radio" name="g"/>
+<input id="r99" type="radio" name="g"/>
+<input id="r100" type="radio" name="g"/>
+<input id="r101" type="radio" name="g"/>
+<input id="r102" type="radio" name="g"/>
+<input id="r103" type="radio" name="g"/>
+<input id="r104" type="radio" name="g"/>
+<input id="r105" type="radio" name="g"/>
+<input id="r106" type="radio" name="g"/>
+<input id="r107" type="radio" name="g"/>
+<input id="r108" type="radio" name="g"/>
+<input id="r109" type="radio" name="g"/>
+<input id="r110" type="radio" name="g"/>
+<input id="r111" type="radio" name="g"/>
+<input id="r112" type="radio" name="g"/>
+<input id="r113" type="radio" name="g"/>
+<input id="r114" type="radio" name="g"/>
+<input id="r115" type="radio" name="g"/>
+<input id="r116" type="radio" name="g"/>
+<input id="r117" type="radio" name="g"/>
+<input id="r118" type="radio" name="g"/>
+<input id="r119" type="radio" name="g"/>
+<input id="r120" type="radio" name="g"/>
+<input id="r121" type="radio" name="g"/>
+<input id="r122" type="radio" name="g"/>
+<input id="r123" type="radio" name="g"/>
+<input id="r124" type="radio" name="g"/>
+<input id="r125" type="radio" name="g"/>
+<input id="r126" type="radio" name="g"/>
+<input id="r127" type="radio" name="g"/>
+<input id="r128" type="radio" name="g"/>
+<input id="r129" type="radio" name="g"/>
+<input id="i0" type="radio" name="i"/>
+<input id="i1" type="radio" name="i"/>
+<input id="i2" type="radio" name="i"/>
+<input id="i3" type="radio" name="i"/>
+<input id="i4" type="radio" name="i"/>
+<input id="i5" type="radio" name="i"/>
+
+<pre class="line-numbers">
+<span class="codeline" id="line-1"><code><span class="comment">// Copyright (c) 2017 Uber Technologies, Inc.</span></code></span>
+<span class="codeline" id="line-2"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-3"><code><span class="comment">// Licensed under the Apache License, Version 2.0 (the "License");</span></code></span>
+<span class="codeline" id="line-4"><code><span class="comment">// you may not use this file except in compliance with the License.</span></code></span>
+<span class="codeline" id="line-5"><code><span class="comment">// You may obtain a copy of the License at</span></code></span>
+<span class="codeline" id="line-6"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-7"><code><span class="comment">// http://www.apache.org/licenses/LICENSE-2.0</span></code></span>
+<span class="codeline" id="line-8"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-9"><code><span class="comment">// Unless required by applicable law or agreed to in writing, software</span></code></span>
+<span class="codeline" id="line-10"><code><span class="comment">// distributed under the License is distributed on an "AS IS" BASIS,</span></code></span>
+<span class="codeline" id="line-11"><code><span class="comment">// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></code></span>
+<span class="codeline" id="line-12"><code><span class="comment">// See the License for the specific language governing permissions and</span></code></span>
+<span class="codeline" id="line-13"><code><span class="comment">// limitations under the License.</span></code></span>
+<span class="codeline" id="line-14"><code></code></span>
+<span class="codeline" id="line-15"><code><span class="keyword">package</span> jaeger</code></span>
+<span class="codeline" id="line-16"><code></code></span>
+<span class="codeline" id="line-17"><code><span class="keyword">import</span> (</code></span>
+<span class="codeline" id="line-18"><code>	<label for="i0"><span class="lit-string i0">"errors"</span></label></code></span>
+<span class="codeline" id="line-19"><code>	<label for="i1"><span class="lit-string i1">"fmt"</span></label></code></span>
+<span class="codeline" id="line-20"><code>	<label for="i2"><span class="lit-string i2">"strconv"</span></label></code></span>
+<span class="codeline" id="line-21"><code>	<label for="i3"><span class="lit-string i3">"strings"</span></label></code></span>
+<span class="codeline" id="line-22"><code>	<label for="i4"><span class="lit-string i4">"sync"</span></label></code></span>
+<span class="codeline" id="line-23"><code></code></span>
+<span class="codeline" id="line-24"><code>	<label for="i5"><span class="lit-string i5">"go.uber.org/atomic"</span></label></code></span>
+<span class="codeline" id="line-25"><code>)</code></span>
+<span class="codeline" id="line-26"><code></code></span>
+<span class="codeline" id="line-27"><code><span class="keyword">const</span> (</code></span>
+<span class="codeline" id="line-28"><code>	<a href="../../../../pkg/github.com/uber/jaeger-client-go.html#name-flagSampled" class="ident">flagSampled</a>  = <span class="lit-number">1</span></code></span>
+<span class="codeline" id="line-29"><code>	<a href="../../../../pkg/github.com/uber/jaeger-client-go.html#name-flagDebug" class="ident">flagDebug</a>    = <span class="lit-number">2</span></code></span>
+<span class="codeline" id="line-30"><code>	<a href="../../../../pkg/github.com/uber/jaeger-client-go.html#name-flagFirehose" class="ident">flagFirehose</a> = <span class="lit-number">8</span></code></span>
+<span class="codeline" id="line-31"><code>)</code></span>
+<span class="codeline" id="line-32"><code></code></span>
+<span class="codeline" id="line-33"><code><span class="keyword">var</span> (</code></span>
+<span class="codeline" id="line-34"><code>	<a href="../../../../pkg/github.com/uber/jaeger-client-go.html#name-errEmptyTracerStateString" class="ident">errEmptyTracerStateString</a>     = <a href="../../../../pkg/errors.html" class="ident i0">errors</a>.<a href="../../../errors/errors.go.html#line-58" class="ident">New</a>(<span class="lit-string">"Cannot convert empty string to tracer state"</span>)</code></span>
+<span class="codeline" id="line-35"><code>	<a href="../../../../pkg/github.com/uber/jaeger-client-go.html#name-errMalformedTracerStateString" class="ident">errMalformedTracerStateString</a> = <a href="../../../../pkg/errors.html" class="ident i0">errors</a>.<a href="../../../errors/errors.go.html#line-58" class="ident">New</a>(<span class="lit-string">"String does not match tracer state format"</span>)</code></span>
+<span class="codeline" id="line-36"><code></code></span>
+<span class="codeline" id="line-37"><code>	<a href="../../../../pkg/github.com/uber/jaeger-client-go.html#name-emptyContext" class="ident">emptyContext</a> = <a href="#line-49" class="ident">SpanContext</a>{}</code></span>
+<span class="codeline" id="line-38"><code>)</code></span>
+<span class="codeline" id="line-39"><code></code></span>
+<span class="codeline" id="line-40"><code><span class="comment">// TraceID represents unique 128bit identifier of a trace</span></code></span>
+<span class="codeline" id="line-41"><code><span class="keyword">type</span> <a href="../../../../pkg/github.com/uber/jaeger-client-go.html#name-TraceID" class="ident">TraceID</a> <span class="keyword">struct</span> {</code></span>
+<span class="codeline" id="line-42"><code>	<a href="../../../../use/github.com/uber/jaeger-client-go..TraceID.High.html" class="ident">High</a>, <a href="../../../../use/github.com/uber/jaeger-client-go..TraceID.Low.html" class="ident">Low</a> <a href="../../../../pkg/builtin.html#name-uint64" class="ident">uint64</a></code></span>
+<span class="codeline" id="line-43"><code>}</code></span>
+<span class="codeline" id="line-44"><code></code></span>
+<span class="codeline" id="line-45"><code><span class="comment">// SpanID represents unique 64bit identifier of a span</span></code></span>
+<span class="codeline" id="line-46"><code><span class="keyword">type</span> <a href="../../../../pkg/github.com/uber/jaeger-client-go.html#name-SpanID" class="ident">SpanID</a> <a href="../../../../pkg/builtin.html#name-uint64" class="ident">uint64</a></code></span>
+<span class="codeline" id="line-47"><code></code></span>
+<span class="codeline" id="line-48"><code><span class="comment">// SpanContext represents propagated span identity and state</span></code></span>
+<span class="codeline" id="line-49"><code><span class="keyword">type</span> <a href="../../../../pkg/github.com/uber/jaeger-client-go.html#name-SpanContext" class="ident">SpanContext</a> <span class="keyword">struct</span> {</code></span>
+<span class="codeline" id="line-50"><code>	<span class="comment">// traceID represents globally unique ID of the trace.</span></code></span>
+<span class="codeline" id="line-51"><code><span class="comment">	// Usually generated as a random number.</span></code></span>
+<span class="codeline" id="line-52"><code>	<a href="../../../../use/github.com/uber/jaeger-client-go..SpanContext.traceID^73521.html" class="ident">traceID</a> <a href="#line-41" class="ident">TraceID</a></code></span>
+<span class="codeline" id="line-53"><code></code></span>
+<span class="codeline" id="line-54"><code>	<span class="comment">// spanID represents span ID that must be unique within its trace,</span></code></span>
+<span class="codeline" id="line-55"><code><span class="comment">	// but does not have to be globally unique.</span></code></span>
+<span class="codeline" id="line-56"><code>	<a href="../../../../use/github.com/uber/jaeger-client-go..SpanContext.spanID^512b5.html" class="ident">spanID</a> <a href="#line-46" class="ident">SpanID</a></code></span>
+<span class="codeline" id="line-57"><code></code></span>
+<span class="codeline" id="line-58"><code>	<span class="comment">// parentID refers to the ID of the parent span.</span></code></span>
+<span class="codeline" id="line-59"><code><span class="comment">	// Should be 0 if the current span is a root span.</span></code></span>
+<span class="codeline" id="line-60"><code>	<a href="../../../../use/github.com/uber/jaeger-client-go..SpanContext.parentID^b715d.html" class="ident">parentID</a> <a href="#line-46" class="ident">SpanID</a></code></span>
+<span class="codeline" id="line-61"><code></code></span>
+<span class="codeline" id="line-62"><code>	<span class="comment">// Distributed Context baggage. The is a snapshot in time.</span></code></span>
+<span class="codeline" id="line-63"><code>	<a href="../../../../use/github.com/uber/jaeger-client-go..SpanContext.baggage^1d6f2.html" class="ident">baggage</a> <span class="keyword">map</span>[<a href="../../../../pkg/builtin.html#name-string" class="ident">string</a>]<a href="../../../../pkg/builtin.html#name-string" class="ident">string</a></code></span>
+<span class="codeline" id="line-64"><code></code></span>
+<span class="codeline" id="line-65"><code>	<span class="comment">// debugID can be set to some correlation ID when the context is being</span></code></span>
+<span class="codeline" id="line-66"><code><span class="comment">	// extracted from a TextMap carrier.</span></code></span>
+<span class="codeline" id="line-67"><code><span class="comment">	//</span></code></span>
+<span class="codeline" id="line-68"><code><span class="comment">	// See JaegerDebugHeader in constants.go</span></code></span>
+<span class="codeline" id="line-69"><code>	<a href="../../../../use/github.com/uber/jaeger-client-go..SpanContext.debugID^4afe7.html" class="ident">debugID</a> <a href="../../../../pkg/builtin.html#name-string" class="ident">string</a></code></span>
+<span class="codeline" id="line-70"><code></code></span>
+<span class="codeline" id="line-71"><code>	<span class="comment">// samplingState is shared across all spans</span></code></span>
+<span class="codeline" id="line-72"><code>	<a href="../../../../use/github.com/uber/jaeger-client-go..SpanContext.samplingState^895ce.html" class="ident">samplingState</a> *<a href="#line-78" class="ident">samplingState</a></code></span>
+<span class="codeline" id="line-73"><code></code></span>
+<span class="codeline" id="line-74"><code>	<span class="comment">// remote indicates that span context represents a remote parent</span></code></span>
+<span class="codeline" id="line-75"><code>	<a href="../../../../use/github.com/uber/jaeger-client-go..SpanContext.remote^b7119.html" class="ident">remote</a> <a href="../../../../pkg/builtin.html#name-bool" class="ident">bool</a></code></span>
+<span class="codeline" id="line-76"><code>}</code></span>
+<span class="codeline" id="line-77"><code></code></span>
+<span class="codeline" id="line-78"><code><span class="keyword">type</span> <a href="../../../../pkg/github.com/uber/jaeger-client-go.html#name-samplingState" class="ident">samplingState</a> <span class="keyword">struct</span> {</code></span>
+<span class="codeline" id="line-79"><code>	<span class="comment">// Span context's state flags that are propagated across processes. Only lower 8 bits are used.</span></code></span>
+<span class="codeline" id="line-80"><code><span class="comment">	// We use an int32 instead of byte to be able to use CAS operations.</span></code></span>
+<span class="codeline" id="line-81"><code>	<a href="../../../../use/github.com/uber/jaeger-client-go..samplingState^895ce.stateFlags^76041.html" class="ident">stateFlags</a> <a href="../../../../pkg/go.uber.org/atomic.html" class="ident i5">atomic</a>.<a href="../../../go.uber.org/atomic/int32.go.html#line-32" class="ident">Int32</a></code></span>
+<span class="codeline" id="line-82"><code></code></span>
+<span class="codeline" id="line-83"><code>	<span class="comment">// When state is not final, sampling will be retried on other span write operations,</span></code></span>
+<span class="codeline" id="line-84"><code><span class="comment">	// like SetOperationName / SetTag, and the spans will remain writable.</span></code></span>
+<span class="codeline" id="line-85"><code>	<a href="../../../../use/github.com/uber/jaeger-client-go..samplingState^895ce.final^24436.html" class="ident">final</a> <a href="../../../../pkg/go.uber.org/atomic.html" class="ident i5">atomic</a>.<a href="../../../go.uber.org/atomic/bool.go.html#line-30" class="ident">Bool</a></code></span>
+<span class="codeline" id="line-86"><code></code></span>
+<span class="codeline" id="line-87"><code>	<span class="comment">// localRootSpan stores the SpanID of the first span created in this process for a given trace.</span></code></span>
+<span class="codeline" id="line-88"><code>	<a href="../../../../use/github.com/uber/jaeger-client-go..samplingState^895ce.localRootSpan^9a83d.html" class="ident">localRootSpan</a> <a href="#line-46" class="ident">SpanID</a></code></span>
+<span class="codeline" id="line-89"><code></code></span>
+<span class="codeline" id="line-90"><code>	<span class="comment">// extendedState allows samplers to keep intermediate state.</span></code></span>
+<span class="codeline" id="line-91"><code><span class="comment">	// The keys and values in this map are completely opaque: interface{} -&gt; interface{}.</span></code></span>
+<span class="codeline" id="line-92"><code>	<a href="../../../../use/github.com/uber/jaeger-client-go..samplingState^895ce.extendedState^d9998.html" class="ident">extendedState</a> <a href="../../../../pkg/sync.html" class="ident i4">sync</a>.<a href="../../../sync/map.go.html#line-27" class="ident">Map</a></code></span>
+<span class="codeline" id="line-93"><code>}</code></span>
+<span class="codeline" id="line-94"><code></code></span>
+<span class="codeline" id="line-95"><code><span class="keyword">func</span> (<label for="r0" class="ident">s</label> *<a href="#line-78" class="ident">samplingState</a>) <label for="r1" class="ident"><a href="../../../../use/github.com/uber/jaeger-client-go..samplingState^895ce.isLocalRootSpan^844a1.html" class="ident">isLocalRootSpan</a></label>(<label for="r2" class="ident">id</label> <a href="#line-46" class="ident">SpanID</a>) <a href="../../../../pkg/builtin.html#name-bool" class="ident">bool</a> {</code></span>
+<span class="codeline" id="line-96"><code>	<span class="keyword">return</span> <label for="r2" class="ident">id</label> == <label for="r0" class="ident">s</label>.<a href="#line-88" class="ident">localRootSpan</a></code></span>
+<span class="codeline" id="line-97"><code>}</code></span>
+<span class="codeline" id="line-98"><code></code></span>
+<span class="codeline" id="line-99"><code><span class="keyword">func</span> (<label for="r3" class="ident">s</label> *<a href="#line-78" class="ident">samplingState</a>) <label for="r4" class="ident"><a href="../../../../use/github.com/uber/jaeger-client-go..samplingState^895ce.setFlag^71c42.html" class="ident">setFlag</a></label>(<label for="r5" class="ident">newFlag</label> <a href="../../../../pkg/builtin.html#name-int32" class="ident">int32</a>) {</code></span>
+<span class="codeline" id="line-100"><code>	<label for="r6" class="ident">swapped</label> := <a href="../../../../pkg/builtin.html#name-false" class="ident">false</a></code></span>
+<span class="codeline" id="line-101"><code>	<span class="keyword">for</span> !<label for="r6" class="ident">swapped</label> {</code></span>
+<span class="codeline" id="line-102"><code>		<label for="r7" class="ident">old</label> := <label for="r3" class="ident">s</label>.<a href="#line-81" class="ident">stateFlags</a>.<a href="../../../go.uber.org/atomic/int32.go.html#line-44" class="ident">Load</a>()</code></span>
+<span class="codeline" id="line-103"><code>		<label for="r6" class="ident">swapped</label> = <label for="r3" class="ident">s</label>.<a href="#line-81" class="ident">stateFlags</a>.<a href="../../../go.uber.org/atomic/int32.go.html#line-69" class="ident">CAS</a>(<label for="r7" class="ident">old</label>, <label for="r7" class="ident">old</label>|<label for="r5" class="ident">newFlag</label>)</code></span>
+<span class="codeline" id="line-104"><code>	}</code></span>
+<span class="codeline" id="line-105"><code>}</code></span>
+<span class="codeline" id="line-106"><code></code></span>
+<span class="codeline" id="line-107"><code><span class="keyword">func</span> (<label for="r8" class="ident">s</label> *<a href="#line-78" class="ident">samplingState</a>) <label for="r9" class="ident"><a href="../../../../use/github.com/uber/jaeger-client-go..samplingState^895ce.unsetFlag^d5d6f.html" class="ident">unsetFlag</a></label>(<label for="r10" class="ident">newFlag</label> <a href="../../../../pkg/builtin.html#name-int32" class="ident">int32</a>) {</code></span>
+<span class="codeline" id="line-108"><code>	<label for="r11" class="ident">swapped</label> := <a href="../../../../pkg/builtin.html#name-false" class="ident">false</a></code></span>
+<span class="codeline" id="line-109"><code>	<span class="keyword">for</span> !<label for="r11" class="ident">swapped</label> {</code></span>
+<span class="codeline" id="line-110"><code>		<label for="r12" class="ident">old</label> := <label for="r8" class="ident">s</label>.<a href="#line-81" class="ident">stateFlags</a>.<a href="../../../go.uber.org/atomic/int32.go.html#line-44" class="ident">Load</a>()</code></span>
+<span class="codeline" id="line-111"><code>		<label for="r11" class="ident">swapped</label> = <label for="r8" class="ident">s</label>.<a href="#line-81" class="ident">stateFlags</a>.<a href="../../../go.uber.org/atomic/int32.go.html#line-69" class="ident">CAS</a>(<label for="r12" class="ident">old</label>, <label for="r12" class="ident">old</label>&amp;^<label for="r10" class="ident">newFlag</label>)</code></span>
+<span class="codeline" id="line-112"><code>	}</code></span>
+<span class="codeline" id="line-113"><code>}</code></span>
+<span class="codeline" id="line-114"><code></code></span>
+<span class="codeline" id="line-115"><code><span class="keyword">func</span> (<label for="r13" class="ident">s</label> *<a href="#line-78" class="ident">samplingState</a>) <label for="r14" class="ident"><a href="../../../../use/github.com/uber/jaeger-client-go..samplingState^895ce.setSampled^fea1b.html" class="ident">setSampled</a></label>() {</code></span>
+<span class="codeline" id="line-116"><code>	<label for="r13" class="ident">s</label>.<a href="#line-99" class="ident">setFlag</a>(<a href="#line-28" class="ident">flagSampled</a>)</code></span>
+<span class="codeline" id="line-117"><code>}</code></span>
+<span class="codeline" id="line-118"><code></code></span>
+<span class="codeline" id="line-119"><code><span class="keyword">func</span> (<label for="r15" class="ident">s</label> *<a href="#line-78" class="ident">samplingState</a>) <label for="r16" class="ident"><a href="../../../../use/github.com/uber/jaeger-client-go..samplingState^895ce.unsetSampled^d5204.html" class="ident">unsetSampled</a></label>() {</code></span>
+<span class="codeline" id="line-120"><code>	<label for="r15" class="ident">s</label>.<a href="#line-107" class="ident">unsetFlag</a>(<a href="#line-28" class="ident">flagSampled</a>)</code></span>
+<span class="codeline" id="line-121"><code>}</code></span>
+<span class="codeline" id="line-122"><code></code></span>
+<span class="codeline" id="line-123"><code><span class="keyword">func</span> (<label for="r17" class="ident">s</label> *<a href="#line-78" class="ident">samplingState</a>) <label for="r18" class="ident"><a href="../../../../use/github.com/uber/jaeger-client-go..samplingState^895ce.setDebugAndSampled^845ea.html" class="ident">setDebugAndSampled</a></label>() {</code></span>
+<span class="codeline" id="line-124"><code>	<label for="r17" class="ident">s</label>.<a href="#line-99" class="ident">setFlag</a>(<a href="#line-29" class="ident">flagDebug</a> | <a href="#line-28" class="ident">flagSampled</a>)</code></span>
+<span class="codeline" id="line-125"><code>}</code></span>
+<span class="codeline" id="line-126"><code></code></span>
+<span class="codeline" id="line-127"><code><span class="keyword">func</span> (<label for="r19" class="ident">s</label> *<a href="#line-78" class="ident">samplingState</a>) <label for="r20" class="ident"><a href="../../../../use/github.com/uber/jaeger-client-go..samplingState^895ce.setFirehose^d1043.html" class="ident">setFirehose</a></label>() {</code></span>
+<span class="codeline" id="line-128"><code>	<label for="r19" class="ident">s</label>.<a href="#line-99" class="ident">setFlag</a>(<a href="#line-30" class="ident">flagFirehose</a>)</code></span>
+<span class="codeline" id="line-129"><code>}</code></span>
+<span class="codeline" id="line-130"><code></code></span>
+<span class="codeline" id="line-131"><code><span class="keyword">func</span> (<label for="r21" class="ident">s</label> *<a href="#line-78" class="ident">samplingState</a>) <label for="r22" class="ident"><a href="../../../../use/github.com/uber/jaeger-client-go..samplingState^895ce.setFlags^38086.html" class="ident">setFlags</a></label>(<label for="r23" class="ident">flags</label> <a href="../../../../pkg/builtin.html#name-byte" class="ident">byte</a>) {</code></span>
+<span class="codeline" id="line-132"><code>	<label for="r21" class="ident">s</label>.<a href="#line-81" class="ident">stateFlags</a>.<a href="../../../go.uber.org/atomic/int32.go.html#line-74" class="ident">Store</a>(<a href="../../../../pkg/builtin.html#name-int32" class="ident">int32</a>(<label for="r23" class="ident">flags</label>))</code></span>
+<span class="codeline" id="line-133"><code>}</code></span>
+<span class="codeline" id="line-134"><code></code></span>
+<span class="codeline" id="line-135"><code><span class="keyword">func</span> (<label for="r24" class="ident">s</label> *<a href="#line-78" class="ident">samplingState</a>) <label for="r25" class="ident"><a href="../../../../use/github.com/uber/jaeger-client-go..samplingState^895ce.setFinal^da0db.html" class="ident">setFinal</a></label>() {</code></span>
+<span class="codeline" id="line-136"><code>	<label for="r24" class="ident">s</label>.<a href="#line-85" class="ident">final</a>.<a href="../../../go.uber.org/atomic/bool.go.html#line-53" class="ident">Store</a>(<a href="../../../../pkg/builtin.html#name-true" class="ident">true</a>)</code></span>
+<span class="codeline" id="line-137"><code>}</code></span>
+<span class="codeline" id="line-138"><code></code></span>
+<span class="codeline" id="line-139"><code><span class="keyword">func</span> (<label for="r26" class="ident">s</label> *<a href="#line-78" class="ident">samplingState</a>) <label for="r27" class="ident"><a href="../../../../use/github.com/uber/jaeger-client-go..samplingState^895ce.flags^2934f.html" class="ident">flags</a></label>() <a href="../../../../pkg/builtin.html#name-byte" class="ident">byte</a> {</code></span>
+<span class="codeline" id="line-140"><code>	<span class="keyword">return</span> <a href="../../../../pkg/builtin.html#name-byte" class="ident">byte</a>(<label for="r26" class="ident">s</label>.<a href="#line-81" class="ident">stateFlags</a>.<a href="../../../go.uber.org/atomic/int32.go.html#line-44" class="ident">Load</a>())</code></span>
+<span class="codeline" id="line-141"><code>}</code></span>
+<span class="codeline" id="line-142"><code></code></span>
+<span class="codeline" id="line-143"><code><span class="keyword">func</span> (<label for="r28" class="ident">s</label> *<a href="#line-78" class="ident">samplingState</a>) <label for="r29" class="ident"><a href="../../../../use/github.com/uber/jaeger-client-go..samplingState^895ce.isSampled^12e44.html" class="ident">isSampled</a></label>() <a href="../../../../pkg/builtin.html#name-bool" class="ident">bool</a> {</code></span>
+<span class="codeline" id="line-144"><code>	<span class="keyword">return</span> <label for="r28" class="ident">s</label>.<a href="#line-81" class="ident">stateFlags</a>.<a href="../../../go.uber.org/atomic/int32.go.html#line-44" class="ident">Load</a>()&amp;<a href="#line-28" class="ident">flagSampled</a> == <a href="#line-28" class="ident">flagSampled</a></code></span>
+<span class="codeline" id="line-145"><code>}</code></span>
+<span class="codeline" id="line-146"><code></code></span>
+<span class="codeline" id="line-147"><code><span class="keyword">func</span> (<label for="r30" class="ident">s</label> *<a href="#line-78" class="ident">samplingState</a>) <label for="r31" class="ident"><a href="../../../../use/github.com/uber/jaeger-client-go..samplingState^895ce.isDebug^61282.html" class="ident">isDebug</a></label>() <a href="../../../../pkg/builtin.html#name-bool" class="ident">bool</a> {</code></span>
+<span class="codeline" id="line-148"><code>	<span class="keyword">return</span> <label for="r30" class="ident">s</label>.<a href="#line-81" class="ident">stateFlags</a>.<a href="../../../go.uber.org/atomic/int32.go.html#line-44" class="ident">Load</a>()&amp;<a href="#line-29" class="ident">flagDebug</a> == <a href="#line-29" class="ident">flagDebug</a></code></span>
+<span class="codeline" id="line-149"><code>}</code></span>
+<span class="codeline" id="line-150"><code></code></span>
+<span class="codeline" id="line-151"><code><span class="keyword">func</span> (<label for="r32" class="ident">s</label> *<a href="#line-78" class="ident">samplingState</a>) <label for="r33" class="ident"><a href="../../../../use/github.com/uber/jaeger-client-go..samplingState^895ce.isFirehose^3b3be.html" class="ident">isFirehose</a></label>() <a href="../../../../pkg/builtin.html#name-bool" class="ident">bool</a> {</code></span>
+<span class="codeline" id="line-152"><code>	<span class="keyword">return</span> <label for="r32" class="ident">s</label>.<a href="#line-81" class="ident">stateFlags</a>.<a href="../../../go.uber.org/atomic/int32.go.html#line-44" class="ident">Load</a>()&amp;<a href="#line-30" class="ident">flagFirehose</a> == <a href="#line-30" class="ident">flagFirehose</a></code></span>
+<span class="codeline" id="line-153"><code>}</code></span>
+<span class="codeline" id="line-154"><code></code></span>
+<span class="codeline" id="line-155"><code><span class="keyword">func</span> (<label for="r34" class="ident">s</label> *<a href="#line-78" class="ident">samplingState</a>) <label for="r35" class="ident"><a href="../../../../use/github.com/uber/jaeger-client-go..samplingState^895ce.isFinal^6380d.html" class="ident">isFinal</a></label>() <a href="../../../../pkg/builtin.html#name-bool" class="ident">bool</a> {</code></span>
+<span class="codeline" id="line-156"><code>	<span class="keyword">return</span> <label for="r34" class="ident">s</label>.<a href="#line-85" class="ident">final</a>.<a href="../../../go.uber.org/atomic/bool.go.html#line-48" class="ident">Load</a>()</code></span>
+<span class="codeline" id="line-157"><code>}</code></span>
+<span class="codeline" id="line-158"><code></code></span>
+<span class="codeline" id="line-159"><code><span class="keyword">func</span> (<label for="r36" class="ident">s</label> *<a href="#line-78" class="ident">samplingState</a>) <label for="r37" class="ident"><a href="../../../../use/github.com/uber/jaeger-client-go..samplingState^895ce.extendedStateForKey^db328.html" class="ident">extendedStateForKey</a></label>(<label for="r38" class="ident">key</label> <span class="keyword">interface</span>{}, <label for="r39" class="ident">initValue</label> <span class="keyword">func</span>() <span class="keyword">interface</span>{}) <span class="keyword">interface</span>{} {</code></span>
+<span class="codeline" id="line-160"><code>	<span class="keyword">if</span> <label for="r40" class="ident">value</label>, <label for="r41" class="ident">ok</label> := <label for="r36" class="ident">s</label>.<a href="#line-92" class="ident">extendedState</a>.<a href="../../../sync/map.go.html#line-103" class="ident">Load</a>(<label for="r38" class="ident">key</label>); <label for="r41" class="ident">ok</label> {</code></span>
+<span class="codeline" id="line-161"><code>		<span class="keyword">return</span> <label for="r40" class="ident">value</label></code></span>
+<span class="codeline" id="line-162"><code>	}</code></span>
+<span class="codeline" id="line-163"><code>	<label for="r42" class="ident">value</label> := <label for="r39" class="ident">initValue</label>()</code></span>
+<span class="codeline" id="line-164"><code>	<label for="r42" class="ident">value</label>, _ = <label for="r36" class="ident">s</label>.<a href="#line-92" class="ident">extendedState</a>.<a href="../../../sync/map.go.html#line-200" class="ident">LoadOrStore</a>(<label for="r38" class="ident">key</label>, <label for="r42" class="ident">value</label>)</code></span>
+<span class="codeline" id="line-165"><code>	<span class="keyword">return</span> <label for="r42" class="ident">value</label></code></span>
+<span class="codeline" id="line-166"><code>}</code></span>
+<span class="codeline" id="line-167"><code></code></span>
+<span class="codeline" id="line-168"><code><span class="comment">// ForeachBaggageItem implements ForeachBaggageItem() of opentracing.SpanContext</span></code></span>
+<span class="codeline" id="line-169"><code><span class="keyword">func</span> (<label for="r43" class="ident">c</label> <a href="#line-49" class="ident">SpanContext</a>) <label for="r44" class="ident"><a href="../../../../use/github.com/uber/jaeger-client-go..SpanContext.ForeachBaggageItem.html" class="ident">ForeachBaggageItem</a></label>(<label for="r45" class="ident">handler</label> <span class="keyword">func</span>(<label for="r46" class="ident">k</label>, <label for="r47" class="ident">v</label> <a href="../../../../pkg/builtin.html#name-string" class="ident">string</a>) <a href="../../../../pkg/builtin.html#name-bool" class="ident">bool</a>) {</code></span>
+<span class="codeline" id="line-170"><code>	<span class="keyword">for</span> <label for="r48" class="ident">k</label>, <label for="r49" class="ident">v</label> := <span class="keyword">range</span> <label for="r43" class="ident">c</label>.<a href="#line-63" class="ident">baggage</a> {</code></span>
+<span class="codeline" id="line-171"><code>		<span class="keyword">if</span> !<label for="r45" class="ident">handler</label>(<label for="r48" class="ident">k</label>, <label for="r49" class="ident">v</label>) {</code></span>
+<span class="codeline" id="line-172"><code>			<span class="keyword">break</span></code></span>
+<span class="codeline" id="line-173"><code>		}</code></span>
+<span class="codeline" id="line-174"><code>	}</code></span>
+<span class="codeline" id="line-175"><code>}</code></span>
+<span class="codeline" id="line-176"><code></code></span>
+<span class="codeline" id="line-177"><code><span class="comment">// IsSampled returns whether this trace was chosen for permanent storage</span></code></span>
+<span class="codeline" id="line-178"><code><span class="comment">// by the sampling mechanism of the tracer.</span></code></span>
+<span class="codeline" id="line-179"><code><span class="keyword">func</span> (<label for="r50" class="ident">c</label> <a href="#line-49" class="ident">SpanContext</a>) <label for="r51" class="ident"><a href="../../../../use/github.com/uber/jaeger-client-go..SpanContext.IsSampled.html" class="ident">IsSampled</a></label>() <a href="../../../../pkg/builtin.html#name-bool" class="ident">bool</a> {</code></span>
+<span class="codeline" id="line-180"><code>	<span class="keyword">return</span> <label for="r50" class="ident">c</label>.<a href="#line-72" class="ident">samplingState</a>.<a href="#line-143" class="ident">isSampled</a>()</code></span>
+<span class="codeline" id="line-181"><code>}</code></span>
+<span class="codeline" id="line-182"><code></code></span>
+<span class="codeline" id="line-183"><code><span class="comment">// IsDebug indicates whether sampling was explicitly requested by the service.</span></code></span>
+<span class="codeline" id="line-184"><code><span class="keyword">func</span> (<label for="r52" class="ident">c</label> <a href="#line-49" class="ident">SpanContext</a>) <label for="r53" class="ident"><a href="../../../../use/github.com/uber/jaeger-client-go..SpanContext.IsDebug.html" class="ident">IsDebug</a></label>() <a href="../../../../pkg/builtin.html#name-bool" class="ident">bool</a> {</code></span>
+<span class="codeline" id="line-185"><code>	<span class="keyword">return</span> <label for="r52" class="ident">c</label>.<a href="#line-72" class="ident">samplingState</a>.<a href="#line-147" class="ident">isDebug</a>()</code></span>
+<span class="codeline" id="line-186"><code>}</code></span>
+<span class="codeline" id="line-187"><code></code></span>
+<span class="codeline" id="line-188"><code><span class="comment">// IsSamplingFinalized indicates whether the sampling decision has been finalized.</span></code></span>
+<span class="codeline" id="line-189"><code><span class="keyword">func</span> (<label for="r54" class="ident">c</label> <a href="#line-49" class="ident">SpanContext</a>) <label for="r55" class="ident"><a href="../../../../use/github.com/uber/jaeger-client-go..SpanContext.IsSamplingFinalized.html" class="ident">IsSamplingFinalized</a></label>() <a href="../../../../pkg/builtin.html#name-bool" class="ident">bool</a> {</code></span>
+<span class="codeline" id="line-190"><code>	<span class="keyword">return</span> <label for="r54" class="ident">c</label>.<a href="#line-72" class="ident">samplingState</a>.<a href="#line-155" class="ident">isFinal</a>()</code></span>
+<span class="codeline" id="line-191"><code>}</code></span>
+<span class="codeline" id="line-192"><code></code></span>
+<span class="codeline" id="line-193"><code><span class="comment">// IsFirehose indicates whether the firehose flag was set</span></code></span>
+<span class="codeline" id="line-194"><code><span class="keyword">func</span> (<label for="r56" class="ident">c</label> <a href="#line-49" class="ident">SpanContext</a>) <label for="r57" class="ident"><a href="../../../../use/github.com/uber/jaeger-client-go..SpanContext.IsFirehose.html" class="ident">IsFirehose</a></label>() <a href="../../../../pkg/builtin.html#name-bool" class="ident">bool</a> {</code></span>
+<span class="codeline" id="line-195"><code>	<span class="keyword">return</span> <label for="r56" class="ident">c</label>.<a href="#line-72" class="ident">samplingState</a>.<a href="#line-151" class="ident">isFirehose</a>()</code></span>
+<span class="codeline" id="line-196"><code>}</code></span>
+<span class="codeline" id="line-197"><code></code></span>
+<span class="codeline" id="line-198"><code><span class="comment">// ExtendedSamplingState returns the custom state object for a given key. If the value for this key does not exist,</span></code></span>
+<span class="codeline" id="line-199"><code><span class="comment">// it is initialized via initValue function. This state can be used by samplers (e.g. x.PrioritySampler).</span></code></span>
+<span class="codeline" id="line-200"><code><span class="keyword">func</span> (<label for="r58" class="ident">c</label> <a href="#line-49" class="ident">SpanContext</a>) <label for="r59" class="ident"><a href="../../../../use/github.com/uber/jaeger-client-go..SpanContext.ExtendedSamplingState.html" class="ident">ExtendedSamplingState</a></label>(<label for="r60" class="ident">key</label> <span class="keyword">interface</span>{}, <label for="r61" class="ident">initValue</label> <span class="keyword">func</span>() <span class="keyword">interface</span>{}) <span class="keyword">interface</span>{} {</code></span>
+<span class="codeline" id="line-201"><code>	<span class="keyword">return</span> <label for="r58" class="ident">c</label>.<a href="#line-72" class="ident">samplingState</a>.<a href="#line-159" class="ident">extendedStateForKey</a>(<label for="r60" class="ident">key</label>, <label for="r61" class="ident">initValue</label>)</code></span>
+<span class="codeline" id="line-202"><code>}</code></span>
+<span class="codeline" id="line-203"><code></code></span>
+<span class="codeline" id="line-204"><code><span class="comment">// IsValid indicates whether this context actually represents a valid trace.</span></code></span>
+<span class="codeline" id="line-205"><code><span class="keyword">func</span> (<label for="r62" class="ident">c</label> <a href="#line-49" class="ident">SpanContext</a>) <label for="r63" class="ident"><a href="../../../../use/github.com/uber/jaeger-client-go..SpanContext.IsValid.html" class="ident">IsValid</a></label>() <a href="../../../../pkg/builtin.html#name-bool" class="ident">bool</a> {</code></span>
+<span class="codeline" id="line-206"><code>	<span class="keyword">return</span> <label for="r62" class="ident">c</label>.<a href="#line-52" class="ident">traceID</a>.<a href="#line-398" class="ident">IsValid</a>() &amp;&amp; <label for="r62" class="ident">c</label>.<a href="#line-56" class="ident">spanID</a> != <span class="lit-number">0</span></code></span>
+<span class="codeline" id="line-207"><code>}</code></span>
+<span class="codeline" id="line-208"><code></code></span>
+<span class="codeline" id="line-209"><code><span class="comment">// SetFirehose enables firehose mode for this trace.</span></code></span>
+<span class="codeline" id="line-210"><code><span class="keyword">func</span> (<label for="r64" class="ident">c</label> <a href="#line-49" class="ident">SpanContext</a>) <label for="r65" class="ident"><a href="../../../../use/github.com/uber/jaeger-client-go..SpanContext.SetFirehose.html" class="ident">SetFirehose</a></label>() {</code></span>
+<span class="codeline" id="line-211"><code>	<label for="r64" class="ident">c</label>.<a href="#line-72" class="ident">samplingState</a>.<a href="#line-127" class="ident">setFirehose</a>()</code></span>
+<span class="codeline" id="line-212"><code>}</code></span>
+<span class="codeline" id="line-213"><code></code></span>
+<span class="codeline" id="line-214"><code><span class="keyword">func</span> (<label for="r66" class="ident">c</label> <a href="#line-49" class="ident">SpanContext</a>) <label for="r67" class="ident"><a href="../../../../use/github.com/uber/jaeger-client-go..SpanContext.String.html" class="ident">String</a></label>() <a href="../../../../pkg/builtin.html#name-string" class="ident">string</a> {</code></span>
+<span class="codeline" id="line-215"><code>	<span class="keyword">var</span> <label for="r68" class="ident">flags</label> <a href="../../../../pkg/builtin.html#name-int32" class="ident">int32</a></code></span>
+<span class="codeline" id="line-216"><code>	<span class="keyword">if</span> <label for="r66" class="ident">c</label>.<a href="#line-72" class="ident">samplingState</a> != <a href="../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-217"><code>		<label for="r68" class="ident">flags</label> = <label for="r66" class="ident">c</label>.<a href="#line-72" class="ident">samplingState</a>.<a href="#line-81" class="ident">stateFlags</a>.<a href="../../../go.uber.org/atomic/int32.go.html#line-44" class="ident">Load</a>()</code></span>
+<span class="codeline" id="line-218"><code>	}</code></span>
+<span class="codeline" id="line-219"><code>	<span class="keyword">if</span> <label for="r66" class="ident">c</label>.<a href="#line-52" class="ident">traceID</a>.<a href="#line-42" class="ident">High</a> == <span class="lit-number">0</span> {</code></span>
+<span class="codeline" id="line-220"><code>		<span class="keyword">return</span> <a href="../../../../pkg/fmt.html" class="ident i1">fmt</a>.<a href="../../../fmt/print.go.html#line-217" class="ident">Sprintf</a>(<span class="lit-string">"%016x:%016x:%016x:%x"</span>, <label for="r66" class="ident">c</label>.<a href="#line-52" class="ident">traceID</a>.<a href="#line-42" class="ident">Low</a>, <a href="../../../../pkg/builtin.html#name-uint64" class="ident">uint64</a>(<label for="r66" class="ident">c</label>.<a href="#line-56" class="ident">spanID</a>), <a href="../../../../pkg/builtin.html#name-uint64" class="ident">uint64</a>(<label for="r66" class="ident">c</label>.<a href="#line-60" class="ident">parentID</a>), <label for="r68" class="ident">flags</label>)</code></span>
+<span class="codeline" id="line-221"><code>	}</code></span>
+<span class="codeline" id="line-222"><code>	<span class="keyword">return</span> <a href="../../../../pkg/fmt.html" class="ident i1">fmt</a>.<a href="../../../fmt/print.go.html#line-217" class="ident">Sprintf</a>(<span class="lit-string">"%016x%016x:%016x:%016x:%x"</span>, <label for="r66" class="ident">c</label>.<a href="#line-52" class="ident">traceID</a>.<a href="#line-42" class="ident">High</a>, <label for="r66" class="ident">c</label>.<a href="#line-52" class="ident">traceID</a>.<a href="#line-42" class="ident">Low</a>, <a href="../../../../pkg/builtin.html#name-uint64" class="ident">uint64</a>(<label for="r66" class="ident">c</label>.<a href="#line-56" class="ident">spanID</a>), <a href="../../../../pkg/builtin.html#name-uint64" class="ident">uint64</a>(<label for="r66" class="ident">c</label>.<a href="#line-60" class="ident">parentID</a>), <label for="r68" class="ident">flags</label>)</code></span>
+<span class="codeline" id="line-223"><code>}</code></span>
+<span class="codeline" id="line-224"><code></code></span>
+<span class="codeline" id="line-225"><code><span class="comment">// ContextFromString reconstructs the Context encoded in a string</span></code></span>
+<span class="codeline" id="line-226"><code><span class="keyword">func</span> <label for="r69" class="ident"><a href="../../../../pkg/github.com/uber/jaeger-client-go.html#name-ContextFromString" class="ident">ContextFromString</a></label>(<label for="r70" class="ident">value</label> <a href="../../../../pkg/builtin.html#name-string" class="ident">string</a>) (<a href="#line-49" class="ident">SpanContext</a>, <a href="../../../../pkg/builtin.html#name-error" class="ident">error</a>) {</code></span>
+<span class="codeline" id="line-227"><code>	<span class="keyword">var</span> <label for="r71" class="ident">context</label> <a href="#line-49" class="ident">SpanContext</a></code></span>
+<span class="codeline" id="line-228"><code>	<span class="keyword">if</span> <label for="r70" class="ident">value</label> == <span class="lit-string">""</span> {</code></span>
+<span class="codeline" id="line-229"><code>		<span class="keyword">return</span> <a href="#line-37" class="ident">emptyContext</a>, <a href="#line-34" class="ident">errEmptyTracerStateString</a></code></span>
+<span class="codeline" id="line-230"><code>	}</code></span>
+<span class="codeline" id="line-231"><code>	<label for="r72" class="ident">parts</label> := <a href="../../../../pkg/strings.html" class="ident i3">strings</a>.<a href="../../../strings/strings.go.html#line-299" class="ident">Split</a>(<label for="r70" class="ident">value</label>, <span class="lit-string">":"</span>)</code></span>
+<span class="codeline" id="line-232"><code>	<span class="keyword">if</span> <a href="../../../../pkg/builtin.html#name-len" class="ident">len</a>(<label for="r72" class="ident">parts</label>) != <span class="lit-number">4</span> {</code></span>
+<span class="codeline" id="line-233"><code>		<span class="keyword">return</span> <a href="#line-37" class="ident">emptyContext</a>, <a href="#line-35" class="ident">errMalformedTracerStateString</a></code></span>
+<span class="codeline" id="line-234"><code>	}</code></span>
+<span class="codeline" id="line-235"><code>	<span class="keyword">var</span> <label for="r73" class="ident">err</label> <a href="../../../../pkg/builtin.html#name-error" class="ident">error</a></code></span>
+<span class="codeline" id="line-236"><code>	<span class="keyword">if</span> <label for="r71" class="ident">context</label>.<a href="#line-52" class="ident">traceID</a>, <label for="r73" class="ident">err</label> = <a href="#line-376" class="ident">TraceIDFromString</a>(<label for="r72" class="ident">parts</label>[<span class="lit-number">0</span>]); <label for="r73" class="ident">err</label> != <a href="../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-237"><code>		<span class="keyword">return</span> <a href="#line-37" class="ident">emptyContext</a>, <label for="r73" class="ident">err</label></code></span>
+<span class="codeline" id="line-238"><code>	}</code></span>
+<span class="codeline" id="line-239"><code>	<span class="keyword">if</span> <label for="r71" class="ident">context</label>.<a href="#line-56" class="ident">spanID</a>, <label for="r73" class="ident">err</label> = <a href="#line-409" class="ident">SpanIDFromString</a>(<label for="r72" class="ident">parts</label>[<span class="lit-number">1</span>]); <label for="r73" class="ident">err</label> != <a href="../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-240"><code>		<span class="keyword">return</span> <a href="#line-37" class="ident">emptyContext</a>, <label for="r73" class="ident">err</label></code></span>
+<span class="codeline" id="line-241"><code>	}</code></span>
+<span class="codeline" id="line-242"><code>	<span class="keyword">if</span> <label for="r71" class="ident">context</label>.<a href="#line-60" class="ident">parentID</a>, <label for="r73" class="ident">err</label> = <a href="#line-409" class="ident">SpanIDFromString</a>(<label for="r72" class="ident">parts</label>[<span class="lit-number">2</span>]); <label for="r73" class="ident">err</label> != <a href="../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-243"><code>		<span class="keyword">return</span> <a href="#line-37" class="ident">emptyContext</a>, <label for="r73" class="ident">err</label></code></span>
+<span class="codeline" id="line-244"><code>	}</code></span>
+<span class="codeline" id="line-245"><code>	<label for="r74" class="ident">flags</label>, <label for="r73" class="ident">err</label> := <a href="../../../../pkg/strconv.html" class="ident i2">strconv</a>.<a href="../../../strconv/atoi.go.html#line-62" class="ident">ParseUint</a>(<label for="r72" class="ident">parts</label>[<span class="lit-number">3</span>], <span class="lit-number">10</span>, <span class="lit-number">8</span>)</code></span>
+<span class="codeline" id="line-246"><code>	<span class="keyword">if</span> <label for="r73" class="ident">err</label> != <a href="../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-247"><code>		<span class="keyword">return</span> <a href="#line-37" class="ident">emptyContext</a>, <label for="r73" class="ident">err</label></code></span>
+<span class="codeline" id="line-248"><code>	}</code></span>
+<span class="codeline" id="line-249"><code>	<label for="r71" class="ident">context</label>.<a href="#line-72" class="ident">samplingState</a> = &amp;<a href="#line-78" class="ident">samplingState</a>{}</code></span>
+<span class="codeline" id="line-250"><code>	<label for="r71" class="ident">context</label>.<a href="#line-72" class="ident">samplingState</a>.<a href="#line-131" class="ident">setFlags</a>(<a href="../../../../pkg/builtin.html#name-byte" class="ident">byte</a>(<label for="r74" class="ident">flags</label>))</code></span>
+<span class="codeline" id="line-251"><code>	<span class="keyword">return</span> <label for="r71" class="ident">context</label>, <a href="../../../../pkg/builtin.html#name-nil" class="ident">nil</a></code></span>
+<span class="codeline" id="line-252"><code>}</code></span>
+<span class="codeline" id="line-253"><code></code></span>
+<span class="codeline" id="line-254"><code><span class="comment">// TraceID returns the trace ID of this span context</span></code></span>
+<span class="codeline" id="line-255"><code><span class="keyword">func</span> (<label for="r75" class="ident">c</label> <a href="#line-49" class="ident">SpanContext</a>) <label for="r76" class="ident"><a href="../../../../use/github.com/uber/jaeger-client-go..SpanContext.TraceID.html" class="ident">TraceID</a></label>() <a href="#line-41" class="ident">TraceID</a> {</code></span>
+<span class="codeline" id="line-256"><code>	<span class="keyword">return</span> <label for="r75" class="ident">c</label>.<a href="#line-52" class="ident">traceID</a></code></span>
+<span class="codeline" id="line-257"><code>}</code></span>
+<span class="codeline" id="line-258"><code></code></span>
+<span class="codeline" id="line-259"><code><span class="comment">// SpanID returns the span ID of this span context</span></code></span>
+<span class="codeline" id="line-260"><code><span class="keyword">func</span> (<label for="r77" class="ident">c</label> <a href="#line-49" class="ident">SpanContext</a>) <label for="r78" class="ident"><a href="../../../../use/github.com/uber/jaeger-client-go..SpanContext.SpanID.html" class="ident">SpanID</a></label>() <a href="#line-46" class="ident">SpanID</a> {</code></span>
+<span class="codeline" id="line-261"><code>	<span class="keyword">return</span> <label for="r77" class="ident">c</label>.<a href="#line-56" class="ident">spanID</a></code></span>
+<span class="codeline" id="line-262"><code>}</code></span>
+<span class="codeline" id="line-263"><code></code></span>
+<span class="codeline" id="line-264"><code><span class="comment">// ParentID returns the parent span ID of this span context</span></code></span>
+<span class="codeline" id="line-265"><code><span class="keyword">func</span> (<label for="r79" class="ident">c</label> <a href="#line-49" class="ident">SpanContext</a>) <label for="r80" class="ident"><a href="../../../../use/github.com/uber/jaeger-client-go..SpanContext.ParentID.html" class="ident">ParentID</a></label>() <a href="#line-46" class="ident">SpanID</a> {</code></span>
+<span class="codeline" id="line-266"><code>	<span class="keyword">return</span> <label for="r79" class="ident">c</label>.<a href="#line-60" class="ident">parentID</a></code></span>
+<span class="codeline" id="line-267"><code>}</code></span>
+<span class="codeline" id="line-268"><code></code></span>
+<span class="codeline" id="line-269"><code><span class="comment">// Flags returns the bitmap containing such bits as 'sampled' and 'debug'.</span></code></span>
+<span class="codeline" id="line-270"><code><span class="keyword">func</span> (<label for="r81" class="ident">c</label> <a href="#line-49" class="ident">SpanContext</a>) <label for="r82" class="ident"><a href="../../../../use/github.com/uber/jaeger-client-go..SpanContext.Flags.html" class="ident">Flags</a></label>() <a href="../../../../pkg/builtin.html#name-byte" class="ident">byte</a> {</code></span>
+<span class="codeline" id="line-271"><code>	<span class="keyword">return</span> <label for="r81" class="ident">c</label>.<a href="#line-72" class="ident">samplingState</a>.<a href="#line-139" class="ident">flags</a>()</code></span>
+<span class="codeline" id="line-272"><code>}</code></span>
+<span class="codeline" id="line-273"><code></code></span>
+<span class="codeline" id="line-274"><code><span class="comment">// Span can be written to if it is sampled or the sampling decision has not been finalized.</span></code></span>
+<span class="codeline" id="line-275"><code><span class="keyword">func</span> (<label for="r83" class="ident">c</label> <a href="#line-49" class="ident">SpanContext</a>) <label for="r84" class="ident"><a href="../../../../use/github.com/uber/jaeger-client-go..SpanContext.isWriteable^78799.html" class="ident">isWriteable</a></label>() <a href="../../../../pkg/builtin.html#name-bool" class="ident">bool</a> {</code></span>
+<span class="codeline" id="line-276"><code>	<label for="r85" class="ident">state</label> := <label for="r83" class="ident">c</label>.<a href="#line-72" class="ident">samplingState</a></code></span>
+<span class="codeline" id="line-277"><code>	<span class="keyword">return</span> !<label for="r85" class="ident">state</label>.<a href="#line-155" class="ident">isFinal</a>() || <label for="r85" class="ident">state</label>.<a href="#line-143" class="ident">isSampled</a>()</code></span>
+<span class="codeline" id="line-278"><code>}</code></span>
+<span class="codeline" id="line-279"><code></code></span>
+<span class="codeline" id="line-280"><code><span class="keyword">func</span> (<label for="r86" class="ident">c</label> <a href="#line-49" class="ident">SpanContext</a>) <label for="r87" class="ident"><a href="../../../../use/github.com/uber/jaeger-client-go..SpanContext.isSamplingFinalized^77e4e.html" class="ident">isSamplingFinalized</a></label>() <a href="../../../../pkg/builtin.html#name-bool" class="ident">bool</a> {</code></span>
+<span class="codeline" id="line-281"><code>	<span class="keyword">return</span> <label for="r86" class="ident">c</label>.<a href="#line-72" class="ident">samplingState</a>.<a href="#line-155" class="ident">isFinal</a>()</code></span>
+<span class="codeline" id="line-282"><code>}</code></span>
+<span class="codeline" id="line-283"><code></code></span>
+<span class="codeline" id="line-284"><code><span class="comment">// NewSpanContext creates a new instance of SpanContext</span></code></span>
+<span class="codeline" id="line-285"><code><span class="keyword">func</span> <label for="r88" class="ident"><a href="../../../../pkg/github.com/uber/jaeger-client-go.html#name-NewSpanContext" class="ident">NewSpanContext</a></label>(<label for="r89" class="ident">traceID</label> <a href="#line-41" class="ident">TraceID</a>, <label for="r90" class="ident">spanID</label>, <label for="r91" class="ident">parentID</label> <a href="#line-46" class="ident">SpanID</a>, <label for="r92" class="ident">sampled</label> <a href="../../../../pkg/builtin.html#name-bool" class="ident">bool</a>, <label for="r93" class="ident">baggage</label> <span class="keyword">map</span>[<a href="../../../../pkg/builtin.html#name-string" class="ident">string</a>]<a href="../../../../pkg/builtin.html#name-string" class="ident">string</a>) <a href="#line-49" class="ident">SpanContext</a> {</code></span>
+<span class="codeline" id="line-286"><code>	<label for="r94" class="ident">samplingState</label> := &amp;<a href="#line-78" class="ident">samplingState</a>{}</code></span>
+<span class="codeline" id="line-287"><code>	<span class="keyword">if</span> <label for="r92" class="ident">sampled</label> {</code></span>
+<span class="codeline" id="line-288"><code>		<label for="r94" class="ident">samplingState</label>.<a href="#line-115" class="ident">setSampled</a>()</code></span>
+<span class="codeline" id="line-289"><code>	}</code></span>
+<span class="codeline" id="line-290"><code></code></span>
+<span class="codeline" id="line-291"><code>	<span class="keyword">return</span> <a href="#line-49" class="ident">SpanContext</a>{</code></span>
+<span class="codeline" id="line-292"><code>		<a href="#line-52" class="ident">traceID</a>:       <label for="r89" class="ident">traceID</label>,</code></span>
+<span class="codeline" id="line-293"><code>		<a href="#line-56" class="ident">spanID</a>:        <label for="r90" class="ident">spanID</label>,</code></span>
+<span class="codeline" id="line-294"><code>		<a href="#line-60" class="ident">parentID</a>:      <label for="r91" class="ident">parentID</label>,</code></span>
+<span class="codeline" id="line-295"><code>		<a href="#line-72" class="ident">samplingState</a>: <label for="r94" class="ident">samplingState</label>,</code></span>
+<span class="codeline" id="line-296"><code>		<a href="#line-63" class="ident">baggage</a>:       <label for="r93" class="ident">baggage</label>}</code></span>
+<span class="codeline" id="line-297"><code>}</code></span>
+<span class="codeline" id="line-298"><code></code></span>
+<span class="codeline" id="line-299"><code><span class="comment">// CopyFrom copies data from ctx into this context, including span identity and baggage.</span></code></span>
+<span class="codeline" id="line-300"><code><span class="comment">// TODO This is only used by interop.go. Remove once TChannel Go supports OpenTracing.</span></code></span>
+<span class="codeline" id="line-301"><code><span class="keyword">func</span> (<label for="r95" class="ident">c</label> *<a href="#line-49" class="ident">SpanContext</a>) <label for="r96" class="ident"><a href="../../../../use/github.com/uber/jaeger-client-go..SpanContext.CopyFrom.html" class="ident">CopyFrom</a></label>(<label for="r97" class="ident">ctx</label> *<a href="#line-49" class="ident">SpanContext</a>) {</code></span>
+<span class="codeline" id="line-302"><code>	<label for="r95" class="ident">c</label>.<a href="#line-52" class="ident">traceID</a> = <label for="r97" class="ident">ctx</label>.<a href="#line-52" class="ident">traceID</a></code></span>
+<span class="codeline" id="line-303"><code>	<label for="r95" class="ident">c</label>.<a href="#line-56" class="ident">spanID</a> = <label for="r97" class="ident">ctx</label>.<a href="#line-56" class="ident">spanID</a></code></span>
+<span class="codeline" id="line-304"><code>	<label for="r95" class="ident">c</label>.<a href="#line-60" class="ident">parentID</a> = <label for="r97" class="ident">ctx</label>.<a href="#line-60" class="ident">parentID</a></code></span>
+<span class="codeline" id="line-305"><code>	<label for="r95" class="ident">c</label>.<a href="#line-72" class="ident">samplingState</a> = <label for="r97" class="ident">ctx</label>.<a href="#line-72" class="ident">samplingState</a></code></span>
+<span class="codeline" id="line-306"><code>	<span class="keyword">if</span> <label for="r98" class="ident">l</label> := <a href="../../../../pkg/builtin.html#name-len" class="ident">len</a>(<label for="r97" class="ident">ctx</label>.<a href="#line-63" class="ident">baggage</a>); <label for="r98" class="ident">l</label> &gt; <span class="lit-number">0</span> {</code></span>
+<span class="codeline" id="line-307"><code>		<label for="r95" class="ident">c</label>.<a href="#line-63" class="ident">baggage</a> = <a href="../../../../pkg/builtin.html#name-make" class="ident">make</a>(<span class="keyword">map</span>[<a href="../../../../pkg/builtin.html#name-string" class="ident">string</a>]<a href="../../../../pkg/builtin.html#name-string" class="ident">string</a>, <label for="r98" class="ident">l</label>)</code></span>
+<span class="codeline" id="line-308"><code>		<span class="keyword">for</span> <label for="r99" class="ident">k</label>, <label for="r100" class="ident">v</label> := <span class="keyword">range</span> <label for="r97" class="ident">ctx</label>.<a href="#line-63" class="ident">baggage</a> {</code></span>
+<span class="codeline" id="line-309"><code>			<label for="r95" class="ident">c</label>.<a href="#line-63" class="ident">baggage</a>[<label for="r99" class="ident">k</label>] = <label for="r100" class="ident">v</label></code></span>
+<span class="codeline" id="line-310"><code>		}</code></span>
+<span class="codeline" id="line-311"><code>	} <span class="keyword">else</span> {</code></span>
+<span class="codeline" id="line-312"><code>		<label for="r95" class="ident">c</label>.<a href="#line-63" class="ident">baggage</a> = <a href="../../../../pkg/builtin.html#name-nil" class="ident">nil</a></code></span>
+<span class="codeline" id="line-313"><code>	}</code></span>
+<span class="codeline" id="line-314"><code>}</code></span>
+<span class="codeline" id="line-315"><code></code></span>
+<span class="codeline" id="line-316"><code><span class="comment">// WithBaggageItem creates a new context with an extra baggage item.</span></code></span>
+<span class="codeline" id="line-317"><code><span class="comment">// Delete a baggage item if provided blank value.</span></code></span>
+<span class="codeline" id="line-318"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-319"><code><span class="comment">// The SpanContext is designed to be immutable and passed by value. As such,</span></code></span>
+<span class="codeline" id="line-320"><code><span class="comment">// it cannot contain any locks, and should only hold immutable data, including baggage.</span></code></span>
+<span class="codeline" id="line-321"><code><span class="comment">// Another reason for why baggage is immutable is when the span context is passed</span></code></span>
+<span class="codeline" id="line-322"><code><span class="comment">// as a parent when starting a new span. The new span's baggage cannot affect the parent</span></code></span>
+<span class="codeline" id="line-323"><code><span class="comment">// span's baggage, so the child span either needs to take a copy of the parent baggage</span></code></span>
+<span class="codeline" id="line-324"><code><span class="comment">// (which is expensive and unnecessary since baggage rarely changes in the life span of</span></code></span>
+<span class="codeline" id="line-325"><code><span class="comment">// a trace), or it needs to do a copy-on-write, which is the approach taken here.</span></code></span>
+<span class="codeline" id="line-326"><code><span class="keyword">func</span> (<label for="r101" class="ident">c</label> <a href="#line-49" class="ident">SpanContext</a>) <label for="r102" class="ident"><a href="../../../../use/github.com/uber/jaeger-client-go..SpanContext.WithBaggageItem.html" class="ident">WithBaggageItem</a></label>(<label for="r103" class="ident">key</label>, <label for="r104" class="ident">value</label> <a href="../../../../pkg/builtin.html#name-string" class="ident">string</a>) <a href="#line-49" class="ident">SpanContext</a> {</code></span>
+<span class="codeline" id="line-327"><code>	<span class="keyword">var</span> <label for="r105" class="ident">newBaggage</label> <span class="keyword">map</span>[<a href="../../../../pkg/builtin.html#name-string" class="ident">string</a>]<a href="../../../../pkg/builtin.html#name-string" class="ident">string</a></code></span>
+<span class="codeline" id="line-328"><code>	<span class="comment">// unset baggage item</span></code></span>
+<span class="codeline" id="line-329"><code>	<span class="keyword">if</span> <label for="r104" class="ident">value</label> == <span class="lit-string">""</span> {</code></span>
+<span class="codeline" id="line-330"><code>		<span class="keyword">if</span> <label for="r106" class="ident">_</label>, <label for="r107" class="ident">ok</label> := <label for="r101" class="ident">c</label>.<a href="#line-63" class="ident">baggage</a>[<label for="r103" class="ident">key</label>]; !<label for="r107" class="ident">ok</label> {</code></span>
+<span class="codeline" id="line-331"><code>			<span class="keyword">return</span> <label for="r101" class="ident">c</label></code></span>
+<span class="codeline" id="line-332"><code>		}</code></span>
+<span class="codeline" id="line-333"><code>		<label for="r105" class="ident">newBaggage</label> = <a href="../../../../pkg/builtin.html#name-make" class="ident">make</a>(<span class="keyword">map</span>[<a href="../../../../pkg/builtin.html#name-string" class="ident">string</a>]<a href="../../../../pkg/builtin.html#name-string" class="ident">string</a>, <a href="../../../../pkg/builtin.html#name-len" class="ident">len</a>(<label for="r101" class="ident">c</label>.<a href="#line-63" class="ident">baggage</a>))</code></span>
+<span class="codeline" id="line-334"><code>		<span class="keyword">for</span> <label for="r108" class="ident">k</label>, <label for="r109" class="ident">v</label> := <span class="keyword">range</span> <label for="r101" class="ident">c</label>.<a href="#line-63" class="ident">baggage</a> {</code></span>
+<span class="codeline" id="line-335"><code>			<label for="r105" class="ident">newBaggage</label>[<label for="r108" class="ident">k</label>] = <label for="r109" class="ident">v</label></code></span>
+<span class="codeline" id="line-336"><code>		}</code></span>
+<span class="codeline" id="line-337"><code>		<a href="../../../../pkg/builtin.html#name-delete" class="ident">delete</a>(<label for="r105" class="ident">newBaggage</label>, <label for="r103" class="ident">key</label>)</code></span>
+<span class="codeline" id="line-338"><code>		<span class="keyword">return</span> <a href="#line-49" class="ident">SpanContext</a>{<label for="r101" class="ident">c</label>.<a href="#line-52" class="ident">traceID</a>, <label for="r101" class="ident">c</label>.<a href="#line-56" class="ident">spanID</a>, <label for="r101" class="ident">c</label>.<a href="#line-60" class="ident">parentID</a>, <label for="r105" class="ident">newBaggage</label>, <span class="lit-string">""</span>, <label for="r101" class="ident">c</label>.<a href="#line-72" class="ident">samplingState</a>, <label for="r101" class="ident">c</label>.<a href="#line-75" class="ident">remote</a>}</code></span>
+<span class="codeline" id="line-339"><code>	}</code></span>
+<span class="codeline" id="line-340"><code>	<span class="keyword">if</span> <label for="r101" class="ident">c</label>.<a href="#line-63" class="ident">baggage</a> == <a href="../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-341"><code>		<label for="r105" class="ident">newBaggage</label> = <span class="keyword">map</span>[<a href="../../../../pkg/builtin.html#name-string" class="ident">string</a>]<a href="../../../../pkg/builtin.html#name-string" class="ident">string</a>{<label for="r103" class="ident">key</label>: <label for="r104" class="ident">value</label>}</code></span>
+<span class="codeline" id="line-342"><code>	} <span class="keyword">else</span> {</code></span>
+<span class="codeline" id="line-343"><code>		<label for="r105" class="ident">newBaggage</label> = <a href="../../../../pkg/builtin.html#name-make" class="ident">make</a>(<span class="keyword">map</span>[<a href="../../../../pkg/builtin.html#name-string" class="ident">string</a>]<a href="../../../../pkg/builtin.html#name-string" class="ident">string</a>, <a href="../../../../pkg/builtin.html#name-len" class="ident">len</a>(<label for="r101" class="ident">c</label>.<a href="#line-63" class="ident">baggage</a>)+<span class="lit-number">1</span>)</code></span>
+<span class="codeline" id="line-344"><code>		<span class="keyword">for</span> <label for="r110" class="ident">k</label>, <label for="r111" class="ident">v</label> := <span class="keyword">range</span> <label for="r101" class="ident">c</label>.<a href="#line-63" class="ident">baggage</a> {</code></span>
+<span class="codeline" id="line-345"><code>			<label for="r105" class="ident">newBaggage</label>[<label for="r110" class="ident">k</label>] = <label for="r111" class="ident">v</label></code></span>
+<span class="codeline" id="line-346"><code>		}</code></span>
+<span class="codeline" id="line-347"><code>		<label for="r105" class="ident">newBaggage</label>[<label for="r103" class="ident">key</label>] = <label for="r104" class="ident">value</label></code></span>
+<span class="codeline" id="line-348"><code>	}</code></span>
+<span class="codeline" id="line-349"><code>	<span class="comment">// Use positional parameters so the compiler will help catch new fields.</span></code></span>
+<span class="codeline" id="line-350"><code>	<span class="keyword">return</span> <a href="#line-49" class="ident">SpanContext</a>{<label for="r101" class="ident">c</label>.<a href="#line-52" class="ident">traceID</a>, <label for="r101" class="ident">c</label>.<a href="#line-56" class="ident">spanID</a>, <label for="r101" class="ident">c</label>.<a href="#line-60" class="ident">parentID</a>, <label for="r105" class="ident">newBaggage</label>, <span class="lit-string">""</span>, <label for="r101" class="ident">c</label>.<a href="#line-72" class="ident">samplingState</a>, <label for="r101" class="ident">c</label>.<a href="#line-75" class="ident">remote</a>}</code></span>
+<span class="codeline" id="line-351"><code>}</code></span>
+<span class="codeline" id="line-352"><code></code></span>
+<span class="codeline" id="line-353"><code><span class="comment">// isDebugIDContainerOnly returns true when the instance of the context is only</span></code></span>
+<span class="codeline" id="line-354"><code><span class="comment">// used to return the debug/correlation ID from extract() method. This happens</span></code></span>
+<span class="codeline" id="line-355"><code><span class="comment">// in the situation when "jaeger-debug-id" header is passed in the carrier to</span></code></span>
+<span class="codeline" id="line-356"><code><span class="comment">// the extract() method, but the request otherwise has no span context in it.</span></code></span>
+<span class="codeline" id="line-357"><code><span class="comment">// Previously this would've returned opentracing.ErrSpanContextNotFound from the</span></code></span>
+<span class="codeline" id="line-358"><code><span class="comment">// extract method, but now it returns a dummy context with only debugID filled in.</span></code></span>
+<span class="codeline" id="line-359"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-360"><code><span class="comment">// See JaegerDebugHeader in constants.go</span></code></span>
+<span class="codeline" id="line-361"><code><span class="comment">// See TextMapPropagator#Extract</span></code></span>
+<span class="codeline" id="line-362"><code><span class="keyword">func</span> (<label for="r112" class="ident">c</label> *<a href="#line-49" class="ident">SpanContext</a>) <label for="r113" class="ident"><a href="../../../../use/github.com/uber/jaeger-client-go..SpanContext.isDebugIDContainerOnly^8ae7a.html" class="ident">isDebugIDContainerOnly</a></label>() <a href="../../../../pkg/builtin.html#name-bool" class="ident">bool</a> {</code></span>
+<span class="codeline" id="line-363"><code>	<span class="keyword">return</span> !<label for="r112" class="ident">c</label>.<a href="#line-52" class="ident">traceID</a>.<a href="#line-398" class="ident">IsValid</a>() &amp;&amp; <label for="r112" class="ident">c</label>.<a href="#line-69" class="ident">debugID</a> != <span class="lit-string">""</span></code></span>
+<span class="codeline" id="line-364"><code>}</code></span>
+<span class="codeline" id="line-365"><code></code></span>
+<span class="codeline" id="line-366"><code><span class="comment">// ------- TraceID -------</span></code></span>
+<span class="codeline" id="line-367"><code></code></span>
+<span class="codeline" id="line-368"><code><span class="keyword">func</span> (<label for="r114" class="ident">t</label> <a href="#line-41" class="ident">TraceID</a>) <label for="r115" class="ident"><a href="../../../../use/github.com/uber/jaeger-client-go..TraceID.String.html" class="ident">String</a></label>() <a href="../../../../pkg/builtin.html#name-string" class="ident">string</a> {</code></span>
+<span class="codeline" id="line-369"><code>	<span class="keyword">if</span> <label for="r114" class="ident">t</label>.<a href="#line-42" class="ident">High</a> == <span class="lit-number">0</span> {</code></span>
+<span class="codeline" id="line-370"><code>		<span class="keyword">return</span> <a href="../../../../pkg/fmt.html" class="ident i1">fmt</a>.<a href="../../../fmt/print.go.html#line-217" class="ident">Sprintf</a>(<span class="lit-string">"%016x"</span>, <label for="r114" class="ident">t</label>.<a href="#line-42" class="ident">Low</a>)</code></span>
+<span class="codeline" id="line-371"><code>	}</code></span>
+<span class="codeline" id="line-372"><code>	<span class="keyword">return</span> <a href="../../../../pkg/fmt.html" class="ident i1">fmt</a>.<a href="../../../fmt/print.go.html#line-217" class="ident">Sprintf</a>(<span class="lit-string">"%016x%016x"</span>, <label for="r114" class="ident">t</label>.<a href="#line-42" class="ident">High</a>, <label for="r114" class="ident">t</label>.<a href="#line-42" class="ident">Low</a>)</code></span>
+<span class="codeline" id="line-373"><code>}</code></span>
+<span class="codeline" id="line-374"><code></code></span>
+<span class="codeline" id="line-375"><code><span class="comment">// TraceIDFromString creates a TraceID from a hexadecimal string</span></code></span>
+<span class="codeline" id="line-376"><code><span class="keyword">func</span> <label for="r116" class="ident"><a href="../../../../pkg/github.com/uber/jaeger-client-go.html#name-TraceIDFromString" class="ident">TraceIDFromString</a></label>(<label for="r117" class="ident">s</label> <a href="../../../../pkg/builtin.html#name-string" class="ident">string</a>) (<a href="#line-41" class="ident">TraceID</a>, <a href="../../../../pkg/builtin.html#name-error" class="ident">error</a>) {</code></span>
+<span class="codeline" id="line-377"><code>	<span class="keyword">var</span> <label for="r118" class="ident">hi</label>, <label for="r119" class="ident">lo</label> <a href="../../../../pkg/builtin.html#name-uint64" class="ident">uint64</a></code></span>
+<span class="codeline" id="line-378"><code>	<span class="keyword">var</span> <label for="r120" class="ident">err</label> <a href="../../../../pkg/builtin.html#name-error" class="ident">error</a></code></span>
+<span class="codeline" id="line-379"><code>	<span class="keyword">if</span> <a href="../../../../pkg/builtin.html#name-len" class="ident">len</a>(<label for="r117" class="ident">s</label>) &gt; <span class="lit-number">32</span> {</code></span>
+<span class="codeline" id="line-380"><code>		<span class="keyword">return</span> <a href="#line-41" class="ident">TraceID</a>{}, <a href="../../../../pkg/fmt.html" class="ident i1">fmt</a>.<a href="../../../fmt/errors.go.html#line-17" class="ident">Errorf</a>(<span class="lit-string">"TraceID cannot be longer than 32 hex characters: %s"</span>, <label for="r117" class="ident">s</label>)</code></span>
+<span class="codeline" id="line-381"><code>	} <span class="keyword">else</span> <span class="keyword">if</span> <a href="../../../../pkg/builtin.html#name-len" class="ident">len</a>(<label for="r117" class="ident">s</label>) &gt; <span class="lit-number">16</span> {</code></span>
+<span class="codeline" id="line-382"><code>		<label for="r121" class="ident">hiLen</label> := <a href="../../../../pkg/builtin.html#name-len" class="ident">len</a>(<label for="r117" class="ident">s</label>) - <span class="lit-number">16</span></code></span>
+<span class="codeline" id="line-383"><code>		<span class="keyword">if</span> <label for="r118" class="ident">hi</label>, <label for="r120" class="ident">err</label> = <a href="../../../../pkg/strconv.html" class="ident i2">strconv</a>.<a href="../../../strconv/atoi.go.html#line-62" class="ident">ParseUint</a>(<label for="r117" class="ident">s</label>[<span class="lit-number">0</span>:<label for="r121" class="ident">hiLen</label>], <span class="lit-number">16</span>, <span class="lit-number">64</span>); <label for="r120" class="ident">err</label> != <a href="../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-384"><code>			<span class="keyword">return</span> <a href="#line-41" class="ident">TraceID</a>{}, <label for="r120" class="ident">err</label></code></span>
+<span class="codeline" id="line-385"><code>		}</code></span>
+<span class="codeline" id="line-386"><code>		<span class="keyword">if</span> <label for="r119" class="ident">lo</label>, <label for="r120" class="ident">err</label> = <a href="../../../../pkg/strconv.html" class="ident i2">strconv</a>.<a href="../../../strconv/atoi.go.html#line-62" class="ident">ParseUint</a>(<label for="r117" class="ident">s</label>[<label for="r121" class="ident">hiLen</label>:], <span class="lit-number">16</span>, <span class="lit-number">64</span>); <label for="r120" class="ident">err</label> != <a href="../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-387"><code>			<span class="keyword">return</span> <a href="#line-41" class="ident">TraceID</a>{}, <label for="r120" class="ident">err</label></code></span>
+<span class="codeline" id="line-388"><code>		}</code></span>
+<span class="codeline" id="line-389"><code>	} <span class="keyword">else</span> {</code></span>
+<span class="codeline" id="line-390"><code>		<span class="keyword">if</span> <label for="r119" class="ident">lo</label>, <label for="r120" class="ident">err</label> = <a href="../../../../pkg/strconv.html" class="ident i2">strconv</a>.<a href="../../../strconv/atoi.go.html#line-62" class="ident">ParseUint</a>(<label for="r117" class="ident">s</label>, <span class="lit-number">16</span>, <span class="lit-number">64</span>); <label for="r120" class="ident">err</label> != <a href="../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-391"><code>			<span class="keyword">return</span> <a href="#line-41" class="ident">TraceID</a>{}, <label for="r120" class="ident">err</label></code></span>
+<span class="codeline" id="line-392"><code>		}</code></span>
+<span class="codeline" id="line-393"><code>	}</code></span>
+<span class="codeline" id="line-394"><code>	<span class="keyword">return</span> <a href="#line-41" class="ident">TraceID</a>{<a href="#line-42" class="ident">High</a>: <label for="r118" class="ident">hi</label>, <a href="#line-42" class="ident">Low</a>: <label for="r119" class="ident">lo</label>}, <a href="../../../../pkg/builtin.html#name-nil" class="ident">nil</a></code></span>
+<span class="codeline" id="line-395"><code>}</code></span>
+<span class="codeline" id="line-396"><code></code></span>
+<span class="codeline" id="line-397"><code><span class="comment">// IsValid checks if the trace ID is valid, i.e. not zero.</span></code></span>
+<span class="codeline" id="line-398"><code><span class="keyword">func</span> (<label for="r122" class="ident">t</label> <a href="#line-41" class="ident">TraceID</a>) <label for="r123" class="ident"><a href="../../../../use/github.com/uber/jaeger-client-go..TraceID.IsValid.html" class="ident">IsValid</a></label>() <a href="../../../../pkg/builtin.html#name-bool" class="ident">bool</a> {</code></span>
+<span class="codeline" id="line-399"><code>	<span class="keyword">return</span> <label for="r122" class="ident">t</label>.<a href="#line-42" class="ident">High</a> != <span class="lit-number">0</span> || <label for="r122" class="ident">t</label>.<a href="#line-42" class="ident">Low</a> != <span class="lit-number">0</span></code></span>
+<span class="codeline" id="line-400"><code>}</code></span>
+<span class="codeline" id="line-401"><code></code></span>
+<span class="codeline" id="line-402"><code><span class="comment">// ------- SpanID -------</span></code></span>
+<span class="codeline" id="line-403"><code></code></span>
+<span class="codeline" id="line-404"><code><span class="keyword">func</span> (<label for="r124" class="ident">s</label> <a href="#line-46" class="ident">SpanID</a>) <label for="r125" class="ident"><a href="../../../../use/github.com/uber/jaeger-client-go..SpanID.String.html" class="ident">String</a></label>() <a href="../../../../pkg/builtin.html#name-string" class="ident">string</a> {</code></span>
+<span class="codeline" id="line-405"><code>	<span class="keyword">return</span> <a href="../../../../pkg/fmt.html" class="ident i1">fmt</a>.<a href="../../../fmt/print.go.html#line-217" class="ident">Sprintf</a>(<span class="lit-string">"%016x"</span>, <a href="../../../../pkg/builtin.html#name-uint64" class="ident">uint64</a>(<label for="r124" class="ident">s</label>))</code></span>
+<span class="codeline" id="line-406"><code>}</code></span>
+<span class="codeline" id="line-407"><code></code></span>
+<span class="codeline" id="line-408"><code><span class="comment">// SpanIDFromString creates a SpanID from a hexadecimal string</span></code></span>
+<span class="codeline" id="line-409"><code><span class="keyword">func</span> <label for="r126" class="ident"><a href="../../../../pkg/github.com/uber/jaeger-client-go.html#name-SpanIDFromString" class="ident">SpanIDFromString</a></label>(<label for="r127" class="ident">s</label> <a href="../../../../pkg/builtin.html#name-string" class="ident">string</a>) (<a href="#line-46" class="ident">SpanID</a>, <a href="../../../../pkg/builtin.html#name-error" class="ident">error</a>) {</code></span>
+<span class="codeline" id="line-410"><code>	<span class="keyword">if</span> <a href="../../../../pkg/builtin.html#name-len" class="ident">len</a>(<label for="r127" class="ident">s</label>) &gt; <span class="lit-number">16</span> {</code></span>
+<span class="codeline" id="line-411"><code>		<span class="keyword">return</span> <a href="#line-46" class="ident">SpanID</a>(<span class="lit-number">0</span>), <a href="../../../../pkg/fmt.html" class="ident i1">fmt</a>.<a href="../../../fmt/errors.go.html#line-17" class="ident">Errorf</a>(<span class="lit-string">"SpanID cannot be longer than 16 hex characters: %s"</span>, <label for="r127" class="ident">s</label>)</code></span>
+<span class="codeline" id="line-412"><code>	}</code></span>
+<span class="codeline" id="line-413"><code>	<label for="r128" class="ident">id</label>, <label for="r129" class="ident">err</label> := <a href="../../../../pkg/strconv.html" class="ident i2">strconv</a>.<a href="../../../strconv/atoi.go.html#line-62" class="ident">ParseUint</a>(<label for="r127" class="ident">s</label>, <span class="lit-number">16</span>, <span class="lit-number">64</span>)</code></span>
+<span class="codeline" id="line-414"><code>	<span class="keyword">if</span> <label for="r129" class="ident">err</label> != <a href="../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-415"><code>		<span class="keyword">return</span> <a href="#line-46" class="ident">SpanID</a>(<span class="lit-number">0</span>), <label for="r129" class="ident">err</label></code></span>
+<span class="codeline" id="line-416"><code>	}</code></span>
+<span class="codeline" id="line-417"><code>	<span class="keyword">return</span> <a href="#line-46" class="ident">SpanID</a>(<label for="r128" class="ident">id</label>), <a href="../../../../pkg/builtin.html#name-nil" class="ident">nil</a></code></span>
+<span class="codeline" id="line-418"><code>}</code></span>
+</pre><pre id="footer">
+<table><tr><td><img src="../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

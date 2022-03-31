@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: google.golang.org/grpc/internal/transport.Stream.header</title>
+<link href="../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../../pkg/google.golang.org/grpc/internal/transport.html">google.golang.org/grpc/internal/transport</a>.<a href="../../../../src/google.golang.org/grpc/internal/transport/transport.go.html#line-238">Stream</a>.<a href="../../../../src/google.golang.org/grpc/internal/transport/transport.go.html#line-272">header</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">14 uses</span>
+
+	google.golang.org/grpc/internal/transport (current package)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/handler_server.go.html#line-277">handler_server.go#L277</a>: 	for k, vv := range s.<b>header</b> {
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1427">http2_client.go#L1427</a>: 				s.<b>header</b> = mdata
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-935">http2_server.go#L935</a>: 		if s.<b>header</b>.Len() &gt; 0 {
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-936" class="path-duplicate">http2_server.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-936">#L936</a>: 			s.<b>header</b> = metadata.Join(s.<b>header</b>, md)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-938" class="path-duplicate">http2_server.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-938">#L938</a>: 			s.<b>header</b> = md
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-962" class="path-duplicate">http2_server.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-962">#L962</a>: 	headerFields = appendHeaderFieldsFromMD(headerFields, s.<b>header</b>)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-980" class="path-duplicate">http2_server.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-980">#L980</a>: 			Header:      s.<b>header</b>.Copy(),
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1001" class="path-duplicate">http2_server.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1001">#L1001</a>: 		if len(s.<b>header</b>) &gt; 0 { // Send a separate header frame.
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/transport.go.html#line-272">transport.go#L272</a>: 	<b>header</b>  metadata.MD
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/transport.go.html#line-365" class="path-duplicate">transport.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/transport.go.html#line-365">#L365</a>: 		return s.<b>header</b>.Copy(), nil
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/transport.go.html#line-371" class="path-duplicate">transport.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/transport.go.html#line-371">#L371</a>: 	return s.<b>header</b>.Copy(), nil
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/transport.go.html#line-429" class="path-duplicate">transport.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/transport.go.html#line-429">#L429</a>: 	s.<b>header</b> = metadata.Join(s.<b>header</b>, md)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

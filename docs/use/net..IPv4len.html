@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: net.IPv4len</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">const <b><a href="../pkg/net.html">net</a>.<a href="../src/net/ip.go.html#line-22">IPv4len</a></b></span>
+
+<span class="title">28 uses</span>
+
+	net (current package)
+		<a href="../src/net/ip.go.html#line-22">ip.go#L22</a>: 	<b>IPv4len</b> = 4
+		<a href="../src/net/ip.go.html#line-66" class="path-duplicate">ip.go</a><a href="../src/net/ip.go.html#line-66">#L66</a>: 	p := make(IPMask, <b>IPv4len</b>)
+		<a href="../src/net/ip.go.html#line-78" class="path-duplicate">ip.go</a><a href="../src/net/ip.go.html#line-78">#L78</a>: 	if bits != 8*<b>IPv4len</b> &amp;&amp; bits != 8*IPv6len {
+		<a href="../src/net/ip.go.html#line-191" class="path-duplicate">ip.go</a><a href="../src/net/ip.go.html#line-191">#L191</a>: 	return (len(ip) == <b>IPv4len</b> || len(ip) == IPv6len) &amp;&amp;
+		<a href="../src/net/ip.go.html#line-212" class="path-duplicate">ip.go</a><a href="../src/net/ip.go.html#line-212">#L212</a>: 	if len(ip) == <b>IPv4len</b> {
+		<a href="../src/net/ip.go.html#line-227" class="path-duplicate">ip.go</a><a href="../src/net/ip.go.html#line-227">#L227</a>: 	if len(ip) == <b>IPv4len</b> {
+		<a href="../src/net/ip.go.html#line-271" class="path-duplicate">ip.go</a><a href="../src/net/ip.go.html#line-271">#L271</a>: 	if len(mask) == IPv6len &amp;&amp; len(ip) == <b>IPv4len</b> &amp;&amp; allFF(mask[:12]) {
+		<a href="../src/net/ip.go.html#line-274" class="path-duplicate">ip.go</a><a href="../src/net/ip.go.html#line-274">#L274</a>: 	if len(mask) == <b>IPv4len</b> &amp;&amp; len(ip) == IPv6len &amp;&amp; bytealg.Equal(ip[:12], v4InV6Prefix) {
+		<a href="../src/net/ip.go.html#line-321" class="path-duplicate">ip.go</a><a href="../src/net/ip.go.html#line-321">#L321</a>: 	if p4 := p.To4(); len(p4) == <b>IPv4len</b> {
+		<a href="../src/net/ip.go.html#line-407" class="path-duplicate">ip.go</a><a href="../src/net/ip.go.html#line-407">#L407</a>: 	if len(ip) != <b>IPv4len</b> &amp;&amp; len(ip) != IPv6len {
+		<a href="../src/net/ip.go.html#line-436" class="path-duplicate">ip.go</a><a href="../src/net/ip.go.html#line-436">#L436</a>: 	if len(ip) == <b>IPv4len</b> &amp;&amp; len(x) == IPv6len {
+		<a href="../src/net/ip.go.html#line-439" class="path-duplicate">ip.go</a><a href="../src/net/ip.go.html#line-439">#L439</a>: 	if len(ip) == IPv6len &amp;&amp; len(x) == <b>IPv4len</b> {
+		<a href="../src/net/ip.go.html#line-506" class="path-duplicate">ip.go</a><a href="../src/net/ip.go.html#line-506">#L506</a>: 	case <b>IPv4len</b>:
+		<a href="../src/net/ip.go.html#line-507" class="path-duplicate">ip.go</a><a href="../src/net/ip.go.html#line-507">#L507</a>: 		if len(ip) != <b>IPv4len</b> {
+		<a href="../src/net/ip.go.html#line-511" class="path-duplicate">ip.go</a><a href="../src/net/ip.go.html#line-511">#L511</a>: 		if len(ip) == <b>IPv4len</b> {
+		<a href="../src/net/ip.go.html#line-561" class="path-duplicate">ip.go</a><a href="../src/net/ip.go.html#line-561">#L561</a>: 	var p [<b>IPv4len</b>]byte
+		<a href="../src/net/ip.go.html#line-562" class="path-duplicate">ip.go</a><a href="../src/net/ip.go.html#line-562">#L562</a>: 	for i := 0; i &lt; <b>IPv4len</b>; i++ {
+		<a href="../src/net/ip.go.html#line-624" class="path-duplicate">ip.go</a><a href="../src/net/ip.go.html#line-624">#L624</a>: 			if ellipsis &lt; 0 &amp;&amp; i != IPv6len-<b>IPv4len</b> {
+		<a href="../src/net/ip.go.html#line-628" class="path-duplicate">ip.go</a><a href="../src/net/ip.go.html#line-628">#L628</a>: 			if i+<b>IPv4len</b> &gt; IPv6len {
+		<a href="../src/net/ip.go.html#line-641" class="path-duplicate">ip.go</a><a href="../src/net/ip.go.html#line-641">#L641</a>: 			i += <b>IPv4len</b>
+		<a href="../src/net/ip.go.html#line-744" class="path-duplicate">ip.go</a><a href="../src/net/ip.go.html#line-744">#L744</a>: 	iplen := <b>IPv4len</b>
+		<a href="../src/net/iprawsock_posix.go.html#line-26">iprawsock_posix.go#L26</a>: 	if a == nil || len(a.IP) &lt;= <b>IPv4len</b> {
+		<a href="../src/net/tcpsock_posix.go.html#line-28">tcpsock_posix.go#L28</a>: 	if a == nil || len(a.IP) &lt;= <b>IPv4len</b> {
+		<a href="../src/net/udpsock_posix.go.html#line-26">udpsock_posix.go#L26</a>: 	if a == nil || len(a.IP) &lt;= <b>IPv4len</b> {
+
+	<a href="../pkg/net/http.html">net/http</a>
+		<a href="../src/net/http/socks_bundle.go.html#line-131">socks_bundle.go#L131</a>: 		l += net.<b>IPv4len</b>
+		<a href="../src/net/http/socks_bundle.go.html#line-132" class="path-duplicate">socks_bundle.go</a><a href="../src/net/http/socks_bundle.go.html#line-132">#L132</a>: 		a.IP = make(net.IP, net.<b>IPv4len</b>)
+
+	<a href="../pkg/crypto/x509.html">crypto/x509</a>
+		<a href="../src/crypto/x509/parser.go.html#line-418">parser.go#L418</a>: 			case net.<b>IPv4len</b>, net.IPv6len:
+		<a href="../src/crypto/x509/verify.go.html#line-647">verify.go#L647</a>: 				if l := len(ip); l != net.<b>IPv4len</b> &amp;&amp; l != net.IPv6len {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: os.NewSyscallError</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">func <b><a href="../pkg/os.html">os</a>.<a href="../src/os/error.go.html#line-69">NewSyscallError</a></b></span>
+
+<span class="title">28 uses</span>
+
+	os (current package)
+		<a href="../src/os/env.go.html#line-122">env.go#L122</a>: 		return <b>NewSyscallError</b>("setenv", err)
+		<a href="../src/os/error.go.html#line-69">error.go#L69</a>: func <b>NewSyscallError</b>(syscall string, err error) error {
+		<a href="../src/os/error_posix.go.html#line-16">error_posix.go#L16</a>: 		err = <b>NewSyscallError</b>(name, err)
+		<a href="../src/os/exec_unix.go.html#line-50">exec_unix.go#L50</a>: 		return nil, <b>NewSyscallError</b>("wait", e)
+		<a href="../src/os/getwd.go.html#line-54">getwd.go#L54</a>: 		return s, <b>NewSyscallError</b>("getwd", e)
+		<a href="../src/os/pipe_bsd.go.html#line-22">pipe_bsd.go#L22</a>: 		return nil, nil, <b>NewSyscallError</b>("pipe", e)
+		<a href="../src/os/proc.go.html#line-54">proc.go#L54</a>: 	return gids, <b>NewSyscallError</b>("getgroups", e)
+		<a href="../src/os/sys_bsd.go.html#line-15">sys_bsd.go#L15</a>: 		return "", <b>NewSyscallError</b>("sysctl kern.hostname", err)
+
+	<a href="../pkg/net.html">net</a>
+		<a href="../src/net/error_posix.go.html#line-19">error_posix.go#L19</a>: 		err = os.<b>NewSyscallError</b>(name, err)
+		<a href="../src/net/fd_unix.go.html#line-84">fd_unix.go#L84</a>: 		return nil, os.<b>NewSyscallError</b>("connect", err)
+		<a href="../src/net/fd_unix.go.html#line-152" class="path-duplicate">fd_unix.go</a><a href="../src/net/fd_unix.go.html#line-152">#L152</a>: 			return nil, os.<b>NewSyscallError</b>("getsockopt", err)
+		<a href="../src/net/fd_unix.go.html#line-166" class="path-duplicate">fd_unix.go</a><a href="../src/net/fd_unix.go.html#line-166">#L166</a>: 			return nil, os.<b>NewSyscallError</b>("connect", err)
+		<a href="../src/net/fd_unix.go.html#line-198" class="path-duplicate">fd_unix.go</a><a href="../src/net/fd_unix.go.html#line-198">#L198</a>: 			err = os.<b>NewSyscallError</b>(call, err)
+		<a href="../src/net/file_unix.go.html#line-20">file_unix.go#L20</a>: 			err = os.<b>NewSyscallError</b>(call, err)
+		<a href="../src/net/file_unix.go.html#line-26" class="path-duplicate">file_unix.go</a><a href="../src/net/file_unix.go.html#line-26">#L26</a>: 		return -1, os.<b>NewSyscallError</b>("setnonblock", err)
+		<a href="../src/net/file_unix.go.html#line-40" class="path-duplicate">file_unix.go</a><a href="../src/net/file_unix.go.html#line-40">#L40</a>: 		return nil, os.<b>NewSyscallError</b>("getsockopt", err)
+		<a href="../src/net/sock_posix.go.html#line-140">sock_posix.go#L140</a>: 				return os.<b>NewSyscallError</b>("bind", err)
+		<a href="../src/net/sock_posix.go.html#line-195" class="path-duplicate">sock_posix.go</a><a href="../src/net/sock_posix.go.html#line-195">#L195</a>: 		return os.<b>NewSyscallError</b>("bind", err)
+		<a href="../src/net/sock_posix.go.html#line-198" class="path-duplicate">sock_posix.go</a><a href="../src/net/sock_posix.go.html#line-198">#L198</a>: 		return os.<b>NewSyscallError</b>("listen", err)
+		<a href="../src/net/sock_posix.go.html#line-247" class="path-duplicate">sock_posix.go</a><a href="../src/net/sock_posix.go.html#line-247">#L247</a>: 		return os.<b>NewSyscallError</b>("bind", err)
+		<a href="../src/net/sockopt_bsd.go.html#line-37">sockopt_bsd.go#L37</a>: 		return os.<b>NewSyscallError</b>("setsockopt", syscall.SetsockoptInt(s, syscall.SOL_SOCKET, syscall.SO_BROADCAST, 1))
+		<a href="../src/net/sockopt_bsd.go.html#line-44" class="path-duplicate">sockopt_bsd.go</a><a href="../src/net/sockopt_bsd.go.html#line-44">#L44</a>: 	return os.<b>NewSyscallError</b>("setsockopt", syscall.SetsockoptInt(s, syscall.SOL_SOCKET, syscall.SO_REUSEADDR, 1))
+		<a href="../src/net/sockopt_bsd.go.html#line-51" class="path-duplicate">sockopt_bsd.go</a><a href="../src/net/sockopt_bsd.go.html#line-51">#L51</a>: 		return os.<b>NewSyscallError</b>("setsockopt", err)
+		<a href="../src/net/sockopt_bsd.go.html#line-57" class="path-duplicate">sockopt_bsd.go</a><a href="../src/net/sockopt_bsd.go.html#line-57">#L57</a>: 	return os.<b>NewSyscallError</b>("setsockopt", syscall.SetsockoptInt(s, syscall.SOL_SOCKET, syscall.SO_REUSEPORT, 1))
+		<a href="../src/net/sys_cloexec.go.html#line-30">sys_cloexec.go#L30</a>: 		return -1, os.<b>NewSyscallError</b>("socket", err)
+		<a href="../src/net/sys_cloexec.go.html#line-34" class="path-duplicate">sys_cloexec.go</a><a href="../src/net/sys_cloexec.go.html#line-34">#L34</a>: 		return -1, os.<b>NewSyscallError</b>("setnonblock", err)
+
+	<a href="../pkg/vendor/golang.org/x/net/route.html">vendor/golang.org/x/net/route</a>
+		<a href="../src/vendor/golang.org/x/net/route/route.go.html#line-117">route.go#L117</a>: 			return nil, os.<b>NewSyscallError</b>("sysctl", err)
+		<a href="../src/vendor/golang.org/x/net/route/route.go.html#line-131" class="path-duplicate">route.go</a><a href="../src/vendor/golang.org/x/net/route/route.go.html#line-131">#L131</a>: 			return nil, os.<b>NewSyscallError</b>("sysctl", err)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

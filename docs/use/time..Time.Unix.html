@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: time.Time.Unix</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/time.html">time</a>.<a href="../src/time/time.go.html#line-127">Time</a>.<a href="../src/time/time.go.html#line-1134">Unix</a></b></span><span style="font-size: large;"><i> (method)</i></span>
+
+<span class="title">14 uses</span>
+
+	time (current package)
+		<a href="../src/time/time.go.html#line-1134">time.go#L1134</a>: func (t Time) <b>Unix</b>() int64 {
+		<a href="../src/time/time.go.html#line-1344" class="path-duplicate">time.go</a><a href="../src/time/time.go.html#line-1344">#L1344</a>: 	_, _, _, _, isDST := t.loc.lookup(t.<b>Unix</b>())
+
+	<a href="../pkg/compress/gzip.html">compress/gzip</a>
+		<a href="../src/compress/gzip/gzip.go.html#line-160">gzip.go#L160</a>: 			le.PutUint32(z.buf[4:8], uint32(z.ModTime.<b>Unix</b>()))
+
+	<a href="../pkg/crypto/tls.html">crypto/tls</a>
+		<a href="../src/crypto/tls/handshake_server.go.html#line-743">handshake_server.go#L743</a>: 	createdAt := uint64(c.config.time().<b>Unix</b>())
+		<a href="../src/crypto/tls/handshake_server_tls13.go.html#line-729">handshake_server_tls13.go#L729</a>: 		createdAt:        uint64(c.config.time().<b>Unix</b>()),
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/private/protocol.html">github.com/aws/aws-sdk-go/private/protocol</a>
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/timestamp.go.html#line-59">timestamp.go#L59</a>: 		return strconv.FormatInt(t.<b>Unix</b>(), 10)
+
+	<a href="../pkg/github.com/golang/protobuf/jsonpb.html">github.com/golang/protobuf/jsonpb</a>
+		<a href="../src/github.com/golang/protobuf/jsonpb/decode.go.html#line-241">decode.go#L241</a>: 		sec := t.<b>Unix</b>()
+
+	<a href="../pkg/github.com/golang/protobuf/ptypes.html">github.com/golang/protobuf/ptypes</a>
+		<a href="../src/github.com/golang/protobuf/ptypes/timestamp.go.html#line-67">timestamp.go#L67</a>: 		Seconds: t.<b>Unix</b>(),
+
+	<a href="../pkg/google.golang.org/protobuf/encoding/protojson.html">google.golang.org/protobuf/encoding/protojson</a>
+		<a href="../src/google.golang.org/protobuf/encoding/protojson/well_known_types.go.html#line-823">well_known_types.go#L823</a>: 	secs := t.<b>Unix</b>()
+
+	<a href="../pkg/google.golang.org/protobuf/types/known/timestamppb.html">google.golang.org/protobuf/types/known/timestamppb</a>
+		<a href="../src/google.golang.org/protobuf/types/known/timestamppb/timestamp.pb.go.html#line-202">timestamp.pb.go#L202</a>: 	return &amp;Timestamp{Seconds: int64(t.<b>Unix</b>()), Nanos: int32(t.Nanosecond())}
+
+	<a href="../pkg/net/http.html">net/http</a>
+		<a href="../src/net/http/fs.go.html#line-516">fs.go#L516</a>: 	if t.<b>Unix</b>() == modtime.<b>Unix</b>() {
+		<a href="../src/net/http/server.go.html#line-1742">server.go#L1742</a>: 	packedState := uint64(time.Now().<b>Unix</b>()&lt;&lt;8) | uint64(state)
+		<a href="../src/net/http/server.go.html#line-2775" class="path-duplicate">server.go</a><a href="../src/net/http/server.go.html#line-2775">#L2775</a>: 		if st == StateNew &amp;&amp; unixSec &lt; time.Now().<b>Unix</b>()-5 {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

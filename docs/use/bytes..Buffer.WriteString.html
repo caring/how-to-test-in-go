@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: bytes.Buffer.WriteString</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/bytes.html">bytes</a>.<a href="../src/bytes/buffer.go.html#line-20">Buffer</a>.<a href="../src/bytes/buffer.go.html#line-180">WriteString</a></b></span><span style="font-size: large;"><i> (method, <a href="../imp/bytes.Buffer.html#name-WriteString">view implemented interface methods</a>)</i></span>
+
+<span class="title">134 uses</span>
+
+	bytes (current package)
+		<a href="../src/bytes/buffer.go.html#line-180">buffer.go#L180</a>: func (b *Buffer) <b>WriteString</b>(s string) (n int, err error) {
+
+	<a href="../pkg/encoding/json.html">encoding/json</a>
+		<a href="../src/encoding/json/encode.go.html#line-203">encode.go#L203</a>: 			dst.<b>WriteString</b>(`\u00`)
+		<a href="../src/encoding/json/encode.go.html#line-213" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-213">#L213</a>: 			dst.<b>WriteString</b>(`\u202`)
+		<a href="../src/encoding/json/encode.go.html#line-466" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-466">#L466</a>: 	e.<b>WriteString</b>("null")
+		<a href="../src/encoding/json/encode.go.html#line-471" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-471">#L471</a>: 		e.<b>WriteString</b>("null")
+		<a href="../src/encoding/json/encode.go.html#line-476" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-476">#L476</a>: 		e.<b>WriteString</b>("null")
+		<a href="../src/encoding/json/encode.go.html#line-492" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-492">#L492</a>: 		e.<b>WriteString</b>("null")
+		<a href="../src/encoding/json/encode.go.html#line-508" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-508">#L508</a>: 		e.<b>WriteString</b>("null")
+		<a href="../src/encoding/json/encode.go.html#line-513" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-513">#L513</a>: 		e.<b>WriteString</b>("null")
+		<a href="../src/encoding/json/encode.go.html#line-526" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-526">#L526</a>: 		e.<b>WriteString</b>("null")
+		<a href="../src/encoding/json/encode.go.html#line-542" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-542">#L542</a>: 		e.<b>WriteString</b>("true")
+		<a href="../src/encoding/json/encode.go.html#line-544" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-544">#L544</a>: 		e.<b>WriteString</b>("false")
+		<a href="../src/encoding/json/encode.go.html#line-633" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-633">#L633</a>: 		e.<b>WriteString</b>(numStr)
+		<a href="../src/encoding/json/encode.go.html#line-713" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-713">#L713</a>: 		e.<b>WriteString</b>("null")
+		<a href="../src/encoding/json/encode.go.html#line-756" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-756">#L756</a>: 			e.<b>WriteString</b>(f.nameEscHTML)
+		<a href="../src/encoding/json/encode.go.html#line-758" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-758">#L758</a>: 			e.<b>WriteString</b>(f.nameNonEsc)
+		<a href="../src/encoding/json/encode.go.html#line-764" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-764">#L764</a>: 		e.<b>WriteString</b>("{}")
+		<a href="../src/encoding/json/encode.go.html#line-781" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-781">#L781</a>: 		e.<b>WriteString</b>("null")
+		<a href="../src/encoding/json/encode.go.html#line-836" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-836">#L836</a>: 		e.<b>WriteString</b>("null")
+		<a href="../src/encoding/json/encode.go.html#line-871" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-871">#L871</a>: 		e.<b>WriteString</b>("null")
+		<a href="../src/encoding/json/encode.go.html#line-932" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-932">#L932</a>: 		e.<b>WriteString</b>("null")
+		<a href="../src/encoding/json/encode.go.html#line-1041" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-1041">#L1041</a>: 				e.<b>WriteString</b>(s[start:i])
+		<a href="../src/encoding/json/encode.go.html#line-1059" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-1059">#L1059</a>: 				e.<b>WriteString</b>(`u00`)
+		<a href="../src/encoding/json/encode.go.html#line-1070" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-1070">#L1070</a>: 				e.<b>WriteString</b>(s[start:i])
+		<a href="../src/encoding/json/encode.go.html#line-1072" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-1072">#L1072</a>: 			e.<b>WriteString</b>(`\ufffd`)
+		<a href="../src/encoding/json/encode.go.html#line-1086" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-1086">#L1086</a>: 				e.<b>WriteString</b>(s[start:i])
+		<a href="../src/encoding/json/encode.go.html#line-1088" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-1088">#L1088</a>: 			e.<b>WriteString</b>(`\u202`)
+		<a href="../src/encoding/json/encode.go.html#line-1097" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-1097">#L1097</a>: 		e.<b>WriteString</b>(s[start:])
+		<a href="../src/encoding/json/encode.go.html#line-1131" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-1131">#L1131</a>: 				e.<b>WriteString</b>(`u00`)
+		<a href="../src/encoding/json/encode.go.html#line-1144" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-1144">#L1144</a>: 			e.<b>WriteString</b>(`\ufffd`)
+		<a href="../src/encoding/json/encode.go.html#line-1160" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-1160">#L1160</a>: 			e.<b>WriteString</b>(`\u202`)
+		<a href="../src/encoding/json/encode.go.html#line-1309" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-1309">#L1309</a>: 					nameEscBuf.<b>WriteString</b>(`"`)
+		<a href="../src/encoding/json/encode.go.html#line-1311" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-1311">#L1311</a>: 					nameEscBuf.<b>WriteString</b>(`":`)
+		<a href="../src/encoding/json/indent.go.html#line-27">indent.go#L27</a>: 			dst.<b>WriteString</b>(`\u00`)
+		<a href="../src/encoding/json/indent.go.html#line-37" class="path-duplicate">indent.go</a><a href="../src/encoding/json/indent.go.html#line-37">#L37</a>: 			dst.<b>WriteString</b>(`\u202`)
+		<a href="../src/encoding/json/indent.go.html#line-64" class="path-duplicate">indent.go</a><a href="../src/encoding/json/indent.go.html#line-64">#L64</a>: 	dst.<b>WriteString</b>(prefix)
+		<a href="../src/encoding/json/indent.go.html#line-66" class="path-duplicate">indent.go</a><a href="../src/encoding/json/indent.go.html#line-66">#L66</a>: 		dst.<b>WriteString</b>(indent)
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/awsutil.html">github.com/aws/aws-sdk-go/aws/awsutil</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/prettify.go.html#line-32">prettify.go#L32</a>: 			buf.<b>WriteString</b>("&lt;buffer&gt;")
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/prettify.go.html#line-36" class="path-duplicate">prettify.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/prettify.go.html#line-36">#L36</a>: 		buf.<b>WriteString</b>("{\n")
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/prettify.go.html#line-53" class="path-duplicate">prettify.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/prettify.go.html#line-53">#L53</a>: 			buf.<b>WriteString</b>(strings.Repeat(" ", indent+2))
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/prettify.go.html#line-54" class="path-duplicate">prettify.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/prettify.go.html#line-54">#L54</a>: 			buf.<b>WriteString</b>(n + ": ")
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/prettify.go.html#line-58" class="path-duplicate">prettify.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/prettify.go.html#line-58">#L58</a>: 				buf.<b>WriteString</b>(",\n")
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/prettify.go.html#line-62" class="path-duplicate">prettify.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/prettify.go.html#line-62">#L62</a>: 		buf.<b>WriteString</b>("\n" + strings.Repeat(" ", indent) + "}")
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/prettify.go.html#line-74" class="path-duplicate">prettify.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/prettify.go.html#line-74">#L74</a>: 		buf.<b>WriteString</b>("[" + nl)
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/prettify.go.html#line-76" class="path-duplicate">prettify.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/prettify.go.html#line-76">#L76</a>: 			buf.<b>WriteString</b>(id2)
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/prettify.go.html#line-80" class="path-duplicate">prettify.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/prettify.go.html#line-80">#L80</a>: 				buf.<b>WriteString</b>("," + nl)
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/prettify.go.html#line-84" class="path-duplicate">prettify.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/prettify.go.html#line-84">#L84</a>: 		buf.<b>WriteString</b>(nl + id + "]")
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/prettify.go.html#line-86" class="path-duplicate">prettify.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/prettify.go.html#line-86">#L86</a>: 		buf.<b>WriteString</b>("{\n")
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/prettify.go.html#line-89" class="path-duplicate">prettify.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/prettify.go.html#line-89">#L89</a>: 			buf.<b>WriteString</b>(strings.Repeat(" ", indent+2))
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/prettify.go.html#line-90" class="path-duplicate">prettify.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/prettify.go.html#line-90">#L90</a>: 			buf.<b>WriteString</b>(k.String() + ": ")
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/prettify.go.html#line-94" class="path-duplicate">prettify.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/prettify.go.html#line-94">#L94</a>: 				buf.<b>WriteString</b>(",\n")
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/prettify.go.html#line-98" class="path-duplicate">prettify.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/prettify.go.html#line-98">#L98</a>: 		buf.<b>WriteString</b>("\n" + strings.Repeat(" ", indent) + "}")
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/string_value.go.html#line-24">string_value.go#L24</a>: 		buf.<b>WriteString</b>("{\n")
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/string_value.go.html#line-37" class="path-duplicate">string_value.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/string_value.go.html#line-37">#L37</a>: 			buf.<b>WriteString</b>(strings.Repeat(" ", indent+2))
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/string_value.go.html#line-38" class="path-duplicate">string_value.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/string_value.go.html#line-38">#L38</a>: 			buf.<b>WriteString</b>(ft.Name + ": ")
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/string_value.go.html#line-41" class="path-duplicate">string_value.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/string_value.go.html#line-41">#L41</a>: 				buf.<b>WriteString</b>("&lt;sensitive&gt;")
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/string_value.go.html#line-46" class="path-duplicate">string_value.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/string_value.go.html#line-46">#L46</a>: 			buf.<b>WriteString</b>(",\n")
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/string_value.go.html#line-49" class="path-duplicate">string_value.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/string_value.go.html#line-49">#L49</a>: 		buf.<b>WriteString</b>("\n" + strings.Repeat(" ", indent) + "}")
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/string_value.go.html#line-55" class="path-duplicate">string_value.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/string_value.go.html#line-55">#L55</a>: 		buf.<b>WriteString</b>("[" + nl)
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/string_value.go.html#line-57" class="path-duplicate">string_value.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/string_value.go.html#line-57">#L57</a>: 			buf.<b>WriteString</b>(id2)
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/string_value.go.html#line-61" class="path-duplicate">string_value.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/string_value.go.html#line-61">#L61</a>: 				buf.<b>WriteString</b>("," + nl)
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/string_value.go.html#line-65" class="path-duplicate">string_value.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/string_value.go.html#line-65">#L65</a>: 		buf.<b>WriteString</b>(nl + id + "]")
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/string_value.go.html#line-67" class="path-duplicate">string_value.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/string_value.go.html#line-67">#L67</a>: 		buf.<b>WriteString</b>("{\n")
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/string_value.go.html#line-70" class="path-duplicate">string_value.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/string_value.go.html#line-70">#L70</a>: 			buf.<b>WriteString</b>(strings.Repeat(" ", indent+2))
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/string_value.go.html#line-71" class="path-duplicate">string_value.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/string_value.go.html#line-71">#L71</a>: 			buf.<b>WriteString</b>(k.String() + ": ")
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/string_value.go.html#line-75" class="path-duplicate">string_value.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/string_value.go.html#line-75">#L75</a>: 				buf.<b>WriteString</b>(",\n")
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/string_value.go.html#line-79" class="path-duplicate">string_value.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/string_value.go.html#line-79">#L79</a>: 		buf.<b>WriteString</b>("\n" + strings.Repeat(" ", indent) + "}")
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/internal/ini.html">github.com/aws/aws-sdk-go/internal/ini</a>
+		<a href="../src/github.com/aws/aws-sdk-go/internal/ini/number_helper.go.html#line-126">number_helper.go#L126</a>: 		buf.<b>WriteString</b>(strconv.Itoa(i) + ": binary format\n")
+		<a href="../src/github.com/aws/aws-sdk-go/internal/ini/number_helper.go.html#line-129" class="path-duplicate">number_helper.go</a><a href="../src/github.com/aws/aws-sdk-go/internal/ini/number_helper.go.html#line-129">#L129</a>: 		buf.<b>WriteString</b>(strconv.Itoa(i) + ": octal format\n")
+		<a href="../src/github.com/aws/aws-sdk-go/internal/ini/number_helper.go.html#line-132" class="path-duplicate">number_helper.go</a><a href="../src/github.com/aws/aws-sdk-go/internal/ini/number_helper.go.html#line-132">#L132</a>: 		buf.<b>WriteString</b>(strconv.Itoa(i) + ": hex format\n")
+		<a href="../src/github.com/aws/aws-sdk-go/internal/ini/number_helper.go.html#line-135" class="path-duplicate">number_helper.go</a><a href="../src/github.com/aws/aws-sdk-go/internal/ini/number_helper.go.html#line-135">#L135</a>: 		buf.<b>WriteString</b>(strconv.Itoa(i) + ": exponent format\n")
+		<a href="../src/github.com/aws/aws-sdk-go/internal/ini/number_helper.go.html#line-138" class="path-duplicate">number_helper.go</a><a href="../src/github.com/aws/aws-sdk-go/internal/ini/number_helper.go.html#line-138">#L138</a>: 		buf.<b>WriteString</b>(strconv.Itoa(i) + ": integer format\n")
+		<a href="../src/github.com/aws/aws-sdk-go/internal/ini/number_helper.go.html#line-143" class="path-duplicate">number_helper.go</a><a href="../src/github.com/aws/aws-sdk-go/internal/ini/number_helper.go.html#line-143">#L143</a>: 		buf.<b>WriteString</b>(strconv.Itoa(i) + ": negative format\n")
+		<a href="../src/github.com/aws/aws-sdk-go/internal/ini/number_helper.go.html#line-148" class="path-duplicate">number_helper.go</a><a href="../src/github.com/aws/aws-sdk-go/internal/ini/number_helper.go.html#line-148">#L148</a>: 		buf.<b>WriteString</b>(strconv.Itoa(i) + ": negative exponent format\n")
+		<a href="../src/github.com/aws/aws-sdk-go/internal/ini/parse_stack.go.html#line-56">parse_stack.go#L56</a>: 		buf.<b>WriteString</b>(fmt.Sprintf("%d: %v\n", i+1, node))
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil.html">github.com/aws/aws-sdk-go/private/protocol/json/jsonutil</a>
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/build.go.html#line-138">build.go#L138</a>: 		buf.<b>WriteString</b>(`:`)
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/build.go.html#line-147" class="path-duplicate">build.go</a><a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/build.go.html#line-147">#L147</a>: 	buf.<b>WriteString</b>("}")
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/build.go.html#line-153" class="path-duplicate">build.go</a><a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/build.go.html#line-153">#L153</a>: 	buf.<b>WriteString</b>("[")
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/build.go.html#line-159" class="path-duplicate">build.go</a><a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/build.go.html#line-159">#L159</a>: 			buf.<b>WriteString</b>(",")
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/build.go.html#line-163" class="path-duplicate">build.go</a><a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/build.go.html#line-163">#L163</a>: 	buf.<b>WriteString</b>("]")
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/build.go.html#line-175" class="path-duplicate">build.go</a><a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/build.go.html#line-175">#L175</a>: 	buf.<b>WriteString</b>("{")
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/build.go.html#line-186" class="path-duplicate">build.go</a><a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/build.go.html#line-186">#L186</a>: 		buf.<b>WriteString</b>(`:`)
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/build.go.html#line-191" class="path-duplicate">build.go</a><a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/build.go.html#line-191">#L191</a>: 	buf.<b>WriteString</b>("}")
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/build.go.html#line-204" class="path-duplicate">build.go</a><a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/build.go.html#line-204">#L204</a>: 			buf.<b>WriteString</b>("true")
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/build.go.html#line-206" class="path-duplicate">build.go</a><a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/build.go.html#line-206">#L206</a>: 			buf.<b>WriteString</b>("false")
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/build.go.html#line-229" class="path-duplicate">build.go</a><a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/build.go.html#line-229">#L229</a>: 			buf.<b>WriteString</b>(ts)
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/build.go.html#line-252" class="path-duplicate">build.go</a><a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/build.go.html#line-252">#L252</a>: 			buf.<b>WriteString</b>(str)
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/build.go.html#line-266" class="path-duplicate">build.go</a><a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/build.go.html#line-266">#L266</a>: 			buf.<b>WriteString</b>(`\"`)
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/build.go.html#line-268" class="path-duplicate">build.go</a><a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/build.go.html#line-268">#L268</a>: 			buf.<b>WriteString</b>(`\\`)
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/build.go.html#line-270" class="path-duplicate">build.go</a><a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/build.go.html#line-270">#L270</a>: 			buf.<b>WriteString</b>(`\b`)
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/build.go.html#line-272" class="path-duplicate">build.go</a><a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/build.go.html#line-272">#L272</a>: 			buf.<b>WriteString</b>(`\f`)
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/build.go.html#line-274" class="path-duplicate">build.go</a><a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/build.go.html#line-274">#L274</a>: 			buf.<b>WriteString</b>(`\r`)
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/build.go.html#line-276" class="path-duplicate">build.go</a><a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/build.go.html#line-276">#L276</a>: 			buf.<b>WriteString</b>(`\t`)
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/build.go.html#line-278" class="path-duplicate">build.go</a><a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/build.go.html#line-278">#L278</a>: 			buf.<b>WriteString</b>(`\n`)
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/build.go.html#line-280" class="path-duplicate">build.go</a><a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/build.go.html#line-280">#L280</a>: 			buf.<b>WriteString</b>("\\u00")
+
+	<a href="../pkg/github.com/go-sql-driver/mysql.html">github.com/go-sql-driver/mysql</a>
+		<a href="../src/github.com/go-sql-driver/mysql/dsn.go.html#line-161">dsn.go#L161</a>: 	buf.<b>WriteString</b>(name)
+		<a href="../src/github.com/go-sql-driver/mysql/dsn.go.html#line-163" class="path-duplicate">dsn.go</a><a href="../src/github.com/go-sql-driver/mysql/dsn.go.html#line-163">#L163</a>: 	buf.<b>WriteString</b>(value)
+		<a href="../src/github.com/go-sql-driver/mysql/dsn.go.html#line-173" class="path-duplicate">dsn.go</a><a href="../src/github.com/go-sql-driver/mysql/dsn.go.html#line-173">#L173</a>: 		buf.<b>WriteString</b>(cfg.User)
+		<a href="../src/github.com/go-sql-driver/mysql/dsn.go.html#line-176" class="path-duplicate">dsn.go</a><a href="../src/github.com/go-sql-driver/mysql/dsn.go.html#line-176">#L176</a>: 			buf.<b>WriteString</b>(cfg.Passwd)
+		<a href="../src/github.com/go-sql-driver/mysql/dsn.go.html#line-183" class="path-duplicate">dsn.go</a><a href="../src/github.com/go-sql-driver/mysql/dsn.go.html#line-183">#L183</a>: 		buf.<b>WriteString</b>(cfg.Net)
+		<a href="../src/github.com/go-sql-driver/mysql/dsn.go.html#line-186" class="path-duplicate">dsn.go</a><a href="../src/github.com/go-sql-driver/mysql/dsn.go.html#line-186">#L186</a>: 			buf.<b>WriteString</b>(cfg.Addr)
+		<a href="../src/github.com/go-sql-driver/mysql/dsn.go.html#line-193" class="path-duplicate">dsn.go</a><a href="../src/github.com/go-sql-driver/mysql/dsn.go.html#line-193">#L193</a>: 	buf.<b>WriteString</b>(cfg.DBName)
+		<a href="../src/github.com/go-sql-driver/mysql/dsn.go.html#line-200" class="path-duplicate">dsn.go</a><a href="../src/github.com/go-sql-driver/mysql/dsn.go.html#line-200">#L200</a>: 		buf.<b>WriteString</b>("?allowAllFiles=true")
+
+	<a href="../pkg/github.com/jmespath/go-jmespath.html">github.com/jmespath/go-jmespath</a>
+		<a href="../src/github.com/jmespath/go-jmespath/lexer.go.html#line-266">lexer.go#L266</a>: 			lexer.buf.<b>WriteString</b>(chunk)
+		<a href="../src/github.com/jmespath/go-jmespath/lexer.go.html#line-267" class="path-duplicate">lexer.go</a><a href="../src/github.com/jmespath/go-jmespath/lexer.go.html#line-267">#L267</a>: 			lexer.buf.<b>WriteString</b>("'")
+		<a href="../src/github.com/jmespath/go-jmespath/lexer.go.html#line-283" class="path-duplicate">lexer.go</a><a href="../src/github.com/jmespath/go-jmespath/lexer.go.html#line-283">#L283</a>: 		lexer.buf.<b>WriteString</b>(lexer.expression[currentIndex : lexer.currentPos-1])
+
+	<a href="../pkg/github.com/uber/jaeger-client-go/log.html">github.com/uber/jaeger-client-go/log</a>
+		<a href="../src/github.com/uber/jaeger-client-go/log/logger.go.html#line-73">logger.go#L73</a>: 	l.buf.<b>WriteString</b>(fmt.Sprintf("ERROR: %s\n", msg))
+		<a href="../src/github.com/uber/jaeger-client-go/log/logger.go.html#line-80" class="path-duplicate">logger.go</a><a href="../src/github.com/uber/jaeger-client-go/log/logger.go.html#line-80">#L80</a>: 	l.buf.<b>WriteString</b>("INFO: " + fmt.Sprintf(msg, args...) + "\n")
+		<a href="../src/github.com/uber/jaeger-client-go/log/logger.go.html#line-87" class="path-duplicate">logger.go</a><a href="../src/github.com/uber/jaeger-client-go/log/logger.go.html#line-87">#L87</a>: 	l.buf.<b>WriteString</b>("DEBUG: " + fmt.Sprintf(msg, args...) + "\n")
+
+	<a href="../pkg/golang.org/x/net/http2.html">golang.org/x/net/http2</a>
+		<a href="../src/golang.org/x/net/http2/frame.go.html#line-178">frame.go#L178</a>: 	buf.<b>WriteString</b>("[FrameHeader ")
+		<a href="../src/golang.org/x/net/http2/frame.go.html#line-185" class="path-duplicate">frame.go</a><a href="../src/golang.org/x/net/http2/frame.go.html#line-185">#L185</a>: 	buf.<b>WriteString</b>(h.Type.String())
+		<a href="../src/golang.org/x/net/http2/frame.go.html#line-187" class="path-duplicate">frame.go</a><a href="../src/golang.org/x/net/http2/frame.go.html#line-187">#L187</a>: 		buf.<b>WriteString</b>(" flags=")
+		<a href="../src/golang.org/x/net/http2/frame.go.html#line-199" class="path-duplicate">frame.go</a><a href="../src/golang.org/x/net/http2/frame.go.html#line-199">#L199</a>: 				buf.<b>WriteString</b>(name)
+		<a href="../src/golang.org/x/net/http2/frame.go.html#line-1582" class="path-duplicate">frame.go</a><a href="../src/golang.org/x/net/http2/frame.go.html#line-1582">#L1582</a>: 				buf.<b>WriteString</b>(", settings:")
+		<a href="../src/golang.org/x/net/http2/frame.go.html#line-1602" class="path-duplicate">frame.go</a><a href="../src/golang.org/x/net/http2/frame.go.html#line-1602">#L1602</a>: 			buf.<b>WriteString</b>(" (conn)")
+
+	<a href="../pkg/google.golang.org/grpc/internal/transport.html">google.golang.org/grpc/internal/transport</a>
+		<a href="../src/google.golang.org/grpc/internal/transport/http_util.go.html#line-266">http_util.go#L266</a>: 				buf.<b>WriteString</b>(fmt.Sprintf("%%%02X", b))
+		<a href="../src/google.golang.org/grpc/internal/transport/http_util.go.html#line-277" class="path-duplicate">http_util.go</a><a href="../src/google.golang.org/grpc/internal/transport/http_util.go.html#line-277">#L277</a>: 				buf.<b>WriteString</b>(fmt.Sprintf("%%%02X", b))
+
+	<a href="../pkg/html/template.html">html/template</a>
+		<a href="../src/html/template/escape.go.html#line-666">escape.go#L666</a>: 					b.<b>WriteString</b>("&amp;lt;")
+		<a href="../src/html/template/url.go.html#line-136">url.go#L136</a>: 		b.<b>WriteString</b>(s[written:i])
+		<a href="../src/html/template/url.go.html#line-140" class="path-duplicate">url.go</a><a href="../src/html/template/url.go.html#line-140">#L140</a>: 	b.<b>WriteString</b>(s[written:])
+		<a href="../src/html/template/url.go.html#line-167" class="path-duplicate">url.go</a><a href="../src/html/template/url.go.html#line-167">#L167</a>: 			b.<b>WriteString</b>(",")
+		<a href="../src/html/template/url.go.html#line-211" class="path-duplicate">url.go</a><a href="../src/html/template/url.go.html#line-211">#L211</a>: 			b.<b>WriteString</b>(s[left:start])
+		<a href="../src/html/template/url.go.html#line-213" class="path-duplicate">url.go</a><a href="../src/html/template/url.go.html#line-213">#L213</a>: 			b.<b>WriteString</b>(s[end:right])
+		<a href="../src/html/template/url.go.html#line-217" class="path-duplicate">url.go</a><a href="../src/html/template/url.go.html#line-217">#L217</a>: 	b.<b>WriteString</b>("#")
+		<a href="../src/html/template/url.go.html#line-218" class="path-duplicate">url.go</a><a href="../src/html/template/url.go.html#line-218">#L218</a>: 	b.<b>WriteString</b>(filterFailsafe)
+
+	<a href="../pkg/net/http.html">net/http</a>
+		<a href="../src/net/http/h2_bundle.go.html#line-1496">h2_bundle.go#L1496</a>: 	buf.<b>WriteString</b>("[FrameHeader ")
+		<a href="../src/net/http/h2_bundle.go.html#line-1503" class="path-duplicate">h2_bundle.go</a><a href="../src/net/http/h2_bundle.go.html#line-1503">#L1503</a>: 	buf.<b>WriteString</b>(h.Type.String())
+		<a href="../src/net/http/h2_bundle.go.html#line-1505" class="path-duplicate">h2_bundle.go</a><a href="../src/net/http/h2_bundle.go.html#line-1505">#L1505</a>: 		buf.<b>WriteString</b>(" flags=")
+		<a href="../src/net/http/h2_bundle.go.html#line-1517" class="path-duplicate">h2_bundle.go</a><a href="../src/net/http/h2_bundle.go.html#line-1517">#L1517</a>: 				buf.<b>WriteString</b>(name)
+		<a href="../src/net/http/h2_bundle.go.html#line-2903" class="path-duplicate">h2_bundle.go</a><a href="../src/net/http/h2_bundle.go.html#line-2903">#L2903</a>: 				buf.<b>WriteString</b>(", settings:")
+		<a href="../src/net/http/h2_bundle.go.html#line-2923" class="path-duplicate">h2_bundle.go</a><a href="../src/net/http/h2_bundle.go.html#line-2923">#L2923</a>: 			buf.<b>WriteString</b>(" (conn)")
+
+	<a href="../pkg/os/exec.html">os/exec</a>
+		<a href="../src/os/exec/exec.go.html#line-723">exec.go#L723</a>: 	buf.<b>WriteString</b>("\n... omitting ")
+		<a href="../src/os/exec/exec.go.html#line-724" class="path-duplicate">exec.go</a><a href="../src/os/exec/exec.go.html#line-724">#L724</a>: 	buf.<b>WriteString</b>(strconv.FormatInt(w.skipped, 10))
+		<a href="../src/os/exec/exec.go.html#line-725" class="path-duplicate">exec.go</a><a href="../src/os/exec/exec.go.html#line-725">#L725</a>: 	buf.<b>WriteString</b>(" bytes ...\n")
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

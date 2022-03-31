@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime.findfunc</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">func <b><a href="../pkg/runtime.html">runtime</a>.<a href="../src/runtime/symtab.go.html#line-724">findfunc</a></b></span>
+
+<span class="title">33 uses</span>
+
+	runtime (current package)
+		<a href="../src/runtime/debugcall.go.html#line-44">debugcall.go#L44</a>: 		f := <b>findfunc</b>(pc)
+		<a href="../src/runtime/debuglog.go.html#line-804">debuglog.go#L804</a>: 	fn := <b>findfunc</b>(pc)
+		<a href="../src/runtime/error.go.html#line-306">error.go#L306</a>: 	name := funcname(<b>findfunc</b>(pc))
+		<a href="../src/runtime/heapdump.go.html#line-606">heapdump.go#L606</a>: 		f := <b>findfunc</b>(pc)
+		<a href="../src/runtime/panic.go.html#line-34">panic.go#L34</a>: 	if sys.GoarchWasm == 0 &amp;&amp; hasPrefix(funcname(<b>findfunc</b>(pc)), "runtime.") {
+		<a href="../src/runtime/panic.go.html#line-1470" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-1470">#L1470</a>: 	if gp.m.incgo || <b>findfunc</b>(pc).valid() {
+		<a href="../src/runtime/panic.go.html#line-1475" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-1475">#L1475</a>: 	if <b>findfunc</b>(lr).valid() {
+		<a href="../src/runtime/panic.go.html#line-1493" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-1493">#L1493</a>: 	f := <b>findfunc</b>(pc)
+		<a href="../src/runtime/plugin.go.html#line-112">plugin.go#L112</a>: 		f2 := <b>findfunc</b>(entry)
+		<a href="../src/runtime/preempt.go.html#line-318">preempt.go#L318</a>: 	f := <b>findfunc</b>(funcPC(asyncPreempt))
+		<a href="../src/runtime/preempt.go.html#line-320" class="path-duplicate">preempt.go</a><a href="../src/runtime/preempt.go.html#line-320">#L320</a>: 	f = <b>findfunc</b>(funcPC(asyncPreempt2))
+		<a href="../src/runtime/preempt.go.html#line-384" class="path-duplicate">preempt.go</a><a href="../src/runtime/preempt.go.html#line-384">#L384</a>: 	f := <b>findfunc</b>(pc)
+		<a href="../src/runtime/print.go.html#line-294">print.go#L294</a>: 		fn := <b>findfunc</b>(val)
+		<a href="../src/runtime/proc.go.html#line-3580">proc.go#L3580</a>: 		f := <b>findfunc</b>(gp.sched.pc)
+		<a href="../src/runtime/proc.go.html#line-4336" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4336">#L4336</a>: 			f := <b>findfunc</b>(fn.fn)
+		<a href="../src/runtime/proc.go.html#line-4696" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4696">#L4696</a>: 		if f := <b>findfunc</b>(pc); f.valid() {
+		<a href="../src/runtime/proc.go.html#line-6506" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-6506">#L6506</a>: 			pkg := funcpkgpath(<b>findfunc</b>(funcPC(firstFunc)))
+		<a href="../src/runtime/stack.go.html#line-969">stack.go#L969</a>: 		f := <b>findfunc</b>(gp.sched.pc)
+		<a href="../src/runtime/stack.go.html#line-1065" class="path-duplicate">stack.go</a><a href="../src/runtime/stack.go.html#line-1065">#L1065</a>: 	if f := <b>findfunc</b>(gp.sched.pc); f.valid() {
+		<a href="../src/runtime/stack.go.html#line-1171" class="path-duplicate">stack.go</a><a href="../src/runtime/stack.go.html#line-1171">#L1171</a>: 	f := <b>findfunc</b>(gp.startpc)
+		<a href="../src/runtime/symtab.go.html#line-90">symtab.go#L90</a>: 		funcInfo := <b>findfunc</b>(pc)
+		<a href="../src/runtime/symtab.go.html#line-171" class="path-duplicate">symtab.go</a><a href="../src/runtime/symtab.go.html#line-171">#L171</a>: 	f := <b>findfunc</b>(tracepc)
+		<a href="../src/runtime/symtab.go.html#line-626" class="path-duplicate">symtab.go</a><a href="../src/runtime/symtab.go.html#line-626">#L626</a>: 	f := <b>findfunc</b>(pc)
+		<a href="../src/runtime/symtab.go.html#line-724" class="path-duplicate">symtab.go</a><a href="../src/runtime/symtab.go.html#line-724">#L724</a>: func <b>findfunc</b>(pc uintptr) funcInfo {
+		<a href="../src/runtime/traceback.go.html#line-39">traceback.go#L39</a>: 			f := <b>findfunc</b>(frame.pc)
+		<a href="../src/runtime/traceback.go.html#line-133" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-133">#L133</a>: 	f := <b>findfunc</b>(frame.pc)
+		<a href="../src/runtime/traceback.go.html#line-194" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-194">#L194</a>: 					frame.fn = <b>findfunc</b>(frame.pc)
+		<a href="../src/runtime/traceback.go.html#line-255" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-255">#L255</a>: 			flr = <b>findfunc</b>(frame.lr)
+		<a href="../src/runtime/traceback.go.html#line-513" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-513">#L513</a>: 			f = <b>findfunc</b>(frame.pc)
+		<a href="../src/runtime/traceback.go.html#line-756" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-756">#L756</a>: 	f := <b>findfunc</b>(pc)
+		<a href="../src/runtime/traceback.go.html#line-845" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-845">#L845</a>: 		f := <b>findfunc</b>(pc) // f previously validated
+		<a href="../src/runtime/traceback.go.html#line-854" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-854">#L854</a>: 	f := <b>findfunc</b>(ancestor.gopc)
+		<a href="../src/runtime/traceback.go.html#line-1101" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-1101">#L1101</a>: 	f := <b>findfunc</b>(gp.startpc)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

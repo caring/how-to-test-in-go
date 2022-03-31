@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: crypto/x509.publicKeyInfo.Algorithm</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../pkg/crypto/x509.html">crypto/x509</a>.<a href="../../src/crypto/x509/x509.go.html#line-168">publicKeyInfo</a>.<a href="../../src/crypto/x509/x509.go.html#line-170">Algorithm</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">9 uses</span>
+
+	crypto/x509 (current package)
+		<a href="../../src/crypto/x509/parser.go.html#line-245">parser.go#L245</a>: 		if !bytes.Equal(keyData.<b>Algorithm</b>.Parameters.FullBytes, asn1.NullBytes) {
+		<a href="../../src/crypto/x509/parser.go.html#line-273" class="path-duplicate">parser.go</a><a href="../../src/crypto/x509/parser.go.html#line-273">#L273</a>: 		paramsDer := cryptobyte.String(keyData.<b>Algorithm</b>.Parameters.FullBytes)
+		<a href="../../src/crypto/x509/parser.go.html#line-295" class="path-duplicate">parser.go</a><a href="../../src/crypto/x509/parser.go.html#line-295">#L295</a>: 		if len(keyData.<b>Algorithm</b>.Parameters.FullBytes) != 0 {
+		<a href="../../src/crypto/x509/parser.go.html#line-315" class="path-duplicate">parser.go</a><a href="../../src/crypto/x509/parser.go.html#line-315">#L315</a>: 		paramsDer := cryptobyte.String(keyData.<b>Algorithm</b>.Parameters.FullBytes)
+		<a href="../../src/crypto/x509/parser.go.html#line-936" class="path-duplicate">parser.go</a><a href="../../src/crypto/x509/parser.go.html#line-936">#L936</a>: 		<b>Algorithm</b>: pkAI,
+		<a href="../../src/crypto/x509/x509.go.html#line-64">x509.go#L64</a>: 	algo := getPublicKeyAlgorithmFromOID(pki.<b>Algorithm</b>.Algorithm)
+		<a href="../../src/crypto/x509/x509.go.html#line-170" class="path-duplicate">x509.go</a><a href="../../src/crypto/x509/x509.go.html#line-170">#L170</a>: 	<b>Algorithm</b> pkix.AlgorithmIdentifier
+		<a href="../../src/crypto/x509/x509.go.html#line-1961" class="path-duplicate">x509.go</a><a href="../../src/crypto/x509/x509.go.html#line-1961">#L1961</a>: 			<b>Algorithm</b>: publicKeyAlgorithm,
+		<a href="../../src/crypto/x509/x509.go.html#line-2024" class="path-duplicate">x509.go</a><a href="../../src/crypto/x509/x509.go.html#line-2024">#L2024</a>: 		PublicKeyAlgorithm: getPublicKeyAlgorithmFromOID(in.TBSCSR.PublicKey.<b>Algorithm</b>.Algorithm),
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

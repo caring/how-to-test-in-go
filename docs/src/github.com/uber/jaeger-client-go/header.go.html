@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Source: header.go in package github.com/uber/jaeger-client-go</title>
+<link href="../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre id="header"><code><span class="title">Source File</span>
+	header.go
+
+<span class="title">Belonging Package</span>
+	<a href="../../../../pkg/github.com/uber/jaeger-client-go.html">github.com/uber/jaeger-client-go</a>
+</code></pre>
+<style>input[type=radio] {display: none;}
+input[id=r0]:checked ~pre label[for=r0],
+input[id=r1]:checked ~pre label[for=r1],
+input[id=r2]:checked ~pre label[for=r2]
+{background: #226; color: #ff8;}
+{background: brown; color: #eed;}
+</style><input id="r0" type="radio" name="g"/>
+<input id="r1" type="radio" name="g"/>
+<input id="r2" type="radio" name="g"/>
+
+<pre class="line-numbers">
+<span class="codeline" id="line-1"><code><span class="comment">// Copyright (c) 2017 Uber Technologies, Inc.</span></code></span>
+<span class="codeline" id="line-2"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-3"><code><span class="comment">// Licensed under the Apache License, Version 2.0 (the "License");</span></code></span>
+<span class="codeline" id="line-4"><code><span class="comment">// you may not use this file except in compliance with the License.</span></code></span>
+<span class="codeline" id="line-5"><code><span class="comment">// You may obtain a copy of the License at</span></code></span>
+<span class="codeline" id="line-6"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-7"><code><span class="comment">// http://www.apache.org/licenses/LICENSE-2.0</span></code></span>
+<span class="codeline" id="line-8"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-9"><code><span class="comment">// Unless required by applicable law or agreed to in writing, software</span></code></span>
+<span class="codeline" id="line-10"><code><span class="comment">// distributed under the License is distributed on an "AS IS" BASIS,</span></code></span>
+<span class="codeline" id="line-11"><code><span class="comment">// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></code></span>
+<span class="codeline" id="line-12"><code><span class="comment">// See the License for the specific language governing permissions and</span></code></span>
+<span class="codeline" id="line-13"><code><span class="comment">// limitations under the License.</span></code></span>
+<span class="codeline" id="line-14"><code></code></span>
+<span class="codeline" id="line-15"><code><span class="keyword">package</span> jaeger</code></span>
+<span class="codeline" id="line-16"><code></code></span>
+<span class="codeline" id="line-17"><code><span class="comment">// HeadersConfig contains the values for the header keys that Jaeger will use.</span></code></span>
+<span class="codeline" id="line-18"><code><span class="comment">// These values may be either custom or default depending on whether custom</span></code></span>
+<span class="codeline" id="line-19"><code><span class="comment">// values were provided via a configuration.</span></code></span>
+<span class="codeline" id="line-20"><code><span class="keyword">type</span> <a href="../../../../pkg/github.com/uber/jaeger-client-go.html#name-HeadersConfig" class="ident">HeadersConfig</a> <span class="keyword">struct</span> {</code></span>
+<span class="codeline" id="line-21"><code>	<span class="comment">// JaegerDebugHeader is the name of HTTP header or a TextMap carrier key which,</span></code></span>
+<span class="codeline" id="line-22"><code><span class="comment">	// if found in the carrier, forces the trace to be sampled as "debug" trace.</span></code></span>
+<span class="codeline" id="line-23"><code><span class="comment">	// The value of the header is recorded as the tag on the root span, so that the</span></code></span>
+<span class="codeline" id="line-24"><code><span class="comment">	// trace can be found in the UI using this value as a correlation ID.</span></code></span>
+<span class="codeline" id="line-25"><code>	<a href="../../../../use/github.com/uber/jaeger-client-go..HeadersConfig.JaegerDebugHeader.html" class="ident">JaegerDebugHeader</a> <a href="../../../../pkg/builtin.html#name-string" class="ident">string</a> <span class="lit-string">`yaml:"jaegerDebugHeader"`</span></code></span>
+<span class="codeline" id="line-26"><code></code></span>
+<span class="codeline" id="line-27"><code>	<span class="comment">// JaegerBaggageHeader is the name of the HTTP header that is used to submit baggage.</span></code></span>
+<span class="codeline" id="line-28"><code><span class="comment">	// It differs from TraceBaggageHeaderPrefix in that it can be used only in cases where</span></code></span>
+<span class="codeline" id="line-29"><code><span class="comment">	// a root span does not exist.</span></code></span>
+<span class="codeline" id="line-30"><code>	<a href="../../../../use/github.com/uber/jaeger-client-go..HeadersConfig.JaegerBaggageHeader.html" class="ident">JaegerBaggageHeader</a> <a href="../../../../pkg/builtin.html#name-string" class="ident">string</a> <span class="lit-string">`yaml:"jaegerBaggageHeader"`</span></code></span>
+<span class="codeline" id="line-31"><code></code></span>
+<span class="codeline" id="line-32"><code>	<span class="comment">// TraceContextHeaderName is the http header name used to propagate tracing context.</span></code></span>
+<span class="codeline" id="line-33"><code><span class="comment">	// This must be in lower-case to avoid mismatches when decoding incoming headers.</span></code></span>
+<span class="codeline" id="line-34"><code>	<a href="../../../../use/github.com/uber/jaeger-client-go..HeadersConfig.TraceContextHeaderName.html" class="ident">TraceContextHeaderName</a> <a href="../../../../pkg/builtin.html#name-string" class="ident">string</a> <span class="lit-string">`yaml:"TraceContextHeaderName"`</span></code></span>
+<span class="codeline" id="line-35"><code></code></span>
+<span class="codeline" id="line-36"><code>	<span class="comment">// TraceBaggageHeaderPrefix is the prefix for http headers used to propagate baggage.</span></code></span>
+<span class="codeline" id="line-37"><code><span class="comment">	// This must be in lower-case to avoid mismatches when decoding incoming headers.</span></code></span>
+<span class="codeline" id="line-38"><code>	<a href="../../../../use/github.com/uber/jaeger-client-go..HeadersConfig.TraceBaggageHeaderPrefix.html" class="ident">TraceBaggageHeaderPrefix</a> <a href="../../../../pkg/builtin.html#name-string" class="ident">string</a> <span class="lit-string">`yaml:"traceBaggageHeaderPrefix"`</span></code></span>
+<span class="codeline" id="line-39"><code>}</code></span>
+<span class="codeline" id="line-40"><code></code></span>
+<span class="codeline" id="line-41"><code><span class="comment">// ApplyDefaults sets missing configuration keys to default values</span></code></span>
+<span class="codeline" id="line-42"><code><span class="keyword">func</span> (<label for="r0" class="ident">c</label> *<a href="#line-20" class="ident">HeadersConfig</a>) <label for="r1" class="ident"><a href="../../../../use/github.com/uber/jaeger-client-go..HeadersConfig.ApplyDefaults.html" class="ident">ApplyDefaults</a></label>() *<a href="#line-20" class="ident">HeadersConfig</a> {</code></span>
+<span class="codeline" id="line-43"><code>	<span class="keyword">if</span> <label for="r0" class="ident">c</label>.<a href="#line-30" class="ident">JaegerBaggageHeader</a> == <span class="lit-string">""</span> {</code></span>
+<span class="codeline" id="line-44"><code>		<label for="r0" class="ident">c</label>.<a href="#line-30" class="ident">JaegerBaggageHeader</a> = <a href="constants.go.html#line-39" class="ident">JaegerBaggageHeader</a></code></span>
+<span class="codeline" id="line-45"><code>	}</code></span>
+<span class="codeline" id="line-46"><code>	<span class="keyword">if</span> <label for="r0" class="ident">c</label>.<a href="#line-25" class="ident">JaegerDebugHeader</a> == <span class="lit-string">""</span> {</code></span>
+<span class="codeline" id="line-47"><code>		<label for="r0" class="ident">c</label>.<a href="#line-25" class="ident">JaegerDebugHeader</a> = <a href="constants.go.html#line-34" class="ident">JaegerDebugHeader</a></code></span>
+<span class="codeline" id="line-48"><code>	}</code></span>
+<span class="codeline" id="line-49"><code>	<span class="keyword">if</span> <label for="r0" class="ident">c</label>.<a href="#line-38" class="ident">TraceBaggageHeaderPrefix</a> == <span class="lit-string">""</span> {</code></span>
+<span class="codeline" id="line-50"><code>		<label for="r0" class="ident">c</label>.<a href="#line-38" class="ident">TraceBaggageHeaderPrefix</a> = <a href="constants.go.html#line-66" class="ident">TraceBaggageHeaderPrefix</a></code></span>
+<span class="codeline" id="line-51"><code>	}</code></span>
+<span class="codeline" id="line-52"><code>	<span class="keyword">if</span> <label for="r0" class="ident">c</label>.<a href="#line-34" class="ident">TraceContextHeaderName</a> == <span class="lit-string">""</span> {</code></span>
+<span class="codeline" id="line-53"><code>		<label for="r0" class="ident">c</label>.<a href="#line-34" class="ident">TraceContextHeaderName</a> = <a href="constants.go.html#line-58" class="ident">TraceContextHeaderName</a></code></span>
+<span class="codeline" id="line-54"><code>	}</code></span>
+<span class="codeline" id="line-55"><code>	<span class="keyword">return</span> <label for="r0" class="ident">c</label></code></span>
+<span class="codeline" id="line-56"><code>}</code></span>
+<span class="codeline" id="line-57"><code></code></span>
+<span class="codeline" id="line-58"><code><span class="keyword">func</span> <label for="r2" class="ident"><a href="../../../../pkg/github.com/uber/jaeger-client-go.html#name-getDefaultHeadersConfig" class="ident">getDefaultHeadersConfig</a></label>() *<a href="#line-20" class="ident">HeadersConfig</a> {</code></span>
+<span class="codeline" id="line-59"><code>	<span class="keyword">return</span> &amp;<a href="#line-20" class="ident">HeadersConfig</a>{</code></span>
+<span class="codeline" id="line-60"><code>		<a href="#line-25" class="ident">JaegerDebugHeader</a>:        <a href="constants.go.html#line-34" class="ident">JaegerDebugHeader</a>,</code></span>
+<span class="codeline" id="line-61"><code>		<a href="#line-30" class="ident">JaegerBaggageHeader</a>:      <a href="constants.go.html#line-39" class="ident">JaegerBaggageHeader</a>,</code></span>
+<span class="codeline" id="line-62"><code>		<a href="#line-34" class="ident">TraceContextHeaderName</a>:   <a href="constants.go.html#line-58" class="ident">TraceContextHeaderName</a>,</code></span>
+<span class="codeline" id="line-63"><code>		<a href="#line-38" class="ident">TraceBaggageHeaderPrefix</a>: <a href="constants.go.html#line-66" class="ident">TraceBaggageHeaderPrefix</a>,</code></span>
+<span class="codeline" id="line-64"><code>	}</code></span>
+<span class="codeline" id="line-65"><code>}</code></span>
+</pre><pre id="footer">
+<table><tr><td><img src="../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

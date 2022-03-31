@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/uber/jaeger-client-go.GuaranteedThroughputProbabilisticSampler</title>
+<link href="../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../../../pkg/github.com/uber/jaeger-client-go.html">github.com/uber/jaeger-client-go</a>.<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-249">GuaranteedThroughputProbabilisticSampler</a></b></span>
+
+<span class="title">13 uses</span>
+
+	github.com/uber/jaeger-client-go (current package)
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-249">sampler.go#L249</a>: type <b>GuaranteedThroughputProbabilisticSampler</b> struct {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-261" class="path-duplicate">sampler.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-261">#L261</a>: ) (*<b>GuaranteedThroughputProbabilisticSampler</b>, error) {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-265" class="path-duplicate">sampler.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-265">#L265</a>: func newGuaranteedThroughputProbabilisticSampler(lowerBound, samplingRate float64) *<b>GuaranteedThroughputProbabilisticSampler</b> {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-266" class="path-duplicate">sampler.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-266">#L266</a>: 	s := &amp;<b>GuaranteedThroughputProbabilisticSampler</b>{
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-274" class="path-duplicate">sampler.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-274">#L274</a>: func (s *<b>GuaranteedThroughputProbabilisticSampler</b>) setProbabilisticSampler(samplingRate float64) {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-292" class="path-duplicate">sampler.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-292">#L292</a>: func (s *<b>GuaranteedThroughputProbabilisticSampler</b>) IsSampled(id TraceID, operation string) (bool, []Tag) {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-302" class="path-duplicate">sampler.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-302">#L302</a>: func (s *<b>GuaranteedThroughputProbabilisticSampler</b>) Close() {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-308" class="path-duplicate">sampler.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-308">#L308</a>: func (s *<b>GuaranteedThroughputProbabilisticSampler</b>) Equal(other Sampler) bool {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-315" class="path-duplicate">sampler.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-315">#L315</a>: func (s *<b>GuaranteedThroughputProbabilisticSampler</b>) update(lowerBound, samplingRate float64) {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-323" class="path-duplicate">sampler.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-323">#L323</a>: func (s <b>GuaranteedThroughputProbabilisticSampler</b>) String() string {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-334" class="path-duplicate">sampler.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-334">#L334</a>: 	samplers       map[string]*<b>GuaranteedThroughputProbabilisticSampler</b>
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-374" class="path-duplicate">sampler.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-374">#L374</a>: 	samplers := make(map[string]*<b>GuaranteedThroughputProbabilisticSampler</b>)
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-495" class="path-duplicate">sampler.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-495">#L495</a>: 	newSamplers := map[string]*<b>GuaranteedThroughputProbabilisticSampler</b>{}
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

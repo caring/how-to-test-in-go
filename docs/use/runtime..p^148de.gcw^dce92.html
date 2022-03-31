@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime.p.gcw</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/runtime.html">runtime</a>.<a href="../src/runtime/runtime2.go.html#line-604">p</a>.<a href="../src/runtime/runtime2.go.html#line-704">gcw</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">19 uses</span>
+
+	runtime (current package)
+		<a href="../src/runtime/mgc.go.html#line-813">mgc.go#L813</a>: 			_p_.<b>gcw</b>.dispose()
+		<a href="../src/runtime/mgc.go.html#line-815" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-815">#L815</a>: 			if _p_.<b>gcw</b>.flushedWork {
+		<a href="../src/runtime/mgc.go.html#line-817" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-817">#L817</a>: 				_p_.<b>gcw</b>.flushedWork = false
+		<a href="../src/runtime/mgc.go.html#line-862" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-862">#L862</a>: 			if !p.<b>gcw</b>.empty() {
+		<a href="../src/runtime/mgc.go.html#line-947" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-947">#L947</a>: 			gcw := &amp;getg().m.p.ptr().<b>gcw</b>
+		<a href="../src/runtime/mgc.go.html#line-1269" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-1269">#L1269</a>: 				gcDrain(&amp;pp.<b>gcw</b>, gcDrainUntilPreempt|gcDrainFlushBgCredit)
+		<a href="../src/runtime/mgc.go.html#line-1284" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-1284">#L1284</a>: 				gcDrain(&amp;pp.<b>gcw</b>, gcDrainFlushBgCredit)
+		<a href="../src/runtime/mgc.go.html#line-1286" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-1286">#L1286</a>: 				gcDrain(&amp;pp.<b>gcw</b>, gcDrainFractional|gcDrainUntilPreempt|gcDrainFlushBgCredit)
+		<a href="../src/runtime/mgc.go.html#line-1288" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-1288">#L1288</a>: 				gcDrain(&amp;pp.<b>gcw</b>, gcDrainIdle|gcDrainUntilPreempt|gcDrainFlushBgCredit)
+		<a href="../src/runtime/mgc.go.html#line-1339" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-1339">#L1339</a>: 	if p != nil &amp;&amp; !p.<b>gcw</b>.empty() {
+		<a href="../src/runtime/mgc.go.html#line-1399" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-1399">#L1399</a>: 		gcw := &amp;p.<b>gcw</b>
+		<a href="../src/runtime/mgcmark.go.html#line-536">mgcmark.go#L536</a>: 	gcw := &amp;getg().m.p.ptr().<b>gcw</b>
+		<a href="../src/runtime/mgcmark.go.html#line-1390" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-1390">#L1390</a>: 		gcw := &amp;getg().m.p.ptr().<b>gcw</b>
+		<a href="../src/runtime/mgcmark.go.html#line-1523" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-1523">#L1523</a>: 	gcw := &amp;getg().m.p.ptr().<b>gcw</b>
+		<a href="../src/runtime/mgcmark.go.html#line-1540" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-1540">#L1540</a>: 		gcw := &amp;p.<b>gcw</b>
+		<a href="../src/runtime/mheap.go.html#line-1819">mheap.go#L1819</a>: 			gcw := &amp;mp.p.ptr().<b>gcw</b>
+		<a href="../src/runtime/mwbbuf.go.html#line-248">mwbbuf.go#L248</a>: 	gcw := &amp;_p_.<b>gcw</b>
+		<a href="../src/runtime/proc.go.html#line-4937">proc.go#L4937</a>: 		pp.<b>gcw</b>.dispose()
+		<a href="../src/runtime/runtime2.go.html#line-704">runtime2.go#L704</a>: 	<b>gcw</b> gcWork
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: strings.TrimSpace</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">func <b><a href="../pkg/strings.html">strings</a>.<a href="../src/strings/strings.go.html#line-867">TrimSpace</a></b></span>
+
+<span class="title">23 uses</span>
+
+	strings (current package)
+		<a href="../src/strings/strings.go.html#line-867">strings.go#L867</a>: func <b>TrimSpace</b>(s string) string {
+
+	<a href="../pkg/encoding/xml.html">encoding/xml</a>
+		<a href="../src/encoding/xml/read.go.html#line-623">read.go#L623</a>: 		itmp, err := strconv.ParseInt(strings.<b>TrimSpace</b>(string(src)), 10, dst.Type().Bits())
+		<a href="../src/encoding/xml/read.go.html#line-633" class="path-duplicate">read.go</a><a href="../src/encoding/xml/read.go.html#line-633">#L633</a>: 		utmp, err := strconv.ParseUint(strings.<b>TrimSpace</b>(string(src)), 10, dst.Type().Bits())
+		<a href="../src/encoding/xml/read.go.html#line-643" class="path-duplicate">read.go</a><a href="../src/encoding/xml/read.go.html#line-643">#L643</a>: 		ftmp, err := strconv.ParseFloat(strings.<b>TrimSpace</b>(string(src)), dst.Type().Bits())
+		<a href="../src/encoding/xml/read.go.html#line-653" class="path-duplicate">read.go</a><a href="../src/encoding/xml/read.go.html#line-653">#L653</a>: 		value, err := strconv.ParseBool(strings.<b>TrimSpace</b>(string(src)))
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/awsutil.html">github.com/aws/aws-sdk-go/aws/awsutil</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/path_value.go.html#line-33">path_value.go#L33</a>: 		c := strings.<b>TrimSpace</b>(components[0])
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/credentials/processcreds.html">github.com/aws/aws-sdk-go/aws/credentials/processcreds</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/credentials/processcreds/provider.go.html#line-312">provider.go#L312</a>: 		if len(strings.<b>TrimSpace</b>(p.originalCommand[0])) &lt; 1 {
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/private/protocol/rest.html">github.com/aws/aws-sdk-go/private/protocol/rest</a>
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/rest/build.go.html#line-168">build.go#L168</a>: 	name = strings.<b>TrimSpace</b>(name)
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/rest/build.go.html#line-169" class="path-duplicate">build.go</a><a href="../src/github.com/aws/aws-sdk-go/private/protocol/rest/build.go.html#line-169">#L169</a>: 	str = strings.<b>TrimSpace</b>(str)
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/rest/build.go.html#line-186" class="path-duplicate">build.go</a><a href="../src/github.com/aws/aws-sdk-go/private/protocol/rest/build.go.html#line-186">#L186</a>: 		keyStr := strings.<b>TrimSpace</b>(key.String())
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/rest/build.go.html#line-187" class="path-duplicate">build.go</a><a href="../src/github.com/aws/aws-sdk-go/private/protocol/rest/build.go.html#line-187">#L187</a>: 		str = strings.<b>TrimSpace</b>(str)
+
+	<a href="../pkg/github.com/uber/jaeger-client-go.html">github.com/uber/jaeger-client-go</a>
+		<a href="../src/github.com/uber/jaeger-client-go/propagation.go.html#line-305">propagation.go#L305</a>: 		kv := strings.Split(strings.<b>TrimSpace</b>(kvpair), "=")
+		<a href="../src/github.com/uber/jaeger-client-go/propagation.go.html#line-307" class="path-duplicate">propagation.go</a><a href="../src/github.com/uber/jaeger-client-go/propagation.go.html#line-307">#L307</a>: 			baggage[strings.<b>TrimSpace</b>(kv[0])] = kv[1]
+
+	<a href="../pkg/golang.org/x/net/trace.html">golang.org/x/net/trace</a>
+		<a href="../src/golang.org/x/net/trace/events.go.html#line-426">events.go#L426</a>: 			"trimSpace": strings.<b>TrimSpace</b>,
+
+	<a href="../pkg/google.golang.org/protobuf/encoding/protojson.html">google.golang.org/protobuf/encoding/protojson</a>
+		<a href="../src/google.golang.org/protobuf/encoding/protojson/decode.go.html#line-350">decode.go#L350</a>: 		s := strings.<b>TrimSpace</b>(tok.ParsedString())
+		<a href="../src/google.golang.org/protobuf/encoding/protojson/decode.go.html#line-382" class="path-duplicate">decode.go</a><a href="../src/google.golang.org/protobuf/encoding/protojson/decode.go.html#line-382">#L382</a>: 		s := strings.<b>TrimSpace</b>(tok.ParsedString())
+		<a href="../src/google.golang.org/protobuf/encoding/protojson/decode.go.html#line-433" class="path-duplicate">decode.go</a><a href="../src/google.golang.org/protobuf/encoding/protojson/decode.go.html#line-433">#L433</a>: 		if len(s) != len(strings.<b>TrimSpace</b>(s)) {
+		<a href="../src/google.golang.org/protobuf/encoding/protojson/well_known_types.go.html#line-872">well_known_types.go#L872</a>: 	str := strings.<b>TrimSpace</b>(tok.ParsedString())
+
+	<a href="../pkg/html/template.html">html/template</a>
+		<a href="../src/html/template/js.go.html#line-405">js.go#L405</a>: 	mimeType = strings.<b>TrimSpace</b>(mimeType)
+
+	<a href="../pkg/mime.html">mime</a>
+		<a href="../src/mime/mediatype.go.html#line-145">mediatype.go#L145</a>: 	mediatype = strings.<b>TrimSpace</b>(strings.ToLower(v[0:i]))
+		<a href="../src/mime/mediatype.go.html#line-167" class="path-duplicate">mediatype.go</a><a href="../src/mime/mediatype.go.html#line-167">#L167</a>: 			if strings.<b>TrimSpace</b>(rest) == ";" {
+
+	<a href="../pkg/vendor/golang.org/x/net/http/httpproxy.html">vendor/golang.org/x/net/http/httpproxy</a>
+		<a href="../src/vendor/golang.org/x/net/http/httpproxy/proxy.go.html#line-191">proxy.go#L191</a>: 	addr = strings.ToLower(strings.<b>TrimSpace</b>(host))
+		<a href="../src/vendor/golang.org/x/net/http/httpproxy/proxy.go.html#line-217" class="path-duplicate">proxy.go</a><a href="../src/vendor/golang.org/x/net/http/httpproxy/proxy.go.html#line-217">#L217</a>: 		p = strings.ToLower(strings.<b>TrimSpace</b>(p))
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

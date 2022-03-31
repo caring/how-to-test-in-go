@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: reflect.arrayAt</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">func <b><a href="../pkg/reflect.html">reflect</a>.<a href="../src/reflect/value.go.html#line-2367">arrayAt</a></b></span>
+
+<span class="title">10 uses</span>
+
+	reflect (current package)
+		<a href="../src/reflect/swapper.go.html#line-71">swapper.go#L71</a>: 		val1 := <b>arrayAt</b>(s.Data, i, size, "i &lt; s.Len")
+		<a href="../src/reflect/swapper.go.html#line-72" class="path-duplicate">swapper.go</a><a href="../src/reflect/swapper.go.html#line-72">#L72</a>: 		val2 := <b>arrayAt</b>(s.Data, j, size, "j &lt; s.Len")
+		<a href="../src/reflect/type.go.html#line-2985">type.go#L2985</a>: 				pi := <b>arrayAt</b>(p, i, esize, "i &lt; length")
+		<a href="../src/reflect/type.go.html#line-2986" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2986">#L2986</a>: 				qi := <b>arrayAt</b>(q, i, esize, "i &lt; length")
+		<a href="../src/reflect/value.go.html#line-1314">value.go#L1314</a>: 		val := <b>arrayAt</b>(s.Data, i, typ.size, "i &lt; s.Len")
+		<a href="../src/reflect/value.go.html#line-1323" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-1323">#L1323</a>: 		p := <b>arrayAt</b>(s.Data, i, 1, "i &lt; s.Len")
+		<a href="../src/reflect/value.go.html#line-2140" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2140">#L2140</a>: 			t = unsafeheader.String{Data: <b>arrayAt</b>(s.Data, i, 1, "i &lt; s.Len"), Len: j - i}
+		<a href="../src/reflect/value.go.html#line-2157" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2157">#L2157</a>: 		s.Data = <b>arrayAt</b>(base, i, typ.elem.Size(), "i &lt; cap")
+		<a href="../src/reflect/value.go.html#line-2209" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2209">#L2209</a>: 		s.Data = <b>arrayAt</b>(base, i, typ.elem.Size(), "i &lt; k &lt;= cap")
+		<a href="../src/reflect/value.go.html#line-2367" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2367">#L2367</a>: func <b>arrayAt</b>(p unsafe.Pointer, i int, eltSize uintptr, whySafe string) unsafe.Pointer {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

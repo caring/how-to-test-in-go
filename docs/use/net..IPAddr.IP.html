@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: net.IPAddr.IP</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/net.html">net</a>.<a href="../src/net/iprawsock.go.html#line-31">IPAddr</a>.<a href="../src/net/iprawsock.go.html#line-32">IP</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">43 uses</span>
+
+	net (current package)
+		<a href="../src/net/addrselect.go.html#line-28">addrselect.go#L28</a>: 		addrAttr[i] = ipAttrOf(v.<b>IP</b>)
+		<a href="../src/net/addrselect.go.html#line-46" class="path-duplicate">addrselect.go</a><a href="../src/net/addrselect.go.html#line-46">#L46</a>: 		dst.IP = addrs[i].<b>IP</b>
+		<a href="../src/net/addrselect.go.html#line-98" class="path-duplicate">addrselect.go</a><a href="../src/net/addrselect.go.html#line-98">#L98</a>: 	DA := s.addrs[i].<b>IP</b>
+		<a href="../src/net/addrselect.go.html#line-99" class="path-duplicate">addrselect.go</a><a href="../src/net/addrselect.go.html#line-99">#L99</a>: 	DB := s.addrs[j].<b>IP</b>
+		<a href="../src/net/dial.go.html#line-259">dial.go#L259</a>: 			if !wildcard &amp;&amp; !addr.isWildcard() &amp;&amp; !addr.<b>IP</b>.matchAddrFamily(ip.<b>IP</b>) {
+		<a href="../src/net/dnsclient_unix.go.html#line-555">dnsclient_unix.go#L555</a>: 			addr := IPAddr{<b>IP</b>: ip, Zone: zone}
+		<a href="../src/net/dnsclient_unix.go.html#line-681" class="path-duplicate">dnsclient_unix.go</a><a href="../src/net/dnsclient_unix.go.html#line-681">#L681</a>: 					addrs = append(addrs, IPAddr{<b>IP</b>: IP(a.A[:])})
+		<a href="../src/net/dnsclient_unix.go.html#line-693" class="path-duplicate">dnsclient_unix.go</a><a href="../src/net/dnsclient_unix.go.html#line-693">#L693</a>: 					addrs = append(addrs, IPAddr{<b>IP</b>: IP(aaaa.AAAA[:])})
+		<a href="../src/net/interface_darwin.go.html#line-48">interface_darwin.go#L48</a>: 				ifmat = append(ifmat, &amp;IPAddr{<b>IP</b>: ip})
+		<a href="../src/net/iprawsock.go.html#line-32">iprawsock.go#L32</a>: 	<b>IP</b>   IP
+		<a href="../src/net/iprawsock.go.html#line-43" class="path-duplicate">iprawsock.go</a><a href="../src/net/iprawsock.go.html#line-43">#L43</a>: 	ip := ipEmptyString(a.<b>IP</b>)
+		<a href="../src/net/iprawsock.go.html#line-51" class="path-duplicate">iprawsock.go</a><a href="../src/net/iprawsock.go.html#line-51">#L51</a>: 	if a == nil || a.<b>IP</b> == nil {
+		<a href="../src/net/iprawsock.go.html#line-54" class="path-duplicate">iprawsock.go</a><a href="../src/net/iprawsock.go.html#line-54">#L54</a>: 	return a.<b>IP</b>.IsUnspecified()
+		<a href="../src/net/iprawsock_posix.go.html#line-18">iprawsock_posix.go#L18</a>: 		return &amp;IPAddr{<b>IP</b>: sa.Addr[0:]}
+		<a href="../src/net/iprawsock_posix.go.html#line-20" class="path-duplicate">iprawsock_posix.go</a><a href="../src/net/iprawsock_posix.go.html#line-20">#L20</a>: 		return &amp;IPAddr{<b>IP</b>: sa.Addr[0:], Zone: zoneCache.name(int(sa.ZoneId))}
+		<a href="../src/net/iprawsock_posix.go.html#line-26" class="path-duplicate">iprawsock_posix.go</a><a href="../src/net/iprawsock_posix.go.html#line-26">#L26</a>: 	if a == nil || len(a.<b>IP</b>) &lt;= IPv4len {
+		<a href="../src/net/iprawsock_posix.go.html#line-29" class="path-duplicate">iprawsock_posix.go</a><a href="../src/net/iprawsock_posix.go.html#line-29">#L29</a>: 	if a.<b>IP</b>.To4() != nil {
+		<a href="../src/net/iprawsock_posix.go.html#line-39" class="path-duplicate">iprawsock_posix.go</a><a href="../src/net/iprawsock_posix.go.html#line-39">#L39</a>: 	return ipToSockaddr(family, a.<b>IP</b>, 0, a.Zone)
+		<a href="../src/net/iprawsock_posix.go.html#line-53" class="path-duplicate">iprawsock_posix.go</a><a href="../src/net/iprawsock_posix.go.html#line-53">#L53</a>: 		addr = &amp;IPAddr{<b>IP</b>: sa.Addr[0:]}
+		<a href="../src/net/iprawsock_posix.go.html#line-56" class="path-duplicate">iprawsock_posix.go</a><a href="../src/net/iprawsock_posix.go.html#line-56">#L56</a>: 		addr = &amp;IPAddr{<b>IP</b>: sa.Addr[0:], Zone: zoneCache.name(int(sa.ZoneId))}
+		<a href="../src/net/iprawsock_posix.go.html#line-81" class="path-duplicate">iprawsock_posix.go</a><a href="../src/net/iprawsock_posix.go.html#line-81">#L81</a>: 		addr = &amp;IPAddr{<b>IP</b>: sa.Addr[0:]}
+		<a href="../src/net/iprawsock_posix.go.html#line-83" class="path-duplicate">iprawsock_posix.go</a><a href="../src/net/iprawsock_posix.go.html#line-83">#L83</a>: 		addr = &amp;IPAddr{<b>IP</b>: sa.Addr[0:], Zone: zoneCache.name(int(sa.ZoneId))}
+		<a href="../src/net/ipsock.go.html#line-70">ipsock.go#L70</a>: 		return addr.<b>IP</b>.To4() != nil
+		<a href="../src/net/ipsock.go.html#line-147" class="path-duplicate">ipsock.go</a><a href="../src/net/ipsock.go.html#line-147">#L147</a>: 	return addr.<b>IP</b>.To4() != nil
+		<a href="../src/net/ipsock.go.html#line-152" class="path-duplicate">ipsock.go</a><a href="../src/net/ipsock.go.html#line-152">#L152</a>: 	return len(addr.<b>IP</b>) == IPv6len &amp;&amp; addr.<b>IP</b>.To4() == nil
+		<a href="../src/net/ipsock.go.html#line-274" class="path-duplicate">ipsock.go</a><a href="../src/net/ipsock.go.html#line-274">#L274</a>: 			return &amp;TCPAddr{IP: ip.<b>IP</b>, Port: portnum, Zone: ip.Zone}
+		<a href="../src/net/ipsock.go.html#line-276" class="path-duplicate">ipsock.go</a><a href="../src/net/ipsock.go.html#line-276">#L276</a>: 			return &amp;UDPAddr{IP: ip.<b>IP</b>, Port: portnum, Zone: ip.Zone}
+		<a href="../src/net/ipsock.go.html#line-278" class="path-duplicate">ipsock.go</a><a href="../src/net/ipsock.go.html#line-278">#L278</a>: 			return &amp;IPAddr{<b>IP</b>: ip.<b>IP</b>, Zone: ip.Zone}
+		<a href="../src/net/ipsock.go.html#line-296" class="path-duplicate">ipsock.go</a><a href="../src/net/ipsock.go.html#line-296">#L296</a>: 	if len(ips) == 1 &amp;&amp; ips[0].<b>IP</b>.Equal(IPv6unspecified) {
+		<a href="../src/net/ipsock.go.html#line-297" class="path-duplicate">ipsock.go</a><a href="../src/net/ipsock.go.html#line-297">#L297</a>: 		ips = append(ips, IPAddr{<b>IP</b>: IPv4zero})
+		<a href="../src/net/lookup.go.html#line-199">lookup.go#L199</a>: 		ips[i] = ia.<b>IP</b>
+		<a href="../src/net/lookup.go.html#line-230" class="path-duplicate">lookup.go</a><a href="../src/net/lookup.go.html#line-230">#L230</a>: 		ips = append(ips, addr.(*IPAddr).<b>IP</b>)
+		<a href="../src/net/lookup.go.html#line-271" class="path-duplicate">lookup.go</a><a href="../src/net/lookup.go.html#line-271">#L271</a>: 		return []IPAddr{{<b>IP</b>: ip, Zone: zone}}, nil
+		<a href="../src/net/sockopt_posix.go.html#line-37">sockopt_posix.go#L37</a>: 				if ip.Equal(v.<b>IP</b>) {
+		<a href="../src/net/sockopt_posix.go.html#line-64" class="path-duplicate">sockopt_posix.go</a><a href="../src/net/sockopt_posix.go.html#line-64">#L64</a>: 			if v.<b>IP</b>.To4() != nil {
+		<a href="../src/net/sockopt_posix.go.html#line-65" class="path-duplicate">sockopt_posix.go</a><a href="../src/net/sockopt_posix.go.html#line-65">#L65</a>: 				return v.<b>IP</b>, nil
+		<a href="../src/net/sockopt_posix.go.html#line-87" class="path-duplicate">sockopt_posix.go</a><a href="../src/net/sockopt_posix.go.html#line-87">#L87</a>: 			if a := v.<b>IP</b>.To4(); a != nil {
+		<a href="../src/net/cgo_unix.go.html#line-211">cgo_unix.go#L211</a>: 			addr := IPAddr{<b>IP</b>: copyIP(sa.Addr[:])}
+		<a href="../src/net/cgo_unix.go.html#line-215" class="path-duplicate">cgo_unix.go</a><a href="../src/net/cgo_unix.go.html#line-215">#L215</a>: 			addr := IPAddr{<b>IP</b>: copyIP(sa.Addr[:]), Zone: zoneCache.name(int(sa.Scope_id))}
+
+	<a href="../pkg/github.com/uber/jaeger-client-go/utils.html">github.com/uber/jaeger-client-go/utils</a>
+		<a href="../src/github.com/uber/jaeger-client-go/utils/localip.go.html#line-35">localip.go#L35</a>: 		ip = netIP.<b>IP</b>
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: database/sql.Stmt.closemu</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../pkg/database/sql.html">database/sql</a>.<a href="../../src/database/sql/sql.go.html#line-2537">Stmt</a>.<a href="../../src/database/sql/sql.go.html#line-2543">closemu</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">7 uses</span>
+
+	database/sql (current package)
+		<a href="../../src/database/sql/sql.go.html#line-2543">sql.go#L2543</a>: 	<b>closemu</b> sync.RWMutex // held exclusively during close, for read otherwise.
+		<a href="../../src/database/sql/sql.go.html#line-2578" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-2578">#L2578</a>: 	s.<b>closemu</b>.RLock()
+		<a href="../../src/database/sql/sql.go.html#line-2579" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-2579">#L2579</a>: 	defer s.<b>closemu</b>.RUnlock()
+		<a href="../../src/database/sql/sql.go.html#line-2726" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-2726">#L2726</a>: 	s.<b>closemu</b>.RLock()
+		<a href="../../src/database/sql/sql.go.html#line-2727" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-2727">#L2727</a>: 	defer s.<b>closemu</b>.RUnlock()
+		<a href="../../src/database/sql/sql.go.html#line-2831" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-2831">#L2831</a>: 	s.<b>closemu</b>.Lock()
+		<a href="../../src/database/sql/sql.go.html#line-2832" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-2832">#L2832</a>: 	defer s.<b>closemu</b>.Unlock()
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

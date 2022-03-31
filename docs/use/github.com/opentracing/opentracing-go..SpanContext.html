@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/opentracing/opentracing-go.SpanContext</title>
+<link href="../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../../../pkg/github.com/opentracing/opentracing-go.html">github.com/opentracing/opentracing-go</a>.<a href="../../../src/github.com/opentracing/opentracing-go/span.go.html#line-11">SpanContext</a></b></span>
+
+<span class="title">19 uses</span>
+
+	github.com/opentracing/opentracing-go (current package)
+		<a href="../../../src/github.com/opentracing/opentracing-go/noop.go.html#line-24">noop.go#L24</a>: 	defaultNoopSpanContext <b>SpanContext</b> = noopSpanContext{}
+		<a href="../../../src/github.com/opentracing/opentracing-go/noop.go.html#line-37" class="path-duplicate">noop.go</a><a href="../../../src/github.com/opentracing/opentracing-go/noop.go.html#line-37">#L37</a>: func (n noopSpan) Context() <b>SpanContext</b>                                  { return defaultNoopSpanContext }
+		<a href="../../../src/github.com/opentracing/opentracing-go/noop.go.html#line-57" class="path-duplicate">noop.go</a><a href="../../../src/github.com/opentracing/opentracing-go/noop.go.html#line-57">#L57</a>: func (n NoopTracer) Inject(sp <b>SpanContext</b>, format interface{}, carrier interface{}) error {
+		<a href="../../../src/github.com/opentracing/opentracing-go/noop.go.html#line-62" class="path-duplicate">noop.go</a><a href="../../../src/github.com/opentracing/opentracing-go/noop.go.html#line-62">#L62</a>: func (n NoopTracer) Extract(format interface{}, carrier interface{}) (<b>SpanContext</b>, error) {
+		<a href="../../../src/github.com/opentracing/opentracing-go/span.go.html#line-11">span.go#L11</a>: type <b>SpanContext</b> interface {
+		<a href="../../../src/github.com/opentracing/opentracing-go/span.go.html#line-41" class="path-duplicate">span.go</a><a href="../../../src/github.com/opentracing/opentracing-go/span.go.html#line-41">#L41</a>: 	Context() <b>SpanContext</b>
+		<a href="../../../src/github.com/opentracing/opentracing-go/tracer.go.html#line-68">tracer.go#L68</a>: 	Inject(sm <b>SpanContext</b>, format interface{}, carrier interface{}) error
+		<a href="../../../src/github.com/opentracing/opentracing-go/tracer.go.html#line-111" class="path-duplicate">tracer.go</a><a href="../../../src/github.com/opentracing/opentracing-go/tracer.go.html#line-111">#L111</a>: 	Extract(format interface{}, carrier interface{}) (<b>SpanContext</b>, error)
+		<a href="../../../src/github.com/opentracing/opentracing-go/tracer.go.html#line-222" class="path-duplicate">tracer.go</a><a href="../../../src/github.com/opentracing/opentracing-go/tracer.go.html#line-222">#L222</a>: 	ReferencedContext <b>SpanContext</b>
+		<a href="../../../src/github.com/opentracing/opentracing-go/tracer.go.html#line-236" class="path-duplicate">tracer.go</a><a href="../../../src/github.com/opentracing/opentracing-go/tracer.go.html#line-236">#L236</a>: func ChildOf(sc <b>SpanContext</b>) SpanReference {
+		<a href="../../../src/github.com/opentracing/opentracing-go/tracer.go.html#line-248" class="path-duplicate">tracer.go</a><a href="../../../src/github.com/opentracing/opentracing-go/tracer.go.html#line-248">#L248</a>: func FollowsFrom(sc <b>SpanContext</b>) SpanReference {
+
+	<a href="../../../pkg/github.com/opentracing/opentracing-go/ext.html">github.com/opentracing/opentracing-go/ext</a>
+		<a href="../../../src/github.com/opentracing/opentracing-go/ext/tags.go.html#line-146">tags.go#L146</a>: 	clientContext opentracing.<b>SpanContext</b>
+		<a href="../../../src/github.com/opentracing/opentracing-go/ext/tags.go.html#line-160" class="path-duplicate">tags.go</a><a href="../../../src/github.com/opentracing/opentracing-go/ext/tags.go.html#line-160">#L160</a>: func RPCServerOption(client opentracing.<b>SpanContext</b>) opentracing.StartSpanOption {
+
+	<a href="../../../pkg/github.com/uber/jaeger-client-go.html">github.com/uber/jaeger-client-go</a>
+		<a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-380">span.go#L380</a>: func (s *Span) Context() opentracing.<b>SpanContext</b> {
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-343">tracer.go#L343</a>: func (t *Tracer) Inject(ctx opentracing.<b>SpanContext</b>, format interface{}, carrier interface{}) error {
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-358" class="path-duplicate">tracer.go</a><a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-358">#L358</a>: ) (opentracing.<b>SpanContext</b>, error) {
+
+	<a href="../../../pkg/github.com/uber/jaeger-client-go/log/zap.html">github.com/uber/jaeger-client-go/log/zap</a>
+		<a href="../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-66">tracer.go#L66</a>: func (l loggingTracer) Inject(ctx opentracing.<b>SpanContext</b>, format interface{}, carrier interface{}) error {
+		<a href="../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-78" class="path-duplicate">tracer.go</a><a href="../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-78">#L78</a>: func (l loggingTracer) Extract(format interface{}, carrier interface{}) (opentracing.<b>SpanContext</b>, error) {
+		<a href="../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-112" class="path-duplicate">tracer.go</a><a href="../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-112">#L112</a>: func (l loggingSpan) Context() opentracing.<b>SpanContext</b> {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

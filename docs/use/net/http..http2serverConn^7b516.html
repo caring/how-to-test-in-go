@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: net/http.http2serverConn</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../../pkg/net/http.html">net/http</a>.<a href="../../src/net/http/h2_bundle.go.html#line-4151">http2serverConn</a></b></span>
+
+<span class="title">71 uses</span>
+
+	net/http (current package)
+		<a href="../../src/net/http/h2_bundle.go.html#line-3749">h2_bundle.go#L3749</a>: 	http2testHookGetServerConn func(*<b>http2serverConn</b>)
+		<a href="../../src/net/http/h2_bundle.go.html#line-3751" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-3751">#L3751</a>: 	http2testHookOnPanic       func(sc *<b>http2serverConn</b>, panicVal interface{}) (rePanic bool)
+		<a href="../../src/net/http/h2_bundle.go.html#line-3847" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-3847">#L3847</a>: 	activeConns map[*<b>http2serverConn</b>]struct{}
+		<a href="../../src/net/http/h2_bundle.go.html#line-3850" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-3850">#L3850</a>: func (s *http2serverInternalState) registerConn(sc *<b>http2serverConn</b>) {
+		<a href="../../src/net/http/h2_bundle.go.html#line-3859" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-3859">#L3859</a>: func (s *http2serverInternalState) unregisterConn(sc *<b>http2serverConn</b>) {
+		<a href="../../src/net/http/h2_bundle.go.html#line-3891" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-3891">#L3891</a>: 	conf.state = &amp;http2serverInternalState{activeConns: make(map[*<b>http2serverConn</b>]struct{})}
+		<a href="../../src/net/http/h2_bundle.go.html#line-4027" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-4027">#L4027</a>: 	sc := &amp;<b>http2serverConn</b>{
+		<a href="../../src/net/http/h2_bundle.go.html#line-4143" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-4143">#L4143</a>: func (sc *<b>http2serverConn</b>) rejectConn(err http2ErrCode, debug string) {
+		<a href="../../src/net/http/h2_bundle.go.html#line-4151" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-4151">#L4151</a>: type <b>http2serverConn</b> struct {
+		<a href="../../src/net/http/h2_bundle.go.html#line-4209" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-4209">#L4209</a>: func (sc *<b>http2serverConn</b>) maxHeaderListSize() uint32 {
+		<a href="../../src/net/http/h2_bundle.go.html#line-4221" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-4221">#L4221</a>: func (sc *<b>http2serverConn</b>) curOpenStreams() uint32 {
+		<a href="../../src/net/http/h2_bundle.go.html#line-4235" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-4235">#L4235</a>: 	sc        *<b>http2serverConn</b>
+		<a href="../../src/net/http/h2_bundle.go.html#line-4257" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-4257">#L4257</a>: func (sc *<b>http2serverConn</b>) Framer() *http2Framer { return sc.framer }
+		<a href="../../src/net/http/h2_bundle.go.html#line-4259" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-4259">#L4259</a>: func (sc *<b>http2serverConn</b>) CloseConn() error { return sc.conn.Close() }
+		<a href="../../src/net/http/h2_bundle.go.html#line-4261" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-4261">#L4261</a>: func (sc *<b>http2serverConn</b>) Flush() error { return sc.bw.Flush() }
+		<a href="../../src/net/http/h2_bundle.go.html#line-4263" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-4263">#L4263</a>: func (sc *<b>http2serverConn</b>) HeaderEncoder() (*hpack.Encoder, *bytes.Buffer) {
+		<a href="../../src/net/http/h2_bundle.go.html#line-4267" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-4267">#L4267</a>: func (sc *<b>http2serverConn</b>) state(streamID uint32) (http2streamState, *http2stream) {
+		<a href="../../src/net/http/h2_bundle.go.html#line-4294" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-4294">#L4294</a>: func (sc *<b>http2serverConn</b>) setConnState(state ConnState) {
+		<a href="../../src/net/http/h2_bundle.go.html#line-4300" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-4300">#L4300</a>: func (sc *<b>http2serverConn</b>) vlogf(format string, args ...interface{}) {
+		<a href="../../src/net/http/h2_bundle.go.html#line-4306" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-4306">#L4306</a>: func (sc *<b>http2serverConn</b>) logf(format string, args ...interface{}) {
+		<a href="../../src/net/http/h2_bundle.go.html#line-4358" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-4358">#L4358</a>: func (sc *<b>http2serverConn</b>) condlogf(err error, format string, args ...interface{}) {
+		<a href="../../src/net/http/h2_bundle.go.html#line-4370" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-4370">#L4370</a>: func (sc *<b>http2serverConn</b>) canonicalHeader(v string) string {
+		<a href="../../src/net/http/h2_bundle.go.html#line-4411" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-4411">#L4411</a>: func (sc *<b>http2serverConn</b>) readFrames() {
+		<a href="../../src/net/http/h2_bundle.go.html#line-4443" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-4443">#L4443</a>: func (sc *<b>http2serverConn</b>) writeFrameAsync(wr http2FrameWriteRequest) {
+		<a href="../../src/net/http/h2_bundle.go.html#line-4448" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-4448">#L4448</a>: func (sc *<b>http2serverConn</b>) closeAllStreamsOnConnClose() {
+		<a href="../../src/net/http/h2_bundle.go.html#line-4455" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-4455">#L4455</a>: func (sc *<b>http2serverConn</b>) stopShutdownTimer() {
+		<a href="../../src/net/http/h2_bundle.go.html#line-4462" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-4462">#L4462</a>: func (sc *<b>http2serverConn</b>) notePanic() {
+		<a href="../../src/net/http/h2_bundle.go.html#line-4477" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-4477">#L4477</a>: func (sc *<b>http2serverConn</b>) serve() {
+		<a href="../../src/net/http/h2_bundle.go.html#line-4604" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-4604">#L4604</a>: func (sc *<b>http2serverConn</b>) awaitGracefulShutdown(sharedCh &lt;-chan struct{}, privateCh chan struct{}) {
+		<a href="../../src/net/http/h2_bundle.go.html#line-4622" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-4622">#L4622</a>: func (sc *<b>http2serverConn</b>) onSettingsTimer() { sc.sendServeMsg(http2settingsTimerMsg) }
+		<a href="../../src/net/http/h2_bundle.go.html#line-4624" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-4624">#L4624</a>: func (sc *<b>http2serverConn</b>) onIdleTimer() { sc.sendServeMsg(http2idleTimerMsg) }
+		<a href="../../src/net/http/h2_bundle.go.html#line-4626" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-4626">#L4626</a>: func (sc *<b>http2serverConn</b>) onShutdownTimer() { sc.sendServeMsg(http2shutdownTimerMsg) }
+		<a href="../../src/net/http/h2_bundle.go.html#line-4628" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-4628">#L4628</a>: func (sc *<b>http2serverConn</b>) sendServeMsg(msg interface{}) {
+		<a href="../../src/net/http/h2_bundle.go.html#line-4641" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-4641">#L4641</a>: func (sc *<b>http2serverConn</b>) readPreface() error {
+		<a href="../../src/net/http/h2_bundle.go.html#line-4679" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-4679">#L4679</a>: func (sc *<b>http2serverConn</b>) writeDataFromHandler(stream *http2stream, data []byte, endStream bool) error {
+		<a href="../../src/net/http/h2_bundle.go.html#line-4726" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-4726">#L4726</a>: func (sc *<b>http2serverConn</b>) writeFrameFromHandler(wr http2FrameWriteRequest) error {
+		<a href="../../src/net/http/h2_bundle.go.html#line-4746" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-4746">#L4746</a>: func (sc *<b>http2serverConn</b>) writeFrame(wr http2FrameWriteRequest) {
+		<a href="../../src/net/http/h2_bundle.go.html#line-4810" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-4810">#L4810</a>: func (sc *<b>http2serverConn</b>) startFrameWrite(wr http2FrameWriteRequest) {
+		<a href="../../src/net/http/h2_bundle.go.html#line-4860" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-4860">#L4860</a>: func (sc *<b>http2serverConn</b>) wroteFrame(res http2frameWriteResult) {
+		<a href="../../src/net/http/h2_bundle.go.html#line-4924" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-4924">#L4924</a>: func (sc *<b>http2serverConn</b>) scheduleFrameWrite() {
+		<a href="../../src/net/http/h2_bundle.go.html#line-4972" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-4972">#L4972</a>: func (sc *<b>http2serverConn</b>) startGracefulShutdown() {
+		<a href="../../src/net/http/h2_bundle.go.html#line-4995" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-4995">#L4995</a>: func (sc *<b>http2serverConn</b>) startGracefulShutdownInternal() {
+		<a href="../../src/net/http/h2_bundle.go.html#line-4999" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-4999">#L4999</a>: func (sc *<b>http2serverConn</b>) goAway(code http2ErrCode) {
+		<a href="../../src/net/http/h2_bundle.go.html#line-5010" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-5010">#L5010</a>: func (sc *<b>http2serverConn</b>) shutDownIn(d time.Duration) {
+		<a href="../../src/net/http/h2_bundle.go.html#line-5015" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-5015">#L5015</a>: func (sc *<b>http2serverConn</b>) resetStream(se http2StreamError) {
+		<a href="../../src/net/http/h2_bundle.go.html#line-5026" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-5026">#L5026</a>: func (sc *<b>http2serverConn</b>) processFrameFromReader(res http2readFrameResult) bool {
+		<a href="../../src/net/http/h2_bundle.go.html#line-5078" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-5078">#L5078</a>: func (sc *<b>http2serverConn</b>) processFrame(f http2Frame) error {
+		<a href="../../src/net/http/h2_bundle.go.html#line-5116" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-5116">#L5116</a>: func (sc *<b>http2serverConn</b>) processPing(f *http2PingFrame) error {
+		<a href="../../src/net/http/h2_bundle.go.html#line-5138" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-5138">#L5138</a>: func (sc *<b>http2serverConn</b>) processWindowUpdate(f *http2WindowUpdateFrame) error {
+		<a href="../../src/net/http/h2_bundle.go.html#line-5170" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-5170">#L5170</a>: func (sc *<b>http2serverConn</b>) processResetStream(f *http2RSTStreamFrame) error {
+		<a href="../../src/net/http/h2_bundle.go.html#line-5189" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-5189">#L5189</a>: func (sc *<b>http2serverConn</b>) closeStream(st *http2stream, err error) {
+		<a href="../../src/net/http/h2_bundle.go.html#line-5224" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-5224">#L5224</a>: func (sc *<b>http2serverConn</b>) processSettings(f *http2SettingsFrame) error {
+		<a href="../../src/net/http/h2_bundle.go.html#line-5252" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-5252">#L5252</a>: func (sc *<b>http2serverConn</b>) processSetting(s http2Setting) error {
+		<a href="../../src/net/http/h2_bundle.go.html#line-5285" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-5285">#L5285</a>: func (sc *<b>http2serverConn</b>) processSettingInitialWindowSize(val uint32) error {
+		<a href="../../src/net/http/h2_bundle.go.html#line-5313" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-5313">#L5313</a>: func (sc *<b>http2serverConn</b>) processData(f *http2DataFrame) error {
+		<a href="../../src/net/http/h2_bundle.go.html#line-5416" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-5416">#L5416</a>: func (sc *<b>http2serverConn</b>) processGoAway(f *http2GoAwayFrame) error {
+		<a href="../../src/net/http/h2_bundle.go.html#line-5468" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-5468">#L5468</a>: func (sc *<b>http2serverConn</b>) processHeaders(f *http2MetaHeadersFrame) error {
+		<a href="../../src/net/http/h2_bundle.go.html#line-5624" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-5624">#L5624</a>: func (sc *<b>http2serverConn</b>) processPriority(f *http2PriorityFrame) error {
+		<a href="../../src/net/http/h2_bundle.go.html#line-5635" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-5635">#L5635</a>: func (sc *<b>http2serverConn</b>) newStream(id, pusherID uint32, state http2streamState) *http2stream {
+		<a href="../../src/net/http/h2_bundle.go.html#line-5672" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-5672">#L5672</a>: func (sc *<b>http2serverConn</b>) newWriterAndRequest(st *http2stream, f *http2MetaHeadersFrame) (*http2responseWriter, *Request, error) {
+		<a href="../../src/net/http/h2_bundle.go.html#line-5742" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-5742">#L5742</a>: func (sc *<b>http2serverConn</b>) newWriterAndRequestNoBody(st *http2stream, rp http2requestParam) (*http2responseWriter, *Request, error) {
+		<a href="../../src/net/http/h2_bundle.go.html#line-5828" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-5828">#L5828</a>: func (sc *<b>http2serverConn</b>) runHandler(rw *http2responseWriter, req *Request, handler func(ResponseWriter, *Request)) {
+		<a href="../../src/net/http/h2_bundle.go.html#line-5865" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-5865">#L5865</a>: func (sc *<b>http2serverConn</b>) writeHeaders(st *http2stream, headerData *http2writeResHeaders) error {
+		<a href="../../src/net/http/h2_bundle.go.html#line-5897" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-5897">#L5897</a>: func (sc *<b>http2serverConn</b>) write100ContinueHeaders(st *http2stream) {
+		<a href="../../src/net/http/h2_bundle.go.html#line-5914" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-5914">#L5914</a>: func (sc *<b>http2serverConn</b>) noteBodyReadFromHandler(st *http2stream, n int, err error) {
+		<a href="../../src/net/http/h2_bundle.go.html#line-5924" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-5924">#L5924</a>: func (sc *<b>http2serverConn</b>) noteBodyRead(st *http2stream, n int) {
+		<a href="../../src/net/http/h2_bundle.go.html#line-5935" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-5935">#L5935</a>: func (sc *<b>http2serverConn</b>) sendWindowUpdate(st *http2stream, n int) {
+		<a href="../../src/net/http/h2_bundle.go.html#line-5951" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-5951">#L5951</a>: func (sc *<b>http2serverConn</b>) sendWindowUpdate32(st *http2stream, n int32) {
+		<a href="../../src/net/http/h2_bundle.go.html#line-5983" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-5983">#L5983</a>: 	conn          *<b>http2serverConn</b>
+		<a href="../../src/net/http/h2_bundle.go.html#line-6039" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-6039">#L6039</a>: 	conn   *<b>http2serverConn</b>
+		<a href="../../src/net/http/h2_bundle.go.html#line-6528" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-6528">#L6528</a>: func (sc *<b>http2serverConn</b>) startPush(msg *http2startPushRequest) {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

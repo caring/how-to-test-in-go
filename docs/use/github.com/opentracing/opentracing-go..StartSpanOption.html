@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/opentracing/opentracing-go.StartSpanOption</title>
+<link href="../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../../../pkg/github.com/opentracing/opentracing-go.html">github.com/opentracing/opentracing-go</a>.<a href="../../../src/github.com/opentracing/opentracing-go/tracer.go.html#line-153">StartSpanOption</a></b></span>
+
+<span class="title">9 uses</span>
+
+	github.com/opentracing/opentracing-go (current package)
+		<a href="../../../src/github.com/opentracing/opentracing-go/globaltracer.go.html#line-30">globaltracer.go#L30</a>: func StartSpan(operationName string, opts ...<b>StartSpanOption</b>) Span {
+		<a href="../../../src/github.com/opentracing/opentracing-go/gocontext.go.html#line-48">gocontext.go#L48</a>: func StartSpanFromContext(ctx context.Context, operationName string, opts ...<b>StartSpanOption</b>) (Span, context.Context) {
+		<a href="../../../src/github.com/opentracing/opentracing-go/gocontext.go.html#line-59" class="path-duplicate">gocontext.go</a><a href="../../../src/github.com/opentracing/opentracing-go/gocontext.go.html#line-59">#L59</a>: func StartSpanFromContextWithTracer(ctx context.Context, tracer Tracer, operationName string, opts ...<b>StartSpanOption</b>) (Span, context.Context) {
+		<a href="../../../src/github.com/opentracing/opentracing-go/noop.go.html#line-52">noop.go#L52</a>: func (n NoopTracer) StartSpan(operationName string, opts ...<b>StartSpanOption</b>) Span {
+		<a href="../../../src/github.com/opentracing/opentracing-go/tracer.go.html#line-37">tracer.go#L37</a>: 	StartSpan(operationName string, opts ...<b>StartSpanOption</b>) Span
+		<a href="../../../src/github.com/opentracing/opentracing-go/tracer.go.html#line-153" class="path-duplicate">tracer.go</a><a href="../../../src/github.com/opentracing/opentracing-go/tracer.go.html#line-153">#L153</a>: type <b>StartSpanOption</b> interface {
+
+	<a href="../../../pkg/github.com/opentracing/opentracing-go/ext.html">github.com/opentracing/opentracing-go/ext</a>
+		<a href="../../../src/github.com/opentracing/opentracing-go/ext/tags.go.html#line-160">tags.go#L160</a>: func RPCServerOption(client opentracing.SpanContext) opentracing.<b>StartSpanOption</b> {
+
+	<a href="../../../pkg/github.com/uber/jaeger-client-go.html">github.com/uber/jaeger-client-go</a>
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-202">tracer.go#L202</a>: 	options ...opentracing.<b>StartSpanOption</b>,
+
+	<a href="../../../pkg/github.com/uber/jaeger-client-go/log/zap.html">github.com/uber/jaeger-client-go/log/zap</a>
+		<a href="../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-47">tracer.go#L47</a>: func (l loggingTracer) StartSpan(operationName string, opts ...opentracing.<b>StartSpanOption</b>) opentracing.Span {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

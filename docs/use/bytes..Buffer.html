@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: bytes.Buffer</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../pkg/bytes.html">bytes</a>.<a href="../src/bytes/buffer.go.html#line-20">Buffer</a></b></span>
+
+<span class="title">153 uses</span>
+
+	bytes (current package)
+		<a href="../src/bytes/buffer.go.html#line-20">buffer.go#L20</a>: type <b>Buffer</b> struct {
+		<a href="../src/bytes/buffer.go.html#line-54" class="path-duplicate">buffer.go</a><a href="../src/bytes/buffer.go.html#line-54">#L54</a>: func (b *<b>Buffer</b>) Bytes() []byte { return b.buf[b.off:] }
+		<a href="../src/bytes/buffer.go.html#line-60" class="path-duplicate">buffer.go</a><a href="../src/bytes/buffer.go.html#line-60">#L60</a>: func (b *<b>Buffer</b>) String() string {
+		<a href="../src/bytes/buffer.go.html#line-69" class="path-duplicate">buffer.go</a><a href="../src/bytes/buffer.go.html#line-69">#L69</a>: func (b *<b>Buffer</b>) empty() bool { return len(b.buf) &lt;= b.off }
+		<a href="../src/bytes/buffer.go.html#line-73" class="path-duplicate">buffer.go</a><a href="../src/bytes/buffer.go.html#line-73">#L73</a>: func (b *<b>Buffer</b>) Len() int { return len(b.buf) - b.off }
+		<a href="../src/bytes/buffer.go.html#line-77" class="path-duplicate">buffer.go</a><a href="../src/bytes/buffer.go.html#line-77">#L77</a>: func (b *<b>Buffer</b>) Cap() int { return cap(b.buf) }
+		<a href="../src/bytes/buffer.go.html#line-82" class="path-duplicate">buffer.go</a><a href="../src/bytes/buffer.go.html#line-82">#L82</a>: func (b *<b>Buffer</b>) Truncate(n int) {
+		<a href="../src/bytes/buffer.go.html#line-97" class="path-duplicate">buffer.go</a><a href="../src/bytes/buffer.go.html#line-97">#L97</a>: func (b *<b>Buffer</b>) Reset() {
+		<a href="../src/bytes/buffer.go.html#line-106" class="path-duplicate">buffer.go</a><a href="../src/bytes/buffer.go.html#line-106">#L106</a>: func (b *<b>Buffer</b>) tryGrowByReslice(n int) (int, bool) {
+		<a href="../src/bytes/buffer.go.html#line-117" class="path-duplicate">buffer.go</a><a href="../src/bytes/buffer.go.html#line-117">#L117</a>: func (b *<b>Buffer</b>) grow(n int) int {
+		<a href="../src/bytes/buffer.go.html#line-157" class="path-duplicate">buffer.go</a><a href="../src/bytes/buffer.go.html#line-157">#L157</a>: func (b *<b>Buffer</b>) Grow(n int) {
+		<a href="../src/bytes/buffer.go.html#line-168" class="path-duplicate">buffer.go</a><a href="../src/bytes/buffer.go.html#line-168">#L168</a>: func (b *<b>Buffer</b>) Write(p []byte) (n int, err error) {
+		<a href="../src/bytes/buffer.go.html#line-180" class="path-duplicate">buffer.go</a><a href="../src/bytes/buffer.go.html#line-180">#L180</a>: func (b *<b>Buffer</b>) WriteString(s string) (n int, err error) {
+		<a href="../src/bytes/buffer.go.html#line-199" class="path-duplicate">buffer.go</a><a href="../src/bytes/buffer.go.html#line-199">#L199</a>: func (b *<b>Buffer</b>) ReadFrom(r io.Reader) (n int64, err error) {
+		<a href="../src/bytes/buffer.go.html#line-236" class="path-duplicate">buffer.go</a><a href="../src/bytes/buffer.go.html#line-236">#L236</a>: func (b *<b>Buffer</b>) WriteTo(w io.Writer) (n int64, err error) {
+		<a href="../src/bytes/buffer.go.html#line-263" class="path-duplicate">buffer.go</a><a href="../src/bytes/buffer.go.html#line-263">#L263</a>: func (b *<b>Buffer</b>) WriteByte(c byte) error {
+		<a href="../src/bytes/buffer.go.html#line-277" class="path-duplicate">buffer.go</a><a href="../src/bytes/buffer.go.html#line-277">#L277</a>: func (b *<b>Buffer</b>) WriteRune(r rune) (n int, err error) {
+		<a href="../src/bytes/buffer.go.html#line-297" class="path-duplicate">buffer.go</a><a href="../src/bytes/buffer.go.html#line-297">#L297</a>: func (b *<b>Buffer</b>) Read(p []byte) (n int, err error) {
+		<a href="../src/bytes/buffer.go.html#line-319" class="path-duplicate">buffer.go</a><a href="../src/bytes/buffer.go.html#line-319">#L319</a>: func (b *<b>Buffer</b>) Next(n int) []byte {
+		<a href="../src/bytes/buffer.go.html#line-335" class="path-duplicate">buffer.go</a><a href="../src/bytes/buffer.go.html#line-335">#L335</a>: func (b *<b>Buffer</b>) ReadByte() (byte, error) {
+		<a href="../src/bytes/buffer.go.html#line-352" class="path-duplicate">buffer.go</a><a href="../src/bytes/buffer.go.html#line-352">#L352</a>: func (b *<b>Buffer</b>) ReadRune() (r rune, size int, err error) {
+		<a href="../src/bytes/buffer.go.html#line-375" class="path-duplicate">buffer.go</a><a href="../src/bytes/buffer.go.html#line-375">#L375</a>: func (b *<b>Buffer</b>) UnreadRune() error {
+		<a href="../src/bytes/buffer.go.html#line-392" class="path-duplicate">buffer.go</a><a href="../src/bytes/buffer.go.html#line-392">#L392</a>: func (b *<b>Buffer</b>) UnreadByte() error {
+		<a href="../src/bytes/buffer.go.html#line-409" class="path-duplicate">buffer.go</a><a href="../src/bytes/buffer.go.html#line-409">#L409</a>: func (b *<b>Buffer</b>) ReadBytes(delim byte) (line []byte, err error) {
+		<a href="../src/bytes/buffer.go.html#line-418" class="path-duplicate">buffer.go</a><a href="../src/bytes/buffer.go.html#line-418">#L418</a>: func (b *<b>Buffer</b>) readSlice(delim byte) (line []byte, err error) {
+		<a href="../src/bytes/buffer.go.html#line-437" class="path-duplicate">buffer.go</a><a href="../src/bytes/buffer.go.html#line-437">#L437</a>: func (b *<b>Buffer</b>) ReadString(delim byte) (line string, err error) {
+		<a href="../src/bytes/buffer.go.html#line-451" class="path-duplicate">buffer.go</a><a href="../src/bytes/buffer.go.html#line-451">#L451</a>: func NewBuffer(buf []byte) *<b>Buffer</b> { return &amp;<b>Buffer</b>{buf: buf} }
+		<a href="../src/bytes/buffer.go.html#line-459" class="path-duplicate">buffer.go</a><a href="../src/bytes/buffer.go.html#line-459">#L459</a>: func NewBufferString(s string) *<b>Buffer</b> {
+		<a href="../src/bytes/buffer.go.html#line-460" class="path-duplicate">buffer.go</a><a href="../src/bytes/buffer.go.html#line-460">#L460</a>: 	return &amp;<b>Buffer</b>{buf: []byte(s)}
+
+	<a href="../pkg/crypto/tls.html">crypto/tls</a>
+		<a href="../src/crypto/tls/auth.go.html#line-83">auth.go#L83</a>: 		b := &amp;bytes.<b>Buffer</b>{}
+		<a href="../src/crypto/tls/conn.go.html#line-96">conn.go#L96</a>: 	rawInput  bytes.<b>Buffer</b> // raw input, starting with a record header
+		<a href="../src/crypto/tls/conn.go.html#line-98" class="path-duplicate">conn.go</a><a href="../src/crypto/tls/conn.go.html#line-98">#L98</a>: 	hand      bytes.<b>Buffer</b> // handshake data waiting to be read
+
+	<a href="../pkg/encoding/json.html">encoding/json</a>
+		<a href="../src/encoding/json/encode.go.html#line-180">encode.go#L180</a>: 	var buf bytes.<b>Buffer</b>
+		<a href="../src/encoding/json/encode.go.html#line-194" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-194">#L194</a>: func HTMLEscape(dst *bytes.<b>Buffer</b>, src []byte) {
+		<a href="../src/encoding/json/encode.go.html#line-288" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-288">#L288</a>: 	bytes.<b>Buffer</b> // accumulated output
+		<a href="../src/encoding/json/encode.go.html#line-1229" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-1229">#L1229</a>: 	var nameEscBuf bytes.<b>Buffer</b>
+		<a href="../src/encoding/json/indent.go.html#line-13">indent.go#L13</a>: func Compact(dst *bytes.<b>Buffer</b>, src []byte) error {
+		<a href="../src/encoding/json/indent.go.html#line-17" class="path-duplicate">indent.go</a><a href="../src/encoding/json/indent.go.html#line-17">#L17</a>: func compact(dst *bytes.<b>Buffer</b>, src []byte, escape bool) error {
+		<a href="../src/encoding/json/indent.go.html#line-62" class="path-duplicate">indent.go</a><a href="../src/encoding/json/indent.go.html#line-62">#L62</a>: func newline(dst *bytes.<b>Buffer</b>, prefix, indent string, depth int) {
+		<a href="../src/encoding/json/indent.go.html#line-81" class="path-duplicate">indent.go</a><a href="../src/encoding/json/indent.go.html#line-81">#L81</a>: func Indent(dst *bytes.<b>Buffer</b>, src []byte, prefix, indent string) error {
+		<a href="../src/encoding/json/stream.go.html#line-186">stream.go#L186</a>: 	indentBuf    *bytes.<b>Buffer</b>
+		<a href="../src/encoding/json/stream.go.html#line-222" class="path-duplicate">stream.go</a><a href="../src/encoding/json/stream.go.html#line-222">#L222</a>: 			enc.indentBuf = new(bytes.<b>Buffer</b>)
+
+	<a href="../pkg/encoding/pem.html">encoding/pem</a>
+		<a href="../src/encoding/pem/pem.go.html#line-335">pem.go#L335</a>: 	var buf bytes.<b>Buffer</b>
+
+	<a href="../pkg/encoding/xml.html">encoding/xml</a>
+		<a href="../src/encoding/xml/marshal.go.html#line-80">marshal.go#L80</a>: 	var b bytes.<b>Buffer</b>
+		<a href="../src/encoding/xml/marshal.go.html#line-126" class="path-duplicate">marshal.go</a><a href="../src/encoding/xml/marshal.go.html#line-126">#L126</a>: 	var b bytes.<b>Buffer</b>
+		<a href="../src/encoding/xml/read.go.html#line-499">read.go#L499</a>: 						d.saved = new(bytes.<b>Buffer</b>)
+		<a href="../src/encoding/xml/xml.go.html#line-211">xml.go#L211</a>: 	buf            bytes.<b>Buffer</b>
+		<a href="../src/encoding/xml/xml.go.html#line-212" class="path-duplicate">xml.go</a><a href="../src/encoding/xml/xml.go.html#line-212">#L212</a>: 	saved          *bytes.<b>Buffer</b>
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/awsutil.html">github.com/aws/aws-sdk-go/aws/awsutil</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/prettify.go.html#line-13">prettify.go#L13</a>: 	var buf bytes.<b>Buffer</b>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/prettify.go.html#line-20" class="path-duplicate">prettify.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/prettify.go.html#line-20">#L20</a>: func prettify(v reflect.Value, indent int, buf *bytes.<b>Buffer</b>) {
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/string_value.go.html#line-12">string_value.go#L12</a>: 	var buf bytes.<b>Buffer</b>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/string_value.go.html#line-17" class="path-duplicate">string_value.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/string_value.go.html#line-17">#L17</a>: func stringValue(v reflect.Value, indent int, buf *bytes.<b>Buffer</b>) {
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/client.html">github.com/aws/aws-sdk-go/aws/client</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/client/logger.go.html#line-28">logger.go#L28</a>: 	buf *bytes.<b>Buffer</b>
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/ec2metadata.html">github.com/aws/aws-sdk-go/aws/ec2metadata</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/ec2metadata/service.go.html#line-164">service.go#L164</a>: 		var b bytes.<b>Buffer</b>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/ec2metadata/service.go.html#line-194" class="path-duplicate">service.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/ec2metadata/service.go.html#line-194">#L194</a>: 		var b bytes.<b>Buffer</b>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/ec2metadata/service.go.html#line-209" class="path-duplicate">service.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/ec2metadata/service.go.html#line-209">#L209</a>: 	var b bytes.<b>Buffer</b>
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/request.html">github.com/aws/aws-sdk-go/aws/request</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/request/validation.go.html#line-81">validation.go#L81</a>: 	w := &amp;bytes.<b>Buffer</b>{}
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/internal/ini.html">github.com/aws/aws-sdk-go/internal/ini</a>
+		<a href="../src/github.com/aws/aws-sdk-go/internal/ini/number_helper.go.html#line-120">number_helper.go#L120</a>: 	buf := bytes.<b>Buffer</b>{}
+		<a href="../src/github.com/aws/aws-sdk-go/internal/ini/parse_stack.go.html#line-54">parse_stack.go#L54</a>: 	buf := bytes.<b>Buffer</b>{}
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil.html">github.com/aws/aws-sdk-go/private/protocol/json/jsonutil</a>
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/build.go.html#line-24">build.go#L24</a>: 	var buf bytes.<b>Buffer</b>
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/build.go.html#line-30" class="path-duplicate">build.go</a><a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/build.go.html#line-30">#L30</a>: func buildAny(value reflect.Value, buf *bytes.<b>Buffer</b>, tag reflect.StructTag) error {
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/build.go.html#line-75" class="path-duplicate">build.go</a><a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/build.go.html#line-75">#L75</a>: func buildStruct(value reflect.Value, buf *bytes.<b>Buffer</b>, tag reflect.StructTag) error {
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/build.go.html#line-152" class="path-duplicate">build.go</a><a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/build.go.html#line-152">#L152</a>: func buildList(value reflect.Value, buf *bytes.<b>Buffer</b>, tag reflect.StructTag) error {
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/build.go.html#line-174" class="path-duplicate">build.go</a><a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/build.go.html#line-174">#L174</a>: func buildMap(value reflect.Value, buf *bytes.<b>Buffer</b>, tag reflect.StructTag) error {
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/build.go.html#line-196" class="path-duplicate">build.go</a><a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/build.go.html#line-196">#L196</a>: func buildScalar(v reflect.Value, buf *bytes.<b>Buffer</b>, tag reflect.StructTag) error {
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/build.go.html#line-262" class="path-duplicate">build.go</a><a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/build.go.html#line-262">#L262</a>: func writeString(s string, buf *bytes.<b>Buffer</b>) {
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/unmarshal.go.html#line-22">unmarshal.go#L22</a>: 	var errBuf bytes.<b>Buffer</b>
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/private/protocol/jsonrpc.html">github.com/aws/aws-sdk-go/private/protocol/jsonrpc</a>
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/jsonrpc/unmarshal_error.go.html#line-38">unmarshal_error.go#L38</a>: 	var buf bytes.<b>Buffer</b>
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/private/protocol/rest.html">github.com/aws/aws-sdk-go/private/protocol/rest</a>
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/rest/build.go.html#line-255">build.go#L255</a>: 	var buf bytes.<b>Buffer</b>
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/private/protocol/xml/xmlutil.html">github.com/aws/aws-sdk-go/private/protocol/xml/xmlutil</a>
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/xml/xmlutil/unmarshal.go.html#line-23">unmarshal.go#L23</a>: 	var errBuf bytes.<b>Buffer</b>
+
+	<a href="../pkg/github.com/go-sql-driver/mysql.html">github.com/go-sql-driver/mysql</a>
+		<a href="../src/github.com/go-sql-driver/mysql/dsn.go.html#line-153">dsn.go#L153</a>: func writeDSNParam(buf *bytes.<b>Buffer</b>, hasParam *bool, name, value string) {
+		<a href="../src/github.com/go-sql-driver/mysql/dsn.go.html#line-169" class="path-duplicate">dsn.go</a><a href="../src/github.com/go-sql-driver/mysql/dsn.go.html#line-169">#L169</a>: 	var buf bytes.<b>Buffer</b>
+
+	<a href="../pkg/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap.html">github.com/grpc-ecosystem/go-grpc-middleware/logging/zap</a>
+		<a href="../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/payload_interceptors.go.html#line-145">payload_interceptors.go#L145</a>: 	b := &amp;bytes.<b>Buffer</b>{}
+
+	<a href="../pkg/github.com/jmespath/go-jmespath.html">github.com/jmespath/go-jmespath</a>
+		<a href="../src/github.com/jmespath/go-jmespath/lexer.go.html#line-28">lexer.go#L28</a>: 	buf        bytes.<b>Buffer</b> // Internal buffer used for building up values.
+
+	<a href="../pkg/github.com/uber/jaeger-client-go.html">github.com/uber/jaeger-client-go</a>
+		<a href="../src/github.com/uber/jaeger-client-go/propagation.go.html#line-104">propagation.go#L104</a>: 		buffers: sync.Pool{New: func() interface{} { return &amp;bytes.<b>Buffer</b>{} }},
+		<a href="../src/github.com/uber/jaeger-client-go/propagation.go.html#line-259" class="path-duplicate">propagation.go</a><a href="../src/github.com/uber/jaeger-client-go/propagation.go.html#line-259">#L259</a>: 		buf := p.buffers.Get().(*bytes.<b>Buffer</b>)
+
+	<a href="../pkg/github.com/uber/jaeger-client-go/log.html">github.com/uber/jaeger-client-go/log</a>
+		<a href="../src/github.com/uber/jaeger-client-go/log/logger.go.html#line-67">logger.go#L67</a>: 	buf bytes.<b>Buffer</b>
+
+	<a href="../pkg/github.com/uber/jaeger-client-go/thrift.html">github.com/uber/jaeger-client-go/thrift</a>
+		<a href="../src/github.com/uber/jaeger-client-go/thrift/binary_protocol.go.html#line-552">binary_protocol.go#L552</a>: 	buf := new(bytes.<b>Buffer</b>)
+		<a href="../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-256">header_transport.go#L256</a>: 	frameBuffer bytes.<b>Buffer</b>
+		<a href="../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-263" class="path-duplicate">header_transport.go</a><a href="../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-263">#L263</a>: 	writeBuffer     bytes.<b>Buffer</b>
+		<a href="../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-631" class="path-duplicate">header_transport.go</a><a href="../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-631">#L631</a>: 		var payload bytes.<b>Buffer</b>
+		<a href="../src/github.com/uber/jaeger-client-go/thrift/memory_buffer.go.html#line-29">memory_buffer.go#L29</a>: 	*bytes.<b>Buffer</b>
+		<a href="../src/github.com/uber/jaeger-client-go/thrift/memory_buffer.go.html#line-52" class="path-duplicate">memory_buffer.go</a><a href="../src/github.com/uber/jaeger-client-go/thrift/memory_buffer.go.html#line-52">#L52</a>: 	return &amp;TMemoryBuffer{Buffer: &amp;bytes.<b>Buffer</b>{}, size: 0}
+
+	<a href="../pkg/go.uber.org/multierr.html">go.uber.org/multierr</a>
+		<a href="../src/go.uber.org/multierr/error.go.html#line-177">error.go#L177</a>: 		return &amp;bytes.<b>Buffer</b>{}
+		<a href="../src/go.uber.org/multierr/error.go.html#line-274" class="path-duplicate">error.go</a><a href="../src/go.uber.org/multierr/error.go.html#line-274">#L274</a>: 	buff := _bufferPool.Get().(*bytes.<b>Buffer</b>)
+
+	<a href="../pkg/golang.org/x/net/http2.html">golang.org/x/net/http2</a>
+		<a href="../src/golang.org/x/net/http2/frame.go.html#line-177">frame.go#L177</a>: 	var buf bytes.<b>Buffer</b>
+		<a href="../src/golang.org/x/net/http2/frame.go.html#line-184" class="path-duplicate">frame.go</a><a href="../src/golang.org/x/net/http2/frame.go.html#line-184">#L184</a>: func (h FrameHeader) writeDebug(buf *bytes.<b>Buffer</b>) {
+		<a href="../src/golang.org/x/net/http2/frame.go.html#line-323" class="path-duplicate">frame.go</a><a href="../src/golang.org/x/net/http2/frame.go.html#line-323">#L323</a>: 	debugFramerBuf    *bytes.<b>Buffer</b>
+		<a href="../src/golang.org/x/net/http2/frame.go.html#line-375" class="path-duplicate">frame.go</a><a href="../src/golang.org/x/net/http2/frame.go.html#line-375">#L375</a>: 		f.debugFramerBuf = new(bytes.<b>Buffer</b>)
+		<a href="../src/golang.org/x/net/http2/frame.go.html#line-1574" class="path-duplicate">frame.go</a><a href="../src/golang.org/x/net/http2/frame.go.html#line-1574">#L1574</a>: 	var buf bytes.<b>Buffer</b>
+		<a href="../src/golang.org/x/net/http2/server.go.html#line-543">server.go#L543</a>: 	headerWriteBuf bytes.<b>Buffer</b>
+		<a href="../src/golang.org/x/net/http2/server.go.html#line-601" class="path-duplicate">server.go</a><a href="../src/golang.org/x/net/http2/server.go.html#line-601">#L601</a>: func (sc *serverConn) HeaderEncoder() (*hpack.Encoder, *bytes.<b>Buffer</b>) {
+		<a href="../src/golang.org/x/net/http2/transport.go.html#line-267">transport.go#L267</a>: 	hbuf    bytes.<b>Buffer</b> // HPACK encoder writes into this
+		<a href="../src/golang.org/x/net/http2/write.go.html#line-44">write.go#L44</a>: 	HeaderEncoder() (*hpack.Encoder, *bytes.<b>Buffer</b>)
+
+	<a href="../pkg/golang.org/x/net/http2/hpack.html">golang.org/x/net/http2/hpack</a>
+		<a href="../src/golang.org/x/net/http2/hpack/hpack.go.html#line-94">hpack.go#L94</a>: 	saveBuf bytes.<b>Buffer</b>
+		<a href="../src/golang.org/x/net/http2/hpack/hpack.go.html#line-493" class="path-duplicate">hpack.go</a><a href="../src/golang.org/x/net/http2/hpack/hpack.go.html#line-493">#L493</a>: 		buf := bufPool.Get().(*bytes.<b>Buffer</b>)
+		<a href="../src/golang.org/x/net/http2/hpack/huffman.go.html#line-15">huffman.go#L15</a>: 	New: func() interface{} { return new(bytes.<b>Buffer</b>) },
+		<a href="../src/golang.org/x/net/http2/hpack/huffman.go.html#line-22" class="path-duplicate">huffman.go</a><a href="../src/golang.org/x/net/http2/hpack/huffman.go.html#line-22">#L22</a>: 	buf := bufPool.Get().(*bytes.<b>Buffer</b>)
+		<a href="../src/golang.org/x/net/http2/hpack/huffman.go.html#line-33" class="path-duplicate">huffman.go</a><a href="../src/golang.org/x/net/http2/hpack/huffman.go.html#line-33">#L33</a>: 	buf := bufPool.Get().(*bytes.<b>Buffer</b>)
+		<a href="../src/golang.org/x/net/http2/hpack/huffman.go.html#line-49" class="path-duplicate">huffman.go</a><a href="../src/golang.org/x/net/http2/hpack/huffman.go.html#line-49">#L49</a>: func huffmanDecode(buf *bytes.<b>Buffer</b>, maxLen int, v []byte) error {
+
+	<a href="../pkg/golang.org/x/net/trace.html">golang.org/x/net/trace</a>
+		<a href="../src/golang.org/x/net/trace/events.go.html#line-364">events.go#L364</a>: 	buf := new(bytes.<b>Buffer</b>)
+		<a href="../src/golang.org/x/net/trace/histogram.go.html#line-323">histogram.go#L323</a>: 	buf := new(bytes.<b>Buffer</b>)
+
+	<a href="../pkg/google.golang.org/grpc.html">google.golang.org/grpc</a>
+		<a href="../src/google.golang.org/grpc/rpc_util.go.html#line-615">rpc_util.go#L615</a>: 	cbuf := &amp;bytes.<b>Buffer</b>{}
+		<a href="../src/google.golang.org/grpc/trace.go.html#line-73">trace.go#L73</a>: 	var line bytes.<b>Buffer</b>
+
+	<a href="../pkg/google.golang.org/grpc/internal/transport.html">google.golang.org/grpc/internal/transport</a>
+		<a href="../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-476">controlbuf.go#L476</a>: 	hBuf          *bytes.<b>Buffer</b>  // The buffer for HPACK encoding.
+		<a href="../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-486" class="path-duplicate">controlbuf.go</a><a href="../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-486">#L486</a>: 	var buf bytes.<b>Buffer</b>
+		<a href="../src/google.golang.org/grpc/internal/transport/handler_server.go.html#line-382">handler_server.go#L382</a>: 		reader:        &amp;recvBufferReader{ctx: s.ctx, ctxDone: s.ctx.Done(), recv: s.buf, freeBuffer: func(*bytes.<b>Buffer</b>) {}},
+		<a href="../src/google.golang.org/grpc/internal/transport/http_util.go.html#line-260">http_util.go#L260</a>: 	var buf bytes.<b>Buffer</b>
+		<a href="../src/google.golang.org/grpc/internal/transport/http_util.go.html#line-300" class="path-duplicate">http_util.go</a><a href="../src/google.golang.org/grpc/internal/transport/http_util.go.html#line-300">#L300</a>: 	var buf bytes.<b>Buffer</b>
+		<a href="../src/google.golang.org/grpc/internal/transport/transport.go.html#line-55">transport.go#L55</a>: 				return new(bytes.<b>Buffer</b>)
+		<a href="../src/google.golang.org/grpc/internal/transport/transport.go.html#line-61" class="path-duplicate">transport.go</a><a href="../src/google.golang.org/grpc/internal/transport/transport.go.html#line-61">#L61</a>: func (p *bufferPool) get() *bytes.<b>Buffer</b> {
+		<a href="../src/google.golang.org/grpc/internal/transport/transport.go.html#line-62" class="path-duplicate">transport.go</a><a href="../src/google.golang.org/grpc/internal/transport/transport.go.html#line-62">#L62</a>: 	return p.pool.Get().(*bytes.<b>Buffer</b>)
+		<a href="../src/google.golang.org/grpc/internal/transport/transport.go.html#line-65" class="path-duplicate">transport.go</a><a href="../src/google.golang.org/grpc/internal/transport/transport.go.html#line-65">#L65</a>: func (p *bufferPool) put(b *bytes.<b>Buffer</b>) {
+		<a href="../src/google.golang.org/grpc/internal/transport/transport.go.html#line-72" class="path-duplicate">transport.go</a><a href="../src/google.golang.org/grpc/internal/transport/transport.go.html#line-72">#L72</a>: 	buffer *bytes.<b>Buffer</b>
+		<a href="../src/google.golang.org/grpc/internal/transport/transport.go.html#line-148" class="path-duplicate">transport.go</a><a href="../src/google.golang.org/grpc/internal/transport/transport.go.html#line-148">#L148</a>: 	last        *bytes.<b>Buffer</b> // Stores the remaining data in the previous calls.
+		<a href="../src/google.golang.org/grpc/internal/transport/transport.go.html#line-150" class="path-duplicate">transport.go</a><a href="../src/google.golang.org/grpc/internal/transport/transport.go.html#line-150">#L150</a>: 	freeBuffer  func(*bytes.<b>Buffer</b>)
+
+	<a href="../pkg/html/template.html">html/template</a>
+		<a href="../src/html/template/escape.go.html#line-649">escape.go#L649</a>: 	s, written, i, b := n.Text, 0, 0, new(bytes.<b>Buffer</b>)
+		<a href="../src/html/template/html.go.html#line-177">html.go#L177</a>: 	var b bytes.<b>Buffer</b>
+		<a href="../src/html/template/url.go.html#line-81">url.go#L81</a>: 	var b bytes.<b>Buffer</b>
+		<a href="../src/html/template/url.go.html#line-90" class="path-duplicate">url.go</a><a href="../src/html/template/url.go.html#line-90">#L90</a>: func processURLOnto(s string, norm bool, b *bytes.<b>Buffer</b>) bool {
+		<a href="../src/html/template/url.go.html#line-154" class="path-duplicate">url.go</a><a href="../src/html/template/url.go.html#line-154">#L154</a>: 		var b bytes.<b>Buffer</b>
+		<a href="../src/html/template/url.go.html#line-162" class="path-duplicate">url.go</a><a href="../src/html/template/url.go.html#line-162">#L162</a>: 	var b bytes.<b>Buffer</b>
+		<a href="../src/html/template/url.go.html#line-188" class="path-duplicate">url.go</a><a href="../src/html/template/url.go.html#line-188">#L188</a>: func filterSrcsetElement(s string, left int, right int, b *bytes.<b>Buffer</b>) {
+
+	<a href="../pkg/mime/multipart.html">mime/multipart</a>
+		<a href="../src/mime/multipart/formdata.go.html#line-66">formdata.go#L66</a>: 		var b bytes.<b>Buffer</b>
+		<a href="../src/mime/multipart/writer.go.html#line-103">writer.go#L103</a>: 	var b bytes.<b>Buffer</b>
+
+	<a href="../pkg/net/http.html">net/http</a>
+		<a href="../src/net/http/h2_bundle.go.html#line-1495">h2_bundle.go#L1495</a>: 	var buf bytes.<b>Buffer</b>
+		<a href="../src/net/http/h2_bundle.go.html#line-1502" class="path-duplicate">h2_bundle.go</a><a href="../src/net/http/h2_bundle.go.html#line-1502">#L1502</a>: func (h http2FrameHeader) writeDebug(buf *bytes.<b>Buffer</b>) {
+		<a href="../src/net/http/h2_bundle.go.html#line-1641" class="path-duplicate">h2_bundle.go</a><a href="../src/net/http/h2_bundle.go.html#line-1641">#L1641</a>: 	debugFramerBuf    *bytes.<b>Buffer</b>
+		<a href="../src/net/http/h2_bundle.go.html#line-1693" class="path-duplicate">h2_bundle.go</a><a href="../src/net/http/h2_bundle.go.html#line-1693">#L1693</a>: 		f.debugFramerBuf = new(bytes.<b>Buffer</b>)
+		<a href="../src/net/http/h2_bundle.go.html#line-2895" class="path-duplicate">h2_bundle.go</a><a href="../src/net/http/h2_bundle.go.html#line-2895">#L2895</a>: 	var buf bytes.<b>Buffer</b>
+		<a href="../src/net/http/h2_bundle.go.html#line-4202" class="path-duplicate">h2_bundle.go</a><a href="../src/net/http/h2_bundle.go.html#line-4202">#L4202</a>: 	headerWriteBuf bytes.<b>Buffer</b>
+		<a href="../src/net/http/h2_bundle.go.html#line-4263" class="path-duplicate">h2_bundle.go</a><a href="../src/net/http/h2_bundle.go.html#line-4263">#L4263</a>: func (sc *http2serverConn) HeaderEncoder() (*hpack.Encoder, *bytes.<b>Buffer</b>) {
+		<a href="../src/net/http/h2_bundle.go.html#line-6922" class="path-duplicate">h2_bundle.go</a><a href="../src/net/http/h2_bundle.go.html#line-6922">#L6922</a>: 	hbuf bytes.<b>Buffer</b> // HPACK encoder writes into this
+		<a href="../src/net/http/h2_bundle.go.html#line-9548" class="path-duplicate">h2_bundle.go</a><a href="../src/net/http/h2_bundle.go.html#line-9548">#L9548</a>: 	HeaderEncoder() (*hpack.Encoder, *bytes.<b>Buffer</b>)
+		<a href="../src/net/http/request.go.html#line-891">request.go#L891</a>: 		case *bytes.<b>Buffer</b>:
+		<a href="../src/net/http/server.go.html#line-3367">server.go#L3367</a>: 	wbuf bytes.<b>Buffer</b>
+		<a href="../src/net/http/transfer.go.html#line-1085">transfer.go#L1085</a>: 	case *bytes.Reader, *bytes.<b>Buffer</b>, *strings.Reader:
+
+	<a href="../pkg/net/http/httputil.html">net/http/httputil</a>
+		<a href="../src/net/http/httputil/dump.go.html#line-30">dump.go#L30</a>: 	var buf bytes.<b>Buffer</b>
+		<a href="../src/net/http/httputil/dump.go.html#line-112" class="path-duplicate">dump.go</a><a href="../src/net/http/httputil/dump.go.html#line-112">#L112</a>: 	var buf bytes.<b>Buffer</b> // records the output
+		<a href="../src/net/http/httputil/dump.go.html#line-230" class="path-duplicate">dump.go</a><a href="../src/net/http/httputil/dump.go.html#line-230">#L230</a>: 	var b bytes.<b>Buffer</b>
+		<a href="../src/net/http/httputil/dump.go.html#line-309" class="path-duplicate">dump.go</a><a href="../src/net/http/httputil/dump.go.html#line-309">#L309</a>: 	var b bytes.<b>Buffer</b>
+
+	<a href="../pkg/os/exec.html">os/exec</a>
+		<a href="../src/os/exec/exec.go.html#line-538">exec.go#L538</a>: 	var stdout bytes.<b>Buffer</b>
+		<a href="../src/os/exec/exec.go.html#line-564" class="path-duplicate">exec.go</a><a href="../src/os/exec/exec.go.html#line-564">#L564</a>: 	var b bytes.<b>Buffer</b>
+		<a href="../src/os/exec/exec.go.html#line-720" class="path-duplicate">exec.go</a><a href="../src/os/exec/exec.go.html#line-720">#L720</a>: 	var buf bytes.<b>Buffer</b>
+
+	<a href="../pkg/text/template.html">text/template</a>
+		<a href="../src/text/template/funcs.go.html#line-641">funcs.go#L641</a>: 	var b bytes.<b>Buffer</b>
+		<a href="../src/text/template/funcs.go.html#line-724" class="path-duplicate">funcs.go</a><a href="../src/text/template/funcs.go.html#line-724">#L724</a>: 	var b bytes.<b>Buffer</b>
+
+	<a href="../pkg/vendor/golang.org/x/net/http2/hpack.html">vendor/golang.org/x/net/http2/hpack</a>
+		<a href="../src/vendor/golang.org/x/net/http2/hpack/hpack.go.html#line-94">hpack.go#L94</a>: 	saveBuf bytes.<b>Buffer</b>
+		<a href="../src/vendor/golang.org/x/net/http2/hpack/hpack.go.html#line-493" class="path-duplicate">hpack.go</a><a href="../src/vendor/golang.org/x/net/http2/hpack/hpack.go.html#line-493">#L493</a>: 		buf := bufPool.Get().(*bytes.<b>Buffer</b>)
+		<a href="../src/vendor/golang.org/x/net/http2/hpack/huffman.go.html#line-15">huffman.go#L15</a>: 	New: func() interface{} { return new(bytes.<b>Buffer</b>) },
+		<a href="../src/vendor/golang.org/x/net/http2/hpack/huffman.go.html#line-22" class="path-duplicate">huffman.go</a><a href="../src/vendor/golang.org/x/net/http2/hpack/huffman.go.html#line-22">#L22</a>: 	buf := bufPool.Get().(*bytes.<b>Buffer</b>)
+		<a href="../src/vendor/golang.org/x/net/http2/hpack/huffman.go.html#line-33" class="path-duplicate">huffman.go</a><a href="../src/vendor/golang.org/x/net/http2/hpack/huffman.go.html#line-33">#L33</a>: 	buf := bufPool.Get().(*bytes.<b>Buffer</b>)
+		<a href="../src/vendor/golang.org/x/net/http2/hpack/huffman.go.html#line-49" class="path-duplicate">huffman.go</a><a href="../src/vendor/golang.org/x/net/http2/hpack/huffman.go.html#line-49">#L49</a>: func huffmanDecode(buf *bytes.<b>Buffer</b>, maxLen int, v []byte) error {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

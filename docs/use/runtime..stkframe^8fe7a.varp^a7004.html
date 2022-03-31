@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime.stkframe.varp</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/runtime.html">runtime</a>.<a href="../src/runtime/runtime2.go.html#line-990">stkframe</a>.<a href="../src/runtime/runtime2.go.html#line-997">varp</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">25 uses</span>
+
+	runtime (current package)
+		<a href="../src/runtime/heapdump.go.html#line-310">heapdump.go#L310</a>: 		for off := child.arglen; off &lt; s.<b>varp</b>-s.sp; off += sys.PtrSize {
+		<a href="../src/runtime/heapdump.go.html#line-317" class="path-duplicate">heapdump.go</a><a href="../src/runtime/heapdump.go.html#line-317">#L317</a>: 		for off := s.<b>varp</b> - size - s.sp; off &lt; s.<b>varp</b>-s.sp; off += sys.PtrSize {
+		<a href="../src/runtime/heapdump.go.html#line-324" class="path-duplicate">heapdump.go</a><a href="../src/runtime/heapdump.go.html#line-324">#L324</a>: 		dumpbv(&amp;bv, s.<b>varp</b>-uintptr(bv.n)*sys.PtrSize-s.sp)
+		<a href="../src/runtime/mbitmap.go.html#line-1935">mbitmap.go#L1935</a>: 	if frame.sp &lt;= target.sp &amp;&amp; target.sp &lt; frame.<b>varp</b> {
+		<a href="../src/runtime/mbitmap.go.html#line-2022" class="path-duplicate">mbitmap.go</a><a href="../src/runtime/mbitmap.go.html#line-2022">#L2022</a>: 				off := (uintptr(p) + i - frame.<b>varp</b> + size) / sys.PtrSize
+		<a href="../src/runtime/mgcmark.go.html#line-883">mgcmark.go#L883</a>: 		if frame.<b>varp</b> != 0 {
+		<a href="../src/runtime/mgcmark.go.html#line-884" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-884">#L884</a>: 			size := frame.<b>varp</b> - frame.sp
+		<a href="../src/runtime/mgcmark.go.html#line-917" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-917">#L917</a>: 		scanblock(frame.<b>varp</b>-size, size, locals.bytedata, gcw, state)
+		<a href="../src/runtime/mgcmark.go.html#line-926" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-926">#L926</a>: 	if frame.<b>varp</b> != 0 {
+		<a href="../src/runtime/mgcmark.go.html#line-932" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-932">#L932</a>: 			base := frame.<b>varp</b> // locals base pointer
+		<a href="../src/runtime/panic.go.html#line-797">panic.go#L797</a>: 				d1.varp = frame.<b>varp</b>
+		<a href="../src/runtime/runtime2.go.html#line-997">runtime2.go#L997</a>: 	<b>varp</b>     uintptr    // top of local variables
+		<a href="../src/runtime/stack.go.html#line-659">stack.go#L659</a>: 		adjustpointers(unsafe.Pointer(frame.<b>varp</b>-size), &amp;locals, adjinfo, f)
+		<a href="../src/runtime/stack.go.html#line-664" class="path-duplicate">stack.go</a><a href="../src/runtime/stack.go.html#line-664">#L664</a>: 	if sys.ArchFamily == sys.AMD64 &amp;&amp; frame.argp-frame.<b>varp</b> == 2*sys.PtrSize {
+		<a href="../src/runtime/stack.go.html#line-671" class="path-duplicate">stack.go</a><a href="../src/runtime/stack.go.html#line-671">#L671</a>: 			bp := *(*uintptr)(unsafe.Pointer(frame.<b>varp</b>))
+		<a href="../src/runtime/stack.go.html#line-678" class="path-duplicate">stack.go</a><a href="../src/runtime/stack.go.html#line-678">#L678</a>: 		adjustpointer(adjinfo, unsafe.Pointer(frame.<b>varp</b>))
+		<a href="../src/runtime/stack.go.html#line-691" class="path-duplicate">stack.go</a><a href="../src/runtime/stack.go.html#line-691">#L691</a>: 	if frame.<b>varp</b> != 0 {
+		<a href="../src/runtime/stack.go.html#line-694" class="path-duplicate">stack.go</a><a href="../src/runtime/stack.go.html#line-694">#L694</a>: 			base := frame.<b>varp</b> // locals base pointer
+		<a href="../src/runtime/stack.go.html#line-1263" class="path-duplicate">stack.go</a><a href="../src/runtime/stack.go.html#line-1263">#L1263</a>: 	size := frame.<b>varp</b> - frame.sp
+		<a href="../src/runtime/stack.go.html#line-1275" class="path-duplicate">stack.go</a><a href="../src/runtime/stack.go.html#line-1275">#L1275</a>: 			print("runtime: frame ", funcname(f), " untyped locals ", hex(frame.<b>varp</b>-size), "+", hex(size), "\n")
+		<a href="../src/runtime/traceback.go.html#line-279">traceback.go#L279</a>: 		frame.<b>varp</b> = frame.fp
+		<a href="../src/runtime/traceback.go.html#line-282" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-282">#L282</a>: 			frame.<b>varp</b> -= sys.PtrSize
+		<a href="../src/runtime/traceback.go.html#line-302" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-302">#L302</a>: 		if frame.<b>varp</b> &gt; frame.sp &amp;&amp; framepointer_enabled {
+		<a href="../src/runtime/traceback.go.html#line-303" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-303">#L303</a>: 			frame.<b>varp</b> -= sys.PtrSize
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

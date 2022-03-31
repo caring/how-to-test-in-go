@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/go-sql-driver/mysql.Config.Net</title>
+<link href="../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../pkg/github.com/go-sql-driver/mysql.html">github.com/go-sql-driver/mysql</a>.<a href="../../../src/github.com/go-sql-driver/mysql/dsn.go.html#line-36">Config</a>.<a href="../../../src/github.com/go-sql-driver/mysql/dsn.go.html#line-39">Net</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">13 uses</span>
+
+	github.com/go-sql-driver/mysql (current package)
+		<a href="../../../src/github.com/go-sql-driver/mysql/auth.go.html#line-277">auth.go#L277</a>: 		if mc.cfg.tls != nil || mc.cfg.<b>Net</b> == "unix" {
+		<a href="../../../src/github.com/go-sql-driver/mysql/auth.go.html#line-353" class="path-duplicate">auth.go</a><a href="../../../src/github.com/go-sql-driver/mysql/auth.go.html#line-353">#L353</a>: 				if mc.cfg.tls != nil || mc.cfg.<b>Net</b> == "unix" {
+		<a href="../../../src/github.com/go-sql-driver/mysql/connector.go.html#line-37">connector.go#L37</a>: 	dial, ok := dials[mc.cfg.<b>Net</b>]
+		<a href="../../../src/github.com/go-sql-driver/mysql/connector.go.html#line-49" class="path-duplicate">connector.go</a><a href="../../../src/github.com/go-sql-driver/mysql/connector.go.html#line-49">#L49</a>: 		mc.netConn, err = nd.DialContext(ctx, mc.cfg.<b>Net</b>, mc.cfg.Addr)
+		<a href="../../../src/github.com/go-sql-driver/mysql/dsn.go.html#line-39">dsn.go#L39</a>: 	<b>Net</b>              string            // Network type
+		<a href="../../../src/github.com/go-sql-driver/mysql/dsn.go.html#line-104" class="path-duplicate">dsn.go</a><a href="../../../src/github.com/go-sql-driver/mysql/dsn.go.html#line-104">#L104</a>: 	if cfg.<b>Net</b> == "" {
+		<a href="../../../src/github.com/go-sql-driver/mysql/dsn.go.html#line-105" class="path-duplicate">dsn.go</a><a href="../../../src/github.com/go-sql-driver/mysql/dsn.go.html#line-105">#L105</a>: 		cfg.<b>Net</b> = "tcp"
+		<a href="../../../src/github.com/go-sql-driver/mysql/dsn.go.html#line-110" class="path-duplicate">dsn.go</a><a href="../../../src/github.com/go-sql-driver/mysql/dsn.go.html#line-110">#L110</a>: 		switch cfg.<b>Net</b> {
+		<a href="../../../src/github.com/go-sql-driver/mysql/dsn.go.html#line-116" class="path-duplicate">dsn.go</a><a href="../../../src/github.com/go-sql-driver/mysql/dsn.go.html#line-116">#L116</a>: 			return errors.New("default addr for network '" + cfg.<b>Net</b> + "' unknown")
+		<a href="../../../src/github.com/go-sql-driver/mysql/dsn.go.html#line-118" class="path-duplicate">dsn.go</a><a href="../../../src/github.com/go-sql-driver/mysql/dsn.go.html#line-118">#L118</a>: 	} else if cfg.<b>Net</b> == "tcp" {
+		<a href="../../../src/github.com/go-sql-driver/mysql/dsn.go.html#line-182" class="path-duplicate">dsn.go</a><a href="../../../src/github.com/go-sql-driver/mysql/dsn.go.html#line-182">#L182</a>: 	if len(cfg.<b>Net</b>) &gt; 0 {
+		<a href="../../../src/github.com/go-sql-driver/mysql/dsn.go.html#line-183" class="path-duplicate">dsn.go</a><a href="../../../src/github.com/go-sql-driver/mysql/dsn.go.html#line-183">#L183</a>: 		buf.WriteString(cfg.<b>Net</b>)
+		<a href="../../../src/github.com/go-sql-driver/mysql/dsn.go.html#line-338" class="path-duplicate">dsn.go</a><a href="../../../src/github.com/go-sql-driver/mysql/dsn.go.html#line-338">#L338</a>: 				cfg.<b>Net</b> = dsn[j+1 : k]
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

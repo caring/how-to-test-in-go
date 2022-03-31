@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Source: server_transport.go in package github.com/uber/jaeger-client-go/thrift</title>
+<link href="../../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre id="header"><code><span class="title">Source File</span>
+	server_transport.go
+
+<span class="title">Belonging Package</span>
+	<a href="../../../../../pkg/github.com/uber/jaeger-client-go/thrift.html">github.com/uber/jaeger-client-go/thrift</a>
+</code></pre>
+
+<pre class="line-numbers">
+<span class="codeline" id="line-1"><code><span class="comment">/*</span></code></span>
+<span class="codeline" id="line-2"><code><span class="comment"> * Licensed to the Apache Software Foundation (ASF) under one</span></code></span>
+<span class="codeline" id="line-3"><code><span class="comment"> * or more contributor license agreements. See the NOTICE file</span></code></span>
+<span class="codeline" id="line-4"><code><span class="comment"> * distributed with this work for additional information</span></code></span>
+<span class="codeline" id="line-5"><code><span class="comment"> * regarding copyright ownership. The ASF licenses this file</span></code></span>
+<span class="codeline" id="line-6"><code><span class="comment"> * to you under the Apache License, Version 2.0 (the</span></code></span>
+<span class="codeline" id="line-7"><code><span class="comment"> * "License"); you may not use this file except in compliance</span></code></span>
+<span class="codeline" id="line-8"><code><span class="comment"> * with the License. You may obtain a copy of the License at</span></code></span>
+<span class="codeline" id="line-9"><code><span class="comment"> *</span></code></span>
+<span class="codeline" id="line-10"><code><span class="comment"> *   http://www.apache.org/licenses/LICENSE-2.0</span></code></span>
+<span class="codeline" id="line-11"><code><span class="comment"> *</span></code></span>
+<span class="codeline" id="line-12"><code><span class="comment"> * Unless required by applicable law or agreed to in writing,</span></code></span>
+<span class="codeline" id="line-13"><code><span class="comment"> * software distributed under the License is distributed on an</span></code></span>
+<span class="codeline" id="line-14"><code><span class="comment"> * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY</span></code></span>
+<span class="codeline" id="line-15"><code><span class="comment"> * KIND, either express or implied. See the License for the</span></code></span>
+<span class="codeline" id="line-16"><code><span class="comment"> * specific language governing permissions and limitations</span></code></span>
+<span class="codeline" id="line-17"><code><span class="comment"> * under the License.</span></code></span>
+<span class="codeline" id="line-18"><code><span class="comment"> */</span></code></span>
+<span class="codeline" id="line-19"><code></code></span>
+<span class="codeline" id="line-20"><code><span class="keyword">package</span> thrift</code></span>
+<span class="codeline" id="line-21"><code></code></span>
+<span class="codeline" id="line-22"><code><span class="comment">// Server transport. Object which provides client transports.</span></code></span>
+<span class="codeline" id="line-23"><code><span class="keyword">type</span> <a href="../../../../../pkg/github.com/uber/jaeger-client-go/thrift.html#name-TServerTransport" class="ident">TServerTransport</a> <span class="keyword">interface</span> {</code></span>
+<span class="codeline" id="line-24"><code>	<a href="../../../../../imp/github.com/uber/jaeger-client-go/thrift.TServerTransport.html#name-Listen" class="ident">Listen</a>() <a href="../../../../../pkg/builtin.html#name-error" class="ident">error</a></code></span>
+<span class="codeline" id="line-25"><code>	<a href="../../../../../imp/github.com/uber/jaeger-client-go/thrift.TServerTransport.html#name-Accept" class="ident">Accept</a>() (<a href="transport.go.html#line-43" class="ident">TTransport</a>, <a href="../../../../../pkg/builtin.html#name-error" class="ident">error</a>)</code></span>
+<span class="codeline" id="line-26"><code>	<a href="../../../../../imp/github.com/uber/jaeger-client-go/thrift.TServerTransport.html#name-Close" class="ident">Close</a>() <a href="../../../../../pkg/builtin.html#name-error" class="ident">error</a></code></span>
+<span class="codeline" id="line-27"><code></code></span>
+<span class="codeline" id="line-28"><code>	<span class="comment">// Optional method implementation. This signals to the server transport</span></code></span>
+<span class="codeline" id="line-29"><code><span class="comment">	// that it should break out of any accept() or listen() that it is currently</span></code></span>
+<span class="codeline" id="line-30"><code><span class="comment">	// blocked on. This method, if implemented, MUST be thread safe, as it may</span></code></span>
+<span class="codeline" id="line-31"><code><span class="comment">	// be called from a different thread context than the other TServerTransport</span></code></span>
+<span class="codeline" id="line-32"><code><span class="comment">	// methods.</span></code></span>
+<span class="codeline" id="line-33"><code>	<a href="../../../../../imp/github.com/uber/jaeger-client-go/thrift.TServerTransport.html#name-Interrupt" class="ident">Interrupt</a>() <a href="../../../../../pkg/builtin.html#name-error" class="ident">error</a></code></span>
+<span class="codeline" id="line-34"><code>}</code></span>
+</pre><pre id="footer">
+<table><tr><td><img src="../../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

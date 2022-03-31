@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Source: doc.go in package github.com/grpc-ecosystem/go-grpc-middleware/tags</title>
+<link href="../../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre id="header"><code><span class="title">Source File</span>
+	doc.go
+
+<span class="title">Belonging Package</span>
+	<a href="../../../../../pkg/github.com/grpc-ecosystem/go-grpc-middleware/tags.html">github.com/grpc-ecosystem/go-grpc-middleware/tags</a>
+</code></pre>
+
+<pre class="line-numbers">
+<div class="anchor" id="doc"><span class="codeline" id="line-1"><code><span class="comment">/*</span></code></span>
+<span class="codeline" id="line-2"><code><span class="comment">`grpc_ctxtags` adds a Tag object to the context that can be used by other middleware to add context about a request.</span></code></span>
+<span class="codeline" id="line-3"><code></code></span>
+<span class="codeline" id="line-4"><code><span class="comment">Request Context Tags</span></code></span>
+<span class="codeline" id="line-5"><code></code></span>
+<span class="codeline" id="line-6"><code><span class="comment">Tags describe information about the request, and can be set and used by other middleware, or handlers. Tags are used</span></code></span>
+<span class="codeline" id="line-7"><code><span class="comment">for logging and tracing of requests. Tags are populated both upwards, *and* downwards in the interceptor-handler stack.</span></code></span>
+<span class="codeline" id="line-8"><code></code></span>
+<span class="codeline" id="line-9"><code><span class="comment">You can automatically extract tags (in `grpc.request.&lt;field_name&gt;`) from request payloads.</span></code></span>
+<span class="codeline" id="line-10"><code></code></span>
+<span class="codeline" id="line-11"><code><span class="comment">For unary and server-streaming methods, pass in the `WithFieldExtractor` option. For client-streams and bidirectional-streams, you can</span></code></span>
+<span class="codeline" id="line-12"><code><span class="comment">use `WithFieldExtractorForInitialReq` which will extract the tags from the first message passed from client to server.</span></code></span>
+<span class="codeline" id="line-13"><code><span class="comment">Note the tags will not be modified for subsequent requests, so this option only makes sense when the initial message</span></code></span>
+<span class="codeline" id="line-14"><code><span class="comment">establishes the meta-data for the stream.</span></code></span>
+<span class="codeline" id="line-15"><code></code></span>
+<span class="codeline" id="line-16"><code><span class="comment">If a user doesn't use the interceptors that initialize the `Tags` object, all operations following from an `Extract(ctx)`</span></code></span>
+<span class="codeline" id="line-17"><code><span class="comment">will be no-ops. This is to ensure that code doesn't panic if the interceptors weren't used.</span></code></span>
+<span class="codeline" id="line-18"><code></code></span>
+<span class="codeline" id="line-19"><code><span class="comment">Tags fields are typed, and shallow and should follow the OpenTracing semantics convention:</span></code></span>
+<span class="codeline" id="line-20"><code><span class="comment">https://github.com/opentracing/specification/blob/master/semantic_conventions.md</span></code></span>
+<span class="codeline" id="line-21"><code><span class="comment">*/</span></code></span></div><span class="codeline" id="line-22"><code><span class="keyword">package</span> grpc_ctxtags</code></span>
+</pre><pre id="footer">
+<table><tr><td><img src="../../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: go.uber.org/zap.Any</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">func <b><a href="../../pkg/go.uber.org/zap.html">go.uber.org/zap</a>.<a href="../../src/go.uber.org/zap/field.go.html#line-404">Any</a></b></span>
+
+<span class="title">19 uses</span>
+
+	go.uber.org/zap (current package)
+		<a href="../../src/go.uber.org/zap/config.go.html#line-239">config.go#L239</a>: 			fs = append(fs, <b>Any</b>(k, cfg.InitialFields[k]))
+		<a href="../../src/go.uber.org/zap/field.go.html#line-404">field.go#L404</a>: func <b>Any</b>(key string, value interface{}) Field {
+		<a href="../../src/go.uber.org/zap/sugar.go.html#line-258">sugar.go#L258</a>: 			s.base.DPanic(_oddNumberErrMsg, <b>Any</b>("ignored", args[i]))
+		<a href="../../src/go.uber.org/zap/sugar.go.html#line-272" class="path-duplicate">sugar.go</a><a href="../../src/go.uber.org/zap/sugar.go.html#line-272">#L272</a>: 			fields = append(fields, <b>Any</b>(keyStr, val))
+		<a href="../../src/go.uber.org/zap/sugar.go.html#line-291" class="path-duplicate">sugar.go</a><a href="../../src/go.uber.org/zap/sugar.go.html#line-291">#L291</a>: 	<b>Any</b>("key", p.key).AddTo(enc)
+		<a href="../../src/go.uber.org/zap/sugar.go.html#line-292" class="path-duplicate">sugar.go</a><a href="../../src/go.uber.org/zap/sugar.go.html#line-292">#L292</a>: 	<b>Any</b>("value", p.value).AddTo(enc)
+
+	<a href="../../pkg/github.com/caring/gopkg-logging.html">github.com/caring/gopkg-logging</a>
+		<a href="../../src/github.com/caring/gopkg-logging/field.go.html#line-59">field.go#L59</a>: 	a := zap.<b>Any</b>(k, v)
+
+	<a href="../../pkg/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/ctxzap.html">github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/ctxzap</a>
+		<a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/ctxzap/context.go.html#line-53">context.go#L53</a>: 		fields = append(fields, zap.<b>Any</b>(k, v))
+
+	<a href="../../pkg/github.com/uber/jaeger-client-go/log/zap.html">github.com/uber/jaeger-client-go/log/zap</a>
+		<a href="../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-35">tracer.go#L35</a>: 			zap.<b>Any</b>("sampler", jTracer.Sampler()),
+		<a href="../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-36" class="path-duplicate">tracer.go</a><a href="../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-36">#L36</a>: 			zap.<b>Any</b>("tags", jTracer.Tags()))
+		<a href="../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-52" class="path-duplicate">tracer.go</a><a href="../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-52">#L52</a>: 		zap.<b>Any</b>("opts", opts),
+		<a href="../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-67" class="path-duplicate">tracer.go</a><a href="../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-67">#L67</a>: 	fields := []zap.Field{zap.<b>Any</b>("format", format), zap.<b>Any</b>("carrier", carrier)}
+		<a href="../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-79" class="path-duplicate">tracer.go</a><a href="../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-79">#L79</a>: 	l.logger.Debug("Extract", zap.<b>Any</b>("format", format), zap.<b>Any</b>("carrier", carrier))
+		<a href="../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-123" class="path-duplicate">tracer.go</a><a href="../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-123">#L123</a>: 	l.logger.Debug("SetTag", zap.String("key", key), zap.<b>Any</b>("value", value))
+		<a href="../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-133" class="path-duplicate">tracer.go</a><a href="../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-133">#L133</a>: 	l.logger.Debug("LogKV", zap.<b>Any</b>("keyValues", alternatingKeyValues))
+		<a href="../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-158" class="path-duplicate">tracer.go</a><a href="../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-158">#L158</a>: 	l.logger.Debug("Deprecated: LogEventWithPayload", zap.String("event", event), zap.<b>Any</b>("payload", payload))
+		<a href="../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-166" class="path-duplicate">tracer.go</a><a href="../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-166">#L166</a>: 		zap.<b>Any</b>("payload", data.Payload))
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

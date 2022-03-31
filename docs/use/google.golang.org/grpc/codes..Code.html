@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: google.golang.org/grpc/codes.Code</title>
+<link href="../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../../../pkg/google.golang.org/grpc/codes.html">google.golang.org/grpc/codes</a>.<a href="../../../src/google.golang.org/grpc/codes/codes.go.html#line-29">Code</a></b></span>
+
+<span class="title">52 uses</span>
+
+	google.golang.org/grpc/codes (current package)
+		<a href="../../../src/google.golang.org/grpc/codes/code_string.go.html#line-23">code_string.go#L23</a>: func (c <b>Code</b>) String() string {
+		<a href="../../../src/google.golang.org/grpc/codes/codes.go.html#line-29">codes.go#L29</a>: type <b>Code</b> uint32
+		<a href="../../../src/google.golang.org/grpc/codes/codes.go.html#line-33" class="path-duplicate">codes.go</a><a href="../../../src/google.golang.org/grpc/codes/codes.go.html#line-33">#L33</a>: 	OK <b>Code</b> = 0
+		<a href="../../../src/google.golang.org/grpc/codes/codes.go.html#line-39" class="path-duplicate">codes.go</a><a href="../../../src/google.golang.org/grpc/codes/codes.go.html#line-39">#L39</a>: 	Canceled <b>Code</b> = 1
+		<a href="../../../src/google.golang.org/grpc/codes/codes.go.html#line-49" class="path-duplicate">codes.go</a><a href="../../../src/google.golang.org/grpc/codes/codes.go.html#line-49">#L49</a>: 	Unknown <b>Code</b> = 2
+		<a href="../../../src/google.golang.org/grpc/codes/codes.go.html#line-57" class="path-duplicate">codes.go</a><a href="../../../src/google.golang.org/grpc/codes/codes.go.html#line-57">#L57</a>: 	InvalidArgument <b>Code</b> = 3
+		<a href="../../../src/google.golang.org/grpc/codes/codes.go.html#line-67" class="path-duplicate">codes.go</a><a href="../../../src/google.golang.org/grpc/codes/codes.go.html#line-67">#L67</a>: 	DeadlineExceeded <b>Code</b> = 4
+		<a href="../../../src/google.golang.org/grpc/codes/codes.go.html#line-73" class="path-duplicate">codes.go</a><a href="../../../src/google.golang.org/grpc/codes/codes.go.html#line-73">#L73</a>: 	NotFound <b>Code</b> = 5
+		<a href="../../../src/google.golang.org/grpc/codes/codes.go.html#line-79" class="path-duplicate">codes.go</a><a href="../../../src/google.golang.org/grpc/codes/codes.go.html#line-79">#L79</a>: 	AlreadyExists <b>Code</b> = 6
+		<a href="../../../src/google.golang.org/grpc/codes/codes.go.html#line-90" class="path-duplicate">codes.go</a><a href="../../../src/google.golang.org/grpc/codes/codes.go.html#line-90">#L90</a>: 	PermissionDenied <b>Code</b> = 7
+		<a href="../../../src/google.golang.org/grpc/codes/codes.go.html#line-98" class="path-duplicate">codes.go</a><a href="../../../src/google.golang.org/grpc/codes/codes.go.html#line-98">#L98</a>: 	ResourceExhausted <b>Code</b> = 8
+		<a href="../../../src/google.golang.org/grpc/codes/codes.go.html#line-121" class="path-duplicate">codes.go</a><a href="../../../src/google.golang.org/grpc/codes/codes.go.html#line-121">#L121</a>: 	FailedPrecondition <b>Code</b> = 9
+		<a href="../../../src/google.golang.org/grpc/codes/codes.go.html#line-131" class="path-duplicate">codes.go</a><a href="../../../src/google.golang.org/grpc/codes/codes.go.html#line-131">#L131</a>: 	Aborted <b>Code</b> = 10
+		<a href="../../../src/google.golang.org/grpc/codes/codes.go.html#line-150" class="path-duplicate">codes.go</a><a href="../../../src/google.golang.org/grpc/codes/codes.go.html#line-150">#L150</a>: 	OutOfRange <b>Code</b> = 11
+		<a href="../../../src/google.golang.org/grpc/codes/codes.go.html#line-160" class="path-duplicate">codes.go</a><a href="../../../src/google.golang.org/grpc/codes/codes.go.html#line-160">#L160</a>: 	Unimplemented <b>Code</b> = 12
+		<a href="../../../src/google.golang.org/grpc/codes/codes.go.html#line-168" class="path-duplicate">codes.go</a><a href="../../../src/google.golang.org/grpc/codes/codes.go.html#line-168">#L168</a>: 	Internal <b>Code</b> = 13
+		<a href="../../../src/google.golang.org/grpc/codes/codes.go.html#line-180" class="path-duplicate">codes.go</a><a href="../../../src/google.golang.org/grpc/codes/codes.go.html#line-180">#L180</a>: 	Unavailable <b>Code</b> = 14
+		<a href="../../../src/google.golang.org/grpc/codes/codes.go.html#line-185" class="path-duplicate">codes.go</a><a href="../../../src/google.golang.org/grpc/codes/codes.go.html#line-185">#L185</a>: 	DataLoss <b>Code</b> = 15
+		<a href="../../../src/google.golang.org/grpc/codes/codes.go.html#line-193" class="path-duplicate">codes.go</a><a href="../../../src/google.golang.org/grpc/codes/codes.go.html#line-193">#L193</a>: 	Unauthenticated <b>Code</b> = 16
+		<a href="../../../src/google.golang.org/grpc/codes/codes.go.html#line-198" class="path-duplicate">codes.go</a><a href="../../../src/google.golang.org/grpc/codes/codes.go.html#line-198">#L198</a>: var strToCode = map[string]<b>Code</b>{
+		<a href="../../../src/google.golang.org/grpc/codes/codes.go.html#line-219" class="path-duplicate">codes.go</a><a href="../../../src/google.golang.org/grpc/codes/codes.go.html#line-219">#L219</a>: func (c *<b>Code</b>) UnmarshalJSON(b []byte) error {
+		<a href="../../../src/google.golang.org/grpc/codes/codes.go.html#line-235" class="path-duplicate">codes.go</a><a href="../../../src/google.golang.org/grpc/codes/codes.go.html#line-235">#L235</a>: 		*c = <b>Code</b>(ci)
+
+	<a href="../../../pkg/google.golang.org/grpc.html">google.golang.org/grpc</a>
+		<a href="../../../src/google.golang.org/grpc/rpc_util.go.html#line-808">rpc_util.go#L808</a>: func Code(err error) codes.<b>Code</b> {
+		<a href="../../../src/google.golang.org/grpc/rpc_util.go.html#line-824" class="path-duplicate">rpc_util.go</a><a href="../../../src/google.golang.org/grpc/rpc_util.go.html#line-824">#L824</a>: func Errorf(c codes.<b>Code</b>, format string, a ...interface{}) error {
+		<a href="../../../src/google.golang.org/grpc/service_config.go.html#line-113">service_config.go#L113</a>: 	RetryableStatusCodes []codes.<b>Code</b>
+		<a href="../../../src/google.golang.org/grpc/service_config.go.html#line-339" class="path-duplicate">service_config.go</a><a href="../../../src/google.golang.org/grpc/service_config.go.html#line-339">#L339</a>: 		RetryableStatusCodes: make(map[codes.<b>Code</b>]bool),
+		<a href="../../../src/google.golang.org/grpc/stream.go.html#line-597">stream.go#L597</a>: 	var code codes.<b>Code</b>
+
+	<a href="../../../pkg/google.golang.org/grpc/internal/serviceconfig.html">google.golang.org/grpc/internal/serviceconfig</a>
+		<a href="../../../src/google.golang.org/grpc/internal/serviceconfig/serviceconfig.go.html#line-179">serviceconfig.go#L179</a>: 	RetryableStatusCodes map[codes.<b>Code</b>]bool
+
+	<a href="../../../pkg/google.golang.org/grpc/internal/status.html">google.golang.org/grpc/internal/status</a>
+		<a href="../../../src/google.golang.org/grpc/internal/status/status.go.html#line-47">status.go#L47</a>: func New(c codes.<b>Code</b>, msg string) *Status {
+		<a href="../../../src/google.golang.org/grpc/internal/status/status.go.html#line-52" class="path-duplicate">status.go</a><a href="../../../src/google.golang.org/grpc/internal/status/status.go.html#line-52">#L52</a>: func Newf(c codes.<b>Code</b>, format string, a ...interface{}) *Status {
+		<a href="../../../src/google.golang.org/grpc/internal/status/status.go.html#line-62" class="path-duplicate">status.go</a><a href="../../../src/google.golang.org/grpc/internal/status/status.go.html#line-62">#L62</a>: func Err(c codes.<b>Code</b>, msg string) error {
+		<a href="../../../src/google.golang.org/grpc/internal/status/status.go.html#line-67" class="path-duplicate">status.go</a><a href="../../../src/google.golang.org/grpc/internal/status/status.go.html#line-67">#L67</a>: func Errorf(c codes.<b>Code</b>, format string, a ...interface{}) error {
+		<a href="../../../src/google.golang.org/grpc/internal/status/status.go.html#line-72" class="path-duplicate">status.go</a><a href="../../../src/google.golang.org/grpc/internal/status/status.go.html#line-72">#L72</a>: func (s *Status) Code() codes.<b>Code</b> {
+		<a href="../../../src/google.golang.org/grpc/internal/status/status.go.html#line-76" class="path-duplicate">status.go</a><a href="../../../src/google.golang.org/grpc/internal/status/status.go.html#line-76">#L76</a>: 	return codes.<b>Code</b>(s.s.Code)
+
+	<a href="../../../pkg/google.golang.org/grpc/internal/transport.html">google.golang.org/grpc/internal/transport</a>
+		<a href="../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1340">http2_client.go#L1340</a>: 			rawStatusCode = codes.<b>Code</b>(uint32(code))
+		<a href="../../../src/google.golang.org/grpc/internal/transport/http_util.go.html#line-60">http_util.go#L60</a>: 	http2ErrConvTab = map[http2.ErrCode]codes.<b>Code</b>{
+		<a href="../../../src/google.golang.org/grpc/internal/transport/http_util.go.html#line-77" class="path-duplicate">http_util.go</a><a href="../../../src/google.golang.org/grpc/internal/transport/http_util.go.html#line-77">#L77</a>: 	HTTPStatusConvTab = map[int]codes.<b>Code</b>{
+
+	<a href="../../../pkg/google.golang.org/grpc/status.html">google.golang.org/grpc/status</a>
+		<a href="../../../src/google.golang.org/grpc/status/status.go.html#line-48">status.go#L48</a>: func New(c codes.<b>Code</b>, msg string) *Status {
+		<a href="../../../src/google.golang.org/grpc/status/status.go.html#line-53" class="path-duplicate">status.go</a><a href="../../../src/google.golang.org/grpc/status/status.go.html#line-53">#L53</a>: func Newf(c codes.<b>Code</b>, format string, a ...interface{}) *Status {
+		<a href="../../../src/google.golang.org/grpc/status/status.go.html#line-58" class="path-duplicate">status.go</a><a href="../../../src/google.golang.org/grpc/status/status.go.html#line-58">#L58</a>: func Error(c codes.<b>Code</b>, msg string) error {
+		<a href="../../../src/google.golang.org/grpc/status/status.go.html#line-63" class="path-duplicate">status.go</a><a href="../../../src/google.golang.org/grpc/status/status.go.html#line-63">#L63</a>: func Errorf(c codes.<b>Code</b>, format string, a ...interface{}) error {
+		<a href="../../../src/google.golang.org/grpc/status/status.go.html#line-108" class="path-duplicate">status.go</a><a href="../../../src/google.golang.org/grpc/status/status.go.html#line-108">#L108</a>: func Code(err error) codes.<b>Code</b> {
+
+	<a href="../../../pkg/github.com/caring/gopkg-errors.html">github.com/caring/gopkg-errors</a>
+		<a href="../../../src/github.com/caring/gopkg-errors/grpc.go.html#line-14">grpc.go#L14</a>: func GrpcFromHttp(httpCode int) codes.<b>Code</b> {
+		<a href="../../../src/github.com/caring/gopkg-errors/grpc.go.html#line-155" class="path-duplicate">grpc.go</a><a href="../../../src/github.com/caring/gopkg-errors/grpc.go.html#line-155">#L155</a>: 	grpcCode   codes.<b>Code</b>
+		<a href="../../../src/github.com/caring/gopkg-errors/grpc.go.html#line-182" class="path-duplicate">grpc.go</a><a href="../../../src/github.com/caring/gopkg-errors/grpc.go.html#line-182">#L182</a>: func WithGrpcStatus(err error, code codes.<b>Code</b>) *withGrpcStatus {
+		<a href="../../../src/github.com/caring/gopkg-errors/grpc.go.html#line-206" class="path-duplicate">grpc.go</a><a href="../../../src/github.com/caring/gopkg-errors/grpc.go.html#line-206">#L206</a>: func (w *withGrpcStatus) ErrorCode() codes.<b>Code</b> {
+		<a href="../../../src/github.com/caring/gopkg-errors/http.go.html#line-17">http.go#L17</a>: func HTTPFromGrpc(grpcCode codes.<b>Code</b>) int {
+
+	<a href="../../../pkg/github.com/grpc-ecosystem/go-grpc-middleware/logging.html">github.com/grpc-ecosystem/go-grpc-middleware/logging</a>
+		<a href="../../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/common.go.html#line-17">common.go#L17</a>: type ErrorToCode func(err error) codes.<b>Code</b>
+		<a href="../../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/common.go.html#line-19" class="path-duplicate">common.go</a><a href="../../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/common.go.html#line-19">#L19</a>: func DefaultErrorToCode(err error) codes.<b>Code</b> {
+
+	<a href="../../../pkg/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap.html">github.com/grpc-ecosystem/go-grpc-middleware/logging/zap</a>
+		<a href="../../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/options.go.html#line-51">options.go#L51</a>: type CodeToLevel func(code codes.<b>Code</b>) zapcore.Level
+		<a href="../../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/options.go.html#line-85" class="path-duplicate">options.go</a><a href="../../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/options.go.html#line-85">#L85</a>: func DefaultCodeToLevel(code codes.<b>Code</b>) zapcore.Level {
+		<a href="../../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/options.go.html#line-127" class="path-duplicate">options.go</a><a href="../../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/options.go.html#line-127">#L127</a>: func DefaultClientCodeToLevel(code codes.<b>Code</b>) zapcore.Level {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: go.uber.org/zap/buffer.Buffer.AppendString</title>
+<link href="../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../pkg/go.uber.org/zap/buffer.html">go.uber.org/zap/buffer</a>.<a href="../../../src/go.uber.org/zap/buffer/buffer.go.html#line-35">Buffer</a>.<a href="../../../src/go.uber.org/zap/buffer/buffer.go.html#line-46">AppendString</a></b></span><span style="font-size: large;"><i> (method)</i></span>
+
+<span class="title">17 uses</span>
+
+	go.uber.org/zap/buffer (current package)
+		<a href="../../../src/go.uber.org/zap/buffer/buffer.go.html#line-46">buffer.go#L46</a>: func (b *Buffer) <b>AppendString</b>(s string) {
+
+	<a href="../../../pkg/go.uber.org/zap.html">go.uber.org/zap</a>
+		<a href="../../../src/go.uber.org/zap/stacktrace.go.html#line-83">stacktrace.go#L83</a>: 		buffer.<b>AppendString</b>(frame.Function)
+		<a href="../../../src/go.uber.org/zap/stacktrace.go.html#line-86" class="path-duplicate">stacktrace.go</a><a href="../../../src/go.uber.org/zap/stacktrace.go.html#line-86">#L86</a>: 		buffer.<b>AppendString</b>(frame.File)
+
+	<a href="../../../pkg/go.uber.org/zap/zapcore.html">go.uber.org/zap/zapcore</a>
+		<a href="../../../src/go.uber.org/zap/zapcore/console_encoder.go.html#line-106">console_encoder.go#L106</a>: 		line.<b>AppendString</b>(ent.Message)
+		<a href="../../../src/go.uber.org/zap/zapcore/console_encoder.go.html#line-116" class="path-duplicate">console_encoder.go</a><a href="../../../src/go.uber.org/zap/zapcore/console_encoder.go.html#line-116">#L116</a>: 		line.<b>AppendString</b>(ent.Stack)
+		<a href="../../../src/go.uber.org/zap/zapcore/console_encoder.go.html#line-120" class="path-duplicate">console_encoder.go</a><a href="../../../src/go.uber.org/zap/zapcore/console_encoder.go.html#line-120">#L120</a>: 		line.<b>AppendString</b>(c.LineEnding)
+		<a href="../../../src/go.uber.org/zap/zapcore/console_encoder.go.html#line-122" class="path-duplicate">console_encoder.go</a><a href="../../../src/go.uber.org/zap/zapcore/console_encoder.go.html#line-122">#L122</a>: 		line.<b>AppendString</b>(DefaultLineEnding)
+		<a href="../../../src/go.uber.org/zap/zapcore/entry.go.html#line-91">entry.go#L91</a>: 	buf.<b>AppendString</b>(ec.File)
+		<a href="../../../src/go.uber.org/zap/zapcore/entry.go.html#line-129" class="path-duplicate">entry.go</a><a href="../../../src/go.uber.org/zap/zapcore/entry.go.html#line-129">#L129</a>: 	buf.<b>AppendString</b>(ec.File[idx+1:])
+		<a href="../../../src/go.uber.org/zap/zapcore/json_encoder.go.html#line-390">json_encoder.go#L390</a>: 		final.buf.<b>AppendString</b>(final.LineEnding)
+		<a href="../../../src/go.uber.org/zap/zapcore/json_encoder.go.html#line-392" class="path-duplicate">json_encoder.go</a><a href="../../../src/go.uber.org/zap/zapcore/json_encoder.go.html#line-392">#L392</a>: 		final.buf.<b>AppendString</b>(DefaultLineEnding)
+		<a href="../../../src/go.uber.org/zap/zapcore/json_encoder.go.html#line-441" class="path-duplicate">json_encoder.go</a><a href="../../../src/go.uber.org/zap/zapcore/json_encoder.go.html#line-441">#L441</a>: 		enc.buf.<b>AppendString</b>(`"NaN"`)
+		<a href="../../../src/go.uber.org/zap/zapcore/json_encoder.go.html#line-443" class="path-duplicate">json_encoder.go</a><a href="../../../src/go.uber.org/zap/zapcore/json_encoder.go.html#line-443">#L443</a>: 		enc.buf.<b>AppendString</b>(`"+Inf"`)
+		<a href="../../../src/go.uber.org/zap/zapcore/json_encoder.go.html#line-445" class="path-duplicate">json_encoder.go</a><a href="../../../src/go.uber.org/zap/zapcore/json_encoder.go.html#line-445">#L445</a>: 		enc.buf.<b>AppendString</b>(`"-Inf"`)
+		<a href="../../../src/go.uber.org/zap/zapcore/json_encoder.go.html#line-465" class="path-duplicate">json_encoder.go</a><a href="../../../src/go.uber.org/zap/zapcore/json_encoder.go.html#line-465">#L465</a>: 		enc.buf.<b>AppendString</b>(s[i : i+size])
+		<a href="../../../src/go.uber.org/zap/zapcore/json_encoder.go.html#line-511" class="path-duplicate">json_encoder.go</a><a href="../../../src/go.uber.org/zap/zapcore/json_encoder.go.html#line-511">#L511</a>: 		enc.buf.<b>AppendString</b>(`\u00`)
+		<a href="../../../src/go.uber.org/zap/zapcore/json_encoder.go.html#line-520" class="path-duplicate">json_encoder.go</a><a href="../../../src/go.uber.org/zap/zapcore/json_encoder.go.html#line-520">#L520</a>: 		enc.buf.<b>AppendString</b>(`\ufffd`)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

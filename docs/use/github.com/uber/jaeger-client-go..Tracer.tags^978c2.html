@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/uber/jaeger-client-go.Tracer.tags</title>
+<link href="../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../pkg/github.com/uber/jaeger-client-go.html">github.com/uber/jaeger-client-go</a>.<a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-37">Tracer</a>.<a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-66">tags</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">15 uses</span>
+
+	github.com/uber/jaeger-client-go (current package)
+		<a href="../../../src/github.com/uber/jaeger-client-go/jaeger_thrift_span.go.html#line-60">jaeger_thrift_span.go#L60</a>: 		Tags:        buildTags(tracer.<b>tags</b>, tracer.options.maxTagValueLength),
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-66">tracer.go#L66</a>: 	<b>tags</b>    []Tag
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-147" class="path-duplicate">tracer.go</a><a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-147">#L147</a>: 	t.<b>tags</b> = append(t.<b>tags</b>, Tag{key: JaegerClientVersionTagKey, value: JaegerClientVersion})
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-149" class="path-duplicate">tracer.go</a><a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-149">#L149</a>: 		t.<b>tags</b> = append(t.<b>tags</b>, Tag{key: TracerHostnameTagKey, value: hostname})
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-160" class="path-duplicate">tracer.go</a><a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-160">#L160</a>: 		t.<b>tags</b> = append(t.<b>tags</b>, Tag{key: TracerIPTagKey, value: ip.String()})
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-180" class="path-duplicate">tracer.go</a><a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-180">#L180</a>: 		Tags:    t.<b>tags</b>,
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-386" class="path-duplicate">tracer.go</a><a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-386">#L386</a>: 	tags := make([]opentracing.Tag, len(t.<b>tags</b>))
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-387" class="path-duplicate">tracer.go</a><a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-387">#L387</a>: 	for i, tag := range t.<b>tags</b> {
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-396" class="path-duplicate">tracer.go</a><a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-396">#L396</a>: 	for _, tag := range t.<b>tags</b> {
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer_options.go.html#line-168">tracer_options.go#L168</a>: 		tracer.<b>tags</b> = append(tracer.<b>tags</b>, Tag{key: key, value: value})
+		<a href="../../../src/github.com/uber/jaeger-client-go/zipkin_thrift_span.go.html#line-252">zipkin_thrift_span.go#L252</a>: 		s.tags = append(s.tags, s.tracer.<b>tags</b>...)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

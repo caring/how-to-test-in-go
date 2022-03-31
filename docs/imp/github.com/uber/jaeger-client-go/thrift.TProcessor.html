@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Method Implmentations: github.com/uber/jaeger-client-go/thrift.TProcessor</title>
+<link href="../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+<pre><code><span style="font-size:x-large;">type <a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift.html">github.com/uber/jaeger-client-go/thrift</a>.<b><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/processor_factory.go.html#line-26">TProcessor</a></b></span><span style="font-size:large;"> <b><i>(interface)</i></b></span>
+
+<code><span class="title">Method Implmentations<span class="title-stat"><i></i></span></span>
+
+<div class="anchor" id="name-AddToProcessorMap">	<a href="../../../../use/github.com/uber/jaeger-client-go/thrift..TProcessor.AddToProcessorMap.html">AddToProcessorMap</a>(<a href="../../../../pkg/builtin.html#name-string">string</a>, <a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift.html#name-TProcessorFunction">TProcessorFunction</a>)
+		*github.com/uber/jaeger-client-go/thrift-gen/agent.<a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift-gen/agent.html#name-AgentProcessor">AgentProcessor</a>.<b><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/agent/agent.go.html#line-98">AddToProcessorMap</a></b>
+		*github.com/uber/jaeger-client-go/thrift-gen/jaeger.<a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift-gen/jaeger.html#name-CollectorProcessor">CollectorProcessor</a>.<b><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-2350">AddToProcessorMap</a></b>
+		*github.com/uber/jaeger-client-go/thrift-gen/sampling.<a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift-gen/sampling.html#name-SamplingManagerProcessor">SamplingManagerProcessor</a>.<b><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-1013">AddToProcessorMap</a></b>
+		*github.com/uber/jaeger-client-go/thrift-gen/zipkincore.<a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift-gen/zipkincore.html#name-ZipkinCollectorProcessor">ZipkinCollectorProcessor</a>.<b><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-1505">AddToProcessorMap</a></b></div>
+<div class="anchor" id="name-Process">	<a href="../../../../use/github.com/uber/jaeger-client-go/thrift..TProcessor.Process.html">Process</a>(ctx <a href="../../../../pkg/context.html">context</a>.<a href="../../../../pkg/context.html#name-Context">Context</a>, in, out <a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift.html#name-TProtocol">TProtocol</a>) (<a href="../../../../pkg/builtin.html#name-bool">bool</a>, <a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift.html#name-TException">TException</a>)
+		*github.com/uber/jaeger-client-go/thrift-gen/agent.<a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift-gen/agent.html#name-AgentProcessor">AgentProcessor</a>.<b><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/agent/agent.go.html#line-119">Process</a></b>
+		*github.com/uber/jaeger-client-go/thrift-gen/jaeger.<a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift-gen/jaeger.html#name-CollectorProcessor">CollectorProcessor</a>.<b><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-2370">Process</a></b>
+		*github.com/uber/jaeger-client-go/thrift-gen/sampling.<a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift-gen/sampling.html#name-SamplingManagerProcessor">SamplingManagerProcessor</a>.<b><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-1033">Process</a></b>
+		*github.com/uber/jaeger-client-go/thrift-gen/zipkincore.<a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift-gen/zipkincore.html#name-ZipkinCollectorProcessor">ZipkinCollectorProcessor</a>.<b><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-1525">Process</a></b></div>
+<div class="anchor" id="name-ProcessorMap">	<a href="../../../../use/github.com/uber/jaeger-client-go/thrift..TProcessor.ProcessorMap.html">ProcessorMap</a>() map[<a href="../../../../pkg/builtin.html#name-string">string</a>]<a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift.html#name-TProcessorFunction">TProcessorFunction</a>
+		*github.com/uber/jaeger-client-go/thrift-gen/agent.<a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift-gen/agent.html#name-AgentProcessor">AgentProcessor</a>.<b><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/agent/agent.go.html#line-107">ProcessorMap</a></b>
+		*github.com/uber/jaeger-client-go/thrift-gen/jaeger.<a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift-gen/jaeger.html#name-CollectorProcessor">CollectorProcessor</a>.<b><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-2359">ProcessorMap</a></b>
+		*github.com/uber/jaeger-client-go/thrift-gen/sampling.<a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift-gen/sampling.html#name-SamplingManagerProcessor">SamplingManagerProcessor</a>.<b><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-1022">ProcessorMap</a></b>
+		*github.com/uber/jaeger-client-go/thrift-gen/zipkincore.<a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift-gen/zipkincore.html#name-ZipkinCollectorProcessor">ZipkinCollectorProcessor</a>.<b><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-1514">ProcessorMap</a></b></div></code></pre><pre id="footer">
+<table><tr><td><img src="../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Source: sampler_v2.go in package github.com/uber/jaeger-client-go</title>
+<link href="../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre id="header"><code><span class="title">Source File</span>
+	sampler_v2.go
+
+<span class="title">Belonging Package</span>
+	<a href="../../../../pkg/github.com/uber/jaeger-client-go.html">github.com/uber/jaeger-client-go</a>
+</code></pre>
+<style>input[type=radio] {display: none;}
+input[id=r0]:checked ~pre label[for=r0],
+input[id=r1]:checked ~pre label[for=r1],
+input[id=r2]:checked ~pre label[for=r2],
+input[id=r3]:checked ~pre label[for=r3],
+input[id=r4]:checked ~pre label[for=r4],
+input[id=r5]:checked ~pre label[for=r5],
+input[id=r6]:checked ~pre label[for=r6],
+input[id=r7]:checked ~pre label[for=r7],
+input[id=r8]:checked ~pre label[for=r8],
+input[id=r9]:checked ~pre label[for=r9],
+input[id=r10]:checked ~pre label[for=r10],
+input[id=r11]:checked ~pre label[for=r11],
+input[id=r12]:checked ~pre label[for=r12],
+input[id=r13]:checked ~pre label[for=r13],
+input[id=r14]:checked ~pre label[for=r14],
+input[id=r15]:checked ~pre label[for=r15],
+input[id=r16]:checked ~pre label[for=r16],
+input[id=r17]:checked ~pre label[for=r17],
+input[id=r18]:checked ~pre label[for=r18],
+input[id=r19]:checked ~pre label[for=r19],
+input[id=r20]:checked ~pre label[for=r20],
+input[id=r21]:checked ~pre label[for=r21],
+input[id=r22]:checked ~pre label[for=r22],
+input[id=r23]:checked ~pre label[for=r23],
+input[id=r24]:checked ~pre label[for=r24],
+input[id=r25]:checked ~pre label[for=r25],
+input[id=r26]:checked ~pre label[for=r26],
+input[id=r27]:checked ~pre label[for=r27],
+input[id=r28]:checked ~pre label[for=r28],
+input[id=r29]:checked ~pre label[for=r29],
+input[id=r30]:checked ~pre label[for=r30],
+input[id=r31]:checked ~pre label[for=r31],
+input[id=r32]:checked ~pre label[for=r32],
+input[id=r33]:checked ~pre label[for=r33],
+input[id=r34]:checked ~pre label[for=r34]
+{background: #226; color: #ff8;}
+{background: brown; color: #eed;}
+</style><input id="r0" type="radio" name="g"/>
+<input id="r1" type="radio" name="g"/>
+<input id="r2" type="radio" name="g"/>
+<input id="r3" type="radio" name="g"/>
+<input id="r4" type="radio" name="g"/>
+<input id="r5" type="radio" name="g"/>
+<input id="r6" type="radio" name="g"/>
+<input id="r7" type="radio" name="g"/>
+<input id="r8" type="radio" name="g"/>
+<input id="r9" type="radio" name="g"/>
+<input id="r10" type="radio" name="g"/>
+<input id="r11" type="radio" name="g"/>
+<input id="r12" type="radio" name="g"/>
+<input id="r13" type="radio" name="g"/>
+<input id="r14" type="radio" name="g"/>
+<input id="r15" type="radio" name="g"/>
+<input id="r16" type="radio" name="g"/>
+<input id="r17" type="radio" name="g"/>
+<input id="r18" type="radio" name="g"/>
+<input id="r19" type="radio" name="g"/>
+<input id="r20" type="radio" name="g"/>
+<input id="r21" type="radio" name="g"/>
+<input id="r22" type="radio" name="g"/>
+<input id="r23" type="radio" name="g"/>
+<input id="r24" type="radio" name="g"/>
+<input id="r25" type="radio" name="g"/>
+<input id="r26" type="radio" name="g"/>
+<input id="r27" type="radio" name="g"/>
+<input id="r28" type="radio" name="g"/>
+<input id="r29" type="radio" name="g"/>
+<input id="r30" type="radio" name="g"/>
+<input id="r31" type="radio" name="g"/>
+<input id="r32" type="radio" name="g"/>
+<input id="r33" type="radio" name="g"/>
+<input id="r34" type="radio" name="g"/>
+
+<pre class="line-numbers">
+<span class="codeline" id="line-1"><code><span class="comment">// Copyright (c) 2019 Uber Technologies, Inc.</span></code></span>
+<span class="codeline" id="line-2"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-3"><code><span class="comment">// Licensed under the Apache License, Version 2.0 (the "License");</span></code></span>
+<span class="codeline" id="line-4"><code><span class="comment">// you may not use this file except in compliance with the License.</span></code></span>
+<span class="codeline" id="line-5"><code><span class="comment">// You may obtain a copy of the License at</span></code></span>
+<span class="codeline" id="line-6"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-7"><code><span class="comment">// http://www.apache.org/licenses/LICENSE-2.0</span></code></span>
+<span class="codeline" id="line-8"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-9"><code><span class="comment">// Unless required by applicable law or agreed to in writing, software</span></code></span>
+<span class="codeline" id="line-10"><code><span class="comment">// distributed under the License is distributed on an "AS IS" BASIS,</span></code></span>
+<span class="codeline" id="line-11"><code><span class="comment">// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></code></span>
+<span class="codeline" id="line-12"><code><span class="comment">// See the License for the specific language governing permissions and</span></code></span>
+<span class="codeline" id="line-13"><code><span class="comment">// limitations under the License.</span></code></span>
+<span class="codeline" id="line-14"><code></code></span>
+<span class="codeline" id="line-15"><code><span class="keyword">package</span> jaeger</code></span>
+<span class="codeline" id="line-16"><code></code></span>
+<span class="codeline" id="line-17"><code><span class="comment">// SamplingDecision is returned by the V2 samplers.</span></code></span>
+<span class="codeline" id="line-18"><code><span class="keyword">type</span> <a href="../../../../pkg/github.com/uber/jaeger-client-go.html#name-SamplingDecision" class="ident">SamplingDecision</a> <span class="keyword">struct</span> {</code></span>
+<span class="codeline" id="line-19"><code>	<a href="../../../../use/github.com/uber/jaeger-client-go..SamplingDecision.Sample.html" class="ident">Sample</a>    <a href="../../../../pkg/builtin.html#name-bool" class="ident">bool</a></code></span>
+<span class="codeline" id="line-20"><code>	<a href="../../../../use/github.com/uber/jaeger-client-go..SamplingDecision.Retryable.html" class="ident">Retryable</a> <a href="../../../../pkg/builtin.html#name-bool" class="ident">bool</a></code></span>
+<span class="codeline" id="line-21"><code>	<a href="../../../../use/github.com/uber/jaeger-client-go..SamplingDecision.Tags.html" class="ident">Tags</a>      []<a href="span.go.html#line-73" class="ident">Tag</a></code></span>
+<span class="codeline" id="line-22"><code>}</code></span>
+<span class="codeline" id="line-23"><code></code></span>
+<span class="codeline" id="line-24"><code><span class="comment">// SamplerV2 is an extension of the V1 samplers that allows sampling decisions</span></code></span>
+<span class="codeline" id="line-25"><code><span class="comment">// be made at different points of the span lifecycle.</span></code></span>
+<span class="codeline" id="line-26"><code><span class="keyword">type</span> <a href="../../../../pkg/github.com/uber/jaeger-client-go.html#name-SamplerV2" class="ident">SamplerV2</a> <span class="keyword">interface</span> {</code></span>
+<span class="codeline" id="line-27"><code>	<a href="../../../../imp/github.com/uber/jaeger-client-go.SamplerV2.html#name-OnCreateSpan" class="ident">OnCreateSpan</a>(span *<a href="span.go.html#line-28" class="ident">Span</a>) <a href="#line-18" class="ident">SamplingDecision</a></code></span>
+<span class="codeline" id="line-28"><code>	<a href="../../../../imp/github.com/uber/jaeger-client-go.SamplerV2.html#name-OnSetOperationName" class="ident">OnSetOperationName</a>(span *<a href="span.go.html#line-28" class="ident">Span</a>, operationName <a href="../../../../pkg/builtin.html#name-string" class="ident">string</a>) <a href="#line-18" class="ident">SamplingDecision</a></code></span>
+<span class="codeline" id="line-29"><code>	<a href="../../../../imp/github.com/uber/jaeger-client-go.SamplerV2.html#name-OnSetTag" class="ident">OnSetTag</a>(span *<a href="span.go.html#line-28" class="ident">Span</a>, key <a href="../../../../pkg/builtin.html#name-string" class="ident">string</a>, value <span class="keyword">interface</span>{}) <a href="#line-18" class="ident">SamplingDecision</a></code></span>
+<span class="codeline" id="line-30"><code>	<a href="../../../../imp/github.com/uber/jaeger-client-go.SamplerV2.html#name-OnFinishSpan" class="ident">OnFinishSpan</a>(span *<a href="span.go.html#line-28" class="ident">Span</a>) <a href="#line-18" class="ident">SamplingDecision</a></code></span>
+<span class="codeline" id="line-31"><code></code></span>
+<span class="codeline" id="line-32"><code>	<span class="comment">// Close does a clean shutdown of the sampler, stopping any background</span></code></span>
+<span class="codeline" id="line-33"><code><span class="comment">	// go-routines it may have started.</span></code></span>
+<span class="codeline" id="line-34"><code>	<a href="../../../../imp/github.com/uber/jaeger-client-go.SamplerV2.html#name-Close" class="ident">Close</a>()</code></span>
+<span class="codeline" id="line-35"><code>}</code></span>
+<span class="codeline" id="line-36"><code></code></span>
+<span class="codeline" id="line-37"><code><span class="comment">// samplerV1toV2 wraps legacy V1 sampler into an adapter that make it look like V2.</span></code></span>
+<span class="codeline" id="line-38"><code><span class="keyword">func</span> <label for="r0" class="ident"><a href="../../../../pkg/github.com/uber/jaeger-client-go.html#name-samplerV1toV2" class="ident">samplerV1toV2</a></label>(<label for="r1" class="ident">s</label> <a href="sampler.go.html#line-32" class="ident">Sampler</a>) <a href="#line-26" class="ident">SamplerV2</a> {</code></span>
+<span class="codeline" id="line-39"><code>	<span class="keyword">if</span> <label for="r2" class="ident">s2</label>, <label for="r3" class="ident">ok</label> := <label for="r1" class="ident">s</label>.(<a href="#line-26" class="ident">SamplerV2</a>); <label for="r3" class="ident">ok</label> {</code></span>
+<span class="codeline" id="line-40"><code>		<span class="keyword">return</span> <label for="r2" class="ident">s2</label></code></span>
+<span class="codeline" id="line-41"><code>	}</code></span>
+<span class="codeline" id="line-42"><code>	<span class="keyword">type</span> <label for="r4" class="ident">legacySamplerV1toV2Adapter</label> <span class="keyword">struct</span> {</code></span>
+<span class="codeline" id="line-43"><code>		<a href="#line-71" class="ident">legacySamplerV1Base</a></code></span>
+<span class="codeline" id="line-44"><code>	}</code></span>
+<span class="codeline" id="line-45"><code>	<span class="keyword">return</span> &amp;<label for="r4" class="ident">legacySamplerV1toV2Adapter</label>{</code></span>
+<span class="codeline" id="line-46"><code>		<label for="r5" class="ident">legacySamplerV1Base</label>: <a href="#line-71" class="ident">legacySamplerV1Base</a>{</code></span>
+<span class="codeline" id="line-47"><code>			<a href="#line-72" class="ident">delegate</a>: <label for="r1" class="ident">s</label>.<a href="sampler.go.html#line-38" class="ident">IsSampled</a>,</code></span>
+<span class="codeline" id="line-48"><code>		},</code></span>
+<span class="codeline" id="line-49"><code>	}</code></span>
+<span class="codeline" id="line-50"><code>}</code></span>
+<span class="codeline" id="line-51"><code></code></span>
+<span class="codeline" id="line-52"><code><span class="comment">// SamplerV2Base can be used by V2 samplers to implement dummy V1 methods.</span></code></span>
+<span class="codeline" id="line-53"><code><span class="comment">// Supporting V1 API is required because Tracer configuration only accepts V1 Sampler</span></code></span>
+<span class="codeline" id="line-54"><code><span class="comment">// for backwards compatibility reasons.</span></code></span>
+<span class="codeline" id="line-55"><code><span class="comment">// TODO (breaking change) remove this in the next major release</span></code></span>
+<span class="codeline" id="line-56"><code><span class="keyword">type</span> <a href="../../../../pkg/github.com/uber/jaeger-client-go.html#name-SamplerV2Base" class="ident">SamplerV2Base</a> <span class="keyword">struct</span>{}</code></span>
+<span class="codeline" id="line-57"><code></code></span>
+<span class="codeline" id="line-58"><code><span class="comment">// IsSampled implements IsSampled of Sampler.</span></code></span>
+<span class="codeline" id="line-59"><code><span class="keyword">func</span> (<a href="#line-56" class="ident">SamplerV2Base</a>) <label for="r6" class="ident"><a href="../../../../use/github.com/uber/jaeger-client-go..SamplerV2Base.IsSampled.html" class="ident">IsSampled</a></label>(<label for="r7" class="ident">id</label> <a href="span_context.go.html#line-41" class="ident">TraceID</a>, <label for="r8" class="ident">operation</label> <a href="../../../../pkg/builtin.html#name-string" class="ident">string</a>) (<label for="r9" class="ident">sampled</label> <a href="../../../../pkg/builtin.html#name-bool" class="ident">bool</a>, <label for="r10" class="ident">tags</label> []<a href="span.go.html#line-73" class="ident">Tag</a>) {</code></span>
+<span class="codeline" id="line-60"><code>	<span class="keyword">return</span> <a href="../../../../pkg/builtin.html#name-false" class="ident">false</a>, <a href="../../../../pkg/builtin.html#name-nil" class="ident">nil</a></code></span>
+<span class="codeline" id="line-61"><code>}</code></span>
+<span class="codeline" id="line-62"><code></code></span>
+<span class="codeline" id="line-63"><code><span class="comment">// Close implements Close of Sampler.</span></code></span>
+<span class="codeline" id="line-64"><code><span class="keyword">func</span> (<a href="#line-56" class="ident">SamplerV2Base</a>) <label for="r11" class="ident"><a href="../../../../use/github.com/uber/jaeger-client-go..SamplerV2Base.Close.html" class="ident">Close</a></label>() {}</code></span>
+<span class="codeline" id="line-65"><code></code></span>
+<span class="codeline" id="line-66"><code><span class="comment">// Equal implements Equal of Sampler.</span></code></span>
+<span class="codeline" id="line-67"><code><span class="keyword">func</span> (<a href="#line-56" class="ident">SamplerV2Base</a>) <label for="r12" class="ident"><a href="../../../../use/github.com/uber/jaeger-client-go..SamplerV2Base.Equal.html" class="ident">Equal</a></label>(<label for="r13" class="ident">other</label> <a href="sampler.go.html#line-32" class="ident">Sampler</a>) <a href="../../../../pkg/builtin.html#name-bool" class="ident">bool</a> { <span class="keyword">return</span> <a href="../../../../pkg/builtin.html#name-false" class="ident">false</a> }</code></span>
+<span class="codeline" id="line-68"><code></code></span>
+<span class="codeline" id="line-69"><code><span class="comment">// legacySamplerV1Base is used as a base for simple samplers that only implement</span></code></span>
+<span class="codeline" id="line-70"><code><span class="comment">// the legacy isSampled() function that is not sensitive to its arguments.</span></code></span>
+<span class="codeline" id="line-71"><code><span class="keyword">type</span> <a href="../../../../pkg/github.com/uber/jaeger-client-go.html#name-legacySamplerV1Base" class="ident">legacySamplerV1Base</a> <span class="keyword">struct</span> {</code></span>
+<span class="codeline" id="line-72"><code>	<a href="../../../../use/github.com/uber/jaeger-client-go..legacySamplerV1Base^42864.delegate^6f216.html" class="ident">delegate</a> <span class="keyword">func</span>(id <a href="span_context.go.html#line-41" class="ident">TraceID</a>, operation <a href="../../../../pkg/builtin.html#name-string" class="ident">string</a>) (sampled <a href="../../../../pkg/builtin.html#name-bool" class="ident">bool</a>, tags []<a href="span.go.html#line-73" class="ident">Tag</a>)</code></span>
+<span class="codeline" id="line-73"><code>}</code></span>
+<span class="codeline" id="line-74"><code></code></span>
+<span class="codeline" id="line-75"><code><span class="keyword">func</span> (<label for="r14" class="ident">s</label> *<a href="#line-71" class="ident">legacySamplerV1Base</a>) <label for="r15" class="ident"><a href="../../../../use/github.com/uber/jaeger-client-go..legacySamplerV1Base^42864.OnCreateSpan.html" class="ident">OnCreateSpan</a></label>(<label for="r16" class="ident">span</label> *<a href="span.go.html#line-28" class="ident">Span</a>) <a href="#line-18" class="ident">SamplingDecision</a> {</code></span>
+<span class="codeline" id="line-76"><code>	<label for="r17" class="ident">isSampled</label>, <label for="r18" class="ident">tags</label> := <label for="r14" class="ident">s</label>.<a href="#line-72" class="ident">delegate</a>(<label for="r16" class="ident">span</label>.<a href="span.go.html#line-38" class="ident">context</a>.<a href="span_context.go.html#line-52" class="ident">traceID</a>, <label for="r16" class="ident">span</label>.<a href="span.go.html#line-42" class="ident">operationName</a>)</code></span>
+<span class="codeline" id="line-77"><code>	<span class="keyword">return</span> <a href="#line-18" class="ident">SamplingDecision</a>{<a href="#line-19" class="ident">Sample</a>: <label for="r17" class="ident">isSampled</label>, <a href="#line-20" class="ident">Retryable</a>: <a href="../../../../pkg/builtin.html#name-false" class="ident">false</a>, <a href="#line-21" class="ident">Tags</a>: <label for="r18" class="ident">tags</label>}</code></span>
+<span class="codeline" id="line-78"><code>}</code></span>
+<span class="codeline" id="line-79"><code></code></span>
+<span class="codeline" id="line-80"><code><span class="keyword">func</span> (<label for="r19" class="ident">s</label> *<a href="#line-71" class="ident">legacySamplerV1Base</a>) <label for="r20" class="ident"><a href="../../../../use/github.com/uber/jaeger-client-go..legacySamplerV1Base^42864.OnSetOperationName.html" class="ident">OnSetOperationName</a></label>(<label for="r21" class="ident">span</label> *<a href="span.go.html#line-28" class="ident">Span</a>, <label for="r22" class="ident">operationName</label> <a href="../../../../pkg/builtin.html#name-string" class="ident">string</a>) <a href="#line-18" class="ident">SamplingDecision</a> {</code></span>
+<span class="codeline" id="line-81"><code>	<label for="r23" class="ident">isSampled</label>, <label for="r24" class="ident">tags</label> := <label for="r19" class="ident">s</label>.<a href="#line-72" class="ident">delegate</a>(<label for="r21" class="ident">span</label>.<a href="span.go.html#line-38" class="ident">context</a>.<a href="span_context.go.html#line-52" class="ident">traceID</a>, <label for="r21" class="ident">span</label>.<a href="span.go.html#line-42" class="ident">operationName</a>)</code></span>
+<span class="codeline" id="line-82"><code>	<span class="keyword">return</span> <a href="#line-18" class="ident">SamplingDecision</a>{<a href="#line-19" class="ident">Sample</a>: <label for="r23" class="ident">isSampled</label>, <a href="#line-20" class="ident">Retryable</a>: <a href="../../../../pkg/builtin.html#name-false" class="ident">false</a>, <a href="#line-21" class="ident">Tags</a>: <label for="r24" class="ident">tags</label>}</code></span>
+<span class="codeline" id="line-83"><code>}</code></span>
+<span class="codeline" id="line-84"><code></code></span>
+<span class="codeline" id="line-85"><code><span class="keyword">func</span> (<label for="r25" class="ident">s</label> *<a href="#line-71" class="ident">legacySamplerV1Base</a>) <label for="r26" class="ident"><a href="../../../../use/github.com/uber/jaeger-client-go..legacySamplerV1Base^42864.OnSetTag.html" class="ident">OnSetTag</a></label>(<label for="r27" class="ident">span</label> *<a href="span.go.html#line-28" class="ident">Span</a>, <label for="r28" class="ident">key</label> <a href="../../../../pkg/builtin.html#name-string" class="ident">string</a>, <label for="r29" class="ident">value</label> <span class="keyword">interface</span>{}) <a href="#line-18" class="ident">SamplingDecision</a> {</code></span>
+<span class="codeline" id="line-86"><code>	<span class="keyword">return</span> <a href="#line-18" class="ident">SamplingDecision</a>{<a href="#line-19" class="ident">Sample</a>: <a href="../../../../pkg/builtin.html#name-false" class="ident">false</a>, <a href="#line-20" class="ident">Retryable</a>: <a href="../../../../pkg/builtin.html#name-true" class="ident">true</a>}</code></span>
+<span class="codeline" id="line-87"><code>}</code></span>
+<span class="codeline" id="line-88"><code></code></span>
+<span class="codeline" id="line-89"><code><span class="keyword">func</span> (<label for="r30" class="ident">s</label> *<a href="#line-71" class="ident">legacySamplerV1Base</a>) <label for="r31" class="ident"><a href="../../../../use/github.com/uber/jaeger-client-go..legacySamplerV1Base^42864.OnFinishSpan.html" class="ident">OnFinishSpan</a></label>(<label for="r32" class="ident">span</label> *<a href="span.go.html#line-28" class="ident">Span</a>) <a href="#line-18" class="ident">SamplingDecision</a> {</code></span>
+<span class="codeline" id="line-90"><code>	<span class="keyword">return</span> <a href="#line-18" class="ident">SamplingDecision</a>{<a href="#line-19" class="ident">Sample</a>: <a href="../../../../pkg/builtin.html#name-false" class="ident">false</a>, <a href="#line-20" class="ident">Retryable</a>: <a href="../../../../pkg/builtin.html#name-true" class="ident">true</a>}</code></span>
+<span class="codeline" id="line-91"><code>}</code></span>
+<span class="codeline" id="line-92"><code></code></span>
+<span class="codeline" id="line-93"><code><span class="keyword">func</span> (<label for="r33" class="ident">s</label> *<a href="#line-71" class="ident">legacySamplerV1Base</a>) <label for="r34" class="ident"><a href="../../../../use/github.com/uber/jaeger-client-go..legacySamplerV1Base^42864.Close.html" class="ident">Close</a></label>() {}</code></span>
+</pre><pre id="footer">
+<table><tr><td><img src="../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

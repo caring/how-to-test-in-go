@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/uber/jaeger-client-go.SamplingDecision</title>
+<link href="../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../../../pkg/github.com/uber/jaeger-client-go.html">github.com/uber/jaeger-client-go</a>.<a href="../../../src/github.com/uber/jaeger-client-go/sampler_v2.go.html#line-18">SamplingDecision</a></b></span>
+
+<span class="title">26 uses</span>
+
+	github.com/uber/jaeger-client-go (current package)
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-408">sampler.go#L408</a>: func (s *PerOperationSampler) OnCreateSpan(span *Span) <b>SamplingDecision</b> {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-410" class="path-duplicate">sampler.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-410">#L410</a>: 	return <b>SamplingDecision</b>{Sample: sampled, Retryable: s.operationNameLateBinding, Tags: tags}
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-414" class="path-duplicate">sampler.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-414">#L414</a>: func (s *PerOperationSampler) OnSetOperationName(span *Span, operationName string) <b>SamplingDecision</b> {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-416" class="path-duplicate">sampler.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-416">#L416</a>: 	return <b>SamplingDecision</b>{Sample: sampled, Retryable: false, Tags: tags}
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-420" class="path-duplicate">sampler.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-420">#L420</a>: func (s *PerOperationSampler) OnSetTag(span *Span, key string, value interface{}) <b>SamplingDecision</b> {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-421" class="path-duplicate">sampler.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-421">#L421</a>: 	return <b>SamplingDecision</b>{Sample: false, Retryable: true}
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-425" class="path-duplicate">sampler.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-425">#L425</a>: func (s *PerOperationSampler) OnFinishSpan(span *Span) <b>SamplingDecision</b> {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-426" class="path-duplicate">sampler.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-426">#L426</a>: 	return <b>SamplingDecision</b>{Sample: false, Retryable: true}
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote.go.html#line-98">sampler_remote.go#L98</a>: func (s *RemotelyControlledSampler) OnCreateSpan(span *Span) <b>SamplingDecision</b> {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote.go.html#line-105" class="path-duplicate">sampler_remote.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote.go.html#line-105">#L105</a>: func (s *RemotelyControlledSampler) OnSetOperationName(span *Span, operationName string) <b>SamplingDecision</b> {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote.go.html#line-112" class="path-duplicate">sampler_remote.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote.go.html#line-112">#L112</a>: func (s *RemotelyControlledSampler) OnSetTag(span *Span, key string, value interface{}) <b>SamplingDecision</b> {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote.go.html#line-119" class="path-duplicate">sampler_remote.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote.go.html#line-119">#L119</a>: func (s *RemotelyControlledSampler) OnFinishSpan(span *Span) <b>SamplingDecision</b> {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler_v2.go.html#line-18">sampler_v2.go#L18</a>: type <b>SamplingDecision</b> struct {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler_v2.go.html#line-27" class="path-duplicate">sampler_v2.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler_v2.go.html#line-27">#L27</a>: 	OnCreateSpan(span *Span) <b>SamplingDecision</b>
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler_v2.go.html#line-28" class="path-duplicate">sampler_v2.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler_v2.go.html#line-28">#L28</a>: 	OnSetOperationName(span *Span, operationName string) <b>SamplingDecision</b>
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler_v2.go.html#line-29" class="path-duplicate">sampler_v2.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler_v2.go.html#line-29">#L29</a>: 	OnSetTag(span *Span, key string, value interface{}) <b>SamplingDecision</b>
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler_v2.go.html#line-30" class="path-duplicate">sampler_v2.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler_v2.go.html#line-30">#L30</a>: 	OnFinishSpan(span *Span) <b>SamplingDecision</b>
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler_v2.go.html#line-75" class="path-duplicate">sampler_v2.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler_v2.go.html#line-75">#L75</a>: func (s *legacySamplerV1Base) OnCreateSpan(span *Span) <b>SamplingDecision</b> {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler_v2.go.html#line-77" class="path-duplicate">sampler_v2.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler_v2.go.html#line-77">#L77</a>: 	return <b>SamplingDecision</b>{Sample: isSampled, Retryable: false, Tags: tags}
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler_v2.go.html#line-80" class="path-duplicate">sampler_v2.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler_v2.go.html#line-80">#L80</a>: func (s *legacySamplerV1Base) OnSetOperationName(span *Span, operationName string) <b>SamplingDecision</b> {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler_v2.go.html#line-82" class="path-duplicate">sampler_v2.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler_v2.go.html#line-82">#L82</a>: 	return <b>SamplingDecision</b>{Sample: isSampled, Retryable: false, Tags: tags}
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler_v2.go.html#line-85" class="path-duplicate">sampler_v2.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler_v2.go.html#line-85">#L85</a>: func (s *legacySamplerV1Base) OnSetTag(span *Span, key string, value interface{}) <b>SamplingDecision</b> {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler_v2.go.html#line-86" class="path-duplicate">sampler_v2.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler_v2.go.html#line-86">#L86</a>: 	return <b>SamplingDecision</b>{Sample: false, Retryable: true}
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler_v2.go.html#line-89" class="path-duplicate">sampler_v2.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler_v2.go.html#line-89">#L89</a>: func (s *legacySamplerV1Base) OnFinishSpan(span *Span) <b>SamplingDecision</b> {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler_v2.go.html#line-90" class="path-duplicate">sampler_v2.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler_v2.go.html#line-90">#L90</a>: 	return <b>SamplingDecision</b>{Sample: false, Retryable: true}
+		<a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-440">span.go#L440</a>: func (s *Span) applySamplingDecision(decision <b>SamplingDecision</b>, lock bool) {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

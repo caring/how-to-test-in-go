@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: time.Duration</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../pkg/time.html">time</a>.<a href="../src/time/time.go.html#line-590">Duration</a></b></span>
+
+<span class="title">356 uses</span>
+
+	time (current package)
+		<a href="../src/time/format.go.html#line-1509">format.go#L1509</a>: func ParseDuration(s string) (<b>Duration</b>, error) {
+		<a href="../src/time/format.go.html#line-1604" class="path-duplicate">format.go</a><a href="../src/time/format.go.html#line-1604">#L1604</a>: 	return <b>Duration</b>(d), nil
+		<a href="../src/time/sleep.go.html#line-9">sleep.go#L9</a>: func Sleep(d <b>Duration</b>)
+		<a href="../src/time/sleep.go.html#line-28" class="path-duplicate">sleep.go</a><a href="../src/time/sleep.go.html#line-28">#L28</a>: func when(d <b>Duration</b>) int64 {
+		<a href="../src/time/sleep.go.html#line-86" class="path-duplicate">sleep.go</a><a href="../src/time/sleep.go.html#line-86">#L86</a>: func NewTimer(d <b>Duration</b>) *Timer {
+		<a href="../src/time/sleep.go.html#line-134" class="path-duplicate">sleep.go</a><a href="../src/time/sleep.go.html#line-134">#L134</a>: func (t *Timer) Reset(d <b>Duration</b>) bool {
+		<a href="../src/time/sleep.go.html#line-160" class="path-duplicate">sleep.go</a><a href="../src/time/sleep.go.html#line-160">#L160</a>: func After(d <b>Duration</b>) &lt;-chan Time {
+		<a href="../src/time/sleep.go.html#line-167" class="path-duplicate">sleep.go</a><a href="../src/time/sleep.go.html#line-167">#L167</a>: func AfterFunc(d <b>Duration</b>, f func()) *Timer {
+		<a href="../src/time/tick.go.html#line-22">tick.go#L22</a>: func NewTicker(d <b>Duration</b>) *Ticker {
+		<a href="../src/time/tick.go.html#line-52" class="path-duplicate">tick.go</a><a href="../src/time/tick.go.html#line-52">#L52</a>: func (t *Ticker) Reset(d <b>Duration</b>) {
+		<a href="../src/time/tick.go.html#line-64" class="path-duplicate">tick.go</a><a href="../src/time/tick.go.html#line-64">#L64</a>: func Tick(d <b>Duration</b>) &lt;-chan Time {
+		<a href="../src/time/time.go.html#line-590">time.go#L590</a>: type <b>Duration</b> int64
+		<a href="../src/time/time.go.html#line-593" class="path-duplicate">time.go</a><a href="../src/time/time.go.html#line-593">#L593</a>: 	minDuration <b>Duration</b> = -1 &lt;&lt; 63
+		<a href="../src/time/time.go.html#line-594" class="path-duplicate">time.go</a><a href="../src/time/time.go.html#line-594">#L594</a>: 	maxDuration <b>Duration</b> = 1&lt;&lt;63 - 1
+		<a href="../src/time/time.go.html#line-609" class="path-duplicate">time.go</a><a href="../src/time/time.go.html#line-609">#L609</a>: 	Nanosecond  <b>Duration</b> = 1
+		<a href="../src/time/time.go.html#line-621" class="path-duplicate">time.go</a><a href="../src/time/time.go.html#line-621">#L621</a>: func (d <b>Duration</b>) String() string {
+		<a href="../src/time/time.go.html#line-736" class="path-duplicate">time.go</a><a href="../src/time/time.go.html#line-736">#L736</a>: func (d <b>Duration</b>) Nanoseconds() int64 { return int64(d) }
+		<a href="../src/time/time.go.html#line-739" class="path-duplicate">time.go</a><a href="../src/time/time.go.html#line-739">#L739</a>: func (d <b>Duration</b>) Microseconds() int64 { return int64(d) / 1e3 }
+		<a href="../src/time/time.go.html#line-742" class="path-duplicate">time.go</a><a href="../src/time/time.go.html#line-742">#L742</a>: func (d <b>Duration</b>) Milliseconds() int64 { return int64(d) / 1e6 }
+		<a href="../src/time/time.go.html#line-754" class="path-duplicate">time.go</a><a href="../src/time/time.go.html#line-754">#L754</a>: func (d <b>Duration</b>) Seconds() float64 {
+		<a href="../src/time/time.go.html#line-761" class="path-duplicate">time.go</a><a href="../src/time/time.go.html#line-761">#L761</a>: func (d <b>Duration</b>) Minutes() float64 {
+		<a href="../src/time/time.go.html#line-768" class="path-duplicate">time.go</a><a href="../src/time/time.go.html#line-768">#L768</a>: func (d <b>Duration</b>) Hours() float64 {
+		<a href="../src/time/time.go.html#line-776" class="path-duplicate">time.go</a><a href="../src/time/time.go.html#line-776">#L776</a>: func (d <b>Duration</b>) Truncate(m <b>Duration</b>) <b>Duration</b> {
+		<a href="../src/time/time.go.html#line-785" class="path-duplicate">time.go</a><a href="../src/time/time.go.html#line-785">#L785</a>: func lessThanHalf(x, y <b>Duration</b>) bool {
+		<a href="../src/time/time.go.html#line-795" class="path-duplicate">time.go</a><a href="../src/time/time.go.html#line-795">#L795</a>: func (d <b>Duration</b>) Round(m <b>Duration</b>) <b>Duration</b> {
+		<a href="../src/time/time.go.html#line-820" class="path-duplicate">time.go</a><a href="../src/time/time.go.html#line-820">#L820</a>: func (t Time) Add(d <b>Duration</b>) Time {
+		<a href="../src/time/time.go.html#line-848" class="path-duplicate">time.go</a><a href="../src/time/time.go.html#line-848">#L848</a>: func (t Time) Sub(u Time) <b>Duration</b> {
+		<a href="../src/time/time.go.html#line-852" class="path-duplicate">time.go</a><a href="../src/time/time.go.html#line-852">#L852</a>: 		d := <b>Duration</b>(te - ue)
+		<a href="../src/time/time.go.html#line-861" class="path-duplicate">time.go</a><a href="../src/time/time.go.html#line-861">#L861</a>: 	d := <b>Duration</b>(t.sec()-u.sec())*Second + <b>Duration</b>(t.nsec()-u.nsec())
+		<a href="../src/time/time.go.html#line-875" class="path-duplicate">time.go</a><a href="../src/time/time.go.html#line-875">#L875</a>: func Since(t Time) <b>Duration</b> {
+		<a href="../src/time/time.go.html#line-888" class="path-duplicate">time.go</a><a href="../src/time/time.go.html#line-888">#L888</a>: func Until(t Time) <b>Duration</b> {
+		<a href="../src/time/time.go.html#line-1446" class="path-duplicate">time.go</a><a href="../src/time/time.go.html#line-1446">#L1446</a>: func (t Time) Truncate(d <b>Duration</b>) Time {
+		<a href="../src/time/time.go.html#line-1463" class="path-duplicate">time.go</a><a href="../src/time/time.go.html#line-1463">#L1463</a>: func (t Time) Round(d <b>Duration</b>) Time {
+		<a href="../src/time/time.go.html#line-1478" class="path-duplicate">time.go</a><a href="../src/time/time.go.html#line-1478">#L1478</a>: func div(t Time, d <b>Duration</b>) (qmod2 int, r <b>Duration</b>) {
+		<a href="../src/time/time.go.html#line-1497" class="path-duplicate">time.go</a><a href="../src/time/time.go.html#line-1497">#L1497</a>: 		r = <b>Duration</b>(nsec % int32(d))
+		<a href="../src/time/time.go.html#line-1503" class="path-duplicate">time.go</a><a href="../src/time/time.go.html#line-1503">#L1503</a>: 		r = <b>Duration</b>(sec%d1)*Second + <b>Duration</b>(nsec)
+		<a href="../src/time/time.go.html#line-1550" class="path-duplicate">time.go</a><a href="../src/time/time.go.html#line-1550">#L1550</a>: 		r = <b>Duration</b>(u0)
+
+	<a href="../pkg/context.html">context</a>
+		<a href="../src/context/context.go.html#line-506">context.go#L506</a>: func WithTimeout(parent Context, timeout time.<b>Duration</b>) (Context, CancelFunc) {
+
+	<a href="../pkg/crypto/tls.html">crypto/tls</a>
+		<a href="../src/crypto/tls/handshake_client_tls13.go.html#line-648">handshake_client_tls13.go#L648</a>: 	lifetime := time.<b>Duration</b>(msg.lifetime) * time.Second
+
+	<a href="../pkg/database/sql.html">database/sql</a>
+		<a href="../src/database/sql/sql.go.html#line-483">sql.go#L483</a>: 	maxLifetime       time.<b>Duration</b>          // maximum amount of time a connection may be reused
+		<a href="../src/database/sql/sql.go.html#line-484" class="path-duplicate">sql.go</a><a href="../src/database/sql/sql.go.html#line-484">#L484</a>: 	maxIdleTime       time.<b>Duration</b>          // maximum amount of time a connection may be idle before being closed
+		<a href="../src/database/sql/sql.go.html#line-538" class="path-duplicate">sql.go</a><a href="../src/database/sql/sql.go.html#line-538">#L538</a>: func (dc *driverConn) expired(timeout time.<b>Duration</b>) bool {
+		<a href="../src/database/sql/sql.go.html#line-934" class="path-duplicate">sql.go</a><a href="../src/database/sql/sql.go.html#line-934">#L934</a>: func (db *DB) shortestIdleTimeLocked() time.<b>Duration</b> {
+		<a href="../src/database/sql/sql.go.html#line-1011" class="path-duplicate">sql.go</a><a href="../src/database/sql/sql.go.html#line-1011">#L1011</a>: func (db *DB) SetConnMaxLifetime(d time.<b>Duration</b>) {
+		<a href="../src/database/sql/sql.go.html#line-1033" class="path-duplicate">sql.go</a><a href="../src/database/sql/sql.go.html#line-1033">#L1033</a>: func (db *DB) SetConnMaxIdleTime(d time.<b>Duration</b>) {
+		<a href="../src/database/sql/sql.go.html#line-1059" class="path-duplicate">sql.go</a><a href="../src/database/sql/sql.go.html#line-1059">#L1059</a>: func (db *DB) connectionCleaner(d time.<b>Duration</b>) {
+		<a href="../src/database/sql/sql.go.html#line-1143" class="path-duplicate">sql.go</a><a href="../src/database/sql/sql.go.html#line-1143">#L1143</a>: 	WaitDuration      time.<b>Duration</b> // The total time blocked waiting for a new connection.
+		<a href="../src/database/sql/sql.go.html#line-1164" class="path-duplicate">sql.go</a><a href="../src/database/sql/sql.go.html#line-1164">#L1164</a>: 		WaitDuration:      time.<b>Duration</b>(wait),
+
+	<a href="../pkg/flag.html">flag</a>
+		<a href="../src/flag/flag.go.html#line-261">flag.go#L261</a>: type durationValue time.<b>Duration</b>
+		<a href="../src/flag/flag.go.html#line-263" class="path-duplicate">flag.go</a><a href="../src/flag/flag.go.html#line-263">#L263</a>: func newDurationValue(val time.<b>Duration</b>, p *time.<b>Duration</b>) *durationValue {
+		<a href="../src/flag/flag.go.html#line-277" class="path-duplicate">flag.go</a><a href="../src/flag/flag.go.html#line-277">#L277</a>: func (d *durationValue) Get() interface{} { return time.<b>Duration</b>(*d) }
+		<a href="../src/flag/flag.go.html#line-279" class="path-duplicate">flag.go</a><a href="../src/flag/flag.go.html#line-279">#L279</a>: func (d *durationValue) String() string { return (*time.<b>Duration</b>)(d).String() }
+		<a href="../src/flag/flag.go.html#line-814" class="path-duplicate">flag.go</a><a href="../src/flag/flag.go.html#line-814">#L814</a>: func (f *FlagSet) DurationVar(p *time.<b>Duration</b>, name string, value time.<b>Duration</b>, usage string) {
+		<a href="../src/flag/flag.go.html#line-821" class="path-duplicate">flag.go</a><a href="../src/flag/flag.go.html#line-821">#L821</a>: func DurationVar(p *time.<b>Duration</b>, name string, value time.<b>Duration</b>, usage string) {
+		<a href="../src/flag/flag.go.html#line-828" class="path-duplicate">flag.go</a><a href="../src/flag/flag.go.html#line-828">#L828</a>: func (f *FlagSet) Duration(name string, value time.<b>Duration</b>, usage string) *time.<b>Duration</b> {
+		<a href="../src/flag/flag.go.html#line-829" class="path-duplicate">flag.go</a><a href="../src/flag/flag.go.html#line-829">#L829</a>: 	p := new(time.<b>Duration</b>)
+		<a href="../src/flag/flag.go.html#line-837" class="path-duplicate">flag.go</a><a href="../src/flag/flag.go.html#line-837">#L837</a>: func Duration(name string, value time.<b>Duration</b>, usage string) *time.<b>Duration</b> {
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws.html">github.com/aws/aws-sdk-go/aws</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/config.go.html#line-222">config.go#L222</a>: 	SleepDelay func(time.<b>Duration</b>)
+		<a href="../src/github.com/aws/aws-sdk-go/aws/config.go.html#line-422" class="path-duplicate">config.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/config.go.html#line-422">#L422</a>: func (c *Config) WithSleepDelay(fn func(time.<b>Duration</b>)) *Config {
+		<a href="../src/github.com/aws/aws-sdk-go/aws/context_sleep.go.html#line-12">context_sleep.go#L12</a>: func SleepWithContext(ctx Context, dur time.<b>Duration</b>) error {
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/client.html">github.com/aws/aws-sdk-go/aws/client</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/client/default_retryer.go.html#line-23">default_retryer.go#L23</a>: 	MinRetryDelay time.<b>Duration</b>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/client/default_retryer.go.html#line-27" class="path-duplicate">default_retryer.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/client/default_retryer.go.html#line-27">#L27</a>: 	MinThrottleDelay time.<b>Duration</b>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/client/default_retryer.go.html#line-31" class="path-duplicate">default_retryer.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/client/default_retryer.go.html#line-31">#L31</a>: 	MaxRetryDelay time.<b>Duration</b>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/client/default_retryer.go.html#line-35" class="path-duplicate">default_retryer.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/client/default_retryer.go.html#line-35">#L35</a>: 	MaxThrottleDelay time.<b>Duration</b>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/client/default_retryer.go.html#line-78" class="path-duplicate">default_retryer.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/client/default_retryer.go.html#line-78">#L78</a>: func (d DefaultRetryer) RetryRules(r *request.Request) time.<b>Duration</b> {
+		<a href="../src/github.com/aws/aws-sdk-go/aws/client/default_retryer.go.html#line-91" class="path-duplicate">default_retryer.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/client/default_retryer.go.html#line-91">#L91</a>: 	var initialDelay time.<b>Duration</b>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/client/default_retryer.go.html#line-110" class="path-duplicate">default_retryer.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/client/default_retryer.go.html#line-110">#L110</a>: 	var delay time.<b>Duration</b>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/client/default_retryer.go.html#line-115" class="path-duplicate">default_retryer.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/client/default_retryer.go.html#line-115">#L115</a>: 		delay = time.<b>Duration</b>(1&lt;&lt;uint64(retryCount)) * getJitterDelay(minDelay)
+		<a href="../src/github.com/aws/aws-sdk-go/aws/client/default_retryer.go.html#line-126" class="path-duplicate">default_retryer.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/client/default_retryer.go.html#line-126">#L126</a>: func getJitterDelay(duration time.<b>Duration</b>) time.<b>Duration</b> {
+		<a href="../src/github.com/aws/aws-sdk-go/aws/client/default_retryer.go.html#line-127" class="path-duplicate">default_retryer.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/client/default_retryer.go.html#line-127">#L127</a>: 	return time.<b>Duration</b>(sdkrand.SeededRand.Int63n(int64(duration)) + int64(duration))
+		<a href="../src/github.com/aws/aws-sdk-go/aws/client/default_retryer.go.html#line-148" class="path-duplicate">default_retryer.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/client/default_retryer.go.html#line-148">#L148</a>: func getRetryAfterDelay(r *request.Request) (time.<b>Duration</b>, bool) {
+		<a href="../src/github.com/aws/aws-sdk-go/aws/client/default_retryer.go.html#line-163" class="path-duplicate">default_retryer.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/client/default_retryer.go.html#line-163">#L163</a>: 	return time.<b>Duration</b>(delay) * time.Second, true
+		<a href="../src/github.com/aws/aws-sdk-go/aws/client/no_op_retryer.go.html#line-26">no_op_retryer.go#L26</a>: func (d NoOpRetryer) RetryRules(_ *request.Request) time.<b>Duration</b> {
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/credentials.html">github.com/aws/aws-sdk-go/aws/credentials</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/credentials/credentials.go.html#line-175">credentials.go#L175</a>: func (e *Expiry) SetExpiration(expiration time.Time, window time.<b>Duration</b>) {
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/credentials/ec2rolecreds.html">github.com/aws/aws-sdk-go/aws/credentials/ec2rolecreds</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/credentials/ec2rolecreds/ec2_role_provider.go.html#line-54">ec2_role_provider.go#L54</a>: 	ExpiryWindow time.<b>Duration</b>
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/credentials/endpointcreds.html">github.com/aws/aws-sdk-go/aws/credentials/endpointcreds</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/credentials/endpointcreds/provider.go.html#line-68">provider.go#L68</a>: 	ExpiryWindow time.<b>Duration</b>
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/credentials/processcreds.html">github.com/aws/aws-sdk-go/aws/credentials/processcreds</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/credentials/processcreds/provider.go.html#line-142">provider.go#L142</a>: 	DefaultDuration = time.<b>Duration</b>(15) * time.Minute
+		<a href="../src/github.com/aws/aws-sdk-go/aws/credentials/processcreds/provider.go.html#line-149" class="path-duplicate">provider.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/credentials/processcreds/provider.go.html#line-149">#L149</a>: 	DefaultTimeout = time.<b>Duration</b>(1) * time.Minute
+		<a href="../src/github.com/aws/aws-sdk-go/aws/credentials/processcreds/provider.go.html#line-160" class="path-duplicate">provider.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/credentials/processcreds/provider.go.html#line-160">#L160</a>: 	Duration time.<b>Duration</b>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/credentials/processcreds/provider.go.html#line-171" class="path-duplicate">provider.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/credentials/processcreds/provider.go.html#line-171">#L171</a>: 	ExpiryWindow time.<b>Duration</b>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/credentials/processcreds/provider.go.html#line-182" class="path-duplicate">provider.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/credentials/processcreds/provider.go.html#line-182">#L182</a>: 	Timeout time.<b>Duration</b>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/credentials/processcreds/provider.go.html#line-204" class="path-duplicate">provider.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/credentials/processcreds/provider.go.html#line-204">#L204</a>: func NewCredentialsTimeout(command string, timeout time.<b>Duration</b>) *credentials.Credentials {
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/credentials/stscreds.html">github.com/aws/aws-sdk-go/aws/credentials/stscreds</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/credentials/stscreds/assume_role_provider.go.html#line-128">assume_role_provider.go#L128</a>: var DefaultDuration = time.<b>Duration</b>(15) * time.Minute
+		<a href="../src/github.com/aws/aws-sdk-go/aws/credentials/stscreds/assume_role_provider.go.html#line-160" class="path-duplicate">assume_role_provider.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/credentials/stscreds/assume_role_provider.go.html#line-160">#L160</a>: 	Duration time.<b>Duration</b>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/credentials/stscreds/assume_role_provider.go.html#line-232" class="path-duplicate">assume_role_provider.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/credentials/stscreds/assume_role_provider.go.html#line-232">#L232</a>: 	ExpiryWindow time.<b>Duration</b>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/credentials/stscreds/assume_role_provider.go.html#line-310" class="path-duplicate">assume_role_provider.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/credentials/stscreds/assume_role_provider.go.html#line-310">#L310</a>: 	jitter := time.<b>Duration</b>(sdkrand.SeededRand.Float64() * p.MaxJitterFrac * float64(p.Duration))
+		<a href="../src/github.com/aws/aws-sdk-go/aws/credentials/stscreds/web_identity_provider.go.html#line-56">web_identity_provider.go#L56</a>: 	ExpiryWindow time.<b>Duration</b>
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/csm.html">github.com/aws/aws-sdk-go/aws/csm</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/csm/metric.go.html#line-13">metric.go#L13</a>: 	ns := time.<b>Duration</b>(time.Time(t).UnixNano())
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/ec2metadata.html">github.com/aws/aws-sdk-go/aws/ec2metadata</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/ec2metadata/api.go.html#line-19">api.go#L19</a>: func (c *EC2Metadata) getToken(ctx aws.Context, duration time.<b>Duration</b>) (tokenOutput, error) {
+		<a href="../src/github.com/aws/aws-sdk-go/aws/ec2metadata/service.go.html#line-156">service.go#L156</a>: 	TTL   time.<b>Duration</b>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/ec2metadata/service.go.html#line-185" class="path-duplicate">service.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/ec2metadata/service.go.html#line-185">#L185</a>: 		t := time.<b>Duration</b>(i) * time.Second
+		<a href="../src/github.com/aws/aws-sdk-go/aws/ec2metadata/token_provider.go.html#line-21">token_provider.go#L21</a>: 	configuredTTL time.<b>Duration</b>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/ec2metadata/token_provider.go.html#line-32" class="path-duplicate">token_provider.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/ec2metadata/token_provider.go.html#line-32">#L32</a>: func newTokenProvider(c *EC2Metadata, duration time.<b>Duration</b>) *tokenProvider {
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/request.html">github.com/aws/aws-sdk-go/aws/request</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/request/request.go.html#line-66">request.go#L66</a>: 	RetryDelay             time.<b>Duration</b>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/request/request.go.html#line-84" class="path-duplicate">request.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/request/request.go.html#line-84">#L84</a>: 	ExpireTime time.<b>Duration</b>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/request/request.go.html#line-315" class="path-duplicate">request.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/request/request.go.html#line-315">#L315</a>: func (r *Request) Presign(expire time.<b>Duration</b>) (string, error) {
+		<a href="../src/github.com/aws/aws-sdk-go/aws/request/request.go.html#line-341" class="path-duplicate">request.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/request/request.go.html#line-341">#L341</a>: func (r *Request) PresignRequest(expire time.<b>Duration</b>) (string, http.Header, error) {
+		<a href="../src/github.com/aws/aws-sdk-go/aws/request/request.go.html#line-351" class="path-duplicate">request.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/request/request.go.html#line-351">#L351</a>: func getPresignedURL(r *Request, expire time.<b>Duration</b>) (string, http.Header, error) {
+		<a href="../src/github.com/aws/aws-sdk-go/aws/request/retryer.go.html#line-23">retryer.go#L23</a>: 	RetryRules(*Request) time.<b>Duration</b>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/request/retryer.go.html#line-71" class="path-duplicate">retryer.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/request/retryer.go.html#line-71">#L71</a>: func (d noOpRetryer) RetryRules(_ *Request) time.<b>Duration</b> {
+		<a href="../src/github.com/aws/aws-sdk-go/aws/request/timeout_read_closer.go.html#line-25">timeout_read_closer.go#L25</a>: 	duration time.<b>Duration</b>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/request/timeout_read_closer.go.html#line-75" class="path-duplicate">timeout_read_closer.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/request/timeout_read_closer.go.html#line-75">#L75</a>: func WithResponseReadTimeout(duration time.<b>Duration</b>) Option {
+		<a href="../src/github.com/aws/aws-sdk-go/aws/request/waiter.go.html#line-34">waiter.go#L34</a>: type WaiterDelay func(attempt int) time.<b>Duration</b>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/request/waiter.go.html#line-39" class="path-duplicate">waiter.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/request/waiter.go.html#line-39">#L39</a>: func ConstantWaiterDelay(delay time.<b>Duration</b>) WaiterDelay {
+		<a href="../src/github.com/aws/aws-sdk-go/aws/request/waiter.go.html#line-40" class="path-duplicate">waiter.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/request/waiter.go.html#line-40">#L40</a>: 	return func(attempt int) time.<b>Duration</b> {
+		<a href="../src/github.com/aws/aws-sdk-go/aws/request/waiter.go.html#line-84" class="path-duplicate">waiter.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/request/waiter.go.html#line-84">#L84</a>: 	SleepWithContext func(aws.Context, time.<b>Duration</b>) error
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/session.html">github.com/aws/aws-sdk-go/aws/session</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/session/session.go.html#line-224">session.go#L224</a>: 	AssumeRoleDuration time.<b>Duration</b>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/session/shared_config.go.html#line-82">shared_config.go#L82</a>: 	AssumeRoleDuration *time.<b>Duration</b>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/session/shared_config.go.html#line-281" class="path-duplicate">shared_config.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/session/shared_config.go.html#line-281">#L281</a>: 			d := time.<b>Duration</b>(section.Int(roleDurationSecondsKey)) * time.Second
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/signer/v4.html">github.com/aws/aws-sdk-go/aws/signer/v4</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/signer/v4/v4.go.html#line-232">v4.go#L232</a>: 	ExpireTime       time.<b>Duration</b>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/signer/v4/v4.go.html#line-310" class="path-duplicate">v4.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/signer/v4/v4.go.html#line-310">#L310</a>: func (v4 Signer) Presign(r *http.Request, body io.ReadSeeker, service, region string, exp time.<b>Duration</b>, signTime time.Time) (http.Header, error) {
+		<a href="../src/github.com/aws/aws-sdk-go/aws/signer/v4/v4.go.html#line-314" class="path-duplicate">v4.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/signer/v4/v4.go.html#line-314">#L314</a>: func (v4 Signer) signWithBody(r *http.Request, body io.ReadSeeker, service, region string, exp time.<b>Duration</b>, isPresign bool, signTime time.Time) (http.Header, error) {
+
+	<a href="../pkg/github.com/caring/gopkg-logging.html">github.com/caring/gopkg-logging</a>
+		<a href="../src/github.com/caring/gopkg-logging/config.go.html#line-32">config.go#L32</a>: 	FlushInterval time.<b>Duration</b>
+		<a href="../src/github.com/caring/gopkg-logging/config.go.html#line-138" class="path-duplicate">config.go</a><a href="../src/github.com/caring/gopkg-logging/config.go.html#line-138">#L138</a>: 		final.FlushInterval = time.<b>Duration</b>(i) * time.Second
+		<a href="../src/github.com/caring/gopkg-logging/config.go.html#line-172" class="path-duplicate">config.go</a><a href="../src/github.com/caring/gopkg-logging/config.go.html#line-172">#L172</a>: func buildReportingCore(streamName string, enc zapcore.EncoderConfig, bufSize int64, flushInterval time.<b>Duration</b>) (zapcore.Core, io.Closer, error) {
+		<a href="../src/github.com/caring/gopkg-logging/config.go.html#line-190" class="path-duplicate">config.go</a><a href="../src/github.com/caring/gopkg-logging/config.go.html#line-190">#L190</a>: func buildMonitoringCore(streamName string, enc zapcore.EncoderConfig, bufSize int64, flushInterval time.<b>Duration</b>, lvl zapcore.Level) (zapcore.Core, io.Closer, error) {
+
+	<a href="../pkg/github.com/caring/gopkg-logging/internal/writer.html">github.com/caring/gopkg-logging/internal/writer</a>
+		<a href="../src/github.com/caring/gopkg-logging/internal/writer/buffer.go.html#line-29">buffer.go#L29</a>: func Buffer(writer zapcore.WriteSyncer, bufferSize int, flushInterval time.<b>Duration</b>) (zapcore.WriteSyncer, io.Closer) {
+
+	<a href="../pkg/github.com/caring/test/1-mocks/db.html">github.com/caring/test/1-mocks/db</a>
+		<a href="../src/github.com/caring/test/1-mocks/db/database.go.html#line-21">database.go#L21</a>: func WithConnMaxIdleTime(d time.<b>Duration</b>) Option {
+		<a href="../src/github.com/caring/test/1-mocks/db/database.go.html#line-26" class="path-duplicate">database.go</a><a href="../src/github.com/caring/test/1-mocks/db/database.go.html#line-26">#L26</a>: func WithConnMaxLifetime(d time.<b>Duration</b>) Option {
+
+	<a href="../pkg/github.com/go-sql-driver/mysql.html">github.com/go-sql-driver/mysql</a>
+		<a href="../src/github.com/go-sql-driver/mysql/buffer.go.html#line-31">buffer.go#L31</a>: 	timeout time.<b>Duration</b>
+		<a href="../src/github.com/go-sql-driver/mysql/connection.go.html#line-32">connection.go#L32</a>: 	writeTimeout     time.<b>Duration</b>
+		<a href="../src/github.com/go-sql-driver/mysql/dsn.go.html#line-50">dsn.go#L50</a>: 	Timeout          time.<b>Duration</b>     // Dial timeout
+		<a href="../src/github.com/go-sql-driver/mysql/dsn.go.html#line-51" class="path-duplicate">dsn.go</a><a href="../src/github.com/go-sql-driver/mysql/dsn.go.html#line-51">#L51</a>: 	ReadTimeout      time.<b>Duration</b>     // I/O read timeout
+		<a href="../src/github.com/go-sql-driver/mysql/dsn.go.html#line-52" class="path-duplicate">dsn.go</a><a href="../src/github.com/go-sql-driver/mysql/dsn.go.html#line-52">#L52</a>: 	WriteTimeout     time.<b>Duration</b>     // I/O write timeout
+
+	<a href="../pkg/github.com/golang/protobuf/ptypes.html">github.com/golang/protobuf/ptypes</a>
+		<a href="../src/github.com/golang/protobuf/ptypes/duration.go.html#line-26">duration.go#L26</a>: func Duration(dur *durationpb.Duration) (time.<b>Duration</b>, error) {
+		<a href="../src/github.com/golang/protobuf/ptypes/duration.go.html#line-30" class="path-duplicate">duration.go</a><a href="../src/github.com/golang/protobuf/ptypes/duration.go.html#line-30">#L30</a>: 	d := time.<b>Duration</b>(dur.Seconds) * time.Second
+		<a href="../src/github.com/golang/protobuf/ptypes/duration.go.html#line-35" class="path-duplicate">duration.go</a><a href="../src/github.com/golang/protobuf/ptypes/duration.go.html#line-35">#L35</a>: 		d += time.<b>Duration</b>(dur.Nanos) * time.Nanosecond
+		<a href="../src/github.com/golang/protobuf/ptypes/duration.go.html#line-46" class="path-duplicate">duration.go</a><a href="../src/github.com/golang/protobuf/ptypes/duration.go.html#line-46">#L46</a>: func DurationProto(d time.<b>Duration</b>) *durationpb.Duration {
+
+	<a href="../pkg/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap.html">github.com/grpc-ecosystem/go-grpc-middleware/logging/zap</a>
+		<a href="../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/options.go.html#line-54">options.go#L54</a>: type DurationToField func(duration time.<b>Duration</b>) zapcore.Field
+		<a href="../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/options.go.html#line-172" class="path-duplicate">options.go</a><a href="../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/options.go.html#line-172">#L172</a>: func DurationToTimeMillisField(duration time.<b>Duration</b>) zapcore.Field {
+		<a href="../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/options.go.html#line-178" class="path-duplicate">options.go</a><a href="../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/options.go.html#line-178">#L178</a>: func DurationToDurationField(duration time.<b>Duration</b>) zapcore.Field {
+		<a href="../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/options.go.html#line-182" class="path-duplicate">options.go</a><a href="../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/options.go.html#line-182">#L182</a>: func durationToMilliseconds(duration time.<b>Duration</b>) float32 {
+
+	<a href="../pkg/github.com/uber/jaeger-client-go.html">github.com/uber/jaeger-client-go</a>
+		<a href="../src/github.com/uber/jaeger-client-go/reporter_options.go.html#line-34">reporter_options.go#L34</a>: 	bufferFlushInterval time.<b>Duration</b>
+		<a href="../src/github.com/uber/jaeger-client-go/reporter_options.go.html#line-59" class="path-duplicate">reporter_options.go</a><a href="../src/github.com/uber/jaeger-client-go/reporter_options.go.html#line-59">#L59</a>: func (reporterOptions) BufferFlushInterval(bufferFlushInterval time.<b>Duration</b>) ReporterOption {
+		<a href="../src/github.com/uber/jaeger-client-go/sampler_remote_options.go.html#line-40">sampler_remote_options.go#L40</a>: 	samplingRefreshInterval time.<b>Duration</b>
+		<a href="../src/github.com/uber/jaeger-client-go/sampler_remote_options.go.html#line-96" class="path-duplicate">sampler_remote_options.go</a><a href="../src/github.com/uber/jaeger-client-go/sampler_remote_options.go.html#line-96">#L96</a>: func (SamplerOptionsFactory) SamplingRefreshInterval(samplingRefreshInterval time.<b>Duration</b>) SamplerOption {
+		<a href="../src/github.com/uber/jaeger-client-go/span.go.html#line-54">span.go#L54</a>: 	duration time.<b>Duration</b>
+		<a href="../src/github.com/uber/jaeger-client-go/span.go.html#line-147" class="path-duplicate">span.go</a><a href="../src/github.com/uber/jaeger-client-go/span.go.html#line-147">#L147</a>: func (s *Span) Duration() time.<b>Duration</b> {
+
+	<a href="../pkg/github.com/uber/jaeger-client-go/thrift.html">github.com/uber/jaeger-client-go/thrift</a>
+		<a href="../src/github.com/uber/jaeger-client-go/thrift/configuration.go.html#line-118">configuration.go#L118</a>: 	ConnectTimeout time.<b>Duration</b>
+		<a href="../src/github.com/uber/jaeger-client-go/thrift/configuration.go.html#line-119" class="path-duplicate">configuration.go</a><a href="../src/github.com/uber/jaeger-client-go/thrift/configuration.go.html#line-119">#L119</a>: 	SocketTimeout  time.<b>Duration</b>
+		<a href="../src/github.com/uber/jaeger-client-go/thrift/configuration.go.html#line-178" class="path-duplicate">configuration.go</a><a href="../src/github.com/uber/jaeger-client-go/thrift/configuration.go.html#line-178">#L178</a>: func (tc *TConfiguration) GetConnectTimeout() time.<b>Duration</b> {
+		<a href="../src/github.com/uber/jaeger-client-go/thrift/configuration.go.html#line-189" class="path-duplicate">configuration.go</a><a href="../src/github.com/uber/jaeger-client-go/thrift/configuration.go.html#line-189">#L189</a>: func (tc *TConfiguration) GetSocketTimeout() time.<b>Duration</b> {
+
+	<a href="../pkg/github.com/uber/jaeger-client-go/utils.html">github.com/uber/jaeger-client-go/utils</a>
+		<a href="../src/github.com/uber/jaeger-client-go/utils/reconnecting_udp_conn.go.html#line-47">reconnecting_udp_conn.go#L47</a>: func newReconnectingUDPConn(hostPort string, resolveTimeout time.<b>Duration</b>, resolveFunc resolveFunc, dialFunc dialFunc, logger log.Logger) (*reconnectingUDPConn, error) {
+		<a href="../src/github.com/uber/jaeger-client-go/utils/reconnecting_udp_conn.go.html#line-65" class="path-duplicate">reconnecting_udp_conn.go</a><a href="../src/github.com/uber/jaeger-client-go/utils/reconnecting_udp_conn.go.html#line-65">#L65</a>: func (c *reconnectingUDPConn) reconnectLoop(resolveTimeout time.<b>Duration</b>) {
+		<a href="../src/github.com/uber/jaeger-client-go/utils/udp_client.go.html#line-60">udp_client.go#L60</a>: 	AttemptReconnectInterval   time.<b>Duration</b>
+
+	<a href="../pkg/github.com/uber/jaeger-lib/metrics.html">github.com/uber/jaeger-lib/metrics</a>
+		<a href="../src/github.com/uber/jaeger-lib/metrics/factory.go.html#line-39">factory.go#L39</a>: 	Buckets []time.<b>Duration</b>
+		<a href="../src/github.com/uber/jaeger-lib/metrics/stopwatch.go.html#line-41">stopwatch.go#L41</a>: func (s Stopwatch) ElapsedTime() time.<b>Duration</b> {
+		<a href="../src/github.com/uber/jaeger-lib/metrics/timer.go.html#line-25">timer.go#L25</a>: 	Record(time.<b>Duration</b>)
+		<a href="../src/github.com/uber/jaeger-lib/metrics/timer.go.html#line-33" class="path-duplicate">timer.go</a><a href="../src/github.com/uber/jaeger-lib/metrics/timer.go.html#line-33">#L33</a>: func (nullTimer) Record(time.<b>Duration</b>) {}
+
+	<a href="../pkg/go.uber.org/atomic.html">go.uber.org/atomic</a>
+		<a href="../src/go.uber.org/atomic/duration.go.html#line-37">duration.go#L37</a>: var _zeroDuration time.<b>Duration</b>
+		<a href="../src/go.uber.org/atomic/duration.go.html#line-40" class="path-duplicate">duration.go</a><a href="../src/go.uber.org/atomic/duration.go.html#line-40">#L40</a>: func NewDuration(v time.<b>Duration</b>) *Duration {
+		<a href="../src/go.uber.org/atomic/duration.go.html#line-49" class="path-duplicate">duration.go</a><a href="../src/go.uber.org/atomic/duration.go.html#line-49">#L49</a>: func (x *Duration) Load() time.<b>Duration</b> {
+		<a href="../src/go.uber.org/atomic/duration.go.html#line-50" class="path-duplicate">duration.go</a><a href="../src/go.uber.org/atomic/duration.go.html#line-50">#L50</a>: 	return time.<b>Duration</b>(x.v.Load())
+		<a href="../src/go.uber.org/atomic/duration.go.html#line-54" class="path-duplicate">duration.go</a><a href="../src/go.uber.org/atomic/duration.go.html#line-54">#L54</a>: func (x *Duration) Store(v time.<b>Duration</b>) {
+		<a href="../src/go.uber.org/atomic/duration.go.html#line-59" class="path-duplicate">duration.go</a><a href="../src/go.uber.org/atomic/duration.go.html#line-59">#L59</a>: func (x *Duration) CAS(o, n time.<b>Duration</b>) bool {
+		<a href="../src/go.uber.org/atomic/duration.go.html#line-65" class="path-duplicate">duration.go</a><a href="../src/go.uber.org/atomic/duration.go.html#line-65">#L65</a>: func (x *Duration) Swap(o time.<b>Duration</b>) time.<b>Duration</b> {
+		<a href="../src/go.uber.org/atomic/duration.go.html#line-66" class="path-duplicate">duration.go</a><a href="../src/go.uber.org/atomic/duration.go.html#line-66">#L66</a>: 	return time.<b>Duration</b>(x.v.Swap(int64(o)))
+		<a href="../src/go.uber.org/atomic/duration.go.html#line-76" class="path-duplicate">duration.go</a><a href="../src/go.uber.org/atomic/duration.go.html#line-76">#L76</a>: 	var v time.<b>Duration</b>
+		<a href="../src/go.uber.org/atomic/duration_ext.go.html#line-28">duration_ext.go#L28</a>: func (d *Duration) Add(n time.<b>Duration</b>) time.<b>Duration</b> {
+		<a href="../src/go.uber.org/atomic/duration_ext.go.html#line-29" class="path-duplicate">duration_ext.go</a><a href="../src/go.uber.org/atomic/duration_ext.go.html#line-29">#L29</a>: 	return time.<b>Duration</b>(d.v.Add(int64(n)))
+		<a href="../src/go.uber.org/atomic/duration_ext.go.html#line-33" class="path-duplicate">duration_ext.go</a><a href="../src/go.uber.org/atomic/duration_ext.go.html#line-33">#L33</a>: func (d *Duration) Sub(n time.<b>Duration</b>) time.<b>Duration</b> {
+		<a href="../src/go.uber.org/atomic/duration_ext.go.html#line-34" class="path-duplicate">duration_ext.go</a><a href="../src/go.uber.org/atomic/duration_ext.go.html#line-34">#L34</a>: 	return time.<b>Duration</b>(d.v.Sub(int64(n)))
+
+	<a href="../pkg/go.uber.org/zap.html">go.uber.org/zap</a>
+		<a href="../src/go.uber.org/zap/array.go.html#line-58">array.go#L58</a>: func Durations(key string, ds []time.<b>Duration</b>) Field {
+		<a href="../src/go.uber.org/zap/array.go.html#line-178" class="path-duplicate">array.go</a><a href="../src/go.uber.org/zap/array.go.html#line-178">#L178</a>: type durations []time.<b>Duration</b>
+		<a href="../src/go.uber.org/zap/field.go.html#line-376">field.go#L376</a>: func Duration(key string, val time.<b>Duration</b>) Field {
+		<a href="../src/go.uber.org/zap/field.go.html#line-382" class="path-duplicate">field.go</a><a href="../src/go.uber.org/zap/field.go.html#line-382">#L382</a>: func Durationp(key string, val *time.<b>Duration</b>) Field {
+		<a href="../src/go.uber.org/zap/field.go.html#line-518" class="path-duplicate">field.go</a><a href="../src/go.uber.org/zap/field.go.html#line-518">#L518</a>: 	case time.<b>Duration</b>:
+		<a href="../src/go.uber.org/zap/field.go.html#line-520" class="path-duplicate">field.go</a><a href="../src/go.uber.org/zap/field.go.html#line-520">#L520</a>: 	case *time.<b>Duration</b>:
+		<a href="../src/go.uber.org/zap/field.go.html#line-522" class="path-duplicate">field.go</a><a href="../src/go.uber.org/zap/field.go.html#line-522">#L522</a>: 	case []time.<b>Duration</b>:
+
+	<a href="../pkg/go.uber.org/zap/zapcore.html">go.uber.org/zap/zapcore</a>
+		<a href="../src/go.uber.org/zap/zapcore/encoder.go.html#line-180">encoder.go#L180</a>: type DurationEncoder func(time.<b>Duration</b>, PrimitiveArrayEncoder)
+		<a href="../src/go.uber.org/zap/zapcore/encoder.go.html#line-183" class="path-duplicate">encoder.go</a><a href="../src/go.uber.org/zap/zapcore/encoder.go.html#line-183">#L183</a>: func SecondsDurationEncoder(d time.<b>Duration</b>, enc PrimitiveArrayEncoder) {
+		<a href="../src/go.uber.org/zap/zapcore/encoder.go.html#line-189" class="path-duplicate">encoder.go</a><a href="../src/go.uber.org/zap/zapcore/encoder.go.html#line-189">#L189</a>: func NanosDurationEncoder(d time.<b>Duration</b>, enc PrimitiveArrayEncoder) {
+		<a href="../src/go.uber.org/zap/zapcore/encoder.go.html#line-195" class="path-duplicate">encoder.go</a><a href="../src/go.uber.org/zap/zapcore/encoder.go.html#line-195">#L195</a>: func MillisDurationEncoder(d time.<b>Duration</b>, enc PrimitiveArrayEncoder) {
+		<a href="../src/go.uber.org/zap/zapcore/encoder.go.html#line-201" class="path-duplicate">encoder.go</a><a href="../src/go.uber.org/zap/zapcore/encoder.go.html#line-201">#L201</a>: func StringDurationEncoder(d time.<b>Duration</b>, enc PrimitiveArrayEncoder) {
+		<a href="../src/go.uber.org/zap/zapcore/encoder.go.html#line-310" class="path-duplicate">encoder.go</a><a href="../src/go.uber.org/zap/zapcore/encoder.go.html#line-310">#L310</a>: 	AddDuration(key string, value time.<b>Duration</b>)
+		<a href="../src/go.uber.org/zap/zapcore/encoder.go.html#line-345" class="path-duplicate">encoder.go</a><a href="../src/go.uber.org/zap/zapcore/encoder.go.html#line-345">#L345</a>: 	AppendDuration(time.<b>Duration</b>)
+		<a href="../src/go.uber.org/zap/zapcore/field.go.html#line-129">field.go#L129</a>: 		enc.AddDuration(f.Key, time.<b>Duration</b>(f.Integer))
+		<a href="../src/go.uber.org/zap/zapcore/json_encoder.go.html#line-121">json_encoder.go#L121</a>: func (enc *jsonEncoder) AddDuration(key string, val time.<b>Duration</b>) {
+		<a href="../src/go.uber.org/zap/zapcore/json_encoder.go.html#line-237" class="path-duplicate">json_encoder.go</a><a href="../src/go.uber.org/zap/zapcore/json_encoder.go.html#line-237">#L237</a>: func (enc *jsonEncoder) AppendDuration(val time.<b>Duration</b>) {
+		<a href="../src/go.uber.org/zap/zapcore/memory_encoder.go.html#line-69">memory_encoder.go#L69</a>: func (m MapObjectEncoder) AddDuration(k string, v time.<b>Duration</b>) { m.cur[k] = v }
+		<a href="../src/go.uber.org/zap/zapcore/memory_encoder.go.html#line-164" class="path-duplicate">memory_encoder.go</a><a href="../src/go.uber.org/zap/zapcore/memory_encoder.go.html#line-164">#L164</a>: func (s *sliceArrayEncoder) AppendDuration(v time.<b>Duration</b>) { s.elems = append(s.elems, v) }
+		<a href="../src/go.uber.org/zap/zapcore/sampler.go.html#line-65">sampler.go#L65</a>: func (c *counter) IncCheckReset(t time.Time, tick time.<b>Duration</b>) uint64 {
+		<a href="../src/go.uber.org/zap/zapcore/sampler.go.html#line-142" class="path-duplicate">sampler.go</a><a href="../src/go.uber.org/zap/zapcore/sampler.go.html#line-142">#L142</a>: func NewSamplerWithOptions(core Core, tick time.<b>Duration</b>, first, thereafter int, opts ...SamplerOption) Core {
+		<a href="../src/go.uber.org/zap/zapcore/sampler.go.html#line-162" class="path-duplicate">sampler.go</a><a href="../src/go.uber.org/zap/zapcore/sampler.go.html#line-162">#L162</a>: 	tick              time.<b>Duration</b>
+		<a href="../src/go.uber.org/zap/zapcore/sampler.go.html#line-180" class="path-duplicate">sampler.go</a><a href="../src/go.uber.org/zap/zapcore/sampler.go.html#line-180">#L180</a>: func NewSampler(core Core, tick time.<b>Duration</b>, first, thereafter int) Core {
+
+	<a href="../pkg/golang.org/x/net/http2.html">golang.org/x/net/http2</a>
+		<a href="../src/golang.org/x/net/http2/server.go.html#line-114">server.go#L114</a>: 	IdleTimeout time.<b>Duration</b>
+		<a href="../src/golang.org/x/net/http2/server.go.html#line-1329" class="path-duplicate">server.go</a><a href="../src/golang.org/x/net/http2/server.go.html#line-1329">#L1329</a>: func (sc *serverConn) shutDownIn(d time.<b>Duration</b>) {
+		<a href="../src/golang.org/x/net/http2/transport.go.html#line-117">transport.go#L117</a>: 	ReadIdleTimeout time.<b>Duration</b>
+		<a href="../src/golang.org/x/net/http2/transport.go.html#line-122" class="path-duplicate">transport.go</a><a href="../src/golang.org/x/net/http2/transport.go.html#line-122">#L122</a>: 	PingTimeout time.<b>Duration</b>
+		<a href="../src/golang.org/x/net/http2/transport.go.html#line-147" class="path-duplicate">transport.go</a><a href="../src/golang.org/x/net/http2/transport.go.html#line-147">#L147</a>: func (t *Transport) pingTimeout() time.<b>Duration</b> {
+		<a href="../src/golang.org/x/net/http2/transport.go.html#line-240" class="path-duplicate">transport.go</a><a href="../src/golang.org/x/net/http2/transport.go.html#line-240">#L240</a>: 	idleTimeout time.<b>Duration</b> // or 0 for never
+		<a href="../src/golang.org/x/net/http2/transport.go.html#line-488" class="path-duplicate">transport.go</a><a href="../src/golang.org/x/net/http2/transport.go.html#line-488">#L488</a>: 				case &lt;-time.After(time.Second * time.<b>Duration</b>(backoff)):
+		<a href="../src/golang.org/x/net/http2/transport.go.html#line-629" class="path-duplicate">transport.go</a><a href="../src/golang.org/x/net/http2/transport.go.html#line-629">#L629</a>: func (t *Transport) expectContinueTimeout() time.<b>Duration</b> {
+		<a href="../src/golang.org/x/net/http2/transport.go.html#line-987" class="path-duplicate">transport.go</a><a href="../src/golang.org/x/net/http2/transport.go.html#line-987">#L987</a>: func (cc *ClientConn) responseHeaderTimeout() time.<b>Duration</b> {
+		<a href="../src/golang.org/x/net/http2/transport.go.html#line-2596" class="path-duplicate">transport.go</a><a href="../src/golang.org/x/net/http2/transport.go.html#line-2596">#L2596</a>: 	delay  time.<b>Duration</b> // how long we should delay a delayed write for
+		<a href="../src/golang.org/x/net/http2/transport.go.html#line-2700" class="path-duplicate">transport.go</a><a href="../src/golang.org/x/net/http2/transport.go.html#line-2700">#L2700</a>: func (t *Transport) idleConnTimeout() time.<b>Duration</b> {
+
+	<a href="../pkg/golang.org/x/net/internal/timeseries.html">golang.org/x/net/internal/timeseries</a>
+		<a href="../src/golang.org/x/net/internal/timeseries/timeseries.go.html#line-19">timeseries.go#L19</a>: var timeSeriesResolutions = []time.<b>Duration</b>{
+		<a href="../src/golang.org/x/net/internal/timeseries/timeseries.go.html#line-32" class="path-duplicate">timeseries.go</a><a href="../src/golang.org/x/net/internal/timeseries/timeseries.go.html#line-32">#L32</a>: var minuteHourSeriesResolutions = []time.<b>Duration</b>{
+		<a href="../src/golang.org/x/net/internal/timeseries/timeseries.go.html#line-92" class="path-duplicate">timeseries.go</a><a href="../src/golang.org/x/net/internal/timeseries/timeseries.go.html#line-92">#L92</a>: 	size     time.<b>Duration</b>     // duration of the bucketed Observable
+		<a href="../src/golang.org/x/net/internal/timeseries/timeseries.go.html#line-109" class="path-duplicate">timeseries.go</a><a href="../src/golang.org/x/net/internal/timeseries/timeseries.go.html#line-109">#L109</a>: func (l *tsLevel) InitLevel(size time.<b>Duration</b>, numBuckets int, f func() Observable) {
+		<a href="../src/golang.org/x/net/internal/timeseries/timeseries.go.html#line-136" class="path-duplicate">timeseries.go</a><a href="../src/golang.org/x/net/internal/timeseries/timeseries.go.html#line-136">#L136</a>: func (ts *timeSeries) init(resolutions []time.<b>Duration</b>, f func() Observable, numBuckets int, clock Clock) {
+		<a href="../src/golang.org/x/net/internal/timeseries/timeseries.go.html#line-237" class="path-duplicate">timeseries.go</a><a href="../src/golang.org/x/net/internal/timeseries/timeseries.go.html#line-237">#L237</a>: 		if !t.Before(level.end.Add(level.size * time.<b>Duration</b>(ts.numBuckets))) {
+		<a href="../src/golang.org/x/net/internal/timeseries/timeseries.go.html#line-338" class="path-duplicate">timeseries.go</a><a href="../src/golang.org/x/net/internal/timeseries/timeseries.go.html#line-338">#L338</a>: func (ts *timeSeries) Recent(delta time.<b>Duration</b>) Observable {
+		<a href="../src/golang.org/x/net/internal/timeseries/timeseries.go.html#line-368" class="path-duplicate">timeseries.go</a><a href="../src/golang.org/x/net/internal/timeseries/timeseries.go.html#line-368">#L368</a>: 		if !start.Before(l.end.Add(-l.size * time.<b>Duration</b>(ts.numBuckets))) {
+		<a href="../src/golang.org/x/net/internal/timeseries/timeseries.go.html#line-384" class="path-duplicate">timeseries.go</a><a href="../src/golang.org/x/net/internal/timeseries/timeseries.go.html#line-384">#L384</a>: func (ts *timeSeries) RecentList(delta time.<b>Duration</b>, num int) []Observable {
+		<a href="../src/golang.org/x/net/internal/timeseries/timeseries.go.html#line-398" class="path-duplicate">timeseries.go</a><a href="../src/golang.org/x/net/internal/timeseries/timeseries.go.html#line-398">#L398</a>: 	dstInterval := finish.Sub(start) / time.<b>Duration</b>(num)
+		<a href="../src/golang.org/x/net/internal/timeseries/timeseries.go.html#line-400" class="path-duplicate">timeseries.go</a><a href="../src/golang.org/x/net/internal/timeseries/timeseries.go.html#line-400">#L400</a>: 	srcStart := l.end.Add(-srcInterval * time.<b>Duration</b>(ts.numBuckets))
+		<a href="../src/golang.org/x/net/internal/timeseries/timeseries.go.html#line-408" class="path-duplicate">timeseries.go</a><a href="../src/golang.org/x/net/internal/timeseries/timeseries.go.html#line-408">#L408</a>: 		srcStart = srcStart.Add(time.<b>Duration</b>(advance) * srcInterval)
+
+	<a href="../pkg/golang.org/x/net/trace.html">golang.org/x/net/trace</a>
+		<a href="../src/golang.org/x/net/trace/events.go.html#line-27">events.go#L27</a>: 	MaxErrAge time.<b>Duration</b>
+		<a href="../src/golang.org/x/net/trace/events.go.html#line-190" class="path-duplicate">events.go</a><a href="../src/golang.org/x/net/trace/events.go.html#line-190">#L190</a>: func (f *eventFamily) Count(now time.Time, maxErrAge time.<b>Duration</b>) (n int) {
+		<a href="../src/golang.org/x/net/trace/events.go.html#line-201" class="path-duplicate">events.go</a><a href="../src/golang.org/x/net/trace/events.go.html#line-201">#L201</a>: func (f *eventFamily) Copy(now time.Time, maxErrAge time.<b>Duration</b>) (els eventLogs) {
+		<a href="../src/golang.org/x/net/trace/events.go.html#line-231" class="path-duplicate">events.go</a><a href="../src/golang.org/x/net/trace/events.go.html#line-231">#L231</a>: 	Elapsed time.<b>Duration</b> // since previous event in log
+		<a href="../src/golang.org/x/net/trace/events.go.html#line-284" class="path-duplicate">events.go</a><a href="../src/golang.org/x/net/trace/events.go.html#line-284">#L284</a>: func (el *eventLog) hasRecentError(now time.Time, maxErrAge time.<b>Duration</b>) bool {
+		<a href="../src/golang.org/x/net/trace/events.go.html#line-296" class="path-duplicate">events.go</a><a href="../src/golang.org/x/net/trace/events.go.html#line-296">#L296</a>: func (el *eventLog) delta(t time.Time) (time.<b>Duration</b>, bool) {
+		<a href="../src/golang.org/x/net/trace/trace.go.html#line-661">trace.go#L661</a>: type minCond time.<b>Duration</b>
+		<a href="../src/golang.org/x/net/trace/trace.go.html#line-663" class="path-duplicate">trace.go</a><a href="../src/golang.org/x/net/trace/trace.go.html#line-663">#L663</a>: func (m minCond) match(t *trace) bool { return t.Elapsed &gt;= time.<b>Duration</b>(m) }
+		<a href="../src/golang.org/x/net/trace/trace.go.html#line-664" class="path-duplicate">trace.go</a><a href="../src/golang.org/x/net/trace/trace.go.html#line-664">#L664</a>: func (m minCond) String() string      { return fmt.Sprintf("≥%gs", time.<b>Duration</b>(m).Seconds()) }
+		<a href="../src/golang.org/x/net/trace/trace.go.html#line-688" class="path-duplicate">trace.go</a><a href="../src/golang.org/x/net/trace/trace.go.html#line-688">#L688</a>: 	Elapsed    time.<b>Duration</b> // since previous event in trace
+		<a href="../src/golang.org/x/net/trace/trace.go.html#line-729" class="path-duplicate">trace.go</a><a href="../src/golang.org/x/net/trace/trace.go.html#line-729">#L729</a>: 	Elapsed   time.<b>Duration</b> // Elapsed time for this trace, zero while active.
+		<a href="../src/golang.org/x/net/trace/trace.go.html#line-768" class="path-duplicate">trace.go</a><a href="../src/golang.org/x/net/trace/trace.go.html#line-768">#L768</a>: func (tr *trace) delta(t time.Time) (time.<b>Duration</b>, bool) {
+		<a href="../src/golang.org/x/net/trace/trace.go.html#line-934" class="path-duplicate">trace.go</a><a href="../src/golang.org/x/net/trace/trace.go.html#line-934">#L934</a>: func elapsed(d time.<b>Duration</b>) string {
+
+	<a href="../pkg/google.golang.org/grpc.html">google.golang.org/grpc</a>
+		<a href="../src/google.golang.org/grpc/backoff.go.html#line-43">backoff.go#L43</a>: 	MaxDelay time.<b>Duration</b>
+		<a href="../src/google.golang.org/grpc/backoff.go.html#line-60" class="path-duplicate">backoff.go</a><a href="../src/google.golang.org/grpc/backoff.go.html#line-60">#L60</a>: 	MinConnectTimeout time.<b>Duration</b>
+		<a href="../src/google.golang.org/grpc/dialoptions.go.html#line-53">dialoptions.go#L53</a>: 	timeout         time.<b>Duration</b>
+		<a href="../src/google.golang.org/grpc/dialoptions.go.html#line-65" class="path-duplicate">dialoptions.go</a><a href="../src/google.golang.org/grpc/dialoptions.go.html#line-65">#L65</a>: 	minConnectTimeout           func() time.<b>Duration</b>
+		<a href="../src/google.golang.org/grpc/dialoptions.go.html#line-241" class="path-duplicate">dialoptions.go</a><a href="../src/google.golang.org/grpc/dialoptions.go.html#line-241">#L241</a>: 		o.minConnectTimeout = func() time.<b>Duration</b> {
+		<a href="../src/google.golang.org/grpc/dialoptions.go.html#line-251" class="path-duplicate">dialoptions.go</a><a href="../src/google.golang.org/grpc/dialoptions.go.html#line-251">#L251</a>: func WithBackoffMaxDelay(md time.<b>Duration</b>) DialOption {
+		<a href="../src/google.golang.org/grpc/dialoptions.go.html#line-364" class="path-duplicate">dialoptions.go</a><a href="../src/google.golang.org/grpc/dialoptions.go.html#line-364">#L364</a>: func WithTimeout(d time.<b>Duration</b>) DialOption {
+		<a href="../src/google.golang.org/grpc/dialoptions.go.html#line-391" class="path-duplicate">dialoptions.go</a><a href="../src/google.golang.org/grpc/dialoptions.go.html#line-391">#L391</a>: func WithDialer(f func(string, time.<b>Duration</b>) (net.Conn, error)) DialOption {
+		<a href="../src/google.golang.org/grpc/dialoptions.go.html#line-598" class="path-duplicate">dialoptions.go</a><a href="../src/google.golang.org/grpc/dialoptions.go.html#line-598">#L598</a>: func withMinConnectDeadline(f func() time.<b>Duration</b>) DialOption {
+		<a href="../src/google.golang.org/grpc/server.go.html#line-164">server.go#L164</a>: 	connectionTimeout     time.<b>Duration</b>
+		<a href="../src/google.golang.org/grpc/server.go.html#line-469" class="path-duplicate">server.go</a><a href="../src/google.golang.org/grpc/server.go.html#line-469">#L469</a>: func ConnectionTimeout(d time.<b>Duration</b>) ServerOption {
+		<a href="../src/google.golang.org/grpc/server.go.html#line-776" class="path-duplicate">server.go</a><a href="../src/google.golang.org/grpc/server.go.html#line-776">#L776</a>: 	var tempDelay time.<b>Duration</b> // how long to sleep on accept failure
+		<a href="../src/google.golang.org/grpc/service_config.go.html#line-133">service_config.go#L133</a>: func parseDuration(s *string) (*time.<b>Duration</b>, error) {
+		<a href="../src/google.golang.org/grpc/service_config.go.html#line-147" class="path-duplicate">service_config.go</a><a href="../src/google.golang.org/grpc/service_config.go.html#line-147">#L147</a>: 	var d time.<b>Duration</b>
+		<a href="../src/google.golang.org/grpc/service_config.go.html#line-153" class="path-duplicate">service_config.go</a><a href="../src/google.golang.org/grpc/service_config.go.html#line-153">#L153</a>: 		d = time.<b>Duration</b>(i) * time.Second
+		<a href="../src/google.golang.org/grpc/service_config.go.html#line-167" class="path-duplicate">service_config.go</a><a href="../src/google.golang.org/grpc/service_config.go.html#line-167">#L167</a>: 		d += time.<b>Duration</b>(f)
+		<a href="../src/google.golang.org/grpc/stream.go.html#line-618">stream.go#L618</a>: 	var dur time.<b>Duration</b>
+		<a href="../src/google.golang.org/grpc/stream.go.html#line-620" class="path-duplicate">stream.go</a><a href="../src/google.golang.org/grpc/stream.go.html#line-620">#L620</a>: 		dur = time.Millisecond * time.<b>Duration</b>(pushback)
+		<a href="../src/google.golang.org/grpc/stream.go.html#line-628" class="path-duplicate">stream.go</a><a href="../src/google.golang.org/grpc/stream.go.html#line-628">#L628</a>: 		dur = time.<b>Duration</b>(grpcrand.Int63n(int64(cur)))
+		<a href="../src/google.golang.org/grpc/trace.go.html#line-60">trace.go#L60</a>: 	deadline   time.<b>Duration</b> // may be zero
+
+	<a href="../pkg/google.golang.org/grpc/backoff.html">google.golang.org/grpc/backoff</a>
+		<a href="../src/google.golang.org/grpc/backoff/backoff.go.html#line-32">backoff.go#L32</a>: 	BaseDelay time.<b>Duration</b>
+		<a href="../src/google.golang.org/grpc/backoff/backoff.go.html#line-39" class="path-duplicate">backoff.go</a><a href="../src/google.golang.org/grpc/backoff/backoff.go.html#line-39">#L39</a>: 	MaxDelay time.<b>Duration</b>
+
+	<a href="../pkg/google.golang.org/grpc/internal/backoff.html">google.golang.org/grpc/internal/backoff</a>
+		<a href="../src/google.golang.org/grpc/internal/backoff/backoff.go.html#line-37">backoff.go#L37</a>: 	Backoff(retries int) time.<b>Duration</b>
+		<a href="../src/google.golang.org/grpc/internal/backoff/backoff.go.html#line-54" class="path-duplicate">backoff.go</a><a href="../src/google.golang.org/grpc/internal/backoff/backoff.go.html#line-54">#L54</a>: func (bc Exponential) Backoff(retries int) time.<b>Duration</b> {
+		<a href="../src/google.golang.org/grpc/internal/backoff/backoff.go.html#line-72" class="path-duplicate">backoff.go</a><a href="../src/google.golang.org/grpc/internal/backoff/backoff.go.html#line-72">#L72</a>: 	return time.<b>Duration</b>(backoff)
+
+	<a href="../pkg/google.golang.org/grpc/internal/binarylog.html">google.golang.org/grpc/internal/binarylog</a>
+		<a href="../src/google.golang.org/grpc/internal/binarylog/method_logger.go.html#line-144">method_logger.go#L144</a>: 	Timeout      time.<b>Duration</b>
+
+	<a href="../pkg/google.golang.org/grpc/internal/grpcutil.html">google.golang.org/grpc/internal/grpcutil</a>
+		<a href="../src/google.golang.org/grpc/internal/grpcutil/encode_duration.go.html#line-30">encode_duration.go#L30</a>: func div(d, r time.<b>Duration</b>) int64 {
+		<a href="../src/google.golang.org/grpc/internal/grpcutil/encode_duration.go.html#line-41" class="path-duplicate">encode_duration.go</a><a href="../src/google.golang.org/grpc/internal/grpcutil/encode_duration.go.html#line-41">#L41</a>: func EncodeDuration(t time.<b>Duration</b>) string {
+
+	<a href="../pkg/google.golang.org/grpc/internal/serviceconfig.html">google.golang.org/grpc/internal/serviceconfig</a>
+		<a href="../src/google.golang.org/grpc/internal/serviceconfig/serviceconfig.go.html#line-139">serviceconfig.go#L139</a>: 	Timeout *time.<b>Duration</b>
+		<a href="../src/google.golang.org/grpc/internal/serviceconfig/serviceconfig.go.html#line-169" class="path-duplicate">serviceconfig.go</a><a href="../src/google.golang.org/grpc/internal/serviceconfig/serviceconfig.go.html#line-169">#L169</a>: 	InitialBackoff    time.<b>Duration</b>
+		<a href="../src/google.golang.org/grpc/internal/serviceconfig/serviceconfig.go.html#line-170" class="path-duplicate">serviceconfig.go</a><a href="../src/google.golang.org/grpc/internal/serviceconfig/serviceconfig.go.html#line-170">#L170</a>: 	MaxBackoff        time.<b>Duration</b>
+
+	<a href="../pkg/google.golang.org/grpc/internal/syscall.html">google.golang.org/grpc/internal/syscall</a>
+		<a href="../src/google.golang.org/grpc/internal/syscall/syscall_nonlinux.go.html#line-67">syscall_nonlinux.go#L67</a>: func SetTCPUserTimeout(conn net.Conn, timeout time.<b>Duration</b>) error {
+
+	<a href="../pkg/google.golang.org/grpc/internal/transport.html">google.golang.org/grpc/internal/transport</a>
+		<a href="../src/google.golang.org/grpc/internal/transport/defaults.go.html#line-31">defaults.go#L31</a>: 	infinity                      = time.<b>Duration</b>(math.MaxInt64)
+		<a href="../src/google.golang.org/grpc/internal/transport/handler_server.go.html#line-119">handler_server.go#L119</a>: 	timeout    time.<b>Duration</b>
+		<a href="../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1553">http2_client.go#L1553</a>: func minTime(a, b time.<b>Duration</b>) time.<b>Duration</b> {
+		<a href="../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1567" class="path-duplicate">http2_client.go</a><a href="../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1567">#L1567</a>: 	timeoutLeft := time.<b>Duration</b>(0)
+		<a href="../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1580" class="path-duplicate">http2_client.go</a><a href="../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1580">#L1580</a>: 				timer.Reset(time.<b>Duration</b>(lastRead) + t.kp.Time - time.<b>Duration</b>(time.Now().UnixNano()))
+		<a href="../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-385">http2_server.go#L385</a>: 		timeout    time.<b>Duration</b>
+		<a href="../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1107" class="path-duplicate">http2_server.go</a><a href="../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1107">#L1107</a>: 	kpTimeoutLeft := time.<b>Duration</b>(0)
+		<a href="../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1163" class="path-duplicate">http2_server.go</a><a href="../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1163">#L1163</a>: 				kpTimer.Reset(time.<b>Duration</b>(lastRead) + t.kp.Time - time.<b>Duration</b>(time.Now().UnixNano()))
+		<a href="../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1407" class="path-duplicate">http2_server.go</a><a href="../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1407">#L1407</a>: func getJitter(v time.<b>Duration</b>) time.<b>Duration</b> {
+		<a href="../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1414" class="path-duplicate">http2_server.go</a><a href="../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1414">#L1414</a>: 	return time.<b>Duration</b>(j)
+		<a href="../src/google.golang.org/grpc/internal/transport/http_util.go.html#line-187">http_util.go#L187</a>: func timeoutUnitToDuration(u timeoutUnit) (d time.<b>Duration</b>, ok bool) {
+		<a href="../src/google.golang.org/grpc/internal/transport/http_util.go.html#line-206" class="path-duplicate">http_util.go</a><a href="../src/google.golang.org/grpc/internal/transport/http_util.go.html#line-206">#L206</a>: func decodeTimeout(s string) (time.<b>Duration</b>, error) {
+		<a href="../src/google.golang.org/grpc/internal/transport/http_util.go.html#line-227" class="path-duplicate">http_util.go</a><a href="../src/google.golang.org/grpc/internal/transport/http_util.go.html#line-227">#L227</a>: 		return time.<b>Duration</b>(math.MaxInt64), nil
+		<a href="../src/google.golang.org/grpc/internal/transport/http_util.go.html#line-229" class="path-duplicate">http_util.go</a><a href="../src/google.golang.org/grpc/internal/transport/http_util.go.html#line-229">#L229</a>: 	return d * time.<b>Duration</b>(t), nil
+		<a href="../src/google.golang.org/grpc/internal/transport/transport.go.html#line-522">transport.go#L522</a>: 	ConnectionTimeout     time.<b>Duration</b>
+
+	<a href="../pkg/google.golang.org/grpc/keepalive.html">google.golang.org/grpc/keepalive</a>
+		<a href="../src/google.golang.org/grpc/keepalive/keepalive.go.html#line-37">keepalive.go#L37</a>: 	Time time.<b>Duration</b> // The current default value is infinity.
+		<a href="../src/google.golang.org/grpc/keepalive/keepalive.go.html#line-41" class="path-duplicate">keepalive.go</a><a href="../src/google.golang.org/grpc/keepalive/keepalive.go.html#line-41">#L41</a>: 	Timeout time.<b>Duration</b> // The current default value is 20 seconds.
+		<a href="../src/google.golang.org/grpc/keepalive/keepalive.go.html#line-55" class="path-duplicate">keepalive.go</a><a href="../src/google.golang.org/grpc/keepalive/keepalive.go.html#line-55">#L55</a>: 	MaxConnectionIdle time.<b>Duration</b> // The current default value is infinity.
+		<a href="../src/google.golang.org/grpc/keepalive/keepalive.go.html#line-60" class="path-duplicate">keepalive.go</a><a href="../src/google.golang.org/grpc/keepalive/keepalive.go.html#line-60">#L60</a>: 	MaxConnectionAge time.<b>Duration</b> // The current default value is infinity.
+		<a href="../src/google.golang.org/grpc/keepalive/keepalive.go.html#line-63" class="path-duplicate">keepalive.go</a><a href="../src/google.golang.org/grpc/keepalive/keepalive.go.html#line-63">#L63</a>: 	MaxConnectionAgeGrace time.<b>Duration</b> // The current default value is infinity.
+		<a href="../src/google.golang.org/grpc/keepalive/keepalive.go.html#line-67" class="path-duplicate">keepalive.go</a><a href="../src/google.golang.org/grpc/keepalive/keepalive.go.html#line-67">#L67</a>: 	Time time.<b>Duration</b> // The current default value is 2 hours.
+		<a href="../src/google.golang.org/grpc/keepalive/keepalive.go.html#line-71" class="path-duplicate">keepalive.go</a><a href="../src/google.golang.org/grpc/keepalive/keepalive.go.html#line-71">#L71</a>: 	Timeout time.<b>Duration</b> // The current default value is 20 seconds.
+		<a href="../src/google.golang.org/grpc/keepalive/keepalive.go.html#line-80" class="path-duplicate">keepalive.go</a><a href="../src/google.golang.org/grpc/keepalive/keepalive.go.html#line-80">#L80</a>: 	MinTime time.<b>Duration</b> // The current default value is 5 minutes.
+
+	<a href="../pkg/google.golang.org/protobuf/types/known/durationpb.html">google.golang.org/protobuf/types/known/durationpb</a>
+		<a href="../src/google.golang.org/protobuf/types/known/durationpb/duration.pb.go.html#line-167">duration.pb.go#L167</a>: func New(d time.<b>Duration</b>) *Duration {
+		<a href="../src/google.golang.org/protobuf/types/known/durationpb/duration.pb.go.html#line-176" class="path-duplicate">duration.pb.go</a><a href="../src/google.golang.org/protobuf/types/known/durationpb/duration.pb.go.html#line-176">#L176</a>: func (x *Duration) AsDuration() time.<b>Duration</b> {
+		<a href="../src/google.golang.org/protobuf/types/known/durationpb/duration.pb.go.html#line-179" class="path-duplicate">duration.pb.go</a><a href="../src/google.golang.org/protobuf/types/known/durationpb/duration.pb.go.html#line-179">#L179</a>: 	d := time.<b>Duration</b>(secs) * time.Second
+		<a href="../src/google.golang.org/protobuf/types/known/durationpb/duration.pb.go.html#line-180" class="path-duplicate">duration.pb.go</a><a href="../src/google.golang.org/protobuf/types/known/durationpb/duration.pb.go.html#line-180">#L180</a>: 	overflow := d/time.Second != time.<b>Duration</b>(secs)
+		<a href="../src/google.golang.org/protobuf/types/known/durationpb/duration.pb.go.html#line-181" class="path-duplicate">duration.pb.go</a><a href="../src/google.golang.org/protobuf/types/known/durationpb/duration.pb.go.html#line-181">#L181</a>: 	d += time.<b>Duration</b>(nanos) * time.Nanosecond
+		<a href="../src/google.golang.org/protobuf/types/known/durationpb/duration.pb.go.html#line-187" class="path-duplicate">duration.pb.go</a><a href="../src/google.golang.org/protobuf/types/known/durationpb/duration.pb.go.html#line-187">#L187</a>: 			return time.<b>Duration</b>(math.MinInt64)
+		<a href="../src/google.golang.org/protobuf/types/known/durationpb/duration.pb.go.html#line-189" class="path-duplicate">duration.pb.go</a><a href="../src/google.golang.org/protobuf/types/known/durationpb/duration.pb.go.html#line-189">#L189</a>: 			return time.<b>Duration</b>(math.MaxInt64)
+
+	<a href="../pkg/net.html">net</a>
+		<a href="../src/net/dial.go.html#line-40">dial.go#L40</a>: 	Timeout time.<b>Duration</b>
+		<a href="../src/net/dial.go.html#line-71" class="path-duplicate">dial.go</a><a href="../src/net/dial.go.html#line-71">#L71</a>: 	FallbackDelay time.<b>Duration</b>
+		<a href="../src/net/dial.go.html#line-80" class="path-duplicate">dial.go</a><a href="../src/net/dial.go.html#line-80">#L80</a>: 	KeepAlive time.<b>Duration</b>
+		<a href="../src/net/dial.go.html#line-146" class="path-duplicate">dial.go</a><a href="../src/net/dial.go.html#line-146">#L146</a>: 	timeout := timeRemaining / time.<b>Duration</b>(addrsRemaining)
+		<a href="../src/net/dial.go.html#line-159" class="path-duplicate">dial.go</a><a href="../src/net/dial.go.html#line-159">#L159</a>: func (d *Dialer) fallbackDelay() time.<b>Duration</b> {
+		<a href="../src/net/dial.go.html#line-332" class="path-duplicate">dial.go</a><a href="../src/net/dial.go.html#line-332">#L332</a>: func DialTimeout(network, address string, timeout time.<b>Duration</b>) (Conn, error) {
+		<a href="../src/net/dial.go.html#line-618" class="path-duplicate">dial.go</a><a href="../src/net/dial.go.html#line-618">#L618</a>: 	KeepAlive time.<b>Duration</b>
+		<a href="../src/net/dnsclient_unix.go.html#line-145">dnsclient_unix.go#L145</a>: func (r *Resolver) exchange(ctx context.Context, server string, q dnsmessage.Question, timeout time.<b>Duration</b>, useTCP bool) (dnsmessage.Parser, dnsmessage.Header, error) {
+		<a href="../src/net/dnsconfig_unix.go.html#line-28">dnsconfig_unix.go#L28</a>: 	timeout       time.<b>Duration</b> // wait before giving up on a query, including retries
+		<a href="../src/net/dnsconfig_unix.go.html#line-112" class="path-duplicate">dnsconfig_unix.go</a><a href="../src/net/dnsconfig_unix.go.html#line-112">#L112</a>: 					conf.timeout = time.<b>Duration</b>(n) * time.Second
+		<a href="../src/net/hook.go.html#line-25">hook.go#L25</a>: 	testHookSetKeepAlive = func(time.<b>Duration</b>) {}
+		<a href="../src/net/tcpsock.go.html#line-170">tcpsock.go#L170</a>: func (c *TCPConn) SetKeepAlivePeriod(d time.<b>Duration</b>) error {
+		<a href="../src/net/tcpsock.go.html#line-343" class="path-duplicate">tcpsock.go</a><a href="../src/net/tcpsock.go.html#line-343">#L343</a>: func roundDurationUp(d time.<b>Duration</b>, to time.<b>Duration</b>) time.<b>Duration</b> {
+		<a href="../src/net/tcpsockopt_darwin.go.html#line-16">tcpsockopt_darwin.go#L16</a>: func setKeepAlivePeriod(fd *netFD, d time.<b>Duration</b>) error {
+
+	<a href="../pkg/net/http.html">net/http</a>
+		<a href="../src/net/http/client.go.html#line-106">client.go#L106</a>: 	Timeout time.<b>Duration</b>
+		<a href="../src/net/http/h2_bundle.go.html#line-3783">h2_bundle.go#L3783</a>: 	IdleTimeout time.<b>Duration</b>
+		<a href="../src/net/http/h2_bundle.go.html#line-5010" class="path-duplicate">h2_bundle.go</a><a href="../src/net/http/h2_bundle.go.html#line-5010">#L5010</a>: func (sc *http2serverConn) shutDownIn(d time.<b>Duration</b>) {
+		<a href="../src/net/http/h2_bundle.go.html#line-6758" class="path-duplicate">h2_bundle.go</a><a href="../src/net/http/h2_bundle.go.html#line-6758">#L6758</a>: 	ReadIdleTimeout time.<b>Duration</b>
+		<a href="../src/net/http/h2_bundle.go.html#line-6763" class="path-duplicate">h2_bundle.go</a><a href="../src/net/http/h2_bundle.go.html#line-6763">#L6763</a>: 	PingTimeout time.<b>Duration</b>
+		<a href="../src/net/http/h2_bundle.go.html#line-6788" class="path-duplicate">h2_bundle.go</a><a href="../src/net/http/h2_bundle.go.html#line-6788">#L6788</a>: func (t *http2Transport) pingTimeout() time.<b>Duration</b> {
+		<a href="../src/net/http/h2_bundle.go.html#line-6882" class="path-duplicate">h2_bundle.go</a><a href="../src/net/http/h2_bundle.go.html#line-6882">#L6882</a>: 	idleTimeout time.<b>Duration</b> // or 0 for never
+		<a href="../src/net/http/h2_bundle.go.html#line-7116" class="path-duplicate">h2_bundle.go</a><a href="../src/net/http/h2_bundle.go.html#line-7116">#L7116</a>: 				case &lt;-time.After(time.Second * time.<b>Duration</b>(backoff)):
+		<a href="../src/net/http/h2_bundle.go.html#line-7248" class="path-duplicate">h2_bundle.go</a><a href="../src/net/http/h2_bundle.go.html#line-7248">#L7248</a>: func (t *http2Transport) expectContinueTimeout() time.<b>Duration</b> {
+		<a href="../src/net/http/h2_bundle.go.html#line-7589" class="path-duplicate">h2_bundle.go</a><a href="../src/net/http/h2_bundle.go.html#line-7589">#L7589</a>: func (cc *http2ClientConn) responseHeaderTimeout() time.<b>Duration</b> {
+		<a href="../src/net/http/h2_bundle.go.html#line-9460" class="path-duplicate">h2_bundle.go</a><a href="../src/net/http/h2_bundle.go.html#line-9460">#L9460</a>: func (t *http2Transport) idleConnTimeout() time.<b>Duration</b> {
+		<a href="../src/net/http/server.go.html#line-2554">server.go#L2554</a>: 	ReadTimeout time.<b>Duration</b>
+		<a href="../src/net/http/server.go.html#line-2562" class="path-duplicate">server.go</a><a href="../src/net/http/server.go.html#line-2562">#L2562</a>: 	ReadHeaderTimeout time.<b>Duration</b>
+		<a href="../src/net/http/server.go.html#line-2569" class="path-duplicate">server.go</a><a href="../src/net/http/server.go.html#line-2569">#L2569</a>: 	WriteTimeout time.<b>Duration</b>
+		<a href="../src/net/http/server.go.html#line-2575" class="path-duplicate">server.go</a><a href="../src/net/http/server.go.html#line-2575">#L2575</a>: 	IdleTimeout time.<b>Duration</b>
+		<a href="../src/net/http/server.go.html#line-2721" class="path-duplicate">server.go</a><a href="../src/net/http/server.go.html#line-2721">#L2721</a>: 	nextPollInterval := func() time.<b>Duration</b> {
+		<a href="../src/net/http/server.go.html#line-2723" class="path-duplicate">server.go</a><a href="../src/net/http/server.go.html#line-2723">#L2723</a>: 		interval := pollIntervalBase + time.<b>Duration</b>(rand.Intn(int(pollIntervalBase/10)))
+		<a href="../src/net/http/server.go.html#line-2998" class="path-duplicate">server.go</a><a href="../src/net/http/server.go.html#line-2998">#L2998</a>: 	var tempDelay time.<b>Duration</b> // how long to sleep on accept failure
+		<a href="../src/net/http/server.go.html#line-3117" class="path-duplicate">server.go</a><a href="../src/net/http/server.go.html#line-3117">#L3117</a>: func (s *Server) idleTimeout() time.<b>Duration</b> {
+		<a href="../src/net/http/server.go.html#line-3124" class="path-duplicate">server.go</a><a href="../src/net/http/server.go.html#line-3124">#L3124</a>: func (s *Server) readHeaderTimeout() time.<b>Duration</b> {
+		<a href="../src/net/http/server.go.html#line-3287" class="path-duplicate">server.go</a><a href="../src/net/http/server.go.html#line-3287">#L3287</a>: func TimeoutHandler(h Handler, dt time.<b>Duration</b>, msg string) Handler {
+		<a href="../src/net/http/server.go.html#line-3302" class="path-duplicate">server.go</a><a href="../src/net/http/server.go.html#line-3302">#L3302</a>: 	dt      time.<b>Duration</b>
+		<a href="../src/net/http/transport.go.html#line-173">transport.go#L173</a>: 	TLSHandshakeTimeout time.<b>Duration</b>
+		<a href="../src/net/http/transport.go.html#line-212" class="path-duplicate">transport.go</a><a href="../src/net/http/transport.go.html#line-212">#L212</a>: 	IdleConnTimeout time.<b>Duration</b>
+		<a href="../src/net/http/transport.go.html#line-218" class="path-duplicate">transport.go</a><a href="../src/net/http/transport.go.html#line-218">#L218</a>: 	ResponseHeaderTimeout time.<b>Duration</b>
+		<a href="../src/net/http/transport.go.html#line-227" class="path-duplicate">transport.go</a><a href="../src/net/http/transport.go.html#line-227">#L227</a>: 	ExpectContinueTimeout time.<b>Duration</b>
+
+	<a href="../pkg/net/http/httptrace.html">net/http/httptrace</a>
+		<a href="../src/net/http/httptrace/trace.go.html#line-254">trace.go#L254</a>: 	IdleTime time.<b>Duration</b>
+
+	<a href="../pkg/net/http/httputil.html">net/http/httputil</a>
+		<a href="../src/net/http/httputil/reverseproxy.go.html#line-65">reverseproxy.go#L65</a>: 	FlushInterval time.<b>Duration</b>
+		<a href="../src/net/http/httputil/reverseproxy.go.html#line-410" class="path-duplicate">reverseproxy.go</a><a href="../src/net/http/httputil/reverseproxy.go.html#line-410">#L410</a>: func (p *ReverseProxy) flushInterval(res *http.Response) time.<b>Duration</b> {
+		<a href="../src/net/http/httputil/reverseproxy.go.html#line-427" class="path-duplicate">reverseproxy.go</a><a href="../src/net/http/httputil/reverseproxy.go.html#line-427">#L427</a>: func (p *ReverseProxy) copyResponse(dst io.Writer, src io.Reader, flushInterval time.<b>Duration</b>) error {
+		<a href="../src/net/http/httputil/reverseproxy.go.html#line-501" class="path-duplicate">reverseproxy.go</a><a href="../src/net/http/httputil/reverseproxy.go.html#line-501">#L501</a>: 	latency time.<b>Duration</b> // non-zero; negative means to flush immediately
+
+	<a href="../pkg/os.html">os</a>
+		<a href="../src/os/exec.go.html#line-142">exec.go#L142</a>: func (p *ProcessState) UserTime() time.<b>Duration</b> {
+		<a href="../src/os/exec.go.html#line-147" class="path-duplicate">exec.go</a><a href="../src/os/exec.go.html#line-147">#L147</a>: func (p *ProcessState) SystemTime() time.<b>Duration</b> {
+		<a href="../src/os/exec_unix.go.html#line-101">exec_unix.go#L101</a>: func (p *ProcessState) userTime() time.<b>Duration</b> {
+		<a href="../src/os/exec_unix.go.html#line-102" class="path-duplicate">exec_unix.go</a><a href="../src/os/exec_unix.go.html#line-102">#L102</a>: 	return time.<b>Duration</b>(p.rusage.Utime.Nano()) * time.Nanosecond
+		<a href="../src/os/exec_unix.go.html#line-105" class="path-duplicate">exec_unix.go</a><a href="../src/os/exec_unix.go.html#line-105">#L105</a>: func (p *ProcessState) systemTime() time.<b>Duration</b> {
+		<a href="../src/os/exec_unix.go.html#line-106" class="path-duplicate">exec_unix.go</a><a href="../src/os/exec_unix.go.html#line-106">#L106</a>: 	return time.<b>Duration</b>(p.rusage.Stime.Nano()) * time.Nanosecond
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

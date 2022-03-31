@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/uber/jaeger-client-go.RemotelyControlledSampler</title>
+<link href="../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../../../pkg/github.com/uber/jaeger-client-go.html">github.com/uber/jaeger-client-go</a>.<a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote.go.html#line-63">RemotelyControlledSampler</a></b></span>
+
+<span class="title">16 uses</span>
+
+	github.com/uber/jaeger-client-go (current package)
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote.go.html#line-63">sampler_remote.go#L63</a>: type <b>RemotelyControlledSampler</b> struct {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote.go.html#line-80" class="path-duplicate">sampler_remote.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote.go.html#line-80">#L80</a>: ) *<b>RemotelyControlledSampler</b> {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote.go.html#line-82" class="path-duplicate">sampler_remote.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote.go.html#line-82">#L82</a>: 	sampler := &amp;<b>RemotelyControlledSampler</b>{
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote.go.html#line-93" class="path-duplicate">sampler_remote.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote.go.html#line-93">#L93</a>: func (s *<b>RemotelyControlledSampler</b>) IsSampled(id TraceID, operation string) (bool, []Tag) {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote.go.html#line-98" class="path-duplicate">sampler_remote.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote.go.html#line-98">#L98</a>: func (s *<b>RemotelyControlledSampler</b>) OnCreateSpan(span *Span) SamplingDecision {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote.go.html#line-105" class="path-duplicate">sampler_remote.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote.go.html#line-105">#L105</a>: func (s *<b>RemotelyControlledSampler</b>) OnSetOperationName(span *Span, operationName string) SamplingDecision {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote.go.html#line-112" class="path-duplicate">sampler_remote.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote.go.html#line-112">#L112</a>: func (s *<b>RemotelyControlledSampler</b>) OnSetTag(span *Span, key string, value interface{}) SamplingDecision {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote.go.html#line-119" class="path-duplicate">sampler_remote.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote.go.html#line-119">#L119</a>: func (s *<b>RemotelyControlledSampler</b>) OnFinishSpan(span *Span) SamplingDecision {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote.go.html#line-126" class="path-duplicate">sampler_remote.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote.go.html#line-126">#L126</a>: func (s *<b>RemotelyControlledSampler</b>) Close() {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote.go.html#line-139" class="path-duplicate">sampler_remote.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote.go.html#line-139">#L139</a>: func (s *<b>RemotelyControlledSampler</b>) Equal(other Sampler) bool {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote.go.html#line-145" class="path-duplicate">sampler_remote.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote.go.html#line-145">#L145</a>: func (s *<b>RemotelyControlledSampler</b>) pollController() {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote.go.html#line-151" class="path-duplicate">sampler_remote.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote.go.html#line-151">#L151</a>: func (s *<b>RemotelyControlledSampler</b>) pollControllerWithTicker(ticker *time.Ticker) {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote.go.html#line-164" class="path-duplicate">sampler_remote.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote.go.html#line-164">#L164</a>: func (s *<b>RemotelyControlledSampler</b>) Sampler() SamplerV2 {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote.go.html#line-169" class="path-duplicate">sampler_remote.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote.go.html#line-169">#L169</a>: func (s *<b>RemotelyControlledSampler</b>) setSampler(sampler SamplerV2) {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote.go.html#line-177" class="path-duplicate">sampler_remote.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote.go.html#line-177">#L177</a>: func (s *<b>RemotelyControlledSampler</b>) UpdateSampler() {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote.go.html#line-204" class="path-duplicate">sampler_remote.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote.go.html#line-204">#L204</a>: func (s *<b>RemotelyControlledSampler</b>) updateSamplerViaUpdaters(strategy interface{}) error {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime.pageAlloc.summary</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/runtime.html">runtime</a>.<a href="../src/runtime/mpagealloc.go.html#line-175">pageAlloc</a>.<a href="../src/runtime/mpagealloc.go.html#line-197">summary</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">34 uses</span>
+
+	runtime (current package)
+		<a href="../src/runtime/mgcscavenge.go.html#line-615">mgcscavenge.go#L615</a>: 	if p.<b>summary</b>[len(p.<b>summary</b>)-1][maxChunk].max() &gt;= uint(minPages) {
+		<a href="../src/runtime/mgcscavenge.go.html#line-646" class="path-duplicate">mgcscavenge.go</a><a href="../src/runtime/mgcscavenge.go.html#line-646">#L646</a>: 			if p.<b>summary</b>[len(p.<b>summary</b>)-1][i].max() &lt; uint(minPages) {
+		<a href="../src/runtime/mpagealloc.go.html#line-197">mpagealloc.go#L197</a>: 	<b>summary</b> [summaryLevels][]pallocSum
+		<a href="../src/runtime/mpagealloc.go.html#line-431" class="path-duplicate">mpagealloc.go</a><a href="../src/runtime/mpagealloc.go.html#line-431">#L431</a>: 		x := p.<b>summary</b>[len(p.<b>summary</b>)-1][sc]
+		<a href="../src/runtime/mpagealloc.go.html#line-436" class="path-duplicate">mpagealloc.go</a><a href="../src/runtime/mpagealloc.go.html#line-436">#L436</a>: 		p.<b>summary</b>[len(p.<b>summary</b>)-1][sc] = y
+		<a href="../src/runtime/mpagealloc.go.html#line-440" class="path-duplicate">mpagealloc.go</a><a href="../src/runtime/mpagealloc.go.html#line-440">#L440</a>: 		summary := p.<b>summary</b>[len(p.<b>summary</b>)-1]
+		<a href="../src/runtime/mpagealloc.go.html#line-447" class="path-duplicate">mpagealloc.go</a><a href="../src/runtime/mpagealloc.go.html#line-447">#L447</a>: 		whole := p.<b>summary</b>[len(p.<b>summary</b>)-1][sc+1 : ec]
+		<a href="../src/runtime/mpagealloc.go.html#line-467" class="path-duplicate">mpagealloc.go</a><a href="../src/runtime/mpagealloc.go.html#line-467">#L467</a>: 		summary := p.<b>summary</b>[len(p.<b>summary</b>)-1]
+		<a href="../src/runtime/mpagealloc.go.html#line-475" class="path-duplicate">mpagealloc.go</a><a href="../src/runtime/mpagealloc.go.html#line-475">#L475</a>: 	for l := len(p.<b>summary</b>) - 2; l &gt;= 0 &amp;&amp; changed; l-- {
+		<a href="../src/runtime/mpagealloc.go.html#line-489" class="path-duplicate">mpagealloc.go</a><a href="../src/runtime/mpagealloc.go.html#line-489">#L489</a>: 			children := p.<b>summary</b>[l+1][i&lt;&lt;logEntriesPerBlock : (i+1)&lt;&lt;logEntriesPerBlock]
+		<a href="../src/runtime/mpagealloc.go.html#line-491" class="path-duplicate">mpagealloc.go</a><a href="../src/runtime/mpagealloc.go.html#line-491">#L491</a>: 			old := p.<b>summary</b>[l][i]
+		<a href="../src/runtime/mpagealloc.go.html#line-494" class="path-duplicate">mpagealloc.go</a><a href="../src/runtime/mpagealloc.go.html#line-494">#L494</a>: 				p.<b>summary</b>[l][i] = sum
+		<a href="../src/runtime/mpagealloc.go.html#line-663" class="path-duplicate">mpagealloc.go</a><a href="../src/runtime/mpagealloc.go.html#line-663">#L663</a>: 	for l := 0; l &lt; len(p.<b>summary</b>); l++ {
+		<a href="../src/runtime/mpagealloc.go.html#line-673" class="path-duplicate">mpagealloc.go</a><a href="../src/runtime/mpagealloc.go.html#line-673">#L673</a>: 		entries := p.<b>summary</b>[l][i : i+entriesPerBlock]
+		<a href="../src/runtime/mpagealloc.go.html#line-778" class="path-duplicate">mpagealloc.go</a><a href="../src/runtime/mpagealloc.go.html#line-778">#L778</a>: 		sum := p.<b>summary</b>[len(p.<b>summary</b>)-1][i]
+		<a href="../src/runtime/mpagealloc.go.html#line-779" class="path-duplicate">mpagealloc.go</a><a href="../src/runtime/mpagealloc.go.html#line-779">#L779</a>: 		print("runtime: summary[", len(p.<b>summary</b>)-1, "][", i, "] = (", sum.start(), ", ", sum.max(), ", ", sum.end(), ")\n")
+		<a href="../src/runtime/mpagealloc.go.html#line-821" class="path-duplicate">mpagealloc.go</a><a href="../src/runtime/mpagealloc.go.html#line-821">#L821</a>: 		if max := p.<b>summary</b>[len(p.<b>summary</b>)-1][i].max(); max &gt;= uint(npages) {
+		<a href="../src/runtime/mpagealloc_64bit.go.html#line-84">mpagealloc_64bit.go#L84</a>: 		p.<b>summary</b>[l] = *(*[]pallocSum)(unsafe.Pointer(&amp;sl))
+		<a href="../src/runtime/mpagealloc_64bit.go.html#line-118" class="path-duplicate">mpagealloc_64bit.go</a><a href="../src/runtime/mpagealloc_64bit.go.html#line-118">#L118</a>: 		base := unsafe.Pointer(&amp;p.<b>summary</b>[level][0])
+		<a href="../src/runtime/mpagealloc_64bit.go.html#line-145" class="path-duplicate">mpagealloc_64bit.go</a><a href="../src/runtime/mpagealloc_64bit.go.html#line-145">#L145</a>: 	for l := range p.<b>summary</b> {
+		<a href="../src/runtime/mpagealloc_64bit.go.html#line-153" class="path-duplicate">mpagealloc_64bit.go</a><a href="../src/runtime/mpagealloc_64bit.go.html#line-153">#L153</a>: 		if needIdxLimit &gt; len(p.<b>summary</b>[l]) {
+		<a href="../src/runtime/mpagealloc_64bit.go.html#line-154" class="path-duplicate">mpagealloc_64bit.go</a><a href="../src/runtime/mpagealloc_64bit.go.html#line-154">#L154</a>: 			p.<b>summary</b>[l] = p.<b>summary</b>[l][:needIdxLimit]
+		<a href="../src/runtime/mpagecache.go.html#line-126">mpagecache.go#L126</a>: 	if p.<b>summary</b>[len(p.<b>summary</b>)-1][ci] != 0 {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

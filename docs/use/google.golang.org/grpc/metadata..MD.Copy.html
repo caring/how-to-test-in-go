@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: google.golang.org/grpc/metadata.MD.Copy</title>
+<link href="../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../pkg/google.golang.org/grpc/metadata.html">google.golang.org/grpc/metadata</a>.<a href="../../../src/google.golang.org/grpc/metadata/metadata.go.html#line-39">MD</a>.<a href="../../../src/google.golang.org/grpc/metadata/metadata.go.html#line-91">Copy</a></b></span><span style="font-size: large;"><i> (method)</i></span>
+
+<span class="title">11 uses</span>
+
+	google.golang.org/grpc/metadata (current package)
+		<a href="../../../src/google.golang.org/grpc/metadata/metadata.go.html#line-91">metadata.go#L91</a>: func (md MD) <b>Copy</b>() MD {
+
+	<a href="../../../pkg/google.golang.org/grpc/internal/transport.html">google.golang.org/grpc/internal/transport</a>
+		<a href="../../../src/google.golang.org/grpc/internal/transport/handler_server.go.html#line-235">handler_server.go#L235</a>: 				Trailer: s.trailer.<b>Copy</b>(),
+		<a href="../../../src/google.golang.org/grpc/internal/transport/handler_server.go.html#line-321" class="path-duplicate">handler_server.go</a><a href="../../../src/google.golang.org/grpc/internal/transport/handler_server.go.html#line-321">#L321</a>: 				Header:      md.<b>Copy</b>(),
+		<a href="../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1441">http2_client.go#L1441</a>: 				Header:      metadata.MD(mdata).<b>Copy</b>(),
+		<a href="../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1449" class="path-duplicate">http2_client.go</a><a href="../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1449">#L1449</a>: 				Trailer:    metadata.MD(mdata).<b>Copy</b>(),
+		<a href="../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-572">http2_server.go#L572</a>: 			Header:      metadata.MD(mdata).<b>Copy</b>(),
+		<a href="../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-980" class="path-duplicate">http2_server.go</a><a href="../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-980">#L980</a>: 			Header:      s.header.<b>Copy</b>(),
+		<a href="../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1048" class="path-duplicate">http2_server.go</a><a href="../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1048">#L1048</a>: 			Trailer: s.trailer.<b>Copy</b>(),
+		<a href="../../../src/google.golang.org/grpc/internal/transport/transport.go.html#line-365">transport.go#L365</a>: 		return s.header.<b>Copy</b>(), nil
+		<a href="../../../src/google.golang.org/grpc/internal/transport/transport.go.html#line-371" class="path-duplicate">transport.go</a><a href="../../../src/google.golang.org/grpc/internal/transport/transport.go.html#line-371">#L371</a>: 	return s.header.<b>Copy</b>(), nil
+		<a href="../../../src/google.golang.org/grpc/internal/transport/transport.go.html#line-388" class="path-duplicate">transport.go</a><a href="../../../src/google.golang.org/grpc/internal/transport/transport.go.html#line-388">#L388</a>: 	c := s.trailer.<b>Copy</b>()
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

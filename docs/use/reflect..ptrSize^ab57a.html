@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: reflect.ptrSize</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">const <b><a href="../pkg/reflect.html">reflect</a>.<a href="../src/reflect/value.go.html#line-16">ptrSize</a></b></span>
+
+<span class="title">41 uses</span>
+
+	reflect (current package)
+		<a href="../src/reflect/abi.go.html#line-170">abi.go#L170</a>: 		ok = a.assignIntN(0, <b>ptrSize</b>, 1, 0b1)
+		<a href="../src/reflect/abi.go.html#line-179" class="path-duplicate">abi.go</a><a href="../src/reflect/abi.go.html#line-179">#L179</a>: 		ok = a.assignIntN(0, <b>ptrSize</b>, 1, 0b0)
+		<a href="../src/reflect/abi.go.html#line-183" class="path-duplicate">abi.go</a><a href="../src/reflect/abi.go.html#line-183">#L183</a>: 		a.stackAssign(<b>ptrSize</b>, <b>ptrSize</b>)
+		<a href="../src/reflect/abi.go.html#line-205" class="path-duplicate">abi.go</a><a href="../src/reflect/abi.go.html#line-205">#L205</a>: 		switch <b>ptrSize</b> {
+		<a href="../src/reflect/abi.go.html#line-218" class="path-duplicate">abi.go</a><a href="../src/reflect/abi.go.html#line-218">#L218</a>: 		return a.assignIntN(offset, <b>ptrSize</b>, 2, 0b01)
+		<a href="../src/reflect/abi.go.html#line-220" class="path-duplicate">abi.go</a><a href="../src/reflect/abi.go.html#line-220">#L220</a>: 		return a.assignIntN(offset, <b>ptrSize</b>, 2, 0b10)
+		<a href="../src/reflect/abi.go.html#line-222" class="path-duplicate">abi.go</a><a href="../src/reflect/abi.go.html#line-222">#L222</a>: 		return a.assignIntN(offset, <b>ptrSize</b>, 3, 0b001)
+		<a href="../src/reflect/abi.go.html#line-265" class="path-duplicate">abi.go</a><a href="../src/reflect/abi.go.html#line-265">#L265</a>: 	if ptrMap != 0 &amp;&amp; size != <b>ptrSize</b> {
+		<a href="../src/reflect/abi.go.html#line-416" class="path-duplicate">abi.go</a><a href="../src/reflect/abi.go.html#line-416">#L416</a>: 			spill += <b>ptrSize</b>
+		<a href="../src/reflect/abi.go.html#line-433" class="path-duplicate">abi.go</a><a href="../src/reflect/abi.go.html#line-433">#L433</a>: 	spill = align(spill, <b>ptrSize</b>)
+		<a href="../src/reflect/abi.go.html#line-438" class="path-duplicate">abi.go</a><a href="../src/reflect/abi.go.html#line-438">#L438</a>: 	retOffset := align(in.stackBytes, <b>ptrSize</b>)
+		<a href="../src/reflect/swapper.go.html#line-39">swapper.go#L39</a>: 		if size == <b>ptrSize</b> {
+		<a href="../src/reflect/type.go.html#line-1927">type.go#L1927</a>: 		mt.keysize = uint8(<b>ptrSize</b>)
+		<a href="../src/reflect/type.go.html#line-1933" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1933">#L1933</a>: 		mt.valuesize = uint8(<b>ptrSize</b>)
+		<a href="../src/reflect/type.go.html#line-2234" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2234">#L2234</a>: 	size := bucketSize*(1+ktyp.size+etyp.size) + overflowPad + <b>ptrSize</b>
+		<a href="../src/reflect/type.go.html#line-2240" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2240">#L2240</a>: 		nptr := (bucketSize*(1+ktyp.size+etyp.size) + <b>ptrSize</b>) / <b>ptrSize</b>
+		<a href="../src/reflect/type.go.html#line-2242" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2242">#L2242</a>: 		base := bucketSize / <b>ptrSize</b>
+		<a href="../src/reflect/type.go.html#line-2247" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2247">#L2247</a>: 		base += bucketSize * ktyp.size / <b>ptrSize</b>
+		<a href="../src/reflect/type.go.html#line-2252" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2252">#L2252</a>: 		base += bucketSize * etyp.size / <b>ptrSize</b>
+		<a href="../src/reflect/type.go.html#line-2253" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2253">#L2253</a>: 		base += overflowPad / <b>ptrSize</b>
+		<a href="../src/reflect/type.go.html#line-2258" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2258">#L2258</a>: 		ptrdata = (word + 1) * <b>ptrSize</b>
+		<a href="../src/reflect/type.go.html#line-2267" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2267">#L2267</a>: 		align:   <b>ptrSize</b>,
+		<a href="../src/reflect/type.go.html#line-2291" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2291">#L2291</a>: 	ptrs := typ.ptrdata / <b>ptrSize</b>
+		<a href="../src/reflect/type.go.html#line-2292" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2292">#L2292</a>: 	words := typ.size / <b>ptrSize</b>
+		<a href="../src/reflect/type.go.html#line-2315" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2315">#L2315</a>: 	ptrs := typ.ptrdata / <b>ptrSize</b>
+		<a href="../src/reflect/type.go.html#line-2762" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2762">#L2762</a>: 				n := (ft.offset() - off) / <b>ptrSize</b>
+		<a href="../src/reflect/type.go.html#line-2939" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2939">#L2939</a>: 	case typ.kind&amp;kindGCProg == 0 &amp;&amp; array.size &lt;= maxPtrmaskBytes*8*<b>ptrSize</b>:
+		<a href="../src/reflect/type.go.html#line-2943" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2943">#L2943</a>: 		mask := make([]byte, (array.ptrdata/<b>ptrSize</b>+7)/8)
+		<a href="../src/reflect/type.go.html#line-2953" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2953">#L2953</a>: 		elemPtrs := typ.ptrdata / <b>ptrSize</b>
+		<a href="../src/reflect/type.go.html#line-2954" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2954">#L2954</a>: 		elemWords := typ.size / <b>ptrSize</b>
+		<a href="../src/reflect/type.go.html#line-3066" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-3066">#L3066</a>: 		align: <b>ptrSize</b>,
+		<a href="../src/reflect/type.go.html#line-3071" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-3071">#L3071</a>: 		size:    align(abi.retOffset+abi.ret.stackBytes, <b>ptrSize</b>),
+		<a href="../src/reflect/type.go.html#line-3072" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-3072">#L3072</a>: 		ptrdata: uintptr(abi.stackPtrs.n) * <b>ptrSize</b>,
+		<a href="../src/reflect/type.go.html#line-3127" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-3127">#L3127</a>: 		for bv.n &lt; uint32(offset/uintptr(<b>ptrSize</b>)) {
+		<a href="../src/reflect/type.go.html#line-3134" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-3134">#L3134</a>: 		for bv.n &lt; uint32(offset/uintptr(<b>ptrSize</b>)) {
+		<a href="../src/reflect/value.go.html#line-16">value.go#L16</a>: const <b>ptrSize</b> = 4 &lt;&lt; (^uintptr(0) &gt;&gt; 63) // unsafe.Sizeof(uintptr(0)) but an ideal const
+		<a href="../src/reflect/value.go.html#line-97" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-97">#L97</a>: 	if v.typ.size != <b>ptrSize</b> || !v.typ.pointers() {
+		<a href="../src/reflect/value.go.html#line-540" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-540">#L540</a>: 	frameSize = align(frameSize, <b>ptrSize</b>)
+		<a href="../src/reflect/value.go.html#line-1059" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-1059">#L1059</a>: 	methodFrameSize = align(methodFrameSize, <b>ptrSize</b>)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Method Implmentations: github.com/uber/jaeger-client-go.Sampler</title>
+<link href="../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+<pre><code><span style="font-size:x-large;">type <a href="../../../pkg/github.com/uber/jaeger-client-go.html">github.com/uber/jaeger-client-go</a>.<b><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-32">Sampler</a></b></span><span style="font-size:large;"> <b><i>(interface)</i></b></span>
+
+<code><span class="title">Method Implmentations<span class="title-stat"><i></i></span></span>
+
+<div class="anchor" id="name-Close">	<a href="../../../use/github.com/uber/jaeger-client-go..Sampler.Close.html">Close</a>()
+		(*<a href="../../../pkg/github.com/uber/jaeger-client-go.html#name-ConstSampler">ConstSampler</a>).<b><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-79">Close</a></b>
+		(*<a href="../../../pkg/github.com/uber/jaeger-client-go.html#name-GuaranteedThroughputProbabilisticSampler">GuaranteedThroughputProbabilisticSampler</a>).<b><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-302">Close</a></b>
+		(*<a href="../../../pkg/github.com/uber/jaeger-client-go.html#name-PerOperationSampler">PerOperationSampler</a>).<b><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-455">Close</a></b>
+		(*<a href="../../../pkg/github.com/uber/jaeger-client-go.html#name-ProbabilisticSampler">ProbabilisticSampler</a>).<b><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-149">Close</a></b>
+		(*<a href="../../../pkg/github.com/uber/jaeger-client-go.html#name-RateLimitingSampler">RateLimitingSampler</a>).<b><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-223">Close</a></b>
+		(*<a href="../../../pkg/github.com/uber/jaeger-client-go.html#name-RemotelyControlledSampler">RemotelyControlledSampler</a>).<b><a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote.go.html#line-126">Close</a></b>
+		<a href="../../../pkg/github.com/uber/jaeger-client-go.html#name-SamplerV2Base">SamplerV2Base</a>.<b><a href="../../../src/github.com/uber/jaeger-client-go/sampler_v2.go.html#line-64">Close</a></b></div>
+<div class="anchor" id="name-Equal">	<a href="../../../use/github.com/uber/jaeger-client-go..Sampler.Equal.html">Equal</a>(other <a href="../../../pkg/github.com/uber/jaeger-client-go.html#name-Sampler">Sampler</a>) <a href="../../../pkg/builtin.html#name-bool">bool</a>
+		(*<a href="../../../pkg/github.com/uber/jaeger-client-go.html#name-ConstSampler">ConstSampler</a>).<b><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-84">Equal</a></b>
+		(*<a href="../../../pkg/github.com/uber/jaeger-client-go.html#name-GuaranteedThroughputProbabilisticSampler">GuaranteedThroughputProbabilisticSampler</a>).<b><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-308">Equal</a></b>
+		(*<a href="../../../pkg/github.com/uber/jaeger-client-go.html#name-PerOperationSampler">PerOperationSampler</a>).<b><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-483">Equal</a></b>
+		(*<a href="../../../pkg/github.com/uber/jaeger-client-go.html#name-ProbabilisticSampler">ProbabilisticSampler</a>).<b><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-154">Equal</a></b>
+		(*<a href="../../../pkg/github.com/uber/jaeger-client-go.html#name-RateLimitingSampler">RateLimitingSampler</a>).<b><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-228">Equal</a></b>
+		(*<a href="../../../pkg/github.com/uber/jaeger-client-go.html#name-RemotelyControlledSampler">RemotelyControlledSampler</a>).<b><a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote.go.html#line-139">Equal</a></b>
+		<a href="../../../pkg/github.com/uber/jaeger-client-go.html#name-SamplerV2Base">SamplerV2Base</a>.<b><a href="../../../src/github.com/uber/jaeger-client-go/sampler_v2.go.html#line-67">Equal</a></b></div>
+<div class="anchor" id="name-IsSampled">	<a href="../../../use/github.com/uber/jaeger-client-go..Sampler.IsSampled.html">IsSampled</a>(id <a href="../../../pkg/github.com/uber/jaeger-client-go.html#name-TraceID">TraceID</a>, operation <a href="../../../pkg/builtin.html#name-string">string</a>) (sampled <a href="../../../pkg/builtin.html#name-bool">bool</a>, tags []<a href="../../../pkg/github.com/uber/jaeger-client-go.html#name-Tag">Tag</a>)
+		(*<a href="../../../pkg/github.com/uber/jaeger-client-go.html#name-ConstSampler">ConstSampler</a>).<b><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-74">IsSampled</a></b>
+		(*<a href="../../../pkg/github.com/uber/jaeger-client-go.html#name-GuaranteedThroughputProbabilisticSampler">GuaranteedThroughputProbabilisticSampler</a>).<b><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-292">IsSampled</a></b>
+		(*<a href="../../../pkg/github.com/uber/jaeger-client-go.html#name-PerOperationSampler">PerOperationSampler</a>).<b><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-393">IsSampled</a></b>
+		(*<a href="../../../pkg/github.com/uber/jaeger-client-go.html#name-ProbabilisticSampler">ProbabilisticSampler</a>).<b><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-144">IsSampled</a></b>
+		(*<a href="../../../pkg/github.com/uber/jaeger-client-go.html#name-RateLimitingSampler">RateLimitingSampler</a>).<b><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-210">IsSampled</a></b>
+		(*<a href="../../../pkg/github.com/uber/jaeger-client-go.html#name-RemotelyControlledSampler">RemotelyControlledSampler</a>).<b><a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote.go.html#line-93">IsSampled</a></b>
+		<a href="../../../pkg/github.com/uber/jaeger-client-go.html#name-SamplerV2Base">SamplerV2Base</a>.<b><a href="../../../src/github.com/uber/jaeger-client-go/sampler_v2.go.html#line-59">IsSampled</a></b></div></code></pre><pre id="footer">
+<table><tr><td><img src="../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

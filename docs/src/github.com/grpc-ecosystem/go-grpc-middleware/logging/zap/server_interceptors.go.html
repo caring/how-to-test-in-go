@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Source: server_interceptors.go in package github.com/grpc-ecosystem/go-grpc-middleware/logging/zap</title>
+<link href="../../../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre id="header"><code><span class="title">Source File</span>
+	server_interceptors.go
+
+<span class="title">Belonging Package</span>
+	<a href="../../../../../../pkg/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap.html">github.com/grpc-ecosystem/go-grpc-middleware/logging/zap</a>
+</code></pre>
+<style>input[type=radio] {display: none;}
+input[id=r0]:checked ~pre label[for=r0],
+input[id=r1]:checked ~pre label[for=r1],
+input[id=r2]:checked ~pre label[for=r2],
+input[id=r3]:checked ~pre label[for=r3],
+input[id=r4]:checked ~pre label[for=r4],
+input[id=r5]:checked ~pre label[for=r5],
+input[id=r6]:checked ~pre label[for=r6],
+input[id=r7]:checked ~pre label[for=r7],
+input[id=r8]:checked ~pre label[for=r8],
+input[id=r9]:checked ~pre label[for=r9],
+input[id=r10]:checked ~pre label[for=r10],
+input[id=r11]:checked ~pre label[for=r11],
+input[id=r12]:checked ~pre label[for=r12],
+input[id=r13]:checked ~pre label[for=r13],
+input[id=r14]:checked ~pre label[for=r14],
+input[id=r15]:checked ~pre label[for=r15],
+input[id=r16]:checked ~pre label[for=r16],
+input[id=r17]:checked ~pre label[for=r17],
+input[id=r18]:checked ~pre label[for=r18],
+input[id=r19]:checked ~pre label[for=r19],
+input[id=r20]:checked ~pre label[for=r20],
+input[id=r21]:checked ~pre label[for=r21],
+input[id=r22]:checked ~pre label[for=r22],
+input[id=r23]:checked ~pre label[for=r23],
+input[id=r24]:checked ~pre label[for=r24],
+input[id=r25]:checked ~pre label[for=r25],
+input[id=r26]:checked ~pre label[for=r26],
+input[id=r27]:checked ~pre label[for=r27],
+input[id=r28]:checked ~pre label[for=r28],
+input[id=r29]:checked ~pre label[for=r29],
+input[id=r30]:checked ~pre label[for=r30],
+input[id=r31]:checked ~pre label[for=r31],
+input[id=r32]:checked ~pre label[for=r32],
+input[id=r33]:checked ~pre label[for=r33],
+input[id=r34]:checked ~pre label[for=r34],
+input[id=r35]:checked ~pre label[for=r35],
+input[id=r36]:checked ~pre label[for=r36],
+input[id=r37]:checked ~pre label[for=r37],
+input[id=r38]:checked ~pre label[for=r38],
+input[id=r39]:checked ~pre label[for=r39],
+input[id=r40]:checked ~pre label[for=r40]
+{background: #226; color: #ff8;}
+input[id=i0]:checked ~pre .i0,
+input[id=i1]:checked ~pre .i1,
+input[id=i2]:checked ~pre .i2,
+input[id=i3]:checked ~pre .i3,
+input[id=i4]:checked ~pre .i4,
+input[id=i5]:checked ~pre .i5,
+input[id=i6]:checked ~pre .i6,
+input[id=i7]:checked ~pre .i7
+{background: brown; color: #eed;}
+</style><input id="r0" type="radio" name="g"/>
+<input id="r1" type="radio" name="g"/>
+<input id="r2" type="radio" name="g"/>
+<input id="r3" type="radio" name="g"/>
+<input id="r4" type="radio" name="g"/>
+<input id="r5" type="radio" name="g"/>
+<input id="r6" type="radio" name="g"/>
+<input id="r7" type="radio" name="g"/>
+<input id="r8" type="radio" name="g"/>
+<input id="r9" type="radio" name="g"/>
+<input id="r10" type="radio" name="g"/>
+<input id="r11" type="radio" name="g"/>
+<input id="r12" type="radio" name="g"/>
+<input id="r13" type="radio" name="g"/>
+<input id="r14" type="radio" name="g"/>
+<input id="r15" type="radio" name="g"/>
+<input id="r16" type="radio" name="g"/>
+<input id="r17" type="radio" name="g"/>
+<input id="r18" type="radio" name="g"/>
+<input id="r19" type="radio" name="g"/>
+<input id="r20" type="radio" name="g"/>
+<input id="r21" type="radio" name="g"/>
+<input id="r22" type="radio" name="g"/>
+<input id="r23" type="radio" name="g"/>
+<input id="r24" type="radio" name="g"/>
+<input id="r25" type="radio" name="g"/>
+<input id="r26" type="radio" name="g"/>
+<input id="r27" type="radio" name="g"/>
+<input id="r28" type="radio" name="g"/>
+<input id="r29" type="radio" name="g"/>
+<input id="r30" type="radio" name="g"/>
+<input id="r31" type="radio" name="g"/>
+<input id="r32" type="radio" name="g"/>
+<input id="r33" type="radio" name="g"/>
+<input id="r34" type="radio" name="g"/>
+<input id="r35" type="radio" name="g"/>
+<input id="r36" type="radio" name="g"/>
+<input id="r37" type="radio" name="g"/>
+<input id="r38" type="radio" name="g"/>
+<input id="r39" type="radio" name="g"/>
+<input id="r40" type="radio" name="g"/>
+<input id="i0" type="radio" name="i"/>
+<input id="i1" type="radio" name="i"/>
+<input id="i2" type="radio" name="i"/>
+<input id="i3" type="radio" name="i"/>
+<input id="i4" type="radio" name="i"/>
+<input id="i5" type="radio" name="i"/>
+<input id="i6" type="radio" name="i"/>
+<input id="i7" type="radio" name="i"/>
+
+<pre class="line-numbers">
+<span class="codeline" id="line-1"><code><span class="keyword">package</span> grpc_zap</code></span>
+<span class="codeline" id="line-2"><code></code></span>
+<span class="codeline" id="line-3"><code><span class="keyword">import</span> (</code></span>
+<span class="codeline" id="line-4"><code>	<label for="i0"><span class="lit-string i0">"context"</span></label></code></span>
+<span class="codeline" id="line-5"><code>	<label for="i1"><span class="lit-string i1">"path"</span></label></code></span>
+<span class="codeline" id="line-6"><code>	<label for="i2"><span class="lit-string i2">"time"</span></label></code></span>
+<span class="codeline" id="line-7"><code></code></span>
+<span class="codeline" id="line-8"><code>	<label for="i3"><span class="lit-string i3">"github.com/grpc-ecosystem/go-grpc-middleware"</span></label></code></span>
+<span class="codeline" id="line-9"><code>	<label for="i4"><span class="lit-string i4">"github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/ctxzap"</span></label></code></span>
+<span class="codeline" id="line-10"><code>	<label for="i5"><span class="lit-string i5">"go.uber.org/zap"</span></label></code></span>
+<span class="codeline" id="line-11"><code>	<label for="i6"><span class="lit-string i6">"go.uber.org/zap/zapcore"</span></label></code></span>
+<span class="codeline" id="line-12"><code>	<label for="i7"><span class="lit-string i7">"google.golang.org/grpc"</span></label></code></span>
+<span class="codeline" id="line-13"><code>)</code></span>
+<span class="codeline" id="line-14"><code></code></span>
+<span class="codeline" id="line-15"><code><span class="keyword">var</span> (</code></span>
+<span class="codeline" id="line-16"><code>	<span class="comment">// SystemField is used in every log statement made through grpc_zap. Can be overwritten before any initialization code.</span></code></span>
+<span class="codeline" id="line-17"><code>	<a href="../../../../../../pkg/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap.html#name-SystemField" class="ident">SystemField</a> = <a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i5">zap</a>.<a href="../../../../../go.uber.org/zap/field.go.html#line-221" class="ident">String</a>(<span class="lit-string">"system"</span>, <span class="lit-string">"grpc"</span>)</code></span>
+<span class="codeline" id="line-18"><code></code></span>
+<span class="codeline" id="line-19"><code>	<span class="comment">// ServerField is used in every server-side log statement made through grpc_zap.Can be overwritten before initialization.</span></code></span>
+<span class="codeline" id="line-20"><code>	<a href="../../../../../../pkg/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap.html#name-ServerField" class="ident">ServerField</a> = <a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i5">zap</a>.<a href="../../../../../go.uber.org/zap/field.go.html#line-221" class="ident">String</a>(<span class="lit-string">"span.kind"</span>, <span class="lit-string">"server"</span>)</code></span>
+<span class="codeline" id="line-21"><code>)</code></span>
+<span class="codeline" id="line-22"><code></code></span>
+<span class="codeline" id="line-23"><code><span class="comment">// UnaryServerInterceptor returns a new unary server interceptors that adds zap.Logger to the context.</span></code></span>
+<span class="codeline" id="line-24"><code><span class="keyword">func</span> <label for="r0" class="ident"><a href="../../../../../../pkg/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap.html#name-UnaryServerInterceptor" class="ident">UnaryServerInterceptor</a></label>(<label for="r1" class="ident">logger</label> *<a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i5">zap</a>.<a href="../../../../../go.uber.org/zap/logger.go.html#line-41" class="ident">Logger</a>, <label for="r2" class="ident">opts</label> ...<a href="options.go.html#line-48" class="ident">Option</a>) <a href="../../../../../../pkg/google.golang.org/grpc.html" class="ident i7">grpc</a>.<a href="../../../../../google.golang.org/grpc/interceptor.go.html#line-84" class="ident">UnaryServerInterceptor</a> {</code></span>
+<span class="codeline" id="line-25"><code>	<label for="r3" class="ident">o</label> := <a href="options.go.html#line-28" class="ident">evaluateServerOpt</a>(<label for="r2" class="ident">opts</label>)</code></span>
+<span class="codeline" id="line-26"><code>	<span class="keyword">return</span> <span class="keyword">func</span>(<label for="r4" class="ident">ctx</label> <a href="../../../../../../pkg/context.html" class="ident i0">context</a>.<a href="../../../../../context/context.go.html#line-62" class="ident">Context</a>, <label for="r5" class="ident">req</label> <span class="keyword">interface</span>{}, <label for="r6" class="ident">info</label> *<a href="../../../../../../pkg/google.golang.org/grpc.html" class="ident i7">grpc</a>.<a href="../../../../../google.golang.org/grpc/interceptor.go.html#line-67" class="ident">UnaryServerInfo</a>, <label for="r7" class="ident">handler</label> <a href="../../../../../../pkg/google.golang.org/grpc.html" class="ident i7">grpc</a>.<a href="../../../../../google.golang.org/grpc/interceptor.go.html#line-78" class="ident">UnaryHandler</a>) (<span class="keyword">interface</span>{}, <a href="../../../../../../pkg/builtin.html#name-error" class="ident">error</a>) {</code></span>
+<span class="codeline" id="line-27"><code>		<label for="r8" class="ident">startTime</label> := <a href="../../../../../../pkg/time.html" class="ident i2">time</a>.<a href="../../../../../time/time.go.html#line-1073" class="ident">Now</a>()</code></span>
+<span class="codeline" id="line-28"><code></code></span>
+<span class="codeline" id="line-29"><code>		<label for="r9" class="ident">newCtx</label> := <a href="#line-87" class="ident">newLoggerForCall</a>(<label for="r4" class="ident">ctx</label>, <label for="r1" class="ident">logger</label>, <label for="r6" class="ident">info</label>.<a href="../../../../../google.golang.org/grpc/interceptor.go.html#line-71" class="ident">FullMethod</a>, <label for="r8" class="ident">startTime</label>)</code></span>
+<span class="codeline" id="line-30"><code></code></span>
+<span class="codeline" id="line-31"><code>		<label for="r10" class="ident">resp</label>, <label for="r11" class="ident">err</label> := <label for="r7" class="ident">handler</label>(<label for="r9" class="ident">newCtx</label>, <label for="r5" class="ident">req</label>)</code></span>
+<span class="codeline" id="line-32"><code>		<span class="keyword">if</span> !<label for="r3" class="ident">o</label>.<a href="options.go.html#line-23" class="ident">shouldLog</a>(<label for="r6" class="ident">info</label>.<a href="../../../../../google.golang.org/grpc/interceptor.go.html#line-71" class="ident">FullMethod</a>, <label for="r11" class="ident">err</label>) {</code></span>
+<span class="codeline" id="line-33"><code>			<span class="keyword">return</span> <label for="r10" class="ident">resp</label>, <label for="r11" class="ident">err</label></code></span>
+<span class="codeline" id="line-34"><code>		}</code></span>
+<span class="codeline" id="line-35"><code>		<label for="r12" class="ident">code</label> := <label for="r3" class="ident">o</label>.<a href="options.go.html#line-24" class="ident">codeFunc</a>(<label for="r11" class="ident">err</label>)</code></span>
+<span class="codeline" id="line-36"><code>		<label for="r13" class="ident">level</label> := <label for="r3" class="ident">o</label>.<a href="options.go.html#line-22" class="ident">levelFunc</a>(<label for="r12" class="ident">code</label>)</code></span>
+<span class="codeline" id="line-37"><code></code></span>
+<span class="codeline" id="line-38"><code>		<span class="comment">// re-extract logger from newCtx, as it may have extra fields that changed in the holder.</span></code></span>
+<span class="codeline" id="line-39"><code>		<a href="../../../../../../pkg/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/ctxzap.html" class="ident i4">ctxzap</a>.<a href="ctxzap/context.go.html#line-36" class="ident">Extract</a>(<label for="r9" class="ident">newCtx</label>).<a href="../../../../../go.uber.org/zap/logger.go.html#line-171" class="ident">Check</a>(<label for="r13" class="ident">level</label>, <span class="lit-string">"finished unary call with code "</span>+<label for="r12" class="ident">code</label>.<a href="../../../../../google.golang.org/grpc/codes/code_string.go.html#line-23" class="ident">String</a>()).<a href="../../../../../go.uber.org/zap/zapcore/entry.go.html#line-196" class="ident">Write</a>(</code></span>
+<span class="codeline" id="line-40"><code>			<a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i5">zap</a>.<a href="../../../../../go.uber.org/zap/error.go.html#line-34" class="ident">Error</a>(<label for="r11" class="ident">err</label>),</code></span>
+<span class="codeline" id="line-41"><code>			<a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i5">zap</a>.<a href="../../../../../go.uber.org/zap/field.go.html#line-221" class="ident">String</a>(<span class="lit-string">"grpc.code"</span>, <label for="r12" class="ident">code</label>.<a href="../../../../../google.golang.org/grpc/codes/code_string.go.html#line-23" class="ident">String</a>()),</code></span>
+<span class="codeline" id="line-42"><code>			<label for="r3" class="ident">o</label>.<a href="options.go.html#line-25" class="ident">durationFunc</a>(<a href="../../../../../../pkg/time.html" class="ident i2">time</a>.<a href="../../../../../time/time.go.html#line-875" class="ident">Since</a>(<label for="r8" class="ident">startTime</label>)),</code></span>
+<span class="codeline" id="line-43"><code>		)</code></span>
+<span class="codeline" id="line-44"><code></code></span>
+<span class="codeline" id="line-45"><code>		<span class="keyword">return</span> <label for="r10" class="ident">resp</label>, <label for="r11" class="ident">err</label></code></span>
+<span class="codeline" id="line-46"><code>	}</code></span>
+<span class="codeline" id="line-47"><code>}</code></span>
+<span class="codeline" id="line-48"><code></code></span>
+<span class="codeline" id="line-49"><code><span class="comment">// StreamServerInterceptor returns a new streaming server interceptor that adds zap.Logger to the context.</span></code></span>
+<span class="codeline" id="line-50"><code><span class="keyword">func</span> <label for="r14" class="ident"><a href="../../../../../../pkg/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap.html#name-StreamServerInterceptor" class="ident">StreamServerInterceptor</a></label>(<label for="r15" class="ident">logger</label> *<a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i5">zap</a>.<a href="../../../../../go.uber.org/zap/logger.go.html#line-41" class="ident">Logger</a>, <label for="r16" class="ident">opts</label> ...<a href="options.go.html#line-48" class="ident">Option</a>) <a href="../../../../../../pkg/google.golang.org/grpc.html" class="ident i7">grpc</a>.<a href="../../../../../google.golang.org/grpc/interceptor.go.html#line-101" class="ident">StreamServerInterceptor</a> {</code></span>
+<span class="codeline" id="line-51"><code>	<label for="r17" class="ident">o</label> := <a href="options.go.html#line-28" class="ident">evaluateServerOpt</a>(<label for="r16" class="ident">opts</label>)</code></span>
+<span class="codeline" id="line-52"><code>	<span class="keyword">return</span> <span class="keyword">func</span>(<label for="r18" class="ident">srv</label> <span class="keyword">interface</span>{}, <label for="r19" class="ident">stream</label> <a href="../../../../../../pkg/google.golang.org/grpc.html" class="ident i7">grpc</a>.<a href="../../../../../google.golang.org/grpc/stream.go.html#line-1367" class="ident">ServerStream</a>, <label for="r20" class="ident">info</label> *<a href="../../../../../../pkg/google.golang.org/grpc.html" class="ident i7">grpc</a>.<a href="../../../../../google.golang.org/grpc/interceptor.go.html#line-88" class="ident">StreamServerInfo</a>, <label for="r21" class="ident">handler</label> <a href="../../../../../../pkg/google.golang.org/grpc.html" class="ident i7">grpc</a>.<a href="../../../../../google.golang.org/grpc/stream.go.html#line-53" class="ident">StreamHandler</a>) <a href="../../../../../../pkg/builtin.html#name-error" class="ident">error</a> {</code></span>
+<span class="codeline" id="line-53"><code>		<label for="r22" class="ident">startTime</label> := <a href="../../../../../../pkg/time.html" class="ident i2">time</a>.<a href="../../../../../time/time.go.html#line-1073" class="ident">Now</a>()</code></span>
+<span class="codeline" id="line-54"><code>		<label for="r23" class="ident">newCtx</label> := <a href="#line-87" class="ident">newLoggerForCall</a>(<label for="r19" class="ident">stream</label>.<a href="../../../../../google.golang.org/grpc/stream.go.html#line-1383" class="ident">Context</a>(), <label for="r15" class="ident">logger</label>, <label for="r20" class="ident">info</label>.<a href="../../../../../google.golang.org/grpc/interceptor.go.html#line-90" class="ident">FullMethod</a>, <label for="r22" class="ident">startTime</label>)</code></span>
+<span class="codeline" id="line-55"><code>		<label for="r24" class="ident">wrapped</label> := <a href="../../../../../../pkg/github.com/grpc-ecosystem/go-grpc-middleware.html" class="ident i3">grpc_middleware</a>.<a href="../../wrappers.go.html#line-25" class="ident">WrapServerStream</a>(<label for="r19" class="ident">stream</label>)</code></span>
+<span class="codeline" id="line-56"><code>		<label for="r24" class="ident">wrapped</label>.<a href="../../wrappers.go.html#line-16" class="ident">WrappedContext</a> = <label for="r23" class="ident">newCtx</label></code></span>
+<span class="codeline" id="line-57"><code></code></span>
+<span class="codeline" id="line-58"><code>		<label for="r25" class="ident">err</label> := <label for="r21" class="ident">handler</label>(<label for="r18" class="ident">srv</label>, <label for="r24" class="ident">wrapped</label>)</code></span>
+<span class="codeline" id="line-59"><code>		<span class="keyword">if</span> !<label for="r17" class="ident">o</label>.<a href="options.go.html#line-23" class="ident">shouldLog</a>(<label for="r20" class="ident">info</label>.<a href="../../../../../google.golang.org/grpc/interceptor.go.html#line-90" class="ident">FullMethod</a>, <label for="r25" class="ident">err</label>) {</code></span>
+<span class="codeline" id="line-60"><code>			<span class="keyword">return</span> <label for="r25" class="ident">err</label></code></span>
+<span class="codeline" id="line-61"><code>		}</code></span>
+<span class="codeline" id="line-62"><code>		<label for="r26" class="ident">code</label> := <label for="r17" class="ident">o</label>.<a href="options.go.html#line-24" class="ident">codeFunc</a>(<label for="r25" class="ident">err</label>)</code></span>
+<span class="codeline" id="line-63"><code>		<label for="r27" class="ident">level</label> := <label for="r17" class="ident">o</label>.<a href="options.go.html#line-22" class="ident">levelFunc</a>(<label for="r26" class="ident">code</label>)</code></span>
+<span class="codeline" id="line-64"><code></code></span>
+<span class="codeline" id="line-65"><code>		<span class="comment">// re-extract logger from newCtx, as it may have extra fields that changed in the holder.</span></code></span>
+<span class="codeline" id="line-66"><code>		<a href="../../../../../../pkg/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/ctxzap.html" class="ident i4">ctxzap</a>.<a href="ctxzap/context.go.html#line-36" class="ident">Extract</a>(<label for="r23" class="ident">newCtx</label>).<a href="../../../../../go.uber.org/zap/logger.go.html#line-171" class="ident">Check</a>(<label for="r27" class="ident">level</label>, <span class="lit-string">"finished streaming call with code "</span>+<label for="r26" class="ident">code</label>.<a href="../../../../../google.golang.org/grpc/codes/code_string.go.html#line-23" class="ident">String</a>()).<a href="../../../../../go.uber.org/zap/zapcore/entry.go.html#line-196" class="ident">Write</a>(</code></span>
+<span class="codeline" id="line-67"><code>			<a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i5">zap</a>.<a href="../../../../../go.uber.org/zap/error.go.html#line-34" class="ident">Error</a>(<label for="r25" class="ident">err</label>),</code></span>
+<span class="codeline" id="line-68"><code>			<a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i5">zap</a>.<a href="../../../../../go.uber.org/zap/field.go.html#line-221" class="ident">String</a>(<span class="lit-string">"grpc.code"</span>, <label for="r26" class="ident">code</label>.<a href="../../../../../google.golang.org/grpc/codes/code_string.go.html#line-23" class="ident">String</a>()),</code></span>
+<span class="codeline" id="line-69"><code>			<label for="r17" class="ident">o</label>.<a href="options.go.html#line-25" class="ident">durationFunc</a>(<a href="../../../../../../pkg/time.html" class="ident i2">time</a>.<a href="../../../../../time/time.go.html#line-875" class="ident">Since</a>(<label for="r22" class="ident">startTime</label>)),</code></span>
+<span class="codeline" id="line-70"><code>		)</code></span>
+<span class="codeline" id="line-71"><code></code></span>
+<span class="codeline" id="line-72"><code>		<span class="keyword">return</span> <label for="r25" class="ident">err</label></code></span>
+<span class="codeline" id="line-73"><code>	}</code></span>
+<span class="codeline" id="line-74"><code>}</code></span>
+<span class="codeline" id="line-75"><code></code></span>
+<span class="codeline" id="line-76"><code><span class="keyword">func</span> <label for="r28" class="ident"><a href="../../../../../../pkg/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap.html#name-serverCallFields" class="ident">serverCallFields</a></label>(<label for="r29" class="ident">fullMethodString</label> <a href="../../../../../../pkg/builtin.html#name-string" class="ident">string</a>) []<a href="../../../../../../pkg/go.uber.org/zap/zapcore.html" class="ident i6">zapcore</a>.<a href="../../../../../go.uber.org/zap/zapcore/field.go.html#line-100" class="ident">Field</a> {</code></span>
+<span class="codeline" id="line-77"><code>	<label for="r30" class="ident">service</label> := <a href="../../../../../../pkg/path.html" class="ident i1">path</a>.<a href="../../../../../path/path.go.html#line-230" class="ident">Dir</a>(<label for="r29" class="ident">fullMethodString</label>)[<span class="lit-number">1</span>:]</code></span>
+<span class="codeline" id="line-78"><code>	<label for="r31" class="ident">method</label> := <a href="../../../../../../pkg/path.html" class="ident i1">path</a>.<a href="../../../../../path/path.go.html#line-199" class="ident">Base</a>(<label for="r29" class="ident">fullMethodString</label>)</code></span>
+<span class="codeline" id="line-79"><code>	<span class="keyword">return</span> []<a href="../../../../../../pkg/go.uber.org/zap/zapcore.html" class="ident i6">zapcore</a>.<a href="../../../../../go.uber.org/zap/zapcore/field.go.html#line-100" class="ident">Field</a>{</code></span>
+<span class="codeline" id="line-80"><code>		<a href="#line-17" class="ident">SystemField</a>,</code></span>
+<span class="codeline" id="line-81"><code>		<a href="#line-20" class="ident">ServerField</a>,</code></span>
+<span class="codeline" id="line-82"><code>		<a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i5">zap</a>.<a href="../../../../../go.uber.org/zap/field.go.html#line-221" class="ident">String</a>(<span class="lit-string">"grpc.service"</span>, <label for="r30" class="ident">service</label>),</code></span>
+<span class="codeline" id="line-83"><code>		<a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i5">zap</a>.<a href="../../../../../go.uber.org/zap/field.go.html#line-221" class="ident">String</a>(<span class="lit-string">"grpc.method"</span>, <label for="r31" class="ident">method</label>),</code></span>
+<span class="codeline" id="line-84"><code>	}</code></span>
+<span class="codeline" id="line-85"><code>}</code></span>
+<span class="codeline" id="line-86"><code></code></span>
+<span class="codeline" id="line-87"><code><span class="keyword">func</span> <label for="r32" class="ident"><a href="../../../../../../pkg/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap.html#name-newLoggerForCall" class="ident">newLoggerForCall</a></label>(<label for="r33" class="ident">ctx</label> <a href="../../../../../../pkg/context.html" class="ident i0">context</a>.<a href="../../../../../context/context.go.html#line-62" class="ident">Context</a>, <label for="r34" class="ident">logger</label> *<a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i5">zap</a>.<a href="../../../../../go.uber.org/zap/logger.go.html#line-41" class="ident">Logger</a>, <label for="r35" class="ident">fullMethodString</label> <a href="../../../../../../pkg/builtin.html#name-string" class="ident">string</a>, <label for="r36" class="ident">start</label> <a href="../../../../../../pkg/time.html" class="ident i2">time</a>.<a href="../../../../../time/time.go.html#line-127" class="ident">Time</a>) <a href="../../../../../../pkg/context.html" class="ident i0">context</a>.<a href="../../../../../context/context.go.html#line-62" class="ident">Context</a> {</code></span>
+<span class="codeline" id="line-88"><code>	<span class="keyword">var</span> <label for="r37" class="ident">f</label> []<a href="../../../../../../pkg/go.uber.org/zap/zapcore.html" class="ident i6">zapcore</a>.<a href="../../../../../go.uber.org/zap/zapcore/field.go.html#line-100" class="ident">Field</a></code></span>
+<span class="codeline" id="line-89"><code>	<label for="r37" class="ident">f</label> = <a href="../../../../../../pkg/builtin.html#name-append" class="ident">append</a>(<label for="r37" class="ident">f</label>, <a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i5">zap</a>.<a href="../../../../../go.uber.org/zap/field.go.html#line-221" class="ident">String</a>(<span class="lit-string">"grpc.start_time"</span>, <label for="r36" class="ident">start</label>.<a href="../../../../../time/format.go.html#line-586" class="ident">Format</a>(<a href="../../../../../../pkg/time.html" class="ident i2">time</a>.<a href="../../../../../time/format.go.html#line-101" class="ident">RFC3339</a>)))</code></span>
+<span class="codeline" id="line-90"><code>	<span class="keyword">if</span> <label for="r38" class="ident">d</label>, <label for="r39" class="ident">ok</label> := <label for="r33" class="ident">ctx</label>.<a href="../../../../../context/context.go.html#line-66" class="ident">Deadline</a>(); <label for="r39" class="ident">ok</label> {</code></span>
+<span class="codeline" id="line-91"><code>		<label for="r37" class="ident">f</label> = <a href="../../../../../../pkg/builtin.html#name-append" class="ident">append</a>(<label for="r37" class="ident">f</label>, <a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i5">zap</a>.<a href="../../../../../go.uber.org/zap/field.go.html#line-221" class="ident">String</a>(<span class="lit-string">"grpc.request.deadline"</span>, <label for="r38" class="ident">d</label>.<a href="../../../../../time/format.go.html#line-586" class="ident">Format</a>(<a href="../../../../../../pkg/time.html" class="ident i2">time</a>.<a href="../../../../../time/format.go.html#line-101" class="ident">RFC3339</a>)))</code></span>
+<span class="codeline" id="line-92"><code>	}</code></span>
+<span class="codeline" id="line-93"><code>	<label for="r40" class="ident">callLog</label> := <label for="r34" class="ident">logger</label>.<a href="../../../../../go.uber.org/zap/logger.go.html#line-159" class="ident">With</a>(<a href="../../../../../../pkg/builtin.html#name-append" class="ident">append</a>(<label for="r37" class="ident">f</label>, <a href="#line-76" class="ident">serverCallFields</a>(<label for="r35" class="ident">fullMethodString</label>)...)...)</code></span>
+<span class="codeline" id="line-94"><code>	<span class="keyword">return</span> <a href="../../../../../../pkg/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/ctxzap.html" class="ident i4">ctxzap</a>.<a href="ctxzap/context.go.html#line-60" class="ident">ToContext</a>(<label for="r33" class="ident">ctx</label>, <label for="r40" class="ident">callLog</label>)</code></span>
+<span class="codeline" id="line-95"><code>}</code></span>
+</pre><pre id="footer">
+<table><tr><td><img src="../../../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/go-sql-driver/mysql.mysqlConn.sequence</title>
+<link href="../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../pkg/github.com/go-sql-driver/mysql.html">github.com/go-sql-driver/mysql</a>.<a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-23">mysqlConn</a>.<a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-35">sequence</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">12 uses</span>
+
+	github.com/go-sql-driver/mysql (current package)
+		<a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-35">connection.go#L35</a>: 	<b>sequence</b>         uint8
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-46">packets.go#L46</a>: 		if data[3] != mc.<b>sequence</b> {
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-47" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-47">#L47</a>: 			if data[3] &gt; mc.<b>sequence</b> {
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-52" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-52">#L52</a>: 		mc.<b>sequence</b>++
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-142" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-142">#L142</a>: 		data[3] = mc.<b>sequence</b>
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-153" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-153">#L153</a>: 			mc.<b>sequence</b>++
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-423" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-423">#L423</a>: 	mc.<b>sequence</b> = 0
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-441" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-441">#L441</a>: 	mc.<b>sequence</b> = 0
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-463" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-463">#L463</a>: 	mc.<b>sequence</b> = 0
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-878" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-878">#L878</a>: 		stmt.mc.<b>sequence</b> = 0
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-903" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-903">#L903</a>: 	stmt.mc.<b>sequence</b> = 0
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-928" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-928">#L928</a>: 	mc.<b>sequence</b> = 0
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

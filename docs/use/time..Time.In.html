@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: time.Time.In</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/time.html">time</a>.<a href="../src/time/time.go.html#line-127">Time</a>.<a href="../src/time/time.go.html#line-1104">In</a></b></span><span style="font-size: large;"><i> (method)</i></span>
+
+<span class="title">4 uses</span>
+
+	time (current package)
+		<a href="../src/time/time.go.html#line-1104">time.go#L1104</a>: func (t Time) <b>In</b>(loc *Location) Time {
+
+	<a href="../pkg/github.com/go-sql-driver/mysql.html">github.com/go-sql-driver/mysql</a>
+		<a href="../src/github.com/go-sql-driver/mysql/connection.go.html#line-249">connection.go#L249</a>: 				buf, err = appendDateTime(buf, v.<b>In</b>(mc.cfg.Loc))
+		<a href="../src/github.com/go-sql-driver/mysql/packets.go.html#line-1119">packets.go#L1119</a>: 					b, err = appendDateTime(b, v.<b>In</b>(mc.cfg.Loc))
+
+	<a href="../pkg/go.uber.org/zap/zapcore.html">go.uber.org/zap/zapcore</a>
+		<a href="../src/go.uber.org/zap/zapcore/field.go.html#line-146">field.go#L146</a>: 			enc.AddTime(f.Key, time.Unix(0, f.Integer).<b>In</b>(f.Interface.(*time.Location)))
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

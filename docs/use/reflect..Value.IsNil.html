@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: reflect.Value.IsNil</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/reflect.html">reflect</a>.<a href="../src/reflect/value.go.html#line-39">Value</a>.<a href="../src/reflect/value.go.html#line-1423">IsNil</a></b></span><span style="font-size: large;"><i> (method)</i></span>
+
+<span class="title">151 uses</span>
+
+	reflect (current package)
+		<a href="../src/reflect/deepequal.go.html#line-50">deepequal.go#L50</a>: 			return !v1.<b>IsNil</b>() &amp;&amp; !v2.<b>IsNil</b>()
+		<a href="../src/reflect/deepequal.go.html#line-96" class="path-duplicate">deepequal.go</a><a href="../src/reflect/deepequal.go.html#line-96">#L96</a>: 		if v1.<b>IsNil</b>() != v2.<b>IsNil</b>() {
+		<a href="../src/reflect/deepequal.go.html#line-112" class="path-duplicate">deepequal.go</a><a href="../src/reflect/deepequal.go.html#line-112">#L112</a>: 		if v1.<b>IsNil</b>() || v2.<b>IsNil</b>() {
+		<a href="../src/reflect/deepequal.go.html#line-113" class="path-duplicate">deepequal.go</a><a href="../src/reflect/deepequal.go.html#line-113">#L113</a>: 			return v1.<b>IsNil</b>() == v2.<b>IsNil</b>()
+		<a href="../src/reflect/deepequal.go.html#line-129" class="path-duplicate">deepequal.go</a><a href="../src/reflect/deepequal.go.html#line-129">#L129</a>: 		if v1.<b>IsNil</b>() != v2.<b>IsNil</b>() {
+		<a href="../src/reflect/deepequal.go.html#line-147" class="path-duplicate">deepequal.go</a><a href="../src/reflect/deepequal.go.html#line-147">#L147</a>: 		if v1.<b>IsNil</b>() &amp;&amp; v2.<b>IsNil</b>() {
+		<a href="../src/reflect/value.go.html#line-1236">value.go#L1236</a>: 				if v.<b>IsNil</b>() {
+		<a href="../src/reflect/value.go.html#line-1423" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-1423">#L1423</a>: func (v Value) <b>IsNil</b>() bool {
+		<a href="../src/reflect/value.go.html#line-1475" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-1475">#L1475</a>: 		return v.<b>IsNil</b>()
+		<a href="../src/reflect/value.go.html#line-1681" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-1681">#L1681</a>: 	if v.typ.Kind() == Interface &amp;&amp; v.<b>IsNil</b>() {
+		<a href="../src/reflect/value.go.html#line-2794" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2794">#L2794</a>: 		if v.Kind() == Interface &amp;&amp; v.<b>IsNil</b>() {
+		<a href="../src/reflect/value.go.html#line-3143" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-3143">#L3143</a>: 	if v.<b>IsNil</b>() {
+
+	<a href="../pkg/database/sql.html">database/sql</a>
+		<a href="../src/database/sql/convert.go.html#line-392">convert.go#L392</a>: 	if dpv.<b>IsNil</b>() {
+		<a href="../src/database/sql/convert.go.html#line-555" class="path-duplicate">convert.go</a><a href="../src/database/sql/convert.go.html#line-555">#L555</a>: 		rv.<b>IsNil</b>() &amp;&amp;
+
+	<a href="../pkg/database/sql/driver.html">database/sql/driver</a>
+		<a href="../src/database/sql/driver/types.go.html#line-229">types.go#L229</a>: 		rv.<b>IsNil</b>() &amp;&amp;
+		<a href="../src/database/sql/driver/types.go.html#line-261" class="path-duplicate">types.go</a><a href="../src/database/sql/driver/types.go.html#line-261">#L261</a>: 		if rv.<b>IsNil</b>() {
+
+	<a href="../pkg/encoding/asn1.html">encoding/asn1</a>
+		<a href="../src/encoding/asn1/asn1.go.html#line-1114">asn1.go#L1114</a>: 	if v.Kind() != reflect.Ptr || v.<b>IsNil</b>() {
+
+	<a href="../pkg/encoding/json.html">encoding/json</a>
+		<a href="../src/encoding/json/decode.go.html#line-172">decode.go#L172</a>: 	if rv.Kind() != reflect.Ptr || rv.<b>IsNil</b>() {
+		<a href="../src/encoding/json/decode.go.html#line-450" class="path-duplicate">decode.go</a><a href="../src/encoding/json/decode.go.html#line-450">#L450</a>: 		if v.Kind() == reflect.Interface &amp;&amp; !v.<b>IsNil</b>() {
+		<a href="../src/encoding/json/decode.go.html#line-452" class="path-duplicate">decode.go</a><a href="../src/encoding/json/decode.go.html#line-452">#L452</a>: 			if e.Kind() == reflect.Ptr &amp;&amp; !e.<b>IsNil</b>() &amp;&amp; (!decodingNull || e.Elem().Kind() == reflect.Ptr) {
+		<a href="../src/encoding/json/decode.go.html#line-474" class="path-duplicate">decode.go</a><a href="../src/encoding/json/decode.go.html#line-474">#L474</a>: 		if v.<b>IsNil</b>() {
+		<a href="../src/encoding/json/decode.go.html#line-650" class="path-duplicate">decode.go</a><a href="../src/encoding/json/decode.go.html#line-650">#L650</a>: 		if v.<b>IsNil</b>() {
+		<a href="../src/encoding/json/decode.go.html#line-721" class="path-duplicate">decode.go</a><a href="../src/encoding/json/decode.go.html#line-721">#L721</a>: 						if subv.<b>IsNil</b>() {
+		<a href="../src/encoding/json/encode.go.html#line-354">encode.go#L354</a>: 		return v.<b>IsNil</b>()
+		<a href="../src/encoding/json/encode.go.html#line-470" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-470">#L470</a>: 	if v.Kind() == reflect.Ptr &amp;&amp; v.<b>IsNil</b>() {
+		<a href="../src/encoding/json/encode.go.html#line-491" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-491">#L491</a>: 	if va.<b>IsNil</b>() {
+		<a href="../src/encoding/json/encode.go.html#line-507" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-507">#L507</a>: 	if v.Kind() == reflect.Ptr &amp;&amp; v.<b>IsNil</b>() {
+		<a href="../src/encoding/json/encode.go.html#line-525" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-525">#L525</a>: 	if va.<b>IsNil</b>() {
+		<a href="../src/encoding/json/encode.go.html#line-712" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-712">#L712</a>: 	if v.<b>IsNil</b>() {
+		<a href="../src/encoding/json/encode.go.html#line-742" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-742">#L742</a>: 				if fv.<b>IsNil</b>() {
+		<a href="../src/encoding/json/encode.go.html#line-780" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-780">#L780</a>: 	if v.<b>IsNil</b>() {
+		<a href="../src/encoding/json/encode.go.html#line-835" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-835">#L835</a>: 	if v.<b>IsNil</b>() {
+		<a href="../src/encoding/json/encode.go.html#line-870" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-870">#L870</a>: 	if v.<b>IsNil</b>() {
+		<a href="../src/encoding/json/encode.go.html#line-931" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-931">#L931</a>: 	if v.<b>IsNil</b>() {
+		<a href="../src/encoding/json/encode.go.html#line-1012" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-1012">#L1012</a>: 		if w.k.Kind() == reflect.Ptr &amp;&amp; w.k.<b>IsNil</b>() {
+
+	<a href="../pkg/encoding/xml.html">encoding/xml</a>
+		<a href="../src/encoding/xml/marshal.go.html#line-424">marshal.go#L424</a>: 		if val.<b>IsNil</b>() {
+		<a href="../src/encoding/xml/marshal.go.html#line-515" class="path-duplicate">marshal.go</a><a href="../src/encoding/xml/marshal.go.html#line-515">#L515</a>: 		if fv.Kind() == reflect.Interface &amp;&amp; fv.<b>IsNil</b>() {
+		<a href="../src/encoding/xml/marshal.go.html#line-603" class="path-duplicate">marshal.go</a><a href="../src/encoding/xml/marshal.go.html#line-603">#L603</a>: 		if val.<b>IsNil</b>() {
+		<a href="../src/encoding/xml/marshal.go.html#line-797" class="path-duplicate">marshal.go</a><a href="../src/encoding/xml/marshal.go.html#line-797">#L797</a>: 		if vf.<b>IsNil</b>() {
+		<a href="../src/encoding/xml/marshal.go.html#line-945" class="path-duplicate">marshal.go</a><a href="../src/encoding/xml/marshal.go.html#line-945">#L945</a>: 				if vf.Kind() != reflect.Ptr &amp;&amp; vf.Kind() != reflect.Interface || !vf.<b>IsNil</b>() {
+		<a href="../src/encoding/xml/marshal.go.html#line-1055" class="path-duplicate">marshal.go</a><a href="../src/encoding/xml/marshal.go.html#line-1055">#L1055</a>: 		return v.<b>IsNil</b>()
+		<a href="../src/encoding/xml/read.go.html#line-248">read.go#L248</a>: 		if val.<b>IsNil</b>() {
+		<a href="../src/encoding/xml/read.go.html#line-325" class="path-duplicate">read.go</a><a href="../src/encoding/xml/read.go.html#line-325">#L325</a>: 	if val.Kind() == reflect.Interface &amp;&amp; !val.<b>IsNil</b>() {
+		<a href="../src/encoding/xml/read.go.html#line-327" class="path-duplicate">read.go</a><a href="../src/encoding/xml/read.go.html#line-327">#L327</a>: 		if e.Kind() == reflect.Ptr &amp;&amp; !e.<b>IsNil</b>() {
+		<a href="../src/encoding/xml/read.go.html#line-333" class="path-duplicate">read.go</a><a href="../src/encoding/xml/read.go.html#line-333">#L333</a>: 		if val.<b>IsNil</b>() {
+		<a href="../src/encoding/xml/read.go.html#line-606" class="path-duplicate">read.go</a><a href="../src/encoding/xml/read.go.html#line-606">#L606</a>: 		if dst.<b>IsNil</b>() {
+		<a href="../src/encoding/xml/typeinfo.go.html#line-362">typeinfo.go#L362</a>: 				if v.<b>IsNil</b>() {
+
+	<a href="../pkg/fmt.html">fmt</a>
+		<a href="../src/fmt/print.go.html#line-292">print.go#L292</a>: 	if val.Kind() == reflect.Interface &amp;&amp; !val.<b>IsNil</b>() {
+		<a href="../src/fmt/print.go.html#line-541" class="path-duplicate">print.go</a><a href="../src/fmt/print.go.html#line-541">#L541</a>: 		if v := reflect.ValueOf(arg); v.Kind() == reflect.Ptr &amp;&amp; v.<b>IsNil</b>() {
+		<a href="../src/fmt/print.go.html#line-761" class="path-duplicate">print.go</a><a href="../src/fmt/print.go.html#line-761">#L761</a>: 			if f.<b>IsNil</b>() {
+		<a href="../src/fmt/print.go.html#line-847" class="path-duplicate">print.go</a><a href="../src/fmt/print.go.html#line-847">#L847</a>: 			if f.Kind() == reflect.Slice &amp;&amp; f.<b>IsNil</b>() {
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/awsutil.html">github.com/aws/aws-sdk-go/aws/awsutil</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/copy.go.html#line-52">copy.go#L52</a>: 			if dst.CanSet() &amp;&amp; !src.<b>IsNil</b>() {
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/copy.go.html#line-78" class="path-duplicate">copy.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/copy.go.html#line-78">#L78</a>: 		if src.<b>IsNil</b>() {
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/copy.go.html#line-88" class="path-duplicate">copy.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/copy.go.html#line-88">#L88</a>: 		if src.<b>IsNil</b>() {
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/path_value.go.html#line-80">path_value.go#L80</a>: 				if !value.<b>IsNil</b>() {
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/path_value.go.html#line-86" class="path-duplicate">path_value.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/path_value.go.html#line-86">#L86</a>: 			if createPath &amp;&amp; value.Kind() == reflect.Ptr &amp;&amp; value.<b>IsNil</b>() {
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/path_value.go.html#line-96" class="path-duplicate">path_value.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/path_value.go.html#line-96">#L96</a>: 				if !createPath &amp;&amp; value.<b>IsNil</b>() {
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/path_value.go.html#line-139" class="path-duplicate">path_value.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/path_value.go.html#line-139">#L139</a>: 					if !createPath &amp;&amp; value.<b>IsNil</b>() {
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/path_value.go.html#line-165" class="path-duplicate">path_value.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/path_value.go.html#line-165">#L165</a>: 	if !v.IsValid() || (v.Kind() == reflect.Ptr &amp;&amp; v.<b>IsNil</b>()) {
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/path_value.go.html#line-190" class="path-duplicate">path_value.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/path_value.go.html#line-190">#L190</a>: 		if rval.Kind() == reflect.Ptr &amp;&amp; rval.<b>IsNil</b>() {
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/path_value.go.html#line-211" class="path-duplicate">path_value.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/path_value.go.html#line-211">#L211</a>: 		if srcVal.<b>IsNil</b>() {
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/prettify.go.html#line-45">prettify.go#L45</a>: 			if (f.Kind() == reflect.Ptr || f.Kind() == reflect.Slice || f.Kind() == reflect.Map) &amp;&amp; f.<b>IsNil</b>() {
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/string_value.go.html#line-33">string_value.go#L33</a>: 			if (fv.Kind() == reflect.Ptr || fv.Kind() == reflect.Slice) &amp;&amp; fv.<b>IsNil</b>() {
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/private/protocol.html">github.com/aws/aws-sdk-go/private/protocol</a>
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/idempotency.go.html#line-45">idempotency.go#L45</a>: 		if v.<b>IsNil</b>() &amp;&amp; v.CanSet() {
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil.html">github.com/aws/aws-sdk-go/private/protocol/json/jsonutil</a>
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/build.go.html#line-121">build.go#L121</a>: 		if (member.Kind() == reflect.Ptr || member.Kind() == reflect.Slice || member.Kind() == reflect.Map) &amp;&amp; member.<b>IsNil</b>() {
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/build.go.html#line-231" class="path-duplicate">build.go</a><a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/build.go.html#line-231">#L231</a>: 			if !value.<b>IsNil</b>() {
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/unmarshal.go.html#line-126">unmarshal.go#L126</a>: 		if value.<b>IsNil</b>() { // create the structure if it's nil
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/unmarshal.go.html#line-182" class="path-duplicate">unmarshal.go</a><a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/unmarshal.go.html#line-182">#L182</a>: 	if value.<b>IsNil</b>() {
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/unmarshal.go.html#line-206" class="path-duplicate">unmarshal.go</a><a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/unmarshal.go.html#line-206">#L206</a>: 	if value.<b>IsNil</b>() {
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/private/protocol/query/queryutil.html">github.com/aws/aws-sdk-go/private/protocol/query/queryutil</a>
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/query/queryutil/queryutil.go.html#line-119">queryutil.go#L119</a>: 	if !value.<b>IsNil</b>() &amp;&amp; value.Len() == 0 {
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/query/queryutil/queryutil.go.html#line-153" class="path-duplicate">queryutil.go</a><a href="../src/github.com/aws/aws-sdk-go/private/protocol/query/queryutil/queryutil.go.html#line-153">#L153</a>: 	if !value.<b>IsNil</b>() &amp;&amp; value.Len() == 0 {
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/query/queryutil/queryutil.go.html#line-221" class="path-duplicate">queryutil.go</a><a href="../src/github.com/aws/aws-sdk-go/private/protocol/query/queryutil/queryutil.go.html#line-221">#L221</a>: 		if !r.<b>IsNil</b>() {
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/private/protocol/rest.html">github.com/aws/aws-sdk-go/private/protocol/rest</a>
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/rest/payload.go.html#line-23">payload.go#L23</a>: 			if payload.IsValid() || (payload.Kind() == reflect.Ptr &amp;&amp; !payload.<b>IsNil</b>()) {
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/private/protocol/xml/xmlutil.html">github.com/aws/aws-sdk-go/private/protocol/xml/xmlutil</a>
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/xml/xmlutil/build.go.html#line-181">build.go#L181</a>: 	if value.<b>IsNil</b>() { // don't build omitted lists
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/xml/xmlutil/build.go.html#line-223" class="path-duplicate">build.go</a><a href="../src/github.com/aws/aws-sdk-go/private/protocol/xml/xmlutil/build.go.html#line-223">#L223</a>: 	if value.<b>IsNil</b>() { // don't build omitted maps
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/xml/xmlutil/build.go.html#line-282" class="path-duplicate">build.go</a><a href="../src/github.com/aws/aws-sdk-go/private/protocol/xml/xmlutil/build.go.html#line-282">#L282</a>: 		if !value.<b>IsNil</b>() {
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/xml/xmlutil/unmarshal.go.html#line-118">unmarshal.go#L118</a>: 		if r.<b>IsNil</b>() { // create the structure if it's nil
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/xml/xmlutil/unmarshal.go.html#line-180" class="path-duplicate">unmarshal.go</a><a href="../src/github.com/aws/aws-sdk-go/private/protocol/xml/xmlutil/unmarshal.go.html#line-180">#L180</a>: 			if r.<b>IsNil</b>() {
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/xml/xmlutil/unmarshal.go.html#line-192" class="path-duplicate">unmarshal.go</a><a href="../src/github.com/aws/aws-sdk-go/private/protocol/xml/xmlutil/unmarshal.go.html#line-192">#L192</a>: 		if r.<b>IsNil</b>() {
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/xml/xmlutil/unmarshal.go.html#line-210" class="path-duplicate">unmarshal.go</a><a href="../src/github.com/aws/aws-sdk-go/private/protocol/xml/xmlutil/unmarshal.go.html#line-210">#L210</a>: 	if r.<b>IsNil</b>() {
+
+	<a href="../pkg/github.com/go-sql-driver/mysql.html">github.com/go-sql-driver/mysql</a>
+		<a href="../src/github.com/go-sql-driver/mysql/statement.go.html#line-172">statement.go#L172</a>: 		if rv.<b>IsNil</b>() {
+		<a href="../src/github.com/go-sql-driver/mysql/statement.go.html#line-215" class="path-duplicate">statement.go</a><a href="../src/github.com/go-sql-driver/mysql/statement.go.html#line-215">#L215</a>: 		rv.<b>IsNil</b>() &amp;&amp;
+
+	<a href="../pkg/github.com/golang/protobuf/jsonpb.html">github.com/golang/protobuf/jsonpb</a>
+		<a href="../src/github.com/golang/protobuf/jsonpb/encode.go.html#line-87">encode.go#L87</a>: 	if m == nil || (v.Kind() == reflect.Ptr &amp;&amp; v.<b>IsNil</b>()) {
+
+	<a href="../pkg/github.com/golang/protobuf/proto.html">github.com/golang/protobuf/proto</a>
+		<a href="../src/github.com/golang/protobuf/proto/extensions.go.html#line-234">extensions.go#L234</a>: 		if rv.<b>IsNil</b>() {
+
+	<a href="../pkg/github.com/jmespath/go-jmespath.html">github.com/jmespath/go-jmespath</a>
+		<a href="../src/github.com/jmespath/go-jmespath/interpreter.go.html#line-329">interpreter.go#L329</a>: 		if rv.<b>IsNil</b>() {
+		<a href="../src/github.com/jmespath/go-jmespath/util.go.html#line-36">util.go#L36</a>: 		if rv.<b>IsNil</b>() {
+
+	<a href="../pkg/github.com/opentracing/opentracing-go/log.html">github.com/opentracing/opentracing-go/log</a>
+		<a href="../src/github.com/opentracing/opentracing-go/log/util.go.html#line-52">util.go#L52</a>: 			if typedVal == nil || (reflect.ValueOf(typedVal).Kind() == reflect.Ptr &amp;&amp; reflect.ValueOf(typedVal).<b>IsNil</b>()) {
+
+	<a href="../pkg/google.golang.org/protobuf/internal/descfmt.html">google.golang.org/protobuf/internal/descfmt</a>
+		<a href="../src/google.golang.org/protobuf/internal/descfmt/stringer.go.html#line-221">stringer.go#L221</a>: 			if !rv.<b>IsNil</b>() {
+		<a href="../src/google.golang.org/protobuf/internal/descfmt/stringer.go.html#line-230" class="path-duplicate">stringer.go</a><a href="../src/google.golang.org/protobuf/internal/descfmt/stringer.go.html#line-230">#L230</a>: 			isZero = rv.<b>IsNil</b>()
+
+	<a href="../pkg/google.golang.org/protobuf/internal/impl.html">google.golang.org/protobuf/internal/impl</a>
+		<a href="../src/google.golang.org/protobuf/internal/impl/codec_field.go.html#line-59">codec_field.go#L59</a>: 			if !vi.<b>IsNil</b>() &amp;&amp; !vi.Elem().<b>IsNil</b>() &amp;&amp; vi.Elem().Elem().Type() == ot {
+		<a href="../src/google.golang.org/protobuf/internal/impl/codec_field.go.html#line-74" class="path-duplicate">codec_field.go</a><a href="../src/google.golang.org/protobuf/internal/impl/codec_field.go.html#line-74">#L74</a>: 		if v.<b>IsNil</b>() {
+		<a href="../src/google.golang.org/protobuf/internal/impl/codec_field.go.html#line-78" class="path-duplicate">codec_field.go</a><a href="../src/google.golang.org/protobuf/internal/impl/codec_field.go.html#line-78">#L78</a>: 		if v.<b>IsNil</b>() {
+		<a href="../src/google.golang.org/protobuf/internal/impl/codec_field.go.html#line-217" class="path-duplicate">codec_field.go</a><a href="../src/google.golang.org/protobuf/internal/impl/codec_field.go.html#line-217">#L217</a>: 				if mp.<b>IsNil</b>() {
+		<a href="../src/google.golang.org/protobuf/internal/impl/codec_field.go.html#line-373" class="path-duplicate">codec_field.go</a><a href="../src/google.golang.org/protobuf/internal/impl/codec_field.go.html#line-373">#L373</a>: 				if mp.<b>IsNil</b>() {
+		<a href="../src/google.golang.org/protobuf/internal/impl/codec_map.go.html#line-60">codec_map.go#L60</a>: 			if mp.Elem().<b>IsNil</b>() {
+		<a href="../src/google.golang.org/protobuf/internal/impl/codec_map.go.html#line-345" class="path-duplicate">codec_map.go</a><a href="../src/google.golang.org/protobuf/internal/impl/codec_map.go.html#line-345">#L345</a>: 	if dstm.<b>IsNil</b>() {
+		<a href="../src/google.golang.org/protobuf/internal/impl/codec_map.go.html#line-360" class="path-duplicate">codec_map.go</a><a href="../src/google.golang.org/protobuf/internal/impl/codec_map.go.html#line-360">#L360</a>: 	if dstm.<b>IsNil</b>() {
+		<a href="../src/google.golang.org/protobuf/internal/impl/codec_map.go.html#line-375" class="path-duplicate">codec_map.go</a><a href="../src/google.golang.org/protobuf/internal/impl/codec_map.go.html#line-375">#L375</a>: 	if dstm.<b>IsNil</b>() {
+		<a href="../src/google.golang.org/protobuf/internal/impl/convert.go.html#line-451">convert.go#L451</a>: 		if !rv.<b>IsNil</b>() {
+		<a href="../src/google.golang.org/protobuf/internal/impl/convert_list.go.html#line-40">convert_list.go#L40</a>: 	if rv.<b>IsNil</b>() {
+		<a href="../src/google.golang.org/protobuf/internal/impl/convert_list.go.html#line-108" class="path-duplicate">convert_list.go</a><a href="../src/google.golang.org/protobuf/internal/impl/convert_list.go.html#line-108">#L108</a>: 	if ls.v.<b>IsNil</b>() {
+		<a href="../src/google.golang.org/protobuf/internal/impl/convert_list.go.html#line-137" class="path-duplicate">convert_list.go</a><a href="../src/google.golang.org/protobuf/internal/impl/convert_list.go.html#line-137">#L137</a>: 	return !ls.v.<b>IsNil</b>()
+		<a href="../src/google.golang.org/protobuf/internal/impl/convert_map.go.html#line-117">convert_map.go#L117</a>: 	return !ms.v.<b>IsNil</b>()
+		<a href="../src/google.golang.org/protobuf/internal/impl/legacy_message.go.html#line-497">legacy_message.go#L497</a>: 	if m.v.Kind() == reflect.Ptr &amp;&amp; !m.v.<b>IsNil</b>() {
+		<a href="../src/google.golang.org/protobuf/internal/impl/legacy_message.go.html#line-556" class="path-duplicate">legacy_message.go</a><a href="../src/google.golang.org/protobuf/internal/impl/legacy_message.go.html#line-556">#L556</a>: 		return !m.v.<b>IsNil</b>()
+		<a href="../src/google.golang.org/protobuf/internal/impl/merge.go.html#line-141">merge.go#L141</a>: 		if dm.<b>IsNil</b>() {
+		<a href="../src/google.golang.org/protobuf/internal/impl/message_reflect.go.html#line-420">message_reflect.go#L420</a>: 	if rv.Kind() == reflect.Ptr &amp;&amp; !rv.<b>IsNil</b>() {
+		<a href="../src/google.golang.org/protobuf/internal/impl/message_reflect_field.go.html#line-91">message_reflect_field.go#L91</a>: 			if rv.<b>IsNil</b>() || rv.Elem().Type().Elem() != ot || rv.Elem().<b>IsNil</b>() {
+		<a href="../src/google.golang.org/protobuf/internal/impl/message_reflect_field.go.html#line-98" class="path-duplicate">message_reflect_field.go</a><a href="../src/google.golang.org/protobuf/internal/impl/message_reflect_field.go.html#line-98">#L98</a>: 			if rv.<b>IsNil</b>() || rv.Elem().Type().Elem() != ot {
+		<a href="../src/google.golang.org/protobuf/internal/impl/message_reflect_field.go.html#line-110" class="path-duplicate">message_reflect_field.go</a><a href="../src/google.golang.org/protobuf/internal/impl/message_reflect_field.go.html#line-110">#L110</a>: 			if rv.<b>IsNil</b>() || rv.Elem().Type().Elem() != ot || rv.Elem().<b>IsNil</b>() {
+		<a href="../src/google.golang.org/protobuf/internal/impl/message_reflect_field.go.html#line-118" class="path-duplicate">message_reflect_field.go</a><a href="../src/google.golang.org/protobuf/internal/impl/message_reflect_field.go.html#line-118">#L118</a>: 			if rv.<b>IsNil</b>() || rv.Elem().Type().Elem() != ot || rv.Elem().<b>IsNil</b>() {
+		<a href="../src/google.golang.org/protobuf/internal/impl/message_reflect_field.go.html#line-129" class="path-duplicate">message_reflect_field.go</a><a href="../src/google.golang.org/protobuf/internal/impl/message_reflect_field.go.html#line-129">#L129</a>: 			if rv.<b>IsNil</b>() || rv.Elem().Type().Elem() != ot || rv.Elem().<b>IsNil</b>() {
+		<a href="../src/google.golang.org/protobuf/internal/impl/message_reflect_field.go.html#line-133" class="path-duplicate">message_reflect_field.go</a><a href="../src/google.golang.org/protobuf/internal/impl/message_reflect_field.go.html#line-133">#L133</a>: 			if rv.Kind() == reflect.Ptr &amp;&amp; rv.<b>IsNil</b>() {
+		<a href="../src/google.golang.org/protobuf/internal/impl/message_reflect_field.go.html#line-182" class="path-duplicate">message_reflect_field.go</a><a href="../src/google.golang.org/protobuf/internal/impl/message_reflect_field.go.html#line-182">#L182</a>: 			if pv.<b>IsNil</b>() {
+		<a href="../src/google.golang.org/protobuf/internal/impl/message_reflect_field.go.html#line-189" class="path-duplicate">message_reflect_field.go</a><a href="../src/google.golang.org/protobuf/internal/impl/message_reflect_field.go.html#line-189">#L189</a>: 			if v.<b>IsNil</b>() {
+		<a href="../src/google.golang.org/protobuf/internal/impl/message_reflect_field.go.html#line-235" class="path-duplicate">message_reflect_field.go</a><a href="../src/google.golang.org/protobuf/internal/impl/message_reflect_field.go.html#line-235">#L235</a>: 			if pv.<b>IsNil</b>() {
+		<a href="../src/google.golang.org/protobuf/internal/impl/message_reflect_field.go.html#line-282" class="path-duplicate">message_reflect_field.go</a><a href="../src/google.golang.org/protobuf/internal/impl/message_reflect_field.go.html#line-282">#L282</a>: 				return !rv.<b>IsNil</b>()
+		<a href="../src/google.golang.org/protobuf/internal/impl/message_reflect_field.go.html#line-309" class="path-duplicate">message_reflect_field.go</a><a href="../src/google.golang.org/protobuf/internal/impl/message_reflect_field.go.html#line-309">#L309</a>: 				if rv.<b>IsNil</b>() {
+		<a href="../src/google.golang.org/protobuf/internal/impl/message_reflect_field.go.html#line-321" class="path-duplicate">message_reflect_field.go</a><a href="../src/google.golang.org/protobuf/internal/impl/message_reflect_field.go.html#line-321">#L321</a>: 				if rv.<b>IsNil</b>() {
+		<a href="../src/google.golang.org/protobuf/internal/impl/message_reflect_field.go.html#line-430" class="path-duplicate">message_reflect_field.go</a><a href="../src/google.golang.org/protobuf/internal/impl/message_reflect_field.go.html#line-430">#L430</a>: 			return !rv.<b>IsNil</b>()
+		<a href="../src/google.golang.org/protobuf/internal/impl/message_reflect_field.go.html#line-446" class="path-duplicate">message_reflect_field.go</a><a href="../src/google.golang.org/protobuf/internal/impl/message_reflect_field.go.html#line-446">#L446</a>: 			if fs.Type.Kind() == reflect.Ptr &amp;&amp; rv.<b>IsNil</b>() {
+		<a href="../src/google.golang.org/protobuf/internal/impl/message_reflect_field.go.html#line-452" class="path-duplicate">message_reflect_field.go</a><a href="../src/google.golang.org/protobuf/internal/impl/message_reflect_field.go.html#line-452">#L452</a>: 			if fs.Type.Kind() == reflect.Ptr &amp;&amp; rv.<b>IsNil</b>() {
+		<a href="../src/google.golang.org/protobuf/internal/impl/message_reflect_field.go.html#line-481" class="path-duplicate">message_reflect_field.go</a><a href="../src/google.golang.org/protobuf/internal/impl/message_reflect_field.go.html#line-481">#L481</a>: 			if rv.<b>IsNil</b>() { // valid on either *T or []byte
+		<a href="../src/google.golang.org/protobuf/internal/impl/message_reflect_field.go.html#line-494" class="path-duplicate">message_reflect_field.go</a><a href="../src/google.golang.org/protobuf/internal/impl/message_reflect_field.go.html#line-494">#L494</a>: 			if rv.<b>IsNil</b>() {
+		<a href="../src/google.golang.org/protobuf/internal/impl/message_reflect_field.go.html#line-498" class="path-duplicate">message_reflect_field.go</a><a href="../src/google.golang.org/protobuf/internal/impl/message_reflect_field.go.html#line-498">#L498</a>: 			if rv.<b>IsNil</b>() {
+		<a href="../src/google.golang.org/protobuf/internal/impl/message_reflect_field.go.html#line-530" class="path-duplicate">message_reflect_field.go</a><a href="../src/google.golang.org/protobuf/internal/impl/message_reflect_field.go.html#line-530">#L530</a>: 		return v.<b>IsNil</b>()
+
+	<a href="../pkg/html/template.html">html/template</a>
+		<a href="../src/html/template/content.go.html#line-124">content.go#L124</a>: 	for v.Kind() == reflect.Ptr &amp;&amp; !v.<b>IsNil</b>() {
+		<a href="../src/html/template/content.go.html#line-143" class="path-duplicate">content.go</a><a href="../src/html/template/content.go.html#line-143">#L143</a>: 	for !v.Type().Implements(fmtStringerType) &amp;&amp; !v.Type().Implements(errorType) &amp;&amp; v.Kind() == reflect.Ptr &amp;&amp; !v.<b>IsNil</b>() {
+		<a href="../src/html/template/js.go.html#line-135">js.go#L135</a>: 	for !v.Type().Implements(jsonMarshalType) &amp;&amp; v.Kind() == reflect.Ptr &amp;&amp; !v.<b>IsNil</b>() {
+
+	<a href="../pkg/internal/fmtsort.html">internal/fmtsort</a>
+		<a href="../src/internal/fmtsort/sort.go.html#line-191">sort.go#L191</a>: 	if aVal.<b>IsNil</b>() {
+		<a href="../src/internal/fmtsort/sort.go.html#line-192" class="path-duplicate">sort.go</a><a href="../src/internal/fmtsort/sort.go.html#line-192">#L192</a>: 		if bVal.<b>IsNil</b>() {
+		<a href="../src/internal/fmtsort/sort.go.html#line-197" class="path-duplicate">sort.go</a><a href="../src/internal/fmtsort/sort.go.html#line-197">#L197</a>: 	if bVal.<b>IsNil</b>() {
+
+	<a href="../pkg/net/http/httptrace.html">net/http/httptrace</a>
+		<a href="../src/net/http/httptrace/trace.go.html#line-189">trace.go#L189</a>: 		if of.<b>IsNil</b>() {
+		<a href="../src/net/http/httptrace/trace.go.html#line-192" class="path-duplicate">trace.go</a><a href="../src/net/http/httptrace/trace.go.html#line-192">#L192</a>: 		if tf.<b>IsNil</b>() {
+
+	<a href="../pkg/text/template.html">text/template</a>
+		<a href="../src/text/template/exec.go.html#line-320">exec.go#L320</a>: 		truth = !val.<b>IsNil</b>()
+		<a href="../src/text/template/exec.go.html#line-372" class="path-duplicate">exec.go</a><a href="../src/text/template/exec.go.html#line-372">#L372</a>: 		if val.<b>IsNil</b>() {
+		<a href="../src/text/template/exec.go.html#line-765" class="path-duplicate">exec.go</a><a href="../src/text/template/exec.go.html#line-765">#L765</a>: 		if value.Kind() == reflect.Interface &amp;&amp; !value.<b>IsNil</b>() {
+		<a href="../src/text/template/exec.go.html#line-935" class="path-duplicate">exec.go</a><a href="../src/text/template/exec.go.html#line-935">#L935</a>: 		if v.<b>IsNil</b>() {
+		<a href="../src/text/template/exec.go.html#line-950" class="path-duplicate">exec.go</a><a href="../src/text/template/exec.go.html#line-950">#L950</a>: 	if v.<b>IsNil</b>() {
+		<a href="../src/text/template/funcs.go.html#line-369">funcs.go#L369</a>: 	if len(ret) == 2 &amp;&amp; !ret[1].<b>IsNil</b>() {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

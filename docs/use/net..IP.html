@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: net.IP</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../pkg/net.html">net</a>.<a href="../src/net/ip.go.html#line-35">IP</a></b></span>
+
+<span class="title">103 uses</span>
+
+	net (current package)
+		<a href="../src/net/addrselect.go.html#line-21">addrselect.go#L21</a>: func sortByRFC6724withSrcs(addrs []IPAddr, srcs []<b>IP</b>) {
+		<a href="../src/net/addrselect.go.html#line-42" class="path-duplicate">addrselect.go</a><a href="../src/net/addrselect.go.html#line-42">#L42</a>: func srcAddrs(addrs []IPAddr) []<b>IP</b> {
+		<a href="../src/net/addrselect.go.html#line-43" class="path-duplicate">addrselect.go</a><a href="../src/net/addrselect.go.html#line-43">#L43</a>: 	srcs := make([]<b>IP</b>, len(addrs))
+		<a href="../src/net/addrselect.go.html#line-65" class="path-duplicate">addrselect.go</a><a href="../src/net/addrselect.go.html#line-65">#L65</a>: func ipAttrOf(ip <b>IP</b>) ipAttr {
+		<a href="../src/net/addrselect.go.html#line-80" class="path-duplicate">addrselect.go</a><a href="../src/net/addrselect.go.html#line-80">#L80</a>: 	srcs     []<b>IP</b> // or nil if unreachable
+		<a href="../src/net/addrselect.go.html#line-309" class="path-duplicate">addrselect.go</a><a href="../src/net/addrselect.go.html#line-309">#L309</a>: func (t policyTable) Classify(ip <b>IP</b>) policyTableEntry {
+		<a href="../src/net/addrselect.go.html#line-330" class="path-duplicate">addrselect.go</a><a href="../src/net/addrselect.go.html#line-330">#L330</a>: func classifyScope(ip <b>IP</b>) scope {
+		<a href="../src/net/addrselect.go.html#line-356" class="path-duplicate">addrselect.go</a><a href="../src/net/addrselect.go.html#line-356">#L356</a>: func commonPrefixLen(a, b <b>IP</b>) (cpl int) {
+		<a href="../src/net/dnsclient_unix.go.html#line-681">dnsclient_unix.go#L681</a>: 					addrs = append(addrs, IPAddr{IP: <b>IP</b>(a.A[:])})
+		<a href="../src/net/dnsclient_unix.go.html#line-693" class="path-duplicate">dnsclient_unix.go</a><a href="../src/net/dnsclient_unix.go.html#line-693">#L693</a>: 					addrs = append(addrs, IPAddr{IP: <b>IP</b>(aaaa.AAAA[:])})
+		<a href="../src/net/hosts.go.html#line-16">hosts.go#L16</a>: 	var ip <b>IP</b>
+		<a href="../src/net/interface_bsd.go.html#line-105">interface_bsd.go#L105</a>: 			var ip <b>IP</b>
+		<a href="../src/net/interface_bsd.go.html#line-110" class="path-duplicate">interface_bsd.go</a><a href="../src/net/interface_bsd.go.html#line-110">#L110</a>: 				ip = make(<b>IP</b>, IPv6len)
+		<a href="../src/net/interface_darwin.go.html#line-39">interface_darwin.go#L39</a>: 			var ip <b>IP</b>
+		<a href="../src/net/interface_darwin.go.html#line-44" class="path-duplicate">interface_darwin.go</a><a href="../src/net/interface_darwin.go.html#line-44">#L44</a>: 				ip = make(<b>IP</b>, IPv6len)
+		<a href="../src/net/ip.go.html#line-35">ip.go#L35</a>: type <b>IP</b> []byte
+		<a href="../src/net/ip.go.html#line-45" class="path-duplicate">ip.go</a><a href="../src/net/ip.go.html#line-45">#L45</a>: 	IP   <b>IP</b>     // network number
+		<a href="../src/net/ip.go.html#line-51" class="path-duplicate">ip.go</a><a href="../src/net/ip.go.html#line-51">#L51</a>: func IPv4(a, b, c, d byte) <b>IP</b> {
+		<a href="../src/net/ip.go.html#line-52" class="path-duplicate">ip.go</a><a href="../src/net/ip.go.html#line-52">#L52</a>: 	p := make(<b>IP</b>, IPv6len)
+		<a href="../src/net/ip.go.html#line-109" class="path-duplicate">ip.go</a><a href="../src/net/ip.go.html#line-109">#L109</a>: 	IPv6zero                   = <b>IP</b>{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+		<a href="../src/net/ip.go.html#line-110" class="path-duplicate">ip.go</a><a href="../src/net/ip.go.html#line-110">#L110</a>: 	IPv6unspecified            = <b>IP</b>{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+		<a href="../src/net/ip.go.html#line-111" class="path-duplicate">ip.go</a><a href="../src/net/ip.go.html#line-111">#L111</a>: 	IPv6loopback               = <b>IP</b>{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1}
+		<a href="../src/net/ip.go.html#line-112" class="path-duplicate">ip.go</a><a href="../src/net/ip.go.html#line-112">#L112</a>: 	IPv6interfacelocalallnodes = <b>IP</b>{0xff, 0x01, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x01}
+		<a href="../src/net/ip.go.html#line-113" class="path-duplicate">ip.go</a><a href="../src/net/ip.go.html#line-113">#L113</a>: 	IPv6linklocalallnodes      = <b>IP</b>{0xff, 0x02, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x01}
+		<a href="../src/net/ip.go.html#line-114" class="path-duplicate">ip.go</a><a href="../src/net/ip.go.html#line-114">#L114</a>: 	IPv6linklocalallrouters    = <b>IP</b>{0xff, 0x02, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x02}
+		<a href="../src/net/ip.go.html#line-119" class="path-duplicate">ip.go</a><a href="../src/net/ip.go.html#line-119">#L119</a>: func (ip <b>IP</b>) IsUnspecified() bool {
+		<a href="../src/net/ip.go.html#line-124" class="path-duplicate">ip.go</a><a href="../src/net/ip.go.html#line-124">#L124</a>: func (ip <b>IP</b>) IsLoopback() bool {
+		<a href="../src/net/ip.go.html#line-133" class="path-duplicate">ip.go</a><a href="../src/net/ip.go.html#line-133">#L133</a>: func (ip <b>IP</b>) IsPrivate() bool {
+		<a href="../src/net/ip.go.html#line-151" class="path-duplicate">ip.go</a><a href="../src/net/ip.go.html#line-151">#L151</a>: func (ip <b>IP</b>) IsMulticast() bool {
+		<a href="../src/net/ip.go.html#line-160" class="path-duplicate">ip.go</a><a href="../src/net/ip.go.html#line-160">#L160</a>: func (ip <b>IP</b>) IsInterfaceLocalMulticast() bool {
+		<a href="../src/net/ip.go.html#line-166" class="path-duplicate">ip.go</a><a href="../src/net/ip.go.html#line-166">#L166</a>: func (ip <b>IP</b>) IsLinkLocalMulticast() bool {
+		<a href="../src/net/ip.go.html#line-175" class="path-duplicate">ip.go</a><a href="../src/net/ip.go.html#line-175">#L175</a>: func (ip <b>IP</b>) IsLinkLocalUnicast() bool {
+		<a href="../src/net/ip.go.html#line-190" class="path-duplicate">ip.go</a><a href="../src/net/ip.go.html#line-190">#L190</a>: func (ip <b>IP</b>) IsGlobalUnicast() bool {
+		<a href="../src/net/ip.go.html#line-200" class="path-duplicate">ip.go</a><a href="../src/net/ip.go.html#line-200">#L200</a>: func isZeros(p <b>IP</b>) bool {
+		<a href="../src/net/ip.go.html#line-211" class="path-duplicate">ip.go</a><a href="../src/net/ip.go.html#line-211">#L211</a>: func (ip <b>IP</b>) To4() <b>IP</b> {
+		<a href="../src/net/ip.go.html#line-226" class="path-duplicate">ip.go</a><a href="../src/net/ip.go.html#line-226">#L226</a>: func (ip <b>IP</b>) To16() <b>IP</b> {
+		<a href="../src/net/ip.go.html#line-246" class="path-duplicate">ip.go</a><a href="../src/net/ip.go.html#line-246">#L246</a>: func (ip <b>IP</b>) DefaultMask() IPMask {
+		<a href="../src/net/ip.go.html#line-270" class="path-duplicate">ip.go</a><a href="../src/net/ip.go.html#line-270">#L270</a>: func (ip <b>IP</b>) Mask(mask IPMask) <b>IP</b> {
+		<a href="../src/net/ip.go.html#line-281" class="path-duplicate">ip.go</a><a href="../src/net/ip.go.html#line-281">#L281</a>: 	out := make(<b>IP</b>, n)
+		<a href="../src/net/ip.go.html#line-313" class="path-duplicate">ip.go</a><a href="../src/net/ip.go.html#line-313">#L313</a>: func (ip <b>IP</b>) String() string {
+		<a href="../src/net/ip.go.html#line-393" class="path-duplicate">ip.go</a><a href="../src/net/ip.go.html#line-393">#L393</a>: func ipEmptyString(ip <b>IP</b>) string {
+		<a href="../src/net/ip.go.html#line-403" class="path-duplicate">ip.go</a><a href="../src/net/ip.go.html#line-403">#L403</a>: func (ip <b>IP</b>) MarshalText() ([]byte, error) {
+		<a href="../src/net/ip.go.html#line-415" class="path-duplicate">ip.go</a><a href="../src/net/ip.go.html#line-415">#L415</a>: func (ip *<b>IP</b>) UnmarshalText(text []byte) error {
+		<a href="../src/net/ip.go.html#line-432" class="path-duplicate">ip.go</a><a href="../src/net/ip.go.html#line-432">#L432</a>: func (ip <b>IP</b>) Equal(x <b>IP</b>) bool {
+		<a href="../src/net/ip.go.html#line-445" class="path-duplicate">ip.go</a><a href="../src/net/ip.go.html#line-445">#L445</a>: func (ip <b>IP</b>) matchAddrFamily(x <b>IP</b>) bool {
+		<a href="../src/net/ip.go.html#line-497" class="path-duplicate">ip.go</a><a href="../src/net/ip.go.html#line-497">#L497</a>: func networkNumberAndMask(n *IPNet) (ip <b>IP</b>, m IPMask) {
+		<a href="../src/net/ip.go.html#line-521" class="path-duplicate">ip.go</a><a href="../src/net/ip.go.html#line-521">#L521</a>: func (n *IPNet) Contains(ip <b>IP</b>) bool {
+		<a href="../src/net/ip.go.html#line-560" class="path-duplicate">ip.go</a><a href="../src/net/ip.go.html#line-560">#L560</a>: func parseIPv4(s string) <b>IP</b> {
+		<a href="../src/net/ip.go.html#line-592" class="path-duplicate">ip.go</a><a href="../src/net/ip.go.html#line-592">#L592</a>: func parseIPv6Zone(s string) (<b>IP</b>, string) {
+		<a href="../src/net/ip.go.html#line-599" class="path-duplicate">ip.go</a><a href="../src/net/ip.go.html#line-599">#L599</a>: func parseIPv6(s string) (ip <b>IP</b>) {
+		<a href="../src/net/ip.go.html#line-600" class="path-duplicate">ip.go</a><a href="../src/net/ip.go.html#line-600">#L600</a>: 	ip = make(<b>IP</b>, IPv6len)
+		<a href="../src/net/ip.go.html#line-704" class="path-duplicate">ip.go</a><a href="../src/net/ip.go.html#line-704">#L704</a>: func ParseIP(s string) <b>IP</b> {
+		<a href="../src/net/ip.go.html#line-718" class="path-duplicate">ip.go</a><a href="../src/net/ip.go.html#line-718">#L718</a>: func parseIPZone(s string) (<b>IP</b>, string) {
+		<a href="../src/net/ip.go.html#line-738" class="path-duplicate">ip.go</a><a href="../src/net/ip.go.html#line-738">#L738</a>: func ParseCIDR(s string) (<b>IP</b>, *IPNet, error) {
+		<a href="../src/net/iprawsock.go.html#line-32">iprawsock.go#L32</a>: 	IP   <b>IP</b>
+		<a href="../src/net/ipsock.go.html#line-310">ipsock.go#L310</a>: func loopbackIP(net string) <b>IP</b> {
+		<a href="../src/net/ipsock.go.html#line-314" class="path-duplicate">ipsock.go</a><a href="../src/net/ipsock.go.html#line-314">#L314</a>: 	return <b>IP</b>{127, 0, 0, 1}
+		<a href="../src/net/ipsock_posix.go.html#line-145">ipsock_posix.go#L145</a>: func ipToSockaddr(family int, ip <b>IP</b>, port int, zone string) (syscall.Sockaddr, error) {
+		<a href="../src/net/lookup.go.html#line-192">lookup.go#L192</a>: func LookupIP(host string) ([]<b>IP</b>, error) {
+		<a href="../src/net/lookup.go.html#line-197" class="path-duplicate">lookup.go</a><a href="../src/net/lookup.go.html#line-197">#L197</a>: 	ips := make([]<b>IP</b>, len(addrs))
+		<a href="../src/net/lookup.go.html#line-214" class="path-duplicate">lookup.go</a><a href="../src/net/lookup.go.html#line-214">#L214</a>: func (r *Resolver) LookupIP(ctx context.Context, network, host string) ([]<b>IP</b>, error) {
+		<a href="../src/net/lookup.go.html#line-228" class="path-duplicate">lookup.go</a><a href="../src/net/lookup.go.html#line-228">#L228</a>: 	ips := make([]<b>IP</b>, 0, len(addrs))
+		<a href="../src/net/sockopt_posix.go.html#line-24">sockopt_posix.go#L24</a>: func ipv4AddrToInterface(ip <b>IP</b>) (*Interface, error) {
+		<a href="../src/net/sockopt_posix.go.html#line-53" class="path-duplicate">sockopt_posix.go</a><a href="../src/net/sockopt_posix.go.html#line-53">#L53</a>: func interfaceToIPv4Addr(ifi *Interface) (<b>IP</b>, error) {
+		<a href="../src/net/sockoptip_posix.go.html#line-15">sockoptip_posix.go#L15</a>: func joinIPv4Group(fd *netFD, ifi *Interface, ip <b>IP</b>) error {
+		<a href="../src/net/sockoptip_posix.go.html#line-41" class="path-duplicate">sockoptip_posix.go</a><a href="../src/net/sockoptip_posix.go.html#line-41">#L41</a>: func joinIPv6Group(fd *netFD, ifi *Interface, ip <b>IP</b>) error {
+		<a href="../src/net/tcpsock.go.html#line-21">tcpsock.go#L21</a>: 	IP   <b>IP</b>
+		<a href="../src/net/udpsock.go.html#line-24">udpsock.go#L24</a>: 	IP   <b>IP</b>
+		<a href="../src/net/udpsock_posix.go.html#line-136">udpsock_posix.go#L136</a>: func listenIPv4MulticastUDP(c *UDPConn, ifi *Interface, ip <b>IP</b>) error {
+		<a href="../src/net/udpsock_posix.go.html#line-151" class="path-duplicate">udpsock_posix.go</a><a href="../src/net/udpsock_posix.go.html#line-151">#L151</a>: func listenIPv6MulticastUDP(c *UDPConn, ifi *Interface, ip <b>IP</b>) error {
+		<a href="../src/net/cgo_sockold.go.html#line-28">cgo_sockold.go#L28</a>: func cgoSockaddrInet4(ip <b>IP</b>) * /*line :25:31*/_Ctype_struct_sockaddr /*line :25:48*/ {
+		<a href="../src/net/cgo_sockold.go.html#line-34" class="path-duplicate">cgo_sockold.go</a><a href="../src/net/cgo_sockold.go.html#line-34">#L34</a>: func cgoSockaddrInet6(ip <b>IP</b>, zone int) * /*line :31:41*/_Ctype_struct_sockaddr /*line :31:58*/ {
+		<a href="../src/net/cgo_unix.go.html#line-337">cgo_unix.go#L337</a>: func cgoSockaddr(ip <b>IP</b>, zone string) (* /*line :334:40*/_Ctype_struct_sockaddr /*line :334:57*/,  /*line :334:59*/_Ctype_socklen_t /*line :334:70*/) {
+		<a href="../src/net/cgo_unix.go.html#line-347" class="path-duplicate">cgo_unix.go</a><a href="../src/net/cgo_unix.go.html#line-347">#L347</a>: func copyIP(x <b>IP</b>) <b>IP</b> {
+		<a href="../src/net/cgo_unix.go.html#line-351" class="path-duplicate">cgo_unix.go</a><a href="../src/net/cgo_unix.go.html#line-351">#L351</a>: 	y := make(<b>IP</b>, len(x))
+
+	<a href="../pkg/net/http.html">net/http</a>
+		<a href="../src/net/http/socks_bundle.go.html#line-132">socks_bundle.go#L132</a>: 		a.IP = make(net.<b>IP</b>, net.IPv4len)
+		<a href="../src/net/http/socks_bundle.go.html#line-135" class="path-duplicate">socks_bundle.go</a><a href="../src/net/http/socks_bundle.go.html#line-135">#L135</a>: 		a.IP = make(net.<b>IP</b>, net.IPv6len)
+		<a href="../src/net/http/socks_bundle.go.html#line-243" class="path-duplicate">socks_bundle.go</a><a href="../src/net/http/socks_bundle.go.html#line-243">#L243</a>: 	IP   net.<b>IP</b>
+
+	<a href="../pkg/crypto/x509.html">crypto/x509</a>
+		<a href="../src/crypto/x509/parser.go.html#line-386">parser.go#L386</a>: func parseSANExtension(der cryptobyte.String) (dnsNames, emailAddresses []string, ipAddresses []net.<b>IP</b>, uris []*url.URL, err error) {
+		<a href="../src/crypto/x509/parser.go.html#line-588" class="path-duplicate">parser.go</a><a href="../src/crypto/x509/parser.go.html#line-588">#L588</a>: 				ips = append(ips, &amp;net.IPNet{IP: net.<b>IP</b>(ip), Mask: net.IPMask(mask)})
+		<a href="../src/crypto/x509/verify.go.html#line-438">verify.go#L438</a>: func matchIPConstraint(ip net.<b>IP</b>, constraint *net.IPNet) (bool, error) {
+		<a href="../src/crypto/x509/verify.go.html#line-646" class="path-duplicate">verify.go</a><a href="../src/crypto/x509/verify.go.html#line-646">#L646</a>: 				ip := net.<b>IP</b>(data)
+		<a href="../src/crypto/x509/verify.go.html#line-653" class="path-duplicate">verify.go</a><a href="../src/crypto/x509/verify.go.html#line-653">#L653</a>: 						return matchIPConstraint(parsedName.(net.<b>IP</b>), constraint.(*net.IPNet))
+		<a href="../src/crypto/x509/x509.go.html#line-708">x509.go#L708</a>: 	IPAddresses    []net.<b>IP</b>
+		<a href="../src/crypto/x509/x509.go.html#line-974" class="path-duplicate">x509.go</a><a href="../src/crypto/x509/x509.go.html#line-974">#L974</a>: func marshalSANs(dnsNames, emailAddresses []string, ipAddresses []net.<b>IP</b>, uris []*url.URL) (derBytes []byte, err error) {
+		<a href="../src/crypto/x509/x509.go.html#line-1733" class="path-duplicate">x509.go</a><a href="../src/crypto/x509/x509.go.html#line-1733">#L1733</a>: 	IPAddresses    []net.<b>IP</b>
+
+	<a href="../pkg/github.com/uber/jaeger-client-go/utils.html">github.com/uber/jaeger-client-go/utils</a>
+		<a href="../src/github.com/uber/jaeger-client-go/utils/localip.go.html#line-30">localip.go#L30</a>: func scoreAddr(iface net.Interface, addr net.Addr) (int, net.<b>IP</b>) {
+		<a href="../src/github.com/uber/jaeger-client-go/utils/localip.go.html#line-31" class="path-duplicate">localip.go</a><a href="../src/github.com/uber/jaeger-client-go/utils/localip.go.html#line-31">#L31</a>: 	var ip net.<b>IP</b>
+		<a href="../src/github.com/uber/jaeger-client-go/utils/localip.go.html#line-54" class="path-duplicate">localip.go</a><a href="../src/github.com/uber/jaeger-client-go/utils/localip.go.html#line-54">#L54</a>: func HostIP() (net.<b>IP</b>, error) {
+		<a href="../src/github.com/uber/jaeger-client-go/utils/localip.go.html#line-61" class="path-duplicate">localip.go</a><a href="../src/github.com/uber/jaeger-client-go/utils/localip.go.html#line-61">#L61</a>: 	var bestIP net.<b>IP</b>
+		<a href="../src/github.com/uber/jaeger-client-go/utils/utils.go.html#line-71">utils.go#L71</a>: func PackIPAsUint32(ip net.<b>IP</b>) uint32 {
+
+	<a href="../pkg/vendor/golang.org/x/net/http/httpproxy.html">vendor/golang.org/x/net/http/httpproxy</a>
+		<a href="../src/vendor/golang.org/x/net/http/httpproxy/proxy.go.html#line-326">proxy.go#L326</a>: 	match(host, port string, ip net.<b>IP</b>) bool
+		<a href="../src/vendor/golang.org/x/net/http/httpproxy/proxy.go.html#line-332" class="path-duplicate">proxy.go</a><a href="../src/vendor/golang.org/x/net/http/httpproxy/proxy.go.html#line-332">#L332</a>: func (a allMatch) match(host, port string, ip net.<b>IP</b>) bool {
+		<a href="../src/vendor/golang.org/x/net/http/httpproxy/proxy.go.html#line-340" class="path-duplicate">proxy.go</a><a href="../src/vendor/golang.org/x/net/http/httpproxy/proxy.go.html#line-340">#L340</a>: func (m cidrMatch) match(host, port string, ip net.<b>IP</b>) bool {
+		<a href="../src/vendor/golang.org/x/net/http/httpproxy/proxy.go.html#line-345" class="path-duplicate">proxy.go</a><a href="../src/vendor/golang.org/x/net/http/httpproxy/proxy.go.html#line-345">#L345</a>: 	ip   net.<b>IP</b>
+		<a href="../src/vendor/golang.org/x/net/http/httpproxy/proxy.go.html#line-349" class="path-duplicate">proxy.go</a><a href="../src/vendor/golang.org/x/net/http/httpproxy/proxy.go.html#line-349">#L349</a>: func (m ipMatch) match(host, port string, ip net.<b>IP</b>) bool {
+		<a href="../src/vendor/golang.org/x/net/http/httpproxy/proxy.go.html#line-363" class="path-duplicate">proxy.go</a><a href="../src/vendor/golang.org/x/net/http/httpproxy/proxy.go.html#line-363">#L363</a>: func (m domainMatch) match(host, port string, ip net.<b>IP</b>) bool {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

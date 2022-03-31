@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: google.golang.org/grpc.clientStream</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../../pkg/google.golang.org/grpc.html">google.golang.org/grpc</a>.<a href="../../src/google.golang.org/grpc/stream.go.html#line-436">clientStream</a></b></span>
+
+<span class="title">18 uses</span>
+
+	google.golang.org/grpc (current package)
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-278">stream.go#L278</a>: 	cs := &amp;<b>clientStream</b>{
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-346" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-346">#L346</a>: func (cs *<b>clientStream</b>) newAttemptLocked(isTransparent bool) (retErr error) {
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-436" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-436">#L436</a>: type <b>clientStream</b> struct {
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-490" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-490">#L490</a>: 	cs   *<b>clientStream</b>
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-511" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-511">#L511</a>: func (cs *<b>clientStream</b>) commitAttemptLocked() {
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-519" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-519">#L519</a>: func (cs *<b>clientStream</b>) commitAttempt() {
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-528" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-528">#L528</a>: func (cs *<b>clientStream</b>) shouldRetry(err error) (bool, error) {
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-646" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-646">#L646</a>: func (cs *<b>clientStream</b>) retryLocked(lastErr error) error {
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-664" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-664">#L664</a>: func (cs *<b>clientStream</b>) Context() context.Context {
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-671" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-671">#L671</a>: func (cs *<b>clientStream</b>) withRetry(op func(a *csAttempt) error, onSuccess func()) error {
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-705" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-705">#L705</a>: func (cs *<b>clientStream</b>) Header() (metadata.MD, error) {
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-732" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-732">#L732</a>: func (cs *<b>clientStream</b>) Trailer() metadata.MD {
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-747" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-747">#L747</a>: func (cs *<b>clientStream</b>) replayBufferLocked() error {
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-757" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-757">#L757</a>: func (cs *<b>clientStream</b>) bufferForRetryLocked(sz int, op func(a *csAttempt) error) {
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-770" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-770">#L770</a>: func (cs *<b>clientStream</b>) SendMsg(m interface{}) (err error) {
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-816" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-816">#L816</a>: func (cs *<b>clientStream</b>) RecvMsg(m interface{}) error {
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-857" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-857">#L857</a>: func (cs *<b>clientStream</b>) CloseSend() error {
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-881" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-881">#L881</a>: func (cs *<b>clientStream</b>) finish(err error) {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

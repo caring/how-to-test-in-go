@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: reflect.Kind</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../pkg/reflect.html">reflect</a>.<a href="../src/reflect/type.go.html#line-238">Kind</a></b></span>
+
+<span class="title">17 uses</span>
+
+	reflect (current package)
+		<a href="../src/reflect/type.go.html#line-100">type.go#L100</a>: 	Kind() <b>Kind</b>
+		<a href="../src/reflect/type.go.html#line-238" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-238">#L238</a>: type <b>Kind</b> uint
+		<a href="../src/reflect/type.go.html#line-241" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-241">#L241</a>: 	Invalid <b>Kind</b> = iota
+		<a href="../src/reflect/type.go.html#line-630" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-630">#L630</a>: func (k <b>Kind</b>) String() string {
+		<a href="../src/reflect/type.go.html#line-819" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-819">#L819</a>: func (t *rtype) Kind() <b>Kind</b> { return <b>Kind</b>(t.kind &amp; kindMask) }
+		<a href="../src/reflect/type.go.html#line-1802" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1802">#L1802</a>: 	kind  <b>Kind</b>
+		<a href="../src/reflect/type.go.html#line-3124" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-3124">#L3124</a>: 	switch <b>Kind</b>(t.kind &amp; kindMask) {
+		<a href="../src/reflect/value.go.html#line-82">value.go#L82</a>: func (f flag) kind() <b>Kind</b> {
+		<a href="../src/reflect/value.go.html#line-83" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-83">#L83</a>: 	return <b>Kind</b>(f &amp; flagKindMask)
+		<a href="../src/reflect/value.go.html#line-163" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-163">#L163</a>: 	Kind   <b>Kind</b>
+		<a href="../src/reflect/value.go.html#line-220" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-220">#L220</a>: func (f flag) mustBe(expected <b>Kind</b>) {
+		<a href="../src/reflect/value.go.html#line-222" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-222">#L222</a>: 	if <b>Kind</b>(f&amp;flagKindMask) != expected {
+		<a href="../src/reflect/value.go.html#line-1494" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-1494">#L1494</a>: func (v Value) Kind() <b>Kind</b> {
+
+	<a href="../pkg/encoding/asn1.html">encoding/asn1</a>
+		<a href="../src/encoding/asn1/asn1.go.html#line-993">asn1.go#L993</a>: func canHaveDefaultValue(k reflect.<b>Kind</b>) bool {
+
+	<a href="../pkg/github.com/golang/protobuf/proto.html">github.com/golang/protobuf/proto</a>
+		<a href="../src/github.com/golang/protobuf/proto/extensions.go.html#line-326">extensions.go#L326</a>: func isScalarKind(k reflect.<b>Kind</b>) bool {
+
+	<a href="../pkg/text/template.html">text/template</a>
+		<a href="../src/text/template/funcs.go.html#line-175">funcs.go#L175</a>: func intLike(typ reflect.<b>Kind</b>) bool {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

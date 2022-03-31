@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: database/sql.Rows</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../../pkg/database/sql.html">database/sql</a>.<a href="../../src/database/sql/sql.go.html#line-2875">Rows</a></b></span>
+
+<span class="title">35 uses</span>
+
+	database/sql (current package)
+		<a href="../../src/database/sql/convert.go.html#line-219">convert.go#L219</a>: func convertAssignRows(dest, src interface{}, rows *<b>Rows</b>) error {
+		<a href="../../src/database/sql/convert.go.html#line-320" class="path-duplicate">convert.go</a><a href="../../src/database/sql/convert.go.html#line-320">#L320</a>: 		case *<b>Rows</b>:
+		<a href="../../src/database/sql/convert.go.html#line-328" class="path-duplicate">convert.go</a><a href="../../src/database/sql/convert.go.html#line-328">#L328</a>: 			*d = <b>Rows</b>{
+		<a href="../../src/database/sql/sql.go.html#line-1670">sql.go#L1670</a>: func (db *DB) QueryContext(ctx context.Context, query string, args ...interface{}) (*<b>Rows</b>, error) {
+		<a href="../../src/database/sql/sql.go.html#line-1671" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-1671">#L1671</a>: 	var rows *<b>Rows</b>
+		<a href="../../src/database/sql/sql.go.html#line-1690" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-1690">#L1690</a>: func (db *DB) Query(query string, args ...interface{}) (*<b>Rows</b>, error) {
+		<a href="../../src/database/sql/sql.go.html#line-1694" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-1694">#L1694</a>: func (db *DB) query(ctx context.Context, query string, args []interface{}, strategy connReuseStrategy) (*<b>Rows</b>, error) {
+		<a href="../../src/database/sql/sql.go.html#line-1707" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-1707">#L1707</a>: func (db *DB) queryDC(ctx, txctx context.Context, dc *driverConn, releaseConn func(error), query string, args []interface{}) (*<b>Rows</b>, error) {
+		<a href="../../src/database/sql/sql.go.html#line-1731" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-1731">#L1731</a>: 			rows := &amp;<b>Rows</b>{
+		<a href="../../src/database/sql/sql.go.html#line-1761" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-1761">#L1761</a>: 	rows := &amp;<b>Rows</b>{
+		<a href="../../src/database/sql/sql.go.html#line-1967" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-1967">#L1967</a>: func (c *Conn) QueryContext(ctx context.Context, query string, args ...interface{}) (*<b>Rows</b>, error) {
+		<a href="../../src/database/sql/sql.go.html#line-2463" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-2463">#L2463</a>: func (tx *Tx) QueryContext(ctx context.Context, query string, args ...interface{}) (*<b>Rows</b>, error) {
+		<a href="../../src/database/sql/sql.go.html#line-2476" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-2476">#L2476</a>: func (tx *Tx) Query(query string, args ...interface{}) (*<b>Rows</b>, error) {
+		<a href="../../src/database/sql/sql.go.html#line-2725" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-2725">#L2725</a>: func (s *Stmt) QueryContext(ctx context.Context, args ...interface{}) (*<b>Rows</b>, error) {
+		<a href="../../src/database/sql/sql.go.html#line-2747" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-2747">#L2747</a>: 			rows := &amp;<b>Rows</b>{
+		<a href="../../src/database/sql/sql.go.html#line-2783" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-2783">#L2783</a>: func (s *Stmt) Query(args ...interface{}) (*<b>Rows</b>, error) {
+		<a href="../../src/database/sql/sql.go.html#line-2875" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-2875">#L2875</a>: type <b>Rows</b> struct {
+		<a href="../../src/database/sql/sql.go.html#line-2898" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-2898">#L2898</a>: func (rs *<b>Rows</b>) lasterrOrErrLocked(err error) error {
+		<a href="../../src/database/sql/sql.go.html#line-2909" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-2909">#L2909</a>: func (rs *<b>Rows</b>) initContextClose(ctx, txctx context.Context) {
+		<a href="../../src/database/sql/sql.go.html#line-2924" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-2924">#L2924</a>: func (rs *<b>Rows</b>) awaitDone(ctx, txctx context.Context) {
+		<a href="../../src/database/sql/sql.go.html#line-2942" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-2942">#L2942</a>: func (rs *<b>Rows</b>) Next() bool {
+		<a href="../../src/database/sql/sql.go.html#line-2953" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-2953">#L2953</a>: func (rs *<b>Rows</b>) nextLocked() (doClose, ok bool) {
+		<a href="../../src/database/sql/sql.go.html#line-2996" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-2996">#L2996</a>: func (rs *<b>Rows</b>) NextResultSet() bool {
+		<a href="../../src/database/sql/sql.go.html#line-3032" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-3032">#L3032</a>: func (rs *<b>Rows</b>) Err() error {
+		<a href="../../src/database/sql/sql.go.html#line-3043" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-3043">#L3043</a>: func (rs *<b>Rows</b>) Columns() ([]string, error) {
+		<a href="../../src/database/sql/sql.go.html#line-3060" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-3060">#L3060</a>: func (rs *<b>Rows</b>) ColumnTypes() ([]*ColumnType, error) {
+		<a href="../../src/database/sql/sql.go.html#line-3225" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-3225">#L3225</a>: func (rs *<b>Rows</b>) Scan(dest ...interface{}) error {
+		<a href="../../src/database/sql/sql.go.html#line-3256" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-3256">#L3256</a>: var rowsCloseHook = func() func(*<b>Rows</b>, *error) { return nil }
+		<a href="../../src/database/sql/sql.go.html#line-3262" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-3262">#L3262</a>: func (rs *<b>Rows</b>) Close() error {
+		<a href="../../src/database/sql/sql.go.html#line-3266" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-3266">#L3266</a>: func (rs *<b>Rows</b>) close(err error) error {
+		<a href="../../src/database/sql/sql.go.html#line-3300" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-3300">#L3300</a>: 	rows *<b>Rows</b>
+
+	<a href="../../pkg/github.com/caring/test/1-mocks.html">github.com/caring/test/1-mocks</a>
+		<a href="../../src/github.com/caring/test/1-mocks/mysql.go.html#line-22">mysql.go#L22</a>: func (c *Item) FromRow(row *sql.<b>Rows</b>) error {
+		<a href="../../src/github.com/caring/test/1-mocks/mysql.go.html#line-45" class="path-duplicate">mysql.go</a><a href="../../src/github.com/caring/test/1-mocks/mysql.go.html#line-45">#L45</a>: func (lis *ListItem) FromRows(rows *sql.<b>Rows</b>) (n int64, err error) {
+
+	<a href="../../pkg/github.com/caring/test/1-mocks/db.html">github.com/caring/test/1-mocks/db</a>
+		<a href="../../src/github.com/caring/test/1-mocks/db/executor.go.html#line-15">executor.go#L15</a>: 	QueryContext(context.Context, string, ...interface{}) (*sql.<b>Rows</b>, error)
+		<a href="../../src/github.com/caring/test/1-mocks/db/executor.go.html#line-24" class="path-duplicate">executor.go</a><a href="../../src/github.com/caring/test/1-mocks/db/executor.go.html#line-24">#L24</a>: func QueryContext(ctx context.Context, log *logging.Logger, exec QueryExecutor, qry string, args ...interface{}) (*sql.<b>Rows</b>, error) {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

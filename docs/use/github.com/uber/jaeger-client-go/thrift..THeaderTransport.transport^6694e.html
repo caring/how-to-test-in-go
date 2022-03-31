@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/uber/jaeger-client-go/thrift.THeaderTransport.transport</title>
+<link href="../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift.html">github.com/uber/jaeger-client-go/thrift</a>.<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-243">THeaderTransport</a>.<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-247">transport</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">12 uses</span>
+
+	github.com/uber/jaeger-client-go/thrift (current package)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-247">header_transport.go#L247</a>: 	<b>transport</b> TTransport
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-304" class="path-duplicate">header_transport.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-304">#L304</a>: 		<b>transport</b>:    trans,
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-314" class="path-duplicate">header_transport.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-314">#L314</a>: 	return t.<b>transport</b>.Open()
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-319" class="path-duplicate">header_transport.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-319">#L319</a>: 	return t.<b>transport</b>.IsOpen()
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-658" class="path-duplicate">header_transport.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-658">#L658</a>: 		if _, err := t.<b>transport</b>.Write(buf); err != nil {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-662" class="path-duplicate">header_transport.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-662">#L662</a>: 		if _, err := io.Copy(t.<b>transport</b>, &amp;payload); err != nil {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-669" class="path-duplicate">header_transport.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-669">#L669</a>: 		if _, err := t.<b>transport</b>.Write(buf); err != nil {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-674" class="path-duplicate">header_transport.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-674">#L674</a>: 		if _, err := io.Copy(t.<b>transport</b>, &amp;t.writeBuffer); err != nil {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-685" class="path-duplicate">header_transport.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-685">#L685</a>: 	return t.<b>transport</b>.Flush(ctx)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-693" class="path-duplicate">header_transport.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-693">#L693</a>: 	return t.<b>transport</b>.Close()
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-704" class="path-duplicate">header_transport.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-704">#L704</a>: 	return t.<b>transport</b>.RemainingBytes()
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-757" class="path-duplicate">header_transport.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-757">#L757</a>: 	PropagateTConfiguration(t.<b>transport</b>, cfg)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

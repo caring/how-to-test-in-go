@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: reflect.Value.pointer</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/reflect.html">reflect</a>.<a href="../src/reflect/value.go.html#line-39">Value</a>.<a href="../src/reflect/value.go.html#line-96">pointer</a></b></span><span style="font-size: large;"><i> (method)</i></span>
+
+<span class="title">17 uses</span>
+
+	reflect (current package)
+		<a href="../src/reflect/deepequal.go.html#line-63">deepequal.go#L63</a>: 				return v.<b>pointer</b>()
+		<a href="../src/reflect/value.go.html#line-96">value.go#L96</a>: func (v Value) <b>pointer</b>() unsafe.Pointer {
+		<a href="../src/reflect/value.go.html#line-1126" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-1126">#L1126</a>: 		return chancap(v.<b>pointer</b>())
+		<a href="../src/reflect/value.go.html#line-1139" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-1139">#L1139</a>: 	chanclose(v.<b>pointer</b>())
+		<a href="../src/reflect/value.go.html#line-1507" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-1507">#L1507</a>: 		return chanlen(v.<b>pointer</b>())
+		<a href="../src/reflect/value.go.html#line-1509" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-1509">#L1509</a>: 		return maplen(v.<b>pointer</b>())
+		<a href="../src/reflect/value.go.html#line-1543" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-1543">#L1543</a>: 	e := mapaccess(v.typ, v.<b>pointer</b>(), k)
+		<a href="../src/reflect/value.go.html#line-1564" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-1564">#L1564</a>: 	m := v.<b>pointer</b>()
+		<a href="../src/reflect/value.go.html#line-1626" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-1626">#L1626</a>: 		it.it = mapiterinit(it.m.typ, it.m.<b>pointer</b>())
+		<a href="../src/reflect/value.go.html#line-1820" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-1820">#L1820</a>: 		return uintptr(v.<b>pointer</b>())
+		<a href="../src/reflect/value.go.html#line-1832" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-1832">#L1832</a>: 		p := v.<b>pointer</b>()
+		<a href="../src/reflect/value.go.html#line-1874" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-1874">#L1874</a>: 	selected, ok := chanrecv(v.<b>pointer</b>(), nb, p)
+		<a href="../src/reflect/value.go.html#line-1905" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-1905">#L1905</a>: 	return chansend(v.<b>pointer</b>(), p, nb)
+		<a href="../src/reflect/value.go.html#line-2053" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2053">#L2053</a>: 		mapdelete(v.typ, v.<b>pointer</b>(), k)
+		<a href="../src/reflect/value.go.html#line-2064" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2064">#L2064</a>: 	mapassign(v.typ, v.<b>pointer</b>(), k, e)
+		<a href="../src/reflect/value.go.html#line-2584" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2584">#L2584</a>: 			rc.ch = ch.<b>pointer</b>()
+		<a href="../src/reflect/value.go.html#line-2612" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2612">#L2612</a>: 			rc.ch = ch.<b>pointer</b>()
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

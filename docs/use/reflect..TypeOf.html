@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: reflect.TypeOf</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">func <b><a href="../pkg/reflect.html">reflect</a>.<a href="../src/reflect/type.go.html#line-1413">TypeOf</a></b></span>
+
+<span class="title">163 uses</span>
+
+	reflect (current package)
+		<a href="../src/reflect/type.go.html#line-1413">type.go#L1413</a>: func <b>TypeOf</b>(i interface{}) Type {
+		<a href="../src/reflect/type.go.html#line-2651" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2651">#L2651</a>: 			{Name: "S", Type: <b>TypeOf</b>(structType{})},
+		<a href="../src/reflect/type.go.html#line-2652" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2652">#L2652</a>: 			{Name: "U", Type: <b>TypeOf</b>(uncommonType{})},
+		<a href="../src/reflect/type.go.html#line-2653" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2653">#L2653</a>: 			{Name: "M", Type: ArrayOf(len(methods), <b>TypeOf</b>(methods[0]))},
+		<a href="../src/reflect/value.go.html#line-1282">value.go#L1282</a>: var uint8Type = <b>TypeOf</b>(uint8(0)).(*rtype)
+
+	<a href="../pkg/database/sql.html">database/sql</a>
+		<a href="../src/database/sql/convert.go.html#line-540">convert.go#L540</a>: var valuerReflectType = reflect.<b>TypeOf</b>((*driver.Valuer)(nil)).Elem()
+		<a href="../src/database/sql/sql.go.html#line-3147">sql.go#L3147</a>: 			ci.scanType = reflect.<b>TypeOf</b>(new(interface{})).Elem()
+
+	<a href="../pkg/database/sql/driver.html">database/sql/driver</a>
+		<a href="../src/database/sql/driver/types.go.html#line-214">types.go#L214</a>: var valuerReflectType = reflect.<b>TypeOf</b>((*Valuer)(nil)).Elem()
+
+	<a href="../pkg/encoding/asn1.html">encoding/asn1</a>
+		<a href="../src/encoding/asn1/asn1.go.html#line-656">asn1.go#L656</a>: 	bitStringType        = reflect.<b>TypeOf</b>(BitString{})
+		<a href="../src/encoding/asn1/asn1.go.html#line-657" class="path-duplicate">asn1.go</a><a href="../src/encoding/asn1/asn1.go.html#line-657">#L657</a>: 	objectIdentifierType = reflect.<b>TypeOf</b>(ObjectIdentifier{})
+		<a href="../src/encoding/asn1/asn1.go.html#line-658" class="path-duplicate">asn1.go</a><a href="../src/encoding/asn1/asn1.go.html#line-658">#L658</a>: 	enumeratedType       = reflect.<b>TypeOf</b>(Enumerated(0))
+		<a href="../src/encoding/asn1/asn1.go.html#line-659" class="path-duplicate">asn1.go</a><a href="../src/encoding/asn1/asn1.go.html#line-659">#L659</a>: 	flagType             = reflect.<b>TypeOf</b>(Flag(false))
+		<a href="../src/encoding/asn1/asn1.go.html#line-660" class="path-duplicate">asn1.go</a><a href="../src/encoding/asn1/asn1.go.html#line-660">#L660</a>: 	timeType             = reflect.<b>TypeOf</b>(time.Time{})
+		<a href="../src/encoding/asn1/asn1.go.html#line-661" class="path-duplicate">asn1.go</a><a href="../src/encoding/asn1/asn1.go.html#line-661">#L661</a>: 	rawValueType         = reflect.<b>TypeOf</b>(RawValue{})
+		<a href="../src/encoding/asn1/asn1.go.html#line-662" class="path-duplicate">asn1.go</a><a href="../src/encoding/asn1/asn1.go.html#line-662">#L662</a>: 	rawContentsType      = reflect.<b>TypeOf</b>(RawContent(nil))
+		<a href="../src/encoding/asn1/asn1.go.html#line-663" class="path-duplicate">asn1.go</a><a href="../src/encoding/asn1/asn1.go.html#line-663">#L663</a>: 	bigIntType           = reflect.<b>TypeOf</b>(new(big.Int))
+		<a href="../src/encoding/asn1/asn1.go.html#line-1115" class="path-duplicate">asn1.go</a><a href="../src/encoding/asn1/asn1.go.html#line-1115">#L1115</a>: 		return nil, &amp;invalidUnmarshalError{reflect.<b>TypeOf</b>(val)}
+
+	<a href="../pkg/encoding/binary.html">encoding/binary</a>
+		<a href="../src/encoding/binary/binary.go.html#line-253">binary.go#L253</a>: 		return errors.New("binary.Read: invalid type " + reflect.<b>TypeOf</b>(data).String())
+		<a href="../src/encoding/binary/binary.go.html#line-383" class="path-duplicate">binary.go</a><a href="../src/encoding/binary/binary.go.html#line-383">#L383</a>: 		return errors.New("binary.Write: invalid type " + reflect.<b>TypeOf</b>(data).String())
+
+	<a href="../pkg/encoding/json.html">encoding/json</a>
+		<a href="../src/encoding/json/decode.go.html#line-173">decode.go#L173</a>: 		return &amp;InvalidUnmarshalError{reflect.<b>TypeOf</b>(v)}
+		<a href="../src/encoding/json/decode.go.html#line-602" class="path-duplicate">decode.go</a><a href="../src/encoding/json/decode.go.html#line-602">#L602</a>: var textUnmarshalerType = reflect.<b>TypeOf</b>((*encoding.TextUnmarshaler)(nil)).Elem()
+		<a href="../src/encoding/json/decode.go.html#line-849" class="path-duplicate">decode.go</a><a href="../src/encoding/json/decode.go.html#line-849">#L849</a>: 		return nil, &amp;UnmarshalTypeError{Value: "number " + s, Type: reflect.<b>TypeOf</b>(0.0), Offset: int64(d.off)}
+		<a href="../src/encoding/json/decode.go.html#line-854" class="path-duplicate">decode.go</a><a href="../src/encoding/json/decode.go.html#line-854">#L854</a>: var numberType = reflect.<b>TypeOf</b>(Number(""))
+		<a href="../src/encoding/json/encode.go.html#line-411">encode.go#L411</a>: 	marshalerType     = reflect.<b>TypeOf</b>((*Marshaler)(nil)).Elem()
+		<a href="../src/encoding/json/encode.go.html#line-412" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-412">#L412</a>: 	textMarshalerType = reflect.<b>TypeOf</b>((*encoding.TextMarshaler)(nil)).Elem()
+
+	<a href="../pkg/encoding/xml.html">encoding/xml</a>
+		<a href="../src/encoding/xml/marshal.go.html#line-401">marshal.go#L401</a>: 	marshalerType     = reflect.<b>TypeOf</b>((*Marshaler)(nil)).Elem()
+		<a href="../src/encoding/xml/marshal.go.html#line-402" class="path-duplicate">marshal.go</a><a href="../src/encoding/xml/marshal.go.html#line-402">#L402</a>: 	marshalerAttrType = reflect.<b>TypeOf</b>((*MarshalerAttr)(nil)).Elem()
+		<a href="../src/encoding/xml/marshal.go.html#line-403" class="path-duplicate">marshal.go</a><a href="../src/encoding/xml/marshal.go.html#line-403">#L403</a>: 	textMarshalerType = reflect.<b>TypeOf</b>((*encoding.TextMarshaler)(nil)).Elem()
+		<a href="../src/encoding/xml/read.go.html#line-192">read.go#L192</a>: 	t := reflect.<b>TypeOf</b>(val)
+		<a href="../src/encoding/xml/read.go.html#line-301" class="path-duplicate">read.go</a><a href="../src/encoding/xml/read.go.html#line-301">#L301</a>: 	attrType            = reflect.<b>TypeOf</b>(Attr{})
+		<a href="../src/encoding/xml/read.go.html#line-302" class="path-duplicate">read.go</a><a href="../src/encoding/xml/read.go.html#line-302">#L302</a>: 	unmarshalerType     = reflect.<b>TypeOf</b>((*Unmarshaler)(nil)).Elem()
+		<a href="../src/encoding/xml/read.go.html#line-303" class="path-duplicate">read.go</a><a href="../src/encoding/xml/read.go.html#line-303">#L303</a>: 	unmarshalerAttrType = reflect.<b>TypeOf</b>((*UnmarshalerAttr)(nil)).Elem()
+		<a href="../src/encoding/xml/read.go.html#line-304" class="path-duplicate">read.go</a><a href="../src/encoding/xml/read.go.html#line-304">#L304</a>: 	textUnmarshalerType = reflect.<b>TypeOf</b>((*encoding.TextUnmarshaler)(nil)).Elem()
+		<a href="../src/encoding/xml/typeinfo.go.html#line-49">typeinfo.go#L49</a>: var nameType = reflect.<b>TypeOf</b>(Name{})
+
+	<a href="../pkg/flag.html">flag</a>
+		<a href="../src/flag/flag.go.html#line-457">flag.go#L457</a>: 	typ := reflect.<b>TypeOf</b>(flag.Value)
+
+	<a href="../pkg/fmt.html">fmt</a>
+		<a href="../src/fmt/print.go.html#line-337">print.go#L337</a>: 		p.buf.writeString(reflect.<b>TypeOf</b>(p.arg).String())
+		<a href="../src/fmt/print.go.html#line-652" class="path-duplicate">print.go</a><a href="../src/fmt/print.go.html#line-652">#L652</a>: 		p.fmt.fmtS(reflect.<b>TypeOf</b>(arg).String())
+		<a href="../src/fmt/print.go.html#line-1140" class="path-duplicate">print.go</a><a href="../src/fmt/print.go.html#line-1140">#L1140</a>: 				p.buf.writeString(reflect.<b>TypeOf</b>(arg).String())
+		<a href="../src/fmt/print.go.html#line-1152" class="path-duplicate">print.go</a><a href="../src/fmt/print.go.html#line-1152">#L1152</a>: 		isString := arg != nil &amp;&amp; reflect.<b>TypeOf</b>(arg).Kind() == reflect.String
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/awsutil.html">github.com/aws/aws-sdk-go/aws/awsutil</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/copy.go.html#line-27">copy.go#L27</a>: 	dsti := reflect.New(reflect.<b>TypeOf</b>(src).Elem())
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/equal.go.html#line-20">equal.go#L20</a>: 		return reflect.<b>TypeOf</b>(a) == reflect.<b>TypeOf</b>(b)
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/request.html">github.com/aws/aws-sdk-go/aws/request</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/request/request_pagination.go.html#line-229">request_pagination.go#L229</a>: 	data := reflect.New(reflect.<b>TypeOf</b>(r.Data).Elem()).Interface()
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/private/protocol/rest.html">github.com/aws/aws-sdk-go/private/protocol/rest</a>
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/rest/build.go.html#line-28">build.go#L28</a>: var byteSliceType = reflect.<b>TypeOf</b>([]byte{})
+
+	<a href="../pkg/github.com/caring/test/1-mocks/pb.html">github.com/caring/test/1-mocks/pb</a>
+		<a href="../src/github.com/caring/test/1-mocks/pb/mocks.pb.go.html#line-200">mocks.pb.go#L200</a>: 			GoPackagePath: reflect.<b>TypeOf</b>(x{}).PkgPath(),
+
+	<a href="../pkg/github.com/go-sql-driver/mysql.html">github.com/go-sql-driver/mysql</a>
+		<a href="../src/github.com/go-sql-driver/mysql/fields.go.html#line-101">fields.go#L101</a>: 	scanTypeFloat32   = reflect.<b>TypeOf</b>(float32(0))
+		<a href="../src/github.com/go-sql-driver/mysql/fields.go.html#line-102" class="path-duplicate">fields.go</a><a href="../src/github.com/go-sql-driver/mysql/fields.go.html#line-102">#L102</a>: 	scanTypeFloat64   = reflect.<b>TypeOf</b>(float64(0))
+		<a href="../src/github.com/go-sql-driver/mysql/fields.go.html#line-103" class="path-duplicate">fields.go</a><a href="../src/github.com/go-sql-driver/mysql/fields.go.html#line-103">#L103</a>: 	scanTypeInt8      = reflect.<b>TypeOf</b>(int8(0))
+		<a href="../src/github.com/go-sql-driver/mysql/fields.go.html#line-104" class="path-duplicate">fields.go</a><a href="../src/github.com/go-sql-driver/mysql/fields.go.html#line-104">#L104</a>: 	scanTypeInt16     = reflect.<b>TypeOf</b>(int16(0))
+		<a href="../src/github.com/go-sql-driver/mysql/fields.go.html#line-105" class="path-duplicate">fields.go</a><a href="../src/github.com/go-sql-driver/mysql/fields.go.html#line-105">#L105</a>: 	scanTypeInt32     = reflect.<b>TypeOf</b>(int32(0))
+		<a href="../src/github.com/go-sql-driver/mysql/fields.go.html#line-106" class="path-duplicate">fields.go</a><a href="../src/github.com/go-sql-driver/mysql/fields.go.html#line-106">#L106</a>: 	scanTypeInt64     = reflect.<b>TypeOf</b>(int64(0))
+		<a href="../src/github.com/go-sql-driver/mysql/fields.go.html#line-107" class="path-duplicate">fields.go</a><a href="../src/github.com/go-sql-driver/mysql/fields.go.html#line-107">#L107</a>: 	scanTypeNullFloat = reflect.<b>TypeOf</b>(sql.NullFloat64{})
+		<a href="../src/github.com/go-sql-driver/mysql/fields.go.html#line-108" class="path-duplicate">fields.go</a><a href="../src/github.com/go-sql-driver/mysql/fields.go.html#line-108">#L108</a>: 	scanTypeNullInt   = reflect.<b>TypeOf</b>(sql.NullInt64{})
+		<a href="../src/github.com/go-sql-driver/mysql/fields.go.html#line-109" class="path-duplicate">fields.go</a><a href="../src/github.com/go-sql-driver/mysql/fields.go.html#line-109">#L109</a>: 	scanTypeNullTime  = reflect.<b>TypeOf</b>(nullTime{})
+		<a href="../src/github.com/go-sql-driver/mysql/fields.go.html#line-110" class="path-duplicate">fields.go</a><a href="../src/github.com/go-sql-driver/mysql/fields.go.html#line-110">#L110</a>: 	scanTypeUint8     = reflect.<b>TypeOf</b>(uint8(0))
+		<a href="../src/github.com/go-sql-driver/mysql/fields.go.html#line-111" class="path-duplicate">fields.go</a><a href="../src/github.com/go-sql-driver/mysql/fields.go.html#line-111">#L111</a>: 	scanTypeUint16    = reflect.<b>TypeOf</b>(uint16(0))
+		<a href="../src/github.com/go-sql-driver/mysql/fields.go.html#line-112" class="path-duplicate">fields.go</a><a href="../src/github.com/go-sql-driver/mysql/fields.go.html#line-112">#L112</a>: 	scanTypeUint32    = reflect.<b>TypeOf</b>(uint32(0))
+		<a href="../src/github.com/go-sql-driver/mysql/fields.go.html#line-113" class="path-duplicate">fields.go</a><a href="../src/github.com/go-sql-driver/mysql/fields.go.html#line-113">#L113</a>: 	scanTypeUint64    = reflect.<b>TypeOf</b>(uint64(0))
+		<a href="../src/github.com/go-sql-driver/mysql/fields.go.html#line-114" class="path-duplicate">fields.go</a><a href="../src/github.com/go-sql-driver/mysql/fields.go.html#line-114">#L114</a>: 	scanTypeRawBytes  = reflect.<b>TypeOf</b>(sql.RawBytes{})
+		<a href="../src/github.com/go-sql-driver/mysql/fields.go.html#line-115" class="path-duplicate">fields.go</a><a href="../src/github.com/go-sql-driver/mysql/fields.go.html#line-115">#L115</a>: 	scanTypeUnknown   = reflect.<b>TypeOf</b>(new(interface{}))
+		<a href="../src/github.com/go-sql-driver/mysql/statement.go.html#line-138">statement.go#L138</a>: var jsonType = reflect.<b>TypeOf</b>(json.RawMessage{})
+		<a href="../src/github.com/go-sql-driver/mysql/statement.go.html#line-200" class="path-duplicate">statement.go</a><a href="../src/github.com/go-sql-driver/mysql/statement.go.html#line-200">#L200</a>: var valuerReflectType = reflect.<b>TypeOf</b>((*driver.Valuer)(nil)).Elem()
+
+	<a href="../pkg/github.com/golang/protobuf/proto.html">github.com/golang/protobuf/proto</a>
+		<a href="../src/github.com/golang/protobuf/proto/extensions.go.html#line-230">extensions.go#L230</a>: 	if reflect.<b>TypeOf</b>(v) != reflect.<b>TypeOf</b>(xt.ExtensionType) {
+		<a href="../src/github.com/golang/protobuf/proto/registry.go.html#line-184">registry.go#L184</a>: 	messageTypeCache.Store(s, reflect.<b>TypeOf</b>(m))
+		<a href="../src/github.com/golang/protobuf/proto/registry.go.html#line-192" class="path-duplicate">registry.go</a><a href="../src/github.com/golang/protobuf/proto/registry.go.html#line-192">#L192</a>: 	t := reflect.<b>TypeOf</b>(m)
+		<a href="../src/github.com/golang/protobuf/proto/registry.go.html#line-242" class="path-duplicate">registry.go</a><a href="../src/github.com/golang/protobuf/proto/registry.go.html#line-242">#L242</a>: 		return reflect.<b>TypeOf</b>(protoreflect.EnumNumber(0))
+		<a href="../src/github.com/golang/protobuf/proto/registry.go.html#line-247" class="path-duplicate">registry.go</a><a href="../src/github.com/golang/protobuf/proto/registry.go.html#line-247">#L247</a>: 		return reflect.<b>TypeOf</b>((*protoreflect.Message)(nil)).Elem()
+		<a href="../src/github.com/golang/protobuf/proto/registry.go.html#line-249" class="path-duplicate">registry.go</a><a href="../src/github.com/golang/protobuf/proto/registry.go.html#line-249">#L249</a>: 		return reflect.<b>TypeOf</b>(fd.Default().Interface())
+		<a href="../src/github.com/golang/protobuf/proto/registry.go.html#line-254" class="path-duplicate">registry.go</a><a href="../src/github.com/golang/protobuf/proto/registry.go.html#line-254">#L254</a>: 	return reflect.<b>TypeOf</b>(et.New(0))
+		<a href="../src/github.com/golang/protobuf/proto/registry.go.html#line-258" class="path-duplicate">registry.go</a><a href="../src/github.com/golang/protobuf/proto/registry.go.html#line-258">#L258</a>: 	return reflect.<b>TypeOf</b>(MessageV1(mt.Zero().Interface()))
+		<a href="../src/github.com/golang/protobuf/proto/text_decode.go.html#line-134">text_decode.go#L134</a>: 				t := reflect.<b>TypeOf</b>(m)
+
+	<a href="../pkg/github.com/golang/protobuf/ptypes/any.html">github.com/golang/protobuf/ptypes/any</a>
+		<a href="../src/github.com/golang/protobuf/ptypes/any/any.pb.go.html#line-48">any.pb.go#L48</a>: 			GoPackagePath: reflect.<b>TypeOf</b>(x{}).PkgPath(),
+
+	<a href="../pkg/github.com/golang/protobuf/ptypes/duration.html">github.com/golang/protobuf/ptypes/duration</a>
+		<a href="../src/github.com/golang/protobuf/ptypes/duration/duration.pb.go.html#line-49">duration.pb.go#L49</a>: 			GoPackagePath: reflect.<b>TypeOf</b>(x{}).PkgPath(),
+
+	<a href="../pkg/github.com/golang/protobuf/ptypes/timestamp.html">github.com/golang/protobuf/ptypes/timestamp</a>
+		<a href="../src/github.com/golang/protobuf/ptypes/timestamp/timestamp.pb.go.html#line-50">timestamp.pb.go#L50</a>: 			GoPackagePath: reflect.<b>TypeOf</b>(x{}).PkgPath(),
+
+	<a href="../pkg/github.com/jmespath/go-jmespath.html">github.com/jmespath/go-jmespath</a>
+		<a href="../src/github.com/jmespath/go-jmespath/interpreter.go.html#line-347">interpreter.go#L347</a>: 		if reflect.<b>TypeOf</b>(element).Kind() == reflect.Slice {
+		<a href="../src/github.com/jmespath/go-jmespath/util.go.html#line-184">util.go#L184</a>: 	return reflect.<b>TypeOf</b>(v).Kind() == reflect.Slice
+
+	<a href="../pkg/github.com/uber/jaeger-lib/metrics.html">github.com/uber/jaeger-lib/metrics</a>
+		<a href="../src/github.com/uber/jaeger-lib/metrics/metrics.go.html#line-48">metrics.go#L48</a>: 	counterPtrType := reflect.<b>TypeOf</b>((*Counter)(nil)).Elem()
+		<a href="../src/github.com/uber/jaeger-lib/metrics/metrics.go.html#line-49" class="path-duplicate">metrics.go</a><a href="../src/github.com/uber/jaeger-lib/metrics/metrics.go.html#line-49">#L49</a>: 	gaugePtrType := reflect.<b>TypeOf</b>((*Gauge)(nil)).Elem()
+		<a href="../src/github.com/uber/jaeger-lib/metrics/metrics.go.html#line-50" class="path-duplicate">metrics.go</a><a href="../src/github.com/uber/jaeger-lib/metrics/metrics.go.html#line-50">#L50</a>: 	timerPtrType := reflect.<b>TypeOf</b>((*Timer)(nil)).Elem()
+		<a href="../src/github.com/uber/jaeger-lib/metrics/metrics.go.html#line-51" class="path-duplicate">metrics.go</a><a href="../src/github.com/uber/jaeger-lib/metrics/metrics.go.html#line-51">#L51</a>: 	histogramPtrType := reflect.<b>TypeOf</b>((*Histogram)(nil)).Elem()
+
+	<a href="../pkg/google.golang.org/genproto/googleapis/rpc/status.html">google.golang.org/genproto/googleapis/rpc/status</a>
+		<a href="../src/google.golang.org/genproto/googleapis/rpc/status/status.pb.go.html#line-191">status.pb.go#L191</a>: 			GoPackagePath: reflect.<b>TypeOf</b>(x{}).PkgPath(),
+
+	<a href="../pkg/google.golang.org/grpc.html">google.golang.org/grpc</a>
+		<a href="../src/google.golang.org/grpc/server.go.html#line-627">server.go#L627</a>: 		ht := reflect.<b>TypeOf</b>(sd.HandlerType).Elem()
+		<a href="../src/google.golang.org/grpc/server.go.html#line-628" class="path-duplicate">server.go</a><a href="../src/google.golang.org/grpc/server.go.html#line-628">#L628</a>: 		st := reflect.<b>TypeOf</b>(ss)
+
+	<a href="../pkg/google.golang.org/grpc/binarylog/grpc_binarylog_v1.html">google.golang.org/grpc/binarylog/grpc_binarylog_v1</a>
+		<a href="../src/google.golang.org/grpc/binarylog/grpc_binarylog_v1/binarylog.pb.go.html#line-1171">binarylog.pb.go#L1171</a>: 			GoPackagePath: reflect.<b>TypeOf</b>(x{}).PkgPath(),
+
+	<a href="../pkg/google.golang.org/protobuf/internal/descfmt.html">google.golang.org/protobuf/internal/descfmt</a>
+		<a href="../src/google.golang.org/protobuf/internal/descfmt/stringer.go.html#line-109">stringer.go#L109</a>: 	reflect.<b>TypeOf</b>((*pref.FileDescriptor)(nil)).Elem():      {"Path", "Package", "Imports", "Messages", "Enums", "Extensions", "Services"},
+		<a href="../src/google.golang.org/protobuf/internal/descfmt/stringer.go.html#line-110" class="path-duplicate">stringer.go</a><a href="../src/google.golang.org/protobuf/internal/descfmt/stringer.go.html#line-110">#L110</a>: 	reflect.<b>TypeOf</b>((*pref.MessageDescriptor)(nil)).Elem():   {"IsMapEntry", "Fields", "Oneofs", "ReservedNames", "ReservedRanges", "RequiredNumbers", "ExtensionRanges", "Messages", "Enums", "Extensions"},
+		<a href="../src/google.golang.org/protobuf/internal/descfmt/stringer.go.html#line-111" class="path-duplicate">stringer.go</a><a href="../src/google.golang.org/protobuf/internal/descfmt/stringer.go.html#line-111">#L111</a>: 	reflect.<b>TypeOf</b>((*pref.FieldDescriptor)(nil)).Elem():     {"Number", "Cardinality", "Kind", "HasJSONName", "JSONName", "HasPresence", "IsExtension", "IsPacked", "IsWeak", "IsList", "IsMap", "MapKey", "MapValue", "HasDefault", "Default", "ContainingOneof", "ContainingMessage", "Message", "Enum"},
+		<a href="../src/google.golang.org/protobuf/internal/descfmt/stringer.go.html#line-112" class="path-duplicate">stringer.go</a><a href="../src/google.golang.org/protobuf/internal/descfmt/stringer.go.html#line-112">#L112</a>: 	reflect.<b>TypeOf</b>((*pref.OneofDescriptor)(nil)).Elem():     {"Fields"}, // not directly used; must keep in sync with formatDescOpt
+		<a href="../src/google.golang.org/protobuf/internal/descfmt/stringer.go.html#line-113" class="path-duplicate">stringer.go</a><a href="../src/google.golang.org/protobuf/internal/descfmt/stringer.go.html#line-113">#L113</a>: 	reflect.<b>TypeOf</b>((*pref.EnumDescriptor)(nil)).Elem():      {"Values", "ReservedNames", "ReservedRanges"},
+		<a href="../src/google.golang.org/protobuf/internal/descfmt/stringer.go.html#line-114" class="path-duplicate">stringer.go</a><a href="../src/google.golang.org/protobuf/internal/descfmt/stringer.go.html#line-114">#L114</a>: 	reflect.<b>TypeOf</b>((*pref.EnumValueDescriptor)(nil)).Elem(): {"Number"},
+		<a href="../src/google.golang.org/protobuf/internal/descfmt/stringer.go.html#line-115" class="path-duplicate">stringer.go</a><a href="../src/google.golang.org/protobuf/internal/descfmt/stringer.go.html#line-115">#L115</a>: 	reflect.<b>TypeOf</b>((*pref.ServiceDescriptor)(nil)).Elem():   {"Methods"},
+		<a href="../src/google.golang.org/protobuf/internal/descfmt/stringer.go.html#line-116" class="path-duplicate">stringer.go</a><a href="../src/google.golang.org/protobuf/internal/descfmt/stringer.go.html#line-116">#L116</a>: 	reflect.<b>TypeOf</b>((*pref.MethodDescriptor)(nil)).Elem():    {"Input", "Output", "IsStreamingClient", "IsStreamingServer"},
+
+	<a href="../pkg/google.golang.org/protobuf/internal/encoding/tag.html">google.golang.org/protobuf/internal/encoding/tag</a>
+		<a href="../src/google.golang.org/protobuf/internal/encoding/tag/tag.go.html#line-20">tag.go#L20</a>: var byteType = reflect.<b>TypeOf</b>(byte(0))
+
+	<a href="../pkg/google.golang.org/protobuf/internal/filedesc.html">google.golang.org/protobuf/internal/filedesc</a>
+		<a href="../src/google.golang.org/protobuf/internal/filedesc/desc_lazy.go.html#line-694">desc_lazy.go#L694</a>: 			opts = reflect.New(reflect.<b>TypeOf</b>(*p).Elem()).Interface().(pref.ProtoMessage)
+
+	<a href="../pkg/google.golang.org/protobuf/internal/filetype.html">google.golang.org/protobuf/internal/filetype</a>
+		<a href="../src/google.golang.org/protobuf/internal/filetype/build.go.html#line-150">build.go#L150</a>: 				GoReflectType: reflect.<b>TypeOf</b>(enumGoTypes[i]),
+		<a href="../src/google.golang.org/protobuf/internal/filetype/build.go.html#line-171" class="path-duplicate">build.go</a><a href="../src/google.golang.org/protobuf/internal/filetype/build.go.html#line-171">#L171</a>: 			tb.MessageInfos[i].GoReflectType = reflect.<b>TypeOf</b>(messageGoTypes[i])
+		<a href="../src/google.golang.org/protobuf/internal/filetype/build.go.html#line-221" class="path-duplicate">build.go</a><a href="../src/google.golang.org/protobuf/internal/filetype/build.go.html#line-221">#L221</a>: 			goType = reflect.<b>TypeOf</b>(tb.GoTypes[j])
+		<a href="../src/google.golang.org/protobuf/internal/filetype/build.go.html#line-225" class="path-duplicate">build.go</a><a href="../src/google.golang.org/protobuf/internal/filetype/build.go.html#line-225">#L225</a>: 			goType = reflect.<b>TypeOf</b>(tb.GoTypes[j])
+		<a href="../src/google.golang.org/protobuf/internal/filetype/build.go.html#line-246" class="path-duplicate">build.go</a><a href="../src/google.golang.org/protobuf/internal/filetype/build.go.html#line-246">#L246</a>: 	pref.BoolKind:     reflect.<b>TypeOf</b>(bool(false)),
+		<a href="../src/google.golang.org/protobuf/internal/filetype/build.go.html#line-247" class="path-duplicate">build.go</a><a href="../src/google.golang.org/protobuf/internal/filetype/build.go.html#line-247">#L247</a>: 	pref.Int32Kind:    reflect.<b>TypeOf</b>(int32(0)),
+		<a href="../src/google.golang.org/protobuf/internal/filetype/build.go.html#line-248" class="path-duplicate">build.go</a><a href="../src/google.golang.org/protobuf/internal/filetype/build.go.html#line-248">#L248</a>: 	pref.Sint32Kind:   reflect.<b>TypeOf</b>(int32(0)),
+		<a href="../src/google.golang.org/protobuf/internal/filetype/build.go.html#line-249" class="path-duplicate">build.go</a><a href="../src/google.golang.org/protobuf/internal/filetype/build.go.html#line-249">#L249</a>: 	pref.Sfixed32Kind: reflect.<b>TypeOf</b>(int32(0)),
+		<a href="../src/google.golang.org/protobuf/internal/filetype/build.go.html#line-250" class="path-duplicate">build.go</a><a href="../src/google.golang.org/protobuf/internal/filetype/build.go.html#line-250">#L250</a>: 	pref.Int64Kind:    reflect.<b>TypeOf</b>(int64(0)),
+		<a href="../src/google.golang.org/protobuf/internal/filetype/build.go.html#line-251" class="path-duplicate">build.go</a><a href="../src/google.golang.org/protobuf/internal/filetype/build.go.html#line-251">#L251</a>: 	pref.Sint64Kind:   reflect.<b>TypeOf</b>(int64(0)),
+		<a href="../src/google.golang.org/protobuf/internal/filetype/build.go.html#line-252" class="path-duplicate">build.go</a><a href="../src/google.golang.org/protobuf/internal/filetype/build.go.html#line-252">#L252</a>: 	pref.Sfixed64Kind: reflect.<b>TypeOf</b>(int64(0)),
+		<a href="../src/google.golang.org/protobuf/internal/filetype/build.go.html#line-253" class="path-duplicate">build.go</a><a href="../src/google.golang.org/protobuf/internal/filetype/build.go.html#line-253">#L253</a>: 	pref.Uint32Kind:   reflect.<b>TypeOf</b>(uint32(0)),
+		<a href="../src/google.golang.org/protobuf/internal/filetype/build.go.html#line-254" class="path-duplicate">build.go</a><a href="../src/google.golang.org/protobuf/internal/filetype/build.go.html#line-254">#L254</a>: 	pref.Fixed32Kind:  reflect.<b>TypeOf</b>(uint32(0)),
+		<a href="../src/google.golang.org/protobuf/internal/filetype/build.go.html#line-255" class="path-duplicate">build.go</a><a href="../src/google.golang.org/protobuf/internal/filetype/build.go.html#line-255">#L255</a>: 	pref.Uint64Kind:   reflect.<b>TypeOf</b>(uint64(0)),
+		<a href="../src/google.golang.org/protobuf/internal/filetype/build.go.html#line-256" class="path-duplicate">build.go</a><a href="../src/google.golang.org/protobuf/internal/filetype/build.go.html#line-256">#L256</a>: 	pref.Fixed64Kind:  reflect.<b>TypeOf</b>(uint64(0)),
+		<a href="../src/google.golang.org/protobuf/internal/filetype/build.go.html#line-257" class="path-duplicate">build.go</a><a href="../src/google.golang.org/protobuf/internal/filetype/build.go.html#line-257">#L257</a>: 	pref.FloatKind:    reflect.<b>TypeOf</b>(float32(0)),
+		<a href="../src/google.golang.org/protobuf/internal/filetype/build.go.html#line-258" class="path-duplicate">build.go</a><a href="../src/google.golang.org/protobuf/internal/filetype/build.go.html#line-258">#L258</a>: 	pref.DoubleKind:   reflect.<b>TypeOf</b>(float64(0)),
+		<a href="../src/google.golang.org/protobuf/internal/filetype/build.go.html#line-259" class="path-duplicate">build.go</a><a href="../src/google.golang.org/protobuf/internal/filetype/build.go.html#line-259">#L259</a>: 	pref.StringKind:   reflect.<b>TypeOf</b>(string("")),
+		<a href="../src/google.golang.org/protobuf/internal/filetype/build.go.html#line-260" class="path-duplicate">build.go</a><a href="../src/google.golang.org/protobuf/internal/filetype/build.go.html#line-260">#L260</a>: 	pref.BytesKind:    reflect.<b>TypeOf</b>([]byte(nil)),
+
+	<a href="../pkg/google.golang.org/protobuf/internal/impl.html">google.golang.org/protobuf/internal/impl</a>
+		<a href="../src/google.golang.org/protobuf/internal/impl/api_export.go.html#line-55">api_export.go#L55</a>: 		return LegacyLoadEnumDesc(reflect.<b>TypeOf</b>(e))
+		<a href="../src/google.golang.org/protobuf/internal/impl/api_export.go.html#line-68" class="path-duplicate">api_export.go</a><a href="../src/google.golang.org/protobuf/internal/impl/api_export.go.html#line-68">#L68</a>: 		return legacyLoadEnumType(reflect.<b>TypeOf</b>(e))
+		<a href="../src/google.golang.org/protobuf/internal/impl/api_export.go.html#line-158" class="path-duplicate">api_export.go</a><a href="../src/google.golang.org/protobuf/internal/impl/api_export.go.html#line-158">#L158</a>: 	return LegacyLoadMessageDesc(reflect.<b>TypeOf</b>(m))
+		<a href="../src/google.golang.org/protobuf/internal/impl/api_export.go.html#line-170" class="path-duplicate">api_export.go</a><a href="../src/google.golang.org/protobuf/internal/impl/api_export.go.html#line-170">#L170</a>: 	return legacyLoadMessageType(reflect.<b>TypeOf</b>(m), "")
+		<a href="../src/google.golang.org/protobuf/internal/impl/convert.go.html#line-66">convert.go#L66</a>: 	boolType    = reflect.<b>TypeOf</b>(bool(false))
+		<a href="../src/google.golang.org/protobuf/internal/impl/convert.go.html#line-67" class="path-duplicate">convert.go</a><a href="../src/google.golang.org/protobuf/internal/impl/convert.go.html#line-67">#L67</a>: 	int32Type   = reflect.<b>TypeOf</b>(int32(0))
+		<a href="../src/google.golang.org/protobuf/internal/impl/convert.go.html#line-68" class="path-duplicate">convert.go</a><a href="../src/google.golang.org/protobuf/internal/impl/convert.go.html#line-68">#L68</a>: 	int64Type   = reflect.<b>TypeOf</b>(int64(0))
+		<a href="../src/google.golang.org/protobuf/internal/impl/convert.go.html#line-69" class="path-duplicate">convert.go</a><a href="../src/google.golang.org/protobuf/internal/impl/convert.go.html#line-69">#L69</a>: 	uint32Type  = reflect.<b>TypeOf</b>(uint32(0))
+		<a href="../src/google.golang.org/protobuf/internal/impl/convert.go.html#line-70" class="path-duplicate">convert.go</a><a href="../src/google.golang.org/protobuf/internal/impl/convert.go.html#line-70">#L70</a>: 	uint64Type  = reflect.<b>TypeOf</b>(uint64(0))
+		<a href="../src/google.golang.org/protobuf/internal/impl/convert.go.html#line-71" class="path-duplicate">convert.go</a><a href="../src/google.golang.org/protobuf/internal/impl/convert.go.html#line-71">#L71</a>: 	float32Type = reflect.<b>TypeOf</b>(float32(0))
+		<a href="../src/google.golang.org/protobuf/internal/impl/convert.go.html#line-72" class="path-duplicate">convert.go</a><a href="../src/google.golang.org/protobuf/internal/impl/convert.go.html#line-72">#L72</a>: 	float64Type = reflect.<b>TypeOf</b>(float64(0))
+		<a href="../src/google.golang.org/protobuf/internal/impl/convert.go.html#line-73" class="path-duplicate">convert.go</a><a href="../src/google.golang.org/protobuf/internal/impl/convert.go.html#line-73">#L73</a>: 	stringType  = reflect.<b>TypeOf</b>(string(""))
+		<a href="../src/google.golang.org/protobuf/internal/impl/convert.go.html#line-74" class="path-duplicate">convert.go</a><a href="../src/google.golang.org/protobuf/internal/impl/convert.go.html#line-74">#L74</a>: 	bytesType   = reflect.<b>TypeOf</b>([]byte(nil))
+		<a href="../src/google.golang.org/protobuf/internal/impl/convert.go.html#line-75" class="path-duplicate">convert.go</a><a href="../src/google.golang.org/protobuf/internal/impl/convert.go.html#line-75">#L75</a>: 	byteType    = reflect.<b>TypeOf</b>(byte(0))
+		<a href="../src/google.golang.org/protobuf/internal/impl/legacy_export.go.html#line-33">legacy_export.go#L33</a>: 	return legacyLoadMessageType(reflect.<b>TypeOf</b>(m), name)
+		<a href="../src/google.golang.org/protobuf/internal/impl/legacy_extension.go.html#line-27">legacy_extension.go#L27</a>: 		t := reflect.<b>TypeOf</b>(mv)
+		<a href="../src/google.golang.org/protobuf/internal/impl/legacy_extension.go.html#line-29" class="path-duplicate">legacy_extension.go</a><a href="../src/google.golang.org/protobuf/internal/impl/legacy_extension.go.html#line-29">#L29</a>: 			t = reflect.<b>TypeOf</b>(mv.protoUnwrap())
+		<a href="../src/google.golang.org/protobuf/internal/impl/legacy_extension.go.html#line-90" class="path-duplicate">legacy_extension.go</a><a href="../src/google.golang.org/protobuf/internal/impl/legacy_extension.go.html#line-90">#L90</a>: 	t := reflect.<b>TypeOf</b>(xi.ExtensionType)
+		<a href="../src/google.golang.org/protobuf/internal/impl/legacy_extension.go.html#line-132" class="path-duplicate">legacy_extension.go</a><a href="../src/google.golang.org/protobuf/internal/impl/legacy_extension.go.html#line-132">#L132</a>: 	tt := reflect.<b>TypeOf</b>(xi.ExtensionType)
+		<a href="../src/google.golang.org/protobuf/internal/impl/legacy_message.go.html#line-216">legacy_message.go#L216</a>: 						oneofWrappers = append(oneofWrappers, reflect.<b>TypeOf</b>(v))
+		<a href="../src/google.golang.org/protobuf/internal/impl/message.go.html#line-120">message.go#L120</a>: 	sizecacheType       = reflect.<b>TypeOf</b>(SizeCache(0))
+		<a href="../src/google.golang.org/protobuf/internal/impl/message.go.html#line-121" class="path-duplicate">message.go</a><a href="../src/google.golang.org/protobuf/internal/impl/message.go.html#line-121">#L121</a>: 	weakFieldsType      = reflect.<b>TypeOf</b>(WeakFields(nil))
+		<a href="../src/google.golang.org/protobuf/internal/impl/message.go.html#line-122" class="path-duplicate">message.go</a><a href="../src/google.golang.org/protobuf/internal/impl/message.go.html#line-122">#L122</a>: 	unknownFieldsAType  = reflect.<b>TypeOf</b>(unknownFieldsA(nil))
+		<a href="../src/google.golang.org/protobuf/internal/impl/message.go.html#line-123" class="path-duplicate">message.go</a><a href="../src/google.golang.org/protobuf/internal/impl/message.go.html#line-123">#L123</a>: 	unknownFieldsBType  = reflect.<b>TypeOf</b>(unknownFieldsB(nil))
+		<a href="../src/google.golang.org/protobuf/internal/impl/message.go.html#line-124" class="path-duplicate">message.go</a><a href="../src/google.golang.org/protobuf/internal/impl/message.go.html#line-124">#L124</a>: 	extensionFieldsType = reflect.<b>TypeOf</b>(ExtensionFields(nil))
+		<a href="../src/google.golang.org/protobuf/internal/impl/message.go.html#line-206" class="path-duplicate">message.go</a><a href="../src/google.golang.org/protobuf/internal/impl/message.go.html#line-206">#L206</a>: 		tf := reflect.<b>TypeOf</b>(v).Elem()
+		<a href="../src/google.golang.org/protobuf/internal/impl/message_reflect.go.html#line-400">message_reflect.go#L400</a>: 	if reflect.<b>TypeOf</b>(m) != mi.GoReflectType {
+
+	<a href="../pkg/google.golang.org/protobuf/types/descriptorpb.html">google.golang.org/protobuf/types/descriptorpb</a>
+		<a href="../src/google.golang.org/protobuf/types/descriptorpb/descriptor.pb.go.html#line-3941">descriptor.pb.go#L3941</a>: 			GoPackagePath: reflect.<b>TypeOf</b>(x{}).PkgPath(),
+
+	<a href="../pkg/google.golang.org/protobuf/types/known/anypb.html">google.golang.org/protobuf/types/known/anypb</a>
+		<a href="../src/google.golang.org/protobuf/types/known/anypb/any.pb.go.html#line-483">any.pb.go#L483</a>: 			GoPackagePath: reflect.<b>TypeOf</b>(x{}).PkgPath(),
+
+	<a href="../pkg/google.golang.org/protobuf/types/known/durationpb.html">google.golang.org/protobuf/types/known/durationpb</a>
+		<a href="../src/google.golang.org/protobuf/types/known/durationpb/duration.pb.go.html#line-364">duration.pb.go#L364</a>: 			GoPackagePath: reflect.<b>TypeOf</b>(x{}).PkgPath(),
+
+	<a href="../pkg/google.golang.org/protobuf/types/known/timestamppb.html">google.golang.org/protobuf/types/known/timestamppb</a>
+		<a href="../src/google.golang.org/protobuf/types/known/timestamppb/timestamp.pb.go.html#line-375">timestamp.pb.go#L375</a>: 			GoPackagePath: reflect.<b>TypeOf</b>(x{}).PkgPath(),
+
+	<a href="../pkg/html/template.html">html/template</a>
+		<a href="../src/html/template/content.go.html#line-119">content.go#L119</a>: 	if t := reflect.<b>TypeOf</b>(a); t.Kind() != reflect.Ptr {
+		<a href="../src/html/template/content.go.html#line-131" class="path-duplicate">content.go</a><a href="../src/html/template/content.go.html#line-131">#L131</a>: 	errorType       = reflect.<b>TypeOf</b>((*error)(nil)).Elem()
+		<a href="../src/html/template/content.go.html#line-132" class="path-duplicate">content.go</a><a href="../src/html/template/content.go.html#line-132">#L132</a>: 	fmtStringerType = reflect.<b>TypeOf</b>((*fmt.Stringer)(nil)).Elem()
+		<a href="../src/html/template/js.go.html#line-121">js.go#L121</a>: var jsonMarshalType = reflect.<b>TypeOf</b>((*json.Marshaler)(nil)).Elem()
+
+	<a href="../pkg/net/http.html">net/http</a>
+		<a href="../src/net/http/client.go.html#line-329">client.go#L329</a>: 	if reflect.<b>TypeOf</b>(rt).String() == "*http2.Transport" {
+		<a href="../src/net/http/transfer.go.html#line-423">transfer.go#L423</a>: 	if reflect.<b>TypeOf</b>(t.Body) == nopCloserType {
+		<a href="../src/net/http/transfer.go.html#line-1078" class="path-duplicate">transfer.go</a><a href="../src/net/http/transfer.go.html#line-1078">#L1078</a>: var nopCloserType = reflect.<b>TypeOf</b>(io.NopCloser(nil))
+		<a href="../src/net/http/transfer.go.html#line-1088" class="path-duplicate">transfer.go</a><a href="../src/net/http/transfer.go.html#line-1088">#L1088</a>: 	if reflect.<b>TypeOf</b>(r) == nopCloserType {
+
+	<a href="../pkg/text/template.html">text/template</a>
+		<a href="../src/text/template/exec.go.html#line-664">exec.go#L664</a>: 	errorType        = reflect.<b>TypeOf</b>((*error)(nil)).Elem()
+		<a href="../src/text/template/exec.go.html#line-665" class="path-duplicate">exec.go</a><a href="../src/text/template/exec.go.html#line-665">#L665</a>: 	fmtStringerType  = reflect.<b>TypeOf</b>((*fmt.Stringer)(nil)).Elem()
+		<a href="../src/text/template/exec.go.html#line-666" class="path-duplicate">exec.go</a><a href="../src/text/template/exec.go.html#line-666">#L666</a>: 	reflectValueType = reflect.<b>TypeOf</b>((*reflect.Value)(nil)).Elem()
+
+	<a href="../pkg/vendor/golang.org/x/crypto/cryptobyte.html">vendor/golang.org/x/crypto/cryptobyte</a>
+		<a href="../src/vendor/golang.org/x/crypto/cryptobyte/asn1.go.html#line-267">asn1.go#L267</a>: var bigIntType = reflect.<b>TypeOf</b>((*big.Int)(nil)).Elem()
+		<a href="../src/vendor/golang.org/x/crypto/cryptobyte/asn1.go.html#line-273" class="path-duplicate">asn1.go</a><a href="../src/vendor/golang.org/x/crypto/cryptobyte/asn1.go.html#line-273">#L273</a>: 	if reflect.<b>TypeOf</b>(out).Kind() != reflect.Ptr {
+		<a href="../src/vendor/golang.org/x/crypto/cryptobyte/asn1.go.html#line-292" class="path-duplicate">asn1.go</a><a href="../src/vendor/golang.org/x/crypto/cryptobyte/asn1.go.html#line-292">#L292</a>: 		if reflect.<b>TypeOf</b>(out).Elem() == bigIntType {
+		<a href="../src/vendor/golang.org/x/crypto/cryptobyte/asn1.go.html#line-663" class="path-duplicate">asn1.go</a><a href="../src/vendor/golang.org/x/crypto/cryptobyte/asn1.go.html#line-663">#L663</a>: 	if reflect.<b>TypeOf</b>(out).Kind() != reflect.Ptr {
+		<a href="../src/vendor/golang.org/x/crypto/cryptobyte/asn1.go.html#line-677" class="path-duplicate">asn1.go</a><a href="../src/vendor/golang.org/x/crypto/cryptobyte/asn1.go.html#line-677">#L677</a>: 			if reflect.<b>TypeOf</b>(out).Elem() != bigIntType {
+		<a href="../src/vendor/golang.org/x/crypto/cryptobyte/asn1.go.html#line-680" class="path-duplicate">asn1.go</a><a href="../src/vendor/golang.org/x/crypto/cryptobyte/asn1.go.html#line-680">#L680</a>: 			if reflect.<b>TypeOf</b>(defaultValue).Kind() != reflect.Ptr ||
+		<a href="../src/vendor/golang.org/x/crypto/cryptobyte/asn1.go.html#line-681" class="path-duplicate">asn1.go</a><a href="../src/vendor/golang.org/x/crypto/cryptobyte/asn1.go.html#line-681">#L681</a>: 				reflect.<b>TypeOf</b>(defaultValue).Elem() != bigIntType {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

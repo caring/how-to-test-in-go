@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: time.RFC3339</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">const <b><a href="../pkg/time.html">time</a>.<a href="../src/time/format.go.html#line-101">RFC3339</a></b></span>
+
+<span class="title">10 uses</span>
+
+	time (current package)
+		<a href="../src/time/format.go.html#line-101">format.go#L101</a>: 	<b>RFC3339</b>     = "2006-01-02T15:04:05Z07:00"
+		<a href="../src/time/time.go.html#line-1288">time.go#L1288</a>: 	*t, err = Parse(`"`+<b>RFC3339</b>+`"`, string(data))
+		<a href="../src/time/time.go.html#line-1308" class="path-duplicate">time.go</a><a href="../src/time/time.go.html#line-1308">#L1308</a>: 	*t, err = Parse(<b>RFC3339</b>, string(data))
+
+	<a href="../pkg/crypto/x509.html">crypto/x509</a>
+		<a href="../src/crypto/x509/verify.go.html#line-576">verify.go#L576</a>: 			Detail: fmt.Sprintf("current time %s is before %s", now.Format(time.<b>RFC3339</b>), c.NotBefore.Format(time.<b>RFC3339</b>)),
+		<a href="../src/crypto/x509/verify.go.html#line-582" class="path-duplicate">verify.go</a><a href="../src/crypto/x509/verify.go.html#line-582">#L582</a>: 			Detail: fmt.Sprintf("current time %s is after %s", now.Format(time.<b>RFC3339</b>), c.NotAfter.Format(time.<b>RFC3339</b>)),
+
+	<a href="../pkg/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap.html">github.com/grpc-ecosystem/go-grpc-middleware/logging/zap</a>
+		<a href="../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/server_interceptors.go.html#line-89">server_interceptors.go#L89</a>: 	f = append(f, zap.String("grpc.start_time", start.Format(time.<b>RFC3339</b>)))
+		<a href="../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/server_interceptors.go.html#line-91" class="path-duplicate">server_interceptors.go</a><a href="../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/server_interceptors.go.html#line-91">#L91</a>: 		f = append(f, zap.String("grpc.request.deadline", d.Format(time.<b>RFC3339</b>)))
+
+	<a href="../pkg/go.uber.org/zap/zapcore.html">go.uber.org/zap/zapcore</a>
+		<a href="../src/go.uber.org/zap/zapcore/encoder.go.html#line-142">encoder.go#L142</a>: 	encodeTimeLayout(t, time.<b>RFC3339</b>, enc)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

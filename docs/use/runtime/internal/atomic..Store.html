@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime/internal/atomic.Store</title>
+<link href="../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">func <b><a href="../../../pkg/runtime/internal/atomic.html">runtime/internal/atomic</a>.<a href="../../../src/runtime/internal/atomic/atomic_amd64.go.html#line-95">Store</a></b></span>
+
+<span class="title">55 uses</span>
+
+	runtime/internal/atomic (current package)
+		<a href="../../../src/runtime/internal/atomic/atomic_amd64.go.html#line-95">atomic_amd64.go#L95</a>: func <b>Store</b>(ptr *uint32, val uint32)
+
+	<a href="../../../pkg/runtime.html">runtime</a>
+		<a href="../../../src/runtime/cpuprof.go.html#line-118">cpuprof.go#L118</a>: 	atomic.<b>Store</b>(&amp;prof.signalLock, 0)
+		<a href="../../../src/runtime/cpuprof.go.html#line-148" class="path-duplicate">cpuprof.go</a><a href="../../../src/runtime/cpuprof.go.html#line-148">#L148</a>: 	atomic.<b>Store</b>(&amp;prof.signalLock, 0)
+		<a href="../../../src/runtime/debuglog.go.html#line-161">debuglog.go#L161</a>: 	atomic.<b>Store</b>(&amp;l.owned, 0)
+		<a href="../../../src/runtime/mcache.go.html#line-319">mcache.go#L319</a>: 	atomic.<b>Store</b>(&amp;c.flushGen, mheap_.sweepgen) // Synchronizes with gcStart
+		<a href="../../../src/runtime/mcentral.go.html#line-207">mcentral.go#L207</a>: 		atomic.<b>Store</b>(&amp;s.sweepgen, sg-1)
+		<a href="../../../src/runtime/mcentral.go.html#line-210" class="path-duplicate">mcentral.go</a><a href="../../../src/runtime/mcentral.go.html#line-210">#L210</a>: 		atomic.<b>Store</b>(&amp;s.sweepgen, sg)
+		<a href="../../../src/runtime/mfinal.go.html#line-255">mfinal.go#L255</a>: 				atomic.<b>Store</b>(&amp;fb.cnt, i-1)
+		<a href="../../../src/runtime/mgc.go.html#line-218">mgc.go#L218</a>: 	atomic.<b>Store</b>(&amp;gcphase, x)
+		<a href="../../../src/runtime/mgc.go.html#line-710" class="path-duplicate">mgc.go</a><a href="../../../src/runtime/mgc.go.html#line-710">#L710</a>: 	atomic.<b>Store</b>(&amp;gcBlackenEnabled, 1)
+		<a href="../../../src/runtime/mgc.go.html#line-881" class="path-duplicate">mgc.go</a><a href="../../../src/runtime/mgc.go.html#line-881">#L881</a>: 	atomic.<b>Store</b>(&amp;gcBlackenEnabled, 0)
+		<a href="../../../src/runtime/mgcscavenge.go.html#line-176">mgcscavenge.go#L176</a>: 	atomic.<b>Store</b>(&amp;scavenge.sysmonWake, 1)
+		<a href="../../../src/runtime/mgcscavenge.go.html#line-189" class="path-duplicate">mgcscavenge.go</a><a href="../../../src/runtime/mgcscavenge.go.html#line-189">#L189</a>: 		atomic.<b>Store</b>(&amp;scavenge.sysmonWake, 0)
+		<a href="../../../src/runtime/mgcsweep.go.html#line-82">mgcsweep.go#L82</a>: 	atomic.<b>Store</b>((*uint32)(s), 0)
+		<a href="../../../src/runtime/mgcsweep.go.html#line-573" class="path-duplicate">mgcsweep.go</a><a href="../../../src/runtime/mgcsweep.go.html#line-573">#L573</a>: 	atomic.<b>Store</b>(&amp;s.sweepgen, sweepgen)
+		<a href="../../../src/runtime/mheap.go.html#line-1249">mheap.go#L1249</a>: 		atomic.<b>Store</b>(&amp;s.sweepgen, h.sweepgen)
+		<a href="../../../src/runtime/mspanset.go.html#line-291">mspanset.go#L291</a>: 	atomic.<b>Store</b>(&amp;block.popped, 0)
+		<a href="../../../src/runtime/netpoll.go.html#line-129">netpoll.go#L129</a>: 			atomic.<b>Store</b>(&amp;netpollInited, 1)
+		<a href="../../../src/runtime/netpoll_kqueue.go.html#line-156">netpoll_kqueue.go#L156</a>: 				atomic.<b>Store</b>(&amp;netpollWakeSig, 0)
+		<a href="../../../src/runtime/proc.go.html#line-173">proc.go#L173</a>: 		atomic.<b>Store</b>(&amp;sched.sysmonStarting, 1)
+		<a href="../../../src/runtime/proc.go.html#line-305" class="path-duplicate">proc.go</a><a href="../../../src/runtime/proc.go.html#line-305">#L305</a>: 		atomic.<b>Store</b>(&amp;forcegc.idle, 1)
+		<a href="../../../src/runtime/proc.go.html#line-865" class="path-duplicate">proc.go</a><a href="../../../src/runtime/proc.go.html#line-865">#L865</a>: 	atomic.<b>Store</b>(&amp;freezing, 1)
+		<a href="../../../src/runtime/proc.go.html#line-872" class="path-duplicate">proc.go</a><a href="../../../src/runtime/proc.go.html#line-872">#L872</a>: 		atomic.<b>Store</b>(&amp;sched.gcwaiting, 1)
+		<a href="../../../src/runtime/proc.go.html#line-1174" class="path-duplicate">proc.go</a><a href="../../../src/runtime/proc.go.html#line-1174">#L1174</a>: 	atomic.<b>Store</b>(&amp;sched.gcwaiting, 1)
+		<a href="../../../src/runtime/proc.go.html#line-1515" class="path-duplicate">proc.go</a><a href="../../../src/runtime/proc.go.html#line-1515">#L1515</a>: 		atomic.<b>Store</b>(&amp;m.freeWait, 1)
+		<a href="../../../src/runtime/proc.go.html#line-1589" class="path-duplicate">proc.go</a><a href="../../../src/runtime/proc.go.html#line-1589">#L1589</a>: 			atomic.<b>Store</b>(&amp;p.runSafePointFn, 1)
+		<a href="../../../src/runtime/proc.go.html#line-1747" class="path-duplicate">proc.go</a><a href="../../../src/runtime/proc.go.html#line-1747">#L1747</a>: 			atomic.<b>Store</b>(&amp;mp.mFixup.used, 1)
+		<a href="../../../src/runtime/proc.go.html#line-1772" class="path-duplicate">proc.go</a><a href="../../../src/runtime/proc.go.html#line-1772">#L1772</a>: 				atomic.<b>Store</b>(&amp;sched.sysmonwait, 0)
+		<a href="../../../src/runtime/proc.go.html#line-2333" class="path-duplicate">proc.go</a><a href="../../../src/runtime/proc.go.html#line-2333">#L2333</a>: 		atomic.<b>Store</b>(&amp;_g_.m.mFixup.used, 0)
+		<a href="../../../src/runtime/proc.go.html#line-3814" class="path-duplicate">proc.go</a><a href="../../../src/runtime/proc.go.html#line-3814">#L3814</a>: 	atomic.<b>Store</b>(&amp;pp.status, _Psyscall)
+		<a href="../../../src/runtime/proc.go.html#line-3836" class="path-duplicate">proc.go</a><a href="../../../src/runtime/proc.go.html#line-3836">#L3836</a>: 		atomic.<b>Store</b>(&amp;sched.sysmonwait, 0)
+		<a href="../../../src/runtime/proc.go.html#line-4063" class="path-duplicate">proc.go</a><a href="../../../src/runtime/proc.go.html#line-4063">#L4063</a>: 		atomic.<b>Store</b>(&amp;sched.sysmonwait, 0)
+		<a href="../../../src/runtime/proc.go.html#line-4099" class="path-duplicate">proc.go</a><a href="../../../src/runtime/proc.go.html#line-4099">#L4099</a>: 		atomic.<b>Store</b>(&amp;sched.sysmonwait, 0)
+		<a href="../../../src/runtime/proc.go.html#line-4802" class="path-duplicate">proc.go</a><a href="../../../src/runtime/proc.go.html#line-4802">#L4802</a>: 	atomic.<b>Store</b>(&amp;sigprofCallersUse, 0)
+		<a href="../../../src/runtime/proc.go.html#line-4845" class="path-duplicate">proc.go</a><a href="../../../src/runtime/proc.go.html#line-4845">#L4845</a>: 	atomic.<b>Store</b>(&amp;prof.signalLock, 0)
+		<a href="../../../src/runtime/proc.go.html#line-5123" class="path-duplicate">proc.go</a><a href="../../../src/runtime/proc.go.html#line-5123">#L5123</a>: 	atomic.<b>Store</b>((*uint32)(unsafe.Pointer(int32p)), uint32(nprocs))
+		<a href="../../../src/runtime/proc.go.html#line-5322" class="path-duplicate">proc.go</a><a href="../../../src/runtime/proc.go.html#line-5322">#L5322</a>: 	atomic.<b>Store</b>(&amp;sched.sysmonStarting, 0)
+		<a href="../../../src/runtime/proc.go.html#line-5362" class="path-duplicate">proc.go</a><a href="../../../src/runtime/proc.go.html#line-5362">#L5362</a>: 					atomic.<b>Store</b>(&amp;sched.sysmonwait, 1)
+		<a href="../../../src/runtime/proc.go.html#line-5380" class="path-duplicate">proc.go</a><a href="../../../src/runtime/proc.go.html#line-5380">#L5380</a>: 					atomic.<b>Store</b>(&amp;sched.sysmonwait, 0)
+		<a href="../../../src/runtime/profbuf.go.html#line-401">profbuf.go#L401</a>: 	atomic.<b>Store</b>(&amp;b.eof, 1)
+		<a href="../../../src/runtime/runtime1.go.html#line-431">runtime1.go#L431</a>: 	atomic.<b>Store</b>(&amp;traceback_cache, t)
+		<a href="../../../src/runtime/sema.go.html#line-540">sema.go#L540</a>: 	atomic.<b>Store</b>(&amp;l.notify, atomic.Load(&amp;l.wait))
+		<a href="../../../src/runtime/sema.go.html#line-571" class="path-duplicate">sema.go</a><a href="../../../src/runtime/sema.go.html#line-571">#L571</a>: 	atomic.<b>Store</b>(&amp;l.notify, t+1)
+		<a href="../../../src/runtime/signal_unix.go.html#line-225">signal_unix.go#L225</a>: 			atomic.<b>Store</b>(&amp;handlingSig[sig], 0)
+		<a href="../../../src/runtime/signal_unix.go.html#line-246" class="path-duplicate">signal_unix.go</a><a href="../../../src/runtime/signal_unix.go.html#line-246">#L246</a>: 		atomic.<b>Store</b>(&amp;handlingSig[sig], 0)
+		<a href="../../../src/runtime/signal_unix.go.html#line-338" class="path-duplicate">signal_unix.go</a><a href="../../../src/runtime/signal_unix.go.html#line-338">#L338</a>: 	atomic.<b>Store</b>(&amp;gp.m.signalPending, 0)
+		<a href="../../../src/runtime/signal_unix.go.html#line-768" class="path-duplicate">signal_unix.go</a><a href="../../../src/runtime/signal_unix.go.html#line-768">#L768</a>: 	atomic.<b>Store</b>(&amp;handlingSig[sig], 0)
+		<a href="../../../src/runtime/sigqueue.go.html#line-241">sigqueue.go#L241</a>: 	atomic.<b>Store</b>(&amp;sig.wanted[s/32], w)
+		<a href="../../../src/runtime/sigqueue.go.html#line-245" class="path-duplicate">sigqueue.go</a><a href="../../../src/runtime/sigqueue.go.html#line-245">#L245</a>: 	atomic.<b>Store</b>(&amp;sig.ignored[s/32], i)
+		<a href="../../../src/runtime/sigqueue.go.html#line-260" class="path-duplicate">sigqueue.go</a><a href="../../../src/runtime/sigqueue.go.html#line-260">#L260</a>: 	atomic.<b>Store</b>(&amp;sig.wanted[s/32], w)
+		<a href="../../../src/runtime/sigqueue.go.html#line-273" class="path-duplicate">sigqueue.go</a><a href="../../../src/runtime/sigqueue.go.html#line-273">#L273</a>: 	atomic.<b>Store</b>(&amp;sig.wanted[s/32], w)
+		<a href="../../../src/runtime/sigqueue.go.html#line-277" class="path-duplicate">sigqueue.go</a><a href="../../../src/runtime/sigqueue.go.html#line-277">#L277</a>: 	atomic.<b>Store</b>(&amp;sig.ignored[s/32], i)
+		<a href="../../../src/runtime/sigqueue.go.html#line-287" class="path-duplicate">sigqueue.go</a><a href="../../../src/runtime/sigqueue.go.html#line-287">#L287</a>: 	atomic.<b>Store</b>(&amp;sig.ignored[s/32], i)
+		<a href="../../../src/runtime/traceback.go.html#line-806">traceback.go#L806</a>: 		atomic.<b>Store</b>(&amp;gp.m.cgoCallersUse, 1)
+		<a href="../../../src/runtime/traceback.go.html#line-809" class="path-duplicate">traceback.go</a><a href="../../../src/runtime/traceback.go.html#line-809">#L809</a>: 		atomic.<b>Store</b>(&amp;gp.m.cgoCallersUse, 0)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/uber/jaeger-client-go/thrift.INTERNAL_ERROR</title>
+<link href="../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">const <b><a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift.html">github.com/uber/jaeger-client-go/thrift</a>.<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/application_exception.go.html#line-33">INTERNAL_ERROR</a></b></span>
+
+<span class="title">5 uses</span>
+
+	github.com/uber/jaeger-client-go/thrift (current package)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/application_exception.go.html#line-33">application_exception.go#L33</a>: 	<b>INTERNAL_ERROR</b>                 = 6
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/application_exception.go.html#line-47" class="path-duplicate">application_exception.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/application_exception.go.html#line-47">#L47</a>: 	<b>INTERNAL_ERROR</b>:                 "unknown internal error",
+
+	<a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift-gen/jaeger.html">github.com/uber/jaeger-client-go/thrift-gen/jaeger</a>
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-2438">jaeger.go#L2438</a>:     x := thrift.NewTApplicationException(thrift.<b>INTERNAL_ERROR</b>, "Internal error processing submitBatches: " + err2.Error())
+
+	<a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift-gen/sampling.html">github.com/uber/jaeger-client-go/thrift-gen/sampling</a>
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-1101">sampling.go#L1101</a>:     x := thrift.NewTApplicationException(thrift.<b>INTERNAL_ERROR</b>, "Internal error processing getSamplingStrategy: " + err2.Error())
+
+	<a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift-gen/zipkincore.html">github.com/uber/jaeger-client-go/thrift-gen/zipkincore</a>
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-1593">zipkincore.go#L1593</a>:     x := thrift.NewTApplicationException(thrift.<b>INTERNAL_ERROR</b>, "Internal error processing submitZipkinBatch: " + err2.Error())
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

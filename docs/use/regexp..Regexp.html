@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: regexp.Regexp</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../pkg/regexp.html">regexp</a>.<a href="../src/regexp/regexp.go.html#line-82">Regexp</a></b></span>
+
+<span class="title">73 uses</span>
+
+	regexp (current package)
+		<a href="../src/regexp/backtrack.go.html#line-131">backtrack.go#L131</a>: func (b *bitState) push(re *<b>Regexp</b>, pc uint32, pos int, arg bool) {
+		<a href="../src/regexp/backtrack.go.html#line-140" class="path-duplicate">backtrack.go</a><a href="../src/regexp/backtrack.go.html#line-140">#L140</a>: func (re *<b>Regexp</b>) tryBacktrack(b *bitState, i input, pc uint32, pos int) bool {
+		<a href="../src/regexp/backtrack.go.html#line-307" class="path-duplicate">backtrack.go</a><a href="../src/regexp/backtrack.go.html#line-307">#L307</a>: func (re *<b>Regexp</b>) backtrack(ib []byte, is string, pos int, ncap int, dstCap []int) []int {
+		<a href="../src/regexp/exec.go.html#line-39">exec.go#L39</a>: 	re       *<b>Regexp</b>      // corresponding Regexp
+		<a href="../src/regexp/exec.go.html#line-397" class="path-duplicate">exec.go</a><a href="../src/regexp/exec.go.html#line-397">#L397</a>: func (re *<b>Regexp</b>) doOnePass(ir io.RuneReader, ib []byte, is string, pos, ncap int, dstCap []int) []int {
+		<a href="../src/regexp/exec.go.html#line-513" class="path-duplicate">exec.go</a><a href="../src/regexp/exec.go.html#line-513">#L513</a>: func (re *<b>Regexp</b>) doMatch(r io.RuneReader, b []byte, s string) bool {
+		<a href="../src/regexp/exec.go.html#line-521" class="path-duplicate">exec.go</a><a href="../src/regexp/exec.go.html#line-521">#L521</a>: func (re *<b>Regexp</b>) doExecute(r io.RuneReader, b []byte, s string, pos int, ncap int, dstCap []int) []int {
+		<a href="../src/regexp/regexp.go.html#line-82">regexp.go#L82</a>: type <b>Regexp</b> struct {
+		<a href="../src/regexp/regexp.go.html#line-105" class="path-duplicate">regexp.go</a><a href="../src/regexp/regexp.go.html#line-105">#L105</a>: func (re *<b>Regexp</b>) String() string {
+		<a href="../src/regexp/regexp.go.html#line-117" class="path-duplicate">regexp.go</a><a href="../src/regexp/regexp.go.html#line-117">#L117</a>: func (re *<b>Regexp</b>) Copy() *<b>Regexp</b> {
+		<a href="../src/regexp/regexp.go.html#line-132" class="path-duplicate">regexp.go</a><a href="../src/regexp/regexp.go.html#line-132">#L132</a>: func Compile(expr string) (*<b>Regexp</b>, error) {
+		<a href="../src/regexp/regexp.go.html#line-155" class="path-duplicate">regexp.go</a><a href="../src/regexp/regexp.go.html#line-155">#L155</a>: func CompilePOSIX(expr string) (*<b>Regexp</b>, error) {
+		<a href="../src/regexp/regexp.go.html#line-165" class="path-duplicate">regexp.go</a><a href="../src/regexp/regexp.go.html#line-165">#L165</a>: func (re *<b>Regexp</b>) Longest() {
+		<a href="../src/regexp/regexp.go.html#line-169" class="path-duplicate">regexp.go</a><a href="../src/regexp/regexp.go.html#line-169">#L169</a>: func compile(expr string, mode syntax.Flags, longest bool) (*<b>Regexp</b>, error) {
+		<a href="../src/regexp/regexp.go.html#line-186" class="path-duplicate">regexp.go</a><a href="../src/regexp/regexp.go.html#line-186">#L186</a>: 	regexp := &amp;<b>Regexp</b>{
+		<a href="../src/regexp/regexp.go.html#line-234" class="path-duplicate">regexp.go</a><a href="../src/regexp/regexp.go.html#line-234">#L234</a>: func (re *<b>Regexp</b>) get() *machine {
+		<a href="../src/regexp/regexp.go.html#line-262" class="path-duplicate">regexp.go</a><a href="../src/regexp/regexp.go.html#line-262">#L262</a>: func (re *<b>Regexp</b>) put(m *machine) {
+		<a href="../src/regexp/regexp.go.html#line-308" class="path-duplicate">regexp.go</a><a href="../src/regexp/regexp.go.html#line-308">#L308</a>: func MustCompile(str string) *<b>Regexp</b> {
+		<a href="../src/regexp/regexp.go.html#line-319" class="path-duplicate">regexp.go</a><a href="../src/regexp/regexp.go.html#line-319">#L319</a>: func MustCompilePOSIX(str string) *<b>Regexp</b> {
+		<a href="../src/regexp/regexp.go.html#line-335" class="path-duplicate">regexp.go</a><a href="../src/regexp/regexp.go.html#line-335">#L335</a>: func (re *<b>Regexp</b>) NumSubexp() int {
+		<a href="../src/regexp/regexp.go.html#line-344" class="path-duplicate">regexp.go</a><a href="../src/regexp/regexp.go.html#line-344">#L344</a>: func (re *<b>Regexp</b>) SubexpNames() []string {
+		<a href="../src/regexp/regexp.go.html#line-355" class="path-duplicate">regexp.go</a><a href="../src/regexp/regexp.go.html#line-355">#L355</a>: func (re *<b>Regexp</b>) SubexpIndex(name string) int {
+		<a href="../src/regexp/regexp.go.html#line-373" class="path-duplicate">regexp.go</a><a href="../src/regexp/regexp.go.html#line-373">#L373</a>: 	hasPrefix(re *<b>Regexp</b>) bool
+		<a href="../src/regexp/regexp.go.html#line-374" class="path-duplicate">regexp.go</a><a href="../src/regexp/regexp.go.html#line-374">#L374</a>: 	index(re *<b>Regexp</b>, pos int) int
+		<a href="../src/regexp/regexp.go.html#line-398" class="path-duplicate">regexp.go</a><a href="../src/regexp/regexp.go.html#line-398">#L398</a>: func (i *inputString) hasPrefix(re *<b>Regexp</b>) bool {
+		<a href="../src/regexp/regexp.go.html#line-402" class="path-duplicate">regexp.go</a><a href="../src/regexp/regexp.go.html#line-402">#L402</a>: func (i *inputString) index(re *<b>Regexp</b>, pos int) int {
+		<a href="../src/regexp/regexp.go.html#line-445" class="path-duplicate">regexp.go</a><a href="../src/regexp/regexp.go.html#line-445">#L445</a>: func (i *inputBytes) hasPrefix(re *<b>Regexp</b>) bool {
+		<a href="../src/regexp/regexp.go.html#line-449" class="path-duplicate">regexp.go</a><a href="../src/regexp/regexp.go.html#line-449">#L449</a>: func (i *inputBytes) index(re *<b>Regexp</b>, pos int) int {
+		<a href="../src/regexp/regexp.go.html#line-497" class="path-duplicate">regexp.go</a><a href="../src/regexp/regexp.go.html#line-497">#L497</a>: func (i *inputReader) hasPrefix(re *<b>Regexp</b>) bool {
+		<a href="../src/regexp/regexp.go.html#line-501" class="path-duplicate">regexp.go</a><a href="../src/regexp/regexp.go.html#line-501">#L501</a>: func (i *inputReader) index(re *<b>Regexp</b>, pos int) int {
+		<a href="../src/regexp/regexp.go.html#line-512" class="path-duplicate">regexp.go</a><a href="../src/regexp/regexp.go.html#line-512">#L512</a>: func (re *<b>Regexp</b>) LiteralPrefix() (prefix string, complete bool) {
+		<a href="../src/regexp/regexp.go.html#line-518" class="path-duplicate">regexp.go</a><a href="../src/regexp/regexp.go.html#line-518">#L518</a>: func (re *<b>Regexp</b>) MatchReader(r io.RuneReader) bool {
+		<a href="../src/regexp/regexp.go.html#line-524" class="path-duplicate">regexp.go</a><a href="../src/regexp/regexp.go.html#line-524">#L524</a>: func (re *<b>Regexp</b>) MatchString(s string) bool {
+		<a href="../src/regexp/regexp.go.html#line-530" class="path-duplicate">regexp.go</a><a href="../src/regexp/regexp.go.html#line-530">#L530</a>: func (re *<b>Regexp</b>) Match(b []byte) bool {
+		<a href="../src/regexp/regexp.go.html#line-570" class="path-duplicate">regexp.go</a><a href="../src/regexp/regexp.go.html#line-570">#L570</a>: func (re *<b>Regexp</b>) ReplaceAllString(src, repl string) string {
+		<a href="../src/regexp/regexp.go.html#line-584" class="path-duplicate">regexp.go</a><a href="../src/regexp/regexp.go.html#line-584">#L584</a>: func (re *<b>Regexp</b>) ReplaceAllLiteralString(src, repl string) string {
+		<a href="../src/regexp/regexp.go.html#line-594" class="path-duplicate">regexp.go</a><a href="../src/regexp/regexp.go.html#line-594">#L594</a>: func (re *<b>Regexp</b>) ReplaceAllStringFunc(src string, repl func(string) string) string {
+		<a href="../src/regexp/regexp.go.html#line-601" class="path-duplicate">regexp.go</a><a href="../src/regexp/regexp.go.html#line-601">#L601</a>: func (re *<b>Regexp</b>) replaceAll(bsrc []byte, src string, nmatch int, repl func(dst []byte, m []int) []byte) []byte {
+		<a href="../src/regexp/regexp.go.html#line-669" class="path-duplicate">regexp.go</a><a href="../src/regexp/regexp.go.html#line-669">#L669</a>: func (re *<b>Regexp</b>) ReplaceAll(src, repl []byte) []byte {
+		<a href="../src/regexp/regexp.go.html#line-687" class="path-duplicate">regexp.go</a><a href="../src/regexp/regexp.go.html#line-687">#L687</a>: func (re *<b>Regexp</b>) ReplaceAllLiteral(src, repl []byte) []byte {
+		<a href="../src/regexp/regexp.go.html#line-697" class="path-duplicate">regexp.go</a><a href="../src/regexp/regexp.go.html#line-697">#L697</a>: func (re *<b>Regexp</b>) ReplaceAllFunc(src []byte, repl func([]byte) []byte) []byte {
+		<a href="../src/regexp/regexp.go.html#line-752" class="path-duplicate">regexp.go</a><a href="../src/regexp/regexp.go.html#line-752">#L752</a>: func (re *<b>Regexp</b>) pad(a []int) []int {
+		<a href="../src/regexp/regexp.go.html#line-767" class="path-duplicate">regexp.go</a><a href="../src/regexp/regexp.go.html#line-767">#L767</a>: func (re *<b>Regexp</b>) allMatches(s string, b []byte, n int, deliver func([]int)) {
+		<a href="../src/regexp/regexp.go.html#line-815" class="path-duplicate">regexp.go</a><a href="../src/regexp/regexp.go.html#line-815">#L815</a>: func (re *<b>Regexp</b>) Find(b []byte) []byte {
+		<a href="../src/regexp/regexp.go.html#line-828" class="path-duplicate">regexp.go</a><a href="../src/regexp/regexp.go.html#line-828">#L828</a>: func (re *<b>Regexp</b>) FindIndex(b []byte) (loc []int) {
+		<a href="../src/regexp/regexp.go.html#line-841" class="path-duplicate">regexp.go</a><a href="../src/regexp/regexp.go.html#line-841">#L841</a>: func (re *<b>Regexp</b>) FindString(s string) string {
+		<a href="../src/regexp/regexp.go.html#line-854" class="path-duplicate">regexp.go</a><a href="../src/regexp/regexp.go.html#line-854">#L854</a>: func (re *<b>Regexp</b>) FindStringIndex(s string) (loc []int) {
+		<a href="../src/regexp/regexp.go.html#line-867" class="path-duplicate">regexp.go</a><a href="../src/regexp/regexp.go.html#line-867">#L867</a>: func (re *<b>Regexp</b>) FindReaderIndex(r io.RuneReader) (loc []int) {
+		<a href="../src/regexp/regexp.go.html#line-880" class="path-duplicate">regexp.go</a><a href="../src/regexp/regexp.go.html#line-880">#L880</a>: func (re *<b>Regexp</b>) FindSubmatch(b []byte) [][]byte {
+		<a href="../src/regexp/regexp.go.html#line-912" class="path-duplicate">regexp.go</a><a href="../src/regexp/regexp.go.html#line-912">#L912</a>: func (re *<b>Regexp</b>) Expand(dst []byte, template []byte, src []byte, match []int) []byte {
+		<a href="../src/regexp/regexp.go.html#line-919" class="path-duplicate">regexp.go</a><a href="../src/regexp/regexp.go.html#line-919">#L919</a>: func (re *<b>Regexp</b>) ExpandString(dst []byte, template string, src string, match []int) []byte {
+		<a href="../src/regexp/regexp.go.html#line-923" class="path-duplicate">regexp.go</a><a href="../src/regexp/regexp.go.html#line-923">#L923</a>: func (re *<b>Regexp</b>) expand(dst []byte, template string, bsrc []byte, src string, match []int) []byte {
+		<a href="../src/regexp/regexp.go.html#line-1028" class="path-duplicate">regexp.go</a><a href="../src/regexp/regexp.go.html#line-1028">#L1028</a>: func (re *<b>Regexp</b>) FindSubmatchIndex(b []byte) []int {
+		<a href="../src/regexp/regexp.go.html#line-1037" class="path-duplicate">regexp.go</a><a href="../src/regexp/regexp.go.html#line-1037">#L1037</a>: func (re *<b>Regexp</b>) FindStringSubmatch(s string) []string {
+		<a href="../src/regexp/regexp.go.html#line-1057" class="path-duplicate">regexp.go</a><a href="../src/regexp/regexp.go.html#line-1057">#L1057</a>: func (re *<b>Regexp</b>) FindStringSubmatchIndex(s string) []int {
+		<a href="../src/regexp/regexp.go.html#line-1066" class="path-duplicate">regexp.go</a><a href="../src/regexp/regexp.go.html#line-1066">#L1066</a>: func (re *<b>Regexp</b>) FindReaderSubmatchIndex(r io.RuneReader) []int {
+		<a href="../src/regexp/regexp.go.html#line-1076" class="path-duplicate">regexp.go</a><a href="../src/regexp/regexp.go.html#line-1076">#L1076</a>: func (re *<b>Regexp</b>) FindAll(b []byte, n int) [][]byte {
+		<a href="../src/regexp/regexp.go.html#line-1094" class="path-duplicate">regexp.go</a><a href="../src/regexp/regexp.go.html#line-1094">#L1094</a>: func (re *<b>Regexp</b>) FindAllIndex(b []byte, n int) [][]int {
+		<a href="../src/regexp/regexp.go.html#line-1112" class="path-duplicate">regexp.go</a><a href="../src/regexp/regexp.go.html#line-1112">#L1112</a>: func (re *<b>Regexp</b>) FindAllString(s string, n int) []string {
+		<a href="../src/regexp/regexp.go.html#line-1130" class="path-duplicate">regexp.go</a><a href="../src/regexp/regexp.go.html#line-1130">#L1130</a>: func (re *<b>Regexp</b>) FindAllStringIndex(s string, n int) [][]int {
+		<a href="../src/regexp/regexp.go.html#line-1148" class="path-duplicate">regexp.go</a><a href="../src/regexp/regexp.go.html#line-1148">#L1148</a>: func (re *<b>Regexp</b>) FindAllSubmatch(b []byte, n int) [][][]byte {
+		<a href="../src/regexp/regexp.go.html#line-1172" class="path-duplicate">regexp.go</a><a href="../src/regexp/regexp.go.html#line-1172">#L1172</a>: func (re *<b>Regexp</b>) FindAllSubmatchIndex(b []byte, n int) [][]int {
+		<a href="../src/regexp/regexp.go.html#line-1190" class="path-duplicate">regexp.go</a><a href="../src/regexp/regexp.go.html#line-1190">#L1190</a>: func (re *<b>Regexp</b>) FindAllStringSubmatch(s string, n int) [][]string {
+		<a href="../src/regexp/regexp.go.html#line-1215" class="path-duplicate">regexp.go</a><a href="../src/regexp/regexp.go.html#line-1215">#L1215</a>: func (re *<b>Regexp</b>) FindAllStringSubmatchIndex(s string, n int) [][]int {
+		<a href="../src/regexp/regexp.go.html#line-1244" class="path-duplicate">regexp.go</a><a href="../src/regexp/regexp.go.html#line-1244">#L1244</a>: func (re *<b>Regexp</b>) Split(s string, n int) []string {
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/endpoints.html">github.com/aws/aws-sdk-go/aws/endpoints</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/endpoints/defaults.go.html#line-101">defaults.go#L101</a>: 		Regexp: func() *regexp.<b>Regexp</b> {
+		<a href="../src/github.com/aws/aws-sdk-go/aws/endpoints/defaults.go.html#line-6072" class="path-duplicate">defaults.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/endpoints/defaults.go.html#line-6072">#L6072</a>: 		Regexp: func() *regexp.<b>Regexp</b> {
+		<a href="../src/github.com/aws/aws-sdk-go/aws/endpoints/defaults.go.html#line-6769" class="path-duplicate">defaults.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/endpoints/defaults.go.html#line-6769">#L6769</a>: 		Regexp: func() *regexp.<b>Regexp</b> {
+		<a href="../src/github.com/aws/aws-sdk-go/aws/endpoints/defaults.go.html#line-8233" class="path-duplicate">defaults.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/endpoints/defaults.go.html#line-8233">#L8233</a>: 		Regexp: func() *regexp.<b>Regexp</b> {
+		<a href="../src/github.com/aws/aws-sdk-go/aws/endpoints/defaults.go.html#line-8604" class="path-duplicate">defaults.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/endpoints/defaults.go.html#line-8604">#L8604</a>: 		Regexp: func() *regexp.<b>Regexp</b> {
+		<a href="../src/github.com/aws/aws-sdk-go/aws/endpoints/v3model.go.html#line-146">v3model.go#L146</a>: 	*regexp.<b>Regexp</b>
+
+	<a href="../pkg/google.golang.org/grpc/internal/grpcutil.html">google.golang.org/grpc/internal/grpcutil</a>
+		<a href="../src/google.golang.org/grpc/internal/grpcutil/regex.go.html#line-24">regex.go#L24</a>: func FullMatchWithRegex(re *regexp.<b>Regexp</b>, text string) bool {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

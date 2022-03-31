@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: go.uber.org/zap.DebugLevel</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">const <b><a href="../../pkg/go.uber.org/zap.html">go.uber.org/zap</a>.<a href="../../src/go.uber.org/zap/level.go.html#line-31">DebugLevel</a></b></span>
+
+<span class="title">17 uses</span>
+
+	go.uber.org/zap (current package)
+		<a href="../../src/go.uber.org/zap/config.go.html#line-161">config.go#L161</a>: 		Level:            NewAtomicLevelAt(<b>DebugLevel</b>),
+		<a href="../../src/go.uber.org/zap/global.go.html#line-142">global.go#L142</a>: 	case <b>DebugLevel</b>:
+		<a href="../../src/go.uber.org/zap/level.go.html#line-31">level.go#L31</a>: 	<b>DebugLevel</b> = zapcore.DebugLevel
+		<a href="../../src/go.uber.org/zap/logger.go.html#line-118">logger.go#L118</a>: 	core := zapcore.NewCore(zapcore.NewJSONEncoder(encoderCfg), os.Stdout, <b>DebugLevel</b>)
+		<a href="../../src/go.uber.org/zap/logger.go.html#line-178" class="path-duplicate">logger.go</a><a href="../../src/go.uber.org/zap/logger.go.html#line-178">#L178</a>: 	if ce := log.check(<b>DebugLevel</b>, msg); ce != nil {
+		<a href="../../src/go.uber.org/zap/sugar.go.html#line-97">sugar.go#L97</a>: 	s.log(<b>DebugLevel</b>, "", args, nil)
+		<a href="../../src/go.uber.org/zap/sugar.go.html#line-133" class="path-duplicate">sugar.go</a><a href="../../src/go.uber.org/zap/sugar.go.html#line-133">#L133</a>: 	s.log(<b>DebugLevel</b>, template, args, nil)
+		<a href="../../src/go.uber.org/zap/sugar.go.html#line-173" class="path-duplicate">sugar.go</a><a href="../../src/go.uber.org/zap/sugar.go.html#line-173">#L173</a>: 	s.log(<b>DebugLevel</b>, msg, nil, keysAndValues)
+
+	<a href="../../pkg/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap.html">github.com/grpc-ecosystem/go-grpc-middleware/logging/zap</a>
+		<a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/options.go.html#line-130">options.go#L130</a>: 		return zap.<b>DebugLevel</b>
+		<a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/options.go.html#line-132" class="path-duplicate">options.go</a><a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/options.go.html#line-132">#L132</a>: 		return zap.<b>DebugLevel</b>
+		<a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/options.go.html#line-136" class="path-duplicate">options.go</a><a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/options.go.html#line-136">#L136</a>: 		return zap.<b>DebugLevel</b>
+		<a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/options.go.html#line-140" class="path-duplicate">options.go</a><a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/options.go.html#line-140">#L140</a>: 		return zap.<b>DebugLevel</b>
+		<a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/options.go.html#line-142" class="path-duplicate">options.go</a><a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/options.go.html#line-142">#L142</a>: 		return zap.<b>DebugLevel</b>
+		<a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/options.go.html#line-148" class="path-duplicate">options.go</a><a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/options.go.html#line-148">#L148</a>: 		return zap.<b>DebugLevel</b>
+		<a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/options.go.html#line-150" class="path-duplicate">options.go</a><a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/options.go.html#line-150">#L150</a>: 		return zap.<b>DebugLevel</b>
+		<a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/options.go.html#line-152" class="path-duplicate">options.go</a><a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/options.go.html#line-152">#L152</a>: 		return zap.<b>DebugLevel</b>
+		<a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/options.go.html#line-154" class="path-duplicate">options.go</a><a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/options.go.html#line-154">#L154</a>: 		return zap.<b>DebugLevel</b>
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

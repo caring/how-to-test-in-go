@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: google.golang.org/grpc.UnaryServerInterceptor</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../../pkg/google.golang.org/grpc.html">google.golang.org/grpc</a>.<a href="../../src/google.golang.org/grpc/interceptor.go.html#line-84">UnaryServerInterceptor</a></b></span>
+
+<span class="title">20 uses</span>
+
+	google.golang.org/grpc (current package)
+		<a href="../../src/google.golang.org/grpc/interceptor.go.html#line-84">interceptor.go#L84</a>: type <b>UnaryServerInterceptor</b> func(ctx context.Context, req interface{}, info *UnaryServerInfo, handler UnaryHandler) (resp interface{}, err error)
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-81">server.go#L81</a>: type methodHandler func(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor <b>UnaryServerInterceptor</b>) (interface{}, error)
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-148" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-148">#L148</a>: 	unaryInt              <b>UnaryServerInterceptor</b>
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-150" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-150">#L150</a>: 	chainUnaryInts        []<b>UnaryServerInterceptor</b>
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-379" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-379">#L379</a>: func UnaryInterceptor(i <b>UnaryServerInterceptor</b>) ServerOption {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-392" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-392">#L392</a>: func ChainUnaryInterceptor(interceptors ...<b>UnaryServerInterceptor</b>) ServerOption {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1090" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1090">#L1090</a>: 		interceptors = append([]<b>UnaryServerInterceptor</b>{s.opts.unaryInt}, s.opts.chainUnaryInts...)
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1093" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1093">#L1093</a>: 	var chainedInt <b>UnaryServerInterceptor</b>
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1105" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1105">#L1105</a>: func chainUnaryInterceptors(interceptors []<b>UnaryServerInterceptor</b>) <b>UnaryServerInterceptor</b> {
+
+	<a href="../../pkg/github.com/caring/gopkg-logging.html">github.com/caring/gopkg-logging</a>
+		<a href="../../src/github.com/caring/gopkg-logging/middleware.go.html#line-30">middleware.go#L30</a>: func (l *Logger) NewGRPCUnaryServerInterceptor() grpc.<b>UnaryServerInterceptor</b> {
+		<a href="../../src/github.com/caring/gopkg-logging/middleware.go.html#line-36" class="path-duplicate">middleware.go</a><a href="../../src/github.com/caring/gopkg-logging/middleware.go.html#line-36">#L36</a>: func NewGRPCUnaryServerInterceptor(l Logging) grpc.<b>UnaryServerInterceptor</b> {
+
+	<a href="../../pkg/github.com/caring/test/1-mocks/pb.html">github.com/caring/test/1-mocks/pb</a>
+		<a href="../../src/github.com/caring/test/1-mocks/pb/mocks_grpc.pb.go.html#line-69">mocks_grpc.pb.go#L69</a>: func _MockService_GetFizzBuzz_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.<b>UnaryServerInterceptor</b>) (interface{}, error) {
+
+	<a href="../../pkg/github.com/grpc-ecosystem/go-grpc-middleware.html">github.com/grpc-ecosystem/go-grpc-middleware</a>
+		<a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/chain.go.html#line-19">chain.go#L19</a>: func ChainUnaryServer(interceptors ...grpc.<b>UnaryServerInterceptor</b>) grpc.<b>UnaryServerInterceptor</b> {
+		<a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/chain.go.html#line-23" class="path-duplicate">chain.go</a><a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/chain.go.html#line-23">#L23</a>: 		chainer := func(currentInter grpc.<b>UnaryServerInterceptor</b>, currentHandler grpc.UnaryHandler) grpc.UnaryHandler {
+		<a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/chain.go.html#line-112" class="path-duplicate">chain.go</a><a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/chain.go.html#line-112">#L112</a>: func WithUnaryServerChain(interceptors ...grpc.<b>UnaryServerInterceptor</b>) grpc.ServerOption {
+
+	<a href="../../pkg/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap.html">github.com/grpc-ecosystem/go-grpc-middleware/logging/zap</a>
+		<a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/payload_interceptors.go.html#line-27">payload_interceptors.go#L27</a>: func PayloadUnaryServerInterceptor(logger *zap.Logger, decider grpc_logging.ServerPayloadLoggingDecider) grpc.<b>UnaryServerInterceptor</b> {
+		<a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/server_interceptors.go.html#line-24">server_interceptors.go#L24</a>: func UnaryServerInterceptor(logger *zap.Logger, opts ...Option) grpc.<b>UnaryServerInterceptor</b> {
+
+	<a href="../../pkg/github.com/grpc-ecosystem/go-grpc-middleware/tags.html">github.com/grpc-ecosystem/go-grpc-middleware/tags</a>
+		<a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/tags/interceptors.go.html#line-16">interceptors.go#L16</a>: func UnaryServerInterceptor(opts ...Option) grpc.<b>UnaryServerInterceptor</b> {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/grpc-ecosystem/go-grpc-middleware.WrappedServerStream.WrappedContext</title>
+<link href="../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../pkg/github.com/grpc-ecosystem/go-grpc-middleware.html">github.com/grpc-ecosystem/go-grpc-middleware</a>.<a href="../../../src/github.com/grpc-ecosystem/go-grpc-middleware/wrappers.go.html#line-13">WrappedServerStream</a>.<a href="../../../src/github.com/grpc-ecosystem/go-grpc-middleware/wrappers.go.html#line-16">WrappedContext</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">5 uses</span>
+
+	github.com/grpc-ecosystem/go-grpc-middleware (current package)
+		<a href="../../../src/github.com/grpc-ecosystem/go-grpc-middleware/wrappers.go.html#line-16">wrappers.go#L16</a>: 	<b>WrappedContext</b> context.Context
+		<a href="../../../src/github.com/grpc-ecosystem/go-grpc-middleware/wrappers.go.html#line-21" class="path-duplicate">wrappers.go</a><a href="../../../src/github.com/grpc-ecosystem/go-grpc-middleware/wrappers.go.html#line-21">#L21</a>: 	return w.<b>WrappedContext</b>
+		<a href="../../../src/github.com/grpc-ecosystem/go-grpc-middleware/wrappers.go.html#line-29" class="path-duplicate">wrappers.go</a><a href="../../../src/github.com/grpc-ecosystem/go-grpc-middleware/wrappers.go.html#line-29">#L29</a>: 	return &amp;WrappedServerStream{ServerStream: stream, <b>WrappedContext</b>: stream.Context()}
+
+	<a href="../../../pkg/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap.html">github.com/grpc-ecosystem/go-grpc-middleware/logging/zap</a>
+		<a href="../../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/server_interceptors.go.html#line-56">server_interceptors.go#L56</a>: 		wrapped.<b>WrappedContext</b> = newCtx
+
+	<a href="../../../pkg/github.com/grpc-ecosystem/go-grpc-middleware/tags.html">github.com/grpc-ecosystem/go-grpc-middleware/tags</a>
+		<a href="../../../src/github.com/grpc-ecosystem/go-grpc-middleware/tags/interceptors.go.html#line-35">interceptors.go#L35</a>: 			wrappedStream.<b>WrappedContext</b> = newCtx
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/uber/jaeger-client-go.Tracer.sampler</title>
+<link href="../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../pkg/github.com/uber/jaeger-client-go.html">github.com/uber/jaeger-client-go</a>.<a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-37">Tracer</a>.<a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-41">sampler</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">8 uses</span>
+
+	github.com/uber/jaeger-client-go (current package)
+		<a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-91">span.go#L91</a>: 		decision := s.tracer.<b>sampler</b>.OnSetOperationName(s, operationName)
+		<a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-119" class="path-duplicate">span.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-119">#L119</a>: 		decision := s.tracer.<b>sampler</b>.OnSetTag(s, key, value)
+		<a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-357" class="path-duplicate">span.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-357">#L357</a>: 		decision := s.tracer.<b>sampler</b>.OnFinishSpan(s)
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-41">tracer.go#L41</a>: 	<b>sampler</b>  SamplerV2
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-87" class="path-duplicate">tracer.go</a><a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-87">#L87</a>: 		<b>sampler</b>:       samplerV1toV2(sampler),
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-324" class="path-duplicate">tracer.go</a><a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-324">#L324</a>: 		decision := t.<b>sampler</b>.OnCreateSpan(sp)
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-374" class="path-duplicate">tracer.go</a><a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-374">#L374</a>: 	t.<b>sampler</b>.Close()
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-482" class="path-duplicate">tracer.go</a><a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-482">#L482</a>: 	return t.<b>sampler</b>
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

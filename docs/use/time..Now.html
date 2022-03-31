@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: time.Now</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">func <b><a href="../pkg/time.html">time</a>.<a href="../src/time/time.go.html#line-1073">Now</a></b></span>
+
+<span class="title">133 uses</span>
+
+	time (current package)
+		<a href="../src/time/sleep.go.html#line-149">sleep.go#L149</a>: 	case c.(chan Time) &lt;- <b>Now</b>():
+		<a href="../src/time/time.go.html#line-881">time.go#L881</a>: 		now = <b>Now</b>()
+		<a href="../src/time/time.go.html#line-894" class="path-duplicate">time.go</a><a href="../src/time/time.go.html#line-894">#L894</a>: 		now = <b>Now</b>()
+		<a href="../src/time/time.go.html#line-1073" class="path-duplicate">time.go</a><a href="../src/time/time.go.html#line-1073">#L1073</a>: func <b>Now</b>() Time {
+
+	<a href="../pkg/context.html">context</a>
+		<a href="../src/context/context.go.html#line-507">context.go#L507</a>: 	return WithDeadline(parent, time.<b>Now</b>().Add(timeout))
+
+	<a href="../pkg/crypto/rand.html">crypto/rand</a>
+		<a href="../src/crypto/rand/rand_unix.go.html#line-153">rand_unix.go#L153</a>: 		ns := time.<b>Now</b>().UnixNano()
+
+	<a href="../pkg/crypto/tls.html">crypto/tls</a>
+		<a href="../src/crypto/tls/common.go.html#line-948">common.go#L948</a>: 		t = time.<b>Now</b>
+		<a href="../src/crypto/tls/conn.go.html#line-1361">conn.go#L1361</a>: 		c.SetWriteDeadline(time.<b>Now</b>().Add(time.Second * 5))
+		<a href="../src/crypto/tls/conn.go.html#line-1365" class="path-duplicate">conn.go</a><a href="../src/crypto/tls/conn.go.html#line-1365">#L1365</a>: 		c.SetWriteDeadline(time.<b>Now</b>())
+
+	<a href="../pkg/crypto/x509.html">crypto/x509</a>
+		<a href="../src/crypto/x509/verify.go.html#line-570">verify.go#L570</a>: 		now = time.<b>Now</b>()
+
+	<a href="../pkg/database/sql.html">database/sql</a>
+		<a href="../src/database/sql/sql.go.html#line-39">sql.go#L39</a>: var nowFunc = time.<b>Now</b>
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/corehandlers.html">github.com/aws/aws-sdk-go/aws/corehandlers</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/corehandlers/handlers.go.html#line-77">handlers.go#L77</a>: 		if signedTime.Add(5 * time.Minute).After(time.<b>Now</b>()) {
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/credentials.html">github.com/aws/aws-sdk-go/aws/credentials</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/credentials/credentials.go.html#line-186">credentials.go#L186</a>: 		curTime = time.<b>Now</b>
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/credentials/stscreds.html">github.com/aws/aws-sdk-go/aws/credentials/stscreds</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/credentials/stscreds/assume_role_provider.go.html#line-304">assume_role_provider.go#L304</a>: 		p.RoleSessionName = fmt.Sprintf("%d", time.<b>Now</b>().UTC().UnixNano())
+		<a href="../src/github.com/aws/aws-sdk-go/aws/credentials/stscreds/web_identity_provider.go.html#line-29">web_identity_provider.go#L29</a>: var now = time.<b>Now</b>
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/csm.html">github.com/aws/aws-sdk-go/aws/csm</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/csm/reporter.go.html#line-54">reporter.go#L54</a>: 	now := time.<b>Now</b>()
+		<a href="../src/github.com/aws/aws-sdk-go/aws/csm/reporter.go.html#line-110" class="path-duplicate">reporter.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/csm/reporter.go.html#line-110">#L110</a>: 	now := time.<b>Now</b>()
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/ec2metadata.html">github.com/aws/aws-sdk-go/aws/ec2metadata</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/ec2metadata/token_provider.go.html#line-76">token_provider.go#L76</a>: 	newToken.SetExpiration(time.<b>Now</b>().Add(output.TTL), ttlExpirationWindow)
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/request.html">github.com/aws/aws-sdk-go/aws/request</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/request/request.go.html#line-144">request.go#L144</a>: 		Time:        time.<b>Now</b>(),
+		<a href="../src/github.com/aws/aws-sdk-go/aws/request/request.go.html#line-524" class="path-duplicate">request.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/request/request.go.html#line-524">#L524</a>: 		r.AttemptTime = time.<b>Now</b>()
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/signer/v4.html">github.com/aws/aws-sdk-go/aws/signer/v4</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/signer/v4/v4.go.html#line-317">v4.go#L317</a>: 		currentTimeFn = time.<b>Now</b>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/signer/v4/v4.go.html#line-428" class="path-duplicate">v4.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/signer/v4/v4.go.html#line-428">#L428</a>: 	SignSDKRequestWithCurrentTime(req, time.<b>Now</b>)
+		<a href="../src/github.com/aws/aws-sdk-go/aws/signer/v4/v4.go.html#line-436" class="path-duplicate">v4.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/signer/v4/v4.go.html#line-436">#L436</a>: 			SignSDKRequestWithCurrentTime(req, time.<b>Now</b>, opts...)
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/internal/sdkrand.html">github.com/aws/aws-sdk-go/internal/sdkrand</a>
+		<a href="../src/github.com/aws/aws-sdk-go/internal/sdkrand/locked_source.go.html#line-29">locked_source.go#L29</a>: var SeededRand = rand.New(&amp;lockedSource{src: rand.NewSource(time.<b>Now</b>().UnixNano())})
+
+	<a href="../pkg/github.com/go-sql-driver/mysql.html">github.com/go-sql-driver/mysql</a>
+		<a href="../src/github.com/go-sql-driver/mysql/buffer.go.html#line-85">buffer.go#L85</a>: 			if err := b.nc.SetReadDeadline(time.<b>Now</b>().Add(b.timeout)); err != nil {
+		<a href="../src/github.com/go-sql-driver/mysql/packets.go.html#line-146">packets.go#L146</a>: 			if err := mc.netConn.SetWriteDeadline(time.<b>Now</b>().Add(mc.writeTimeout)); err != nil {
+
+	<a href="../pkg/github.com/golang/protobuf/ptypes.html">github.com/golang/protobuf/ptypes</a>
+		<a href="../src/github.com/golang/protobuf/ptypes/timestamp.go.html#line-54">timestamp.go#L54</a>: 	ts, err := TimestampProto(time.<b>Now</b>())
+
+	<a href="../pkg/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap.html">github.com/grpc-ecosystem/go-grpc-middleware/logging/zap</a>
+		<a href="../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/client_interceptors.go.html#line-26">client_interceptors.go#L26</a>: 		startTime := time.<b>Now</b>()
+		<a href="../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/client_interceptors.go.html#line-38" class="path-duplicate">client_interceptors.go</a><a href="../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/client_interceptors.go.html#line-38">#L38</a>: 		startTime := time.<b>Now</b>()
+		<a href="../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/client_interceptors.go.html#line-51" class="path-duplicate">client_interceptors.go</a><a href="../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/client_interceptors.go.html#line-51">#L51</a>: 		o.durationFunc(time.<b>Now</b>().Sub(startTime)),
+		<a href="../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/server_interceptors.go.html#line-27">server_interceptors.go#L27</a>: 		startTime := time.<b>Now</b>()
+		<a href="../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/server_interceptors.go.html#line-53" class="path-duplicate">server_interceptors.go</a><a href="../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/server_interceptors.go.html#line-53">#L53</a>: 		startTime := time.<b>Now</b>()
+
+	<a href="../pkg/github.com/opentracing/opentracing-go.html">github.com/opentracing/opentracing-go</a>
+		<a href="../src/github.com/opentracing/opentracing-go/span.go.html#line-171">span.go#L171</a>: 		literalTimestamp = time.<b>Now</b>()
+
+	<a href="../pkg/github.com/uber/jaeger-client-go.html">github.com/uber/jaeger-client-go</a>
+		<a href="../src/github.com/uber/jaeger-client-go/span.go.html#line-211">span.go#L211</a>: 		Timestamp: time.<b>Now</b>(),
+		<a href="../src/github.com/uber/jaeger-client-go/tracer.go.html#line-126">tracer.go#L126</a>: 		seedGenerator := utils.NewRand(time.<b>Now</b>().UnixNano())
+		<a href="../src/github.com/uber/jaeger-client-go/tracer.go.html#line-141" class="path-duplicate">tracer.go</a><a href="../src/github.com/uber/jaeger-client-go/tracer.go.html#line-141">#L141</a>: 		t.timeNow = time.<b>Now</b>
+
+	<a href="../pkg/github.com/uber/jaeger-client-go/thrift-gen/agent.html">github.com/uber/jaeger-client-go/thrift-gen/agent</a>
+		<a href="../src/github.com/uber/jaeger-client-go/thrift-gen/agent/agent-consts.go.html#line-20">agent-consts.go#L20</a>: var _ = time.<b>Now</b>
+		<a href="../src/github.com/uber/jaeger-client-go/thrift-gen/agent/agent.go.html#line-20">agent.go#L20</a>: var _ = time.<b>Now</b>
+
+	<a href="../pkg/github.com/uber/jaeger-client-go/thrift-gen/jaeger.html">github.com/uber/jaeger-client-go/thrift-gen/jaeger</a>
+		<a href="../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger-consts.go.html#line-17">jaeger-consts.go#L17</a>: var _ = time.<b>Now</b>
+		<a href="../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-19">jaeger.go#L19</a>: var _ = time.<b>Now</b>
+
+	<a href="../pkg/github.com/uber/jaeger-client-go/thrift-gen/sampling.html">github.com/uber/jaeger-client-go/thrift-gen/sampling</a>
+		<a href="../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling-consts.go.html#line-17">sampling-consts.go#L17</a>: var _ = time.<b>Now</b>
+		<a href="../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-19">sampling.go#L19</a>: var _ = time.<b>Now</b>
+
+	<a href="../pkg/github.com/uber/jaeger-client-go/thrift-gen/zipkincore.html">github.com/uber/jaeger-client-go/thrift-gen/zipkincore</a>
+		<a href="../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore-consts.go.html#line-17">zipkincore-consts.go#L17</a>: var _ = time.<b>Now</b>
+		<a href="../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-19">zipkincore.go#L19</a>: var _ = time.<b>Now</b>
+
+	<a href="../pkg/github.com/uber/jaeger-client-go/utils.html">github.com/uber/jaeger-client-go/utils</a>
+		<a href="../src/github.com/uber/jaeger-client-go/utils/rate_limiter.go.html#line-62">rate_limiter.go#L62</a>: 		lastTick:         time.<b>Now</b>(),
+		<a href="../src/github.com/uber/jaeger-client-go/utils/rate_limiter.go.html#line-63" class="path-duplicate">rate_limiter.go</a><a href="../src/github.com/uber/jaeger-client-go/utils/rate_limiter.go.html#line-63">#L63</a>: 		timeNow:          time.<b>Now</b>,
+
+	<a href="../pkg/github.com/uber/jaeger-lib/metrics.html">github.com/uber/jaeger-lib/metrics</a>
+		<a href="../src/github.com/uber/jaeger-lib/metrics/stopwatch.go.html#line-26">stopwatch.go#L26</a>: 	return Stopwatch{t: timer, start: time.<b>Now</b>()}
+
+	<a href="../pkg/go.uber.org/zap.html">go.uber.org/zap</a>
+		<a href="../src/go.uber.org/zap/logger.go.html#line-271">logger.go#L271</a>: 		Time:       time.<b>Now</b>(),
+		<a href="../src/go.uber.org/zap/logger.go.html#line-302" class="path-duplicate">logger.go</a><a href="../src/go.uber.org/zap/logger.go.html#line-302">#L302</a>: 			fmt.Fprintf(log.errorOutput, "%v Logger.check error: failed to get caller\n", time.<b>Now</b>().UTC())
+
+	<a href="../pkg/go.uber.org/zap/zapcore.html">go.uber.org/zap/zapcore</a>
+		<a href="../src/go.uber.org/zap/zapcore/entry.go.html#line-207">entry.go#L207</a>: 			fmt.Fprintf(ce.ErrorOutput, "%v Unsafe CheckedEntry re-use near Entry %+v.\n", time.<b>Now</b>(), ce.Entry)
+		<a href="../src/go.uber.org/zap/zapcore/entry.go.html#line-220" class="path-duplicate">entry.go</a><a href="../src/go.uber.org/zap/zapcore/entry.go.html#line-220">#L220</a>: 			fmt.Fprintf(ce.ErrorOutput, "%v write error: %v\n", time.<b>Now</b>(), err)
+
+	<a href="../pkg/golang.org/x/net/http2.html">golang.org/x/net/http2</a>
+		<a href="../src/golang.org/x/net/http2/server.go.html#line-2447">server.go#L2447</a>: 			date = time.<b>Now</b>().UTC().Format(http.TimeFormat)
+		<a href="../src/golang.org/x/net/http2/transport.go.html#line-1230">transport.go#L1230</a>: 		cc.lastActive = time.<b>Now</b>()
+		<a href="../src/golang.org/x/net/http2/transport.go.html#line-1716" class="path-duplicate">transport.go</a><a href="../src/golang.org/x/net/http2/transport.go.html#line-1716">#L1716</a>: 		cc.lastActive = time.<b>Now</b>()
+		<a href="../src/golang.org/x/net/http2/transport.go.html#line-1720" class="path-duplicate">transport.go</a><a href="../src/golang.org/x/net/http2/transport.go.html#line-1720">#L1720</a>: 			cc.lastIdle = time.<b>Now</b>()
+		<a href="../src/golang.org/x/net/http2/transport.go.html#line-2725" class="path-duplicate">transport.go</a><a href="../src/golang.org/x/net/http2/transport.go.html#line-2725">#L2725</a>: 		ci.IdleTime = time.<b>Now</b>().Sub(cc.lastActive)
+
+	<a href="../pkg/golang.org/x/net/internal/timeseries.html">golang.org/x/net/internal/timeseries</a>
+		<a href="../src/golang.org/x/net/internal/timeseries/timeseries.go.html#line-83">timeseries.go#L83</a>: func (defaultClock) Time() time.Time { return time.<b>Now</b>() }
+
+	<a href="../pkg/golang.org/x/net/trace.html">golang.org/x/net/trace</a>
+		<a href="../src/golang.org/x/net/trace/events.go.html#line-46">events.go#L46</a>: 	now := time.<b>Now</b>()
+		<a href="../src/golang.org/x/net/trace/events.go.html#line-136" class="path-duplicate">events.go</a><a href="../src/golang.org/x/net/trace/events.go.html#line-136">#L136</a>: 	el.Start = time.<b>Now</b>()
+		<a href="../src/golang.org/x/net/trace/events.go.html#line-314" class="path-duplicate">events.go</a><a href="../src/golang.org/x/net/trace/events.go.html#line-314">#L314</a>: 	e := logEntry{When: time.<b>Now</b>(), IsErr: isErr, What: fmt.Sprintf(format, a...)}
+		<a href="../src/golang.org/x/net/trace/trace.go.html#line-365">trace.go#L365</a>: 	tr.Start = time.<b>Now</b>()
+		<a href="../src/golang.org/x/net/trace/trace.go.html#line-398" class="path-duplicate">trace.go</a><a href="../src/golang.org/x/net/trace/trace.go.html#line-398">#L398</a>: 	elapsed := time.<b>Now</b>().Sub(tr.Start)
+		<a href="../src/golang.org/x/net/trace/trace.go.html#line-797" class="path-duplicate">trace.go</a><a href="../src/golang.org/x/net/trace/trace.go.html#line-797">#L797</a>: 	e := event{When: time.<b>Now</b>(), What: x, Recyclable: recyclable, Sensitive: sensitive}
+
+	<a href="../pkg/google.golang.org/grpc.html">google.golang.org/grpc</a>
+		<a href="../src/google.golang.org/grpc/clientconn.go.html#line-823">clientconn.go#L823</a>: 	atomic.StoreInt64(&amp;cc.czData.lastCallStartedTime, time.<b>Now</b>().UnixNano())
+		<a href="../src/google.golang.org/grpc/clientconn.go.html#line-1186" class="path-duplicate">clientconn.go</a><a href="../src/google.golang.org/grpc/clientconn.go.html#line-1186">#L1186</a>: 	connectDeadline := time.<b>Now</b>().Add(dialDuration)
+		<a href="../src/google.golang.org/grpc/clientconn.go.html#line-1538" class="path-duplicate">clientconn.go</a><a href="../src/google.golang.org/grpc/clientconn.go.html#line-1538">#L1538</a>: 	atomic.StoreInt64(&amp;ac.czData.lastCallStartedTime, time.<b>Now</b>().UnixNano())
+		<a href="../src/google.golang.org/grpc/server.go.html#line-834">server.go#L834</a>: 	rawConn.SetDeadline(time.<b>Now</b>().Add(s.opts.connectionTimeout))
+		<a href="../src/google.golang.org/grpc/server.go.html#line-1050" class="path-duplicate">server.go</a><a href="../src/google.golang.org/grpc/server.go.html#line-1050">#L1050</a>: 	atomic.StoreInt64(&amp;s.czData.lastCallStartedTime, time.<b>Now</b>().UnixNano())
+		<a href="../src/google.golang.org/grpc/server.go.html#line-1079" class="path-duplicate">server.go</a><a href="../src/google.golang.org/grpc/server.go.html#line-1079">#L1079</a>: 		s.opts.statsHandler.HandleRPC(stream.Context(), outPayload(false, msg, data, payload, time.<b>Now</b>()))
+		<a href="../src/google.golang.org/grpc/server.go.html#line-1133" class="path-duplicate">server.go</a><a href="../src/google.golang.org/grpc/server.go.html#line-1133">#L1133</a>: 			beginTime := time.<b>Now</b>()
+		<a href="../src/google.golang.org/grpc/server.go.html#line-1166" class="path-duplicate">server.go</a><a href="../src/google.golang.org/grpc/server.go.html#line-1166">#L1166</a>: 					EndTime:   time.<b>Now</b>(),
+		<a href="../src/google.golang.org/grpc/server.go.html#line-1264" class="path-duplicate">server.go</a><a href="../src/google.golang.org/grpc/server.go.html#line-1264">#L1264</a>: 				RecvTime:   time.<b>Now</b>(),
+		<a href="../src/google.golang.org/grpc/server.go.html#line-1422" class="path-duplicate">server.go</a><a href="../src/google.golang.org/grpc/server.go.html#line-1422">#L1422</a>: 		beginTime := time.<b>Now</b>()
+		<a href="../src/google.golang.org/grpc/server.go.html#line-1460" class="path-duplicate">server.go</a><a href="../src/google.golang.org/grpc/server.go.html#line-1460">#L1460</a>: 					EndTime:   time.<b>Now</b>(),
+		<a href="../src/google.golang.org/grpc/stream.go.html#line-353">stream.go#L353</a>: 		beginTime = time.<b>Now</b>()
+		<a href="../src/google.golang.org/grpc/stream.go.html#line-945" class="path-duplicate">stream.go</a><a href="../src/google.golang.org/grpc/stream.go.html#line-945">#L945</a>: 		a.statsHandler.HandleRPC(a.ctx, outPayload(true, m, data, payld, time.<b>Now</b>()))
+		<a href="../src/google.golang.org/grpc/stream.go.html#line-995" class="path-duplicate">stream.go</a><a href="../src/google.golang.org/grpc/stream.go.html#line-995">#L995</a>: 			RecvTime: time.<b>Now</b>(),
+		<a href="../src/google.golang.org/grpc/stream.go.html#line-1056" class="path-duplicate">stream.go</a><a href="../src/google.golang.org/grpc/stream.go.html#line-1056">#L1056</a>: 			EndTime:   time.<b>Now</b>(),
+		<a href="../src/google.golang.org/grpc/stream.go.html#line-1526" class="path-duplicate">stream.go</a><a href="../src/google.golang.org/grpc/stream.go.html#line-1526">#L1526</a>: 		ss.statsHandler.HandleRPC(ss.s.Context(), outPayload(false, m, data, payload, time.<b>Now</b>()))
+		<a href="../src/google.golang.org/grpc/stream.go.html#line-1577" class="path-duplicate">stream.go</a><a href="../src/google.golang.org/grpc/stream.go.html#line-1577">#L1577</a>: 			RecvTime: time.<b>Now</b>(),
+
+	<a href="../pkg/google.golang.org/grpc/internal/binarylog.html">google.golang.org/grpc/internal/binarylog</a>
+		<a href="../src/google.golang.org/grpc/internal/binarylog/method_logger.go.html#line-75">method_logger.go#L75</a>: 	timestamp, _ := ptypes.TimestampProto(time.<b>Now</b>())
+
+	<a href="../pkg/google.golang.org/grpc/internal/channelz.html">google.golang.org/grpc/internal/channelz</a>
+		<a href="../src/google.golang.org/grpc/internal/channelz/funcs.go.html#line-204">funcs.go#L204</a>: 		trace:       &amp;channelTrace{createdTime: time.<b>Now</b>(), events: make([]*TraceEvent, 0, getMaxTraceEntry())},
+		<a href="../src/google.golang.org/grpc/internal/channelz/funcs.go.html#line-229" class="path-duplicate">funcs.go</a><a href="../src/google.golang.org/grpc/internal/channelz/funcs.go.html#line-229">#L229</a>: 		trace:   &amp;channelTrace{createdTime: time.<b>Now</b>(), events: make([]*TraceEvent, 0, getMaxTraceEntry())},
+		<a href="../src/google.golang.org/grpc/internal/channelz/funcs.go.html#line-454" class="path-duplicate">funcs.go</a><a href="../src/google.golang.org/grpc/internal/channelz/funcs.go.html#line-454">#L454</a>: 	childTC.getChannelTrace().append(&amp;TraceEvent{Desc: desc.Desc, Severity: desc.Severity, Timestamp: time.<b>Now</b>()})
+		<a href="../src/google.golang.org/grpc/internal/channelz/funcs.go.html#line-468" class="path-duplicate">funcs.go</a><a href="../src/google.golang.org/grpc/internal/channelz/funcs.go.html#line-468">#L468</a>: 				Timestamp: time.<b>Now</b>(),
+		<a href="../src/google.golang.org/grpc/internal/channelz/types.go.html#line-652">types.go#L652</a>: 	e.Timestamp = time.<b>Now</b>()
+
+	<a href="../pkg/google.golang.org/grpc/internal/grpcrand.html">google.golang.org/grpc/internal/grpcrand</a>
+		<a href="../src/google.golang.org/grpc/internal/grpcrand/grpcrand.go.html#line-30">grpcrand.go#L30</a>: 	r  = rand.New(rand.NewSource(time.<b>Now</b>().UnixNano()))
+
+	<a href="../pkg/google.golang.org/grpc/internal/transport.html">google.golang.org/grpc/internal/transport</a>
+		<a href="../src/google.golang.org/grpc/internal/transport/bdp_estimator.go.html#line-78">bdp_estimator.go#L78</a>: 	b.sentAt = time.<b>Now</b>()
+		<a href="../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-691">http2_client.go#L691</a>: 				atomic.StoreInt64(&amp;t.czData.lastStreamCreatedTime, time.<b>Now</b>().UnixNano())
+		<a href="../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1107" class="path-duplicate">http2_client.go</a><a href="../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1107">#L1107</a>: 		if d, ok := s.ctx.Deadline(); ok &amp;&amp; !d.After(time.<b>Now</b>()) {
+		<a href="../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1485" class="path-duplicate">http2_client.go</a><a href="../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1485">#L1485</a>: 		atomic.StoreInt64(&amp;t.lastRead, time.<b>Now</b>().UnixNano())
+		<a href="../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1501" class="path-duplicate">http2_client.go</a><a href="../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1501">#L1501</a>: 			atomic.StoreInt64(&amp;t.lastRead, time.<b>Now</b>().UnixNano())
+		<a href="../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1570" class="path-duplicate">http2_client.go</a><a href="../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1570">#L1570</a>: 	prevNano := time.<b>Now</b>().UnixNano()
+		<a href="../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1580" class="path-duplicate">http2_client.go</a><a href="../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1580">#L1580</a>: 				timer.Reset(time.Duration(lastRead) + t.kp.Time - time.Duration(time.<b>Now</b>().UnixNano()))
+		<a href="../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1675" class="path-duplicate">http2_client.go</a><a href="../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1675">#L1675</a>: 	atomic.StoreInt64(&amp;t.czData.lastMsgSentTime, time.<b>Now</b>().UnixNano())
+		<a href="../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1680" class="path-duplicate">http2_client.go</a><a href="../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1680">#L1680</a>: 	atomic.StoreInt64(&amp;t.czData.lastMsgRecvTime, time.<b>Now</b>().UnixNano())
+		<a href="../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-257">http2_server.go#L257</a>: 		idle:              time.<b>Now</b>(),
+		<a href="../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-316" class="path-duplicate">http2_server.go</a><a href="../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-316">#L316</a>: 	atomic.StoreInt64(&amp;t.lastRead, time.<b>Now</b>().UnixNano())
+		<a href="../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-558" class="path-duplicate">http2_server.go</a><a href="../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-558">#L558</a>: 		atomic.StoreInt64(&amp;t.czData.lastStreamCreatedTime, time.<b>Now</b>().UnixNano())
+		<a href="../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-606" class="path-duplicate">http2_server.go</a><a href="../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-606">#L606</a>: 		atomic.StoreInt64(&amp;t.lastRead, time.<b>Now</b>().UnixNano())
+		<a href="../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-855" class="path-duplicate">http2_server.go</a><a href="../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-855">#L855</a>: 	now := time.<b>Now</b>()
+		<a href="../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1110" class="path-duplicate">http2_server.go</a><a href="../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1110">#L1110</a>: 	prevNano := time.<b>Now</b>().UnixNano()
+		<a href="../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1163" class="path-duplicate">http2_server.go</a><a href="../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1163">#L1163</a>: 				kpTimer.Reset(time.Duration(lastRead) + t.kp.Time - time.Duration(time.<b>Now</b>().UnixNano()))
+		<a href="../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1237" class="path-duplicate">http2_server.go</a><a href="../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1237">#L1237</a>: 			t.idle = time.<b>Now</b>()
+		<a href="../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1384" class="path-duplicate">http2_server.go</a><a href="../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1384">#L1384</a>: 	atomic.StoreInt64(&amp;t.czData.lastMsgSentTime, time.<b>Now</b>().UnixNano())
+		<a href="../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1389" class="path-duplicate">http2_server.go</a><a href="../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1389">#L1389</a>: 	atomic.StoreInt64(&amp;t.czData.lastMsgRecvTime, time.<b>Now</b>().UnixNano())
+
+	<a href="../pkg/google.golang.org/protobuf/types/known/timestamppb.html">google.golang.org/protobuf/types/known/timestamppb</a>
+		<a href="../src/google.golang.org/protobuf/types/known/timestamppb/timestamp.pb.go.html#line-197">timestamp.pb.go#L197</a>: 	return New(time.<b>Now</b>())
+
+	<a href="../pkg/log.html">log</a>
+		<a href="../src/log/log.go.html#line-162">log.go#L162</a>: 	now := time.<b>Now</b>() // get this early.
+
+	<a href="../pkg/net.html">net</a>
+		<a href="../src/net/dial.go.html#line-376">dial.go#L376</a>: 	deadline := d.deadline(ctx, time.<b>Now</b>())
+		<a href="../src/net/dial.go.html#line-536" class="path-duplicate">dial.go</a><a href="../src/net/dial.go.html#line-536">#L536</a>: 			partialDeadline, err := partialDeadline(time.<b>Now</b>(), deadline, len(ras)-i)
+		<a href="../src/net/dnsclient_unix.go.html#line-158">dnsclient_unix.go#L158</a>: 		ctx, cancel := context.WithDeadline(ctx, time.<b>Now</b>().Add(timeout))
+		<a href="../src/net/dnsclient_unix.go.html#line-344" class="path-duplicate">dnsclient_unix.go</a><a href="../src/net/dnsclient_unix.go.html#line-344">#L344</a>: 	conf.lastChecked = time.<b>Now</b>()
+		<a href="../src/net/dnsclient_unix.go.html#line-363" class="path-duplicate">dnsclient_unix.go</a><a href="../src/net/dnsclient_unix.go.html#line-363">#L363</a>: 	now := time.<b>Now</b>()
+		<a href="../src/net/hosts.go.html#line-53">hosts.go#L53</a>: 	now := time.<b>Now</b>()
+		<a href="../src/net/interface.go.html#line-197">interface.go#L197</a>: 	now := time.<b>Now</b>()
+
+	<a href="../pkg/net/http.html">net/http</a>
+		<a href="../src/net/http/client.go.html#line-190">client.go#L190</a>: 		return time.<b>Now</b>().Add(c.Timeout)
+		<a href="../src/net/http/client.go.html#line-360" class="path-duplicate">client.go</a><a href="../src/net/http/client.go.html#line-360">#L360</a>: 		return cancelCtx, func() bool { return time.<b>Now</b>().After(deadline) }
+		<a href="../src/net/http/h2_bundle.go.html#line-6128">h2_bundle.go#L6128</a>: 			date = time.<b>Now</b>().UTC().Format(TimeFormat)
+		<a href="../src/net/http/h2_bundle.go.html#line-7996" class="path-duplicate">h2_bundle.go</a><a href="../src/net/http/h2_bundle.go.html#line-7996">#L7996</a>: 		cc.lastActive = time.<b>Now</b>()
+		<a href="../src/net/http/h2_bundle.go.html#line-8500" class="path-duplicate">h2_bundle.go</a><a href="../src/net/http/h2_bundle.go.html#line-8500">#L8500</a>: 	cc.lastActive = time.<b>Now</b>()
+		<a href="../src/net/http/h2_bundle.go.html#line-8503" class="path-duplicate">h2_bundle.go</a><a href="../src/net/http/h2_bundle.go.html#line-8503">#L8503</a>: 		cc.lastIdle = time.<b>Now</b>()
+		<a href="../src/net/http/h2_bundle.go.html#line-9485" class="path-duplicate">h2_bundle.go</a><a href="../src/net/http/h2_bundle.go.html#line-9485">#L9485</a>: 		ci.IdleTime = time.<b>Now</b>().Sub(cc.lastActive)
+		<a href="../src/net/http/server.go.html#line-946">server.go#L946</a>: 	t0 := time.<b>Now</b>()
+		<a href="../src/net/http/server.go.html#line-956" class="path-duplicate">server.go</a><a href="../src/net/http/server.go.html#line-956">#L956</a>: 			c.rwc.SetWriteDeadline(time.<b>Now</b>().Add(d))
+		<a href="../src/net/http/server.go.html#line-1395" class="path-duplicate">server.go</a><a href="../src/net/http/server.go.html#line-1395">#L1395</a>: 		setHeader.date = appendTime(cw.res.dateBuf[:0], time.<b>Now</b>())
+		<a href="../src/net/http/server.go.html#line-1742" class="path-duplicate">server.go</a><a href="../src/net/http/server.go.html#line-1742">#L1742</a>: 	packedState := uint64(time.<b>Now</b>().Unix()&lt;&lt;8) | uint64(state)
+		<a href="../src/net/http/server.go.html#line-1813" class="path-duplicate">server.go</a><a href="../src/net/http/server.go.html#line-1813">#L1813</a>: 			c.rwc.SetReadDeadline(time.<b>Now</b>().Add(d))
+		<a href="../src/net/http/server.go.html#line-1816" class="path-duplicate">server.go</a><a href="../src/net/http/server.go.html#line-1816">#L1816</a>: 			c.rwc.SetWriteDeadline(time.<b>Now</b>().Add(d))
+		<a href="../src/net/http/server.go.html#line-1954" class="path-duplicate">server.go</a><a href="../src/net/http/server.go.html#line-1954">#L1954</a>: 			c.rwc.SetReadDeadline(time.<b>Now</b>().Add(d))
+		<a href="../src/net/http/server.go.html#line-2775" class="path-duplicate">server.go</a><a href="../src/net/http/server.go.html#line-2775">#L2775</a>: 		if st == StateNew &amp;&amp; unixSec &lt; time.<b>Now</b>().Unix()-5 {
+		<a href="../src/net/http/transport.go.html#line-997">transport.go#L997</a>: 	pconn.idleAt = time.<b>Now</b>()
+		<a href="../src/net/http/transport.go.html#line-1026" class="path-duplicate">transport.go</a><a href="../src/net/http/transport.go.html#line-1026">#L1026</a>: 		oldTime = time.<b>Now</b>().Add(-t.IdleConnTimeout)
+		<a href="../src/net/http/transport.go.html#line-2673" class="path-duplicate">transport.go</a><a href="../src/net/http/transport.go.html#line-2673">#L2673</a>: 		logf(time.<b>Now</b>().Format(time.RFC3339Nano)+": "+format, args...)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: crypto/tls.finishedMsg.verifyData</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../pkg/crypto/tls.html">crypto/tls</a>.<a href="../../src/crypto/tls/handshake_messages.go.html#line-1539">finishedMsg</a>.<a href="../../src/crypto/tls/handshake_messages.go.html#line-1541">verifyData</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">16 uses</span>
+
+	crypto/tls (current package)
+		<a href="../../src/crypto/tls/handshake_client.go.html#line-785">handshake_client.go#L785</a>: 	if len(verify) != len(serverFinished.<b>verifyData</b>) ||
+		<a href="../../src/crypto/tls/handshake_client.go.html#line-786" class="path-duplicate">handshake_client.go</a><a href="../../src/crypto/tls/handshake_client.go.html#line-786">#L786</a>: 		subtle.ConstantTimeCompare(verify, serverFinished.<b>verifyData</b>) != 1 {
+		<a href="../../src/crypto/tls/handshake_client.go.html#line-835" class="path-duplicate">handshake_client.go</a><a href="../../src/crypto/tls/handshake_client.go.html#line-835">#L835</a>: 	finished.<b>verifyData</b> = hs.finishedHash.clientSum(hs.masterSecret)
+		<a href="../../src/crypto/tls/handshake_client.go.html#line-840" class="path-duplicate">handshake_client.go</a><a href="../../src/crypto/tls/handshake_client.go.html#line-840">#L840</a>: 	copy(out, finished.<b>verifyData</b>)
+		<a href="../../src/crypto/tls/handshake_client_tls13.go.html#line-512">handshake_client_tls13.go#L512</a>: 	if !hmac.Equal(expectedMAC, finished.<b>verifyData</b>) {
+		<a href="../../src/crypto/tls/handshake_client_tls13.go.html#line-616" class="path-duplicate">handshake_client_tls13.go</a><a href="../../src/crypto/tls/handshake_client_tls13.go.html#line-616">#L616</a>: 		<b>verifyData</b>: hs.suite.finishedHash(c.out.trafficSecret, hs.transcript),
+		<a href="../../src/crypto/tls/handshake_messages.go.html#line-1541">handshake_messages.go#L1541</a>: 	<b>verifyData</b> []byte
+		<a href="../../src/crypto/tls/handshake_messages.go.html#line-1552" class="path-duplicate">handshake_messages.go</a><a href="../../src/crypto/tls/handshake_messages.go.html#line-1552">#L1552</a>: 		b.AddBytes(m.<b>verifyData</b>)
+		<a href="../../src/crypto/tls/handshake_messages.go.html#line-1563" class="path-duplicate">handshake_messages.go</a><a href="../../src/crypto/tls/handshake_messages.go.html#line-1563">#L1563</a>: 		readUint24LengthPrefixed(&amp;s, &amp;m.<b>verifyData</b>) &amp;&amp;
+		<a href="../../src/crypto/tls/handshake_server.go.html#line-721">handshake_server.go#L721</a>: 	if len(verify) != len(clientFinished.<b>verifyData</b>) ||
+		<a href="../../src/crypto/tls/handshake_server.go.html#line-722" class="path-duplicate">handshake_server.go</a><a href="../../src/crypto/tls/handshake_server.go.html#line-722">#L722</a>: 		subtle.ConstantTimeCompare(verify, clientFinished.<b>verifyData</b>) != 1 {
+		<a href="../../src/crypto/tls/handshake_server.go.html#line-783" class="path-duplicate">handshake_server.go</a><a href="../../src/crypto/tls/handshake_server.go.html#line-783">#L783</a>: 	finished.<b>verifyData</b> = hs.finishedHash.serverSum(hs.masterSecret)
+		<a href="../../src/crypto/tls/handshake_server.go.html#line-789" class="path-duplicate">handshake_server.go</a><a href="../../src/crypto/tls/handshake_server.go.html#line-789">#L789</a>: 	copy(out, finished.<b>verifyData</b>)
+		<a href="../../src/crypto/tls/handshake_server_tls13.go.html#line-647">handshake_server_tls13.go#L647</a>: 		<b>verifyData</b>: hs.suite.finishedHash(c.out.trafficSecret, hs.transcript),
+		<a href="../../src/crypto/tls/handshake_server_tls13.go.html#line-710" class="path-duplicate">handshake_server_tls13.go</a><a href="../../src/crypto/tls/handshake_server_tls13.go.html#line-710">#L710</a>: 		<b>verifyData</b>: hs.clientFinished,
+		<a href="../../src/crypto/tls/handshake_server_tls13.go.html#line-850" class="path-duplicate">handshake_server_tls13.go</a><a href="../../src/crypto/tls/handshake_server_tls13.go.html#line-850">#L850</a>: 	if !hmac.Equal(hs.clientFinished, finished.<b>verifyData</b>) {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

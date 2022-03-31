@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/uber/jaeger-client-go/thrift.EXCEPTION</title>
+<link href="../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">const <b><a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift.html">github.com/uber/jaeger-client-go/thrift</a>.<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/messagetype.go.html#line-29">EXCEPTION</a></b></span>
+
+<span class="title">13 uses</span>
+
+	github.com/uber/jaeger-client-go/thrift (current package)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/client.go.html#line-66">client.go#L66</a>: 	} else if rTypeId == <b>EXCEPTION</b> {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_protocol.go.html#line-241">header_protocol.go#L241</a>: 		if e := p.protocol.WriteMessageBegin(ctx, "", <b>EXCEPTION</b>, seqID); e != nil {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/messagetype.go.html#line-29">messagetype.go#L29</a>: 	<b>EXCEPTION</b>             TMessageType = 3
+
+	<a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift-gen/agent.html">github.com/uber/jaeger-client-go/thrift-gen/agent</a>
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/agent/agent.go.html#line-128">agent.go#L128</a>:   oprot.WriteMessageBegin(ctx, name, thrift.<b>EXCEPTION</b>, seqId)
+
+	<a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift-gen/jaeger.html">github.com/uber/jaeger-client-go/thrift-gen/jaeger</a>
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-2379">jaeger.go#L2379</a>:   oprot.WriteMessageBegin(ctx, name, thrift.<b>EXCEPTION</b>, seqId)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-2397" class="path-duplicate">jaeger.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-2397">#L2397</a>:     oprot.WriteMessageBegin(ctx, "submitBatches", thrift.<b>EXCEPTION</b>, seqId)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-2439" class="path-duplicate">jaeger.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-2439">#L2439</a>:     oprot.WriteMessageBegin(ctx, "submitBatches", thrift.<b>EXCEPTION</b>, seqId)
+
+	<a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift-gen/sampling.html">github.com/uber/jaeger-client-go/thrift-gen/sampling</a>
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-1042">sampling.go#L1042</a>:   oprot.WriteMessageBegin(ctx, name, thrift.<b>EXCEPTION</b>, seqId)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-1060" class="path-duplicate">sampling.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-1060">#L1060</a>:     oprot.WriteMessageBegin(ctx, "getSamplingStrategy", thrift.<b>EXCEPTION</b>, seqId)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-1102" class="path-duplicate">sampling.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-1102">#L1102</a>:     oprot.WriteMessageBegin(ctx, "getSamplingStrategy", thrift.<b>EXCEPTION</b>, seqId)
+
+	<a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift-gen/zipkincore.html">github.com/uber/jaeger-client-go/thrift-gen/zipkincore</a>
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-1534">zipkincore.go#L1534</a>:   oprot.WriteMessageBegin(ctx, name, thrift.<b>EXCEPTION</b>, seqId)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-1552" class="path-duplicate">zipkincore.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-1552">#L1552</a>:     oprot.WriteMessageBegin(ctx, "submitZipkinBatch", thrift.<b>EXCEPTION</b>, seqId)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-1594" class="path-duplicate">zipkincore.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-1594">#L1594</a>:     oprot.WriteMessageBegin(ctx, "submitZipkinBatch", thrift.<b>EXCEPTION</b>, seqId)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: fmt.Printf</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">func <b><a href="../pkg/fmt.html">fmt</a>.<a href="../src/fmt/print.go.html#line-212">Printf</a></b></span>
+
+<span class="title">14 uses</span>
+
+	fmt (current package)
+		<a href="../src/fmt/print.go.html#line-212">print.go#L212</a>: func <b>Printf</b>(format string, a ...interface{}) (n int, err error) {
+
+	<a href="../pkg/database/sql.html">database/sql</a>
+		<a href="../src/database/sql/sql.go.html#line-1424">sql.go#L1424</a>: 			fmt.<b>Printf</b>("putConn(%v) DUPLICATE was: %s\n\nPREVIOUS was: %s", dc, stack(), db.lastPut[dc])
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/endpoints.html">github.com/aws/aws-sdk-go/aws/endpoints</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/endpoints/decode.go.html#line-173">decode.go#L173</a>: 		fmt.<b>Printf</b>("custFixAppAutoscalingChina: ignoring customization, expected %s, got %s\n", e, a)
+		<a href="../src/github.com/aws/aws-sdk-go/aws/endpoints/decode.go.html#line-193" class="path-duplicate">decode.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/endpoints/decode.go.html#line-193">#L193</a>: 		fmt.<b>Printf</b>("custFixAppAutoscalingUsGov: ignoring customization, expected empty credential scope service, got %s\n", a)
+		<a href="../src/github.com/aws/aws-sdk-go/aws/endpoints/decode.go.html#line-198" class="path-duplicate">decode.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/endpoints/decode.go.html#line-198">#L198</a>: 		fmt.<b>Printf</b>("custFixAppAutoscalingUsGov: ignoring customization, expected empty hostname, got %s\n", a)
+
+	<a href="../pkg/github.com/golang/protobuf/proto.html">github.com/golang/protobuf/proto</a>
+		<a href="../src/github.com/golang/protobuf/proto/buffer.go.html#line-136">buffer.go#L136</a>: 	fmt.<b>Printf</b>("==== %s ====\n%s==== %s ====\n", s, b, s)
+
+	<a href="../pkg/github.com/uber/jaeger-client-go/thrift-gen/agent.html">github.com/uber/jaeger-client-go/thrift-gen/agent</a>
+		<a href="../src/github.com/uber/jaeger-client-go/thrift-gen/agent/agent-consts.go.html#line-18">agent-consts.go#L18</a>: var _ = fmt.<b>Printf</b>
+		<a href="../src/github.com/uber/jaeger-client-go/thrift-gen/agent/agent.go.html#line-18">agent.go#L18</a>: var _ = fmt.<b>Printf</b>
+
+	<a href="../pkg/github.com/uber/jaeger-client-go/thrift-gen/jaeger.html">github.com/uber/jaeger-client-go/thrift-gen/jaeger</a>
+		<a href="../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger-consts.go.html#line-15">jaeger-consts.go#L15</a>: var _ = fmt.<b>Printf</b>
+		<a href="../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-17">jaeger.go#L17</a>: var _ = fmt.<b>Printf</b>
+
+	<a href="../pkg/github.com/uber/jaeger-client-go/thrift-gen/sampling.html">github.com/uber/jaeger-client-go/thrift-gen/sampling</a>
+		<a href="../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling-consts.go.html#line-15">sampling-consts.go#L15</a>: var _ = fmt.<b>Printf</b>
+		<a href="../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-17">sampling.go#L17</a>: var _ = fmt.<b>Printf</b>
+
+	<a href="../pkg/github.com/uber/jaeger-client-go/thrift-gen/zipkincore.html">github.com/uber/jaeger-client-go/thrift-gen/zipkincore</a>
+		<a href="../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore-consts.go.html#line-15">zipkincore-consts.go#L15</a>: var _ = fmt.<b>Printf</b>
+		<a href="../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-17">zipkincore.go#L17</a>: var _ = fmt.<b>Printf</b>
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

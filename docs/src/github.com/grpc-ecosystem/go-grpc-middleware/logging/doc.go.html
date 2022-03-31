@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Source: doc.go in package github.com/grpc-ecosystem/go-grpc-middleware/logging</title>
+<link href="../../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre id="header"><code><span class="title">Source File</span>
+	doc.go
+
+<span class="title">Belonging Package</span>
+	<a href="../../../../../pkg/github.com/grpc-ecosystem/go-grpc-middleware/logging.html">github.com/grpc-ecosystem/go-grpc-middleware/logging</a>
+</code></pre>
+
+<pre class="line-numbers">
+<span class="codeline" id="line-1"><code><span class="comment">// Copyright 2017 Michal Witkowski. All Rights Reserved.</span></code></span>
+<span class="codeline" id="line-2"><code><span class="comment">// See LICENSE for licensing terms.</span></code></span>
+<span class="codeline" id="line-3"><code></code></span>
+<div class="anchor" id="doc"><span class="codeline" id="line-4"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-5"><code><span class="comment">/*</span></code></span>
+<span class="codeline" id="line-6"><code><span class="comment">grpc_logging is a "parent" package for gRPC logging middlewares.</span></code></span>
+<span class="codeline" id="line-7"><code></code></span>
+<span class="codeline" id="line-8"><code><span class="comment">General functionality of all middleware</span></code></span>
+<span class="codeline" id="line-9"><code></code></span>
+<span class="codeline" id="line-10"><code><span class="comment">The gRPC logging middleware populates request-scoped data to `grpc_ctxtags.Tags` that relate to the current gRPC call</span></code></span>
+<span class="codeline" id="line-11"><code><span class="comment">(e.g. service and method names).</span></code></span>
+<span class="codeline" id="line-12"><code></code></span>
+<span class="codeline" id="line-13"><code><span class="comment">Once the gRPC logging middleware has added the gRPC specific Tags to the ctx they will then be written with the logs</span></code></span>
+<span class="codeline" id="line-14"><code><span class="comment">that are made using the `ctx_logrus` or `ctx_zap` loggers.</span></code></span>
+<span class="codeline" id="line-15"><code></code></span>
+<span class="codeline" id="line-16"><code><span class="comment">All logging middleware will emit a final log statement. It is based on the error returned by the handler function,</span></code></span>
+<span class="codeline" id="line-17"><code><span class="comment">the gRPC status code, an error (if any) and it will emit at a level controlled via `WithLevels`.</span></code></span>
+<span class="codeline" id="line-18"><code></code></span>
+<span class="codeline" id="line-19"><code><span class="comment">This parent package</span></code></span>
+<span class="codeline" id="line-20"><code></code></span>
+<span class="codeline" id="line-21"><code><span class="comment">This particular package is intended for use by other middleware, logging or otherwise. It contains interfaces that other</span></code></span>
+<span class="codeline" id="line-22"><code><span class="comment">logging middlewares *could* share . This allows code to be shared between different implementations.</span></code></span>
+<span class="codeline" id="line-23"><code></code></span>
+<span class="codeline" id="line-24"><code><span class="comment">Field names</span></code></span>
+<span class="codeline" id="line-25"><code></code></span>
+<span class="codeline" id="line-26"><code><span class="comment">All field names of loggers follow the OpenTracing semantics definitions, with `grpc.` prefix if needed:</span></code></span>
+<span class="codeline" id="line-27"><code><span class="comment">https://github.com/opentracing/specification/blob/master/semantic_conventions.md</span></code></span>
+<span class="codeline" id="line-28"><code></code></span>
+<span class="codeline" id="line-29"><code><span class="comment">Implementations</span></code></span>
+<span class="codeline" id="line-30"><code></code></span>
+<span class="codeline" id="line-31"><code><span class="comment">There are three implementations at the moment: logrus, zap and kit</span></code></span>
+<span class="codeline" id="line-32"><code></code></span>
+<span class="codeline" id="line-33"><code><span class="comment">See relevant packages below.</span></code></span>
+<span class="codeline" id="line-34"><code><span class="comment">*/</span></code></span></div><span class="codeline" id="line-35"><code><span class="keyword">package</span> grpc_logging</code></span>
+</pre><pre id="footer">
+<table><tr><td><img src="../../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

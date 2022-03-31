@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Source: configuration.go in package github.com/uber/jaeger-client-go/thrift</title>
+<link href="../../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre id="header"><code><span class="title">Source File</span>
+	configuration.go
+
+<span class="title">Belonging Package</span>
+	<a href="../../../../../pkg/github.com/uber/jaeger-client-go/thrift.html">github.com/uber/jaeger-client-go/thrift</a>
+</code></pre>
+<style>input[type=radio] {display: none;}
+input[id=r0]:checked ~pre label[for=r0],
+input[id=r1]:checked ~pre label[for=r1],
+input[id=r2]:checked ~pre label[for=r2],
+input[id=r3]:checked ~pre label[for=r3],
+input[id=r4]:checked ~pre label[for=r4],
+input[id=r5]:checked ~pre label[for=r5],
+input[id=r6]:checked ~pre label[for=r6],
+input[id=r7]:checked ~pre label[for=r7],
+input[id=r8]:checked ~pre label[for=r8],
+input[id=r9]:checked ~pre label[for=r9],
+input[id=r10]:checked ~pre label[for=r10],
+input[id=r11]:checked ~pre label[for=r11],
+input[id=r12]:checked ~pre label[for=r12],
+input[id=r13]:checked ~pre label[for=r13],
+input[id=r14]:checked ~pre label[for=r14],
+input[id=r15]:checked ~pre label[for=r15],
+input[id=r16]:checked ~pre label[for=r16],
+input[id=r17]:checked ~pre label[for=r17],
+input[id=r18]:checked ~pre label[for=r18],
+input[id=r19]:checked ~pre label[for=r19],
+input[id=r20]:checked ~pre label[for=r20],
+input[id=r21]:checked ~pre label[for=r21],
+input[id=r22]:checked ~pre label[for=r22],
+input[id=r23]:checked ~pre label[for=r23],
+input[id=r24]:checked ~pre label[for=r24],
+input[id=r25]:checked ~pre label[for=r25],
+input[id=r26]:checked ~pre label[for=r26],
+input[id=r27]:checked ~pre label[for=r27],
+input[id=r28]:checked ~pre label[for=r28],
+input[id=r29]:checked ~pre label[for=r29],
+input[id=r30]:checked ~pre label[for=r30],
+input[id=r31]:checked ~pre label[for=r31],
+input[id=r32]:checked ~pre label[for=r32],
+input[id=r33]:checked ~pre label[for=r33],
+input[id=r34]:checked ~pre label[for=r34],
+input[id=r35]:checked ~pre label[for=r35],
+input[id=r36]:checked ~pre label[for=r36],
+input[id=r37]:checked ~pre label[for=r37],
+input[id=r38]:checked ~pre label[for=r38],
+input[id=r39]:checked ~pre label[for=r39],
+input[id=r40]:checked ~pre label[for=r40],
+input[id=r41]:checked ~pre label[for=r41],
+input[id=r42]:checked ~pre label[for=r42],
+input[id=r43]:checked ~pre label[for=r43],
+input[id=r44]:checked ~pre label[for=r44],
+input[id=r45]:checked ~pre label[for=r45],
+input[id=r46]:checked ~pre label[for=r46],
+input[id=r47]:checked ~pre label[for=r47],
+input[id=r48]:checked ~pre label[for=r48],
+input[id=r49]:checked ~pre label[for=r49],
+input[id=r50]:checked ~pre label[for=r50],
+input[id=r51]:checked ~pre label[for=r51],
+input[id=r52]:checked ~pre label[for=r52],
+input[id=r53]:checked ~pre label[for=r53],
+input[id=r54]:checked ~pre label[for=r54],
+input[id=r55]:checked ~pre label[for=r55]
+{background: #226; color: #ff8;}
+input[id=i0]:checked ~pre .i0,
+input[id=i1]:checked ~pre .i1,
+input[id=i2]:checked ~pre .i2
+{background: brown; color: #eed;}
+</style><input id="r0" type="radio" name="g"/>
+<input id="r1" type="radio" name="g"/>
+<input id="r2" type="radio" name="g"/>
+<input id="r3" type="radio" name="g"/>
+<input id="r4" type="radio" name="g"/>
+<input id="r5" type="radio" name="g"/>
+<input id="r6" type="radio" name="g"/>
+<input id="r7" type="radio" name="g"/>
+<input id="r8" type="radio" name="g"/>
+<input id="r9" type="radio" name="g"/>
+<input id="r10" type="radio" name="g"/>
+<input id="r11" type="radio" name="g"/>
+<input id="r12" type="radio" name="g"/>
+<input id="r13" type="radio" name="g"/>
+<input id="r14" type="radio" name="g"/>
+<input id="r15" type="radio" name="g"/>
+<input id="r16" type="radio" name="g"/>
+<input id="r17" type="radio" name="g"/>
+<input id="r18" type="radio" name="g"/>
+<input id="r19" type="radio" name="g"/>
+<input id="r20" type="radio" name="g"/>
+<input id="r21" type="radio" name="g"/>
+<input id="r22" type="radio" name="g"/>
+<input id="r23" type="radio" name="g"/>
+<input id="r24" type="radio" name="g"/>
+<input id="r25" type="radio" name="g"/>
+<input id="r26" type="radio" name="g"/>
+<input id="r27" type="radio" name="g"/>
+<input id="r28" type="radio" name="g"/>
+<input id="r29" type="radio" name="g"/>
+<input id="r30" type="radio" name="g"/>
+<input id="r31" type="radio" name="g"/>
+<input id="r32" type="radio" name="g"/>
+<input id="r33" type="radio" name="g"/>
+<input id="r34" type="radio" name="g"/>
+<input id="r35" type="radio" name="g"/>
+<input id="r36" type="radio" name="g"/>
+<input id="r37" type="radio" name="g"/>
+<input id="r38" type="radio" name="g"/>
+<input id="r39" type="radio" name="g"/>
+<input id="r40" type="radio" name="g"/>
+<input id="r41" type="radio" name="g"/>
+<input id="r42" type="radio" name="g"/>
+<input id="r43" type="radio" name="g"/>
+<input id="r44" type="radio" name="g"/>
+<input id="r45" type="radio" name="g"/>
+<input id="r46" type="radio" name="g"/>
+<input id="r47" type="radio" name="g"/>
+<input id="r48" type="radio" name="g"/>
+<input id="r49" type="radio" name="g"/>
+<input id="r50" type="radio" name="g"/>
+<input id="r51" type="radio" name="g"/>
+<input id="r52" type="radio" name="g"/>
+<input id="r53" type="radio" name="g"/>
+<input id="r54" type="radio" name="g"/>
+<input id="r55" type="radio" name="g"/>
+<input id="i0" type="radio" name="i"/>
+<input id="i1" type="radio" name="i"/>
+<input id="i2" type="radio" name="i"/>
+
+<pre class="line-numbers">
+<span class="codeline" id="line-1"><code><span class="comment">/*</span></code></span>
+<span class="codeline" id="line-2"><code><span class="comment"> * Licensed to the Apache Software Foundation (ASF) under one</span></code></span>
+<span class="codeline" id="line-3"><code><span class="comment"> * or more contributor license agreements. See the NOTICE file</span></code></span>
+<span class="codeline" id="line-4"><code><span class="comment"> * distributed with this work for additional information</span></code></span>
+<span class="codeline" id="line-5"><code><span class="comment"> * regarding copyright ownership. The ASF licenses this file</span></code></span>
+<span class="codeline" id="line-6"><code><span class="comment"> * to you under the Apache License, Version 2.0 (the</span></code></span>
+<span class="codeline" id="line-7"><code><span class="comment"> * "License"); you may not use this file except in compliance</span></code></span>
+<span class="codeline" id="line-8"><code><span class="comment"> * with the License. You may obtain a copy of the License at</span></code></span>
+<span class="codeline" id="line-9"><code><span class="comment"> *</span></code></span>
+<span class="codeline" id="line-10"><code><span class="comment"> *   http://www.apache.org/licenses/LICENSE-2.0</span></code></span>
+<span class="codeline" id="line-11"><code><span class="comment"> *</span></code></span>
+<span class="codeline" id="line-12"><code><span class="comment"> * Unless required by applicable law or agreed to in writing,</span></code></span>
+<span class="codeline" id="line-13"><code><span class="comment"> * software distributed under the License is distributed on an</span></code></span>
+<span class="codeline" id="line-14"><code><span class="comment"> * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY</span></code></span>
+<span class="codeline" id="line-15"><code><span class="comment"> * KIND, either express or implied. See the License for the</span></code></span>
+<span class="codeline" id="line-16"><code><span class="comment"> * specific language governing permissions and limitations</span></code></span>
+<span class="codeline" id="line-17"><code><span class="comment"> * under the License.</span></code></span>
+<span class="codeline" id="line-18"><code><span class="comment"> */</span></code></span>
+<span class="codeline" id="line-19"><code></code></span>
+<span class="codeline" id="line-20"><code><span class="keyword">package</span> thrift</code></span>
+<span class="codeline" id="line-21"><code></code></span>
+<span class="codeline" id="line-22"><code><span class="keyword">import</span> (</code></span>
+<span class="codeline" id="line-23"><code>	<label for="i0"><span class="lit-string i0">"crypto/tls"</span></label></code></span>
+<span class="codeline" id="line-24"><code>	<label for="i1"><span class="lit-string i1">"fmt"</span></label></code></span>
+<span class="codeline" id="line-25"><code>	<label for="i2"><span class="lit-string i2">"time"</span></label></code></span>
+<span class="codeline" id="line-26"><code>)</code></span>
+<span class="codeline" id="line-27"><code></code></span>
+<span class="codeline" id="line-28"><code><span class="comment">// Default TConfiguration values.</span></code></span>
+<span class="codeline" id="line-29"><code><span class="keyword">const</span> (</code></span>
+<span class="codeline" id="line-30"><code>	<a href="../../../../../pkg/github.com/uber/jaeger-client-go/thrift.html#name-DEFAULT_MAX_MESSAGE_SIZE" class="ident">DEFAULT_MAX_MESSAGE_SIZE</a> = <span class="lit-number">100</span> * <span class="lit-number">1024</span> * <span class="lit-number">1024</span></code></span>
+<span class="codeline" id="line-31"><code>	<a href="../../../../../pkg/github.com/uber/jaeger-client-go/thrift.html#name-DEFAULT_MAX_FRAME_SIZE" class="ident">DEFAULT_MAX_FRAME_SIZE</a>   = <span class="lit-number">16384000</span></code></span>
+<span class="codeline" id="line-32"><code></code></span>
+<span class="codeline" id="line-33"><code>	<a href="../../../../../pkg/github.com/uber/jaeger-client-go/thrift.html#name-DEFAULT_TBINARY_STRICT_READ" class="ident">DEFAULT_TBINARY_STRICT_READ</a>  = <a href="../../../../../pkg/builtin.html#name-false" class="ident">false</a></code></span>
+<span class="codeline" id="line-34"><code>	<a href="../../../../../pkg/github.com/uber/jaeger-client-go/thrift.html#name-DEFAULT_TBINARY_STRICT_WRITE" class="ident">DEFAULT_TBINARY_STRICT_WRITE</a> = <a href="../../../../../pkg/builtin.html#name-true" class="ident">true</a></code></span>
+<span class="codeline" id="line-35"><code></code></span>
+<span class="codeline" id="line-36"><code>	<a href="../../../../../pkg/github.com/uber/jaeger-client-go/thrift.html#name-DEFAULT_CONNECT_TIMEOUT" class="ident">DEFAULT_CONNECT_TIMEOUT</a> = <span class="lit-number">0</span></code></span>
+<span class="codeline" id="line-37"><code>	<a href="../../../../../pkg/github.com/uber/jaeger-client-go/thrift.html#name-DEFAULT_SOCKET_TIMEOUT" class="ident">DEFAULT_SOCKET_TIMEOUT</a>  = <span class="lit-number">0</span></code></span>
+<span class="codeline" id="line-38"><code>)</code></span>
+<span class="codeline" id="line-39"><code></code></span>
+<span class="codeline" id="line-40"><code><span class="comment">// TConfiguration defines some configurations shared between TTransport,</span></code></span>
+<span class="codeline" id="line-41"><code><span class="comment">// TProtocol, TTransportFactory, TProtocolFactory, and other implementations.</span></code></span>
+<span class="codeline" id="line-42"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-43"><code><span class="comment">// When constructing TConfiguration, you only need to specify the non-default</span></code></span>
+<span class="codeline" id="line-44"><code><span class="comment">// fields. All zero values have sane default values.</span></code></span>
+<span class="codeline" id="line-45"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-46"><code><span class="comment">// Not all configurations defined are applicable to all implementations.</span></code></span>
+<span class="codeline" id="line-47"><code><span class="comment">// Implementations are free to ignore the configurations not applicable to them.</span></code></span>
+<span class="codeline" id="line-48"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-49"><code><span class="comment">// All functions attached to this type are nil-safe.</span></code></span>
+<span class="codeline" id="line-50"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-51"><code><span class="comment">// See [1] for spec.</span></code></span>
+<span class="codeline" id="line-52"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-53"><code><span class="comment">// NOTE: When using TConfiguration, fill in all the configurations you want to</span></code></span>
+<span class="codeline" id="line-54"><code><span class="comment">// set across the stack, not only the ones you want to set in the immediate</span></code></span>
+<span class="codeline" id="line-55"><code><span class="comment">// TTransport/TProtocol.</span></code></span>
+<span class="codeline" id="line-56"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-57"><code><span class="comment">// For example, say you want to migrate this old code into using TConfiguration:</span></code></span>
+<span class="codeline" id="line-58"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-59"><code><span class="comment">//     sccket := thrift.NewTSocketTimeout("host:port", time.Second)</span></code></span>
+<span class="codeline" id="line-60"><code><span class="comment">//     transFactory := thrift.NewTFramedTransportFactoryMaxLength(</span></code></span>
+<span class="codeline" id="line-61"><code><span class="comment">//         thrift.NewTTransportFactory(),</span></code></span>
+<span class="codeline" id="line-62"><code><span class="comment">//         1024 * 1024 * 256,</span></code></span>
+<span class="codeline" id="line-63"><code><span class="comment">//     )</span></code></span>
+<span class="codeline" id="line-64"><code><span class="comment">//     protoFactory := thrift.NewTBinaryProtocolFactory(true, true)</span></code></span>
+<span class="codeline" id="line-65"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-66"><code><span class="comment">// This is the wrong way to do it because in the end the TConfiguration used by</span></code></span>
+<span class="codeline" id="line-67"><code><span class="comment">// socket and transFactory will be overwritten by the one used by protoFactory</span></code></span>
+<span class="codeline" id="line-68"><code><span class="comment">// because of TConfiguration propagation:</span></code></span>
+<span class="codeline" id="line-69"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-70"><code><span class="comment">//     // bad example, DO NOT USE</span></code></span>
+<span class="codeline" id="line-71"><code><span class="comment">//     sccket := thrift.NewTSocketConf("host:port", &amp;thrift.TConfiguration{</span></code></span>
+<span class="codeline" id="line-72"><code><span class="comment">//         ConnectTimeout: time.Second,</span></code></span>
+<span class="codeline" id="line-73"><code><span class="comment">//         SocketTimeout:  time.Second,</span></code></span>
+<span class="codeline" id="line-74"><code><span class="comment">//     })</span></code></span>
+<span class="codeline" id="line-75"><code><span class="comment">//     transFactory := thrift.NewTFramedTransportFactoryConf(</span></code></span>
+<span class="codeline" id="line-76"><code><span class="comment">//         thrift.NewTTransportFactory(),</span></code></span>
+<span class="codeline" id="line-77"><code><span class="comment">//         &amp;thrift.TConfiguration{</span></code></span>
+<span class="codeline" id="line-78"><code><span class="comment">//             MaxFrameSize: 1024 * 1024 * 256,</span></code></span>
+<span class="codeline" id="line-79"><code><span class="comment">//         },</span></code></span>
+<span class="codeline" id="line-80"><code><span class="comment">//     )</span></code></span>
+<span class="codeline" id="line-81"><code><span class="comment">//     protoFactory := thrift.NewTBinaryProtocolFactoryConf(&amp;thrift.TConfiguration{</span></code></span>
+<span class="codeline" id="line-82"><code><span class="comment">//         TBinaryStrictRead:  thrift.BoolPtr(true),</span></code></span>
+<span class="codeline" id="line-83"><code><span class="comment">//         TBinaryStrictWrite: thrift.BoolPtr(true),</span></code></span>
+<span class="codeline" id="line-84"><code><span class="comment">//     })</span></code></span>
+<span class="codeline" id="line-85"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-86"><code><span class="comment">// This is the correct way to do it:</span></code></span>
+<span class="codeline" id="line-87"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-88"><code><span class="comment">//     conf := &amp;thrift.TConfiguration{</span></code></span>
+<span class="codeline" id="line-89"><code><span class="comment">//         ConnectTimeout: time.Second,</span></code></span>
+<span class="codeline" id="line-90"><code><span class="comment">//         SocketTimeout:  time.Second,</span></code></span>
+<span class="codeline" id="line-91"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-92"><code><span class="comment">//         MaxFrameSize: 1024 * 1024 * 256,</span></code></span>
+<span class="codeline" id="line-93"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-94"><code><span class="comment">//         TBinaryStrictRead:  thrift.BoolPtr(true),</span></code></span>
+<span class="codeline" id="line-95"><code><span class="comment">//         TBinaryStrictWrite: thrift.BoolPtr(true),</span></code></span>
+<span class="codeline" id="line-96"><code><span class="comment">//     }</span></code></span>
+<span class="codeline" id="line-97"><code><span class="comment">//     sccket := thrift.NewTSocketConf("host:port", conf)</span></code></span>
+<span class="codeline" id="line-98"><code><span class="comment">//     transFactory := thrift.NewTFramedTransportFactoryConf(thrift.NewTTransportFactory(), conf)</span></code></span>
+<span class="codeline" id="line-99"><code><span class="comment">//     protoFactory := thrift.NewTBinaryProtocolFactoryConf(conf)</span></code></span>
+<span class="codeline" id="line-100"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-101"><code><span class="comment">// [1]: https://github.com/apache/thrift/blob/master/doc/specs/thrift-tconfiguration.md</span></code></span>
+<span class="codeline" id="line-102"><code><span class="keyword">type</span> <a href="../../../../../pkg/github.com/uber/jaeger-client-go/thrift.html#name-TConfiguration" class="ident">TConfiguration</a> <span class="keyword">struct</span> {</code></span>
+<span class="codeline" id="line-103"><code>	<span class="comment">// If &lt;= 0, DEFAULT_MAX_MESSAGE_SIZE will be used instead.</span></code></span>
+<span class="codeline" id="line-104"><code>	<a href="../../../../../use/github.com/uber/jaeger-client-go/thrift..TConfiguration.MaxMessageSize.html" class="ident">MaxMessageSize</a> <a href="../../../../../pkg/builtin.html#name-int32" class="ident">int32</a></code></span>
+<span class="codeline" id="line-105"><code></code></span>
+<span class="codeline" id="line-106"><code>	<span class="comment">// If &lt;= 0, DEFAULT_MAX_FRAME_SIZE will be used instead.</span></code></span>
+<span class="codeline" id="line-107"><code><span class="comment">	//</span></code></span>
+<span class="codeline" id="line-108"><code><span class="comment">	// Also if MaxMessageSize &lt; MaxFrameSize,</span></code></span>
+<span class="codeline" id="line-109"><code><span class="comment">	// MaxMessageSize will be used instead.</span></code></span>
+<span class="codeline" id="line-110"><code>	<a href="../../../../../use/github.com/uber/jaeger-client-go/thrift..TConfiguration.MaxFrameSize.html" class="ident">MaxFrameSize</a> <a href="../../../../../pkg/builtin.html#name-int32" class="ident">int32</a></code></span>
+<span class="codeline" id="line-111"><code></code></span>
+<span class="codeline" id="line-112"><code>	<span class="comment">// Connect and socket timeouts to be used by TSocket and TSSLSocket.</span></code></span>
+<span class="codeline" id="line-113"><code><span class="comment">	//</span></code></span>
+<span class="codeline" id="line-114"><code><span class="comment">	// 0 means no timeout.</span></code></span>
+<span class="codeline" id="line-115"><code><span class="comment">	//</span></code></span>
+<span class="codeline" id="line-116"><code><span class="comment">	// If &lt;0, DEFAULT_CONNECT_TIMEOUT and DEFAULT_SOCKET_TIMEOUT will be</span></code></span>
+<span class="codeline" id="line-117"><code><span class="comment">	// used.</span></code></span>
+<span class="codeline" id="line-118"><code>	<a href="../../../../../use/github.com/uber/jaeger-client-go/thrift..TConfiguration.ConnectTimeout.html" class="ident">ConnectTimeout</a> <a href="../../../../../pkg/time.html" class="ident i2">time</a>.<a href="../../../../time/time.go.html#line-590" class="ident">Duration</a></code></span>
+<span class="codeline" id="line-119"><code>	<a href="../../../../../use/github.com/uber/jaeger-client-go/thrift..TConfiguration.SocketTimeout.html" class="ident">SocketTimeout</a>  <a href="../../../../../pkg/time.html" class="ident i2">time</a>.<a href="../../../../time/time.go.html#line-590" class="ident">Duration</a></code></span>
+<span class="codeline" id="line-120"><code></code></span>
+<span class="codeline" id="line-121"><code>	<span class="comment">// TLS config to be used by TSSLSocket.</span></code></span>
+<span class="codeline" id="line-122"><code>	<a href="../../../../../use/github.com/uber/jaeger-client-go/thrift..TConfiguration.TLSConfig.html" class="ident">TLSConfig</a> *<a href="../../../../../pkg/crypto/tls.html" class="ident i0">tls</a>.<a href="../../../../crypto/tls/common.go.html#line-517" class="ident">Config</a></code></span>
+<span class="codeline" id="line-123"><code></code></span>
+<span class="codeline" id="line-124"><code>	<span class="comment">// Strict read/write configurations for TBinaryProtocol.</span></code></span>
+<span class="codeline" id="line-125"><code><span class="comment">	//</span></code></span>
+<span class="codeline" id="line-126"><code><span class="comment">	// BoolPtr helper function is available to use literal values.</span></code></span>
+<span class="codeline" id="line-127"><code>	<a href="../../../../../use/github.com/uber/jaeger-client-go/thrift..TConfiguration.TBinaryStrictRead.html" class="ident">TBinaryStrictRead</a>  *<a href="../../../../../pkg/builtin.html#name-bool" class="ident">bool</a></code></span>
+<span class="codeline" id="line-128"><code>	<a href="../../../../../use/github.com/uber/jaeger-client-go/thrift..TConfiguration.TBinaryStrictWrite.html" class="ident">TBinaryStrictWrite</a> *<a href="../../../../../pkg/builtin.html#name-bool" class="ident">bool</a></code></span>
+<span class="codeline" id="line-129"><code></code></span>
+<span class="codeline" id="line-130"><code>	<span class="comment">// The wrapped protocol id to be used in THeader transport/protocol.</span></code></span>
+<span class="codeline" id="line-131"><code><span class="comment">	//</span></code></span>
+<span class="codeline" id="line-132"><code><span class="comment">	// THeaderProtocolIDPtr and THeaderProtocolIDPtrMust helper functions</span></code></span>
+<span class="codeline" id="line-133"><code><span class="comment">	// are provided to help filling this value.</span></code></span>
+<span class="codeline" id="line-134"><code>	<a href="../../../../../use/github.com/uber/jaeger-client-go/thrift..TConfiguration.THeaderProtocolID.html" class="ident">THeaderProtocolID</a> *<a href="header_transport.go.html#line-69" class="ident">THeaderProtocolID</a></code></span>
+<span class="codeline" id="line-135"><code></code></span>
+<span class="codeline" id="line-136"><code>	<span class="comment">// Used internally by deprecated constructors, to avoid overriding</span></code></span>
+<span class="codeline" id="line-137"><code><span class="comment">	// underlying TTransport/TProtocol's cfg by accidental propagations.</span></code></span>
+<span class="codeline" id="line-138"><code><span class="comment">	//</span></code></span>
+<span class="codeline" id="line-139"><code><span class="comment">	// For external users this is always false.</span></code></span>
+<span class="codeline" id="line-140"><code>	<a href="../../../../../use/github.com/uber/jaeger-client-go/thrift..TConfiguration.noPropagation^52cf5.html" class="ident">noPropagation</a> <a href="../../../../../pkg/builtin.html#name-bool" class="ident">bool</a></code></span>
+<span class="codeline" id="line-141"><code>}</code></span>
+<span class="codeline" id="line-142"><code></code></span>
+<span class="codeline" id="line-143"><code><span class="comment">// GetMaxMessageSize returns the max message size an implementation should</span></code></span>
+<span class="codeline" id="line-144"><code><span class="comment">// follow.</span></code></span>
+<span class="codeline" id="line-145"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-146"><code><span class="comment">// It's nil-safe. DEFAULT_MAX_MESSAGE_SIZE will be returned if tc is nil.</span></code></span>
+<span class="codeline" id="line-147"><code><span class="keyword">func</span> (<label for="r0" class="ident">tc</label> *<a href="#line-102" class="ident">TConfiguration</a>) <label for="r1" class="ident"><a href="../../../../../use/github.com/uber/jaeger-client-go/thrift..TConfiguration.GetMaxMessageSize.html" class="ident">GetMaxMessageSize</a></label>() <a href="../../../../../pkg/builtin.html#name-int32" class="ident">int32</a> {</code></span>
+<span class="codeline" id="line-148"><code>	<span class="keyword">if</span> <label for="r0" class="ident">tc</label> == <a href="../../../../../pkg/builtin.html#name-nil" class="ident">nil</a> || <label for="r0" class="ident">tc</label>.<a href="#line-104" class="ident">MaxMessageSize</a> &lt;= <span class="lit-number">0</span> {</code></span>
+<span class="codeline" id="line-149"><code>		<span class="keyword">return</span> <a href="#line-30" class="ident">DEFAULT_MAX_MESSAGE_SIZE</a></code></span>
+<span class="codeline" id="line-150"><code>	}</code></span>
+<span class="codeline" id="line-151"><code>	<span class="keyword">return</span> <label for="r0" class="ident">tc</label>.<a href="#line-104" class="ident">MaxMessageSize</a></code></span>
+<span class="codeline" id="line-152"><code>}</code></span>
+<span class="codeline" id="line-153"><code></code></span>
+<span class="codeline" id="line-154"><code><span class="comment">// GetMaxFrameSize returns the max frame size an implementation should follow.</span></code></span>
+<span class="codeline" id="line-155"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-156"><code><span class="comment">// It's nil-safe. DEFAULT_MAX_FRAME_SIZE will be returned if tc is nil.</span></code></span>
+<span class="codeline" id="line-157"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-158"><code><span class="comment">// If the configured max message size is smaller than the configured max frame</span></code></span>
+<span class="codeline" id="line-159"><code><span class="comment">// size, the smaller one will be returned instead.</span></code></span>
+<span class="codeline" id="line-160"><code><span class="keyword">func</span> (<label for="r2" class="ident">tc</label> *<a href="#line-102" class="ident">TConfiguration</a>) <label for="r3" class="ident"><a href="../../../../../use/github.com/uber/jaeger-client-go/thrift..TConfiguration.GetMaxFrameSize.html" class="ident">GetMaxFrameSize</a></label>() <a href="../../../../../pkg/builtin.html#name-int32" class="ident">int32</a> {</code></span>
+<span class="codeline" id="line-161"><code>	<span class="keyword">if</span> <label for="r2" class="ident">tc</label> == <a href="../../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-162"><code>		<span class="keyword">return</span> <a href="#line-31" class="ident">DEFAULT_MAX_FRAME_SIZE</a></code></span>
+<span class="codeline" id="line-163"><code>	}</code></span>
+<span class="codeline" id="line-164"><code>	<label for="r4" class="ident">maxFrameSize</label> := <label for="r2" class="ident">tc</label>.<a href="#line-110" class="ident">MaxFrameSize</a></code></span>
+<span class="codeline" id="line-165"><code>	<span class="keyword">if</span> <label for="r4" class="ident">maxFrameSize</label> &lt;= <span class="lit-number">0</span> {</code></span>
+<span class="codeline" id="line-166"><code>		<label for="r4" class="ident">maxFrameSize</label> = <a href="#line-31" class="ident">DEFAULT_MAX_FRAME_SIZE</a></code></span>
+<span class="codeline" id="line-167"><code>	}</code></span>
+<span class="codeline" id="line-168"><code>	<span class="keyword">if</span> <label for="r5" class="ident">maxMessageSize</label> := <label for="r2" class="ident">tc</label>.<a href="#line-147" class="ident">GetMaxMessageSize</a>(); <label for="r5" class="ident">maxMessageSize</label> &lt; <label for="r4" class="ident">maxFrameSize</label> {</code></span>
+<span class="codeline" id="line-169"><code>		<span class="keyword">return</span> <label for="r5" class="ident">maxMessageSize</label></code></span>
+<span class="codeline" id="line-170"><code>	}</code></span>
+<span class="codeline" id="line-171"><code>	<span class="keyword">return</span> <label for="r4" class="ident">maxFrameSize</label></code></span>
+<span class="codeline" id="line-172"><code>}</code></span>
+<span class="codeline" id="line-173"><code></code></span>
+<span class="codeline" id="line-174"><code><span class="comment">// GetConnectTimeout returns the connect timeout should be used by TSocket and</span></code></span>
+<span class="codeline" id="line-175"><code><span class="comment">// TSSLSocket.</span></code></span>
+<span class="codeline" id="line-176"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-177"><code><span class="comment">// It's nil-safe. If tc is nil, DEFAULT_CONNECT_TIMEOUT will be returned instead.</span></code></span>
+<span class="codeline" id="line-178"><code><span class="keyword">func</span> (<label for="r6" class="ident">tc</label> *<a href="#line-102" class="ident">TConfiguration</a>) <label for="r7" class="ident"><a href="../../../../../use/github.com/uber/jaeger-client-go/thrift..TConfiguration.GetConnectTimeout.html" class="ident">GetConnectTimeout</a></label>() <a href="../../../../../pkg/time.html" class="ident i2">time</a>.<a href="../../../../time/time.go.html#line-590" class="ident">Duration</a> {</code></span>
+<span class="codeline" id="line-179"><code>	<span class="keyword">if</span> <label for="r6" class="ident">tc</label> == <a href="../../../../../pkg/builtin.html#name-nil" class="ident">nil</a> || <label for="r6" class="ident">tc</label>.<a href="#line-118" class="ident">ConnectTimeout</a> &lt; <span class="lit-number">0</span> {</code></span>
+<span class="codeline" id="line-180"><code>		<span class="keyword">return</span> <a href="#line-36" class="ident">DEFAULT_CONNECT_TIMEOUT</a></code></span>
+<span class="codeline" id="line-181"><code>	}</code></span>
+<span class="codeline" id="line-182"><code>	<span class="keyword">return</span> <label for="r6" class="ident">tc</label>.<a href="#line-118" class="ident">ConnectTimeout</a></code></span>
+<span class="codeline" id="line-183"><code>}</code></span>
+<span class="codeline" id="line-184"><code></code></span>
+<span class="codeline" id="line-185"><code><span class="comment">// GetSocketTimeout returns the socket timeout should be used by TSocket and</span></code></span>
+<span class="codeline" id="line-186"><code><span class="comment">// TSSLSocket.</span></code></span>
+<span class="codeline" id="line-187"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-188"><code><span class="comment">// It's nil-safe. If tc is nil, DEFAULT_SOCKET_TIMEOUT will be returned instead.</span></code></span>
+<span class="codeline" id="line-189"><code><span class="keyword">func</span> (<label for="r8" class="ident">tc</label> *<a href="#line-102" class="ident">TConfiguration</a>) <label for="r9" class="ident"><a href="../../../../../use/github.com/uber/jaeger-client-go/thrift..TConfiguration.GetSocketTimeout.html" class="ident">GetSocketTimeout</a></label>() <a href="../../../../../pkg/time.html" class="ident i2">time</a>.<a href="../../../../time/time.go.html#line-590" class="ident">Duration</a> {</code></span>
+<span class="codeline" id="line-190"><code>	<span class="keyword">if</span> <label for="r8" class="ident">tc</label> == <a href="../../../../../pkg/builtin.html#name-nil" class="ident">nil</a> || <label for="r8" class="ident">tc</label>.<a href="#line-119" class="ident">SocketTimeout</a> &lt; <span class="lit-number">0</span> {</code></span>
+<span class="codeline" id="line-191"><code>		<span class="keyword">return</span> <a href="#line-37" class="ident">DEFAULT_SOCKET_TIMEOUT</a></code></span>
+<span class="codeline" id="line-192"><code>	}</code></span>
+<span class="codeline" id="line-193"><code>	<span class="keyword">return</span> <label for="r8" class="ident">tc</label>.<a href="#line-119" class="ident">SocketTimeout</a></code></span>
+<span class="codeline" id="line-194"><code>}</code></span>
+<span class="codeline" id="line-195"><code></code></span>
+<span class="codeline" id="line-196"><code><span class="comment">// GetTLSConfig returns the tls config should be used by TSSLSocket.</span></code></span>
+<span class="codeline" id="line-197"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-198"><code><span class="comment">// It's nil-safe. If tc is nil, nil will be returned instead.</span></code></span>
+<span class="codeline" id="line-199"><code><span class="keyword">func</span> (<label for="r10" class="ident">tc</label> *<a href="#line-102" class="ident">TConfiguration</a>) <label for="r11" class="ident"><a href="../../../../../use/github.com/uber/jaeger-client-go/thrift..TConfiguration.GetTLSConfig.html" class="ident">GetTLSConfig</a></label>() *<a href="../../../../../pkg/crypto/tls.html" class="ident i0">tls</a>.<a href="../../../../crypto/tls/common.go.html#line-517" class="ident">Config</a> {</code></span>
+<span class="codeline" id="line-200"><code>	<span class="keyword">if</span> <label for="r10" class="ident">tc</label> == <a href="../../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-201"><code>		<span class="keyword">return</span> <a href="../../../../../pkg/builtin.html#name-nil" class="ident">nil</a></code></span>
+<span class="codeline" id="line-202"><code>	}</code></span>
+<span class="codeline" id="line-203"><code>	<span class="keyword">return</span> <label for="r10" class="ident">tc</label>.<a href="#line-122" class="ident">TLSConfig</a></code></span>
+<span class="codeline" id="line-204"><code>}</code></span>
+<span class="codeline" id="line-205"><code></code></span>
+<span class="codeline" id="line-206"><code><span class="comment">// GetTBinaryStrictRead returns the strict read configuration TBinaryProtocol</span></code></span>
+<span class="codeline" id="line-207"><code><span class="comment">// should follow.</span></code></span>
+<span class="codeline" id="line-208"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-209"><code><span class="comment">// It's nil-safe. DEFAULT_TBINARY_STRICT_READ will be returned if either tc or</span></code></span>
+<span class="codeline" id="line-210"><code><span class="comment">// tc.TBinaryStrictRead is nil.</span></code></span>
+<span class="codeline" id="line-211"><code><span class="keyword">func</span> (<label for="r12" class="ident">tc</label> *<a href="#line-102" class="ident">TConfiguration</a>) <label for="r13" class="ident"><a href="../../../../../use/github.com/uber/jaeger-client-go/thrift..TConfiguration.GetTBinaryStrictRead.html" class="ident">GetTBinaryStrictRead</a></label>() <a href="../../../../../pkg/builtin.html#name-bool" class="ident">bool</a> {</code></span>
+<span class="codeline" id="line-212"><code>	<span class="keyword">if</span> <label for="r12" class="ident">tc</label> == <a href="../../../../../pkg/builtin.html#name-nil" class="ident">nil</a> || <label for="r12" class="ident">tc</label>.<a href="#line-127" class="ident">TBinaryStrictRead</a> == <a href="../../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-213"><code>		<span class="keyword">return</span> <a href="#line-33" class="ident">DEFAULT_TBINARY_STRICT_READ</a></code></span>
+<span class="codeline" id="line-214"><code>	}</code></span>
+<span class="codeline" id="line-215"><code>	<span class="keyword">return</span> *<label for="r12" class="ident">tc</label>.<a href="#line-127" class="ident">TBinaryStrictRead</a></code></span>
+<span class="codeline" id="line-216"><code>}</code></span>
+<span class="codeline" id="line-217"><code></code></span>
+<span class="codeline" id="line-218"><code><span class="comment">// GetTBinaryStrictWrite returns the strict read configuration TBinaryProtocol</span></code></span>
+<span class="codeline" id="line-219"><code><span class="comment">// should follow.</span></code></span>
+<span class="codeline" id="line-220"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-221"><code><span class="comment">// It's nil-safe. DEFAULT_TBINARY_STRICT_WRITE will be returned if either tc or</span></code></span>
+<span class="codeline" id="line-222"><code><span class="comment">// tc.TBinaryStrictWrite is nil.</span></code></span>
+<span class="codeline" id="line-223"><code><span class="keyword">func</span> (<label for="r14" class="ident">tc</label> *<a href="#line-102" class="ident">TConfiguration</a>) <label for="r15" class="ident"><a href="../../../../../use/github.com/uber/jaeger-client-go/thrift..TConfiguration.GetTBinaryStrictWrite.html" class="ident">GetTBinaryStrictWrite</a></label>() <a href="../../../../../pkg/builtin.html#name-bool" class="ident">bool</a> {</code></span>
+<span class="codeline" id="line-224"><code>	<span class="keyword">if</span> <label for="r14" class="ident">tc</label> == <a href="../../../../../pkg/builtin.html#name-nil" class="ident">nil</a> || <label for="r14" class="ident">tc</label>.<a href="#line-128" class="ident">TBinaryStrictWrite</a> == <a href="../../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-225"><code>		<span class="keyword">return</span> <a href="#line-34" class="ident">DEFAULT_TBINARY_STRICT_WRITE</a></code></span>
+<span class="codeline" id="line-226"><code>	}</code></span>
+<span class="codeline" id="line-227"><code>	<span class="keyword">return</span> *<label for="r14" class="ident">tc</label>.<a href="#line-128" class="ident">TBinaryStrictWrite</a></code></span>
+<span class="codeline" id="line-228"><code>}</code></span>
+<span class="codeline" id="line-229"><code></code></span>
+<span class="codeline" id="line-230"><code><span class="comment">// GetTHeaderProtocolID returns the THeaderProtocolID should be used by</span></code></span>
+<span class="codeline" id="line-231"><code><span class="comment">// THeaderProtocol clients (for servers, they always use the same one as the</span></code></span>
+<span class="codeline" id="line-232"><code><span class="comment">// client instead).</span></code></span>
+<span class="codeline" id="line-233"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-234"><code><span class="comment">// It's nil-safe. If either tc or tc.THeaderProtocolID is nil,</span></code></span>
+<span class="codeline" id="line-235"><code><span class="comment">// THeaderProtocolDefault will be returned instead.</span></code></span>
+<span class="codeline" id="line-236"><code><span class="comment">// THeaderProtocolDefault will also be returned if configured value is invalid.</span></code></span>
+<span class="codeline" id="line-237"><code><span class="keyword">func</span> (<label for="r16" class="ident">tc</label> *<a href="#line-102" class="ident">TConfiguration</a>) <label for="r17" class="ident"><a href="../../../../../use/github.com/uber/jaeger-client-go/thrift..TConfiguration.GetTHeaderProtocolID.html" class="ident">GetTHeaderProtocolID</a></label>() <a href="header_transport.go.html#line-69" class="ident">THeaderProtocolID</a> {</code></span>
+<span class="codeline" id="line-238"><code>	<span class="keyword">if</span> <label for="r16" class="ident">tc</label> == <a href="../../../../../pkg/builtin.html#name-nil" class="ident">nil</a> || <label for="r16" class="ident">tc</label>.<a href="#line-134" class="ident">THeaderProtocolID</a> == <a href="../../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-239"><code>		<span class="keyword">return</span> <a href="header_transport.go.html#line-75" class="ident">THeaderProtocolDefault</a></code></span>
+<span class="codeline" id="line-240"><code>	}</code></span>
+<span class="codeline" id="line-241"><code>	<label for="r18" class="ident">protoID</label> := *<label for="r16" class="ident">tc</label>.<a href="#line-134" class="ident">THeaderProtocolID</a></code></span>
+<span class="codeline" id="line-242"><code>	<span class="keyword">if</span> <label for="r19" class="ident">err</label> := <label for="r18" class="ident">protoID</label>.<a href="header_transport.go.html#line-82" class="ident">Validate</a>(); <label for="r19" class="ident">err</label> != <a href="../../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-243"><code>		<span class="keyword">return</span> <a href="header_transport.go.html#line-75" class="ident">THeaderProtocolDefault</a></code></span>
+<span class="codeline" id="line-244"><code>	}</code></span>
+<span class="codeline" id="line-245"><code>	<span class="keyword">return</span> <label for="r18" class="ident">protoID</label></code></span>
+<span class="codeline" id="line-246"><code>}</code></span>
+<span class="codeline" id="line-247"><code></code></span>
+<span class="codeline" id="line-248"><code><span class="comment">// THeaderProtocolIDPtr validates and returns the pointer to id.</span></code></span>
+<span class="codeline" id="line-249"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-250"><code><span class="comment">// If id is not a valid THeaderProtocolID, a pointer to THeaderProtocolDefault</span></code></span>
+<span class="codeline" id="line-251"><code><span class="comment">// and the validation error will be returned.</span></code></span>
+<span class="codeline" id="line-252"><code><span class="keyword">func</span> <label for="r20" class="ident"><a href="../../../../../pkg/github.com/uber/jaeger-client-go/thrift.html#name-THeaderProtocolIDPtr" class="ident">THeaderProtocolIDPtr</a></label>(<label for="r21" class="ident">id</label> <a href="header_transport.go.html#line-69" class="ident">THeaderProtocolID</a>) (*<a href="header_transport.go.html#line-69" class="ident">THeaderProtocolID</a>, <a href="../../../../../pkg/builtin.html#name-error" class="ident">error</a>) {</code></span>
+<span class="codeline" id="line-253"><code>	<label for="r22" class="ident">err</label> := <label for="r21" class="ident">id</label>.<a href="header_transport.go.html#line-82" class="ident">Validate</a>()</code></span>
+<span class="codeline" id="line-254"><code>	<span class="keyword">if</span> <label for="r22" class="ident">err</label> != <a href="../../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-255"><code>		<label for="r21" class="ident">id</label> = <a href="header_transport.go.html#line-75" class="ident">THeaderProtocolDefault</a></code></span>
+<span class="codeline" id="line-256"><code>	}</code></span>
+<span class="codeline" id="line-257"><code>	<span class="keyword">return</span> &amp;<label for="r21" class="ident">id</label>, <label for="r22" class="ident">err</label></code></span>
+<span class="codeline" id="line-258"><code>}</code></span>
+<span class="codeline" id="line-259"><code></code></span>
+<span class="codeline" id="line-260"><code><span class="comment">// THeaderProtocolIDPtrMust validates and returns the pointer to id.</span></code></span>
+<span class="codeline" id="line-261"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-262"><code><span class="comment">// It's similar to THeaderProtocolIDPtr, but it panics on validation errors</span></code></span>
+<span class="codeline" id="line-263"><code><span class="comment">// instead of returning them.</span></code></span>
+<span class="codeline" id="line-264"><code><span class="keyword">func</span> <label for="r23" class="ident"><a href="../../../../../pkg/github.com/uber/jaeger-client-go/thrift.html#name-THeaderProtocolIDPtrMust" class="ident">THeaderProtocolIDPtrMust</a></label>(<label for="r24" class="ident">id</label> <a href="header_transport.go.html#line-69" class="ident">THeaderProtocolID</a>) *<a href="header_transport.go.html#line-69" class="ident">THeaderProtocolID</a> {</code></span>
+<span class="codeline" id="line-265"><code>	<label for="r25" class="ident">ptr</label>, <label for="r26" class="ident">err</label> := <a href="#line-252" class="ident">THeaderProtocolIDPtr</a>(<label for="r24" class="ident">id</label>)</code></span>
+<span class="codeline" id="line-266"><code>	<span class="keyword">if</span> <label for="r26" class="ident">err</label> != <a href="../../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-267"><code>		<a href="../../../../../pkg/builtin.html#name-panic" class="ident">panic</a>(<label for="r26" class="ident">err</label>)</code></span>
+<span class="codeline" id="line-268"><code>	}</code></span>
+<span class="codeline" id="line-269"><code>	<span class="keyword">return</span> <label for="r25" class="ident">ptr</label></code></span>
+<span class="codeline" id="line-270"><code>}</code></span>
+<span class="codeline" id="line-271"><code></code></span>
+<span class="codeline" id="line-272"><code><span class="comment">// TConfigurationSetter is an optional interface TProtocol, TTransport,</span></code></span>
+<span class="codeline" id="line-273"><code><span class="comment">// TProtocolFactory, TTransportFactory, and other implementations can implement.</span></code></span>
+<span class="codeline" id="line-274"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-275"><code><span class="comment">// It's intended to be called during intializations.</span></code></span>
+<span class="codeline" id="line-276"><code><span class="comment">// The behavior of calling SetTConfiguration on a TTransport/TProtocol in the</span></code></span>
+<span class="codeline" id="line-277"><code><span class="comment">// middle of a message is undefined:</span></code></span>
+<span class="codeline" id="line-278"><code><span class="comment">// It may or may not change the behavior of the current processing message,</span></code></span>
+<span class="codeline" id="line-279"><code><span class="comment">// and it may even cause the current message to fail.</span></code></span>
+<span class="codeline" id="line-280"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-281"><code><span class="comment">// Note for implementations: SetTConfiguration might be called multiple times</span></code></span>
+<span class="codeline" id="line-282"><code><span class="comment">// with the same value in quick successions due to the implementation of the</span></code></span>
+<span class="codeline" id="line-283"><code><span class="comment">// propagation. Implementations should make SetTConfiguration as simple as</span></code></span>
+<span class="codeline" id="line-284"><code><span class="comment">// possible (usually just overwrite the stored configuration and propagate it to</span></code></span>
+<span class="codeline" id="line-285"><code><span class="comment">// the wrapped TTransports/TProtocols).</span></code></span>
+<span class="codeline" id="line-286"><code><span class="keyword">type</span> <a href="../../../../../pkg/github.com/uber/jaeger-client-go/thrift.html#name-TConfigurationSetter" class="ident">TConfigurationSetter</a> <span class="keyword">interface</span> {</code></span>
+<span class="codeline" id="line-287"><code>	<a href="../../../../../imp/github.com/uber/jaeger-client-go/thrift.TConfigurationSetter.html#name-SetTConfiguration" class="ident">SetTConfiguration</a>(*<a href="#line-102" class="ident">TConfiguration</a>)</code></span>
+<span class="codeline" id="line-288"><code>}</code></span>
+<span class="codeline" id="line-289"><code></code></span>
+<span class="codeline" id="line-290"><code><span class="comment">// PropagateTConfiguration propagates cfg to impl if impl implements</span></code></span>
+<span class="codeline" id="line-291"><code><span class="comment">// TConfigurationSetter and cfg is non-nil, otherwise it does nothing.</span></code></span>
+<span class="codeline" id="line-292"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-293"><code><span class="comment">// NOTE: nil cfg is not propagated. If you want to propagate a TConfiguration</span></code></span>
+<span class="codeline" id="line-294"><code><span class="comment">// with everything being default value, use &amp;TConfiguration{} explicitly instead.</span></code></span>
+<span class="codeline" id="line-295"><code><span class="keyword">func</span> <label for="r27" class="ident"><a href="../../../../../pkg/github.com/uber/jaeger-client-go/thrift.html#name-PropagateTConfiguration" class="ident">PropagateTConfiguration</a></label>(<label for="r28" class="ident">impl</label> <span class="keyword">interface</span>{}, <label for="r29" class="ident">cfg</label> *<a href="#line-102" class="ident">TConfiguration</a>) {</code></span>
+<span class="codeline" id="line-296"><code>	<span class="keyword">if</span> <label for="r29" class="ident">cfg</label> == <a href="../../../../../pkg/builtin.html#name-nil" class="ident">nil</a> || <label for="r29" class="ident">cfg</label>.<a href="#line-140" class="ident">noPropagation</a> {</code></span>
+<span class="codeline" id="line-297"><code>		<span class="keyword">return</span></code></span>
+<span class="codeline" id="line-298"><code>	}</code></span>
+<span class="codeline" id="line-299"><code></code></span>
+<span class="codeline" id="line-300"><code>	<span class="keyword">if</span> <label for="r30" class="ident">setter</label>, <label for="r31" class="ident">ok</label> := <label for="r28" class="ident">impl</label>.(<a href="#line-286" class="ident">TConfigurationSetter</a>); <label for="r31" class="ident">ok</label> {</code></span>
+<span class="codeline" id="line-301"><code>		<label for="r30" class="ident">setter</label>.<a href="#line-287" class="ident">SetTConfiguration</a>(<label for="r29" class="ident">cfg</label>)</code></span>
+<span class="codeline" id="line-302"><code>	}</code></span>
+<span class="codeline" id="line-303"><code>}</code></span>
+<span class="codeline" id="line-304"><code></code></span>
+<span class="codeline" id="line-305"><code><span class="keyword">func</span> <label for="r32" class="ident"><a href="../../../../../pkg/github.com/uber/jaeger-client-go/thrift.html#name-checkSizeForProtocol" class="ident">checkSizeForProtocol</a></label>(<label for="r33" class="ident">size</label> <a href="../../../../../pkg/builtin.html#name-int32" class="ident">int32</a>, <label for="r34" class="ident">cfg</label> *<a href="#line-102" class="ident">TConfiguration</a>) <a href="../../../../../pkg/builtin.html#name-error" class="ident">error</a> {</code></span>
+<span class="codeline" id="line-306"><code>	<span class="keyword">if</span> <label for="r33" class="ident">size</label> &lt; <span class="lit-number">0</span> {</code></span>
+<span class="codeline" id="line-307"><code>		<span class="keyword">return</span> <a href="protocol_exception.go.html#line-87" class="ident">NewTProtocolExceptionWithType</a>(</code></span>
+<span class="codeline" id="line-308"><code>			<a href="protocol_exception.go.html#line-36" class="ident">NEGATIVE_SIZE</a>,</code></span>
+<span class="codeline" id="line-309"><code>			<a href="../../../../../pkg/fmt.html" class="ident i1">fmt</a>.<a href="../../../../fmt/errors.go.html#line-17" class="ident">Errorf</a>(<span class="lit-string">"negative size: %d"</span>, <label for="r33" class="ident">size</label>),</code></span>
+<span class="codeline" id="line-310"><code>		)</code></span>
+<span class="codeline" id="line-311"><code>	}</code></span>
+<span class="codeline" id="line-312"><code>	<span class="keyword">if</span> <label for="r33" class="ident">size</label> &gt; <label for="r34" class="ident">cfg</label>.<a href="#line-147" class="ident">GetMaxMessageSize</a>() {</code></span>
+<span class="codeline" id="line-313"><code>		<span class="keyword">return</span> <a href="protocol_exception.go.html#line-87" class="ident">NewTProtocolExceptionWithType</a>(</code></span>
+<span class="codeline" id="line-314"><code>			<a href="protocol_exception.go.html#line-37" class="ident">SIZE_LIMIT</a>,</code></span>
+<span class="codeline" id="line-315"><code>			<a href="../../../../../pkg/fmt.html" class="ident i1">fmt</a>.<a href="../../../../fmt/errors.go.html#line-17" class="ident">Errorf</a>(<span class="lit-string">"size exceeded max allowed: %d"</span>, <label for="r33" class="ident">size</label>),</code></span>
+<span class="codeline" id="line-316"><code>		)</code></span>
+<span class="codeline" id="line-317"><code>	}</code></span>
+<span class="codeline" id="line-318"><code>	<span class="keyword">return</span> <a href="../../../../../pkg/builtin.html#name-nil" class="ident">nil</a></code></span>
+<span class="codeline" id="line-319"><code>}</code></span>
+<span class="codeline" id="line-320"><code></code></span>
+<span class="codeline" id="line-321"><code><span class="keyword">type</span> <a href="../../../../../pkg/github.com/uber/jaeger-client-go/thrift.html#name-tTransportFactoryConf" class="ident">tTransportFactoryConf</a> <span class="keyword">struct</span> {</code></span>
+<span class="codeline" id="line-322"><code>	<a href="../../../../../use/github.com/uber/jaeger-client-go/thrift..tTransportFactoryConf^08353.delegate^6f216.html" class="ident">delegate</a> <a href="transport_factory.go.html#line-26" class="ident">TTransportFactory</a></code></span>
+<span class="codeline" id="line-323"><code>	<a href="../../../../../use/github.com/uber/jaeger-client-go/thrift..tTransportFactoryConf^08353.cfg^e67d2.html" class="ident">cfg</a>      *<a href="#line-102" class="ident">TConfiguration</a></code></span>
+<span class="codeline" id="line-324"><code>}</code></span>
+<span class="codeline" id="line-325"><code></code></span>
+<span class="codeline" id="line-326"><code><span class="keyword">func</span> (<label for="r35" class="ident">f</label> *<a href="#line-321" class="ident">tTransportFactoryConf</a>) <label for="r36" class="ident"><a href="../../../../../use/github.com/uber/jaeger-client-go/thrift..tTransportFactoryConf^08353.GetTransport.html" class="ident">GetTransport</a></label>(<label for="r37" class="ident">orig</label> <a href="transport.go.html#line-43" class="ident">TTransport</a>) (<a href="transport.go.html#line-43" class="ident">TTransport</a>, <a href="../../../../../pkg/builtin.html#name-error" class="ident">error</a>) {</code></span>
+<span class="codeline" id="line-327"><code>	<label for="r38" class="ident">trans</label>, <label for="r39" class="ident">err</label> := <label for="r35" class="ident">f</label>.<a href="#line-322" class="ident">delegate</a>.<a href="transport_factory.go.html#line-27" class="ident">GetTransport</a>(<label for="r37" class="ident">orig</label>)</code></span>
+<span class="codeline" id="line-328"><code>	<span class="keyword">if</span> <label for="r39" class="ident">err</label> == <a href="../../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-329"><code>		<a href="#line-295" class="ident">PropagateTConfiguration</a>(<label for="r37" class="ident">orig</label>, <label for="r35" class="ident">f</label>.<a href="#line-323" class="ident">cfg</a>)</code></span>
+<span class="codeline" id="line-330"><code>		<a href="#line-295" class="ident">PropagateTConfiguration</a>(<label for="r38" class="ident">trans</label>, <label for="r35" class="ident">f</label>.<a href="#line-323" class="ident">cfg</a>)</code></span>
+<span class="codeline" id="line-331"><code>	}</code></span>
+<span class="codeline" id="line-332"><code>	<span class="keyword">return</span> <label for="r38" class="ident">trans</label>, <label for="r39" class="ident">err</label></code></span>
+<span class="codeline" id="line-333"><code>}</code></span>
+<span class="codeline" id="line-334"><code></code></span>
+<span class="codeline" id="line-335"><code><span class="keyword">func</span> (<label for="r40" class="ident">f</label> *<a href="#line-321" class="ident">tTransportFactoryConf</a>) <label for="r41" class="ident"><a href="../../../../../use/github.com/uber/jaeger-client-go/thrift..tTransportFactoryConf^08353.SetTConfiguration.html" class="ident">SetTConfiguration</a></label>(<label for="r42" class="ident">cfg</label> *<a href="#line-102" class="ident">TConfiguration</a>) {</code></span>
+<span class="codeline" id="line-336"><code>	<a href="#line-295" class="ident">PropagateTConfiguration</a>(<label for="r40" class="ident">f</label>.<a href="#line-322" class="ident">delegate</a>, <label for="r40" class="ident">f</label>.<a href="#line-323" class="ident">cfg</a>)</code></span>
+<span class="codeline" id="line-337"><code>	<label for="r40" class="ident">f</label>.<a href="#line-323" class="ident">cfg</a> = <label for="r42" class="ident">cfg</label></code></span>
+<span class="codeline" id="line-338"><code>}</code></span>
+<span class="codeline" id="line-339"><code></code></span>
+<span class="codeline" id="line-340"><code><span class="comment">// TTransportFactoryConf wraps a TTransportFactory to propagate</span></code></span>
+<span class="codeline" id="line-341"><code><span class="comment">// TConfiguration on the factory's GetTransport calls.</span></code></span>
+<span class="codeline" id="line-342"><code><span class="keyword">func</span> <label for="r43" class="ident"><a href="../../../../../pkg/github.com/uber/jaeger-client-go/thrift.html#name-TTransportFactoryConf" class="ident">TTransportFactoryConf</a></label>(<label for="r44" class="ident">delegate</label> <a href="transport_factory.go.html#line-26" class="ident">TTransportFactory</a>, <label for="r45" class="ident">conf</label> *<a href="#line-102" class="ident">TConfiguration</a>) <a href="transport_factory.go.html#line-26" class="ident">TTransportFactory</a> {</code></span>
+<span class="codeline" id="line-343"><code>	<span class="keyword">return</span> &amp;<a href="#line-321" class="ident">tTransportFactoryConf</a>{</code></span>
+<span class="codeline" id="line-344"><code>		<a href="#line-322" class="ident">delegate</a>: <label for="r44" class="ident">delegate</label>,</code></span>
+<span class="codeline" id="line-345"><code>		<a href="#line-323" class="ident">cfg</a>:      <label for="r45" class="ident">conf</label>,</code></span>
+<span class="codeline" id="line-346"><code>	}</code></span>
+<span class="codeline" id="line-347"><code>}</code></span>
+<span class="codeline" id="line-348"><code></code></span>
+<span class="codeline" id="line-349"><code><span class="keyword">type</span> <a href="../../../../../pkg/github.com/uber/jaeger-client-go/thrift.html#name-tProtocolFactoryConf" class="ident">tProtocolFactoryConf</a> <span class="keyword">struct</span> {</code></span>
+<span class="codeline" id="line-350"><code>	<a href="../../../../../use/github.com/uber/jaeger-client-go/thrift..tProtocolFactoryConf^a30c3.delegate^6f216.html" class="ident">delegate</a> <a href="protocol_factory.go.html#line-23" class="ident">TProtocolFactory</a></code></span>
+<span class="codeline" id="line-351"><code>	<a href="../../../../../use/github.com/uber/jaeger-client-go/thrift..tProtocolFactoryConf^a30c3.cfg^e67d2.html" class="ident">cfg</a>      *<a href="#line-102" class="ident">TConfiguration</a></code></span>
+<span class="codeline" id="line-352"><code>}</code></span>
+<span class="codeline" id="line-353"><code></code></span>
+<span class="codeline" id="line-354"><code><span class="keyword">func</span> (<label for="r46" class="ident">f</label> *<a href="#line-349" class="ident">tProtocolFactoryConf</a>) <label for="r47" class="ident"><a href="../../../../../use/github.com/uber/jaeger-client-go/thrift..tProtocolFactoryConf^a30c3.GetProtocol.html" class="ident">GetProtocol</a></label>(<label for="r48" class="ident">trans</label> <a href="transport.go.html#line-43" class="ident">TTransport</a>) <a href="protocol.go.html#line-33" class="ident">TProtocol</a> {</code></span>
+<span class="codeline" id="line-355"><code>	<label for="r49" class="ident">proto</label> := <label for="r46" class="ident">f</label>.<a href="#line-350" class="ident">delegate</a>.<a href="protocol_factory.go.html#line-24" class="ident">GetProtocol</a>(<label for="r48" class="ident">trans</label>)</code></span>
+<span class="codeline" id="line-356"><code>	<a href="#line-295" class="ident">PropagateTConfiguration</a>(<label for="r48" class="ident">trans</label>, <label for="r46" class="ident">f</label>.<a href="#line-351" class="ident">cfg</a>)</code></span>
+<span class="codeline" id="line-357"><code>	<a href="#line-295" class="ident">PropagateTConfiguration</a>(<label for="r49" class="ident">proto</label>, <label for="r46" class="ident">f</label>.<a href="#line-351" class="ident">cfg</a>)</code></span>
+<span class="codeline" id="line-358"><code>	<span class="keyword">return</span> <label for="r49" class="ident">proto</label></code></span>
+<span class="codeline" id="line-359"><code>}</code></span>
+<span class="codeline" id="line-360"><code></code></span>
+<span class="codeline" id="line-361"><code><span class="keyword">func</span> (<label for="r50" class="ident">f</label> *<a href="#line-349" class="ident">tProtocolFactoryConf</a>) <label for="r51" class="ident"><a href="../../../../../use/github.com/uber/jaeger-client-go/thrift..tProtocolFactoryConf^a30c3.SetTConfiguration.html" class="ident">SetTConfiguration</a></label>(<label for="r52" class="ident">cfg</label> *<a href="#line-102" class="ident">TConfiguration</a>) {</code></span>
+<span class="codeline" id="line-362"><code>	<a href="#line-295" class="ident">PropagateTConfiguration</a>(<label for="r50" class="ident">f</label>.<a href="#line-350" class="ident">delegate</a>, <label for="r50" class="ident">f</label>.<a href="#line-351" class="ident">cfg</a>)</code></span>
+<span class="codeline" id="line-363"><code>	<label for="r50" class="ident">f</label>.<a href="#line-351" class="ident">cfg</a> = <label for="r52" class="ident">cfg</label></code></span>
+<span class="codeline" id="line-364"><code>}</code></span>
+<span class="codeline" id="line-365"><code></code></span>
+<span class="codeline" id="line-366"><code><span class="comment">// TProtocolFactoryConf wraps a TProtocolFactory to propagate</span></code></span>
+<span class="codeline" id="line-367"><code><span class="comment">// TConfiguration on the factory's GetProtocol calls.</span></code></span>
+<span class="codeline" id="line-368"><code><span class="keyword">func</span> <label for="r53" class="ident"><a href="../../../../../pkg/github.com/uber/jaeger-client-go/thrift.html#name-TProtocolFactoryConf" class="ident">TProtocolFactoryConf</a></label>(<label for="r54" class="ident">delegate</label> <a href="protocol_factory.go.html#line-23" class="ident">TProtocolFactory</a>, <label for="r55" class="ident">conf</label> *<a href="#line-102" class="ident">TConfiguration</a>) <a href="protocol_factory.go.html#line-23" class="ident">TProtocolFactory</a> {</code></span>
+<span class="codeline" id="line-369"><code>	<span class="keyword">return</span> &amp;<a href="#line-349" class="ident">tProtocolFactoryConf</a>{</code></span>
+<span class="codeline" id="line-370"><code>		<a href="#line-350" class="ident">delegate</a>: <label for="r54" class="ident">delegate</label>,</code></span>
+<span class="codeline" id="line-371"><code>		<a href="#line-351" class="ident">cfg</a>:      <label for="r55" class="ident">conf</label>,</code></span>
+<span class="codeline" id="line-372"><code>	}</code></span>
+<span class="codeline" id="line-373"><code>}</code></span>
+<span class="codeline" id="line-374"><code></code></span>
+<span class="codeline" id="line-375"><code><span class="keyword">var</span> (</code></span>
+<span class="codeline" id="line-376"><code>	_ <a href="#line-286" class="ident">TConfigurationSetter</a> = (*<a href="#line-321" class="ident">tTransportFactoryConf</a>)(<a href="../../../../../pkg/builtin.html#name-nil" class="ident">nil</a>)</code></span>
+<span class="codeline" id="line-377"><code>	_ <a href="#line-286" class="ident">TConfigurationSetter</a> = (*<a href="#line-349" class="ident">tProtocolFactoryConf</a>)(<a href="../../../../../pkg/builtin.html#name-nil" class="ident">nil</a>)</code></span>
+<span class="codeline" id="line-378"><code>)</code></span>
+</pre><pre id="footer">
+<table><tr><td><img src="../../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

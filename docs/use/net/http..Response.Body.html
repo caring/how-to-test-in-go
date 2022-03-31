@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: net/http.Response.Body</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../pkg/net/http.html">net/http</a>.<a href="../../src/net/http/response.go.html#line-35">Response</a>.<a href="../../src/net/http/response.go.html#line-72">Body</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">102 uses</span>
+
+	net/http (current package)
+		<a href="../../src/net/http/client.go.html#line-271">client.go#L271</a>: 	if resp.<b>Body</b> == nil {
+		<a href="../../src/net/http/client.go.html#line-285" class="path-duplicate">client.go</a><a href="../../src/net/http/client.go.html#line-285">#L285</a>: 		resp.<b>Body</b> = io.NopCloser(strings.NewReader(""))
+		<a href="../../src/net/http/client.go.html#line-288" class="path-duplicate">client.go</a><a href="../../src/net/http/client.go.html#line-288">#L288</a>: 		resp.<b>Body</b> = &amp;cancelTimerBody{
+		<a href="../../src/net/http/client.go.html#line-290" class="path-duplicate">client.go</a><a href="../../src/net/http/client.go.html#line-290">#L290</a>: 			rc:            resp.<b>Body</b>,
+		<a href="../../src/net/http/client.go.html#line-707" class="path-duplicate">client.go</a><a href="../../src/net/http/client.go.html#line-707">#L707</a>: 				io.CopyN(io.Discard, resp.<b>Body</b>, maxBodySlurpSize)
+		<a href="../../src/net/http/client.go.html#line-709" class="path-duplicate">client.go</a><a href="../../src/net/http/client.go.html#line-709">#L709</a>: 			resp.<b>Body</b>.Close()
+		<a href="../../src/net/http/filetransport.go.html#line-59">filetransport.go#L59</a>: 			<b>Body</b>:       pr,
+		<a href="../../src/net/http/h2_bundle.go.html#line-7685">h2_bundle.go#L7685</a>: 		if res.<b>Body</b> == http2noBody &amp;&amp; http2actualContentLength(req) == 0 {
+		<a href="../../src/net/http/h2_bundle.go.html#line-8822" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-8822">#L8822</a>: 		res.<b>Body</b> = http2noBody
+		<a href="../../src/net/http/h2_bundle.go.html#line-8828" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-8828">#L8828</a>: 			res.<b>Body</b> = http2missingBody{}
+		<a href="../../src/net/http/h2_bundle.go.html#line-8830" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-8830">#L8830</a>: 			res.<b>Body</b> = http2noBody
+		<a href="../../src/net/http/h2_bundle.go.html#line-8837" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-8837">#L8837</a>: 	res.<b>Body</b> = http2transportResponseBody{cs}
+		<a href="../../src/net/http/h2_bundle.go.html#line-8843" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-8843">#L8843</a>: 		res.<b>Body</b> = &amp;http2gzipReader{body: res.<b>Body</b>}
+		<a href="../../src/net/http/response.go.html#line-72">response.go#L72</a>: 	<b>Body</b> io.ReadCloser
+		<a href="../../src/net/http/response.go.html#line-267" class="path-duplicate">response.go</a><a href="../../src/net/http/response.go.html#line-267">#L267</a>: 	if r1.ContentLength == 0 &amp;&amp; r1.<b>Body</b> != nil {
+		<a href="../../src/net/http/response.go.html#line-270" class="path-duplicate">response.go</a><a href="../../src/net/http/response.go.html#line-270">#L270</a>: 		n, err := r1.<b>Body</b>.Read(buf[:])
+		<a href="../../src/net/http/response.go.html#line-277" class="path-duplicate">response.go</a><a href="../../src/net/http/response.go.html#line-277">#L277</a>: 			r1.<b>Body</b> = NoBody
+		<a href="../../src/net/http/response.go.html#line-280" class="path-duplicate">response.go</a><a href="../../src/net/http/response.go.html#line-280">#L280</a>: 			r1.<b>Body</b> = struct {
+		<a href="../../src/net/http/response.go.html#line-284" class="path-duplicate">response.go</a><a href="../../src/net/http/response.go.html#line-284">#L284</a>: 				io.MultiReader(bytes.NewReader(buf[:1]), r.<b>Body</b>),
+		<a href="../../src/net/http/response.go.html#line-285" class="path-duplicate">response.go</a><a href="../../src/net/http/response.go.html#line-285">#L285</a>: 				r.<b>Body</b>,
+		<a href="../../src/net/http/response.go.html#line-338" class="path-duplicate">response.go</a><a href="../../src/net/http/response.go.html#line-338">#L338</a>: 	if r.<b>Body</b> != nil {
+		<a href="../../src/net/http/response.go.html#line-339" class="path-duplicate">response.go</a><a href="../../src/net/http/response.go.html#line-339">#L339</a>: 		r.<b>Body</b>.Close()
+		<a href="../../src/net/http/response.go.html#line-351" class="path-duplicate">response.go</a><a href="../../src/net/http/response.go.html#line-351">#L351</a>: 	_, ok := r.<b>Body</b>.(io.Writer)
+		<a href="../../src/net/http/transfer.go.html#line-114">transfer.go#L114</a>: 		t.Body = rr.<b>Body</b>
+		<a href="../../src/net/http/transfer.go.html#line-115" class="path-duplicate">transfer.go</a><a href="../../src/net/http/transfer.go.html#line-115">#L115</a>: 		t.BodyCloser = rr.<b>Body</b>
+		<a href="../../src/net/http/transfer.go.html#line-588" class="path-duplicate">transfer.go</a><a href="../../src/net/http/transfer.go.html#line-588">#L588</a>: 		rr.<b>Body</b> = t.Body
+		<a href="../../src/net/http/transport.go.html#line-2168">transport.go#L2168</a>: 			body: resp.<b>Body</b>,
+		<a href="../../src/net/http/transport.go.html#line-2189" class="path-duplicate">transport.go</a><a href="../../src/net/http/transport.go.html#line-2189">#L2189</a>: 		resp.<b>Body</b> = body
+		<a href="../../src/net/http/transport.go.html#line-2191" class="path-duplicate">transport.go</a><a href="../../src/net/http/transport.go.html#line-2191">#L2191</a>: 			resp.<b>Body</b> = &amp;gzipReader{body: body}
+		<a href="../../src/net/http/transport.go.html#line-2316" class="path-duplicate">transport.go</a><a href="../../src/net/http/transport.go.html#line-2316">#L2316</a>: 		resp.<b>Body</b> = newReadWriteCloserBody(pc.br, pc.conn)
+
+	<a href="../../pkg/net/http/httputil.html">net/http/httputil</a>
+		<a href="../../src/net/http/httputil/dump.go.html#line-311">dump.go#L311</a>: 	save := resp.<b>Body</b>
+		<a href="../../src/net/http/httputil/dump.go.html#line-318" class="path-duplicate">dump.go</a><a href="../../src/net/http/httputil/dump.go.html#line-318">#L318</a>: 			resp.<b>Body</b> = emptyBody
+		<a href="../../src/net/http/httputil/dump.go.html#line-320" class="path-duplicate">dump.go</a><a href="../../src/net/http/httputil/dump.go.html#line-320">#L320</a>: 			resp.<b>Body</b> = failureToReadBody{}
+		<a href="../../src/net/http/httputil/dump.go.html#line-322" class="path-duplicate">dump.go</a><a href="../../src/net/http/httputil/dump.go.html#line-322">#L322</a>: 	} else if resp.<b>Body</b> == nil {
+		<a href="../../src/net/http/httputil/dump.go.html#line-323" class="path-duplicate">dump.go</a><a href="../../src/net/http/httputil/dump.go.html#line-323">#L323</a>: 		resp.<b>Body</b> = emptyBody
+		<a href="../../src/net/http/httputil/dump.go.html#line-325" class="path-duplicate">dump.go</a><a href="../../src/net/http/httputil/dump.go.html#line-325">#L325</a>: 		save, resp.<b>Body</b>, err = drainBody(resp.<b>Body</b>)
+		<a href="../../src/net/http/httputil/dump.go.html#line-334" class="path-duplicate">dump.go</a><a href="../../src/net/http/httputil/dump.go.html#line-334">#L334</a>: 	resp.<b>Body</b> = save
+		<a href="../../src/net/http/httputil/persist.go.html#line-413">persist.go#L413</a>: 	cc.lastbody = resp.<b>Body</b>
+		<a href="../../src/net/http/httputil/reverseproxy.go.html#line-206">reverseproxy.go#L206</a>: 		res.<b>Body</b>.Close()
+		<a href="../../src/net/http/httputil/reverseproxy.go.html#line-338" class="path-duplicate">reverseproxy.go</a><a href="../../src/net/http/httputil/reverseproxy.go.html#line-338">#L338</a>: 	err = p.copyResponse(rw, res.<b>Body</b>, p.flushInterval(res))
+		<a href="../../src/net/http/httputil/reverseproxy.go.html#line-340" class="path-duplicate">reverseproxy.go</a><a href="../../src/net/http/httputil/reverseproxy.go.html#line-340">#L340</a>: 		defer res.<b>Body</b>.Close()
+		<a href="../../src/net/http/httputil/reverseproxy.go.html#line-350" class="path-duplicate">reverseproxy.go</a><a href="../../src/net/http/httputil/reverseproxy.go.html#line-350">#L350</a>: 	res.<b>Body</b>.Close() // close now, instead of defer, to populate res.Trailer
+		<a href="../../src/net/http/httputil/reverseproxy.go.html#line-570" class="path-duplicate">reverseproxy.go</a><a href="../../src/net/http/httputil/reverseproxy.go.html#line-570">#L570</a>: 	backConn, ok := res.<b>Body</b>.(io.ReadWriteCloser)
+		<a href="../../src/net/http/httputil/reverseproxy.go.html#line-599" class="path-duplicate">reverseproxy.go</a><a href="../../src/net/http/httputil/reverseproxy.go.html#line-599">#L599</a>: 	res.<b>Body</b> = nil // so res.Write only writes the headers; we have res.Body in backConn above
+
+	<a href="../../pkg/github.com/aws/aws-sdk-go/aws/client.html">github.com/aws/aws-sdk-go/aws/client</a>
+		<a href="../../src/github.com/aws/aws-sdk-go/aws/client/logger.go.html#line-133">logger.go#L133</a>: 		r.HTTPResponse.<b>Body</b> = &amp;teeReaderCloser{
+		<a href="../../src/github.com/aws/aws-sdk-go/aws/client/logger.go.html#line-134" class="path-duplicate">logger.go</a><a href="../../src/github.com/aws/aws-sdk-go/aws/client/logger.go.html#line-134">#L134</a>: 			Reader: io.TeeReader(r.HTTPResponse.<b>Body</b>, lw),
+		<a href="../../src/github.com/aws/aws-sdk-go/aws/client/logger.go.html#line-135" class="path-duplicate">logger.go</a><a href="../../src/github.com/aws/aws-sdk-go/aws/client/logger.go.html#line-135">#L135</a>: 			Source: r.HTTPResponse.<b>Body</b>,
+
+	<a href="../../pkg/github.com/aws/aws-sdk-go/aws/corehandlers.html">github.com/aws/aws-sdk-go/aws/corehandlers</a>
+		<a href="../../src/github.com/aws/aws-sdk-go/aws/corehandlers/handlers.go.html#line-136">handlers.go#L136</a>: 		r.HTTPResponse.<b>Body</b>.Close()
+		<a href="../../src/github.com/aws/aws-sdk-go/aws/corehandlers/handlers.go.html#line-148" class="path-duplicate">handlers.go</a><a href="../../src/github.com/aws/aws-sdk-go/aws/corehandlers/handlers.go.html#line-148">#L148</a>: 				<b>Body</b>:       ioutil.NopCloser(bytes.NewReader([]byte{})),
+		<a href="../../src/github.com/aws/aws-sdk-go/aws/corehandlers/handlers.go.html#line-159" class="path-duplicate">handlers.go</a><a href="../../src/github.com/aws/aws-sdk-go/aws/corehandlers/handlers.go.html#line-159">#L159</a>: 			<b>Body</b>:       ioutil.NopCloser(bytes.NewReader([]byte{})),
+
+	<a href="../../pkg/github.com/aws/aws-sdk-go/aws/credentials/endpointcreds.html">github.com/aws/aws-sdk-go/aws/credentials/endpointcreds</a>
+		<a href="../../src/github.com/aws/aws-sdk-go/aws/credentials/endpointcreds/provider.go.html#line-181">provider.go#L181</a>: 	defer r.HTTPResponse.<b>Body</b>.Close()
+		<a href="../../src/github.com/aws/aws-sdk-go/aws/credentials/endpointcreds/provider.go.html#line-184" class="path-duplicate">provider.go</a><a href="../../src/github.com/aws/aws-sdk-go/aws/credentials/endpointcreds/provider.go.html#line-184">#L184</a>: 	if err := json.NewDecoder(r.HTTPResponse.<b>Body</b>).Decode(&amp;out); err != nil {
+		<a href="../../src/github.com/aws/aws-sdk-go/aws/credentials/endpointcreds/provider.go.html#line-193" class="path-duplicate">provider.go</a><a href="../../src/github.com/aws/aws-sdk-go/aws/credentials/endpointcreds/provider.go.html#line-193">#L193</a>: 	defer r.HTTPResponse.<b>Body</b>.Close()
+		<a href="../../src/github.com/aws/aws-sdk-go/aws/credentials/endpointcreds/provider.go.html#line-196" class="path-duplicate">provider.go</a><a href="../../src/github.com/aws/aws-sdk-go/aws/credentials/endpointcreds/provider.go.html#line-196">#L196</a>: 	err := jsonutil.UnmarshalJSONError(&amp;errOut, r.HTTPResponse.<b>Body</b>)
+
+	<a href="../../pkg/github.com/aws/aws-sdk-go/aws/ec2metadata.html">github.com/aws/aws-sdk-go/aws/ec2metadata</a>
+		<a href="../../src/github.com/aws/aws-sdk-go/aws/ec2metadata/service.go.html#line-163">service.go#L163</a>: 		defer r.HTTPResponse.<b>Body</b>.Close()
+		<a href="../../src/github.com/aws/aws-sdk-go/aws/ec2metadata/service.go.html#line-165" class="path-duplicate">service.go</a><a href="../../src/github.com/aws/aws-sdk-go/aws/ec2metadata/service.go.html#line-165">#L165</a>: 		if _, err := io.Copy(&amp;b, r.HTTPResponse.<b>Body</b>); err != nil {
+		<a href="../../src/github.com/aws/aws-sdk-go/aws/ec2metadata/service.go.html#line-193" class="path-duplicate">service.go</a><a href="../../src/github.com/aws/aws-sdk-go/aws/ec2metadata/service.go.html#line-193">#L193</a>: 		defer r.HTTPResponse.<b>Body</b>.Close()
+		<a href="../../src/github.com/aws/aws-sdk-go/aws/ec2metadata/service.go.html#line-195" class="path-duplicate">service.go</a><a href="../../src/github.com/aws/aws-sdk-go/aws/ec2metadata/service.go.html#line-195">#L195</a>: 		if _, err := io.Copy(&amp;b, r.HTTPResponse.<b>Body</b>); err != nil {
+		<a href="../../src/github.com/aws/aws-sdk-go/aws/ec2metadata/service.go.html#line-208" class="path-duplicate">service.go</a><a href="../../src/github.com/aws/aws-sdk-go/aws/ec2metadata/service.go.html#line-208">#L208</a>: 	defer r.HTTPResponse.<b>Body</b>.Close()
+		<a href="../../src/github.com/aws/aws-sdk-go/aws/ec2metadata/service.go.html#line-211" class="path-duplicate">service.go</a><a href="../../src/github.com/aws/aws-sdk-go/aws/ec2metadata/service.go.html#line-211">#L211</a>: 	if _, err := io.Copy(&amp;b, r.HTTPResponse.<b>Body</b>); err != nil {
+
+	<a href="../../pkg/github.com/aws/aws-sdk-go/aws/request.html">github.com/aws/aws-sdk-go/aws/request</a>
+		<a href="../../src/github.com/aws/aws-sdk-go/aws/request/request.go.html#line-567">request.go#L567</a>: 	if r.HTTPResponse != nil &amp;&amp; r.HTTPResponse.<b>Body</b> != nil {
+		<a href="../../src/github.com/aws/aws-sdk-go/aws/request/request.go.html#line-568" class="path-duplicate">request.go</a><a href="../../src/github.com/aws/aws-sdk-go/aws/request/request.go.html#line-568">#L568</a>: 		r.HTTPResponse.<b>Body</b>.Close()
+		<a href="../../src/github.com/aws/aws-sdk-go/aws/request/timeout_read_closer.go.html#line-81">timeout_read_closer.go#L81</a>: 				req.HTTPResponse.<b>Body</b> = &amp;timeoutReadCloser{
+		<a href="../../src/github.com/aws/aws-sdk-go/aws/request/timeout_read_closer.go.html#line-82" class="path-duplicate">timeout_read_closer.go</a><a href="../../src/github.com/aws/aws-sdk-go/aws/request/timeout_read_closer.go.html#line-82">#L82</a>: 					reader:   req.HTTPResponse.<b>Body</b>,
+
+	<a href="../../pkg/github.com/aws/aws-sdk-go/private/protocol.html">github.com/aws/aws-sdk-go/private/protocol</a>
+		<a href="../../src/github.com/aws/aws-sdk-go/private/protocol/payload.go.html#line-35">payload.go#L35</a>: 			<b>Body</b>:       ioutil.NopCloser(r),
+		<a href="../../src/github.com/aws/aws-sdk-go/private/protocol/unmarshal.go.html#line-15">unmarshal.go#L15</a>: 	if r.HTTPResponse == nil || r.HTTPResponse.<b>Body</b> == nil {
+		<a href="../../src/github.com/aws/aws-sdk-go/private/protocol/unmarshal.go.html#line-19" class="path-duplicate">unmarshal.go</a><a href="../../src/github.com/aws/aws-sdk-go/private/protocol/unmarshal.go.html#line-19">#L19</a>: 	io.Copy(ioutil.Discard, r.HTTPResponse.<b>Body</b>)
+		<a href="../../src/github.com/aws/aws-sdk-go/private/protocol/unmarshal.go.html#line-20" class="path-duplicate">unmarshal.go</a><a href="../../src/github.com/aws/aws-sdk-go/private/protocol/unmarshal.go.html#line-20">#L20</a>: 	r.HTTPResponse.<b>Body</b>.Close()
+		<a href="../../src/github.com/aws/aws-sdk-go/private/protocol/unmarshal_error.go.html#line-46">unmarshal_error.go#L46</a>: 	defer r.HTTPResponse.<b>Body</b>.Close()
+
+	<a href="../../pkg/github.com/aws/aws-sdk-go/private/protocol/jsonrpc.html">github.com/aws/aws-sdk-go/private/protocol/jsonrpc</a>
+		<a href="../../src/github.com/aws/aws-sdk-go/private/protocol/jsonrpc/jsonrpc.go.html#line-71">jsonrpc.go#L71</a>: 	defer req.HTTPResponse.<b>Body</b>.Close()
+		<a href="../../src/github.com/aws/aws-sdk-go/private/protocol/jsonrpc/jsonrpc.go.html#line-73" class="path-duplicate">jsonrpc.go</a><a href="../../src/github.com/aws/aws-sdk-go/private/protocol/jsonrpc/jsonrpc.go.html#line-73">#L73</a>: 		err := jsonutil.UnmarshalJSON(req.Data, req.HTTPResponse.<b>Body</b>)
+		<a href="../../src/github.com/aws/aws-sdk-go/private/protocol/jsonrpc/unmarshal_error.go.html#line-40">unmarshal_error.go#L40</a>: 	teeReader := io.TeeReader(resp.<b>Body</b>, &amp;buf)
+		<a href="../../src/github.com/aws/aws-sdk-go/private/protocol/jsonrpc/unmarshal_error.go.html#line-82" class="path-duplicate">unmarshal_error.go</a><a href="../../src/github.com/aws/aws-sdk-go/private/protocol/jsonrpc/unmarshal_error.go.html#line-82">#L82</a>: 	defer req.HTTPResponse.<b>Body</b>.Close()
+		<a href="../../src/github.com/aws/aws-sdk-go/private/protocol/jsonrpc/unmarshal_error.go.html#line-85" class="path-duplicate">unmarshal_error.go</a><a href="../../src/github.com/aws/aws-sdk-go/private/protocol/jsonrpc/unmarshal_error.go.html#line-85">#L85</a>: 	err := jsonutil.UnmarshalJSONError(&amp;jsonErr, req.HTTPResponse.<b>Body</b>)
+
+	<a href="../../pkg/github.com/aws/aws-sdk-go/private/protocol/query.html">github.com/aws/aws-sdk-go/private/protocol/query</a>
+		<a href="../../src/github.com/aws/aws-sdk-go/private/protocol/query/unmarshal.go.html#line-21">unmarshal.go#L21</a>: 	defer r.HTTPResponse.<b>Body</b>.Close()
+		<a href="../../src/github.com/aws/aws-sdk-go/private/protocol/query/unmarshal.go.html#line-23" class="path-duplicate">unmarshal.go</a><a href="../../src/github.com/aws/aws-sdk-go/private/protocol/query/unmarshal.go.html#line-23">#L23</a>: 		decoder := xml.NewDecoder(r.HTTPResponse.<b>Body</b>)
+		<a href="../../src/github.com/aws/aws-sdk-go/private/protocol/query/unmarshal_error.go.html#line-45">unmarshal_error.go#L45</a>: 	defer r.HTTPResponse.<b>Body</b>.Close()
+		<a href="../../src/github.com/aws/aws-sdk-go/private/protocol/query/unmarshal_error.go.html#line-48" class="path-duplicate">unmarshal_error.go</a><a href="../../src/github.com/aws/aws-sdk-go/private/protocol/query/unmarshal_error.go.html#line-48">#L48</a>: 	err := xmlutil.UnmarshalXMLError(&amp;respErr, r.HTTPResponse.<b>Body</b>)
+
+	<a href="../../pkg/github.com/aws/aws-sdk-go/private/protocol/rest.html">github.com/aws/aws-sdk-go/private/protocol/rest</a>
+		<a href="../../src/github.com/aws/aws-sdk-go/private/protocol/rest/unmarshal.go.html#line-69">unmarshal.go#L69</a>: 						defer r.HTTPResponse.<b>Body</b>.Close()
+		<a href="../../src/github.com/aws/aws-sdk-go/private/protocol/rest/unmarshal.go.html#line-70" class="path-duplicate">unmarshal.go</a><a href="../../src/github.com/aws/aws-sdk-go/private/protocol/rest/unmarshal.go.html#line-70">#L70</a>: 						b, err := ioutil.ReadAll(r.HTTPResponse.<b>Body</b>)
+		<a href="../../src/github.com/aws/aws-sdk-go/private/protocol/rest/unmarshal.go.html#line-78" class="path-duplicate">unmarshal.go</a><a href="../../src/github.com/aws/aws-sdk-go/private/protocol/rest/unmarshal.go.html#line-78">#L78</a>: 						defer r.HTTPResponse.<b>Body</b>.Close()
+		<a href="../../src/github.com/aws/aws-sdk-go/private/protocol/rest/unmarshal.go.html#line-79" class="path-duplicate">unmarshal.go</a><a href="../../src/github.com/aws/aws-sdk-go/private/protocol/rest/unmarshal.go.html#line-79">#L79</a>: 						b, err := ioutil.ReadAll(r.HTTPResponse.<b>Body</b>)
+		<a href="../../src/github.com/aws/aws-sdk-go/private/protocol/rest/unmarshal.go.html#line-90" class="path-duplicate">unmarshal.go</a><a href="../../src/github.com/aws/aws-sdk-go/private/protocol/rest/unmarshal.go.html#line-90">#L90</a>: 							payload.Set(reflect.ValueOf(r.HTTPResponse.<b>Body</b>))
+		<a href="../../src/github.com/aws/aws-sdk-go/private/protocol/rest/unmarshal.go.html#line-93" class="path-duplicate">unmarshal.go</a><a href="../../src/github.com/aws/aws-sdk-go/private/protocol/rest/unmarshal.go.html#line-93">#L93</a>: 							b, err := ioutil.ReadAll(r.HTTPResponse.<b>Body</b>)
+		<a href="../../src/github.com/aws/aws-sdk-go/private/protocol/rest/unmarshal.go.html#line-101" class="path-duplicate">unmarshal.go</a><a href="../../src/github.com/aws/aws-sdk-go/private/protocol/rest/unmarshal.go.html#line-101">#L101</a>: 							io.Copy(ioutil.Discard, r.HTTPResponse.<b>Body</b>)
+		<a href="../../src/github.com/aws/aws-sdk-go/private/protocol/rest/unmarshal.go.html#line-102" class="path-duplicate">unmarshal.go</a><a href="../../src/github.com/aws/aws-sdk-go/private/protocol/rest/unmarshal.go.html#line-102">#L102</a>: 							r.HTTPResponse.<b>Body</b>.Close()
+
+	<a href="../../pkg/github.com/caring/gopkg-errors.html">github.com/caring/gopkg-errors</a>
+		<a href="../../src/github.com/caring/gopkg-errors/http.go.html#line-61">http.go#L61</a>: 	defer resp.<b>Body</b>.Close()
+		<a href="../../src/github.com/caring/gopkg-errors/http.go.html#line-63" class="path-duplicate">http.go</a><a href="../../src/github.com/caring/gopkg-errors/http.go.html#line-63">#L63</a>: 	if decErr := json.NewDecoder(resp.<b>Body</b>).Decode(&amp;err); decErr != nil {
+
+	<a href="../../pkg/github.com/caring/test/1-mocks.html">github.com/caring/test/1-mocks</a>
+		<a href="../../src/github.com/caring/test/1-mocks/http.go.html#line-32">http.go#L32</a>: 	content, err := ioutil.ReadAll(response.<b>Body</b>)
+
+	<a href="../../pkg/github.com/uber/jaeger-client-go.html">github.com/uber/jaeger-client-go</a>
+		<a href="../../src/github.com/uber/jaeger-client-go/sampler_remote.go.html#line-331">sampler_remote.go#L331</a>: 		if err := resp.<b>Body</b>.Close(); err != nil {
+		<a href="../../src/github.com/uber/jaeger-client-go/sampler_remote.go.html#line-336" class="path-duplicate">sampler_remote.go</a><a href="../../src/github.com/uber/jaeger-client-go/sampler_remote.go.html#line-336">#L336</a>: 	body, err := ioutil.ReadAll(resp.<b>Body</b>)
+
+	<a href="../../pkg/github.com/uber/jaeger-client-go/utils.html">github.com/uber/jaeger-client-go/utils</a>
+		<a href="../../src/github.com/uber/jaeger-client-go/utils/http_json.go.html#line-36">http_json.go#L36</a>: 	defer resp.<b>Body</b>.Close()
+		<a href="../../src/github.com/uber/jaeger-client-go/utils/http_json.go.html#line-39" class="path-duplicate">http_json.go</a><a href="../../src/github.com/uber/jaeger-client-go/utils/http_json.go.html#line-39">#L39</a>: 		body, err := ioutil.ReadAll(resp.<b>Body</b>)
+		<a href="../../src/github.com/uber/jaeger-client-go/utils/http_json.go.html#line-48" class="path-duplicate">http_json.go</a><a href="../../src/github.com/uber/jaeger-client-go/utils/http_json.go.html#line-48">#L48</a>: 		io.Copy(ioutil.Discard, resp.<b>Body</b>)
+		<a href="../../src/github.com/uber/jaeger-client-go/utils/http_json.go.html#line-52" class="path-duplicate">http_json.go</a><a href="../../src/github.com/uber/jaeger-client-go/utils/http_json.go.html#line-52">#L52</a>: 	decoder := json.NewDecoder(resp.<b>Body</b>)
+
+	<a href="../../pkg/golang.org/x/net/http2.html">golang.org/x/net/http2</a>
+		<a href="../../src/golang.org/x/net/http2/transport.go.html#line-2047">transport.go#L2047</a>: 		res.<b>Body</b> = noBody
+		<a href="../../src/golang.org/x/net/http2/transport.go.html#line-2053" class="path-duplicate">transport.go</a><a href="../../src/golang.org/x/net/http2/transport.go.html#line-2053">#L2053</a>: 	res.<b>Body</b> = transportResponseBody{cs}
+		<a href="../../src/golang.org/x/net/http2/transport.go.html#line-2060" class="path-duplicate">transport.go</a><a href="../../src/golang.org/x/net/http2/transport.go.html#line-2060">#L2060</a>: 		res.<b>Body</b> = &amp;gzipReader{body: res.<b>Body</b>}
+
+	<a href="../../pkg/google.golang.org/grpc/internal/transport.html">google.golang.org/grpc/internal/transport</a>
+		<a href="../../src/google.golang.org/grpc/internal/transport/proxy.go.html#line-100">proxy.go#L100</a>: 	defer resp.<b>Body</b>.Close()
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

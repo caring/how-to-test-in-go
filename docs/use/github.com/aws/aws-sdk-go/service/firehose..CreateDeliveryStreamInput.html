@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/aws/aws-sdk-go/service/firehose.CreateDeliveryStreamInput</title>
+<link href="../../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../../../../../pkg/github.com/aws/aws-sdk-go/service/firehose.html">github.com/aws/aws-sdk-go/service/firehose</a>.<a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-1611">CreateDeliveryStreamInput</a></b></span>
+
+<span class="title">28 uses</span>
+
+	github.com/aws/aws-sdk-go/service/firehose (current package)
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-42">api.go#L42</a>: func (c *Firehose) CreateDeliveryStreamRequest(input *<b>CreateDeliveryStreamInput</b>) (req *request.Request, output *CreateDeliveryStreamOutput) {
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-50" class="path-duplicate">api.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-50">#L50</a>: 		input = &amp;<b>CreateDeliveryStreamInput</b>{}
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-149" class="path-duplicate">api.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-149">#L149</a>: func (c *Firehose) CreateDeliveryStream(input *<b>CreateDeliveryStreamInput</b>) (*CreateDeliveryStreamOutput, error) {
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-163" class="path-duplicate">api.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-163">#L163</a>: func (c *Firehose) CreateDeliveryStreamWithContext(ctx aws.Context, input *<b>CreateDeliveryStreamInput</b>, opts ...request.Option) (*CreateDeliveryStreamOutput, error) {
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-1611" class="path-duplicate">api.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-1611">#L1611</a>: type <b>CreateDeliveryStreamInput</b> struct {
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-1668" class="path-duplicate">api.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-1668">#L1668</a>: func (s <b>CreateDeliveryStreamInput</b>) String() string {
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-1673" class="path-duplicate">api.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-1673">#L1673</a>: func (s <b>CreateDeliveryStreamInput</b>) GoString() string {
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-1678" class="path-duplicate">api.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-1678">#L1678</a>: func (s *<b>CreateDeliveryStreamInput</b>) Validate() error {
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-1742" class="path-duplicate">api.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-1742">#L1742</a>: func (s *<b>CreateDeliveryStreamInput</b>) SetDeliveryStreamEncryptionConfigurationInput(v *DeliveryStreamEncryptionConfigurationInput) *<b>CreateDeliveryStreamInput</b> {
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-1748" class="path-duplicate">api.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-1748">#L1748</a>: func (s *<b>CreateDeliveryStreamInput</b>) SetDeliveryStreamName(v string) *<b>CreateDeliveryStreamInput</b> {
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-1754" class="path-duplicate">api.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-1754">#L1754</a>: func (s *<b>CreateDeliveryStreamInput</b>) SetDeliveryStreamType(v string) *<b>CreateDeliveryStreamInput</b> {
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-1760" class="path-duplicate">api.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-1760">#L1760</a>: func (s *<b>CreateDeliveryStreamInput</b>) SetElasticsearchDestinationConfiguration(v *ElasticsearchDestinationConfiguration) *<b>CreateDeliveryStreamInput</b> {
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-1766" class="path-duplicate">api.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-1766">#L1766</a>: func (s *<b>CreateDeliveryStreamInput</b>) SetExtendedS3DestinationConfiguration(v *ExtendedS3DestinationConfiguration) *<b>CreateDeliveryStreamInput</b> {
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-1772" class="path-duplicate">api.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-1772">#L1772</a>: func (s *<b>CreateDeliveryStreamInput</b>) SetKinesisStreamSourceConfiguration(v *KinesisStreamSourceConfiguration) *<b>CreateDeliveryStreamInput</b> {
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-1778" class="path-duplicate">api.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-1778">#L1778</a>: func (s *<b>CreateDeliveryStreamInput</b>) SetRedshiftDestinationConfiguration(v *RedshiftDestinationConfiguration) *<b>CreateDeliveryStreamInput</b> {
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-1784" class="path-duplicate">api.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-1784">#L1784</a>: func (s *<b>CreateDeliveryStreamInput</b>) SetS3DestinationConfiguration(v *S3DestinationConfiguration) *<b>CreateDeliveryStreamInput</b> {
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-1790" class="path-duplicate">api.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-1790">#L1790</a>: func (s *<b>CreateDeliveryStreamInput</b>) SetSplunkDestinationConfiguration(v *SplunkDestinationConfiguration) *<b>CreateDeliveryStreamInput</b> {
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-1796" class="path-duplicate">api.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-1796">#L1796</a>: func (s *<b>CreateDeliveryStreamInput</b>) SetTags(v []*Tag) *<b>CreateDeliveryStreamInput</b> {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

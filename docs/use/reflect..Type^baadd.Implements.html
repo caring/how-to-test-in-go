@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: reflect.Type.Implements</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/reflect.html">reflect</a>.<a href="../src/reflect/type.go.html#line-38">Type</a>.<a href="../src/reflect/type.go.html#line-103">Implements</a></b></span><span style="font-size: large;"><i> (method)</i></span>
+
+<span class="title">43 uses</span>
+
+	reflect (current package)
+		<a href="../src/reflect/type.go.html#line-103">type.go#L103</a>: 	<b>Implements</b>(u Type) bool
+
+	<a href="../pkg/database/sql.html">database/sql</a>
+		<a href="../src/database/sql/convert.go.html#line-556">convert.go#L556</a>: 		rv.Type().Elem().<b>Implements</b>(valuerReflectType) {
+
+	<a href="../pkg/database/sql/driver.html">database/sql/driver</a>
+		<a href="../src/database/sql/driver/types.go.html#line-230">types.go#L230</a>: 		rv.Type().Elem().<b>Implements</b>(valuerReflectType) {
+
+	<a href="../pkg/encoding/json.html">encoding/json</a>
+		<a href="../src/encoding/json/decode.go.html#line-644">decode.go#L644</a>: 			if !reflect.PtrTo(t.Key()).<b>Implements</b>(textUnmarshalerType) {
+		<a href="../src/encoding/json/decode.go.html#line-785" class="path-duplicate">decode.go</a><a href="../src/encoding/json/decode.go.html#line-785">#L785</a>: 			case reflect.PtrTo(kt).<b>Implements</b>(textUnmarshalerType):
+		<a href="../src/encoding/json/encode.go.html#line-422">encode.go#L422</a>: 	if t.Kind() != reflect.Ptr &amp;&amp; allowAddr &amp;&amp; reflect.PtrTo(t).<b>Implements</b>(marshalerType) {
+		<a href="../src/encoding/json/encode.go.html#line-425" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-425">#L425</a>: 	if t.<b>Implements</b>(marshalerType) {
+		<a href="../src/encoding/json/encode.go.html#line-428" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-428">#L428</a>: 	if t.Kind() != reflect.Ptr &amp;&amp; allowAddr &amp;&amp; reflect.PtrTo(t).<b>Implements</b>(textMarshalerType) {
+		<a href="../src/encoding/json/encode.go.html#line-431" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-431">#L431</a>: 	if t.<b>Implements</b>(textMarshalerType) {
+		<a href="../src/encoding/json/encode.go.html#line-826" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-826">#L826</a>: 		if !t.Key().<b>Implements</b>(textMarshalerType) {
+		<a href="../src/encoding/json/encode.go.html#line-897" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-897">#L897</a>: 		if !p.<b>Implements</b>(marshalerType) &amp;&amp; !p.<b>Implements</b>(textMarshalerType) {
+
+	<a href="../pkg/encoding/xml.html">encoding/xml</a>
+		<a href="../src/encoding/xml/marshal.go.html#line-434">marshal.go#L434</a>: 	if val.CanInterface() &amp;&amp; typ.<b>Implements</b>(marshalerType) {
+		<a href="../src/encoding/xml/marshal.go.html#line-439" class="path-duplicate">marshal.go</a><a href="../src/encoding/xml/marshal.go.html#line-439">#L439</a>: 		if pv.CanInterface() &amp;&amp; pv.Type().<b>Implements</b>(marshalerType) {
+		<a href="../src/encoding/xml/marshal.go.html#line-445" class="path-duplicate">marshal.go</a><a href="../src/encoding/xml/marshal.go.html#line-445">#L445</a>: 	if val.CanInterface() &amp;&amp; typ.<b>Implements</b>(textMarshalerType) {
+		<a href="../src/encoding/xml/marshal.go.html#line-450" class="path-duplicate">marshal.go</a><a href="../src/encoding/xml/marshal.go.html#line-450">#L450</a>: 		if pv.CanInterface() &amp;&amp; pv.Type().<b>Implements</b>(textMarshalerType) {
+		<a href="../src/encoding/xml/marshal.go.html#line-554" class="path-duplicate">marshal.go</a><a href="../src/encoding/xml/marshal.go.html#line-554">#L554</a>: 	if val.CanInterface() &amp;&amp; val.Type().<b>Implements</b>(marshalerAttrType) {
+		<a href="../src/encoding/xml/marshal.go.html#line-567" class="path-duplicate">marshal.go</a><a href="../src/encoding/xml/marshal.go.html#line-567">#L567</a>: 		if pv.CanInterface() &amp;&amp; pv.Type().<b>Implements</b>(marshalerAttrType) {
+		<a href="../src/encoding/xml/marshal.go.html#line-579" class="path-duplicate">marshal.go</a><a href="../src/encoding/xml/marshal.go.html#line-579">#L579</a>: 	if val.CanInterface() &amp;&amp; val.Type().<b>Implements</b>(textMarshalerType) {
+		<a href="../src/encoding/xml/marshal.go.html#line-590" class="path-duplicate">marshal.go</a><a href="../src/encoding/xml/marshal.go.html#line-590">#L590</a>: 		if pv.CanInterface() &amp;&amp; pv.Type().<b>Implements</b>(textMarshalerType) {
+		<a href="../src/encoding/xml/marshal.go.html#line-828" class="path-duplicate">marshal.go</a><a href="../src/encoding/xml/marshal.go.html#line-828">#L828</a>: 			if vf.CanInterface() &amp;&amp; vf.Type().<b>Implements</b>(textMarshalerType) {
+		<a href="../src/encoding/xml/marshal.go.html#line-840" class="path-duplicate">marshal.go</a><a href="../src/encoding/xml/marshal.go.html#line-840">#L840</a>: 				if pv.CanInterface() &amp;&amp; pv.Type().<b>Implements</b>(textMarshalerType) {
+		<a href="../src/encoding/xml/read.go.html#line-253">read.go#L253</a>: 	if val.CanInterface() &amp;&amp; val.Type().<b>Implements</b>(unmarshalerAttrType) {
+		<a href="../src/encoding/xml/read.go.html#line-260" class="path-duplicate">read.go</a><a href="../src/encoding/xml/read.go.html#line-260">#L260</a>: 		if pv.CanInterface() &amp;&amp; pv.Type().<b>Implements</b>(unmarshalerAttrType) {
+		<a href="../src/encoding/xml/read.go.html#line-266" class="path-duplicate">read.go</a><a href="../src/encoding/xml/read.go.html#line-266">#L266</a>: 	if val.CanInterface() &amp;&amp; val.Type().<b>Implements</b>(textUnmarshalerType) {
+		<a href="../src/encoding/xml/read.go.html#line-273" class="path-duplicate">read.go</a><a href="../src/encoding/xml/read.go.html#line-273">#L273</a>: 		if pv.CanInterface() &amp;&amp; pv.Type().<b>Implements</b>(textUnmarshalerType) {
+		<a href="../src/encoding/xml/read.go.html#line-339" class="path-duplicate">read.go</a><a href="../src/encoding/xml/read.go.html#line-339">#L339</a>: 	if val.CanInterface() &amp;&amp; val.Type().<b>Implements</b>(unmarshalerType) {
+		<a href="../src/encoding/xml/read.go.html#line-347" class="path-duplicate">read.go</a><a href="../src/encoding/xml/read.go.html#line-347">#L347</a>: 		if pv.CanInterface() &amp;&amp; pv.Type().<b>Implements</b>(unmarshalerType) {
+		<a href="../src/encoding/xml/read.go.html#line-352" class="path-duplicate">read.go</a><a href="../src/encoding/xml/read.go.html#line-352">#L352</a>: 	if val.CanInterface() &amp;&amp; val.Type().<b>Implements</b>(textUnmarshalerType) {
+		<a href="../src/encoding/xml/read.go.html#line-358" class="path-duplicate">read.go</a><a href="../src/encoding/xml/read.go.html#line-358">#L358</a>: 		if pv.CanInterface() &amp;&amp; pv.Type().<b>Implements</b>(textUnmarshalerType) {
+		<a href="../src/encoding/xml/read.go.html#line-562" class="path-duplicate">read.go</a><a href="../src/encoding/xml/read.go.html#line-562">#L562</a>: 	if saveData.IsValid() &amp;&amp; saveData.CanInterface() &amp;&amp; saveData.Type().<b>Implements</b>(textUnmarshalerType) {
+		<a href="../src/encoding/xml/read.go.html#line-571" class="path-duplicate">read.go</a><a href="../src/encoding/xml/read.go.html#line-571">#L571</a>: 		if pv.CanInterface() &amp;&amp; pv.Type().<b>Implements</b>(textUnmarshalerType) {
+
+	<a href="../pkg/github.com/go-sql-driver/mysql.html">github.com/go-sql-driver/mysql</a>
+		<a href="../src/github.com/go-sql-driver/mysql/statement.go.html#line-216">statement.go#L216</a>: 		rv.Type().Elem().<b>Implements</b>(valuerReflectType) {
+
+	<a href="../pkg/google.golang.org/grpc.html">google.golang.org/grpc</a>
+		<a href="../src/google.golang.org/grpc/server.go.html#line-629">server.go#L629</a>: 		if !st.<b>Implements</b>(ht) {
+
+	<a href="../pkg/google.golang.org/protobuf/internal/impl.html">google.golang.org/protobuf/internal/impl</a>
+		<a href="../src/google.golang.org/protobuf/internal/impl/legacy_message.go.html#line-254">legacy_message.go#L254</a>: 				if t.<b>Implements</b>(f.Type) {
+		<a href="../src/google.golang.org/protobuf/internal/impl/message_reflect_field.go.html#line-72">message_reflect_field.go#L72</a>: 	if !reflect.PtrTo(ot).<b>Implements</b>(ft) {
+
+	<a href="../pkg/html/template.html">html/template</a>
+		<a href="../src/html/template/content.go.html#line-143">content.go#L143</a>: 	for !v.Type().<b>Implements</b>(fmtStringerType) &amp;&amp; !v.Type().<b>Implements</b>(errorType) &amp;&amp; v.Kind() == reflect.Ptr &amp;&amp; !v.IsNil() {
+		<a href="../src/html/template/js.go.html#line-135">js.go#L135</a>: 	for !v.Type().<b>Implements</b>(jsonMarshalType) &amp;&amp; v.Kind() == reflect.Ptr &amp;&amp; !v.IsNil() {
+
+	<a href="../pkg/text/template.html">text/template</a>
+		<a href="../src/text/template/exec.go.html#line-980">exec.go#L980</a>: 	if !v.Type().<b>Implements</b>(errorType) &amp;&amp; !v.Type().<b>Implements</b>(fmtStringerType) {
+		<a href="../src/text/template/exec.go.html#line-981" class="path-duplicate">exec.go</a><a href="../src/text/template/exec.go.html#line-981">#L981</a>: 		if v.CanAddr() &amp;&amp; (reflect.PtrTo(v.Type()).<b>Implements</b>(errorType) || reflect.PtrTo(v.Type()).<b>Implements</b>(fmtStringerType)) {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

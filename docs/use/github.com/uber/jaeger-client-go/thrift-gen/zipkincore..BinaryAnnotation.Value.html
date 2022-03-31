@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/uber/jaeger-client-go/thrift-gen/zipkincore.BinaryAnnotation.Value</title>
+<link href="../../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../../../pkg/github.com/uber/jaeger-client-go/thrift-gen/zipkincore.html">github.com/uber/jaeger-client-go/thrift-gen/zipkincore</a>.<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-540">BinaryAnnotation</a>.<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-542">Value</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">15 uses</span>
+
+	github.com/uber/jaeger-client-go/thrift-gen/zipkincore (current package)
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-542">zipkincore.go#L542</a>:   <b>Value</b> []byte `thrift:"value,2" db:"value" json:"value"`
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-557" class="path-duplicate">zipkincore.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-557">#L557</a>:   return p.<b>Value</b>
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-655" class="path-duplicate">zipkincore.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-655">#L655</a>:   p.<b>Value</b> = v
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-707" class="path-duplicate">zipkincore.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-707">#L707</a>:   if err := oprot.WriteBinary(ctx, p.<b>Value</b>); err != nil {
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-744" class="path-duplicate">zipkincore.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-744">#L744</a>:   if bytes.Compare(p.<b>Value</b>, other.<b>Value</b>) != 0 { return false }
+
+	<a href="../../../../../pkg/github.com/uber/jaeger-client-go.html">github.com/uber/jaeger-client-go</a>
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/zipkin_thrift_span.go.html#line-129">zipkin_thrift_span.go#L129</a>: 			<b>Value</b>:          []byte{1},
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/zipkin_thrift_span.go.html#line-144" class="path-duplicate">zipkin_thrift_span.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/zipkin_thrift_span.go.html#line-144">#L144</a>: 			<b>Value</b>:          []byte(componentName),
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/zipkin_thrift_span.go.html#line-165" class="path-duplicate">zipkin_thrift_span.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/zipkin_thrift_span.go.html#line-165">#L165</a>: 		bann.<b>Value</b> = []byte(truncateString(value, maxTagValueLength))
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/zipkin_thrift_span.go.html#line-171" class="path-duplicate">zipkin_thrift_span.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/zipkin_thrift_span.go.html#line-171">#L171</a>: 		bann.<b>Value</b> = value
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/zipkin_thrift_span.go.html#line-174" class="path-duplicate">zipkin_thrift_span.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/zipkin_thrift_span.go.html#line-174">#L174</a>: 		bann.<b>Value</b> = int32ToBytes(value)
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/zipkin_thrift_span.go.html#line-177" class="path-duplicate">zipkin_thrift_span.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/zipkin_thrift_span.go.html#line-177">#L177</a>: 		bann.<b>Value</b> = int64ToBytes(value)
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/zipkin_thrift_span.go.html#line-180" class="path-duplicate">zipkin_thrift_span.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/zipkin_thrift_span.go.html#line-180">#L180</a>: 		bann.<b>Value</b> = int64ToBytes(int64(value))
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/zipkin_thrift_span.go.html#line-183" class="path-duplicate">zipkin_thrift_span.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/zipkin_thrift_span.go.html#line-183">#L183</a>: 		bann.<b>Value</b> = []byte{boolToByte(value)}
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/zipkin_thrift_span.go.html#line-187" class="path-duplicate">zipkin_thrift_span.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/zipkin_thrift_span.go.html#line-187">#L187</a>: 		bann.<b>Value</b> = []byte(truncateString(value, maxTagValueLength))
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

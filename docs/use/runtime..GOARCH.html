@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime.GOARCH</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">const <b><a href="../pkg/runtime.html">runtime</a>.<a href="../src/runtime/extern.go.html#line-267">GOARCH</a></b></span>
+
+<span class="title">56 uses</span>
+
+	runtime (current package)
+		<a href="../src/runtime/alg.go.html#line-313">alg.go#L313</a>: 	if (<b>GOARCH</b> == "386" || <b>GOARCH</b> == "amd64") &amp;&amp;
+		<a href="../src/runtime/alg.go.html#line-320" class="path-duplicate">alg.go</a><a href="../src/runtime/alg.go.html#line-320">#L320</a>: 	if <b>GOARCH</b> == "arm64" &amp;&amp; cpu.ARM64.HasAES {
+		<a href="../src/runtime/debug.go.html#line-17">debug.go#L17</a>: 	if <b>GOARCH</b> == "wasm" &amp;&amp; n &gt; 1 {
+		<a href="../src/runtime/extern.go.html#line-267">extern.go#L267</a>: const <b>GOARCH</b> string = sys.GOARCH
+		<a href="../src/runtime/lfstack_64bit.go.html#line-43">lfstack_64bit.go#L43</a>: 	if <b>GOARCH</b> == "ppc64" &amp;&amp; GOOS == "aix" {
+		<a href="../src/runtime/lfstack_64bit.go.html#line-50" class="path-duplicate">lfstack_64bit.go</a><a href="../src/runtime/lfstack_64bit.go.html#line-50">#L50</a>: 	if <b>GOARCH</b> == "amd64" {
+		<a href="../src/runtime/lfstack_64bit.go.html#line-55" class="path-duplicate">lfstack_64bit.go</a><a href="../src/runtime/lfstack_64bit.go.html#line-55">#L55</a>: 	if <b>GOARCH</b> == "ppc64" &amp;&amp; GOOS == "aix" {
+		<a href="../src/runtime/malloc.go.html#line-539">malloc.go#L539</a>: 			case <b>GOARCH</b> == "arm64" &amp;&amp; GOOS == "ios":
+		<a href="../src/runtime/malloc.go.html#line-541" class="path-duplicate">malloc.go</a><a href="../src/runtime/malloc.go.html#line-541">#L541</a>: 			case <b>GOARCH</b> == "arm64":
+		<a href="../src/runtime/mbitmap.go.html#line-389">mbitmap.go#L389</a>: 		if <b>GOARCH</b> == "amd64" &amp;&amp; p == clobberdeadPtr &amp;&amp; debug.invalidptr != 0 {
+		<a href="../src/runtime/os_darwin.go.html#line-306">os_darwin.go#L306</a>: 	if GOOS == "darwin" &amp;&amp; <b>GOARCH</b> == "arm64" {
+		<a href="../src/runtime/os_darwin.go.html#line-319" class="path-duplicate">os_darwin.go</a><a href="../src/runtime/os_darwin.go.html#line-319">#L319</a>: 	if !(GOOS == "ios" &amp;&amp; <b>GOARCH</b> == "arm64") {
+		<a href="../src/runtime/os_darwin.go.html#line-331" class="path-duplicate">os_darwin.go</a><a href="../src/runtime/os_darwin.go.html#line-331">#L331</a>: 	if !(GOOS == "ios" &amp;&amp; <b>GOARCH</b> == "arm64") {
+		<a href="../src/runtime/preempt.go.html#line-389">preempt.go#L389</a>: 	if (<b>GOARCH</b> == "mips" || <b>GOARCH</b> == "mipsle" || <b>GOARCH</b> == "mips64" || <b>GOARCH</b> == "mips64le") &amp;&amp; lr == pc+8 &amp;&amp; funcspdelta(f, pc, nil) == 0 {
+		<a href="../src/runtime/proc.go.html#line-169">proc.go#L169</a>: 	if <b>GOARCH</b> != "wasm" { // no threads on wasm yet, so no sysmon
+		<a href="../src/runtime/proc.go.html#line-1306" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1306">#L1306</a>: 		return <b>GOARCH</b> == "386" || <b>GOARCH</b> == "amd64" || <b>GOARCH</b> == "arm" || <b>GOARCH</b> == "arm64"
+		<a href="../src/runtime/proc.go.html#line-1318" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1318">#L1318</a>: 		switch <b>GOARCH</b> {
+		<a href="../src/runtime/proc.go.html#line-2260" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2260">#L2260</a>: 	if <b>GOARCH</b> == "wasm" { // no threads on wasm yet
+		<a href="../src/runtime/proc.go.html#line-3666" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3666">#L3666</a>: 	if <b>GOARCH</b> == "wasm" { // no threads yet on wasm
+		<a href="../src/runtime/proc.go.html#line-4545" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4545">#L4545</a>: 	if <b>GOARCH</b> == "wasm" {
+		<a href="../src/runtime/proc.go.html#line-4596" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4596">#L4596</a>: 	if <b>GOARCH</b> == "wasm" {
+		<a href="../src/runtime/proc.go.html#line-4695" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4695">#L4695</a>: 	if <b>GOARCH</b> == "mips" || <b>GOARCH</b> == "mipsle" || <b>GOARCH</b> == "arm" {
+		<a href="../src/runtime/proc.go.html#line-4702" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4702">#L4702</a>: 		if <b>GOARCH</b> == "arm" &amp;&amp; goarm &lt; 7 &amp;&amp; GOOS == "linux" &amp;&amp; pc&amp;0xffff0000 == 0xffff0000 {
+		<a href="../src/runtime/runtime2.go.html#line-1144">runtime2.go#L1144</a>: const framepointer_enabled = <b>GOARCH</b> == "amd64" || <b>GOARCH</b> == "arm64"
+		<a href="../src/runtime/signal_unix.go.html#line-384">signal_unix.go#L384</a>: 	switch <b>GOARCH</b> {
+		<a href="../src/runtime/signal_unix.go.html#line-857" class="path-duplicate">signal_unix.go</a><a href="../src/runtime/signal_unix.go.html#line-857">#L857</a>: 	if GOOS == "darwin" &amp;&amp; <b>GOARCH</b> == "amd64" {
+		<a href="../src/runtime/stack.go.html#line-1323">stack.go#L1323</a>: 	if <b>GOARCH</b> == "amd64" &amp;&amp; unsafe.Sizeof(abi.RegArgs{}) &gt; 0 &amp;&amp; frame.argmap != nil {
+		<a href="../src/runtime/type.go.html#line-312">type.go#L312</a>: 	if res &gt; md.etext &amp;&amp; <b>GOARCH</b> != "wasm" { // on wasm, functions do not live in the same address space as the linear memory
+
+	<a href="../pkg/crypto/tls.html">crypto/tls</a>
+		<a href="../src/crypto/tls/cipher_suites.go.html#line-364">cipher_suites.go#L364</a>: 	hasAESGCMHardwareSupport = runtime.<b>GOARCH</b> == "amd64" &amp;&amp; hasGCMAsmAMD64 ||
+		<a href="../src/crypto/tls/cipher_suites.go.html#line-365" class="path-duplicate">cipher_suites.go</a><a href="../src/crypto/tls/cipher_suites.go.html#line-365">#L365</a>: 		runtime.<b>GOARCH</b> == "arm64" &amp;&amp; hasGCMAsmARM64 ||
+		<a href="../src/crypto/tls/cipher_suites.go.html#line-366" class="path-duplicate">cipher_suites.go</a><a href="../src/crypto/tls/cipher_suites.go.html#line-366">#L366</a>: 		runtime.<b>GOARCH</b> == "s390x" &amp;&amp; hasGCMAsmS390X
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/corehandlers.html">github.com/aws/aws-sdk-go/aws/corehandlers</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/corehandlers/user_agent.go.html#line-16">user_agent.go#L16</a>: 		runtime.Version(), runtime.GOOS, runtime.<b>GOARCH</b>),
+
+	<a href="../pkg/syscall.html">syscall</a>
+		<a href="../src/syscall/exec_unix.go.html#line-296">exec_unix.go#L296</a>: 	} else if runtime.GOOS == "openbsd" &amp;&amp; (runtime.<b>GOARCH</b> == "386" || runtime.<b>GOARCH</b> == "amd64" || runtime.<b>GOARCH</b> == "arm" || runtime.<b>GOARCH</b> == "arm64") {
+		<a href="../src/syscall/sockcmsg_unix_other.go.html#line-33">sockcmsg_unix_other.go#L33</a>: 		if runtime.<b>GOARCH</b> == "arm" {
+		<a href="../src/syscall/sockcmsg_unix_other.go.html#line-37" class="path-duplicate">sockcmsg_unix_other.go</a><a href="../src/syscall/sockcmsg_unix_other.go.html#line-37">#L37</a>: 		if runtime.GOOS == "netbsd" &amp;&amp; runtime.<b>GOARCH</b> == "arm64" {
+
+	<a href="../pkg/text/template.html">text/template</a>
+		<a href="../src/text/template/exec.go.html#line-24">exec.go#L24</a>: 	if runtime.<b>GOARCH</b> == "wasm" {
+
+	<a href="../pkg/vendor/golang.org/x/crypto/chacha20.html">vendor/golang.org/x/crypto/chacha20</a>
+		<a href="../src/vendor/golang.org/x/crypto/chacha20/xor.go.html#line-10">xor.go#L10</a>: const unaligned = runtime.<b>GOARCH</b> == "386" ||
+		<a href="../src/vendor/golang.org/x/crypto/chacha20/xor.go.html#line-11" class="path-duplicate">xor.go</a><a href="../src/vendor/golang.org/x/crypto/chacha20/xor.go.html#line-11">#L11</a>: 	runtime.<b>GOARCH</b> == "amd64" ||
+		<a href="../src/vendor/golang.org/x/crypto/chacha20/xor.go.html#line-12" class="path-duplicate">xor.go</a><a href="../src/vendor/golang.org/x/crypto/chacha20/xor.go.html#line-12">#L12</a>: 	runtime.<b>GOARCH</b> == "arm64" ||
+		<a href="../src/vendor/golang.org/x/crypto/chacha20/xor.go.html#line-13" class="path-duplicate">xor.go</a><a href="../src/vendor/golang.org/x/crypto/chacha20/xor.go.html#line-13">#L13</a>: 	runtime.<b>GOARCH</b> == "ppc64le" ||
+		<a href="../src/vendor/golang.org/x/crypto/chacha20/xor.go.html#line-14" class="path-duplicate">xor.go</a><a href="../src/vendor/golang.org/x/crypto/chacha20/xor.go.html#line-14">#L14</a>: 	runtime.<b>GOARCH</b> == "s390x"
+
+	<a href="../pkg/vendor/golang.org/x/sys/cpu.html">vendor/golang.org/x/sys/cpu</a>
+		<a href="../src/vendor/golang.org/x/sys/cpu/byteorder.go.html#line-45">byteorder.go#L45</a>: 	switch runtime.<b>GOARCH</b> {
+		<a href="../src/vendor/golang.org/x/sys/cpu/cpu_x86.go.html#line-55">cpu_x86.go#L55</a>: 		{Name: "sse2", Feature: &amp;X86.HasSSE2, Required: runtime.<b>GOARCH</b> == "amd64"},
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

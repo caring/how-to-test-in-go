@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Source: tracer.go in package github.com/uber/jaeger-client-go/log/zap</title>
+<link href="../../../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre id="header"><code><span class="title">Source File</span>
+	tracer.go
+
+<span class="title">Belonging Package</span>
+	<a href="../../../../../../pkg/github.com/uber/jaeger-client-go/log/zap.html">github.com/uber/jaeger-client-go/log/zap</a>
+</code></pre>
+<style>input[type=radio] {display: none;}
+input[id=r0]:checked ~pre label[for=r0],
+input[id=r1]:checked ~pre label[for=r1],
+input[id=r2]:checked ~pre label[for=r2],
+input[id=r3]:checked ~pre label[for=r3],
+input[id=r4]:checked ~pre label[for=r4],
+input[id=r5]:checked ~pre label[for=r5],
+input[id=r6]:checked ~pre label[for=r6],
+input[id=r7]:checked ~pre label[for=r7],
+input[id=r8]:checked ~pre label[for=r8],
+input[id=r9]:checked ~pre label[for=r9],
+input[id=r10]:checked ~pre label[for=r10],
+input[id=r11]:checked ~pre label[for=r11],
+input[id=r12]:checked ~pre label[for=r12],
+input[id=r13]:checked ~pre label[for=r13],
+input[id=r14]:checked ~pre label[for=r14],
+input[id=r15]:checked ~pre label[for=r15],
+input[id=r16]:checked ~pre label[for=r16],
+input[id=r17]:checked ~pre label[for=r17],
+input[id=r18]:checked ~pre label[for=r18],
+input[id=r19]:checked ~pre label[for=r19],
+input[id=r20]:checked ~pre label[for=r20],
+input[id=r21]:checked ~pre label[for=r21],
+input[id=r22]:checked ~pre label[for=r22],
+input[id=r23]:checked ~pre label[for=r23],
+input[id=r24]:checked ~pre label[for=r24],
+input[id=r25]:checked ~pre label[for=r25],
+input[id=r26]:checked ~pre label[for=r26],
+input[id=r27]:checked ~pre label[for=r27],
+input[id=r28]:checked ~pre label[for=r28],
+input[id=r29]:checked ~pre label[for=r29],
+input[id=r30]:checked ~pre label[for=r30],
+input[id=r31]:checked ~pre label[for=r31],
+input[id=r32]:checked ~pre label[for=r32],
+input[id=r33]:checked ~pre label[for=r33],
+input[id=r34]:checked ~pre label[for=r34],
+input[id=r35]:checked ~pre label[for=r35],
+input[id=r36]:checked ~pre label[for=r36],
+input[id=r37]:checked ~pre label[for=r37],
+input[id=r38]:checked ~pre label[for=r38],
+input[id=r39]:checked ~pre label[for=r39],
+input[id=r40]:checked ~pre label[for=r40],
+input[id=r41]:checked ~pre label[for=r41],
+input[id=r42]:checked ~pre label[for=r42],
+input[id=r43]:checked ~pre label[for=r43],
+input[id=r44]:checked ~pre label[for=r44],
+input[id=r45]:checked ~pre label[for=r45],
+input[id=r46]:checked ~pre label[for=r46],
+input[id=r47]:checked ~pre label[for=r47],
+input[id=r48]:checked ~pre label[for=r48],
+input[id=r49]:checked ~pre label[for=r49],
+input[id=r50]:checked ~pre label[for=r50],
+input[id=r51]:checked ~pre label[for=r51],
+input[id=r52]:checked ~pre label[for=r52],
+input[id=r53]:checked ~pre label[for=r53],
+input[id=r54]:checked ~pre label[for=r54],
+input[id=r55]:checked ~pre label[for=r55],
+input[id=r56]:checked ~pre label[for=r56],
+input[id=r57]:checked ~pre label[for=r57],
+input[id=r58]:checked ~pre label[for=r58],
+input[id=r59]:checked ~pre label[for=r59],
+input[id=r60]:checked ~pre label[for=r60],
+input[id=r61]:checked ~pre label[for=r61],
+input[id=r62]:checked ~pre label[for=r62],
+input[id=r63]:checked ~pre label[for=r63],
+input[id=r64]:checked ~pre label[for=r64],
+input[id=r65]:checked ~pre label[for=r65],
+input[id=r66]:checked ~pre label[for=r66],
+input[id=r67]:checked ~pre label[for=r67],
+input[id=r68]:checked ~pre label[for=r68],
+input[id=r69]:checked ~pre label[for=r69],
+input[id=r70]:checked ~pre label[for=r70]
+{background: #226; color: #ff8;}
+input[id=i0]:checked ~pre .i0,
+input[id=i1]:checked ~pre .i1,
+input[id=i2]:checked ~pre .i2,
+input[id=i3]:checked ~pre .i3
+{background: brown; color: #eed;}
+</style><input id="r0" type="radio" name="g"/>
+<input id="r1" type="radio" name="g"/>
+<input id="r2" type="radio" name="g"/>
+<input id="r3" type="radio" name="g"/>
+<input id="r4" type="radio" name="g"/>
+<input id="r5" type="radio" name="g"/>
+<input id="r6" type="radio" name="g"/>
+<input id="r7" type="radio" name="g"/>
+<input id="r8" type="radio" name="g"/>
+<input id="r9" type="radio" name="g"/>
+<input id="r10" type="radio" name="g"/>
+<input id="r11" type="radio" name="g"/>
+<input id="r12" type="radio" name="g"/>
+<input id="r13" type="radio" name="g"/>
+<input id="r14" type="radio" name="g"/>
+<input id="r15" type="radio" name="g"/>
+<input id="r16" type="radio" name="g"/>
+<input id="r17" type="radio" name="g"/>
+<input id="r18" type="radio" name="g"/>
+<input id="r19" type="radio" name="g"/>
+<input id="r20" type="radio" name="g"/>
+<input id="r21" type="radio" name="g"/>
+<input id="r22" type="radio" name="g"/>
+<input id="r23" type="radio" name="g"/>
+<input id="r24" type="radio" name="g"/>
+<input id="r25" type="radio" name="g"/>
+<input id="r26" type="radio" name="g"/>
+<input id="r27" type="radio" name="g"/>
+<input id="r28" type="radio" name="g"/>
+<input id="r29" type="radio" name="g"/>
+<input id="r30" type="radio" name="g"/>
+<input id="r31" type="radio" name="g"/>
+<input id="r32" type="radio" name="g"/>
+<input id="r33" type="radio" name="g"/>
+<input id="r34" type="radio" name="g"/>
+<input id="r35" type="radio" name="g"/>
+<input id="r36" type="radio" name="g"/>
+<input id="r37" type="radio" name="g"/>
+<input id="r38" type="radio" name="g"/>
+<input id="r39" type="radio" name="g"/>
+<input id="r40" type="radio" name="g"/>
+<input id="r41" type="radio" name="g"/>
+<input id="r42" type="radio" name="g"/>
+<input id="r43" type="radio" name="g"/>
+<input id="r44" type="radio" name="g"/>
+<input id="r45" type="radio" name="g"/>
+<input id="r46" type="radio" name="g"/>
+<input id="r47" type="radio" name="g"/>
+<input id="r48" type="radio" name="g"/>
+<input id="r49" type="radio" name="g"/>
+<input id="r50" type="radio" name="g"/>
+<input id="r51" type="radio" name="g"/>
+<input id="r52" type="radio" name="g"/>
+<input id="r53" type="radio" name="g"/>
+<input id="r54" type="radio" name="g"/>
+<input id="r55" type="radio" name="g"/>
+<input id="r56" type="radio" name="g"/>
+<input id="r57" type="radio" name="g"/>
+<input id="r58" type="radio" name="g"/>
+<input id="r59" type="radio" name="g"/>
+<input id="r60" type="radio" name="g"/>
+<input id="r61" type="radio" name="g"/>
+<input id="r62" type="radio" name="g"/>
+<input id="r63" type="radio" name="g"/>
+<input id="r64" type="radio" name="g"/>
+<input id="r65" type="radio" name="g"/>
+<input id="r66" type="radio" name="g"/>
+<input id="r67" type="radio" name="g"/>
+<input id="r68" type="radio" name="g"/>
+<input id="r69" type="radio" name="g"/>
+<input id="r70" type="radio" name="g"/>
+<input id="i0" type="radio" name="i"/>
+<input id="i1" type="radio" name="i"/>
+<input id="i2" type="radio" name="i"/>
+<input id="i3" type="radio" name="i"/>
+
+<pre class="line-numbers">
+<span class="codeline" id="line-1"><code><span class="comment">// Copyright (c) 2020 The Jaeger Authors.</span></code></span>
+<span class="codeline" id="line-2"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-3"><code><span class="comment">// Licensed under the Apache License, Version 2.0 (the "License");</span></code></span>
+<span class="codeline" id="line-4"><code><span class="comment">// you may not use this file except in compliance with the License.</span></code></span>
+<span class="codeline" id="line-5"><code><span class="comment">// You may obtain a copy of the License at</span></code></span>
+<span class="codeline" id="line-6"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-7"><code><span class="comment">// http://www.apache.org/licenses/LICENSE-2.0</span></code></span>
+<span class="codeline" id="line-8"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-9"><code><span class="comment">// Unless required by applicable law or agreed to in writing, software</span></code></span>
+<span class="codeline" id="line-10"><code><span class="comment">// distributed under the License is distributed on an "AS IS" BASIS,</span></code></span>
+<span class="codeline" id="line-11"><code><span class="comment">// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></code></span>
+<span class="codeline" id="line-12"><code><span class="comment">// See the License for the specific language governing permissions and</span></code></span>
+<span class="codeline" id="line-13"><code><span class="comment">// limitations under the License.</span></code></span>
+<span class="codeline" id="line-14"><code></code></span>
+<span class="codeline" id="line-15"><code><span class="keyword">package</span> zap</code></span>
+<span class="codeline" id="line-16"><code></code></span>
+<span class="codeline" id="line-17"><code><span class="keyword">import</span> (</code></span>
+<span class="codeline" id="line-18"><code>	<label for="i0"><span class="lit-string i0">"github.com/opentracing/opentracing-go"</span></label></code></span>
+<span class="codeline" id="line-19"><code>	<label for="i1"><span class="lit-string i1">"github.com/opentracing/opentracing-go/log"</span></label></code></span>
+<span class="codeline" id="line-20"><code>	<label for="i2"><span class="lit-string i2">"github.com/uber/jaeger-client-go"</span></label></code></span>
+<span class="codeline" id="line-21"><code>	<label for="i3"><span class="lit-string i3">"go.uber.org/zap"</span></label></code></span>
+<span class="codeline" id="line-22"><code>)</code></span>
+<span class="codeline" id="line-23"><code></code></span>
+<span class="codeline" id="line-24"><code><span class="comment">// loggingTracer is a wrapper for the Jaeger tracer, which logs all span interactions</span></code></span>
+<span class="codeline" id="line-25"><code><span class="comment">// It is intended to be used for debugging tracing issues</span></code></span>
+<span class="codeline" id="line-26"><code><span class="keyword">type</span> <a href="../../../../../../pkg/github.com/uber/jaeger-client-go/log/zap.html#name-loggingTracer" class="ident">loggingTracer</a> <span class="keyword">struct</span> {</code></span>
+<span class="codeline" id="line-27"><code>	<a href="../../../../../../use/github.com/uber/jaeger-client-go/log/zap..loggingTracer^db5c9.logger^2686a.html" class="ident">logger</a> *<a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i3">zap</a>.<a href="../../../../../go.uber.org/zap/logger.go.html#line-41" class="ident">Logger</a></code></span>
+<span class="codeline" id="line-28"><code>	<a href="../../../../../../use/github.com/uber/jaeger-client-go/log/zap..loggingTracer^db5c9.tracer^1e624.html" class="ident">tracer</a> <a href="../../../../../../pkg/github.com/opentracing/opentracing-go.html" class="ident i0">opentracing</a>.<a href="../../../../opentracing/opentracing-go/tracer.go.html#line-7" class="ident">Tracer</a></code></span>
+<span class="codeline" id="line-29"><code>}</code></span>
+<span class="codeline" id="line-30"><code></code></span>
+<span class="codeline" id="line-31"><code><span class="comment">// NewLoggingTracer creates a new tracer that logs all span interactions</span></code></span>
+<span class="codeline" id="line-32"><code><span class="keyword">func</span> <label for="r0" class="ident"><a href="../../../../../../pkg/github.com/uber/jaeger-client-go/log/zap.html#name-NewLoggingTracer" class="ident">NewLoggingTracer</a></label>(<label for="r1" class="ident">logger</label> *<a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i3">zap</a>.<a href="../../../../../go.uber.org/zap/logger.go.html#line-41" class="ident">Logger</a>, <label for="r2" class="ident">tracer</label> <a href="../../../../../../pkg/github.com/opentracing/opentracing-go.html" class="ident i0">opentracing</a>.<a href="../../../../opentracing/opentracing-go/tracer.go.html#line-7" class="ident">Tracer</a>) <a href="../../../../../../pkg/github.com/opentracing/opentracing-go.html" class="ident i0">opentracing</a>.<a href="../../../../opentracing/opentracing-go/tracer.go.html#line-7" class="ident">Tracer</a> {</code></span>
+<span class="codeline" id="line-33"><code>	<span class="keyword">if</span> <label for="r3" class="ident">jTracer</label>, <label for="r4" class="ident">ok</label> := <label for="r2" class="ident">tracer</label>.(*<a href="../../../../../../pkg/github.com/uber/jaeger-client-go.html" class="ident i2">jaeger</a>.<a href="../../tracer.go.html#line-37" class="ident">Tracer</a>); <label for="r4" class="ident">ok</label> {</code></span>
+<span class="codeline" id="line-34"><code>		<label for="r1" class="ident">logger</label>.<a href="../../../../../go.uber.org/zap/logger.go.html#line-185" class="ident">Info</a>(<span class="lit-string">"loggingTracer created"</span>,</code></span>
+<span class="codeline" id="line-35"><code>			<a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i3">zap</a>.<a href="../../../../../go.uber.org/zap/field.go.html#line-404" class="ident">Any</a>(<span class="lit-string">"sampler"</span>, <label for="r3" class="ident">jTracer</label>.<a href="../../tracer.go.html#line-481" class="ident">Sampler</a>()),</code></span>
+<span class="codeline" id="line-36"><code>			<a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i3">zap</a>.<a href="../../../../../go.uber.org/zap/field.go.html#line-404" class="ident">Any</a>(<span class="lit-string">"tags"</span>, <label for="r3" class="ident">jTracer</label>.<a href="../../tracer.go.html#line-385" class="ident">Tags</a>()))</code></span>
+<span class="codeline" id="line-37"><code>	} <span class="keyword">else</span> {</code></span>
+<span class="codeline" id="line-38"><code>		<label for="r1" class="ident">logger</label>.<a href="../../../../../go.uber.org/zap/logger.go.html#line-185" class="ident">Info</a>(<span class="lit-string">"Non Jaeger Tracer supplied to loggingTracer"</span>)</code></span>
+<span class="codeline" id="line-39"><code>	}</code></span>
+<span class="codeline" id="line-40"><code></code></span>
+<span class="codeline" id="line-41"><code>	<span class="keyword">return</span> <a href="#line-26" class="ident">loggingTracer</a>{</code></span>
+<span class="codeline" id="line-42"><code>		<a href="#line-27" class="ident">logger</a>: <label for="r1" class="ident">logger</label>,</code></span>
+<span class="codeline" id="line-43"><code>		<a href="#line-28" class="ident">tracer</a>: <label for="r2" class="ident">tracer</label>,</code></span>
+<span class="codeline" id="line-44"><code>	}</code></span>
+<span class="codeline" id="line-45"><code>}</code></span>
+<span class="codeline" id="line-46"><code></code></span>
+<span class="codeline" id="line-47"><code><span class="keyword">func</span> (<label for="r5" class="ident">l</label> <a href="#line-26" class="ident">loggingTracer</a>) <label for="r6" class="ident"><a href="../../../../../../use/github.com/uber/jaeger-client-go/log/zap..loggingTracer^db5c9.StartSpan.html" class="ident">StartSpan</a></label>(<label for="r7" class="ident">operationName</label> <a href="../../../../../../pkg/builtin.html#name-string" class="ident">string</a>, <label for="r8" class="ident">opts</label> ...<a href="../../../../../../pkg/github.com/opentracing/opentracing-go.html" class="ident i0">opentracing</a>.<a href="../../../../opentracing/opentracing-go/tracer.go.html#line-153" class="ident">StartSpanOption</a>) <a href="../../../../../../pkg/github.com/opentracing/opentracing-go.html" class="ident i0">opentracing</a>.<a href="../../../../opentracing/opentracing-go/span.go.html#line-27" class="ident">Span</a> {</code></span>
+<span class="codeline" id="line-48"><code>	<label for="r9" class="ident">span</label> := <label for="r5" class="ident">l</label>.<a href="#line-28" class="ident">tracer</a>.<a href="../../../../opentracing/opentracing-go/tracer.go.html#line-37" class="ident">StartSpan</a>(<label for="r7" class="ident">operationName</label>, <label for="r8" class="ident">opts</label>...)</code></span>
+<span class="codeline" id="line-49"><code>	<label for="r10" class="ident">fields</label> := []<a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i3">zap</a>.<a href="../../../../../go.uber.org/zap/field.go.html#line-33" class="ident">Field</a>{</code></span>
+<span class="codeline" id="line-50"><code>		<a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i3">zap</a>.<a href="../../../../../go.uber.org/zap/field.go.html#line-366" class="ident">Stack</a>(<span class="lit-string">"stack"</span>),</code></span>
+<span class="codeline" id="line-51"><code>		<a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i3">zap</a>.<a href="../../../../../go.uber.org/zap/field.go.html#line-221" class="ident">String</a>(<span class="lit-string">"operation_name"</span>, <label for="r7" class="ident">operationName</label>),</code></span>
+<span class="codeline" id="line-52"><code>		<a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i3">zap</a>.<a href="../../../../../go.uber.org/zap/field.go.html#line-404" class="ident">Any</a>(<span class="lit-string">"opts"</span>, <label for="r8" class="ident">opts</label>),</code></span>
+<span class="codeline" id="line-53"><code>	}</code></span>
+<span class="codeline" id="line-54"><code></code></span>
+<span class="codeline" id="line-55"><code>	<span class="keyword">if</span> <label for="r11" class="ident">jSpan</label>, <label for="r12" class="ident">ok</label> := <label for="r9" class="ident">span</label>.(*<a href="../../../../../../pkg/github.com/uber/jaeger-client-go.html" class="ident i2">jaeger</a>.<a href="../../span.go.html#line-28" class="ident">Span</a>); <label for="r12" class="ident">ok</label> {</code></span>
+<span class="codeline" id="line-56"><code>		<label for="r13" class="ident">ctx</label> := <label for="r11" class="ident">jSpan</label>.<a href="../../span.go.html#line-133" class="ident">SpanContext</a>()</code></span>
+<span class="codeline" id="line-57"><code>		<label for="r10" class="ident">fields</label> = <a href="../../../../../../pkg/builtin.html#name-append" class="ident">append</a>(<label for="r10" class="ident">fields</label>, <a href="field.go.html#line-68" class="ident">Context</a>(<label for="r13" class="ident">ctx</label>))</code></span>
+<span class="codeline" id="line-58"><code>		<label for="r5" class="ident">l</label>.<a href="#line-27" class="ident">logger</a>.<a href="../../../../../go.uber.org/zap/logger.go.html#line-185" class="ident">Info</a>(<span class="lit-string">"StartSpan"</span>, <label for="r10" class="ident">fields</label>...)</code></span>
+<span class="codeline" id="line-59"><code>		<span class="keyword">return</span> <a href="#line-94" class="ident">newLoggingSpan</a>(<label for="r5" class="ident">l</label>.<a href="#line-27" class="ident">logger</a>, <label for="r9" class="ident">span</label>)</code></span>
+<span class="codeline" id="line-60"><code>	}</code></span>
+<span class="codeline" id="line-61"><code></code></span>
+<span class="codeline" id="line-62"><code>	<label for="r5" class="ident">l</label>.<a href="#line-27" class="ident">logger</a>.<a href="../../../../../go.uber.org/zap/logger.go.html#line-185" class="ident">Info</a>(<span class="lit-string">"StartSpan"</span>, <label for="r10" class="ident">fields</label>...)</code></span>
+<span class="codeline" id="line-63"><code>	<span class="keyword">return</span> <label for="r9" class="ident">span</label></code></span>
+<span class="codeline" id="line-64"><code>}</code></span>
+<span class="codeline" id="line-65"><code></code></span>
+<span class="codeline" id="line-66"><code><span class="keyword">func</span> (<label for="r14" class="ident">l</label> <a href="#line-26" class="ident">loggingTracer</a>) <label for="r15" class="ident"><a href="../../../../../../use/github.com/uber/jaeger-client-go/log/zap..loggingTracer^db5c9.Inject.html" class="ident">Inject</a></label>(<label for="r16" class="ident">ctx</label> <a href="../../../../../../pkg/github.com/opentracing/opentracing-go.html" class="ident i0">opentracing</a>.<a href="../../../../opentracing/opentracing-go/span.go.html#line-11" class="ident">SpanContext</a>, <label for="r17" class="ident">format</label> <span class="keyword">interface</span>{}, <label for="r18" class="ident">carrier</label> <span class="keyword">interface</span>{}) <a href="../../../../../../pkg/builtin.html#name-error" class="ident">error</a> {</code></span>
+<span class="codeline" id="line-67"><code>	<label for="r19" class="ident">fields</label> := []<a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i3">zap</a>.<a href="../../../../../go.uber.org/zap/field.go.html#line-33" class="ident">Field</a>{<a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i3">zap</a>.<a href="../../../../../go.uber.org/zap/field.go.html#line-404" class="ident">Any</a>(<span class="lit-string">"format"</span>, <label for="r17" class="ident">format</label>), <a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i3">zap</a>.<a href="../../../../../go.uber.org/zap/field.go.html#line-404" class="ident">Any</a>(<span class="lit-string">"carrier"</span>, <label for="r18" class="ident">carrier</label>)}</code></span>
+<span class="codeline" id="line-68"><code>	<span class="keyword">if</span> <label for="r20" class="ident">jCtx</label>, <label for="r21" class="ident">ok</label> := <label for="r16" class="ident">ctx</label>.(<a href="../../../../../../pkg/github.com/uber/jaeger-client-go.html" class="ident i2">jaeger</a>.<a href="../../span_context.go.html#line-49" class="ident">SpanContext</a>); <label for="r21" class="ident">ok</label> {</code></span>
+<span class="codeline" id="line-69"><code>		<label for="r19" class="ident">fields</label> = <a href="../../../../../../pkg/builtin.html#name-append" class="ident">append</a>(<label for="r19" class="ident">fields</label>, <a href="field.go.html#line-68" class="ident">Context</a>(<label for="r20" class="ident">jCtx</label>))</code></span>
+<span class="codeline" id="line-70"><code>	} <span class="keyword">else</span> {</code></span>
+<span class="codeline" id="line-71"><code>		<label for="r14" class="ident">l</label>.<a href="#line-27" class="ident">logger</a>.<a href="../../../../../go.uber.org/zap/logger.go.html#line-201" class="ident">Error</a>(<span class="lit-string">"Inject attempted with Non Jaeger Context"</span>)</code></span>
+<span class="codeline" id="line-72"><code>	}</code></span>
+<span class="codeline" id="line-73"><code></code></span>
+<span class="codeline" id="line-74"><code>	<label for="r14" class="ident">l</label>.<a href="#line-27" class="ident">logger</a>.<a href="../../../../../go.uber.org/zap/logger.go.html#line-177" class="ident">Debug</a>(<span class="lit-string">"Inject"</span>, <label for="r19" class="ident">fields</label>...)</code></span>
+<span class="codeline" id="line-75"><code>	<span class="keyword">return</span> <label for="r14" class="ident">l</label>.<a href="#line-28" class="ident">tracer</a>.<a href="../../../../opentracing/opentracing-go/tracer.go.html#line-68" class="ident">Inject</a>(<label for="r16" class="ident">ctx</label>, <label for="r17" class="ident">format</label>, <label for="r18" class="ident">carrier</label>)</code></span>
+<span class="codeline" id="line-76"><code>}</code></span>
+<span class="codeline" id="line-77"><code></code></span>
+<span class="codeline" id="line-78"><code><span class="keyword">func</span> (<label for="r22" class="ident">l</label> <a href="#line-26" class="ident">loggingTracer</a>) <label for="r23" class="ident"><a href="../../../../../../use/github.com/uber/jaeger-client-go/log/zap..loggingTracer^db5c9.Extract.html" class="ident">Extract</a></label>(<label for="r24" class="ident">format</label> <span class="keyword">interface</span>{}, <label for="r25" class="ident">carrier</label> <span class="keyword">interface</span>{}) (<a href="../../../../../../pkg/github.com/opentracing/opentracing-go.html" class="ident i0">opentracing</a>.<a href="../../../../opentracing/opentracing-go/span.go.html#line-11" class="ident">SpanContext</a>, <a href="../../../../../../pkg/builtin.html#name-error" class="ident">error</a>) {</code></span>
+<span class="codeline" id="line-79"><code>	<label for="r22" class="ident">l</label>.<a href="#line-27" class="ident">logger</a>.<a href="../../../../../go.uber.org/zap/logger.go.html#line-177" class="ident">Debug</a>(<span class="lit-string">"Extract"</span>, <a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i3">zap</a>.<a href="../../../../../go.uber.org/zap/field.go.html#line-404" class="ident">Any</a>(<span class="lit-string">"format"</span>, <label for="r24" class="ident">format</label>), <a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i3">zap</a>.<a href="../../../../../go.uber.org/zap/field.go.html#line-404" class="ident">Any</a>(<span class="lit-string">"carrier"</span>, <label for="r25" class="ident">carrier</label>))</code></span>
+<span class="codeline" id="line-80"><code>	<label for="r26" class="ident">ctx</label>, <label for="r27" class="ident">err</label> := <label for="r22" class="ident">l</label>.<a href="#line-28" class="ident">tracer</a>.<a href="../../../../opentracing/opentracing-go/tracer.go.html#line-111" class="ident">Extract</a>(<label for="r24" class="ident">format</label>, <label for="r25" class="ident">carrier</label>)</code></span>
+<span class="codeline" id="line-81"><code>	<span class="keyword">if</span> <label for="r27" class="ident">err</label> != <a href="../../../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-82"><code>		<label for="r22" class="ident">l</label>.<a href="#line-27" class="ident">logger</a>.<a href="../../../../../go.uber.org/zap/logger.go.html#line-177" class="ident">Debug</a>(<span class="lit-string">"Extract succeeded"</span>, <a href="field.go.html#line-68" class="ident">Context</a>(<label for="r26" class="ident">ctx</label>.(<a href="../../../../../../pkg/github.com/uber/jaeger-client-go.html" class="ident i2">jaeger</a>.<a href="../../span_context.go.html#line-49" class="ident">SpanContext</a>)))</code></span>
+<span class="codeline" id="line-83"><code>	} <span class="keyword">else</span> {</code></span>
+<span class="codeline" id="line-84"><code>		<label for="r22" class="ident">l</label>.<a href="#line-27" class="ident">logger</a>.<a href="../../../../../go.uber.org/zap/logger.go.html#line-201" class="ident">Error</a>(<span class="lit-string">"Extract failed"</span>, <a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i3">zap</a>.<a href="../../../../../go.uber.org/zap/error.go.html#line-34" class="ident">Error</a>(<label for="r27" class="ident">err</label>))</code></span>
+<span class="codeline" id="line-85"><code>	}</code></span>
+<span class="codeline" id="line-86"><code>	<span class="keyword">return</span> <label for="r26" class="ident">ctx</label>, <label for="r27" class="ident">err</label></code></span>
+<span class="codeline" id="line-87"><code>}</code></span>
+<span class="codeline" id="line-88"><code></code></span>
+<span class="codeline" id="line-89"><code><span class="keyword">type</span> <a href="../../../../../../pkg/github.com/uber/jaeger-client-go/log/zap.html#name-loggingSpan" class="ident">loggingSpan</a> <span class="keyword">struct</span> {</code></span>
+<span class="codeline" id="line-90"><code>	<a href="../../../../../../use/github.com/uber/jaeger-client-go/log/zap..loggingSpan^28470.logger^2686a.html" class="ident">logger</a>   *<a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i3">zap</a>.<a href="../../../../../go.uber.org/zap/logger.go.html#line-41" class="ident">Logger</a></code></span>
+<span class="codeline" id="line-91"><code>	<a href="../../../../../../use/github.com/uber/jaeger-client-go/log/zap..loggingSpan^28470.delegate^6f216.html" class="ident">delegate</a> <a href="../../../../../../pkg/github.com/opentracing/opentracing-go.html" class="ident i0">opentracing</a>.<a href="../../../../opentracing/opentracing-go/span.go.html#line-27" class="ident">Span</a></code></span>
+<span class="codeline" id="line-92"><code>}</code></span>
+<span class="codeline" id="line-93"><code></code></span>
+<span class="codeline" id="line-94"><code><span class="keyword">func</span> <label for="r28" class="ident"><a href="../../../../../../pkg/github.com/uber/jaeger-client-go/log/zap.html#name-newLoggingSpan" class="ident">newLoggingSpan</a></label>(<label for="r29" class="ident">logger</label> *<a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i3">zap</a>.<a href="../../../../../go.uber.org/zap/logger.go.html#line-41" class="ident">Logger</a>, <label for="r30" class="ident">span</label> <a href="../../../../../../pkg/github.com/opentracing/opentracing-go.html" class="ident i0">opentracing</a>.<a href="../../../../opentracing/opentracing-go/span.go.html#line-27" class="ident">Span</a>) <a href="../../../../../../pkg/github.com/opentracing/opentracing-go.html" class="ident i0">opentracing</a>.<a href="../../../../opentracing/opentracing-go/span.go.html#line-27" class="ident">Span</a> {</code></span>
+<span class="codeline" id="line-95"><code>	<span class="keyword">return</span> <a href="#line-89" class="ident">loggingSpan</a>{</code></span>
+<span class="codeline" id="line-96"><code>		<a href="#line-91" class="ident">delegate</a>: <label for="r30" class="ident">span</label>,</code></span>
+<span class="codeline" id="line-97"><code>		<a href="#line-90" class="ident">logger</a>:   <label for="r29" class="ident">logger</label>,</code></span>
+<span class="codeline" id="line-98"><code>	}</code></span>
+<span class="codeline" id="line-99"><code>}</code></span>
+<span class="codeline" id="line-100"><code></code></span>
+<span class="codeline" id="line-101"><code><span class="keyword">func</span> (<label for="r31" class="ident">l</label> <a href="#line-89" class="ident">loggingSpan</a>) <label for="r32" class="ident"><a href="../../../../../../use/github.com/uber/jaeger-client-go/log/zap..loggingSpan^28470.Finish.html" class="ident">Finish</a></label>() {</code></span>
+<span class="codeline" id="line-102"><code>	<label for="r33" class="ident">stack</label> := <a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i3">zap</a>.<a href="../../../../../go.uber.org/zap/field.go.html#line-366" class="ident">Stack</a>(<span class="lit-string">"debug_stack"</span>)</code></span>
+<span class="codeline" id="line-103"><code>	<label for="r31" class="ident">l</label>.<a href="#line-90" class="ident">logger</a>.<a href="../../../../../go.uber.org/zap/logger.go.html#line-185" class="ident">Info</a>(<span class="lit-string">"Finish"</span>, <a href="field.go.html#line-187" class="ident">Span</a>(<label for="r31" class="ident">l</label>.<a href="#line-91" class="ident">delegate</a>), <label for="r33" class="ident">stack</label>)</code></span>
+<span class="codeline" id="line-104"><code>	<label for="r31" class="ident">l</label>.<a href="#line-91" class="ident">delegate</a>.<a href="../../../../opentracing/opentracing-go/span.go.html#line-33" class="ident">Finish</a>()</code></span>
+<span class="codeline" id="line-105"><code>}</code></span>
+<span class="codeline" id="line-106"><code></code></span>
+<span class="codeline" id="line-107"><code><span class="keyword">func</span> (<label for="r34" class="ident">l</label> <a href="#line-89" class="ident">loggingSpan</a>) <label for="r35" class="ident"><a href="../../../../../../use/github.com/uber/jaeger-client-go/log/zap..loggingSpan^28470.FinishWithOptions.html" class="ident">FinishWithOptions</a></label>(<label for="r36" class="ident">opts</label> <a href="../../../../../../pkg/github.com/opentracing/opentracing-go.html" class="ident i0">opentracing</a>.<a href="../../../../opentracing/opentracing-go/span.go.html#line-134" class="ident">FinishOptions</a>) {</code></span>
+<span class="codeline" id="line-108"><code>	<label for="r34" class="ident">l</label>.<a href="#line-90" class="ident">logger</a>.<a href="../../../../../go.uber.org/zap/logger.go.html#line-185" class="ident">Info</a>(<span class="lit-string">"FinishWithOptions"</span>, <a href="field.go.html#line-187" class="ident">Span</a>(<label for="r34" class="ident">l</label>.<a href="#line-91" class="ident">delegate</a>))</code></span>
+<span class="codeline" id="line-109"><code>	<label for="r34" class="ident">l</label>.<a href="#line-91" class="ident">delegate</a>.<a href="../../../../opentracing/opentracing-go/span.go.html#line-36" class="ident">FinishWithOptions</a>(<label for="r36" class="ident">opts</label>)</code></span>
+<span class="codeline" id="line-110"><code>}</code></span>
+<span class="codeline" id="line-111"><code></code></span>
+<span class="codeline" id="line-112"><code><span class="keyword">func</span> (<label for="r37" class="ident">l</label> <a href="#line-89" class="ident">loggingSpan</a>) <label for="r38" class="ident"><a href="../../../../../../use/github.com/uber/jaeger-client-go/log/zap..loggingSpan^28470.Context.html" class="ident">Context</a></label>() <a href="../../../../../../pkg/github.com/opentracing/opentracing-go.html" class="ident i0">opentracing</a>.<a href="../../../../opentracing/opentracing-go/span.go.html#line-11" class="ident">SpanContext</a> {</code></span>
+<span class="codeline" id="line-113"><code>	<label for="r37" class="ident">l</label>.<a href="#line-90" class="ident">logger</a>.<a href="../../../../../go.uber.org/zap/logger.go.html#line-177" class="ident">Debug</a>(<span class="lit-string">"Context"</span>)</code></span>
+<span class="codeline" id="line-114"><code>	<span class="keyword">return</span> <label for="r37" class="ident">l</label>.<a href="#line-91" class="ident">delegate</a>.<a href="../../../../opentracing/opentracing-go/span.go.html#line-41" class="ident">Context</a>()</code></span>
+<span class="codeline" id="line-115"><code>}</code></span>
+<span class="codeline" id="line-116"><code></code></span>
+<span class="codeline" id="line-117"><code><span class="keyword">func</span> (<label for="r39" class="ident">l</label> <a href="#line-89" class="ident">loggingSpan</a>) <label for="r40" class="ident"><a href="../../../../../../use/github.com/uber/jaeger-client-go/log/zap..loggingSpan^28470.SetOperationName.html" class="ident">SetOperationName</a></label>(<label for="r41" class="ident">operationName</label> <a href="../../../../../../pkg/builtin.html#name-string" class="ident">string</a>) <a href="../../../../../../pkg/github.com/opentracing/opentracing-go.html" class="ident i0">opentracing</a>.<a href="../../../../opentracing/opentracing-go/span.go.html#line-27" class="ident">Span</a> {</code></span>
+<span class="codeline" id="line-118"><code>	<label for="r39" class="ident">l</label>.<a href="#line-90" class="ident">logger</a>.<a href="../../../../../go.uber.org/zap/logger.go.html#line-177" class="ident">Debug</a>(<span class="lit-string">"SetOperationName"</span>, <a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i3">zap</a>.<a href="../../../../../go.uber.org/zap/field.go.html#line-221" class="ident">String</a>(<span class="lit-string">"operation_name"</span>, <label for="r41" class="ident">operationName</label>))</code></span>
+<span class="codeline" id="line-119"><code>	<span class="keyword">return</span> <label for="r39" class="ident">l</label>.<a href="#line-91" class="ident">delegate</a>.<a href="../../../../opentracing/opentracing-go/span.go.html#line-46" class="ident">SetOperationName</a>(<label for="r41" class="ident">operationName</label>)</code></span>
+<span class="codeline" id="line-120"><code>}</code></span>
+<span class="codeline" id="line-121"><code></code></span>
+<span class="codeline" id="line-122"><code><span class="keyword">func</span> (<label for="r42" class="ident">l</label> <a href="#line-89" class="ident">loggingSpan</a>) <label for="r43" class="ident"><a href="../../../../../../use/github.com/uber/jaeger-client-go/log/zap..loggingSpan^28470.SetTag.html" class="ident">SetTag</a></label>(<label for="r44" class="ident">key</label> <a href="../../../../../../pkg/builtin.html#name-string" class="ident">string</a>, <label for="r45" class="ident">value</label> <span class="keyword">interface</span>{}) <a href="../../../../../../pkg/github.com/opentracing/opentracing-go.html" class="ident i0">opentracing</a>.<a href="../../../../opentracing/opentracing-go/span.go.html#line-27" class="ident">Span</a> {</code></span>
+<span class="codeline" id="line-123"><code>	<label for="r42" class="ident">l</label>.<a href="#line-90" class="ident">logger</a>.<a href="../../../../../go.uber.org/zap/logger.go.html#line-177" class="ident">Debug</a>(<span class="lit-string">"SetTag"</span>, <a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i3">zap</a>.<a href="../../../../../go.uber.org/zap/field.go.html#line-221" class="ident">String</a>(<span class="lit-string">"key"</span>, <label for="r44" class="ident">key</label>), <a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i3">zap</a>.<a href="../../../../../go.uber.org/zap/field.go.html#line-404" class="ident">Any</a>(<span class="lit-string">"value"</span>, <label for="r45" class="ident">value</label>))</code></span>
+<span class="codeline" id="line-124"><code>	<span class="keyword">return</span> <label for="r42" class="ident">l</label>.<a href="#line-91" class="ident">delegate</a>.<a href="../../../../opentracing/opentracing-go/span.go.html#line-58" class="ident">SetTag</a>(<label for="r44" class="ident">key</label>, <label for="r45" class="ident">value</label>)</code></span>
+<span class="codeline" id="line-125"><code>}</code></span>
+<span class="codeline" id="line-126"><code></code></span>
+<span class="codeline" id="line-127"><code><span class="keyword">func</span> (<label for="r46" class="ident">l</label> <a href="#line-89" class="ident">loggingSpan</a>) <label for="r47" class="ident"><a href="../../../../../../use/github.com/uber/jaeger-client-go/log/zap..loggingSpan^28470.LogFields.html" class="ident">LogFields</a></label>(<label for="r48" class="ident">fields</label> ...<a href="../../../../../../pkg/github.com/opentracing/opentracing-go/log.html" class="ident i1">log</a>.<a href="../../../../opentracing/opentracing-go/log/field.go.html#line-32" class="ident">Field</a>) {</code></span>
+<span class="codeline" id="line-128"><code>	<label for="r46" class="ident">l</label>.<a href="#line-90" class="ident">logger</a>.<a href="../../../../../go.uber.org/zap/logger.go.html#line-177" class="ident">Debug</a>(<span class="lit-string">"LogFields"</span>, <a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i3">zap</a>.<a href="../../../../../go.uber.org/zap/array.go.html#line-32" class="ident">Array</a>(<span class="lit-string">"fields"</span>, <a href="field.go.html#line-135" class="ident">logFields</a>(<label for="r48" class="ident">fields</label>)))</code></span>
+<span class="codeline" id="line-129"><code>	<label for="r46" class="ident">l</label>.<a href="#line-91" class="ident">delegate</a>.<a href="../../../../opentracing/opentracing-go/span.go.html#line-70" class="ident">LogFields</a>(<label for="r48" class="ident">fields</label>...)</code></span>
+<span class="codeline" id="line-130"><code>}</code></span>
+<span class="codeline" id="line-131"><code></code></span>
+<span class="codeline" id="line-132"><code><span class="keyword">func</span> (<label for="r49" class="ident">l</label> <a href="#line-89" class="ident">loggingSpan</a>) <label for="r50" class="ident"><a href="../../../../../../use/github.com/uber/jaeger-client-go/log/zap..loggingSpan^28470.LogKV.html" class="ident">LogKV</a></label>(<label for="r51" class="ident">alternatingKeyValues</label> ...<span class="keyword">interface</span>{}) {</code></span>
+<span class="codeline" id="line-133"><code>	<label for="r49" class="ident">l</label>.<a href="#line-90" class="ident">logger</a>.<a href="../../../../../go.uber.org/zap/logger.go.html#line-177" class="ident">Debug</a>(<span class="lit-string">"LogKV"</span>, <a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i3">zap</a>.<a href="../../../../../go.uber.org/zap/field.go.html#line-404" class="ident">Any</a>(<span class="lit-string">"keyValues"</span>, <label for="r51" class="ident">alternatingKeyValues</label>))</code></span>
+<span class="codeline" id="line-134"><code>	<label for="r49" class="ident">l</label>.<a href="#line-91" class="ident">delegate</a>.<a href="../../../../opentracing/opentracing-go/span.go.html#line-90" class="ident">LogKV</a>(<label for="r51" class="ident">alternatingKeyValues</label>...)</code></span>
+<span class="codeline" id="line-135"><code>}</code></span>
+<span class="codeline" id="line-136"><code></code></span>
+<span class="codeline" id="line-137"><code><span class="keyword">func</span> (<label for="r52" class="ident">l</label> <a href="#line-89" class="ident">loggingSpan</a>) <label for="r53" class="ident"><a href="../../../../../../use/github.com/uber/jaeger-client-go/log/zap..loggingSpan^28470.SetBaggageItem.html" class="ident">SetBaggageItem</a></label>(<label for="r54" class="ident">restrictedKey</label>, <label for="r55" class="ident">value</label> <a href="../../../../../../pkg/builtin.html#name-string" class="ident">string</a>) <a href="../../../../../../pkg/github.com/opentracing/opentracing-go.html" class="ident i0">opentracing</a>.<a href="../../../../opentracing/opentracing-go/span.go.html#line-27" class="ident">Span</a> {</code></span>
+<span class="codeline" id="line-138"><code>	<label for="r52" class="ident">l</label>.<a href="#line-90" class="ident">logger</a>.<a href="../../../../../go.uber.org/zap/logger.go.html#line-177" class="ident">Debug</a>(<span class="lit-string">"SetBaggageItem"</span>, <a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i3">zap</a>.<a href="../../../../../go.uber.org/zap/field.go.html#line-221" class="ident">String</a>(<span class="lit-string">"key"</span>, <label for="r54" class="ident">restrictedKey</label>), <a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i3">zap</a>.<a href="../../../../../go.uber.org/zap/field.go.html#line-221" class="ident">String</a>(<span class="lit-string">"value"</span>, <label for="r55" class="ident">value</label>))</code></span>
+<span class="codeline" id="line-139"><code>	<span class="keyword">return</span> <label for="r52" class="ident">l</label>.<a href="#line-91" class="ident">delegate</a>.<a href="../../../../opentracing/opentracing-go/span.go.html#line-108" class="ident">SetBaggageItem</a>(<label for="r54" class="ident">restrictedKey</label>, <label for="r55" class="ident">value</label>)</code></span>
+<span class="codeline" id="line-140"><code>}</code></span>
+<span class="codeline" id="line-141"><code></code></span>
+<span class="codeline" id="line-142"><code><span class="keyword">func</span> (<label for="r56" class="ident">l</label> <a href="#line-89" class="ident">loggingSpan</a>) <label for="r57" class="ident"><a href="../../../../../../use/github.com/uber/jaeger-client-go/log/zap..loggingSpan^28470.BaggageItem.html" class="ident">BaggageItem</a></label>(<label for="r58" class="ident">restrictedKey</label> <a href="../../../../../../pkg/builtin.html#name-string" class="ident">string</a>) <a href="../../../../../../pkg/builtin.html#name-string" class="ident">string</a> {</code></span>
+<span class="codeline" id="line-143"><code>	<label for="r56" class="ident">l</label>.<a href="#line-90" class="ident">logger</a>.<a href="../../../../../go.uber.org/zap/logger.go.html#line-177" class="ident">Debug</a>(<span class="lit-string">"BaggageItem"</span>, <a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i3">zap</a>.<a href="../../../../../go.uber.org/zap/field.go.html#line-221" class="ident">String</a>(<span class="lit-string">"key"</span>, <label for="r58" class="ident">restrictedKey</label>))</code></span>
+<span class="codeline" id="line-144"><code>	<span class="keyword">return</span> <label for="r56" class="ident">l</label>.<a href="#line-91" class="ident">delegate</a>.<a href="../../../../opentracing/opentracing-go/span.go.html#line-112" class="ident">BaggageItem</a>(<label for="r58" class="ident">restrictedKey</label>)</code></span>
+<span class="codeline" id="line-145"><code>}</code></span>
+<span class="codeline" id="line-146"><code></code></span>
+<span class="codeline" id="line-147"><code><span class="keyword">func</span> (<label for="r59" class="ident">l</label> <a href="#line-89" class="ident">loggingSpan</a>) <label for="r60" class="ident"><a href="../../../../../../use/github.com/uber/jaeger-client-go/log/zap..loggingSpan^28470.Tracer.html" class="ident">Tracer</a></label>() <a href="../../../../../../pkg/github.com/opentracing/opentracing-go.html" class="ident i0">opentracing</a>.<a href="../../../../opentracing/opentracing-go/tracer.go.html#line-7" class="ident">Tracer</a> {</code></span>
+<span class="codeline" id="line-148"><code>	<label for="r59" class="ident">l</label>.<a href="#line-90" class="ident">logger</a>.<a href="../../../../../go.uber.org/zap/logger.go.html#line-177" class="ident">Debug</a>(<span class="lit-string">"Tracer"</span>)</code></span>
+<span class="codeline" id="line-149"><code>	<span class="keyword">return</span> <label for="r59" class="ident">l</label>.<a href="#line-91" class="ident">delegate</a>.<a href="../../../../opentracing/opentracing-go/span.go.html#line-115" class="ident">Tracer</a>()</code></span>
+<span class="codeline" id="line-150"><code>}</code></span>
+<span class="codeline" id="line-151"><code></code></span>
+<span class="codeline" id="line-152"><code><span class="keyword">func</span> (<label for="r61" class="ident">l</label> <a href="#line-89" class="ident">loggingSpan</a>) <label for="r62" class="ident"><a href="../../../../../../use/github.com/uber/jaeger-client-go/log/zap..loggingSpan^28470.LogEvent.html" class="ident">LogEvent</a></label>(<label for="r63" class="ident">event</label> <a href="../../../../../../pkg/builtin.html#name-string" class="ident">string</a>) {</code></span>
+<span class="codeline" id="line-153"><code>	<label for="r61" class="ident">l</label>.<a href="#line-90" class="ident">logger</a>.<a href="../../../../../go.uber.org/zap/logger.go.html#line-177" class="ident">Debug</a>(<span class="lit-string">"Deprecated: LogEvent"</span>, <a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i3">zap</a>.<a href="../../../../../go.uber.org/zap/field.go.html#line-221" class="ident">String</a>(<span class="lit-string">"event"</span>, <label for="r63" class="ident">event</label>))</code></span>
+<span class="codeline" id="line-154"><code>	<label for="r61" class="ident">l</label>.<a href="#line-91" class="ident">delegate</a>.<a href="../../../../opentracing/opentracing-go/span.go.html#line-118" class="ident">LogEvent</a>(<label for="r63" class="ident">event</label>)</code></span>
+<span class="codeline" id="line-155"><code>}</code></span>
+<span class="codeline" id="line-156"><code></code></span>
+<span class="codeline" id="line-157"><code><span class="keyword">func</span> (<label for="r64" class="ident">l</label> <a href="#line-89" class="ident">loggingSpan</a>) <label for="r65" class="ident"><a href="../../../../../../use/github.com/uber/jaeger-client-go/log/zap..loggingSpan^28470.LogEventWithPayload.html" class="ident">LogEventWithPayload</a></label>(<label for="r66" class="ident">event</label> <a href="../../../../../../pkg/builtin.html#name-string" class="ident">string</a>, <label for="r67" class="ident">payload</label> <span class="keyword">interface</span>{}) {</code></span>
+<span class="codeline" id="line-158"><code>	<label for="r64" class="ident">l</label>.<a href="#line-90" class="ident">logger</a>.<a href="../../../../../go.uber.org/zap/logger.go.html#line-177" class="ident">Debug</a>(<span class="lit-string">"Deprecated: LogEventWithPayload"</span>, <a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i3">zap</a>.<a href="../../../../../go.uber.org/zap/field.go.html#line-221" class="ident">String</a>(<span class="lit-string">"event"</span>, <label for="r66" class="ident">event</label>), <a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i3">zap</a>.<a href="../../../../../go.uber.org/zap/field.go.html#line-404" class="ident">Any</a>(<span class="lit-string">"payload"</span>, <label for="r67" class="ident">payload</label>))</code></span>
+<span class="codeline" id="line-159"><code>	<label for="r64" class="ident">l</label>.<a href="#line-91" class="ident">delegate</a>.<a href="../../../../opentracing/opentracing-go/span.go.html#line-120" class="ident">LogEventWithPayload</a>(<label for="r66" class="ident">event</label>, <label for="r67" class="ident">payload</label>)</code></span>
+<span class="codeline" id="line-160"><code>}</code></span>
+<span class="codeline" id="line-161"><code></code></span>
+<span class="codeline" id="line-162"><code><span class="keyword">func</span> (<label for="r68" class="ident">l</label> <a href="#line-89" class="ident">loggingSpan</a>) <label for="r69" class="ident"><a href="../../../../../../use/github.com/uber/jaeger-client-go/log/zap..loggingSpan^28470.Log.html" class="ident">Log</a></label>(<label for="r70" class="ident">data</label> <a href="../../../../../../pkg/github.com/opentracing/opentracing-go.html" class="ident i0">opentracing</a>.<a href="../../../../opentracing/opentracing-go/span.go.html#line-161" class="ident">LogData</a>) {</code></span>
+<span class="codeline" id="line-163"><code>	<label for="r68" class="ident">l</label>.<a href="#line-90" class="ident">logger</a>.<a href="../../../../../go.uber.org/zap/logger.go.html#line-177" class="ident">Debug</a>(<span class="lit-string">"Deprecated: Log"</span>,</code></span>
+<span class="codeline" id="line-164"><code>		<a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i3">zap</a>.<a href="../../../../../go.uber.org/zap/field.go.html#line-221" class="ident">String</a>(<span class="lit-string">"event"</span>, <label for="r70" class="ident">data</label>.<a href="../../../../opentracing/opentracing-go/span.go.html#line-163" class="ident">Event</a>),</code></span>
+<span class="codeline" id="line-165"><code>		<a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i3">zap</a>.<a href="../../../../../go.uber.org/zap/field.go.html#line-346" class="ident">Time</a>(<span class="lit-string">"ts"</span>, <label for="r70" class="ident">data</label>.<a href="../../../../opentracing/opentracing-go/span.go.html#line-162" class="ident">Timestamp</a>),</code></span>
+<span class="codeline" id="line-166"><code>		<a href="../../../../../../pkg/go.uber.org/zap.html" class="ident i3">zap</a>.<a href="../../../../../go.uber.org/zap/field.go.html#line-404" class="ident">Any</a>(<span class="lit-string">"payload"</span>, <label for="r70" class="ident">data</label>.<a href="../../../../opentracing/opentracing-go/span.go.html#line-164" class="ident">Payload</a>))</code></span>
+<span class="codeline" id="line-167"><code>	<label for="r68" class="ident">l</label>.<a href="#line-91" class="ident">delegate</a>.<a href="../../../../opentracing/opentracing-go/span.go.html#line-122" class="ident">Log</a>(<label for="r70" class="ident">data</label>)</code></span>
+<span class="codeline" id="line-168"><code>}</code></span>
+</pre><pre id="footer">
+<table><tr><td><img src="../../../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

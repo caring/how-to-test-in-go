@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: strings.HasSuffix</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">func <b><a href="../pkg/strings.html">strings</a>.<a href="../src/strings/strings.go.html#line-449">HasSuffix</a></b></span>
+
+<span class="title">34 uses</span>
+
+	strings (current package)
+		<a href="../src/strings/strings.go.html#line-449">strings.go#L449</a>: func <b>HasSuffix</b>(s, suffix string) bool {
+		<a href="../src/strings/strings.go.html#line-912" class="path-duplicate">strings.go</a><a href="../src/strings/strings.go.html#line-912">#L912</a>: 	if <b>HasSuffix</b>(s, suffix) {
+
+	<a href="../pkg/crypto/tls.html">crypto/tls</a>
+		<a href="../src/crypto/tls/handshake_messages.go.html#line-420">handshake_messages.go#L420</a>: 				if strings.<b>HasSuffix</b>(m.serverName, ".") {
+		<a href="../src/crypto/tls/tls.go.html#line-267">tls.go#L267</a>: 		if len(skippedBlockTypes) == 1 &amp;&amp; strings.<b>HasSuffix</b>(skippedBlockTypes[0], "PRIVATE KEY") {
+		<a href="../src/crypto/tls/tls.go.html#line-286" class="path-duplicate">tls.go</a><a href="../src/crypto/tls/tls.go.html#line-286">#L286</a>: 		if keyDERBlock.Type == "PRIVATE KEY" || strings.<b>HasSuffix</b>(keyDERBlock.Type, " PRIVATE KEY") {
+
+	<a href="../pkg/crypto/x509.html">crypto/x509</a>
+		<a href="../src/crypto/x509/verify.go.html#line-422">verify.go#L422</a>: 	if strings.Contains(host, ":") &amp;&amp; !strings.<b>HasSuffix</b>(host, "]") {
+		<a href="../src/crypto/x509/verify.go.html#line-430" class="path-duplicate">verify.go</a><a href="../src/crypto/x509/verify.go.html#line-430">#L430</a>: 	if strings.HasPrefix(host, "[") &amp;&amp; strings.<b>HasSuffix</b>(host, "]") ||
+
+	<a href="../pkg/encoding/asn1.html">encoding/asn1</a>
+		<a href="../src/encoding/asn1/common.go.html#line-184">common.go#L184</a>: 		if strings.<b>HasSuffix</b>(t.Name(), "SET") {
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/internal/sdkuri.html">github.com/aws/aws-sdk-go/internal/sdkuri</a>
+		<a href="../src/github.com/aws/aws-sdk-go/internal/sdkuri/path.go.html#line-16">path.go#L16</a>: 	hasTrailing := strings.<b>HasSuffix</b>(elems[len(elems)-1], "/")
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/private/protocol/rest.html">github.com/aws/aws-sdk-go/private/protocol/rest</a>
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/rest/build.go.html#line-241">build.go#L241</a>: 	hasSlash := strings.<b>HasSuffix</b>(u.Path, "/")
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/rest/build.go.html#line-247" class="path-duplicate">build.go</a><a href="../src/github.com/aws/aws-sdk-go/private/protocol/rest/build.go.html#line-247">#L247</a>: 	if hasSlash &amp;&amp; !strings.<b>HasSuffix</b>(u.Path, "/") {
+
+	<a href="../pkg/github.com/golang/protobuf/jsonpb.html">github.com/golang/protobuf/jsonpb</a>
+		<a href="../src/github.com/golang/protobuf/jsonpb/decode.go.html#line-349">decode.go#L349</a>: 		if !strings.HasPrefix(name, "[") || !strings.<b>HasSuffix</b>(name, "]") {
+
+	<a href="../pkg/github.com/golang/protobuf/proto.html">github.com/golang/protobuf/proto</a>
+		<a href="../src/github.com/golang/protobuf/proto/text_decode.go.html#line-423">text_decode.go#L423</a>: 		if strings.<b>HasSuffix</b>(v, "f") &amp;&amp; v != "-inf" &amp;&amp; v != "inf" {
+		<a href="../src/github.com/golang/protobuf/proto/text_decode.go.html#line-433" class="path-duplicate">text_decode.go</a><a href="../src/github.com/golang/protobuf/proto/text_decode.go.html#line-433">#L433</a>: 		if strings.<b>HasSuffix</b>(v, "f") &amp;&amp; v != "-inf" &amp;&amp; v != "inf" {
+
+	<a href="../pkg/github.com/golang/protobuf/ptypes.html">github.com/golang/protobuf/ptypes</a>
+		<a href="../src/github.com/golang/protobuf/ptypes/any.go.html#line-119">any.go#L119</a>: 	if !strings.<b>HasSuffix</b>(any.TypeUrl, name) {
+
+	<a href="../pkg/github.com/jmespath/go-jmespath.html">github.com/jmespath/go-jmespath</a>
+		<a href="../src/github.com/jmespath/go-jmespath/functions.go.html#line-464">functions.go#L464</a>: 	return strings.<b>HasSuffix</b>(search, suffix), nil
+
+	<a href="../pkg/golang.org/x/net/http2.html">golang.org/x/net/http2</a>
+		<a href="../src/golang.org/x/net/http2/transport.go.html#line-457">transport.go#L457</a>: 	if strings.HasPrefix(host, "[") &amp;&amp; strings.<b>HasSuffix</b>(host, "]") {
+
+	<a href="../pkg/google.golang.org/grpc.html">google.golang.org/grpc</a>
+		<a href="../src/google.golang.org/grpc/service_config.go.html#line-137">service_config.go#L137</a>: 	if !strings.<b>HasSuffix</b>(*s, "s") {
+
+	<a href="../pkg/google.golang.org/grpc/internal/transport.html">google.golang.org/grpc/internal/transport</a>
+		<a href="../src/google.golang.org/grpc/internal/transport/http_util.go.html#line-150">http_util.go#L150</a>: 	if strings.<b>HasSuffix</b>(k, binHdrSuffix) {
+		<a href="../src/google.golang.org/grpc/internal/transport/http_util.go.html#line-157" class="path-duplicate">http_util.go</a><a href="../src/google.golang.org/grpc/internal/transport/http_util.go.html#line-157">#L157</a>: 	if strings.<b>HasSuffix</b>(k, binHdrSuffix) {
+
+	<a href="../pkg/google.golang.org/protobuf/encoding/protojson.html">google.golang.org/protobuf/encoding/protojson</a>
+		<a href="../src/google.golang.org/protobuf/encoding/protojson/decode.go.html#line-163">decode.go#L163</a>: 		if strings.HasPrefix(name, "[") &amp;&amp; strings.<b>HasSuffix</b>(name, "]") {
+
+	<a href="../pkg/google.golang.org/protobuf/types/known/anypb.html">google.golang.org/protobuf/types/known/anypb</a>
+		<a href="../src/google.golang.org/protobuf/types/known/anypb/any.pb.go.html#line-332">any.pb.go#L332</a>: 	if !strings.<b>HasSuffix</b>(url, name) {
+
+	<a href="../pkg/mime.html">mime</a>
+		<a href="../src/mime/encodedword.go.html#line-201">encodedword.go#L201</a>: 	if len(word) &lt; 8 || !strings.HasPrefix(word, "=?") || !strings.<b>HasSuffix</b>(word, "?=") || strings.Count(word, "?") != 4 {
+
+	<a href="../pkg/net/http.html">net/http</a>
+		<a href="../src/net/http/client.go.html#line-1021">client.go#L1021</a>: 	if !strings.<b>HasSuffix</b>(sub, parent) {
+		<a href="../src/net/http/fs.go.html#line-592">fs.go#L592</a>: 	if strings.<b>HasSuffix</b>(r.URL.Path, indexPage) {
+		<a href="../src/net/http/h2_bundle.go.html#line-7085">h2_bundle.go#L7085</a>: 	if strings.HasPrefix(host, "[") &amp;&amp; strings.<b>HasSuffix</b>(host, "]") {
+		<a href="../src/net/http/server.go.html#line-2133">server.go#L2133</a>: 			trailing := strings.<b>HasSuffix</b>(url, "/")
+		<a href="../src/net/http/server.go.html#line-2135" class="path-duplicate">server.go</a><a href="../src/net/http/server.go.html#line-2135">#L2135</a>: 			if trailing &amp;&amp; !strings.<b>HasSuffix</b>(url, "/") {
+
+	<a href="../pkg/net/http/httputil.html">net/http/httputil</a>
+		<a href="../src/net/http/httputil/reverseproxy.go.html#line-104">reverseproxy.go#L104</a>: 	aslash := strings.<b>HasSuffix</b>(a, "/")
+		<a href="../src/net/http/httputil/reverseproxy.go.html#line-124" class="path-duplicate">reverseproxy.go</a><a href="../src/net/http/httputil/reverseproxy.go.html#line-124">#L124</a>: 	aslash := strings.<b>HasSuffix</b>(apath, "/")
+
+	<a href="../pkg/net/url.html">net/url</a>
+		<a href="../src/net/url/url.go.html#line-533">url.go#L533</a>: 	if strings.<b>HasSuffix</b>(rest, "?") &amp;&amp; strings.Count(rest, "?") == 1 {
+		<a href="../src/net/url/url.go.html#line-1182" class="path-duplicate">url.go</a><a href="../src/net/url/url.go.html#line-1182">#L1182</a>: 	if strings.HasPrefix(host, "[") &amp;&amp; strings.<b>HasSuffix</b>(host, "]") {
+
+	<a href="../pkg/text/template/parse.html">text/template/parse</a>
+		<a href="../src/text/template/parse/parse.go.html#line-196">parse.go#L196</a>: 			if strings.<b>HasSuffix</b>(token.val, " action") {
+
+	<a href="../pkg/vendor/golang.org/x/net/http/httpproxy.html">vendor/golang.org/x/net/http/httpproxy</a>
+		<a href="../src/vendor/golang.org/x/net/http/httpproxy/proxy.go.html#line-364">proxy.go#L364</a>: 	if strings.<b>HasSuffix</b>(host, m.host) || (m.matchHost &amp;&amp; host == m.host[1:]) {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

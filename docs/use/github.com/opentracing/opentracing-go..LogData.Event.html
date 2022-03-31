@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/opentracing/opentracing-go.LogData.Event</title>
+<link href="../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../pkg/github.com/opentracing/opentracing-go.html">github.com/opentracing/opentracing-go</a>.<a href="../../../src/github.com/opentracing/opentracing-go/span.go.html#line-161">LogData</a>.<a href="../../../src/github.com/opentracing/opentracing-go/span.go.html#line-163">Event</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">6 uses</span>
+
+	github.com/opentracing/opentracing-go (current package)
+		<a href="../../../src/github.com/opentracing/opentracing-go/span.go.html#line-163">span.go#L163</a>: 	<b>Event</b>     string
+		<a href="../../../src/github.com/opentracing/opentracing-go/span.go.html#line-180" class="path-duplicate">span.go</a><a href="../../../src/github.com/opentracing/opentracing-go/span.go.html#line-180">#L180</a>: 			log.String("event", ld.<b>Event</b>),
+		<a href="../../../src/github.com/opentracing/opentracing-go/span.go.html#line-184" class="path-duplicate">span.go</a><a href="../../../src/github.com/opentracing/opentracing-go/span.go.html#line-184">#L184</a>: 			log.String("event", ld.<b>Event</b>),
+
+	<a href="../../../pkg/github.com/uber/jaeger-client-go.html">github.com/uber/jaeger-client-go</a>
+		<a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-234">span.go#L234</a>: 	s.Log(opentracing.LogData{<b>Event</b>: event})
+		<a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-239" class="path-duplicate">span.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-239">#L239</a>: 	s.Log(opentracing.LogData{<b>Event</b>: event, Payload: payload})
+
+	<a href="../../../pkg/github.com/uber/jaeger-client-go/log/zap.html">github.com/uber/jaeger-client-go/log/zap</a>
+		<a href="../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-164">tracer.go#L164</a>: 		zap.String("event", data.<b>Event</b>),
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Source: metrics.go in package github.com/uber/jaeger-client-go</title>
+<link href="../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre id="header"><code><span class="title">Source File</span>
+	metrics.go
+
+<span class="title">Belonging Package</span>
+	<a href="../../../../pkg/github.com/uber/jaeger-client-go.html">github.com/uber/jaeger-client-go</a>
+</code></pre>
+<style>input[type=radio] {display: none;}
+input[id=r0]:checked ~pre label[for=r0],
+input[id=r1]:checked ~pre label[for=r1],
+input[id=r2]:checked ~pre label[for=r2],
+input[id=r3]:checked ~pre label[for=r3],
+input[id=r4]:checked ~pre label[for=r4]
+{background: #226; color: #ff8;}
+input[id=i0]:checked ~pre .i0
+{background: brown; color: #eed;}
+</style><input id="r0" type="radio" name="g"/>
+<input id="r1" type="radio" name="g"/>
+<input id="r2" type="radio" name="g"/>
+<input id="r3" type="radio" name="g"/>
+<input id="r4" type="radio" name="g"/>
+<input id="i0" type="radio" name="i"/>
+
+<pre class="line-numbers">
+<span class="codeline" id="line-1"><code><span class="comment">// Copyright (c) 2017-2018 Uber Technologies, Inc.</span></code></span>
+<span class="codeline" id="line-2"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-3"><code><span class="comment">// Licensed under the Apache License, Version 2.0 (the "License");</span></code></span>
+<span class="codeline" id="line-4"><code><span class="comment">// you may not use this file except in compliance with the License.</span></code></span>
+<span class="codeline" id="line-5"><code><span class="comment">// You may obtain a copy of the License at</span></code></span>
+<span class="codeline" id="line-6"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-7"><code><span class="comment">// http://www.apache.org/licenses/LICENSE-2.0</span></code></span>
+<span class="codeline" id="line-8"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-9"><code><span class="comment">// Unless required by applicable law or agreed to in writing, software</span></code></span>
+<span class="codeline" id="line-10"><code><span class="comment">// distributed under the License is distributed on an "AS IS" BASIS,</span></code></span>
+<span class="codeline" id="line-11"><code><span class="comment">// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></code></span>
+<span class="codeline" id="line-12"><code><span class="comment">// See the License for the specific language governing permissions and</span></code></span>
+<span class="codeline" id="line-13"><code><span class="comment">// limitations under the License.</span></code></span>
+<span class="codeline" id="line-14"><code></code></span>
+<span class="codeline" id="line-15"><code><span class="keyword">package</span> jaeger</code></span>
+<span class="codeline" id="line-16"><code></code></span>
+<span class="codeline" id="line-17"><code><span class="keyword">import</span> (</code></span>
+<span class="codeline" id="line-18"><code>	<label for="i0"><span class="lit-string i0">"github.com/uber/jaeger-lib/metrics"</span></label></code></span>
+<span class="codeline" id="line-19"><code>)</code></span>
+<span class="codeline" id="line-20"><code></code></span>
+<span class="codeline" id="line-21"><code><span class="comment">// Metrics is a container of all stats emitted by Jaeger tracer.</span></code></span>
+<span class="codeline" id="line-22"><code><span class="keyword">type</span> <a href="../../../../pkg/github.com/uber/jaeger-client-go.html#name-Metrics" class="ident">Metrics</a> <span class="keyword">struct</span> {</code></span>
+<span class="codeline" id="line-23"><code>	<span class="comment">// Number of traces started by this tracer as sampled</span></code></span>
+<span class="codeline" id="line-24"><code>	<a href="../../../../use/github.com/uber/jaeger-client-go..Metrics.TracesStartedSampled.html" class="ident">TracesStartedSampled</a> <a href="../../../../pkg/github.com/uber/jaeger-lib/metrics.html" class="ident i0">metrics</a>.<a href="../jaeger-lib/metrics/counter.go.html#line-18" class="ident">Counter</a> <span class="lit-string">`metric:"traces" tags:"state=started,sampled=y" help:"Number of traces started by this tracer as sampled"`</span></code></span>
+<span class="codeline" id="line-25"><code></code></span>
+<span class="codeline" id="line-26"><code>	<span class="comment">// Number of traces started by this tracer as not sampled</span></code></span>
+<span class="codeline" id="line-27"><code>	<a href="../../../../use/github.com/uber/jaeger-client-go..Metrics.TracesStartedNotSampled.html" class="ident">TracesStartedNotSampled</a> <a href="../../../../pkg/github.com/uber/jaeger-lib/metrics.html" class="ident i0">metrics</a>.<a href="../jaeger-lib/metrics/counter.go.html#line-18" class="ident">Counter</a> <span class="lit-string">`metric:"traces" tags:"state=started,sampled=n" help:"Number of traces started by this tracer as not sampled"`</span></code></span>
+<span class="codeline" id="line-28"><code></code></span>
+<span class="codeline" id="line-29"><code>	<span class="comment">// Number of traces started by this tracer with delayed sampling</span></code></span>
+<span class="codeline" id="line-30"><code>	<a href="../../../../use/github.com/uber/jaeger-client-go..Metrics.TracesStartedDelayedSampling.html" class="ident">TracesStartedDelayedSampling</a> <a href="../../../../pkg/github.com/uber/jaeger-lib/metrics.html" class="ident i0">metrics</a>.<a href="../jaeger-lib/metrics/counter.go.html#line-18" class="ident">Counter</a> <span class="lit-string">`metric:"traces" tags:"state=started,sampled=n" help:"Number of traces started by this tracer with delayed sampling"`</span></code></span>
+<span class="codeline" id="line-31"><code></code></span>
+<span class="codeline" id="line-32"><code>	<span class="comment">// Number of externally started sampled traces this tracer joined</span></code></span>
+<span class="codeline" id="line-33"><code>	<a href="../../../../use/github.com/uber/jaeger-client-go..Metrics.TracesJoinedSampled.html" class="ident">TracesJoinedSampled</a> <a href="../../../../pkg/github.com/uber/jaeger-lib/metrics.html" class="ident i0">metrics</a>.<a href="../jaeger-lib/metrics/counter.go.html#line-18" class="ident">Counter</a> <span class="lit-string">`metric:"traces" tags:"state=joined,sampled=y" help:"Number of externally started sampled traces this tracer joined"`</span></code></span>
+<span class="codeline" id="line-34"><code></code></span>
+<span class="codeline" id="line-35"><code>	<span class="comment">// Number of externally started not-sampled traces this tracer joined</span></code></span>
+<span class="codeline" id="line-36"><code>	<a href="../../../../use/github.com/uber/jaeger-client-go..Metrics.TracesJoinedNotSampled.html" class="ident">TracesJoinedNotSampled</a> <a href="../../../../pkg/github.com/uber/jaeger-lib/metrics.html" class="ident i0">metrics</a>.<a href="../jaeger-lib/metrics/counter.go.html#line-18" class="ident">Counter</a> <span class="lit-string">`metric:"traces" tags:"state=joined,sampled=n" help:"Number of externally started not-sampled traces this tracer joined"`</span></code></span>
+<span class="codeline" id="line-37"><code></code></span>
+<span class="codeline" id="line-38"><code>	<span class="comment">// Number of sampled spans started by this tracer</span></code></span>
+<span class="codeline" id="line-39"><code>	<a href="../../../../use/github.com/uber/jaeger-client-go..Metrics.SpansStartedSampled.html" class="ident">SpansStartedSampled</a> <a href="../../../../pkg/github.com/uber/jaeger-lib/metrics.html" class="ident i0">metrics</a>.<a href="../jaeger-lib/metrics/counter.go.html#line-18" class="ident">Counter</a> <span class="lit-string">`metric:"started_spans" tags:"sampled=y" help:"Number of spans started by this tracer as sampled"`</span></code></span>
+<span class="codeline" id="line-40"><code></code></span>
+<span class="codeline" id="line-41"><code>	<span class="comment">// Number of not sampled spans started by this tracer</span></code></span>
+<span class="codeline" id="line-42"><code>	<a href="../../../../use/github.com/uber/jaeger-client-go..Metrics.SpansStartedNotSampled.html" class="ident">SpansStartedNotSampled</a> <a href="../../../../pkg/github.com/uber/jaeger-lib/metrics.html" class="ident i0">metrics</a>.<a href="../jaeger-lib/metrics/counter.go.html#line-18" class="ident">Counter</a> <span class="lit-string">`metric:"started_spans" tags:"sampled=n" help:"Number of spans started by this tracer as not sampled"`</span></code></span>
+<span class="codeline" id="line-43"><code></code></span>
+<span class="codeline" id="line-44"><code>	<span class="comment">// Number of spans with delayed sampling started by this tracer</span></code></span>
+<span class="codeline" id="line-45"><code>	<a href="../../../../use/github.com/uber/jaeger-client-go..Metrics.SpansStartedDelayedSampling.html" class="ident">SpansStartedDelayedSampling</a> <a href="../../../../pkg/github.com/uber/jaeger-lib/metrics.html" class="ident i0">metrics</a>.<a href="../jaeger-lib/metrics/counter.go.html#line-18" class="ident">Counter</a> <span class="lit-string">`metric:"started_spans" tags:"sampled=delayed" help:"Number of spans started by this tracer with delayed sampling"`</span></code></span>
+<span class="codeline" id="line-46"><code></code></span>
+<span class="codeline" id="line-47"><code>	<span class="comment">// Number of spans finished by this tracer</span></code></span>
+<span class="codeline" id="line-48"><code>	<a href="../../../../use/github.com/uber/jaeger-client-go..Metrics.SpansFinishedSampled.html" class="ident">SpansFinishedSampled</a> <a href="../../../../pkg/github.com/uber/jaeger-lib/metrics.html" class="ident i0">metrics</a>.<a href="../jaeger-lib/metrics/counter.go.html#line-18" class="ident">Counter</a> <span class="lit-string">`metric:"finished_spans" tags:"sampled=y" help:"Number of sampled spans finished by this tracer"`</span></code></span>
+<span class="codeline" id="line-49"><code></code></span>
+<span class="codeline" id="line-50"><code>	<span class="comment">// Number of spans finished by this tracer</span></code></span>
+<span class="codeline" id="line-51"><code>	<a href="../../../../use/github.com/uber/jaeger-client-go..Metrics.SpansFinishedNotSampled.html" class="ident">SpansFinishedNotSampled</a> <a href="../../../../pkg/github.com/uber/jaeger-lib/metrics.html" class="ident i0">metrics</a>.<a href="../jaeger-lib/metrics/counter.go.html#line-18" class="ident">Counter</a> <span class="lit-string">`metric:"finished_spans" tags:"sampled=n" help:"Number of not-sampled spans finished by this tracer"`</span></code></span>
+<span class="codeline" id="line-52"><code></code></span>
+<span class="codeline" id="line-53"><code>	<span class="comment">// Number of spans finished by this tracer</span></code></span>
+<span class="codeline" id="line-54"><code>	<a href="../../../../use/github.com/uber/jaeger-client-go..Metrics.SpansFinishedDelayedSampling.html" class="ident">SpansFinishedDelayedSampling</a> <a href="../../../../pkg/github.com/uber/jaeger-lib/metrics.html" class="ident i0">metrics</a>.<a href="../jaeger-lib/metrics/counter.go.html#line-18" class="ident">Counter</a> <span class="lit-string">`metric:"finished_spans" tags:"sampled=delayed" help:"Number of spans with delayed sampling finished by this tracer"`</span></code></span>
+<span class="codeline" id="line-55"><code></code></span>
+<span class="codeline" id="line-56"><code>	<span class="comment">// Number of errors decoding tracing context</span></code></span>
+<span class="codeline" id="line-57"><code>	<a href="../../../../use/github.com/uber/jaeger-client-go..Metrics.DecodingErrors.html" class="ident">DecodingErrors</a> <a href="../../../../pkg/github.com/uber/jaeger-lib/metrics.html" class="ident i0">metrics</a>.<a href="../jaeger-lib/metrics/counter.go.html#line-18" class="ident">Counter</a> <span class="lit-string">`metric:"span_context_decoding_errors" help:"Number of errors decoding tracing context"`</span></code></span>
+<span class="codeline" id="line-58"><code></code></span>
+<span class="codeline" id="line-59"><code>	<span class="comment">// Number of spans successfully reported</span></code></span>
+<span class="codeline" id="line-60"><code>	<a href="../../../../use/github.com/uber/jaeger-client-go..Metrics.ReporterSuccess.html" class="ident">ReporterSuccess</a> <a href="../../../../pkg/github.com/uber/jaeger-lib/metrics.html" class="ident i0">metrics</a>.<a href="../jaeger-lib/metrics/counter.go.html#line-18" class="ident">Counter</a> <span class="lit-string">`metric:"reporter_spans" tags:"result=ok" help:"Number of spans successfully reported"`</span></code></span>
+<span class="codeline" id="line-61"><code></code></span>
+<span class="codeline" id="line-62"><code>	<span class="comment">// Number of spans not reported due to a Sender failure</span></code></span>
+<span class="codeline" id="line-63"><code>	<a href="../../../../use/github.com/uber/jaeger-client-go..Metrics.ReporterFailure.html" class="ident">ReporterFailure</a> <a href="../../../../pkg/github.com/uber/jaeger-lib/metrics.html" class="ident i0">metrics</a>.<a href="../jaeger-lib/metrics/counter.go.html#line-18" class="ident">Counter</a> <span class="lit-string">`metric:"reporter_spans" tags:"result=err" help:"Number of spans not reported due to a Sender failure"`</span></code></span>
+<span class="codeline" id="line-64"><code></code></span>
+<span class="codeline" id="line-65"><code>	<span class="comment">// Number of spans dropped due to internal queue overflow</span></code></span>
+<span class="codeline" id="line-66"><code>	<a href="../../../../use/github.com/uber/jaeger-client-go..Metrics.ReporterDropped.html" class="ident">ReporterDropped</a> <a href="../../../../pkg/github.com/uber/jaeger-lib/metrics.html" class="ident i0">metrics</a>.<a href="../jaeger-lib/metrics/counter.go.html#line-18" class="ident">Counter</a> <span class="lit-string">`metric:"reporter_spans" tags:"result=dropped" help:"Number of spans dropped due to internal queue overflow"`</span></code></span>
+<span class="codeline" id="line-67"><code></code></span>
+<span class="codeline" id="line-68"><code>	<span class="comment">// Current number of spans in the reporter queue</span></code></span>
+<span class="codeline" id="line-69"><code>	<a href="../../../../use/github.com/uber/jaeger-client-go..Metrics.ReporterQueueLength.html" class="ident">ReporterQueueLength</a> <a href="../../../../pkg/github.com/uber/jaeger-lib/metrics.html" class="ident i0">metrics</a>.<a href="../jaeger-lib/metrics/gauge.go.html#line-18" class="ident">Gauge</a> <span class="lit-string">`metric:"reporter_queue_length" help:"Current number of spans in the reporter queue"`</span></code></span>
+<span class="codeline" id="line-70"><code></code></span>
+<span class="codeline" id="line-71"><code>	<span class="comment">// Number of times the Sampler succeeded to retrieve sampling strategy</span></code></span>
+<span class="codeline" id="line-72"><code>	<a href="../../../../use/github.com/uber/jaeger-client-go..Metrics.SamplerRetrieved.html" class="ident">SamplerRetrieved</a> <a href="../../../../pkg/github.com/uber/jaeger-lib/metrics.html" class="ident i0">metrics</a>.<a href="../jaeger-lib/metrics/counter.go.html#line-18" class="ident">Counter</a> <span class="lit-string">`metric:"sampler_queries" tags:"result=ok" help:"Number of times the Sampler succeeded to retrieve sampling strategy"`</span></code></span>
+<span class="codeline" id="line-73"><code></code></span>
+<span class="codeline" id="line-74"><code>	<span class="comment">// Number of times the Sampler failed to retrieve sampling strategy</span></code></span>
+<span class="codeline" id="line-75"><code>	<a href="../../../../use/github.com/uber/jaeger-client-go..Metrics.SamplerQueryFailure.html" class="ident">SamplerQueryFailure</a> <a href="../../../../pkg/github.com/uber/jaeger-lib/metrics.html" class="ident i0">metrics</a>.<a href="../jaeger-lib/metrics/counter.go.html#line-18" class="ident">Counter</a> <span class="lit-string">`metric:"sampler_queries" tags:"result=err" help:"Number of times the Sampler failed to retrieve sampling strategy"`</span></code></span>
+<span class="codeline" id="line-76"><code></code></span>
+<span class="codeline" id="line-77"><code>	<span class="comment">// Number of times the Sampler succeeded to retrieve and update sampling strategy</span></code></span>
+<span class="codeline" id="line-78"><code>	<a href="../../../../use/github.com/uber/jaeger-client-go..Metrics.SamplerUpdated.html" class="ident">SamplerUpdated</a> <a href="../../../../pkg/github.com/uber/jaeger-lib/metrics.html" class="ident i0">metrics</a>.<a href="../jaeger-lib/metrics/counter.go.html#line-18" class="ident">Counter</a> <span class="lit-string">`metric:"sampler_updates" tags:"result=ok" help:"Number of times the Sampler succeeded to retrieve and update sampling strategy"`</span></code></span>
+<span class="codeline" id="line-79"><code></code></span>
+<span class="codeline" id="line-80"><code>	<span class="comment">// Number of times the Sampler failed to update sampling strategy</span></code></span>
+<span class="codeline" id="line-81"><code>	<a href="../../../../use/github.com/uber/jaeger-client-go..Metrics.SamplerUpdateFailure.html" class="ident">SamplerUpdateFailure</a> <a href="../../../../pkg/github.com/uber/jaeger-lib/metrics.html" class="ident i0">metrics</a>.<a href="../jaeger-lib/metrics/counter.go.html#line-18" class="ident">Counter</a> <span class="lit-string">`metric:"sampler_updates" tags:"result=err" help:"Number of times the Sampler failed to update sampling strategy"`</span></code></span>
+<span class="codeline" id="line-82"><code></code></span>
+<span class="codeline" id="line-83"><code>	<span class="comment">// Number of times baggage was successfully written or updated on spans.</span></code></span>
+<span class="codeline" id="line-84"><code>	<a href="../../../../use/github.com/uber/jaeger-client-go..Metrics.BaggageUpdateSuccess.html" class="ident">BaggageUpdateSuccess</a> <a href="../../../../pkg/github.com/uber/jaeger-lib/metrics.html" class="ident i0">metrics</a>.<a href="../jaeger-lib/metrics/counter.go.html#line-18" class="ident">Counter</a> <span class="lit-string">`metric:"baggage_updates" tags:"result=ok" help:"Number of times baggage was successfully written or updated on spans"`</span></code></span>
+<span class="codeline" id="line-85"><code></code></span>
+<span class="codeline" id="line-86"><code>	<span class="comment">// Number of times baggage failed to write or update on spans.</span></code></span>
+<span class="codeline" id="line-87"><code>	<a href="../../../../use/github.com/uber/jaeger-client-go..Metrics.BaggageUpdateFailure.html" class="ident">BaggageUpdateFailure</a> <a href="../../../../pkg/github.com/uber/jaeger-lib/metrics.html" class="ident i0">metrics</a>.<a href="../jaeger-lib/metrics/counter.go.html#line-18" class="ident">Counter</a> <span class="lit-string">`metric:"baggage_updates" tags:"result=err" help:"Number of times baggage failed to write or update on spans"`</span></code></span>
+<span class="codeline" id="line-88"><code></code></span>
+<span class="codeline" id="line-89"><code>	<span class="comment">// Number of times baggage was truncated as per baggage restrictions.</span></code></span>
+<span class="codeline" id="line-90"><code>	<a href="../../../../use/github.com/uber/jaeger-client-go..Metrics.BaggageTruncate.html" class="ident">BaggageTruncate</a> <a href="../../../../pkg/github.com/uber/jaeger-lib/metrics.html" class="ident i0">metrics</a>.<a href="../jaeger-lib/metrics/counter.go.html#line-18" class="ident">Counter</a> <span class="lit-string">`metric:"baggage_truncations" help:"Number of times baggage was truncated as per baggage restrictions"`</span></code></span>
+<span class="codeline" id="line-91"><code></code></span>
+<span class="codeline" id="line-92"><code>	<span class="comment">// Number of times baggage restrictions were successfully updated.</span></code></span>
+<span class="codeline" id="line-93"><code>	<a href="../../../../use/github.com/uber/jaeger-client-go..Metrics.BaggageRestrictionsUpdateSuccess.html" class="ident">BaggageRestrictionsUpdateSuccess</a> <a href="../../../../pkg/github.com/uber/jaeger-lib/metrics.html" class="ident i0">metrics</a>.<a href="../jaeger-lib/metrics/counter.go.html#line-18" class="ident">Counter</a> <span class="lit-string">`metric:"baggage_restrictions_updates" tags:"result=ok" help:"Number of times baggage restrictions were successfully updated"`</span></code></span>
+<span class="codeline" id="line-94"><code></code></span>
+<span class="codeline" id="line-95"><code>	<span class="comment">// Number of times baggage restrictions failed to update.</span></code></span>
+<span class="codeline" id="line-96"><code>	<a href="../../../../use/github.com/uber/jaeger-client-go..Metrics.BaggageRestrictionsUpdateFailure.html" class="ident">BaggageRestrictionsUpdateFailure</a> <a href="../../../../pkg/github.com/uber/jaeger-lib/metrics.html" class="ident i0">metrics</a>.<a href="../jaeger-lib/metrics/counter.go.html#line-18" class="ident">Counter</a> <span class="lit-string">`metric:"baggage_restrictions_updates" tags:"result=err" help:"Number of times baggage restrictions failed to update"`</span></code></span>
+<span class="codeline" id="line-97"><code></code></span>
+<span class="codeline" id="line-98"><code>	<span class="comment">// Number of times debug spans were throttled.</span></code></span>
+<span class="codeline" id="line-99"><code>	<a href="../../../../use/github.com/uber/jaeger-client-go..Metrics.ThrottledDebugSpans.html" class="ident">ThrottledDebugSpans</a> <a href="../../../../pkg/github.com/uber/jaeger-lib/metrics.html" class="ident i0">metrics</a>.<a href="../jaeger-lib/metrics/counter.go.html#line-18" class="ident">Counter</a> <span class="lit-string">`metric:"throttled_debug_spans" help:"Number of times debug spans were throttled"`</span></code></span>
+<span class="codeline" id="line-100"><code></code></span>
+<span class="codeline" id="line-101"><code>	<span class="comment">// Number of times throttler successfully updated.</span></code></span>
+<span class="codeline" id="line-102"><code>	<a href="../../../../use/github.com/uber/jaeger-client-go..Metrics.ThrottlerUpdateSuccess.html" class="ident">ThrottlerUpdateSuccess</a> <a href="../../../../pkg/github.com/uber/jaeger-lib/metrics.html" class="ident i0">metrics</a>.<a href="../jaeger-lib/metrics/counter.go.html#line-18" class="ident">Counter</a> <span class="lit-string">`metric:"throttler_updates" tags:"result=ok" help:"Number of times throttler successfully updated"`</span></code></span>
+<span class="codeline" id="line-103"><code></code></span>
+<span class="codeline" id="line-104"><code>	<span class="comment">// Number of times throttler failed to update.</span></code></span>
+<span class="codeline" id="line-105"><code>	<a href="../../../../use/github.com/uber/jaeger-client-go..Metrics.ThrottlerUpdateFailure.html" class="ident">ThrottlerUpdateFailure</a> <a href="../../../../pkg/github.com/uber/jaeger-lib/metrics.html" class="ident i0">metrics</a>.<a href="../jaeger-lib/metrics/counter.go.html#line-18" class="ident">Counter</a> <span class="lit-string">`metric:"throttler_updates" tags:"result=err" help:"Number of times throttler failed to update"`</span></code></span>
+<span class="codeline" id="line-106"><code>}</code></span>
+<span class="codeline" id="line-107"><code></code></span>
+<span class="codeline" id="line-108"><code><span class="comment">// NewMetrics creates a new Metrics struct and initializes it.</span></code></span>
+<span class="codeline" id="line-109"><code><span class="keyword">func</span> <label for="r0" class="ident"><a href="../../../../pkg/github.com/uber/jaeger-client-go.html#name-NewMetrics" class="ident">NewMetrics</a></label>(<label for="r1" class="ident">factory</label> <a href="../../../../pkg/github.com/uber/jaeger-lib/metrics.html" class="ident i0">metrics</a>.<a href="../jaeger-lib/metrics/factory.go.html#line-51" class="ident">Factory</a>, <label for="r2" class="ident">globalTags</label> <span class="keyword">map</span>[<a href="../../../../pkg/builtin.html#name-string" class="ident">string</a>]<a href="../../../../pkg/builtin.html#name-string" class="ident">string</a>) *<a href="#line-22" class="ident">Metrics</a> {</code></span>
+<span class="codeline" id="line-110"><code>	<label for="r3" class="ident">m</label> := &amp;<a href="#line-22" class="ident">Metrics</a>{}</code></span>
+<span class="codeline" id="line-111"><code>	<span class="comment">// TODO the namespace "jaeger" should be configurable</span></code></span>
+<span class="codeline" id="line-112"><code>	<a href="../../../../pkg/github.com/uber/jaeger-lib/metrics.html" class="ident i0">metrics</a>.<a href="../jaeger-lib/metrics/metrics.go.html#line-34" class="ident">MustInit</a>(<label for="r3" class="ident">m</label>, <label for="r1" class="ident">factory</label>.<a href="../jaeger-lib/metrics/factory.go.html#line-58" class="ident">Namespace</a>(<a href="../../../../pkg/github.com/uber/jaeger-lib/metrics.html" class="ident i0">metrics</a>.<a href="../jaeger-lib/metrics/factory.go.html#line-22" class="ident">NSOptions</a>{<a href="../jaeger-lib/metrics/factory.go.html#line-23" class="ident">Name</a>: <span class="lit-string">"jaeger"</span>}).<a href="../jaeger-lib/metrics/factory.go.html#line-58" class="ident">Namespace</a>(<a href="../../../../pkg/github.com/uber/jaeger-lib/metrics.html" class="ident i0">metrics</a>.<a href="../jaeger-lib/metrics/factory.go.html#line-22" class="ident">NSOptions</a>{<a href="../jaeger-lib/metrics/factory.go.html#line-23" class="ident">Name</a>: <span class="lit-string">"tracer"</span>}), <label for="r2" class="ident">globalTags</label>)</code></span>
+<span class="codeline" id="line-113"><code>	<span class="keyword">return</span> <label for="r3" class="ident">m</label></code></span>
+<span class="codeline" id="line-114"><code>}</code></span>
+<span class="codeline" id="line-115"><code></code></span>
+<span class="codeline" id="line-116"><code><span class="comment">// NewNullMetrics creates a new Metrics struct that won't report any metrics.</span></code></span>
+<span class="codeline" id="line-117"><code><span class="keyword">func</span> <label for="r4" class="ident"><a href="../../../../pkg/github.com/uber/jaeger-client-go.html#name-NewNullMetrics" class="ident">NewNullMetrics</a></label>() *<a href="#line-22" class="ident">Metrics</a> {</code></span>
+<span class="codeline" id="line-118"><code>	<span class="keyword">return</span> <a href="#line-109" class="ident">NewMetrics</a>(<a href="../../../../pkg/github.com/uber/jaeger-lib/metrics.html" class="ident i0">metrics</a>.<a href="../jaeger-lib/metrics/factory.go.html#line-62" class="ident">NullFactory</a>, <a href="../../../../pkg/builtin.html#name-nil" class="ident">nil</a>)</code></span>
+<span class="codeline" id="line-119"><code>}</code></span>
+</pre><pre id="footer">
+<table><tr><td><img src="../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

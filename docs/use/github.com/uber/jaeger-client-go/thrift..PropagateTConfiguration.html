@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/uber/jaeger-client-go/thrift.PropagateTConfiguration</title>
+<link href="../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">func <b><a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift.html">github.com/uber/jaeger-client-go/thrift</a>.<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/configuration.go.html#line-295">PropagateTConfiguration</a></b></span>
+
+<span class="title">22 uses</span>
+
+	github.com/uber/jaeger-client-go/thrift (current package)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/binary_protocol.go.html#line-61">binary_protocol.go#L61</a>: 	<b>PropagateTConfiguration</b>(t, conf)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/binary_protocol.go.html#line-533" class="path-duplicate">binary_protocol.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/binary_protocol.go.html#line-533">#L533</a>: 	<b>PropagateTConfiguration</b>(p.trans, conf)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/binary_protocol.go.html#line-534" class="path-duplicate">binary_protocol.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/binary_protocol.go.html#line-534">#L534</a>: 	<b>PropagateTConfiguration</b>(p.origTransport, conf)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-135">compact_protocol.go#L135</a>: 	<b>PropagateTConfiguration</b>(trans, conf)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-857" class="path-duplicate">compact_protocol.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-857">#L857</a>: 	<b>PropagateTConfiguration</b>(p.trans, conf)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-858" class="path-duplicate">compact_protocol.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-858">#L858</a>: 	<b>PropagateTConfiguration</b>(p.origTransport, conf)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/configuration.go.html#line-295">configuration.go#L295</a>: func <b>PropagateTConfiguration</b>(impl interface{}, cfg *TConfiguration) {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/configuration.go.html#line-329" class="path-duplicate">configuration.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/configuration.go.html#line-329">#L329</a>: 		<b>PropagateTConfiguration</b>(orig, f.cfg)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/configuration.go.html#line-330" class="path-duplicate">configuration.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/configuration.go.html#line-330">#L330</a>: 		<b>PropagateTConfiguration</b>(trans, f.cfg)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/configuration.go.html#line-336" class="path-duplicate">configuration.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/configuration.go.html#line-336">#L336</a>: 	<b>PropagateTConfiguration</b>(f.delegate, f.cfg)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/configuration.go.html#line-356" class="path-duplicate">configuration.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/configuration.go.html#line-356">#L356</a>: 	<b>PropagateTConfiguration</b>(trans, f.cfg)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/configuration.go.html#line-357" class="path-duplicate">configuration.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/configuration.go.html#line-357">#L357</a>: 	<b>PropagateTConfiguration</b>(proto, f.cfg)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/configuration.go.html#line-362" class="path-duplicate">configuration.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/configuration.go.html#line-362">#L362</a>: 	<b>PropagateTConfiguration</b>(f.delegate, f.cfg)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_protocol.go.html#line-64">header_protocol.go#L64</a>: 	<b>PropagateTConfiguration</b>(p, cfg)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_protocol.go.html#line-135" class="path-duplicate">header_protocol.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_protocol.go.html#line-135">#L135</a>: 	<b>PropagateTConfiguration</b>(newProto, p.cfg)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_protocol.go.html#line-255" class="path-duplicate">header_protocol.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_protocol.go.html#line-255">#L255</a>: 	<b>PropagateTConfiguration</b>(newProto, p.cfg)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_protocol.go.html#line-343" class="path-duplicate">header_protocol.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_protocol.go.html#line-343">#L343</a>: 	<b>PropagateTConfiguration</b>(p.transport, cfg)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_protocol.go.html#line-344" class="path-duplicate">header_protocol.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_protocol.go.html#line-344">#L344</a>: 	<b>PropagateTConfiguration</b>(p.protocol, cfg)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-302">header_transport.go#L302</a>: 	<b>PropagateTConfiguration</b>(trans, conf)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-757" class="path-duplicate">header_transport.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-757">#L757</a>: 	<b>PropagateTConfiguration</b>(t.transport, cfg)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-803" class="path-duplicate">header_transport.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-803">#L803</a>: 	<b>PropagateTConfiguration</b>(f.Factory, f.cfg)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/simple_json_protocol.go.html#line-1370">simple_json_protocol.go#L1370</a>: 	<b>PropagateTConfiguration</b>(p.trans, conf)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

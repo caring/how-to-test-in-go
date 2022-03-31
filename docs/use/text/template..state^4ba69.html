@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: text/template.state</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../../pkg/text/template.html">text/template</a>.<a href="../../src/text/template/exec.go.html#line-33">state</a></b></span>
+
+<span class="title">36 uses</span>
+
+	text/template (current package)
+		<a href="../../src/text/template/exec.go.html#line-33">exec.go#L33</a>: type <b>state</b> struct {
+		<a href="../../src/text/template/exec.go.html#line-48" class="path-duplicate">exec.go</a><a href="../../src/text/template/exec.go.html#line-48">#L48</a>: func (s *<b>state</b>) push(name string, value reflect.Value) {
+		<a href="../../src/text/template/exec.go.html#line-53" class="path-duplicate">exec.go</a><a href="../../src/text/template/exec.go.html#line-53">#L53</a>: func (s *<b>state</b>) mark() int {
+		<a href="../../src/text/template/exec.go.html#line-58" class="path-duplicate">exec.go</a><a href="../../src/text/template/exec.go.html#line-58">#L58</a>: func (s *<b>state</b>) pop(mark int) {
+		<a href="../../src/text/template/exec.go.html#line-64" class="path-duplicate">exec.go</a><a href="../../src/text/template/exec.go.html#line-64">#L64</a>: func (s *<b>state</b>) setVar(name string, value reflect.Value) {
+		<a href="../../src/text/template/exec.go.html#line-75" class="path-duplicate">exec.go</a><a href="../../src/text/template/exec.go.html#line-75">#L75</a>: func (s *<b>state</b>) setTopVar(n int, value reflect.Value) {
+		<a href="../../src/text/template/exec.go.html#line-80" class="path-duplicate">exec.go</a><a href="../../src/text/template/exec.go.html#line-80">#L80</a>: func (s *<b>state</b>) varValue(name string) reflect.Value {
+		<a href="../../src/text/template/exec.go.html#line-97" class="path-duplicate">exec.go</a><a href="../../src/text/template/exec.go.html#line-97">#L97</a>: func (s *<b>state</b>) at(node parse.Node) {
+		<a href="../../src/text/template/exec.go.html#line-128" class="path-duplicate">exec.go</a><a href="../../src/text/template/exec.go.html#line-128">#L128</a>: func (s *<b>state</b>) errorf(format string, args ...interface{}) {
+		<a href="../../src/text/template/exec.go.html#line-150" class="path-duplicate">exec.go</a><a href="../../src/text/template/exec.go.html#line-150">#L150</a>: func (s *<b>state</b>) writeError(err error) {
+		<a href="../../src/text/template/exec.go.html#line-209" class="path-duplicate">exec.go</a><a href="../../src/text/template/exec.go.html#line-209">#L209</a>: 	state := &amp;<b>state</b>{
+		<a href="../../src/text/template/exec.go.html#line-248" class="path-duplicate">exec.go</a><a href="../../src/text/template/exec.go.html#line-248">#L248</a>: func (s *<b>state</b>) walk(dot reflect.Value, node parse.Node) {
+		<a href="../../src/text/template/exec.go.html#line-282" class="path-duplicate">exec.go</a><a href="../../src/text/template/exec.go.html#line-282">#L282</a>: func (s *<b>state</b>) walkIfOrWith(typ parse.NodeType, dot reflect.Value, pipe *parse.PipeNode, list, elseList *parse.ListNode) {
+		<a href="../../src/text/template/exec.go.html#line-335" class="path-duplicate">exec.go</a><a href="../../src/text/template/exec.go.html#line-335">#L335</a>: func (s *<b>state</b>) walkRange(dot reflect.Value, r *parse.RangeNode) {
+		<a href="../../src/text/template/exec.go.html#line-401" class="path-duplicate">exec.go</a><a href="../../src/text/template/exec.go.html#line-401">#L401</a>: func (s *<b>state</b>) walkTemplate(dot reflect.Value, t *parse.TemplateNode) {
+		<a href="../../src/text/template/exec.go.html#line-428" class="path-duplicate">exec.go</a><a href="../../src/text/template/exec.go.html#line-428">#L428</a>: func (s *<b>state</b>) evalPipeline(dot reflect.Value, pipe *parse.PipeNode) (value reflect.Value) {
+		<a href="../../src/text/template/exec.go.html#line-451" class="path-duplicate">exec.go</a><a href="../../src/text/template/exec.go.html#line-451">#L451</a>: func (s *<b>state</b>) notAFunction(args []parse.Node, final reflect.Value) {
+		<a href="../../src/text/template/exec.go.html#line-457" class="path-duplicate">exec.go</a><a href="../../src/text/template/exec.go.html#line-457">#L457</a>: func (s *<b>state</b>) evalCommand(dot reflect.Value, cmd *parse.CommandNode, final reflect.Value) reflect.Value {
+		<a href="../../src/text/template/exec.go.html#line-496" class="path-duplicate">exec.go</a><a href="../../src/text/template/exec.go.html#line-496">#L496</a>: func (s *<b>state</b>) idealConstant(constant *parse.NumberNode) reflect.Value {
+		<a href="../../src/text/template/exec.go.html#line-531" class="path-duplicate">exec.go</a><a href="../../src/text/template/exec.go.html#line-531">#L531</a>: func (s *<b>state</b>) evalFieldNode(dot reflect.Value, field *parse.FieldNode, args []parse.Node, final reflect.Value) reflect.Value {
+		<a href="../../src/text/template/exec.go.html#line-536" class="path-duplicate">exec.go</a><a href="../../src/text/template/exec.go.html#line-536">#L536</a>: func (s *<b>state</b>) evalChainNode(dot reflect.Value, chain *parse.ChainNode, args []parse.Node, final reflect.Value) reflect.Value {
+		<a href="../../src/text/template/exec.go.html#line-549" class="path-duplicate">exec.go</a><a href="../../src/text/template/exec.go.html#line-549">#L549</a>: func (s *<b>state</b>) evalVariableNode(dot reflect.Value, variable *parse.VariableNode, args []parse.Node, final reflect.Value) reflect.Value {
+		<a href="../../src/text/template/exec.go.html#line-563" class="path-duplicate">exec.go</a><a href="../../src/text/template/exec.go.html#line-563">#L563</a>: func (s *<b>state</b>) evalFieldChain(dot, receiver reflect.Value, node parse.Node, ident []string, args []parse.Node, final reflect.Value) reflect.Value {
+		<a href="../../src/text/template/exec.go.html#line-572" class="path-duplicate">exec.go</a><a href="../../src/text/template/exec.go.html#line-572">#L572</a>: func (s *<b>state</b>) evalFunction(dot reflect.Value, node *parse.IdentifierNode, cmd parse.Node, args []parse.Node, final reflect.Value) reflect.Value {
+		<a href="../../src/text/template/exec.go.html#line-585" class="path-duplicate">exec.go</a><a href="../../src/text/template/exec.go.html#line-585">#L585</a>: func (s *<b>state</b>) evalField(dot reflect.Value, fieldName string, node parse.Node, args []parse.Node, final, receiver reflect.Value) reflect.Value {
+		<a href="../../src/text/template/exec.go.html#line-672" class="path-duplicate">exec.go</a><a href="../../src/text/template/exec.go.html#line-672">#L672</a>: func (s *<b>state</b>) evalCall(dot, fun reflect.Value, node parse.Node, name string, args []parse.Node, final reflect.Value) reflect.Value {
+		<a href="../../src/text/template/exec.go.html#line-749" class="path-duplicate">exec.go</a><a href="../../src/text/template/exec.go.html#line-749">#L749</a>: func (s *<b>state</b>) validateType(value reflect.Value, typ reflect.Type) reflect.Value {
+		<a href="../../src/text/template/exec.go.html#line-791" class="path-duplicate">exec.go</a><a href="../../src/text/template/exec.go.html#line-791">#L791</a>: func (s *<b>state</b>) evalArg(dot reflect.Value, typ reflect.Type, n parse.Node) reflect.Value {
+		<a href="../../src/text/template/exec.go.html#line-838" class="path-duplicate">exec.go</a><a href="../../src/text/template/exec.go.html#line-838">#L838</a>: func (s *<b>state</b>) evalBool(typ reflect.Type, n parse.Node) reflect.Value {
+		<a href="../../src/text/template/exec.go.html#line-849" class="path-duplicate">exec.go</a><a href="../../src/text/template/exec.go.html#line-849">#L849</a>: func (s *<b>state</b>) evalString(typ reflect.Type, n parse.Node) reflect.Value {
+		<a href="../../src/text/template/exec.go.html#line-860" class="path-duplicate">exec.go</a><a href="../../src/text/template/exec.go.html#line-860">#L860</a>: func (s *<b>state</b>) evalInteger(typ reflect.Type, n parse.Node) reflect.Value {
+		<a href="../../src/text/template/exec.go.html#line-871" class="path-duplicate">exec.go</a><a href="../../src/text/template/exec.go.html#line-871">#L871</a>: func (s *<b>state</b>) evalUnsignedInteger(typ reflect.Type, n parse.Node) reflect.Value {
+		<a href="../../src/text/template/exec.go.html#line-882" class="path-duplicate">exec.go</a><a href="../../src/text/template/exec.go.html#line-882">#L882</a>: func (s *<b>state</b>) evalFloat(typ reflect.Type, n parse.Node) reflect.Value {
+		<a href="../../src/text/template/exec.go.html#line-893" class="path-duplicate">exec.go</a><a href="../../src/text/template/exec.go.html#line-893">#L893</a>: func (s *<b>state</b>) evalComplex(typ reflect.Type, n parse.Node) reflect.Value {
+		<a href="../../src/text/template/exec.go.html#line-903" class="path-duplicate">exec.go</a><a href="../../src/text/template/exec.go.html#line-903">#L903</a>: func (s *<b>state</b>) evalEmptyInterface(dot reflect.Value, n parse.Node) reflect.Value {
+		<a href="../../src/text/template/exec.go.html#line-958" class="path-duplicate">exec.go</a><a href="../../src/text/template/exec.go.html#line-958">#L958</a>: func (s *<b>state</b>) printValue(n parse.Node, v reflect.Value) {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

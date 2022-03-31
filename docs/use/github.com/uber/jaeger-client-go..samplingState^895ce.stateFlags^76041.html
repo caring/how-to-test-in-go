@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/uber/jaeger-client-go.samplingState.stateFlags</title>
+<link href="../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../pkg/github.com/uber/jaeger-client-go.html">github.com/uber/jaeger-client-go</a>.<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-78">samplingState</a>.<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-81">stateFlags</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">11 uses</span>
+
+	github.com/uber/jaeger-client-go (current package)
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-81">span_context.go#L81</a>: 	<b>stateFlags</b> atomic.Int32
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-102" class="path-duplicate">span_context.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-102">#L102</a>: 		old := s.<b>stateFlags</b>.Load()
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-103" class="path-duplicate">span_context.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-103">#L103</a>: 		swapped = s.<b>stateFlags</b>.CAS(old, old|newFlag)
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-110" class="path-duplicate">span_context.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-110">#L110</a>: 		old := s.<b>stateFlags</b>.Load()
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-111" class="path-duplicate">span_context.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-111">#L111</a>: 		swapped = s.<b>stateFlags</b>.CAS(old, old&amp;^newFlag)
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-132" class="path-duplicate">span_context.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-132">#L132</a>: 	s.<b>stateFlags</b>.Store(int32(flags))
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-140" class="path-duplicate">span_context.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-140">#L140</a>: 	return byte(s.<b>stateFlags</b>.Load())
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-144" class="path-duplicate">span_context.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-144">#L144</a>: 	return s.<b>stateFlags</b>.Load()&amp;flagSampled == flagSampled
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-148" class="path-duplicate">span_context.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-148">#L148</a>: 	return s.<b>stateFlags</b>.Load()&amp;flagDebug == flagDebug
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-152" class="path-duplicate">span_context.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-152">#L152</a>: 	return s.<b>stateFlags</b>.Load()&amp;flagFirehose == flagFirehose
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-217" class="path-duplicate">span_context.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-217">#L217</a>: 		flags = c.samplingState.<b>stateFlags</b>.Load()
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

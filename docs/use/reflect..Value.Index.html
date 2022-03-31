@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: reflect.Value.Index</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/reflect.html">reflect</a>.<a href="../src/reflect/value.go.html#line-39">Value</a>.<a href="../src/reflect/value.go.html#line-1286">Index</a></b></span><span style="font-size: large;"><i> (method)</i></span>
+
+<span class="title">58 uses</span>
+
+	reflect (current package)
+		<a href="../src/reflect/deepequal.go.html#line-90">deepequal.go#L90</a>: 			if !deepValueEqual(v1.<b>Index</b>(i), v2.<b>Index</b>(i), visited) {
+		<a href="../src/reflect/deepequal.go.html#line-106" class="path-duplicate">deepequal.go</a><a href="../src/reflect/deepequal.go.html#line-106">#L106</a>: 			if !deepValueEqual(v1.<b>Index</b>(i), v2.<b>Index</b>(i), visited) {
+		<a href="../src/reflect/value.go.html#line-424">value.go#L424</a>: 			slice.<b>Index</b>(i).Set(x)
+		<a href="../src/reflect/value.go.html#line-1286" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-1286">#L1286</a>: func (v Value) <b>Index</b>(i int) Value {
+		<a href="../src/reflect/value.go.html#line-1469" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-1469">#L1469</a>: 			if !v.<b>Index</b>(i).IsZero() {
+		<a href="../src/reflect/value.go.html#line-2405" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2405">#L2405</a>: 		s.<b>Index</b>(i).Set(x[j])
+
+	<a href="../pkg/crypto/x509.html">crypto/x509</a>
+		<a href="../src/crypto/x509/verify.go.html#line-515">verify.go#L515</a>: 		constraint := excludedValue.<b>Index</b>(i).Interface()
+		<a href="../src/crypto/x509/verify.go.html#line-535" class="path-duplicate">verify.go</a><a href="../src/crypto/x509/verify.go.html#line-535">#L535</a>: 		constraint := permittedValue.<b>Index</b>(i).Interface()
+
+	<a href="../pkg/encoding/asn1.html">encoding/asn1</a>
+		<a href="../src/encoding/asn1/asn1.go.html#line-647">asn1.go#L647</a>: 		offset, err = parseField(ret.<b>Index</b>(i), bytes, offset, params)
+		<a href="../src/encoding/asn1/marshal.go.html#line-547">marshal.go#L547</a>: 			return makeField(v.<b>Index</b>(0), fp)
+		<a href="../src/encoding/asn1/marshal.go.html#line-552" class="path-duplicate">marshal.go</a><a href="../src/encoding/asn1/marshal.go.html#line-552">#L552</a>: 				m[i], err = makeField(v.<b>Index</b>(i), fp)
+
+	<a href="../pkg/encoding/binary.html">encoding/binary</a>
+		<a href="../src/encoding/binary/binary.go.html#line-545">binary.go#L545</a>: 			d.value(v.<b>Index</b>(i))
+		<a href="../src/encoding/binary/binary.go.html#line-567" class="path-duplicate">binary.go</a><a href="../src/encoding/binary/binary.go.html#line-567">#L567</a>: 			d.value(v.<b>Index</b>(i))
+		<a href="../src/encoding/binary/binary.go.html#line-614" class="path-duplicate">binary.go</a><a href="../src/encoding/binary/binary.go.html#line-614">#L614</a>: 			e.value(v.<b>Index</b>(i))
+		<a href="../src/encoding/binary/binary.go.html#line-632" class="path-duplicate">binary.go</a><a href="../src/encoding/binary/binary.go.html#line-632">#L632</a>: 			e.value(v.<b>Index</b>(i))
+
+	<a href="../pkg/encoding/json.html">encoding/json</a>
+		<a href="../src/encoding/json/decode.go.html#line-561">decode.go#L561</a>: 			if err := d.value(v.<b>Index</b>(i)); err != nil {
+		<a href="../src/encoding/json/decode.go.html#line-589" class="path-duplicate">decode.go</a><a href="../src/encoding/json/decode.go.html#line-589">#L589</a>: 				v.<b>Index</b>(i).Set(z)
+		<a href="../src/encoding/json/encode.go.html#line-916">encode.go#L916</a>: 		ae.elemEnc(e, v.<b>Index</b>(i), opts)
+
+	<a href="../pkg/encoding/xml.html">encoding/xml</a>
+		<a href="../src/encoding/xml/marshal.go.html#line-458">marshal.go#L458</a>: 			if err := p.marshalValue(val.<b>Index</b>(i), finfo, startTemplate); err != nil {
+		<a href="../src/encoding/xml/marshal.go.html#line-613" class="path-duplicate">marshal.go</a><a href="../src/encoding/xml/marshal.go.html#line-613">#L613</a>: 			if err := p.marshalAttr(start, name, val.<b>Index</b>(i)); err != nil {
+		<a href="../src/encoding/xml/read.go.html#line-285">read.go#L285</a>: 		if err := d.unmarshalAttr(val.<b>Index</b>(n), attr); err != nil {
+		<a href="../src/encoding/xml/read.go.html#line-401" class="path-duplicate">read.go</a><a href="../src/encoding/xml/read.go.html#line-401">#L401</a>: 		if err := d.unmarshal(v.<b>Index</b>(n), start); err != nil {
+
+	<a href="../pkg/fmt.html">fmt</a>
+		<a href="../src/fmt/print.go.html#line-838">print.go#L838</a>: 						bytes[i] = byte(f.<b>Index</b>(i).Uint())
+		<a href="../src/fmt/print.go.html#line-856" class="path-duplicate">print.go</a><a href="../src/fmt/print.go.html#line-856">#L856</a>: 				p.printValue(f.<b>Index</b>(i), verb, depth+1)
+		<a href="../src/fmt/print.go.html#line-865" class="path-duplicate">print.go</a><a href="../src/fmt/print.go.html#line-865">#L865</a>: 				p.printValue(f.<b>Index</b>(i), verb, depth+1)
+		<a href="../src/fmt/scan.go.html#line-1042">scan.go#L1042</a>: 				v.<b>Index</b>(i).SetUint(uint64(str[i]))
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/awsutil.html">github.com/aws/aws-sdk-go/aws/awsutil</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/copy.go.html#line-85">copy.go#L85</a>: 			rcopy(dst.<b>Index</b>(i), src.<b>Index</b>(i), false)
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/path_value.go.html#line-117">path_value.go#L117</a>: 						idx := reflect.Indirect(value.<b>Index</b>(i))
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/path_value.go.html#line-136" class="path-duplicate">path_value.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/path_value.go.html#line-136">#L136</a>: 				value = reflect.Indirect(value.<b>Index</b>(i))
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/path_value.go.html#line-177" class="path-duplicate">path_value.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/path_value.go.html#line-177">#L177</a>: 			out[i] = v.<b>Index</b>(i).Interface()
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/prettify.go.html#line-77">prettify.go#L77</a>: 			prettify(v.<b>Index</b>(i), indent+2, buf)
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/string_value.go.html#line-58">string_value.go#L58</a>: 			stringValue(v.<b>Index</b>(i), indent+2, buf)
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil.html">github.com/aws/aws-sdk-go/private/protocol/json/jsonutil</a>
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/build.go.html#line-156">build.go#L156</a>: 		buildAny(value.<b>Index</b>(i), buf, "")
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/unmarshal.go.html#line-188">unmarshal.go#L188</a>: 		err := u.unmarshalAny(value.<b>Index</b>(i), c, "")
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/private/protocol/query/queryutil.html">github.com/aws/aws-sdk-go/private/protocol/query/queryutil</a>
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/query/queryutil/queryutil.go.html#line-144">queryutil.go#L144</a>: 		if err := q.parseValue(v, value.<b>Index</b>(i), slicePrefix, ""); err != nil {
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/private/protocol/xml/xmlutil.html">github.com/aws/aws-sdk-go/private/protocol/xml/xmlutil</a>
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/xml/xmlutil/build.go.html#line-193">build.go#L193</a>: 			if err := b.buildValue(value.<b>Index</b>(i), child, ""); err != nil {
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/xml/xmlutil/build.go.html#line-209" class="path-duplicate">build.go</a><a href="../src/github.com/aws/aws-sdk-go/private/protocol/xml/xmlutil/build.go.html#line-209">#L209</a>: 			if err := b.buildValue(value.<b>Index</b>(i), child, ""); err != nil {
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/xml/xmlutil/unmarshal.go.html#line-185">unmarshal.go#L185</a>: 				err := parse(r.<b>Index</b>(i), c, "")
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/xml/xmlutil/unmarshal.go.html#line-198" class="path-duplicate">unmarshal.go</a><a href="../src/github.com/aws/aws-sdk-go/private/protocol/xml/xmlutil/unmarshal.go.html#line-198">#L198</a>: 		err := parse(r.<b>Index</b>(r.Len()-1), node, "")
+
+	<a href="../pkg/github.com/grpc-ecosystem/go-grpc-middleware/tags.html">github.com/grpc-ecosystem/go-grpc-middleware/tags</a>
+		<a href="../src/github.com/grpc-ecosystem/go-grpc-middleware/tags/fieldextractor.go.html#line-75">fieldextractor.go#L75</a>: 			kind = field.<b>Index</b>(0).Kind()
+
+	<a href="../pkg/github.com/jmespath/go-jmespath.html">github.com/jmespath/go-jmespath</a>
+		<a href="../src/github.com/jmespath/go-jmespath/interpreter.go.html#line-137">interpreter.go#L137</a>: 					reflectFlat = append(reflectFlat, v.<b>Index</b>(i).Interface())
+		<a href="../src/github.com/jmespath/go-jmespath/interpreter.go.html#line-166" class="path-duplicate">interpreter.go</a><a href="../src/github.com/jmespath/go-jmespath/interpreter.go.html#line-166">#L166</a>: 				v := rv.<b>Index</b>(index)
+		<a href="../src/github.com/jmespath/go-jmespath/interpreter.go.html#line-346" class="path-duplicate">interpreter.go</a><a href="../src/github.com/jmespath/go-jmespath/interpreter.go.html#line-346">#L346</a>: 		element := v.<b>Index</b>(i).Interface()
+		<a href="../src/github.com/jmespath/go-jmespath/interpreter.go.html#line-354" class="path-duplicate">interpreter.go</a><a href="../src/github.com/jmespath/go-jmespath/interpreter.go.html#line-354">#L354</a>: 					flattened, elementV.<b>Index</b>(j).Interface())
+		<a href="../src/github.com/jmespath/go-jmespath/interpreter.go.html#line-375" class="path-duplicate">interpreter.go</a><a href="../src/github.com/jmespath/go-jmespath/interpreter.go.html#line-375">#L375</a>: 		element := v.<b>Index</b>(i).Interface()
+		<a href="../src/github.com/jmespath/go-jmespath/interpreter.go.html#line-386" class="path-duplicate">interpreter.go</a><a href="../src/github.com/jmespath/go-jmespath/interpreter.go.html#line-386">#L386</a>: 		element := v.<b>Index</b>(i).Interface()
+		<a href="../src/github.com/jmespath/go-jmespath/interpreter.go.html#line-408" class="path-duplicate">interpreter.go</a><a href="../src/github.com/jmespath/go-jmespath/interpreter.go.html#line-408">#L408</a>: 		element := v.<b>Index</b>(i).Interface()
+
+	<a href="../pkg/google.golang.org/protobuf/internal/impl.html">google.golang.org/protobuf/internal/impl</a>
+		<a href="../src/google.golang.org/protobuf/internal/impl/convert_list.go.html#line-114">convert_list.go#L114</a>: 	return ls.conv.PBValueOf(ls.v.Elem().<b>Index</b>(i))
+		<a href="../src/google.golang.org/protobuf/internal/impl/convert_list.go.html#line-117" class="path-duplicate">convert_list.go</a><a href="../src/google.golang.org/protobuf/internal/impl/convert_list.go.html#line-117">#L117</a>: 	ls.v.Elem().<b>Index</b>(i).Set(ls.conv.GoValueOf(v))
+		<a href="../src/google.golang.org/protobuf/internal/impl/legacy_message.go.html#line-227">legacy_message.go#L227</a>: 			v := vs.<b>Index</b>(i)
+		<a href="../src/google.golang.org/protobuf/internal/impl/message_reflect_field.go.html#line-524">message_reflect_field.go#L524</a>: 			if !isZero(v.<b>Index</b>(i)) {
+
+	<a href="../pkg/internal/fmtsort.html">internal/fmtsort</a>
+		<a href="../src/internal/fmtsort/sort.go.html#line-165">sort.go#L165</a>: 			if c := compare(aVal.<b>Index</b>(i), bVal.<b>Index</b>(i)); c != 0 {
+
+	<a href="../pkg/text/template.html">text/template</a>
+		<a href="../src/text/template/exec.go.html#line-359">exec.go#L359</a>: 			oneIteration(reflect.ValueOf(i), val.<b>Index</b>(i))
+		<a href="../src/text/template/funcs.go.html#line-226">funcs.go#L226</a>: 			item = item.<b>Index</b>(x)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

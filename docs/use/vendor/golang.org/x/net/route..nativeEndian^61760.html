@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: vendor/golang.org/x/net/route.nativeEndian</title>
+<link href="../../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">var <b><a href="../../../../../pkg/vendor/golang.org/x/net/route.html">vendor/golang.org/x/net/route</a>.<a href="../../../../../src/vendor/golang.org/x/net/route/sys.go.html#line-13">nativeEndian</a></b></span>
+
+<span class="title">36 uses</span>
+
+	vendor/golang.org/x/net/route (current package)
+		<a href="../../../../../src/vendor/golang.org/x/net/route/address.go.html#line-45">address.go#L45</a>: 		<b>nativeEndian</b>.PutUint16(b[2:4], uint16(a.Index))
+		<a href="../../../../../src/vendor/golang.org/x/net/route/address.go.html#line-69" class="path-duplicate">address.go</a><a href="../../../../../src/vendor/golang.org/x/net/route/address.go.html#line-69">#L69</a>: 	a.(*LinkAddr).Index = int(<b>nativeEndian</b>.Uint16(b[2:4]))
+		<a href="../../../../../src/vendor/golang.org/x/net/route/address.go.html#line-164" class="path-duplicate">address.go</a><a href="../../../../../src/vendor/golang.org/x/net/route/address.go.html#line-164">#L164</a>: 		<b>nativeEndian</b>.PutUint32(b[24:28], uint32(a.ZoneID))
+		<a href="../../../../../src/vendor/golang.org/x/net/route/address.go.html#line-183" class="path-duplicate">address.go</a><a href="../../../../../src/vendor/golang.org/x/net/route/address.go.html#line-183">#L183</a>: 		a := &amp;Inet6Addr{ZoneID: int(<b>nativeEndian</b>.Uint32(b[24:28]))}
+		<a href="../../../../../src/vendor/golang.org/x/net/route/interface_classic.go.html#line-16">interface_classic.go#L16</a>: 	l := int(<b>nativeEndian</b>.Uint16(b[:2]))
+		<a href="../../../../../src/vendor/golang.org/x/net/route/interface_classic.go.html#line-20" class="path-duplicate">interface_classic.go</a><a href="../../../../../src/vendor/golang.org/x/net/route/interface_classic.go.html#line-20">#L20</a>: 	attrs := uint(<b>nativeEndian</b>.Uint32(b[4:8]))
+		<a href="../../../../../src/vendor/golang.org/x/net/route/interface_classic.go.html#line-28" class="path-duplicate">interface_classic.go</a><a href="../../../../../src/vendor/golang.org/x/net/route/interface_classic.go.html#line-28">#L28</a>: 		Flags:   int(<b>nativeEndian</b>.Uint32(b[8:12])),
+		<a href="../../../../../src/vendor/golang.org/x/net/route/interface_classic.go.html#line-29" class="path-duplicate">interface_classic.go</a><a href="../../../../../src/vendor/golang.org/x/net/route/interface_classic.go.html#line-29">#L29</a>: 		Index:   int(<b>nativeEndian</b>.Uint16(b[12:14])),
+		<a href="../../../../../src/vendor/golang.org/x/net/route/interface_classic.go.html#line-46" class="path-duplicate">interface_classic.go</a><a href="../../../../../src/vendor/golang.org/x/net/route/interface_classic.go.html#line-46">#L46</a>: 	l := int(<b>nativeEndian</b>.Uint16(b[:2]))
+		<a href="../../../../../src/vendor/golang.org/x/net/route/interface_classic.go.html#line-53" class="path-duplicate">interface_classic.go</a><a href="../../../../../src/vendor/golang.org/x/net/route/interface_classic.go.html#line-53">#L53</a>: 		Flags:   int(<b>nativeEndian</b>.Uint32(b[8:12])),
+		<a href="../../../../../src/vendor/golang.org/x/net/route/interface_classic.go.html#line-57" class="path-duplicate">interface_classic.go</a><a href="../../../../../src/vendor/golang.org/x/net/route/interface_classic.go.html#line-57">#L57</a>: 		m.Index = int(<b>nativeEndian</b>.Uint16(b[16:18]))
+		<a href="../../../../../src/vendor/golang.org/x/net/route/interface_classic.go.html#line-59" class="path-duplicate">interface_classic.go</a><a href="../../../../../src/vendor/golang.org/x/net/route/interface_classic.go.html#line-59">#L59</a>: 		m.Index = int(<b>nativeEndian</b>.Uint16(b[12:14]))
+		<a href="../../../../../src/vendor/golang.org/x/net/route/interface_classic.go.html#line-62" class="path-duplicate">interface_classic.go</a><a href="../../../../../src/vendor/golang.org/x/net/route/interface_classic.go.html#line-62">#L62</a>: 	m.Addrs, err = parseAddrs(uint(<b>nativeEndian</b>.Uint32(b[4:8])), parseKernelInetAddr, b[w.bodyOff:])
+		<a href="../../../../../src/vendor/golang.org/x/net/route/interface_multicast.go.html#line-14">interface_multicast.go#L14</a>: 	l := int(<b>nativeEndian</b>.Uint16(b[:2]))
+		<a href="../../../../../src/vendor/golang.org/x/net/route/interface_multicast.go.html#line-21" class="path-duplicate">interface_multicast.go</a><a href="../../../../../src/vendor/golang.org/x/net/route/interface_multicast.go.html#line-21">#L21</a>: 		Flags:   int(<b>nativeEndian</b>.Uint32(b[8:12])),
+		<a href="../../../../../src/vendor/golang.org/x/net/route/interface_multicast.go.html#line-22" class="path-duplicate">interface_multicast.go</a><a href="../../../../../src/vendor/golang.org/x/net/route/interface_multicast.go.html#line-22">#L22</a>: 		Index:   int(<b>nativeEndian</b>.Uint16(b[12:14])),
+		<a href="../../../../../src/vendor/golang.org/x/net/route/interface_multicast.go.html#line-26" class="path-duplicate">interface_multicast.go</a><a href="../../../../../src/vendor/golang.org/x/net/route/interface_multicast.go.html#line-26">#L26</a>: 	m.Addrs, err = parseAddrs(uint(<b>nativeEndian</b>.Uint32(b[4:8])), parseKernelInetAddr, b[w.bodyOff:])
+		<a href="../../../../../src/vendor/golang.org/x/net/route/message.go.html#line-42">message.go#L42</a>: 		l := int(<b>nativeEndian</b>.Uint16(b[:2]))
+		<a href="../../../../../src/vendor/golang.org/x/net/route/route_classic.go.html#line-27">route_classic.go#L27</a>: 	<b>nativeEndian</b>.PutUint16(b[:2], uint16(l))
+		<a href="../../../../../src/vendor/golang.org/x/net/route/route_classic.go.html#line-34" class="path-duplicate">route_classic.go</a><a href="../../../../../src/vendor/golang.org/x/net/route/route_classic.go.html#line-34">#L34</a>: 	<b>nativeEndian</b>.PutUint32(b[8:12], uint32(m.Flags))
+		<a href="../../../../../src/vendor/golang.org/x/net/route/route_classic.go.html#line-35" class="path-duplicate">route_classic.go</a><a href="../../../../../src/vendor/golang.org/x/net/route/route_classic.go.html#line-35">#L35</a>: 	<b>nativeEndian</b>.PutUint16(b[4:6], uint16(m.Index))
+		<a href="../../../../../src/vendor/golang.org/x/net/route/route_classic.go.html#line-36" class="path-duplicate">route_classic.go</a><a href="../../../../../src/vendor/golang.org/x/net/route/route_classic.go.html#line-36">#L36</a>: 	<b>nativeEndian</b>.PutUint32(b[16:20], uint32(m.ID))
+		<a href="../../../../../src/vendor/golang.org/x/net/route/route_classic.go.html#line-37" class="path-duplicate">route_classic.go</a><a href="../../../../../src/vendor/golang.org/x/net/route/route_classic.go.html#line-37">#L37</a>: 	<b>nativeEndian</b>.PutUint32(b[20:24], uint32(m.Seq))
+		<a href="../../../../../src/vendor/golang.org/x/net/route/route_classic.go.html#line-43" class="path-duplicate">route_classic.go</a><a href="../../../../../src/vendor/golang.org/x/net/route/route_classic.go.html#line-43">#L43</a>: 		<b>nativeEndian</b>.PutUint32(b[12:16], uint32(attrs))
+		<a href="../../../../../src/vendor/golang.org/x/net/route/route_classic.go.html#line-52" class="path-duplicate">route_classic.go</a><a href="../../../../../src/vendor/golang.org/x/net/route/route_classic.go.html#line-52">#L52</a>: 	l := int(<b>nativeEndian</b>.Uint16(b[:2]))
+		<a href="../../../../../src/vendor/golang.org/x/net/route/route_classic.go.html#line-59" class="path-duplicate">route_classic.go</a><a href="../../../../../src/vendor/golang.org/x/net/route/route_classic.go.html#line-59">#L59</a>: 		Flags:   int(<b>nativeEndian</b>.Uint32(b[8:12])),
+		<a href="../../../../../src/vendor/golang.org/x/net/route/route_classic.go.html#line-60" class="path-duplicate">route_classic.go</a><a href="../../../../../src/vendor/golang.org/x/net/route/route_classic.go.html#line-60">#L60</a>: 		Index:   int(<b>nativeEndian</b>.Uint16(b[4:6])),
+		<a href="../../../../../src/vendor/golang.org/x/net/route/route_classic.go.html#line-61" class="path-duplicate">route_classic.go</a><a href="../../../../../src/vendor/golang.org/x/net/route/route_classic.go.html#line-61">#L61</a>: 		ID:      uintptr(<b>nativeEndian</b>.Uint32(b[16:20])),
+		<a href="../../../../../src/vendor/golang.org/x/net/route/route_classic.go.html#line-62" class="path-duplicate">route_classic.go</a><a href="../../../../../src/vendor/golang.org/x/net/route/route_classic.go.html#line-62">#L62</a>: 		Seq:     int(<b>nativeEndian</b>.Uint32(b[20:24])),
+		<a href="../../../../../src/vendor/golang.org/x/net/route/route_classic.go.html#line-66" class="path-duplicate">route_classic.go</a><a href="../../../../../src/vendor/golang.org/x/net/route/route_classic.go.html#line-66">#L66</a>: 	errno := syscall.Errno(<b>nativeEndian</b>.Uint32(b[28:32]))
+		<a href="../../../../../src/vendor/golang.org/x/net/route/route_classic.go.html#line-71" class="path-duplicate">route_classic.go</a><a href="../../../../../src/vendor/golang.org/x/net/route/route_classic.go.html#line-71">#L71</a>: 	m.Addrs, err = parseAddrs(uint(<b>nativeEndian</b>.Uint32(b[12:16])), parseKernelInetAddr, b[w.bodyOff:])
+		<a href="../../../../../src/vendor/golang.org/x/net/route/sys.go.html#line-13">sys.go#L13</a>: 	<b>nativeEndian</b> binaryByteOrder
+		<a href="../../../../../src/vendor/golang.org/x/net/route/sys.go.html#line-23" class="path-duplicate">sys.go</a><a href="../../../../../src/vendor/golang.org/x/net/route/sys.go.html#line-23">#L23</a>: 		<b>nativeEndian</b> = littleEndian
+		<a href="../../../../../src/vendor/golang.org/x/net/route/sys.go.html#line-25" class="path-duplicate">sys.go</a><a href="../../../../../src/vendor/golang.org/x/net/route/sys.go.html#line-25">#L25</a>: 		<b>nativeEndian</b> = bigEndian
+		<a href="../../../../../src/vendor/golang.org/x/net/route/sys_darwin.go.html#line-28">sys_darwin.go#L28</a>: 			PathMTU: int(<b>nativeEndian</b>.Uint32(m.raw[m.extOff+4 : m.extOff+8])),
+		<a href="../../../../../src/vendor/golang.org/x/net/route/sys_darwin.go.html#line-47" class="path-duplicate">sys_darwin.go</a><a href="../../../../../src/vendor/golang.org/x/net/route/sys_darwin.go.html#line-47">#L47</a>: 			MTU:  int(<b>nativeEndian</b>.Uint32(m.raw[m.extOff+8 : m.extOff+12])),
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

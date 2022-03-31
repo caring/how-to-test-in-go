@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: net.sockaddr.String</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/net.html">net</a>.<a href="../src/net/sockaddr_posix.go.html#line-16">sockaddr</a>.<a href="../src/net/net.go.html#line-107">String</a></b></span><span style="font-size: large;"><i> (method)</i></span>
+
+<span class="title">23 uses</span>
+
+	net (current package)
+		<a href="../src/net/dial.go.html#line-217">dial.go#L217</a>: 			return nil, &amp;AddrError{Err: "mismatched local address type", Addr: hint.<b>String</b>()}
+		<a href="../src/net/dial.go.html#line-245" class="path-duplicate">dial.go</a><a href="../src/net/dial.go.html#line-245">#L245</a>: 			return nil, &amp;AddrError{Err: "mismatched local address type", Addr: hint.<b>String</b>()}
+		<a href="../src/net/dial.go.html#line-266" class="path-duplicate">dial.go</a><a href="../src/net/dial.go.html#line-266">#L266</a>: 		return nil, &amp;AddrError{Err: errNoSuitableAddress.Error(), Addr: hint.<b>String</b>()}
+		<a href="../src/net/dial.go.html#line-571" class="path-duplicate">dial.go</a><a href="../src/net/dial.go.html#line-571">#L571</a>: 		raStr := ra.<b>String</b>()
+		<a href="../src/net/fd_unix.go.html#line-48">fd_unix.go#L48</a>: 		ls = fd.laddr.<b>String</b>()
+		<a href="../src/net/fd_unix.go.html#line-51" class="path-duplicate">fd_unix.go</a><a href="../src/net/fd_unix.go.html#line-51">#L51</a>: 		rs = fd.raddr.<b>String</b>()
+		<a href="../src/net/net.go.html#line-107">net.go#L107</a>: 	<b>String</b>() string  // string form of address (for example, "192.0.2.1:25", "[2001:db8::1]:80")
+		<a href="../src/net/net.go.html#line-473" class="path-duplicate">net.go</a><a href="../src/net/net.go.html#line-473">#L473</a>: 		s += " " + e.Source.<b>String</b>()
+		<a href="../src/net/net.go.html#line-481" class="path-duplicate">net.go</a><a href="../src/net/net.go.html#line-481">#L481</a>: 		s += e.Addr.<b>String</b>()
+		<a href="../src/net/sock_posix.go.html#line-125">sock_posix.go#L125</a>: 			ctrlAddr = raddr.<b>String</b>()
+		<a href="../src/net/sock_posix.go.html#line-127" class="path-duplicate">sock_posix.go</a><a href="../src/net/sock_posix.go.html#line-127">#L127</a>: 			ctrlAddr = laddr.<b>String</b>()
+		<a href="../src/net/sock_posix.go.html#line-190" class="path-duplicate">sock_posix.go</a><a href="../src/net/sock_posix.go.html#line-190">#L190</a>: 		if err := ctrlFn(fd.ctrlNetwork(), laddr.<b>String</b>(), c); err != nil {
+		<a href="../src/net/sock_posix.go.html#line-242" class="path-duplicate">sock_posix.go</a><a href="../src/net/sock_posix.go.html#line-242">#L242</a>: 		if err := ctrlFn(fd.ctrlNetwork(), laddr.<b>String</b>(), c); err != nil {
+		<a href="../src/net/unixsock_posix.go.html#line-219">unixsock_posix.go#L219</a>: 	return &amp;UnixListener{fd: fd, path: fd.laddr.<b>String</b>(), unlink: true}, nil
+
+	<a href="../pkg/net/http.html">net/http</a>
+		<a href="../src/net/http/h2_bundle.go.html#line-4032">h2_bundle.go#L4032</a>: 		remoteAddrStr:               c.RemoteAddr().<b>String</b>(),
+		<a href="../src/net/http/server.go.html#line-1796">server.go#L1796</a>: 	c.remoteAddr = c.rwc.RemoteAddr().<b>String</b>()
+		<a href="../src/net/http/server.go.html#line-3478" class="path-duplicate">server.go</a><a href="../src/net/http/server.go.html#line-3478">#L3478</a>: 		req.RemoteAddr = h.c.RemoteAddr().<b>String</b>()
+		<a href="../src/net/http/transport.go.html#line-1626">transport.go#L1626</a>: 		d := socksNewDialer("tcp", conn.RemoteAddr().<b>String</b>())
+
+	<a href="../pkg/crypto/tls.html">crypto/tls</a>
+		<a href="../src/crypto/tls/handshake_client.go.html#line-990">handshake_client.go#L990</a>: 	return serverAddr.<b>String</b>()
+
+	<a href="../pkg/github.com/grpc-ecosystem/go-grpc-middleware/tags.html">github.com/grpc-ecosystem/go-grpc-middleware/tags</a>
+		<a href="../src/github.com/grpc-ecosystem/go-grpc-middleware/tags/interceptors.go.html#line-73">interceptors.go#L73</a>: 		t.Set("peer.address", peer.Addr.<b>String</b>())
+
+	<a href="../pkg/golang.org/x/net/http2.html">golang.org/x/net/http2</a>
+		<a href="../src/golang.org/x/net/http2/server.go.html#line-373">server.go#L373</a>: 		remoteAddrStr:               c.RemoteAddr().<b>String</b>(),
+
+	<a href="../pkg/google.golang.org/grpc.html">google.golang.org/grpc</a>
+		<a href="../src/google.golang.org/grpc/server.go.html#line-763">server.go#L763</a>: 		ls.channelzID = channelz.RegisterListenSocket(ls, s.channelzID, lis.Addr().<b>String</b>())
+		<a href="../src/google.golang.org/grpc/server.go.html#line-821" class="path-duplicate">server.go</a><a href="../src/google.golang.org/grpc/server.go.html#line-821">#L821</a>: 			s.handleRawConn(lis.Addr().<b>String</b>(), rawConn)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: strconv.AppendUint</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">func <b><a href="../pkg/strconv.html">strconv</a>.<a href="../src/strconv/itoa.go.html#line-50">AppendUint</a></b></span>
+
+<span class="title">11 uses</span>
+
+	strconv (current package)
+		<a href="../src/strconv/itoa.go.html#line-50">itoa.go#L50</a>: func <b>AppendUint</b>(dst []byte, i uint64, base int) []byte {
+
+	<a href="../pkg/database/sql.html">database/sql</a>
+		<a href="../src/database/sql/convert.go.html#line-526">convert.go#L526</a>: 		return strconv.<b>AppendUint</b>(buf, rv.Uint(), 10), true
+
+	<a href="../pkg/encoding/json.html">encoding/json</a>
+		<a href="../src/encoding/json/encode.go.html#line-563">encode.go#L563</a>: 	b := strconv.<b>AppendUint</b>(e.scratch[:0], v.Uint(), 10)
+
+	<a href="../pkg/encoding/xml.html">encoding/xml</a>
+		<a href="../src/encoding/xml/marshal.go.html#line-860">marshal.go#L860</a>: 				if err := emit(p, strconv.<b>AppendUint</b>(scratch[:0], vf.Uint(), 10)); err != nil {
+
+	<a href="../pkg/github.com/go-sql-driver/mysql.html">github.com/go-sql-driver/mysql</a>
+		<a href="../src/github.com/go-sql-driver/mysql/connection.go.html#line-235">connection.go#L235</a>: 			buf = strconv.<b>AppendUint</b>(buf, v, 10)
+
+	<a href="../pkg/go.uber.org/zap/buffer.html">go.uber.org/zap/buffer</a>
+		<a href="../src/go.uber.org/zap/buffer/buffer.go.html#line-63">buffer.go#L63</a>: 	b.bs = strconv.<b>AppendUint</b>(b.bs, i, 10)
+
+	<a href="../pkg/google.golang.org/protobuf/internal/encoding/json.html">google.golang.org/protobuf/internal/encoding/json</a>
+		<a href="../src/google.golang.org/protobuf/internal/encoding/json/encode.go.html#line-116">encode.go#L116</a>: 				out = strconv.<b>AppendUint</b>(out, uint64(r), 16)
+
+	<a href="../pkg/google.golang.org/protobuf/internal/encoding/text.html">google.golang.org/protobuf/internal/encoding/text</a>
+		<a href="../src/google.golang.org/protobuf/internal/encoding/text/encode.go.html#line-141">encode.go#L141</a>: 				out = strconv.<b>AppendUint</b>(out, uint64(r), 16)
+		<a href="../src/google.golang.org/protobuf/internal/encoding/text/encode.go.html#line-149" class="path-duplicate">encode.go</a><a href="../src/google.golang.org/protobuf/internal/encoding/text/encode.go.html#line-149">#L149</a>: 				out = strconv.<b>AppendUint</b>(out, uint64(r), 16)
+		<a href="../src/google.golang.org/protobuf/internal/encoding/text/encode.go.html#line-153" class="path-duplicate">encode.go</a><a href="../src/google.golang.org/protobuf/internal/encoding/text/encode.go.html#line-153">#L153</a>: 				out = strconv.<b>AppendUint</b>(out, uint64(r), 16)
+
+	<a href="../pkg/google.golang.org/protobuf/reflect/protoreflect.html">google.golang.org/protobuf/reflect/protoreflect</a>
+		<a href="../src/google.golang.org/protobuf/reflect/protoreflect/source.go.html#line-121">source.go#L121</a>: 	b = strconv.<b>AppendUint</b>(b, uint64((*p)[0]), 10)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

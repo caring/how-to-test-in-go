@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/uber/jaeger-client-go/thrift.DOUBLE</title>
+<link href="../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">const <b><a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift.html">github.com/uber/jaeger-client-go/thrift</a>.<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/type.go.html#line-31">DOUBLE</a></b></span>
+
+<span class="title">19 uses</span>
+
+	github.com/uber/jaeger-client-go/thrift (current package)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-69">compact_protocol.go#L69</a>: 		<b>DOUBLE</b>: COMPACT_DOUBLE,
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-836" class="path-duplicate">compact_protocol.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/compact_protocol.go.html#line-836">#L836</a>: 		return <b>DOUBLE</b>, nil
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/protocol.go.html#line-114">protocol.go#L114</a>: 	case <b>DOUBLE</b>:
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/simple_json_protocol.go.html#line-1136">simple_json_protocol.go#L1136</a>: 				return INFINITY, <b>DOUBLE</b>, nil
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/simple_json_protocol.go.html#line-1138" class="path-duplicate">simple_json_protocol.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/simple_json_protocol.go.html#line-1138">#L1138</a>: 				return NEGATIVE_INFINITY, <b>DOUBLE</b>, nil
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/simple_json_protocol.go.html#line-1140" class="path-duplicate">simple_json_protocol.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/simple_json_protocol.go.html#line-1140">#L1140</a>: 				return NAN, <b>DOUBLE</b>, nil
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/simple_json_protocol.go.html#line-1174" class="path-duplicate">simple_json_protocol.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/simple_json_protocol.go.html#line-1174">#L1174</a>: 			return v, <b>DOUBLE</b>, e
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/type.go.html#line-31">type.go#L31</a>: 	<b>DOUBLE</b> = 4
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/type.go.html#line-51" class="path-duplicate">type.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/type.go.html#line-51">#L51</a>: 	<b>DOUBLE</b>: "DOUBLE",
+
+	<a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift-gen/jaeger.html">github.com/uber/jaeger-client-go/thrift-gen/jaeger</a>
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-268">jaeger.go#L268</a>:       if fieldTypeId == thrift.<b>DOUBLE</b> {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-445" class="path-duplicate">jaeger.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-445">#L445</a>:     if err := oprot.WriteFieldBegin(ctx, "vDouble", thrift.<b>DOUBLE</b>, 4); err != nil {
+
+	<a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift-gen/sampling.html">github.com/uber/jaeger-client-go/thrift-gen/sampling</a>
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-104">sampling.go#L104</a>:       if fieldTypeId == thrift.<b>DOUBLE</b> {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-155" class="path-duplicate">sampling.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-155">#L155</a>:   if err := oprot.WriteFieldBegin(ctx, "samplingRate", thrift.<b>DOUBLE</b>, 1); err != nil {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-498" class="path-duplicate">sampling.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-498">#L498</a>:       if fieldTypeId == thrift.<b>DOUBLE</b> {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-509" class="path-duplicate">sampling.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-509">#L509</a>:       if fieldTypeId == thrift.<b>DOUBLE</b> {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-531" class="path-duplicate">sampling.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-531">#L531</a>:       if fieldTypeId == thrift.<b>DOUBLE</b> {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-628" class="path-duplicate">sampling.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-628">#L628</a>:   if err := oprot.WriteFieldBegin(ctx, "defaultSamplingProbability", thrift.<b>DOUBLE</b>, 1); err != nil {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-638" class="path-duplicate">sampling.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-638">#L638</a>:   if err := oprot.WriteFieldBegin(ctx, "defaultLowerBoundTracesPerSecond", thrift.<b>DOUBLE</b>, 2); err != nil {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-668" class="path-duplicate">sampling.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-668">#L668</a>:     if err := oprot.WriteFieldBegin(ctx, "defaultUpperBoundTracesPerSecond", thrift.<b>DOUBLE</b>, 4); err != nil {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: syscall.EAGAIN</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">const <b><a href="../pkg/syscall.html">syscall</a>.<a href="../src/syscall/zerrors_darwin_amd64.go.html#line-1142">EAGAIN</a></b></span>
+
+<span class="title">17 uses</span>
+
+	syscall (current package)
+		<a href="../src/syscall/syscall_unix.go.html#line-145">syscall_unix.go#L145</a>: 	return e == <b>EAGAIN</b> || e == EWOULDBLOCK || e == ETIMEDOUT
+		<a href="../src/syscall/syscall_unix.go.html#line-151" class="path-duplicate">syscall_unix.go</a><a href="../src/syscall/syscall_unix.go.html#line-151">#L151</a>: 	errEAGAIN error = <b>EAGAIN</b>
+		<a href="../src/syscall/syscall_unix.go.html#line-162" class="path-duplicate">syscall_unix.go</a><a href="../src/syscall/syscall_unix.go.html#line-162">#L162</a>: 	case <b>EAGAIN</b>:
+		<a href="../src/syscall/zerrors_darwin_amd64.go.html#line-1142">zerrors_darwin_amd64.go#L1142</a>: 	<b>EAGAIN</b>          = Errno(0x23)
+
+	<a href="../pkg/crypto/rand.html">crypto/rand</a>
+		<a href="../src/crypto/rand/eagain.go.html#line-23">eagain.go#L23</a>: 		if errno, ok := pe.Err.(syscall.Errno); ok &amp;&amp; errno == syscall.<b>EAGAIN</b> {
+
+	<a href="../pkg/github.com/go-sql-driver/mysql.html">github.com/go-sql-driver/mysql</a>
+		<a href="../src/github.com/go-sql-driver/mysql/conncheck.go.html#line-42">conncheck.go#L42</a>: 		case err == syscall.<b>EAGAIN</b> || err == syscall.EWOULDBLOCK:
+
+	<a href="../pkg/internal/poll.html">internal/poll</a>
+		<a href="../src/internal/poll/errno_unix.go.html#line-15">errno_unix.go#L15</a>: 	errEAGAIN error = syscall.<b>EAGAIN</b>
+		<a href="../src/internal/poll/errno_unix.go.html#line-26" class="path-duplicate">errno_unix.go</a><a href="../src/internal/poll/errno_unix.go.html#line-26">#L26</a>: 	case syscall.<b>EAGAIN</b>:
+		<a href="../src/internal/poll/fd_unix.go.html#line-166">fd_unix.go#L166</a>: 			if err == syscall.<b>EAGAIN</b> &amp;&amp; fd.pd.pollable() {
+		<a href="../src/internal/poll/fd_unix.go.html#line-222" class="path-duplicate">fd_unix.go</a><a href="../src/internal/poll/fd_unix.go.html#line-222">#L222</a>: 			if err == syscall.<b>EAGAIN</b> &amp;&amp; fd.pd.pollable() {
+		<a href="../src/internal/poll/fd_unix.go.html#line-249" class="path-duplicate">fd_unix.go</a><a href="../src/internal/poll/fd_unix.go.html#line-249">#L249</a>: 			if err == syscall.<b>EAGAIN</b> &amp;&amp; fd.pd.pollable() {
+		<a href="../src/internal/poll/fd_unix.go.html#line-282" class="path-duplicate">fd_unix.go</a><a href="../src/internal/poll/fd_unix.go.html#line-282">#L282</a>: 		if err == syscall.<b>EAGAIN</b> &amp;&amp; fd.pd.pollable() {
+		<a href="../src/internal/poll/fd_unix.go.html#line-344" class="path-duplicate">fd_unix.go</a><a href="../src/internal/poll/fd_unix.go.html#line-344">#L344</a>: 		if err == syscall.<b>EAGAIN</b> &amp;&amp; fd.pd.pollable() {
+		<a href="../src/internal/poll/fd_unix.go.html#line-370" class="path-duplicate">fd_unix.go</a><a href="../src/internal/poll/fd_unix.go.html#line-370">#L370</a>: 		if err == syscall.<b>EAGAIN</b> &amp;&amp; fd.pd.pollable() {
+		<a href="../src/internal/poll/fd_unix.go.html#line-400" class="path-duplicate">fd_unix.go</a><a href="../src/internal/poll/fd_unix.go.html#line-400">#L400</a>: 		case syscall.<b>EAGAIN</b>:
+		<a href="../src/internal/poll/fd_unix.go.html#line-437" class="path-duplicate">fd_unix.go</a><a href="../src/internal/poll/fd_unix.go.html#line-437">#L437</a>: 			if err == syscall.<b>EAGAIN</b> &amp;&amp; fd.pd.pollable() {
+		<a href="../src/internal/poll/writev.go.html#line-75">writev.go#L75</a>: 			if err == syscall.<b>EAGAIN</b> {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

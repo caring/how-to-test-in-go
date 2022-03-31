@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime.gcControllerState.heapLive</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/runtime.html">runtime</a>.<a href="../src/runtime/mgcpacer.go.html#line-74">gcControllerState</a>.<a href="../src/runtime/mgcpacer.go.html#line-153">heapLive</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">22 uses</span>
+
+	runtime (current package)
+		<a href="../src/runtime/mcache.go.html#line-189">mcache.go#L189</a>: 	atomic.Xadd64(&amp;gcController.<b>heapLive</b>, int64(s.npages*pageSize)-int64(usedBytes))
+		<a href="../src/runtime/mcache.go.html#line-237" class="path-duplicate">mcache.go</a><a href="../src/runtime/mcache.go.html#line-237">#L237</a>: 	atomic.Xadd64(&amp;gcController.<b>heapLive</b>, int64(npages*pageSize))
+		<a href="../src/runtime/mcache.go.html#line-276" class="path-duplicate">mcache.go</a><a href="../src/runtime/mcache.go.html#line-276">#L276</a>: 				atomic.Xadd64(&amp;gcController.<b>heapLive</b>, -int64(n)*int64(s.elemsize))
+		<a href="../src/runtime/mgc.go.html#line-551">mgc.go#L551</a>: 		return gcController.<b>heapLive</b> &gt;= gcController.trigger
+		<a href="../src/runtime/mgc.go.html#line-647" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-647">#L647</a>: 	work.heap0 = atomic.Load64(&amp;gcController.<b>heapLive</b>)
+		<a href="../src/runtime/mgc.go.html#line-911" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-911">#L911</a>: 	work.heap1 = gcController.<b>heapLive</b>
+		<a href="../src/runtime/mgc.go.html#line-1441" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-1441">#L1441</a>: 	gcController.<b>heapLive</b> = work.bytesMarked
+		<a href="../src/runtime/mgc.go.html#line-1535" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-1535">#L1535</a>: 	work.initialHeapLive = atomic.Load64(&amp;gcController.<b>heapLive</b>)
+		<a href="../src/runtime/mgcpacer.go.html#line-53">mgcpacer.go#L53</a>: 	if offset := unsafe.Offsetof(gcController.<b>heapLive</b>); offset%8 != 0 {
+		<a href="../src/runtime/mgcpacer.go.html#line-153" class="path-duplicate">mgcpacer.go</a><a href="../src/runtime/mgcpacer.go.html#line-153">#L153</a>: 	<b>heapLive</b> uint64
+		<a href="../src/runtime/mgcpacer.go.html#line-292" class="path-duplicate">mgcpacer.go</a><a href="../src/runtime/mgcpacer.go.html#line-292">#L292</a>: 	if c.heapGoal &lt; c.<b>heapLive</b>+1024*1024 {
+		<a href="../src/runtime/mgcpacer.go.html#line-293" class="path-duplicate">mgcpacer.go</a><a href="../src/runtime/mgcpacer.go.html#line-293">#L293</a>: 		c.heapGoal = c.<b>heapLive</b> + 1024*1024
+		<a href="../src/runtime/mgcpacer.go.html#line-374" class="path-duplicate">mgcpacer.go</a><a href="../src/runtime/mgcpacer.go.html#line-374">#L374</a>: 	live := atomic.Load64(&amp;c.<b>heapLive</b>)
+		<a href="../src/runtime/mgcpacer.go.html#line-475" class="path-duplicate">mgcpacer.go</a><a href="../src/runtime/mgcpacer.go.html#line-475">#L475</a>: 	actualGrowthRatio := float64(c.<b>heapLive</b>)/float64(c.heapMarked) - 1
+		<a href="../src/runtime/mgcpacer.go.html#line-498" class="path-duplicate">mgcpacer.go</a><a href="../src/runtime/mgcpacer.go.html#line-498">#L498</a>: 		H_a := c.<b>heapLive</b>
+		<a href="../src/runtime/mgcpacer.go.html#line-713" class="path-duplicate">mgcpacer.go</a><a href="../src/runtime/mgcpacer.go.html#line-713">#L713</a>: 			sweepMin := atomic.Load64(&amp;c.<b>heapLive</b>) + sweepMinHeapDistance
+		<a href="../src/runtime/mgcpacer.go.html#line-722" class="path-duplicate">mgcpacer.go</a><a href="../src/runtime/mgcpacer.go.html#line-722">#L722</a>: 			print("runtime: heapGoal=", c.heapGoal, " heapMarked=", c.heapMarked, " gcController.heapLive=", c.<b>heapLive</b>, " initialHeapLive=", work.initialHeapLive, "triggerRatio=", triggerRatio, " minTrigger=", minTrigger, "\n")
+		<a href="../src/runtime/mgcpacer.go.html#line-754" class="path-duplicate">mgcpacer.go</a><a href="../src/runtime/mgcpacer.go.html#line-754">#L754</a>: 		heapLiveBasis := atomic.Load64(&amp;c.<b>heapLive</b>)
+		<a href="../src/runtime/mgcsweep.go.html#line-248">mgcsweep.go#L248</a>: 		print("pacer: sweep done at heap size ", gcController.<b>heapLive</b>&gt;&gt;20, "MB; allocated ", (gcController.<b>heapLive</b>-mheap_.sweepHeapLiveBasis)&gt;&gt;20, "MB during sweep; swept ", mheap_.pagesSwept, " pages at ", mheap_.sweepPagesPerByte, " pages/byte\n")
+		<a href="../src/runtime/mgcsweep.go.html#line-725" class="path-duplicate">mgcsweep.go</a><a href="../src/runtime/mgcsweep.go.html#line-725">#L725</a>: 	newHeapLive := uintptr(atomic.Load64(&amp;gcController.<b>heapLive</b>)-mheap_.sweepHeapLiveBasis) + spanBytes
+		<a href="../src/runtime/trace.go.html#line-1147">trace.go#L1147</a>: 	traceEvent(traceEvHeapAlloc, -1, gcController.<b>heapLive</b>)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

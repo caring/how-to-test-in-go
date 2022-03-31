@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: google.golang.org/protobuf/reflect/protoregistry.Files</title>
+<link href="../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../../../../pkg/google.golang.org/protobuf/reflect/protoregistry.html">google.golang.org/protobuf/reflect/protoregistry</a>.<a href="../../../../src/google.golang.org/protobuf/reflect/protoregistry/registry.go.html#line-83">Files</a></b></span>
+
+<span class="title">17 uses</span>
+
+	google.golang.org/protobuf/reflect/protoregistry (current package)
+		<a href="../../../../src/google.golang.org/protobuf/reflect/protoregistry/registry.go.html#line-68">registry.go#L68</a>: var GlobalFiles *<b>Files</b> = new(<b>Files</b>)
+		<a href="../../../../src/google.golang.org/protobuf/reflect/protoregistry/registry.go.html#line-83" class="path-duplicate">registry.go</a><a href="../../../../src/google.golang.org/protobuf/reflect/protoregistry/registry.go.html#line-83">#L83</a>: type <b>Files</b> struct {
+		<a href="../../../../src/google.golang.org/protobuf/reflect/protoregistry/registry.go.html#line-112" class="path-duplicate">registry.go</a><a href="../../../../src/google.golang.org/protobuf/reflect/protoregistry/registry.go.html#line-112">#L112</a>: func (r *<b>Files</b>) RegisterFile(file protoreflect.FileDescriptor) error {
+		<a href="../../../../src/google.golang.org/protobuf/reflect/protoregistry/registry.go.html#line-181" class="path-duplicate">registry.go</a><a href="../../../../src/google.golang.org/protobuf/reflect/protoregistry/registry.go.html#line-181">#L181</a>: func (r *<b>Files</b>) checkGenProtoConflict(path string) {
+		<a href="../../../../src/google.golang.org/protobuf/reflect/protoregistry/registry.go.html#line-220" class="path-duplicate">registry.go</a><a href="../../../../src/google.golang.org/protobuf/reflect/protoregistry/registry.go.html#line-220">#L220</a>: func (r *<b>Files</b>) FindDescriptorByName(name protoreflect.FullName) (protoreflect.Descriptor, error) {
+		<a href="../../../../src/google.golang.org/protobuf/reflect/protoregistry/registry.go.html#line-313" class="path-duplicate">registry.go</a><a href="../../../../src/google.golang.org/protobuf/reflect/protoregistry/registry.go.html#line-313">#L313</a>: func (r *<b>Files</b>) FindFileByPath(path string) (protoreflect.FileDescriptor, error) {
+		<a href="../../../../src/google.golang.org/protobuf/reflect/protoregistry/registry.go.html#line-334" class="path-duplicate">registry.go</a><a href="../../../../src/google.golang.org/protobuf/reflect/protoregistry/registry.go.html#line-334">#L334</a>: func (r *<b>Files</b>) NumFiles() int {
+		<a href="../../../../src/google.golang.org/protobuf/reflect/protoregistry/registry.go.html#line-348" class="path-duplicate">registry.go</a><a href="../../../../src/google.golang.org/protobuf/reflect/protoregistry/registry.go.html#line-348">#L348</a>: func (r *<b>Files</b>) RangeFiles(f func(protoreflect.FileDescriptor) bool) {
+		<a href="../../../../src/google.golang.org/protobuf/reflect/protoregistry/registry.go.html#line-366" class="path-duplicate">registry.go</a><a href="../../../../src/google.golang.org/protobuf/reflect/protoregistry/registry.go.html#line-366">#L366</a>: func (r *<b>Files</b>) NumFilesByPackage(name protoreflect.FullName) int {
+		<a href="../../../../src/google.golang.org/protobuf/reflect/protoregistry/registry.go.html#line-383" class="path-duplicate">registry.go</a><a href="../../../../src/google.golang.org/protobuf/reflect/protoregistry/registry.go.html#line-383">#L383</a>: func (r *<b>Files</b>) RangeFilesByPackage(name protoreflect.FullName, f func(protoreflect.FileDescriptor) bool) {
+
+	<a href="../../../../pkg/google.golang.org/protobuf/reflect/protodesc.html">google.golang.org/protobuf/reflect/protodesc</a>
+		<a href="../../../../src/google.golang.org/protobuf/reflect/protodesc/desc.go.html#line-72">desc.go#L72</a>: func NewFiles(fd *descriptorpb.FileDescriptorSet) (*protoregistry.<b>Files</b>, error) {
+		<a href="../../../../src/google.golang.org/protobuf/reflect/protodesc/desc.go.html#line-86" class="path-duplicate">desc.go</a><a href="../../../../src/google.golang.org/protobuf/reflect/protodesc/desc.go.html#line-86">#L86</a>: 		r = (*protoregistry.<b>Files</b>)(nil) // empty resolver
+		<a href="../../../../src/google.golang.org/protobuf/reflect/protodesc/desc.go.html#line-238" class="path-duplicate">desc.go</a><a href="../../../../src/google.golang.org/protobuf/reflect/protodesc/desc.go.html#line-238">#L238</a>: func (o FileOptions) NewFiles(fds *descriptorpb.FileDescriptorSet) (*protoregistry.<b>Files</b>, error) {
+		<a href="../../../../src/google.golang.org/protobuf/reflect/protodesc/desc.go.html#line-246" class="path-duplicate">desc.go</a><a href="../../../../src/google.golang.org/protobuf/reflect/protodesc/desc.go.html#line-246">#L246</a>: 	r := &amp;protoregistry.<b>Files</b>{}
+		<a href="../../../../src/google.golang.org/protobuf/reflect/protodesc/desc.go.html#line-254" class="path-duplicate">desc.go</a><a href="../../../../src/google.golang.org/protobuf/reflect/protodesc/desc.go.html#line-254">#L254</a>: func (o FileOptions) addFileDeps(r *protoregistry.<b>Files</b>, fd *descriptorpb.FileDescriptorProto, files map[string]*descriptorpb.FileDescriptorProto) error {
+
+	<a href="../../../../pkg/google.golang.org/protobuf/internal/impl.html">google.golang.org/protobuf/internal/impl</a>
+		<a href="../../../../src/google.golang.org/protobuf/internal/impl/legacy_file.go.html#line-70">legacy_file.go#L70</a>: 	reg *protoregistry.<b>Files</b>
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

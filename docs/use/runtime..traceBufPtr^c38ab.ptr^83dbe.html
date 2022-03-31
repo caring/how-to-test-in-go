@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime.traceBufPtr.ptr</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/runtime.html">runtime</a>.<a href="../src/runtime/trace.go.html#line-170">traceBufPtr</a>.<a href="../src/runtime/trace.go.html#line-172">ptr</a></b></span><span style="font-size: large;"><i> (method)</i></span>
+
+<span class="title">20 uses</span>
+
+	runtime (current package)
+		<a href="../src/runtime/trace.go.html#line-172">trace.go#L172</a>: func (tp traceBufPtr) <b>ptr</b>() *traceBuf   { return (*traceBuf)(unsafe.Pointer(tp)) }
+		<a href="../src/runtime/trace.go.html#line-316" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-316">#L316</a>: 		if buf.<b>ptr</b>().pos != 0 {
+		<a href="../src/runtime/trace.go.html#line-364" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-364">#L364</a>: 		trace.empty = buf.<b>ptr</b>().link
+		<a href="../src/runtime/trace.go.html#line-365" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-365">#L365</a>: 		sysFree(unsafe.Pointer(buf), unsafe.Sizeof(*buf.<b>ptr</b>()), &amp;memstats.other_sys)
+		<a href="../src/runtime/trace.go.html#line-398" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-398">#L398</a>: 		buf.<b>ptr</b>().link = trace.empty
+		<a href="../src/runtime/trace.go.html#line-421" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-421">#L421</a>: 		return buf.<b>ptr</b>().arr[:buf.<b>ptr</b>().pos]
+		<a href="../src/runtime/trace.go.html#line-489" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-489">#L489</a>: 	buf.<b>ptr</b>().link = 0
+		<a href="../src/runtime/trace.go.html#line-493" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-493">#L493</a>: 		trace.fullTail.<b>ptr</b>().link = buf
+		<a href="../src/runtime/trace.go.html#line-504" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-504">#L504</a>: 	trace.fullHead = buf.<b>ptr</b>().link
+		<a href="../src/runtime/trace.go.html#line-508" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-508">#L508</a>: 	buf.<b>ptr</b>().link = 0
+		<a href="../src/runtime/trace.go.html#line-545" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-545">#L545</a>: 	buf := bufp.<b>ptr</b>()
+		<a href="../src/runtime/trace.go.html#line-549" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-549">#L549</a>: 		buf = traceFlush(traceBufPtrOf(buf), pid).<b>ptr</b>()
+		<a href="../src/runtime/trace.go.html#line-642" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-642">#L642</a>: 		trace.empty = buf.<b>ptr</b>().link
+		<a href="../src/runtime/trace.go.html#line-649" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-649">#L649</a>: 	bufp := buf.<b>ptr</b>()
+		<a href="../src/runtime/trace.go.html#line-702" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-702">#L702</a>: 	buf := bufp.<b>ptr</b>()
+		<a href="../src/runtime/trace.go.html#line-705" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-705">#L705</a>: 		buf = traceFlush(traceBufPtrOf(buf), pid).<b>ptr</b>()
+		<a href="../src/runtime/trace.go.html#line-870" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-870">#L870</a>: 			if buf := bufp.<b>ptr</b>(); len(buf.arr)-buf.pos &lt; size {
+		<a href="../src/runtime/trace.go.html#line-873" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-873">#L873</a>: 			buf := bufp.<b>ptr</b>()
+		<a href="../src/runtime/trace.go.html#line-1220" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-1220">#L1220</a>: 	buf := bufp.<b>ptr</b>()
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

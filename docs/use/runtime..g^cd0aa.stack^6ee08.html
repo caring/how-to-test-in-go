@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime.g.stack</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/runtime.html">runtime</a>.<a href="../src/runtime/runtime2.go.html#line-403">g</a>.<a href="../src/runtime/runtime2.go.html#line-411">stack</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">115 uses</span>
+
+	runtime (current package)
+		<a href="../src/runtime/checkptr.go.html#line-81">checkptr.go#L81</a>: 	if gp := getg(); gp.<b>stack</b>.lo &lt;= uintptr(p) &amp;&amp; uintptr(p) &lt; gp.<b>stack</b>.hi {
+		<a href="../src/runtime/debugcall.go.html#line-32">debugcall.go#L32</a>: 	if sp := getcallersp(); !(getg().<b>stack</b>.lo &lt; sp &amp;&amp; sp &lt;= getg().<b>stack</b>.hi) {
+		<a href="../src/runtime/mbitmap.go.html#line-2008">mbitmap.go#L2008</a>: 	if _g_ := getg(); _g_.m.curg.<b>stack</b>.lo &lt;= uintptr(p) &amp;&amp; uintptr(p) &lt; _g_.m.curg.<b>stack</b>.hi {
+		<a href="../src/runtime/mgc.go.html#line-1702">mgc.go#L1702</a>: 	if gp.<b>stack</b>.lo &lt;= p2 &amp;&amp; p2 &lt; gp.<b>stack</b>.hi {
+		<a href="../src/runtime/mgcmark.go.html#line-288">mgcmark.go#L288</a>: 		stackfree(gp.<b>stack</b>)
+		<a href="../src/runtime/mgcmark.go.html#line-289" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-289">#L289</a>: 		gp.<b>stack</b>.lo = 0
+		<a href="../src/runtime/mgcmark.go.html#line-290" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-290">#L290</a>: 		gp.<b>stack</b>.hi = 0
+		<a href="../src/runtime/mgcmark.go.html#line-726" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-726">#L726</a>: 	state.stack = gp.<b>stack</b>
+		<a href="../src/runtime/mgcmark.go.html#line-733" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-733">#L733</a>: 		print("scanning async preempted goroutine ", gp.goid, " stack [", hex(gp.<b>stack</b>.lo), ",", hex(gp.<b>stack</b>.hi), ")\n")
+		<a href="../src/runtime/mgcmark.go.html#line-849" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-849">#L849</a>: 				println("  dead stkobj at", hex(gp.<b>stack</b>.lo+uintptr(obj.off)), "of size", obj.r.size)
+		<a href="../src/runtime/os_darwin.go.html#line-200">os_darwin.go#L200</a>: 	stk := unsafe.Pointer(mp.g0.<b>stack</b>.hi)
+		<a href="../src/runtime/os_darwin.go.html#line-220" class="path-duplicate">os_darwin.go</a><a href="../src/runtime/os_darwin.go.html#line-220">#L220</a>: 	mp.g0.<b>stack</b>.hi = stacksize // for mstart
+		<a href="../src/runtime/os_darwin.go.html#line-268" class="path-duplicate">os_darwin.go</a><a href="../src/runtime/os_darwin.go.html#line-268">#L268</a>: 	g0.<b>stack</b>.hi = stacksize // for mstart
+		<a href="../src/runtime/os_darwin.go.html#line-310" class="path-duplicate">os_darwin.go</a><a href="../src/runtime/os_darwin.go.html#line-310">#L310</a>: 		mlock(unsafe.Pointer(mp.gsignal.<b>stack</b>.hi-physPageSize), physPageSize)
+		<a href="../src/runtime/panic.go.html#line-1224">panic.go#L1224</a>: 	if sp != 0 &amp;&amp; (sp &lt; gp.<b>stack</b>.lo || gp.<b>stack</b>.hi &lt; sp) {
+		<a href="../src/runtime/panic.go.html#line-1225" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-1225">#L1225</a>: 		print("recover: ", hex(sp), " not in [", hex(gp.<b>stack</b>.lo), ", ", hex(gp.<b>stack</b>.hi), "]\n")
+		<a href="../src/runtime/preempt.go.html#line-176">preempt.go#L176</a>: 			gp.stackguard0 = gp.<b>stack</b>.lo + _StackGuard
+		<a href="../src/runtime/preempt.go.html#line-379" class="path-duplicate">preempt.go</a><a href="../src/runtime/preempt.go.html#line-379">#L379</a>: 	if sp &lt; gp.<b>stack</b>.lo || sp-gp.<b>stack</b>.lo &lt; asyncPreemptStack {
+		<a href="../src/runtime/proc.go.html#line-805">proc.go#L805</a>: 		mp.gsignal.stackguard1 = mp.gsignal.<b>stack</b>.lo + _StackGuard
+		<a href="../src/runtime/proc.go.html#line-1342" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1342">#L1342</a>: 	osStack := _g_.<b>stack</b>.lo == 0
+		<a href="../src/runtime/proc.go.html#line-1352" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1352">#L1352</a>: 		size := _g_.<b>stack</b>.hi
+		<a href="../src/runtime/proc.go.html#line-1356" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1356">#L1356</a>: 		_g_.<b>stack</b>.hi = uintptr(noescape(unsafe.Pointer(&amp;size)))
+		<a href="../src/runtime/proc.go.html#line-1357" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1357">#L1357</a>: 		_g_.<b>stack</b>.lo = _g_.<b>stack</b>.hi - size + 1024
+		<a href="../src/runtime/proc.go.html#line-1361" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1361">#L1361</a>: 	_g_.stackguard0 = _g_.<b>stack</b>.lo + _StackGuard
+		<a href="../src/runtime/proc.go.html#line-1492" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1492">#L1492</a>: 		stackfree(m.gsignal.<b>stack</b>)
+		<a href="../src/runtime/proc.go.html#line-1867" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1867">#L1867</a>: 				stackfree(freem.g0.<b>stack</b>)
+		<a href="../src/runtime/proc.go.html#line-1985" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1985">#L1985</a>: 	_g_.<b>stack</b>.hi = getcallersp() + 1024
+		<a href="../src/runtime/proc.go.html#line-1986" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1986">#L1986</a>: 	_g_.<b>stack</b>.lo = getcallersp() - 32*1024
+		<a href="../src/runtime/proc.go.html#line-1987" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1987">#L1987</a>: 	_g_.stackguard0 = _g_.<b>stack</b>.lo + _StackGuard
+		<a href="../src/runtime/proc.go.html#line-2029" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2029">#L2029</a>: 	gp.sched.sp = gp.<b>stack</b>.hi
+		<a href="../src/runtime/proc.go.html#line-2680" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2680">#L2680</a>: 	gp.stackguard0 = gp.<b>stack</b>.lo + _StackGuard
+		<a href="../src/runtime/proc.go.html#line-3782" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3782">#L3782</a>: 	if _g_.syscallsp &lt; _g_.<b>stack</b>.lo || _g_.<b>stack</b>.hi &lt; _g_.syscallsp {
+		<a href="../src/runtime/proc.go.html#line-3784" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3784">#L3784</a>: 			print("entersyscall inconsistent ", hex(_g_.syscallsp), " [", hex(_g_.<b>stack</b>.lo), ",", hex(_g_.<b>stack</b>.hi), "]\n")
+		<a href="../src/runtime/proc.go.html#line-3878" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3878">#L3878</a>: 	if _g_.syscallsp &lt; _g_.<b>stack</b>.lo || _g_.<b>stack</b>.hi &lt; _g_.syscallsp {
+		<a href="../src/runtime/proc.go.html#line-3883" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3883">#L3883</a>: 			print("entersyscallblock inconsistent ", hex(sp1), " ", hex(sp2), " ", hex(sp3), " [", hex(_g_.<b>stack</b>.lo), ",", hex(_g_.<b>stack</b>.hi), "]\n")
+		<a href="../src/runtime/proc.go.html#line-3888" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3888">#L3888</a>: 	if _g_.syscallsp &lt; _g_.<b>stack</b>.lo || _g_.<b>stack</b>.hi &lt; _g_.syscallsp {
+		<a href="../src/runtime/proc.go.html#line-3890" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3890">#L3890</a>: 			print("entersyscallblock inconsistent ", hex(sp), " ", hex(_g_.sched.sp), " ", hex(_g_.syscallsp), " [", hex(_g_.<b>stack</b>.lo), ",", hex(_g_.<b>stack</b>.hi), "]\n")
+		<a href="../src/runtime/proc.go.html#line-3954" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3954">#L3954</a>: 			_g_.stackguard0 = _g_.<b>stack</b>.lo + _StackGuard
+		<a href="../src/runtime/proc.go.html#line-4147" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4147">#L4147</a>: 	gp.stackguard0 = gp.<b>stack</b>.lo + _StackGuard
+		<a href="../src/runtime/proc.go.html#line-4224" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4224">#L4224</a>: 			newg.<b>stack</b> = stackalloc(uint32(stacksize))
+		<a href="../src/runtime/proc.go.html#line-4226" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4226">#L4226</a>: 		newg.stackguard0 = newg.<b>stack</b>.lo + _StackGuard
+		<a href="../src/runtime/proc.go.html#line-4230" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4230">#L4230</a>: 		*(*uintptr)(unsafe.Pointer(newg.<b>stack</b>.lo)) = 0
+		<a href="../src/runtime/proc.go.html#line-4309" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4309">#L4309</a>: 	if newg.<b>stack</b>.hi == 0 {
+		<a href="../src/runtime/proc.go.html#line-4319" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4319">#L4319</a>: 	sp := newg.<b>stack</b>.hi - totalSize
+		<a href="../src/runtime/proc.go.html#line-4430" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4430">#L4430</a>: 	stksize := gp.<b>stack</b>.hi - gp.<b>stack</b>.lo
+		<a href="../src/runtime/proc.go.html#line-4434" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4434">#L4434</a>: 		stackfree(gp.<b>stack</b>)
+		<a href="../src/runtime/proc.go.html#line-4435" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4435">#L4435</a>: 		gp.<b>stack</b>.lo = 0
+		<a href="../src/runtime/proc.go.html#line-4436" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4436">#L4436</a>: 		gp.<b>stack</b>.hi = 0
+		<a href="../src/runtime/proc.go.html#line-4451" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4451">#L4451</a>: 			if gp.<b>stack</b>.lo == 0 {
+		<a href="../src/runtime/proc.go.html#line-4494" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4494">#L4494</a>: 	if gp.<b>stack</b>.lo == 0 {
+		<a href="../src/runtime/proc.go.html#line-4497" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4497">#L4497</a>: 			gp.<b>stack</b> = stackalloc(_FixedStack)
+		<a href="../src/runtime/proc.go.html#line-4499" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4499">#L4499</a>: 		gp.stackguard0 = gp.<b>stack</b>.lo + _StackGuard
+		<a href="../src/runtime/proc.go.html#line-4502" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4502">#L4502</a>: 			racemalloc(unsafe.Pointer(gp.<b>stack</b>.lo), gp.<b>stack</b>.hi-gp.<b>stack</b>.lo)
+		<a href="../src/runtime/proc.go.html#line-4505" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4505">#L4505</a>: 			msanmalloc(unsafe.Pointer(gp.<b>stack</b>.lo), gp.<b>stack</b>.hi-gp.<b>stack</b>.lo)
+		<a href="../src/runtime/proc.go.html#line-4521" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4521">#L4521</a>: 		if gp.<b>stack</b>.lo == 0 {
+		<a href="../src/runtime/runtime2.go.html#line-411">runtime2.go#L411</a>: 	<b>stack</b>       stack   // offset known to runtime/cgo
+		<a href="../src/runtime/signal_unix.go.html#line-475">signal_unix.go#L475</a>: 	if sp &gt;= mp.gsignal.<b>stack</b>.lo &amp;&amp; sp &lt; mp.gsignal.<b>stack</b>.hi {
+		<a href="../src/runtime/signal_unix.go.html#line-487" class="path-duplicate">signal_unix.go</a><a href="../src/runtime/signal_unix.go.html#line-487">#L487</a>: 	if sp &gt;= mp.g0.<b>stack</b>.lo &amp;&amp; sp &lt; mp.g0.<b>stack</b>.hi {
+		<a href="../src/runtime/signal_unix.go.html#line-498" class="path-duplicate">signal_unix.go</a><a href="../src/runtime/signal_unix.go.html#line-498">#L498</a>: 		st := stackt{ss_size: mp.g0.<b>stack</b>.hi - mp.g0.<b>stack</b>.lo}
+		<a href="../src/runtime/signal_unix.go.html#line-499" class="path-duplicate">signal_unix.go</a><a href="../src/runtime/signal_unix.go.html#line-499">#L499</a>: 		setSignalstackSP(&amp;st, mp.g0.<b>stack</b>.lo)
+		<a href="../src/runtime/signal_unix.go.html#line-1107" class="path-duplicate">signal_unix.go</a><a href="../src/runtime/signal_unix.go.html#line-1107">#L1107</a>: 		signalstack(&amp;_g_.m.gsignal.<b>stack</b>)
+		<a href="../src/runtime/signal_unix.go.html#line-1189" class="path-duplicate">signal_unix.go</a><a href="../src/runtime/signal_unix.go.html#line-1189">#L1189</a>: 		old.stack = g.m.gsignal.<b>stack</b>
+		<a href="../src/runtime/signal_unix.go.html#line-1195" class="path-duplicate">signal_unix.go</a><a href="../src/runtime/signal_unix.go.html#line-1195">#L1195</a>: 	g.m.gsignal.<b>stack</b>.lo = stsp
+		<a href="../src/runtime/signal_unix.go.html#line-1196" class="path-duplicate">signal_unix.go</a><a href="../src/runtime/signal_unix.go.html#line-1196">#L1196</a>: 	g.m.gsignal.<b>stack</b>.hi = stsp + st.ss_size
+		<a href="../src/runtime/signal_unix.go.html#line-1207" class="path-duplicate">signal_unix.go</a><a href="../src/runtime/signal_unix.go.html#line-1207">#L1207</a>: 	gp.<b>stack</b> = st.stack
+		<a href="../src/runtime/stack.go.html#line-852">stack.go#L852</a>: 	old := gp.<b>stack</b>
+		<a href="../src/runtime/stack.go.html#line-912" class="path-duplicate">stack.go</a><a href="../src/runtime/stack.go.html#line-912">#L912</a>: 	gp.<b>stack</b> = new
+		<a href="../src/runtime/stack.go.html#line-975" class="path-duplicate">stack.go</a><a href="../src/runtime/stack.go.html#line-975">#L975</a>: 			" sp=", hex(gp.sched.sp), " stack=[", hex(gp.<b>stack</b>.lo), ", ", hex(gp.<b>stack</b>.hi), "]\n",
+		<a href="../src/runtime/stack.go.html#line-1011" class="path-duplicate">stack.go</a><a href="../src/runtime/stack.go.html#line-1011">#L1011</a>: 			gp.stackguard0 = gp.<b>stack</b>.lo + _StackGuard
+		<a href="../src/runtime/stack.go.html#line-1016" class="path-duplicate">stack.go</a><a href="../src/runtime/stack.go.html#line-1016">#L1016</a>: 	if gp.<b>stack</b>.lo == 0 {
+		<a href="../src/runtime/stack.go.html#line-1024" class="path-duplicate">stack.go</a><a href="../src/runtime/stack.go.html#line-1024">#L1024</a>: 	if stackDebug &gt;= 1 || sp &lt; gp.<b>stack</b>.lo {
+		<a href="../src/runtime/stack.go.html#line-1025" class="path-duplicate">stack.go</a><a href="../src/runtime/stack.go.html#line-1025">#L1025</a>: 		print("runtime: newstack sp=", hex(sp), " stack=[", hex(gp.<b>stack</b>.lo), ", ", hex(gp.<b>stack</b>.hi), "]\n",
+		<a href="../src/runtime/stack.go.html#line-1029" class="path-duplicate">stack.go</a><a href="../src/runtime/stack.go.html#line-1029">#L1029</a>: 	if sp &lt; gp.<b>stack</b>.lo {
+		<a href="../src/runtime/stack.go.html#line-1031" class="path-duplicate">stack.go</a><a href="../src/runtime/stack.go.html#line-1031">#L1031</a>: 		print("runtime: split stack overflow: ", hex(sp), " &lt; ", hex(gp.<b>stack</b>.lo), "\n")
+		<a href="../src/runtime/stack.go.html#line-1059" class="path-duplicate">stack.go</a><a href="../src/runtime/stack.go.html#line-1059">#L1059</a>: 	oldsize := gp.<b>stack</b>.hi - gp.<b>stack</b>.lo
+		<a href="../src/runtime/stack.go.html#line-1068" class="path-duplicate">stack.go</a><a href="../src/runtime/stack.go.html#line-1068">#L1068</a>: 		used := gp.<b>stack</b>.hi - gp.sched.sp
+		<a href="../src/runtime/stack.go.html#line-1087" class="path-duplicate">stack.go</a><a href="../src/runtime/stack.go.html#line-1087">#L1087</a>: 		print("runtime: sp=", hex(sp), " stack=[", hex(gp.<b>stack</b>.lo), ", ", hex(gp.<b>stack</b>.hi), "]\n")
+		<a href="../src/runtime/stack.go.html#line-1146" class="path-duplicate">stack.go</a><a href="../src/runtime/stack.go.html#line-1146">#L1146</a>: 	if gp.<b>stack</b>.lo == 0 {
+		<a href="../src/runtime/stack.go.html#line-1178" class="path-duplicate">stack.go</a><a href="../src/runtime/stack.go.html#line-1178">#L1178</a>: 	oldsize := gp.<b>stack</b>.hi - gp.<b>stack</b>.lo
+		<a href="../src/runtime/stack.go.html#line-1190" class="path-duplicate">stack.go</a><a href="../src/runtime/stack.go.html#line-1190">#L1190</a>: 	avail := gp.<b>stack</b>.hi - gp.<b>stack</b>.lo
+		<a href="../src/runtime/stack.go.html#line-1191" class="path-duplicate">stack.go</a><a href="../src/runtime/stack.go.html#line-1191">#L1191</a>: 	if used := gp.<b>stack</b>.hi - gp.sched.sp + _StackLimit; used &gt;= avail/4 {
+		<a href="../src/runtime/string.go.html#line-122">string.go#L122</a>: 	stk := getg().<b>stack</b>
+		<a href="../src/runtime/traceback.go.html#line-137">traceback.go#L137</a>: 			tracebackHexdump(gp.<b>stack</b>, &amp;frame, 0)
+		<a href="../src/runtime/traceback.go.html#line-271" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-271">#L271</a>: 					tracebackHexdump(gp.<b>stack</b>, &amp;frame, lrPtr)
+		<a href="../src/runtime/traceback.go.html#line-569" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-569">#L569</a>: 		print("\tstack=[", hex(gp.<b>stack</b>.lo), "-", hex(gp.<b>stack</b>.hi), "] n=", n, " max=", max, "\n")
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

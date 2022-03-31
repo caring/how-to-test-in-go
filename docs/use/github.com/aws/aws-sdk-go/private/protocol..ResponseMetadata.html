@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/aws/aws-sdk-go/private/protocol.ResponseMetadata</title>
+<link href="../../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../../../../../pkg/github.com/aws/aws-sdk-go/private/protocol.html">github.com/aws/aws-sdk-go/private/protocol</a>.<a href="../../../../../src/github.com/aws/aws-sdk-go/private/protocol/unmarshal.go.html#line-24">ResponseMetadata</a></b></span>
+
+<span class="title">21 uses</span>
+
+	github.com/aws/aws-sdk-go/private/protocol (current package)
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/private/protocol/unmarshal.go.html#line-24">unmarshal.go#L24</a>: type <b>ResponseMetadata</b> struct {
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/private/protocol/unmarshal_error.go.html#line-19">unmarshal_error.go#L19</a>: 	UnmarshalError(*http.Response, <b>ResponseMetadata</b>) (error, error)
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/private/protocol/unmarshal_error.go.html#line-48" class="path-duplicate">unmarshal_error.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/private/protocol/unmarshal_error.go.html#line-48">#L48</a>: 	respMeta := <b>ResponseMetadata</b>{
+
+	<a href="../../../../../pkg/github.com/aws/aws-sdk-go/private/protocol/jsonrpc.html">github.com/aws/aws-sdk-go/private/protocol/jsonrpc</a>
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/private/protocol/jsonrpc/unmarshal_error.go.html#line-19">unmarshal_error.go#L19</a>: 	exceptions map[string]func(protocol.<b>ResponseMetadata</b>) error
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/private/protocol/jsonrpc/unmarshal_error.go.html#line-24" class="path-duplicate">unmarshal_error.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/private/protocol/jsonrpc/unmarshal_error.go.html#line-24">#L24</a>: func NewUnmarshalTypedError(exceptions map[string]func(protocol.<b>ResponseMetadata</b>) error) *UnmarshalTypedError {
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/private/protocol/jsonrpc/unmarshal_error.go.html#line-35" class="path-duplicate">unmarshal_error.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/private/protocol/jsonrpc/unmarshal_error.go.html#line-35">#L35</a>: 	respMeta protocol.<b>ResponseMetadata</b>,
+
+	<a href="../../../../../pkg/github.com/aws/aws-sdk-go/service/firehose.html">github.com/aws/aws-sdk-go/service/firehose</a>
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-1478">api.go#L1478</a>: 	RespMetadata protocol.<b>ResponseMetadata</b> `json:"-" xml:"-"`
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-1494" class="path-duplicate">api.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-1494">#L1494</a>: func newErrorConcurrentModificationException(v protocol.<b>ResponseMetadata</b>) error {
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-3741" class="path-duplicate">api.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-3741">#L3741</a>: 	RespMetadata protocol.<b>ResponseMetadata</b> `json:"-" xml:"-"`
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-3757" class="path-duplicate">api.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-3757">#L3757</a>: func newErrorInvalidArgumentException(v protocol.<b>ResponseMetadata</b>) error {
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-3801" class="path-duplicate">api.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-3801">#L3801</a>: 	RespMetadata protocol.<b>ResponseMetadata</b> `json:"-" xml:"-"`
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-3818" class="path-duplicate">api.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-3818">#L3818</a>: func newErrorInvalidKMSResourceException(v protocol.<b>ResponseMetadata</b>) error {
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-4012" class="path-duplicate">api.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-4012">#L4012</a>: 	RespMetadata protocol.<b>ResponseMetadata</b> `json:"-" xml:"-"`
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-4028" class="path-duplicate">api.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-4028">#L4028</a>: func newErrorLimitExceededException(v protocol.<b>ResponseMetadata</b>) error {
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-5589" class="path-duplicate">api.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-5589">#L5589</a>: 	RespMetadata protocol.<b>ResponseMetadata</b> `json:"-" xml:"-"`
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-5605" class="path-duplicate">api.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-5605">#L5605</a>: func newErrorResourceInUseException(v protocol.<b>ResponseMetadata</b>) error {
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-5646" class="path-duplicate">api.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-5646">#L5646</a>: 	RespMetadata protocol.<b>ResponseMetadata</b> `json:"-" xml:"-"`
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-5662" class="path-duplicate">api.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-5662">#L5662</a>: func newErrorResourceNotFoundException(v protocol.<b>ResponseMetadata</b>) error {
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-6239" class="path-duplicate">api.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-6239">#L6239</a>: 	RespMetadata protocol.<b>ResponseMetadata</b> `json:"-" xml:"-"`
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-6255" class="path-duplicate">api.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-6255">#L6255</a>: func newErrorServiceUnavailableException(v protocol.<b>ResponseMetadata</b>) error {
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/errors.go.html#line-61">errors.go#L61</a>: var exceptionFromCode = map[string]func(protocol.<b>ResponseMetadata</b>) error{
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

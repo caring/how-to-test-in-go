@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Source: constants.go in package github.com/uber/jaeger-client-go</title>
+<link href="../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre id="header"><code><span class="title">Source File</span>
+	constants.go
+
+<span class="title">Belonging Package</span>
+	<a href="../../../../pkg/github.com/uber/jaeger-client-go.html">github.com/uber/jaeger-client-go</a>
+</code></pre>
+<style>input[type=radio] {display: none;}
+{background: #226; color: #ff8;}
+input[id=i0]:checked ~pre .i0,
+input[id=i1]:checked ~pre .i1
+{background: brown; color: #eed;}
+</style><input id="i0" type="radio" name="i"/>
+<input id="i1" type="radio" name="i"/>
+
+<pre class="line-numbers">
+<span class="codeline" id="line-1"><code><span class="comment">// Copyright (c) 2017 Uber Technologies, Inc.</span></code></span>
+<span class="codeline" id="line-2"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-3"><code><span class="comment">// Licensed under the Apache License, Version 2.0 (the "License");</span></code></span>
+<span class="codeline" id="line-4"><code><span class="comment">// you may not use this file except in compliance with the License.</span></code></span>
+<span class="codeline" id="line-5"><code><span class="comment">// You may obtain a copy of the License at</span></code></span>
+<span class="codeline" id="line-6"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-7"><code><span class="comment">// http://www.apache.org/licenses/LICENSE-2.0</span></code></span>
+<span class="codeline" id="line-8"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-9"><code><span class="comment">// Unless required by applicable law or agreed to in writing, software</span></code></span>
+<span class="codeline" id="line-10"><code><span class="comment">// distributed under the License is distributed on an "AS IS" BASIS,</span></code></span>
+<span class="codeline" id="line-11"><code><span class="comment">// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></code></span>
+<span class="codeline" id="line-12"><code><span class="comment">// See the License for the specific language governing permissions and</span></code></span>
+<span class="codeline" id="line-13"><code><span class="comment">// limitations under the License.</span></code></span>
+<span class="codeline" id="line-14"><code></code></span>
+<span class="codeline" id="line-15"><code><span class="keyword">package</span> jaeger</code></span>
+<span class="codeline" id="line-16"><code></code></span>
+<span class="codeline" id="line-17"><code><span class="keyword">import</span> (</code></span>
+<span class="codeline" id="line-18"><code>	<label for="i0"><span class="lit-string i0">"fmt"</span></label></code></span>
+<span class="codeline" id="line-19"><code></code></span>
+<span class="codeline" id="line-20"><code>	<label for="i1"><span class="lit-string i1">"github.com/opentracing/opentracing-go"</span></label></code></span>
+<span class="codeline" id="line-21"><code>)</code></span>
+<span class="codeline" id="line-22"><code></code></span>
+<span class="codeline" id="line-23"><code><span class="keyword">const</span> (</code></span>
+<span class="codeline" id="line-24"><code>	<span class="comment">// JaegerClientVersion is the version of the client library reported as Span tag.</span></code></span>
+<span class="codeline" id="line-25"><code>	<a href="../../../../pkg/github.com/uber/jaeger-client-go.html#name-JaegerClientVersion" class="ident">JaegerClientVersion</a> = <span class="lit-string">"Go-2.29.1"</span></code></span>
+<span class="codeline" id="line-26"><code></code></span>
+<span class="codeline" id="line-27"><code>	<span class="comment">// JaegerClientVersionTagKey is the name of the tag used to report client version.</span></code></span>
+<span class="codeline" id="line-28"><code>	<a href="../../../../pkg/github.com/uber/jaeger-client-go.html#name-JaegerClientVersionTagKey" class="ident">JaegerClientVersionTagKey</a> = <span class="lit-string">"jaeger.version"</span></code></span>
+<span class="codeline" id="line-29"><code></code></span>
+<span class="codeline" id="line-30"><code>	<span class="comment">// JaegerDebugHeader is the name of HTTP header or a TextMap carrier key which,</span></code></span>
+<span class="codeline" id="line-31"><code><span class="comment">	// if found in the carrier, forces the trace to be sampled as "debug" trace.</span></code></span>
+<span class="codeline" id="line-32"><code><span class="comment">	// The value of the header is recorded as the tag on the root span, so that the</span></code></span>
+<span class="codeline" id="line-33"><code><span class="comment">	// trace can be found in the UI using this value as a correlation ID.</span></code></span>
+<span class="codeline" id="line-34"><code>	<a href="../../../../pkg/github.com/uber/jaeger-client-go.html#name-JaegerDebugHeader" class="ident">JaegerDebugHeader</a> = <span class="lit-string">"jaeger-debug-id"</span></code></span>
+<span class="codeline" id="line-35"><code></code></span>
+<span class="codeline" id="line-36"><code>	<span class="comment">// JaegerBaggageHeader is the name of the HTTP header that is used to submit baggage.</span></code></span>
+<span class="codeline" id="line-37"><code><span class="comment">	// It differs from TraceBaggageHeaderPrefix in that it can be used only in cases where</span></code></span>
+<span class="codeline" id="line-38"><code><span class="comment">	// a root span does not exist.</span></code></span>
+<span class="codeline" id="line-39"><code>	<a href="../../../../pkg/github.com/uber/jaeger-client-go.html#name-JaegerBaggageHeader" class="ident">JaegerBaggageHeader</a> = <span class="lit-string">"jaeger-baggage"</span></code></span>
+<span class="codeline" id="line-40"><code></code></span>
+<span class="codeline" id="line-41"><code>	<span class="comment">// TracerHostnameTagKey used to report host name of the process.</span></code></span>
+<span class="codeline" id="line-42"><code>	<a href="../../../../pkg/github.com/uber/jaeger-client-go.html#name-TracerHostnameTagKey" class="ident">TracerHostnameTagKey</a> = <span class="lit-string">"hostname"</span></code></span>
+<span class="codeline" id="line-43"><code></code></span>
+<span class="codeline" id="line-44"><code>	<span class="comment">// TracerIPTagKey used to report ip of the process.</span></code></span>
+<span class="codeline" id="line-45"><code>	<a href="../../../../pkg/github.com/uber/jaeger-client-go.html#name-TracerIPTagKey" class="ident">TracerIPTagKey</a> = <span class="lit-string">"ip"</span></code></span>
+<span class="codeline" id="line-46"><code></code></span>
+<span class="codeline" id="line-47"><code>	<span class="comment">// TracerUUIDTagKey used to report UUID of the client process.</span></code></span>
+<span class="codeline" id="line-48"><code>	<a href="../../../../pkg/github.com/uber/jaeger-client-go.html#name-TracerUUIDTagKey" class="ident">TracerUUIDTagKey</a> = <span class="lit-string">"client-uuid"</span></code></span>
+<span class="codeline" id="line-49"><code></code></span>
+<span class="codeline" id="line-50"><code>	<span class="comment">// SamplerTypeTagKey reports which sampler was used on the root span.</span></code></span>
+<span class="codeline" id="line-51"><code>	<a href="../../../../pkg/github.com/uber/jaeger-client-go.html#name-SamplerTypeTagKey" class="ident">SamplerTypeTagKey</a> = <span class="lit-string">"sampler.type"</span></code></span>
+<span class="codeline" id="line-52"><code></code></span>
+<span class="codeline" id="line-53"><code>	<span class="comment">// SamplerParamTagKey reports the parameter of the sampler, like sampling probability.</span></code></span>
+<span class="codeline" id="line-54"><code>	<a href="../../../../pkg/github.com/uber/jaeger-client-go.html#name-SamplerParamTagKey" class="ident">SamplerParamTagKey</a> = <span class="lit-string">"sampler.param"</span></code></span>
+<span class="codeline" id="line-55"><code></code></span>
+<span class="codeline" id="line-56"><code>	<span class="comment">// TraceContextHeaderName is the http header name used to propagate tracing context.</span></code></span>
+<span class="codeline" id="line-57"><code><span class="comment">	// This must be in lower-case to avoid mismatches when decoding incoming headers.</span></code></span>
+<span class="codeline" id="line-58"><code>	<a href="../../../../pkg/github.com/uber/jaeger-client-go.html#name-TraceContextHeaderName" class="ident">TraceContextHeaderName</a> = <span class="lit-string">"uber-trace-id"</span></code></span>
+<span class="codeline" id="line-59"><code></code></span>
+<span class="codeline" id="line-60"><code>	<span class="comment">// TracerStateHeaderName is deprecated.</span></code></span>
+<span class="codeline" id="line-61"><code><span class="comment">	// Deprecated: use TraceContextHeaderName</span></code></span>
+<span class="codeline" id="line-62"><code>	<a href="../../../../pkg/github.com/uber/jaeger-client-go.html#name-TracerStateHeaderName" class="ident">TracerStateHeaderName</a> = <a href="#line-58" class="ident">TraceContextHeaderName</a></code></span>
+<span class="codeline" id="line-63"><code></code></span>
+<span class="codeline" id="line-64"><code>	<span class="comment">// TraceBaggageHeaderPrefix is the prefix for http headers used to propagate baggage.</span></code></span>
+<span class="codeline" id="line-65"><code><span class="comment">	// This must be in lower-case to avoid mismatches when decoding incoming headers.</span></code></span>
+<span class="codeline" id="line-66"><code>	<a href="../../../../pkg/github.com/uber/jaeger-client-go.html#name-TraceBaggageHeaderPrefix" class="ident">TraceBaggageHeaderPrefix</a> = <span class="lit-string">"uberctx-"</span></code></span>
+<span class="codeline" id="line-67"><code></code></span>
+<span class="codeline" id="line-68"><code>	<span class="comment">// SamplerTypeConst is the type of sampler that always makes the same decision.</span></code></span>
+<span class="codeline" id="line-69"><code>	<a href="../../../../pkg/github.com/uber/jaeger-client-go.html#name-SamplerTypeConst" class="ident">SamplerTypeConst</a> = <span class="lit-string">"const"</span></code></span>
+<span class="codeline" id="line-70"><code></code></span>
+<span class="codeline" id="line-71"><code>	<span class="comment">// SamplerTypeRemote is the type of sampler that polls Jaeger agent for sampling strategy.</span></code></span>
+<span class="codeline" id="line-72"><code>	<a href="../../../../pkg/github.com/uber/jaeger-client-go.html#name-SamplerTypeRemote" class="ident">SamplerTypeRemote</a> = <span class="lit-string">"remote"</span></code></span>
+<span class="codeline" id="line-73"><code></code></span>
+<span class="codeline" id="line-74"><code>	<span class="comment">// SamplerTypeProbabilistic is the type of sampler that samples traces</span></code></span>
+<span class="codeline" id="line-75"><code><span class="comment">	// with a certain fixed probability.</span></code></span>
+<span class="codeline" id="line-76"><code>	<a href="../../../../pkg/github.com/uber/jaeger-client-go.html#name-SamplerTypeProbabilistic" class="ident">SamplerTypeProbabilistic</a> = <span class="lit-string">"probabilistic"</span></code></span>
+<span class="codeline" id="line-77"><code></code></span>
+<span class="codeline" id="line-78"><code>	<span class="comment">// SamplerTypeRateLimiting is the type of sampler that samples</span></code></span>
+<span class="codeline" id="line-79"><code><span class="comment">	// only up to a fixed number of traces per second.</span></code></span>
+<span class="codeline" id="line-80"><code>	<a href="../../../../pkg/github.com/uber/jaeger-client-go.html#name-SamplerTypeRateLimiting" class="ident">SamplerTypeRateLimiting</a> = <span class="lit-string">"ratelimiting"</span></code></span>
+<span class="codeline" id="line-81"><code></code></span>
+<span class="codeline" id="line-82"><code>	<span class="comment">// SamplerTypeLowerBound is the type of sampler that samples</span></code></span>
+<span class="codeline" id="line-83"><code><span class="comment">	// at least a fixed number of traces per second.</span></code></span>
+<span class="codeline" id="line-84"><code>	<a href="../../../../pkg/github.com/uber/jaeger-client-go.html#name-SamplerTypeLowerBound" class="ident">SamplerTypeLowerBound</a> = <span class="lit-string">"lowerbound"</span></code></span>
+<span class="codeline" id="line-85"><code></code></span>
+<span class="codeline" id="line-86"><code>	<span class="comment">// DefaultUDPSpanServerHost is the default host to send the spans to, via UDP</span></code></span>
+<span class="codeline" id="line-87"><code>	<a href="../../../../pkg/github.com/uber/jaeger-client-go.html#name-DefaultUDPSpanServerHost" class="ident">DefaultUDPSpanServerHost</a> = <span class="lit-string">"localhost"</span></code></span>
+<span class="codeline" id="line-88"><code></code></span>
+<span class="codeline" id="line-89"><code>	<span class="comment">// DefaultUDPSpanServerPort is the default port to send the spans to, via UDP</span></code></span>
+<span class="codeline" id="line-90"><code>	<a href="../../../../pkg/github.com/uber/jaeger-client-go.html#name-DefaultUDPSpanServerPort" class="ident">DefaultUDPSpanServerPort</a> = <span class="lit-number">6831</span></code></span>
+<span class="codeline" id="line-91"><code></code></span>
+<span class="codeline" id="line-92"><code>	<span class="comment">// DefaultSamplingServerPort is the default port to fetch sampling config from, via http</span></code></span>
+<span class="codeline" id="line-93"><code>	<a href="../../../../pkg/github.com/uber/jaeger-client-go.html#name-DefaultSamplingServerPort" class="ident">DefaultSamplingServerPort</a> = <span class="lit-number">5778</span></code></span>
+<span class="codeline" id="line-94"><code></code></span>
+<span class="codeline" id="line-95"><code>	<span class="comment">// DefaultMaxTagValueLength is the default max length of byte array or string allowed in the tag value.</span></code></span>
+<span class="codeline" id="line-96"><code>	<a href="../../../../pkg/github.com/uber/jaeger-client-go.html#name-DefaultMaxTagValueLength" class="ident">DefaultMaxTagValueLength</a> = <span class="lit-number">256</span></code></span>
+<span class="codeline" id="line-97"><code></code></span>
+<span class="codeline" id="line-98"><code>	<span class="comment">// SelfRefType is a jaeger specific reference type that supports creating a span</span></code></span>
+<span class="codeline" id="line-99"><code><span class="comment">	// with an already defined context.</span></code></span>
+<span class="codeline" id="line-100"><code>	<a href="../../../../pkg/github.com/uber/jaeger-client-go.html#name-selfRefType" class="ident">selfRefType</a> <a href="../../../../pkg/github.com/opentracing/opentracing-go.html" class="ident i1">opentracing</a>.<a href="../../opentracing/opentracing-go/tracer.go.html#line-165" class="ident">SpanReferenceType</a> = <span class="lit-number">99</span></code></span>
+<span class="codeline" id="line-101"><code>)</code></span>
+<span class="codeline" id="line-102"><code></code></span>
+<span class="codeline" id="line-103"><code><span class="keyword">var</span> (</code></span>
+<span class="codeline" id="line-104"><code>	<span class="comment">// DefaultSamplingServerURL is the default url to fetch sampling config from, via http</span></code></span>
+<span class="codeline" id="line-105"><code>	<a href="../../../../pkg/github.com/uber/jaeger-client-go.html#name-DefaultSamplingServerURL" class="ident">DefaultSamplingServerURL</a> = <a href="../../../../pkg/fmt.html" class="ident i0">fmt</a>.<a href="../../../fmt/print.go.html#line-217" class="ident">Sprintf</a>(<span class="lit-string">"http://127.0.0.1:%d/sampling"</span>, <a href="#line-93" class="ident">DefaultSamplingServerPort</a>)</code></span>
+<span class="codeline" id="line-106"><code>)</code></span>
+</pre><pre id="footer">
+<table><tr><td><img src="../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

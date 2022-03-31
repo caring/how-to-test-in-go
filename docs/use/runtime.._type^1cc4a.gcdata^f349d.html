@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime._type.gcdata</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/runtime.html">runtime</a>.<a href="../src/runtime/type.go.html#line-31">_type</a>.<a href="../src/runtime/type.go.html#line-45">gcdata</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">11 uses</span>
+
+	runtime (current package)
+		<a href="../src/runtime/cgocheck.go.html#line-118">cgocheck.go#L118</a>: 		cgoCheckBits(src, typ.<b>gcdata</b>, off, size)
+		<a href="../src/runtime/cgocheck.go.html#line-220" class="path-duplicate">cgocheck.go</a><a href="../src/runtime/cgocheck.go.html#line-220">#L220</a>: 		cgoCheckBits(src, typ.<b>gcdata</b>, off, size)
+		<a href="../src/runtime/mbitmap.go.html#line-720">mbitmap.go#L720</a>: 	ptrmask := typ.<b>gcdata</b>
+		<a href="../src/runtime/mbitmap.go.html#line-857" class="path-duplicate">mbitmap.go</a><a href="../src/runtime/mbitmap.go.html#line-857">#L857</a>: 	ptrmask := typ.<b>gcdata</b> // start of 1-bit pointer mask (or GC program, handled below)
+		<a href="../src/runtime/mbitmap.go.html#line-923" class="path-duplicate">mbitmap.go</a><a href="../src/runtime/mbitmap.go.html#line-923">#L923</a>: 			if doubleCheck &amp;&amp; *typ.<b>gcdata</b> != 1 {
+		<a href="../src/runtime/mbitmap.go.html#line-924" class="path-duplicate">mbitmap.go</a><a href="../src/runtime/mbitmap.go.html#line-924">#L924</a>: 				print("runtime: heapBitsSetType size=", size, " typ.size=", typ.size, "but *typ.gcdata", *typ.<b>gcdata</b>, "\n")
+		<a href="../src/runtime/mbitmap.go.html#line-1011" class="path-duplicate">mbitmap.go</a><a href="../src/runtime/mbitmap.go.html#line-1011">#L1011</a>: 		heapBitsSetTypeGCProg(h, typ.ptrdata, typ.size, dataSize, size, addb(typ.<b>gcdata</b>, 4))
+		<a href="../src/runtime/mbitmap.go.html#line-1025" class="path-duplicate">mbitmap.go</a><a href="../src/runtime/mbitmap.go.html#line-1025">#L1025</a>: 			runGCProg(addb(typ.<b>gcdata</b>, 4), nil, ptrmask, 1)
+		<a href="../src/runtime/mbitmap.go.html#line-1452" class="path-duplicate">mbitmap.go</a><a href="../src/runtime/mbitmap.go.html#line-1452">#L1452</a>: 					dumpGCProg(addb(typ.<b>gcdata</b>, 4))
+		<a href="../src/runtime/stack.go.html#line-1354">stack.go#L1354</a>: 			gcdata:   abiRegArgsType.<b>gcdata</b>,
+		<a href="../src/runtime/type.go.html#line-45">type.go#L45</a>: 	<b>gcdata</b>    *byte
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

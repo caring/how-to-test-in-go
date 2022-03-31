@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime.asmcgocall</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">func <b><a href="../pkg/runtime.html">runtime</a>.<a href="../src/runtime/stubs.go.html#line-310">asmcgocall</a></b></span>
+
+<span class="title">13 uses</span>
+
+	runtime (current package)
+		<a href="../src/runtime/cgocall.go.html#line-166">cgocall.go#L166</a>: 	errno := <b>asmcgocall</b>(fn, arg)
+		<a href="../src/runtime/env_posix.go.html#line-59">env_posix.go#L59</a>: 	<b>asmcgocall</b>(_cgo_setenv, unsafe.Pointer(&amp;arg))
+		<a href="../src/runtime/env_posix.go.html#line-70" class="path-duplicate">env_posix.go</a><a href="../src/runtime/env_posix.go.html#line-70">#L70</a>: 	<b>asmcgocall</b>(_cgo_unsetenv, unsafe.Pointer(&amp;arg))
+		<a href="../src/runtime/lock_sema.go.html#line-188">lock_sema.go#L188</a>: 			<b>asmcgocall</b>(*cgo_yield, nil)
+		<a href="../src/runtime/lock_sema.go.html#line-219" class="path-duplicate">lock_sema.go</a><a href="../src/runtime/lock_sema.go.html#line-219">#L219</a>: 				<b>asmcgocall</b>(*cgo_yield, nil)
+		<a href="../src/runtime/lock_sema.go.html#line-240" class="path-duplicate">lock_sema.go</a><a href="../src/runtime/lock_sema.go.html#line-240">#L240</a>: 			<b>asmcgocall</b>(*cgo_yield, nil)
+		<a href="../src/runtime/proc.go.html#line-2246">proc.go#L2246</a>: 		<b>asmcgocall</b>(_cgo_thread_start, unsafe.Pointer(&amp;ts))
+		<a href="../src/runtime/proc.go.html#line-2730" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2730">#L2730</a>: 		<b>asmcgocall</b>(*cgo_yield, nil)
+		<a href="../src/runtime/proc.go.html#line-5398" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5398">#L5398</a>: 			<b>asmcgocall</b>(*cgo_yield, nil)
+		<a href="../src/runtime/stubs.go.html#line-310">stubs.go#L310</a>: func <b>asmcgocall</b>(fn, arg unsafe.Pointer) int32
+		<a href="../src/runtime/sys_libc.go.html#line-49">sys_libc.go#L49</a>: 	res := <b>asmcgocall</b>(fn, arg)
+		<a href="../src/runtime/traceback.go.html#line-1390">traceback.go#L1390</a>: 		call = <b>asmcgocall</b>
+		<a href="../src/runtime/traceback.go.html#line-1407" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-1407">#L1407</a>: 		call = <b>asmcgocall</b>
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

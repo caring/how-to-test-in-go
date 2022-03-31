@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: internal/poll.CloseFunc</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">var <b><a href="../../pkg/internal/poll.html">internal/poll</a>.<a href="../../src/internal/poll/hook_unix.go.html#line-13">CloseFunc</a></b></span>
+
+<span class="title">13 uses</span>
+
+	internal/poll (current package)
+		<a href="../../src/internal/poll/fd_unix.go.html#line-84">fd_unix.go#L84</a>: 	err := <b>CloseFunc</b>(fd.Sysfd)
+		<a href="../../src/internal/poll/hook_unix.go.html#line-13">hook_unix.go#L13</a>: var <b>CloseFunc</b> func(int) error = syscall.Close
+		<a href="../../src/internal/poll/sys_cloexec.go.html#line-33">sys_cloexec.go#L33</a>: 		<b>CloseFunc</b>(ns)
+
+	<a href="../../pkg/net.html">net</a>
+		<a href="../../src/net/fd_unix.go.html#line-182">fd_unix.go#L182</a>: 		poll.<b>CloseFunc</b>(d)
+		<a href="../../src/net/file_unix.go.html#line-25">file_unix.go#L25</a>: 		poll.<b>CloseFunc</b>(s)
+		<a href="../../src/net/file_unix.go.html#line-39" class="path-duplicate">file_unix.go</a><a href="../../src/net/file_unix.go.html#line-39">#L39</a>: 		poll.<b>CloseFunc</b>(s)
+		<a href="../../src/net/file_unix.go.html#line-52" class="path-duplicate">file_unix.go</a><a href="../../src/net/file_unix.go.html#line-52">#L52</a>: 		poll.<b>CloseFunc</b>(s)
+		<a href="../../src/net/file_unix.go.html#line-57" class="path-duplicate">file_unix.go</a><a href="../../src/net/file_unix.go.html#line-57">#L57</a>: 		poll.<b>CloseFunc</b>(s)
+		<a href="../../src/net/ipsock_posix.go.html#line-32">ipsock_posix.go#L32</a>: 		poll.<b>CloseFunc</b>(s)
+		<a href="../../src/net/ipsock_posix.go.html#line-56" class="path-duplicate">ipsock_posix.go</a><a href="../../src/net/ipsock_posix.go.html#line-56">#L56</a>: 		defer poll.<b>CloseFunc</b>(s)
+		<a href="../../src/net/sock_posix.go.html#line-25">sock_posix.go#L25</a>: 		poll.<b>CloseFunc</b>(s)
+		<a href="../../src/net/sock_posix.go.html#line-29" class="path-duplicate">sock_posix.go</a><a href="../../src/net/sock_posix.go.html#line-29">#L29</a>: 		poll.<b>CloseFunc</b>(s)
+		<a href="../../src/net/sys_cloexec.go.html#line-33">sys_cloexec.go#L33</a>: 		poll.<b>CloseFunc</b>(s)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

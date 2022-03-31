@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: net.IP.To4</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/net.html">net</a>.<a href="../src/net/ip.go.html#line-35">IP</a>.<a href="../src/net/ip.go.html#line-211">To4</a></b></span><span style="font-size: large;"><i> (method)</i></span>
+
+<span class="title">43 uses</span>
+
+	net (current package)
+		<a href="../src/net/addrselect.go.html#line-199">addrselect.go#L199</a>: 	if DA.<b>To4</b>() == nil &amp;&amp; DB.<b>To4</b>() == nil {
+		<a href="../src/net/addrselect.go.html#line-334" class="path-duplicate">addrselect.go</a><a href="../src/net/addrselect.go.html#line-334">#L334</a>: 	ipv6 := len(ip) == IPv6len &amp;&amp; ip.<b>To4</b>() == nil
+		<a href="../src/net/addrselect.go.html#line-357" class="path-duplicate">addrselect.go</a><a href="../src/net/addrselect.go.html#line-357">#L357</a>: 	if a4 := a.<b>To4</b>(); a4 != nil {
+		<a href="../src/net/addrselect.go.html#line-360" class="path-duplicate">addrselect.go</a><a href="../src/net/addrselect.go.html#line-360">#L360</a>: 	if b4 := b.<b>To4</b>(); b4 != nil {
+		<a href="../src/net/dnsclient.go.html#line-36">dnsclient.go#L36</a>: 	if ip.<b>To4</b>() != nil {
+		<a href="../src/net/ip.go.html#line-125">ip.go#L125</a>: 	if ip4 := ip.<b>To4</b>(); ip4 != nil {
+		<a href="../src/net/ip.go.html#line-134" class="path-duplicate">ip.go</a><a href="../src/net/ip.go.html#line-134">#L134</a>: 	if ip4 := ip.<b>To4</b>(); ip4 != nil {
+		<a href="../src/net/ip.go.html#line-152" class="path-duplicate">ip.go</a><a href="../src/net/ip.go.html#line-152">#L152</a>: 	if ip4 := ip.<b>To4</b>(); ip4 != nil {
+		<a href="../src/net/ip.go.html#line-167" class="path-duplicate">ip.go</a><a href="../src/net/ip.go.html#line-167">#L167</a>: 	if ip4 := ip.<b>To4</b>(); ip4 != nil {
+		<a href="../src/net/ip.go.html#line-176" class="path-duplicate">ip.go</a><a href="../src/net/ip.go.html#line-176">#L176</a>: 	if ip4 := ip.<b>To4</b>(); ip4 != nil {
+		<a href="../src/net/ip.go.html#line-211" class="path-duplicate">ip.go</a><a href="../src/net/ip.go.html#line-211">#L211</a>: func (ip IP) <b>To4</b>() IP {
+		<a href="../src/net/ip.go.html#line-247" class="path-duplicate">ip.go</a><a href="../src/net/ip.go.html#line-247">#L247</a>: 	if ip = ip.<b>To4</b>(); ip == nil {
+		<a href="../src/net/ip.go.html#line-321" class="path-duplicate">ip.go</a><a href="../src/net/ip.go.html#line-321">#L321</a>: 	if p4 := p.<b>To4</b>(); len(p4) == IPv4len {
+		<a href="../src/net/ip.go.html#line-446" class="path-duplicate">ip.go</a><a href="../src/net/ip.go.html#line-446">#L446</a>: 	return ip.<b>To4</b>() != nil &amp;&amp; x.<b>To4</b>() != nil || ip.To16() != nil &amp;&amp; ip.<b>To4</b>() == nil &amp;&amp; x.To16() != nil &amp;&amp; x.<b>To4</b>() == nil
+		<a href="../src/net/ip.go.html#line-498" class="path-duplicate">ip.go</a><a href="../src/net/ip.go.html#line-498">#L498</a>: 	if ip = n.IP.<b>To4</b>(); ip == nil {
+		<a href="../src/net/ip.go.html#line-523" class="path-duplicate">ip.go</a><a href="../src/net/ip.go.html#line-523">#L523</a>: 	if x := ip.<b>To4</b>(); x != nil {
+		<a href="../src/net/iprawsock_posix.go.html#line-29">iprawsock_posix.go#L29</a>: 	if a.IP.<b>To4</b>() != nil {
+		<a href="../src/net/ipsock.go.html#line-66">ipsock.go#L66</a>: 		return addr.IP.<b>To4</b>() != nil
+		<a href="../src/net/ipsock.go.html#line-68" class="path-duplicate">ipsock.go</a><a href="../src/net/ipsock.go.html#line-68">#L68</a>: 		return addr.IP.<b>To4</b>() != nil
+		<a href="../src/net/ipsock.go.html#line-70" class="path-duplicate">ipsock.go</a><a href="../src/net/ipsock.go.html#line-70">#L70</a>: 		return addr.IP.<b>To4</b>() != nil
+		<a href="../src/net/ipsock.go.html#line-147" class="path-duplicate">ipsock.go</a><a href="../src/net/ipsock.go.html#line-147">#L147</a>: 	return addr.IP.<b>To4</b>() != nil
+		<a href="../src/net/ipsock.go.html#line-152" class="path-duplicate">ipsock.go</a><a href="../src/net/ipsock.go.html#line-152">#L152</a>: 	return len(addr.IP) == IPv6len &amp;&amp; addr.IP.<b>To4</b>() == nil
+		<a href="../src/net/ipsock_posix.go.html#line-151">ipsock_posix.go#L151</a>: 		ip4 := ip.<b>To4</b>()
+		<a href="../src/net/sockopt_posix.go.html#line-64">sockopt_posix.go#L64</a>: 			if v.IP.<b>To4</b>() != nil {
+		<a href="../src/net/sockopt_posix.go.html#line-68" class="path-duplicate">sockopt_posix.go</a><a href="../src/net/sockopt_posix.go.html#line-68">#L68</a>: 			if v.IP.<b>To4</b>() != nil {
+		<a href="../src/net/sockopt_posix.go.html#line-87" class="path-duplicate">sockopt_posix.go</a><a href="../src/net/sockopt_posix.go.html#line-87">#L87</a>: 			if a := v.IP.<b>To4</b>(); a != nil {
+		<a href="../src/net/sockopt_posix.go.html#line-92" class="path-duplicate">sockopt_posix.go</a><a href="../src/net/sockopt_posix.go.html#line-92">#L92</a>: 			if a := v.IP.<b>To4</b>(); a != nil {
+		<a href="../src/net/sockopt_posix.go.html#line-99" class="path-duplicate">sockopt_posix.go</a><a href="../src/net/sockopt_posix.go.html#line-99">#L99</a>: 	if bytealg.Equal(mreq.Multiaddr[:], IPv4zero.<b>To4</b>()) {
+		<a href="../src/net/sockoptip_bsdvar.go.html#line-21">sockoptip_bsdvar.go#L21</a>: 	copy(a[:], ip.<b>To4</b>())
+		<a href="../src/net/tcpsock_posix.go.html#line-31">tcpsock_posix.go#L31</a>: 	if a.IP.<b>To4</b>() != nil {
+		<a href="../src/net/udpsock_posix.go.html#line-29">udpsock_posix.go#L29</a>: 	if a.IP.<b>To4</b>() != nil {
+		<a href="../src/net/udpsock_posix.go.html#line-122" class="path-duplicate">udpsock_posix.go</a><a href="../src/net/udpsock_posix.go.html#line-122">#L122</a>: 	if ip4 := gaddr.IP.<b>To4</b>(); ip4 != nil {
+		<a href="../src/net/cgo_unix.go.html#line-338">cgo_unix.go#L338</a>: 	if ip4 := ip.<b>To4</b>(); ip4 != nil {
+
+	<a href="../pkg/net/http.html">net/http</a>
+		<a href="../src/net/http/socks_bundle.go.html#line-93">socks_bundle.go#L93</a>: 		if ip4 := ip.<b>To4</b>(); ip4 != nil {
+
+	<a href="../pkg/crypto/x509.html">crypto/x509</a>
+		<a href="../src/crypto/x509/x509.go.html#line-990">x509.go#L990</a>: 		ip := rawIP.<b>To4</b>()
+
+	<a href="../pkg/github.com/uber/jaeger-client-go/utils.html">github.com/uber/jaeger-client-go/utils</a>
+		<a href="../src/github.com/uber/jaeger-client-go/utils/localip.go.html#line-41">localip.go#L41</a>: 	if ip.<b>To4</b>() != nil {
+		<a href="../src/github.com/uber/jaeger-client-go/utils/utils.go.html#line-72">utils.go#L72</a>: 	if ipv4 := ip.<b>To4</b>(); ipv4 != nil {
+
+	<a href="../pkg/google.golang.org/grpc/internal/binarylog.html">google.golang.org/grpc/internal/binarylog</a>
+		<a href="../src/google.golang.org/grpc/internal/binarylog/method_logger.go.html#line-404">method_logger.go#L404</a>: 		if a.IP.<b>To4</b>() != nil {
+
+	<a href="../pkg/google.golang.org/grpc/internal/resolver/dns.html">google.golang.org/grpc/internal/resolver/dns</a>
+		<a href="../src/google.golang.org/grpc/internal/resolver/dns/dns_resolver.go.html#line-363">dns_resolver.go#L363</a>: 	if ip.<b>To4</b>() != nil {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/uber/jaeger-client-go.tracerOptions</title>
+<link href="../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../../../pkg/github.com/uber/jaeger-client-go.html">github.com/uber/jaeger-client-go</a>.<a href="../../../src/github.com/uber/jaeger-client-go/tracer_options.go.html#line-33">tracerOptions</a></b></span>
+
+<span class="title">22 uses</span>
+
+	github.com/uber/jaeger-client-go (current package)
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer_options.go.html#line-31">tracer_options.go#L31</a>: var TracerOptions <b>tracerOptions</b>
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer_options.go.html#line-33" class="path-duplicate">tracer_options.go</a><a href="../../../src/github.com/uber/jaeger-client-go/tracer_options.go.html#line-33">#L33</a>: type <b>tracerOptions</b> struct{}
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer_options.go.html#line-37" class="path-duplicate">tracer_options.go</a><a href="../../../src/github.com/uber/jaeger-client-go/tracer_options.go.html#line-37">#L37</a>: func (<b>tracerOptions</b>) Metrics(m *Metrics) TracerOption {
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer_options.go.html#line-44" class="path-duplicate">tracer_options.go</a><a href="../../../src/github.com/uber/jaeger-client-go/tracer_options.go.html#line-44">#L44</a>: func (<b>tracerOptions</b>) Logger(logger Logger) TracerOption {
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer_options.go.html#line-50" class="path-duplicate">tracer_options.go</a><a href="../../../src/github.com/uber/jaeger-client-go/tracer_options.go.html#line-50">#L50</a>: func (<b>tracerOptions</b>) CustomHeaderKeys(headerKeys *HeadersConfig) TracerOption {
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer_options.go.html#line-65" class="path-duplicate">tracer_options.go</a><a href="../../../src/github.com/uber/jaeger-client-go/tracer_options.go.html#line-65">#L65</a>: func (<b>tracerOptions</b>) TimeNow(timeNow func() time.Time) TracerOption {
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer_options.go.html#line-73" class="path-duplicate">tracer_options.go</a><a href="../../../src/github.com/uber/jaeger-client-go/tracer_options.go.html#line-73">#L73</a>: func (<b>tracerOptions</b>) RandomNumber(randomNumber func() uint64) TracerOption {
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer_options.go.html#line-83" class="path-duplicate">tracer_options.go</a><a href="../../../src/github.com/uber/jaeger-client-go/tracer_options.go.html#line-83">#L83</a>: func (<b>tracerOptions</b>) PoolSpans(poolSpans bool) TracerOption {
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer_options.go.html#line-96" class="path-duplicate">tracer_options.go</a><a href="../../../src/github.com/uber/jaeger-client-go/tracer_options.go.html#line-96">#L96</a>: func (<b>tracerOptions</b>) HostIPv4(hostIPv4 uint32) TracerOption {
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer_options.go.html#line-102" class="path-duplicate">tracer_options.go</a><a href="../../../src/github.com/uber/jaeger-client-go/tracer_options.go.html#line-102">#L102</a>: func (<b>tracerOptions</b>) Injector(format interface{}, injector Injector) TracerOption {
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer_options.go.html#line-108" class="path-duplicate">tracer_options.go</a><a href="../../../src/github.com/uber/jaeger-client-go/tracer_options.go.html#line-108">#L108</a>: func (<b>tracerOptions</b>) Extractor(format interface{}, extractor Extractor) TracerOption {
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer_options.go.html#line-114" class="path-duplicate">tracer_options.go</a><a href="../../../src/github.com/uber/jaeger-client-go/tracer_options.go.html#line-114">#L114</a>: func (t <b>tracerOptions</b>) Observer(observer Observer) TracerOption {
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer_options.go.html#line-118" class="path-duplicate">tracer_options.go</a><a href="../../../src/github.com/uber/jaeger-client-go/tracer_options.go.html#line-118">#L118</a>: func (<b>tracerOptions</b>) ContribObserver(observer ContribObserver) TracerOption {
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer_options.go.html#line-124" class="path-duplicate">tracer_options.go</a><a href="../../../src/github.com/uber/jaeger-client-go/tracer_options.go.html#line-124">#L124</a>: func (<b>tracerOptions</b>) Gen128Bit(gen128Bit bool) TracerOption {
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer_options.go.html#line-130" class="path-duplicate">tracer_options.go</a><a href="../../../src/github.com/uber/jaeger-client-go/tracer_options.go.html#line-130">#L130</a>: func (<b>tracerOptions</b>) NoDebugFlagOnForcedSampling(noDebugFlagOnForcedSampling bool) TracerOption {
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer_options.go.html#line-136" class="path-duplicate">tracer_options.go</a><a href="../../../src/github.com/uber/jaeger-client-go/tracer_options.go.html#line-136">#L136</a>: func (<b>tracerOptions</b>) HighTraceIDGenerator(highTraceIDGenerator func() uint64) TracerOption {
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer_options.go.html#line-142" class="path-duplicate">tracer_options.go</a><a href="../../../src/github.com/uber/jaeger-client-go/tracer_options.go.html#line-142">#L142</a>: func (<b>tracerOptions</b>) MaxTagValueLength(maxTagValueLength int) TracerOption {
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer_options.go.html#line-154" class="path-duplicate">tracer_options.go</a><a href="../../../src/github.com/uber/jaeger-client-go/tracer_options.go.html#line-154">#L154</a>: func (<b>tracerOptions</b>) MaxLogsPerSpan(maxLogsPerSpan int) TracerOption {
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer_options.go.html#line-160" class="path-duplicate">tracer_options.go</a><a href="../../../src/github.com/uber/jaeger-client-go/tracer_options.go.html#line-160">#L160</a>: func (<b>tracerOptions</b>) ZipkinSharedRPCSpan(zipkinSharedRPCSpan bool) TracerOption {
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer_options.go.html#line-166" class="path-duplicate">tracer_options.go</a><a href="../../../src/github.com/uber/jaeger-client-go/tracer_options.go.html#line-166">#L166</a>: func (<b>tracerOptions</b>) Tag(key string, value interface{}) TracerOption {
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer_options.go.html#line-172" class="path-duplicate">tracer_options.go</a><a href="../../../src/github.com/uber/jaeger-client-go/tracer_options.go.html#line-172">#L172</a>: func (<b>tracerOptions</b>) BaggageRestrictionManager(mgr baggage.RestrictionManager) TracerOption {
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer_options.go.html#line-178" class="path-duplicate">tracer_options.go</a><a href="../../../src/github.com/uber/jaeger-client-go/tracer_options.go.html#line-178">#L178</a>: func (<b>tracerOptions</b>) DebugThrottler(throttler throttler.Throttler) TracerOption {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: net.Conn.Close</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/net.html">net</a>.<a href="../src/net/net.go.html#line-113">Conn</a>.<a href="../src/net/net.go.html#line-126">Close</a></b></span><span style="font-size: large;"><i> (method)</i></span>
+
+<span class="title">55 uses</span>
+
+	net (current package)
+		<a href="../src/net/dial.go.html#line-476">dial.go#L476</a>: 				c.<b>Close</b>()
+		<a href="../src/net/dnsclient_unix.go.html#line-175">dnsclient_unix.go#L175</a>: 		c.<b>Close</b>()
+		<a href="../src/net/net.go.html#line-126">net.go#L126</a>: 	<b>Close</b>() error
+
+	<a href="../pkg/net/http.html">net/http</a>
+		<a href="../src/net/http/h2_bundle.go.html#line-4148">h2_bundle.go#L4148</a>: 	sc.conn.<b>Close</b>()
+		<a href="../src/net/http/h2_bundle.go.html#line-4259" class="path-duplicate">h2_bundle.go</a><a href="../src/net/http/h2_bundle.go.html#line-4259">#L4259</a>: func (sc *http2serverConn) CloseConn() error { return sc.conn.<b>Close</b>() }
+		<a href="../src/net/http/h2_bundle.go.html#line-4480" class="path-duplicate">h2_bundle.go</a><a href="../src/net/http/h2_bundle.go.html#line-4480">#L4480</a>: 	defer sc.conn.<b>Close</b>()
+		<a href="../src/net/http/h2_bundle.go.html#line-4799" class="path-duplicate">h2_bundle.go</a><a href="../src/net/http/h2_bundle.go.html#line-4799">#L4799</a>: 				sc.conn.<b>Close</b>()
+		<a href="../src/net/http/h2_bundle.go.html#line-7469" class="path-duplicate">h2_bundle.go</a><a href="../src/net/http/h2_bundle.go.html#line-7469">#L7469</a>: 	cc.tconn.<b>Close</b>()
+		<a href="../src/net/http/h2_bundle.go.html#line-7494" class="path-duplicate">h2_bundle.go</a><a href="../src/net/http/h2_bundle.go.html#line-7494">#L7494</a>: 				done &lt;- cc.tconn.<b>Close</b>()
+		<a href="../src/net/http/h2_bundle.go.html#line-7551" class="path-duplicate">h2_bundle.go</a><a href="../src/net/http/h2_bundle.go.html#line-7551">#L7551</a>: 	return cc.tconn.<b>Close</b>()
+		<a href="../src/net/http/h2_bundle.go.html#line-8515" class="path-duplicate">h2_bundle.go</a><a href="../src/net/http/h2_bundle.go.html#line-8515">#L8515</a>: 		defer cc.tconn.<b>Close</b>()
+		<a href="../src/net/http/h2_bundle.go.html#line-8562" class="path-duplicate">h2_bundle.go</a><a href="../src/net/http/h2_bundle.go.html#line-8562">#L8562</a>: 	defer cc.tconn.<b>Close</b>()
+		<a href="../src/net/http/server.go.html#line-379">server.go#L379</a>: 			cw.res.conn.rwc.<b>Close</b>()
+		<a href="../src/net/http/server.go.html#line-388" class="path-duplicate">server.go</a><a href="../src/net/http/server.go.html#line-388">#L388</a>: 		cw.res.conn.rwc.<b>Close</b>()
+		<a href="../src/net/http/server.go.html#line-1683" class="path-duplicate">server.go</a><a href="../src/net/http/server.go.html#line-1683">#L1683</a>: 	c.rwc.<b>Close</b>()
+		<a href="../src/net/http/server.go.html#line-1824" class="path-duplicate">server.go</a><a href="../src/net/http/server.go.html#line-1824">#L1824</a>: 				re.Conn.<b>Close</b>()
+		<a href="../src/net/http/server.go.html#line-2674" class="path-duplicate">server.go</a><a href="../src/net/http/server.go.html#line-2674">#L2674</a>: 		c.rwc.<b>Close</b>()
+		<a href="../src/net/http/server.go.html#line-2784" class="path-duplicate">server.go</a><a href="../src/net/http/server.go.html#line-2784">#L2784</a>: 		c.rwc.<b>Close</b>()
+		<a href="../src/net/http/server.go.html#line-3520" class="path-duplicate">server.go</a><a href="../src/net/http/server.go.html#line-3520">#L3520</a>: 	err = c.Conn.<b>Close</b>()
+		<a href="../src/net/http/socks_bundle.go.html#line-330">socks_bundle.go#L330</a>: 		c.<b>Close</b>()
+		<a href="../src/net/http/socks_bundle.go.html#line-383" class="path-duplicate">socks_bundle.go</a><a href="../src/net/http/socks_bundle.go.html#line-383">#L383</a>: 		c.<b>Close</b>()
+		<a href="../src/net/http/transport.go.html#line-1541">transport.go#L1541</a>: 		plainConn.<b>Close</b>()
+		<a href="../src/net/http/transport.go.html#line-1591" class="path-duplicate">transport.go</a><a href="../src/net/http/transport.go.html#line-1591">#L1591</a>: 				go pconn.conn.<b>Close</b>()
+		<a href="../src/net/http/transport.go.html#line-1639" class="path-duplicate">transport.go</a><a href="../src/net/http/transport.go.html#line-1639">#L1639</a>: 			conn.<b>Close</b>()
+		<a href="../src/net/http/transport.go.html#line-1656" class="path-duplicate">transport.go</a><a href="../src/net/http/transport.go.html#line-1656">#L1656</a>: 				conn.<b>Close</b>()
+		<a href="../src/net/http/transport.go.html#line-1707" class="path-duplicate">transport.go</a><a href="../src/net/http/transport.go.html#line-1707">#L1707</a>: 			conn.<b>Close</b>()
+		<a href="../src/net/http/transport.go.html#line-1714" class="path-duplicate">transport.go</a><a href="../src/net/http/transport.go.html#line-1714">#L1714</a>: 			conn.<b>Close</b>()
+		<a href="../src/net/http/transport.go.html#line-1719" class="path-duplicate">transport.go</a><a href="../src/net/http/transport.go.html#line-1719">#L1719</a>: 			conn.<b>Close</b>()
+		<a href="../src/net/http/transport.go.html#line-2708" class="path-duplicate">transport.go</a><a href="../src/net/http/transport.go.html#line-2708">#L2708</a>: 				pc.conn.<b>Close</b>()
+
+	<a href="../pkg/net/http/httputil.html">net/http/httputil</a>
+		<a href="../src/net/http/httputil/persist.go.html#line-79">persist.go#L79</a>: 		return c.<b>Close</b>()
+		<a href="../src/net/http/httputil/persist.go.html#line-289" class="path-duplicate">persist.go</a><a href="../src/net/http/httputil/persist.go.html#line-289">#L289</a>: 		return c.<b>Close</b>()
+		<a href="../src/net/http/httputil/reverseproxy.go.html#line-594">reverseproxy.go#L594</a>: 	defer conn.<b>Close</b>()
+
+	<a href="../pkg/crypto/tls.html">crypto/tls</a>
+		<a href="../src/crypto/tls/conn.go.html#line-1326">conn.go#L1326</a>: 		return c.conn.<b>Close</b>()
+		<a href="../src/crypto/tls/conn.go.html#line-1336" class="path-duplicate">conn.go</a><a href="../src/crypto/tls/conn.go.html#line-1336">#L1336</a>: 	if err := c.conn.<b>Close</b>(); err != nil {
+		<a href="../src/crypto/tls/conn.go.html#line-1424" class="path-duplicate">conn.go</a><a href="../src/crypto/tls/conn.go.html#line-1424">#L1424</a>: 				_ = c.conn.<b>Close</b>()
+		<a href="../src/crypto/tls/tls.go.html#line-158">tls.go#L158</a>: 		rawConn.<b>Close</b>()
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/csm.html">github.com/aws/aws-sdk-go/aws/csm</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/csm/reporter.go.html#line-144">reporter.go#L144</a>: 		rep.conn.<b>Close</b>()
+
+	<a href="../pkg/github.com/go-sql-driver/mysql.html">github.com/go-sql-driver/mysql</a>
+		<a href="../src/github.com/go-sql-driver/mysql/connection.go.html#line-149">connection.go#L149</a>: 	if err := mc.netConn.<b>Close</b>(); err != nil {
+		<a href="../src/github.com/go-sql-driver/mysql/connector.go.html#line-60">connector.go#L60</a>: 			mc.netConn.<b>Close</b>()
+
+	<a href="../pkg/golang.org/x/net/http2.html">golang.org/x/net/http2</a>
+		<a href="../src/golang.org/x/net/http2/server.go.html#line-489">server.go#L489</a>: 	sc.conn.<b>Close</b>()
+		<a href="../src/golang.org/x/net/http2/server.go.html#line-599" class="path-duplicate">server.go</a><a href="../src/golang.org/x/net/http2/server.go.html#line-599">#L599</a>: func (sc *serverConn) CloseConn() error { return sc.conn.<b>Close</b>() }
+		<a href="../src/golang.org/x/net/http2/server.go.html#line-810" class="path-duplicate">server.go</a><a href="../src/golang.org/x/net/http2/server.go.html#line-810">#L810</a>: 	defer sc.conn.<b>Close</b>()
+		<a href="../src/golang.org/x/net/http2/server.go.html#line-1118" class="path-duplicate">server.go</a><a href="../src/golang.org/x/net/http2/server.go.html#line-1118">#L1118</a>: 				sc.conn.<b>Close</b>()
+		<a href="../src/golang.org/x/net/http2/transport.go.html#line-830">transport.go#L830</a>: 	cc.tconn.<b>Close</b>()
+		<a href="../src/golang.org/x/net/http2/transport.go.html#line-849" class="path-duplicate">transport.go</a><a href="../src/golang.org/x/net/http2/transport.go.html#line-849">#L849</a>: 				done &lt;- cc.tconn.<b>Close</b>()
+		<a href="../src/golang.org/x/net/http2/transport.go.html#line-909" class="path-duplicate">transport.go</a><a href="../src/golang.org/x/net/http2/transport.go.html#line-909">#L909</a>: 	return cc.tconn.<b>Close</b>()
+		<a href="../src/golang.org/x/net/http2/transport.go.html#line-1772" class="path-duplicate">transport.go</a><a href="../src/golang.org/x/net/http2/transport.go.html#line-1772">#L1772</a>: 	defer cc.tconn.<b>Close</b>()
+
+	<a href="../pkg/google.golang.org/grpc.html">google.golang.org/grpc</a>
+		<a href="../src/google.golang.org/grpc/server.go.html#line-831">server.go#L831</a>: 		rawConn.<b>Close</b>()
+		<a href="../src/google.golang.org/grpc/server.go.html#line-892" class="path-duplicate">server.go</a><a href="../src/google.golang.org/grpc/server.go.html#line-892">#L892</a>: 			c.<b>Close</b>()
+
+	<a href="../pkg/google.golang.org/grpc/internal/transport.html">google.golang.org/grpc/internal/transport</a>
+		<a href="../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-220">http2_client.go#L220</a>: 			conn.<b>Close</b>()
+		<a href="../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-422" class="path-duplicate">http2_client.go</a><a href="../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-422">#L422</a>: 		t.conn.<b>Close</b>()
+		<a href="../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-900" class="path-duplicate">http2_client.go</a><a href="../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-900">#L900</a>: 	t.conn.<b>Close</b>()
+		<a href="../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-331">http2_server.go#L331</a>: 		t.conn.<b>Close</b>()
+		<a href="../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1210" class="path-duplicate">http2_server.go</a><a href="../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1210">#L1210</a>: 	if err := t.conn.<b>Close</b>(); err != nil &amp;&amp; logger.V(logLevel) {
+		<a href="../src/google.golang.org/grpc/internal/transport/proxy.go.html#line-76">proxy.go#L76</a>: 			conn.<b>Close</b>()
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: context.Canceled</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">var <b><a href="../pkg/context.html">context</a>.<a href="../src/context/context.go.html#line-157">Canceled</a></b></span>
+
+<span class="title">11 uses</span>
+
+	context (current package)
+		<a href="../src/context/context.go.html#line-157">context.go#L157</a>: var <b>Canceled</b> = errors.New("context canceled")
+		<a href="../src/context/context.go.html#line-238" class="path-duplicate">context.go</a><a href="../src/context/context.go.html#line-238">#L238</a>: 	return &amp;c, func() { c.cancel(true, <b>Canceled</b>) }
+		<a href="../src/context/context.go.html#line-450" class="path-duplicate">context.go</a><a href="../src/context/context.go.html#line-450">#L450</a>: 		return c, func() { c.cancel(false, <b>Canceled</b>) }
+		<a href="../src/context/context.go.html#line-459" class="path-duplicate">context.go</a><a href="../src/context/context.go.html#line-459">#L459</a>: 	return c, func() { c.cancel(true, <b>Canceled</b>) }
+
+	<a href="../pkg/google.golang.org/grpc.html">google.golang.org/grpc</a>
+		<a href="../src/google.golang.org/grpc/picker_wrapper.go.html#line-114">picker_wrapper.go#L114</a>: 				case context.<b>Canceled</b>:
+		<a href="../src/google.golang.org/grpc/rpc_util.go.html#line-835">rpc_util.go#L835</a>: 	case context.<b>Canceled</b>:
+
+	<a href="../pkg/google.golang.org/grpc/internal/transport.html">google.golang.org/grpc/internal/transport</a>
+		<a href="../src/google.golang.org/grpc/internal/transport/transport.go.html#line-802">transport.go#L802</a>: 	case context.<b>Canceled</b>:
+
+	<a href="../pkg/google.golang.org/grpc/status.html">google.golang.org/grpc/status</a>
+		<a href="../src/google.golang.org/grpc/status/status.go.html#line-131">status.go#L131</a>: 	if errors.Is(err, context.<b>Canceled</b>) {
+
+	<a href="../pkg/net.html">net</a>
+		<a href="../src/net/net.go.html#line-423">net.go#L423</a>: 	case context.<b>Canceled</b>:
+
+	<a href="../pkg/net/http.html">net/http</a>
+		<a href="../src/net/http/h2_bundle.go.html#line-1019">h2_bundle.go#L1019</a>: 	if !errors.Is(call.err, context.<b>Canceled</b>) &amp;&amp; !errors.Is(call.err, context.DeadlineExceeded) {
+
+	<a href="../pkg/net/http/httputil.html">net/http/httputil</a>
+		<a href="../src/net/http/httputil/reverseproxy.go.html#line-462">reverseproxy.go#L462</a>: 		if rerr != nil &amp;&amp; rerr != io.EOF &amp;&amp; rerr != context.<b>Canceled</b> {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

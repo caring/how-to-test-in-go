@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime.mspan.nelems</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/runtime.html">runtime</a>.<a href="../src/runtime/mheap.go.html#line-384">mspan</a>.<a href="../src/runtime/mheap.go.html#line-412">nelems</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">33 uses</span>
+
+	runtime (current package)
+		<a href="../src/runtime/heapdump.go.html#line-489">heapdump.go#L489</a>: 		for freeIndex := uintptr(0); freeIndex &lt; s.<b>nelems</b>; freeIndex++ {
+		<a href="../src/runtime/malloc.go.html#line-853">malloc.go#L853</a>: 		if result &lt; s.<b>nelems</b> {
+		<a href="../src/runtime/malloc.go.html#line-855" class="path-duplicate">malloc.go</a><a href="../src/runtime/malloc.go.html#line-855">#L855</a>: 			if freeidx%64 == 0 &amp;&amp; freeidx != s.<b>nelems</b> {
+		<a href="../src/runtime/malloc.go.html#line-880" class="path-duplicate">malloc.go</a><a href="../src/runtime/malloc.go.html#line-880">#L880</a>: 	if freeIndex == s.<b>nelems</b> {
+		<a href="../src/runtime/malloc.go.html#line-882" class="path-duplicate">malloc.go</a><a href="../src/runtime/malloc.go.html#line-882">#L882</a>: 		if uintptr(s.allocCount) != s.<b>nelems</b> {
+		<a href="../src/runtime/malloc.go.html#line-883" class="path-duplicate">malloc.go</a><a href="../src/runtime/malloc.go.html#line-883">#L883</a>: 			println("runtime: s.allocCount=", s.allocCount, "s.nelems=", s.<b>nelems</b>)
+		<a href="../src/runtime/malloc.go.html#line-893" class="path-duplicate">malloc.go</a><a href="../src/runtime/malloc.go.html#line-893">#L893</a>: 	if freeIndex &gt;= s.<b>nelems</b> {
+		<a href="../src/runtime/malloc.go.html#line-899" class="path-duplicate">malloc.go</a><a href="../src/runtime/malloc.go.html#line-899">#L899</a>: 	if uintptr(s.allocCount) &gt; s.<b>nelems</b> {
+		<a href="../src/runtime/malloc.go.html#line-900" class="path-duplicate">malloc.go</a><a href="../src/runtime/malloc.go.html#line-900">#L900</a>: 		println("s.allocCount=", s.allocCount, "s.nelems=", s.<b>nelems</b>)
+		<a href="../src/runtime/mbitmap.go.html#line-168">mbitmap.go#L168</a>: 	snelems := s.<b>nelems</b>
+		<a href="../src/runtime/mbitmap.go.html#line-783" class="path-duplicate">mbitmap.go</a><a href="../src/runtime/mbitmap.go.html#line-783">#L783</a>: 	bytes := divRoundUp(s.<b>nelems</b>, 8)
+		<a href="../src/runtime/mcache.go.html#line-150">mcache.go#L150</a>: 	if uintptr(s.allocCount) != s.<b>nelems</b> {
+		<a href="../src/runtime/mcache.go.html#line-167" class="path-duplicate">mcache.go</a><a href="../src/runtime/mcache.go.html#line-167">#L167</a>: 	if uintptr(s.allocCount) == s.<b>nelems</b> {
+		<a href="../src/runtime/mcache.go.html#line-178" class="path-duplicate">mcache.go</a><a href="../src/runtime/mcache.go.html#line-178">#L178</a>: 	atomic.Xadduintptr(&amp;stats.smallAllocCount[spc.sizeclass()], uintptr(s.<b>nelems</b>)-uintptr(s.allocCount))
+		<a href="../src/runtime/mcache.go.html#line-264" class="path-duplicate">mcache.go</a><a href="../src/runtime/mcache.go.html#line-264">#L264</a>: 			n := uintptr(s.<b>nelems</b>) - uintptr(s.allocCount)
+		<a href="../src/runtime/mcentral.go.html#line-144">mcentral.go#L144</a>: 			if freeIndex != s.<b>nelems</b> {
+		<a href="../src/runtime/mcentral.go.html#line-171" class="path-duplicate">mcentral.go</a><a href="../src/runtime/mcentral.go.html#line-171">#L171</a>: 	n := int(s.<b>nelems</b>) - int(s.allocCount)
+		<a href="../src/runtime/mcentral.go.html#line-172" class="path-duplicate">mcentral.go</a><a href="../src/runtime/mcentral.go.html#line-172">#L172</a>: 	if n == 0 || s.freeindex == s.<b>nelems</b> || uintptr(s.allocCount) == s.<b>nelems</b> {
+		<a href="../src/runtime/mcentral.go.html#line-225" class="path-duplicate">mcentral.go</a><a href="../src/runtime/mcentral.go.html#line-225">#L225</a>: 		if int(s.<b>nelems</b>)-int(s.allocCount) &gt; 0 {
+		<a href="../src/runtime/mgcsweep.go.html#line-489">mgcsweep.go#L489</a>: 		for i := uintptr(0); i &lt; s.<b>nelems</b>; i++ {
+		<a href="../src/runtime/mgcsweep.go.html#line-511" class="path-duplicate">mgcsweep.go</a><a href="../src/runtime/mgcsweep.go.html#line-511">#L511</a>: 	if s.freeindex &lt; s.<b>nelems</b> {
+		<a href="../src/runtime/mgcsweep.go.html#line-522" class="path-duplicate">mgcsweep.go</a><a href="../src/runtime/mgcsweep.go.html#line-522">#L522</a>: 		for i := obj/8 + 1; i &lt; divRoundUp(s.<b>nelems</b>, 8); i++ {
+		<a href="../src/runtime/mgcsweep.go.html#line-535" class="path-duplicate">mgcsweep.go</a><a href="../src/runtime/mgcsweep.go.html#line-535">#L535</a>: 		print("runtime: nelems=", s.<b>nelems</b>, " nalloc=", nalloc, " previous allocCount=", s.allocCount, " nfreed=", nfreed, "\n")
+		<a href="../src/runtime/mgcsweep.go.html#line-548" class="path-duplicate">mgcsweep.go</a><a href="../src/runtime/mgcsweep.go.html#line-548">#L548</a>: 	s.gcmarkBits = newMarkBits(s.<b>nelems</b>)
+		<a href="../src/runtime/mgcsweep.go.html#line-599" class="path-duplicate">mgcsweep.go</a><a href="../src/runtime/mgcsweep.go.html#line-599">#L599</a>: 			if uintptr(nalloc) == s.<b>nelems</b> {
+		<a href="../src/runtime/mgcsweep.go.html#line-662" class="path-duplicate">mgcsweep.go</a><a href="../src/runtime/mgcsweep.go.html#line-662">#L662</a>: 	for i := uintptr(0); i &lt; s.<b>nelems</b>; i++ {
+		<a href="../src/runtime/mheap.go.html#line-412">mheap.go#L412</a>: 	<b>nelems</b> uintptr // number of object in the span.
+		<a href="../src/runtime/mheap.go.html#line-1223" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1223">#L1223</a>: 		s.<b>nelems</b> = 0
+		<a href="../src/runtime/mheap.go.html#line-1232" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1232">#L1232</a>: 			s.<b>nelems</b> = 1
+		<a href="../src/runtime/mheap.go.html#line-1236" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1236">#L1236</a>: 			s.<b>nelems</b> = nbytes / s.elemsize
+		<a href="../src/runtime/mheap.go.html#line-1243" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1243">#L1243</a>: 		s.gcmarkBits = newMarkBits(s.<b>nelems</b>)
+		<a href="../src/runtime/mheap.go.html#line-1244" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1244">#L1244</a>: 		s.allocBits = newAllocBits(s.<b>nelems</b>)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

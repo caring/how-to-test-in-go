@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: time.UTC</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">var <b><a href="../pkg/time.html">time</a>.<a href="../src/time/zoneinfo.go.html#line-67">UTC</a></b></span>
+
+<span class="title">14 uses</span>
+
+	time (current package)
+		<a href="../src/time/format.go.html#line-552">format.go#L552</a>: 	case <b>UTC</b>, nil:
+		<a href="../src/time/format.go.html#line-946" class="path-duplicate">format.go</a><a href="../src/time/format.go.html#line-946">#L946</a>: 	return parse(layout, value, <b>UTC</b>, Local)
+		<a href="../src/time/format.go.html#line-1119" class="path-duplicate">format.go</a><a href="../src/time/format.go.html#line-1119">#L1119</a>: 				z = <b>UTC</b>
+		<a href="../src/time/format.go.html#line-1181" class="path-duplicate">format.go</a><a href="../src/time/format.go.html#line-1181">#L1181</a>: 				z = <b>UTC</b>
+		<a href="../src/time/format.go.html#line-1281" class="path-duplicate">format.go</a><a href="../src/time/format.go.html#line-1281">#L1281</a>: 		t := Date(year, Month(month), day, hour, min, sec, nsec, <b>UTC</b>)
+		<a href="../src/time/format.go.html#line-1298" class="path-duplicate">format.go</a><a href="../src/time/format.go.html#line-1298">#L1298</a>: 		t := Date(year, Month(month), day, hour, min, sec, nsec, <b>UTC</b>)
+		<a href="../src/time/time.go.html#line-1116">time.go#L1116</a>: 		l = <b>UTC</b>
+		<a href="../src/time/time.go.html#line-1172" class="path-duplicate">time.go</a><a href="../src/time/time.go.html#line-1172">#L1172</a>: 	if t.Location() == <b>UTC</b> {
+		<a href="../src/time/zoneinfo.go.html#line-67">zoneinfo.go#L67</a>: var <b>UTC</b> *Location = &amp;utcLoc
+		<a href="../src/time/zoneinfo.go.html#line-642" class="path-duplicate">zoneinfo.go</a><a href="../src/time/zoneinfo.go.html#line-642">#L642</a>: 		return <b>UTC</b>, nil
+
+	<a href="../pkg/github.com/go-sql-driver/mysql.html">github.com/go-sql-driver/mysql</a>
+		<a href="../src/github.com/go-sql-driver/mysql/dsn.go.html#line-71">dsn.go#L71</a>: 		Loc:                  time.<b>UTC</b>,
+		<a href="../src/github.com/go-sql-driver/mysql/dsn.go.html#line-235" class="path-duplicate">dsn.go</a><a href="../src/github.com/go-sql-driver/mysql/dsn.go.html#line-235">#L235</a>: 	if cfg.Loc != time.<b>UTC</b> &amp;&amp; cfg.Loc != nil {
+		<a href="../src/github.com/go-sql-driver/mysql/nulltime.go.html#line-31">nulltime.go#L31</a>: 		nt.Time, err = parseDateTime(v, time.<b>UTC</b>)
+		<a href="../src/github.com/go-sql-driver/mysql/nulltime.go.html#line-35" class="path-duplicate">nulltime.go</a><a href="../src/github.com/go-sql-driver/mysql/nulltime.go.html#line-35">#L35</a>: 		nt.Time, err = parseDateTime([]byte(v), time.<b>UTC</b>)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

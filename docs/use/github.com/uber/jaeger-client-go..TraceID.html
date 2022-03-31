@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/uber/jaeger-client-go.TraceID</title>
+<link href="../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../../../pkg/github.com/uber/jaeger-client-go.html">github.com/uber/jaeger-client-go</a>.<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-41">TraceID</a></b></span>
+
+<span class="title">21 uses</span>
+
+	github.com/uber/jaeger-client-go (current package)
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-38">sampler.go#L38</a>: 	IsSampled(id <b>TraceID</b>, operation string) (sampled bool, tags []Tag)
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-74" class="path-duplicate">sampler.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-74">#L74</a>: func (s *ConstSampler) IsSampled(id <b>TraceID</b>, operation string) (bool, []Tag) {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-144" class="path-duplicate">sampler.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-144">#L144</a>: func (s *ProbabilisticSampler) IsSampled(id <b>TraceID</b>, operation string) (bool, []Tag) {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-210" class="path-duplicate">sampler.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-210">#L210</a>: func (s *RateLimitingSampler) IsSampled(id <b>TraceID</b>, operation string) (bool, []Tag) {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-292" class="path-duplicate">sampler.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-292">#L292</a>: func (s *GuaranteedThroughputProbabilisticSampler) IsSampled(id <b>TraceID</b>, operation string) (bool, []Tag) {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-393" class="path-duplicate">sampler.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-393">#L393</a>: func (s *PerOperationSampler) IsSampled(id <b>TraceID</b>, operation string) (bool, []Tag) {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote.go.html#line-93">sampler_remote.go#L93</a>: func (s *RemotelyControlledSampler) IsSampled(id <b>TraceID</b>, operation string) (bool, []Tag) {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler_v2.go.html#line-59">sampler_v2.go#L59</a>: func (SamplerV2Base) IsSampled(id <b>TraceID</b>, operation string) (sampled bool, tags []Tag) {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler_v2.go.html#line-72" class="path-duplicate">sampler_v2.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler_v2.go.html#line-72">#L72</a>: 	delegate func(id <b>TraceID</b>, operation string) (sampled bool, tags []Tag)
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-41">span_context.go#L41</a>: type <b>TraceID</b> struct {
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-52" class="path-duplicate">span_context.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-52">#L52</a>: 	traceID <b>TraceID</b>
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-255" class="path-duplicate">span_context.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-255">#L255</a>: func (c SpanContext) TraceID() <b>TraceID</b> {
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-285" class="path-duplicate">span_context.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-285">#L285</a>: func NewSpanContext(traceID <b>TraceID</b>, spanID, parentID SpanID, sampled bool, baggage map[string]string) SpanContext {
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-368" class="path-duplicate">span_context.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-368">#L368</a>: func (t <b>TraceID</b>) String() string {
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-376" class="path-duplicate">span_context.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-376">#L376</a>: func TraceIDFromString(s string) (<b>TraceID</b>, error) {
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-380" class="path-duplicate">span_context.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-380">#L380</a>: 		return <b>TraceID</b>{}, fmt.Errorf("TraceID cannot be longer than 32 hex characters: %s", s)
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-384" class="path-duplicate">span_context.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-384">#L384</a>: 			return <b>TraceID</b>{}, err
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-387" class="path-duplicate">span_context.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-387">#L387</a>: 			return <b>TraceID</b>{}, err
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-391" class="path-duplicate">span_context.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-391">#L391</a>: 			return <b>TraceID</b>{}, err
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-394" class="path-duplicate">span_context.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-394">#L394</a>: 	return <b>TraceID</b>{High: hi, Low: lo}, nil
+		<a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-398" class="path-duplicate">span_context.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-398">#L398</a>: func (t <b>TraceID</b>) IsValid() bool {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

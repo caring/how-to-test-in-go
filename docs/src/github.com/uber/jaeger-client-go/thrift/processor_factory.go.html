@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Source: processor_factory.go in package github.com/uber/jaeger-client-go/thrift</title>
+<link href="../../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre id="header"><code><span class="title">Source File</span>
+	processor_factory.go
+
+<span class="title">Belonging Package</span>
+	<a href="../../../../../pkg/github.com/uber/jaeger-client-go/thrift.html">github.com/uber/jaeger-client-go/thrift</a>
+</code></pre>
+<style>input[type=radio] {display: none;}
+input[id=r0]:checked ~pre label[for=r0],
+input[id=r1]:checked ~pre label[for=r1],
+input[id=r2]:checked ~pre label[for=r2],
+input[id=r3]:checked ~pre label[for=r3],
+input[id=r4]:checked ~pre label[for=r4],
+input[id=r5]:checked ~pre label[for=r5],
+input[id=r6]:checked ~pre label[for=r6],
+input[id=r7]:checked ~pre label[for=r7],
+input[id=r8]:checked ~pre label[for=r8],
+input[id=r9]:checked ~pre label[for=r9]
+{background: #226; color: #ff8;}
+input[id=i0]:checked ~pre .i0
+{background: brown; color: #eed;}
+</style><input id="r0" type="radio" name="g"/>
+<input id="r1" type="radio" name="g"/>
+<input id="r2" type="radio" name="g"/>
+<input id="r3" type="radio" name="g"/>
+<input id="r4" type="radio" name="g"/>
+<input id="r5" type="radio" name="g"/>
+<input id="r6" type="radio" name="g"/>
+<input id="r7" type="radio" name="g"/>
+<input id="r8" type="radio" name="g"/>
+<input id="r9" type="radio" name="g"/>
+<input id="i0" type="radio" name="i"/>
+
+<pre class="line-numbers">
+<span class="codeline" id="line-1"><code><span class="comment">/*</span></code></span>
+<span class="codeline" id="line-2"><code><span class="comment"> * Licensed to the Apache Software Foundation (ASF) under one</span></code></span>
+<span class="codeline" id="line-3"><code><span class="comment"> * or more contributor license agreements. See the NOTICE file</span></code></span>
+<span class="codeline" id="line-4"><code><span class="comment"> * distributed with this work for additional information</span></code></span>
+<span class="codeline" id="line-5"><code><span class="comment"> * regarding copyright ownership. The ASF licenses this file</span></code></span>
+<span class="codeline" id="line-6"><code><span class="comment"> * to you under the Apache License, Version 2.0 (the</span></code></span>
+<span class="codeline" id="line-7"><code><span class="comment"> * "License"); you may not use this file except in compliance</span></code></span>
+<span class="codeline" id="line-8"><code><span class="comment"> * with the License. You may obtain a copy of the License at</span></code></span>
+<span class="codeline" id="line-9"><code><span class="comment"> *</span></code></span>
+<span class="codeline" id="line-10"><code><span class="comment"> *   http://www.apache.org/licenses/LICENSE-2.0</span></code></span>
+<span class="codeline" id="line-11"><code><span class="comment"> *</span></code></span>
+<span class="codeline" id="line-12"><code><span class="comment"> * Unless required by applicable law or agreed to in writing,</span></code></span>
+<span class="codeline" id="line-13"><code><span class="comment"> * software distributed under the License is distributed on an</span></code></span>
+<span class="codeline" id="line-14"><code><span class="comment"> * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY</span></code></span>
+<span class="codeline" id="line-15"><code><span class="comment"> * KIND, either express or implied. See the License for the</span></code></span>
+<span class="codeline" id="line-16"><code><span class="comment"> * specific language governing permissions and limitations</span></code></span>
+<span class="codeline" id="line-17"><code><span class="comment"> * under the License.</span></code></span>
+<span class="codeline" id="line-18"><code><span class="comment"> */</span></code></span>
+<span class="codeline" id="line-19"><code></code></span>
+<span class="codeline" id="line-20"><code><span class="keyword">package</span> thrift</code></span>
+<span class="codeline" id="line-21"><code></code></span>
+<span class="codeline" id="line-22"><code><span class="keyword">import</span> <label for="i0"><span class="lit-string i0">"context"</span></label></code></span>
+<span class="codeline" id="line-23"><code></code></span>
+<span class="codeline" id="line-24"><code><span class="comment">// A processor is a generic object which operates upon an input stream and</span></code></span>
+<span class="codeline" id="line-25"><code><span class="comment">// writes to some output stream.</span></code></span>
+<span class="codeline" id="line-26"><code><span class="keyword">type</span> <a href="../../../../../pkg/github.com/uber/jaeger-client-go/thrift.html#name-TProcessor" class="ident">TProcessor</a> <span class="keyword">interface</span> {</code></span>
+<span class="codeline" id="line-27"><code>	<a href="../../../../../imp/github.com/uber/jaeger-client-go/thrift.TProcessor.html#name-Process" class="ident">Process</a>(ctx <a href="../../../../../pkg/context.html" class="ident i0">context</a>.<a href="../../../../context/context.go.html#line-62" class="ident">Context</a>, in, out <a href="protocol.go.html#line-33" class="ident">TProtocol</a>) (<a href="../../../../../pkg/builtin.html#name-bool" class="ident">bool</a>, <a href="exception.go.html#line-27" class="ident">TException</a>)</code></span>
+<span class="codeline" id="line-28"><code></code></span>
+<span class="codeline" id="line-29"><code>	<span class="comment">// ProcessorMap returns a map of thrift method names to TProcessorFunctions.</span></code></span>
+<span class="codeline" id="line-30"><code>	<a href="../../../../../imp/github.com/uber/jaeger-client-go/thrift.TProcessor.html#name-ProcessorMap" class="ident">ProcessorMap</a>() <span class="keyword">map</span>[<a href="../../../../../pkg/builtin.html#name-string" class="ident">string</a>]<a href="#line-40" class="ident">TProcessorFunction</a></code></span>
+<span class="codeline" id="line-31"><code></code></span>
+<span class="codeline" id="line-32"><code>	<span class="comment">// AddToProcessorMap adds the given TProcessorFunction to the internal</span></code></span>
+<span class="codeline" id="line-33"><code><span class="comment">	// processor map at the given key.</span></code></span>
+<span class="codeline" id="line-34"><code><span class="comment">	//</span></code></span>
+<span class="codeline" id="line-35"><code><span class="comment">	// If one is already set at the given key, it will be replaced with the new</span></code></span>
+<span class="codeline" id="line-36"><code><span class="comment">	// TProcessorFunction.</span></code></span>
+<span class="codeline" id="line-37"><code>	<a href="../../../../../imp/github.com/uber/jaeger-client-go/thrift.TProcessor.html#name-AddToProcessorMap" class="ident">AddToProcessorMap</a>(<a href="../../../../../pkg/builtin.html#name-string" class="ident">string</a>, <a href="#line-40" class="ident">TProcessorFunction</a>)</code></span>
+<span class="codeline" id="line-38"><code>}</code></span>
+<span class="codeline" id="line-39"><code></code></span>
+<span class="codeline" id="line-40"><code><span class="keyword">type</span> <a href="../../../../../pkg/github.com/uber/jaeger-client-go/thrift.html#name-TProcessorFunction" class="ident">TProcessorFunction</a> <span class="keyword">interface</span> {</code></span>
+<span class="codeline" id="line-41"><code>	<a href="../../../../../imp/github.com/uber/jaeger-client-go/thrift.TProcessorFunction.html#name-Process" class="ident">Process</a>(ctx <a href="../../../../../pkg/context.html" class="ident i0">context</a>.<a href="../../../../context/context.go.html#line-62" class="ident">Context</a>, seqId <a href="../../../../../pkg/builtin.html#name-int32" class="ident">int32</a>, in, out <a href="protocol.go.html#line-33" class="ident">TProtocol</a>) (<a href="../../../../../pkg/builtin.html#name-bool" class="ident">bool</a>, <a href="exception.go.html#line-27" class="ident">TException</a>)</code></span>
+<span class="codeline" id="line-42"><code>}</code></span>
+<span class="codeline" id="line-43"><code></code></span>
+<span class="codeline" id="line-44"><code><span class="comment">// The default processor factory just returns a singleton</span></code></span>
+<span class="codeline" id="line-45"><code><span class="comment">// instance.</span></code></span>
+<span class="codeline" id="line-46"><code><span class="keyword">type</span> <a href="../../../../../pkg/github.com/uber/jaeger-client-go/thrift.html#name-TProcessorFactory" class="ident">TProcessorFactory</a> <span class="keyword">interface</span> {</code></span>
+<span class="codeline" id="line-47"><code>	<a href="../../../../../imp/github.com/uber/jaeger-client-go/thrift.TProcessorFactory.html#name-GetProcessor" class="ident">GetProcessor</a>(trans <a href="transport.go.html#line-43" class="ident">TTransport</a>) <a href="#line-26" class="ident">TProcessor</a></code></span>
+<span class="codeline" id="line-48"><code>}</code></span>
+<span class="codeline" id="line-49"><code></code></span>
+<span class="codeline" id="line-50"><code><span class="keyword">type</span> <a href="../../../../../pkg/github.com/uber/jaeger-client-go/thrift.html#name-tProcessorFactory" class="ident">tProcessorFactory</a> <span class="keyword">struct</span> {</code></span>
+<span class="codeline" id="line-51"><code>	<a href="../../../../../use/github.com/uber/jaeger-client-go/thrift..tProcessorFactory^f3d1e.processor^d825b.html" class="ident">processor</a> <a href="#line-26" class="ident">TProcessor</a></code></span>
+<span class="codeline" id="line-52"><code>}</code></span>
+<span class="codeline" id="line-53"><code></code></span>
+<span class="codeline" id="line-54"><code><span class="keyword">func</span> <label for="r0" class="ident"><a href="../../../../../pkg/github.com/uber/jaeger-client-go/thrift.html#name-NewTProcessorFactory" class="ident">NewTProcessorFactory</a></label>(<label for="r1" class="ident">p</label> <a href="#line-26" class="ident">TProcessor</a>) <a href="#line-46" class="ident">TProcessorFactory</a> {</code></span>
+<span class="codeline" id="line-55"><code>	<span class="keyword">return</span> &amp;<a href="#line-50" class="ident">tProcessorFactory</a>{<a href="#line-51" class="ident">processor</a>: <label for="r1" class="ident">p</label>}</code></span>
+<span class="codeline" id="line-56"><code>}</code></span>
+<span class="codeline" id="line-57"><code></code></span>
+<span class="codeline" id="line-58"><code><span class="keyword">func</span> (<label for="r2" class="ident">p</label> *<a href="#line-50" class="ident">tProcessorFactory</a>) <label for="r3" class="ident"><a href="../../../../../use/github.com/uber/jaeger-client-go/thrift..tProcessorFactory^f3d1e.GetProcessor.html" class="ident">GetProcessor</a></label>(<label for="r4" class="ident">trans</label> <a href="transport.go.html#line-43" class="ident">TTransport</a>) <a href="#line-26" class="ident">TProcessor</a> {</code></span>
+<span class="codeline" id="line-59"><code>	<span class="keyword">return</span> <label for="r2" class="ident">p</label>.<a href="#line-51" class="ident">processor</a></code></span>
+<span class="codeline" id="line-60"><code>}</code></span>
+<span class="codeline" id="line-61"><code></code></span>
+<span class="codeline" id="line-62"><code><span class="comment">/**</span></code></span>
+<span class="codeline" id="line-63"><code><span class="comment"> * The default processor factory just returns a singleton</span></code></span>
+<span class="codeline" id="line-64"><code><span class="comment"> * instance.</span></code></span>
+<span class="codeline" id="line-65"><code><span class="comment"> */</span></code></span>
+<span class="codeline" id="line-66"><code><span class="keyword">type</span> <a href="../../../../../pkg/github.com/uber/jaeger-client-go/thrift.html#name-TProcessorFunctionFactory" class="ident">TProcessorFunctionFactory</a> <span class="keyword">interface</span> {</code></span>
+<span class="codeline" id="line-67"><code>	<a href="../../../../../imp/github.com/uber/jaeger-client-go/thrift.TProcessorFunctionFactory.html#name-GetProcessorFunction" class="ident">GetProcessorFunction</a>(trans <a href="transport.go.html#line-43" class="ident">TTransport</a>) <a href="#line-40" class="ident">TProcessorFunction</a></code></span>
+<span class="codeline" id="line-68"><code>}</code></span>
+<span class="codeline" id="line-69"><code></code></span>
+<span class="codeline" id="line-70"><code><span class="keyword">type</span> <a href="../../../../../pkg/github.com/uber/jaeger-client-go/thrift.html#name-tProcessorFunctionFactory" class="ident">tProcessorFunctionFactory</a> <span class="keyword">struct</span> {</code></span>
+<span class="codeline" id="line-71"><code>	<a href="../../../../../use/github.com/uber/jaeger-client-go/thrift..tProcessorFunctionFactory^e24ef.processor^d825b.html" class="ident">processor</a> <a href="#line-40" class="ident">TProcessorFunction</a></code></span>
+<span class="codeline" id="line-72"><code>}</code></span>
+<span class="codeline" id="line-73"><code></code></span>
+<span class="codeline" id="line-74"><code><span class="keyword">func</span> <label for="r5" class="ident"><a href="../../../../../pkg/github.com/uber/jaeger-client-go/thrift.html#name-NewTProcessorFunctionFactory" class="ident">NewTProcessorFunctionFactory</a></label>(<label for="r6" class="ident">p</label> <a href="#line-40" class="ident">TProcessorFunction</a>) <a href="#line-66" class="ident">TProcessorFunctionFactory</a> {</code></span>
+<span class="codeline" id="line-75"><code>	<span class="keyword">return</span> &amp;<a href="#line-70" class="ident">tProcessorFunctionFactory</a>{<a href="#line-71" class="ident">processor</a>: <label for="r6" class="ident">p</label>}</code></span>
+<span class="codeline" id="line-76"><code>}</code></span>
+<span class="codeline" id="line-77"><code></code></span>
+<span class="codeline" id="line-78"><code><span class="keyword">func</span> (<label for="r7" class="ident">p</label> *<a href="#line-70" class="ident">tProcessorFunctionFactory</a>) <label for="r8" class="ident"><a href="../../../../../use/github.com/uber/jaeger-client-go/thrift..tProcessorFunctionFactory^e24ef.GetProcessorFunction.html" class="ident">GetProcessorFunction</a></label>(<label for="r9" class="ident">trans</label> <a href="transport.go.html#line-43" class="ident">TTransport</a>) <a href="#line-40" class="ident">TProcessorFunction</a> {</code></span>
+<span class="codeline" id="line-79"><code>	<span class="keyword">return</span> <label for="r7" class="ident">p</label>.<a href="#line-71" class="ident">processor</a></code></span>
+<span class="codeline" id="line-80"><code>}</code></span>
+</pre><pre id="footer">
+<table><tr><td><img src="../../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

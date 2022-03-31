@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime.mspan</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../pkg/runtime.html">runtime</a>.<a href="../src/runtime/mheap.go.html#line-384">mspan</a></b></span>
+
+<span class="title">80 uses</span>
+
+	runtime (current package)
+		<a href="../src/runtime/malloc.go.html#line-849">malloc.go#L849</a>: func nextFreeFast(s *<b>mspan</b>) gclinkptr {
+		<a href="../src/runtime/malloc.go.html#line-876" class="path-duplicate">malloc.go</a><a href="../src/runtime/malloc.go.html#line-876">#L876</a>: func (c *mcache) nextFree(spc spanClass) (v gclinkptr, s *<b>mspan</b>, shouldhelpgc bool) {
+		<a href="../src/runtime/malloc.go.html#line-985" class="path-duplicate">malloc.go</a><a href="../src/runtime/malloc.go.html#line-985">#L985</a>: 	var span *<b>mspan</b>
+		<a href="../src/runtime/mbitmap.go.html#line-139">mbitmap.go#L139</a>: func (s *<b>mspan</b>) allocBitsForIndex(allocBitIndex uintptr) markBits {
+		<a href="../src/runtime/mbitmap.go.html#line-148" class="path-duplicate">mbitmap.go</a><a href="../src/runtime/mbitmap.go.html#line-148">#L148</a>: func (s *<b>mspan</b>) refillAllocCache(whichByte uintptr) {
+		<a href="../src/runtime/mbitmap.go.html#line-166" class="path-duplicate">mbitmap.go</a><a href="../src/runtime/mbitmap.go.html#line-166">#L166</a>: func (s *<b>mspan</b>) nextFreeIndex() uintptr {
+		<a href="../src/runtime/mbitmap.go.html#line-221" class="path-duplicate">mbitmap.go</a><a href="../src/runtime/mbitmap.go.html#line-221">#L221</a>: func (s *<b>mspan</b>) isFree(index uintptr) bool {
+		<a href="../src/runtime/mbitmap.go.html#line-233" class="path-duplicate">mbitmap.go</a><a href="../src/runtime/mbitmap.go.html#line-233">#L233</a>: func (s *<b>mspan</b>) divideByElemSize(n uintptr) uintptr {
+		<a href="../src/runtime/mbitmap.go.html#line-246" class="path-duplicate">mbitmap.go</a><a href="../src/runtime/mbitmap.go.html#line-246">#L246</a>: func (s *<b>mspan</b>) objIndex(p uintptr) uintptr {
+		<a href="../src/runtime/mbitmap.go.html#line-256" class="path-duplicate">mbitmap.go</a><a href="../src/runtime/mbitmap.go.html#line-256">#L256</a>: func (s *<b>mspan</b>) markBitsForIndex(objIndex uintptr) markBits {
+		<a href="../src/runtime/mbitmap.go.html#line-261" class="path-duplicate">mbitmap.go</a><a href="../src/runtime/mbitmap.go.html#line-261">#L261</a>: func (s *<b>mspan</b>) markBitsForBase() markBits {
+		<a href="../src/runtime/mbitmap.go.html#line-341" class="path-duplicate">mbitmap.go</a><a href="../src/runtime/mbitmap.go.html#line-341">#L341</a>: func badPointer(s *<b>mspan</b>, p, refBase, refOff uintptr) {
+		<a href="../src/runtime/mbitmap.go.html#line-384" class="path-duplicate">mbitmap.go</a><a href="../src/runtime/mbitmap.go.html#line-384">#L384</a>: func findObject(p, refBase, refOff uintptr) (base uintptr, s *<b>mspan</b>, objIndex uintptr) {
+		<a href="../src/runtime/mbitmap.go.html#line-752" class="path-duplicate">mbitmap.go</a><a href="../src/runtime/mbitmap.go.html#line-752">#L752</a>: func (h heapBits) initSpan(s *<b>mspan</b>) {
+		<a href="../src/runtime/mbitmap.go.html#line-781" class="path-duplicate">mbitmap.go</a><a href="../src/runtime/mbitmap.go.html#line-781">#L781</a>: func (s *<b>mspan</b>) countAlloc() int {
+		<a href="../src/runtime/mbitmap.go.html#line-1873" class="path-duplicate">mbitmap.go</a><a href="../src/runtime/mbitmap.go.html#line-1873">#L1873</a>: func materializeGCProg(ptrdata uintptr, prog *byte) *<b>mspan</b> {
+		<a href="../src/runtime/mbitmap.go.html#line-1882" class="path-duplicate">mbitmap.go</a><a href="../src/runtime/mbitmap.go.html#line-1882">#L1882</a>: func dematerializeGCProg(s *<b>mspan</b>) {
+		<a href="../src/runtime/mcache.go.html#line-44">mcache.go#L44</a>: 	alloc [numSpanClasses]*<b>mspan</b> // spans to allocate from, indexed by spanClass
+		<a href="../src/runtime/mcache.go.html#line-82" class="path-duplicate">mcache.go</a><a href="../src/runtime/mcache.go.html#line-82">#L82</a>: var emptymspan <b>mspan</b>
+		<a href="../src/runtime/mcache.go.html#line-212" class="path-duplicate">mcache.go</a><a href="../src/runtime/mcache.go.html#line-212">#L212</a>: func (c *mcache) allocLarge(size uintptr, needzero bool, noscan bool) (*<b>mspan</b>, bool) {
+		<a href="../src/runtime/mcentral.go.html#line-79">mcentral.go#L79</a>: func (c *mcentral) cacheSpan() *<b>mspan</b> {
+		<a href="../src/runtime/mcentral.go.html#line-104" class="path-duplicate">mcentral.go</a><a href="../src/runtime/mcentral.go.html#line-104">#L104</a>: 	var s *<b>mspan</b>
+		<a href="../src/runtime/mcentral.go.html#line-191" class="path-duplicate">mcentral.go</a><a href="../src/runtime/mcentral.go.html#line-191">#L191</a>: func (c *mcentral) uncacheSpan(s *<b>mspan</b>) {
+		<a href="../src/runtime/mcentral.go.html#line-237" class="path-duplicate">mcentral.go</a><a href="../src/runtime/mcentral.go.html#line-237">#L237</a>: func (c *mcentral) grow() *<b>mspan</b> {
+		<a href="../src/runtime/mgcmark.go.html#line-811">mgcmark.go#L811</a>: 		var s *<b>mspan</b>
+		<a href="../src/runtime/mgcmark.go.html#line-1402" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-1402">#L1402</a>: func greyobject(obj, base, off uintptr, span *<b>mspan</b>, gcw *gcWork, objIndex uintptr) {
+		<a href="../src/runtime/mgcmark.go.html#line-1508" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-1508">#L1508</a>: func gcmarknewobject(span *<b>mspan</b>, obj, size, scanSize uintptr) {
+		<a href="../src/runtime/mgcsweep.go.html#line-96">mgcsweep.go#L96</a>: func (h *mheap) nextSpanForSweep() *<b>mspan</b> {
+		<a href="../src/runtime/mgcsweep.go.html#line-101" class="path-duplicate">mgcsweep.go</a><a href="../src/runtime/mgcsweep.go.html#line-101">#L101</a>: 		var s *<b>mspan</b>
+		<a href="../src/runtime/mgcsweep.go.html#line-199" class="path-duplicate">mgcsweep.go</a><a href="../src/runtime/mgcsweep.go.html#line-199">#L199</a>: 	*<b>mspan</b>
+		<a href="../src/runtime/mgcsweep.go.html#line-210" class="path-duplicate">mgcsweep.go</a><a href="../src/runtime/mgcsweep.go.html#line-210">#L210</a>: func (l *sweepLocker) tryAcquire(s *<b>mspan</b>) (sweepLocked, bool) {
+		<a href="../src/runtime/mgcsweep.go.html#line-353" class="path-duplicate">mgcsweep.go</a><a href="../src/runtime/mgcsweep.go.html#line-353">#L353</a>: func (s *<b>mspan</b>) ensureSwept() {
+		<a href="../src/runtime/mgcsweep.go.html#line-657" class="path-duplicate">mgcsweep.go</a><a href="../src/runtime/mgcsweep.go.html#line-657">#L657</a>: func (s *<b>mspan</b>) reportZombies() {
+		<a href="../src/runtime/mgcwork.go.html#line-362">mgcwork.go#L362</a>: 		var s *<b>mspan</b>
+		<a href="../src/runtime/mheap.go.html#line-83">mheap.go#L83</a>: 	allspans []*<b>mspan</b> // all spans out there
+		<a href="../src/runtime/mheap.go.html#line-246" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-246">#L246</a>: 	spans [pagesPerArena]*<b>mspan</b>
+		<a href="../src/runtime/mheap.go.html#line-379" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-379">#L379</a>: 	first *<b>mspan</b> // first span in list, or nil if none
+		<a href="../src/runtime/mheap.go.html#line-380" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-380">#L380</a>: 	last  *<b>mspan</b> // last span in list, or nil if none
+		<a href="../src/runtime/mheap.go.html#line-384" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-384">#L384</a>: type <b>mspan</b> struct {
+		<a href="../src/runtime/mheap.go.html#line-385" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-385">#L385</a>: 	next *<b>mspan</b>     // next span in list, or nil if none
+		<a href="../src/runtime/mheap.go.html#line-386" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-386">#L386</a>: 	prev *<b>mspan</b>     // previous span in list, or nil if none
+		<a href="../src/runtime/mheap.go.html#line-467" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-467">#L467</a>: func (s *<b>mspan</b>) base() uintptr {
+		<a href="../src/runtime/mheap.go.html#line-471" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-471">#L471</a>: func (s *<b>mspan</b>) layout() (size, n, total uintptr) {
+		<a href="../src/runtime/mheap.go.html#line-495" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-495">#L495</a>: 	s := (*<b>mspan</b>)(p)
+		<a href="../src/runtime/mheap.go.html#line-504" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-504">#L504</a>: 		var new []*<b>mspan</b>
+		<a href="../src/runtime/mheap.go.html#line-630" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-630">#L630</a>: func spanOf(p uintptr) *<b>mspan</b> {
+		<a href="../src/runtime/mheap.go.html#line-665" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-665">#L665</a>: func spanOfUnchecked(p uintptr) *<b>mspan</b> {
+		<a href="../src/runtime/mheap.go.html#line-676" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-676">#L676</a>: func spanOfHeap(p uintptr) *<b>mspan</b> {
+		<a href="../src/runtime/mheap.go.html#line-704" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-704">#L704</a>: 	h.spanalloc.init(unsafe.Sizeof(<b>mspan</b>{}), recordspan, unsafe.Pointer(h), &amp;memstats.mspan_sys)
+		<a href="../src/runtime/mheap.go.html#line-902" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-902">#L902</a>: func (h *mheap) alloc(npages uintptr, spanclass spanClass, needzero bool) (*<b>mspan</b>, bool) {
+		<a href="../src/runtime/mheap.go.html#line-906" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-906">#L906</a>: 	var s *<b>mspan</b>
+		<a href="../src/runtime/mheap.go.html#line-945" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-945">#L945</a>: func (h *mheap) allocManual(npages uintptr, typ spanAllocType) *<b>mspan</b> {
+		<a href="../src/runtime/mheap.go.html#line-954" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-954">#L954</a>: func (h *mheap) setSpans(base, npage uintptr, s *<b>mspan</b>) {
+		<a href="../src/runtime/mheap.go.html#line-1043" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1043">#L1043</a>: func (h *mheap) tryAllocMSpan() *<b>mspan</b> {
+		<a href="../src/runtime/mheap.go.html#line-1066" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1066">#L1066</a>: func (h *mheap) allocMSpanLocked() *<b>mspan</b> {
+		<a href="../src/runtime/mheap.go.html#line-1072" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1072">#L1072</a>: 		return (*<b>mspan</b>)(h.spanalloc.alloc())
+		<a href="../src/runtime/mheap.go.html#line-1078" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1078">#L1078</a>: 			pp.mspancache.buf[i] = (*<b>mspan</b>)(h.spanalloc.alloc())
+		<a href="../src/runtime/mheap.go.html#line-1098" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1098">#L1098</a>: func (h *mheap) freeMSpanLocked(s *<b>mspan</b>) {
+		<a href="../src/runtime/mheap.go.html#line-1130" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1130">#L1130</a>: func (h *mheap) allocSpan(npages uintptr, typ spanAllocType, spanclass spanClass) (s *<b>mspan</b>) {
+		<a href="../src/runtime/mheap.go.html#line-1426" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1426">#L1426</a>: func (h *mheap) freeSpan(s *<b>mspan</b>) {
+		<a href="../src/runtime/mheap.go.html#line-1451" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1451">#L1451</a>: func (h *mheap) freeManual(s *<b>mspan</b>, typ spanAllocType) {
+		<a href="../src/runtime/mheap.go.html#line-1458" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1458">#L1458</a>: func (h *mheap) freeSpanLocked(s *<b>mspan</b>, typ spanAllocType) {
+		<a href="../src/runtime/mheap.go.html#line-1543" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1543">#L1543</a>: func (span *<b>mspan</b>) init(base uintptr, npages uintptr) {
+		<a href="../src/runtime/mheap.go.html#line-1563" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1563">#L1563</a>: func (span *<b>mspan</b>) inList() bool {
+		<a href="../src/runtime/mheap.go.html#line-1573" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1573">#L1573</a>: func (list *mSpanList) remove(span *<b>mspan</b>) {
+		<a href="../src/runtime/mheap.go.html#line-1598" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1598">#L1598</a>: func (list *mSpanList) insert(span *<b>mspan</b>) {
+		<a href="../src/runtime/mheap.go.html#line-1616" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1616">#L1616</a>: func (list *mSpanList) insertBack(span *<b>mspan</b>) {
+		<a href="../src/runtime/mheap.go.html#line-1678" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1678">#L1678</a>: func spanHasSpecials(s *<b>mspan</b>) {
+		<a href="../src/runtime/mheap.go.html#line-1686" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1686">#L1686</a>: func spanHasNoSpecials(s *<b>mspan</b>) {
+		<a href="../src/runtime/mheap.go.html#line-1883" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1883">#L1883</a>: func newSpecialsIter(span *<b>mspan</b>) specialsIter {
+		<a href="../src/runtime/mspanset.go.html#line-69">mspanset.go#L69</a>: 	spans [spanSetBlockEntries]*<b>mspan</b>
+		<a href="../src/runtime/mspanset.go.html#line-74" class="path-duplicate">mspanset.go</a><a href="../src/runtime/mspanset.go.html#line-74">#L74</a>: func (b *spanSet) push(s *<b>mspan</b>) {
+		<a href="../src/runtime/mspanset.go.html#line-141" class="path-duplicate">mspanset.go</a><a href="../src/runtime/mspanset.go.html#line-141">#L141</a>: func (b *spanSet) pop() *<b>mspan</b> {
+		<a href="../src/runtime/mspanset.go.html#line-190" class="path-duplicate">mspanset.go</a><a href="../src/runtime/mspanset.go.html#line-190">#L190</a>: 	s := (*<b>mspan</b>)(atomic.Loadp(unsafe.Pointer(&amp;block.spans[bottom])))
+		<a href="../src/runtime/mspanset.go.html#line-195" class="path-duplicate">mspanset.go</a><a href="../src/runtime/mspanset.go.html#line-195">#L195</a>: 		s = (*<b>mspan</b>)(atomic.Loadp(unsafe.Pointer(&amp;block.spans[bottom])))
+		<a href="../src/runtime/os_nonopenbsd.go.html#line-12">os_nonopenbsd.go#L12</a>: func osStackAlloc(s *<b>mspan</b>) {
+		<a href="../src/runtime/os_nonopenbsd.go.html#line-17" class="path-duplicate">os_nonopenbsd.go</a><a href="../src/runtime/os_nonopenbsd.go.html#line-17">#L17</a>: func osStackFree(s *<b>mspan</b>) {
+		<a href="../src/runtime/runtime2.go.html#line-658">runtime2.go#L658</a>: 		buf [128]*<b>mspan</b>
+		<a href="../src/runtime/stack.go.html#line-393">stack.go#L393</a>: 		var s *<b>mspan</b>
+		<a href="../src/runtime/stack.go.html#line-707" class="path-duplicate">stack.go</a><a href="../src/runtime/stack.go.html#line-707">#L707</a>: 			var s *<b>mspan</b>
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

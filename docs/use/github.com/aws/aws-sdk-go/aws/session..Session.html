@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/aws/aws-sdk-go/aws/session.Session</title>
+<link href="../../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../../../../../pkg/github.com/aws/aws-sdk-go/aws/session.html">github.com/aws/aws-sdk-go/aws/session</a>.<a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/session.go.html#line-48">Session</a></b></span>
+
+<span class="title">22 uses</span>
+
+	github.com/aws/aws-sdk-go/aws/session (current package)
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/credentials.go.html#line-72">credentials.go#L72</a>: 		&amp;<b>Session</b>{
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/credentials.go.html#line-203" class="path-duplicate">credentials.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/credentials.go.html#line-203">#L203</a>: 		&amp;<b>Session</b>{
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/session.go.html#line-48">session.go#L48</a>: type <b>Session</b> struct {
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/session.go.html#line-74" class="path-duplicate">session.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/session.go.html#line-74">#L74</a>: func New(cfgs ...*aws.Config) *<b>Session</b> {
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/session.go.html#line-95" class="path-duplicate">session.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/session.go.html#line-95">#L95</a>: 			s = &amp;<b>Session</b>{Config: defaults.Config()}
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/session.go.html#line-138" class="path-duplicate">session.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/session.go.html#line-138">#L138</a>: func NewSession(cfgs ...*aws.Config) (*<b>Session</b>, error) {
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/session.go.html#line-277" class="path-duplicate">session.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/session.go.html#line-277">#L277</a>: func NewSessionWithOptions(opts Options) (*<b>Session</b>, error) {
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/session.go.html#line-324" class="path-duplicate">session.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/session.go.html#line-324">#L324</a>: func Must(sess *<b>Session</b>, err error) *<b>Session</b> {
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/session.go.html#line-332" class="path-duplicate">session.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/session.go.html#line-332">#L332</a>: func deprecatedNewSession(cfgs ...*aws.Config) *<b>Session</b> {
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/session.go.html#line-349" class="path-duplicate">session.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/session.go.html#line-349">#L349</a>: 	s := &amp;<b>Session</b>{
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/session.go.html#line-372" class="path-duplicate">session.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/session.go.html#line-372">#L372</a>: func newSession(opts Options, envCfg envConfig, cfgs ...*aws.Config) (*<b>Session</b>, error) {
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/session.go.html#line-418" class="path-duplicate">session.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/session.go.html#line-418">#L418</a>: 	s := &amp;<b>Session</b>{
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/session.go.html#line-486" class="path-duplicate">session.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/session.go.html#line-486">#L486</a>: func loadCustomCABundle(s *<b>Session</b>, bundle io.Reader) error {
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/session.go.html#line-612" class="path-duplicate">session.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/session.go.html#line-612">#L612</a>: func initHandlers(s *<b>Session</b>) {
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/session.go.html#line-626" class="path-duplicate">session.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/session.go.html#line-626">#L626</a>: func (s *<b>Session</b>) Copy(cfgs ...*aws.Config) *<b>Session</b> {
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/session.go.html#line-627" class="path-duplicate">session.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/session.go.html#line-627">#L627</a>: 	newSession := &amp;<b>Session</b>{
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/session.go.html#line-640" class="path-duplicate">session.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/session.go.html#line-640">#L640</a>: func (s *<b>Session</b>) ClientConfig(service string, cfgs ...*aws.Config) client.Config {
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/session.go.html#line-668" class="path-duplicate">session.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/session.go.html#line-668">#L668</a>: func (s *<b>Session</b>) resolveEndpoint(service, region string, cfg *aws.Config) (endpoints.ResolvedEndpoint, error) {
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/session.go.html#line-706" class="path-duplicate">session.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/session.go.html#line-706">#L706</a>: func (s *<b>Session</b>) ClientConfigNoResolveEndpoint(cfgs ...*aws.Config) client.Config {
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/session.go.html#line-726" class="path-duplicate">session.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/aws/session/session.go.html#line-726">#L726</a>: func (s *<b>Session</b>) logDeprecatedNewSessionError(msg string, err error, cfgs []*aws.Config) {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

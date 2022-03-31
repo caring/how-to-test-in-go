@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: vendor/golang.org/x/crypto/cryptobyte.Builder.AddASN1</title>
+<link href="../../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../../../pkg/vendor/golang.org/x/crypto/cryptobyte.html">vendor/golang.org/x/crypto/cryptobyte</a>.<a href="../../../../../src/vendor/golang.org/x/crypto/cryptobyte/builder.go.html#line-23">Builder</a>.<a href="../../../../../src/vendor/golang.org/x/crypto/cryptobyte/asn1.go.html#line-230">AddASN1</a></b></span><span style="font-size: large;"><i> (method)</i></span>
+
+<span class="title">22 uses</span>
+
+	vendor/golang.org/x/crypto/cryptobyte (current package)
+		<a href="../../../../../src/vendor/golang.org/x/crypto/cryptobyte/asn1.go.html#line-38">asn1.go#L38</a>: 	b.<b>AddASN1</b>(tag, func(c *Builder) {
+		<a href="../../../../../src/vendor/golang.org/x/crypto/cryptobyte/asn1.go.html#line-53" class="path-duplicate">asn1.go</a><a href="../../../../../src/vendor/golang.org/x/crypto/cryptobyte/asn1.go.html#line-53">#L53</a>: 	b.<b>AddASN1</b>(asn1.INTEGER, func(c *Builder) {
+		<a href="../../../../../src/vendor/golang.org/x/crypto/cryptobyte/asn1.go.html#line-72" class="path-duplicate">asn1.go</a><a href="../../../../../src/vendor/golang.org/x/crypto/cryptobyte/asn1.go.html#line-72">#L72</a>: 	b.<b>AddASN1</b>(asn1.INTEGER, func(c *Builder) {
+		<a href="../../../../../src/vendor/golang.org/x/crypto/cryptobyte/asn1.go.html#line-102" class="path-duplicate">asn1.go</a><a href="../../../../../src/vendor/golang.org/x/crypto/cryptobyte/asn1.go.html#line-102">#L102</a>: 	b.<b>AddASN1</b>(asn1.OCTET_STRING, func(c *Builder) {
+		<a href="../../../../../src/vendor/golang.org/x/crypto/cryptobyte/asn1.go.html#line-115" class="path-duplicate">asn1.go</a><a href="../../../../../src/vendor/golang.org/x/crypto/cryptobyte/asn1.go.html#line-115">#L115</a>: 	b.<b>AddASN1</b>(asn1.GeneralizedTime, func(c *Builder) {
+		<a href="../../../../../src/vendor/golang.org/x/crypto/cryptobyte/asn1.go.html#line-122" class="path-duplicate">asn1.go</a><a href="../../../../../src/vendor/golang.org/x/crypto/cryptobyte/asn1.go.html#line-122">#L122</a>: 	b.<b>AddASN1</b>(asn1.UTCTime, func(c *Builder) {
+		<a href="../../../../../src/vendor/golang.org/x/crypto/cryptobyte/asn1.go.html#line-136" class="path-duplicate">asn1.go</a><a href="../../../../../src/vendor/golang.org/x/crypto/cryptobyte/asn1.go.html#line-136">#L136</a>: 	b.<b>AddASN1</b>(asn1.BIT_STRING, func(b *Builder) {
+		<a href="../../../../../src/vendor/golang.org/x/crypto/cryptobyte/asn1.go.html#line-182" class="path-duplicate">asn1.go</a><a href="../../../../../src/vendor/golang.org/x/crypto/cryptobyte/asn1.go.html#line-182">#L182</a>: 	b.<b>AddASN1</b>(asn1.OBJECT_IDENTIFIER, func(b *Builder) {
+		<a href="../../../../../src/vendor/golang.org/x/crypto/cryptobyte/asn1.go.html#line-196" class="path-duplicate">asn1.go</a><a href="../../../../../src/vendor/golang.org/x/crypto/cryptobyte/asn1.go.html#line-196">#L196</a>: 	b.<b>AddASN1</b>(asn1.BOOLEAN, func(b *Builder) {
+		<a href="../../../../../src/vendor/golang.org/x/crypto/cryptobyte/asn1.go.html#line-230" class="path-duplicate">asn1.go</a><a href="../../../../../src/vendor/golang.org/x/crypto/cryptobyte/asn1.go.html#line-230">#L230</a>: func (b *Builder) <b>AddASN1</b>(tag asn1.Tag, f BuilderContinuation) {
+
+	<a href="../../../../../pkg/crypto/ecdsa.html">crypto/ecdsa</a>
+		<a href="../../../../../src/crypto/ecdsa/ecdsa.go.html#line-122">ecdsa.go#L122</a>: 	b.<b>AddASN1</b>(asn1.SEQUENCE, func(b *cryptobyte.Builder) {
+
+	<a href="../../../../../pkg/crypto/x509.html">crypto/x509</a>
+		<a href="../../../../../src/crypto/x509/x509.go.html#line-1135">x509.go#L1135</a>: 				b.<b>AddASN1</b>(cryptobyte_asn1.SEQUENCE, func(b *cryptobyte.Builder) {
+		<a href="../../../../../src/crypto/x509/x509.go.html#line-1136" class="path-duplicate">x509.go</a><a href="../../../../../src/crypto/x509/x509.go.html#line-1136">#L1136</a>: 					b.<b>AddASN1</b>(cryptobyte_asn1.Tag(2).ContextSpecific(), func(b *cryptobyte.Builder) {
+		<a href="../../../../../src/crypto/x509/x509.go.html#line-1143" class="path-duplicate">x509.go</a><a href="../../../../../src/crypto/x509/x509.go.html#line-1143">#L1143</a>: 				b.<b>AddASN1</b>(cryptobyte_asn1.SEQUENCE, func(b *cryptobyte.Builder) {
+		<a href="../../../../../src/crypto/x509/x509.go.html#line-1144" class="path-duplicate">x509.go</a><a href="../../../../../src/crypto/x509/x509.go.html#line-1144">#L1144</a>: 					b.<b>AddASN1</b>(cryptobyte_asn1.Tag(7).ContextSpecific(), func(b *cryptobyte.Builder) {
+		<a href="../../../../../src/crypto/x509/x509.go.html#line-1155" class="path-duplicate">x509.go</a><a href="../../../../../src/crypto/x509/x509.go.html#line-1155">#L1155</a>: 				b.<b>AddASN1</b>(cryptobyte_asn1.SEQUENCE, func(b *cryptobyte.Builder) {
+		<a href="../../../../../src/crypto/x509/x509.go.html#line-1156" class="path-duplicate">x509.go</a><a href="../../../../../src/crypto/x509/x509.go.html#line-1156">#L1156</a>: 					b.<b>AddASN1</b>(cryptobyte_asn1.Tag(1).ContextSpecific(), func(b *cryptobyte.Builder) {
+		<a href="../../../../../src/crypto/x509/x509.go.html#line-1167" class="path-duplicate">x509.go</a><a href="../../../../../src/crypto/x509/x509.go.html#line-1167">#L1167</a>: 				b.<b>AddASN1</b>(cryptobyte_asn1.SEQUENCE, func(b *cryptobyte.Builder) {
+		<a href="../../../../../src/crypto/x509/x509.go.html#line-1168" class="path-duplicate">x509.go</a><a href="../../../../../src/crypto/x509/x509.go.html#line-1168">#L1168</a>: 					b.<b>AddASN1</b>(cryptobyte_asn1.Tag(6).ContextSpecific(), func(b *cryptobyte.Builder) {
+		<a href="../../../../../src/crypto/x509/x509.go.html#line-1188" class="path-duplicate">x509.go</a><a href="../../../../../src/crypto/x509/x509.go.html#line-1188">#L1188</a>: 		b.<b>AddASN1</b>(cryptobyte_asn1.SEQUENCE, func(b *cryptobyte.Builder) {
+		<a href="../../../../../src/crypto/x509/x509.go.html#line-1190" class="path-duplicate">x509.go</a><a href="../../../../../src/crypto/x509/x509.go.html#line-1190">#L1190</a>: 				b.<b>AddASN1</b>(cryptobyte_asn1.Tag(0).ContextSpecific().Constructed(), func(b *cryptobyte.Builder) {
+		<a href="../../../../../src/crypto/x509/x509.go.html#line-1196" class="path-duplicate">x509.go</a><a href="../../../../../src/crypto/x509/x509.go.html#line-1196">#L1196</a>: 				b.<b>AddASN1</b>(cryptobyte_asn1.Tag(1).ContextSpecific().Constructed(), func(b *cryptobyte.Builder) {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

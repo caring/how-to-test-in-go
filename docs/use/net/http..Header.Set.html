@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: net/http.Header.Set</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../pkg/net/http.html">net/http</a>.<a href="../../src/net/http/header.go.html#line-22">Header</a>.<a href="../../src/net/http/header.go.html#line-37">Set</a></b></span><span style="font-size: large;"><i> (method, <a href="../../imp/net/http.Header.html#name-Set">view implemented interface methods</a>)</i></span>
+
+<span class="title">58 uses</span>
+
+	net/http (current package)
+		<a href="../../src/net/http/client.go.html#line-244">client.go#L244</a>: 		req.Header.<b>Set</b>("Authorization", "Basic "+basicAuth(username, password))
+		<a href="../../src/net/http/client.go.html#line-689" class="path-duplicate">client.go</a><a href="../../src/net/http/client.go.html#line-689">#L689</a>: 				req.Header.<b>Set</b>("Referer", ref)
+		<a href="../../src/net/http/client.go.html#line-795" class="path-duplicate">client.go</a><a href="../../src/net/http/client.go.html#line-795">#L795</a>: 				ireqhdr.<b>Set</b>("Cookie", strings.Join(ss, "; "))
+		<a href="../../src/net/http/client.go.html#line-857" class="path-duplicate">client.go</a><a href="../../src/net/http/client.go.html#line-857">#L857</a>: 	req.Header.<b>Set</b>("Content-Type", contentType)
+		<a href="../../src/net/http/fs.go.html#line-151">fs.go#L151</a>: 	w.Header().<b>Set</b>("Content-Type", "text/html; charset=utf-8")
+		<a href="../../src/net/http/fs.go.html#line-247" class="path-duplicate">fs.go</a><a href="../../src/net/http/fs.go.html#line-247">#L247</a>: 		w.Header().<b>Set</b>("Content-Type", ctype)
+		<a href="../../src/net/http/fs.go.html#line-265" class="path-duplicate">fs.go</a><a href="../../src/net/http/fs.go.html#line-265">#L265</a>: 				w.Header().<b>Set</b>("Content-Range", fmt.Sprintf("bytes */%d", size))
+		<a href="../../src/net/http/fs.go.html#line-297" class="path-duplicate">fs.go</a><a href="../../src/net/http/fs.go.html#line-297">#L297</a>: 			w.Header().<b>Set</b>("Content-Range", ra.contentRange(size))
+		<a href="../../src/net/http/fs.go.html#line-304" class="path-duplicate">fs.go</a><a href="../../src/net/http/fs.go.html#line-304">#L304</a>: 			w.Header().<b>Set</b>("Content-Type", "multipart/byteranges; boundary="+mw.Boundary())
+		<a href="../../src/net/http/fs.go.html#line-328" class="path-duplicate">fs.go</a><a href="../../src/net/http/fs.go.html#line-328">#L328</a>: 		w.Header().<b>Set</b>("Accept-Ranges", "bytes")
+		<a href="../../src/net/http/fs.go.html#line-330" class="path-duplicate">fs.go</a><a href="../../src/net/http/fs.go.html#line-330">#L330</a>: 			w.Header().<b>Set</b>("Content-Length", strconv.FormatInt(sendSize, 10))
+		<a href="../../src/net/http/fs.go.html#line-531" class="path-duplicate">fs.go</a><a href="../../src/net/http/fs.go.html#line-531">#L531</a>: 		w.Header().<b>Set</b>("Last-Modified", modtime.UTC().Format(TimeFormat))
+		<a href="../../src/net/http/fs.go.html#line-689" class="path-duplicate">fs.go</a><a href="../../src/net/http/fs.go.html#line-689">#L689</a>: 	w.Header().<b>Set</b>("Location", newPath)
+		<a href="../../src/net/http/h2_bundle.go.html#line-5756">h2_bundle.go#L5756</a>: 		rp.header.<b>Set</b>("Cookie", strings.Join(cookies, "; "))
+		<a href="../../src/net/http/header.go.html#line-37">header.go#L37</a>: func (h Header) <b>Set</b>(key, value string) {
+		<a href="../../src/net/http/request.go.html#line-437">request.go#L437</a>: 		r.Header.<b>Set</b>("Cookie", c+"; "+s)
+		<a href="../../src/net/http/request.go.html#line-439" class="path-duplicate">request.go</a><a href="../../src/net/http/request.go.html#line-439">#L439</a>: 		r.Header.<b>Set</b>("Cookie", s)
+		<a href="../../src/net/http/request.go.html#line-977" class="path-duplicate">request.go</a><a href="../../src/net/http/request.go.html#line-977">#L977</a>: 	r.Header.<b>Set</b>("Authorization", "Basic "+basicAuth(username, password))
+		<a href="../../src/net/http/server.go.html#line-548">server.go#L548</a>: 		w.Header().<b>Set</b>("Connection", "close")
+		<a href="../../src/net/http/server.go.html#line-1976" class="path-duplicate">server.go</a><a href="../../src/net/http/server.go.html#line-1976">#L1976</a>: 	w.Header().<b>Set</b>("Connection", "close")
+		<a href="../../src/net/http/server.go.html#line-2057" class="path-duplicate">server.go</a><a href="../../src/net/http/server.go.html#line-2057">#L2057</a>: 	w.Header().<b>Set</b>("Content-Type", "text/plain; charset=utf-8")
+		<a href="../../src/net/http/server.go.html#line-2058" class="path-duplicate">server.go</a><a href="../../src/net/http/server.go.html#line-2058">#L2058</a>: 	w.Header().<b>Set</b>("X-Content-Type-Options", "nosniff")
+		<a href="../../src/net/http/server.go.html#line-2149" class="path-duplicate">server.go</a><a href="../../src/net/http/server.go.html#line-2149">#L2149</a>: 	h.<b>Set</b>("Location", hexEscapeNonASCII(url))
+		<a href="../../src/net/http/server.go.html#line-2151" class="path-duplicate">server.go</a><a href="../../src/net/http/server.go.html#line-2151">#L2151</a>: 		h.<b>Set</b>("Content-Type", "text/html; charset=utf-8")
+		<a href="../../src/net/http/server.go.html#line-2419" class="path-duplicate">server.go</a><a href="../../src/net/http/server.go.html#line-2419">#L2419</a>: 			w.Header().<b>Set</b>("Connection", "close")
+		<a href="../../src/net/http/server.go.html#line-3442" class="path-duplicate">server.go</a><a href="../../src/net/http/server.go.html#line-3442">#L3442</a>: 	w.Header().<b>Set</b>("Content-Length", "0")
+		<a href="../../src/net/http/transport.go.html#line-1646">transport.go#L1646</a>: 				h.<b>Set</b>("Proxy-Authorization", pa)
+		<a href="../../src/net/http/transport.go.html#line-1667" class="path-duplicate">transport.go</a><a href="../../src/net/http/transport.go.html#line-1667">#L1667</a>: 			hdr.<b>Set</b>("Proxy-Authorization", pa)
+		<a href="../../src/net/http/transport.go.html#line-2565" class="path-duplicate">transport.go</a><a href="../../src/net/http/transport.go.html#line-2565">#L2565</a>: 		req.extraHeaders().<b>Set</b>("Accept-Encoding", "gzip")
+		<a href="../../src/net/http/transport.go.html#line-2576" class="path-duplicate">transport.go</a><a href="../../src/net/http/transport.go.html#line-2576">#L2576</a>: 		req.extraHeaders().<b>Set</b>("Connection", "close")
+
+	<a href="../../pkg/net/http/httputil.html">net/http/httputil</a>
+		<a href="../../src/net/http/httputil/reverseproxy.go.html#line-156">reverseproxy.go#L156</a>: 			req.Header.<b>Set</b>("User-Agent", "")
+		<a href="../../src/net/http/httputil/reverseproxy.go.html#line-274" class="path-duplicate">reverseproxy.go</a><a href="../../src/net/http/httputil/reverseproxy.go.html#line-274">#L274</a>: 		outreq.Header.<b>Set</b>("Te", "trailers")
+		<a href="../../src/net/http/httputil/reverseproxy.go.html#line-280" class="path-duplicate">reverseproxy.go</a><a href="../../src/net/http/httputil/reverseproxy.go.html#line-280">#L280</a>: 		outreq.Header.<b>Set</b>("Connection", "Upgrade")
+		<a href="../../src/net/http/httputil/reverseproxy.go.html#line-281" class="path-duplicate">reverseproxy.go</a><a href="../../src/net/http/httputil/reverseproxy.go.html#line-281">#L281</a>: 		outreq.Header.<b>Set</b>("Upgrade", reqUpType)
+		<a href="../../src/net/http/httputil/reverseproxy.go.html#line-294" class="path-duplicate">reverseproxy.go</a><a href="../../src/net/http/httputil/reverseproxy.go.html#line-294">#L294</a>: 			outreq.Header.<b>Set</b>("X-Forwarded-For", clientIP)
+
+	<a href="../../pkg/github.com/aws/aws-sdk-go/aws/corehandlers.html">github.com/aws/aws-sdk-go/aws/corehandlers</a>
+		<a href="../../src/github.com/aws/aws-sdk-go/aws/corehandlers/handlers.go.html#line-49">handlers.go#L49</a>: 		r.HTTPRequest.Header.<b>Set</b>("Content-Length", fmt.Sprintf("%d", length))
+
+	<a href="../../pkg/github.com/aws/aws-sdk-go/aws/credentials/endpointcreds.html">github.com/aws/aws-sdk-go/aws/credentials/endpointcreds</a>
+		<a href="../../src/github.com/aws/aws-sdk-go/aws/credentials/endpointcreds/provider.go.html#line-166">provider.go#L166</a>: 	req.HTTPRequest.Header.<b>Set</b>("Accept", "application/json")
+		<a href="../../src/github.com/aws/aws-sdk-go/aws/credentials/endpointcreds/provider.go.html#line-168" class="path-duplicate">provider.go</a><a href="../../src/github.com/aws/aws-sdk-go/aws/credentials/endpointcreds/provider.go.html#line-168">#L168</a>: 		req.HTTPRequest.Header.<b>Set</b>("Authorization", authToken)
+
+	<a href="../../pkg/github.com/aws/aws-sdk-go/aws/ec2metadata.html">github.com/aws/aws-sdk-go/aws/ec2metadata</a>
+		<a href="../../src/github.com/aws/aws-sdk-go/aws/ec2metadata/api.go.html#line-37">api.go#L37</a>: 	req.HTTPRequest.Header.<b>Set</b>(ttlHeader, ttl)
+		<a href="../../src/github.com/aws/aws-sdk-go/aws/ec2metadata/token_provider.go.html#line-45">token_provider.go#L45</a>: 		r.HTTPRequest.Header.<b>Set</b>(tokenHeader, ec2Token.token)
+		<a href="../../src/github.com/aws/aws-sdk-go/aws/ec2metadata/token_provider.go.html#line-81" class="path-duplicate">token_provider.go</a><a href="../../src/github.com/aws/aws-sdk-go/aws/ec2metadata/token_provider.go.html#line-81">#L81</a>: 		r.HTTPRequest.Header.<b>Set</b>(tokenHeader, ec2Token.token)
+
+	<a href="../../pkg/github.com/aws/aws-sdk-go/aws/request.html">github.com/aws/aws-sdk-go/aws/request</a>
+		<a href="../../src/github.com/aws/aws-sdk-go/aws/request/request.go.html#line-624">request.go#L624</a>: 	r.HTTPRequest.Header.<b>Set</b>("User-Agent", s)
+
+	<a href="../../pkg/github.com/aws/aws-sdk-go/aws/signer/v4.html">github.com/aws/aws-sdk-go/aws/signer/v4</a>
+		<a href="../../src/github.com/aws/aws-sdk-go/aws/signer/v4/v4.go.html#line-406">v4.go#L406</a>: 		ctx.Request.Header.<b>Set</b>("X-Amz-Security-Token", ctx.credValues.SessionToken)
+		<a href="../../src/github.com/aws/aws-sdk-go/aws/signer/v4/v4.go.html#line-545" class="path-duplicate">v4.go</a><a href="../../src/github.com/aws/aws-sdk-go/aws/signer/v4/v4.go.html#line-545">#L545</a>: 		ctx.Request.Header.<b>Set</b>(authorizationHeader, strings.Join(parts, ", "))
+		<a href="../../src/github.com/aws/aws-sdk-go/aws/signer/v4/v4.go.html#line-582" class="path-duplicate">v4.go</a><a href="../../src/github.com/aws/aws-sdk-go/aws/signer/v4/v4.go.html#line-582">#L582</a>: 		ctx.Request.Header.<b>Set</b>("X-Amz-Date", formatTime(ctx.Time))
+		<a href="../../src/github.com/aws/aws-sdk-go/aws/signer/v4/v4.go.html#line-713" class="path-duplicate">v4.go</a><a href="../../src/github.com/aws/aws-sdk-go/aws/signer/v4/v4.go.html#line-713">#L713</a>: 			ctx.Request.Header.<b>Set</b>("X-Amz-Content-Sha256", hash)
+
+	<a href="../../pkg/github.com/aws/aws-sdk-go/private/protocol/jsonrpc.html">github.com/aws/aws-sdk-go/private/protocol/jsonrpc</a>
+		<a href="../../src/github.com/aws/aws-sdk-go/private/protocol/jsonrpc/jsonrpc.go.html#line-65">jsonrpc.go#L65</a>: 		req.HTTPRequest.Header.<b>Set</b>("Content-Type", "application/x-amz-json-"+jsonVersion)
+
+	<a href="../../pkg/github.com/aws/aws-sdk-go/private/protocol/query.html">github.com/aws/aws-sdk-go/private/protocol/query</a>
+		<a href="../../src/github.com/aws/aws-sdk-go/private/protocol/query/build.go.html#line-30">build.go#L30</a>: 		r.HTTPRequest.Header.<b>Set</b>("Content-Type", "application/x-www-form-urlencoded; charset=utf-8")
+
+	<a href="../../pkg/github.com/caring/gopkg-errors.html">github.com/caring/gopkg-errors</a>
+		<a href="../../src/github.com/caring/gopkg-errors/http.go.html#line-49">http.go#L49</a>: 	w.Header().<b>Set</b>("Content-Type", "application/json")
+
+	<a href="../../pkg/github.com/opentracing/opentracing-go.html">github.com/opentracing/opentracing-go</a>
+		<a href="../../src/github.com/opentracing/opentracing-go/propagation.go.html#line-163">propagation.go#L163</a>: 	h.<b>Set</b>(key, val)
+
+	<a href="../../pkg/golang.org/x/net/http2.html">golang.org/x/net/http2</a>
+		<a href="../../src/golang.org/x/net/http2/server.go.html#line-2075">server.go#L2075</a>: 		rp.header.<b>Set</b>("Cookie", strings.Join(cookies, "; "))
+
+	<a href="../../pkg/golang.org/x/net/trace.html">golang.org/x/net/trace</a>
+		<a href="../../src/golang.org/x/net/trace/trace.go.html#line-157">trace.go#L157</a>: 	w.Header().<b>Set</b>("Content-Type", "text/html; charset=utf-8")
+		<a href="../../src/golang.org/x/net/trace/trace.go.html#line-172" class="path-duplicate">trace.go</a><a href="../../src/golang.org/x/net/trace/trace.go.html#line-172">#L172</a>: 	w.Header().<b>Set</b>("Content-Type", "text/html; charset=utf-8")
+
+	<a href="../../pkg/google.golang.org/grpc/internal/transport.html">google.golang.org/grpc/internal/transport</a>
+		<a href="../../src/google.golang.org/grpc/internal/transport/handler_server.go.html#line-200">handler_server.go#L200</a>: 		h.<b>Set</b>("Grpc-Status", fmt.Sprintf("%d", st.Code()))
+		<a href="../../src/google.golang.org/grpc/internal/transport/handler_server.go.html#line-202" class="path-duplicate">handler_server.go</a><a href="../../src/google.golang.org/grpc/internal/transport/handler_server.go.html#line-202">#L202</a>: 			h.<b>Set</b>("Grpc-Message", encodeGrpcMessage(m))
+		<a href="../../src/google.golang.org/grpc/internal/transport/handler_server.go.html#line-212" class="path-duplicate">handler_server.go</a><a href="../../src/google.golang.org/grpc/internal/transport/handler_server.go.html#line-212">#L212</a>: 			h.<b>Set</b>("Grpc-Status-Details-Bin", encodeBinHeader(stBytes))
+		<a href="../../src/google.golang.org/grpc/internal/transport/handler_server.go.html#line-255" class="path-duplicate">handler_server.go</a><a href="../../src/google.golang.org/grpc/internal/transport/handler_server.go.html#line-255">#L255</a>: 	h.<b>Set</b>("Content-Type", ht.contentType)
+		<a href="../../src/google.golang.org/grpc/internal/transport/handler_server.go.html#line-267" class="path-duplicate">handler_server.go</a><a href="../../src/google.golang.org/grpc/internal/transport/handler_server.go.html#line-267">#L267</a>: 		h.<b>Set</b>("Grpc-Encoding", s.sendCompress)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

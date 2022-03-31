@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: google.golang.org/grpc.Server</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../../pkg/google.golang.org/grpc.html">google.golang.org/grpc</a>.<a href="../../src/google.golang.org/grpc/server.go.html#line-117">Server</a></b></span>
+
+<span class="title">37 uses</span>
+
+	google.golang.org/grpc (current package)
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-70">server.go#L70</a>: 	internal.GetServerCredentials = func(srv *<b>Server</b>) credentials.TransportCredentials {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-73" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-73">#L73</a>: 	internal.DrainServerTransports = func(srv *<b>Server</b>, addr string) {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-117" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-117">#L117</a>: type <b>Server</b> struct {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-528" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-528">#L528</a>: func (s *<b>Server</b>) serverWorker(ch chan *serverWorkerData) {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-545" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-545">#L545</a>: func (s *<b>Server</b>) initServerWorkers() {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-553" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-553">#L553</a>: func (s *<b>Server</b>) stopServerWorkers() {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-561" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-561">#L561</a>: func NewServer(opt ...ServerOption) *<b>Server</b> {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-566" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-566">#L566</a>: 	s := &amp;<b>Server</b>{
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-595" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-595">#L595</a>: func (s *<b>Server</b>) printf(format string, a ...interface{}) {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-603" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-603">#L603</a>: func (s *<b>Server</b>) errorf(format string, a ...interface{}) {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-625" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-625">#L625</a>: func (s *<b>Server</b>) RegisterService(sd *ServiceDesc, ss interface{}) {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-636" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-636">#L636</a>: func (s *<b>Server</b>) register(sd *ServiceDesc, ss interface{}) {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-682" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-682">#L682</a>: func (s *<b>Server</b>) GetServiceInfo() map[string]ServiceInfo {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-739" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-739">#L739</a>: func (s *<b>Server</b>) Serve(lis net.Listener) error {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-829" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-829">#L829</a>: func (s *<b>Server</b>) handleRawConn(lisAddr string, rawConn net.Conn) {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-852" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-852">#L852</a>: func (s *<b>Server</b>) drainServerTransports(addr string) {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-863" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-863">#L863</a>: func (s *<b>Server</b>) newHTTP2Transport(c net.Conn) transport.ServerTransport {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-900" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-900">#L900</a>: func (s *<b>Server</b>) serveStreams(st transport.ServerTransport) {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-934" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-934">#L934</a>: var _ http.Handler = (*<b>Server</b>)(nil)
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-964" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-964">#L964</a>: func (s *<b>Server</b>) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-979" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-979">#L979</a>: func (s *<b>Server</b>) traceInfo(st transport.ServerTransport, stream *transport.Stream) (trInfo *traceInfo) {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1001" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1001">#L1001</a>: func (s *<b>Server</b>) addConn(addr string, st transport.ServerTransport) bool {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1022" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1022">#L1022</a>: func (s *<b>Server</b>) removeConn(addr string, st transport.ServerTransport) {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1039" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1039">#L1039</a>: func (s *<b>Server</b>) channelzMetric() *channelz.ServerInternalMetric {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1048" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1048">#L1048</a>: func (s *<b>Server</b>) incrCallsStarted() {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1053" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1053">#L1053</a>: func (s *<b>Server</b>) incrCallsSucceeded() {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1057" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1057">#L1057</a>: func (s *<b>Server</b>) incrCallsFailed() {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1061" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1061">#L1061</a>: func (s *<b>Server</b>) sendResponse(t transport.ServerTransport, stream *transport.Stream, msg interface{}, cp Compressor, opts *transport.Options, comp encoding.Compressor) error {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1085" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1085">#L1085</a>: func chainUnaryServerInterceptors(s *<b>Server</b>) {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1125" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1125">#L1125</a>: func (s *<b>Server</b>) processUnaryRPC(t transport.ServerTransport, stream *transport.Stream, info *serviceInfo, md *MethodDesc, trInfo *traceInfo) (err error) {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1375" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1375">#L1375</a>: func chainStreamServerInterceptors(s *<b>Server</b>) {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1415" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1415">#L1415</a>: func (s *<b>Server</b>) processStreamingRPC(t transport.ServerTransport, stream *transport.Stream, info *serviceInfo, sd *StreamDesc, trInfo *traceInfo) (err error) {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1586" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1586">#L1586</a>: func (s *<b>Server</b>) handleStream(t transport.ServerTransport, stream *transport.Stream, trInfo *traceInfo) {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1701" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1701">#L1701</a>: func (s *<b>Server</b>) Stop() {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1747" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1747">#L1747</a>: func (s *<b>Server</b>) GracefulStop() {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1794" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1794">#L1794</a>: func (s *<b>Server</b>) getCodec(contentSubtype string) baseCodec {
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1862" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1862">#L1862</a>: 	s *<b>Server</b>
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

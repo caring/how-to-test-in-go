@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: reflect.rtype.align</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/reflect.html">reflect</a>.<a href="../src/reflect/type.go.html#line-311">rtype</a>.<a href="../src/reflect/type.go.html#line-316">align</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">16 uses</span>
+
+	reflect (current package)
+		<a href="../src/reflect/abi.go.html#line-143">abi.go#L143</a>: 		a.stackBytes = align(a.stackBytes, uintptr(t.<b>align</b>))
+		<a href="../src/reflect/abi.go.html#line-153" class="path-duplicate">abi.go</a><a href="../src/reflect/abi.go.html#line-153">#L153</a>: 		a.stackAssign(t.size, uintptr(t.<b>align</b>))
+		<a href="../src/reflect/abi.go.html#line-424" class="path-duplicate">abi.go</a><a href="../src/reflect/abi.go.html#line-424">#L424</a>: 			spill = align(spill, uintptr(arg.<b>align</b>))
+		<a href="../src/reflect/type.go.html#line-316">type.go#L316</a>: 	<b>align</b>      uint8   // alignment of variable with this type
+		<a href="../src/reflect/type.go.html#line-815" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-815">#L815</a>: func (t *rtype) Align() int { return int(t.<b>align</b>) }
+		<a href="../src/reflect/type.go.html#line-2235" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2235">#L2235</a>: 	if size&amp;uintptr(ktyp.<b>align</b>-1) != 0 || size&amp;uintptr(etyp.<b>align</b>-1) != 0 {
+		<a href="../src/reflect/type.go.html#line-2267" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2267">#L2267</a>: 		<b>align</b>:   ptrSize,
+		<a href="../src/reflect/type.go.html#line-2274" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2274">#L2274</a>: 		b.<b>align</b> = 8
+		<a href="../src/reflect/type.go.html#line-2614" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2614">#L2614</a>: 		offset := align(size, uintptr(ft.<b>align</b>))
+		<a href="../src/reflect/type.go.html#line-2615" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2615">#L2615</a>: 		if ft.<b>align</b> &gt; typalign {
+		<a href="../src/reflect/type.go.html#line-2616" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2616">#L2616</a>: 			typalign = ft.<b>align</b>
+		<a href="../src/reflect/type.go.html#line-2734" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2734">#L2734</a>: 	typ.<b>align</b> = typalign
+		<a href="../src/reflect/type.go.html#line-2922" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2922">#L2922</a>: 	array.<b>align</b> = typ.<b>align</b>
+		<a href="../src/reflect/type.go.html#line-3066" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-3066">#L3066</a>: 		<b>align</b>: ptrSize,
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

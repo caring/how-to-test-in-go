@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime.gQueue.head</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/runtime.html">runtime</a>.<a href="../src/runtime/proc.go.html#line-6209">gQueue</a>.<a href="../src/runtime/proc.go.html#line-6210">head</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">15 uses</span>
+
+	runtime (current package)
+		<a href="../src/runtime/proc.go.html#line-3250">proc.go#L3250</a>: 	q.<b>head</b>.set(head)
+		<a href="../src/runtime/proc.go.html#line-6017" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-6017">#L6017</a>: 	q.<b>head</b>.set(batch[0])
+		<a href="../src/runtime/proc.go.html#line-6210" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-6210">#L6210</a>: 	<b>head</b> guintptr
+		<a href="../src/runtime/proc.go.html#line-6216" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-6216">#L6216</a>: 	return q.<b>head</b> == 0
+		<a href="../src/runtime/proc.go.html#line-6221" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-6221">#L6221</a>: 	gp.schedlink = q.<b>head</b>
+		<a href="../src/runtime/proc.go.html#line-6222" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-6222">#L6222</a>: 	q.<b>head</b>.set(gp)
+		<a href="../src/runtime/proc.go.html#line-6234" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-6234">#L6234</a>: 		q.<b>head</b>.set(gp)
+		<a href="../src/runtime/proc.go.html#line-6247" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-6247">#L6247</a>: 		q.tail.ptr().schedlink = q2.<b>head</b>
+		<a href="../src/runtime/proc.go.html#line-6249" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-6249">#L6249</a>: 		q.<b>head</b> = q2.<b>head</b>
+		<a href="../src/runtime/proc.go.html#line-6257" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-6257">#L6257</a>: 	gp := q.<b>head</b>.ptr()
+		<a href="../src/runtime/proc.go.html#line-6259" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-6259">#L6259</a>: 		q.<b>head</b> = gp.schedlink
+		<a href="../src/runtime/proc.go.html#line-6260" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-6260">#L6260</a>: 		if q.<b>head</b> == 0 {
+		<a href="../src/runtime/proc.go.html#line-6269" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-6269">#L6269</a>: 	stack := gList{q.<b>head</b>}
+		<a href="../src/runtime/proc.go.html#line-6295" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-6295">#L6295</a>: 		l.head = q.<b>head</b>
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

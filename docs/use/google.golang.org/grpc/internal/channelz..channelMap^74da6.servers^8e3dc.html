@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: google.golang.org/grpc/internal/channelz.channelMap.servers</title>
+<link href="../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../../pkg/google.golang.org/grpc/internal/channelz.html">google.golang.org/grpc/internal/channelz</a>.<a href="../../../../src/google.golang.org/grpc/internal/channelz/funcs.go.html#line-319">channelMap</a>.<a href="../../../../src/google.golang.org/grpc/internal/channelz/funcs.go.html#line-322">servers</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">13 uses</span>
+
+	google.golang.org/grpc/internal/channelz (current package)
+		<a href="../../../../src/google.golang.org/grpc/internal/channelz/funcs.go.html#line-112">funcs.go#L112</a>: 		<b>servers</b>:          make(map[int64]*server),
+		<a href="../../../../src/google.golang.org/grpc/internal/channelz/funcs.go.html#line-124" class="path-duplicate">funcs.go</a><a href="../../../../src/google.golang.org/grpc/internal/channelz/funcs.go.html#line-124">#L124</a>: 			if len(cm.topLevelChannels) == 0 &amp;&amp; len(cm.<b>servers</b>) == 0 &amp;&amp; len(cm.channels) == 0 &amp;&amp; len(cm.subChannels) == 0 &amp;&amp; len(cm.listenSockets) == 0 &amp;&amp; len(cm.normalSockets) == 0 {
+		<a href="../../../../src/google.golang.org/grpc/internal/channelz/funcs.go.html#line-134" class="path-duplicate">funcs.go</a><a href="../../../../src/google.golang.org/grpc/internal/channelz/funcs.go.html#line-134">#L134</a>: 		err = fmt.Errorf("after 10s the channelz map has not been cleaned up yet, topchannels: %d, servers: %d, channels: %d, subchannels: %d, listen sockets: %d, normal sockets: %d", len(cm.topLevelChannels), len(cm.<b>servers</b>), len(cm.channels), len(cm.subChannels), len(cm.listenSockets), len(cm.normalSockets))
+		<a href="../../../../src/google.golang.org/grpc/internal/channelz/funcs.go.html#line-322" class="path-duplicate">funcs.go</a><a href="../../../../src/google.golang.org/grpc/internal/channelz/funcs.go.html#line-322">#L322</a>: 	<b>servers</b>          map[int64]*server
+		<a href="../../../../src/google.golang.org/grpc/internal/channelz/funcs.go.html#line-332" class="path-duplicate">funcs.go</a><a href="../../../../src/google.golang.org/grpc/internal/channelz/funcs.go.html#line-332">#L332</a>: 	c.<b>servers</b>[id] = s
+		<a href="../../../../src/google.golang.org/grpc/internal/channelz/funcs.go.html#line-403" class="path-duplicate">funcs.go</a><a href="../../../../src/google.golang.org/grpc/internal/channelz/funcs.go.html#line-403">#L403</a>: 	if v, ok = c.<b>servers</b>[id]; ok {
+		<a href="../../../../src/google.golang.org/grpc/internal/channelz/funcs.go.html#line-440" class="path-duplicate">funcs.go</a><a href="../../../../src/google.golang.org/grpc/internal/channelz/funcs.go.html#line-440">#L440</a>: 	if _, ok = c.<b>servers</b>[id]; ok {
+		<a href="../../../../src/google.golang.org/grpc/internal/channelz/funcs.go.html#line-441" class="path-duplicate">funcs.go</a><a href="../../../../src/google.golang.org/grpc/internal/channelz/funcs.go.html#line-441">#L441</a>: 		delete(c.<b>servers</b>, id)
+		<a href="../../../../src/google.golang.org/grpc/internal/channelz/funcs.go.html#line-553" class="path-duplicate">funcs.go</a><a href="../../../../src/google.golang.org/grpc/internal/channelz/funcs.go.html#line-553">#L553</a>: 	l := int64(len(c.<b>servers</b>))
+		<a href="../../../../src/google.golang.org/grpc/internal/channelz/funcs.go.html#line-556" class="path-duplicate">funcs.go</a><a href="../../../../src/google.golang.org/grpc/internal/channelz/funcs.go.html#line-556">#L556</a>: 	for k := range c.<b>servers</b> {
+		<a href="../../../../src/google.golang.org/grpc/internal/channelz/funcs.go.html#line-568" class="path-duplicate">funcs.go</a><a href="../../../../src/google.golang.org/grpc/internal/channelz/funcs.go.html#line-568">#L568</a>: 		if svr, ok := c.<b>servers</b>[v]; ok {
+		<a href="../../../../src/google.golang.org/grpc/internal/channelz/funcs.go.html#line-600" class="path-duplicate">funcs.go</a><a href="../../../../src/google.golang.org/grpc/internal/channelz/funcs.go.html#line-600">#L600</a>: 	if svr, ok = c.<b>servers</b>[id]; !ok {
+		<a href="../../../../src/google.golang.org/grpc/internal/channelz/funcs.go.html#line-715" class="path-duplicate">funcs.go</a><a href="../../../../src/google.golang.org/grpc/internal/channelz/funcs.go.html#line-715">#L715</a>: 	if svr, ok = c.<b>servers</b>[id]; !ok {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/go-sql-driver/mysql.mysqlConn.cfg</title>
+<link href="../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../pkg/github.com/go-sql-driver/mysql.html">github.com/go-sql-driver/mysql</a>.<a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-23">mysqlConn</a>.<a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-29">cfg</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">61 uses</span>
+
+	github.com/go-sql-driver/mysql (current package)
+		<a href="../../../src/github.com/go-sql-driver/mysql/auth.go.html#line-230">auth.go#L230</a>: 	enc, err := encryptPassword(mc.<b>cfg</b>.Passwd, seed, pub)
+		<a href="../../../src/github.com/go-sql-driver/mysql/auth.go.html#line-240" class="path-duplicate">auth.go</a><a href="../../../src/github.com/go-sql-driver/mysql/auth.go.html#line-240">#L240</a>: 		authResp := scrambleSHA256Password(authData, mc.<b>cfg</b>.Passwd)
+		<a href="../../../src/github.com/go-sql-driver/mysql/auth.go.html#line-244" class="path-duplicate">auth.go</a><a href="../../../src/github.com/go-sql-driver/mysql/auth.go.html#line-244">#L244</a>: 		if !mc.<b>cfg</b>.AllowOldPasswords {
+		<a href="../../../src/github.com/go-sql-driver/mysql/auth.go.html#line-247" class="path-duplicate">auth.go</a><a href="../../../src/github.com/go-sql-driver/mysql/auth.go.html#line-247">#L247</a>: 		if len(mc.<b>cfg</b>.Passwd) == 0 {
+		<a href="../../../src/github.com/go-sql-driver/mysql/auth.go.html#line-253" class="path-duplicate">auth.go</a><a href="../../../src/github.com/go-sql-driver/mysql/auth.go.html#line-253">#L253</a>: 		authResp := append(scrambleOldPassword(authData[:8], mc.<b>cfg</b>.Passwd), 0)
+		<a href="../../../src/github.com/go-sql-driver/mysql/auth.go.html#line-257" class="path-duplicate">auth.go</a><a href="../../../src/github.com/go-sql-driver/mysql/auth.go.html#line-257">#L257</a>: 		if !mc.<b>cfg</b>.AllowCleartextPasswords {
+		<a href="../../../src/github.com/go-sql-driver/mysql/auth.go.html#line-262" class="path-duplicate">auth.go</a><a href="../../../src/github.com/go-sql-driver/mysql/auth.go.html#line-262">#L262</a>: 		return append([]byte(mc.<b>cfg</b>.Passwd), 0), nil
+		<a href="../../../src/github.com/go-sql-driver/mysql/auth.go.html#line-265" class="path-duplicate">auth.go</a><a href="../../../src/github.com/go-sql-driver/mysql/auth.go.html#line-265">#L265</a>: 		if !mc.<b>cfg</b>.AllowNativePasswords {
+		<a href="../../../src/github.com/go-sql-driver/mysql/auth.go.html#line-270" class="path-duplicate">auth.go</a><a href="../../../src/github.com/go-sql-driver/mysql/auth.go.html#line-270">#L270</a>: 		authResp := scramblePassword(authData[:20], mc.<b>cfg</b>.Passwd)
+		<a href="../../../src/github.com/go-sql-driver/mysql/auth.go.html#line-274" class="path-duplicate">auth.go</a><a href="../../../src/github.com/go-sql-driver/mysql/auth.go.html#line-274">#L274</a>: 		if len(mc.<b>cfg</b>.Passwd) == 0 {
+		<a href="../../../src/github.com/go-sql-driver/mysql/auth.go.html#line-277" class="path-duplicate">auth.go</a><a href="../../../src/github.com/go-sql-driver/mysql/auth.go.html#line-277">#L277</a>: 		if mc.<b>cfg</b>.tls != nil || mc.<b>cfg</b>.Net == "unix" {
+		<a href="../../../src/github.com/go-sql-driver/mysql/auth.go.html#line-279" class="path-duplicate">auth.go</a><a href="../../../src/github.com/go-sql-driver/mysql/auth.go.html#line-279">#L279</a>: 			return append([]byte(mc.<b>cfg</b>.Passwd), 0), nil
+		<a href="../../../src/github.com/go-sql-driver/mysql/auth.go.html#line-282" class="path-duplicate">auth.go</a><a href="../../../src/github.com/go-sql-driver/mysql/auth.go.html#line-282">#L282</a>: 		pubKey := mc.<b>cfg</b>.pubKey
+		<a href="../../../src/github.com/go-sql-driver/mysql/auth.go.html#line-289" class="path-duplicate">auth.go</a><a href="../../../src/github.com/go-sql-driver/mysql/auth.go.html#line-289">#L289</a>: 		enc, err := encryptPassword(mc.<b>cfg</b>.Passwd, authData, pubKey)
+		<a href="../../../src/github.com/go-sql-driver/mysql/auth.go.html#line-353" class="path-duplicate">auth.go</a><a href="../../../src/github.com/go-sql-driver/mysql/auth.go.html#line-353">#L353</a>: 				if mc.<b>cfg</b>.tls != nil || mc.<b>cfg</b>.Net == "unix" {
+		<a href="../../../src/github.com/go-sql-driver/mysql/auth.go.html#line-355" class="path-duplicate">auth.go</a><a href="../../../src/github.com/go-sql-driver/mysql/auth.go.html#line-355">#L355</a>: 					err = mc.writeAuthSwitchPacket(append([]byte(mc.<b>cfg</b>.Passwd), 0))
+		<a href="../../../src/github.com/go-sql-driver/mysql/auth.go.html#line-360" class="path-duplicate">auth.go</a><a href="../../../src/github.com/go-sql-driver/mysql/auth.go.html#line-360">#L360</a>: 					pubKey := mc.<b>cfg</b>.pubKey
+		<a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-29">connection.go#L29</a>: 	<b>cfg</b>              *Config
+		<a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-51" class="path-duplicate">connection.go</a><a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-51">#L51</a>: 	for param, val := range mc.<b>cfg</b>.Params {
+		<a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-71" class="path-duplicate">connection.go</a><a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-71">#L71</a>: 				cmdSet.Grow(4 + len(param) + 1 + len(val) + 30*(len(mc.<b>cfg</b>.Params)-1))
+		<a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-249" class="path-duplicate">connection.go</a><a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-249">#L249</a>: 				buf, err = appendDateTime(buf, v.In(mc.<b>cfg</b>.Loc))
+		<a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-303" class="path-duplicate">connection.go</a><a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-303">#L303</a>: 		if !mc.<b>cfg</b>.InterpolateParams {
+		<a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-364" class="path-duplicate">connection.go</a><a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-364">#L364</a>: 		if !mc.<b>cfg</b>.InterpolateParams {
+		<a href="../../../src/github.com/go-sql-driver/mysql/connector.go.html#line-31">connector.go#L31</a>: 		<b>cfg</b>:              c.cfg,
+		<a href="../../../src/github.com/go-sql-driver/mysql/connector.go.html#line-33" class="path-duplicate">connector.go</a><a href="../../../src/github.com/go-sql-driver/mysql/connector.go.html#line-33">#L33</a>: 	mc.parseTime = mc.<b>cfg</b>.ParseTime
+		<a href="../../../src/github.com/go-sql-driver/mysql/connector.go.html#line-37" class="path-duplicate">connector.go</a><a href="../../../src/github.com/go-sql-driver/mysql/connector.go.html#line-37">#L37</a>: 	dial, ok := dials[mc.<b>cfg</b>.Net]
+		<a href="../../../src/github.com/go-sql-driver/mysql/connector.go.html#line-41" class="path-duplicate">connector.go</a><a href="../../../src/github.com/go-sql-driver/mysql/connector.go.html#line-41">#L41</a>: 		if mc.<b>cfg</b>.Timeout &gt; 0 {
+		<a href="../../../src/github.com/go-sql-driver/mysql/connector.go.html#line-46" class="path-duplicate">connector.go</a><a href="../../../src/github.com/go-sql-driver/mysql/connector.go.html#line-46">#L46</a>: 		mc.netConn, err = dial(dctx, mc.<b>cfg</b>.Addr)
+		<a href="../../../src/github.com/go-sql-driver/mysql/connector.go.html#line-48" class="path-duplicate">connector.go</a><a href="../../../src/github.com/go-sql-driver/mysql/connector.go.html#line-48">#L48</a>: 		nd := net.Dialer{Timeout: mc.<b>cfg</b>.Timeout}
+		<a href="../../../src/github.com/go-sql-driver/mysql/connector.go.html#line-49" class="path-duplicate">connector.go</a><a href="../../../src/github.com/go-sql-driver/mysql/connector.go.html#line-49">#L49</a>: 		mc.netConn, err = nd.DialContext(ctx, mc.<b>cfg</b>.Net, mc.<b>cfg</b>.Addr)
+		<a href="../../../src/github.com/go-sql-driver/mysql/connector.go.html#line-77" class="path-duplicate">connector.go</a><a href="../../../src/github.com/go-sql-driver/mysql/connector.go.html#line-77">#L77</a>: 	mc.buf.timeout = mc.<b>cfg</b>.ReadTimeout
+		<a href="../../../src/github.com/go-sql-driver/mysql/connector.go.html#line-78" class="path-duplicate">connector.go</a><a href="../../../src/github.com/go-sql-driver/mysql/connector.go.html#line-78">#L78</a>: 	mc.writeTimeout = mc.<b>cfg</b>.WriteTimeout
+		<a href="../../../src/github.com/go-sql-driver/mysql/connector.go.html#line-117" class="path-duplicate">connector.go</a><a href="../../../src/github.com/go-sql-driver/mysql/connector.go.html#line-117">#L117</a>: 	if mc.<b>cfg</b>.MaxAllowedPacket &gt; 0 {
+		<a href="../../../src/github.com/go-sql-driver/mysql/connector.go.html#line-118" class="path-duplicate">connector.go</a><a href="../../../src/github.com/go-sql-driver/mysql/connector.go.html#line-118">#L118</a>: 		mc.maxAllowedPacket = mc.<b>cfg</b>.MaxAllowedPacket
+		<a href="../../../src/github.com/go-sql-driver/mysql/infile.go.html#line-129">infile.go#L129</a>: 		if mc.<b>cfg</b>.AllowAllFiles || fr {
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-116">packets.go#L116</a>: 		if mc.<b>cfg</b>.ReadTimeout != 0 {
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-119" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-119">#L119</a>: 		if err == nil &amp;&amp; mc.<b>cfg</b>.CheckConnLiveness {
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-226" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-226">#L226</a>: 	if mc.flags&amp;clientSSL == 0 &amp;&amp; mc.<b>cfg</b>.tls != nil {
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-227" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-227">#L227</a>: 		if mc.<b>cfg</b>.TLSConfig == "preferred" {
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-228" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-228">#L228</a>: 			mc.<b>cfg</b>.tls = nil
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-291" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-291">#L291</a>: 	if mc.<b>cfg</b>.ClientFoundRows {
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-296" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-296">#L296</a>: 	if mc.<b>cfg</b>.tls != nil {
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-300" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-300">#L300</a>: 	if mc.<b>cfg</b>.MultiStatements {
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-314" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-314">#L314</a>: 	pktLen := 4 + 4 + 1 + 23 + len(mc.<b>cfg</b>.User) + 1 + len(authRespLEI) + len(authResp) + 21 + 1
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-317" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-317">#L317</a>: 	if n := len(mc.<b>cfg</b>.DBName); n &gt; 0 {
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-344" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-344">#L344</a>: 	data[12], found = collations[mc.<b>cfg</b>.Collation]
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-360" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-360">#L360</a>: 	if mc.<b>cfg</b>.tls != nil {
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-367" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-367">#L367</a>: 		tlsConn := tls.Client(mc.netConn, mc.<b>cfg</b>.tls)
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-377" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-377">#L377</a>: 	if len(mc.<b>cfg</b>.User) &gt; 0 {
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-378" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-378">#L378</a>: 		pos += copy(data[pos:], mc.<b>cfg</b>.User)
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-388" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-388">#L388</a>: 	if len(mc.<b>cfg</b>.DBName) &gt; 0 {
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-389" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-389">#L389</a>: 		pos += copy(data[pos:], mc.<b>cfg</b>.DBName)
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-577" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-577">#L577</a>: 	if (errno == 1792 || errno == 1290) &amp;&amp; mc.<b>cfg</b>.RejectReadOnly {
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-667" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-667">#L667</a>: 		if mc.<b>cfg</b>.ColumnsWithAlias {
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-782" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-782">#L782</a>: 							mc.<b>cfg</b>.Loc,
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-1119" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-1119">#L1119</a>: 					b, err = appendDateTime(b, v.In(mc.<b>cfg</b>.Loc))
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-1314" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-1314">#L1314</a>: 				dest[i], err = parseBinaryDateTime(num, data[pos:], rows.mc.<b>cfg</b>.Loc)
+		<a href="../../../src/github.com/go-sql-driver/mysql/rows.go.html#line-44">rows.go#L44</a>: 	if rows.mc != nil &amp;&amp; rows.mc.<b>cfg</b>.ColumnsWithAlias {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

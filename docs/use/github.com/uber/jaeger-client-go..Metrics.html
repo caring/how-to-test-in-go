@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/uber/jaeger-client-go.Metrics</title>
+<link href="../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../../../pkg/github.com/uber/jaeger-client-go.html">github.com/uber/jaeger-client-go</a>.<a href="../../../src/github.com/uber/jaeger-client-go/metrics.go.html#line-22">Metrics</a></b></span>
+
+<span class="title">15 uses</span>
+
+	github.com/uber/jaeger-client-go (current package)
+		<a href="../../../src/github.com/uber/jaeger-client-go/baggage_setter.go.html#line-27">baggage_setter.go#L27</a>: 	metrics            *<b>Metrics</b>
+		<a href="../../../src/github.com/uber/jaeger-client-go/baggage_setter.go.html#line-30" class="path-duplicate">baggage_setter.go</a><a href="../../../src/github.com/uber/jaeger-client-go/baggage_setter.go.html#line-30">#L30</a>: func newBaggageSetter(restrictionManager baggage.RestrictionManager, metrics *<b>Metrics</b>) *baggageSetter {
+		<a href="../../../src/github.com/uber/jaeger-client-go/metrics.go.html#line-22">metrics.go#L22</a>: type <b>Metrics</b> struct {
+		<a href="../../../src/github.com/uber/jaeger-client-go/metrics.go.html#line-109" class="path-duplicate">metrics.go</a><a href="../../../src/github.com/uber/jaeger-client-go/metrics.go.html#line-109">#L109</a>: func NewMetrics(factory metrics.Factory, globalTags map[string]string) *<b>Metrics</b> {
+		<a href="../../../src/github.com/uber/jaeger-client-go/metrics.go.html#line-110" class="path-duplicate">metrics.go</a><a href="../../../src/github.com/uber/jaeger-client-go/metrics.go.html#line-110">#L110</a>: 	m := &amp;<b>Metrics</b>{}
+		<a href="../../../src/github.com/uber/jaeger-client-go/metrics.go.html#line-117" class="path-duplicate">metrics.go</a><a href="../../../src/github.com/uber/jaeger-client-go/metrics.go.html#line-117">#L117</a>: func NewNullMetrics() *<b>Metrics</b> {
+		<a href="../../../src/github.com/uber/jaeger-client-go/propagation.go.html#line-57">propagation.go#L57</a>: 	metrics     <b>Metrics</b>
+		<a href="../../../src/github.com/uber/jaeger-client-go/propagation.go.html#line-63" class="path-duplicate">propagation.go</a><a href="../../../src/github.com/uber/jaeger-client-go/propagation.go.html#line-63">#L63</a>: func NewTextMapPropagator(headerKeys *HeadersConfig, metrics <b>Metrics</b>) *TextMapPropagator {
+		<a href="../../../src/github.com/uber/jaeger-client-go/propagation.go.html#line-77" class="path-duplicate">propagation.go</a><a href="../../../src/github.com/uber/jaeger-client-go/propagation.go.html#line-77">#L77</a>: func NewHTTPHeaderPropagator(headerKeys *HeadersConfig, metrics <b>Metrics</b>) *TextMapPropagator {
+		<a href="../../../src/github.com/uber/jaeger-client-go/reporter_options.go.html#line-38">reporter_options.go#L38</a>: 	metrics *<b>Metrics</b>
+		<a href="../../../src/github.com/uber/jaeger-client-go/reporter_options.go.html#line-51" class="path-duplicate">reporter_options.go</a><a href="../../../src/github.com/uber/jaeger-client-go/reporter_options.go.html#line-51">#L51</a>: func (reporterOptions) Metrics(metrics *<b>Metrics</b>) ReporterOption {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote_options.go.html#line-36">sampler_remote_options.go#L36</a>: 	metrics                 *<b>Metrics</b>
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote_options.go.html#line-49" class="path-duplicate">sampler_remote_options.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote_options.go.html#line-49">#L49</a>: func (SamplerOptionsFactory) Metrics(m *<b>Metrics</b>) SamplerOption {
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-43">tracer.go#L43</a>: 	metrics  <b>Metrics</b>
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer_options.go.html#line-37">tracer_options.go#L37</a>: func (tracerOptions) Metrics(m *<b>Metrics</b>) TracerOption {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: google.golang.org/grpc/internal/transport.http2Client.closeStream</title>
+<link href="../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../../pkg/google.golang.org/grpc/internal/transport.html">google.golang.org/grpc/internal/transport</a>.<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-59">http2Client</a>.<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-811">closeStream</a></b></span><span style="font-size: large;"><i> (method)</i></span>
+
+<span class="title">15 uses</span>
+
+	google.golang.org/grpc/internal/transport (current package)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-808">http2_client.go#L808</a>: 	t.<b>closeStream</b>(s, err, rst, rstCode, status.Convert(err), nil, false)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-811" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-811">#L811</a>: func (t *http2Client) <b>closeStream</b>(s *Stream, err error, rst bool, rstCode http2.ErrCode, st *status.Status, mdata map[string][]string, eosReceived bool) {
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-918" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-918">#L918</a>: 		t.<b>closeStream</b>(s, err, false, http2.ErrCodeNo, st, nil, false)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1065" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1065">#L1065</a>: 			t.<b>closeStream</b>(s, io.EOF, true, http2.ErrCodeFlowControl, status.New(codes.Internal, err.Error()), nil, false)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1086" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1086">#L1086</a>: 		t.<b>closeStream</b>(s, io.EOF, false, http2.ErrCodeNo, status.New(codes.Internal, "server closed the stream without sending trailers"), nil, true)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1113" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1113">#L1113</a>: 	t.<b>closeStream</b>(s, io.EOF, false, http2.ErrCodeNo, status.Newf(statusCode, "stream terminated by RST_STREAM with error code: %v", f.ErrCode), nil, false)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1233" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1233">#L1233</a>: 			t.<b>closeStream</b>(stream, errStreamDrain, false, http2.ErrCodeNo, statusGoAway, nil, false)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1289" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1289">#L1289</a>: 		t.<b>closeStream</b>(s, st.Err(), true, http2.ErrCodeProtocol, st, nil, false)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1297" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1297">#L1297</a>: 		t.<b>closeStream</b>(s, se.Err(), true, http2.ErrCodeFrameSize, se, nil, endStream)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1337" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1337">#L1337</a>: 				t.<b>closeStream</b>(s, se.Err(), true, http2.ErrCodeProtocol, se, nil, endStream)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1360" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1360">#L1360</a>: 				t.<b>closeStream</b>(s, se.Err(), true, http2.ErrCodeProtocol, se, nil, endStream)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1404" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1404">#L1404</a>: 		t.<b>closeStream</b>(s, se.Err(), true, http2.ErrCodeProtocol, se, nil, endStream)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1410" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1410">#L1410</a>: 		t.<b>closeStream</b>(s, se.Err(), true, http2.ErrCodeProtocol, se, nil, endStream)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1465" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1465">#L1465</a>: 	t.<b>closeStream</b>(s, io.EOF, rst, http2.ErrCodeNo, statusGen, mdata, true)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1521" class="path-duplicate">http2_client.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1521">#L1521</a>: 					t.<b>closeStream</b>(s, status.Error(code, msg), true, http2.ErrCodeProtocol, status.New(code, msg), nil, false)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

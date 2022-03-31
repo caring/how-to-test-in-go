@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: net._C2func_getaddrinfo</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">func <b><a href="../pkg/net.html">net</a>.<a href="../src/net/0e4c02c3e4c7616da3b53532a5ddd22048fc34c721a6a7052f2e2d64fae56984-d.html#line-96">_C2func_getaddrinfo</a></b></span>
+
+<span class="title">3 uses</span>
+
+	net (current package)
+		<a href="../src/net/0e4c02c3e4c7616da3b53532a5ddd22048fc34c721a6a7052f2e2d64fae56984-d.html#line-96">0e4c02c3e4c7616da3b53532a5ddd22048fc34c721a6a7052f2e2d64fae56984-d#L96</a>: func <b>_C2func_getaddrinfo</b>(p0 *_Ctype_char, p1 *_Ctype_char, p2 *_Ctype_struct_addrinfo, p3 **_Ctype_struct_addrinfo) (r1 _Ctype_int, r2 error) {
+		<a href="../src/net/cgo_unix.go.html#line-112">cgo_unix.go#L112</a>: 	gerrno, err := func() (_Ctype_int, error){ var _cgo0 *_Ctype_char = /*line :109:31*/nil; var _cgo1 *_Ctype_char = /*line :109:36*/(*_Ctype_char /*line :109:44*/)(unsafe.Pointer(&amp;cservice[0])); _cgo2 := /*line :109:77*/hints; _cgoBase3 := /*line :109:84*/&amp;res; _cgo3 := _cgoBase3; _cgoCheckPointer(_cgo2, nil); _cgoCheckPointer(_cgoBase3, 0 == 0); return <b>_C2func_getaddrinfo</b>(_cgo0, _cgo1, _cgo2, _cgo3); }()
+		<a href="../src/net/cgo_unix.go.html#line-166" class="path-duplicate">cgo_unix.go</a><a href="../src/net/cgo_unix.go.html#line-166">#L166</a>: 	gerrno, err := func() (_Ctype_int, error){ var _cgo0 *_Ctype_char = /*line :163:31*/(*_Ctype_char /*line :163:39*/)(unsafe.Pointer(&amp;h[0])); var _cgo1 *_Ctype_char = /*line :163:65*/nil; _cgoBase2 := /*line :163:70*/&amp;hints; _cgo2 := _cgoBase2; _cgoBase3 := /*line :163:78*/&amp;res; _cgo3 := _cgoBase3; _cgoCheckPointer(_cgoBase2, 0 == 0); _cgoCheckPointer(_cgoBase3, 0 == 0); return <b>_C2func_getaddrinfo</b>(_cgo0, _cgo1, _cgo2, _cgo3); }()
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

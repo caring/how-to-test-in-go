@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: regexp/syntax.Error</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../../pkg/regexp/syntax.html">regexp/syntax</a>.<a href="../../src/regexp/syntax/parse.go.html#line-16">Error</a></b></span>
+
+<span class="title">25 uses</span>
+
+	regexp/syntax (current package)
+		<a href="../../src/regexp/syntax/parse.go.html#line-16">parse.go#L16</a>: type <b>Error</b> struct {
+		<a href="../../src/regexp/syntax/parse.go.html#line-21" class="path-duplicate">parse.go</a><a href="../../src/regexp/syntax/parse.go.html#line-21">#L21</a>: func (e *<b>Error</b>) Error() string {
+		<a href="../../src/regexp/syntax/parse.go.html#line-283" class="path-duplicate">parse.go</a><a href="../../src/regexp/syntax/parse.go.html#line-283">#L283</a>: 			return "", &amp;<b>Error</b>{ErrInvalidRepeatOp, lastRepeat[:len(lastRepeat)-len(after)]}
+		<a href="../../src/regexp/syntax/parse.go.html#line-288" class="path-duplicate">parse.go</a><a href="../../src/regexp/syntax/parse.go.html#line-288">#L288</a>: 		return "", &amp;<b>Error</b>{ErrMissingRepeatArgument, before[:len(before)-len(after)]}
+		<a href="../../src/regexp/syntax/parse.go.html#line-292" class="path-duplicate">parse.go</a><a href="../../src/regexp/syntax/parse.go.html#line-292">#L292</a>: 		return "", &amp;<b>Error</b>{ErrMissingRepeatArgument, before[:len(before)-len(after)]}
+		<a href="../../src/regexp/syntax/parse.go.html#line-305" class="path-duplicate">parse.go</a><a href="../../src/regexp/syntax/parse.go.html#line-305">#L305</a>: 		return "", &amp;<b>Error</b>{ErrInvalidRepeatSize, before[:len(before)-len(after)]}
+		<a href="../../src/regexp/syntax/parse.go.html#line-761" class="path-duplicate">parse.go</a><a href="../../src/regexp/syntax/parse.go.html#line-761">#L761</a>: 			err = &amp;<b>Error</b>{Code: ErrInternalError, Expr: s}
+		<a href="../../src/regexp/syntax/parse.go.html#line-867" class="path-duplicate">parse.go</a><a href="../../src/regexp/syntax/parse.go.html#line-867">#L867</a>: 				return nil, &amp;<b>Error</b>{ErrInvalidRepeatSize, before[:len(before)-len(after)]}
+		<a href="../../src/regexp/syntax/parse.go.html#line-891" class="path-duplicate">parse.go</a><a href="../../src/regexp/syntax/parse.go.html#line-891">#L891</a>: 					return nil, &amp;<b>Error</b>{ErrInvalidEscape, t[:2]}
+		<a href="../../src/regexp/syntax/parse.go.html#line-962" class="path-duplicate">parse.go</a><a href="../../src/regexp/syntax/parse.go.html#line-962">#L962</a>: 		return nil, &amp;<b>Error</b>{ErrMissingParen, s}
+		<a href="../../src/regexp/syntax/parse.go.html#line-1034" class="path-duplicate">parse.go</a><a href="../../src/regexp/syntax/parse.go.html#line-1034">#L1034</a>: 			return "", &amp;<b>Error</b>{ErrInvalidNamedCapture, s}
+		<a href="../../src/regexp/syntax/parse.go.html#line-1043" class="path-duplicate">parse.go</a><a href="../../src/regexp/syntax/parse.go.html#line-1043">#L1043</a>: 			return "", &amp;<b>Error</b>{ErrInvalidNamedCapture, capture}
+		<a href="../../src/regexp/syntax/parse.go.html#line-1111" class="path-duplicate">parse.go</a><a href="../../src/regexp/syntax/parse.go.html#line-1111">#L1111</a>: 	return "", &amp;<b>Error</b>{ErrInvalidPerlOp, s[:len(s)-len(t)]}
+		<a href="../../src/regexp/syntax/parse.go.html#line-1282" class="path-duplicate">parse.go</a><a href="../../src/regexp/syntax/parse.go.html#line-1282">#L1282</a>: 		return &amp;<b>Error</b>{ErrUnexpectedParen, p.wholeRegexp}
+		<a href="../../src/regexp/syntax/parse.go.html#line-1288" class="path-duplicate">parse.go</a><a href="../../src/regexp/syntax/parse.go.html#line-1288">#L1288</a>: 		return &amp;<b>Error</b>{ErrUnexpectedParen, p.wholeRegexp}
+		<a href="../../src/regexp/syntax/parse.go.html#line-1309" class="path-duplicate">parse.go</a><a href="../../src/regexp/syntax/parse.go.html#line-1309">#L1309</a>: 		return 0, "", &amp;<b>Error</b>{ErrTrailingBackslash, ""}
+		<a href="../../src/regexp/syntax/parse.go.html#line-1417" class="path-duplicate">parse.go</a><a href="../../src/regexp/syntax/parse.go.html#line-1417">#L1417</a>: 	return 0, "", &amp;<b>Error</b>{ErrInvalidEscape, s[:len(s)-len(t)]}
+		<a href="../../src/regexp/syntax/parse.go.html#line-1424" class="path-duplicate">parse.go</a><a href="../../src/regexp/syntax/parse.go.html#line-1424">#L1424</a>: 		return 0, "", &amp;<b>Error</b>{Code: ErrMissingBracket, Expr: wholeClass}
+		<a href="../../src/regexp/syntax/parse.go.html#line-1471" class="path-duplicate">parse.go</a><a href="../../src/regexp/syntax/parse.go.html#line-1471">#L1471</a>: 		return nil, "", &amp;<b>Error</b>{ErrInvalidCharRange, name}
+		<a href="../../src/regexp/syntax/parse.go.html#line-1548" class="path-duplicate">parse.go</a><a href="../../src/regexp/syntax/parse.go.html#line-1548">#L1548</a>: 			return nil, "", &amp;<b>Error</b>{ErrInvalidCharRange, s}
+		<a href="../../src/regexp/syntax/parse.go.html#line-1565" class="path-duplicate">parse.go</a><a href="../../src/regexp/syntax/parse.go.html#line-1565">#L1565</a>: 		return nil, "", &amp;<b>Error</b>{ErrInvalidCharRange, seq}
+		<a href="../../src/regexp/syntax/parse.go.html#line-1619" class="path-duplicate">parse.go</a><a href="../../src/regexp/syntax/parse.go.html#line-1619">#L1619</a>: 			return "", &amp;<b>Error</b>{Code: ErrInvalidCharRange, Expr: t[:1+size]}
+		<a href="../../src/regexp/syntax/parse.go.html#line-1666" class="path-duplicate">parse.go</a><a href="../../src/regexp/syntax/parse.go.html#line-1666">#L1666</a>: 				return "", &amp;<b>Error</b>{Code: ErrInvalidCharRange, Expr: rng}
+		<a href="../../src/regexp/syntax/parse.go.html#line-1948" class="path-duplicate">parse.go</a><a href="../../src/regexp/syntax/parse.go.html#line-1948">#L1948</a>: 			return &amp;<b>Error</b>{Code: ErrInvalidUTF8, Expr: s}
+		<a href="../../src/regexp/syntax/parse.go.html#line-1958" class="path-duplicate">parse.go</a><a href="../../src/regexp/syntax/parse.go.html#line-1958">#L1958</a>: 		return 0, "", &amp;<b>Error</b>{Code: ErrInvalidUTF8, Expr: s}
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

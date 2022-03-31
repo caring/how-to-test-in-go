@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime.g.param</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/runtime.html">runtime</a>.<a href="../src/runtime/runtime2.go.html#line-403">g</a>.<a href="../src/runtime/runtime2.go.html#line-433">param</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">21 uses</span>
+
+	runtime (current package)
+		<a href="../src/runtime/chan.go.html#line-250">chan.go#L250</a>: 	gp.<b>param</b> = nil
+		<a href="../src/runtime/chan.go.html#line-271" class="path-duplicate">chan.go</a><a href="../src/runtime/chan.go.html#line-271">#L271</a>: 	gp.<b>param</b> = nil
+		<a href="../src/runtime/chan.go.html#line-315" class="path-duplicate">chan.go</a><a href="../src/runtime/chan.go.html#line-315">#L315</a>: 	gp.<b>param</b> = unsafe.Pointer(sg)
+		<a href="../src/runtime/chan.go.html#line-390" class="path-duplicate">chan.go</a><a href="../src/runtime/chan.go.html#line-390">#L390</a>: 		gp.<b>param</b> = unsafe.Pointer(sg)
+		<a href="../src/runtime/chan.go.html#line-409" class="path-duplicate">chan.go</a><a href="../src/runtime/chan.go.html#line-409">#L409</a>: 		gp.<b>param</b> = unsafe.Pointer(sg)
+		<a href="../src/runtime/chan.go.html#line-569" class="path-duplicate">chan.go</a><a href="../src/runtime/chan.go.html#line-569">#L569</a>: 	gp.<b>param</b> = nil
+		<a href="../src/runtime/chan.go.html#line-588" class="path-duplicate">chan.go</a><a href="../src/runtime/chan.go.html#line-588">#L588</a>: 	gp.<b>param</b> = nil
+		<a href="../src/runtime/chan.go.html#line-641" class="path-duplicate">chan.go</a><a href="../src/runtime/chan.go.html#line-641">#L641</a>: 	gp.<b>param</b> = unsafe.Pointer(sg)
+		<a href="../src/runtime/debugcall.go.html#line-120">debugcall.go#L120</a>: 		newg.<b>param</b> = unsafe.Pointer(args)
+		<a href="../src/runtime/debugcall.go.html#line-199" class="path-duplicate">debugcall.go</a><a href="../src/runtime/debugcall.go.html#line-199">#L199</a>: 	args := (*debugCallWrapArgs)(gp.<b>param</b>)
+		<a href="../src/runtime/debugcall.go.html#line-201" class="path-duplicate">debugcall.go</a><a href="../src/runtime/debugcall.go.html#line-201">#L201</a>: 	gp.<b>param</b> = nil
+		<a href="../src/runtime/mgcmark.go.html#line-453">mgcmark.go#L453</a>: 	completed := gp.<b>param</b> != nil
+		<a href="../src/runtime/mgcmark.go.html#line-454" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-454">#L454</a>: 	gp.<b>param</b> = nil
+		<a href="../src/runtime/mgcmark.go.html#line-506" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-506">#L506</a>: 	gp.<b>param</b> = nil
+		<a href="../src/runtime/mgcmark.go.html#line-564" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-564">#L564</a>: 		gp.<b>param</b> = unsafe.Pointer(gp)
+		<a href="../src/runtime/proc.go.html#line-440">proc.go#L440</a>: 	if gp.<b>param</b> != nil {
+		<a href="../src/runtime/proc.go.html#line-3650" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3650">#L3650</a>: 	gp.<b>param</b> = nil
+		<a href="../src/runtime/runtime2.go.html#line-433">runtime2.go#L433</a>: 	<b>param</b>        unsafe.Pointer
+		<a href="../src/runtime/select.go.html#line-321">select.go#L321</a>: 	gp.<b>param</b> = nil
+		<a href="../src/runtime/select.go.html#line-333" class="path-duplicate">select.go</a><a href="../src/runtime/select.go.html#line-333">#L333</a>: 	sg = (*sudog)(gp.<b>param</b>)
+		<a href="../src/runtime/select.go.html#line-334" class="path-duplicate">select.go</a><a href="../src/runtime/select.go.html#line-334">#L334</a>: 	gp.<b>param</b> = nil
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

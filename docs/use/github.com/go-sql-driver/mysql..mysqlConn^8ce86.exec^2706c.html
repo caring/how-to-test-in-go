@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/go-sql-driver/mysql.mysqlConn.exec</title>
+<link href="../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../pkg/github.com/go-sql-driver/mysql.html">github.com/go-sql-driver/mysql</a>.<a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-23">mysqlConn</a>.<a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-327">exec</a></b></span><span style="font-size: large;"><i> (method)</i></span>
+
+<span class="title">8 uses</span>
+
+	github.com/go-sql-driver/mysql (current package)
+		<a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-58">connection.go#L58</a>: 				err = mc.<b>exec</b>("SET NAMES " + charsets[i])
+		<a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-83" class="path-duplicate">connection.go</a><a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-83">#L83</a>: 		err = mc.<b>exec</b>(cmdSet.String())
+		<a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-117" class="path-duplicate">connection.go</a><a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-117">#L117</a>: 	err := mc.<b>exec</b>(q)
+		<a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-316" class="path-duplicate">connection.go</a><a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-316">#L316</a>: 	err := mc.<b>exec</b>(query)
+		<a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-327" class="path-duplicate">connection.go</a><a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-327">#L327</a>: func (mc *mysqlConn) <b>exec</b>(query string) error {
+		<a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-486" class="path-duplicate">connection.go</a><a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-486">#L486</a>: 		err = mc.<b>exec</b>("SET TRANSACTION ISOLATION LEVEL " + level)
+		<a href="../../../src/github.com/go-sql-driver/mysql/transaction.go.html#line-19">transaction.go#L19</a>: 	err = tx.mc.<b>exec</b>("COMMIT")
+		<a href="../../../src/github.com/go-sql-driver/mysql/transaction.go.html#line-28" class="path-duplicate">transaction.go</a><a href="../../../src/github.com/go-sql-driver/mysql/transaction.go.html#line-28">#L28</a>: 	err = tx.mc.<b>exec</b>("ROLLBACK")
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

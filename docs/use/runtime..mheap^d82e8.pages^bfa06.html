@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime.mheap.pages</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/runtime.html">runtime</a>.<a href="../src/runtime/mheap.go.html#line-62">mheap</a>.<a href="../src/runtime/mheap.go.html#line-66">pages</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">18 uses</span>
+
+	runtime (current package)
+		<a href="../src/runtime/mgcscavenge.go.html#line-304">mgcscavenge.go#L304</a>: 			released = mheap_.<b>pages</b>.scavenge(physPageSize, true)
+		<a href="../src/runtime/mgcscavenge.go.html#line-305" class="path-duplicate">mgcscavenge.go</a><a href="../src/runtime/mgcscavenge.go.html#line-305">#L305</a>: 			mheap_.<b>pages</b>.scav.released += released
+		<a href="../src/runtime/mgcsweep.go.html#line-325">mgcsweep.go#L325</a>: 			mheap_.<b>pages</b>.scavengeStartGen()
+		<a href="../src/runtime/mheap.go.html#line-66">mheap.go#L66</a>: 	<b>pages</b> pageAlloc // page allocation data structure
+		<a href="../src/runtime/mheap.go.html#line-726" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-726">#L726</a>: 	h.<b>pages</b>.init(&amp;h.lock, &amp;memstats.gcMiscSys)
+		<a href="../src/runtime/mheap.go.html#line-1150" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1150">#L1150</a>: 			*c = h.<b>pages</b>.allocToCache()
+		<a href="../src/runtime/mheap.go.html#line-1177" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1177">#L1177</a>: 		base, scav = h.<b>pages</b>.alloc(npages)
+		<a href="../src/runtime/mheap.go.html#line-1183" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1183">#L1183</a>: 			base, scav = h.<b>pages</b>.alloc(npages)
+		<a href="../src/runtime/mheap.go.html#line-1203" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1203">#L1203</a>: 			h.<b>pages</b>.free(allocBase, spaceBefore/pageSize)
+		<a href="../src/runtime/mheap.go.html#line-1207" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1207">#L1207</a>: 			h.<b>pages</b>.free(base+npages*pageSize, spaceAfter/pageSize)
+		<a href="../src/runtime/mheap.go.html#line-1373" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1373">#L1373</a>: 				h.<b>pages</b>.grow(h.curArena.base, size)
+		<a href="../src/runtime/mheap.go.html#line-1408" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1408">#L1408</a>: 	h.<b>pages</b>.grow(v, nBase-v)
+		<a href="../src/runtime/mheap.go.html#line-1420" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1420">#L1420</a>: 		h.<b>pages</b>.scavenge(todo, false)
+		<a href="../src/runtime/mheap.go.html#line-1506" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1506">#L1506</a>: 	h.<b>pages</b>.free(s.base(), s.npages)
+		<a href="../src/runtime/mheap.go.html#line-1525" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1525">#L1525</a>: 	h.<b>pages</b>.scavengeStartGen()
+		<a href="../src/runtime/mheap.go.html#line-1526" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1526">#L1526</a>: 	released := h.<b>pages</b>.scavenge(^uintptr(0), false)
+		<a href="../src/runtime/mheap.go.html#line-1527" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1527">#L1527</a>: 	gen := h.<b>pages</b>.scav.gen
+		<a href="../src/runtime/proc.go.html#line-4956">proc.go#L4956</a>: 		pp.pcache.flush(&amp;mheap_.<b>pages</b>)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

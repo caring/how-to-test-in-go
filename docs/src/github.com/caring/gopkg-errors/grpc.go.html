@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Source: grpc.go in package github.com/caring/gopkg-errors</title>
+<link href="../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre id="header"><code><span class="title">Source File</span>
+	grpc.go
+
+<span class="title">Belonging Package</span>
+	<a href="../../../../pkg/github.com/caring/gopkg-errors.html">github.com/caring/gopkg-errors</a>
+</code></pre>
+<style>input[type=radio] {display: none;}
+input[id=r0]:checked ~pre label[for=r0],
+input[id=r1]:checked ~pre label[for=r1],
+input[id=r2]:checked ~pre label[for=r2],
+input[id=r3]:checked ~pre label[for=r3],
+input[id=r4]:checked ~pre label[for=r4],
+input[id=r5]:checked ~pre label[for=r5],
+input[id=r6]:checked ~pre label[for=r6],
+input[id=r7]:checked ~pre label[for=r7],
+input[id=r8]:checked ~pre label[for=r8],
+input[id=r9]:checked ~pre label[for=r9],
+input[id=r10]:checked ~pre label[for=r10],
+input[id=r11]:checked ~pre label[for=r11],
+input[id=r12]:checked ~pre label[for=r12],
+input[id=r13]:checked ~pre label[for=r13],
+input[id=r14]:checked ~pre label[for=r14],
+input[id=r15]:checked ~pre label[for=r15],
+input[id=r16]:checked ~pre label[for=r16],
+input[id=r17]:checked ~pre label[for=r17],
+input[id=r18]:checked ~pre label[for=r18],
+input[id=r19]:checked ~pre label[for=r19],
+input[id=r20]:checked ~pre label[for=r20],
+input[id=r21]:checked ~pre label[for=r21],
+input[id=r22]:checked ~pre label[for=r22],
+input[id=r23]:checked ~pre label[for=r23]
+{background: #226; color: #ff8;}
+input[id=i0]:checked ~pre .i0,
+input[id=i1]:checked ~pre .i1,
+input[id=i2]:checked ~pre .i2,
+input[id=i3]:checked ~pre .i3,
+input[id=i4]:checked ~pre .i4
+{background: brown; color: #eed;}
+</style><input id="r0" type="radio" name="g"/>
+<input id="r1" type="radio" name="g"/>
+<input id="r2" type="radio" name="g"/>
+<input id="r3" type="radio" name="g"/>
+<input id="r4" type="radio" name="g"/>
+<input id="r5" type="radio" name="g"/>
+<input id="r6" type="radio" name="g"/>
+<input id="r7" type="radio" name="g"/>
+<input id="r8" type="radio" name="g"/>
+<input id="r9" type="radio" name="g"/>
+<input id="r10" type="radio" name="g"/>
+<input id="r11" type="radio" name="g"/>
+<input id="r12" type="radio" name="g"/>
+<input id="r13" type="radio" name="g"/>
+<input id="r14" type="radio" name="g"/>
+<input id="r15" type="radio" name="g"/>
+<input id="r16" type="radio" name="g"/>
+<input id="r17" type="radio" name="g"/>
+<input id="r18" type="radio" name="g"/>
+<input id="r19" type="radio" name="g"/>
+<input id="r20" type="radio" name="g"/>
+<input id="r21" type="radio" name="g"/>
+<input id="r22" type="radio" name="g"/>
+<input id="r23" type="radio" name="g"/>
+<input id="i0" type="radio" name="i"/>
+<input id="i1" type="radio" name="i"/>
+<input id="i2" type="radio" name="i"/>
+<input id="i3" type="radio" name="i"/>
+<input id="i4" type="radio" name="i"/>
+
+<pre class="line-numbers">
+<span class="codeline" id="line-1"><code><span class="keyword">package</span> errors</code></span>
+<span class="codeline" id="line-2"><code></code></span>
+<span class="codeline" id="line-3"><code><span class="keyword">import</span> (</code></span>
+<span class="codeline" id="line-4"><code>	<label for="i0"><span class="lit-string i0">"fmt"</span></label></code></span>
+<span class="codeline" id="line-5"><code>	<label for="i1"><span class="lit-string i1">"io"</span></label></code></span>
+<span class="codeline" id="line-6"><code>	<label for="i2"><span class="lit-string i2">"net/http"</span></label></code></span>
+<span class="codeline" id="line-7"><code>)</code></span>
+<span class="codeline" id="line-8"><code><span class="keyword">import</span> (</code></span>
+<span class="codeline" id="line-9"><code>	<label for="i3"><span class="lit-string i3">"google.golang.org/grpc/codes"</span></label></code></span>
+<span class="codeline" id="line-10"><code>	<label for="i4"><span class="lit-string i4">"google.golang.org/grpc/status"</span></label></code></span>
+<span class="codeline" id="line-11"><code>)</code></span>
+<span class="codeline" id="line-12"><code></code></span>
+<span class="codeline" id="line-13"><code><span class="comment">// GrpcFromHttp converts a HTTP error code to a gRPC code</span></code></span>
+<span class="codeline" id="line-14"><code><span class="keyword">func</span> <label for="r0" class="ident"><a href="../../../../pkg/github.com/caring/gopkg-errors.html#name-GrpcFromHttp" class="ident">GrpcFromHttp</a></label>(<label for="r1" class="ident">httpCode</label> <a href="../../../../pkg/builtin.html#name-int" class="ident">int</a>) <a href="../../../../pkg/google.golang.org/grpc/codes.html" class="ident i3">codes</a>.<a href="../../../google.golang.org/grpc/codes/codes.go.html#line-29" class="ident">Code</a> {</code></span>
+<span class="codeline" id="line-15"><code></code></span>
+<span class="codeline" id="line-16"><code>	<span class="comment">// TODO: This probably just be done with an array lookup</span></code></span>
+<span class="codeline" id="line-17"><code>	<span class="keyword">switch</span> <label for="r1" class="ident">httpCode</label> {</code></span>
+<span class="codeline" id="line-18"><code></code></span>
+<span class="codeline" id="line-19"><code>	<span class="keyword">case</span> <a href="../../../../pkg/net/http.html" class="ident i2">http</a>.<a href="../../../net/http/status.go.html#line-15" class="ident">StatusOK</a>:</code></span>
+<span class="codeline" id="line-20"><code>		<span class="comment">// OK is returned on success.</span></code></span>
+<span class="codeline" id="line-21"><code>		<span class="keyword">return</span> <a href="../../../../pkg/google.golang.org/grpc/codes.html" class="ident i3">codes</a>.<a href="../../../google.golang.org/grpc/codes/codes.go.html#line-33" class="ident">OK</a></code></span>
+<span class="codeline" id="line-22"><code></code></span>
+<span class="codeline" id="line-23"><code>	<span class="keyword">case</span> <a href="../../../../pkg/net/http.html" class="ident i2">http</a>.<a href="../../../net/http/status.go.html#line-46" class="ident">StatusGone</a>:</code></span>
+<span class="codeline" id="line-24"><code>		<span class="comment">// NotFound means some requested entity (e.g., file or directory) was not found.</span></code></span>
+<span class="codeline" id="line-25"><code>		<span class="keyword">return</span> <a href="../../../../pkg/google.golang.org/grpc/codes.html" class="ident i3">codes</a>.<a href="../../../google.golang.org/grpc/codes/codes.go.html#line-73" class="ident">NotFound</a></code></span>
+<span class="codeline" id="line-26"><code></code></span>
+<span class="codeline" id="line-27"><code>	<span class="keyword">case</span> <a href="../../../../pkg/net/http.html" class="ident i2">http</a>.<a href="../../../net/http/status.go.html#line-36" class="ident">StatusBadRequest</a>:</code></span>
+<span class="codeline" id="line-28"><code>		<span class="comment">// InvalidArgument indicates client specified an invalid argument.</span></code></span>
+<span class="codeline" id="line-29"><code><span class="comment">		// Note that this differs from FailedPrecondition. It indicates arguments</span></code></span>
+<span class="codeline" id="line-30"><code><span class="comment">		// that are problematic regardless of the state of the system</span></code></span>
+<span class="codeline" id="line-31"><code><span class="comment">		// (e.g., a malformed file name).</span></code></span>
+<span class="codeline" id="line-32"><code>		<span class="keyword">return</span> <a href="../../../../pkg/google.golang.org/grpc/codes.html" class="ident i3">codes</a>.<a href="../../../google.golang.org/grpc/codes/codes.go.html#line-57" class="ident">InvalidArgument</a></code></span>
+<span class="codeline" id="line-33"><code></code></span>
+<span class="codeline" id="line-34"><code>	<span class="keyword">case</span> <a href="../../../../pkg/net/http.html" class="ident i2">http</a>.<a href="../../../net/http/status.go.html#line-44" class="ident">StatusRequestTimeout</a>:</code></span>
+<span class="codeline" id="line-35"><code>		<span class="comment">// DeadlineExceeded means operation expired before completion.</span></code></span>
+<span class="codeline" id="line-36"><code><span class="comment">		// For operations that change the state of the system, this error may be</span></code></span>
+<span class="codeline" id="line-37"><code><span class="comment">		// returned even if the operation has completed successfully. For</span></code></span>
+<span class="codeline" id="line-38"><code><span class="comment">		// example, a successful response from a server could have been delayed</span></code></span>
+<span class="codeline" id="line-39"><code><span class="comment">		// long enough for the deadline to expire.</span></code></span>
+<span class="codeline" id="line-40"><code>		<span class="keyword">return</span> <a href="../../../../pkg/google.golang.org/grpc/codes.html" class="ident i3">codes</a>.<a href="../../../google.golang.org/grpc/codes/codes.go.html#line-67" class="ident">DeadlineExceeded</a></code></span>
+<span class="codeline" id="line-41"><code></code></span>
+<span class="codeline" id="line-42"><code>	<span class="keyword">case</span> <a href="../../../../pkg/net/http.html" class="ident i2">http</a>.<a href="../../../net/http/status.go.html#line-40" class="ident">StatusNotFound</a>:</code></span>
+<span class="codeline" id="line-43"><code>		<span class="comment">// NotFound means some requested entity (e.g., file or directory) was</span></code></span>
+<span class="codeline" id="line-44"><code><span class="comment">		// not found.</span></code></span>
+<span class="codeline" id="line-45"><code>		<span class="keyword">return</span> <a href="../../../../pkg/google.golang.org/grpc/codes.html" class="ident i3">codes</a>.<a href="../../../google.golang.org/grpc/codes/codes.go.html#line-73" class="ident">NotFound</a></code></span>
+<span class="codeline" id="line-46"><code></code></span>
+<span class="codeline" id="line-47"><code>	<span class="keyword">case</span> <a href="../../../../pkg/net/http.html" class="ident i2">http</a>.<a href="../../../net/http/status.go.html#line-45" class="ident">StatusConflict</a>:</code></span>
+<span class="codeline" id="line-48"><code>		<span class="comment">// AlreadyExists means an attempt to create an entity failed because one</span></code></span>
+<span class="codeline" id="line-49"><code><span class="comment">		// already exists.</span></code></span>
+<span class="codeline" id="line-50"><code>		<span class="keyword">return</span> <a href="../../../../pkg/google.golang.org/grpc/codes.html" class="ident i3">codes</a>.<a href="../../../google.golang.org/grpc/codes/codes.go.html#line-79" class="ident">AlreadyExists</a></code></span>
+<span class="codeline" id="line-51"><code></code></span>
+<span class="codeline" id="line-52"><code>	<span class="keyword">case</span> <a href="../../../../pkg/net/http.html" class="ident i2">http</a>.<a href="../../../net/http/status.go.html#line-39" class="ident">StatusForbidden</a>:</code></span>
+<span class="codeline" id="line-53"><code>		<span class="comment">// PermissionDenied indicates the caller does not have permission to</span></code></span>
+<span class="codeline" id="line-54"><code><span class="comment">		// execute the specified operation. It must not be used for rejections</span></code></span>
+<span class="codeline" id="line-55"><code><span class="comment">		// caused by exhausting some resource (use ResourceExhausted</span></code></span>
+<span class="codeline" id="line-56"><code><span class="comment">		// instead for those errors). It must not be</span></code></span>
+<span class="codeline" id="line-57"><code><span class="comment">		// used if the caller cannot be identified (use Unauthenticated</span></code></span>
+<span class="codeline" id="line-58"><code><span class="comment">		// instead for those errors).</span></code></span>
+<span class="codeline" id="line-59"><code>		<span class="keyword">return</span> <a href="../../../../pkg/google.golang.org/grpc/codes.html" class="ident i3">codes</a>.<a href="../../../google.golang.org/grpc/codes/codes.go.html#line-90" class="ident">PermissionDenied</a></code></span>
+<span class="codeline" id="line-60"><code></code></span>
+<span class="codeline" id="line-61"><code>	<span class="keyword">case</span> <a href="../../../../pkg/net/http.html" class="ident i2">http</a>.<a href="../../../net/http/status.go.html#line-73" class="ident">StatusInsufficientStorage</a>:</code></span>
+<span class="codeline" id="line-62"><code>		<span class="comment">// ResourceExhausted indicates some resource has been exhausted, perhaps</span></code></span>
+<span class="codeline" id="line-63"><code><span class="comment">		// a per-user quota, or perhaps the entire file system is out of space.</span></code></span>
+<span class="codeline" id="line-64"><code>		<span class="keyword">return</span> <a href="../../../../pkg/google.golang.org/grpc/codes.html" class="ident i3">codes</a>.<a href="../../../google.golang.org/grpc/codes/codes.go.html#line-98" class="ident">ResourceExhausted</a></code></span>
+<span class="codeline" id="line-65"><code></code></span>
+<span class="codeline" id="line-66"><code>	<span class="keyword">case</span> <a href="../../../../pkg/net/http.html" class="ident i2">http</a>.<a href="../../../net/http/status.go.html#line-48" class="ident">StatusPreconditionFailed</a>:</code></span>
+<span class="codeline" id="line-67"><code>		<span class="comment">// FailedPrecondition indicates operation was rejected because the</span></code></span>
+<span class="codeline" id="line-68"><code><span class="comment">		// system is not in a state required for the operation's execution.</span></code></span>
+<span class="codeline" id="line-69"><code><span class="comment">		// For example, directory to be deleted may be non-empty, an rmdir</span></code></span>
+<span class="codeline" id="line-70"><code><span class="comment">		// operation is applied to a non-directory, etc.</span></code></span>
+<span class="codeline" id="line-71"><code><span class="comment">		//</span></code></span>
+<span class="codeline" id="line-72"><code><span class="comment">		// A litmus test that may help a service implementor in deciding</span></code></span>
+<span class="codeline" id="line-73"><code><span class="comment">		// between FailedPrecondition, Aborted, and Unavailable:</span></code></span>
+<span class="codeline" id="line-74"><code><span class="comment">		//  (a) Use Unavailable if the client can retry just the failing call.</span></code></span>
+<span class="codeline" id="line-75"><code><span class="comment">		//  (b) Use Aborted if the client should retry at a higher-level</span></code></span>
+<span class="codeline" id="line-76"><code><span class="comment">		//      (e.g., restarting a read-modify-write sequence).</span></code></span>
+<span class="codeline" id="line-77"><code><span class="comment">		//  (c) Use FailedPrecondition if the client should not retry until</span></code></span>
+<span class="codeline" id="line-78"><code><span class="comment">		//      the system state has been explicitly fixed. E.g., if an "rmdir"</span></code></span>
+<span class="codeline" id="line-79"><code><span class="comment">		//      fails because the directory is non-empty, FailedPrecondition</span></code></span>
+<span class="codeline" id="line-80"><code><span class="comment">		//      should be returned since the client should not retry unless</span></code></span>
+<span class="codeline" id="line-81"><code><span class="comment">		//      they have first fixed up the directory by deleting files from it.</span></code></span>
+<span class="codeline" id="line-82"><code><span class="comment">		//  (d) Use FailedPrecondition if the client performs conditional</span></code></span>
+<span class="codeline" id="line-83"><code><span class="comment">		//      REST Get/Update/Delete on a resource and the resource on the</span></code></span>
+<span class="codeline" id="line-84"><code><span class="comment">		//      server does not match the condition. E.g., conflicting</span></code></span>
+<span class="codeline" id="line-85"><code><span class="comment">		//      read-modify-write on the same resource.</span></code></span>
+<span class="codeline" id="line-86"><code>		<span class="keyword">return</span> <a href="../../../../pkg/google.golang.org/grpc/codes.html" class="ident i3">codes</a>.<a href="../../../google.golang.org/grpc/codes/codes.go.html#line-121" class="ident">FailedPrecondition</a></code></span>
+<span class="codeline" id="line-87"><code></code></span>
+<span class="codeline" id="line-88"><code>	<span class="keyword">case</span> <a href="../../../../pkg/net/http.html" class="ident i2">http</a>.<a href="../../../net/http/status.go.html#line-20" class="ident">StatusResetContent</a>:</code></span>
+<span class="codeline" id="line-89"><code>		<span class="comment">// Aborted indicates the operation was aborted, typically due to a</span></code></span>
+<span class="codeline" id="line-90"><code><span class="comment">		// concurrency issue like sequencer check failures, transaction aborts,</span></code></span>
+<span class="codeline" id="line-91"><code><span class="comment">		// etc.</span></code></span>
+<span class="codeline" id="line-92"><code><span class="comment">		//</span></code></span>
+<span class="codeline" id="line-93"><code><span class="comment">		// See litmus test above for deciding between FailedPrecondition,</span></code></span>
+<span class="codeline" id="line-94"><code><span class="comment">		// Aborted, and Unavailable.</span></code></span>
+<span class="codeline" id="line-95"><code>		<span class="keyword">return</span> <a href="../../../../pkg/google.golang.org/grpc/codes.html" class="ident i3">codes</a>.<a href="../../../google.golang.org/grpc/codes/codes.go.html#line-131" class="ident">Aborted</a></code></span>
+<span class="codeline" id="line-96"><code></code></span>
+<span class="codeline" id="line-97"><code>	<span class="keyword">case</span> <a href="../../../../pkg/net/http.html" class="ident i2">http</a>.<a href="../../../net/http/status.go.html#line-52" class="ident">StatusRequestedRangeNotSatisfiable</a>:</code></span>
+<span class="codeline" id="line-98"><code>		<span class="comment">// OutOfRange means operation was attempted past the valid range.</span></code></span>
+<span class="codeline" id="line-99"><code><span class="comment">		// E.g., seeking or reading past end of file.</span></code></span>
+<span class="codeline" id="line-100"><code><span class="comment">		//</span></code></span>
+<span class="codeline" id="line-101"><code><span class="comment">		// Unlike InvalidArgument, this error indicates a problem that may</span></code></span>
+<span class="codeline" id="line-102"><code><span class="comment">		// be fixed if the system state changes. For example, a 32-bit file</span></code></span>
+<span class="codeline" id="line-103"><code><span class="comment">		// system will generate InvalidArgument if asked to read at an</span></code></span>
+<span class="codeline" id="line-104"><code><span class="comment">		// offset that is not in the range [0,2^32-1], but it will generate</span></code></span>
+<span class="codeline" id="line-105"><code><span class="comment">		// OutOfRange if asked to read from an offset past the current</span></code></span>
+<span class="codeline" id="line-106"><code><span class="comment">		// file size.</span></code></span>
+<span class="codeline" id="line-107"><code><span class="comment">		//</span></code></span>
+<span class="codeline" id="line-108"><code><span class="comment">		// There is a fair bit of overlap between FailedPrecondition and</span></code></span>
+<span class="codeline" id="line-109"><code><span class="comment">		// OutOfRange. We recommend using OutOfRange (the more specific</span></code></span>
+<span class="codeline" id="line-110"><code><span class="comment">		// error) when it applies so that callers who are iterating through</span></code></span>
+<span class="codeline" id="line-111"><code><span class="comment">		// a space can easily look for an OutOfRange error to detect when</span></code></span>
+<span class="codeline" id="line-112"><code><span class="comment">		// they are done.</span></code></span>
+<span class="codeline" id="line-113"><code>		<span class="keyword">return</span> <a href="../../../../pkg/google.golang.org/grpc/codes.html" class="ident i3">codes</a>.<a href="../../../google.golang.org/grpc/codes/codes.go.html#line-150" class="ident">OutOfRange</a></code></span>
+<span class="codeline" id="line-114"><code></code></span>
+<span class="codeline" id="line-115"><code>	<span class="keyword">case</span> <a href="../../../../pkg/net/http.html" class="ident i2">http</a>.<a href="../../../net/http/status.go.html#line-67" class="ident">StatusNotImplemented</a>:</code></span>
+<span class="codeline" id="line-116"><code>		<span class="comment">// Unimplemented indicates operation is not implemented or not</span></code></span>
+<span class="codeline" id="line-117"><code><span class="comment">		// supported/enabled in this service.</span></code></span>
+<span class="codeline" id="line-118"><code>		<span class="keyword">return</span> <a href="../../../../pkg/google.golang.org/grpc/codes.html" class="ident i3">codes</a>.<a href="../../../google.golang.org/grpc/codes/codes.go.html#line-160" class="ident">Unimplemented</a></code></span>
+<span class="codeline" id="line-119"><code></code></span>
+<span class="codeline" id="line-120"><code>	<span class="keyword">case</span> <a href="../../../../pkg/net/http.html" class="ident i2">http</a>.<a href="../../../net/http/status.go.html#line-66" class="ident">StatusInternalServerError</a>:</code></span>
+<span class="codeline" id="line-121"><code>		<span class="comment">// Internal errors. Means some invariants expected by underlying</span></code></span>
+<span class="codeline" id="line-122"><code><span class="comment">		// system has been broken. If you see one of these errors,</span></code></span>
+<span class="codeline" id="line-123"><code><span class="comment">		// something is very broken.</span></code></span>
+<span class="codeline" id="line-124"><code>		<span class="keyword">return</span> <a href="../../../../pkg/google.golang.org/grpc/codes.html" class="ident i3">codes</a>.<a href="../../../google.golang.org/grpc/codes/codes.go.html#line-168" class="ident">Internal</a></code></span>
+<span class="codeline" id="line-125"><code></code></span>
+<span class="codeline" id="line-126"><code>	<span class="keyword">case</span> <a href="../../../../pkg/net/http.html" class="ident i2">http</a>.<a href="../../../net/http/status.go.html#line-69" class="ident">StatusServiceUnavailable</a>:</code></span>
+<span class="codeline" id="line-127"><code>		<span class="comment">// Unavailable indicates the service is currently unavailable.</span></code></span>
+<span class="codeline" id="line-128"><code><span class="comment">		// This is a most likely a transient condition and may be corrected</span></code></span>
+<span class="codeline" id="line-129"><code><span class="comment">		// by retrying with a backoff. Note that it is not always safe to retry</span></code></span>
+<span class="codeline" id="line-130"><code><span class="comment">		// non-idempotent operations.</span></code></span>
+<span class="codeline" id="line-131"><code><span class="comment">		//</span></code></span>
+<span class="codeline" id="line-132"><code><span class="comment">		// See litmus test above for deciding between FailedPrecondition,</span></code></span>
+<span class="codeline" id="line-133"><code><span class="comment">		// Aborted, and Unavailable.</span></code></span>
+<span class="codeline" id="line-134"><code>		<span class="keyword">return</span> <a href="../../../../pkg/google.golang.org/grpc/codes.html" class="ident i3">codes</a>.<a href="../../../google.golang.org/grpc/codes/codes.go.html#line-180" class="ident">Unavailable</a></code></span>
+<span class="codeline" id="line-135"><code></code></span>
+<span class="codeline" id="line-136"><code>	<span class="keyword">case</span> <a href="../../../../pkg/net/http.html" class="ident i2">http</a>.<a href="../../../net/http/status.go.html#line-54" class="ident">StatusTeapot</a>:</code></span>
+<span class="codeline" id="line-137"><code>		<span class="comment">// DataLoss indicates unrecoverable data loss or corruption.</span></code></span>
+<span class="codeline" id="line-138"><code>		<span class="keyword">return</span> <a href="../../../../pkg/google.golang.org/grpc/codes.html" class="ident i3">codes</a>.<a href="../../../google.golang.org/grpc/codes/codes.go.html#line-49" class="ident">Unknown</a></code></span>
+<span class="codeline" id="line-139"><code></code></span>
+<span class="codeline" id="line-140"><code>	<span class="keyword">case</span> <a href="../../../../pkg/net/http.html" class="ident i2">http</a>.<a href="../../../net/http/status.go.html#line-37" class="ident">StatusUnauthorized</a>:</code></span>
+<span class="codeline" id="line-141"><code>		<span class="comment">// Unauthenticated indicates the request does not have valid</span></code></span>
+<span class="codeline" id="line-142"><code><span class="comment">		// authentication credentials for the operation.</span></code></span>
+<span class="codeline" id="line-143"><code>		<span class="keyword">return</span> <a href="../../../../pkg/google.golang.org/grpc/codes.html" class="ident i3">codes</a>.<a href="../../../google.golang.org/grpc/codes/codes.go.html#line-193" class="ident">Unauthenticated</a></code></span>
+<span class="codeline" id="line-144"><code></code></span>
+<span class="codeline" id="line-145"><code>	<span class="keyword">case</span> <a href="../../../../pkg/net/http.html" class="ident i2">http</a>.<a href="../../../net/http/status.go.html#line-56" class="ident">StatusUnprocessableEntity</a>:</code></span>
+<span class="codeline" id="line-146"><code>		<span class="keyword">return</span> <a href="../../../../pkg/google.golang.org/grpc/codes.html" class="ident i3">codes</a>.<a href="../../../google.golang.org/grpc/codes/codes.go.html#line-57" class="ident">InvalidArgument</a></code></span>
+<span class="codeline" id="line-147"><code></code></span>
+<span class="codeline" id="line-148"><code>	}</code></span>
+<span class="codeline" id="line-149"><code></code></span>
+<span class="codeline" id="line-150"><code>	<span class="keyword">return</span> <a href="../../../../pkg/google.golang.org/grpc/codes.html" class="ident i3">codes</a>.<a href="../../../google.golang.org/grpc/codes/codes.go.html#line-49" class="ident">Unknown</a></code></span>
+<span class="codeline" id="line-151"><code>}</code></span>
+<span class="codeline" id="line-152"><code></code></span>
+<span class="codeline" id="line-153"><code><span class="keyword">type</span> <a href="../../../../pkg/github.com/caring/gopkg-errors.html#name-withGrpcStatus" class="ident">withGrpcStatus</a> <span class="keyword">struct</span> {</code></span>
+<span class="codeline" id="line-154"><code>	<a href="../../../../use/github.com/caring/gopkg-errors..withGrpcStatus^5cea6.cause^6a7ef.html" class="ident">cause</a>      <a href="../../../../pkg/builtin.html#name-error" class="ident">error</a></code></span>
+<span class="codeline" id="line-155"><code>	<a href="../../../../use/github.com/caring/gopkg-errors..withGrpcStatus^5cea6.grpcCode^7c8ea.html" class="ident">grpcCode</a>   <a href="../../../../pkg/google.golang.org/grpc/codes.html" class="ident i3">codes</a>.<a href="../../../google.golang.org/grpc/codes/codes.go.html#line-29" class="ident">Code</a></code></span>
+<span class="codeline" id="line-156"><code>	<a href="../../../../use/github.com/caring/gopkg-errors..withGrpcStatus^5cea6.grpcStatus^0668f.html" class="ident">grpcStatus</a> *<a href="../../../../pkg/google.golang.org/grpc/status.html" class="ident i4">status</a>.<a href="../../../google.golang.org/grpc/status/status.go.html#line-45" class="ident">Status</a></code></span>
+<span class="codeline" id="line-157"><code>}</code></span>
+<span class="codeline" id="line-158"><code></code></span>
+<span class="codeline" id="line-159"><code><span class="comment">// FromGrpcError takes a grpc error passed in, and gets the status</span></code></span>
+<span class="codeline" id="line-160"><code><span class="comment">// of it to create a WithGrpcStatus error type</span></code></span>
+<span class="codeline" id="line-161"><code><span class="keyword">func</span> <label for="r2" class="ident"><a href="../../../../pkg/github.com/caring/gopkg-errors.html#name-FromGrpcError" class="ident">FromGrpcError</a></label>(<label for="r3" class="ident">origErr</label> *<a href="../../../../pkg/google.golang.org/grpc/status.html" class="ident i4">status</a>.<a href="../../../google.golang.org/grpc/status/status.go.html#line-45" class="ident">Status</a>) <a href="../../../../pkg/builtin.html#name-error" class="ident">error</a> {</code></span>
+<span class="codeline" id="line-162"><code>	<span class="keyword">if</span> <label for="r3" class="ident">origErr</label>.<a href="../../../google.golang.org/grpc/internal/status/status.go.html#line-96" class="ident">Err</a>() == <a href="../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-163"><code>		<span class="keyword">return</span> <a href="../../../../pkg/builtin.html#name-nil" class="ident">nil</a></code></span>
+<span class="codeline" id="line-164"><code>	}</code></span>
+<span class="codeline" id="line-165"><code>	<span class="keyword">if</span> <label for="r3" class="ident">origErr</label>.<a href="../../../google.golang.org/grpc/internal/status/status.go.html#line-72" class="ident">Code</a>() == <a href="../../../../pkg/google.golang.org/grpc/codes.html" class="ident i3">codes</a>.<a href="../../../google.golang.org/grpc/codes/codes.go.html#line-33" class="ident">OK</a> {</code></span>
+<span class="codeline" id="line-166"><code>		<span class="keyword">return</span> <a href="../../../../pkg/builtin.html#name-nil" class="ident">nil</a></code></span>
+<span class="codeline" id="line-167"><code>	}</code></span>
+<span class="codeline" id="line-168"><code></code></span>
+<span class="codeline" id="line-169"><code>	<label for="r4" class="ident">err</label> := &amp;<a href="#line-153" class="ident">withGrpcStatus</a>{</code></span>
+<span class="codeline" id="line-170"><code>		<a href="#line-154" class="ident">cause</a>:      <label for="r3" class="ident">origErr</label>.<a href="../../../google.golang.org/grpc/internal/status/status.go.html#line-96" class="ident">Err</a>(),</code></span>
+<span class="codeline" id="line-171"><code>		<a href="#line-155" class="ident">grpcCode</a>:   <label for="r3" class="ident">origErr</label>.<a href="../../../google.golang.org/grpc/internal/status/status.go.html#line-72" class="ident">Code</a>(),</code></span>
+<span class="codeline" id="line-172"><code>		<a href="#line-156" class="ident">grpcStatus</a>: <label for="r3" class="ident">origErr</label>,</code></span>
+<span class="codeline" id="line-173"><code>	}</code></span>
+<span class="codeline" id="line-174"><code>	<span class="keyword">return</span> &amp;<a href="withstack.go.html#line-20" class="ident">withStack</a>{</code></span>
+<span class="codeline" id="line-175"><code>		<label for="r4" class="ident">err</label>,</code></span>
+<span class="codeline" id="line-176"><code>		<a href="stack.go.html#line-163" class="ident">callers</a>(),</code></span>
+<span class="codeline" id="line-177"><code>	}</code></span>
+<span class="codeline" id="line-178"><code>}</code></span>
+<span class="codeline" id="line-179"><code></code></span>
+<span class="codeline" id="line-180"><code><span class="comment">// WithGrpcStatus annotates err with the grpc code and a status.</span></code></span>
+<span class="codeline" id="line-181"><code><span class="comment">// If err is nil, WithMessage returns nil.</span></code></span>
+<span class="codeline" id="line-182"><code><span class="keyword">func</span> <label for="r5" class="ident"><a href="../../../../pkg/github.com/caring/gopkg-errors.html#name-WithGrpcStatus" class="ident">WithGrpcStatus</a></label>(<label for="r6" class="ident">err</label> <a href="../../../../pkg/builtin.html#name-error" class="ident">error</a>, <label for="r7" class="ident">code</label> <a href="../../../../pkg/google.golang.org/grpc/codes.html" class="ident i3">codes</a>.<a href="../../../google.golang.org/grpc/codes/codes.go.html#line-29" class="ident">Code</a>) *<a href="#line-153" class="ident">withGrpcStatus</a> {</code></span>
+<span class="codeline" id="line-183"><code>	<span class="keyword">if</span> <label for="r6" class="ident">err</label> == <a href="../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-184"><code>		<span class="keyword">return</span> <a href="../../../../pkg/builtin.html#name-nil" class="ident">nil</a></code></span>
+<span class="codeline" id="line-185"><code>	}</code></span>
+<span class="codeline" id="line-186"><code></code></span>
+<span class="codeline" id="line-187"><code>	<span class="keyword">if</span> <label for="r7" class="ident">code</label> == <a href="../../../../pkg/google.golang.org/grpc/codes.html" class="ident i3">codes</a>.<a href="../../../google.golang.org/grpc/codes/codes.go.html#line-33" class="ident">OK</a> {</code></span>
+<span class="codeline" id="line-188"><code>		<span class="keyword">return</span> <a href="../../../../pkg/builtin.html#name-nil" class="ident">nil</a></code></span>
+<span class="codeline" id="line-189"><code>	}</code></span>
+<span class="codeline" id="line-190"><code></code></span>
+<span class="codeline" id="line-191"><code>	<span class="keyword">return</span> &amp;<a href="#line-153" class="ident">withGrpcStatus</a>{</code></span>
+<span class="codeline" id="line-192"><code>		<a href="#line-154" class="ident">cause</a>:      <label for="r6" class="ident">err</label>,</code></span>
+<span class="codeline" id="line-193"><code>		<a href="#line-155" class="ident">grpcCode</a>:   <label for="r7" class="ident">code</label>,</code></span>
+<span class="codeline" id="line-194"><code>		<a href="#line-156" class="ident">grpcStatus</a>: <a href="../../../../pkg/google.golang.org/grpc/status.html" class="ident i4">status</a>.<a href="../../../google.golang.org/grpc/status/status.go.html#line-48" class="ident">New</a>(<label for="r7" class="ident">code</label>, <label for="r6" class="ident">err</label>.Error()),</code></span>
+<span class="codeline" id="line-195"><code>	}</code></span>
+<span class="codeline" id="line-196"><code>}</code></span>
+<span class="codeline" id="line-197"><code></code></span>
+<span class="codeline" id="line-198"><code><span class="keyword">func</span> (<label for="r8" class="ident">w</label> *<a href="#line-153" class="ident">withGrpcStatus</a>) <label for="r9" class="ident"><a href="../../../../use/github.com/caring/gopkg-errors..withGrpcStatus^5cea6.GRPCStatus.html" class="ident">GRPCStatus</a></label>() *<a href="../../../../pkg/google.golang.org/grpc/status.html" class="ident i4">status</a>.<a href="../../../google.golang.org/grpc/status/status.go.html#line-45" class="ident">Status</a> {</code></span>
+<span class="codeline" id="line-199"><code>	<span class="keyword">return</span> <label for="r8" class="ident">w</label>.<a href="#line-156" class="ident">grpcStatus</a></code></span>
+<span class="codeline" id="line-200"><code>}</code></span>
+<span class="codeline" id="line-201"><code></code></span>
+<span class="codeline" id="line-202"><code><span class="keyword">func</span> (<label for="r10" class="ident">w</label> *<a href="#line-153" class="ident">withGrpcStatus</a>) <label for="r11" class="ident"><a href="../../../../use/github.com/caring/gopkg-errors..withGrpcStatus^5cea6.Error.html" class="ident">Error</a></label>() <a href="../../../../pkg/builtin.html#name-string" class="ident">string</a> {</code></span>
+<span class="codeline" id="line-203"><code>	<span class="keyword">return</span> <a href="../../../../pkg/fmt.html" class="ident i0">fmt</a>.<a href="../../../fmt/print.go.html#line-217" class="ident">Sprintf</a>(<span class="lit-string">"rpc error: code = %s desc = %s"</span>, <label for="r10" class="ident">w</label>.<a href="#line-155" class="ident">grpcCode</a>, <label for="r10" class="ident">w</label>.<a href="#line-156" class="ident">grpcStatus</a>.<a href="../../../google.golang.org/grpc/internal/status/status.go.html#line-80" class="ident">Message</a>())</code></span>
+<span class="codeline" id="line-204"><code>}</code></span>
+<span class="codeline" id="line-205"><code></code></span>
+<span class="codeline" id="line-206"><code><span class="keyword">func</span> (<label for="r12" class="ident">w</label> *<a href="#line-153" class="ident">withGrpcStatus</a>) <label for="r13" class="ident"><a href="../../../../use/github.com/caring/gopkg-errors..withGrpcStatus^5cea6.ErrorCode.html" class="ident">ErrorCode</a></label>() <a href="../../../../pkg/google.golang.org/grpc/codes.html" class="ident i3">codes</a>.<a href="../../../google.golang.org/grpc/codes/codes.go.html#line-29" class="ident">Code</a> {</code></span>
+<span class="codeline" id="line-207"><code>	<span class="keyword">return</span> <label for="r12" class="ident">w</label>.<a href="#line-155" class="ident">grpcCode</a></code></span>
+<span class="codeline" id="line-208"><code>}</code></span>
+<span class="codeline" id="line-209"><code></code></span>
+<span class="codeline" id="line-210"><code><span class="keyword">func</span> (<label for="r14" class="ident">w</label> *<a href="#line-153" class="ident">withGrpcStatus</a>) <label for="r15" class="ident"><a href="../../../../use/github.com/caring/gopkg-errors..withGrpcStatus^5cea6.String.html" class="ident">String</a></label>() <a href="../../../../pkg/builtin.html#name-string" class="ident">string</a> {</code></span>
+<span class="codeline" id="line-211"><code>	<span class="keyword">return</span> <label for="r14" class="ident">w</label>.<a href="#line-156" class="ident">grpcStatus</a>.<a href="../../../google.golang.org/grpc/internal/status/status.go.html#line-80" class="ident">Message</a>()</code></span>
+<span class="codeline" id="line-212"><code>}</code></span>
+<span class="codeline" id="line-213"><code></code></span>
+<span class="codeline" id="line-214"><code><span class="keyword">func</span> (<label for="r16" class="ident">w</label> *<a href="#line-153" class="ident">withGrpcStatus</a>) <label for="r17" class="ident"><a href="../../../../use/github.com/caring/gopkg-errors..withGrpcStatus^5cea6.Cause.html" class="ident">Cause</a></label>() <a href="../../../../pkg/builtin.html#name-error" class="ident">error</a> {</code></span>
+<span class="codeline" id="line-215"><code>	<span class="keyword">return</span> <label for="r16" class="ident">w</label>.<a href="#line-154" class="ident">cause</a></code></span>
+<span class="codeline" id="line-216"><code>}</code></span>
+<span class="codeline" id="line-217"><code></code></span>
+<span class="codeline" id="line-218"><code><span class="keyword">func</span> (<label for="r18" class="ident">w</label> *<a href="#line-153" class="ident">withGrpcStatus</a>) <label for="r19" class="ident"><a href="../../../../use/github.com/caring/gopkg-errors..withGrpcStatus^5cea6.Unwrap.html" class="ident">Unwrap</a></label>() <a href="../../../../pkg/builtin.html#name-error" class="ident">error</a> {</code></span>
+<span class="codeline" id="line-219"><code>	<span class="keyword">return</span> <label for="r18" class="ident">w</label>.<a href="#line-154" class="ident">cause</a></code></span>
+<span class="codeline" id="line-220"><code>}</code></span>
+<span class="codeline" id="line-221"><code></code></span>
+<span class="codeline" id="line-222"><code><span class="keyword">func</span> (<label for="r20" class="ident">w</label> *<a href="#line-153" class="ident">withGrpcStatus</a>) <label for="r21" class="ident"><a href="../../../../use/github.com/caring/gopkg-errors..withGrpcStatus^5cea6.Format.html" class="ident">Format</a></label>(<label for="r22" class="ident">s</label> <a href="../../../../pkg/fmt.html" class="ident i0">fmt</a>.<a href="../../../fmt/print.go.html#line-38" class="ident">State</a>, <label for="r23" class="ident">verb</label> <a href="../../../../pkg/builtin.html#name-rune" class="ident">rune</a>) {</code></span>
+<span class="codeline" id="line-223"><code>	<span class="keyword">switch</span> <label for="r23" class="ident">verb</label> {</code></span>
+<span class="codeline" id="line-224"><code>	<span class="keyword">case</span> <span class="lit-number">'v'</span>:</code></span>
+<span class="codeline" id="line-225"><code>		<span class="keyword">if</span> <label for="r22" class="ident">s</label>.<a href="../../../fmt/print.go.html#line-47" class="ident">Flag</a>(<span class="lit-number">'+'</span>) {</code></span>
+<span class="codeline" id="line-226"><code>			<a href="../../../../pkg/fmt.html" class="ident i0">fmt</a>.<a href="../../../fmt/print.go.html#line-202" class="ident">Fprintf</a>(<label for="r22" class="ident">s</label>, <span class="lit-string">"%+v\n"</span>, <label for="r20" class="ident">w</label>.<a href="#line-214" class="ident">Cause</a>())</code></span>
+<span class="codeline" id="line-227"><code>			<a href="../../../../pkg/io.html" class="ident i1">io</a>.<a href="../../../io/io.go.html#line-307" class="ident">WriteString</a>(<label for="r22" class="ident">s</label>, <label for="r20" class="ident">w</label>.<a href="#line-210" class="ident">String</a>())</code></span>
+<span class="codeline" id="line-228"><code>			<span class="keyword">return</span></code></span>
+<span class="codeline" id="line-229"><code>		}</code></span>
+<span class="codeline" id="line-230"><code>		<span class="keyword">fallthrough</span></code></span>
+<span class="codeline" id="line-231"><code>	<span class="keyword">case</span> <span class="lit-number">'s'</span>, <span class="lit-number">'q'</span>:</code></span>
+<span class="codeline" id="line-232"><code>		<a href="../../../../pkg/io.html" class="ident i1">io</a>.<a href="../../../io/io.go.html#line-307" class="ident">WriteString</a>(<label for="r22" class="ident">s</label>, <label for="r20" class="ident">w</label>.<a href="#line-202" class="ident">Error</a>())</code></span>
+<span class="codeline" id="line-233"><code>	}</code></span>
+<span class="codeline" id="line-234"><code>}</code></span>
+</pre><pre id="footer">
+<table><tr><td><img src="../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

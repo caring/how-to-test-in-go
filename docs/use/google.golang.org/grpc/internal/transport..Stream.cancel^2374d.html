@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: google.golang.org/grpc/internal/transport.Stream.cancel</title>
+<link href="../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../../pkg/google.golang.org/grpc/internal/transport.html">google.golang.org/grpc/internal/transport</a>.<a href="../../../../src/google.golang.org/grpc/internal/transport/transport.go.html#line-238">Stream</a>.<a href="../../../../src/google.golang.org/grpc/internal/transport/transport.go.html#line-243">cancel</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">10 uses</span>
+
+	google.golang.org/grpc/internal/transport (current package)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/handler_server.go.html#line-357">handler_server.go#L357</a>: 		<b>cancel</b>:         cancel,
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-478">http2_server.go#L478</a>: 		s.ctx, s.<b>cancel</b> = context.WithTimeout(t.ctx, timeout)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-480" class="path-duplicate">http2_server.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-480">#L480</a>: 		s.ctx, s.<b>cancel</b> = context.WithCancel(t.ctx)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-503" class="path-duplicate">http2_server.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-503">#L503</a>: 		s.<b>cancel</b>()
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-514" class="path-duplicate">http2_server.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-514">#L514</a>: 		s.<b>cancel</b>()
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-528" class="path-duplicate">http2_server.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-528">#L528</a>: 		s.<b>cancel</b>()
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1069" class="path-duplicate">http2_server.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1069">#L1069</a>: 			s.<b>cancel</b>()
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1218" class="path-duplicate">http2_server.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1218">#L1218</a>: 		s.<b>cancel</b>()
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1231" class="path-duplicate">http2_server.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1231">#L1231</a>: 	s.<b>cancel</b>()
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/transport.go.html#line-243">transport.go#L243</a>: 	<b>cancel</b>       context.CancelFunc // always nil for client side Stream
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

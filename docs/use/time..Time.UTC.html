@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: time.Time.UTC</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/time.html">time</a>.<a href="../src/time/time.go.html#line-127">Time</a>.<a href="../src/time/time.go.html#line-1088">UTC</a></b></span><span style="font-size: large;"><i> (method)</i></span>
+
+<span class="title">27 uses</span>
+
+	time (current package)
+		<a href="../src/time/time.go.html#line-1088">time.go#L1088</a>: func (t Time) <b>UTC</b>() Time {
+
+	<a href="../pkg/crypto/x509.html">crypto/x509</a>
+		<a href="../src/crypto/x509/x509.go.html#line-1538">x509.go#L1538</a>: 		Validity:           validity{template.NotBefore.<b>UTC</b>(), template.NotAfter.<b>UTC</b>()},
+		<a href="../src/crypto/x509/x509.go.html#line-1644" class="path-duplicate">x509.go</a><a href="../src/crypto/x509/x509.go.html#line-1644">#L1644</a>: 		rc.RevocationTime = rc.RevocationTime.<b>UTC</b>()
+		<a href="../src/crypto/x509/x509.go.html#line-1652" class="path-duplicate">x509.go</a><a href="../src/crypto/x509/x509.go.html#line-1652">#L1652</a>: 		ThisUpdate:          now.<b>UTC</b>(),
+		<a href="../src/crypto/x509/x509.go.html#line-1653" class="path-duplicate">x509.go</a><a href="../src/crypto/x509/x509.go.html#line-1653">#L1653</a>: 		NextUpdate:          expiry.<b>UTC</b>(),
+		<a href="../src/crypto/x509/x509.go.html#line-2136" class="path-duplicate">x509.go</a><a href="../src/crypto/x509/x509.go.html#line-2136">#L2136</a>: 		rc.RevocationTime = rc.RevocationTime.<b>UTC</b>()
+		<a href="../src/crypto/x509/x509.go.html#line-2153" class="path-duplicate">x509.go</a><a href="../src/crypto/x509/x509.go.html#line-2153">#L2153</a>: 		ThisUpdate: template.ThisUpdate.<b>UTC</b>(),
+		<a href="../src/crypto/x509/x509.go.html#line-2154" class="path-duplicate">x509.go</a><a href="../src/crypto/x509/x509.go.html#line-2154">#L2154</a>: 		NextUpdate: template.NextUpdate.<b>UTC</b>(),
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/credentials/stscreds.html">github.com/aws/aws-sdk-go/aws/credentials/stscreds</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/credentials/stscreds/assume_role_provider.go.html#line-304">assume_role_provider.go#L304</a>: 		p.RoleSessionName = fmt.Sprintf("%d", time.Now().<b>UTC</b>().UnixNano())
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/signer/v4.html">github.com/aws/aws-sdk-go/aws/signer/v4</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/signer/v4/v4.go.html#line-841">v4.go#L841</a>: 	return dt.<b>UTC</b>().Format(shortTimeFormat)
+		<a href="../src/github.com/aws/aws-sdk-go/aws/signer/v4/v4.go.html#line-845" class="path-duplicate">v4.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/signer/v4/v4.go.html#line-845">#L845</a>: 	return dt.<b>UTC</b>().Format(timeFormat)
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/private/protocol.html">github.com/aws/aws-sdk-go/private/protocol</a>
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/timestamp.go.html#line-51">timestamp.go#L51</a>: 	t = t.<b>UTC</b>()
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil.html">github.com/aws/aws-sdk-go/private/protocol/json/jsonutil</a>
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/unmarshal.go.html#line-266">unmarshal.go#L266</a>: 			t := time.Unix(int64(d), 0).<b>UTC</b>()
+
+	<a href="../pkg/github.com/golang/protobuf/jsonpb.html">github.com/golang/protobuf/jsonpb</a>
+		<a href="../src/github.com/golang/protobuf/jsonpb/encode.go.html#line-201">encode.go#L201</a>: 		t := time.Unix(s, ns).<b>UTC</b>()
+
+	<a href="../pkg/github.com/golang/protobuf/ptypes.html">github.com/golang/protobuf/ptypes</a>
+		<a href="../src/github.com/golang/protobuf/ptypes/timestamp.go.html#line-43">timestamp.go#L43</a>: 		t = time.Unix(0, 0).<b>UTC</b>() // treat nil like the empty Timestamp
+		<a href="../src/github.com/golang/protobuf/ptypes/timestamp.go.html#line-45" class="path-duplicate">timestamp.go</a><a href="../src/github.com/golang/protobuf/ptypes/timestamp.go.html#line-45">#L45</a>: 		t = time.Unix(ts.Seconds, int64(ts.Nanos)).<b>UTC</b>()
+
+	<a href="../pkg/go.uber.org/zap.html">go.uber.org/zap</a>
+		<a href="../src/go.uber.org/zap/logger.go.html#line-302">logger.go#L302</a>: 			fmt.Fprintf(log.errorOutput, "%v Logger.check error: failed to get caller\n", time.Now().<b>UTC</b>())
+
+	<a href="../pkg/golang.org/x/net/http2.html">golang.org/x/net/http2</a>
+		<a href="../src/golang.org/x/net/http2/server.go.html#line-2447">server.go#L2447</a>: 			date = time.Now().<b>UTC</b>().Format(http.TimeFormat)
+
+	<a href="../pkg/google.golang.org/protobuf/encoding/protojson.html">google.golang.org/protobuf/encoding/protojson</a>
+		<a href="../src/google.golang.org/protobuf/encoding/protojson/well_known_types.go.html#line-799">well_known_types.go#L799</a>: 	t := time.Unix(secs, nanos).<b>UTC</b>()
+
+	<a href="../pkg/google.golang.org/protobuf/types/known/timestamppb.html">google.golang.org/protobuf/types/known/timestamppb</a>
+		<a href="../src/google.golang.org/protobuf/types/known/timestamppb/timestamp.pb.go.html#line-207">timestamp.pb.go#L207</a>: 	return time.Unix(int64(x.GetSeconds()), int64(x.GetNanos())).<b>UTC</b>()
+
+	<a href="../pkg/log.html">log</a>
+		<a href="../src/log/log.go.html#line-109">log.go#L109</a>: 			t = t.<b>UTC</b>()
+
+	<a href="../pkg/net/http.html">net/http</a>
+		<a href="../src/net/http/cookie.go.html#line-154">cookie.go#L154</a>: 				c.Expires = exptime.<b>UTC</b>()
+		<a href="../src/net/http/cookie.go.html#line-216" class="path-duplicate">cookie.go</a><a href="../src/net/http/cookie.go.html#line-216">#L216</a>: 		b.Write(c.Expires.<b>UTC</b>().AppendFormat(buf[:0], TimeFormat))
+		<a href="../src/net/http/fs.go.html#line-531">fs.go#L531</a>: 		w.Header().Set("Last-Modified", modtime.<b>UTC</b>().Format(TimeFormat))
+		<a href="../src/net/http/h2_bundle.go.html#line-6128">h2_bundle.go#L6128</a>: 			date = time.Now().<b>UTC</b>().Format(TimeFormat)
+		<a href="../src/net/http/server.go.html#line-917">server.go#L917</a>: 	t = t.<b>UTC</b>()
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

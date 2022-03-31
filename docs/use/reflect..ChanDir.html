@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: reflect.ChanDir</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../pkg/reflect.html">reflect</a>.<a href="../src/reflect/type.go.html#line-348">ChanDir</a></b></span>
+
+<span class="title">11 uses</span>
+
+	reflect (current package)
+		<a href="../src/reflect/type.go.html#line-139">type.go#L139</a>: 	ChanDir() <b>ChanDir</b>
+		<a href="../src/reflect/type.go.html#line-348" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-348">#L348</a>: type <b>ChanDir</b> int
+		<a href="../src/reflect/type.go.html#line-351" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-351">#L351</a>: 	RecvDir <b>ChanDir</b>             = 1 &lt;&lt; iota // &lt;-chan
+		<a href="../src/reflect/type.go.html#line-920" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-920">#L920</a>: func (t *rtype) ChanDir() <b>ChanDir</b> {
+		<a href="../src/reflect/type.go.html#line-925" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-925">#L925</a>: 	return <b>ChanDir</b>(tt.dir)
+		<a href="../src/reflect/type.go.html#line-1079" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1079">#L1079</a>: func (d <b>ChanDir</b>) String() string {
+		<a href="../src/reflect/type.go.html#line-1824" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1824">#L1824</a>: func ChanOf(dir <b>ChanDir</b>, t Type) Type {
+		<a href="../src/reflect/value.go.html#line-1861">value.go#L1861</a>: 	if <b>ChanDir</b>(tt.dir)&amp;RecvDir == 0 {
+		<a href="../src/reflect/value.go.html#line-1894" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-1894">#L1894</a>: 	if <b>ChanDir</b>(tt.dir)&amp;SendDir == 0 {
+		<a href="../src/reflect/value.go.html#line-2581" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2581">#L2581</a>: 			if <b>ChanDir</b>(tt.dir)&amp;SendDir == 0 {
+		<a href="../src/reflect/value.go.html#line-2609" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2609">#L2609</a>: 			if <b>ChanDir</b>(tt.dir)&amp;RecvDir == 0 {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

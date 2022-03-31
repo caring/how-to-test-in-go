@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: time.Unix</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">func <b><a href="../pkg/time.html">time</a>.<a href="../src/time/time.go.html#line-1317">Unix</a></b></span>
+
+<span class="title">35 uses</span>
+
+	time (current package)
+		<a href="../src/time/time.go.html#line-1317">time.go#L1317</a>: func <b>Unix</b>(sec int64, nsec int64) Time {
+		<a href="../src/time/time.go.html#line-1333" class="path-duplicate">time.go</a><a href="../src/time/time.go.html#line-1333">#L1333</a>: 	return <b>Unix</b>(msec/1e3, (msec%1e3)*1e6)
+		<a href="../src/time/time.go.html#line-1339" class="path-duplicate">time.go</a><a href="../src/time/time.go.html#line-1339">#L1339</a>: 	return <b>Unix</b>(usec/1e6, (usec%1e6)*1e3)
+
+	<a href="../pkg/compress/gzip.html">compress/gzip</a>
+		<a href="../src/compress/gzip/gunzip.go.html#line-192">gunzip.go#L192</a>: 		hdr.ModTime = time.<b>Unix</b>(t, 0)
+		<a href="../src/compress/gzip/gzip.go.html#line-157">gzip.go#L157</a>: 		if z.ModTime.After(time.<b>Unix</b>(0, 0)) {
+
+	<a href="../pkg/crypto/tls.html">crypto/tls</a>
+		<a href="../src/crypto/tls/handshake_server.go.html#line-407">handshake_server.go#L407</a>: 	createdAt := time.<b>Unix</b>(int64(hs.sessionState.createdAt), 0)
+		<a href="../src/crypto/tls/handshake_server_tls13.go.html#line-264">handshake_server_tls13.go#L264</a>: 		createdAt := time.<b>Unix</b>(int64(sessionState.createdAt), 0)
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws.html">github.com/aws/aws-sdk-go/aws</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/convert_types.go.html#line-849">convert_types.go#L849</a>: 		return time.<b>Unix</b>((*v / 1000), 0)
+		<a href="../src/github.com/aws/aws-sdk-go/aws/convert_types.go.html#line-858" class="path-duplicate">convert_types.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/convert_types.go.html#line-858">#L858</a>: 		return time.<b>Unix</b>(0, (*v * 1000000))
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/private/protocol.html">github.com/aws/aws-sdk-go/private/protocol</a>
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/timestamp.go.html#line-80">timestamp.go#L80</a>: 		return time.<b>Unix</b>(int64(v), int64(dec*(1e9))), nil
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil.html">github.com/aws/aws-sdk-go/private/protocol/json/jsonutil</a>
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/unmarshal.go.html#line-266">unmarshal.go#L266</a>: 			t := time.<b>Unix</b>(int64(d), 0).UTC()
+
+	<a href="../pkg/github.com/golang/protobuf/jsonpb.html">github.com/golang/protobuf/jsonpb</a>
+		<a href="../src/github.com/golang/protobuf/jsonpb/encode.go.html#line-201">encode.go#L201</a>: 		t := time.<b>Unix</b>(s, ns).UTC()
+
+	<a href="../pkg/github.com/golang/protobuf/ptypes.html">github.com/golang/protobuf/ptypes</a>
+		<a href="../src/github.com/golang/protobuf/ptypes/timestamp.go.html#line-43">timestamp.go#L43</a>: 		t = time.<b>Unix</b>(0, 0).UTC() // treat nil like the empty Timestamp
+		<a href="../src/github.com/golang/protobuf/ptypes/timestamp.go.html#line-45" class="path-duplicate">timestamp.go</a><a href="../src/github.com/golang/protobuf/ptypes/timestamp.go.html#line-45">#L45</a>: 		t = time.<b>Unix</b>(ts.Seconds, int64(ts.Nanos)).UTC()
+
+	<a href="../pkg/go.uber.org/zap.html">go.uber.org/zap</a>
+		<a href="../src/go.uber.org/zap/field.go.html#line-36">field.go#L36</a>: 	_minTimeInt64 = time.<b>Unix</b>(0, math.MinInt64)
+		<a href="../src/go.uber.org/zap/field.go.html#line-37" class="path-duplicate">field.go</a><a href="../src/go.uber.org/zap/field.go.html#line-37">#L37</a>: 	_maxTimeInt64 = time.<b>Unix</b>(0, math.MaxInt64)
+
+	<a href="../pkg/go.uber.org/zap/zapcore.html">go.uber.org/zap/zapcore</a>
+		<a href="../src/go.uber.org/zap/zapcore/field.go.html#line-146">field.go#L146</a>: 			enc.AddTime(f.Key, time.<b>Unix</b>(0, f.Integer).In(f.Interface.(*time.Location)))
+		<a href="../src/go.uber.org/zap/zapcore/field.go.html#line-149" class="path-duplicate">field.go</a><a href="../src/go.uber.org/zap/zapcore/field.go.html#line-149">#L149</a>: 			enc.AddTime(f.Key, time.<b>Unix</b>(0, f.Integer))
+
+	<a href="../pkg/golang.org/x/net/internal/timeseries.html">golang.org/x/net/internal/timeseries</a>
+		<a href="../src/golang.org/x/net/internal/timeseries/timeseries.go.html#line-241">timeseries.go#L241</a>: 			level.end = time.<b>Unix</b>(0, (t.UnixNano()/level.size.Nanoseconds())*level.size.Nanoseconds())
+
+	<a href="../pkg/google.golang.org/grpc.html">google.golang.org/grpc</a>
+		<a href="../src/google.golang.org/grpc/clientconn.go.html#line-807">clientconn.go#L807</a>: 		LastCallStartedTimestamp: time.<b>Unix</b>(0, atomic.LoadInt64(&amp;cc.czData.lastCallStartedTime)),
+		<a href="../src/google.golang.org/grpc/clientconn.go.html#line-1532" class="path-duplicate">clientconn.go</a><a href="../src/google.golang.org/grpc/clientconn.go.html#line-1532">#L1532</a>: 		LastCallStartedTimestamp: time.<b>Unix</b>(0, atomic.LoadInt64(&amp;ac.czData.lastCallStartedTime)),
+		<a href="../src/google.golang.org/grpc/server.go.html#line-1044">server.go#L1044</a>: 		LastCallStartedTimestamp: time.<b>Unix</b>(0, atomic.LoadInt64(&amp;s.czData.lastCallStartedTime)),
+
+	<a href="../pkg/google.golang.org/grpc/internal/transport.html">google.golang.org/grpc/internal/transport</a>
+		<a href="../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1655">http2_client.go#L1655</a>: 		LastLocalStreamCreatedTimestamp: time.<b>Unix</b>(0, atomic.LoadInt64(&amp;t.czData.lastStreamCreatedTime)),
+		<a href="../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1656" class="path-duplicate">http2_client.go</a><a href="../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1656">#L1656</a>: 		LastMessageSentTimestamp:        time.<b>Unix</b>(0, atomic.LoadInt64(&amp;t.czData.lastMsgSentTime)),
+		<a href="../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1657" class="path-duplicate">http2_client.go</a><a href="../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1657">#L1657</a>: 		LastMessageReceivedTimestamp:    time.<b>Unix</b>(0, atomic.LoadInt64(&amp;t.czData.lastMsgRecvTime)),
+		<a href="../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1366">http2_server.go#L1366</a>: 		LastRemoteStreamCreatedTimestamp: time.<b>Unix</b>(0, atomic.LoadInt64(&amp;t.czData.lastStreamCreatedTime)),
+		<a href="../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1367" class="path-duplicate">http2_server.go</a><a href="../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1367">#L1367</a>: 		LastMessageSentTimestamp:         time.<b>Unix</b>(0, atomic.LoadInt64(&amp;t.czData.lastMsgSentTime)),
+		<a href="../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1368" class="path-duplicate">http2_server.go</a><a href="../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1368">#L1368</a>: 		LastMessageReceivedTimestamp:     time.<b>Unix</b>(0, atomic.LoadInt64(&amp;t.czData.lastMsgRecvTime)),
+
+	<a href="../pkg/google.golang.org/protobuf/encoding/protojson.html">google.golang.org/protobuf/encoding/protojson</a>
+		<a href="../src/google.golang.org/protobuf/encoding/protojson/well_known_types.go.html#line-799">well_known_types.go#L799</a>: 	t := time.<b>Unix</b>(secs, nanos).UTC()
+
+	<a href="../pkg/google.golang.org/protobuf/types/known/timestamppb.html">google.golang.org/protobuf/types/known/timestamppb</a>
+		<a href="../src/google.golang.org/protobuf/types/known/timestamppb/timestamp.pb.go.html#line-207">timestamp.pb.go#L207</a>: 	return time.<b>Unix</b>(int64(x.GetSeconds()), int64(x.GetNanos())).UTC()
+
+	<a href="../pkg/net.html">net</a>
+		<a href="../src/net/net.go.html#line-490">net.go#L490</a>: 	aLongTimeAgo = time.<b>Unix</b>(1, 0)
+
+	<a href="../pkg/net/http.html">net/http</a>
+		<a href="../src/net/http/fs.go.html#line-522">fs.go#L522</a>: var unixEpochTime = time.<b>Unix</b>(0, 0)
+		<a href="../src/net/http/http.go.html#line-30">http.go#L30</a>: var aLongTimeAgo = time.<b>Unix</b>(1, 0)
+		<a href="../src/net/http/socks_bundle.go.html#line-24">socks_bundle.go#L24</a>: 	socksaLongTimeAgo = time.<b>Unix</b>(1, 0)
+
+	<a href="../pkg/os.html">os</a>
+		<a href="../src/os/stat_darwin.go.html#line-45">stat_darwin.go#L45</a>: 	return time.<b>Unix</b>(int64(ts.Sec), int64(ts.Nsec))
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

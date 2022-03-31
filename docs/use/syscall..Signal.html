@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: syscall.Signal</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../pkg/syscall.html">syscall</a>.<a href="../src/syscall/syscall_unix.go.html#line-174">Signal</a></b></span>
+
+<span class="title">43 uses</span>
+
+	syscall (current package)
+		<a href="../src/syscall/syscall_bsd.go.html#line-118">syscall_bsd.go#L118</a>: func (w WaitStatus) Signal() <b>Signal</b> {
+		<a href="../src/syscall/syscall_bsd.go.html#line-119" class="path-duplicate">syscall_bsd.go</a><a href="../src/syscall/syscall_bsd.go.html#line-119">#L119</a>: 	sig := <b>Signal</b>(w &amp; mask)
+		<a href="../src/syscall/syscall_bsd.go.html#line-128" class="path-duplicate">syscall_bsd.go</a><a href="../src/syscall/syscall_bsd.go.html#line-128">#L128</a>: func (w WaitStatus) Stopped() bool { return w&amp;mask == stopped &amp;&amp; <b>Signal</b>(w&gt;&gt;shift) != SIGSTOP }
+		<a href="../src/syscall/syscall_bsd.go.html#line-130" class="path-duplicate">syscall_bsd.go</a><a href="../src/syscall/syscall_bsd.go.html#line-130">#L130</a>: func (w WaitStatus) Continued() bool { return w&amp;mask == stopped &amp;&amp; <b>Signal</b>(w&gt;&gt;shift) == SIGSTOP }
+		<a href="../src/syscall/syscall_bsd.go.html#line-132" class="path-duplicate">syscall_bsd.go</a><a href="../src/syscall/syscall_bsd.go.html#line-132">#L132</a>: func (w WaitStatus) StopSignal() <b>Signal</b> {
+		<a href="../src/syscall/syscall_bsd.go.html#line-136" class="path-duplicate">syscall_bsd.go</a><a href="../src/syscall/syscall_bsd.go.html#line-136">#L136</a>: 	return <b>Signal</b>(w&gt;&gt;shift) &amp; 0xFF
+		<a href="../src/syscall/syscall_darwin.go.html#line-168">syscall_darwin.go#L168</a>: func Kill(pid int, signum <b>Signal</b>) (err error) { return kill(pid, int(signum), 1) }
+		<a href="../src/syscall/syscall_unix.go.html#line-174">syscall_unix.go#L174</a>: type <b>Signal</b> int
+		<a href="../src/syscall/syscall_unix.go.html#line-176" class="path-duplicate">syscall_unix.go</a><a href="../src/syscall/syscall_unix.go.html#line-176">#L176</a>: func (s <b>Signal</b>) Signal() {}
+		<a href="../src/syscall/syscall_unix.go.html#line-178" class="path-duplicate">syscall_unix.go</a><a href="../src/syscall/syscall_unix.go.html#line-178">#L178</a>: func (s <b>Signal</b>) String() string {
+		<a href="../src/syscall/zerrors_darwin_amd64.go.html#line-1248">zerrors_darwin_amd64.go#L1248</a>: 	SIGABRT   = <b>Signal</b>(0x6)
+		<a href="../src/syscall/zerrors_darwin_amd64.go.html#line-1249" class="path-duplicate">zerrors_darwin_amd64.go</a><a href="../src/syscall/zerrors_darwin_amd64.go.html#line-1249">#L1249</a>: 	SIGALRM   = <b>Signal</b>(0xe)
+		<a href="../src/syscall/zerrors_darwin_amd64.go.html#line-1250" class="path-duplicate">zerrors_darwin_amd64.go</a><a href="../src/syscall/zerrors_darwin_amd64.go.html#line-1250">#L1250</a>: 	SIGBUS    = <b>Signal</b>(0xa)
+		<a href="../src/syscall/zerrors_darwin_amd64.go.html#line-1251" class="path-duplicate">zerrors_darwin_amd64.go</a><a href="../src/syscall/zerrors_darwin_amd64.go.html#line-1251">#L1251</a>: 	SIGCHLD   = <b>Signal</b>(0x14)
+		<a href="../src/syscall/zerrors_darwin_amd64.go.html#line-1252" class="path-duplicate">zerrors_darwin_amd64.go</a><a href="../src/syscall/zerrors_darwin_amd64.go.html#line-1252">#L1252</a>: 	SIGCONT   = <b>Signal</b>(0x13)
+		<a href="../src/syscall/zerrors_darwin_amd64.go.html#line-1253" class="path-duplicate">zerrors_darwin_amd64.go</a><a href="../src/syscall/zerrors_darwin_amd64.go.html#line-1253">#L1253</a>: 	SIGEMT    = <b>Signal</b>(0x7)
+		<a href="../src/syscall/zerrors_darwin_amd64.go.html#line-1254" class="path-duplicate">zerrors_darwin_amd64.go</a><a href="../src/syscall/zerrors_darwin_amd64.go.html#line-1254">#L1254</a>: 	SIGFPE    = <b>Signal</b>(0x8)
+		<a href="../src/syscall/zerrors_darwin_amd64.go.html#line-1255" class="path-duplicate">zerrors_darwin_amd64.go</a><a href="../src/syscall/zerrors_darwin_amd64.go.html#line-1255">#L1255</a>: 	SIGHUP    = <b>Signal</b>(0x1)
+		<a href="../src/syscall/zerrors_darwin_amd64.go.html#line-1256" class="path-duplicate">zerrors_darwin_amd64.go</a><a href="../src/syscall/zerrors_darwin_amd64.go.html#line-1256">#L1256</a>: 	SIGILL    = <b>Signal</b>(0x4)
+		<a href="../src/syscall/zerrors_darwin_amd64.go.html#line-1257" class="path-duplicate">zerrors_darwin_amd64.go</a><a href="../src/syscall/zerrors_darwin_amd64.go.html#line-1257">#L1257</a>: 	SIGINFO   = <b>Signal</b>(0x1d)
+		<a href="../src/syscall/zerrors_darwin_amd64.go.html#line-1258" class="path-duplicate">zerrors_darwin_amd64.go</a><a href="../src/syscall/zerrors_darwin_amd64.go.html#line-1258">#L1258</a>: 	SIGINT    = <b>Signal</b>(0x2)
+		<a href="../src/syscall/zerrors_darwin_amd64.go.html#line-1259" class="path-duplicate">zerrors_darwin_amd64.go</a><a href="../src/syscall/zerrors_darwin_amd64.go.html#line-1259">#L1259</a>: 	SIGIO     = <b>Signal</b>(0x17)
+		<a href="../src/syscall/zerrors_darwin_amd64.go.html#line-1260" class="path-duplicate">zerrors_darwin_amd64.go</a><a href="../src/syscall/zerrors_darwin_amd64.go.html#line-1260">#L1260</a>: 	SIGIOT    = <b>Signal</b>(0x6)
+		<a href="../src/syscall/zerrors_darwin_amd64.go.html#line-1261" class="path-duplicate">zerrors_darwin_amd64.go</a><a href="../src/syscall/zerrors_darwin_amd64.go.html#line-1261">#L1261</a>: 	SIGKILL   = <b>Signal</b>(0x9)
+		<a href="../src/syscall/zerrors_darwin_amd64.go.html#line-1262" class="path-duplicate">zerrors_darwin_amd64.go</a><a href="../src/syscall/zerrors_darwin_amd64.go.html#line-1262">#L1262</a>: 	SIGPIPE   = <b>Signal</b>(0xd)
+		<a href="../src/syscall/zerrors_darwin_amd64.go.html#line-1263" class="path-duplicate">zerrors_darwin_amd64.go</a><a href="../src/syscall/zerrors_darwin_amd64.go.html#line-1263">#L1263</a>: 	SIGPROF   = <b>Signal</b>(0x1b)
+		<a href="../src/syscall/zerrors_darwin_amd64.go.html#line-1264" class="path-duplicate">zerrors_darwin_amd64.go</a><a href="../src/syscall/zerrors_darwin_amd64.go.html#line-1264">#L1264</a>: 	SIGQUIT   = <b>Signal</b>(0x3)
+		<a href="../src/syscall/zerrors_darwin_amd64.go.html#line-1265" class="path-duplicate">zerrors_darwin_amd64.go</a><a href="../src/syscall/zerrors_darwin_amd64.go.html#line-1265">#L1265</a>: 	SIGSEGV   = <b>Signal</b>(0xb)
+		<a href="../src/syscall/zerrors_darwin_amd64.go.html#line-1266" class="path-duplicate">zerrors_darwin_amd64.go</a><a href="../src/syscall/zerrors_darwin_amd64.go.html#line-1266">#L1266</a>: 	SIGSTOP   = <b>Signal</b>(0x11)
+		<a href="../src/syscall/zerrors_darwin_amd64.go.html#line-1267" class="path-duplicate">zerrors_darwin_amd64.go</a><a href="../src/syscall/zerrors_darwin_amd64.go.html#line-1267">#L1267</a>: 	SIGSYS    = <b>Signal</b>(0xc)
+		<a href="../src/syscall/zerrors_darwin_amd64.go.html#line-1268" class="path-duplicate">zerrors_darwin_amd64.go</a><a href="../src/syscall/zerrors_darwin_amd64.go.html#line-1268">#L1268</a>: 	SIGTERM   = <b>Signal</b>(0xf)
+		<a href="../src/syscall/zerrors_darwin_amd64.go.html#line-1269" class="path-duplicate">zerrors_darwin_amd64.go</a><a href="../src/syscall/zerrors_darwin_amd64.go.html#line-1269">#L1269</a>: 	SIGTRAP   = <b>Signal</b>(0x5)
+		<a href="../src/syscall/zerrors_darwin_amd64.go.html#line-1270" class="path-duplicate">zerrors_darwin_amd64.go</a><a href="../src/syscall/zerrors_darwin_amd64.go.html#line-1270">#L1270</a>: 	SIGTSTP   = <b>Signal</b>(0x12)
+		<a href="../src/syscall/zerrors_darwin_amd64.go.html#line-1271" class="path-duplicate">zerrors_darwin_amd64.go</a><a href="../src/syscall/zerrors_darwin_amd64.go.html#line-1271">#L1271</a>: 	SIGTTIN   = <b>Signal</b>(0x15)
+		<a href="../src/syscall/zerrors_darwin_amd64.go.html#line-1272" class="path-duplicate">zerrors_darwin_amd64.go</a><a href="../src/syscall/zerrors_darwin_amd64.go.html#line-1272">#L1272</a>: 	SIGTTOU   = <b>Signal</b>(0x16)
+		<a href="../src/syscall/zerrors_darwin_amd64.go.html#line-1273" class="path-duplicate">zerrors_darwin_amd64.go</a><a href="../src/syscall/zerrors_darwin_amd64.go.html#line-1273">#L1273</a>: 	SIGURG    = <b>Signal</b>(0x10)
+		<a href="../src/syscall/zerrors_darwin_amd64.go.html#line-1274" class="path-duplicate">zerrors_darwin_amd64.go</a><a href="../src/syscall/zerrors_darwin_amd64.go.html#line-1274">#L1274</a>: 	SIGUSR1   = <b>Signal</b>(0x1e)
+		<a href="../src/syscall/zerrors_darwin_amd64.go.html#line-1275" class="path-duplicate">zerrors_darwin_amd64.go</a><a href="../src/syscall/zerrors_darwin_amd64.go.html#line-1275">#L1275</a>: 	SIGUSR2   = <b>Signal</b>(0x1f)
+		<a href="../src/syscall/zerrors_darwin_amd64.go.html#line-1276" class="path-duplicate">zerrors_darwin_amd64.go</a><a href="../src/syscall/zerrors_darwin_amd64.go.html#line-1276">#L1276</a>: 	SIGVTALRM = <b>Signal</b>(0x1a)
+		<a href="../src/syscall/zerrors_darwin_amd64.go.html#line-1277" class="path-duplicate">zerrors_darwin_amd64.go</a><a href="../src/syscall/zerrors_darwin_amd64.go.html#line-1277">#L1277</a>: 	SIGWINCH  = <b>Signal</b>(0x1c)
+		<a href="../src/syscall/zerrors_darwin_amd64.go.html#line-1278" class="path-duplicate">zerrors_darwin_amd64.go</a><a href="../src/syscall/zerrors_darwin_amd64.go.html#line-1278">#L1278</a>: 	SIGXCPU   = <b>Signal</b>(0x18)
+		<a href="../src/syscall/zerrors_darwin_amd64.go.html#line-1279" class="path-duplicate">zerrors_darwin_amd64.go</a><a href="../src/syscall/zerrors_darwin_amd64.go.html#line-1279">#L1279</a>: 	SIGXFSZ   = <b>Signal</b>(0x19)
+
+	<a href="../pkg/os.html">os</a>
+		<a href="../src/os/exec_unix.go.html#line-75">exec_unix.go#L75</a>: 	s, ok := sig.(syscall.<b>Signal</b>)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

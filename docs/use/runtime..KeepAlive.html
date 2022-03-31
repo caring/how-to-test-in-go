@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime.KeepAlive</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">func <b><a href="../pkg/runtime.html">runtime</a>.<a href="../src/runtime/mfinal.go.html#line-473">KeepAlive</a></b></span>
+
+<span class="title">89 uses</span>
+
+	runtime (current package)
+		<a href="../src/runtime/cgocall.go.html#line-193">cgocall.go#L193</a>: 	<b>KeepAlive</b>(fn)
+		<a href="../src/runtime/cgocall.go.html#line-194" class="path-duplicate">cgocall.go</a><a href="../src/runtime/cgocall.go.html#line-194">#L194</a>: 	<b>KeepAlive</b>(arg)
+		<a href="../src/runtime/cgocall.go.html#line-195" class="path-duplicate">cgocall.go</a><a href="../src/runtime/cgocall.go.html#line-195">#L195</a>: 	<b>KeepAlive</b>(mp)
+		<a href="../src/runtime/chan.go.html#line-262">chan.go#L262</a>: 	<b>KeepAlive</b>(ep)
+		<a href="../src/runtime/mfinal.go.html#line-473">mfinal.go#L473</a>: func <b>KeepAlive</b>(x interface{}) {
+		<a href="../src/runtime/mgc.go.html#line-1716">mgc.go#L1716</a>: 	<b>KeepAlive</b>(p)
+		<a href="../src/runtime/sys_darwin.go.html#line-109">sys_darwin.go#L109</a>: 	<b>KeepAlive</b>(attr)
+		<a href="../src/runtime/sys_darwin.go.html#line-118" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-118">#L118</a>: 	<b>KeepAlive</b>(attr)
+		<a href="../src/runtime/sys_darwin.go.html#line-119" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-119">#L119</a>: 	<b>KeepAlive</b>(size)
+		<a href="../src/runtime/sys_darwin.go.html#line-128" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-128">#L128</a>: 	<b>KeepAlive</b>(attr)
+		<a href="../src/runtime/sys_darwin.go.html#line-137" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-137">#L137</a>: 	<b>KeepAlive</b>(attr)
+		<a href="../src/runtime/sys_darwin.go.html#line-138" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-138">#L138</a>: 	<b>KeepAlive</b>(arg) // Just for consistency. Arg of course needs to be kept alive for the start function.
+		<a href="../src/runtime/sys_darwin.go.html#line-188" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-188">#L188</a>: 	<b>KeepAlive</b>(addr) // Just for consistency. Hopefully addr is not a Go address.
+		<a href="../src/runtime/sys_darwin.go.html#line-196" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-196">#L196</a>: 	<b>KeepAlive</b>(addr) // Just for consistency. Hopefully addr is not a Go address.
+		<a href="../src/runtime/sys_darwin.go.html#line-204" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-204">#L204</a>: 	<b>KeepAlive</b>(addr) // Just for consistency. Hopefully addr is not a Go address.
+		<a href="../src/runtime/sys_darwin.go.html#line-212" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-212">#L212</a>: 	<b>KeepAlive</b>(p)
+		<a href="../src/runtime/sys_darwin.go.html#line-258" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-258">#L258</a>: 	<b>KeepAlive</b>(p)
+		<a href="../src/runtime/sys_darwin.go.html#line-267" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-267">#L267</a>: 	<b>KeepAlive</b>(name)
+		<a href="../src/runtime/sys_darwin.go.html#line-307" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-307">#L307</a>: 	<b>KeepAlive</b>(new)
+		<a href="../src/runtime/sys_darwin.go.html#line-308" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-308">#L308</a>: 	<b>KeepAlive</b>(old)
+		<a href="../src/runtime/sys_darwin.go.html#line-316" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-316">#L316</a>: 	<b>KeepAlive</b>(new)
+		<a href="../src/runtime/sys_darwin.go.html#line-317" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-317">#L317</a>: 	<b>KeepAlive</b>(old)
+		<a href="../src/runtime/sys_darwin.go.html#line-332" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-332">#L332</a>: 	<b>KeepAlive</b>(new)
+		<a href="../src/runtime/sys_darwin.go.html#line-333" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-333">#L333</a>: 	<b>KeepAlive</b>(old)
+		<a href="../src/runtime/sys_darwin.go.html#line-348" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-348">#L348</a>: 	<b>KeepAlive</b>(new)
+		<a href="../src/runtime/sys_darwin.go.html#line-349" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-349">#L349</a>: 	<b>KeepAlive</b>(old)
+		<a href="../src/runtime/sys_darwin.go.html#line-357" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-357">#L357</a>: 	<b>KeepAlive</b>(mib)
+		<a href="../src/runtime/sys_darwin.go.html#line-358" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-358">#L358</a>: 	<b>KeepAlive</b>(oldp)
+		<a href="../src/runtime/sys_darwin.go.html#line-359" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-359">#L359</a>: 	<b>KeepAlive</b>(oldlenp)
+		<a href="../src/runtime/sys_darwin.go.html#line-360" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-360">#L360</a>: 	<b>KeepAlive</b>(newp)
+		<a href="../src/runtime/sys_darwin.go.html#line-369" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-369">#L369</a>: 	<b>KeepAlive</b>(name)
+		<a href="../src/runtime/sys_darwin.go.html#line-370" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-370">#L370</a>: 	<b>KeepAlive</b>(oldp)
+		<a href="../src/runtime/sys_darwin.go.html#line-371" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-371">#L371</a>: 	<b>KeepAlive</b>(oldlenp)
+		<a href="../src/runtime/sys_darwin.go.html#line-372" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-372">#L372</a>: 	<b>KeepAlive</b>(newp)
+		<a href="../src/runtime/sys_darwin.go.html#line-396" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-396">#L396</a>: 	<b>KeepAlive</b>(ch)
+		<a href="../src/runtime/sys_darwin.go.html#line-397" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-397">#L397</a>: 	<b>KeepAlive</b>(ev)
+		<a href="../src/runtime/sys_darwin.go.html#line-398" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-398">#L398</a>: 	<b>KeepAlive</b>(ts)
+		<a href="../src/runtime/sys_darwin.go.html#line-407" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-407">#L407</a>: 	<b>KeepAlive</b>(m)
+		<a href="../src/runtime/sys_darwin.go.html#line-408" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-408">#L408</a>: 	<b>KeepAlive</b>(attr)
+		<a href="../src/runtime/sys_darwin.go.html#line-417" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-417">#L417</a>: 	<b>KeepAlive</b>(m)
+		<a href="../src/runtime/sys_darwin.go.html#line-426" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-426">#L426</a>: 	<b>KeepAlive</b>(m)
+		<a href="../src/runtime/sys_darwin.go.html#line-435" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-435">#L435</a>: 	<b>KeepAlive</b>(c)
+		<a href="../src/runtime/sys_darwin.go.html#line-436" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-436">#L436</a>: 	<b>KeepAlive</b>(attr)
+		<a href="../src/runtime/sys_darwin.go.html#line-445" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-445">#L445</a>: 	<b>KeepAlive</b>(c)
+		<a href="../src/runtime/sys_darwin.go.html#line-446" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-446">#L446</a>: 	<b>KeepAlive</b>(m)
+		<a href="../src/runtime/sys_darwin.go.html#line-455" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-455">#L455</a>: 	<b>KeepAlive</b>(c)
+		<a href="../src/runtime/sys_darwin.go.html#line-456" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-456">#L456</a>: 	<b>KeepAlive</b>(m)
+		<a href="../src/runtime/sys_darwin.go.html#line-457" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-457">#L457</a>: 	<b>KeepAlive</b>(t)
+		<a href="../src/runtime/sys_darwin.go.html#line-466" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-466">#L466</a>: 	<b>KeepAlive</b>(c)
+
+	<a href="../pkg/crypto/x509/internal/macos.html">crypto/x509/internal/macos</a>
+		<a href="../src/crypto/x509/internal/macos/corefoundation.go.html#line-51">corefoundation.go#L51</a>: 	runtime.<b>KeepAlive</b>(p)
+
+	<a href="../pkg/net.html">net</a>
+		<a href="../src/net/fd_posix.go.html#line-43">fd_posix.go#L43</a>: 	runtime.<b>KeepAlive</b>(fd)
+		<a href="../src/net/fd_posix.go.html#line-57" class="path-duplicate">fd_posix.go</a><a href="../src/net/fd_posix.go.html#line-57">#L57</a>: 	runtime.<b>KeepAlive</b>(fd)
+		<a href="../src/net/fd_posix.go.html#line-63" class="path-duplicate">fd_posix.go</a><a href="../src/net/fd_posix.go.html#line-63">#L63</a>: 	runtime.<b>KeepAlive</b>(fd)
+		<a href="../src/net/fd_posix.go.html#line-69" class="path-duplicate">fd_posix.go</a><a href="../src/net/fd_posix.go.html#line-69">#L69</a>: 	runtime.<b>KeepAlive</b>(fd)
+		<a href="../src/net/fd_posix.go.html#line-75" class="path-duplicate">fd_posix.go</a><a href="../src/net/fd_posix.go.html#line-75">#L75</a>: 	runtime.<b>KeepAlive</b>(fd)
+		<a href="../src/net/fd_posix.go.html#line-81" class="path-duplicate">fd_posix.go</a><a href="../src/net/fd_posix.go.html#line-81">#L81</a>: 	runtime.<b>KeepAlive</b>(fd)
+		<a href="../src/net/fd_posix.go.html#line-87" class="path-duplicate">fd_posix.go</a><a href="../src/net/fd_posix.go.html#line-87">#L87</a>: 	runtime.<b>KeepAlive</b>(fd)
+		<a href="../src/net/fd_unix.go.html#line-71">fd_unix.go#L71</a>: 		runtime.<b>KeepAlive</b>(fd)
+		<a href="../src/net/fd_unix.go.html#line-168" class="path-duplicate">fd_unix.go</a><a href="../src/net/fd_unix.go.html#line-168">#L168</a>: 		runtime.<b>KeepAlive</b>(fd)
+		<a href="../src/net/rawconn.go.html#line-32">rawconn.go#L32</a>: 	runtime.<b>KeepAlive</b>(c.fd)
+		<a href="../src/net/rawconn.go.html#line-44" class="path-duplicate">rawconn.go</a><a href="../src/net/rawconn.go.html#line-44">#L44</a>: 	runtime.<b>KeepAlive</b>(c.fd)
+		<a href="../src/net/rawconn.go.html#line-56" class="path-duplicate">rawconn.go</a><a href="../src/net/rawconn.go.html#line-56">#L56</a>: 	runtime.<b>KeepAlive</b>(c.fd)
+		<a href="../src/net/sockopt_posix.go.html#line-107">sockopt_posix.go#L107</a>: 	runtime.<b>KeepAlive</b>(fd)
+		<a href="../src/net/sockopt_posix.go.html#line-113" class="path-duplicate">sockopt_posix.go</a><a href="../src/net/sockopt_posix.go.html#line-113">#L113</a>: 	runtime.<b>KeepAlive</b>(fd)
+		<a href="../src/net/sockopt_posix.go.html#line-119" class="path-duplicate">sockopt_posix.go</a><a href="../src/net/sockopt_posix.go.html#line-119">#L119</a>: 	runtime.<b>KeepAlive</b>(fd)
+		<a href="../src/net/sockopt_posix.go.html#line-133" class="path-duplicate">sockopt_posix.go</a><a href="../src/net/sockopt_posix.go.html#line-133">#L133</a>: 	runtime.<b>KeepAlive</b>(fd)
+		<a href="../src/net/sockoptip_bsdvar.go.html#line-23">sockoptip_bsdvar.go#L23</a>: 	runtime.<b>KeepAlive</b>(fd)
+		<a href="../src/net/sockoptip_bsdvar.go.html#line-29" class="path-duplicate">sockoptip_bsdvar.go</a><a href="../src/net/sockoptip_bsdvar.go.html#line-29">#L29</a>: 	runtime.<b>KeepAlive</b>(fd)
+		<a href="../src/net/sockoptip_posix.go.html#line-21">sockoptip_posix.go#L21</a>: 	runtime.<b>KeepAlive</b>(fd)
+		<a href="../src/net/sockoptip_posix.go.html#line-31" class="path-duplicate">sockoptip_posix.go</a><a href="../src/net/sockoptip_posix.go.html#line-31">#L31</a>: 	runtime.<b>KeepAlive</b>(fd)
+		<a href="../src/net/sockoptip_posix.go.html#line-37" class="path-duplicate">sockoptip_posix.go</a><a href="../src/net/sockoptip_posix.go.html#line-37">#L37</a>: 	runtime.<b>KeepAlive</b>(fd)
+		<a href="../src/net/sockoptip_posix.go.html#line-48" class="path-duplicate">sockoptip_posix.go</a><a href="../src/net/sockoptip_posix.go.html#line-48">#L48</a>: 	runtime.<b>KeepAlive</b>(fd)
+		<a href="../src/net/tcpsockopt_darwin.go.html#line-23">tcpsockopt_darwin.go#L23</a>: 	runtime.<b>KeepAlive</b>(fd)
+		<a href="../src/net/tcpsockopt_posix.go.html#line-17">tcpsockopt_posix.go#L17</a>: 	runtime.<b>KeepAlive</b>(fd)
+		<a href="../src/net/writev_unix.go.html#line-28">writev_unix.go#L28</a>: 	runtime.<b>KeepAlive</b>(fd)
+
+	<a href="../pkg/os.html">os</a>
+		<a href="../src/os/dir_darwin.go.html#line-96">dir_darwin.go#L96</a>: 		runtime.<b>KeepAlive</b>(f)
+		<a href="../src/os/exec_posix.go.html#line-58">exec_posix.go#L58</a>: 	runtime.<b>KeepAlive</b>(attr)
+		<a href="../src/os/file_posix.go.html#line-33">file_posix.go#L33</a>: 	runtime.<b>KeepAlive</b>(f)
+		<a href="../src/os/file_posix.go.html#line-42" class="path-duplicate">file_posix.go</a><a href="../src/os/file_posix.go.html#line-42">#L42</a>: 	runtime.<b>KeepAlive</b>(f)
+		<a href="../src/os/file_posix.go.html#line-50" class="path-duplicate">file_posix.go</a><a href="../src/os/file_posix.go.html#line-50">#L50</a>: 	runtime.<b>KeepAlive</b>(f)
+		<a href="../src/os/file_posix.go.html#line-58" class="path-duplicate">file_posix.go</a><a href="../src/os/file_posix.go.html#line-58">#L58</a>: 	runtime.<b>KeepAlive</b>(f)
+		<a href="../src/os/file_unix.go.html#line-277">file_unix.go#L277</a>: 	runtime.<b>KeepAlive</b>(f)
+		<a href="../src/os/rawconn.go.html#line-24">rawconn.go#L24</a>: 	runtime.<b>KeepAlive</b>(c.file)
+		<a href="../src/os/rawconn.go.html#line-33" class="path-duplicate">rawconn.go</a><a href="../src/os/rawconn.go.html#line-33">#L33</a>: 	runtime.<b>KeepAlive</b>(c.file)
+		<a href="../src/os/rawconn.go.html#line-42" class="path-duplicate">rawconn.go</a><a href="../src/os/rawconn.go.html#line-42">#L42</a>: 	runtime.<b>KeepAlive</b>(c.file)
+
+	<a href="../pkg/reflect.html">reflect</a>
+		<a href="../src/reflect/value.go.html#line-832">value.go#L832</a>: 	runtime.<b>KeepAlive</b>(out)
+		<a href="../src/reflect/value.go.html#line-837" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-837">#L837</a>: 	runtime.<b>KeepAlive</b>(ctxt)
+		<a href="../src/reflect/value.go.html#line-1100" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-1100">#L1100</a>: 	runtime.<b>KeepAlive</b>(ctxt)
+		<a href="../src/reflect/value.go.html#line-1105" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-1105">#L1105</a>: 	runtime.<b>KeepAlive</b>(valueRegs)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/uber/jaeger-client-go/thrift-gen/jaeger.SpanRefType</title>
+<link href="../../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../../../../../pkg/github.com/uber/jaeger-client-go/thrift-gen/jaeger.html">github.com/uber/jaeger-client-go/thrift-gen/jaeger</a>.<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-84">SpanRefType</a></b></span>
+
+<span class="title">17 uses</span>
+
+	github.com/uber/jaeger-client-go/thrift-gen/jaeger (current package)
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-84">jaeger.go#L84</a>: type <b>SpanRefType</b> int64
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-86" class="path-duplicate">jaeger.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-86">#L86</a>:   SpanRefType_CHILD_OF <b>SpanRefType</b> = 0
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-87" class="path-duplicate">jaeger.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-87">#L87</a>:   SpanRefType_FOLLOWS_FROM <b>SpanRefType</b> = 1
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-90" class="path-duplicate">jaeger.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-90">#L90</a>: func (p <b>SpanRefType</b>) String() string {
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-98" class="path-duplicate">jaeger.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-98">#L98</a>: func SpanRefTypeFromString(s string) (<b>SpanRefType</b>, error) {
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-103" class="path-duplicate">jaeger.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-103">#L103</a>:   return <b>SpanRefType</b>(0), fmt.Errorf("not a valid SpanRefType string")
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-107" class="path-duplicate">jaeger.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-107">#L107</a>: func SpanRefTypePtr(v <b>SpanRefType</b>) *<b>SpanRefType</b> { return &amp;v }
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-109" class="path-duplicate">jaeger.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-109">#L109</a>: func (p <b>SpanRefType</b>) MarshalText() ([]byte, error) {
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-113" class="path-duplicate">jaeger.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-113">#L113</a>: func (p *<b>SpanRefType</b>) UnmarshalText(text []byte) error {
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-122" class="path-duplicate">jaeger.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-122">#L122</a>: func (p *<b>SpanRefType</b>) Scan(value interface{}) error {
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-127" class="path-duplicate">jaeger.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-127">#L127</a>: *p = <b>SpanRefType</b>(v)
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-131" class="path-duplicate">jaeger.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-131">#L131</a>: func (p * <b>SpanRefType</b>) Value() (driver.Value, error) {
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-712" class="path-duplicate">jaeger.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-712">#L712</a>:   RefType <b>SpanRefType</b> `thrift:"refType,1,required" db:"refType" json:"refType"`
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-723" class="path-duplicate">jaeger.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-723">#L723</a>: func (p *SpanRef) GetRefType() <b>SpanRefType</b> {
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-830" class="path-duplicate">jaeger.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-830">#L830</a>:   temp := <b>SpanRefType</b>(v)
+
+	<a href="../../../../../pkg/github.com/uber/jaeger-client-go.html">github.com/uber/jaeger-client-go</a>
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/jaeger_thrift_span.go.html#line-174">jaeger_thrift_span.go#L174</a>: func spanRef(ctx SpanContext, refType j.<b>SpanRefType</b>) *j.SpanRef {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

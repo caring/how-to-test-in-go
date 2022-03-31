@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: database/sql.Rows.lasterr</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../pkg/database/sql.html">database/sql</a>.<a href="../../src/database/sql/sql.go.html#line-2875">Rows</a>.<a href="../../src/database/sql/sql.go.html#line-2889">lasterr</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">15 uses</span>
+
+	database/sql (current package)
+		<a href="../../src/database/sql/convert.go.html#line-338">convert.go#L338</a>: 				d.close(rows.<b>lasterr</b>)
+		<a href="../../src/database/sql/sql.go.html#line-2889">sql.go#L2889</a>: 	<b>lasterr</b> error // non-nil only if closed is true
+		<a href="../../src/database/sql/sql.go.html#line-2899" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-2899">#L2899</a>: 	if rs.<b>lasterr</b> != nil &amp;&amp; rs.<b>lasterr</b> != io.EOF {
+		<a href="../../src/database/sql/sql.go.html#line-2900" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-2900">#L2900</a>: 		return rs.<b>lasterr</b>
+		<a href="../../src/database/sql/sql.go.html#line-2967" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-2967">#L2967</a>: 	rs.<b>lasterr</b> = rs.rowsi.Next(rs.lastcols)
+		<a href="../../src/database/sql/sql.go.html#line-2968" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-2968">#L2968</a>: 	if rs.<b>lasterr</b> != nil {
+		<a href="../../src/database/sql/sql.go.html#line-2970" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-2970">#L2970</a>: 		if rs.<b>lasterr</b> != io.EOF {
+		<a href="../../src/database/sql/sql.go.html#line-3022" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-3022">#L3022</a>: 	rs.<b>lasterr</b> = nextResultSet.NextResultSet()
+		<a href="../../src/database/sql/sql.go.html#line-3023" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-3023">#L3023</a>: 	if rs.<b>lasterr</b> != nil {
+		<a href="../../src/database/sql/sql.go.html#line-3228" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-3228">#L3228</a>: 	if rs.<b>lasterr</b> != nil &amp;&amp; rs.<b>lasterr</b> != io.EOF {
+		<a href="../../src/database/sql/sql.go.html#line-3230" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-3230">#L3230</a>: 		return rs.<b>lasterr</b>
+		<a href="../../src/database/sql/sql.go.html#line-3275" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-3275">#L3275</a>: 	if rs.<b>lasterr</b> == nil {
+		<a href="../../src/database/sql/sql.go.html#line-3276" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-3276">#L3276</a>: 		rs.<b>lasterr</b> = err
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

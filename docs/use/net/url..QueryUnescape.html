@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: net/url.QueryUnescape</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">func <b><a href="../../pkg/net/url.html">net/url</a>.<a href="../../src/net/url/url.go.html#line-182">QueryUnescape</a></b></span>
+
+<span class="title">9 uses</span>
+
+	net/url (current package)
+		<a href="../../src/net/url/url.go.html#line-182">url.go#L182</a>: func <b>QueryUnescape</b>(s string) (string, error) {
+		<a href="../../src/net/url/url.go.html#line-953" class="path-duplicate">url.go</a><a href="../../src/net/url/url.go.html#line-953">#L953</a>: 		key, err1 := <b>QueryUnescape</b>(key)
+		<a href="../../src/net/url/url.go.html#line-960" class="path-duplicate">url.go</a><a href="../../src/net/url/url.go.html#line-960">#L960</a>: 		value, err1 = <b>QueryUnescape</b>(value)
+
+	<a href="../../pkg/github.com/go-sql-driver/mysql.html">github.com/go-sql-driver/mysql</a>
+		<a href="../../src/github.com/go-sql-driver/mysql/dsn.go.html#line-452">dsn.go#L452</a>: 			if value, err = url.<b>QueryUnescape</b>(value); err != nil {
+		<a href="../../src/github.com/go-sql-driver/mysql/dsn.go.html#line-493" class="path-duplicate">dsn.go</a><a href="../../src/github.com/go-sql-driver/mysql/dsn.go.html#line-493">#L493</a>: 			name, err := url.<b>QueryUnescape</b>(value)
+		<a href="../../src/github.com/go-sql-driver/mysql/dsn.go.html#line-522" class="path-duplicate">dsn.go</a><a href="../../src/github.com/go-sql-driver/mysql/dsn.go.html#line-522">#L522</a>: 				name, err := url.<b>QueryUnescape</b>(value)
+		<a href="../../src/github.com/go-sql-driver/mysql/dsn.go.html#line-546" class="path-duplicate">dsn.go</a><a href="../../src/github.com/go-sql-driver/mysql/dsn.go.html#line-546">#L546</a>: 			if cfg.Params[param[0]], err = url.<b>QueryUnescape</b>(value); err != nil {
+
+	<a href="../../pkg/github.com/uber/jaeger-client-go.html">github.com/uber/jaeger-client-go</a>
+		<a href="../../src/github.com/uber/jaeger-client-go/propagation.go.html#line-86">propagation.go#L86</a>: 			if v, err := url.<b>QueryUnescape</b>(val); err == nil {
+		<a href="../../src/github.com/uber/jaeger-client-go/propagation.go.html#line-299" class="path-duplicate">propagation.go</a><a href="../../src/github.com/uber/jaeger-client-go/propagation.go.html#line-299">#L299</a>: 	value, err := url.<b>QueryUnescape</b>(value)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

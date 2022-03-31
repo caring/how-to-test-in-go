@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime.guintptr.set</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/runtime.html">runtime</a>.<a href="../src/runtime/runtime2.go.html#line-258">guintptr</a>.<a href="../src/runtime/runtime2.go.html#line-264">set</a></b></span><span style="font-size: large;"><i> (method)</i></span>
+
+<span class="title">29 uses</span>
+
+	runtime (current package)
+		<a href="../src/runtime/debugcall.go.html#line-139">debugcall.go#L139</a>: 			mp.lockedg.<b>set</b>(newg)
+		<a href="../src/runtime/debugcall.go.html#line-152" class="path-duplicate">debugcall.go</a><a href="../src/runtime/debugcall.go.html#line-152">#L152</a>: 		gp.schedlink.<b>set</b>(newg)
+		<a href="../src/runtime/debugcall.go.html#line-183" class="path-duplicate">debugcall.go</a><a href="../src/runtime/debugcall.go.html#line-183">#L183</a>: 		mp.lockedg.<b>set</b>(gp)
+		<a href="../src/runtime/debugcall.go.html#line-207" class="path-duplicate">debugcall.go</a><a href="../src/runtime/debugcall.go.html#line-207">#L207</a>: 	getg().schedlink.<b>set</b>(callingG)
+		<a href="../src/runtime/mgc.go.html#line-1176">mgc.go#L1176</a>: 	node.gp.<b>set</b>(gp)
+		<a href="../src/runtime/mgcmark.go.html#line-293">mgcmark.go#L293</a>: 		q.tail.<b>set</b>(gp)
+		<a href="../src/runtime/mgcmark.go.html#line-612" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-612">#L612</a>: 			oldList.tail.ptr().schedlink.<b>set</b>(nil)
+		<a href="../src/runtime/proc.go.html#line-2044">proc.go#L2044</a>: 	mp.lockedg.<b>set</b>(gp)
+		<a href="../src/runtime/proc.go.html#line-2239" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2239">#L2239</a>: 		ts.g.<b>set</b>(mp.g0)
+		<a href="../src/runtime/proc.go.html#line-3250" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3250">#L3250</a>: 	q.head.<b>set</b>(head)
+		<a href="../src/runtime/proc.go.html#line-3251" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3251">#L3251</a>: 	q.tail.<b>set</b>(tail)
+		<a href="../src/runtime/proc.go.html#line-4549" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4549">#L4549</a>: 	_g_.m.lockedg.<b>set</b>(_g_)
+		<a href="../src/runtime/proc.go.html#line-5975" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5975">#L5975</a>: 		_p_.runq[t%uint32(len(_p_.runq))].<b>set</b>(gp)
+		<a href="../src/runtime/proc.go.html#line-6014" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-6014">#L6014</a>: 		batch[i].schedlink.<b>set</b>(batch[i+1])
+		<a href="../src/runtime/proc.go.html#line-6017" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-6017">#L6017</a>: 	q.head.<b>set</b>(batch[0])
+		<a href="../src/runtime/proc.go.html#line-6018" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-6018">#L6018</a>: 	q.tail.<b>set</b>(batch[n])
+		<a href="../src/runtime/proc.go.html#line-6037" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-6037">#L6037</a>: 		pp.runq[t%uint32(len(pp.runq))].<b>set</b>(gp)
+		<a href="../src/runtime/proc.go.html#line-6222" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-6222">#L6222</a>: 	q.head.<b>set</b>(gp)
+		<a href="../src/runtime/proc.go.html#line-6224" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-6224">#L6224</a>: 		q.tail.<b>set</b>(gp)
+		<a href="../src/runtime/proc.go.html#line-6232" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-6232">#L6232</a>: 		q.tail.ptr().schedlink.<b>set</b>(gp)
+		<a href="../src/runtime/proc.go.html#line-6234" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-6234">#L6234</a>: 		q.head.<b>set</b>(gp)
+		<a href="../src/runtime/proc.go.html#line-6236" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-6236">#L6236</a>: 	q.tail.<b>set</b>(gp)
+		<a href="../src/runtime/proc.go.html#line-6288" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-6288">#L6288</a>: 	l.head.<b>set</b>(gp)
+		<a href="../src/runtime/runtime2.go.html#line-264">runtime2.go#L264</a>: func (gp *guintptr) <b>set</b>(g *g) { *gp = guintptr(unsafe.Pointer(g)) }
+		<a href="../src/runtime/runtime2.go.html#line-276" class="path-duplicate">runtime2.go</a><a href="../src/runtime/runtime2.go.html#line-276">#L276</a>: 	(*guintptr)(unsafe.Pointer(gp)).<b>set</b>(new)
+		<a href="../src/runtime/signal_unix.go.html#line-617">signal_unix.go#L617</a>: 	_g_.m.caughtsig.<b>set</b>(gp)
+		<a href="../src/runtime/sys_libc.go.html#line-25">sys_libc.go#L25</a>: 		mp.libcallg.<b>set</b>(gp)
+		<a href="../src/runtime/trace.go.html#line-411">trace.go#L411</a>: 		trace.reader.<b>set</b>(getg())
+		<a href="../src/runtime/trace.go.html#line-470" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-470">#L470</a>: 	trace.reader.<b>set</b>(nil)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

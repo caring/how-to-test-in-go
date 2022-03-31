@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: math/big.Int</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../../pkg/math/big.html">math/big</a>.<a href="../../src/math/big/int.go.html#line-25">Int</a></b></span>
+
+<span class="title">501 uses</span>
+
+	math/big (current package)
+		<a href="../../src/math/big/float.go.html#line-592">float.go#L592</a>: func (z *Float) SetInt(x *<b>Int</b>) *Float {
+		<a href="../../src/math/big/float.go.html#line-1074" class="path-duplicate">float.go</a><a href="../../src/math/big/float.go.html#line-1074">#L1074</a>: func (x *Float) Int(z *<b>Int</b>) (*<b>Int</b>, Accuracy) {
+		<a href="../../src/math/big/float.go.html#line-1080" class="path-duplicate">float.go</a><a href="../../src/math/big/float.go.html#line-1080">#L1080</a>: 		z = new(<b>Int</b>)
+		<a href="../../src/math/big/float.go.html#line-1102" class="path-duplicate">float.go</a><a href="../../src/math/big/float.go.html#line-1102">#L1102</a>: 			z = new(<b>Int</b>)
+		<a href="../../src/math/big/int.go.html#line-25">int.go#L25</a>: type <b>Int</b> struct {
+		<a href="../../src/math/big/int.go.html#line-30" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-30">#L30</a>: var intOne = &amp;<b>Int</b>{false, natOne}
+		<a href="../../src/math/big/int.go.html#line-38" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-38">#L38</a>: func (x *<b>Int</b>) Sign() int {
+		<a href="../../src/math/big/int.go.html#line-49" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-49">#L49</a>: func (z *<b>Int</b>) SetInt64(x int64) *<b>Int</b> {
+		<a href="../../src/math/big/int.go.html#line-61" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-61">#L61</a>: func (z *<b>Int</b>) SetUint64(x uint64) *<b>Int</b> {
+		<a href="../../src/math/big/int.go.html#line-68" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-68">#L68</a>: func NewInt(x int64) *<b>Int</b> {
+		<a href="../../src/math/big/int.go.html#line-69" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-69">#L69</a>: 	return new(<b>Int</b>).SetInt64(x)
+		<a href="../../src/math/big/int.go.html#line-73" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-73">#L73</a>: func (z *<b>Int</b>) Set(x *<b>Int</b>) *<b>Int</b> {
+		<a href="../../src/math/big/int.go.html#line-86" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-86">#L86</a>: func (x *<b>Int</b>) Bits() []Word {
+		<a href="../../src/math/big/int.go.html#line-95" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-95">#L95</a>: func (z *<b>Int</b>) SetBits(abs []Word) *<b>Int</b> {
+		<a href="../../src/math/big/int.go.html#line-102" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-102">#L102</a>: func (z *<b>Int</b>) Abs(x *<b>Int</b>) *<b>Int</b> {
+		<a href="../../src/math/big/int.go.html#line-109" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-109">#L109</a>: func (z *<b>Int</b>) Neg(x *<b>Int</b>) *<b>Int</b> {
+		<a href="../../src/math/big/int.go.html#line-116" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-116">#L116</a>: func (z *<b>Int</b>) Add(x, y *<b>Int</b>) *<b>Int</b> {
+		<a href="../../src/math/big/int.go.html#line-137" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-137">#L137</a>: func (z *<b>Int</b>) Sub(x, y *<b>Int</b>) *<b>Int</b> {
+		<a href="../../src/math/big/int.go.html#line-158" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-158">#L158</a>: func (z *<b>Int</b>) Mul(x, y *<b>Int</b>) *<b>Int</b> {
+		<a href="../../src/math/big/int.go.html#line-176" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-176">#L176</a>: func (z *<b>Int</b>) MulRange(a, b int64) *<b>Int</b> {
+		<a href="../../src/math/big/int.go.html#line-197" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-197">#L197</a>: func (z *<b>Int</b>) Binomial(n, k int64) *<b>Int</b> {
+		<a href="../../src/math/big/int.go.html#line-202" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-202">#L202</a>: 	var a, b <b>Int</b>
+		<a href="../../src/math/big/int.go.html#line-211" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-211">#L211</a>: func (z *<b>Int</b>) Quo(x, y *<b>Int</b>) *<b>Int</b> {
+		<a href="../../src/math/big/int.go.html#line-220" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-220">#L220</a>: func (z *<b>Int</b>) Rem(x, y *<b>Int</b>) *<b>Int</b> {
+		<a href="../../src/math/big/int.go.html#line-238" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-238">#L238</a>: func (z *<b>Int</b>) QuoRem(x, y, r *<b>Int</b>) (*<b>Int</b>, *<b>Int</b>) {
+		<a href="../../src/math/big/int.go.html#line-247" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-247">#L247</a>: func (z *<b>Int</b>) Div(x, y *<b>Int</b>) *<b>Int</b> {
+		<a href="../../src/math/big/int.go.html#line-249" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-249">#L249</a>: 	var r <b>Int</b>
+		<a href="../../src/math/big/int.go.html#line-264" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-264">#L264</a>: func (z *<b>Int</b>) Mod(x, y *<b>Int</b>) *<b>Int</b> {
+		<a href="../../src/math/big/int.go.html#line-267" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-267">#L267</a>: 		y0 = new(<b>Int</b>).Set(y)
+		<a href="../../src/math/big/int.go.html#line-269" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-269">#L269</a>: 	var q <b>Int</b>
+		<a href="../../src/math/big/int.go.html#line-296" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-296">#L296</a>: func (z *<b>Int</b>) DivMod(x, y, m *<b>Int</b>) (*<b>Int</b>, *<b>Int</b>) {
+		<a href="../../src/math/big/int.go.html#line-299" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-299">#L299</a>: 		y0 = new(<b>Int</b>).Set(y)
+		<a href="../../src/math/big/int.go.html#line-320" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-320">#L320</a>: func (x *<b>Int</b>) Cmp(y *<b>Int</b>) (r int) {
+		<a href="../../src/math/big/int.go.html#line-347" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-347">#L347</a>: func (x *<b>Int</b>) CmpAbs(y *<b>Int</b>) int {
+		<a href="../../src/math/big/int.go.html#line-373" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-373">#L373</a>: func (x *<b>Int</b>) Int64() int64 {
+		<a href="../../src/math/big/int.go.html#line-383" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-383">#L383</a>: func (x *<b>Int</b>) Uint64() uint64 {
+		<a href="../../src/math/big/int.go.html#line-388" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-388">#L388</a>: func (x *<b>Int</b>) IsInt64() bool {
+		<a href="../../src/math/big/int.go.html#line-397" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-397">#L397</a>: func (x *<b>Int</b>) IsUint64() bool {
+		<a href="../../src/math/big/int.go.html#line-424" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-424">#L424</a>: func (z *<b>Int</b>) SetString(s string, base int) (*<b>Int</b>, bool) {
+		<a href="../../src/math/big/int.go.html#line-430" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-430">#L430</a>: func (z *<b>Int</b>) setFromScanner(r io.ByteScanner, base int) (*<b>Int</b>, bool) {
+		<a href="../../src/math/big/int.go.html#line-443" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-443">#L443</a>: func (z *<b>Int</b>) SetBytes(buf []byte) *<b>Int</b> {
+		<a href="../../src/math/big/int.go.html#line-452" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-452">#L452</a>: func (x *<b>Int</b>) Bytes() []byte {
+		<a href="../../src/math/big/int.go.html#line-461" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-461">#L461</a>: func (x *<b>Int</b>) FillBytes(buf []byte) []byte {
+		<a href="../../src/math/big/int.go.html#line-472" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-472">#L472</a>: func (x *<b>Int</b>) BitLen() int {
+		<a href="../../src/math/big/int.go.html#line-478" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-478">#L478</a>: func (x *<b>Int</b>) TrailingZeroBits() uint {
+		<a href="../../src/math/big/int.go.html#line-488" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-488">#L488</a>: func (z *<b>Int</b>) Exp(x, y, m *<b>Int</b>) *<b>Int</b> {
+		<a href="../../src/math/big/int.go.html#line-496" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-496">#L496</a>: 		inverse := new(<b>Int</b>).ModInverse(x, m)
+		<a href="../../src/math/big/int.go.html#line-531" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-531">#L531</a>: func (z *<b>Int</b>) GCD(x, y, a, b *<b>Int</b>) *<b>Int</b> {
+		<a href="../../src/math/big/int.go.html#line-572" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-572">#L572</a>: func lehmerSimulate(A, B *<b>Int</b>) (u0, u1, v0, v1 Word, even bool) {
+		<a href="../../src/math/big/int.go.html#line-623" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-623">#L623</a>: func lehmerUpdate(A, B, q, r, s, t *<b>Int</b>, u0, u1, v0, v1 Word, even bool) {
+		<a href="../../src/math/big/int.go.html#line-647" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-647">#L647</a>: func euclidUpdate(A, B, Ua, Ub, q, r, s, t *<b>Int</b>, extended bool) {
+		<a href="../../src/math/big/int.go.html#line-671" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-671">#L671</a>: func (z *<b>Int</b>) lehmerGCD(x, y, a, b *<b>Int</b>) *<b>Int</b> {
+		<a href="../../src/math/big/int.go.html#line-672" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-672">#L672</a>: 	var A, B, Ua, Ub *<b>Int</b>
+		<a href="../../src/math/big/int.go.html#line-674" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-674">#L674</a>: 	A = new(<b>Int</b>).Abs(a)
+		<a href="../../src/math/big/int.go.html#line-675" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-675">#L675</a>: 	B = new(<b>Int</b>).Abs(b)
+		<a href="../../src/math/big/int.go.html#line-681" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-681">#L681</a>: 		Ua = new(<b>Int</b>).SetInt64(1)
+		<a href="../../src/math/big/int.go.html#line-682" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-682">#L682</a>: 		Ub = new(<b>Int</b>)
+		<a href="../../src/math/big/int.go.html#line-686" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-686">#L686</a>: 	q := new(<b>Int</b>)
+		<a href="../../src/math/big/int.go.html#line-687" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-687">#L687</a>: 	r := new(<b>Int</b>)
+		<a href="../../src/math/big/int.go.html#line-688" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-688">#L688</a>: 	s := new(<b>Int</b>)
+		<a href="../../src/math/big/int.go.html#line-689" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-689">#L689</a>: 	t := new(<b>Int</b>)
+		<a href="../../src/math/big/int.go.html#line-794" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-794">#L794</a>: func (z *<b>Int</b>) Rand(rnd *rand.Rand, n *<b>Int</b>) *<b>Int</b> {
+		<a href="../../src/math/big/int.go.html#line-808" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-808">#L808</a>: func (z *<b>Int</b>) ModInverse(g, n *<b>Int</b>) *<b>Int</b> {
+		<a href="../../src/math/big/int.go.html#line-811" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-811">#L811</a>: 		var n2 <b>Int</b>
+		<a href="../../src/math/big/int.go.html#line-815" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-815">#L815</a>: 		var g2 <b>Int</b>
+		<a href="../../src/math/big/int.go.html#line-818" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-818">#L818</a>: 	var d, x <b>Int</b>
+		<a href="../../src/math/big/int.go.html#line-838" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-838">#L838</a>: func Jacobi(x, y *<b>Int</b>) int {
+		<a href="../../src/math/big/int.go.html#line-847" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-847">#L847</a>: 	var a, b, c <b>Int</b>
+		<a href="../../src/math/big/int.go.html#line-897" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-897">#L897</a>: func (z *<b>Int</b>) modSqrt3Mod4Prime(x, p *<b>Int</b>) *<b>Int</b> {
+		<a href="../../src/math/big/int.go.html#line-898" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-898">#L898</a>: 	e := new(<b>Int</b>).Add(p, intOne) // e = p + 1
+		<a href="../../src/math/big/int.go.html#line-910" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-910">#L910</a>: func (z *<b>Int</b>) modSqrt5Mod8Prime(x, p *<b>Int</b>) *<b>Int</b> {
+		<a href="../../src/math/big/int.go.html#line-913" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-913">#L913</a>: 	e := new(<b>Int</b>).Rsh(p, 3)  // e = (p - 5) / 8
+		<a href="../../src/math/big/int.go.html#line-914" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-914">#L914</a>: 	tx := new(<b>Int</b>).Lsh(x, 1) // tx = 2*x
+		<a href="../../src/math/big/int.go.html#line-915" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-915">#L915</a>: 	alpha := new(<b>Int</b>).Exp(tx, e, p)
+		<a href="../../src/math/big/int.go.html#line-916" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-916">#L916</a>: 	beta := new(<b>Int</b>).Mul(alpha, alpha)
+		<a href="../../src/math/big/int.go.html#line-930" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-930">#L930</a>: func (z *<b>Int</b>) modSqrtTonelliShanks(x, p *<b>Int</b>) *<b>Int</b> {
+		<a href="../../src/math/big/int.go.html#line-932" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-932">#L932</a>: 	var s <b>Int</b>
+		<a href="../../src/math/big/int.go.html#line-938" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-938">#L938</a>: 	var n <b>Int</b>
+		<a href="../../src/math/big/int.go.html#line-948" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-948">#L948</a>: 	var y, b, g, t <b>Int</b>
+		<a href="../../src/math/big/int.go.html#line-981" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-981">#L981</a>: func (z *<b>Int</b>) ModSqrt(x, p *<b>Int</b>) *<b>Int</b> {
+		<a href="../../src/math/big/int.go.html#line-991" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-991">#L991</a>: 		x = new(<b>Int</b>).Mod(x, p)
+		<a href="../../src/math/big/int.go.html#line-1008" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-1008">#L1008</a>: func (z *<b>Int</b>) Lsh(x *<b>Int</b>, n uint) *<b>Int</b> {
+		<a href="../../src/math/big/int.go.html#line-1015" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-1015">#L1015</a>: func (z *<b>Int</b>) Rsh(x *<b>Int</b>, n uint) *<b>Int</b> {
+		<a href="../../src/math/big/int.go.html#line-1032" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-1032">#L1032</a>: func (x *<b>Int</b>) Bit(i int) uint {
+		<a href="../../src/math/big/int.go.html#line-1055" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-1055">#L1055</a>: func (z *<b>Int</b>) SetBit(x *<b>Int</b>, i int, b uint) *<b>Int</b> {
+		<a href="../../src/math/big/int.go.html#line-1072" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-1072">#L1072</a>: func (z *<b>Int</b>) And(x, y *<b>Int</b>) *<b>Int</b> {
+		<a href="../../src/math/big/int.go.html#line-1102" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-1102">#L1102</a>: func (z *<b>Int</b>) AndNot(x, y *<b>Int</b>) *<b>Int</b> {
+		<a href="../../src/math/big/int.go.html#line-1135" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-1135">#L1135</a>: func (z *<b>Int</b>) Or(x, y *<b>Int</b>) *<b>Int</b> {
+		<a href="../../src/math/big/int.go.html#line-1165" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-1165">#L1165</a>: func (z *<b>Int</b>) Xor(x, y *<b>Int</b>) *<b>Int</b> {
+		<a href="../../src/math/big/int.go.html#line-1195" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-1195">#L1195</a>: func (z *<b>Int</b>) Not(x *<b>Int</b>) *<b>Int</b> {
+		<a href="../../src/math/big/int.go.html#line-1211" class="path-duplicate">int.go</a><a href="../../src/math/big/int.go.html#line-1211">#L1211</a>: func (z *<b>Int</b>) Sqrt(x *<b>Int</b>) *<b>Int</b> {
+		<a href="../../src/math/big/intconv.go.html#line-21">intconv.go#L21</a>: func (x *<b>Int</b>) Text(base int) string {
+		<a href="../../src/math/big/intconv.go.html#line-30" class="path-duplicate">intconv.go</a><a href="../../src/math/big/intconv.go.html#line-30">#L30</a>: func (x *<b>Int</b>) Append(buf []byte, base int) []byte {
+		<a href="../../src/math/big/intconv.go.html#line-39" class="path-duplicate">intconv.go</a><a href="../../src/math/big/intconv.go.html#line-39">#L39</a>: func (x *<b>Int</b>) String() string {
+		<a href="../../src/math/big/intconv.go.html#line-67" class="path-duplicate">intconv.go</a><a href="../../src/math/big/intconv.go.html#line-67">#L67</a>: func (x *<b>Int</b>) Format(s fmt.State, ch rune) {
+		<a href="../../src/math/big/intconv.go.html#line-182" class="path-duplicate">intconv.go</a><a href="../../src/math/big/intconv.go.html#line-182">#L182</a>: func (z *<b>Int</b>) scan(r io.ByteScanner, base int) (*<b>Int</b>, int, error) {
+		<a href="../../src/math/big/intconv.go.html#line-238" class="path-duplicate">intconv.go</a><a href="../../src/math/big/intconv.go.html#line-238">#L238</a>: func (z *<b>Int</b>) Scan(s fmt.ScanState, ch rune) error {
+		<a href="../../src/math/big/intmarsh.go.html#line-18">intmarsh.go#L18</a>: func (x *<b>Int</b>) GobEncode() ([]byte, error) {
+		<a href="../../src/math/big/intmarsh.go.html#line-33" class="path-duplicate">intmarsh.go</a><a href="../../src/math/big/intmarsh.go.html#line-33">#L33</a>: func (z *<b>Int</b>) GobDecode(buf []byte) error {
+		<a href="../../src/math/big/intmarsh.go.html#line-36" class="path-duplicate">intmarsh.go</a><a href="../../src/math/big/intmarsh.go.html#line-36">#L36</a>: 		*z = <b>Int</b>{}
+		<a href="../../src/math/big/intmarsh.go.html#line-49" class="path-duplicate">intmarsh.go</a><a href="../../src/math/big/intmarsh.go.html#line-49">#L49</a>: func (x *<b>Int</b>) MarshalText() (text []byte, err error) {
+		<a href="../../src/math/big/intmarsh.go.html#line-57" class="path-duplicate">intmarsh.go</a><a href="../../src/math/big/intmarsh.go.html#line-57">#L57</a>: func (z *<b>Int</b>) UnmarshalText(text []byte) error {
+		<a href="../../src/math/big/intmarsh.go.html#line-69" class="path-duplicate">intmarsh.go</a><a href="../../src/math/big/intmarsh.go.html#line-69">#L69</a>: func (x *<b>Int</b>) MarshalJSON() ([]byte, error) {
+		<a href="../../src/math/big/intmarsh.go.html#line-74" class="path-duplicate">intmarsh.go</a><a href="../../src/math/big/intmarsh.go.html#line-74">#L74</a>: func (z *<b>Int</b>) UnmarshalJSON(text []byte) error {
+		<a href="../../src/math/big/prime.go.html#line-26">prime.go#L26</a>: func (x *<b>Int</b>) ProbablyPrime(n int) bool {
+		<a href="../../src/math/big/prime.go.html#line-171" class="path-duplicate">prime.go</a><a href="../../src/math/big/prime.go.html#line-171">#L171</a>: 	intD := &amp;<b>Int</b>{abs: d}
+		<a href="../../src/math/big/prime.go.html#line-172" class="path-duplicate">prime.go</a><a href="../../src/math/big/prime.go.html#line-172">#L172</a>: 	intN := &amp;<b>Int</b>{abs: n}
+		<a href="../../src/math/big/rat.go.html#line-29">rat.go#L29</a>: 	a, b <b>Int</b>
+		<a href="../../src/math/big/rat.go.html#line-303" class="path-duplicate">rat.go</a><a href="../../src/math/big/rat.go.html#line-303">#L303</a>: func (z *Rat) SetFrac(a, b *<b>Int</b>) *Rat {
+		<a href="../../src/math/big/rat.go.html#line-333" class="path-duplicate">rat.go</a><a href="../../src/math/big/rat.go.html#line-333">#L333</a>: func (z *Rat) SetInt(x *<b>Int</b>) *Rat {
+		<a href="../../src/math/big/rat.go.html#line-409" class="path-duplicate">rat.go</a><a href="../../src/math/big/rat.go.html#line-409">#L409</a>: func (x *Rat) Num() *<b>Int</b> {
+		<a href="../../src/math/big/rat.go.html#line-420" class="path-duplicate">rat.go</a><a href="../../src/math/big/rat.go.html#line-420">#L420</a>: func (x *Rat) Denom() *<b>Int</b> {
+		<a href="../../src/math/big/rat.go.html#line-426" class="path-duplicate">rat.go</a><a href="../../src/math/big/rat.go.html#line-426">#L426</a>: 		return &amp;<b>Int</b>{abs: nat{1}}
+		<a href="../../src/math/big/rat.go.html#line-471" class="path-duplicate">rat.go</a><a href="../../src/math/big/rat.go.html#line-471">#L471</a>: func (z *<b>Int</b>) scaleDenom(x *<b>Int</b>, f nat) {
+		<a href="../../src/math/big/rat.go.html#line-487" class="path-duplicate">rat.go</a><a href="../../src/math/big/rat.go.html#line-487">#L487</a>: 	var a, b <b>Int</b>
+		<a href="../../src/math/big/rat.go.html#line-495" class="path-duplicate">rat.go</a><a href="../../src/math/big/rat.go.html#line-495">#L495</a>: 	var a1, a2 <b>Int</b>
+		<a href="../../src/math/big/rat.go.html#line-505" class="path-duplicate">rat.go</a><a href="../../src/math/big/rat.go.html#line-505">#L505</a>: 	var a1, a2 <b>Int</b>
+		<a href="../../src/math/big/rat.go.html#line-537" class="path-duplicate">rat.go</a><a href="../../src/math/big/rat.go.html#line-537">#L537</a>: 	var a, b <b>Int</b>
+
+	<a href="../../pkg/crypto/dsa.html">crypto/dsa</a>
+		<a href="../../src/crypto/dsa/dsa.go.html#line-27">dsa.go#L27</a>: 	P, Q, G *big.<b>Int</b>
+		<a href="../../src/crypto/dsa/dsa.go.html#line-33" class="path-duplicate">dsa.go</a><a href="../../src/crypto/dsa/dsa.go.html#line-33">#L33</a>: 	Y *big.<b>Int</b>
+		<a href="../../src/crypto/dsa/dsa.go.html#line-39" class="path-duplicate">dsa.go</a><a href="../../src/crypto/dsa/dsa.go.html#line-39">#L39</a>: 	X *big.<b>Int</b>
+		<a href="../../src/crypto/dsa/dsa.go.html#line-92" class="path-duplicate">dsa.go</a><a href="../../src/crypto/dsa/dsa.go.html#line-92">#L92</a>: 	q := new(big.<b>Int</b>)
+		<a href="../../src/crypto/dsa/dsa.go.html#line-93" class="path-duplicate">dsa.go</a><a href="../../src/crypto/dsa/dsa.go.html#line-93">#L93</a>: 	p := new(big.<b>Int</b>)
+		<a href="../../src/crypto/dsa/dsa.go.html#line-94" class="path-duplicate">dsa.go</a><a href="../../src/crypto/dsa/dsa.go.html#line-94">#L94</a>: 	rem := new(big.<b>Int</b>)
+		<a href="../../src/crypto/dsa/dsa.go.html#line-95" class="path-duplicate">dsa.go</a><a href="../../src/crypto/dsa/dsa.go.html#line-95">#L95</a>: 	one := new(big.<b>Int</b>)
+		<a href="../../src/crypto/dsa/dsa.go.html#line-138" class="path-duplicate">dsa.go</a><a href="../../src/crypto/dsa/dsa.go.html#line-138">#L138</a>: 	h := new(big.<b>Int</b>)
+		<a href="../../src/crypto/dsa/dsa.go.html#line-140" class="path-duplicate">dsa.go</a><a href="../../src/crypto/dsa/dsa.go.html#line-140">#L140</a>: 	g := new(big.<b>Int</b>)
+		<a href="../../src/crypto/dsa/dsa.go.html#line-142" class="path-duplicate">dsa.go</a><a href="../../src/crypto/dsa/dsa.go.html#line-142">#L142</a>: 	pm1 := new(big.<b>Int</b>).Sub(p, one)
+		<a href="../../src/crypto/dsa/dsa.go.html#line-143" class="path-duplicate">dsa.go</a><a href="../../src/crypto/dsa/dsa.go.html#line-143">#L143</a>: 	e := new(big.<b>Int</b>).Div(pm1, q)
+		<a href="../../src/crypto/dsa/dsa.go.html#line-164" class="path-duplicate">dsa.go</a><a href="../../src/crypto/dsa/dsa.go.html#line-164">#L164</a>: 	x := new(big.<b>Int</b>)
+		<a href="../../src/crypto/dsa/dsa.go.html#line-179" class="path-duplicate">dsa.go</a><a href="../../src/crypto/dsa/dsa.go.html#line-179">#L179</a>: 	priv.Y = new(big.<b>Int</b>)
+		<a href="../../src/crypto/dsa/dsa.go.html#line-188" class="path-duplicate">dsa.go</a><a href="../../src/crypto/dsa/dsa.go.html#line-188">#L188</a>: func fermatInverse(k, P *big.<b>Int</b>) *big.<b>Int</b> {
+		<a href="../../src/crypto/dsa/dsa.go.html#line-190" class="path-duplicate">dsa.go</a><a href="../../src/crypto/dsa/dsa.go.html#line-190">#L190</a>: 	pMinus2 := new(big.<b>Int</b>).Sub(P, two)
+		<a href="../../src/crypto/dsa/dsa.go.html#line-191" class="path-duplicate">dsa.go</a><a href="../../src/crypto/dsa/dsa.go.html#line-191">#L191</a>: 	return new(big.<b>Int</b>).Exp(k, pMinus2, P)
+		<a href="../../src/crypto/dsa/dsa.go.html#line-205" class="path-duplicate">dsa.go</a><a href="../../src/crypto/dsa/dsa.go.html#line-205">#L205</a>: func Sign(rand io.Reader, priv *PrivateKey, hash []byte) (r, s *big.<b>Int</b>, err error) {
+		<a href="../../src/crypto/dsa/dsa.go.html#line-219" class="path-duplicate">dsa.go</a><a href="../../src/crypto/dsa/dsa.go.html#line-219">#L219</a>: 		k := new(big.<b>Int</b>)
+		<a href="../../src/crypto/dsa/dsa.go.html#line-238" class="path-duplicate">dsa.go</a><a href="../../src/crypto/dsa/dsa.go.html#line-238">#L238</a>: 		r = new(big.<b>Int</b>).Exp(priv.G, k, priv.P)
+		<a href="../../src/crypto/dsa/dsa.go.html#line-247" class="path-duplicate">dsa.go</a><a href="../../src/crypto/dsa/dsa.go.html#line-247">#L247</a>: 		s = new(big.<b>Int</b>).Mul(priv.X, r)
+		<a href="../../src/crypto/dsa/dsa.go.html#line-273" class="path-duplicate">dsa.go</a><a href="../../src/crypto/dsa/dsa.go.html#line-273">#L273</a>: func Verify(pub *PublicKey, hash []byte, r, s *big.<b>Int</b>) bool {
+		<a href="../../src/crypto/dsa/dsa.go.html#line-287" class="path-duplicate">dsa.go</a><a href="../../src/crypto/dsa/dsa.go.html#line-287">#L287</a>: 	w := new(big.<b>Int</b>).ModInverse(s, pub.Q)
+		<a href="../../src/crypto/dsa/dsa.go.html#line-296" class="path-duplicate">dsa.go</a><a href="../../src/crypto/dsa/dsa.go.html#line-296">#L296</a>: 	z := new(big.<b>Int</b>).SetBytes(hash)
+		<a href="../../src/crypto/dsa/dsa.go.html#line-298" class="path-duplicate">dsa.go</a><a href="../../src/crypto/dsa/dsa.go.html#line-298">#L298</a>: 	u1 := new(big.<b>Int</b>).Mul(z, w)
+
+	<a href="../../pkg/crypto/ecdsa.html">crypto/ecdsa</a>
+		<a href="../../src/crypto/ecdsa/ecdsa.go.html#line-47">ecdsa.go#L47</a>: 	Inverse(k *big.<b>Int</b>) *big.<b>Int</b>
+		<a href="../../src/crypto/ecdsa/ecdsa.go.html#line-52" class="path-duplicate">ecdsa.go</a><a href="../../src/crypto/ecdsa/ecdsa.go.html#line-52">#L52</a>: 	CombinedMult(bigX, bigY *big.<b>Int</b>, baseScalar, scalar []byte) (x, y *big.<b>Int</b>)
+		<a href="../../src/crypto/ecdsa/ecdsa.go.html#line-62" class="path-duplicate">ecdsa.go</a><a href="../../src/crypto/ecdsa/ecdsa.go.html#line-62">#L62</a>: 	X, Y *big.<b>Int</b>
+		<a href="../../src/crypto/ecdsa/ecdsa.go.html#line-89" class="path-duplicate">ecdsa.go</a><a href="../../src/crypto/ecdsa/ecdsa.go.html#line-89">#L89</a>: 	D *big.<b>Int</b>
+		<a href="../../src/crypto/ecdsa/ecdsa.go.html#line-129" class="path-duplicate">ecdsa.go</a><a href="../../src/crypto/ecdsa/ecdsa.go.html#line-129">#L129</a>: var one = new(big.<b>Int</b>).SetInt64(1)
+		<a href="../../src/crypto/ecdsa/ecdsa.go.html#line-133" class="path-duplicate">ecdsa.go</a><a href="../../src/crypto/ecdsa/ecdsa.go.html#line-133">#L133</a>: func randFieldElement(c elliptic.Curve, rand io.Reader) (k *big.<b>Int</b>, err error) {
+		<a href="../../src/crypto/ecdsa/ecdsa.go.html#line-141" class="path-duplicate">ecdsa.go</a><a href="../../src/crypto/ecdsa/ecdsa.go.html#line-141">#L141</a>: 	k = new(big.<b>Int</b>).SetBytes(b)
+		<a href="../../src/crypto/ecdsa/ecdsa.go.html#line-142" class="path-duplicate">ecdsa.go</a><a href="../../src/crypto/ecdsa/ecdsa.go.html#line-142">#L142</a>: 	n := new(big.<b>Int</b>).Sub(params.N, one)
+		<a href="../../src/crypto/ecdsa/ecdsa.go.html#line-168" class="path-duplicate">ecdsa.go</a><a href="../../src/crypto/ecdsa/ecdsa.go.html#line-168">#L168</a>: func hashToInt(hash []byte, c elliptic.Curve) *big.<b>Int</b> {
+		<a href="../../src/crypto/ecdsa/ecdsa.go.html#line-175" class="path-duplicate">ecdsa.go</a><a href="../../src/crypto/ecdsa/ecdsa.go.html#line-175">#L175</a>: 	ret := new(big.<b>Int</b>).SetBytes(hash)
+		<a href="../../src/crypto/ecdsa/ecdsa.go.html#line-187" class="path-duplicate">ecdsa.go</a><a href="../../src/crypto/ecdsa/ecdsa.go.html#line-187">#L187</a>: func fermatInverse(k, N *big.<b>Int</b>) *big.<b>Int</b> {
+		<a href="../../src/crypto/ecdsa/ecdsa.go.html#line-189" class="path-duplicate">ecdsa.go</a><a href="../../src/crypto/ecdsa/ecdsa.go.html#line-189">#L189</a>: 	nMinus2 := new(big.<b>Int</b>).Sub(N, two)
+		<a href="../../src/crypto/ecdsa/ecdsa.go.html#line-190" class="path-duplicate">ecdsa.go</a><a href="../../src/crypto/ecdsa/ecdsa.go.html#line-190">#L190</a>: 	return new(big.<b>Int</b>).Exp(k, nMinus2, N)
+		<a href="../../src/crypto/ecdsa/ecdsa.go.html#line-200" class="path-duplicate">ecdsa.go</a><a href="../../src/crypto/ecdsa/ecdsa.go.html#line-200">#L200</a>: func Sign(rand io.Reader, priv *PrivateKey, hash []byte) (r, s *big.<b>Int</b>, err error) {
+		<a href="../../src/crypto/ecdsa/ecdsa.go.html#line-240" class="path-duplicate">ecdsa.go</a><a href="../../src/crypto/ecdsa/ecdsa.go.html#line-240">#L240</a>: func signGeneric(priv *PrivateKey, csprng *cipher.StreamReader, c elliptic.Curve, hash []byte) (r, s *big.<b>Int</b>, err error) {
+		<a href="../../src/crypto/ecdsa/ecdsa.go.html#line-245" class="path-duplicate">ecdsa.go</a><a href="../../src/crypto/ecdsa/ecdsa.go.html#line-245">#L245</a>: 	var k, kInv *big.<b>Int</b>
+		<a href="../../src/crypto/ecdsa/ecdsa.go.html#line-268" class="path-duplicate">ecdsa.go</a><a href="../../src/crypto/ecdsa/ecdsa.go.html#line-268">#L268</a>: 		s = new(big.<b>Int</b>).Mul(priv.D, r)
+		<a href="../../src/crypto/ecdsa/ecdsa.go.html#line-291" class="path-duplicate">ecdsa.go</a><a href="../../src/crypto/ecdsa/ecdsa.go.html#line-291">#L291</a>: func Verify(pub *PublicKey, hash []byte, r, s *big.<b>Int</b>) bool {
+		<a href="../../src/crypto/ecdsa/ecdsa.go.html#line-305" class="path-duplicate">ecdsa.go</a><a href="../../src/crypto/ecdsa/ecdsa.go.html#line-305">#L305</a>: func verifyGeneric(pub *PublicKey, c elliptic.Curve, hash []byte, r, s *big.<b>Int</b>) bool {
+		<a href="../../src/crypto/ecdsa/ecdsa.go.html#line-307" class="path-duplicate">ecdsa.go</a><a href="../../src/crypto/ecdsa/ecdsa.go.html#line-307">#L307</a>: 	var w *big.<b>Int</b>
+		<a href="../../src/crypto/ecdsa/ecdsa.go.html#line-312" class="path-duplicate">ecdsa.go</a><a href="../../src/crypto/ecdsa/ecdsa.go.html#line-312">#L312</a>: 		w = new(big.<b>Int</b>).ModInverse(s, N)
+		<a href="../../src/crypto/ecdsa/ecdsa.go.html#line-321" class="path-duplicate">ecdsa.go</a><a href="../../src/crypto/ecdsa/ecdsa.go.html#line-321">#L321</a>: 	var x, y *big.<b>Int</b>
+		<a href="../../src/crypto/ecdsa/ecdsa.go.html#line-341" class="path-duplicate">ecdsa.go</a><a href="../../src/crypto/ecdsa/ecdsa.go.html#line-341">#L341</a>: 		r, s  = &amp;big.<b>Int</b>{}, &amp;big.<b>Int</b>{}
+		<a href="../../src/crypto/ecdsa/ecdsa_noasm.go.html#line-16">ecdsa_noasm.go#L16</a>: func sign(priv *PrivateKey, csprng *cipher.StreamReader, c elliptic.Curve, hash []byte) (r, s *big.<b>Int</b>, err error) {
+		<a href="../../src/crypto/ecdsa/ecdsa_noasm.go.html#line-20" class="path-duplicate">ecdsa_noasm.go</a><a href="../../src/crypto/ecdsa/ecdsa_noasm.go.html#line-20">#L20</a>: func verify(pub *PublicKey, c elliptic.Curve, hash []byte, r, s *big.<b>Int</b>) bool {
+
+	<a href="../../pkg/crypto/elliptic.html">crypto/elliptic</a>
+		<a href="../../src/crypto/elliptic/elliptic.go.html#line-31">elliptic.go#L31</a>: 	IsOnCurve(x, y *big.<b>Int</b>) bool
+		<a href="../../src/crypto/elliptic/elliptic.go.html#line-33" class="path-duplicate">elliptic.go</a><a href="../../src/crypto/elliptic/elliptic.go.html#line-33">#L33</a>: 	Add(x1, y1, x2, y2 *big.<b>Int</b>) (x, y *big.<b>Int</b>)
+		<a href="../../src/crypto/elliptic/elliptic.go.html#line-35" class="path-duplicate">elliptic.go</a><a href="../../src/crypto/elliptic/elliptic.go.html#line-35">#L35</a>: 	Double(x1, y1 *big.<b>Int</b>) (x, y *big.<b>Int</b>)
+		<a href="../../src/crypto/elliptic/elliptic.go.html#line-37" class="path-duplicate">elliptic.go</a><a href="../../src/crypto/elliptic/elliptic.go.html#line-37">#L37</a>: 	ScalarMult(x1, y1 *big.<b>Int</b>, k []byte) (x, y *big.<b>Int</b>)
+		<a href="../../src/crypto/elliptic/elliptic.go.html#line-40" class="path-duplicate">elliptic.go</a><a href="../../src/crypto/elliptic/elliptic.go.html#line-40">#L40</a>: 	ScalarBaseMult(k []byte) (x, y *big.<b>Int</b>)
+		<a href="../../src/crypto/elliptic/elliptic.go.html#line-55" class="path-duplicate">elliptic.go</a><a href="../../src/crypto/elliptic/elliptic.go.html#line-55">#L55</a>: 	P       *big.<b>Int</b> // the order of the underlying field
+		<a href="../../src/crypto/elliptic/elliptic.go.html#line-56" class="path-duplicate">elliptic.go</a><a href="../../src/crypto/elliptic/elliptic.go.html#line-56">#L56</a>: 	N       *big.<b>Int</b> // the order of the base point
+		<a href="../../src/crypto/elliptic/elliptic.go.html#line-57" class="path-duplicate">elliptic.go</a><a href="../../src/crypto/elliptic/elliptic.go.html#line-57">#L57</a>: 	B       *big.<b>Int</b> // the constant of the curve equation
+		<a href="../../src/crypto/elliptic/elliptic.go.html#line-58" class="path-duplicate">elliptic.go</a><a href="../../src/crypto/elliptic/elliptic.go.html#line-58">#L58</a>: 	Gx, Gy  *big.<b>Int</b> // (x,y) of the base point
+		<a href="../../src/crypto/elliptic/elliptic.go.html#line-68" class="path-duplicate">elliptic.go</a><a href="../../src/crypto/elliptic/elliptic.go.html#line-68">#L68</a>: func (curve *CurveParams) polynomial(x *big.<b>Int</b>) *big.<b>Int</b> {
+		<a href="../../src/crypto/elliptic/elliptic.go.html#line-69" class="path-duplicate">elliptic.go</a><a href="../../src/crypto/elliptic/elliptic.go.html#line-69">#L69</a>: 	x3 := new(big.<b>Int</b>).Mul(x, x)
+		<a href="../../src/crypto/elliptic/elliptic.go.html#line-72" class="path-duplicate">elliptic.go</a><a href="../../src/crypto/elliptic/elliptic.go.html#line-72">#L72</a>: 	threeX := new(big.<b>Int</b>).Lsh(x, 1)
+		<a href="../../src/crypto/elliptic/elliptic.go.html#line-82" class="path-duplicate">elliptic.go</a><a href="../../src/crypto/elliptic/elliptic.go.html#line-82">#L82</a>: func (curve *CurveParams) IsOnCurve(x, y *big.<b>Int</b>) bool {
+		<a href="../../src/crypto/elliptic/elliptic.go.html#line-95" class="path-duplicate">elliptic.go</a><a href="../../src/crypto/elliptic/elliptic.go.html#line-95">#L95</a>: 	y2 := new(big.<b>Int</b>).Mul(y, y)
+		<a href="../../src/crypto/elliptic/elliptic.go.html#line-104" class="path-duplicate">elliptic.go</a><a href="../../src/crypto/elliptic/elliptic.go.html#line-104">#L104</a>: func zForAffine(x, y *big.<b>Int</b>) *big.<b>Int</b> {
+		<a href="../../src/crypto/elliptic/elliptic.go.html#line-105" class="path-duplicate">elliptic.go</a><a href="../../src/crypto/elliptic/elliptic.go.html#line-105">#L105</a>: 	z := new(big.<b>Int</b>)
+		<a href="../../src/crypto/elliptic/elliptic.go.html#line-114" class="path-duplicate">elliptic.go</a><a href="../../src/crypto/elliptic/elliptic.go.html#line-114">#L114</a>: func (curve *CurveParams) affineFromJacobian(x, y, z *big.<b>Int</b>) (xOut, yOut *big.<b>Int</b>) {
+		<a href="../../src/crypto/elliptic/elliptic.go.html#line-116" class="path-duplicate">elliptic.go</a><a href="../../src/crypto/elliptic/elliptic.go.html#line-116">#L116</a>: 		return new(big.<b>Int</b>), new(big.<b>Int</b>)
+		<a href="../../src/crypto/elliptic/elliptic.go.html#line-119" class="path-duplicate">elliptic.go</a><a href="../../src/crypto/elliptic/elliptic.go.html#line-119">#L119</a>: 	zinv := new(big.<b>Int</b>).ModInverse(z, curve.P)
+		<a href="../../src/crypto/elliptic/elliptic.go.html#line-120" class="path-duplicate">elliptic.go</a><a href="../../src/crypto/elliptic/elliptic.go.html#line-120">#L120</a>: 	zinvsq := new(big.<b>Int</b>).Mul(zinv, zinv)
+		<a href="../../src/crypto/elliptic/elliptic.go.html#line-122" class="path-duplicate">elliptic.go</a><a href="../../src/crypto/elliptic/elliptic.go.html#line-122">#L122</a>: 	xOut = new(big.<b>Int</b>).Mul(x, zinvsq)
+		<a href="../../src/crypto/elliptic/elliptic.go.html#line-125" class="path-duplicate">elliptic.go</a><a href="../../src/crypto/elliptic/elliptic.go.html#line-125">#L125</a>: 	yOut = new(big.<b>Int</b>).Mul(y, zinvsq)
+		<a href="../../src/crypto/elliptic/elliptic.go.html#line-130" class="path-duplicate">elliptic.go</a><a href="../../src/crypto/elliptic/elliptic.go.html#line-130">#L130</a>: func (curve *CurveParams) Add(x1, y1, x2, y2 *big.<b>Int</b>) (*big.<b>Int</b>, *big.<b>Int</b>) {
+		<a href="../../src/crypto/elliptic/elliptic.go.html#line-144" class="path-duplicate">elliptic.go</a><a href="../../src/crypto/elliptic/elliptic.go.html#line-144">#L144</a>: func (curve *CurveParams) addJacobian(x1, y1, z1, x2, y2, z2 *big.<b>Int</b>) (*big.<b>Int</b>, *big.<b>Int</b>, *big.<b>Int</b>) {
+		<a href="../../src/crypto/elliptic/elliptic.go.html#line-146" class="path-duplicate">elliptic.go</a><a href="../../src/crypto/elliptic/elliptic.go.html#line-146">#L146</a>: 	x3, y3, z3 := new(big.<b>Int</b>), new(big.<b>Int</b>), new(big.<b>Int</b>)
+		<a href="../../src/crypto/elliptic/elliptic.go.html#line-160" class="path-duplicate">elliptic.go</a><a href="../../src/crypto/elliptic/elliptic.go.html#line-160">#L160</a>: 	z1z1 := new(big.<b>Int</b>).Mul(z1, z1)
+		<a href="../../src/crypto/elliptic/elliptic.go.html#line-162" class="path-duplicate">elliptic.go</a><a href="../../src/crypto/elliptic/elliptic.go.html#line-162">#L162</a>: 	z2z2 := new(big.<b>Int</b>).Mul(z2, z2)
+		<a href="../../src/crypto/elliptic/elliptic.go.html#line-165" class="path-duplicate">elliptic.go</a><a href="../../src/crypto/elliptic/elliptic.go.html#line-165">#L165</a>: 	u1 := new(big.<b>Int</b>).Mul(x1, z2z2)
+		<a href="../../src/crypto/elliptic/elliptic.go.html#line-167" class="path-duplicate">elliptic.go</a><a href="../../src/crypto/elliptic/elliptic.go.html#line-167">#L167</a>: 	u2 := new(big.<b>Int</b>).Mul(x2, z1z1)
+		<a href="../../src/crypto/elliptic/elliptic.go.html#line-169" class="path-duplicate">elliptic.go</a><a href="../../src/crypto/elliptic/elliptic.go.html#line-169">#L169</a>: 	h := new(big.<b>Int</b>).Sub(u2, u1)
+		<a href="../../src/crypto/elliptic/elliptic.go.html#line-174" class="path-duplicate">elliptic.go</a><a href="../../src/crypto/elliptic/elliptic.go.html#line-174">#L174</a>: 	i := new(big.<b>Int</b>).Lsh(h, 1)
+		<a href="../../src/crypto/elliptic/elliptic.go.html#line-176" class="path-duplicate">elliptic.go</a><a href="../../src/crypto/elliptic/elliptic.go.html#line-176">#L176</a>: 	j := new(big.<b>Int</b>).Mul(h, i)
+		<a href="../../src/crypto/elliptic/elliptic.go.html#line-178" class="path-duplicate">elliptic.go</a><a href="../../src/crypto/elliptic/elliptic.go.html#line-178">#L178</a>: 	s1 := new(big.<b>Int</b>).Mul(y1, z2)
+		<a href="../../src/crypto/elliptic/elliptic.go.html#line-181" class="path-duplicate">elliptic.go</a><a href="../../src/crypto/elliptic/elliptic.go.html#line-181">#L181</a>: 	s2 := new(big.<b>Int</b>).Mul(y2, z1)
+		<a href="../../src/crypto/elliptic/elliptic.go.html#line-184" class="path-duplicate">elliptic.go</a><a href="../../src/crypto/elliptic/elliptic.go.html#line-184">#L184</a>: 	r := new(big.<b>Int</b>).Sub(s2, s1)
+		<a href="../../src/crypto/elliptic/elliptic.go.html#line-193" class="path-duplicate">elliptic.go</a><a href="../../src/crypto/elliptic/elliptic.go.html#line-193">#L193</a>: 	v := new(big.<b>Int</b>).Mul(u1, i)
+		<a href="../../src/crypto/elliptic/elliptic.go.html#line-220" class="path-duplicate">elliptic.go</a><a href="../../src/crypto/elliptic/elliptic.go.html#line-220">#L220</a>: func (curve *CurveParams) Double(x1, y1 *big.<b>Int</b>) (*big.<b>Int</b>, *big.<b>Int</b>) {
+		<a href="../../src/crypto/elliptic/elliptic.go.html#line-233" class="path-duplicate">elliptic.go</a><a href="../../src/crypto/elliptic/elliptic.go.html#line-233">#L233</a>: func (curve *CurveParams) doubleJacobian(x, y, z *big.<b>Int</b>) (*big.<b>Int</b>, *big.<b>Int</b>, *big.<b>Int</b>) {
+		<a href="../../src/crypto/elliptic/elliptic.go.html#line-235" class="path-duplicate">elliptic.go</a><a href="../../src/crypto/elliptic/elliptic.go.html#line-235">#L235</a>: 	delta := new(big.<b>Int</b>).Mul(z, z)
+		<a href="../../src/crypto/elliptic/elliptic.go.html#line-237" class="path-duplicate">elliptic.go</a><a href="../../src/crypto/elliptic/elliptic.go.html#line-237">#L237</a>: 	gamma := new(big.<b>Int</b>).Mul(y, y)
+		<a href="../../src/crypto/elliptic/elliptic.go.html#line-239" class="path-duplicate">elliptic.go</a><a href="../../src/crypto/elliptic/elliptic.go.html#line-239">#L239</a>: 	alpha := new(big.<b>Int</b>).Sub(x, delta)
+		<a href="../../src/crypto/elliptic/elliptic.go.html#line-243" class="path-duplicate">elliptic.go</a><a href="../../src/crypto/elliptic/elliptic.go.html#line-243">#L243</a>: 	alpha2 := new(big.<b>Int</b>).Add(x, delta)
+		<a href="../../src/crypto/elliptic/elliptic.go.html#line-251" class="path-duplicate">elliptic.go</a><a href="../../src/crypto/elliptic/elliptic.go.html#line-251">#L251</a>: 	x3 := new(big.<b>Int</b>).Mul(alpha, alpha)
+		<a href="../../src/crypto/elliptic/elliptic.go.html#line-252" class="path-duplicate">elliptic.go</a><a href="../../src/crypto/elliptic/elliptic.go.html#line-252">#L252</a>: 	beta8 := new(big.<b>Int</b>).Lsh(beta, 3)
+		<a href="../../src/crypto/elliptic/elliptic.go.html#line-260" class="path-duplicate">elliptic.go</a><a href="../../src/crypto/elliptic/elliptic.go.html#line-260">#L260</a>: 	z3 := new(big.<b>Int</b>).Add(y, z)
+		<a href="../../src/crypto/elliptic/elliptic.go.html#line-292" class="path-duplicate">elliptic.go</a><a href="../../src/crypto/elliptic/elliptic.go.html#line-292">#L292</a>: func (curve *CurveParams) ScalarMult(Bx, By *big.<b>Int</b>, k []byte) (*big.<b>Int</b>, *big.<b>Int</b>) {
+		<a href="../../src/crypto/elliptic/elliptic.go.html#line-299" class="path-duplicate">elliptic.go</a><a href="../../src/crypto/elliptic/elliptic.go.html#line-299">#L299</a>: 	Bz := new(big.<b>Int</b>).SetInt64(1)
+		<a href="../../src/crypto/elliptic/elliptic.go.html#line-300" class="path-duplicate">elliptic.go</a><a href="../../src/crypto/elliptic/elliptic.go.html#line-300">#L300</a>: 	x, y, z := new(big.<b>Int</b>), new(big.<b>Int</b>), new(big.<b>Int</b>)
+		<a href="../../src/crypto/elliptic/elliptic.go.html#line-315" class="path-duplicate">elliptic.go</a><a href="../../src/crypto/elliptic/elliptic.go.html#line-315">#L315</a>: func (curve *CurveParams) ScalarBaseMult(k []byte) (*big.<b>Int</b>, *big.<b>Int</b>) {
+		<a href="../../src/crypto/elliptic/elliptic.go.html#line-329" class="path-duplicate">elliptic.go</a><a href="../../src/crypto/elliptic/elliptic.go.html#line-329">#L329</a>: func GenerateKey(curve Curve, rand io.Reader) (priv []byte, x, y *big.<b>Int</b>, err error) {
+		<a href="../../src/crypto/elliptic/elliptic.go.html#line-348" class="path-duplicate">elliptic.go</a><a href="../../src/crypto/elliptic/elliptic.go.html#line-348">#L348</a>: 		if new(big.<b>Int</b>).SetBytes(priv).Cmp(N) &gt;= 0 {
+		<a href="../../src/crypto/elliptic/elliptic.go.html#line-359" class="path-duplicate">elliptic.go</a><a href="../../src/crypto/elliptic/elliptic.go.html#line-359">#L359</a>: func Marshal(curve Curve, x, y *big.<b>Int</b>) []byte {
+		<a href="../../src/crypto/elliptic/elliptic.go.html#line-373" class="path-duplicate">elliptic.go</a><a href="../../src/crypto/elliptic/elliptic.go.html#line-373">#L373</a>: func MarshalCompressed(curve Curve, x, y *big.<b>Int</b>) []byte {
+		<a href="../../src/crypto/elliptic/elliptic.go.html#line-384" class="path-duplicate">elliptic.go</a><a href="../../src/crypto/elliptic/elliptic.go.html#line-384">#L384</a>: func Unmarshal(curve Curve, data []byte) (x, y *big.<b>Int</b>) {
+		<a href="../../src/crypto/elliptic/elliptic.go.html#line-393" class="path-duplicate">elliptic.go</a><a href="../../src/crypto/elliptic/elliptic.go.html#line-393">#L393</a>: 	x = new(big.<b>Int</b>).SetBytes(data[1 : 1+byteLen])
+		<a href="../../src/crypto/elliptic/elliptic.go.html#line-394" class="path-duplicate">elliptic.go</a><a href="../../src/crypto/elliptic/elliptic.go.html#line-394">#L394</a>: 	y = new(big.<b>Int</b>).SetBytes(data[1+byteLen:])
+		<a href="../../src/crypto/elliptic/elliptic.go.html#line-407" class="path-duplicate">elliptic.go</a><a href="../../src/crypto/elliptic/elliptic.go.html#line-407">#L407</a>: func UnmarshalCompressed(curve Curve, data []byte) (x, y *big.<b>Int</b>) {
+		<a href="../../src/crypto/elliptic/elliptic.go.html#line-416" class="path-duplicate">elliptic.go</a><a href="../../src/crypto/elliptic/elliptic.go.html#line-416">#L416</a>: 	x = new(big.<b>Int</b>).SetBytes(data[1:])
+		<a href="../../src/crypto/elliptic/elliptic.go.html#line-448" class="path-duplicate">elliptic.go</a><a href="../../src/crypto/elliptic/elliptic.go.html#line-448">#L448</a>: 	p384.P, _ = new(big.<b>Int</b>).SetString("39402006196394479212279040100143613805079739270465446667948293404245721771496870329047266088258938001861606973112319", 10)
+		<a href="../../src/crypto/elliptic/elliptic.go.html#line-449" class="path-duplicate">elliptic.go</a><a href="../../src/crypto/elliptic/elliptic.go.html#line-449">#L449</a>: 	p384.N, _ = new(big.<b>Int</b>).SetString("39402006196394479212279040100143613805079739270465446667946905279627659399113263569398956308152294913554433653942643", 10)
+		<a href="../../src/crypto/elliptic/elliptic.go.html#line-450" class="path-duplicate">elliptic.go</a><a href="../../src/crypto/elliptic/elliptic.go.html#line-450">#L450</a>: 	p384.B, _ = new(big.<b>Int</b>).SetString("b3312fa7e23ee7e4988e056be3f82d19181d9c6efe8141120314088f5013875ac656398d8a2ed19d2a85c8edd3ec2aef", 16)
+		<a href="../../src/crypto/elliptic/elliptic.go.html#line-451" class="path-duplicate">elliptic.go</a><a href="../../src/crypto/elliptic/elliptic.go.html#line-451">#L451</a>: 	p384.Gx, _ = new(big.<b>Int</b>).SetString("aa87ca22be8b05378eb1c71ef320ad746e1d3b628ba79b9859f741e082542a385502f25dbf55296c3a545e3872760ab7", 16)
+		<a href="../../src/crypto/elliptic/elliptic.go.html#line-452" class="path-duplicate">elliptic.go</a><a href="../../src/crypto/elliptic/elliptic.go.html#line-452">#L452</a>: 	p384.Gy, _ = new(big.<b>Int</b>).SetString("3617de4a96262c6f5d9e98bf9292dc29f8f41dbd289a147ce9da3113b5f0b8c00a60b1ce1d7e819d7a431d7c90ea0e5f", 16)
+		<a href="../../src/crypto/elliptic/p224.go.html#line-26">p224.go#L26</a>: 	p224.P, _ = new(big.<b>Int</b>).SetString("26959946667150639794667015087019630673557916260026308143510066298881", 10)
+		<a href="../../src/crypto/elliptic/p224.go.html#line-27" class="path-duplicate">p224.go</a><a href="../../src/crypto/elliptic/p224.go.html#line-27">#L27</a>: 	p224.N, _ = new(big.<b>Int</b>).SetString("26959946667150639794667015087019625940457807714424391721682722368061", 10)
+		<a href="../../src/crypto/elliptic/p224.go.html#line-28" class="path-duplicate">p224.go</a><a href="../../src/crypto/elliptic/p224.go.html#line-28">#L28</a>: 	p224.B, _ = new(big.<b>Int</b>).SetString("b4050a850c04b3abf54132565044b0b7d7bfd8ba270b39432355ffb4", 16)
+		<a href="../../src/crypto/elliptic/p224.go.html#line-29" class="path-duplicate">p224.go</a><a href="../../src/crypto/elliptic/p224.go.html#line-29">#L29</a>: 	p224.Gx, _ = new(big.<b>Int</b>).SetString("b70e0cbd6bb4bf7f321390b94a03c1d356c21122343280d6115c1d21", 16)
+		<a href="../../src/crypto/elliptic/p224.go.html#line-30" class="path-duplicate">p224.go</a><a href="../../src/crypto/elliptic/p224.go.html#line-30">#L30</a>: 	p224.Gy, _ = new(big.<b>Int</b>).SetString("bd376388b5f723fb4c22dfe6cd4375a05a07476444d5819985007e34", 16)
+		<a href="../../src/crypto/elliptic/p224.go.html#line-50" class="path-duplicate">p224.go</a><a href="../../src/crypto/elliptic/p224.go.html#line-50">#L50</a>: func (curve p224Curve) IsOnCurve(bigX, bigY *big.<b>Int</b>) bool {
+		<a href="../../src/crypto/elliptic/p224.go.html#line-85" class="path-duplicate">p224.go</a><a href="../../src/crypto/elliptic/p224.go.html#line-85">#L85</a>: func (p224Curve) Add(bigX1, bigY1, bigX2, bigY2 *big.<b>Int</b>) (x, y *big.<b>Int</b>) {
+		<a href="../../src/crypto/elliptic/p224.go.html#line-103" class="path-duplicate">p224.go</a><a href="../../src/crypto/elliptic/p224.go.html#line-103">#L103</a>: func (p224Curve) Double(bigX1, bigY1 *big.<b>Int</b>) (x, y *big.<b>Int</b>) {
+		<a href="../../src/crypto/elliptic/p224.go.html#line-114" class="path-duplicate">p224.go</a><a href="../../src/crypto/elliptic/p224.go.html#line-114">#L114</a>: func (p224Curve) ScalarMult(bigX1, bigY1 *big.<b>Int</b>, scalar []byte) (x, y *big.<b>Int</b>) {
+		<a href="../../src/crypto/elliptic/p224.go.html#line-125" class="path-duplicate">p224.go</a><a href="../../src/crypto/elliptic/p224.go.html#line-125">#L125</a>: func (curve p224Curve) ScalarBaseMult(scalar []byte) (x, y *big.<b>Int</b>) {
+		<a href="../../src/crypto/elliptic/p224.go.html#line-690" class="path-duplicate">p224.go</a><a href="../../src/crypto/elliptic/p224.go.html#line-690">#L690</a>: func p224ToAffine(x, y, z *p224FieldElement) (*big.<b>Int</b>, *big.<b>Int</b>) {
+		<a href="../../src/crypto/elliptic/p224.go.html#line-695" class="path-duplicate">p224.go</a><a href="../../src/crypto/elliptic/p224.go.html#line-695">#L695</a>: 		return new(big.<b>Int</b>), new(big.<b>Int</b>)
+		<a href="../../src/crypto/elliptic/p224.go.html#line-731" class="path-duplicate">p224.go</a><a href="../../src/crypto/elliptic/p224.go.html#line-731">#L731</a>: func p224FromBig(out *p224FieldElement, in *big.<b>Int</b>) {
+		<a href="../../src/crypto/elliptic/p224.go.html#line-744" class="path-duplicate">p224.go</a><a href="../../src/crypto/elliptic/p224.go.html#line-744">#L744</a>: func p224ToBig(in *p224FieldElement) *big.<b>Int</b> {
+		<a href="../../src/crypto/elliptic/p224.go.html#line-782" class="path-duplicate">p224.go</a><a href="../../src/crypto/elliptic/p224.go.html#line-782">#L782</a>: 	return new(big.<b>Int</b>).SetBytes(buf[:])
+		<a href="../../src/crypto/elliptic/p256_asm.go.html#line-37">p256_asm.go#L37</a>: 	p256.P, _ = new(big.<b>Int</b>).SetString("115792089210356248762697446949407573530086143415290314195533631308867097853951", 10)
+		<a href="../../src/crypto/elliptic/p256_asm.go.html#line-38" class="path-duplicate">p256_asm.go</a><a href="../../src/crypto/elliptic/p256_asm.go.html#line-38">#L38</a>: 	p256.N, _ = new(big.<b>Int</b>).SetString("115792089210356248762697446949407573529996955224135760342422259061068512044369", 10)
+		<a href="../../src/crypto/elliptic/p256_asm.go.html#line-39" class="path-duplicate">p256_asm.go</a><a href="../../src/crypto/elliptic/p256_asm.go.html#line-39">#L39</a>: 	p256.B, _ = new(big.<b>Int</b>).SetString("5ac635d8aa3a93e7b3ebbd55769886bc651d06b0cc53b0f63bce3c3e27d2604b", 16)
+		<a href="../../src/crypto/elliptic/p256_asm.go.html#line-40" class="path-duplicate">p256_asm.go</a><a href="../../src/crypto/elliptic/p256_asm.go.html#line-40">#L40</a>: 	p256.Gx, _ = new(big.<b>Int</b>).SetString("6b17d1f2e12c4247f8bce6e563a440f277037d812deb33a0f4a13945d898c296", 16)
+		<a href="../../src/crypto/elliptic/p256_asm.go.html#line-41" class="path-duplicate">p256_asm.go</a><a href="../../src/crypto/elliptic/p256_asm.go.html#line-41">#L41</a>: 	p256.Gy, _ = new(big.<b>Int</b>).SetString("4fe342e2fe1a7f9b8ee7eb4a7c0f9e162bce33576b315ececbb6406837bf51f5", 16)
+		<a href="../../src/crypto/elliptic/p256_asm.go.html#line-109" class="path-duplicate">p256_asm.go</a><a href="../../src/crypto/elliptic/p256_asm.go.html#line-109">#L109</a>: func (curve p256Curve) Inverse(k *big.<b>Int</b>) *big.<b>Int</b> {
+		<a href="../../src/crypto/elliptic/p256_asm.go.html#line-112" class="path-duplicate">p256_asm.go</a><a href="../../src/crypto/elliptic/p256_asm.go.html#line-112">#L112</a>: 		k = new(big.<b>Int</b>).Neg(k)
+		<a href="../../src/crypto/elliptic/p256_asm.go.html#line-117" class="path-duplicate">p256_asm.go</a><a href="../../src/crypto/elliptic/p256_asm.go.html#line-117">#L117</a>: 		k = new(big.<b>Int</b>).Mod(k, p256.N)
+		<a href="../../src/crypto/elliptic/p256_asm.go.html#line-193" class="path-duplicate">p256_asm.go</a><a href="../../src/crypto/elliptic/p256_asm.go.html#line-193">#L193</a>: 	return new(big.<b>Int</b>).SetBytes(xOut)
+		<a href="../../src/crypto/elliptic/p256_asm.go.html#line-197" class="path-duplicate">p256_asm.go</a><a href="../../src/crypto/elliptic/p256_asm.go.html#line-197">#L197</a>: func fromBig(out []uint64, big *big.<b>Int</b>) {
+		<a href="../../src/crypto/elliptic/p256_asm.go.html#line-211" class="path-duplicate">p256_asm.go</a><a href="../../src/crypto/elliptic/p256_asm.go.html#line-211">#L211</a>: 	n := new(big.<b>Int</b>).SetBytes(in)
+		<a href="../../src/crypto/elliptic/p256_asm.go.html#line-224" class="path-duplicate">p256_asm.go</a><a href="../../src/crypto/elliptic/p256_asm.go.html#line-224">#L224</a>: func maybeReduceModP(in *big.<b>Int</b>) *big.<b>Int</b> {
+		<a href="../../src/crypto/elliptic/p256_asm.go.html#line-228" class="path-duplicate">p256_asm.go</a><a href="../../src/crypto/elliptic/p256_asm.go.html#line-228">#L228</a>: 	return new(big.<b>Int</b>).Mod(in, p256.P)
+		<a href="../../src/crypto/elliptic/p256_asm.go.html#line-231" class="path-duplicate">p256_asm.go</a><a href="../../src/crypto/elliptic/p256_asm.go.html#line-231">#L231</a>: func (curve p256Curve) CombinedMult(bigX, bigY *big.<b>Int</b>, baseScalar, scalar []byte) (x, y *big.<b>Int</b>) {
+		<a href="../../src/crypto/elliptic/p256_asm.go.html#line-263" class="path-duplicate">p256_asm.go</a><a href="../../src/crypto/elliptic/p256_asm.go.html#line-263">#L263</a>: func (curve p256Curve) ScalarBaseMult(scalar []byte) (x, y *big.<b>Int</b>) {
+		<a href="../../src/crypto/elliptic/p256_asm.go.html#line-272" class="path-duplicate">p256_asm.go</a><a href="../../src/crypto/elliptic/p256_asm.go.html#line-272">#L272</a>: func (curve p256Curve) ScalarMult(bigX, bigY *big.<b>Int</b>, scalar []byte) (x, y *big.<b>Int</b>) {
+		<a href="../../src/crypto/elliptic/p256_asm.go.html#line-309" class="path-duplicate">p256_asm.go</a><a href="../../src/crypto/elliptic/p256_asm.go.html#line-309">#L309</a>: func (p *p256Point) p256PointToAffine() (x, y *big.<b>Int</b>) {
+		<a href="../../src/crypto/elliptic/p256_asm.go.html#line-327" class="path-duplicate">p256_asm.go</a><a href="../../src/crypto/elliptic/p256_asm.go.html#line-327">#L327</a>: 	return new(big.<b>Int</b>).SetBytes(xOut), new(big.<b>Int</b>).SetBytes(yOut)
+		<a href="../../src/crypto/elliptic/p521.go.html#line-22">p521.go#L22</a>: 	p521.P, _ = new(big.<b>Int</b>).SetString("6864797660130609714981900799081393217269435300143305409394463459185543183397656052122559640661454554977296311391480858037121987999716643812574028291115057151", 10)
+		<a href="../../src/crypto/elliptic/p521.go.html#line-23" class="path-duplicate">p521.go</a><a href="../../src/crypto/elliptic/p521.go.html#line-23">#L23</a>: 	p521.N, _ = new(big.<b>Int</b>).SetString("6864797660130609714981900799081393217269435300143305409394463459185543183397655394245057746333217197532963996371363321113864768612440380340372808892707005449", 10)
+		<a href="../../src/crypto/elliptic/p521.go.html#line-24" class="path-duplicate">p521.go</a><a href="../../src/crypto/elliptic/p521.go.html#line-24">#L24</a>: 	p521.B, _ = new(big.<b>Int</b>).SetString("051953eb9618e1c9a1f929a21a0b68540eea2da725b99b315f3b8b489918ef109e156193951ec7e937b1652c0bd3bb1bf073573df883d2c34f1ef451fd46b503f00", 16)
+		<a href="../../src/crypto/elliptic/p521.go.html#line-25" class="path-duplicate">p521.go</a><a href="../../src/crypto/elliptic/p521.go.html#line-25">#L25</a>: 	p521.Gx, _ = new(big.<b>Int</b>).SetString("c6858e06b70404e9cd9e3ecb662395b4429c648139053fb521f828af606b4d3dbaa14b5e77efe75928fe1dc127a2ffa8de3348b3c1856a429bf97e7e31c2e5bd66", 16)
+		<a href="../../src/crypto/elliptic/p521.go.html#line-26" class="path-duplicate">p521.go</a><a href="../../src/crypto/elliptic/p521.go.html#line-26">#L26</a>: 	p521.Gy, _ = new(big.<b>Int</b>).SetString("11839296a789a3bc0045c8a5fb42c7d1bd998f54449579b446817afbd17273e662c97ee72995ef42640c550b9013fad0761353c7086a272c24088be94769fd16650", 16)
+		<a href="../../src/crypto/elliptic/p521.go.html#line-34" class="path-duplicate">p521.go</a><a href="../../src/crypto/elliptic/p521.go.html#line-34">#L34</a>: func (curve p521Curve) IsOnCurve(x, y *big.<b>Int</b>) bool {
+		<a href="../../src/crypto/elliptic/p521.go.html#line-64" class="path-duplicate">p521.go</a><a href="../../src/crypto/elliptic/p521.go.html#line-64">#L64</a>: func fiatP521ToBigInt(x *fiat.P521Element) *big.<b>Int</b> {
+		<a href="../../src/crypto/elliptic/p521.go.html#line-69" class="path-duplicate">p521.go</a><a href="../../src/crypto/elliptic/p521.go.html#line-69">#L69</a>: 	return new(big.<b>Int</b>).SetBytes(xBytes)
+		<a href="../../src/crypto/elliptic/p521.go.html#line-75" class="path-duplicate">p521.go</a><a href="../../src/crypto/elliptic/p521.go.html#line-75">#L75</a>: func (curve p521Curve) affineFromJacobian(p *p521Point) (x, y *big.<b>Int</b>) {
+		<a href="../../src/crypto/elliptic/p521.go.html#line-77" class="path-duplicate">p521.go</a><a href="../../src/crypto/elliptic/p521.go.html#line-77">#L77</a>: 		return new(big.<b>Int</b>), new(big.<b>Int</b>)
+		<a href="../../src/crypto/elliptic/p521.go.html#line-90" class="path-duplicate">p521.go</a><a href="../../src/crypto/elliptic/p521.go.html#line-90">#L90</a>: func bigIntToFiatP521(x *big.<b>Int</b>) *fiat.P521Element {
+		<a href="../../src/crypto/elliptic/p521.go.html#line-91" class="path-duplicate">p521.go</a><a href="../../src/crypto/elliptic/p521.go.html#line-91">#L91</a>: 	xBytes := new(big.<b>Int</b>).Mod(x, p521.P).FillBytes(make([]byte, 66))
+		<a href="../../src/crypto/elliptic/p521.go.html#line-107" class="path-duplicate">p521.go</a><a href="../../src/crypto/elliptic/p521.go.html#line-107">#L107</a>: func (curve p521Curve) jacobianFromAffine(x, y *big.<b>Int</b>) *p521Point {
+		<a href="../../src/crypto/elliptic/p521.go.html#line-124" class="path-duplicate">p521.go</a><a href="../../src/crypto/elliptic/p521.go.html#line-124">#L124</a>: func (curve p521Curve) Add(x1, y1, x2, y2 *big.<b>Int</b>) (*big.<b>Int</b>, *big.<b>Int</b>) {
+		<a href="../../src/crypto/elliptic/p521.go.html#line-191" class="path-duplicate">p521.go</a><a href="../../src/crypto/elliptic/p521.go.html#line-191">#L191</a>: func (curve p521Curve) Double(x1, y1 *big.<b>Int</b>) (*big.<b>Int</b>, *big.<b>Int</b>) {
+		<a href="../../src/crypto/elliptic/p521.go.html#line-236" class="path-duplicate">p521.go</a><a href="../../src/crypto/elliptic/p521.go.html#line-236">#L236</a>: func (curve p521Curve) ScalarMult(Bx, By *big.<b>Int</b>, scalar []byte) (*big.<b>Int</b>, *big.<b>Int</b>) {
+		<a href="../../src/crypto/elliptic/p521.go.html#line-262" class="path-duplicate">p521.go</a><a href="../../src/crypto/elliptic/p521.go.html#line-262">#L262</a>: func (curve p521Curve) ScalarBaseMult(k []byte) (*big.<b>Int</b>, *big.<b>Int</b>) {
+
+	<a href="../../pkg/crypto/rand.html">crypto/rand</a>
+		<a href="../../src/crypto/rand/util.go.html#line-26">util.go#L26</a>: var smallPrimesProduct = new(big.<b>Int</b>).SetUint64(16294579238595022365)
+		<a href="../../src/crypto/rand/util.go.html#line-31" class="path-duplicate">util.go</a><a href="../../src/crypto/rand/util.go.html#line-31">#L31</a>: func Prime(rand io.Reader, bits int) (p *big.<b>Int</b>, err error) {
+		<a href="../../src/crypto/rand/util.go.html#line-43" class="path-duplicate">util.go</a><a href="../../src/crypto/rand/util.go.html#line-43">#L43</a>: 	p = new(big.<b>Int</b>)
+		<a href="../../src/crypto/rand/util.go.html#line-45" class="path-duplicate">util.go</a><a href="../../src/crypto/rand/util.go.html#line-45">#L45</a>: 	bigMod := new(big.<b>Int</b>)
+		<a href="../../src/crypto/rand/util.go.html#line-106" class="path-duplicate">util.go</a><a href="../../src/crypto/rand/util.go.html#line-106">#L106</a>: func Int(rand io.Reader, max *big.<b>Int</b>) (n *big.<b>Int</b>, err error) {
+		<a href="../../src/crypto/rand/util.go.html#line-110" class="path-duplicate">util.go</a><a href="../../src/crypto/rand/util.go.html#line-110">#L110</a>: 	n = new(big.<b>Int</b>)
+
+	<a href="../../pkg/crypto/rsa.html">crypto/rsa</a>
+		<a href="../../src/crypto/rsa/pkcs1v15.go.html#line-61">pkcs1v15.go#L61</a>: 	m := new(big.<b>Int</b>).SetBytes(em)
+		<a href="../../src/crypto/rsa/pkcs1v15.go.html#line-62" class="path-duplicate">pkcs1v15.go</a><a href="../../src/crypto/rsa/pkcs1v15.go.html#line-62">#L62</a>: 	c := encrypt(new(big.<b>Int</b>), pub, m)
+		<a href="../../src/crypto/rsa/pkcs1v15.go.html#line-146" class="path-duplicate">pkcs1v15.go</a><a href="../../src/crypto/rsa/pkcs1v15.go.html#line-146">#L146</a>: 	c := new(big.<b>Int</b>).SetBytes(ciphertext)
+		<a href="../../src/crypto/rsa/pkcs1v15.go.html#line-252" class="path-duplicate">pkcs1v15.go</a><a href="../../src/crypto/rsa/pkcs1v15.go.html#line-252">#L252</a>: 	m := new(big.<b>Int</b>).SetBytes(em)
+		<a href="../../src/crypto/rsa/pkcs1v15.go.html#line-285" class="path-duplicate">pkcs1v15.go</a><a href="../../src/crypto/rsa/pkcs1v15.go.html#line-285">#L285</a>: 	c := new(big.<b>Int</b>).SetBytes(sig)
+		<a href="../../src/crypto/rsa/pkcs1v15.go.html#line-286" class="path-duplicate">pkcs1v15.go</a><a href="../../src/crypto/rsa/pkcs1v15.go.html#line-286">#L286</a>: 	m := encrypt(new(big.<b>Int</b>), pub, c)
+		<a href="../../src/crypto/rsa/pss.go.html#line-216">pss.go#L216</a>: 	m := new(big.<b>Int</b>).SetBytes(em)
+		<a href="../../src/crypto/rsa/pss.go.html#line-294" class="path-duplicate">pss.go</a><a href="../../src/crypto/rsa/pss.go.html#line-294">#L294</a>: 	s := new(big.<b>Int</b>).SetBytes(sig)
+		<a href="../../src/crypto/rsa/pss.go.html#line-295" class="path-duplicate">pss.go</a><a href="../../src/crypto/rsa/pss.go.html#line-295">#L295</a>: 	m := encrypt(new(big.<b>Int</b>), pub, s)
+		<a href="../../src/crypto/rsa/rsa.go.html#line-43">rsa.go#L43</a>: 	N *big.<b>Int</b> // modulus
+		<a href="../../src/crypto/rsa/rsa.go.html#line-102" class="path-duplicate">rsa.go</a><a href="../../src/crypto/rsa/rsa.go.html#line-102">#L102</a>: 	D         *big.<b>Int</b>   // private exponent
+		<a href="../../src/crypto/rsa/rsa.go.html#line-103" class="path-duplicate">rsa.go</a><a href="../../src/crypto/rsa/rsa.go.html#line-103">#L103</a>: 	Primes    []*big.<b>Int</b> // prime factors of N, has &gt;= 2 elements.
+		<a href="../../src/crypto/rsa/rsa.go.html#line-184" class="path-duplicate">rsa.go</a><a href="../../src/crypto/rsa/rsa.go.html#line-184">#L184</a>: 	Dp, Dq *big.<b>Int</b> // D mod (P-1) (or mod Q-1)
+		<a href="../../src/crypto/rsa/rsa.go.html#line-185" class="path-duplicate">rsa.go</a><a href="../../src/crypto/rsa/rsa.go.html#line-185">#L185</a>: 	Qinv   *big.<b>Int</b> // Q^-1 mod P
+		<a href="../../src/crypto/rsa/rsa.go.html#line-196" class="path-duplicate">rsa.go</a><a href="../../src/crypto/rsa/rsa.go.html#line-196">#L196</a>: 	Exp   *big.<b>Int</b> // D mod (prime-1).
+		<a href="../../src/crypto/rsa/rsa.go.html#line-197" class="path-duplicate">rsa.go</a><a href="../../src/crypto/rsa/rsa.go.html#line-197">#L197</a>: 	Coeff *big.<b>Int</b> // R·Coeff ≡ 1 mod Prime.
+		<a href="../../src/crypto/rsa/rsa.go.html#line-198" class="path-duplicate">rsa.go</a><a href="../../src/crypto/rsa/rsa.go.html#line-198">#L198</a>: 	R     *big.<b>Int</b> // product of primes prior to this (inc p and q).
+		<a href="../../src/crypto/rsa/rsa.go.html#line-209" class="path-duplicate">rsa.go</a><a href="../../src/crypto/rsa/rsa.go.html#line-209">#L209</a>: 	modulus := new(big.<b>Int</b>).Set(bigOne)
+		<a href="../../src/crypto/rsa/rsa.go.html#line-226" class="path-duplicate">rsa.go</a><a href="../../src/crypto/rsa/rsa.go.html#line-226">#L226</a>: 	congruence := new(big.<b>Int</b>)
+		<a href="../../src/crypto/rsa/rsa.go.html#line-227" class="path-duplicate">rsa.go</a><a href="../../src/crypto/rsa/rsa.go.html#line-227">#L227</a>: 	de := new(big.<b>Int</b>).SetInt64(int64(priv.E))
+		<a href="../../src/crypto/rsa/rsa.go.html#line-230" class="path-duplicate">rsa.go</a><a href="../../src/crypto/rsa/rsa.go.html#line-230">#L230</a>: 		pminus1 := new(big.<b>Int</b>).Sub(prime, bigOne)
+		<a href="../../src/crypto/rsa/rsa.go.html#line-281" class="path-duplicate">rsa.go</a><a href="../../src/crypto/rsa/rsa.go.html#line-281">#L281</a>: 	primes := make([]*big.<b>Int</b>, nprimes)
+		<a href="../../src/crypto/rsa/rsa.go.html#line-318" class="path-duplicate">rsa.go</a><a href="../../src/crypto/rsa/rsa.go.html#line-318">#L318</a>: 		n := new(big.<b>Int</b>).Set(bigOne)
+		<a href="../../src/crypto/rsa/rsa.go.html#line-319" class="path-duplicate">rsa.go</a><a href="../../src/crypto/rsa/rsa.go.html#line-319">#L319</a>: 		totient := new(big.<b>Int</b>).Set(bigOne)
+		<a href="../../src/crypto/rsa/rsa.go.html#line-320" class="path-duplicate">rsa.go</a><a href="../../src/crypto/rsa/rsa.go.html#line-320">#L320</a>: 		pminus1 := new(big.<b>Int</b>)
+		<a href="../../src/crypto/rsa/rsa.go.html#line-333" class="path-duplicate">rsa.go</a><a href="../../src/crypto/rsa/rsa.go.html#line-333">#L333</a>: 		priv.D = new(big.<b>Int</b>)
+		<a href="../../src/crypto/rsa/rsa.go.html#line-387" class="path-duplicate">rsa.go</a><a href="../../src/crypto/rsa/rsa.go.html#line-387">#L387</a>: func encrypt(c *big.<b>Int</b>, pub *PublicKey, m *big.<b>Int</b>) *big.<b>Int</b> {
+		<a href="../../src/crypto/rsa/rsa.go.html#line-440" class="path-duplicate">rsa.go</a><a href="../../src/crypto/rsa/rsa.go.html#line-440">#L440</a>: 	m := new(big.<b>Int</b>)
+		<a href="../../src/crypto/rsa/rsa.go.html#line-442" class="path-duplicate">rsa.go</a><a href="../../src/crypto/rsa/rsa.go.html#line-442">#L442</a>: 	c := encrypt(new(big.<b>Int</b>), pub, m)
+		<a href="../../src/crypto/rsa/rsa.go.html#line-463" class="path-duplicate">rsa.go</a><a href="../../src/crypto/rsa/rsa.go.html#line-463">#L463</a>: 	priv.Precomputed.Dp = new(big.<b>Int</b>).Sub(priv.Primes[0], bigOne)
+		<a href="../../src/crypto/rsa/rsa.go.html#line-466" class="path-duplicate">rsa.go</a><a href="../../src/crypto/rsa/rsa.go.html#line-466">#L466</a>: 	priv.Precomputed.Dq = new(big.<b>Int</b>).Sub(priv.Primes[1], bigOne)
+		<a href="../../src/crypto/rsa/rsa.go.html#line-469" class="path-duplicate">rsa.go</a><a href="../../src/crypto/rsa/rsa.go.html#line-469">#L469</a>: 	priv.Precomputed.Qinv = new(big.<b>Int</b>).ModInverse(priv.Primes[1], priv.Primes[0])
+		<a href="../../src/crypto/rsa/rsa.go.html#line-471" class="path-duplicate">rsa.go</a><a href="../../src/crypto/rsa/rsa.go.html#line-471">#L471</a>: 	r := new(big.<b>Int</b>).Mul(priv.Primes[0], priv.Primes[1])
+		<a href="../../src/crypto/rsa/rsa.go.html#line-477" class="path-duplicate">rsa.go</a><a href="../../src/crypto/rsa/rsa.go.html#line-477">#L477</a>: 		values.Exp = new(big.<b>Int</b>).Sub(prime, bigOne)
+		<a href="../../src/crypto/rsa/rsa.go.html#line-480" class="path-duplicate">rsa.go</a><a href="../../src/crypto/rsa/rsa.go.html#line-480">#L480</a>: 		values.R = new(big.<b>Int</b>).Set(r)
+		<a href="../../src/crypto/rsa/rsa.go.html#line-481" class="path-duplicate">rsa.go</a><a href="../../src/crypto/rsa/rsa.go.html#line-481">#L481</a>: 		values.Coeff = new(big.<b>Int</b>).ModInverse(r, prime)
+		<a href="../../src/crypto/rsa/rsa.go.html#line-489" class="path-duplicate">rsa.go</a><a href="../../src/crypto/rsa/rsa.go.html#line-489">#L489</a>: func decrypt(random io.Reader, priv *PrivateKey, c *big.<b>Int</b>) (m *big.<b>Int</b>, err error) {
+		<a href="../../src/crypto/rsa/rsa.go.html#line-499" class="path-duplicate">rsa.go</a><a href="../../src/crypto/rsa/rsa.go.html#line-499">#L499</a>: 	var ir *big.<b>Int</b>
+		<a href="../../src/crypto/rsa/rsa.go.html#line-508" class="path-duplicate">rsa.go</a><a href="../../src/crypto/rsa/rsa.go.html#line-508">#L508</a>: 		var r *big.<b>Int</b>
+		<a href="../../src/crypto/rsa/rsa.go.html#line-509" class="path-duplicate">rsa.go</a><a href="../../src/crypto/rsa/rsa.go.html#line-509">#L509</a>: 		ir = new(big.<b>Int</b>)
+		<a href="../../src/crypto/rsa/rsa.go.html#line-524" class="path-duplicate">rsa.go</a><a href="../../src/crypto/rsa/rsa.go.html#line-524">#L524</a>: 		rpowe := new(big.<b>Int</b>).Exp(r, bigE, priv.N) // N != 0
+		<a href="../../src/crypto/rsa/rsa.go.html#line-525" class="path-duplicate">rsa.go</a><a href="../../src/crypto/rsa/rsa.go.html#line-525">#L525</a>: 		cCopy := new(big.<b>Int</b>).Set(c)
+		<a href="../../src/crypto/rsa/rsa.go.html#line-532" class="path-duplicate">rsa.go</a><a href="../../src/crypto/rsa/rsa.go.html#line-532">#L532</a>: 		m = new(big.<b>Int</b>).Exp(c, priv.D, priv.N)
+		<a href="../../src/crypto/rsa/rsa.go.html#line-535" class="path-duplicate">rsa.go</a><a href="../../src/crypto/rsa/rsa.go.html#line-535">#L535</a>: 		m = new(big.<b>Int</b>).Exp(c, priv.Precomputed.Dp, priv.Primes[0])
+		<a href="../../src/crypto/rsa/rsa.go.html#line-536" class="path-duplicate">rsa.go</a><a href="../../src/crypto/rsa/rsa.go.html#line-536">#L536</a>: 		m2 := new(big.<b>Int</b>).Exp(c, priv.Precomputed.Dq, priv.Primes[1])
+		<a href="../../src/crypto/rsa/rsa.go.html#line-569" class="path-duplicate">rsa.go</a><a href="../../src/crypto/rsa/rsa.go.html#line-569">#L569</a>: func decryptAndCheck(random io.Reader, priv *PrivateKey, c *big.<b>Int</b>) (m *big.<b>Int</b>, err error) {
+		<a href="../../src/crypto/rsa/rsa.go.html#line-577" class="path-duplicate">rsa.go</a><a href="../../src/crypto/rsa/rsa.go.html#line-577">#L577</a>: 	check := encrypt(new(big.<b>Int</b>), &amp;priv.PublicKey, m)
+		<a href="../../src/crypto/rsa/rsa.go.html#line-606" class="path-duplicate">rsa.go</a><a href="../../src/crypto/rsa/rsa.go.html#line-606">#L606</a>: 	c := new(big.<b>Int</b>).SetBytes(ciphertext)
+
+	<a href="../../pkg/crypto/tls.html">crypto/tls</a>
+		<a href="../../src/crypto/tls/key_schedule.go.html#line-154">key_schedule.go#L154</a>: 	x, y       *big.<b>Int</b> // public key
+
+	<a href="../../pkg/crypto/x509.html">crypto/x509</a>
+		<a href="../../src/crypto/x509/parser.go.html#line-249">parser.go#L249</a>: 		p := &amp;pkcs1PublicKey{N: new(big.<b>Int</b>)}
+		<a href="../../src/crypto/x509/parser.go.html#line-303" class="path-duplicate">parser.go</a><a href="../../src/crypto/x509/parser.go.html#line-303">#L303</a>: 		y := new(big.<b>Int</b>)
+		<a href="../../src/crypto/x509/parser.go.html#line-310" class="path-duplicate">parser.go</a><a href="../../src/crypto/x509/parser.go.html#line-310">#L310</a>: 				P: new(big.<b>Int</b>),
+		<a href="../../src/crypto/x509/parser.go.html#line-311" class="path-duplicate">parser.go</a><a href="../../src/crypto/x509/parser.go.html#line-311">#L311</a>: 				Q: new(big.<b>Int</b>),
+		<a href="../../src/crypto/x509/parser.go.html#line-312" class="path-duplicate">parser.go</a><a href="../../src/crypto/x509/parser.go.html#line-312">#L312</a>: 				G: new(big.<b>Int</b>),
+		<a href="../../src/crypto/x509/parser.go.html#line-852" class="path-duplicate">parser.go</a><a href="../../src/crypto/x509/parser.go.html#line-852">#L852</a>: 	serial := new(big.<b>Int</b>)
+		<a href="../../src/crypto/x509/pkcs1.go.html#line-17">pkcs1.go#L17</a>: 	N       *big.<b>Int</b>
+		<a href="../../src/crypto/x509/pkcs1.go.html#line-19" class="path-duplicate">pkcs1.go</a><a href="../../src/crypto/x509/pkcs1.go.html#line-19">#L19</a>: 	D       *big.<b>Int</b>
+		<a href="../../src/crypto/x509/pkcs1.go.html#line-20" class="path-duplicate">pkcs1.go</a><a href="../../src/crypto/x509/pkcs1.go.html#line-20">#L20</a>: 	P       *big.<b>Int</b>
+		<a href="../../src/crypto/x509/pkcs1.go.html#line-21" class="path-duplicate">pkcs1.go</a><a href="../../src/crypto/x509/pkcs1.go.html#line-21">#L21</a>: 	Q       *big.<b>Int</b>
+		<a href="../../src/crypto/x509/pkcs1.go.html#line-23" class="path-duplicate">pkcs1.go</a><a href="../../src/crypto/x509/pkcs1.go.html#line-23">#L23</a>: 	Dp   *big.<b>Int</b> `asn1:"optional"`
+		<a href="../../src/crypto/x509/pkcs1.go.html#line-24" class="path-duplicate">pkcs1.go</a><a href="../../src/crypto/x509/pkcs1.go.html#line-24">#L24</a>: 	Dq   *big.<b>Int</b> `asn1:"optional"`
+		<a href="../../src/crypto/x509/pkcs1.go.html#line-25" class="path-duplicate">pkcs1.go</a><a href="../../src/crypto/x509/pkcs1.go.html#line-25">#L25</a>: 	Qinv *big.<b>Int</b> `asn1:"optional"`
+		<a href="../../src/crypto/x509/pkcs1.go.html#line-31" class="path-duplicate">pkcs1.go</a><a href="../../src/crypto/x509/pkcs1.go.html#line-31">#L31</a>: 	Prime *big.<b>Int</b>
+		<a href="../../src/crypto/x509/pkcs1.go.html#line-34" class="path-duplicate">pkcs1.go</a><a href="../../src/crypto/x509/pkcs1.go.html#line-34">#L34</a>: 	Exp   *big.<b>Int</b>
+		<a href="../../src/crypto/x509/pkcs1.go.html#line-35" class="path-duplicate">pkcs1.go</a><a href="../../src/crypto/x509/pkcs1.go.html#line-35">#L35</a>: 	Coeff *big.<b>Int</b>
+		<a href="../../src/crypto/x509/pkcs1.go.html#line-40" class="path-duplicate">pkcs1.go</a><a href="../../src/crypto/x509/pkcs1.go.html#line-40">#L40</a>: 	N *big.<b>Int</b>
+		<a href="../../src/crypto/x509/pkcs1.go.html#line-78" class="path-duplicate">pkcs1.go</a><a href="../../src/crypto/x509/pkcs1.go.html#line-78">#L78</a>: 	key.Primes = make([]*big.<b>Int</b>, 2+len(priv.AdditionalPrimes))
+		<a href="../../src/crypto/x509/sec1.go.html#line-93">sec1.go#L93</a>: 	k := new(big.<b>Int</b>).SetBytes(privKey.PrivateKey)
+		<a href="../../src/crypto/x509/x509.go.html#line-149">x509.go#L149</a>: 	SerialNumber       *big.<b>Int</b>
+		<a href="../../src/crypto/x509/x509.go.html#line-161" class="path-duplicate">x509.go</a><a href="../../src/crypto/x509/x509.go.html#line-161">#L161</a>: 	P, Q, G *big.<b>Int</b>
+		<a href="../../src/crypto/x509/x509.go.html#line-641" class="path-duplicate">x509.go</a><a href="../../src/crypto/x509/x509.go.html#line-641">#L641</a>: 	SerialNumber        *big.<b>Int</b>
+		<a href="../../src/crypto/x509/x509.go.html#line-2083" class="path-duplicate">x509.go</a><a href="../../src/crypto/x509/x509.go.html#line-2083">#L2083</a>: 	Number *big.<b>Int</b>
+
+	<a href="../../pkg/crypto/x509/pkix.html">crypto/x509/pkix</a>
+		<a href="../../src/crypto/x509/pkix/pkix.go.html#line-313">pkix.go#L313</a>: 	SerialNumber   *big.<b>Int</b>
+
+	<a href="../../pkg/encoding/asn1.html">encoding/asn1</a>
+		<a href="../../src/encoding/asn1/asn1.go.html#line-134">asn1.go#L134</a>: func parseBigInt(bytes []byte) (*big.<b>Int</b>, error) {
+		<a href="../../src/encoding/asn1/asn1.go.html#line-138" class="path-duplicate">asn1.go</a><a href="../../src/encoding/asn1/asn1.go.html#line-138">#L138</a>: 	ret := new(big.<b>Int</b>)
+		<a href="../../src/encoding/asn1/asn1.go.html#line-663" class="path-duplicate">asn1.go</a><a href="../../src/encoding/asn1/asn1.go.html#line-663">#L663</a>: 	bigIntType           = reflect.TypeOf(new(big.<b>Int</b>))
+		<a href="../../src/encoding/asn1/asn1.go.html#line-881" class="path-duplicate">asn1.go</a><a href="../../src/encoding/asn1/asn1.go.html#line-881">#L881</a>: 	case **big.<b>Int</b>:
+		<a href="../../src/encoding/asn1/marshal.go.html#line-197">marshal.go#L197</a>: func makeBigInt(n *big.<b>Int</b>) (encoder, error) {
+		<a href="../../src/encoding/asn1/marshal.go.html#line-207" class="path-duplicate">marshal.go</a><a href="../../src/encoding/asn1/marshal.go.html#line-207">#L207</a>: 		nMinus1 := new(big.<b>Int</b>).Neg(n)
+		<a href="../../src/encoding/asn1/marshal.go.html#line-476" class="path-duplicate">marshal.go</a><a href="../../src/encoding/asn1/marshal.go.html#line-476">#L476</a>: 		return makeBigInt(value.Interface().(*big.<b>Int</b>))
+
+	<a href="../../pkg/github.com/go-sql-driver/mysql.html">github.com/go-sql-driver/mysql</a>
+		<a href="../../src/github.com/go-sql-driver/mysql/dsn.go.html#line-91">dsn.go#L91</a>: 			N: new(big.<b>Int</b>).Set(cfg.pubKey.N),
+
+	<a href="../../pkg/vendor/golang.org/x/crypto/cryptobyte.html">vendor/golang.org/x/crypto/cryptobyte</a>
+		<a href="../../src/vendor/golang.org/x/crypto/cryptobyte/asn1.go.html#line-67">asn1.go#L67</a>: func (b *Builder) AddASN1BigInt(n *big.<b>Int</b>) {
+		<a href="../../src/vendor/golang.org/x/crypto/cryptobyte/asn1.go.html#line-78" class="path-duplicate">asn1.go</a><a href="../../src/vendor/golang.org/x/crypto/cryptobyte/asn1.go.html#line-78">#L78</a>: 			nMinus1 := new(big.<b>Int</b>).Neg(n)
+		<a href="../../src/vendor/golang.org/x/crypto/cryptobyte/asn1.go.html#line-267" class="path-duplicate">asn1.go</a><a href="../../src/vendor/golang.org/x/crypto/cryptobyte/asn1.go.html#line-267">#L267</a>: var bigIntType = reflect.TypeOf((*big.<b>Int</b>)(nil)).Elem()
+		<a href="../../src/vendor/golang.org/x/crypto/cryptobyte/asn1.go.html#line-293" class="path-duplicate">asn1.go</a><a href="../../src/vendor/golang.org/x/crypto/cryptobyte/asn1.go.html#line-293">#L293</a>: 			return s.readASN1BigInt(out.(*big.<b>Int</b>))
+		<a href="../../src/vendor/golang.org/x/crypto/cryptobyte/asn1.go.html#line-316" class="path-duplicate">asn1.go</a><a href="../../src/vendor/golang.org/x/crypto/cryptobyte/asn1.go.html#line-316">#L316</a>: func (s *String) readASN1BigInt(out *big.<b>Int</b>) bool {
+		<a href="../../src/vendor/golang.org/x/crypto/cryptobyte/asn1.go.html#line-684" class="path-duplicate">asn1.go</a><a href="../../src/vendor/golang.org/x/crypto/cryptobyte/asn1.go.html#line-684">#L684</a>: 			out.(*big.<b>Int</b>).Set(defaultValue.(*big.<b>Int</b>))
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

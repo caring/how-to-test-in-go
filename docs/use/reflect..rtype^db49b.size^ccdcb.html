@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: reflect.rtype.size</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/reflect.html">reflect</a>.<a href="../src/reflect/type.go.html#line-311">rtype</a>.<a href="../src/reflect/type.go.html#line-312">size</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">56 uses</span>
+
+	reflect (current package)
+		<a href="../src/reflect/abi.go.html#line-128">abi.go#L128</a>: 	if t.<b>size</b> == 0 {
+		<a href="../src/reflect/abi.go.html#line-153" class="path-duplicate">abi.go</a><a href="../src/reflect/abi.go.html#line-153">#L153</a>: 		a.stackAssign(t.<b>size</b>, uintptr(t.align))
+		<a href="../src/reflect/abi.go.html#line-201" class="path-duplicate">abi.go</a><a href="../src/reflect/abi.go.html#line-201">#L201</a>: 		return a.assignIntN(offset, t.<b>size</b>, 1, 0b1)
+		<a href="../src/reflect/abi.go.html#line-203" class="path-duplicate">abi.go</a><a href="../src/reflect/abi.go.html#line-203">#L203</a>: 		return a.assignIntN(offset, t.<b>size</b>, 1, 0b0)
+		<a href="../src/reflect/abi.go.html#line-212" class="path-duplicate">abi.go</a><a href="../src/reflect/abi.go.html#line-212">#L212</a>: 		return a.assignFloatN(offset, t.<b>size</b>, 1)
+		<a href="../src/reflect/abi.go.html#line-425" class="path-duplicate">abi.go</a><a href="../src/reflect/abi.go.html#line-425">#L425</a>: 			spill += arg.<b>size</b>
+		<a href="../src/reflect/type.go.html#line-312">type.go#L312</a>: 	<b>size</b>       uintptr
+		<a href="../src/reflect/type.go.html#line-802" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-802">#L802</a>: func (t *rtype) Size() uintptr { return t.<b>size</b> }
+		<a href="../src/reflect/type.go.html#line-812" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-812">#L812</a>: 	return int(t.<b>size</b>) * 8
+		<a href="../src/reflect/type.go.html#line-1834" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1834">#L1834</a>: 	if typ.<b>size</b> &gt;= 1&lt;&lt;16 {
+		<a href="../src/reflect/type.go.html#line-1926" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1926">#L1926</a>: 	if ktyp.<b>size</b> &gt; maxKeySize {
+		<a href="../src/reflect/type.go.html#line-1930" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1930">#L1930</a>: 		mt.keysize = uint8(ktyp.<b>size</b>)
+		<a href="../src/reflect/type.go.html#line-1932" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1932">#L1932</a>: 	if etyp.<b>size</b> &gt; maxValSize {
+		<a href="../src/reflect/type.go.html#line-1936" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1936">#L1936</a>: 		mt.valuesize = uint8(etyp.<b>size</b>)
+		<a href="../src/reflect/type.go.html#line-1938" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1938">#L1938</a>: 	mt.bucketsize = uint16(mt.bucket.<b>size</b>)
+		<a href="../src/reflect/type.go.html#line-2218" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2218">#L2218</a>: 	if ktyp.<b>size</b> &gt; maxKeySize {
+		<a href="../src/reflect/type.go.html#line-2221" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2221">#L2221</a>: 	if etyp.<b>size</b> &gt; maxValSize {
+		<a href="../src/reflect/type.go.html#line-2234" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2234">#L2234</a>: 	size := bucketSize*(1+ktyp.<b>size</b>+etyp.<b>size</b>) + overflowPad + ptrSize
+		<a href="../src/reflect/type.go.html#line-2240" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2240">#L2240</a>: 		nptr := (bucketSize*(1+ktyp.<b>size</b>+etyp.<b>size</b>) + ptrSize) / ptrSize
+		<a href="../src/reflect/type.go.html#line-2247" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2247">#L2247</a>: 		base += bucketSize * ktyp.<b>size</b> / ptrSize
+		<a href="../src/reflect/type.go.html#line-2252" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2252">#L2252</a>: 		base += bucketSize * etyp.<b>size</b> / ptrSize
+		<a href="../src/reflect/type.go.html#line-2268" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2268">#L2268</a>: 		<b>size</b>:    size,
+		<a href="../src/reflect/type.go.html#line-2292" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2292">#L2292</a>: 	words := typ.<b>size</b> / ptrSize
+		<a href="../src/reflect/type.go.html#line-2618" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2618">#L2618</a>: 		size = offset + ft.<b>size</b>
+		<a href="../src/reflect/type.go.html#line-2621" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2621">#L2621</a>: 		if ft.<b>size</b> == 0 {
+		<a href="../src/reflect/type.go.html#line-2732" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2732">#L2732</a>: 	typ.<b>size</b> = size
+		<a href="../src/reflect/type.go.html#line-2912" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2912">#L2912</a>: 	if typ.<b>size</b> &gt; 0 {
+		<a href="../src/reflect/type.go.html#line-2913" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2913">#L2913</a>: 		max := ^uintptr(0) / typ.<b>size</b>
+		<a href="../src/reflect/type.go.html#line-2918" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2918">#L2918</a>: 	array.<b>size</b> = typ.<b>size</b> * uintptr(length)
+		<a href="../src/reflect/type.go.html#line-2920" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2920">#L2920</a>: 		array.ptrdata = typ.<b>size</b>*uintptr(length-1) + typ.ptrdata
+		<a href="../src/reflect/type.go.html#line-2928" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2928">#L2928</a>: 	case typ.ptrdata == 0 || array.<b>size</b> == 0:
+		<a href="../src/reflect/type.go.html#line-2939" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2939">#L2939</a>: 	case typ.kind&amp;kindGCProg == 0 &amp;&amp; array.<b>size</b> &lt;= maxPtrmaskBytes*8*ptrSize:
+		<a href="../src/reflect/type.go.html#line-2954" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2954">#L2954</a>: 		elemWords := typ.<b>size</b> / ptrSize
+		<a href="../src/reflect/type.go.html#line-2975" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2975">#L2975</a>: 		array.ptrdata = array.<b>size</b> // overestimate but ok; must match program
+		<a href="../src/reflect/type.go.html#line-3071" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-3071">#L3071</a>: 		<b>size</b>:    align(abi.retOffset+abi.ret.stackBytes, ptrSize),
+		<a href="../src/reflect/type.go.html#line-3144" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-3144">#L3144</a>: 			addTypeBits(bv, offset+uintptr(i)*tt.elem.<b>size</b>, tt.elem)
+		<a href="../src/reflect/value.go.html#line-97">value.go#L97</a>: 	if v.typ.<b>size</b> != ptrSize || !v.typ.pointers() {
+		<a href="../src/reflect/value.go.html#line-446" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-446">#L446</a>: 	if frametype.<b>size</b> != 0 {
+		<a href="../src/reflect/value.go.html#line-455" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-455">#L455</a>: 	frameSize := frametype.<b>size</b>
+		<a href="../src/reflect/value.go.html#line-556" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-556">#L556</a>: 	call(frametype, fn, stackArgs, uint32(frametype.<b>size</b>), uint32(abi.retOffset), uint32(frameSize), &amp;regArgs)
+		<a href="../src/reflect/value.go.html#line-698" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-698">#L698</a>: 				if typ.<b>size</b> &gt; 0 {
+		<a href="../src/reflect/value.go.html#line-760" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-760">#L760</a>: 			if typ.<b>size</b> == 0 {
+		<a href="../src/reflect/value.go.html#line-1056" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-1056">#L1056</a>: 	methodFrameSize := methodFrameType.<b>size</b>
+		<a href="../src/reflect/value.go.html#line-1068" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-1068">#L1068</a>: 	call(methodFrameType, methodFn, methodFrame, uint32(methodFrameType.<b>size</b>), uint32(methodABI.retOffset), uint32(methodFrameSize), &amp;methodRegs)
+		<a href="../src/reflect/value.go.html#line-1082" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-1082">#L1082</a>: 	if retSize := methodFrameType.<b>size</b> - methodABI.retOffset; retSize &gt; 0 {
+		<a href="../src/reflect/value.go.html#line-1294" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-1294">#L1294</a>: 		offset := uintptr(i) * typ.<b>size</b>
+		<a href="../src/reflect/value.go.html#line-1314" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-1314">#L1314</a>: 		val := arrayAt(s.Data, i, typ.<b>size</b>, "i &lt; s.Len")
+		<a href="../src/reflect/value.go.html#line-1767" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-1767">#L1767</a>: 		bitSize := v.typ.<b>size</b> * 8
+		<a href="../src/reflect/value.go.html#line-1780" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-1780">#L1780</a>: 		bitSize := v.typ.<b>size</b> * 8
+		<a href="../src/reflect/value.go.html#line-2732" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2732">#L2732</a>: 		if t.<b>size</b> &lt;= maxZero {
+		<a href="../src/reflect/value.go.html#line-2945" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2945">#L2945</a>: 	switch typ.<b>size</b> {
+		<a href="../src/reflect/value.go.html#line-2963" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2963">#L2963</a>: 	switch typ.<b>size</b> {
+		<a href="../src/reflect/value.go.html#line-2985" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2985">#L2985</a>: 	switch typ.<b>size</b> {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

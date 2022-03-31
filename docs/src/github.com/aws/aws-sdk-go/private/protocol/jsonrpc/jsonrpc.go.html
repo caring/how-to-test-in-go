@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Source: jsonrpc.go in package github.com/aws/aws-sdk-go/private/protocol/jsonrpc</title>
+<link href="../../../../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre id="header"><code><span class="title">Source File</span>
+	jsonrpc.go
+
+<span class="title">Belonging Package</span>
+	<a href="../../../../../../../pkg/github.com/aws/aws-sdk-go/private/protocol/jsonrpc.html">github.com/aws/aws-sdk-go/private/protocol/jsonrpc</a>
+</code></pre>
+<style>input[type=radio] {display: none;}
+input[id=r0]:checked ~pre label[for=r0],
+input[id=r1]:checked ~pre label[for=r1],
+input[id=r2]:checked ~pre label[for=r2],
+input[id=r3]:checked ~pre label[for=r3],
+input[id=r4]:checked ~pre label[for=r4],
+input[id=r5]:checked ~pre label[for=r5],
+input[id=r6]:checked ~pre label[for=r6],
+input[id=r7]:checked ~pre label[for=r7],
+input[id=r8]:checked ~pre label[for=r8],
+input[id=r9]:checked ~pre label[for=r9],
+input[id=r10]:checked ~pre label[for=r10],
+input[id=r11]:checked ~pre label[for=r11],
+input[id=r12]:checked ~pre label[for=r12]
+{background: #226; color: #ff8;}
+input[id=i0]:checked ~pre .i0,
+input[id=i1]:checked ~pre .i1,
+input[id=i2]:checked ~pre .i2,
+input[id=i3]:checked ~pre .i3
+{background: brown; color: #eed;}
+</style><input id="r0" type="radio" name="g"/>
+<input id="r1" type="radio" name="g"/>
+<input id="r2" type="radio" name="g"/>
+<input id="r3" type="radio" name="g"/>
+<input id="r4" type="radio" name="g"/>
+<input id="r5" type="radio" name="g"/>
+<input id="r6" type="radio" name="g"/>
+<input id="r7" type="radio" name="g"/>
+<input id="r8" type="radio" name="g"/>
+<input id="r9" type="radio" name="g"/>
+<input id="r10" type="radio" name="g"/>
+<input id="r11" type="radio" name="g"/>
+<input id="r12" type="radio" name="g"/>
+<input id="i0" type="radio" name="i"/>
+<input id="i1" type="radio" name="i"/>
+<input id="i2" type="radio" name="i"/>
+<input id="i3" type="radio" name="i"/>
+
+<pre class="line-numbers">
+<div class="anchor" id="doc"><span class="codeline" id="line-1"><code><span class="comment">// Package jsonrpc provides JSON RPC utilities for serialization of AWS</span></code></span>
+<span class="codeline" id="line-2"><code><span class="comment">// requests and responses.</span></code></span></div><span class="codeline" id="line-3"><code><span class="keyword">package</span> jsonrpc</code></span>
+<span class="codeline" id="line-4"><code></code></span>
+<span class="codeline" id="line-5"><code><span class="comment">//go:generate go run -tags codegen ../../../private/model/cli/gen-protocol-tests ../../../models/protocol_tests/input/json.json build_test.go</span></code></span>
+<span class="codeline" id="line-6"><code><span class="comment">//go:generate go run -tags codegen ../../../private/model/cli/gen-protocol-tests ../../../models/protocol_tests/output/json.json unmarshal_test.go</span></code></span>
+<span class="codeline" id="line-7"><code></code></span>
+<span class="codeline" id="line-8"><code><span class="keyword">import</span> (</code></span>
+<span class="codeline" id="line-9"><code>	<label for="i0"><span class="lit-string i0">"github.com/aws/aws-sdk-go/aws/awserr"</span></label></code></span>
+<span class="codeline" id="line-10"><code>	<label for="i1"><span class="lit-string i1">"github.com/aws/aws-sdk-go/aws/request"</span></label></code></span>
+<span class="codeline" id="line-11"><code>	<label for="i2"><span class="lit-string i2">"github.com/aws/aws-sdk-go/private/protocol/json/jsonutil"</span></label></code></span>
+<span class="codeline" id="line-12"><code>	<label for="i3"><span class="lit-string i3">"github.com/aws/aws-sdk-go/private/protocol/rest"</span></label></code></span>
+<span class="codeline" id="line-13"><code>)</code></span>
+<span class="codeline" id="line-14"><code></code></span>
+<span class="codeline" id="line-15"><code><span class="keyword">var</span> <a href="../../../../../../../pkg/github.com/aws/aws-sdk-go/private/protocol/jsonrpc.html#name-emptyJSON" class="ident">emptyJSON</a> = []<a href="../../../../../../../pkg/builtin.html#name-byte" class="ident">byte</a>(<span class="lit-string">"{}"</span>)</code></span>
+<span class="codeline" id="line-16"><code></code></span>
+<span class="codeline" id="line-17"><code><span class="comment">// BuildHandler is a named request handler for building jsonrpc protocol</span></code></span>
+<span class="codeline" id="line-18"><code><span class="comment">// requests</span></code></span>
+<span class="codeline" id="line-19"><code><span class="keyword">var</span> <a href="../../../../../../../pkg/github.com/aws/aws-sdk-go/private/protocol/jsonrpc.html#name-BuildHandler" class="ident">BuildHandler</a> = <a href="../../../../../../../pkg/github.com/aws/aws-sdk-go/aws/request.html" class="ident i1">request</a>.<a href="../../../aws/request/handlers.go.html#line-138" class="ident">NamedHandler</a>{</code></span>
+<span class="codeline" id="line-20"><code>	<a href="../../../aws/request/handlers.go.html#line-139" class="ident">Name</a>: <span class="lit-string">"awssdk.jsonrpc.Build"</span>,</code></span>
+<span class="codeline" id="line-21"><code>	<a href="../../../aws/request/handlers.go.html#line-140" class="ident">Fn</a>:   <a href="#line-39" class="ident">Build</a>,</code></span>
+<span class="codeline" id="line-22"><code>}</code></span>
+<span class="codeline" id="line-23"><code></code></span>
+<span class="codeline" id="line-24"><code><span class="comment">// UnmarshalHandler is a named request handler for unmarshaling jsonrpc</span></code></span>
+<span class="codeline" id="line-25"><code><span class="comment">// protocol requests</span></code></span>
+<span class="codeline" id="line-26"><code><span class="keyword">var</span> <a href="../../../../../../../pkg/github.com/aws/aws-sdk-go/private/protocol/jsonrpc.html#name-UnmarshalHandler" class="ident">UnmarshalHandler</a> = <a href="../../../../../../../pkg/github.com/aws/aws-sdk-go/aws/request.html" class="ident i1">request</a>.<a href="../../../aws/request/handlers.go.html#line-138" class="ident">NamedHandler</a>{</code></span>
+<span class="codeline" id="line-27"><code>	<a href="../../../aws/request/handlers.go.html#line-139" class="ident">Name</a>: <span class="lit-string">"awssdk.jsonrpc.Unmarshal"</span>,</code></span>
+<span class="codeline" id="line-28"><code>	<a href="../../../aws/request/handlers.go.html#line-140" class="ident">Fn</a>:   <a href="#line-70" class="ident">Unmarshal</a>,</code></span>
+<span class="codeline" id="line-29"><code>}</code></span>
+<span class="codeline" id="line-30"><code></code></span>
+<span class="codeline" id="line-31"><code><span class="comment">// UnmarshalMetaHandler is a named request handler for unmarshaling jsonrpc</span></code></span>
+<span class="codeline" id="line-32"><code><span class="comment">// protocol request metadata</span></code></span>
+<span class="codeline" id="line-33"><code><span class="keyword">var</span> <a href="../../../../../../../pkg/github.com/aws/aws-sdk-go/private/protocol/jsonrpc.html#name-UnmarshalMetaHandler" class="ident">UnmarshalMetaHandler</a> = <a href="../../../../../../../pkg/github.com/aws/aws-sdk-go/aws/request.html" class="ident i1">request</a>.<a href="../../../aws/request/handlers.go.html#line-138" class="ident">NamedHandler</a>{</code></span>
+<span class="codeline" id="line-34"><code>	<a href="../../../aws/request/handlers.go.html#line-139" class="ident">Name</a>: <span class="lit-string">"awssdk.jsonrpc.UnmarshalMeta"</span>,</code></span>
+<span class="codeline" id="line-35"><code>	<a href="../../../aws/request/handlers.go.html#line-140" class="ident">Fn</a>:   <a href="#line-86" class="ident">UnmarshalMeta</a>,</code></span>
+<span class="codeline" id="line-36"><code>}</code></span>
+<span class="codeline" id="line-37"><code></code></span>
+<span class="codeline" id="line-38"><code><span class="comment">// Build builds a JSON payload for a JSON RPC request.</span></code></span>
+<span class="codeline" id="line-39"><code><span class="keyword">func</span> <label for="r0" class="ident"><a href="../../../../../../../pkg/github.com/aws/aws-sdk-go/private/protocol/jsonrpc.html#name-Build" class="ident">Build</a></label>(<label for="r1" class="ident">req</label> *<a href="../../../../../../../pkg/github.com/aws/aws-sdk-go/aws/request.html" class="ident i1">request</a>.<a href="../../../aws/request/request.go.html#line-46" class="ident">Request</a>) {</code></span>
+<span class="codeline" id="line-40"><code>	<span class="keyword">var</span> <label for="r2" class="ident">buf</label> []<a href="../../../../../../../pkg/builtin.html#name-byte" class="ident">byte</a></code></span>
+<span class="codeline" id="line-41"><code>	<span class="keyword">var</span> <label for="r3" class="ident">err</label> <a href="../../../../../../../pkg/builtin.html#name-error" class="ident">error</a></code></span>
+<span class="codeline" id="line-42"><code>	<span class="keyword">if</span> <label for="r1" class="ident">req</label>.<a href="../../../aws/request/request.go.html#line-261" class="ident">ParamsFilled</a>() {</code></span>
+<span class="codeline" id="line-43"><code>		<label for="r2" class="ident">buf</label>, <label for="r3" class="ident">err</label> = <a href="../../../../../../../pkg/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil.html" class="ident i2">jsonutil</a>.<a href="../json/jsonutil/build.go.html#line-23" class="ident">BuildJSON</a>(<label for="r1" class="ident">req</label>.<a href="../../../aws/request/request.go.html#line-60" class="ident">Params</a>)</code></span>
+<span class="codeline" id="line-44"><code>		<span class="keyword">if</span> <label for="r3" class="ident">err</label> != <a href="../../../../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-45"><code>			<label for="r1" class="ident">req</label>.<a href="../../../aws/request/request.go.html#line-61" class="ident">Error</a> = <a href="../../../../../../../pkg/github.com/aws/aws-sdk-go/aws/awserr.html" class="ident i0">awserr</a>.<a href="../../../aws/awserr/error.go.html#line-82" class="ident">New</a>(<a href="../../../../../../../pkg/github.com/aws/aws-sdk-go/aws/request.html" class="ident i1">request</a>.<a href="../../../aws/request/request.go.html#line-22" class="ident">ErrCodeSerialization</a>, <span class="lit-string">"failed encoding JSON RPC request"</span>, <label for="r3" class="ident">err</label>)</code></span>
+<span class="codeline" id="line-46"><code>			<span class="keyword">return</span></code></span>
+<span class="codeline" id="line-47"><code>		}</code></span>
+<span class="codeline" id="line-48"><code>	} <span class="keyword">else</span> {</code></span>
+<span class="codeline" id="line-49"><code>		<label for="r2" class="ident">buf</label> = <a href="#line-15" class="ident">emptyJSON</a></code></span>
+<span class="codeline" id="line-50"><code>	}</code></span>
+<span class="codeline" id="line-51"><code></code></span>
+<span class="codeline" id="line-52"><code>	<span class="keyword">if</span> <label for="r1" class="ident">req</label>.<a href="../../../aws/request/request.go.html#line-48" class="ident">ClientInfo</a>.<a href="../../../aws/client/metadata/client_info.go.html#line-13" class="ident">TargetPrefix</a> != <span class="lit-string">""</span> || <a href="../../../../../../../pkg/builtin.html#name-string" class="ident">string</a>(<label for="r2" class="ident">buf</label>) != <span class="lit-string">"{}"</span> {</code></span>
+<span class="codeline" id="line-53"><code>		<label for="r1" class="ident">req</label>.<a href="../../../aws/request/request.go.html#line-274" class="ident">SetBufferBody</a>(<label for="r2" class="ident">buf</label>)</code></span>
+<span class="codeline" id="line-54"><code>	}</code></span>
+<span class="codeline" id="line-55"><code></code></span>
+<span class="codeline" id="line-56"><code>	<span class="keyword">if</span> <label for="r1" class="ident">req</label>.<a href="../../../aws/request/request.go.html#line-48" class="ident">ClientInfo</a>.<a href="../../../aws/client/metadata/client_info.go.html#line-13" class="ident">TargetPrefix</a> != <span class="lit-string">""</span> {</code></span>
+<span class="codeline" id="line-57"><code>		<label for="r4" class="ident">target</label> := <label for="r1" class="ident">req</label>.<a href="../../../aws/request/request.go.html#line-48" class="ident">ClientInfo</a>.<a href="../../../aws/client/metadata/client_info.go.html#line-13" class="ident">TargetPrefix</a> + <span class="lit-string">"."</span> + <label for="r1" class="ident">req</label>.<a href="../../../aws/request/request.go.html#line-54" class="ident">Operation</a>.<a href="../../../aws/request/request.go.html#line-99" class="ident">Name</a></code></span>
+<span class="codeline" id="line-58"><code>		<label for="r1" class="ident">req</label>.<a href="../../../aws/request/request.go.html#line-55" class="ident">HTTPRequest</a>.<a href="../../../../../../net/http/request.go.html#line-166" class="ident">Header</a>.<a href="../../../../../../net/http/header.go.html#line-28" class="ident">Add</a>(<span class="lit-string">"X-Amz-Target"</span>, <label for="r4" class="ident">target</label>)</code></span>
+<span class="codeline" id="line-59"><code>	}</code></span>
+<span class="codeline" id="line-60"><code></code></span>
+<span class="codeline" id="line-61"><code>	<span class="comment">// Only set the content type if one is not already specified and an</span></code></span>
+<span class="codeline" id="line-62"><code><span class="comment">	// JSONVersion is specified.</span></code></span>
+<span class="codeline" id="line-63"><code>	<span class="keyword">if</span> <label for="r5" class="ident">ct</label>, <label for="r6" class="ident">v</label> := <label for="r1" class="ident">req</label>.<a href="../../../aws/request/request.go.html#line-55" class="ident">HTTPRequest</a>.<a href="../../../../../../net/http/request.go.html#line-166" class="ident">Header</a>.<a href="../../../../../../net/http/header.go.html#line-46" class="ident">Get</a>(<span class="lit-string">"Content-Type"</span>), <label for="r1" class="ident">req</label>.<a href="../../../aws/request/request.go.html#line-48" class="ident">ClientInfo</a>.<a href="../../../aws/client/metadata/client_info.go.html#line-12" class="ident">JSONVersion</a>; <a href="../../../../../../../pkg/builtin.html#name-len" class="ident">len</a>(<label for="r5" class="ident">ct</label>) == <span class="lit-number">0</span> &amp;&amp; <a href="../../../../../../../pkg/builtin.html#name-len" class="ident">len</a>(<label for="r6" class="ident">v</label>) != <span class="lit-number">0</span> {</code></span>
+<span class="codeline" id="line-64"><code>		<label for="r7" class="ident">jsonVersion</label> := <label for="r1" class="ident">req</label>.<a href="../../../aws/request/request.go.html#line-48" class="ident">ClientInfo</a>.<a href="../../../aws/client/metadata/client_info.go.html#line-12" class="ident">JSONVersion</a></code></span>
+<span class="codeline" id="line-65"><code>		<label for="r1" class="ident">req</label>.<a href="../../../aws/request/request.go.html#line-55" class="ident">HTTPRequest</a>.<a href="../../../../../../net/http/request.go.html#line-166" class="ident">Header</a>.<a href="../../../../../../net/http/header.go.html#line-37" class="ident">Set</a>(<span class="lit-string">"Content-Type"</span>, <span class="lit-string">"application/x-amz-json-"</span>+<label for="r7" class="ident">jsonVersion</label>)</code></span>
+<span class="codeline" id="line-66"><code>	}</code></span>
+<span class="codeline" id="line-67"><code>}</code></span>
+<span class="codeline" id="line-68"><code></code></span>
+<span class="codeline" id="line-69"><code><span class="comment">// Unmarshal unmarshals a response for a JSON RPC service.</span></code></span>
+<span class="codeline" id="line-70"><code><span class="keyword">func</span> <label for="r8" class="ident"><a href="../../../../../../../pkg/github.com/aws/aws-sdk-go/private/protocol/jsonrpc.html#name-Unmarshal" class="ident">Unmarshal</a></label>(<label for="r9" class="ident">req</label> *<a href="../../../../../../../pkg/github.com/aws/aws-sdk-go/aws/request.html" class="ident i1">request</a>.<a href="../../../aws/request/request.go.html#line-46" class="ident">Request</a>) {</code></span>
+<span class="codeline" id="line-71"><code>	<span class="keyword">defer</span> <label for="r9" class="ident">req</label>.<a href="../../../aws/request/request.go.html#line-56" class="ident">HTTPResponse</a>.<a href="../../../../../../net/http/response.go.html#line-72" class="ident">Body</a>.<a href="../../../../../../io/io.go.html#line-105" class="ident">Close</a>()</code></span>
+<span class="codeline" id="line-72"><code>	<span class="keyword">if</span> <label for="r9" class="ident">req</label>.<a href="../../../aws/request/request.go.html#line-268" class="ident">DataFilled</a>() {</code></span>
+<span class="codeline" id="line-73"><code>		<label for="r10" class="ident">err</label> := <a href="../../../../../../../pkg/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil.html" class="ident i2">jsonutil</a>.<a href="../json/jsonutil/unmarshal.go.html#line-39" class="ident">UnmarshalJSON</a>(<label for="r9" class="ident">req</label>.<a href="../../../aws/request/request.go.html#line-62" class="ident">Data</a>, <label for="r9" class="ident">req</label>.<a href="../../../aws/request/request.go.html#line-56" class="ident">HTTPResponse</a>.<a href="../../../../../../net/http/response.go.html#line-72" class="ident">Body</a>)</code></span>
+<span class="codeline" id="line-74"><code>		<span class="keyword">if</span> <label for="r10" class="ident">err</label> != <a href="../../../../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-75"><code>			<label for="r9" class="ident">req</label>.<a href="../../../aws/request/request.go.html#line-61" class="ident">Error</a> = <a href="../../../../../../../pkg/github.com/aws/aws-sdk-go/aws/awserr.html" class="ident i0">awserr</a>.<a href="../../../aws/awserr/error.go.html#line-147" class="ident">NewRequestFailure</a>(</code></span>
+<span class="codeline" id="line-76"><code>				<a href="../../../../../../../pkg/github.com/aws/aws-sdk-go/aws/awserr.html" class="ident i0">awserr</a>.<a href="../../../aws/awserr/error.go.html#line-82" class="ident">New</a>(<a href="../../../../../../../pkg/github.com/aws/aws-sdk-go/aws/request.html" class="ident i1">request</a>.<a href="../../../aws/request/request.go.html#line-22" class="ident">ErrCodeSerialization</a>, <span class="lit-string">"failed decoding JSON RPC response"</span>, <label for="r10" class="ident">err</label>),</code></span>
+<span class="codeline" id="line-77"><code>				<label for="r9" class="ident">req</label>.<a href="../../../aws/request/request.go.html#line-56" class="ident">HTTPResponse</a>.<a href="../../../../../../net/http/response.go.html#line-37" class="ident">StatusCode</a>,</code></span>
+<span class="codeline" id="line-78"><code>				<label for="r9" class="ident">req</label>.<a href="../../../aws/request/request.go.html#line-63" class="ident">RequestID</a>,</code></span>
+<span class="codeline" id="line-79"><code>			)</code></span>
+<span class="codeline" id="line-80"><code>		}</code></span>
+<span class="codeline" id="line-81"><code>	}</code></span>
+<span class="codeline" id="line-82"><code>	<span class="keyword">return</span></code></span>
+<span class="codeline" id="line-83"><code>}</code></span>
+<span class="codeline" id="line-84"><code></code></span>
+<span class="codeline" id="line-85"><code><span class="comment">// UnmarshalMeta unmarshals headers from a response for a JSON RPC service.</span></code></span>
+<span class="codeline" id="line-86"><code><span class="keyword">func</span> <label for="r11" class="ident"><a href="../../../../../../../pkg/github.com/aws/aws-sdk-go/private/protocol/jsonrpc.html#name-UnmarshalMeta" class="ident">UnmarshalMeta</a></label>(<label for="r12" class="ident">req</label> *<a href="../../../../../../../pkg/github.com/aws/aws-sdk-go/aws/request.html" class="ident i1">request</a>.<a href="../../../aws/request/request.go.html#line-46" class="ident">Request</a>) {</code></span>
+<span class="codeline" id="line-87"><code>	<a href="../../../../../../../pkg/github.com/aws/aws-sdk-go/private/protocol/rest.html" class="ident i3">rest</a>.<a href="../rest/unmarshal.go.html#line-39" class="ident">UnmarshalMeta</a>(<label for="r12" class="ident">req</label>)</code></span>
+<span class="codeline" id="line-88"><code>}</code></span>
+</pre><pre id="footer">
+<table><tr><td><img src="../../../../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: time.Millisecond</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">const <b><a href="../pkg/time.html">time</a>.<a href="../src/time/time.go.html#line-611">Millisecond</a></b></span>
+
+<span class="title">31 uses</span>
+
+	time (current package)
+		<a href="../src/time/format.go.html#line-1498">format.go#L1498</a>: 	"ms": int64(<b>Millisecond</b>),
+		<a href="../src/time/time.go.html#line-611">time.go#L611</a>: 	<b>Millisecond</b>          = 1000 * Microsecond
+		<a href="../src/time/time.go.html#line-612" class="path-duplicate">time.go</a><a href="../src/time/time.go.html#line-612">#L612</a>: 	Second               = 1000 * <b>Millisecond</b>
+		<a href="../src/time/time.go.html#line-646" class="path-duplicate">time.go</a><a href="../src/time/time.go.html#line-646">#L646</a>: 		case u &lt; uint64(<b>Millisecond</b>):
+
+	<a href="../pkg/crypto/tls.html">crypto/tls</a>
+		<a href="../src/crypto/tls/handshake_client.go.html#line-338">handshake_client.go#L338</a>: 	ticketAge := uint32(c.config.time().Sub(session.receivedAt) / time.<b>Millisecond</b>)
+		<a href="../src/crypto/tls/handshake_client_tls13.go.html#line-246">handshake_client_tls13.go#L246</a>: 			ticketAge := uint32(c.config.time().Sub(hs.session.receivedAt) / time.<b>Millisecond</b>)
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws.html">github.com/aws/aws-sdk-go/aws</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/convert_types.go.html#line-872">convert_types.go#L872</a>: 	return t.UnixNano() / int64(time.<b>Millisecond</b>/time.Nanosecond)
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/client.html">github.com/aws/aws-sdk-go/aws/client</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/client/default_retryer.go.html#line-43">default_retryer.go#L43</a>: 	DefaultRetryerMinRetryDelay = 30 * time.<b>Millisecond</b>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/client/default_retryer.go.html#line-46" class="path-duplicate">default_retryer.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/client/default_retryer.go.html#line-46">#L46</a>: 	DefaultRetryerMinThrottleDelay = 500 * time.<b>Millisecond</b>
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/csm.html">github.com/aws/aws-sdk-go/aws/csm</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/csm/metric.go.html#line-14">metric.go#L14</a>: 	return []byte(strconv.FormatInt(int64(ns/time.<b>Millisecond</b>), 10)), nil
+		<a href="../src/github.com/aws/aws-sdk-go/aws/csm/reporter.go.html#line-69">reporter.go#L69</a>: 		AttemptLatency: aws.Int(int(now.Sub(r.AttemptTime).Nanoseconds() / int64(time.<b>Millisecond</b>))),
+		<a href="../src/github.com/aws/aws-sdk-go/aws/csm/reporter.go.html#line-120" class="path-duplicate">reporter.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/csm/reporter.go.html#line-120">#L120</a>: 		Latency:            aws.Int(int(time.Since(r.Time) / time.<b>Millisecond</b>)),
+
+	<a href="../pkg/github.com/uber/jaeger-client-go/thrift.html">github.com/uber/jaeger-client-go/thrift</a>
+		<a href="../src/github.com/uber/jaeger-client-go/thrift/simple_server.go.html#line-49">simple_server.go#L49</a>: var ServerConnectivityCheckInterval = time.<b>Millisecond</b> * 5
+
+	<a href="../pkg/go.uber.org/zap.html">go.uber.org/zap</a>
+		<a href="../src/go.uber.org/zap/time.go.html#line-26">time.go#L26</a>: 	return t.UnixNano() / int64(time.<b>Millisecond</b>)
+
+	<a href="../pkg/go.uber.org/zap/zapcore.html">go.uber.org/zap/zapcore</a>
+		<a href="../src/go.uber.org/zap/zapcore/encoder.go.html#line-105">encoder.go#L105</a>: 	millis := float64(nanos) / float64(time.<b>Millisecond</b>)
+
+	<a href="../pkg/golang.org/x/net/trace.html">golang.org/x/net/trace</a>
+		<a href="../src/golang.org/x/net/trace/trace.go.html#line-577">trace.go#L577</a>: 			{Cond: minCond(50 * time.<b>Millisecond</b>)},
+		<a href="../src/golang.org/x/net/trace/trace.go.html#line-578" class="path-duplicate">trace.go</a><a href="../src/golang.org/x/net/trace/trace.go.html#line-578">#L578</a>: 			{Cond: minCond(100 * time.<b>Millisecond</b>)},
+		<a href="../src/golang.org/x/net/trace/trace.go.html#line-579" class="path-duplicate">trace.go</a><a href="../src/golang.org/x/net/trace/trace.go.html#line-579">#L579</a>: 			{Cond: minCond(200 * time.<b>Millisecond</b>)},
+		<a href="../src/golang.org/x/net/trace/trace.go.html#line-580" class="path-duplicate">trace.go</a><a href="../src/golang.org/x/net/trace/trace.go.html#line-580">#L580</a>: 			{Cond: minCond(500 * time.<b>Millisecond</b>)},
+
+	<a href="../pkg/google.golang.org/grpc.html">google.golang.org/grpc</a>
+		<a href="../src/google.golang.org/grpc/server.go.html#line-785">server.go#L785</a>: 					tempDelay = 5 * time.<b>Millisecond</b>
+		<a href="../src/google.golang.org/grpc/stream.go.html#line-620">stream.go#L620</a>: 		dur = time.<b>Millisecond</b> * time.Duration(pushback)
+
+	<a href="../pkg/google.golang.org/grpc/internal/channelz.html">google.golang.org/grpc/internal/channelz</a>
+		<a href="../src/google.golang.org/grpc/internal/channelz/funcs.go.html#line-130">funcs.go#L130</a>: 			time.Sleep(10 * time.<b>Millisecond</b>)
+
+	<a href="../pkg/google.golang.org/grpc/internal/grpcutil.html">google.golang.org/grpc/internal/grpcutil</a>
+		<a href="../src/google.golang.org/grpc/internal/grpcutil/encode_duration.go.html#line-52">encode_duration.go#L52</a>: 	if d := div(t, time.<b>Millisecond</b>); d &lt;= maxTimeoutValue {
+
+	<a href="../pkg/google.golang.org/grpc/internal/transport.html">google.golang.org/grpc/internal/transport</a>
+		<a href="../src/google.golang.org/grpc/internal/transport/http_util.go.html#line-196">http_util.go#L196</a>: 		return time.<b>Millisecond</b>, true
+
+	<a href="../pkg/net.html">net</a>
+		<a href="../src/net/dial.go.html#line-163">dial.go#L163</a>: 		return 300 * time.<b>Millisecond</b>
+
+	<a href="../pkg/net/http.html">net/http</a>
+		<a href="../src/net/http/server.go.html#line-1693">server.go#L1693</a>: const rstAvoidanceDelay = 500 * time.<b>Millisecond</b>
+		<a href="../src/net/http/server.go.html#line-2687" class="path-duplicate">server.go</a><a href="../src/net/http/server.go.html#line-2687">#L2687</a>: const shutdownPollIntervalMax = 500 * time.<b>Millisecond</b>
+		<a href="../src/net/http/server.go.html#line-2720" class="path-duplicate">server.go</a><a href="../src/net/http/server.go.html#line-2720">#L2720</a>: 	pollIntervalBase := time.<b>Millisecond</b>
+		<a href="../src/net/http/server.go.html#line-3011" class="path-duplicate">server.go</a><a href="../src/net/http/server.go.html#line-3011">#L3011</a>: 					tempDelay = 5 * time.<b>Millisecond</b>
+		<a href="../src/net/http/transfer.go.html#line-216">transfer.go#L216</a>: 	timer := time.NewTimer(200 * time.<b>Millisecond</b>)
+		<a href="../src/net/http/transport.go.html#line-2424">transport.go#L2424</a>: const maxWriteWaitBeforeConnReuse = 50 * time.<b>Millisecond</b>
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime.sched</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">var <b><a href="../pkg/runtime.html">runtime</a>.<a href="../src/runtime/runtime2.go.html#line-1095">sched</a></b></span>
+
+<span class="title">398 uses</span>
+
+	runtime (current package)
+		<a href="../src/runtime/debug.go.html#line-21">debug.go#L21</a>: 	lock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/debug.go.html#line-23" class="path-duplicate">debug.go</a><a href="../src/runtime/debug.go.html#line-23">#L23</a>: 	unlock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/debugcall.go.html#line-227">debugcall.go#L227</a>: 		lock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/debugcall.go.html#line-229" class="path-duplicate">debugcall.go</a><a href="../src/runtime/debugcall.go.html#line-229">#L229</a>: 		unlock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/metrics.go.html#line-286">metrics.go#L286</a>: 				hist.counts[0] = atomic.Load64(&amp;<b>sched</b>.timeToRun.underflow)
+		<a href="../src/runtime/metrics.go.html#line-287" class="path-duplicate">metrics.go</a><a href="../src/runtime/metrics.go.html#line-287">#L287</a>: 				for i := range <b>sched</b>.timeToRun.counts {
+		<a href="../src/runtime/metrics.go.html#line-288" class="path-duplicate">metrics.go</a><a href="../src/runtime/metrics.go.html#line-288">#L288</a>: 					hist.counts[i+1] = atomic.Load64(&amp;<b>sched</b>.timeToRun.counts[i])
+		<a href="../src/runtime/mgc.go.html#line-1003">mgc.go#L1003</a>: 	totalCpu := <b>sched</b>.totaltime + (now-<b>sched</b>.procresizetime)*int64(gomaxprocs)
+		<a href="../src/runtime/mgc.go.html#line-1277" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-1277">#L1277</a>: 						lock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/mgc.go.html#line-1279" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-1279">#L1279</a>: 						unlock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/mgc.go.html#line-1557" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-1557">#L1557</a>: 	lock(&amp;<b>sched</b>.sudoglock)
+		<a href="../src/runtime/mgc.go.html#line-1559" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-1559">#L1559</a>: 	for sg = <b>sched</b>.sudogcache; sg != nil; sg = sgnext {
+		<a href="../src/runtime/mgc.go.html#line-1563" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-1563">#L1563</a>: 	<b>sched</b>.sudogcache = nil
+		<a href="../src/runtime/mgc.go.html#line-1564" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-1564">#L1564</a>: 	unlock(&amp;<b>sched</b>.sudoglock)
+		<a href="../src/runtime/mgc.go.html#line-1568" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-1568">#L1568</a>: 	lock(&amp;<b>sched</b>.deferlock)
+		<a href="../src/runtime/mgc.go.html#line-1569" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-1569">#L1569</a>: 	for i := range <b>sched</b>.deferpool {
+		<a href="../src/runtime/mgc.go.html#line-1573" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-1573">#L1573</a>: 		for d = <b>sched</b>.deferpool[i]; d != nil; d = dlink {
+		<a href="../src/runtime/mgc.go.html#line-1577" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-1577">#L1577</a>: 		<b>sched</b>.deferpool[i] = nil
+		<a href="../src/runtime/mgc.go.html#line-1579" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-1579">#L1579</a>: 	unlock(&amp;<b>sched</b>.deferlock)
+		<a href="../src/runtime/mgcmark.go.html#line-277">mgcmark.go#L277</a>: 	lock(&amp;<b>sched</b>.gFree.lock)
+		<a href="../src/runtime/mgcmark.go.html#line-278" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-278">#L278</a>: 	list := <b>sched</b>.gFree.stack
+		<a href="../src/runtime/mgcmark.go.html#line-279" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-279">#L279</a>: 	<b>sched</b>.gFree.stack = gList{}
+		<a href="../src/runtime/mgcmark.go.html#line-280" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-280">#L280</a>: 	unlock(&amp;<b>sched</b>.gFree.lock)
+		<a href="../src/runtime/mgcmark.go.html#line-297" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-297">#L297</a>: 	lock(&amp;<b>sched</b>.gFree.lock)
+		<a href="../src/runtime/mgcmark.go.html#line-298" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-298">#L298</a>: 	<b>sched</b>.gFree.noStack.pushAll(q)
+		<a href="../src/runtime/mgcmark.go.html#line-299" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-299">#L299</a>: 	unlock(&amp;<b>sched</b>.gFree.lock)
+		<a href="../src/runtime/mgcmark.go.html#line-1008" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-1008">#L1008</a>: 		for !(gp.preempt &amp;&amp; (preemptible || atomic.Load(&amp;<b>sched</b>.gcwaiting) != 0)) {
+		<a href="../src/runtime/mgcmark.go.html#line-1022" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-1022">#L1022</a>: 	for !(gp.preempt &amp;&amp; (preemptible || atomic.Load(&amp;<b>sched</b>.gcwaiting) != 0)) {
+		<a href="../src/runtime/panic.go.html#line-428">panic.go#L428</a>: 		if len(pp.deferpool[sc]) == 0 &amp;&amp; <b>sched</b>.deferpool[sc] != nil {
+		<a href="../src/runtime/panic.go.html#line-432" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-432">#L432</a>: 				lock(&amp;<b>sched</b>.deferlock)
+		<a href="../src/runtime/panic.go.html#line-433" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-433">#L433</a>: 				for len(pp.deferpool[sc]) &lt; cap(pp.deferpool[sc])/2 &amp;&amp; <b>sched</b>.deferpool[sc] != nil {
+		<a href="../src/runtime/panic.go.html#line-434" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-434">#L434</a>: 					d := <b>sched</b>.deferpool[sc]
+		<a href="../src/runtime/panic.go.html#line-435" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-435">#L435</a>: 					<b>sched</b>.deferpool[sc] = d.link
+		<a href="../src/runtime/panic.go.html#line-439" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-439">#L439</a>: 				unlock(&amp;<b>sched</b>.deferlock)
+		<a href="../src/runtime/panic.go.html#line-501" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-501">#L501</a>: 			lock(&amp;<b>sched</b>.deferlock)
+		<a href="../src/runtime/panic.go.html#line-502" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-502">#L502</a>: 			last.link = <b>sched</b>.deferpool[sc]
+		<a href="../src/runtime/panic.go.html#line-503" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-503">#L503</a>: 			<b>sched</b>.deferpool[sc] = first
+		<a href="../src/runtime/panic.go.html#line-504" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-504">#L504</a>: 			unlock(&amp;<b>sched</b>.deferlock)
+		<a href="../src/runtime/proc.go.html#line-173">proc.go#L173</a>: 		atomic.Store(&amp;<b>sched</b>.sysmonStarting, 1)
+		<a href="../src/runtime/proc.go.html#line-394" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-394">#L394</a>: 		lock(&amp;<b>sched</b>.sudoglock)
+		<a href="../src/runtime/proc.go.html#line-396" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-396">#L396</a>: 		for len(pp.sudogcache) &lt; cap(pp.sudogcache)/2 &amp;&amp; <b>sched</b>.sudogcache != nil {
+		<a href="../src/runtime/proc.go.html#line-397" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-397">#L397</a>: 			s := <b>sched</b>.sudogcache
+		<a href="../src/runtime/proc.go.html#line-398" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-398">#L398</a>: 			<b>sched</b>.sudogcache = s.next
+		<a href="../src/runtime/proc.go.html#line-402" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-402">#L402</a>: 		unlock(&amp;<b>sched</b>.sudoglock)
+		<a href="../src/runtime/proc.go.html#line-460" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-460">#L460</a>: 		lock(&amp;<b>sched</b>.sudoglock)
+		<a href="../src/runtime/proc.go.html#line-461" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-461">#L461</a>: 		last.next = <b>sched</b>.sudogcache
+		<a href="../src/runtime/proc.go.html#line-462" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-462">#L462</a>: 		<b>sched</b>.sudogcache = first
+		<a href="../src/runtime/proc.go.html#line-463" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-463">#L463</a>: 		unlock(&amp;<b>sched</b>.sudoglock)
+		<a href="../src/runtime/proc.go.html#line-655" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-655">#L655</a>: 	lockInit(&amp;<b>sched</b>.lock, lockRankSched)
+		<a href="../src/runtime/proc.go.html#line-656" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-656">#L656</a>: 	lockInit(&amp;<b>sched</b>.sysmonlock, lockRankSysmon)
+		<a href="../src/runtime/proc.go.html#line-657" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-657">#L657</a>: 	lockInit(&amp;<b>sched</b>.deferlock, lockRankDefer)
+		<a href="../src/runtime/proc.go.html#line-658" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-658">#L658</a>: 	lockInit(&amp;<b>sched</b>.sudoglock, lockRankSudog)
+		<a href="../src/runtime/proc.go.html#line-682" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-682">#L682</a>: 	<b>sched</b>.maxmcount = 10000
+		<a href="../src/runtime/proc.go.html#line-701" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-701">#L701</a>: 	if offset := unsafe.Offsetof(<b>sched</b>.timeToRun); offset%8 != 0 {
+		<a href="../src/runtime/proc.go.html#line-711" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-711">#L711</a>: 	lock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-712" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-712">#L712</a>: 	<b>sched</b>.lastpoll = uint64(nanotime())
+		<a href="../src/runtime/proc.go.html#line-720" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-720">#L720</a>: 	unlock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-756" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-756">#L756</a>: 	assertLockHeld(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-758" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-758">#L758</a>: 	if mcount() &gt; <b>sched</b>.maxmcount {
+		<a href="../src/runtime/proc.go.html#line-759" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-759">#L759</a>: 		print("runtime: program exceeds ", <b>sched</b>.maxmcount, "-thread limit\n")
+		<a href="../src/runtime/proc.go.html#line-769" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-769">#L769</a>: 	assertLockHeld(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-771" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-771">#L771</a>: 	if <b>sched</b>.mnext+1 &lt; <b>sched</b>.mnext {
+		<a href="../src/runtime/proc.go.html#line-774" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-774">#L774</a>: 	id := <b>sched</b>.mnext
+		<a href="../src/runtime/proc.go.html#line-775" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-775">#L775</a>: 	<b>sched</b>.mnext++
+		<a href="../src/runtime/proc.go.html#line-789" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-789">#L789</a>: 	lock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-815" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-815">#L815</a>: 	unlock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-871" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-871">#L871</a>: 		<b>sched</b>.stopwait = freezeStopWait
+		<a href="../src/runtime/proc.go.html#line-872" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-872">#L872</a>: 		atomic.Store(&amp;<b>sched</b>.gcwaiting, 1)
+		<a href="../src/runtime/proc.go.html#line-1009" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1009">#L1009</a>: 			<b>sched</b>.timeToRun.record(gp.runnableTime)
+		<a href="../src/runtime/proc.go.html#line-1172" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1172">#L1172</a>: 	lock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-1173" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1173">#L1173</a>: 	<b>sched</b>.stopwait = gomaxprocs
+		<a href="../src/runtime/proc.go.html#line-1174" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1174">#L1174</a>: 	atomic.Store(&amp;<b>sched</b>.gcwaiting, 1)
+		<a href="../src/runtime/proc.go.html#line-1178" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1178">#L1178</a>: 	<b>sched</b>.stopwait--
+		<a href="../src/runtime/proc.go.html#line-1188" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1188">#L1188</a>: 			<b>sched</b>.stopwait--
+		<a href="../src/runtime/proc.go.html#line-1198" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1198">#L1198</a>: 		<b>sched</b>.stopwait--
+		<a href="../src/runtime/proc.go.html#line-1200" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1200">#L1200</a>: 	wait := <b>sched</b>.stopwait &gt; 0
+		<a href="../src/runtime/proc.go.html#line-1201" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1201">#L1201</a>: 	unlock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-1207" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1207">#L1207</a>: 			if notetsleep(&amp;<b>sched</b>.stopnote, 100*1000) {
+		<a href="../src/runtime/proc.go.html#line-1208" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1208">#L1208</a>: 				noteclear(&amp;<b>sched</b>.stopnote)
+		<a href="../src/runtime/proc.go.html#line-1217" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1217">#L1217</a>: 	if <b>sched</b>.stopwait != 0 {
+		<a href="../src/runtime/proc.go.html#line-1249" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1249">#L1249</a>: 	lock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-1257" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1257">#L1257</a>: 	<b>sched</b>.gcwaiting = 0
+		<a href="../src/runtime/proc.go.html#line-1258" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1258">#L1258</a>: 	if <b>sched</b>.sysmonwait != 0 {
+		<a href="../src/runtime/proc.go.html#line-1259" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1259">#L1259</a>: 		<b>sched</b>.sysmonwait = 0
+		<a href="../src/runtime/proc.go.html#line-1260" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1260">#L1260</a>: 		notewakeup(&amp;<b>sched</b>.sysmonnote)
+		<a href="../src/runtime/proc.go.html#line-1262" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1262">#L1262</a>: 	unlock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-1479" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1479">#L1479</a>: 		lock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-1480" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1480">#L1480</a>: 		<b>sched</b>.nmfreed++
+		<a href="../src/runtime/proc.go.html#line-1482" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1482">#L1482</a>: 		unlock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-1501" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1501">#L1501</a>: 	lock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-1520" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1520">#L1520</a>: 		m.freelink = <b>sched</b>.freem
+		<a href="../src/runtime/proc.go.html#line-1521" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1521">#L1521</a>: 		<b>sched</b>.freem = m
+		<a href="../src/runtime/proc.go.html#line-1523" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1523">#L1523</a>: 	unlock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-1534" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1534">#L1534</a>: 	lock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-1535" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1535">#L1535</a>: 	<b>sched</b>.nmfreed++
+		<a href="../src/runtime/proc.go.html#line-1537" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1537">#L1537</a>: 	unlock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-1579" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1579">#L1579</a>: 	lock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-1580" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1580">#L1580</a>: 	if <b>sched</b>.safePointWait != 0 {
+		<a href="../src/runtime/proc.go.html#line-1583" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1583">#L1583</a>: 	<b>sched</b>.safePointWait = gomaxprocs - 1
+		<a href="../src/runtime/proc.go.html#line-1584" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1584">#L1584</a>: 	<b>sched</b>.safePointFn = fn
+		<a href="../src/runtime/proc.go.html#line-1600" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1600">#L1600</a>: 	for p := <b>sched</b>.pidle.ptr(); p != nil; p = p.link.ptr() {
+		<a href="../src/runtime/proc.go.html#line-1603" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1603">#L1603</a>: 			<b>sched</b>.safePointWait--
+		<a href="../src/runtime/proc.go.html#line-1607" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1607">#L1607</a>: 	wait := <b>sched</b>.safePointWait &gt; 0
+		<a href="../src/runtime/proc.go.html#line-1608" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1608">#L1608</a>: 	unlock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-1634" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1634">#L1634</a>: 			if notetsleep(&amp;<b>sched</b>.safePointNote, 100*1000) {
+		<a href="../src/runtime/proc.go.html#line-1635" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1635">#L1635</a>: 				noteclear(&amp;<b>sched</b>.safePointNote)
+		<a href="../src/runtime/proc.go.html#line-1641" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1641">#L1641</a>: 	if <b>sched</b>.safePointWait != 0 {
+		<a href="../src/runtime/proc.go.html#line-1650" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1650">#L1650</a>: 	lock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-1651" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1651">#L1651</a>: 	<b>sched</b>.safePointFn = nil
+		<a href="../src/runtime/proc.go.html#line-1652" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1652">#L1652</a>: 	unlock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-1677" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1677">#L1677</a>: 	for atomic.Load(&amp;<b>sched</b>.sysmonStarting) != 0 {
+		<a href="../src/runtime/proc.go.html#line-1770" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1770">#L1770</a>: 			lock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-1771" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1771">#L1771</a>: 			if atomic.Load(&amp;<b>sched</b>.sysmonwait) != 0 {
+		<a href="../src/runtime/proc.go.html#line-1772" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1772">#L1772</a>: 				atomic.Store(&amp;<b>sched</b>.sysmonwait, 0)
+		<a href="../src/runtime/proc.go.html#line-1773" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1773">#L1773</a>: 				notewakeup(&amp;<b>sched</b>.sysmonnote)
+		<a href="../src/runtime/proc.go.html#line-1775" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1775">#L1775</a>: 			unlock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-1814" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1814">#L1814</a>: 	<b>sched</b>.safePointFn(p)
+		<a href="../src/runtime/proc.go.html#line-1815" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1815">#L1815</a>: 	lock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-1816" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1816">#L1816</a>: 	<b>sched</b>.safePointWait--
+		<a href="../src/runtime/proc.go.html#line-1817" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1817">#L1817</a>: 	if <b>sched</b>.safePointWait == 0 {
+		<a href="../src/runtime/proc.go.html#line-1818" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1818">#L1818</a>: 		notewakeup(&amp;<b>sched</b>.safePointNote)
+		<a href="../src/runtime/proc.go.html#line-1820" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1820">#L1820</a>: 	unlock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-1852" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1852">#L1852</a>: 	if <b>sched</b>.freem != nil {
+		<a href="../src/runtime/proc.go.html#line-1853" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1853">#L1853</a>: 		lock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-1855" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1855">#L1855</a>: 		for freem := <b>sched</b>.freem; freem != nil; {
+		<a href="../src/runtime/proc.go.html#line-1871" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1871">#L1871</a>: 		<b>sched</b>.freem = newList
+		<a href="../src/runtime/proc.go.html#line-1872" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1872">#L1872</a>: 		unlock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-1995" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1995">#L1995</a>: 	atomic.Xadd(&amp;<b>sched</b>.ngsys, -1)
+		<a href="../src/runtime/proc.go.html#line-2046" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2046">#L2046</a>: 	gp.goid = int64(atomic.Xadd64(&amp;<b>sched</b>.goidgen, 1))
+		<a href="../src/runtime/proc.go.html#line-2057" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2057">#L2057</a>: 	atomic.Xadd(&amp;<b>sched</b>.ngsys, +1)
+		<a href="../src/runtime/proc.go.html#line-2098" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2098">#L2098</a>: 	atomic.Xadd(&amp;<b>sched</b>.ngsys, +1)
+		<a href="../src/runtime/proc.go.html#line-2363" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2363">#L2363</a>: 	lock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-2364" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2364">#L2364</a>: 	<b>sched</b>.nmsys++
+		<a href="../src/runtime/proc.go.html#line-2366" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2366">#L2366</a>: 	unlock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-2405" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2405">#L2405</a>: 	lock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-2407" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2407">#L2407</a>: 	unlock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-2447" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2447">#L2447</a>: 	lock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-2451" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2451">#L2451</a>: 			unlock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-2455" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2455">#L2455</a>: 				if int32(atomic.Xadd(&amp;<b>sched</b>.nmspinning, -1)) &lt; 0 {
+		<a href="../src/runtime/proc.go.html#line-2478" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2478">#L2478</a>: 		unlock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-2491" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2491">#L2491</a>: 	unlock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-2518" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2518">#L2518</a>: 	if !runqempty(_p_) || <b>sched</b>.runqsize != 0 {
+		<a href="../src/runtime/proc.go.html#line-2529" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2529">#L2529</a>: 	if atomic.Load(&amp;<b>sched</b>.nmspinning)+atomic.Load(&amp;<b>sched</b>.npidle) == 0 &amp;&amp; atomic.Cas(&amp;<b>sched</b>.nmspinning, 0, 1) { // TODO: fast atomic
+		<a href="../src/runtime/proc.go.html#line-2533" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2533">#L2533</a>: 	lock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-2534" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2534">#L2534</a>: 	if <b>sched</b>.gcwaiting != 0 {
+		<a href="../src/runtime/proc.go.html#line-2536" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2536">#L2536</a>: 		<b>sched</b>.stopwait--
+		<a href="../src/runtime/proc.go.html#line-2537" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2537">#L2537</a>: 		if <b>sched</b>.stopwait == 0 {
+		<a href="../src/runtime/proc.go.html#line-2538" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2538">#L2538</a>: 			notewakeup(&amp;<b>sched</b>.stopnote)
+		<a href="../src/runtime/proc.go.html#line-2540" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2540">#L2540</a>: 		unlock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-2544" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2544">#L2544</a>: 		<b>sched</b>.safePointFn(_p_)
+		<a href="../src/runtime/proc.go.html#line-2545" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2545">#L2545</a>: 		<b>sched</b>.safePointWait--
+		<a href="../src/runtime/proc.go.html#line-2546" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2546">#L2546</a>: 		if <b>sched</b>.safePointWait == 0 {
+		<a href="../src/runtime/proc.go.html#line-2547" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2547">#L2547</a>: 			notewakeup(&amp;<b>sched</b>.safePointNote)
+		<a href="../src/runtime/proc.go.html#line-2550" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2550">#L2550</a>: 	if <b>sched</b>.runqsize != 0 {
+		<a href="../src/runtime/proc.go.html#line-2551" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2551">#L2551</a>: 		unlock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-2557" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2557">#L2557</a>: 	if <b>sched</b>.npidle == uint32(gomaxprocs-1) &amp;&amp; atomic.Load64(&amp;<b>sched</b>.lastpoll) != 0 {
+		<a href="../src/runtime/proc.go.html#line-2558" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2558">#L2558</a>: 		unlock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-2567" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2567">#L2567</a>: 	unlock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-2577" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2577">#L2577</a>: 	if atomic.Load(&amp;<b>sched</b>.npidle) == 0 {
+		<a href="../src/runtime/proc.go.html#line-2581" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2581">#L2581</a>: 	if atomic.Load(&amp;<b>sched</b>.nmspinning) != 0 || !atomic.Cas(&amp;<b>sched</b>.nmspinning, 0, 1) {
+		<a href="../src/runtime/proc.go.html#line-2639" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2639">#L2639</a>: 	if <b>sched</b>.gcwaiting == 0 {
+		<a href="../src/runtime/proc.go.html#line-2646" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2646">#L2646</a>: 		if int32(atomic.Xadd(&amp;<b>sched</b>.nmspinning, -1)) &lt; 0 {
+		<a href="../src/runtime/proc.go.html#line-2651" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2651">#L2651</a>: 	lock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-2653" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2653">#L2653</a>: 	<b>sched</b>.stopwait--
+		<a href="../src/runtime/proc.go.html#line-2654" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2654">#L2654</a>: 	if <b>sched</b>.stopwait == 0 {
+		<a href="../src/runtime/proc.go.html#line-2655" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2655">#L2655</a>: 		notewakeup(&amp;<b>sched</b>.stopnote)
+		<a href="../src/runtime/proc.go.html#line-2657" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2657">#L2657</a>: 	unlock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-2686" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2686">#L2686</a>: 	hz := <b>sched</b>.profilehz
+		<a href="../src/runtime/proc.go.html#line-2714" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2714">#L2714</a>: 	if <b>sched</b>.gcwaiting != 0 {
+		<a href="../src/runtime/proc.go.html#line-2739" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2739">#L2739</a>: 	if <b>sched</b>.runqsize != 0 {
+		<a href="../src/runtime/proc.go.html#line-2740" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2740">#L2740</a>: 		lock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-2742" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2742">#L2742</a>: 		unlock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-2755" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2755">#L2755</a>: 	if netpollinited() &amp;&amp; atomic.Load(&amp;netpollWaiters) &gt; 0 &amp;&amp; atomic.Load64(&amp;<b>sched</b>.lastpoll) != 0 {
+		<a href="../src/runtime/proc.go.html#line-2773" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2773">#L2773</a>: 	if _g_.m.spinning || 2*atomic.Load(&amp;<b>sched</b>.nmspinning) &lt; procs-atomic.Load(&amp;<b>sched</b>.npidle) {
+		<a href="../src/runtime/proc.go.html#line-2776" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2776">#L2776</a>: 			atomic.Xadd(&amp;<b>sched</b>.nmspinning, 1)
+		<a href="../src/runtime/proc.go.html#line-2841" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2841">#L2841</a>: 	lock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-2842" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2842">#L2842</a>: 	if <b>sched</b>.gcwaiting != 0 || _p_.runSafePointFn != 0 {
+		<a href="../src/runtime/proc.go.html#line-2843" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2843">#L2843</a>: 		unlock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-2846" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2846">#L2846</a>: 	if <b>sched</b>.runqsize != 0 {
+		<a href="../src/runtime/proc.go.html#line-2848" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2848">#L2848</a>: 		unlock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-2855" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2855">#L2855</a>: 	unlock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-2880" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2880">#L2880</a>: 		if int32(atomic.Xadd(&amp;<b>sched</b>.nmspinning, -1)) &lt; 0 {
+		<a href="../src/runtime/proc.go.html#line-2895" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2895">#L2895</a>: 			atomic.Xadd(&amp;<b>sched</b>.nmspinning, 1)
+		<a href="../src/runtime/proc.go.html#line-2904" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2904">#L2904</a>: 			atomic.Xadd(&amp;<b>sched</b>.nmspinning, 1)
+		<a href="../src/runtime/proc.go.html#line-2925" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2925">#L2925</a>: 	if netpollinited() &amp;&amp; (atomic.Load(&amp;netpollWaiters) &gt; 0 || pollUntil != 0) &amp;&amp; atomic.Xchg64(&amp;<b>sched</b>.lastpoll, 0) != 0 {
+		<a href="../src/runtime/proc.go.html#line-2926" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2926">#L2926</a>: 		atomic.Store64(&amp;<b>sched</b>.pollUntil, uint64(pollUntil))
+		<a href="../src/runtime/proc.go.html#line-2948" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2948">#L2948</a>: 		atomic.Store64(&amp;<b>sched</b>.pollUntil, 0)
+		<a href="../src/runtime/proc.go.html#line-2949" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2949">#L2949</a>: 		atomic.Store64(&amp;<b>sched</b>.lastpoll, uint64(nanotime()))
+		<a href="../src/runtime/proc.go.html#line-2956" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2956">#L2956</a>: 		lock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-2958" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2958">#L2958</a>: 		unlock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-2974" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2974">#L2974</a>: 				atomic.Xadd(&amp;<b>sched</b>.nmspinning, 1)
+		<a href="../src/runtime/proc.go.html#line-2979" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2979">#L2979</a>: 		pollerPollUntil := int64(atomic.Load64(&amp;<b>sched</b>.pollUntil))
+		<a href="../src/runtime/proc.go.html#line-2993" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2993">#L2993</a>: 	if <b>sched</b>.runqsize != 0 {
+		<a href="../src/runtime/proc.go.html#line-3000" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3000">#L3000</a>: 	if netpollinited() &amp;&amp; atomic.Load(&amp;netpollWaiters) &gt; 0 &amp;&amp; <b>sched</b>.lastpoll != 0 {
+		<a href="../src/runtime/proc.go.html#line-3025" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3025">#L3025</a>: 			if <b>sched</b>.gcwaiting != 0 {
+		<a href="../src/runtime/proc.go.html#line-3092" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3092">#L3092</a>: 			lock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-3094" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3094">#L3094</a>: 			unlock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-3154" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3154">#L3154</a>: 	lock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-3157" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3157">#L3157</a>: 		unlock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-3165" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3165">#L3165</a>: 		unlock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-3172" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3172">#L3172</a>: 		unlock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-3176" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3176">#L3176</a>: 	unlock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-3185" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3185">#L3185</a>: 	if atomic.Load64(&amp;<b>sched</b>.lastpoll) == 0 {
+		<a href="../src/runtime/proc.go.html#line-3190" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3190">#L3190</a>: 		pollerPollUntil := int64(atomic.Load64(&amp;<b>sched</b>.pollUntil))
+		<a href="../src/runtime/proc.go.html#line-3209" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3209">#L3209</a>: 	nmspinning := atomic.Xadd(&amp;<b>sched</b>.nmspinning, -1)
+		<a href="../src/runtime/proc.go.html#line-3255" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3255">#L3255</a>: 		for ; n != 0 &amp;&amp; <b>sched</b>.npidle != 0; n-- {
+		<a href="../src/runtime/proc.go.html#line-3262" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3262">#L3262</a>: 		lock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-3264" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3264">#L3264</a>: 		unlock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-3269" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3269">#L3269</a>: 	npidle := int(atomic.Load(&amp;<b>sched</b>.npidle))
+		<a href="../src/runtime/proc.go.html#line-3277" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3277">#L3277</a>: 		lock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-3279" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3279">#L3279</a>: 		unlock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-3313" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3313">#L3313</a>: 	if <b>sched</b>.gcwaiting != 0 {
+		<a href="../src/runtime/proc.go.html#line-3355" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3355">#L3355</a>: 		if _g_.m.p.ptr().schedtick%61 == 0 &amp;&amp; <b>sched</b>.runqsize &gt; 0 {
+		<a href="../src/runtime/proc.go.html#line-3356" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3356">#L3356</a>: 			lock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-3358" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3358">#L3358</a>: 			unlock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-3377" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3377">#L3377</a>: 	if <b>sched</b>.disable.user &amp;&amp; !schedEnabled(gp) {
+		<a href="../src/runtime/proc.go.html#line-3381" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3381">#L3381</a>: 		lock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-3385" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3385">#L3385</a>: 			unlock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-3387" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3387">#L3387</a>: 			<b>sched</b>.disable.runnable.pushBack(gp)
+		<a href="../src/runtime/proc.go.html#line-3388" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3388">#L3388</a>: 			<b>sched</b>.disable.n++
+		<a href="../src/runtime/proc.go.html#line-3389" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3389">#L3389</a>: 			unlock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-3527" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3527">#L3527</a>: 	lock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-3529" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3529">#L3529</a>: 	unlock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-3638" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3638">#L3638</a>: 		atomic.Xadd(&amp;<b>sched</b>.ngsys, -1)
+		<a href="../src/runtime/proc.go.html#line-3797" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3797">#L3797</a>: 	if atomic.Load(&amp;<b>sched</b>.sysmonwait) != 0 {
+		<a href="../src/runtime/proc.go.html#line-3815" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3815">#L3815</a>: 	if <b>sched</b>.gcwaiting != 0 {
+		<a href="../src/runtime/proc.go.html#line-3834" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3834">#L3834</a>: 	lock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-3835" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3835">#L3835</a>: 	if atomic.Load(&amp;<b>sched</b>.sysmonwait) != 0 {
+		<a href="../src/runtime/proc.go.html#line-3836" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3836">#L3836</a>: 		atomic.Store(&amp;<b>sched</b>.sysmonwait, 0)
+		<a href="../src/runtime/proc.go.html#line-3837" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3837">#L3837</a>: 		notewakeup(&amp;<b>sched</b>.sysmonnote)
+		<a href="../src/runtime/proc.go.html#line-3839" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3839">#L3839</a>: 	unlock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-3846" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3846">#L3846</a>: 	lock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-3847" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3847">#L3847</a>: 	if <b>sched</b>.stopwait &gt; 0 &amp;&amp; atomic.Cas(&amp;_p_.status, _Psyscall, _Pgcstop) {
+		<a href="../src/runtime/proc.go.html#line-3853" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3853">#L3853</a>: 		if <b>sched</b>.stopwait--; <b>sched</b>.stopwait == 0 {
+		<a href="../src/runtime/proc.go.html#line-3854" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3854">#L3854</a>: 			notewakeup(&amp;<b>sched</b>.stopnote)
+		<a href="../src/runtime/proc.go.html#line-3857" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3857">#L3857</a>: 	unlock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-3958" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3958">#L3958</a>: 		if <b>sched</b>.disable.user &amp;&amp; !schedEnabled(_g_) {
+		<a href="../src/runtime/proc.go.html#line-4001" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4001">#L4001</a>: 	if <b>sched</b>.stopwait == freezeStopWait {
+		<a href="../src/runtime/proc.go.html#line-4014" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4014">#L4014</a>: 	if <b>sched</b>.pidle != 0 {
+		<a href="../src/runtime/proc.go.html#line-4060" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4060">#L4060</a>: 	lock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-4062" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4062">#L4062</a>: 	if _p_ != nil &amp;&amp; atomic.Load(&amp;<b>sched</b>.sysmonwait) != 0 {
+		<a href="../src/runtime/proc.go.html#line-4063" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4063">#L4063</a>: 		atomic.Store(&amp;<b>sched</b>.sysmonwait, 0)
+		<a href="../src/runtime/proc.go.html#line-4064" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4064">#L4064</a>: 		notewakeup(&amp;<b>sched</b>.sysmonnote)
+		<a href="../src/runtime/proc.go.html#line-4066" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4066">#L4066</a>: 	unlock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-4083" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4083">#L4083</a>: 	lock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-4098" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4098">#L4098</a>: 	} else if atomic.Load(&amp;<b>sched</b>.sysmonwait) != 0 {
+		<a href="../src/runtime/proc.go.html#line-4099" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4099">#L4099</a>: 		atomic.Store(&amp;<b>sched</b>.sysmonwait, 0)
+		<a href="../src/runtime/proc.go.html#line-4100" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4100">#L4100</a>: 		notewakeup(&amp;<b>sched</b>.sysmonnote)
+		<a href="../src/runtime/proc.go.html#line-4102" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4102">#L4102</a>: 	unlock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-4359" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4359">#L4359</a>: 		atomic.Xadd(&amp;<b>sched</b>.ngsys, +1)
+		<a href="../src/runtime/proc.go.html#line-4372" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4372">#L4372</a>: 		_p_.goidcache = atomic.Xadd64(&amp;<b>sched</b>.goidgen, _GoidCacheBatch)
+		<a href="../src/runtime/proc.go.html#line-4458" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4458">#L4458</a>: 		lock(&amp;<b>sched</b>.gFree.lock)
+		<a href="../src/runtime/proc.go.html#line-4459" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4459">#L4459</a>: 		<b>sched</b>.gFree.noStack.pushAll(noStackQ)
+		<a href="../src/runtime/proc.go.html#line-4460" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4460">#L4460</a>: 		<b>sched</b>.gFree.stack.pushAll(stackQ)
+		<a href="../src/runtime/proc.go.html#line-4461" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4461">#L4461</a>: 		<b>sched</b>.gFree.n += inc
+		<a href="../src/runtime/proc.go.html#line-4462" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4462">#L4462</a>: 		unlock(&amp;<b>sched</b>.gFree.lock)
+		<a href="../src/runtime/proc.go.html#line-4470" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4470">#L4470</a>: 	if _p_.gFree.empty() &amp;&amp; (!<b>sched</b>.gFree.stack.empty() || !<b>sched</b>.gFree.noStack.empty()) {
+		<a href="../src/runtime/proc.go.html#line-4471" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4471">#L4471</a>: 		lock(&amp;<b>sched</b>.gFree.lock)
+		<a href="../src/runtime/proc.go.html#line-4475" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4475">#L4475</a>: 			gp := <b>sched</b>.gFree.stack.pop()
+		<a href="../src/runtime/proc.go.html#line-4477" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4477">#L4477</a>: 				gp = <b>sched</b>.gFree.noStack.pop()
+		<a href="../src/runtime/proc.go.html#line-4482" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4482">#L4482</a>: 			<b>sched</b>.gFree.n--
+		<a href="../src/runtime/proc.go.html#line-4486" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4486">#L4486</a>: 		unlock(&amp;<b>sched</b>.gFree.lock)
+		<a href="../src/runtime/proc.go.html#line-4528" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4528">#L4528</a>: 	lock(&amp;<b>sched</b>.gFree.lock)
+		<a href="../src/runtime/proc.go.html#line-4529" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4529">#L4529</a>: 	<b>sched</b>.gFree.noStack.pushAll(noStackQ)
+		<a href="../src/runtime/proc.go.html#line-4530" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4530">#L4530</a>: 	<b>sched</b>.gFree.stack.pushAll(stackQ)
+		<a href="../src/runtime/proc.go.html#line-4531" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4531">#L4531</a>: 	<b>sched</b>.gFree.n += inc
+		<a href="../src/runtime/proc.go.html#line-4532" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4532">#L4532</a>: 	unlock(&amp;<b>sched</b>.gFree.lock)
+		<a href="../src/runtime/proc.go.html#line-4645" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4645">#L4645</a>: 	n := int32(atomic.Loaduintptr(&amp;allglen)) - <b>sched</b>.gFree.n - int32(atomic.Load(&amp;<b>sched</b>.ngsys))
+		<a href="../src/runtime/proc.go.html#line-4659" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4659">#L4659</a>: 	return int32(<b>sched</b>.mnext - <b>sched</b>.nmfreed)
+		<a href="../src/runtime/proc.go.html#line-4847" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4847">#L4847</a>: 	lock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-4848" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4848">#L4848</a>: 	<b>sched</b>.profilehz = hz
+		<a href="../src/runtime/proc.go.html#line-4849" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4849">#L4849</a>: 	unlock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-4903" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4903">#L4903</a>: 	assertLockHeld(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-4995" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4995">#L4995</a>: 	assertLockHeld(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-5008" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5008">#L5008</a>: 	if <b>sched</b>.procresizetime != 0 {
+		<a href="../src/runtime/proc.go.html#line-5009" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5009">#L5009</a>: 		<b>sched</b>.totaltime += int64(old) * (now - <b>sched</b>.procresizetime)
+		<a href="../src/runtime/proc.go.html#line-5011" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5011">#L5011</a>: 	<b>sched</b>.procresizetime = now
+		<a href="../src/runtime/proc.go.html#line-5195" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5195">#L5195</a>: 	lock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-5196" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5196">#L5196</a>: 	<b>sched</b>.nmidlelocked += v
+		<a href="../src/runtime/proc.go.html#line-5200" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5200">#L5200</a>: 	unlock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-5207" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5207">#L5207</a>: 	assertLockHeld(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-5238" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5238">#L5238</a>: 	run := mcount() - <b>sched</b>.nmidle - <b>sched</b>.nmidlelocked - <b>sched</b>.nmsys
+		<a href="../src/runtime/proc.go.html#line-5243" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5243">#L5243</a>: 		print("runtime: checkdead: nmidle=", <b>sched</b>.nmidle, " nmidlelocked=", <b>sched</b>.nmidlelocked, " mcount=", mcount(), " nmsys=", <b>sched</b>.nmsys, "\n")
+		<a href="../src/runtime/proc.go.html#line-5265" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5265">#L5265</a>: 		unlock(&amp;<b>sched</b>.lock) // unlock so that GODEBUG=scheddetail=1 doesn't hang
+		<a href="../src/runtime/proc.go.html#line-5274" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5274">#L5274</a>: 			for pp := &amp;<b>sched</b>.pidle; *pp != 0; pp = &amp;(*pp).ptr().link {
+		<a href="../src/runtime/proc.go.html#line-5300" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5300">#L5300</a>: 	unlock(&amp;<b>sched</b>.lock)    // unlock so that GODEBUG=scheddetail=1 doesn't hang
+		<a href="../src/runtime/proc.go.html#line-5315" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5315">#L5315</a>: 	lock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-5316" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5316">#L5316</a>: 	<b>sched</b>.nmsys++
+		<a href="../src/runtime/proc.go.html#line-5318" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5318">#L5318</a>: 	unlock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-5322" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5322">#L5322</a>: 	atomic.Store(&amp;<b>sched</b>.sysmonStarting, 0)
+		<a href="../src/runtime/proc.go.html#line-5356" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5356">#L5356</a>: 		if debug.schedtrace &lt;= 0 &amp;&amp; (<b>sched</b>.gcwaiting != 0 || atomic.Load(&amp;<b>sched</b>.npidle) == uint32(gomaxprocs)) {
+		<a href="../src/runtime/proc.go.html#line-5357" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5357">#L5357</a>: 			lock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-5358" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5358">#L5358</a>: 			if atomic.Load(&amp;<b>sched</b>.gcwaiting) != 0 || atomic.Load(&amp;<b>sched</b>.npidle) == uint32(gomaxprocs) {
+		<a href="../src/runtime/proc.go.html#line-5362" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5362">#L5362</a>: 					atomic.Store(&amp;<b>sched</b>.sysmonwait, 1)
+		<a href="../src/runtime/proc.go.html#line-5363" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5363">#L5363</a>: 					unlock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-5374" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5374">#L5374</a>: 					syscallWake = notetsleep(&amp;<b>sched</b>.sysmonnote, sleep)
+		<a href="../src/runtime/proc.go.html#line-5379" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5379">#L5379</a>: 					lock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-5380" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5380">#L5380</a>: 					atomic.Store(&amp;<b>sched</b>.sysmonwait, 0)
+		<a href="../src/runtime/proc.go.html#line-5381" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5381">#L5381</a>: 					noteclear(&amp;<b>sched</b>.sysmonnote)
+		<a href="../src/runtime/proc.go.html#line-5388" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5388">#L5388</a>: 			unlock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-5391" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5391">#L5391</a>: 		lock(&amp;<b>sched</b>.sysmonlock)
+		<a href="../src/runtime/proc.go.html#line-5401" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5401">#L5401</a>: 		lastpoll := int64(atomic.Load64(&amp;<b>sched</b>.lastpoll))
+		<a href="../src/runtime/proc.go.html#line-5403" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5403">#L5403</a>: 			atomic.Cas64(&amp;<b>sched</b>.lastpoll, uint64(lastpoll), uint64(now))
+		<a href="../src/runtime/proc.go.html#line-5463" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5463">#L5463</a>: 		unlock(&amp;<b>sched</b>.sysmonlock)
+		<a href="../src/runtime/proc.go.html#line-5520" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5520">#L5520</a>: 			if runqempty(_p_) &amp;&amp; atomic.Load(&amp;<b>sched</b>.nmspinning)+atomic.Load(&amp;<b>sched</b>.npidle) &gt; 0 &amp;&amp; pd.syscallwhen+10*1000*1000 &gt; now {
+		<a href="../src/runtime/proc.go.html#line-5610" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5610">#L5610</a>: 	lock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-5611" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5611">#L5611</a>: 	print("SCHED ", (now-starttime)/1e6, "ms: gomaxprocs=", gomaxprocs, " idleprocs=", <b>sched</b>.npidle, " threads=", mcount(), " spinningthreads=", <b>sched</b>.nmspinning, " idlethreads=", <b>sched</b>.nmidle, " runqueue=", <b>sched</b>.runqsize)
+		<a href="../src/runtime/proc.go.html#line-5613" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5613">#L5613</a>: 		print(" gcwaiting=", <b>sched</b>.gcwaiting, " nmidlelocked=", <b>sched</b>.nmidlelocked, " stopwait=", <b>sched</b>.stopwait, " sysmonwait=", <b>sched</b>.sysmonwait, "\n")
+		<a href="../src/runtime/proc.go.html#line-5643" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5643">#L5643</a>: 		unlock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-5679" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5679">#L5679</a>: 	unlock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-5688" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5688">#L5688</a>: 	lock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-5689" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5689">#L5689</a>: 	if <b>sched</b>.disable.user == !enable {
+		<a href="../src/runtime/proc.go.html#line-5690" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5690">#L5690</a>: 		unlock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-5693" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5693">#L5693</a>: 	<b>sched</b>.disable.user = !enable
+		<a href="../src/runtime/proc.go.html#line-5695" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5695">#L5695</a>: 		n := <b>sched</b>.disable.n
+		<a href="../src/runtime/proc.go.html#line-5696" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5696">#L5696</a>: 		<b>sched</b>.disable.n = 0
+		<a href="../src/runtime/proc.go.html#line-5697" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5697">#L5697</a>: 		globrunqputbatch(&amp;<b>sched</b>.disable.runnable, n)
+		<a href="../src/runtime/proc.go.html#line-5698" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5698">#L5698</a>: 		unlock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-5699" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5699">#L5699</a>: 		for ; n != 0 &amp;&amp; <b>sched</b>.npidle != 0; n-- {
+		<a href="../src/runtime/proc.go.html#line-5703" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5703">#L5703</a>: 		unlock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-5712" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5712">#L5712</a>: 	assertLockHeld(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-5714" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5714">#L5714</a>: 	if <b>sched</b>.disable.user {
+		<a href="../src/runtime/proc.go.html#line-5725" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5725">#L5725</a>: 	assertLockHeld(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-5727" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5727">#L5727</a>: 	mp.schedlink = <b>sched</b>.midle
+		<a href="../src/runtime/proc.go.html#line-5728" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5728">#L5728</a>: 	<b>sched</b>.midle.set(mp)
+		<a href="../src/runtime/proc.go.html#line-5729" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5729">#L5729</a>: 	<b>sched</b>.nmidle++
+		<a href="../src/runtime/proc.go.html#line-5738" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5738">#L5738</a>: 	assertLockHeld(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-5740" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5740">#L5740</a>: 	mp := <b>sched</b>.midle.ptr()
+		<a href="../src/runtime/proc.go.html#line-5742" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5742">#L5742</a>: 		<b>sched</b>.midle = mp.schedlink
+		<a href="../src/runtime/proc.go.html#line-5743" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5743">#L5743</a>: 		<b>sched</b>.nmidle--
+		<a href="../src/runtime/proc.go.html#line-5753" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5753">#L5753</a>: 	assertLockHeld(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-5755" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5755">#L5755</a>: 	<b>sched</b>.runq.pushBack(gp)
+		<a href="../src/runtime/proc.go.html#line-5756" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5756">#L5756</a>: 	<b>sched</b>.runqsize++
+		<a href="../src/runtime/proc.go.html#line-5764" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5764">#L5764</a>: 	assertLockHeld(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-5766" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5766">#L5766</a>: 	<b>sched</b>.runq.push(gp)
+		<a href="../src/runtime/proc.go.html#line-5767" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5767">#L5767</a>: 	<b>sched</b>.runqsize++
+		<a href="../src/runtime/proc.go.html#line-5776" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5776">#L5776</a>: 	assertLockHeld(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-5778" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5778">#L5778</a>: 	<b>sched</b>.runq.pushBackAll(*batch)
+		<a href="../src/runtime/proc.go.html#line-5779" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5779">#L5779</a>: 	<b>sched</b>.runqsize += n
+		<a href="../src/runtime/proc.go.html#line-5786" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5786">#L5786</a>: 	assertLockHeld(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-5788" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5788">#L5788</a>: 	if <b>sched</b>.runqsize == 0 {
+		<a href="../src/runtime/proc.go.html#line-5792" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5792">#L5792</a>: 	n := <b>sched</b>.runqsize/gomaxprocs + 1
+		<a href="../src/runtime/proc.go.html#line-5793" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5793">#L5793</a>: 	if n &gt; <b>sched</b>.runqsize {
+		<a href="../src/runtime/proc.go.html#line-5794" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5794">#L5794</a>: 		n = <b>sched</b>.runqsize
+		<a href="../src/runtime/proc.go.html#line-5803" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5803">#L5803</a>: 	<b>sched</b>.runqsize -= n
+		<a href="../src/runtime/proc.go.html#line-5805" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5805">#L5805</a>: 	gp := <b>sched</b>.runq.pop()
+		<a href="../src/runtime/proc.go.html#line-5808" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5808">#L5808</a>: 		gp1 := <b>sched</b>.runq.pop()
+		<a href="../src/runtime/proc.go.html#line-5888" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5888">#L5888</a>: 	assertLockHeld(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-5895" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5895">#L5895</a>: 	_p_.link = <b>sched</b>.pidle
+		<a href="../src/runtime/proc.go.html#line-5896" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5896">#L5896</a>: 	<b>sched</b>.pidle.set(_p_)
+		<a href="../src/runtime/proc.go.html#line-5897" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5897">#L5897</a>: 	atomic.Xadd(&amp;<b>sched</b>.npidle, 1) // TODO: fast atomic
+		<a href="../src/runtime/proc.go.html#line-5907" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5907">#L5907</a>: 	assertLockHeld(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-5909" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5909">#L5909</a>: 	_p_ := <b>sched</b>.pidle.ptr()
+		<a href="../src/runtime/proc.go.html#line-5914" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5914">#L5914</a>: 		<b>sched</b>.pidle = _p_.link
+		<a href="../src/runtime/proc.go.html#line-5915" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5915">#L5915</a>: 		atomic.Xadd(&amp;<b>sched</b>.npidle, -1) // TODO: fast atomic
+		<a href="../src/runtime/proc.go.html#line-6021" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-6021">#L6021</a>: 	lock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-6023" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-6023">#L6023</a>: 	unlock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-6055" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-6055">#L6055</a>: 		lock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-6057" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-6057">#L6057</a>: 		unlock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-6310" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-6310">#L6310</a>: 	lock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-6311" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-6311">#L6311</a>: 	out = int(<b>sched</b>.maxmcount)
+		<a href="../src/runtime/proc.go.html#line-6313" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-6313">#L6313</a>: 		<b>sched</b>.maxmcount = 0x7fffffff
+		<a href="../src/runtime/proc.go.html#line-6315" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-6315">#L6315</a>: 		<b>sched</b>.maxmcount = int32(in)
+		<a href="../src/runtime/proc.go.html#line-6318" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-6318">#L6318</a>: 	unlock(&amp;<b>sched</b>.lock)
+		<a href="../src/runtime/proc.go.html#line-6370" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-6370">#L6370</a>: 	if i &gt;= active_spin || ncpu &lt;= 1 || gomaxprocs &lt;= int32(<b>sched</b>.npidle+<b>sched</b>.nmspinning)+1 {
+		<a href="../src/runtime/runtime2.go.html#line-1095">runtime2.go#L1095</a>: 	<b>sched</b>      schedt
+		<a href="../src/runtime/trace.go.html#line-192">trace.go#L192</a>: 	lock(&amp;<b>sched</b>.sysmonlock)
+		<a href="../src/runtime/trace.go.html#line-203" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-203">#L203</a>: 		unlock(&amp;<b>sched</b>.sysmonlock)
+		<a href="../src/runtime/trace.go.html#line-276" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-276">#L276</a>: 	unlock(&amp;<b>sched</b>.sysmonlock)
+		<a href="../src/runtime/trace.go.html#line-290" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-290">#L290</a>: 	lock(&amp;<b>sched</b>.sysmonlock)
+		<a href="../src/runtime/trace.go.html#line-297" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-297">#L297</a>: 		unlock(&amp;<b>sched</b>.sysmonlock)
+		<a href="../src/runtime/trace.go.html#line-335" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-335">#L335</a>: 	unlock(&amp;<b>sched</b>.sysmonlock)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Source: transport.go in package github.com/uber/jaeger-client-go/thrift</title>
+<link href="../../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre id="header"><code><span class="title">Source File</span>
+	transport.go
+
+<span class="title">Belonging Package</span>
+	<a href="../../../../../pkg/github.com/uber/jaeger-client-go/thrift.html">github.com/uber/jaeger-client-go/thrift</a>
+</code></pre>
+<style>input[type=radio] {display: none;}
+{background: #226; color: #ff8;}
+input[id=i0]:checked ~pre .i0,
+input[id=i1]:checked ~pre .i1,
+input[id=i2]:checked ~pre .i2
+{background: brown; color: #eed;}
+</style><input id="i0" type="radio" name="i"/>
+<input id="i1" type="radio" name="i"/>
+<input id="i2" type="radio" name="i"/>
+
+<pre class="line-numbers">
+<span class="codeline" id="line-1"><code><span class="comment">/*</span></code></span>
+<span class="codeline" id="line-2"><code><span class="comment"> * Licensed to the Apache Software Foundation (ASF) under one</span></code></span>
+<span class="codeline" id="line-3"><code><span class="comment"> * or more contributor license agreements. See the NOTICE file</span></code></span>
+<span class="codeline" id="line-4"><code><span class="comment"> * distributed with this work for additional information</span></code></span>
+<span class="codeline" id="line-5"><code><span class="comment"> * regarding copyright ownership. The ASF licenses this file</span></code></span>
+<span class="codeline" id="line-6"><code><span class="comment"> * to you under the Apache License, Version 2.0 (the</span></code></span>
+<span class="codeline" id="line-7"><code><span class="comment"> * "License"); you may not use this file except in compliance</span></code></span>
+<span class="codeline" id="line-8"><code><span class="comment"> * with the License. You may obtain a copy of the License at</span></code></span>
+<span class="codeline" id="line-9"><code><span class="comment"> *</span></code></span>
+<span class="codeline" id="line-10"><code><span class="comment"> *   http://www.apache.org/licenses/LICENSE-2.0</span></code></span>
+<span class="codeline" id="line-11"><code><span class="comment"> *</span></code></span>
+<span class="codeline" id="line-12"><code><span class="comment"> * Unless required by applicable law or agreed to in writing,</span></code></span>
+<span class="codeline" id="line-13"><code><span class="comment"> * software distributed under the License is distributed on an</span></code></span>
+<span class="codeline" id="line-14"><code><span class="comment"> * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY</span></code></span>
+<span class="codeline" id="line-15"><code><span class="comment"> * KIND, either express or implied. See the License for the</span></code></span>
+<span class="codeline" id="line-16"><code><span class="comment"> * specific language governing permissions and limitations</span></code></span>
+<span class="codeline" id="line-17"><code><span class="comment"> * under the License.</span></code></span>
+<span class="codeline" id="line-18"><code><span class="comment"> */</span></code></span>
+<span class="codeline" id="line-19"><code></code></span>
+<span class="codeline" id="line-20"><code><span class="keyword">package</span> thrift</code></span>
+<span class="codeline" id="line-21"><code></code></span>
+<span class="codeline" id="line-22"><code><span class="keyword">import</span> (</code></span>
+<span class="codeline" id="line-23"><code>	<label for="i0"><span class="lit-string i0">"context"</span></label></code></span>
+<span class="codeline" id="line-24"><code>	<label for="i1"><span class="lit-string i1">"errors"</span></label></code></span>
+<span class="codeline" id="line-25"><code>	<label for="i2"><span class="lit-string i2">"io"</span></label></code></span>
+<span class="codeline" id="line-26"><code>)</code></span>
+<span class="codeline" id="line-27"><code></code></span>
+<span class="codeline" id="line-28"><code><span class="keyword">var</span> <a href="../../../../../pkg/github.com/uber/jaeger-client-go/thrift.html#name-errTransportInterrupted" class="ident">errTransportInterrupted</a> = <a href="../../../../../pkg/errors.html" class="ident i1">errors</a>.<a href="../../../../errors/errors.go.html#line-58" class="ident">New</a>(<span class="lit-string">"Transport Interrupted"</span>)</code></span>
+<span class="codeline" id="line-29"><code></code></span>
+<span class="codeline" id="line-30"><code><span class="keyword">type</span> <a href="../../../../../pkg/github.com/uber/jaeger-client-go/thrift.html#name-Flusher" class="ident">Flusher</a> <span class="keyword">interface</span> {</code></span>
+<span class="codeline" id="line-31"><code>	<a href="../../../../../imp/github.com/uber/jaeger-client-go/thrift.Flusher.html#name-Flush" class="ident">Flush</a>() (err <a href="../../../../../pkg/builtin.html#name-error" class="ident">error</a>)</code></span>
+<span class="codeline" id="line-32"><code>}</code></span>
+<span class="codeline" id="line-33"><code></code></span>
+<span class="codeline" id="line-34"><code><span class="keyword">type</span> <a href="../../../../../pkg/github.com/uber/jaeger-client-go/thrift.html#name-ContextFlusher" class="ident">ContextFlusher</a> <span class="keyword">interface</span> {</code></span>
+<span class="codeline" id="line-35"><code>	<a href="../../../../../imp/github.com/uber/jaeger-client-go/thrift.ContextFlusher.html#name-Flush" class="ident">Flush</a>(ctx <a href="../../../../../pkg/context.html" class="ident i0">context</a>.<a href="../../../../context/context.go.html#line-62" class="ident">Context</a>) (err <a href="../../../../../pkg/builtin.html#name-error" class="ident">error</a>)</code></span>
+<span class="codeline" id="line-36"><code>}</code></span>
+<span class="codeline" id="line-37"><code></code></span>
+<span class="codeline" id="line-38"><code><span class="keyword">type</span> <a href="../../../../../pkg/github.com/uber/jaeger-client-go/thrift.html#name-ReadSizeProvider" class="ident">ReadSizeProvider</a> <span class="keyword">interface</span> {</code></span>
+<span class="codeline" id="line-39"><code>	<a href="../../../../../imp/github.com/uber/jaeger-client-go/thrift.ReadSizeProvider.html#name-RemainingBytes" class="ident">RemainingBytes</a>() (num_bytes <a href="../../../../../pkg/builtin.html#name-uint64" class="ident">uint64</a>)</code></span>
+<span class="codeline" id="line-40"><code>}</code></span>
+<span class="codeline" id="line-41"><code></code></span>
+<span class="codeline" id="line-42"><code><span class="comment">// Encapsulates the I/O layer</span></code></span>
+<span class="codeline" id="line-43"><code><span class="keyword">type</span> <a href="../../../../../pkg/github.com/uber/jaeger-client-go/thrift.html#name-TTransport" class="ident">TTransport</a> <span class="keyword">interface</span> {</code></span>
+<span class="codeline" id="line-44"><code>	<a href="../../../../../pkg/io.html" class="ident i2">io</a>.<a href="../../../../io/io.go.html#line-144" class="ident">ReadWriteCloser</a></code></span>
+<span class="codeline" id="line-45"><code>	<a href="#line-34" class="ident">ContextFlusher</a></code></span>
+<span class="codeline" id="line-46"><code>	<a href="#line-38" class="ident">ReadSizeProvider</a></code></span>
+<span class="codeline" id="line-47"><code></code></span>
+<span class="codeline" id="line-48"><code>	<span class="comment">// Opens the transport for communication</span></code></span>
+<span class="codeline" id="line-49"><code>	<a href="../../../../../imp/github.com/uber/jaeger-client-go/thrift.TTransport.html#name-Open" class="ident">Open</a>() <a href="../../../../../pkg/builtin.html#name-error" class="ident">error</a></code></span>
+<span class="codeline" id="line-50"><code></code></span>
+<span class="codeline" id="line-51"><code>	<span class="comment">// Returns true if the transport is open</span></code></span>
+<span class="codeline" id="line-52"><code>	<a href="../../../../../imp/github.com/uber/jaeger-client-go/thrift.TTransport.html#name-IsOpen" class="ident">IsOpen</a>() <a href="../../../../../pkg/builtin.html#name-bool" class="ident">bool</a></code></span>
+<span class="codeline" id="line-53"><code>}</code></span>
+<span class="codeline" id="line-54"><code></code></span>
+<span class="codeline" id="line-55"><code><span class="keyword">type</span> <a href="../../../../../pkg/github.com/uber/jaeger-client-go/thrift.html#name-stringWriter" class="ident">stringWriter</a> <span class="keyword">interface</span> {</code></span>
+<span class="codeline" id="line-56"><code>	<a href="../../../../../imp/github.com/uber/jaeger-client-go/thrift.stringWriter^170fe.html#name-WriteString" class="ident">WriteString</a>(s <a href="../../../../../pkg/builtin.html#name-string" class="ident">string</a>) (n <a href="../../../../../pkg/builtin.html#name-int" class="ident">int</a>, err <a href="../../../../../pkg/builtin.html#name-error" class="ident">error</a>)</code></span>
+<span class="codeline" id="line-57"><code>}</code></span>
+<span class="codeline" id="line-58"><code></code></span>
+<span class="codeline" id="line-59"><code><span class="comment">// This is "enchanced" transport with extra capabilities. You need to use one of these</span></code></span>
+<span class="codeline" id="line-60"><code><span class="comment">// to construct protocol.</span></code></span>
+<span class="codeline" id="line-61"><code><span class="comment">// Notably, TSocket does not implement this interface, and it is always a mistake to use</span></code></span>
+<span class="codeline" id="line-62"><code><span class="comment">// TSocket directly in protocol.</span></code></span>
+<span class="codeline" id="line-63"><code><span class="keyword">type</span> <a href="../../../../../pkg/github.com/uber/jaeger-client-go/thrift.html#name-TRichTransport" class="ident">TRichTransport</a> <span class="keyword">interface</span> {</code></span>
+<span class="codeline" id="line-64"><code>	<a href="../../../../../pkg/io.html" class="ident i2">io</a>.<a href="../../../../io/io.go.html#line-126" class="ident">ReadWriter</a></code></span>
+<span class="codeline" id="line-65"><code>	<a href="../../../../../pkg/io.html" class="ident i2">io</a>.<a href="../../../../io/io.go.html#line-257" class="ident">ByteReader</a></code></span>
+<span class="codeline" id="line-66"><code>	<a href="../../../../../pkg/io.html" class="ident i2">io</a>.<a href="../../../../io/io.go.html#line-274" class="ident">ByteWriter</a></code></span>
+<span class="codeline" id="line-67"><code>	<a href="#line-55" class="ident">stringWriter</a></code></span>
+<span class="codeline" id="line-68"><code>	<a href="#line-34" class="ident">ContextFlusher</a></code></span>
+<span class="codeline" id="line-69"><code>	<a href="#line-38" class="ident">ReadSizeProvider</a></code></span>
+<span class="codeline" id="line-70"><code>}</code></span>
+</pre><pre id="footer">
+<table><tr><td><img src="../../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

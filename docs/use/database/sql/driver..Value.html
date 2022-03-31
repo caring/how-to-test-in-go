@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: database/sql/driver.Value</title>
+<link href="../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../../../pkg/database/sql/driver.html">database/sql/driver</a>.<a href="../../../src/database/sql/driver/driver.go.html#line-61">Value</a></b></span>
+
+<span class="title">54 uses</span>
+
+	database/sql/driver (current package)
+		<a href="../../../src/database/sql/driver/driver.go.html#line-61">driver.go#L61</a>: type <b>Value</b> interface{}
+		<a href="../../../src/database/sql/driver/driver.go.html#line-75" class="path-duplicate">driver.go</a><a href="../../../src/database/sql/driver/driver.go.html#line-75">#L75</a>: 	Value <b>Value</b>
+		<a href="../../../src/database/sql/driver/driver.go.html#line-182" class="path-duplicate">driver.go</a><a href="../../../src/database/sql/driver/driver.go.html#line-182">#L182</a>: 	Exec(query string, args []<b>Value</b>) (Result, error)
+		<a href="../../../src/database/sql/driver/driver.go.html#line-209" class="path-duplicate">driver.go</a><a href="../../../src/database/sql/driver/driver.go.html#line-209">#L209</a>: 	Query(query string, args []<b>Value</b>) (Rows, error)
+		<a href="../../../src/database/sql/driver/driver.go.html#line-351" class="path-duplicate">driver.go</a><a href="../../../src/database/sql/driver/driver.go.html#line-351">#L351</a>: 	Exec(args []<b>Value</b>) (Result, error)
+		<a href="../../../src/database/sql/driver/driver.go.html#line-357" class="path-duplicate">driver.go</a><a href="../../../src/database/sql/driver/driver.go.html#line-357">#L357</a>: 	Query(args []<b>Value</b>) (Rows, error)
+		<a href="../../../src/database/sql/driver/driver.go.html#line-439" class="path-duplicate">driver.go</a><a href="../../../src/database/sql/driver/driver.go.html#line-439">#L439</a>: 	Next(dest []<b>Value</b>) error
+		<a href="../../../src/database/sql/driver/types.go.html#line-32">types.go#L32</a>: 	ConvertValue(v interface{}) (<b>Value</b>, error)
+		<a href="../../../src/database/sql/driver/types.go.html#line-42" class="path-duplicate">types.go</a><a href="../../../src/database/sql/driver/types.go.html#line-42">#L42</a>: 	Value() (<b>Value</b>, error)
+		<a href="../../../src/database/sql/driver/types.go.html#line-63" class="path-duplicate">types.go</a><a href="../../../src/database/sql/driver/types.go.html#line-63">#L63</a>: func (boolType) ConvertValue(src interface{}) (<b>Value</b>, error) {
+		<a href="../../../src/database/sql/driver/types.go.html#line-108" class="path-duplicate">types.go</a><a href="../../../src/database/sql/driver/types.go.html#line-108">#L108</a>: func (int32Type) ConvertValue(v interface{}) (<b>Value</b>, error) {
+		<a href="../../../src/database/sql/driver/types.go.html#line-141" class="path-duplicate">types.go</a><a href="../../../src/database/sql/driver/types.go.html#line-141">#L141</a>: func (stringType) ConvertValue(v interface{}) (<b>Value</b>, error) {
+		<a href="../../../src/database/sql/driver/types.go.html#line-155" class="path-duplicate">types.go</a><a href="../../../src/database/sql/driver/types.go.html#line-155">#L155</a>: func (n Null) ConvertValue(v interface{}) (<b>Value</b>, error) {
+		<a href="../../../src/database/sql/driver/types.go.html#line-168" class="path-duplicate">types.go</a><a href="../../../src/database/sql/driver/types.go.html#line-168">#L168</a>: func (n NotNull) ConvertValue(v interface{}) (<b>Value</b>, error) {
+		<a href="../../../src/database/sql/driver/types.go.html#line-227" class="path-duplicate">types.go</a><a href="../../../src/database/sql/driver/types.go.html#line-227">#L227</a>: func callValuerValue(vr Valuer) (v <b>Value</b>, err error) {
+		<a href="../../../src/database/sql/driver/types.go.html#line-236" class="path-duplicate">types.go</a><a href="../../../src/database/sql/driver/types.go.html#line-236">#L236</a>: func (defaultConverter) ConvertValue(v interface{}) (<b>Value</b>, error) {
+
+	<a href="../../../pkg/database/sql.html">database/sql</a>
+		<a href="../../../src/database/sql/convert.go.html#line-553">convert.go#L553</a>: func callValuerValue(vr driver.Valuer) (v driver.<b>Value</b>, err error) {
+		<a href="../../../src/database/sql/ctxutil.go.html#line-137">ctxutil.go#L137</a>: func namedValueToValue(named []driver.NamedValue) ([]driver.<b>Value</b>, error) {
+		<a href="../../../src/database/sql/ctxutil.go.html#line-138" class="path-duplicate">ctxutil.go</a><a href="../../../src/database/sql/ctxutil.go.html#line-138">#L138</a>: 	dargs := make([]driver.<b>Value</b>, len(named))
+		<a href="../../../src/database/sql/sql.go.html#line-204">sql.go#L204</a>: func (ns NullString) Value() (driver.<b>Value</b>, error) {
+		<a href="../../../src/database/sql/sql.go.html#line-230" class="path-duplicate">sql.go</a><a href="../../../src/database/sql/sql.go.html#line-230">#L230</a>: func (n NullInt64) Value() (driver.<b>Value</b>, error) {
+		<a href="../../../src/database/sql/sql.go.html#line-256" class="path-duplicate">sql.go</a><a href="../../../src/database/sql/sql.go.html#line-256">#L256</a>: func (n NullInt32) Value() (driver.<b>Value</b>, error) {
+		<a href="../../../src/database/sql/sql.go.html#line-283" class="path-duplicate">sql.go</a><a href="../../../src/database/sql/sql.go.html#line-283">#L283</a>: func (n NullInt16) Value() (driver.<b>Value</b>, error) {
+		<a href="../../../src/database/sql/sql.go.html#line-310" class="path-duplicate">sql.go</a><a href="../../../src/database/sql/sql.go.html#line-310">#L310</a>: func (n NullByte) Value() (driver.<b>Value</b>, error) {
+		<a href="../../../src/database/sql/sql.go.html#line-336" class="path-duplicate">sql.go</a><a href="../../../src/database/sql/sql.go.html#line-336">#L336</a>: func (n NullFloat64) Value() (driver.<b>Value</b>, error) {
+		<a href="../../../src/database/sql/sql.go.html#line-362" class="path-duplicate">sql.go</a><a href="../../../src/database/sql/sql.go.html#line-362">#L362</a>: func (n NullBool) Value() (driver.<b>Value</b>, error) {
+		<a href="../../../src/database/sql/sql.go.html#line-388" class="path-duplicate">sql.go</a><a href="../../../src/database/sql/sql.go.html#line-388">#L388</a>: func (n NullTime) Value() (driver.<b>Value</b>, error) {
+		<a href="../../../src/database/sql/sql.go.html#line-2893" class="path-duplicate">sql.go</a><a href="../../../src/database/sql/sql.go.html#line-2893">#L2893</a>: 	lastcols []driver.<b>Value</b>
+		<a href="../../../src/database/sql/sql.go.html#line-2964" class="path-duplicate">sql.go</a><a href="../../../src/database/sql/sql.go.html#line-2964">#L2964</a>: 		rs.lastcols = make([]driver.<b>Value</b>, len(rs.rowsi.Columns()))
+
+	<a href="../../../pkg/github.com/go-sql-driver/mysql.html">github.com/go-sql-driver/mysql</a>
+		<a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-198">connection.go#L198</a>: func (mc *mysqlConn) interpolateParams(query string, args []driver.<b>Value</b>) (string, error) {
+		<a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-297" class="path-duplicate">connection.go</a><a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-297">#L297</a>: func (mc *mysqlConn) Exec(query string, args []driver.<b>Value</b>) (driver.Result, error) {
+		<a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-354" class="path-duplicate">connection.go</a><a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-354">#L354</a>: func (mc *mysqlConn) Query(query string, args []driver.<b>Value</b>) (driver.Rows, error) {
+		<a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-358" class="path-duplicate">connection.go</a><a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-358">#L358</a>: func (mc *mysqlConn) query(query string, args []driver.<b>Value</b>) (*textRows, error) {
+		<a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-425" class="path-duplicate">connection.go</a><a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-425">#L425</a>: 		dest := make([]driver.<b>Value</b>, resLen)
+		<a href="../../../src/github.com/go-sql-driver/mysql/nulltime.go.html#line-45">nulltime.go#L45</a>: func (nt NullTime) Value() (driver.<b>Value</b>, error) {
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-736">packets.go#L736</a>: func (rows *textRows) readRow(dest []driver.<b>Value</b>) error {
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-909" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-909">#L909</a>: func (stmt *mysqlStmt) writeExecutePacket(args []driver.<b>Value</b>) error {
+		<a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-1173" class="path-duplicate">packets.go</a><a href="../../../src/github.com/go-sql-driver/mysql/packets.go.html#line-1173">#L1173</a>: func (rows *binaryRows) readRow(dest []driver.<b>Value</b>) error {
+		<a href="../../../src/github.com/go-sql-driver/mysql/rows.go.html#line-191">rows.go#L191</a>: func (rows *binaryRows) Next(dest []driver.<b>Value</b>) error {
+		<a href="../../../src/github.com/go-sql-driver/mysql/rows.go.html#line-213" class="path-duplicate">rows.go</a><a href="../../../src/github.com/go-sql-driver/mysql/rows.go.html#line-213">#L213</a>: func (rows *textRows) Next(dest []driver.<b>Value</b>) error {
+		<a href="../../../src/github.com/go-sql-driver/mysql/statement.go.html#line-52">statement.go#L52</a>: func (stmt *mysqlStmt) Exec(args []driver.<b>Value</b>) (driver.Result, error) {
+		<a href="../../../src/github.com/go-sql-driver/mysql/statement.go.html#line-96" class="path-duplicate">statement.go</a><a href="../../../src/github.com/go-sql-driver/mysql/statement.go.html#line-96">#L96</a>: func (stmt *mysqlStmt) Query(args []driver.<b>Value</b>) (driver.Rows, error) {
+		<a href="../../../src/github.com/go-sql-driver/mysql/statement.go.html#line-100" class="path-duplicate">statement.go</a><a href="../../../src/github.com/go-sql-driver/mysql/statement.go.html#line-100">#L100</a>: func (stmt *mysqlStmt) query(args []driver.<b>Value</b>) (*binaryRows, error) {
+		<a href="../../../src/github.com/go-sql-driver/mysql/statement.go.html#line-147" class="path-duplicate">statement.go</a><a href="../../../src/github.com/go-sql-driver/mysql/statement.go.html#line-147">#L147</a>: func (c converter) ConvertValue(v interface{}) (driver.<b>Value</b>, error) {
+		<a href="../../../src/github.com/go-sql-driver/mysql/statement.go.html#line-213" class="path-duplicate">statement.go</a><a href="../../../src/github.com/go-sql-driver/mysql/statement.go.html#line-213">#L213</a>: func callValuerValue(vr driver.Valuer) (v driver.<b>Value</b>, err error) {
+		<a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-241">utils.go#L241</a>: func parseBinaryDateTime(num uint64, data []byte, loc *time.Location) (driver.<b>Value</b>, error) {
+		<a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-395" class="path-duplicate">utils.go</a><a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-395">#L395</a>: func formatBinaryDateTime(src []byte, length uint8) (driver.<b>Value</b>, error) {
+		<a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-454" class="path-duplicate">utils.go</a><a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-454">#L454</a>: func formatBinaryTime(src []byte, length uint8) (driver.<b>Value</b>, error) {
+		<a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-843" class="path-duplicate">utils.go</a><a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-843">#L843</a>: func namedValueToValue(named []driver.NamedValue) ([]driver.<b>Value</b>, error) {
+		<a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-844" class="path-duplicate">utils.go</a><a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-844">#L844</a>: 	dargs := make([]driver.<b>Value</b>, len(named))
+
+	<a href="../../../pkg/github.com/uber/jaeger-client-go/thrift-gen/jaeger.html">github.com/uber/jaeger-client-go/thrift-gen/jaeger</a>
+		<a href="../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-78">jaeger.go#L78</a>: func (p * TagType) Value() (driver.<b>Value</b>, error) {
+		<a href="../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-131" class="path-duplicate">jaeger.go</a><a href="../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-131">#L131</a>: func (p * SpanRefType) Value() (driver.<b>Value</b>, error) {
+
+	<a href="../../../pkg/github.com/uber/jaeger-client-go/thrift-gen/sampling.html">github.com/uber/jaeger-client-go/thrift-gen/sampling</a>
+		<a href="../../../src/github.com/uber/jaeger-client-go/thrift-gen/sampling/sampling.go.html#line-69">sampling.go#L69</a>: func (p * SamplingStrategyType) Value() (driver.<b>Value</b>, error) {
+
+	<a href="../../../pkg/github.com/uber/jaeger-client-go/thrift-gen/zipkincore.html">github.com/uber/jaeger-client-go/thrift-gen/zipkincore</a>
+		<a href="../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-84">zipkincore.go#L84</a>: func (p * AnnotationType) Value() (driver.<b>Value</b>, error) {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

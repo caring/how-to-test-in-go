@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: encoding/json.Encoder.Encode</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../pkg/encoding/json.html">encoding/json</a>.<a href="../../src/encoding/json/stream.go.html#line-181">Encoder</a>.<a href="../../src/encoding/json/stream.go.html#line-201">Encode</a></b></span><span style="font-size: large;"><i> (method)</i></span>
+
+<span class="title">13 uses</span>
+
+	encoding/json (current package)
+		<a href="../../src/encoding/json/stream.go.html#line-201">stream.go#L201</a>: func (enc *Encoder) <b>Encode</b>(v interface{}) error {
+
+	<a href="../../pkg/github.com/caring/gopkg-errors.html">github.com/caring/gopkg-errors</a>
+		<a href="../../src/github.com/caring/gopkg-errors/http.go.html#line-51">http.go#L51</a>: 	return json.NewEncoder(w).<b>Encode</b>(in.Code())
+
+	<a href="../../pkg/github.com/caring/test/1-mocks.html">github.com/caring/test/1-mocks</a>
+		<a href="../../src/github.com/caring/test/1-mocks/http.go.html#line-61">http.go#L61</a>: 		_ = enc.<b>Encode</b>(result)
+		<a href="../../src/github.com/caring/test/1-mocks/http.go.html#line-69" class="path-duplicate">http.go</a><a href="../../src/github.com/caring/test/1-mocks/http.go.html#line-69">#L69</a>: 		_ = enc.<b>Encode</b>(result)
+		<a href="../../src/github.com/caring/test/1-mocks/http.go.html#line-77" class="path-duplicate">http.go</a><a href="../../src/github.com/caring/test/1-mocks/http.go.html#line-77">#L77</a>: 		_ = enc.<b>Encode</b>(result)
+		<a href="../../src/github.com/caring/test/1-mocks/http.go.html#line-87" class="path-duplicate">http.go</a><a href="../../src/github.com/caring/test/1-mocks/http.go.html#line-87">#L87</a>: 		_ = enc.<b>Encode</b>(result)
+		<a href="../../src/github.com/caring/test/1-mocks/http.go.html#line-96" class="path-duplicate">http.go</a><a href="../../src/github.com/caring/test/1-mocks/http.go.html#line-96">#L96</a>: 		_ = enc.<b>Encode</b>(result)
+		<a href="../../src/github.com/caring/test/1-mocks/http.go.html#line-102" class="path-duplicate">http.go</a><a href="../../src/github.com/caring/test/1-mocks/http.go.html#line-102">#L102</a>: 	_ = enc.<b>Encode</b>(result)
+
+	<a href="../../pkg/go.uber.org/zap.html">go.uber.org/zap</a>
+		<a href="../../src/go.uber.org/zap/http_handler.go.html#line-53">http_handler.go#L53</a>: 		enc.<b>Encode</b>(payload{Level: &amp;current})
+		<a href="../../src/go.uber.org/zap/http_handler.go.html#line-68" class="path-duplicate">http_handler.go</a><a href="../../src/go.uber.org/zap/http_handler.go.html#line-68">#L68</a>: 			enc.<b>Encode</b>(errorResponse{Error: errmess})
+		<a href="../../src/go.uber.org/zap/http_handler.go.html#line-73" class="path-duplicate">http_handler.go</a><a href="../../src/go.uber.org/zap/http_handler.go.html#line-73">#L73</a>: 		enc.<b>Encode</b>(req)
+		<a href="../../src/go.uber.org/zap/http_handler.go.html#line-77" class="path-duplicate">http_handler.go</a><a href="../../src/go.uber.org/zap/http_handler.go.html#line-77">#L77</a>: 		enc.<b>Encode</b>(errorResponse{
+
+	<a href="../../pkg/go.uber.org/zap/zapcore.html">go.uber.org/zap/zapcore</a>
+		<a href="../../src/go.uber.org/zap/zapcore/json_encoder.go.html#line-157">json_encoder.go#L157</a>: 	if err := enc.reflectEnc.<b>Encode</b>(obj); err != nil {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

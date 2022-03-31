@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: strings.Replace</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">func <b><a href="../pkg/strings.html">strings</a>.<a href="../src/strings/strings.go.html#line-924">Replace</a></b></span>
+
+<span class="title">18 uses</span>
+
+	strings (current package)
+		<a href="../src/strings/strings.go.html#line-924">strings.go#L924</a>: func <b>Replace</b>(s, old, new string, n int) string {
+		<a href="../src/strings/strings.go.html#line-964" class="path-duplicate">strings.go</a><a href="../src/strings/strings.go.html#line-964">#L964</a>: 	return <b>Replace</b>(s, old, new, -1)
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/credentials/processcreds.html">github.com/aws/aws-sdk-go/aws/credentials/processcreds</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/credentials/processcreds/provider.go.html#line-392">provider.go#L392</a>: 		out = []byte(strings.<b>Replace</b>(string(out), `\"`, `"`, -1))
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/endpoints.html">github.com/aws/aws-sdk-go/aws/endpoints</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/endpoints/v3model.go.html#line-263">v3model.go#L263</a>: 	u := strings.<b>Replace</b>(hostname, "{service}", service, 1)
+		<a href="../src/github.com/aws/aws-sdk-go/aws/endpoints/v3model.go.html#line-264" class="path-duplicate">v3model.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/endpoints/v3model.go.html#line-264">#L264</a>: 	u = strings.<b>Replace</b>(u, "{region}", region, 1)
+		<a href="../src/github.com/aws/aws-sdk-go/aws/endpoints/v3model.go.html#line-265" class="path-duplicate">v3model.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/endpoints/v3model.go.html#line-265">#L265</a>: 	u = strings.<b>Replace</b>(u, "{dnsSuffix}", dnsSuffix, 1)
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/signer/v4.html">github.com/aws/aws-sdk-go/aws/signer/v4</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/signer/v4/v4.go.html#line-654">v4.go#L654</a>: 	ctx.Request.URL.RawQuery = strings.<b>Replace</b>(ctx.Query.Encode(), "+", "%20", -1)
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/private/protocol.html">github.com/aws/aws-sdk-go/private/protocol</a>
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/host_prefix.go.html#line-47">host_prefix.go#L47</a>: 		prefix = strings.<b>Replace</b>(prefix, "{"+name+"}", value, -1)
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/private/protocol/rest.html">github.com/aws/aws-sdk-go/private/protocol/rest</a>
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/rest/build.go.html#line-202">build.go#L202</a>: 	u.Path = strings.<b>Replace</b>(u.Path, "{"+name+"}", value, -1)
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/rest/build.go.html#line-203" class="path-duplicate">build.go</a><a href="../src/github.com/aws/aws-sdk-go/private/protocol/rest/build.go.html#line-203">#L203</a>: 	u.Path = strings.<b>Replace</b>(u.Path, "{"+name+"+}", value, -1)
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/rest/build.go.html#line-205" class="path-duplicate">build.go</a><a href="../src/github.com/aws/aws-sdk-go/private/protocol/rest/build.go.html#line-205">#L205</a>: 	u.RawPath = strings.<b>Replace</b>(u.RawPath, "{"+name+"}", EscapePath(value, true), -1)
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/rest/build.go.html#line-206" class="path-duplicate">build.go</a><a href="../src/github.com/aws/aws-sdk-go/private/protocol/rest/build.go.html#line-206">#L206</a>: 	u.RawPath = strings.<b>Replace</b>(u.RawPath, "{"+name+"+}", EscapePath(value, false), -1)
+
+	<a href="../pkg/github.com/jmespath/go-jmespath.html">github.com/jmespath/go-jmespath</a>
+		<a href="../src/github.com/jmespath/go-jmespath/lexer.go.html#line-250">lexer.go#L250</a>: 	value = strings.<b>Replace</b>(value, "\\`", "`", -1)
+
+	<a href="../pkg/google.golang.org/protobuf/reflect/protodesc.html">google.golang.org/protobuf/reflect/protodesc</a>
+		<a href="../src/google.golang.org/protobuf/reflect/protodesc/desc_validate.go.html#line-56">desc_validate.go#L56</a>: 			prefix := strings.<b>Replace</b>(strings.ToLower(string(e.Name())), "_", "", -1)
+		<a href="../src/google.golang.org/protobuf/reflect/protodesc/desc_validate.go.html#line-123" class="path-duplicate">desc_validate.go</a><a href="../src/google.golang.org/protobuf/reflect/protodesc/desc_validate.go.html#line-123">#L123</a>: 				s := strings.<b>Replace</b>(strings.ToLower(string(f1.Name())), "_", "", -1)
+
+	<a href="../pkg/google.golang.org/protobuf/reflect/protoregistry.html">google.golang.org/protobuf/reflect/protoregistry</a>
+		<a href="../src/google.golang.org/protobuf/reflect/protoregistry/registry.go.html#line-201">registry.go#L201</a>: 	pkgName = strings.<b>Replace</b>(pkgName, "_", "", -1) + "pb" // e.g., "field_mask" =&gt; "fieldmaskpb"
+
+	<a href="../pkg/net/http.html">net/http</a>
+		<a href="../src/net/http/client.go.html#line-164">client.go#L164</a>: 		referer = strings.<b>Replace</b>(referer, auth, "", 1)
+		<a href="../src/net/http/client.go.html#line-1030" class="path-duplicate">client.go</a><a href="../src/net/http/client.go.html#line-1030">#L1030</a>: 		return strings.<b>Replace</b>(u.String(), u.User.String()+"@", u.User.Username()+":***@", 1)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

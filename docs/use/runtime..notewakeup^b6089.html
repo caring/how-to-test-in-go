@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime.notewakeup</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">func <b><a href="../pkg/runtime.html">runtime</a>.<a href="../src/runtime/lock_sema.go.html#line-143">notewakeup</a></b></span>
+
+<span class="title">25 uses</span>
+
+	runtime (current package)
+		<a href="../src/runtime/lock_sema.go.html#line-143">lock_sema.go#L143</a>: func <b>notewakeup</b>(n *note) {
+		<a href="../src/runtime/mgc.go.html#line-1179">mgc.go#L1179</a>: 	<b>notewakeup</b>(&amp;work.bgMarkReady)
+		<a href="../src/runtime/proc.go.html#line-1260">proc.go#L1260</a>: 		<b>notewakeup</b>(&amp;sched.sysmonnote)
+		<a href="../src/runtime/proc.go.html#line-1276" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1276">#L1276</a>: 			<b>notewakeup</b>(&amp;mp.park)
+		<a href="../src/runtime/proc.go.html#line-1754" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1754">#L1754</a>: 				<b>notewakeup</b>(&amp;mp.park)
+		<a href="../src/runtime/proc.go.html#line-1773" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1773">#L1773</a>: 				<b>notewakeup</b>(&amp;sched.sysmonnote)
+		<a href="../src/runtime/proc.go.html#line-1779" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1779">#L1779</a>: 				<b>notewakeup</b>(&amp;newmHandoff.wake)
+		<a href="../src/runtime/proc.go.html#line-1818" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1818">#L1818</a>: 		<b>notewakeup</b>(&amp;sched.safePointNote)
+		<a href="../src/runtime/proc.go.html#line-2225" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2225">#L2225</a>: 			<b>notewakeup</b>(&amp;newmHandoff.wake)
+		<a href="../src/runtime/proc.go.html#line-2504" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2504">#L2504</a>: 	<b>notewakeup</b>(&amp;nmp.park)
+		<a href="../src/runtime/proc.go.html#line-2538" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2538">#L2538</a>: 			<b>notewakeup</b>(&amp;sched.stopnote)
+		<a href="../src/runtime/proc.go.html#line-2547" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2547">#L2547</a>: 			<b>notewakeup</b>(&amp;sched.safePointNote)
+		<a href="../src/runtime/proc.go.html#line-2630" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2630">#L2630</a>: 	<b>notewakeup</b>(&amp;mp.park)
+		<a href="../src/runtime/proc.go.html#line-2655" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2655">#L2655</a>: 		<b>notewakeup</b>(&amp;sched.stopnote)
+		<a href="../src/runtime/proc.go.html#line-3837" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3837">#L3837</a>: 		<b>notewakeup</b>(&amp;sched.sysmonnote)
+		<a href="../src/runtime/proc.go.html#line-3854" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3854">#L3854</a>: 			<b>notewakeup</b>(&amp;sched.stopnote)
+		<a href="../src/runtime/proc.go.html#line-4064" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4064">#L4064</a>: 		<b>notewakeup</b>(&amp;sched.sysmonnote)
+		<a href="../src/runtime/proc.go.html#line-4100" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4100">#L4100</a>: 		<b>notewakeup</b>(&amp;sched.sysmonnote)
+		<a href="../src/runtime/proc.go.html#line-5287" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5287">#L5287</a>: 			<b>notewakeup</b>(&amp;mp.park)
+		<a href="../src/runtime/profbuf.go.html#line-389">profbuf.go#L389</a>: 			<b>notewakeup</b>(&amp;b.wait)
+		<a href="../src/runtime/profbuf.go.html#line-416" class="path-duplicate">profbuf.go</a><a href="../src/runtime/profbuf.go.html#line-416">#L416</a>: 			<b>notewakeup</b>(&amp;b.wait)
+		<a href="../src/runtime/rwmutex.go.html#line-73">rwmutex.go#L73</a>: 				<b>notewakeup</b>(&amp;w.park)
+		<a href="../src/runtime/rwmutex.go.html#line-116" class="path-duplicate">rwmutex.go</a><a href="../src/runtime/rwmutex.go.html#line-116">#L116</a>: 		<b>notewakeup</b>(&amp;reader.park)
+		<a href="../src/runtime/sigqueue.go.html#line-118">sigqueue.go#L118</a>: 				<b>notewakeup</b>(&amp;sig.note)
+		<a href="../src/runtime/sigqueue.go.html#line-140" class="path-duplicate">sigqueue.go</a><a href="../src/runtime/sigqueue.go.html#line-140">#L140</a>: 		<b>notewakeup</b>(&amp;sig.note)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

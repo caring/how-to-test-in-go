@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: crypto/tls.Conn.handshakeMutex</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../pkg/crypto/tls.html">crypto/tls</a>.<a href="../../src/crypto/tls/conn.go.html#line-27">Conn</a>.<a href="../../src/crypto/tls/conn.go.html#line-38">handshakeMutex</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">11 uses</span>
+
+	crypto/tls (current package)
+		<a href="../../src/crypto/tls/conn.go.html#line-38">conn.go#L38</a>: 	<b>handshakeMutex</b> sync.Mutex
+		<a href="../../src/crypto/tls/conn.go.html#line-1190" class="path-duplicate">conn.go</a><a href="../../src/crypto/tls/conn.go.html#line-1190">#L1190</a>: 	c.<b>handshakeMutex</b>.Lock()
+		<a href="../../src/crypto/tls/conn.go.html#line-1191" class="path-duplicate">conn.go</a><a href="../../src/crypto/tls/conn.go.html#line-1191">#L1191</a>: 	defer c.<b>handshakeMutex</b>.Unlock()
+		<a href="../../src/crypto/tls/conn.go.html#line-1432" class="path-duplicate">conn.go</a><a href="../../src/crypto/tls/conn.go.html#line-1432">#L1432</a>: 	c.<b>handshakeMutex</b>.Lock()
+		<a href="../../src/crypto/tls/conn.go.html#line-1433" class="path-duplicate">conn.go</a><a href="../../src/crypto/tls/conn.go.html#line-1433">#L1433</a>: 	defer c.<b>handshakeMutex</b>.Unlock()
+		<a href="../../src/crypto/tls/conn.go.html#line-1463" class="path-duplicate">conn.go</a><a href="../../src/crypto/tls/conn.go.html#line-1463">#L1463</a>: 	c.<b>handshakeMutex</b>.Lock()
+		<a href="../../src/crypto/tls/conn.go.html#line-1464" class="path-duplicate">conn.go</a><a href="../../src/crypto/tls/conn.go.html#line-1464">#L1464</a>: 	defer c.<b>handshakeMutex</b>.Unlock()
+		<a href="../../src/crypto/tls/conn.go.html#line-1499" class="path-duplicate">conn.go</a><a href="../../src/crypto/tls/conn.go.html#line-1499">#L1499</a>: 	c.<b>handshakeMutex</b>.Lock()
+		<a href="../../src/crypto/tls/conn.go.html#line-1500" class="path-duplicate">conn.go</a><a href="../../src/crypto/tls/conn.go.html#line-1500">#L1500</a>: 	defer c.<b>handshakeMutex</b>.Unlock()
+		<a href="../../src/crypto/tls/conn.go.html#line-1509" class="path-duplicate">conn.go</a><a href="../../src/crypto/tls/conn.go.html#line-1509">#L1509</a>: 	c.<b>handshakeMutex</b>.Lock()
+		<a href="../../src/crypto/tls/conn.go.html#line-1510" class="path-duplicate">conn.go</a><a href="../../src/crypto/tls/conn.go.html#line-1510">#L1510</a>: 	defer c.<b>handshakeMutex</b>.Unlock()
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

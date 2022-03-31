@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: net/http.http2errRequestCanceled</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">var <b><a href="../../pkg/net/http.html">net/http</a>.<a href="../../src/net/http/h2_bundle.go.html#line-7570">http2errRequestCanceled</a></b></span>
+
+<span class="title">12 uses</span>
+
+	net/http (current package)
+		<a href="../../src/net/http/h2_bundle.go.html#line-7570">h2_bundle.go#L7570</a>: var <b>http2errRequestCanceled</b> = errors.New("net/http: request canceled")
+		<a href="../../src/net/http/h2_bundle.go.html#line-7665" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-7665">#L7665</a>: 			return <b>http2errRequestCanceled</b>
+		<a href="../../src/net/http/h2_bundle.go.html#line-7717" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-7717">#L7717</a>: 			cs.abortStream(<b>http2errRequestCanceled</b>)
+		<a href="../../src/net/http/h2_bundle.go.html#line-7718" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-7718">#L7718</a>: 			return nil, <b>http2errRequestCanceled</b>
+		<a href="../../src/net/http/h2_bundle.go.html#line-7755" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-7755">#L7755</a>: 		return <b>http2errRequestCanceled</b>
+		<a href="../../src/net/http/h2_bundle.go.html#line-7832" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-7832">#L7832</a>: 				err = <b>http2errRequestCanceled</b>
+		<a href="../../src/net/http/h2_bundle.go.html#line-7878" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-7878">#L7878</a>: 			return <b>http2errRequestCanceled</b>
+		<a href="../../src/net/http/h2_bundle.go.html#line-7897" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-7897">#L7897</a>: 		return <b>http2errRequestCanceled</b>
+		<a href="../../src/net/http/h2_bundle.go.html#line-7976" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-7976">#L7976</a>: 		cs.bufPipe.CloseWithError(<b>http2errRequestCanceled</b>)
+		<a href="../../src/net/http/h2_bundle.go.html#line-8223" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-8223">#L8223</a>: 			return 0, <b>http2errRequestCanceled</b>
+		<a href="../../src/net/http/h2_bundle.go.html#line-8980" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-8980">#L8980</a>: 		return <b>http2errRequestCanceled</b>
+		<a href="../../src/net/http/transport.go.html#line-2511">transport.go#L2511</a>: var errRequestCanceled = <b>http2errRequestCanceled</b>
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

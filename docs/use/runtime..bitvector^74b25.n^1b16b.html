@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime.bitvector.n</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/runtime.html">runtime</a>.<a href="../src/runtime/stack.go.html#line-572">bitvector</a>.<a href="../src/runtime/stack.go.html#line-573">n</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">22 uses</span>
+
+	runtime (current package)
+		<a href="../src/runtime/heapdump.go.html#line-247">heapdump.go#L247</a>: 	for i := uintptr(0); i &lt; uintptr(cbv.<b>n</b>); i++ {
+		<a href="../src/runtime/heapdump.go.html#line-278" class="path-duplicate">heapdump.go</a><a href="../src/runtime/heapdump.go.html#line-278">#L278</a>: 		bv.<b>n</b> = -1
+		<a href="../src/runtime/heapdump.go.html#line-297" class="path-duplicate">heapdump.go</a><a href="../src/runtime/heapdump.go.html#line-297">#L297</a>: 	if child.args.<b>n</b> &gt;= 0 {
+		<a href="../src/runtime/heapdump.go.html#line-324" class="path-duplicate">heapdump.go</a><a href="../src/runtime/heapdump.go.html#line-324">#L324</a>: 		dumpbv(&amp;bv, s.varp-uintptr(bv.<b>n</b>)*sys.PtrSize-s.sp)
+		<a href="../src/runtime/heapdump.go.html#line-337" class="path-duplicate">heapdump.go</a><a href="../src/runtime/heapdump.go.html#line-337">#L337</a>: 		child.args.<b>n</b> = -1
+		<a href="../src/runtime/heapdump.go.html#line-371" class="path-duplicate">heapdump.go</a><a href="../src/runtime/heapdump.go.html#line-371">#L371</a>: 	child.args.<b>n</b> = -1
+		<a href="../src/runtime/mbitmap.go.html#line-2015">mbitmap.go#L2015</a>: 			if locals.<b>n</b> == 0 {
+		<a href="../src/runtime/mbitmap.go.html#line-2018" class="path-duplicate">mbitmap.go</a><a href="../src/runtime/mbitmap.go.html#line-2018">#L2018</a>: 			size := uintptr(locals.<b>n</b>) * sys.PtrSize
+		<a href="../src/runtime/mgcmark.go.html#line-915">mgcmark.go#L915</a>: 	if locals.<b>n</b> &gt; 0 {
+		<a href="../src/runtime/mgcmark.go.html#line-916" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-916">#L916</a>: 		size := uintptr(locals.<b>n</b>) * sys.PtrSize
+		<a href="../src/runtime/mgcmark.go.html#line-921" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-921">#L921</a>: 	if args.<b>n</b> &gt; 0 {
+		<a href="../src/runtime/mgcmark.go.html#line-922" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-922">#L922</a>: 		scanblock(frame.argp, uintptr(args.<b>n</b>)*sys.PtrSize, args.bytedata, gcw, state)
+		<a href="../src/runtime/proc.go.html#line-4341">proc.go#L4341</a>: 				bulkBarrierBitmap(spArg, spArg, uintptr(bv.<b>n</b>)*sys.PtrSize, 0, bv.bytedata)
+		<a href="../src/runtime/stack.go.html#line-573">stack.go#L573</a>: 	<b>n</b>        int32 // # of bits
+		<a href="../src/runtime/stack.go.html#line-592" class="path-duplicate">stack.go</a><a href="../src/runtime/stack.go.html#line-592">#L592</a>: 	num := uintptr(bv.<b>n</b>)
+		<a href="../src/runtime/stack.go.html#line-657" class="path-duplicate">stack.go</a><a href="../src/runtime/stack.go.html#line-657">#L657</a>: 	if locals.<b>n</b> &gt; 0 {
+		<a href="../src/runtime/stack.go.html#line-658" class="path-duplicate">stack.go</a><a href="../src/runtime/stack.go.html#line-658">#L658</a>: 		size := uintptr(locals.<b>n</b>) * sys.PtrSize
+		<a href="../src/runtime/stack.go.html#line-682" class="path-duplicate">stack.go</a><a href="../src/runtime/stack.go.html#line-682">#L682</a>: 	if args.<b>n</b> &gt; 0 {
+		<a href="../src/runtime/stack.go.html#line-1287" class="path-duplicate">stack.go</a><a href="../src/runtime/stack.go.html#line-1287">#L1287</a>: 				print("      locals ", stackid, "/", stkmap.n, " ", locals.<b>n</b>, " words ", locals.bytedata, "\n")
+		<a href="../src/runtime/stack.go.html#line-1302" class="path-duplicate">stack.go</a><a href="../src/runtime/stack.go.html#line-1302">#L1302</a>: 			if n &lt; args.<b>n</b> {
+		<a href="../src/runtime/stack.go.html#line-1303" class="path-duplicate">stack.go</a><a href="../src/runtime/stack.go.html#line-1303">#L1303</a>: 				args.<b>n</b> = n // Don't use more of the arguments than arglen.
+		<a href="../src/runtime/traceback.go.html#line-710">traceback.go#L710</a>: 			arglen = uintptr(bv.<b>n</b> * sys.PtrSize)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

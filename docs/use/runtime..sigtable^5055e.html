@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime.sigtable</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">var <b><a href="../pkg/runtime.html">runtime</a>.<a href="../src/runtime/signal_darwin.go.html#line-7">sigtable</a></b></span>
+
+<span class="title">24 uses</span>
+
+	runtime (current package)
+		<a href="../src/runtime/signal_darwin.go.html#line-7">signal_darwin.go#L7</a>: var <b>sigtable</b> = [...]sigTabT{
+		<a href="../src/runtime/signal_unix.go.html#line-31">signal_unix.go#L31</a>: 	if sig &gt;= uint32(len(<b>sigtable</b>)) {
+		<a href="../src/runtime/signal_unix.go.html#line-34" class="path-duplicate">signal_unix.go</a><a href="../src/runtime/signal_unix.go.html#line-34">#L34</a>: 	return <b>sigtable</b>[sig].name
+		<a href="../src/runtime/signal_unix.go.html#line-100" class="path-duplicate">signal_unix.go</a><a href="../src/runtime/signal_unix.go.html#line-100">#L100</a>: 	if len(<b>sigtable</b>) != _NSIG {
+		<a href="../src/runtime/signal_unix.go.html#line-101" class="path-duplicate">signal_unix.go</a><a href="../src/runtime/signal_unix.go.html#line-101">#L101</a>: 		print("runtime: len(sigtable)=", len(<b>sigtable</b>), " _NSIG=", _NSIG, "\n")
+		<a href="../src/runtime/signal_unix.go.html#line-125" class="path-duplicate">signal_unix.go</a><a href="../src/runtime/signal_unix.go.html#line-125">#L125</a>: 		t := &amp;<b>sigtable</b>[i]
+		<a href="../src/runtime/signal_unix.go.html#line-163" class="path-duplicate">signal_unix.go</a><a href="../src/runtime/signal_unix.go.html#line-163">#L163</a>: 	t := &amp;<b>sigtable</b>[sig]
+		<a href="../src/runtime/signal_unix.go.html#line-181" class="path-duplicate">signal_unix.go</a><a href="../src/runtime/signal_unix.go.html#line-181">#L181</a>: 	if sig &gt;= uint32(len(<b>sigtable</b>)) {
+		<a href="../src/runtime/signal_unix.go.html#line-190" class="path-duplicate">signal_unix.go</a><a href="../src/runtime/signal_unix.go.html#line-190">#L190</a>: 	t := &amp;<b>sigtable</b>[sig]
+		<a href="../src/runtime/signal_unix.go.html#line-206" class="path-duplicate">signal_unix.go</a><a href="../src/runtime/signal_unix.go.html#line-206">#L206</a>: 	if sig &gt;= uint32(len(<b>sigtable</b>)) {
+		<a href="../src/runtime/signal_unix.go.html#line-215" class="path-duplicate">signal_unix.go</a><a href="../src/runtime/signal_unix.go.html#line-215">#L215</a>: 	t := &amp;<b>sigtable</b>[sig]
+		<a href="../src/runtime/signal_unix.go.html#line-235" class="path-duplicate">signal_unix.go</a><a href="../src/runtime/signal_unix.go.html#line-235">#L235</a>: 	if sig &gt;= uint32(len(<b>sigtable</b>)) {
+		<a href="../src/runtime/signal_unix.go.html#line-244" class="path-duplicate">signal_unix.go</a><a href="../src/runtime/signal_unix.go.html#line-244">#L244</a>: 	t := &amp;<b>sigtable</b>[sig]
+		<a href="../src/runtime/signal_unix.go.html#line-563" class="path-duplicate">signal_unix.go</a><a href="../src/runtime/signal_unix.go.html#line-563">#L563</a>: 	if sig &lt; uint32(len(<b>sigtable</b>)) {
+		<a href="../src/runtime/signal_unix.go.html#line-564" class="path-duplicate">signal_unix.go</a><a href="../src/runtime/signal_unix.go.html#line-564">#L564</a>: 		flags = <b>sigtable</b>[sig].flags
+		<a href="../src/runtime/signal_unix.go.html#line-623" class="path-duplicate">signal_unix.go</a><a href="../src/runtime/signal_unix.go.html#line-623">#L623</a>: 	if sig &lt; uint32(len(<b>sigtable</b>)) {
+		<a href="../src/runtime/signal_unix.go.html#line-624" class="path-duplicate">signal_unix.go</a><a href="../src/runtime/signal_unix.go.html#line-624">#L624</a>: 		print(<b>sigtable</b>[sig].name, "\n")
+		<a href="../src/runtime/signal_unix.go.html#line-753" class="path-duplicate">signal_unix.go</a><a href="../src/runtime/signal_unix.go.html#line-753">#L753</a>: 	if g.sig &gt;= uint32(len(<b>sigtable</b>)) {
+		<a href="../src/runtime/signal_unix.go.html#line-757" class="path-duplicate">signal_unix.go</a><a href="../src/runtime/signal_unix.go.html#line-757">#L757</a>: 	panic(errorString(<b>sigtable</b>[g.sig].name))
+		<a href="../src/runtime/signal_unix.go.html#line-883" class="path-duplicate">signal_unix.go</a><a href="../src/runtime/signal_unix.go.html#line-883">#L883</a>: 		for i := range <b>sigtable</b> {
+		<a href="../src/runtime/signal_unix.go.html#line-967" class="path-duplicate">signal_unix.go</a><a href="../src/runtime/signal_unix.go.html#line-967">#L967</a>: 	if sig &gt;= uint32(len(<b>sigtable</b>)) {
+		<a href="../src/runtime/signal_unix.go.html#line-971" class="path-duplicate">signal_unix.go</a><a href="../src/runtime/signal_unix.go.html#line-971">#L971</a>: 	flags := <b>sigtable</b>[sig].flags
+		<a href="../src/runtime/signal_unix.go.html#line-1125" class="path-duplicate">signal_unix.go</a><a href="../src/runtime/signal_unix.go.html#line-1125">#L1125</a>: 	for i := range <b>sigtable</b> {
+		<a href="../src/runtime/signal_unix.go.html#line-1160" class="path-duplicate">signal_unix.go</a><a href="../src/runtime/signal_unix.go.html#line-1160">#L1160</a>: 	flags := <b>sigtable</b>[sig].flags
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

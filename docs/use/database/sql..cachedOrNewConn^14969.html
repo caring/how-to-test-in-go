@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: database/sql.cachedOrNewConn</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">const <b><a href="../../pkg/database/sql.html">database/sql</a>.<a href="../../src/database/sql/sql.go.html#line-503">cachedOrNewConn</a></b></span>
+
+<span class="title">11 uses</span>
+
+	database/sql (current package)
+		<a href="../../src/database/sql/sql.go.html#line-503">sql.go#L503</a>: 	<b>cachedOrNewConn</b>
+		<a href="../../src/database/sql/sql.go.html#line-853" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-853">#L853</a>: 		dc, err = db.conn(ctx, <b>cachedOrNewConn</b>)
+		<a href="../../src/database/sql/sql.go.html#line-1276" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-1276">#L1276</a>: 	if strategy == <b>cachedOrNewConn</b> &amp;&amp; numFree &gt; 0 {
+		<a href="../../src/database/sql/sql.go.html#line-1342" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-1342">#L1342</a>: 			if strategy == <b>cachedOrNewConn</b> &amp;&amp; ret.err == nil &amp;&amp; ret.conn.expired(lifetime) {
+		<a href="../../src/database/sql/sql.go.html#line-1525" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-1525">#L1525</a>: 		stmt, err = db.prepare(ctx, query, <b>cachedOrNewConn</b>)
+		<a href="../../src/database/sql/sql.go.html#line-1601" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-1601">#L1601</a>: 		res, err = db.exec(ctx, query, args, <b>cachedOrNewConn</b>)
+		<a href="../../src/database/sql/sql.go.html#line-1674" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-1674">#L1674</a>: 		rows, err = db.query(ctx, query, args, <b>cachedOrNewConn</b>)
+		<a href="../../src/database/sql/sql.go.html#line-1809" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-1809">#L1809</a>: 		tx, err = db.begin(ctx, opts, <b>cachedOrNewConn</b>)
+		<a href="../../src/database/sql/sql.go.html#line-1888" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-1888">#L1888</a>: 		dc, err = db.conn(ctx, <b>cachedOrNewConn</b>)
+		<a href="../../src/database/sql/sql.go.html#line-2582" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-2582">#L2582</a>: 	strategy := <b>cachedOrNewConn</b>
+		<a href="../../src/database/sql/sql.go.html#line-2730" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-2730">#L2730</a>: 	strategy := <b>cachedOrNewConn</b>
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

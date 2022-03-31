@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/uber/jaeger-client-go/thrift-gen/zipkincore.BinaryAnnotation.Host</title>
+<link href="../../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../../../pkg/github.com/uber/jaeger-client-go/thrift-gen/zipkincore.html">github.com/uber/jaeger-client-go/thrift-gen/zipkincore</a>.<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-540">BinaryAnnotation</a>.<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-544">Host</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">13 uses</span>
+
+	github.com/uber/jaeger-client-go/thrift-gen/zipkincore (current package)
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-544">zipkincore.go#L544</a>:   <b>Host</b> *Endpoint `thrift:"host,4" db:"host" json:"host,omitempty"`
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-568" class="path-duplicate">zipkincore.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-568">#L568</a>: return p.<b>Host</b>
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-571" class="path-duplicate">zipkincore.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-571">#L571</a>:   return p.<b>Host</b> != nil
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-671" class="path-duplicate">zipkincore.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-671">#L671</a>:   p.<b>Host</b> = &amp;Endpoint{}
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-672" class="path-duplicate">zipkincore.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-672">#L672</a>:   if err := p.<b>Host</b>.Read(ctx, iprot); err != nil {
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-673" class="path-duplicate">zipkincore.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-673">#L673</a>:     return thrift.PrependError(fmt.Sprintf("%T error reading struct: ", p.<b>Host</b>), err)
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-728" class="path-duplicate">zipkincore.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-728">#L728</a>:     if err := p.<b>Host</b>.Write(ctx, oprot); err != nil {
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-729" class="path-duplicate">zipkincore.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-729">#L729</a>:       return thrift.PrependError(fmt.Sprintf("%T error writing struct: ", p.<b>Host</b>), err)
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-746" class="path-duplicate">zipkincore.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-746">#L746</a>:   if !p.<b>Host</b>.Equals(other.<b>Host</b>) { return false }
+
+	<a href="../../../../../pkg/github.com/uber/jaeger-client-go.html">github.com/uber/jaeger-client-go</a>
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/zipkin_thrift_span.go.html#line-131">zipkin_thrift_span.go#L131</a>: 			<b>Host</b>:           &amp;peer}
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/zipkin_thrift_span.go.html#line-146" class="path-duplicate">zipkin_thrift_span.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/zipkin_thrift_span.go.html#line-146">#L146</a>: 			<b>Host</b>:           endpoint}
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/zipkin_thrift_span.go.html#line-163" class="path-duplicate">zipkin_thrift_span.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/zipkin_thrift_span.go.html#line-163">#L163</a>: 	bann := &amp;z.BinaryAnnotation{Key: key, <b>Host</b>: endpoint}
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

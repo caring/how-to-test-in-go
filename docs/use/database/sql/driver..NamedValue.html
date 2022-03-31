@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: database/sql/driver.NamedValue</title>
+<link href="../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../../../pkg/database/sql/driver.html">database/sql/driver</a>.<a href="../../../src/database/sql/driver/driver.go.html#line-64">NamedValue</a></b></span>
+
+<span class="title">25 uses</span>
+
+	database/sql/driver (current package)
+		<a href="../../../src/database/sql/driver/driver.go.html#line-64">driver.go#L64</a>: type <b>NamedValue</b> struct {
+		<a href="../../../src/database/sql/driver/driver.go.html#line-196" class="path-duplicate">driver.go</a><a href="../../../src/database/sql/driver/driver.go.html#line-196">#L196</a>: 	ExecContext(ctx context.Context, query string, args []<b>NamedValue</b>) (Result, error)
+		<a href="../../../src/database/sql/driver/driver.go.html#line-223" class="path-duplicate">driver.go</a><a href="../../../src/database/sql/driver/driver.go.html#line-223">#L223</a>: 	QueryContext(ctx context.Context, query string, args []<b>NamedValue</b>) (Rows, error)
+		<a href="../../../src/database/sql/driver/driver.go.html#line-366" class="path-duplicate">driver.go</a><a href="../../../src/database/sql/driver/driver.go.html#line-366">#L366</a>: 	ExecContext(ctx context.Context, args []<b>NamedValue</b>) (Result, error)
+		<a href="../../../src/database/sql/driver/driver.go.html#line-375" class="path-duplicate">driver.go</a><a href="../../../src/database/sql/driver/driver.go.html#line-375">#L375</a>: 	QueryContext(ctx context.Context, args []<b>NamedValue</b>) (Rows, error)
+		<a href="../../../src/database/sql/driver/driver.go.html#line-403" class="path-duplicate">driver.go</a><a href="../../../src/database/sql/driver/driver.go.html#line-403">#L403</a>: 	CheckNamedValue(*<b>NamedValue</b>) error
+
+	<a href="../../../pkg/database/sql.html">database/sql</a>
+		<a href="../../../src/database/sql/convert.go.html#line-22">convert.go#L22</a>: func describeNamedValue(nv *driver.<b>NamedValue</b>) string {
+		<a href="../../../src/database/sql/convert.go.html#line-48" class="path-duplicate">convert.go</a><a href="../../../src/database/sql/convert.go.html#line-48">#L48</a>: func (c ccChecker) CheckNamedValue(nv *driver.<b>NamedValue</b>) error {
+		<a href="../../../src/database/sql/convert.go.html#line-96" class="path-duplicate">convert.go</a><a href="../../../src/database/sql/convert.go.html#line-96">#L96</a>: func defaultCheckNamedValue(nv *driver.<b>NamedValue</b>) (err error) {
+		<a href="../../../src/database/sql/convert.go.html#line-107" class="path-duplicate">convert.go</a><a href="../../../src/database/sql/convert.go.html#line-107">#L107</a>: func driverArgsConnLocked(ci driver.Conn, ds *driverStmt, args []interface{}) ([]driver.<b>NamedValue</b>, error) {
+		<a href="../../../src/database/sql/convert.go.html#line-108" class="path-duplicate">convert.go</a><a href="../../../src/database/sql/convert.go.html#line-108">#L108</a>: 	nvargs := make([]driver.<b>NamedValue</b>, len(args))
+		<a href="../../../src/database/sql/ctxutil.go.html#line-29">ctxutil.go#L29</a>: func ctxDriverExec(ctx context.Context, execerCtx driver.ExecerContext, execer driver.Execer, query string, nvdargs []driver.<b>NamedValue</b>) (driver.Result, error) {
+		<a href="../../../src/database/sql/ctxutil.go.html#line-46" class="path-duplicate">ctxutil.go</a><a href="../../../src/database/sql/ctxutil.go.html#line-46">#L46</a>: func ctxDriverQuery(ctx context.Context, queryerCtx driver.QueryerContext, queryer driver.Queryer, query string, nvdargs []driver.<b>NamedValue</b>) (driver.Rows, error) {
+		<a href="../../../src/database/sql/ctxutil.go.html#line-63" class="path-duplicate">ctxutil.go</a><a href="../../../src/database/sql/ctxutil.go.html#line-63">#L63</a>: func ctxDriverStmtExec(ctx context.Context, si driver.Stmt, nvdargs []driver.<b>NamedValue</b>) (driver.Result, error) {
+		<a href="../../../src/database/sql/ctxutil.go.html#line-80" class="path-duplicate">ctxutil.go</a><a href="../../../src/database/sql/ctxutil.go.html#line-80">#L80</a>: func ctxDriverStmtQuery(ctx context.Context, si driver.Stmt, nvdargs []driver.<b>NamedValue</b>) (driver.Rows, error) {
+		<a href="../../../src/database/sql/ctxutil.go.html#line-137" class="path-duplicate">ctxutil.go</a><a href="../../../src/database/sql/ctxutil.go.html#line-137">#L137</a>: func namedValueToValue(named []driver.<b>NamedValue</b>) ([]driver.Value, error) {
+		<a href="../../../src/database/sql/sql.go.html#line-1639">sql.go#L1639</a>: 		var nvdargs []driver.<b>NamedValue</b>
+		<a href="../../../src/database/sql/sql.go.html#line-1714" class="path-duplicate">sql.go</a><a href="../../../src/database/sql/sql.go.html#line-1714">#L1714</a>: 		var nvdargs []driver.<b>NamedValue</b>
+
+	<a href="../../../pkg/github.com/go-sql-driver/mysql.html">github.com/go-sql-driver/mysql</a>
+		<a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-495">connection.go#L495</a>: func (mc *mysqlConn) QueryContext(ctx context.Context, query string, args []driver.<b>NamedValue</b>) (driver.Rows, error) {
+		<a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-514" class="path-duplicate">connection.go</a><a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-514">#L514</a>: func (mc *mysqlConn) ExecContext(ctx context.Context, query string, args []driver.<b>NamedValue</b>) (driver.Result, error) {
+		<a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-548" class="path-duplicate">connection.go</a><a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-548">#L548</a>: func (stmt *mysqlStmt) QueryContext(ctx context.Context, args []driver.<b>NamedValue</b>) (driver.Rows, error) {
+		<a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-567" class="path-duplicate">connection.go</a><a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-567">#L567</a>: func (stmt *mysqlStmt) ExecContext(ctx context.Context, args []driver.<b>NamedValue</b>) (driver.Result, error) {
+		<a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-631" class="path-duplicate">connection.go</a><a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-631">#L631</a>: func (mc *mysqlConn) CheckNamedValue(nv *driver.<b>NamedValue</b>) (err error) {
+		<a href="../../../src/github.com/go-sql-driver/mysql/statement.go.html#line-47">statement.go#L47</a>: func (stmt *mysqlStmt) CheckNamedValue(nv *driver.<b>NamedValue</b>) (err error) {
+		<a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-843">utils.go#L843</a>: func namedValueToValue(named []driver.<b>NamedValue</b>) ([]driver.Value, error) {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

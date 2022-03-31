@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime.gcController</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">var <b><a href="../pkg/runtime.html">runtime</a>.<a href="../src/runtime/mgcpacer.go.html#line-72">gcController</a></b></span>
+
+<span class="title">75 uses</span>
+
+	runtime (current package)
+		<a href="../src/runtime/mcache.go.html#line-189">mcache.go#L189</a>: 	atomic.Xadd64(&amp;<b>gcController</b>.heapLive, int64(s.npages*pageSize)-int64(usedBytes))
+		<a href="../src/runtime/mcache.go.html#line-193" class="path-duplicate">mcache.go</a><a href="../src/runtime/mcache.go.html#line-193">#L193</a>: 	atomic.Xadd64(&amp;<b>gcController</b>.heapScan, int64(c.scanAlloc))
+		<a href="../src/runtime/mcache.go.html#line-202" class="path-duplicate">mcache.go</a><a href="../src/runtime/mcache.go.html#line-202">#L202</a>: 		<b>gcController</b>.revise()
+		<a href="../src/runtime/mcache.go.html#line-237" class="path-duplicate">mcache.go</a><a href="../src/runtime/mcache.go.html#line-237">#L237</a>: 	atomic.Xadd64(&amp;<b>gcController</b>.heapLive, int64(npages*pageSize))
+		<a href="../src/runtime/mcache.go.html#line-243" class="path-duplicate">mcache.go</a><a href="../src/runtime/mcache.go.html#line-243">#L243</a>: 		<b>gcController</b>.revise()
+		<a href="../src/runtime/mcache.go.html#line-256" class="path-duplicate">mcache.go</a><a href="../src/runtime/mcache.go.html#line-256">#L256</a>: 	atomic.Xadd64(&amp;<b>gcController</b>.heapScan, int64(c.scanAlloc))
+		<a href="../src/runtime/mcache.go.html#line-276" class="path-duplicate">mcache.go</a><a href="../src/runtime/mcache.go.html#line-276">#L276</a>: 				atomic.Xadd64(&amp;<b>gcController</b>.heapLive, -int64(n)*int64(s.elemsize))
+		<a href="../src/runtime/mcache.go.html#line-295" class="path-duplicate">mcache.go</a><a href="../src/runtime/mcache.go.html#line-295">#L295</a>: 		<b>gcController</b>.revise()
+		<a href="../src/runtime/metrics.go.html#line-434">metrics.go#L434</a>: 	a.heapGoal = atomic.Load64(&amp;<b>gcController</b>.heapGoal)
+		<a href="../src/runtime/mgc.go.html#line-161">mgc.go#L161</a>: 	<b>gcController</b>.init(readGOGC())
+		<a href="../src/runtime/mgc.go.html#line-275" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-275">#L275</a>: 	delta := now - <b>gcController</b>.markStartTime
+		<a href="../src/runtime/mgc.go.html#line-283" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-283">#L283</a>: 	return float64(selfTime)/float64(delta) &gt; 1.2*<b>gcController</b>.fractionalUtilizationGoal
+		<a href="../src/runtime/mgc.go.html#line-551" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-551">#L551</a>: 		return <b>gcController</b>.heapLive &gt;= <b>gcController</b>.trigger
+		<a href="../src/runtime/mgc.go.html#line-553" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-553">#L553</a>: 		if <b>gcController</b>.gcPercent &lt; 0 {
+		<a href="../src/runtime/mgc.go.html#line-647" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-647">#L647</a>: 	work.heap0 = atomic.Load64(&amp;<b>gcController</b>.heapLive)
+		<a href="../src/runtime/mgc.go.html#line-669" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-669">#L669</a>: 	<b>gcController</b>.startCycle()
+		<a href="../src/runtime/mgc.go.html#line-670" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-670">#L670</a>: 	work.heapGoal = <b>gcController</b>.heapGoal
+		<a href="../src/runtime/mgc.go.html#line-714" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-714">#L714</a>: 	<b>gcController</b>.markStartTime = now
+		<a href="../src/runtime/mgc.go.html#line-899" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-899">#L899</a>: 	nextTriggerRatio := <b>gcController</b>.endCycle(work.userForced)
+		<a href="../src/runtime/mgc.go.html#line-911" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-911">#L911</a>: 	work.heap1 = <b>gcController</b>.heapLive
+		<a href="../src/runtime/mgc.go.html#line-974" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-974">#L974</a>: 	<b>gcController</b>.lastHeapGoal = <b>gcController</b>.heapGoal
+		<a href="../src/runtime/mgc.go.html#line-978" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-978">#L978</a>: 	<b>gcController</b>.commit(nextTriggerRatio)
+		<a href="../src/runtime/mgc.go.html#line-997" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-997">#L997</a>: 	markCpu := <b>gcController</b>.assistTime + <b>gcController</b>.dedicatedMarkTime + <b>gcController</b>.fractionalMarkTime
+		<a href="../src/runtime/mgc.go.html#line-1079" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-1079">#L1079</a>: 		for i, ns := range []int64{sweepTermCpu, <b>gcController</b>.assistTime, <b>gcController</b>.dedicatedMarkTime + <b>gcController</b>.fractionalMarkTime, <b>gcController</b>.idleMarkTime, markTermCpu} {
+		<a href="../src/runtime/mgc.go.html#line-1297" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-1297">#L1297</a>: 			atomic.Xaddint64(&amp;<b>gcController</b>.dedicatedMarkTime, duration)
+		<a href="../src/runtime/mgc.go.html#line-1298" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-1298">#L1298</a>: 			atomic.Xaddint64(&amp;<b>gcController</b>.dedicatedMarkWorkersNeeded, 1)
+		<a href="../src/runtime/mgc.go.html#line-1300" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-1300">#L1300</a>: 			atomic.Xaddint64(&amp;<b>gcController</b>.fractionalMarkTime, duration)
+		<a href="../src/runtime/mgc.go.html#line-1303" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-1303">#L1303</a>: 			atomic.Xaddint64(&amp;<b>gcController</b>.idleMarkTime, duration)
+		<a href="../src/runtime/mgc.go.html#line-1424" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-1424">#L1424</a>: 	<b>gcController</b>.heapMarked = work.bytesMarked
+		<a href="../src/runtime/mgc.go.html#line-1434" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-1434">#L1434</a>: 		<b>gcController</b>.heapScan += uint64(c.scanAlloc)
+		<a href="../src/runtime/mgc.go.html#line-1441" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-1441">#L1441</a>: 	<b>gcController</b>.heapLive = work.bytesMarked
+		<a href="../src/runtime/mgc.go.html#line-1442" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-1442">#L1442</a>: 	<b>gcController</b>.heapScan = uint64(<b>gcController</b>.scanWork)
+		<a href="../src/runtime/mgc.go.html#line-1535" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-1535">#L1535</a>: 	work.initialHeapLive = atomic.Load64(&amp;<b>gcController</b>.heapLive)
+		<a href="../src/runtime/mgcmark.go.html#line-402">mgcmark.go#L402</a>: 	assistWorkPerByte := float64frombits(atomic.Load64(&amp;<b>gcController</b>.assistWorkPerByte))
+		<a href="../src/runtime/mgcmark.go.html#line-403" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-403">#L403</a>: 	assistBytesPerWork := float64frombits(atomic.Load64(&amp;<b>gcController</b>.assistBytesPerWork))
+		<a href="../src/runtime/mgcmark.go.html#line-417" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-417">#L417</a>: 	bgScanCredit := atomic.Loadint64(&amp;<b>gcController</b>.bgScanCredit)
+		<a href="../src/runtime/mgcmark.go.html#line-427" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-427">#L427</a>: 		atomic.Xaddint64(&amp;<b>gcController</b>.bgScanCredit, -stolen)
+		<a href="../src/runtime/mgcmark.go.html#line-547" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-547">#L547</a>: 	assistBytesPerWork := float64frombits(atomic.Load64(&amp;<b>gcController</b>.assistBytesPerWork))
+		<a href="../src/runtime/mgcmark.go.html#line-570" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-570">#L570</a>: 		atomic.Xaddint64(&amp;<b>gcController</b>.assistTime, _p_.gcAssistTime)
+		<a href="../src/runtime/mgcmark.go.html#line-609" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-609">#L609</a>: 	if atomic.Loadint64(&amp;<b>gcController</b>.bgScanCredit) &gt; 0 {
+		<a href="../src/runtime/mgcmark.go.html#line-638" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-638">#L638</a>: 		atomic.Xaddint64(&amp;<b>gcController</b>.bgScanCredit, scanWork)
+		<a href="../src/runtime/mgcmark.go.html#line-642" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-642">#L642</a>: 	assistBytesPerWork := float64frombits(atomic.Load64(&amp;<b>gcController</b>.assistBytesPerWork))
+		<a href="../src/runtime/mgcmark.go.html#line-676" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-676">#L676</a>: 		assistWorkPerByte := float64frombits(atomic.Load64(&amp;<b>gcController</b>.assistWorkPerByte))
+		<a href="../src/runtime/mgcmark.go.html#line-678" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-678">#L678</a>: 		atomic.Xaddint64(&amp;<b>gcController</b>.bgScanCredit, scanWork)
+		<a href="../src/runtime/mgcmark.go.html#line-1053" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-1053">#L1053</a>: 			atomic.Xaddint64(&amp;<b>gcController</b>.scanWork, gcw.scanWork)
+		<a href="../src/runtime/mgcmark.go.html#line-1073" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-1073">#L1073</a>: 		atomic.Xaddint64(&amp;<b>gcController</b>.scanWork, gcw.scanWork)
+		<a href="../src/runtime/mgcmark.go.html#line-1145" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-1145">#L1145</a>: 			atomic.Xaddint64(&amp;<b>gcController</b>.scanWork, gcw.scanWork)
+		<a href="../src/runtime/mgcpacer.go.html#line-53">mgcpacer.go#L53</a>: 	if offset := unsafe.Offsetof(<b>gcController</b>.heapLive); offset%8 != 0 {
+		<a href="../src/runtime/mgcpacer.go.html#line-72" class="path-duplicate">mgcpacer.go</a><a href="../src/runtime/mgcpacer.go.html#line-72">#L72</a>: var <b>gcController</b> gcControllerState
+		<a href="../src/runtime/mgcpacer.go.html#line-338" class="path-duplicate">mgcpacer.go</a><a href="../src/runtime/mgcpacer.go.html#line-338">#L338</a>: 			" (scan ", <b>gcController</b>.heapScan&gt;&gt;20, " MB in ",
+		<a href="../src/runtime/mgcpacer.go.html#line-826" class="path-duplicate">mgcpacer.go</a><a href="../src/runtime/mgcpacer.go.html#line-826">#L826</a>: 		out = <b>gcController</b>.setGCPercent(in)
+		<a href="../src/runtime/mgcscavenge.go.html#line-121">mgcscavenge.go#L121</a>: 	if <b>gcController</b>.lastHeapGoal == 0 {
+		<a href="../src/runtime/mgcscavenge.go.html#line-126" class="path-duplicate">mgcscavenge.go</a><a href="../src/runtime/mgcscavenge.go.html#line-126">#L126</a>: 	goalRatio := float64(atomic.Load64(&amp;<b>gcController</b>.heapGoal)) / float64(<b>gcController</b>.lastHeapGoal)
+		<a href="../src/runtime/mgcsweep.go.html#line-248">mgcsweep.go#L248</a>: 		print("pacer: sweep done at heap size ", <b>gcController</b>.heapLive&gt;&gt;20, "MB; allocated ", (<b>gcController</b>.heapLive-mheap_.sweepHeapLiveBasis)&gt;&gt;20, "MB during sweep; swept ", mheap_.pagesSwept, " pages at ", mheap_.sweepPagesPerByte, " pages/byte\n")
+		<a href="../src/runtime/mgcsweep.go.html#line-725" class="path-duplicate">mgcsweep.go</a><a href="../src/runtime/mgcsweep.go.html#line-725">#L725</a>: 	newHeapLive := uintptr(atomic.Load64(&amp;<b>gcController</b>.heapLive)-mheap_.sweepHeapLiveBasis) + spanBytes
+		<a href="../src/runtime/mgcwork.go.html#line-141">mgcwork.go#L141</a>: 		<b>gcController</b>.enlistWorker()
+		<a href="../src/runtime/mgcwork.go.html#line-191" class="path-duplicate">mgcwork.go</a><a href="../src/runtime/mgcwork.go.html#line-191">#L191</a>: 		<b>gcController</b>.enlistWorker()
+		<a href="../src/runtime/mgcwork.go.html#line-278" class="path-duplicate">mgcwork.go</a><a href="../src/runtime/mgcwork.go.html#line-278">#L278</a>: 		atomic.Xaddint64(&amp;<b>gcController</b>.scanWork, w.scanWork)
+		<a href="../src/runtime/mgcwork.go.html#line-302" class="path-duplicate">mgcwork.go</a><a href="../src/runtime/mgcwork.go.html#line-302">#L302</a>: 		<b>gcController</b>.enlistWorker()
+		<a href="../src/runtime/mstats.go.html#line-456">mstats.go#L456</a>: 	stats.NextGC = <b>gcController</b>.heapGoal
+		<a href="../src/runtime/proc.go.html#line-3346">proc.go#L3346</a>: 		gp = <b>gcController</b>.findRunnableGCWorker(_g_.m.p.ptr())
+		<a href="../src/runtime/proc.go.html#line-3658" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3658">#L3658</a>: 		assistWorkPerByte := float64frombits(atomic.Load64(&amp;<b>gcController</b>.assistWorkPerByte))
+		<a href="../src/runtime/proc.go.html#line-3660" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3660">#L3660</a>: 		atomic.Xaddint64(&amp;<b>gcController</b>.bgScanCredit, scanCredit)
+		<a href="../src/runtime/trace.go.html#line-1147">trace.go#L1147</a>: 	traceEvent(traceEvHeapAlloc, -1, <b>gcController</b>.heapLive)
+		<a href="../src/runtime/trace.go.html#line-1151" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-1151">#L1151</a>: 	if heapGoal := atomic.Load64(&amp;<b>gcController</b>.heapGoal); heapGoal == ^uint64(0) {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: go.uber.org/zap/zapcore.Level</title>
+<link href="../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../../../pkg/go.uber.org/zap/zapcore.html">go.uber.org/zap/zapcore</a>.<a href="../../../src/go.uber.org/zap/zapcore/level.go.html#line-32">Level</a></b></span>
+
+<span class="title">49 uses</span>
+
+	go.uber.org/zap/zapcore (current package)
+		<a href="../../../src/go.uber.org/zap/zapcore/core.go.html#line-51">core.go#L51</a>: func (nopCore) Enabled(<b>Level</b>) bool                            { return false }
+		<a href="../../../src/go.uber.org/zap/zapcore/encoder.go.html#line-38">encoder.go#L38</a>: type LevelEncoder func(<b>Level</b>, PrimitiveArrayEncoder)
+		<a href="../../../src/go.uber.org/zap/zapcore/encoder.go.html#line-42" class="path-duplicate">encoder.go</a><a href="../../../src/go.uber.org/zap/zapcore/encoder.go.html#line-42">#L42</a>: func LowercaseLevelEncoder(l <b>Level</b>, enc PrimitiveArrayEncoder) {
+		<a href="../../../src/go.uber.org/zap/zapcore/encoder.go.html#line-48" class="path-duplicate">encoder.go</a><a href="../../../src/go.uber.org/zap/zapcore/encoder.go.html#line-48">#L48</a>: func LowercaseColorLevelEncoder(l <b>Level</b>, enc PrimitiveArrayEncoder) {
+		<a href="../../../src/go.uber.org/zap/zapcore/encoder.go.html#line-58" class="path-duplicate">encoder.go</a><a href="../../../src/go.uber.org/zap/zapcore/encoder.go.html#line-58">#L58</a>: func CapitalLevelEncoder(l <b>Level</b>, enc PrimitiveArrayEncoder) {
+		<a href="../../../src/go.uber.org/zap/zapcore/encoder.go.html#line-64" class="path-duplicate">encoder.go</a><a href="../../../src/go.uber.org/zap/zapcore/encoder.go.html#line-64">#L64</a>: func CapitalColorLevelEncoder(l <b>Level</b>, enc PrimitiveArrayEncoder) {
+		<a href="../../../src/go.uber.org/zap/zapcore/entry.go.html#line-145">entry.go#L145</a>: 	Level      <b>Level</b>
+		<a href="../../../src/go.uber.org/zap/zapcore/increase_level.go.html#line-44">increase_level.go#L44</a>: func (c *levelFilterCore) Enabled(lvl <b>Level</b>) bool {
+		<a href="../../../src/go.uber.org/zap/zapcore/level.go.html#line-32">level.go#L32</a>: type <b>Level</b> int8
+		<a href="../../../src/go.uber.org/zap/zapcore/level.go.html#line-37" class="path-duplicate">level.go</a><a href="../../../src/go.uber.org/zap/zapcore/level.go.html#line-37">#L37</a>: 	DebugLevel <b>Level</b> = iota - 1
+		<a href="../../../src/go.uber.org/zap/zapcore/level.go.html#line-59" class="path-duplicate">level.go</a><a href="../../../src/go.uber.org/zap/zapcore/level.go.html#line-59">#L59</a>: func (l <b>Level</b>) String() string {
+		<a href="../../../src/go.uber.org/zap/zapcore/level.go.html#line-81" class="path-duplicate">level.go</a><a href="../../../src/go.uber.org/zap/zapcore/level.go.html#line-81">#L81</a>: func (l <b>Level</b>) CapitalString() string {
+		<a href="../../../src/go.uber.org/zap/zapcore/level.go.html#line-106" class="path-duplicate">level.go</a><a href="../../../src/go.uber.org/zap/zapcore/level.go.html#line-106">#L106</a>: func (l <b>Level</b>) MarshalText() ([]byte, error) {
+		<a href="../../../src/go.uber.org/zap/zapcore/level.go.html#line-116" class="path-duplicate">level.go</a><a href="../../../src/go.uber.org/zap/zapcore/level.go.html#line-116">#L116</a>: func (l *<b>Level</b>) UnmarshalText(text []byte) error {
+		<a href="../../../src/go.uber.org/zap/zapcore/level.go.html#line-126" class="path-duplicate">level.go</a><a href="../../../src/go.uber.org/zap/zapcore/level.go.html#line-126">#L126</a>: func (l *<b>Level</b>) unmarshalText(text []byte) bool {
+		<a href="../../../src/go.uber.org/zap/zapcore/level.go.html#line-149" class="path-duplicate">level.go</a><a href="../../../src/go.uber.org/zap/zapcore/level.go.html#line-149">#L149</a>: func (l *<b>Level</b>) Set(s string) error {
+		<a href="../../../src/go.uber.org/zap/zapcore/level.go.html#line-154" class="path-duplicate">level.go</a><a href="../../../src/go.uber.org/zap/zapcore/level.go.html#line-154">#L154</a>: func (l *<b>Level</b>) Get() interface{} {
+		<a href="../../../src/go.uber.org/zap/zapcore/level.go.html#line-159" class="path-duplicate">level.go</a><a href="../../../src/go.uber.org/zap/zapcore/level.go.html#line-159">#L159</a>: func (l <b>Level</b>) Enabled(lvl <b>Level</b>) bool {
+		<a href="../../../src/go.uber.org/zap/zapcore/level.go.html#line-174" class="path-duplicate">level.go</a><a href="../../../src/go.uber.org/zap/zapcore/level.go.html#line-174">#L174</a>: 	Enabled(<b>Level</b>) bool
+		<a href="../../../src/go.uber.org/zap/zapcore/level_strings.go.html#line-26">level_strings.go#L26</a>: 	_levelToColor = map[<b>Level</b>]color.Color{
+		<a href="../../../src/go.uber.org/zap/zapcore/level_strings.go.html#line-37" class="path-duplicate">level_strings.go</a><a href="../../../src/go.uber.org/zap/zapcore/level_strings.go.html#line-37">#L37</a>: 	_levelToLowercaseColorString = make(map[<b>Level</b>]string, len(_levelToColor))
+		<a href="../../../src/go.uber.org/zap/zapcore/level_strings.go.html#line-38" class="path-duplicate">level_strings.go</a><a href="../../../src/go.uber.org/zap/zapcore/level_strings.go.html#line-38">#L38</a>: 	_levelToCapitalColorString   = make(map[<b>Level</b>]string, len(_levelToColor))
+		<a href="../../../src/go.uber.org/zap/zapcore/sampler.go.html#line-45">sampler.go#L45</a>: func (cs *counters) get(lvl <b>Level</b>, key string) *counter {
+		<a href="../../../src/go.uber.org/zap/zapcore/tee.go.html#line-51">tee.go#L51</a>: func (mc multiCore) Enabled(lvl <b>Level</b>) bool {
+
+	<a href="../../../pkg/go.uber.org/zap.html">go.uber.org/zap</a>
+		<a href="../../../src/go.uber.org/zap/flag.go.html#line-35">flag.go#L35</a>: func LevelFlag(name string, defaultLevel zapcore.<b>Level</b>, usage string) *zapcore.<b>Level</b> {
+		<a href="../../../src/go.uber.org/zap/global.go.html#line-85">global.go#L85</a>: func NewStdLogAt(l *Logger, level zapcore.<b>Level</b>) (*log.Logger, error) {
+		<a href="../../../src/go.uber.org/zap/global.go.html#line-118" class="path-duplicate">global.go</a><a href="../../../src/go.uber.org/zap/global.go.html#line-118">#L118</a>: func RedirectStdLogAt(l *Logger, level zapcore.<b>Level</b>) (func(), error) {
+		<a href="../../../src/go.uber.org/zap/global.go.html#line-122" class="path-duplicate">global.go</a><a href="../../../src/go.uber.org/zap/global.go.html#line-122">#L122</a>: func redirectStdLogAt(l *Logger, level zapcore.<b>Level</b>) (func(), error) {
+		<a href="../../../src/go.uber.org/zap/global.go.html#line-140" class="path-duplicate">global.go</a><a href="../../../src/go.uber.org/zap/global.go.html#line-140">#L140</a>: func levelToFunc(logger *Logger, lvl zapcore.<b>Level</b>) (func(string, ...Field), error) {
+		<a href="../../../src/go.uber.org/zap/http_handler.go.html#line-44">http_handler.go#L44</a>: 		Level *zapcore.<b>Level</b> `json:"level"`
+		<a href="../../../src/go.uber.org/zap/level.go.html#line-55">level.go#L55</a>: type LevelEnablerFunc func(zapcore.<b>Level</b>) bool
+		<a href="../../../src/go.uber.org/zap/level.go.html#line-58" class="path-duplicate">level.go</a><a href="../../../src/go.uber.org/zap/level.go.html#line-58">#L58</a>: func (f LevelEnablerFunc) Enabled(lvl zapcore.<b>Level</b>) bool { return f(lvl) }
+		<a href="../../../src/go.uber.org/zap/level.go.html#line-83" class="path-duplicate">level.go</a><a href="../../../src/go.uber.org/zap/level.go.html#line-83">#L83</a>: func NewAtomicLevelAt(l zapcore.<b>Level</b>) AtomicLevel {
+		<a href="../../../src/go.uber.org/zap/level.go.html#line-91" class="path-duplicate">level.go</a><a href="../../../src/go.uber.org/zap/level.go.html#line-91">#L91</a>: func (lvl AtomicLevel) Enabled(l zapcore.<b>Level</b>) bool {
+		<a href="../../../src/go.uber.org/zap/level.go.html#line-96" class="path-duplicate">level.go</a><a href="../../../src/go.uber.org/zap/level.go.html#line-96">#L96</a>: func (lvl AtomicLevel) Level() zapcore.<b>Level</b> {
+		<a href="../../../src/go.uber.org/zap/level.go.html#line-97" class="path-duplicate">level.go</a><a href="../../../src/go.uber.org/zap/level.go.html#line-97">#L97</a>: 	return zapcore.<b>Level</b>(int8(lvl.l.Load()))
+		<a href="../../../src/go.uber.org/zap/level.go.html#line-101" class="path-duplicate">level.go</a><a href="../../../src/go.uber.org/zap/level.go.html#line-101">#L101</a>: func (lvl AtomicLevel) SetLevel(l zapcore.<b>Level</b>) {
+		<a href="../../../src/go.uber.org/zap/level.go.html#line-118" class="path-duplicate">level.go</a><a href="../../../src/go.uber.org/zap/level.go.html#line-118">#L118</a>: 	var l zapcore.<b>Level</b>
+		<a href="../../../src/go.uber.org/zap/logger.go.html#line-171">logger.go#L171</a>: func (log *Logger) Check(lvl zapcore.<b>Level</b>, msg string) *zapcore.CheckedEntry {
+		<a href="../../../src/go.uber.org/zap/logger.go.html#line-256" class="path-duplicate">logger.go</a><a href="../../../src/go.uber.org/zap/logger.go.html#line-256">#L256</a>: func (log *Logger) check(lvl zapcore.<b>Level</b>, msg string) *zapcore.CheckedEntry {
+		<a href="../../../src/go.uber.org/zap/sugar.go.html#line-218">sugar.go#L218</a>: func (s *SugaredLogger) log(lvl zapcore.<b>Level</b>, template string, fmtArgs []interface{}, context []interface{}) {
+
+	<a href="../../../pkg/github.com/caring/gopkg-logging.html">github.com/caring/gopkg-logging</a>
+		<a href="../../../src/github.com/caring/gopkg-logging/config.go.html#line-190">config.go#L190</a>: func buildMonitoringCore(streamName string, enc zapcore.EncoderConfig, bufSize int64, flushInterval time.Duration, lvl zapcore.<b>Level</b>) (zapcore.Core, io.Closer, error) {
+		<a href="../../../src/github.com/caring/gopkg-logging/logger.go.html#line-77">logger.go#L77</a>: 	zapConfig.Level.SetLevel(zapcore.<b>Level</b>(c.LogLevel))
+		<a href="../../../src/github.com/caring/gopkg-logging/logger.go.html#line-95" class="path-duplicate">logger.go</a><a href="../../../src/github.com/caring/gopkg-logging/logger.go.html#line-95">#L95</a>: 			zapcore.<b>Level</b>(c.LogLevel),
+
+	<a href="../../../pkg/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap.html">github.com/grpc-ecosystem/go-grpc-middleware/logging/zap</a>
+		<a href="../../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/options.go.html#line-51">options.go#L51</a>: type CodeToLevel func(code codes.Code) zapcore.<b>Level</b>
+		<a href="../../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/options.go.html#line-85" class="path-duplicate">options.go</a><a href="../../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/options.go.html#line-85">#L85</a>: func DefaultCodeToLevel(code codes.Code) zapcore.<b>Level</b> {
+		<a href="../../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/options.go.html#line-127" class="path-duplicate">options.go</a><a href="../../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/options.go.html#line-127">#L127</a>: func DefaultClientCodeToLevel(code codes.Code) zapcore.<b>Level</b> {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

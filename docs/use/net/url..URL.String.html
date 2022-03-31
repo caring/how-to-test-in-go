@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: net/url.URL.String</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../pkg/net/url.html">net/url</a>.<a href="../../src/net/url/url.go.html#line-358">URL</a>.<a href="../../src/net/url/url.go.html#line-811">String</a></b></span><span style="font-size: large;"><i> (method, <a href="../../imp/net/url.URL.html#name-String">view implemented interface methods</a>)</i></span>
+
+<span class="title">17 uses</span>
+
+	net/url (current package)
+		<a href="../../src/net/url/url.go.html#line-811">url.go#L811</a>: func (u *URL) <b>String</b>() string {
+		<a href="../../src/net/url/url.go.html#line-871" class="path-duplicate">url.go</a><a href="../../src/net/url/url.go.html#line-871">#L871</a>: 	return ru.<b>String</b>()
+		<a href="../../src/net/url/url.go.html#line-1193" class="path-duplicate">url.go</a><a href="../../src/net/url/url.go.html#line-1193">#L1193</a>: 	return []byte(u.<b>String</b>()), nil
+
+	<a href="../../pkg/net/http.html">net/http</a>
+		<a href="../../src/net/http/client.go.html#line-155">client.go#L155</a>: 	referer := lastReq.<b>String</b>()
+		<a href="../../src/net/http/client.go.html#line-1030" class="path-duplicate">client.go</a><a href="../../src/net/http/client.go.html#line-1030">#L1030</a>: 		return strings.Replace(u.<b>String</b>(), u.User.String()+"@", u.User.Username()+":***@", 1)
+		<a href="../../src/net/http/client.go.html#line-1032" class="path-duplicate">client.go</a><a href="../../src/net/http/client.go.html#line-1032">#L1032</a>: 	return u.<b>String</b>()
+		<a href="../../src/net/http/fs.go.html#line-162">fs.go#L162</a>: 		fmt.Fprintf(w, "&lt;a href=\"%s\"&gt;%s&lt;/a&gt;\n", url.<b>String</b>(), htmlReplacer.Replace(name))
+		<a href="../../src/net/http/server.go.html#line-2369">server.go#L2369</a>: 			return RedirectHandler(u.<b>String</b>(), StatusMovedPermanently), u.Path
+		<a href="../../src/net/http/server.go.html#line-2383" class="path-duplicate">server.go</a><a href="../../src/net/http/server.go.html#line-2383">#L2383</a>: 		return RedirectHandler(u.<b>String</b>(), StatusMovedPermanently), u.Path
+		<a href="../../src/net/http/server.go.html#line-2389" class="path-duplicate">server.go</a><a href="../../src/net/http/server.go.html#line-2389">#L2389</a>: 		return RedirectHandler(u.<b>String</b>(), StatusMovedPermanently), pattern
+		<a href="../../src/net/http/transport.go.html#line-1811">transport.go#L1811</a>: 		proxyStr = cm.proxyURL.<b>String</b>()
+
+	<a href="../../pkg/crypto/x509.html">crypto/x509</a>
+		<a href="../../src/crypto/x509/verify.go.html#line-419">verify.go#L419</a>: 		return false, fmt.Errorf("URI with empty host (%q) cannot be matched against constraints", uri.<b>String</b>())
+		<a href="../../src/crypto/x509/verify.go.html#line-432" class="path-duplicate">verify.go</a><a href="../../src/crypto/x509/verify.go.html#line-432">#L432</a>: 		return false, fmt.Errorf("URI with IP (%q) cannot be matched against constraints", uri.<b>String</b>())
+		<a href="../../src/crypto/x509/x509.go.html#line-997">x509.go#L997</a>: 		uriStr := uri.<b>String</b>()
+
+	<a href="../../pkg/github.com/aws/aws-sdk-go/aws/request.html">github.com/aws/aws-sdk-go/aws/request</a>
+		<a href="../../src/github.com/aws/aws-sdk-go/aws/request/request.go.html#line-372">request.go#L372</a>: 	return r.HTTPRequest.URL.<b>String</b>(), r.SignedHeaderVals, nil
+
+	<a href="../../pkg/github.com/aws/aws-sdk-go/aws/signer/v4.html">github.com/aws/aws-sdk-go/aws/signer/v4</a>
+		<a href="../../src/github.com/aws/aws-sdk-go/aws/signer/v4/v4.go.html#line-507">v4.go#L507</a>: 		signedURLMsg = fmt.Sprintf(logSignedURLMsg, ctx.Request.URL.<b>String</b>())
+
+	<a href="../../pkg/google.golang.org/grpc/internal/credentials.html">google.golang.org/grpc/internal/credentials</a>
+		<a href="../../src/google.golang.org/grpc/internal/credentials/spiffe.go.html#line-55">spiffe.go#L55</a>: 		if len(uri.<b>String</b>()) &gt; 2048 {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

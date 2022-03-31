@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: io.Copy</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">func <b><a href="../pkg/io.html">io</a>.<a href="../src/io/io.go.html#line-381">Copy</a></b></span>
+
+<span class="title">30 uses</span>
+
+	io (current package)
+		<a href="../src/io/io.go.html#line-358">io.go#L358</a>: 	written, err = <b>Copy</b>(dst, LimitReader(src, n))
+		<a href="../src/io/io.go.html#line-381" class="path-duplicate">io.go</a><a href="../src/io/io.go.html#line-381">#L381</a>: func <b>Copy</b>(dst Writer, src Reader) (written int64, err error) {
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/ec2metadata.html">github.com/aws/aws-sdk-go/aws/ec2metadata</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/ec2metadata/service.go.html#line-165">service.go#L165</a>: 		if _, err := io.<b>Copy</b>(&amp;b, r.HTTPResponse.Body); err != nil {
+		<a href="../src/github.com/aws/aws-sdk-go/aws/ec2metadata/service.go.html#line-195" class="path-duplicate">service.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/ec2metadata/service.go.html#line-195">#L195</a>: 		if _, err := io.<b>Copy</b>(&amp;b, r.HTTPResponse.Body); err != nil {
+		<a href="../src/github.com/aws/aws-sdk-go/aws/ec2metadata/service.go.html#line-211" class="path-duplicate">service.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/ec2metadata/service.go.html#line-211">#L211</a>: 	if _, err := io.<b>Copy</b>(&amp;b, r.HTTPResponse.Body); err != nil {
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/signer/v4.html">github.com/aws/aws-sdk-go/aws/signer/v4</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/signer/v4/v4.go.html#line-771">v4.go#L771</a>: 		io.<b>Copy</b>(hash, reader)
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/private/protocol.html">github.com/aws/aws-sdk-go/private/protocol</a>
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/payload.go.html#line-78">payload.go#L78</a>: 	io.<b>Copy</b>(w, req.GetBody())
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/unmarshal.go.html#line-19">unmarshal.go#L19</a>: 	io.<b>Copy</b>(ioutil.Discard, r.HTTPResponse.Body)
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/private/protocol/rest.html">github.com/aws/aws-sdk-go/private/protocol/rest</a>
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/rest/unmarshal.go.html#line-101">unmarshal.go#L101</a>: 							io.<b>Copy</b>(ioutil.Discard, r.HTTPResponse.Body)
+
+	<a href="../pkg/github.com/uber/jaeger-client-go/thrift.html">github.com/uber/jaeger-client-go/thrift</a>
+		<a href="../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-640">header_transport.go#L640</a>: 		if _, err := io.<b>Copy</b>(&amp;payload, headers); err != nil {
+		<a href="../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-648" class="path-duplicate">header_transport.go</a><a href="../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-648">#L648</a>: 		if _, err := io.<b>Copy</b>(writer, &amp;t.writeBuffer); err != nil {
+		<a href="../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-662" class="path-duplicate">header_transport.go</a><a href="../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-662">#L662</a>: 		if _, err := io.<b>Copy</b>(t.transport, &amp;payload); err != nil {
+		<a href="../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-674" class="path-duplicate">header_transport.go</a><a href="../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-674">#L674</a>: 		if _, err := io.<b>Copy</b>(t.transport, &amp;t.writeBuffer); err != nil {
+
+	<a href="../pkg/github.com/uber/jaeger-client-go/utils.html">github.com/uber/jaeger-client-go/utils</a>
+		<a href="../src/github.com/uber/jaeger-client-go/utils/http_json.go.html#line-48">http_json.go#L48</a>: 		io.<b>Copy</b>(ioutil.Discard, resp.Body)
+
+	<a href="../pkg/mime.html">mime</a>
+		<a href="../src/mime/encodedword.go.html#line-349">encodedword.go#L349</a>: 		if _, err = io.<b>Copy</b>(buf, r); err != nil {
+
+	<a href="../pkg/mime/multipart.html">mime/multipart</a>
+		<a href="../src/mime/multipart/formdata.go.html#line-97">formdata.go#L97</a>: 			size, err := io.<b>Copy</b>(file, io.MultiReader(&amp;b, p))
+		<a href="../src/mime/multipart/multipart.go.html#line-288">multipart.go#L288</a>: 	io.<b>Copy</b>(io.Discard, p)
+		<a href="../src/mime/multipart/writer.go.html#line-121">writer.go#L121</a>: 	_, err := io.<b>Copy</b>(w.w, &amp;b)
+
+	<a href="../pkg/net.html">net</a>
+		<a href="../src/net/net.go.html#line-658">net.go#L658</a>: 	return io.<b>Copy</b>(writerOnly{w}, r)
+
+	<a href="../pkg/net/http.html">net/http</a>
+		<a href="../src/net/http/server.go.html#line-3450">server.go#L3450</a>: 		io.<b>Copy</b>(io.Discard, mb)
+		<a href="../src/net/http/transfer.go.html#line-410">transfer.go#L410</a>: 	n, err = io.<b>Copy</b>(dst, src)
+		<a href="../src/net/http/transfer.go.html#line-1006" class="path-duplicate">transfer.go</a><a href="../src/net/http/transfer.go.html#line-1006">#L1006</a>: 		_, err = io.<b>Copy</b>(io.Discard, bodyLocked{b})
+		<a href="../src/net/http/transport.go.html#line-1772">transport.go#L1772</a>: 	n, err = io.<b>Copy</b>(w.pc.conn, r)
+
+	<a href="../pkg/net/http/httputil.html">net/http/httputil</a>
+		<a href="../src/net/http/httputil/dump.go.html#line-135">dump.go#L135</a>: 			io.<b>Copy</b>(io.Discard, req.Body)
+		<a href="../src/net/http/httputil/dump.go.html#line-277" class="path-duplicate">dump.go</a><a href="../src/net/http/httputil/dump.go.html#line-277">#L277</a>: 		_, err = io.<b>Copy</b>(dest, req.Body)
+		<a href="../src/net/http/httputil/reverseproxy.go.html#line-623">reverseproxy.go#L623</a>: 	_, err := io.<b>Copy</b>(c.user, c.backend)
+		<a href="../src/net/http/httputil/reverseproxy.go.html#line-628" class="path-duplicate">reverseproxy.go</a><a href="../src/net/http/httputil/reverseproxy.go.html#line-628">#L628</a>: 	_, err := io.<b>Copy</b>(c.backend, c.user)
+
+	<a href="../pkg/os.html">os</a>
+		<a href="../src/os/file.go.html#line-162">file.go#L162</a>: 	return io.<b>Copy</b>(onlyWriter{f}, r)
+
+	<a href="../pkg/os/exec.html">os/exec</a>
+		<a href="../src/os/exec/exec.go.html#line-266">exec.go#L266</a>: 		_, err := io.<b>Copy</b>(pw, c.Stdin)
+		<a href="../src/os/exec/exec.go.html#line-311" class="path-duplicate">exec.go</a><a href="../src/os/exec/exec.go.html#line-311">#L311</a>: 		_, err := io.<b>Copy</b>(w, pr)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

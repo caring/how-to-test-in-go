@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/uber/jaeger-client-go/thrift-gen/jaeger.Batch.Stats</title>
+<link href="../../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../../../pkg/github.com/uber/jaeger-client-go/thrift-gen/jaeger.html">github.com/uber/jaeger-client-go/thrift-gen/jaeger</a>.<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-1912">Batch</a>.<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-1916">Stats</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">11 uses</span>
+
+	github.com/uber/jaeger-client-go/thrift-gen/jaeger (current package)
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-1916">jaeger.go#L1916</a>:   <b>Stats</b> *ClientStats `thrift:"stats,4" db:"stats" json:"stats,omitempty"`
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-1946" class="path-duplicate">jaeger.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-1946">#L1946</a>: return p.<b>Stats</b>
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-1957" class="path-duplicate">jaeger.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-1957">#L1957</a>:   return p.<b>Stats</b> != nil
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-2076" class="path-duplicate">jaeger.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-2076">#L2076</a>:   p.<b>Stats</b> = &amp;ClientStats{}
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-2077" class="path-duplicate">jaeger.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-2077">#L2077</a>:   if err := p.<b>Stats</b>.Read(ctx, iprot); err != nil {
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-2078" class="path-duplicate">jaeger.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-2078">#L2078</a>:     return thrift.PrependError(fmt.Sprintf("%T error reading struct: ", p.<b>Stats</b>), err)
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-2145" class="path-duplicate">jaeger.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-2145">#L2145</a>:     if err := p.<b>Stats</b>.Write(ctx, oprot); err != nil {
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-2146" class="path-duplicate">jaeger.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-2146">#L2146</a>:       return thrift.PrependError(fmt.Sprintf("%T error writing struct: ", p.<b>Stats</b>), err)
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-2172" class="path-duplicate">jaeger.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/jaeger/jaeger.go.html#line-2172">#L2172</a>:   if !p.<b>Stats</b>.Equals(other.<b>Stats</b>) { return false }
+
+	<a href="../../../../../pkg/github.com/uber/jaeger-client-go.html">github.com/uber/jaeger-client-go</a>
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/transport_udp.go.html#line-163">transport_udp.go#L163</a>: 		<b>Stats</b>:   s.makeStats(),
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

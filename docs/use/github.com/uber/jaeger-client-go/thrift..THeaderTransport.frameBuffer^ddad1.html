@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/uber/jaeger-client-go/thrift.THeaderTransport.frameBuffer</title>
+<link href="../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift.html">github.com/uber/jaeger-client-go/thrift</a>.<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-243">THeaderTransport</a>.<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-256">frameBuffer</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">9 uses</span>
+
+	github.com/uber/jaeger-client-go/thrift (current package)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-256">header_transport.go#L256</a>: 	<b>frameBuffer</b> bytes.Buffer
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-373" class="path-duplicate">header_transport.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-373">#L373</a>: 	_, err = io.CopyN(&amp;t.<b>frameBuffer</b>, t.reader, int64(frameSize))
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-377" class="path-duplicate">header_transport.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-377">#L377</a>: 	t.frameReader = ioutil.NopCloser(&amp;t.<b>frameBuffer</b>)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-380" class="path-duplicate">header_transport.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-380">#L380</a>: 	buf = t.<b>frameBuffer</b>.Bytes()[:size32]
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-408" class="path-duplicate">header_transport.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-408">#L408</a>: 		t.<b>frameBuffer</b>.Reset()
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-421" class="path-duplicate">header_transport.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-421">#L421</a>: 	if err = binary.Read(&amp;t.<b>frameBuffer</b>, binary.BigEndian, &amp;meta); err != nil {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-435" class="path-duplicate">header_transport.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-435">#L435</a>: 	_, err = io.CopyN(headerBuf, &amp;t.<b>frameBuffer</b>, headerLength)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-457" class="path-duplicate">header_transport.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-457">#L457</a>: 			&amp;t.<b>frameBuffer</b>,
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-541" class="path-duplicate">header_transport.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-541">#L541</a>: 		if err == nil &amp;&amp; t.<b>frameBuffer</b>.Len() &lt;= 0 {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

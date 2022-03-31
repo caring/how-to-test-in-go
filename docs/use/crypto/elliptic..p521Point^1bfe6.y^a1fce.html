@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: crypto/elliptic.p521Point.y</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../pkg/crypto/elliptic.html">crypto/elliptic</a>.<a href="../../src/crypto/elliptic/p521.go.html#line-60">p521Point</a>.<a href="../../src/crypto/elliptic/p521.go.html#line-61">y</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">19 uses</span>
+
+	crypto/elliptic (current package)
+		<a href="../../src/crypto/elliptic/p521.go.html#line-61">p521.go#L61</a>: 	x, <b>y</b>, z *fiat.P521Element
+		<a href="../../src/crypto/elliptic/p521.go.html#line-85" class="path-duplicate">p521.go</a><a href="../../src/crypto/elliptic/p521.go.html#line-85">#L85</a>: 	yy := new(fiat.P521Element).Mul(p.<b>y</b>, zinvsq)
+		<a href="../../src/crypto/elliptic/p521.go.html#line-113" class="path-duplicate">p521.go</a><a href="../../src/crypto/elliptic/p521.go.html#line-113">#L113</a>: 			<b>y</b>: new(fiat.P521Element),
+		<a href="../../src/crypto/elliptic/p521.go.html#line-119" class="path-duplicate">p521.go</a><a href="../../src/crypto/elliptic/p521.go.html#line-119">#L119</a>: 		<b>y</b>: bigIntToFiatP521(y),
+		<a href="../../src/crypto/elliptic/p521.go.html#line-147" class="path-duplicate">p521.go</a><a href="../../src/crypto/elliptic/p521.go.html#line-147">#L147</a>: 	s1 := new(fiat.P521Element).Mul(p1.<b>y</b>, p2.z)
+		<a href="../../src/crypto/elliptic/p521.go.html#line-149" class="path-duplicate">p521.go</a><a href="../../src/crypto/elliptic/p521.go.html#line-149">#L149</a>: 	s2 := new(fiat.P521Element).Mul(p2.<b>y</b>, p1.z)
+		<a href="../../src/crypto/elliptic/p521.go.html#line-180" class="path-duplicate">p521.go</a><a href="../../src/crypto/elliptic/p521.go.html#line-180">#L180</a>: 	y.Select(p2.<b>y</b>, y, z1IsZero)
+		<a href="../../src/crypto/elliptic/p521.go.html#line-181" class="path-duplicate">p521.go</a><a href="../../src/crypto/elliptic/p521.go.html#line-181">#L181</a>: 	y.Select(p1.<b>y</b>, y, z2IsZero)
+		<a href="../../src/crypto/elliptic/p521.go.html#line-186" class="path-duplicate">p521.go</a><a href="../../src/crypto/elliptic/p521.go.html#line-186">#L186</a>: 	q.<b>y</b>.Set(y)
+		<a href="../../src/crypto/elliptic/p521.go.html#line-200" class="path-duplicate">p521.go</a><a href="../../src/crypto/elliptic/p521.go.html#line-200">#L200</a>: 	gamma := new(fiat.P521Element).Square(p.<b>y</b>)
+		<a href="../../src/crypto/elliptic/p521.go.html#line-216" class="path-duplicate">p521.go</a><a href="../../src/crypto/elliptic/p521.go.html#line-216">#L216</a>: 	q.z.Add(p.<b>y</b>, p.z)
+		<a href="../../src/crypto/elliptic/p521.go.html#line-224" class="path-duplicate">p521.go</a><a href="../../src/crypto/elliptic/p521.go.html#line-224">#L224</a>: 	q.<b>y</b>.Mul(alpha, beta)
+		<a href="../../src/crypto/elliptic/p521.go.html#line-231" class="path-duplicate">p521.go</a><a href="../../src/crypto/elliptic/p521.go.html#line-231">#L231</a>: 	q.<b>y</b>.Sub(q.<b>y</b>, gamma)
+		<a href="../../src/crypto/elliptic/p521.go.html#line-240" class="path-duplicate">p521.go</a><a href="../../src/crypto/elliptic/p521.go.html#line-240">#L240</a>: 		<b>y</b>: new(fiat.P521Element),
+		<a href="../../src/crypto/elliptic/p521.go.html#line-244" class="path-duplicate">p521.go</a><a href="../../src/crypto/elliptic/p521.go.html#line-244">#L244</a>: 		<b>y</b>: new(fiat.P521Element),
+		<a href="../../src/crypto/elliptic/p521.go.html#line-254" class="path-duplicate">p521.go</a><a href="../../src/crypto/elliptic/p521.go.html#line-254">#L254</a>: 			p.<b>y</b>.Select(t.<b>y</b>, p.<b>y</b>, int(bit))
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: fmt.Fprint</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">func <b><a href="../pkg/fmt.html">fmt</a>.<a href="../src/fmt/print.go.html#line-230">Fprint</a></b></span>
+
+<span class="title">16 uses</span>
+
+	fmt (current package)
+		<a href="../src/fmt/print.go.html#line-230">print.go#L230</a>: func <b>Fprint</b>(w io.Writer, a ...interface{}) (n int, err error) {
+		<a href="../src/fmt/print.go.html#line-242" class="path-duplicate">print.go</a><a href="../src/fmt/print.go.html#line-242">#L242</a>: 	return <b>Fprint</b>(os.Stdout, a...)
+
+	<a href="../pkg/flag.html">flag</a>
+		<a href="../src/flag/flag.go.html#line-537">flag.go#L537</a>: 		fmt.<b>Fprint</b>(f.Output(), b.String(), "\n")
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/awsutil.html">github.com/aws/aws-sdk-go/aws/awsutil</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/prettify.go.html#line-101">prettify.go#L101</a>: 			fmt.<b>Fprint</b>(buf, "&lt;invalid value&gt;")
+
+	<a href="../pkg/github.com/golang/protobuf/proto.html">github.com/golang/protobuf/proto</a>
+		<a href="../src/github.com/golang/protobuf/proto/text_encode.go.html#line-365">text_encode.go#L365</a>: 			fmt.<b>Fprint</b>(w, v.Interface())
+		<a href="../src/github.com/golang/protobuf/proto/text_encode.go.html#line-396" class="path-duplicate">text_encode.go</a><a href="../src/github.com/golang/protobuf/proto/text_encode.go.html#line-396">#L396</a>: 			fmt.<b>Fprint</b>(w, ev.Name())
+		<a href="../src/github.com/golang/protobuf/proto/text_encode.go.html#line-398" class="path-duplicate">text_encode.go</a><a href="../src/github.com/golang/protobuf/proto/text_encode.go.html#line-398">#L398</a>: 			fmt.<b>Fprint</b>(w, v.Enum())
+		<a href="../src/github.com/golang/protobuf/proto/text_encode.go.html#line-401" class="path-duplicate">text_encode.go</a><a href="../src/github.com/golang/protobuf/proto/text_encode.go.html#line-401">#L401</a>: 		fmt.<b>Fprint</b>(w, v.Interface())
+		<a href="../src/github.com/golang/protobuf/proto/text_encode.go.html#line-449" class="path-duplicate">text_encode.go</a><a href="../src/github.com/golang/protobuf/proto/text_encode.go.html#line-449">#L449</a>: 		fmt.<b>Fprint</b>(w, num)
+		<a href="../src/github.com/golang/protobuf/proto/text_encode.go.html#line-463" class="path-duplicate">text_encode.go</a><a href="../src/github.com/golang/protobuf/proto/text_encode.go.html#line-463">#L463</a>: 			fmt.<b>Fprint</b>(w, v)
+		<a href="../src/github.com/golang/protobuf/proto/text_encode.go.html#line-470" class="path-duplicate">text_encode.go</a><a href="../src/github.com/golang/protobuf/proto/text_encode.go.html#line-470">#L470</a>: 			fmt.<b>Fprint</b>(w, v)
+		<a href="../src/github.com/golang/protobuf/proto/text_encode.go.html#line-477" class="path-duplicate">text_encode.go</a><a href="../src/github.com/golang/protobuf/proto/text_encode.go.html#line-477">#L477</a>: 			fmt.<b>Fprint</b>(w, v)
+
+	<a href="../pkg/go.uber.org/zap/zapcore.html">go.uber.org/zap/zapcore</a>
+		<a href="../src/go.uber.org/zap/zapcore/console_encoder.go.html#line-99">console_encoder.go#L99</a>: 		fmt.<b>Fprint</b>(line, arr.elems[i])
+
+	<a href="../pkg/google.golang.org/grpc.html">google.golang.org/grpc</a>
+		<a href="../src/google.golang.org/grpc/trace.go.html#line-82">trace.go#L82</a>: 		fmt.<b>Fprint</b>(&amp;line, f.deadline)
+
+	<a href="../pkg/math/big.html">math/big</a>
+		<a href="../src/math/big/intconv.go.html#line-86">intconv.go#L86</a>: 		fmt.<b>Fprint</b>(s, "&lt;nil&gt;")
+
+	<a href="../pkg/text/template.html">text/template</a>
+		<a href="../src/text/template/exec.go.html#line-964">exec.go#L964</a>: 	_, err := fmt.<b>Fprint</b>(s.wr, iface)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

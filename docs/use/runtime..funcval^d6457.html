@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime.funcval</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../pkg/runtime.html">runtime</a>.<a href="../src/runtime/runtime2.go.html#line-197">funcval</a></b></span>
+
+<span class="title">23 uses</span>
+
+	runtime (current package)
+		<a href="../src/runtime/cgocall.go.html#line-304">cgocall.go#L304</a>: 	cbFV := <b>funcval</b>{uintptr(fn)}
+		<a href="../src/runtime/debugcall.go.html#line-115">debugcall.go#L115</a>: 		newg := newproc1(*(**<b>funcval</b>)(unsafe.Pointer(&amp;fn)), nil, 0, gp, callerpc)
+		<a href="../src/runtime/debugcall.go.html#line-242" class="path-duplicate">debugcall.go</a><a href="../src/runtime/debugcall.go.html#line-242">#L242</a>: 	dispatchFV := <b>funcval</b>{dispatch}
+		<a href="../src/runtime/heapdump.go.html#line-226">heapdump.go#L226</a>: func dumpfinalizer(obj unsafe.Pointer, fn *<b>funcval</b>, fint *_type, ot *ptrtype) {
+		<a href="../src/runtime/heapdump.go.html#line-425" class="path-duplicate">heapdump.go</a><a href="../src/runtime/heapdump.go.html#line-425">#L425</a>: func finq_callback(fn *<b>funcval</b>, obj unsafe.Pointer, nret uintptr, fint *_type, ot *ptrtype) {
+		<a href="../src/runtime/mfinal.go.html#line-43">mfinal.go#L43</a>: 	fn   *<b>funcval</b>       // function to call (may be a heap pointer)
+		<a href="../src/runtime/mfinal.go.html#line-78" class="path-duplicate">mfinal.go</a><a href="../src/runtime/mfinal.go.html#line-78">#L78</a>: func queuefinalizer(p unsafe.Pointer, fn *<b>funcval</b>, nret uintptr, fint *_type, ot *ptrtype) {
+		<a href="../src/runtime/mfinal.go.html#line-128" class="path-duplicate">mfinal.go</a><a href="../src/runtime/mfinal.go.html#line-128">#L128</a>: func iterate_finq(callback func(*<b>funcval</b>, unsafe.Pointer, uintptr, *_type, *ptrtype)) {
+		<a href="../src/runtime/mfinal.go.html#line-441" class="path-duplicate">mfinal.go</a><a href="../src/runtime/mfinal.go.html#line-441">#L441</a>: 		if !addfinalizer(e.data, (*<b>funcval</b>)(f.data), nret, fint, ot) {
+		<a href="../src/runtime/mheap.go.html#line-1795">mheap.go#L1795</a>: 	fn      *<b>funcval</b> // May be a heap pointer.
+		<a href="../src/runtime/mheap.go.html#line-1802" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1802">#L1802</a>: func addfinalizer(p unsafe.Pointer, f *<b>funcval</b>, nret uintptr, fint *_type, ot *ptrtype) bool {
+		<a href="../src/runtime/panic.go.html#line-232">panic.go#L232</a>: func deferproc(siz int32, fn *<b>funcval</b>) { // arguments of fn follow fn
+		<a href="../src/runtime/panic.go.html#line-402" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-402">#L402</a>: 	*(**<b>funcval</b>)(unsafe.Pointer(&amp;fn)) = d.fn
+		<a href="../src/runtime/panic.go.html#line-871" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-871">#L871</a>: 		closure := *(**<b>funcval</b>)(unsafe.Pointer(d.varp - uintptr(closureOffset)))
+		<a href="../src/runtime/proc.go.html#line-4250">proc.go#L4250</a>: func newproc(siz int32, fn *<b>funcval</b>) {
+		<a href="../src/runtime/proc.go.html#line-4275" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4275">#L4275</a>: func newproc1(fn *<b>funcval</b>, argp unsafe.Pointer, narg int32, callergp *g, callerpc uintptr) *g {
+		<a href="../src/runtime/runtime2.go.html#line-197">runtime2.go#L197</a>: type <b>funcval</b> struct {
+		<a href="../src/runtime/runtime2.go.html#line-953" class="path-duplicate">runtime2.go</a><a href="../src/runtime/runtime2.go.html#line-953">#L953</a>: 	fn        *<b>funcval</b> // can be nil for open-coded defers
+		<a href="../src/runtime/stack.go.html#line-1112">stack.go#L1112</a>: func gostartcallfn(gobuf *gobuf, fv *<b>funcval</b>) {
+		<a href="../src/runtime/stubs.go.html#line-180">stubs.go#L180</a>: func jmpdefer(fv *<b>funcval</b>, argp uintptr)
+		<a href="../src/runtime/traceback.go.html#line-91">traceback.go#L91</a>: 	var ctxt *<b>funcval</b> // Context pointer for unstarted goroutines. See issue #25897.
+		<a href="../src/runtime/traceback.go.html#line-106" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-106">#L106</a>: 			ctxt = (*<b>funcval</b>)(gp.sched.ctxt)
+		<a href="../src/runtime/traceback.go.html#line-677" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-677">#L677</a>: func getArgInfo(frame *stkframe, f funcInfo, needArgMap bool, ctxt *<b>funcval</b>) (arglen uintptr, argmap *bitvector) {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

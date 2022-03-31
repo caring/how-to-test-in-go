@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Package: github.com/uber/jaeger-client-go/log/zap</title>
+<link href="../../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre id="package-details"><code><span style="font-size:xx-large;">package <b>zap</b></span>
+
+<span class="title">Import Path</span>
+	<a href="../../../../../index.html#pkg-github.com/uber/jaeger-client-go/log/zap">github.com/uber/jaeger-client-go/log/zap</a><i> (on <a href="https://pkg.go.dev/github.com/uber/jaeger-client-go/log/zap" target="_blank">go.dev</a>)</i>
+
+<span class="title">Dependency Relation</span>
+	imports <a href="../../../../../dep/github.com/uber/jaeger-client-go/log/zap.html">7 packages</a>, and imported by <a href="../../../../../dep/github.com/uber/jaeger-client-go/log/zap.html#imported-by">one package</a>
+
+<div id="files"><span class="title">Involved Source Files</span>
+
+	<span class="nodocs">      <a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/field.go.html">field.go</a></span>
+	<span class="nodocs">      <a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/logger.go.html">logger.go</a></span>
+	<span class="nodocs">      <a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html">tracer.go</a></span></div>
+<div id="exported-types"><span class="title">Package-Level Type Names<span class="title-stat"><i> (total 15, in which 1 are exported)</i></span></span>
+
+<div id="exported-types-buttons" class="js-on">	/* sort exporteds by: <label id="sort-types-by-alphabet" class="button">alphabet</label> | <label id="sort-types-by-popularity" class="button">popularity</label> */</div><div class="anchor type-res" id="name-Logger" data-popularity="375">	<input type='checkbox' class="fold" id="Logger-fold-content"><label for="Logger-fold-content"> <a href="../../../../../use/github.com/uber/jaeger-client-go/log/zap..Logger.html">type</a> <a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/logger.go.html#line-22">Logger</a> <i>(struct)</i></label><span id='Logger-fold-content-docs' class="fold-docs">
+		Logger is an adapter from zap Logger to jaeger-lib Logger.
+
+		<input type='checkbox' class="fold" id="Logger-fold-fields"><label for="Logger-fold-fields">Fields (<i>only one, which is unexported</i>)</label><span id='Logger-fold-fields-items' class="fold-items">
+			<input type='checkbox' class="showhide" id="Logger-showhide-fields"><i><label for="Logger-showhide-fields" class="show-inline">/* one unexported ... */</label><label for="Logger-showhide-fields" class="hide-inline">/* one unexported: */</label></i><span class="hidden"><i>
+			<span class="nodocs"><a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/logger.go.html#line-23">logger</a> <i>*<a href="../../../../go.uber.org/zap.html">zap</a>.<a href="../../../../go.uber.org/zap.html#name-SugaredLogger">SugaredLogger</a></i></span></i></span></span>
+		<input type='checkbox' class="fold" id="Logger-fold-methods"><label for="Logger-fold-methods">Methods (<i>total 3, all are exported</i>)</label><span id='Logger-fold-methods-items' class="fold-items"><span>
+			<input type='checkbox' class="fold" id="Logger-fold-method-Debugf"><label for="Logger-fold-method-Debugf">(*Logger) <a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/logger.go.html#line-44">Debugf</a>(msg <a href="../../../../builtin.html#name-string">string</a>, args ...interface{})</label><span id='Logger-fold-method-Debugf-docs' class="fold-docs">
+				Debugf logs a message at debug priority.
+				TODO: treat the last arg specially similar to Slf4J
+				- cast to zap.Span/etc if  type assertion succeeds
+</span></span><span>
+			<input type='checkbox' class="fold" id="Logger-fold-method-Error"><label for="Logger-fold-method-Error">(*Logger) <a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/logger.go.html#line-32">Error</a>(msg <a href="../../../../builtin.html#name-string">string</a>)</label><span id='Logger-fold-method-Error-docs' class="fold-docs">
+				Error logs a message at error priority
+</span></span><span>
+			<input type='checkbox' class="fold" id="Logger-fold-method-Infof"><label for="Logger-fold-method-Infof">(*Logger) <a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/logger.go.html#line-37">Infof</a>(msg <a href="../../../../builtin.html#name-string">string</a>, args ...interface{})</label><span id='Logger-fold-method-Infof-docs' class="fold-docs">
+				Infof logs a message at info priority
+</span></span></span>
+		<input type='checkbox' class="fold" id="Logger-fold-impls"><label for="Logger-fold-impls">Implements (<i>at least 3, all are exported</i>)</label><span id='Logger-fold-impls-items' class="fold-items"><span>
+			*Logger : github.com/uber/jaeger-client-go/log.<a href="../log.html#name-DebugLogger">DebugLogger</a></span><span>
+			*Logger : github.com/uber/jaeger-client-go/log.<a href="../log.html#name-Logger">Logger</a></span><span>
+			*Logger : github.com/uber/jaeger-client-go.<a href="../../jaeger-client-go.html#name-Logger">Logger</a></span></span>
+		<input type='checkbox' class="fold" id="Logger-fold-results"><label for="Logger-fold-results">As Outputs Of (<i>at least one exported</i>)</label><span id='Logger-fold-results-items' class="fold-items"><span>
+			func <a href="#name-NewLogger">NewLogger</a>(logger *<a href="../../../../go.uber.org/zap.html">zap</a>.<a href="../../../../go.uber.org/zap.html#name-Logger">Logger</a>) *<b>Logger</b></span></span>
+
+</span></div></div><div>	<input type='checkbox' class="showhide" id="unexported-typenames-showhide"><i><label for="unexported-typenames-showhide" class="show-inline">/* 14 unexporteds ... */</label><label for="unexported-typenames-showhide" class="hide-inline">/* 14 unexporteds: */</label></i><div class="anchor type-res hidden" id="name-baggageKV" data-popularity="100">	<input type='checkbox' class="fold" id="baggageKV-fold-content"><label for="baggageKV-fold-content"> <a href="../../../../../use/github.com/uber/jaeger-client-go/log/zap..baggageKV^f4928.html">type</a> <a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/field.go.html#line-84">baggageKV</a> <i>(struct)</i></label><span id='baggageKV-fold-content-docs' class="fold-docs">
+
+		<input type='checkbox' class="fold" id="baggageKV-fold-fields"><label for="baggageKV-fold-fields">Fields (<i>total 2, neither is exported</i>)</label><span id='baggageKV-fold-fields-items' class="fold-items">
+			<input type='checkbox' checked class="showhide" id="baggageKV-showhide-fields"><i><label for="baggageKV-showhide-fields" class="show-inline">/* 2 unexporteds ... */</label><label for="baggageKV-showhide-fields" class="hide-inline">/* 2 unexporteds: */</label></i><span class="hidden"><i>
+			<span class="nodocs"><a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/field.go.html#line-85">key</a> <i><a href="../../../../builtin.html#name-string">string</a></i></span></i></span><span class="hidden"><i>
+			<span class="nodocs"><a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/field.go.html#line-86">value</a> <i><a href="../../../../builtin.html#name-string">string</a></i></span></i></span></span>
+		<input type='checkbox' class="fold" id="baggageKV-fold-methods"><label for="baggageKV-fold-methods">Methods (<i>only one, which is exported</i>)</label><span id='baggageKV-fold-methods-items' class="fold-items"><span>
+			<span class="nodocs">( baggageKV) <a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/field.go.html#line-89">MarshalLogObject</a>(enc <a href="../../../../go.uber.org/zap/zapcore.html">zapcore</a>.<a href="../../../../go.uber.org/zap/zapcore.html#name-ObjectEncoder">ObjectEncoder</a>) <a href="../../../../builtin.html#name-error">error</a></span></span></span>
+		<input type='checkbox' class="fold" id="baggageKV-fold-impls"><label for="baggageKV-fold-impls">Implements (<i>at least one exported</i>)</label><span id='baggageKV-fold-impls-items' class="fold-items"><span>
+			 baggageKV : go.uber.org/zap/zapcore.<a href="../../../../go.uber.org/zap/zapcore.html#name-ObjectMarshaler">ObjectMarshaler</a></span></span>
+
+</span></div><div class="anchor type-res hidden" id="name-baggageKVs" data-popularity="100">	<input type='checkbox' class="fold" id="baggageKVs-fold-content"><label for="baggageKVs-fold-content"> <a href="../../../../../use/github.com/uber/jaeger-client-go/log/zap..baggageKVs^7f63e.html">type</a> <a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/field.go.html#line-95">baggageKVs</a> <a href="../../jaeger-client-go.html">jaeger</a>.<a href="../../jaeger-client-go.html#name-SpanContext">SpanContext</a> <i>(struct)</i></label><span id='baggageKVs-fold-content-docs' class="fold-docs">
+
+		<input type='checkbox' class="fold" id="baggageKVs-fold-fields"><label for="baggageKVs-fold-fields">Fields (<i>total 7, none are exported</i>)</label><span id='baggageKVs-fold-fields-items' class="fold-items">
+			<input type='checkbox' checked class="showhide" id="baggageKVs-showhide-fields"><i><label for="baggageKVs-showhide-fields" class="show-inline">/* 7 unexporteds ... */</label><label for="baggageKVs-showhide-fields" class="hide-inline">/* 7 unexporteds: */</label></i><span class="hidden"><i>
+			<input type='checkbox' class="fold" id="baggageKVs-fold-field-baggage"><label for="baggageKVs-fold-field-baggage"><a href="../../../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-63">baggage</a> <i>map[<a href="../../../../builtin.html#name-string">string</a>]<a href="../../../../builtin.html#name-string">string</a></i></label><span id='baggageKVs-fold-field-baggage-docs' class="fold-docs">
+				Distributed Context baggage. The is a snapshot in time.
+</span></i></span><span class="hidden"><i>
+			<input type='checkbox' class="fold" id="baggageKVs-fold-field-debugID"><label for="baggageKVs-fold-field-debugID"><a href="../../../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-69">debugID</a> <i><a href="../../../../builtin.html#name-string">string</a></i></label><span id='baggageKVs-fold-field-debugID-docs' class="fold-docs">
+				debugID can be set to some correlation ID when the context is being
+				extracted from a TextMap carrier.
+
+				See JaegerDebugHeader in constants.go
+</span></i></span><span class="hidden"><i>
+			<input type='checkbox' class="fold" id="baggageKVs-fold-field-parentID"><label for="baggageKVs-fold-field-parentID"><a href="../../../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-60">parentID</a> <i><a href="../../jaeger-client-go.html">jaeger</a>.<a href="../../jaeger-client-go.html#name-SpanID">SpanID</a></i></label><span id='baggageKVs-fold-field-parentID-docs' class="fold-docs">
+				parentID refers to the ID of the parent span.
+				Should be 0 if the current span is a root span.
+</span></i></span><span class="hidden"><i>
+			<input type='checkbox' class="fold" id="baggageKVs-fold-field-remote"><label for="baggageKVs-fold-field-remote"><a href="../../../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-75">remote</a> <i><a href="../../../../builtin.html#name-bool">bool</a></i></label><span id='baggageKVs-fold-field-remote-docs' class="fold-docs">
+				remote indicates that span context represents a remote parent
+</span></i></span><span class="hidden"><i>
+			<input type='checkbox' class="fold" id="baggageKVs-fold-field-samplingState"><label for="baggageKVs-fold-field-samplingState"><a href="../../../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-72">samplingState</a> <i>*<a href="../../jaeger-client-go.html">jaeger</a>.<a href="../../jaeger-client-go.html#name-samplingState">samplingState</a></i></label><span id='baggageKVs-fold-field-samplingState-docs' class="fold-docs">
+				samplingState is shared across all spans
+</span></i></span><span class="hidden"><i>
+			<input type='checkbox' class="fold" id="baggageKVs-fold-field-spanID"><label for="baggageKVs-fold-field-spanID"><a href="../../../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-56">spanID</a> <i><a href="../../jaeger-client-go.html">jaeger</a>.<a href="../../jaeger-client-go.html#name-SpanID">SpanID</a></i></label><span id='baggageKVs-fold-field-spanID-docs' class="fold-docs">
+				spanID represents span ID that must be unique within its trace,
+				but does not have to be globally unique.
+</span></i></span><span class="hidden"><i>
+			<input type='checkbox' class="fold" id="baggageKVs-fold-field-traceID"><label for="baggageKVs-fold-field-traceID"><a href="../../../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-52">traceID</a> <i><a href="../../jaeger-client-go.html">jaeger</a>.<a href="../../jaeger-client-go.html#name-TraceID">TraceID</a></i></label><span id='baggageKVs-fold-field-traceID-docs' class="fold-docs">
+				traceID represents globally unique ID of the trace.
+				Usually generated as a random number.
+</span></i></span></span>
+		<input type='checkbox' class="fold" id="baggageKVs-fold-methods"><label for="baggageKVs-fold-methods">Methods (<i>only one, which is exported</i>)</label><span id='baggageKVs-fold-methods-items' class="fold-items"><span>
+			<span class="nodocs">( baggageKVs) <a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/field.go.html#line-97">MarshalLogArray</a>(enc <a href="../../../../go.uber.org/zap/zapcore.html">zapcore</a>.<a href="../../../../go.uber.org/zap/zapcore.html#name-ArrayEncoder">ArrayEncoder</a>) <a href="../../../../builtin.html#name-error">error</a></span></span></span>
+		<input type='checkbox' class="fold" id="baggageKVs-fold-impls"><label for="baggageKVs-fold-impls">Implements (<i>at least one exported</i>)</label><span id='baggageKVs-fold-impls-items' class="fold-items"><span>
+			 baggageKVs : go.uber.org/zap/zapcore.<a href="../../../../go.uber.org/zap/zapcore.html#name-ArrayMarshaler">ArrayMarshaler</a></span></span>
+
+</span></div><div class="anchor type-res hidden" id="name-logField" data-popularity="100">	<input type='checkbox' class="fold" id="logField-fold-content"><label for="logField-fold-content"> <a href="../../../../../use/github.com/uber/jaeger-client-go/log/zap..logField^e5a50.html">type</a> <a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/field.go.html#line-126">logField</a> <a href="../../../opentracing/opentracing-go/log.html">log</a>.<a href="../../../opentracing/opentracing-go/log.html#name-Field">Field</a> <i>(struct)</i></label><span id='logField-fold-content-docs' class="fold-docs">
+
+		<input type='checkbox' class="fold" id="logField-fold-fields"><label for="logField-fold-fields">Fields (<i>total 5, none are exported</i>)</label><span id='logField-fold-fields-items' class="fold-items">
+			<input type='checkbox' checked class="showhide" id="logField-showhide-fields"><i><label for="logField-showhide-fields" class="show-inline">/* 5 unexporteds ... */</label><label for="logField-showhide-fields" class="hide-inline">/* 5 unexporteds: */</label></i><span class="hidden"><i>
+			<span class="nodocs"><a href="../../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-34">fieldType</a> <i><a href="../../../opentracing/opentracing-go/log.html">log</a>.<a href="../../../opentracing/opentracing-go/log.html#name-fieldType">fieldType</a></i></span></i></span><span class="hidden"><i>
+			<span class="nodocs"><a href="../../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-37">interfaceVal</a> <i>interface{}</i></span></i></span><span class="hidden"><i>
+			<span class="nodocs"><a href="../../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-33">key</a> <i><a href="../../../../builtin.html#name-string">string</a></i></span></i></span><span class="hidden"><i>
+			<span class="nodocs"><a href="../../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-35">numericVal</a> <i><a href="../../../../builtin.html#name-int64">int64</a></i></span></i></span><span class="hidden"><i>
+			<span class="nodocs"><a href="../../../../../src/github.com/opentracing/opentracing-go/log/field.go.html#line-36">stringVal</a> <i><a href="../../../../builtin.html#name-string">string</a></i></span></i></span></span>
+		<input type='checkbox' class="fold" id="logField-fold-methods"><label for="logField-fold-methods">Methods (<i>only one, which is exported</i>)</label><span id='logField-fold-methods-items' class="fold-items"><span>
+			<span class="nodocs">( logField) <a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/field.go.html#line-128">MarshalLogObject</a>(enc <a href="../../../../go.uber.org/zap/zapcore.html">zapcore</a>.<a href="../../../../go.uber.org/zap/zapcore.html#name-ObjectEncoder">ObjectEncoder</a>) <a href="../../../../builtin.html#name-error">error</a></span></span></span>
+		<input type='checkbox' class="fold" id="logField-fold-impls"><label for="logField-fold-impls">Implements (<i>at least one exported</i>)</label><span id='logField-fold-impls-items' class="fold-items"><span>
+			 logField : go.uber.org/zap/zapcore.<a href="../../../../go.uber.org/zap/zapcore.html#name-ObjectMarshaler">ObjectMarshaler</a></span></span>
+
+</span></div><div class="anchor type-res hidden" id="name-logFields" data-popularity="100">	<input type='checkbox' class="fold" id="logFields-fold-content"><label for="logFields-fold-content"> <a href="../../../../../use/github.com/uber/jaeger-client-go/log/zap..logFields^5d861.html">type</a> <a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/field.go.html#line-135">logFields</a> <i>([])</i></label><span id='logFields-fold-content-docs' class="fold-docs">
+
+		<input type='checkbox' class="fold" id="logFields-fold-methods"><label for="logFields-fold-methods">Methods (<i>only one, which is exported</i>)</label><span id='logFields-fold-methods-items' class="fold-items"><span>
+			<span class="nodocs">( logFields) <a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/field.go.html#line-137">MarshalLogArray</a>(enc <a href="../../../../go.uber.org/zap/zapcore.html">zapcore</a>.<a href="../../../../go.uber.org/zap/zapcore.html#name-ArrayEncoder">ArrayEncoder</a>) <a href="../../../../builtin.html#name-error">error</a></span></span></span>
+		<input type='checkbox' class="fold" id="logFields-fold-impls"><label for="logFields-fold-impls">Implements (<i>at least one exported</i>)</label><span id='logFields-fold-impls-items' class="fold-items"><span>
+			 logFields : go.uber.org/zap/zapcore.<a href="../../../../go.uber.org/zap/zapcore.html#name-ArrayMarshaler">ArrayMarshaler</a></span></span>
+
+</span></div><div class="anchor type-res hidden" id="name-loggingSpan" data-popularity="700">	<input type='checkbox' class="fold" id="loggingSpan-fold-content"><label for="loggingSpan-fold-content"> <a href="../../../../../use/github.com/uber/jaeger-client-go/log/zap..loggingSpan^28470.html">type</a> <a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-89">loggingSpan</a> <i>(struct)</i></label><span id='loggingSpan-fold-content-docs' class="fold-docs">
+
+		<input type='checkbox' class="fold" id="loggingSpan-fold-fields"><label for="loggingSpan-fold-fields">Fields (<i>total 2, neither is exported</i>)</label><span id='loggingSpan-fold-fields-items' class="fold-items">
+			<input type='checkbox' checked class="showhide" id="loggingSpan-showhide-fields"><i><label for="loggingSpan-showhide-fields" class="show-inline">/* 2 unexporteds ... */</label><label for="loggingSpan-showhide-fields" class="hide-inline">/* 2 unexporteds: */</label></i><span class="hidden"><i>
+			<span class="nodocs"><a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-91">delegate</a> <i><a href="../../../opentracing/opentracing-go.html">opentracing</a>.<a href="../../../opentracing/opentracing-go.html#name-Span">Span</a></i></span></i></span><span class="hidden"><i>
+			<span class="nodocs"><a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-90">logger</a> <i>*<a href="../../../../go.uber.org/zap.html">zap</a>.<a href="../../../../go.uber.org/zap.html#name-Logger">Logger</a></i></span></i></span></span>
+		<input type='checkbox' class="fold" id="loggingSpan-fold-methods"><label for="loggingSpan-fold-methods">Methods (<i>total 13, all are exported</i>)</label><span id='loggingSpan-fold-methods-items' class="fold-items"><span>
+			<span class="nodocs">( loggingSpan) <a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-142">BaggageItem</a>(restrictedKey <a href="../../../../builtin.html#name-string">string</a>) <a href="../../../../builtin.html#name-string">string</a></span></span><span>
+			<span class="nodocs">( loggingSpan) <a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-112">Context</a>() <a href="../../../opentracing/opentracing-go.html">opentracing</a>.<a href="../../../opentracing/opentracing-go.html#name-SpanContext">SpanContext</a></span></span><span>
+			<span class="nodocs">( loggingSpan) <a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-101">Finish</a>()</span></span><span>
+			<span class="nodocs">( loggingSpan) <a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-107">FinishWithOptions</a>(opts <a href="../../../opentracing/opentracing-go.html">opentracing</a>.<a href="../../../opentracing/opentracing-go.html#name-FinishOptions">FinishOptions</a>)</span></span><span>
+			<span class="nodocs">( loggingSpan) <a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-162">Log</a>(data <a href="../../../opentracing/opentracing-go.html">opentracing</a>.<a href="../../../opentracing/opentracing-go.html#name-LogData">LogData</a>)</span></span><span>
+			<span class="nodocs">( loggingSpan) <a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-152">LogEvent</a>(event <a href="../../../../builtin.html#name-string">string</a>)</span></span><span>
+			<span class="nodocs">( loggingSpan) <a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-157">LogEventWithPayload</a>(event <a href="../../../../builtin.html#name-string">string</a>, payload interface{})</span></span><span>
+			<span class="nodocs">( loggingSpan) <a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-127">LogFields</a>(fields ...<a href="../../../opentracing/opentracing-go/log.html">log</a>.<a href="../../../opentracing/opentracing-go/log.html#name-Field">Field</a>)</span></span><span>
+			<span class="nodocs">( loggingSpan) <a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-132">LogKV</a>(alternatingKeyValues ...interface{})</span></span><span>
+			<span class="nodocs">( loggingSpan) <a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-137">SetBaggageItem</a>(restrictedKey, value <a href="../../../../builtin.html#name-string">string</a>) <a href="../../../opentracing/opentracing-go.html">opentracing</a>.<a href="../../../opentracing/opentracing-go.html#name-Span">Span</a></span></span><span>
+			<span class="nodocs">( loggingSpan) <a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-117">SetOperationName</a>(operationName <a href="../../../../builtin.html#name-string">string</a>) <a href="../../../opentracing/opentracing-go.html">opentracing</a>.<a href="../../../opentracing/opentracing-go.html#name-Span">Span</a></span></span><span>
+			<span class="nodocs">( loggingSpan) <a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-122">SetTag</a>(key <a href="../../../../builtin.html#name-string">string</a>, value interface{}) <a href="../../../opentracing/opentracing-go.html">opentracing</a>.<a href="../../../opentracing/opentracing-go.html#name-Span">Span</a></span></span><span>
+			<span class="nodocs">( loggingSpan) <a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-147">Tracer</a>() <a href="../../../opentracing/opentracing-go.html">opentracing</a>.<a href="../../../opentracing/opentracing-go.html#name-Tracer">Tracer</a></span></span></span>
+		<input type='checkbox' class="fold" id="loggingSpan-fold-impls"><label for="loggingSpan-fold-impls">Implements (<i>at least one exported</i>)</label><span id='loggingSpan-fold-impls-items' class="fold-items"><span>
+			 loggingSpan : github.com/opentracing/opentracing-go.<a href="../../../opentracing/opentracing-go.html#name-Span">Span</a></span></span>
+
+</span></div><div class="anchor type-res hidden" id="name-loggingTracer" data-popularity="200">	<input type='checkbox' class="fold" id="loggingTracer-fold-content"><label for="loggingTracer-fold-content"> <a href="../../../../../use/github.com/uber/jaeger-client-go/log/zap..loggingTracer^db5c9.html">type</a> <a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-26">loggingTracer</a> <i>(struct)</i></label><span id='loggingTracer-fold-content-docs' class="fold-docs">
+		loggingTracer is a wrapper for the Jaeger tracer, which logs all span interactions
+		It is intended to be used for debugging tracing issues
+
+		<input type='checkbox' class="fold" id="loggingTracer-fold-fields"><label for="loggingTracer-fold-fields">Fields (<i>total 2, neither is exported</i>)</label><span id='loggingTracer-fold-fields-items' class="fold-items">
+			<input type='checkbox' checked class="showhide" id="loggingTracer-showhide-fields"><i><label for="loggingTracer-showhide-fields" class="show-inline">/* 2 unexporteds ... */</label><label for="loggingTracer-showhide-fields" class="hide-inline">/* 2 unexporteds: */</label></i><span class="hidden"><i>
+			<span class="nodocs"><a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-27">logger</a> <i>*<a href="../../../../go.uber.org/zap.html">zap</a>.<a href="../../../../go.uber.org/zap.html#name-Logger">Logger</a></i></span></i></span><span class="hidden"><i>
+			<span class="nodocs"><a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-28">tracer</a> <i><a href="../../../opentracing/opentracing-go.html">opentracing</a>.<a href="../../../opentracing/opentracing-go.html#name-Tracer">Tracer</a></i></span></i></span></span>
+		<input type='checkbox' class="fold" id="loggingTracer-fold-methods"><label for="loggingTracer-fold-methods">Methods (<i>total 3, all are exported</i>)</label><span id='loggingTracer-fold-methods-items' class="fold-items"><span>
+			<span class="nodocs">( loggingTracer) <a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-78">Extract</a>(format interface{}, carrier interface{}) (<a href="../../../opentracing/opentracing-go.html">opentracing</a>.<a href="../../../opentracing/opentracing-go.html#name-SpanContext">SpanContext</a>, <a href="../../../../builtin.html#name-error">error</a>)</span></span><span>
+			<span class="nodocs">( loggingTracer) <a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-66">Inject</a>(ctx <a href="../../../opentracing/opentracing-go.html">opentracing</a>.<a href="../../../opentracing/opentracing-go.html#name-SpanContext">SpanContext</a>, format interface{}, carrier interface{}) <a href="../../../../builtin.html#name-error">error</a></span></span><span>
+			<span class="nodocs">( loggingTracer) <a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-47">StartSpan</a>(operationName <a href="../../../../builtin.html#name-string">string</a>, opts ...<a href="../../../opentracing/opentracing-go.html">opentracing</a>.<a href="../../../opentracing/opentracing-go.html#name-StartSpanOption">StartSpanOption</a>) <a href="../../../opentracing/opentracing-go.html">opentracing</a>.<a href="../../../opentracing/opentracing-go.html#name-Span">Span</a></span></span></span>
+		<input type='checkbox' class="fold" id="loggingTracer-fold-impls"><label for="loggingTracer-fold-impls">Implements (<i>at least one exported</i>)</label><span id='loggingTracer-fold-impls-items' class="fold-items"><span>
+			 loggingTracer : github.com/opentracing/opentracing-go.<a href="../../../opentracing/opentracing-go.html#name-Tracer">Tracer</a></span></span>
+
+</span></div><div class="anchor type-res hidden" id="name-logRecord" data-popularity="100">	<input type='checkbox' class="fold" id="logRecord-fold-content"><label for="logRecord-fold-content"> <a href="../../../../../use/github.com/uber/jaeger-client-go/log/zap..logRecord^cdd1a.html">type</a> <a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/field.go.html#line-109">logRecord</a> <a href="../../../opentracing/opentracing-go.html">opentracing</a>.<a href="../../../opentracing/opentracing-go.html#name-LogRecord">LogRecord</a> <i>(struct)</i></label><span id='logRecord-fold-content-docs' class="fold-docs">
+
+		<input type='checkbox' class="fold" id="logRecord-fold-fields"><label for="logRecord-fold-fields">Fields (<i>total 2, both are exported</i>)</label><span id='logRecord-fold-fields-items' class="fold-items"><span>
+			<span class="nodocs"><a href="../../../../../src/github.com/opentracing/opentracing-go/span.go.html#line-129">Fields</a> <i>[]<a href="../../../opentracing/opentracing-go/log.html">log</a>.<a href="../../../opentracing/opentracing-go/log.html#name-Field">Field</a></i></span></span><span>
+			<span class="nodocs"><a href="../../../../../src/github.com/opentracing/opentracing-go/span.go.html#line-128">Timestamp</a> <i><a href="../../../../time.html">time</a>.<a href="../../../../time.html#name-Time">Time</a></i></span></span></span>
+		<input type='checkbox' class="fold" id="logRecord-fold-methods"><label for="logRecord-fold-methods">Methods (<i>only one, which is exported</i>)</label><span id='logRecord-fold-methods-items' class="fold-items"><span>
+			<span class="nodocs">( logRecord) <a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/field.go.html#line-111">MarshalLogObject</a>(enc <a href="../../../../go.uber.org/zap/zapcore.html">zapcore</a>.<a href="../../../../go.uber.org/zap/zapcore.html#name-ObjectEncoder">ObjectEncoder</a>) <a href="../../../../builtin.html#name-error">error</a></span></span></span>
+		<input type='checkbox' class="fold" id="logRecord-fold-impls"><label for="logRecord-fold-impls">Implements (<i>at least one exported</i>)</label><span id='logRecord-fold-impls-items' class="fold-items"><span>
+			 logRecord : go.uber.org/zap/zapcore.<a href="../../../../go.uber.org/zap/zapcore.html#name-ObjectMarshaler">ObjectMarshaler</a></span></span>
+
+</span></div><div class="anchor type-res hidden" id="name-logRecords" data-popularity="100">	<input type='checkbox' class="fold" id="logRecords-fold-content"><label for="logRecords-fold-content"> <a href="../../../../../use/github.com/uber/jaeger-client-go/log/zap..logRecords^392f1.html">type</a> <a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/field.go.html#line-117">logRecords</a> <i>([])</i></label><span id='logRecords-fold-content-docs' class="fold-docs">
+
+		<input type='checkbox' class="fold" id="logRecords-fold-methods"><label for="logRecords-fold-methods">Methods (<i>only one, which is exported</i>)</label><span id='logRecords-fold-methods-items' class="fold-items"><span>
+			<span class="nodocs">( logRecords) <a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/field.go.html#line-119">MarshalLogArray</a>(enc <a href="../../../../go.uber.org/zap/zapcore.html">zapcore</a>.<a href="../../../../go.uber.org/zap/zapcore.html#name-ArrayEncoder">ArrayEncoder</a>) <a href="../../../../builtin.html#name-error">error</a></span></span></span>
+		<input type='checkbox' class="fold" id="logRecords-fold-impls"><label for="logRecords-fold-impls">Implements (<i>at least one exported</i>)</label><span id='logRecords-fold-impls-items' class="fold-items"><span>
+			 logRecords : go.uber.org/zap/zapcore.<a href="../../../../go.uber.org/zap/zapcore.html#name-ArrayMarshaler">ArrayMarshaler</a></span></span>
+
+</span></div><div class="anchor type-res hidden" id="name-reference" data-popularity="100">	<input type='checkbox' class="fold" id="reference-fold-content"><label for="reference-fold-content"> <a href="../../../../../use/github.com/uber/jaeger-client-go/log/zap..reference^52367.html">type</a> <a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/field.go.html#line-154">reference</a> <a href="../../../opentracing/opentracing-go.html">opentracing</a>.<a href="../../../opentracing/opentracing-go.html#name-SpanReference">SpanReference</a> <i>(struct)</i></label><span id='reference-fold-content-docs' class="fold-docs">
+
+		<input type='checkbox' class="fold" id="reference-fold-fields"><label for="reference-fold-fields">Fields (<i>total 2, both are exported</i>)</label><span id='reference-fold-fields-items' class="fold-items"><span>
+			<span class="nodocs"><a href="../../../../../src/github.com/opentracing/opentracing-go/tracer.go.html#line-222">ReferencedContext</a> <i><a href="../../../opentracing/opentracing-go.html">opentracing</a>.<a href="../../../opentracing/opentracing-go.html#name-SpanContext">SpanContext</a></i></span></span><span>
+			<span class="nodocs"><a href="../../../../../src/github.com/opentracing/opentracing-go/tracer.go.html#line-221">Type</a> <i><a href="../../../opentracing/opentracing-go.html">opentracing</a>.<a href="../../../opentracing/opentracing-go.html#name-SpanReferenceType">SpanReferenceType</a></i></span></span></span>
+		<input type='checkbox' class="fold" id="reference-fold-methods"><label for="reference-fold-methods">Methods (<i>only one, which is exported</i>)</label><span id='reference-fold-methods-items' class="fold-items"><span>
+			<span class="nodocs">( reference) <a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/field.go.html#line-156">MarshalLogObject</a>(enc <a href="../../../../go.uber.org/zap/zapcore.html">zapcore</a>.<a href="../../../../go.uber.org/zap/zapcore.html#name-ObjectEncoder">ObjectEncoder</a>) <a href="../../../../builtin.html#name-error">error</a></span></span></span>
+		<input type='checkbox' class="fold" id="reference-fold-impls"><label for="reference-fold-impls">Implements (<i>at least one exported</i>)</label><span id='reference-fold-impls-items' class="fold-items"><span>
+			 reference : go.uber.org/zap/zapcore.<a href="../../../../go.uber.org/zap/zapcore.html#name-ObjectMarshaler">ObjectMarshaler</a></span></span>
+
+</span></div><div class="anchor type-res hidden" id="name-references" data-popularity="100">	<input type='checkbox' class="fold" id="references-fold-content"><label for="references-fold-content"> <a href="../../../../../use/github.com/uber/jaeger-client-go/log/zap..references^07a0b.html">type</a> <a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/field.go.html#line-173">references</a> <i>([])</i></label><span id='references-fold-content-docs' class="fold-docs">
+
+		<input type='checkbox' class="fold" id="references-fold-methods"><label for="references-fold-methods">Methods (<i>only one, which is exported</i>)</label><span id='references-fold-methods-items' class="fold-items"><span>
+			<span class="nodocs">( references) <a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/field.go.html#line-175">MarshalLogArray</a>(enc <a href="../../../../go.uber.org/zap/zapcore.html">zapcore</a>.<a href="../../../../go.uber.org/zap/zapcore.html#name-ArrayEncoder">ArrayEncoder</a>) <a href="../../../../builtin.html#name-error">error</a></span></span></span>
+		<input type='checkbox' class="fold" id="references-fold-impls"><label for="references-fold-impls">Implements (<i>at least one exported</i>)</label><span id='references-fold-impls-items' class="fold-items"><span>
+			 references : go.uber.org/zap/zapcore.<a href="../../../../go.uber.org/zap/zapcore.html#name-ArrayMarshaler">ArrayMarshaler</a></span></span>
+
+</span></div><div class="anchor type-res hidden" id="name-span" data-popularity="100">	<input type='checkbox' class="fold" id="span-fold-content"><label for="span-fold-content"> <a href="../../../../../use/github.com/uber/jaeger-client-go/log/zap..span^37a00.html">type</a> <a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/field.go.html#line-182">span</a> <i>(struct)</i></label><span id='span-fold-content-docs' class="fold-docs">
+
+		<input type='checkbox' class="fold" id="span-fold-fields"><label for="span-fold-fields">Fields (<i>only one, which is unexported</i>)</label><span id='span-fold-fields-items' class="fold-items">
+			<input type='checkbox' checked class="showhide" id="span-showhide-fields"><i><label for="span-showhide-fields" class="show-inline">/* one unexported ... */</label><label for="span-showhide-fields" class="hide-inline">/* one unexported: */</label></i><span class="hidden"><i>
+			<span class="nodocs"><a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/field.go.html#line-183">span</a> <i>*<a href="../../jaeger-client-go.html">jaeger</a>.<a href="../../jaeger-client-go.html#name-Span">Span</a></i></span></i></span></span>
+		<input type='checkbox' class="fold" id="span-fold-methods"><label for="span-fold-methods">Methods (<i>only one, which is exported</i>)</label><span id='span-fold-methods-items' class="fold-items"><span>
+			<span class="nodocs">( span) <a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/field.go.html#line-197">MarshalLogObject</a>(enc <a href="../../../../go.uber.org/zap/zapcore.html">zapcore</a>.<a href="../../../../go.uber.org/zap/zapcore.html#name-ObjectEncoder">ObjectEncoder</a>) <a href="../../../../builtin.html#name-error">error</a></span></span></span>
+		<input type='checkbox' class="fold" id="span-fold-impls"><label for="span-fold-impls">Implements (<i>at least one exported</i>)</label><span id='span-fold-impls-items' class="fold-items"><span>
+			 span : go.uber.org/zap/zapcore.<a href="../../../../go.uber.org/zap/zapcore.html#name-ObjectMarshaler">ObjectMarshaler</a></span></span>
+
+</span></div><div class="anchor type-res hidden" id="name-spanContext" data-popularity="100">	<input type='checkbox' class="fold" id="spanContext-fold-content"><label for="spanContext-fold-content"> <a href="../../../../../use/github.com/uber/jaeger-client-go/log/zap..spanContext^4be40.html">type</a> <a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/field.go.html#line-65">spanContext</a> <a href="../../jaeger-client-go.html">jaeger</a>.<a href="../../jaeger-client-go.html#name-SpanContext">SpanContext</a> <i>(struct)</i></label><span id='spanContext-fold-content-docs' class="fold-docs">
+
+		<input type='checkbox' class="fold" id="spanContext-fold-fields"><label for="spanContext-fold-fields">Fields (<i>total 7, none are exported</i>)</label><span id='spanContext-fold-fields-items' class="fold-items">
+			<input type='checkbox' checked class="showhide" id="spanContext-showhide-fields"><i><label for="spanContext-showhide-fields" class="show-inline">/* 7 unexporteds ... */</label><label for="spanContext-showhide-fields" class="hide-inline">/* 7 unexporteds: */</label></i><span class="hidden"><i>
+			<input type='checkbox' class="fold" id="spanContext-fold-field-baggage"><label for="spanContext-fold-field-baggage"><a href="../../../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-63">baggage</a> <i>map[<a href="../../../../builtin.html#name-string">string</a>]<a href="../../../../builtin.html#name-string">string</a></i></label><span id='spanContext-fold-field-baggage-docs' class="fold-docs">
+				Distributed Context baggage. The is a snapshot in time.
+</span></i></span><span class="hidden"><i>
+			<input type='checkbox' class="fold" id="spanContext-fold-field-debugID"><label for="spanContext-fold-field-debugID"><a href="../../../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-69">debugID</a> <i><a href="../../../../builtin.html#name-string">string</a></i></label><span id='spanContext-fold-field-debugID-docs' class="fold-docs">
+				debugID can be set to some correlation ID when the context is being
+				extracted from a TextMap carrier.
+
+				See JaegerDebugHeader in constants.go
+</span></i></span><span class="hidden"><i>
+			<input type='checkbox' class="fold" id="spanContext-fold-field-parentID"><label for="spanContext-fold-field-parentID"><a href="../../../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-60">parentID</a> <i><a href="../../jaeger-client-go.html">jaeger</a>.<a href="../../jaeger-client-go.html#name-SpanID">SpanID</a></i></label><span id='spanContext-fold-field-parentID-docs' class="fold-docs">
+				parentID refers to the ID of the parent span.
+				Should be 0 if the current span is a root span.
+</span></i></span><span class="hidden"><i>
+			<input type='checkbox' class="fold" id="spanContext-fold-field-remote"><label for="spanContext-fold-field-remote"><a href="../../../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-75">remote</a> <i><a href="../../../../builtin.html#name-bool">bool</a></i></label><span id='spanContext-fold-field-remote-docs' class="fold-docs">
+				remote indicates that span context represents a remote parent
+</span></i></span><span class="hidden"><i>
+			<input type='checkbox' class="fold" id="spanContext-fold-field-samplingState"><label for="spanContext-fold-field-samplingState"><a href="../../../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-72">samplingState</a> <i>*<a href="../../jaeger-client-go.html">jaeger</a>.<a href="../../jaeger-client-go.html#name-samplingState">samplingState</a></i></label><span id='spanContext-fold-field-samplingState-docs' class="fold-docs">
+				samplingState is shared across all spans
+</span></i></span><span class="hidden"><i>
+			<input type='checkbox' class="fold" id="spanContext-fold-field-spanID"><label for="spanContext-fold-field-spanID"><a href="../../../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-56">spanID</a> <i><a href="../../jaeger-client-go.html">jaeger</a>.<a href="../../jaeger-client-go.html#name-SpanID">SpanID</a></i></label><span id='spanContext-fold-field-spanID-docs' class="fold-docs">
+				spanID represents span ID that must be unique within its trace,
+				but does not have to be globally unique.
+</span></i></span><span class="hidden"><i>
+			<input type='checkbox' class="fold" id="spanContext-fold-field-traceID"><label for="spanContext-fold-field-traceID"><a href="../../../../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-52">traceID</a> <i><a href="../../jaeger-client-go.html">jaeger</a>.<a href="../../jaeger-client-go.html#name-TraceID">TraceID</a></i></label><span id='spanContext-fold-field-traceID-docs' class="fold-docs">
+				traceID represents globally unique ID of the trace.
+				Usually generated as a random number.
+</span></i></span></span>
+		<input type='checkbox' class="fold" id="spanContext-fold-methods"><label for="spanContext-fold-methods">Methods (<i>only one, which is exported</i>)</label><span id='spanContext-fold-methods-items' class="fold-items"><span>
+			<span class="nodocs">( spanContext) <a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/field.go.html#line-72">MarshalLogObject</a>(enc <a href="../../../../go.uber.org/zap/zapcore.html">zapcore</a>.<a href="../../../../go.uber.org/zap/zapcore.html#name-ObjectEncoder">ObjectEncoder</a>) <a href="../../../../builtin.html#name-error">error</a></span></span></span>
+		<input type='checkbox' class="fold" id="spanContext-fold-impls"><label for="spanContext-fold-impls">Implements (<i>at least one exported</i>)</label><span id='spanContext-fold-impls-items' class="fold-items"><span>
+			 spanContext : go.uber.org/zap/zapcore.<a href="../../../../go.uber.org/zap/zapcore.html#name-ObjectMarshaler">ObjectMarshaler</a></span></span>
+
+</span></div><div class="anchor type-res hidden" id="name-tags" data-popularity="100">	<input type='checkbox' class="fold" id="tags-fold-content"><label for="tags-fold-content"> <a href="../../../../../use/github.com/uber/jaeger-client-go/log/zap..tags^978c2.html">type</a> <a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/field.go.html#line-144">tags</a> <a href="../../../opentracing/opentracing-go.html">opentracing</a>.<a href="../../../opentracing/opentracing-go.html#name-Tags">Tags</a> <i>(map)</i></label><span id='tags-fold-content-docs' class="fold-docs">
+
+		<input type='checkbox' class="fold" id="tags-fold-methods"><label for="tags-fold-methods">Methods (<i>only one, which is exported</i>)</label><span id='tags-fold-methods-items' class="fold-items"><span>
+			<span class="nodocs">( tags) <a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/field.go.html#line-146">MarshalLogObject</a>(enc <a href="../../../../go.uber.org/zap/zapcore.html">zapcore</a>.<a href="../../../../go.uber.org/zap/zapcore.html#name-ObjectEncoder">ObjectEncoder</a>) <a href="../../../../builtin.html#name-error">error</a></span></span></span>
+		<input type='checkbox' class="fold" id="tags-fold-impls"><label for="tags-fold-impls">Implements (<i>at least one exported</i>)</label><span id='tags-fold-impls-items' class="fold-items"><span>
+			 tags : go.uber.org/zap/zapcore.<a href="../../../../go.uber.org/zap/zapcore.html#name-ObjectMarshaler">ObjectMarshaler</a></span></span>
+
+</span></div><div class="anchor type-res hidden" id="name-trace" data-popularity="100">	<input type='checkbox' class="fold" id="trace-fold-content"><label for="trace-fold-content"> <a href="../../../../../use/github.com/uber/jaeger-client-go/log/zap..trace^eafe8.html">type</a> <a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/field.go.html#line-43">trace</a> <i>(struct)</i></label><span id='trace-fold-content-docs' class="fold-docs">
+
+		<input type='checkbox' class="fold" id="trace-fold-fields"><label for="trace-fold-fields">Fields (<i>only one, which is unexported</i>)</label><span id='trace-fold-fields-items' class="fold-items">
+			<input type='checkbox' checked class="showhide" id="trace-showhide-fields"><i><label for="trace-showhide-fields" class="show-inline">/* one unexported ... */</label><label for="trace-showhide-fields" class="hide-inline">/* one unexported: */</label></i><span class="hidden"><i>
+			<span class="nodocs"><a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/field.go.html#line-44">ctx</a> <i><a href="../../../../context.html">context</a>.<a href="../../../../context.html#name-Context">Context</a></i></span></i></span></span>
+		<input type='checkbox' class="fold" id="trace-fold-methods"><label for="trace-fold-methods">Methods (<i>only one, which is exported</i>)</label><span id='trace-fold-methods-items' class="fold-items"><span>
+			<span class="nodocs">( trace) <a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/field.go.html#line-47">MarshalLogObject</a>(enc <a href="../../../../go.uber.org/zap/zapcore.html">zapcore</a>.<a href="../../../../go.uber.org/zap/zapcore.html#name-ObjectEncoder">ObjectEncoder</a>) <a href="../../../../builtin.html#name-error">error</a></span></span></span>
+		<input type='checkbox' class="fold" id="trace-fold-impls"><label for="trace-fold-impls">Implements (<i>at least one exported</i>)</label><span id='trace-fold-impls-items' class="fold-items"><span>
+			 trace : go.uber.org/zap/zapcore.<a href="../../../../go.uber.org/zap/zapcore.html#name-ObjectMarshaler">ObjectMarshaler</a></span></span>
+
+</span></div></div>
+<div id="exported-functions"><span class="title">Package-Level Functions<span class="title-stat"><i> (total 6, in which 5 are exported)</i></span></span>
+
+<div class="anchor value-res" id="name-Context">	<input type='checkbox' class="fold" id="Context-fold-content"><label for="Context-fold-content"> <a href="../../../../../use/github.com/uber/jaeger-client-go/log/zap..Context.html">func</a> <a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/field.go.html#line-68">Context</a>(sc <a href="../../jaeger-client-go.html">jaeger</a>.<a href="../../jaeger-client-go.html#name-SpanContext">SpanContext</a>) <a href="../../../../go.uber.org/zap/zapcore.html">zapcore</a>.<a href="../../../../go.uber.org/zap/zapcore.html#name-Field">Field</a></label><span id='Context-fold-content-docs' class="fold-docs">
+		Context creates a zap.Field which marshals all information contained in a jaeger context
+
+</span></div><div class="anchor value-res" id="name-NewLogger">	<input type='checkbox' class="fold" id="NewLogger-fold-content"><label for="NewLogger-fold-content"> <a href="../../../../../use/github.com/uber/jaeger-client-go/log/zap..NewLogger.html">func</a> <a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/logger.go.html#line-27">NewLogger</a>(logger *<a href="../../../../go.uber.org/zap.html">zap</a>.<a href="../../../../go.uber.org/zap.html#name-Logger">Logger</a>) *<a href="#name-Logger">Logger</a></label><span id='NewLogger-fold-content-docs' class="fold-docs">
+		NewLogger creates a new Logger.
+
+</span></div><div class="anchor value-res" id="name-NewLoggingTracer">	<input type='checkbox' class="fold" id="NewLoggingTracer-fold-content"><label for="NewLoggingTracer-fold-content"> <a href="../../../../../use/github.com/uber/jaeger-client-go/log/zap..NewLoggingTracer.html">func</a> <a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-32">NewLoggingTracer</a>(logger *<a href="../../../../go.uber.org/zap.html">zap</a>.<a href="../../../../go.uber.org/zap.html#name-Logger">Logger</a>, tracer <a href="../../../opentracing/opentracing-go.html">opentracing</a>.<a href="../../../opentracing/opentracing-go.html#name-Tracer">Tracer</a>) <a href="../../../opentracing/opentracing-go.html">opentracing</a>.<a href="../../../opentracing/opentracing-go.html#name-Tracer">Tracer</a></label><span id='NewLoggingTracer-fold-content-docs' class="fold-docs">
+		NewLoggingTracer creates a new tracer that logs all span interactions
+
+</span></div><div class="anchor value-res" id="name-Span">	<input type='checkbox' class="fold" id="Span-fold-content"><label for="Span-fold-content"> <a href="../../../../../use/github.com/uber/jaeger-client-go/log/zap..Span.html">func</a> <a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/field.go.html#line-187">Span</a>(s <a href="../../../opentracing/opentracing-go.html">opentracing</a>.<a href="../../../opentracing/opentracing-go.html#name-Span">Span</a>) <a href="../../../../go.uber.org/zap/zapcore.html">zapcore</a>.<a href="../../../../go.uber.org/zap/zapcore.html#name-Field">Field</a></label><span id='Span-fold-content-docs' class="fold-docs">
+		Span creates a zap.Field that marshals all information contained in a jaeger span
+
+</span></div><div class="anchor value-res" id="name-Trace">	<input type='checkbox' class="fold" id="Trace-fold-content"><label for="Trace-fold-content"> <a href="../../../../../use/github.com/uber/jaeger-client-go/log/zap..Trace.html">func</a> <a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/field.go.html#line-36">Trace</a>(ctx <a href="../../../../context.html">context</a>.<a href="../../../../context.html#name-Context">Context</a>) <a href="../../../../go.uber.org/zap/zapcore.html">zapcore</a>.<a href="../../../../go.uber.org/zap/zapcore.html#name-Field">Field</a></label><span id='Trace-fold-content-docs' class="fold-docs">
+		Trace creates a field that extracts tracing information from a context and
+		includes it under the "trace" key.
+
+		Because the opentracing APIs don't expose this information, the returned
+		zap.Field is a no-op for contexts that don't contain a span or contain a
+		non-Jaeger span.
+		TODO: delegate to `spanContext`
+
+</span></div>	<input type='checkbox' class="showhide" id="unexported-functions-showhide"><i><label for="unexported-functions-showhide" class="show-inline">/* one unexported ... */</label><label for="unexported-functions-showhide" class="hide-inline">/* one unexported: */</label></i><div class="anchor value-res hidden" id="name-newLoggingSpan"><i>	<span class="nodocs"> <a href="../../../../../use/github.com/uber/jaeger-client-go/log/zap..newLoggingSpan^a6d18.html">func</a> <a href="../../../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-94">newLoggingSpan</a>(logger *<a href="../../../../go.uber.org/zap.html">zap</a>.<a href="../../../../go.uber.org/zap.html#name-Logger">Logger</a>, span <a href="../../../opentracing/opentracing-go.html">opentracing</a>.<a href="../../../opentracing/opentracing-go.html#name-Span">Span</a>) <a href="../../../opentracing/opentracing-go.html">opentracing</a>.<a href="../../../opentracing/opentracing-go.html#name-Span">Span</a></span></i></div></div></code></pre><pre id="footer">
+<table><tr><td><img src="../../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

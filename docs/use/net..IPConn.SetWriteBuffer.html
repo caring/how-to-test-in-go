@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: net.IPConn.SetWriteBuffer</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/net.html">net</a>.<a href="../src/net/iprawsock.go.html#line-99">IPConn</a>.<a href="../src/net/net.go.html#line-281">SetWriteBuffer</a></b></span><span style="font-size: large;"><i> (method, <a href="../imp/net.IPConn.html#name-SetWriteBuffer">view implemented interface methods</a>)</i></span>
+
+<span class="title">3 uses</span>
+
+	net (current package)
+		<a href="../src/net/net.go.html#line-281">net.go#L281</a>: func (c *conn) <b>SetWriteBuffer</b>(bytes int) error {
+
+	<a href="../pkg/github.com/uber/jaeger-client-go/utils.html">github.com/uber/jaeger-client-go/utils</a>
+		<a href="../src/github.com/uber/jaeger-client-go/utils/reconnecting_udp_conn.go.html#line-110">reconnecting_udp_conn.go#L110</a>: 		if err = connUDP.<b>SetWriteBuffer</b>(bufferBytes); err != nil {
+		<a href="../src/github.com/uber/jaeger-client-go/utils/reconnecting_udp_conn.go.html#line-180" class="path-duplicate">reconnecting_udp_conn.go</a><a href="../src/github.com/uber/jaeger-client-go/utils/reconnecting_udp_conn.go.html#line-180">#L180</a>: 		err = c.conn.<b>SetWriteBuffer</b>(bytes)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

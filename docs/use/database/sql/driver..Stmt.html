@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: database/sql/driver.Stmt</title>
+<link href="../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../../../pkg/database/sql/driver.html">database/sql/driver</a>.<a href="../../../src/database/sql/driver/driver.go.html#line-326">Stmt</a></b></span>
+
+<span class="title">13 uses</span>
+
+	database/sql/driver (current package)
+		<a href="../../../src/database/sql/driver/driver.go.html#line-232">driver.go#L232</a>: 	Prepare(query string) (<b>Stmt</b>, error)
+		<a href="../../../src/database/sql/driver/driver.go.html#line-258" class="path-duplicate">driver.go</a><a href="../../../src/database/sql/driver/driver.go.html#line-258">#L258</a>: 	PrepareContext(ctx context.Context, query string) (<b>Stmt</b>, error)
+		<a href="../../../src/database/sql/driver/driver.go.html#line-326" class="path-duplicate">driver.go</a><a href="../../../src/database/sql/driver/driver.go.html#line-326">#L326</a>: type <b>Stmt</b> interface {
+
+	<a href="../../../pkg/database/sql.html">database/sql</a>
+		<a href="../../../src/database/sql/convert.go.html#line-115">convert.go#L115</a>: 	var si driver.<b>Stmt</b>
+		<a href="../../../src/database/sql/ctxutil.go.html#line-13">ctxutil.go#L13</a>: func ctxDriverPrepare(ctx context.Context, ci driver.Conn, query string) (driver.<b>Stmt</b>, error) {
+		<a href="../../../src/database/sql/ctxutil.go.html#line-63" class="path-duplicate">ctxutil.go</a><a href="../../../src/database/sql/ctxutil.go.html#line-63">#L63</a>: func ctxDriverStmtExec(ctx context.Context, si driver.<b>Stmt</b>, nvdargs []driver.NamedValue) (driver.Result, error) {
+		<a href="../../../src/database/sql/ctxutil.go.html#line-80" class="path-duplicate">ctxutil.go</a><a href="../../../src/database/sql/ctxutil.go.html#line-80">#L80</a>: func ctxDriverStmtQuery(ctx context.Context, si driver.<b>Stmt</b>, nvdargs []driver.NamedValue) (driver.Rows, error) {
+		<a href="../../../src/database/sql/sql.go.html#line-664">sql.go#L664</a>: 	si          driver.<b>Stmt</b>
+		<a href="../../../src/database/sql/sql.go.html#line-1656" class="path-duplicate">sql.go</a><a href="../../../src/database/sql/sql.go.html#line-1656">#L1656</a>: 	var si driver.<b>Stmt</b>
+		<a href="../../../src/database/sql/sql.go.html#line-1741" class="path-duplicate">sql.go</a><a href="../../../src/database/sql/sql.go.html#line-1741">#L1741</a>: 	var si driver.<b>Stmt</b>
+		<a href="../../../src/database/sql/sql.go.html#line-2362" class="path-duplicate">sql.go</a><a href="../../../src/database/sql/sql.go.html#line-2362">#L2362</a>: 	var si driver.<b>Stmt</b>
+
+	<a href="../../../pkg/github.com/go-sql-driver/mysql.html">github.com/go-sql-driver/mysql</a>
+		<a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-164">connection.go#L164</a>: func (mc *mysqlConn) Prepare(query string) (driver.<b>Stmt</b>, error) {
+		<a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-528" class="path-duplicate">connection.go</a><a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-528">#L528</a>: func (mc *mysqlConn) PrepareContext(ctx context.Context, query string) (driver.<b>Stmt</b>, error) {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

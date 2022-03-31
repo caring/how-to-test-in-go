@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: errors.As</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">func <b><a href="../pkg/errors.html">errors</a>.<a href="../src/errors/wrap.go.html#line-77">As</a></b></span>
+
+<span class="title">11 uses</span>
+
+	errors (current package)
+		<a href="../src/errors/wrap.go.html#line-77">wrap.go#L77</a>: func <b>As</b>(err error, target interface{}) bool {
+
+	<a href="../pkg/github.com/caring/gopkg-errors.html">github.com/caring/gopkg-errors</a>
+		<a href="../src/github.com/caring/gopkg-errors/chain.go.html#line-50">chain.go#L50</a>: func As(err error, target interface{}) bool { return stderrs.<b>As</b>(err, target) }
+
+	<a href="../pkg/github.com/uber/jaeger-client-go/thrift.html">github.com/uber/jaeger-client-go/thrift</a>
+		<a href="../src/github.com/uber/jaeger-client-go/thrift/exception.go.html#line-38">exception.go#L38</a>: 	if errors.<b>As</b>(err, &amp;te) {
+		<a href="../src/github.com/uber/jaeger-client-go/thrift/exception.go.html#line-50" class="path-duplicate">exception.go</a><a href="../src/github.com/uber/jaeger-client-go/thrift/exception.go.html#line-50">#L50</a>: 			if errors.<b>As</b>(err, &amp;t) {
+		<a href="../src/github.com/uber/jaeger-client-go/thrift/header_protocol.go.html#line-238">header_protocol.go#L238</a>: 		if !errors.<b>As</b>(err, &amp;tAppExc) {
+		<a href="../src/github.com/uber/jaeger-client-go/thrift/protocol_exception.go.html#line-80">protocol_exception.go#L80</a>: 	if errors.<b>As</b>(err, new(base64.CorruptInputError)) {
+		<a href="../src/github.com/uber/jaeger-client-go/thrift/simple_server.go.html#line-250">simple_server.go#L250</a>: 	if errors.<b>As</b>(err, &amp;te) &amp;&amp; te.TypeId() == END_OF_FILE {
+		<a href="../src/github.com/uber/jaeger-client-go/thrift/simple_server.go.html#line-320" class="path-duplicate">simple_server.go</a><a href="../src/github.com/uber/jaeger-client-go/thrift/simple_server.go.html#line-320">#L320</a>: 		if errors.<b>As</b>(err, new(TTransportException)) &amp;&amp; err != nil {
+		<a href="../src/github.com/uber/jaeger-client-go/thrift/simple_server.go.html#line-324" class="path-duplicate">simple_server.go</a><a href="../src/github.com/uber/jaeger-client-go/thrift/simple_server.go.html#line-324">#L324</a>: 		if errors.<b>As</b>(err, &amp;tae) &amp;&amp; tae.TypeId() == UNKNOWN_METHOD {
+		<a href="../src/github.com/uber/jaeger-client-go/thrift/transport_exception.go.html#line-127">transport_exception.go#L127</a>: 	if errors.<b>As</b>(err, &amp;t) {
+
+	<a href="../pkg/go.uber.org/multierr.html">go.uber.org/multierr</a>
+		<a href="../src/go.uber.org/multierr/error.go.html#line-249">error.go#L249</a>: 		if errors.<b>As</b>(err, target) {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

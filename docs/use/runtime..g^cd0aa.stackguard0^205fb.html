@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime.g.stackguard0</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/runtime.html">runtime</a>.<a href="../src/runtime/runtime2.go.html#line-403">g</a>.<a href="../src/runtime/runtime2.go.html#line-412">stackguard0</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">30 uses</span>
+
+	runtime (current package)
+		<a href="../src/runtime/lock_sema.go.html#line-128">lock_sema.go#L128</a>: 		gp.<b>stackguard0</b> = stackPreempt
+		<a href="../src/runtime/mgc.go.html#line-1633">mgc.go#L1633</a>: 	gp.<b>stackguard0</b> = stackForceMove
+		<a href="../src/runtime/preempt.go.html#line-176">preempt.go#L176</a>: 			gp.<b>stackguard0</b> = gp.stack.lo + _StackGuard
+		<a href="../src/runtime/preempt.go.html#line-195" class="path-duplicate">preempt.go</a><a href="../src/runtime/preempt.go.html#line-195">#L195</a>: 			if gp.preemptStop &amp;&amp; gp.preempt &amp;&amp; gp.<b>stackguard0</b> == stackPreempt &amp;&amp; asyncM == gp.m &amp;&amp; atomic.Load(&amp;asyncM.preemptGen) == asyncGen {
+		<a href="../src/runtime/preempt.go.html#line-207" class="path-duplicate">preempt.go</a><a href="../src/runtime/preempt.go.html#line-207">#L207</a>: 			gp.<b>stackguard0</b> = stackPreempt
+		<a href="../src/runtime/proc.go.html#line-1361">proc.go#L1361</a>: 	_g_.<b>stackguard0</b> = _g_.stack.lo + _StackGuard
+		<a href="../src/runtime/proc.go.html#line-1364" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1364">#L1364</a>: 	_g_.stackguard1 = _g_.<b>stackguard0</b>
+		<a href="../src/runtime/proc.go.html#line-1987" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1987">#L1987</a>: 	_g_.<b>stackguard0</b> = _g_.stack.lo + _StackGuard
+		<a href="../src/runtime/proc.go.html#line-2680" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2680">#L2680</a>: 	gp.<b>stackguard0</b> = gp.stack.lo + _StackGuard
+		<a href="../src/runtime/proc.go.html#line-3774" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3774">#L3774</a>: 	_g_.<b>stackguard0</b> = stackPreempt
+		<a href="../src/runtime/proc.go.html#line-3867" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3867">#L3867</a>: 	_g_.<b>stackguard0</b> = stackPreempt // see comment in entersyscall
+		<a href="../src/runtime/proc.go.html#line-3951" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3951">#L3951</a>: 			_g_.<b>stackguard0</b> = stackPreempt
+		<a href="../src/runtime/proc.go.html#line-3954" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3954">#L3954</a>: 			_g_.<b>stackguard0</b> = _g_.stack.lo + _StackGuard
+		<a href="../src/runtime/proc.go.html#line-4133" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4133">#L4133</a>: 	gp.<b>stackguard0</b> = stackFork
+		<a href="../src/runtime/proc.go.html#line-4147" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4147">#L4147</a>: 	gp.<b>stackguard0</b> = gp.stack.lo + _StackGuard
+		<a href="../src/runtime/proc.go.html#line-4226" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4226">#L4226</a>: 		newg.<b>stackguard0</b> = newg.stack.lo + _StackGuard
+		<a href="../src/runtime/proc.go.html#line-4437" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4437">#L4437</a>: 		gp.<b>stackguard0</b> = 0
+		<a href="../src/runtime/proc.go.html#line-4499" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4499">#L4499</a>: 		gp.<b>stackguard0</b> = gp.stack.lo + _StackGuard
+		<a href="../src/runtime/proc.go.html#line-5591" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5591">#L5591</a>: 	gp.<b>stackguard0</b> = stackPreempt
+		<a href="../src/runtime/runtime1.go.html#line-477">runtime1.go#L477</a>: 		_g_.<b>stackguard0</b> = stackPreempt
+		<a href="../src/runtime/runtime2.go.html#line-412">runtime2.go#L412</a>: 	<b>stackguard0</b> uintptr // offset known to liblink
+		<a href="../src/runtime/signal_unix.go.html#line-455">signal_unix.go#L455</a>: 	if g.<b>stackguard0</b> == stackFork {
+		<a href="../src/runtime/signal_unix.go.html#line-1190" class="path-duplicate">signal_unix.go</a><a href="../src/runtime/signal_unix.go.html#line-1190">#L1190</a>: 		old.stackguard0 = g.m.gsignal.<b>stackguard0</b>
+		<a href="../src/runtime/signal_unix.go.html#line-1197" class="path-duplicate">signal_unix.go</a><a href="../src/runtime/signal_unix.go.html#line-1197">#L1197</a>: 	g.m.gsignal.<b>stackguard0</b> = stsp + _StackGuard
+		<a href="../src/runtime/signal_unix.go.html#line-1208" class="path-duplicate">signal_unix.go</a><a href="../src/runtime/signal_unix.go.html#line-1208">#L1208</a>: 	gp.<b>stackguard0</b> = st.stackguard0
+		<a href="../src/runtime/stack.go.html#line-913">stack.go#L913</a>: 	gp.<b>stackguard0</b> = new.lo + _StackGuard // NOTE: might clobber a preempt request
+		<a href="../src/runtime/stack.go.html#line-951" class="path-duplicate">stack.go</a><a href="../src/runtime/stack.go.html#line-951">#L951</a>: 	if thisg.m.morebuf.g.ptr().<b>stackguard0</b> == stackFork {
+		<a href="../src/runtime/stack.go.html#line-993" class="path-duplicate">stack.go</a><a href="../src/runtime/stack.go.html#line-993">#L993</a>: 	preempt := atomic.Loaduintptr(&amp;gp.<b>stackguard0</b>) == stackPreempt
+		<a href="../src/runtime/stack.go.html#line-1011" class="path-duplicate">stack.go</a><a href="../src/runtime/stack.go.html#line-1011">#L1011</a>: 			gp.<b>stackguard0</b> = gp.stack.lo + _StackGuard
+		<a href="../src/runtime/stack.go.html#line-1074" class="path-duplicate">stack.go</a><a href="../src/runtime/stack.go.html#line-1074">#L1074</a>: 	if gp.<b>stackguard0</b> == stackForceMove {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

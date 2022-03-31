@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/go-sql-driver/mysql.Config.Passwd</title>
+<link href="../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../pkg/github.com/go-sql-driver/mysql.html">github.com/go-sql-driver/mysql</a>.<a href="../../../src/github.com/go-sql-driver/mysql/dsn.go.html#line-36">Config</a>.<a href="../../../src/github.com/go-sql-driver/mysql/dsn.go.html#line-38">Passwd</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">14 uses</span>
+
+	github.com/go-sql-driver/mysql (current package)
+		<a href="../../../src/github.com/go-sql-driver/mysql/auth.go.html#line-230">auth.go#L230</a>: 	enc, err := encryptPassword(mc.cfg.<b>Passwd</b>, seed, pub)
+		<a href="../../../src/github.com/go-sql-driver/mysql/auth.go.html#line-240" class="path-duplicate">auth.go</a><a href="../../../src/github.com/go-sql-driver/mysql/auth.go.html#line-240">#L240</a>: 		authResp := scrambleSHA256Password(authData, mc.cfg.<b>Passwd</b>)
+		<a href="../../../src/github.com/go-sql-driver/mysql/auth.go.html#line-247" class="path-duplicate">auth.go</a><a href="../../../src/github.com/go-sql-driver/mysql/auth.go.html#line-247">#L247</a>: 		if len(mc.cfg.<b>Passwd</b>) == 0 {
+		<a href="../../../src/github.com/go-sql-driver/mysql/auth.go.html#line-253" class="path-duplicate">auth.go</a><a href="../../../src/github.com/go-sql-driver/mysql/auth.go.html#line-253">#L253</a>: 		authResp := append(scrambleOldPassword(authData[:8], mc.cfg.<b>Passwd</b>), 0)
+		<a href="../../../src/github.com/go-sql-driver/mysql/auth.go.html#line-262" class="path-duplicate">auth.go</a><a href="../../../src/github.com/go-sql-driver/mysql/auth.go.html#line-262">#L262</a>: 		return append([]byte(mc.cfg.<b>Passwd</b>), 0), nil
+		<a href="../../../src/github.com/go-sql-driver/mysql/auth.go.html#line-270" class="path-duplicate">auth.go</a><a href="../../../src/github.com/go-sql-driver/mysql/auth.go.html#line-270">#L270</a>: 		authResp := scramblePassword(authData[:20], mc.cfg.<b>Passwd</b>)
+		<a href="../../../src/github.com/go-sql-driver/mysql/auth.go.html#line-274" class="path-duplicate">auth.go</a><a href="../../../src/github.com/go-sql-driver/mysql/auth.go.html#line-274">#L274</a>: 		if len(mc.cfg.<b>Passwd</b>) == 0 {
+		<a href="../../../src/github.com/go-sql-driver/mysql/auth.go.html#line-279" class="path-duplicate">auth.go</a><a href="../../../src/github.com/go-sql-driver/mysql/auth.go.html#line-279">#L279</a>: 			return append([]byte(mc.cfg.<b>Passwd</b>), 0), nil
+		<a href="../../../src/github.com/go-sql-driver/mysql/auth.go.html#line-289" class="path-duplicate">auth.go</a><a href="../../../src/github.com/go-sql-driver/mysql/auth.go.html#line-289">#L289</a>: 		enc, err := encryptPassword(mc.cfg.<b>Passwd</b>, authData, pubKey)
+		<a href="../../../src/github.com/go-sql-driver/mysql/auth.go.html#line-355" class="path-duplicate">auth.go</a><a href="../../../src/github.com/go-sql-driver/mysql/auth.go.html#line-355">#L355</a>: 					err = mc.writeAuthSwitchPacket(append([]byte(mc.cfg.<b>Passwd</b>), 0))
+		<a href="../../../src/github.com/go-sql-driver/mysql/dsn.go.html#line-38">dsn.go#L38</a>: 	<b>Passwd</b>           string            // Password (requires User)
+		<a href="../../../src/github.com/go-sql-driver/mysql/dsn.go.html#line-174" class="path-duplicate">dsn.go</a><a href="../../../src/github.com/go-sql-driver/mysql/dsn.go.html#line-174">#L174</a>: 		if len(cfg.<b>Passwd</b>) &gt; 0 {
+		<a href="../../../src/github.com/go-sql-driver/mysql/dsn.go.html#line-176" class="path-duplicate">dsn.go</a><a href="../../../src/github.com/go-sql-driver/mysql/dsn.go.html#line-176">#L176</a>: 			buf.WriteString(cfg.<b>Passwd</b>)
+		<a href="../../../src/github.com/go-sql-driver/mysql/dsn.go.html#line-313" class="path-duplicate">dsn.go</a><a href="../../../src/github.com/go-sql-driver/mysql/dsn.go.html#line-313">#L313</a>: 								cfg.<b>Passwd</b> = dsn[k+1 : j]
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

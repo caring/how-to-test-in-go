@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: net.DNSError</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../pkg/net.html">net</a>.<a href="../src/net/net.go.html#line-608">DNSError</a></b></span>
+
+<span class="title">48 uses</span>
+
+	net (current package)
+		<a href="../src/net/dnsclient.go.html#line-34">dnsclient.go#L34</a>: 		return "", &amp;<b>DNSError</b>{Err: "unrecognized address", Name: addr}
+		<a href="../src/net/dnsclient_unix.go.html#line-263">dnsclient_unix.go#L263</a>: 				dnsErr := &amp;<b>DNSError</b>{
+		<a href="../src/net/dnsclient_unix.go.html#line-281" class="path-duplicate">dnsclient_unix.go</a><a href="../src/net/dnsclient_unix.go.html#line-281">#L281</a>: 				dnsErr := &amp;<b>DNSError</b>{
+		<a href="../src/net/dnsclient_unix.go.html#line-304" class="path-duplicate">dnsclient_unix.go</a><a href="../src/net/dnsclient_unix.go.html#line-304">#L304</a>: 			lastErr = &amp;<b>DNSError</b>{
+		<a href="../src/net/dnsclient_unix.go.html#line-313" class="path-duplicate">dnsclient_unix.go</a><a href="../src/net/dnsclient_unix.go.html#line-313">#L313</a>: 				lastErr.(*<b>DNSError</b>).IsNotFound = true
+		<a href="../src/net/dnsclient_unix.go.html#line-403" class="path-duplicate">dnsclient_unix.go</a><a href="../src/net/dnsclient_unix.go.html#line-403">#L403</a>: 		return dnsmessage.Parser{}, "", &amp;<b>DNSError</b>{Err: errNoSuchHost.Error(), Name: name, IsNotFound: true}
+		<a href="../src/net/dnsclient_unix.go.html#line-428" class="path-duplicate">dnsclient_unix.go</a><a href="../src/net/dnsclient_unix.go.html#line-428">#L428</a>: 	if err, ok := err.(*<b>DNSError</b>); ok {
+		<a href="../src/net/dnsclient_unix.go.html#line-580" class="path-duplicate">dnsclient_unix.go</a><a href="../src/net/dnsclient_unix.go.html#line-580">#L580</a>: 		return nil, dnsmessage.Name{}, &amp;<b>DNSError</b>{Err: errNoSuchHost.Error(), Name: name, IsNotFound: true}
+		<a href="../src/net/dnsclient_unix.go.html#line-661" class="path-duplicate">dnsclient_unix.go</a><a href="../src/net/dnsclient_unix.go.html#line-661">#L661</a>: 					lastErr = &amp;<b>DNSError</b>{
+		<a href="../src/net/dnsclient_unix.go.html#line-674" class="path-duplicate">dnsclient_unix.go</a><a href="../src/net/dnsclient_unix.go.html#line-674">#L674</a>: 						lastErr = &amp;<b>DNSError</b>{
+		<a href="../src/net/dnsclient_unix.go.html#line-686" class="path-duplicate">dnsclient_unix.go</a><a href="../src/net/dnsclient_unix.go.html#line-686">#L686</a>: 						lastErr = &amp;<b>DNSError</b>{
+		<a href="../src/net/dnsclient_unix.go.html#line-697" class="path-duplicate">dnsclient_unix.go</a><a href="../src/net/dnsclient_unix.go.html#line-697">#L697</a>: 						lastErr = &amp;<b>DNSError</b>{
+		<a href="../src/net/dnsclient_unix.go.html#line-722" class="path-duplicate">dnsclient_unix.go</a><a href="../src/net/dnsclient_unix.go.html#line-722">#L722</a>: 	if lastErr, ok := lastErr.(*<b>DNSError</b>); ok {
+		<a href="../src/net/dnsclient_unix.go.html#line-772" class="path-duplicate">dnsclient_unix.go</a><a href="../src/net/dnsclient_unix.go.html#line-772">#L772</a>: 			return nil, &amp;<b>DNSError</b>{
+		<a href="../src/net/dnsclient_unix.go.html#line-781" class="path-duplicate">dnsclient_unix.go</a><a href="../src/net/dnsclient_unix.go.html#line-781">#L781</a>: 				return nil, &amp;<b>DNSError</b>{
+		<a href="../src/net/dnsclient_unix.go.html#line-791" class="path-duplicate">dnsclient_unix.go</a><a href="../src/net/dnsclient_unix.go.html#line-791">#L791</a>: 			return nil, &amp;<b>DNSError</b>{
+		<a href="../src/net/lookup.go.html#line-182">lookup.go#L182</a>: 		return nil, &amp;<b>DNSError</b>{Err: errNoSuchHost.Error(), Name: host, IsNotFound: true}
+		<a href="../src/net/lookup.go.html#line-268" class="path-duplicate">lookup.go</a><a href="../src/net/lookup.go.html#line-268">#L268</a>: 		return nil, &amp;<b>DNSError</b>{Err: errNoSuchHost.Error(), Name: host, IsNotFound: true}
+		<a href="../src/net/lookup.go.html#line-427" class="path-duplicate">lookup.go</a><a href="../src/net/lookup.go.html#line-427">#L427</a>: 		return "", &amp;<b>DNSError</b>{Err: errMalformedDNSRecordsDetail, Name: host}
+		<a href="../src/net/lookup.go.html#line-470" class="path-duplicate">lookup.go</a><a href="../src/net/lookup.go.html#line-470">#L470</a>: 		return "", nil, &amp;<b>DNSError</b>{Err: "SRV header name is invalid", Name: name}
+		<a href="../src/net/lookup.go.html#line-483" class="path-duplicate">lookup.go</a><a href="../src/net/lookup.go.html#line-483">#L483</a>: 		return cname, filteredAddrs, &amp;<b>DNSError</b>{Err: errMalformedDNSRecordsDetail, Name: name}
+		<a href="../src/net/lookup.go.html#line-525" class="path-duplicate">lookup.go</a><a href="../src/net/lookup.go.html#line-525">#L525</a>: 		return filteredMX, &amp;<b>DNSError</b>{Err: errMalformedDNSRecordsDetail, Name: name}
+		<a href="../src/net/lookup.go.html#line-565" class="path-duplicate">lookup.go</a><a href="../src/net/lookup.go.html#line-565">#L565</a>: 		return filteredNS, &amp;<b>DNSError</b>{Err: errMalformedDNSRecordsDetail, Name: name}
+		<a href="../src/net/lookup.go.html#line-617" class="path-duplicate">lookup.go</a><a href="../src/net/lookup.go.html#line-617">#L617</a>: 		return filteredNames, &amp;<b>DNSError</b>{Err: errMalformedDNSRecordsDetail, Name: addr}
+		<a href="../src/net/lookup_unix.go.html#line-151">lookup_unix.go#L151</a>: 			return "", nil, &amp;<b>DNSError</b>{
+		<a href="../src/net/lookup_unix.go.html#line-159" class="path-duplicate">lookup_unix.go</a><a href="../src/net/lookup_unix.go.html#line-159">#L159</a>: 				return "", nil, &amp;<b>DNSError</b>{
+		<a href="../src/net/lookup_unix.go.html#line-172" class="path-duplicate">lookup_unix.go</a><a href="../src/net/lookup_unix.go.html#line-172">#L172</a>: 			return "", nil, &amp;<b>DNSError</b>{
+		<a href="../src/net/lookup_unix.go.html#line-196" class="path-duplicate">lookup_unix.go</a><a href="../src/net/lookup_unix.go.html#line-196">#L196</a>: 			return nil, &amp;<b>DNSError</b>{
+		<a href="../src/net/lookup_unix.go.html#line-204" class="path-duplicate">lookup_unix.go</a><a href="../src/net/lookup_unix.go.html#line-204">#L204</a>: 				return nil, &amp;<b>DNSError</b>{
+		<a href="../src/net/lookup_unix.go.html#line-214" class="path-duplicate">lookup_unix.go</a><a href="../src/net/lookup_unix.go.html#line-214">#L214</a>: 			return nil, &amp;<b>DNSError</b>{
+		<a href="../src/net/lookup_unix.go.html#line-239" class="path-duplicate">lookup_unix.go</a><a href="../src/net/lookup_unix.go.html#line-239">#L239</a>: 			return nil, &amp;<b>DNSError</b>{
+		<a href="../src/net/lookup_unix.go.html#line-247" class="path-duplicate">lookup_unix.go</a><a href="../src/net/lookup_unix.go.html#line-247">#L247</a>: 				return nil, &amp;<b>DNSError</b>{
+		<a href="../src/net/lookup_unix.go.html#line-257" class="path-duplicate">lookup_unix.go</a><a href="../src/net/lookup_unix.go.html#line-257">#L257</a>: 			return nil, &amp;<b>DNSError</b>{
+		<a href="../src/net/lookup_unix.go.html#line-280" class="path-duplicate">lookup_unix.go</a><a href="../src/net/lookup_unix.go.html#line-280">#L280</a>: 			return nil, &amp;<b>DNSError</b>{
+		<a href="../src/net/lookup_unix.go.html#line-288" class="path-duplicate">lookup_unix.go</a><a href="../src/net/lookup_unix.go.html#line-288">#L288</a>: 				return nil, &amp;<b>DNSError</b>{
+		<a href="../src/net/lookup_unix.go.html#line-298" class="path-duplicate">lookup_unix.go</a><a href="../src/net/lookup_unix.go.html#line-298">#L298</a>: 			return nil, &amp;<b>DNSError</b>{
+		<a href="../src/net/net.go.html#line-608">net.go#L608</a>: type <b>DNSError</b> struct {
+		<a href="../src/net/net.go.html#line-617" class="path-duplicate">net.go</a><a href="../src/net/net.go.html#line-617">#L617</a>: func (e *<b>DNSError</b>) Error() string {
+		<a href="../src/net/net.go.html#line-632" class="path-duplicate">net.go</a><a href="../src/net/net.go.html#line-632">#L632</a>: func (e *<b>DNSError</b>) Timeout() bool { return e.IsTimeout }
+		<a href="../src/net/net.go.html#line-637" class="path-duplicate">net.go</a><a href="../src/net/net.go.html#line-637">#L637</a>: func (e *<b>DNSError</b>) Temporary() bool { return e.IsTimeout || e.IsTemporary }
+		<a href="../src/net/cgo_unix.go.html#line-80">cgo_unix.go#L80</a>: 		return 0, &amp;<b>DNSError</b>{Err: "unknown network", Name: network + "/" + service}, true
+		<a href="../src/net/cgo_unix.go.html#line-124" class="path-duplicate">cgo_unix.go</a><a href="../src/net/cgo_unix.go.html#line-124">#L124</a>: 		return 0, &amp;<b>DNSError</b>{Err: err.Error(), Name: network + "/" + service, IsTemporary: isTemporary}
+		<a href="../src/net/cgo_unix.go.html#line-140" class="path-duplicate">cgo_unix.go</a><a href="../src/net/cgo_unix.go.html#line-140">#L140</a>: 	return 0, &amp;<b>DNSError</b>{Err: "unknown port", Name: network + "/" + service}
+		<a href="../src/net/cgo_unix.go.html#line-190" class="path-duplicate">cgo_unix.go</a><a href="../src/net/cgo_unix.go.html#line-190">#L190</a>: 		return nil, "", &amp;<b>DNSError</b>{Err: err.Error(), Name: name, IsNotFound: isErrorNoSuchHost, IsTemporary: isTemporary}
+		<a href="../src/net/cgo_unix.go.html#line-277" class="path-duplicate">cgo_unix.go</a><a href="../src/net/cgo_unix.go.html#line-277">#L277</a>: 		return nil, &amp;<b>DNSError</b>{Err: "invalid address", Name: addr}, true
+		<a href="../src/net/cgo_unix.go.html#line-281" class="path-duplicate">cgo_unix.go</a><a href="../src/net/cgo_unix.go.html#line-281">#L281</a>: 		return nil, &amp;<b>DNSError</b>{Err: "invalid address " + ip.String(), Name: addr}, true
+		<a href="../src/net/cgo_unix.go.html#line-321" class="path-duplicate">cgo_unix.go</a><a href="../src/net/cgo_unix.go.html#line-321">#L321</a>: 		return nil, &amp;<b>DNSError</b>{Err: err.Error(), Name: addr, IsTemporary: isTemporary}
+
+	<a href="../pkg/google.golang.org/grpc/internal/resolver/dns.html">google.golang.org/grpc/internal/resolver/dns</a>
+		<a href="../src/google.golang.org/grpc/internal/resolver/dns/dns_resolver.go.html#line-281">dns_resolver.go#L281</a>: 	if dnsErr, ok := err.(*net.<b>DNSError</b>); ok &amp;&amp; !dnsErr.IsTimeout &amp;&amp; !dnsErr.IsTemporary {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

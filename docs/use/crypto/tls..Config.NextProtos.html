@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: crypto/tls.Config.NextProtos</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../pkg/crypto/tls.html">crypto/tls</a>.<a href="../../src/crypto/tls/common.go.html#line-517">Config</a>.<a href="../../src/crypto/tls/common.go.html#line-623">NextProtos</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">41 uses</span>
+
+	crypto/tls (current package)
+		<a href="../../src/crypto/tls/common.go.html#line-623">common.go#L623</a>: 	<b>NextProtos</b> []string
+		<a href="../../src/crypto/tls/common.go.html#line-790" class="path-duplicate">common.go</a><a href="../../src/crypto/tls/common.go.html#line-790">#L790</a>: 		<b>NextProtos</b>:                  c.<b>NextProtos</b>,
+		<a href="../../src/crypto/tls/handshake_client.go.html#line-44">handshake_client.go#L44</a>: 	for _, proto := range config.<b>NextProtos</b> {
+		<a href="../../src/crypto/tls/handshake_client.go.html#line-79" class="path-duplicate">handshake_client.go</a><a href="../../src/crypto/tls/handshake_client.go.html#line-79">#L79</a>: 		alpnProtocols:                config.<b>NextProtos</b>,
+		<a href="../../src/crypto/tls/handshake_server.go.html#line-220">handshake_server.go#L220</a>: 	selectedProto, err := negotiateALPN(c.config.<b>NextProtos</b>, hs.clientHello.alpnProtocols)
+		<a href="../../src/crypto/tls/handshake_server_tls13.go.html#line-553">handshake_server_tls13.go#L553</a>: 	selectedProto, err := negotiateALPN(c.config.<b>NextProtos</b>, hs.clientHello.alpnProtocols)
+
+	<a href="../../pkg/golang.org/x/net/http2.html">golang.org/x/net/http2</a>
+		<a href="../../src/golang.org/x/net/http2/server.go.html#line-269">server.go#L269</a>: 	for _, p := range s.TLSConfig.<b>NextProtos</b> {
+		<a href="../../src/golang.org/x/net/http2/server.go.html#line-276" class="path-duplicate">server.go</a><a href="../../src/golang.org/x/net/http2/server.go.html#line-276">#L276</a>: 		s.TLSConfig.<b>NextProtos</b> = append(s.TLSConfig.<b>NextProtos</b>, NextProtoTLS)
+		<a href="../../src/golang.org/x/net/http2/transport.go.html#line-184">transport.go#L184</a>: 	if !strSliceContains(t1.TLSClientConfig.<b>NextProtos</b>, "h2") {
+		<a href="../../src/golang.org/x/net/http2/transport.go.html#line-185" class="path-duplicate">transport.go</a><a href="../../src/golang.org/x/net/http2/transport.go.html#line-185">#L185</a>: 		t1.TLSClientConfig.<b>NextProtos</b> = append([]string{"h2"}, t1.TLSClientConfig.<b>NextProtos</b>...)
+		<a href="../../src/golang.org/x/net/http2/transport.go.html#line-187" class="path-duplicate">transport.go</a><a href="../../src/golang.org/x/net/http2/transport.go.html#line-187">#L187</a>: 	if !strSliceContains(t1.TLSClientConfig.<b>NextProtos</b>, "http/1.1") {
+		<a href="../../src/golang.org/x/net/http2/transport.go.html#line-188" class="path-duplicate">transport.go</a><a href="../../src/golang.org/x/net/http2/transport.go.html#line-188">#L188</a>: 		t1.TLSClientConfig.<b>NextProtos</b> = append(t1.TLSClientConfig.<b>NextProtos</b>, "http/1.1")
+		<a href="../../src/golang.org/x/net/http2/transport.go.html#line-584" class="path-duplicate">transport.go</a><a href="../../src/golang.org/x/net/http2/transport.go.html#line-584">#L584</a>: 	if !strSliceContains(cfg.<b>NextProtos</b>, NextProtoTLS) {
+		<a href="../../src/golang.org/x/net/http2/transport.go.html#line-585" class="path-duplicate">transport.go</a><a href="../../src/golang.org/x/net/http2/transport.go.html#line-585">#L585</a>: 		cfg.<b>NextProtos</b> = append([]string{NextProtoTLS}, cfg.<b>NextProtos</b>...)
+
+	<a href="../../pkg/google.golang.org/grpc/credentials.html">google.golang.org/grpc/credentials</a>
+		<a href="../../src/google.golang.org/grpc/credentials/tls.go.html#line-144">tls.go#L144</a>: 	tc.config.<b>NextProtos</b> = credinternal.AppendH2ToNextProtos(tc.config.<b>NextProtos</b>)
+
+	<a href="../../pkg/net/http.html">net/http</a>
+		<a href="../../src/net/http/h2_bundle.go.html#line-3931">h2_bundle.go#L3931</a>: 	if !http2strSliceContains(s.TLSConfig.<b>NextProtos</b>, http2NextProtoTLS) {
+		<a href="../../src/net/http/h2_bundle.go.html#line-3932" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-3932">#L3932</a>: 		s.TLSConfig.<b>NextProtos</b> = append(s.TLSConfig.<b>NextProtos</b>, http2NextProtoTLS)
+		<a href="../../src/net/http/h2_bundle.go.html#line-3934" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-3934">#L3934</a>: 	if !http2strSliceContains(s.TLSConfig.<b>NextProtos</b>, "http/1.1") {
+		<a href="../../src/net/http/h2_bundle.go.html#line-3935" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-3935">#L3935</a>: 		s.TLSConfig.<b>NextProtos</b> = append(s.TLSConfig.<b>NextProtos</b>, "http/1.1")
+		<a href="../../src/net/http/h2_bundle.go.html#line-6825" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-6825">#L6825</a>: 	if !http2strSliceContains(t1.TLSClientConfig.<b>NextProtos</b>, "h2") {
+		<a href="../../src/net/http/h2_bundle.go.html#line-6826" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-6826">#L6826</a>: 		t1.TLSClientConfig.<b>NextProtos</b> = append([]string{"h2"}, t1.TLSClientConfig.<b>NextProtos</b>...)
+		<a href="../../src/net/http/h2_bundle.go.html#line-6828" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-6828">#L6828</a>: 	if !http2strSliceContains(t1.TLSClientConfig.<b>NextProtos</b>, "http/1.1") {
+		<a href="../../src/net/http/h2_bundle.go.html#line-6829" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-6829">#L6829</a>: 		t1.TLSClientConfig.<b>NextProtos</b> = append(t1.TLSClientConfig.<b>NextProtos</b>, "http/1.1")
+		<a href="../../src/net/http/h2_bundle.go.html#line-7213" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-7213">#L7213</a>: 	if !http2strSliceContains(cfg.<b>NextProtos</b>, http2NextProtoTLS) {
+		<a href="../../src/net/http/h2_bundle.go.html#line-7214" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-7214">#L7214</a>: 		cfg.<b>NextProtos</b> = append([]string{http2NextProtoTLS}, cfg.<b>NextProtos</b>...)
+		<a href="../../src/net/http/server.go.html#line-2955">server.go#L2955</a>: 	return strSliceContains(srv.TLSConfig.<b>NextProtos</b>, http2NextProtoTLS)
+		<a href="../../src/net/http/server.go.html#line-3059" class="path-duplicate">server.go</a><a href="../../src/net/http/server.go.html#line-3059">#L3059</a>: 	if !strSliceContains(config.<b>NextProtos</b>, "http/1.1") {
+		<a href="../../src/net/http/server.go.html#line-3060" class="path-duplicate">server.go</a><a href="../../src/net/http/server.go.html#line-3060">#L3060</a>: 		config.<b>NextProtos</b> = append(config.<b>NextProtos</b>, "http/1.1")
+		<a href="../../src/net/http/transport.go.html#line-1519">transport.go#L1519</a>: 		cfg.<b>NextProtos</b> = nil
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

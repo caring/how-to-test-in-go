@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: reflect.rtype.kind</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/reflect.html">reflect</a>.<a href="../src/reflect/type.go.html#line-311">rtype</a>.<a href="../src/reflect/type.go.html#line-318">kind</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">20 uses</span>
+
+	reflect (current package)
+		<a href="../src/reflect/type.go.html#line-318">type.go#L318</a>: 	<b>kind</b>       uint8   // enumeration for C
+		<a href="../src/reflect/type.go.html#line-819" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-819">#L819</a>: func (t *rtype) Kind() Kind { return Kind(t.<b>kind</b> &amp; kindMask) }
+		<a href="../src/reflect/type.go.html#line-2269" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2269">#L2269</a>: 		<b>kind</b>:    uint8(Struct),
+		<a href="../src/reflect/type.go.html#line-2288" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2288">#L2288</a>: 	if typ.<b>kind</b>&amp;kindGCProg != 0 {
+		<a href="../src/reflect/type.go.html#line-2307" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2307">#L2307</a>: 	if typ.<b>kind</b>&amp;kindGCProg != 0 {
+		<a href="../src/reflect/type.go.html#line-2443" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2443">#L2443</a>: 		if ft.<b>kind</b>&amp;kindGCProg != 0 {
+		<a href="../src/reflect/type.go.html#line-2485" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2485">#L2485</a>: 					if ft.<b>kind</b>&amp;kindDirectIface != 0 {
+		<a href="../src/reflect/type.go.html#line-2575" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2575">#L2575</a>: 					if len(fields) &gt; 1 &amp;&amp; ft.<b>kind</b>&amp;kindDirectIface != 0 {
+		<a href="../src/reflect/type.go.html#line-2776" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2776">#L2776</a>: 		typ.<b>kind</b> |= kindGCProg
+		<a href="../src/reflect/type.go.html#line-2779" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2779">#L2779</a>: 		typ.<b>kind</b> &amp;^= kindGCProg
+		<a href="../src/reflect/type.go.html#line-2803" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2803">#L2803</a>: 		typ.<b>kind</b> |= kindDirectIface
+		<a href="../src/reflect/type.go.html#line-2805" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2805">#L2805</a>: 		typ.<b>kind</b> &amp;^= kindDirectIface
+		<a href="../src/reflect/type.go.html#line-2935" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2935">#L2935</a>: 		array.<b>kind</b> |= typ.<b>kind</b> &amp; kindGCProg
+		<a href="../src/reflect/type.go.html#line-2939" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2939">#L2939</a>: 	case typ.<b>kind</b>&amp;kindGCProg == 0 &amp;&amp; array.size &lt;= maxPtrmaskBytes*8*ptrSize:
+		<a href="../src/reflect/type.go.html#line-2973" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2973">#L2973</a>: 		array.<b>kind</b> |= kindGCProg
+		<a href="../src/reflect/type.go.html#line-2999" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2999">#L2999</a>: 		array.<b>kind</b> |= kindDirectIface
+		<a href="../src/reflect/type.go.html#line-3001" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-3001">#L3001</a>: 		array.<b>kind</b> &amp;^= kindDirectIface
+		<a href="../src/reflect/type.go.html#line-3101" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-3101">#L3101</a>: 	return t.<b>kind</b>&amp;kindDirectIface == 0
+		<a href="../src/reflect/type.go.html#line-3124" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-3124">#L3124</a>: 	switch Kind(t.<b>kind</b> &amp; kindMask) {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

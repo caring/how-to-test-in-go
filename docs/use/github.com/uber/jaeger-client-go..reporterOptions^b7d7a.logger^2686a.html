@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/uber/jaeger-client-go.reporterOptions.logger</title>
+<link href="../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../pkg/github.com/uber/jaeger-client-go.html">github.com/uber/jaeger-client-go</a>.<a href="../../../src/github.com/uber/jaeger-client-go/reporter_options.go.html#line-30">reporterOptions</a>.<a href="../../../src/github.com/uber/jaeger-client-go/reporter_options.go.html#line-36">logger</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">9 uses</span>
+
+	github.com/uber/jaeger-client-go (current package)
+		<a href="../../../src/github.com/uber/jaeger-client-go/reporter.go.html#line-219">reporter.go#L219</a>: 	if options.<b>logger</b> == nil {
+		<a href="../../../src/github.com/uber/jaeger-client-go/reporter.go.html#line-220" class="path-duplicate">reporter.go</a><a href="../../../src/github.com/uber/jaeger-client-go/reporter.go.html#line-220">#L220</a>: 		options.<b>logger</b> = log.NullLogger
+		<a href="../../../src/github.com/uber/jaeger-client-go/reporter.go.html#line-260" class="path-duplicate">reporter.go</a><a href="../../../src/github.com/uber/jaeger-client-go/reporter.go.html#line-260">#L260</a>: 	r.<b>logger</b>.Debugf("closing reporter")
+		<a href="../../../src/github.com/uber/jaeger-client-go/reporter.go.html#line-262" class="path-duplicate">reporter.go</a><a href="../../../src/github.com/uber/jaeger-client-go/reporter.go.html#line-262">#L262</a>: 		r.<b>logger</b>.Error("Repeated attempt to close the reporter is ignored")
+		<a href="../../../src/github.com/uber/jaeger-client-go/reporter.go.html#line-288" class="path-duplicate">reporter.go</a><a href="../../../src/github.com/uber/jaeger-client-go/reporter.go.html#line-288">#L288</a>: 			r.<b>logger</b>.Error(fmt.Sprintf("failed to flush Jaeger spans to server: %s", err.Error()))
+		<a href="../../../src/github.com/uber/jaeger-client-go/reporter.go.html#line-306" class="path-duplicate">reporter.go</a><a href="../../../src/github.com/uber/jaeger-client-go/reporter.go.html#line-306">#L306</a>: 					r.<b>logger</b>.Error(fmt.Sprintf("error reporting Jaeger span %q: %s", span.OperationName(), err.Error()))
+		<a href="../../../src/github.com/uber/jaeger-client-go/reporter.go.html#line-311" class="path-duplicate">reporter.go</a><a href="../../../src/github.com/uber/jaeger-client-go/reporter.go.html#line-311">#L311</a>: 					r.<b>logger</b>.Debugf("flushed %d spans", flushed)
+		<a href="../../../src/github.com/uber/jaeger-client-go/reporter_options.go.html#line-36">reporter_options.go#L36</a>: 	<b>logger</b> log.DebugLogger
+		<a href="../../../src/github.com/uber/jaeger-client-go/reporter_options.go.html#line-69" class="path-duplicate">reporter_options.go</a><a href="../../../src/github.com/uber/jaeger-client-go/reporter_options.go.html#line-69">#L69</a>: 		r.<b>logger</b> = log.DebugLogAdapter(logger)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

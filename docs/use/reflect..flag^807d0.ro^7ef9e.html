@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: reflect.flag.ro</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/reflect.html">reflect</a>.<a href="../src/reflect/value.go.html#line-68">flag</a>.<a href="../src/reflect/value.go.html#line-86">ro</a></b></span><span style="font-size: large;"><i> (method)</i></span>
+
+<span class="title">31 uses</span>
+
+	reflect (current package)
+		<a href="../src/reflect/value.go.html#line-86">value.go#L86</a>: func (f flag) <b>ro</b>() flag {
+		<a href="../src/reflect/value.go.html#line-1173" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-1173">#L1173</a>: 			x.flag |= v.flag.<b>ro</b>()
+		<a href="../src/reflect/value.go.html#line-1302" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-1302">#L1302</a>: 		fl := v.flag&amp;(flagIndir|flagAddr) | v.flag.<b>ro</b>() | flag(typ.Kind()) // bits same as overall array
+		<a href="../src/reflect/value.go.html#line-1315" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-1315">#L1315</a>: 		fl := flagAddr | flagIndir | v.flag.<b>ro</b>() | flag(typ.Kind())
+		<a href="../src/reflect/value.go.html#line-1324" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-1324">#L1324</a>: 		fl := v.flag.<b>ro</b>() | flag(Uint8) | flagIndir
+		<a href="../src/reflect/value.go.html#line-1548" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-1548">#L1548</a>: 	fl := (v.flag | key.flag).<b>ro</b>()
+		<a href="../src/reflect/value.go.html#line-1562" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-1562">#L1562</a>: 	fl := v.flag.<b>ro</b>() | flag(keyType.Kind())
+		<a href="../src/reflect/value.go.html#line-1604" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-1604">#L1604</a>: 	return copyVal(ktype, it.m.flag.<b>ro</b>()|flag(ktype.Kind()), mapiterkey(it.it))
+		<a href="../src/reflect/value.go.html#line-1618" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-1618">#L1618</a>: 	return copyVal(vtype, it.m.flag.<b>ro</b>()|flag(vtype.Kind()), mapiterelem(it.it))
+		<a href="../src/reflect/value.go.html#line-1684" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-1684">#L1684</a>: 	fl := v.flag.<b>ro</b>() | (v.flag &amp; flagIndir)
+		<a href="../src/reflect/value.go.html#line-2163" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2163">#L2163</a>: 	fl := v.flag.<b>ro</b>() | flagIndir | flag(Slice)
+		<a href="../src/reflect/value.go.html#line-2215" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2215">#L2215</a>: 	fl := v.flag.<b>ro</b>() | flagIndir | flag(Slice)
+		<a href="../src/reflect/value.go.html#line-2786" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2786">#L2786</a>: 		fl := v.flag&amp;(flagAddr|flagIndir) | v.flag.<b>ro</b>()
+		<a href="../src/reflect/value.go.html#line-3022" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-3022">#L3022</a>: 	return makeInt(v.flag.<b>ro</b>(), uint64(v.Int()), t)
+		<a href="../src/reflect/value.go.html#line-3027" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-3027">#L3027</a>: 	return makeInt(v.flag.<b>ro</b>(), v.Uint(), t)
+		<a href="../src/reflect/value.go.html#line-3032" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-3032">#L3032</a>: 	return makeInt(v.flag.<b>ro</b>(), uint64(int64(v.Float())), t)
+		<a href="../src/reflect/value.go.html#line-3037" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-3037">#L3037</a>: 	return makeInt(v.flag.<b>ro</b>(), uint64(v.Float()), t)
+		<a href="../src/reflect/value.go.html#line-3042" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-3042">#L3042</a>: 	return makeFloat(v.flag.<b>ro</b>(), float64(v.Int()), t)
+		<a href="../src/reflect/value.go.html#line-3047" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-3047">#L3047</a>: 	return makeFloat(v.flag.<b>ro</b>(), float64(v.Uint()), t)
+		<a href="../src/reflect/value.go.html#line-3056" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-3056">#L3056</a>: 		return makeFloat32(v.flag.<b>ro</b>(), *(*float32)(v.ptr), t)
+		<a href="../src/reflect/value.go.html#line-3058" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-3058">#L3058</a>: 	return makeFloat(v.flag.<b>ro</b>(), v.Float(), t)
+		<a href="../src/reflect/value.go.html#line-3063" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-3063">#L3063</a>: 	return makeComplex(v.flag.<b>ro</b>(), v.Complex(), t)
+		<a href="../src/reflect/value.go.html#line-3072" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-3072">#L3072</a>: 	return makeString(v.flag.<b>ro</b>(), s, t)
+		<a href="../src/reflect/value.go.html#line-3081" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-3081">#L3081</a>: 	return makeString(v.flag.<b>ro</b>(), s, t)
+		<a href="../src/reflect/value.go.html#line-3086" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-3086">#L3086</a>: 	return makeString(v.flag.<b>ro</b>(), string(v.Bytes()), t)
+		<a href="../src/reflect/value.go.html#line-3091" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-3091">#L3091</a>: 	return makeBytes(v.flag.<b>ro</b>(), []byte(v.String()), t)
+		<a href="../src/reflect/value.go.html#line-3096" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-3096">#L3096</a>: 	return makeString(v.flag.<b>ro</b>(), string(v.runes()), t)
+		<a href="../src/reflect/value.go.html#line-3101" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-3101">#L3101</a>: 	return makeRunes(v.flag.<b>ro</b>(), []rune(v.String()), t)
+		<a href="../src/reflect/value.go.html#line-3126" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-3126">#L3126</a>: 	return Value{t, ptr, v.flag.<b>ro</b>() | f} // v.flag.ro()|f == f?
+		<a href="../src/reflect/value.go.html#line-3138" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-3138">#L3138</a>: 	return Value{typ.common(), target, v.flag.<b>ro</b>() | flagIndir | flag(Interface)}
+		<a href="../src/reflect/value.go.html#line-3145" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-3145">#L3145</a>: 		ret.flag |= v.flag.<b>ro</b>()
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

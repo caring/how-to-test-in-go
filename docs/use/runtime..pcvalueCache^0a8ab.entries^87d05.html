@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime.pcvalueCache.entries</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/runtime.html">runtime</a>.<a href="../src/runtime/symtab.go.html#line-772">pcvalueCache</a>.<a href="../src/runtime/symtab.go.html#line-773">entries</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">6 uses</span>
+
+	runtime (current package)
+		<a href="../src/runtime/symtab.go.html#line-773">symtab.go#L773</a>: 	<b>entries</b> [2][8]pcvalueCacheEnt
+		<a href="../src/runtime/symtab.go.html#line-789" class="path-duplicate">symtab.go</a><a href="../src/runtime/symtab.go.html#line-789">#L789</a>: 	return (targetpc / sys.PtrSize) % uintptr(len(pcvalueCache{}.<b>entries</b>))
+		<a href="../src/runtime/symtab.go.html#line-807" class="path-duplicate">symtab.go</a><a href="../src/runtime/symtab.go.html#line-807">#L807</a>: 		for i := range cache.<b>entries</b>[x] {
+		<a href="../src/runtime/symtab.go.html#line-813" class="path-duplicate">symtab.go</a><a href="../src/runtime/symtab.go.html#line-813">#L813</a>: 			ent := &amp;cache.<b>entries</b>[x][i]
+		<a href="../src/runtime/symtab.go.html#line-847" class="path-duplicate">symtab.go</a><a href="../src/runtime/symtab.go.html#line-847">#L847</a>: 				e := &amp;cache.<b>entries</b>[x]
+		<a href="../src/runtime/symtab.go.html#line-848" class="path-duplicate">symtab.go</a><a href="../src/runtime/symtab.go.html#line-848">#L848</a>: 				ci := fastrand() % uint32(len(cache.<b>entries</b>[x]))
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

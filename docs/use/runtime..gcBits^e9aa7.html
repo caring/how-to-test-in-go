@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime.gcBits</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../pkg/runtime.html">runtime</a>.<a href="../src/runtime/mheap.go.html#line-1934">gcBits</a></b></span>
+
+<span class="title">9 uses</span>
+
+	runtime (current package)
+		<a href="../src/runtime/mheap.go.html#line-444">mheap.go#L444</a>: 	allocBits  *<b>gcBits</b>
+		<a href="../src/runtime/mheap.go.html#line-445" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-445">#L445</a>: 	gcmarkBits *<b>gcBits</b>
+		<a href="../src/runtime/mheap.go.html#line-1934" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1934">#L1934</a>: type <b>gcBits</b> uint8
+		<a href="../src/runtime/mheap.go.html#line-1937" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1937">#L1937</a>: func (b *<b>gcBits</b>) bytep(n uintptr) *uint8 {
+		<a href="../src/runtime/mheap.go.html#line-1943" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1943">#L1943</a>: func (b *<b>gcBits</b>) bitp(n uintptr) (bytep *uint8, mask uint8) {
+		<a href="../src/runtime/mheap.go.html#line-1960" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1960">#L1960</a>: 	bits [gcBitsChunkBytes - gcBitsHeaderBytes]<b>gcBits</b>
+		<a href="../src/runtime/mheap.go.html#line-1973" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1973">#L1973</a>: func (b *gcBitsArena) tryAlloc(bytes uintptr) *<b>gcBits</b> {
+		<a href="../src/runtime/mheap.go.html#line-1989" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1989">#L1989</a>: func newMarkBits(nelems uintptr) *<b>gcBits</b> {
+		<a href="../src/runtime/mheap.go.html#line-2045" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-2045">#L2045</a>: func newAllocBits(nelems uintptr) *<b>gcBits</b> {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

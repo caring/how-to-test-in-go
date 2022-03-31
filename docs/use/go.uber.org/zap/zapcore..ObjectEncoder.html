@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: go.uber.org/zap/zapcore.ObjectEncoder</title>
+<link href="../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../../../pkg/go.uber.org/zap/zapcore.html">go.uber.org/zap/zapcore</a>.<a href="../../../src/go.uber.org/zap/zapcore/encoder.go.html#line-299">ObjectEncoder</a></b></span>
+
+<span class="title">21 uses</span>
+
+	go.uber.org/zap/zapcore (current package)
+		<a href="../../../src/go.uber.org/zap/zapcore/encoder.go.html#line-299">encoder.go#L299</a>: type <b>ObjectEncoder</b> interface {
+		<a href="../../../src/go.uber.org/zap/zapcore/encoder.go.html#line-391" class="path-duplicate">encoder.go</a><a href="../../../src/go.uber.org/zap/zapcore/encoder.go.html#line-391">#L391</a>: 	<b>ObjectEncoder</b>
+		<a href="../../../src/go.uber.org/zap/zapcore/error.go.html#line-45">error.go#L45</a>: func encodeError(key string, err error, enc <b>ObjectEncoder</b>) error {
+		<a href="../../../src/go.uber.org/zap/zapcore/error.go.html#line-108" class="path-duplicate">error.go</a><a href="../../../src/go.uber.org/zap/zapcore/error.go.html#line-108">#L108</a>: func (e *errArrayElem) MarshalLogObject(enc <b>ObjectEncoder</b>) error {
+		<a href="../../../src/go.uber.org/zap/zapcore/field.go.html#line-110">field.go#L110</a>: func (f Field) AddTo(enc <b>ObjectEncoder</b>) {
+		<a href="../../../src/go.uber.org/zap/zapcore/field.go.html#line-202" class="path-duplicate">field.go</a><a href="../../../src/go.uber.org/zap/zapcore/field.go.html#line-202">#L202</a>: func addFields(enc <b>ObjectEncoder</b>, fields []Field) {
+		<a href="../../../src/go.uber.org/zap/zapcore/field.go.html#line-208" class="path-duplicate">field.go</a><a href="../../../src/go.uber.org/zap/zapcore/field.go.html#line-208">#L208</a>: func encodeStringer(key string, stringer interface{}, enc <b>ObjectEncoder</b>) (err error) {
+		<a href="../../../src/go.uber.org/zap/zapcore/marshaler.go.html#line-27">marshaler.go#L27</a>: 	MarshalLogObject(<b>ObjectEncoder</b>) error
+		<a href="../../../src/go.uber.org/zap/zapcore/marshaler.go.html#line-32" class="path-duplicate">marshaler.go</a><a href="../../../src/go.uber.org/zap/zapcore/marshaler.go.html#line-32">#L32</a>: type ObjectMarshalerFunc func(<b>ObjectEncoder</b>) error
+		<a href="../../../src/go.uber.org/zap/zapcore/marshaler.go.html#line-35" class="path-duplicate">marshaler.go</a><a href="../../../src/go.uber.org/zap/zapcore/marshaler.go.html#line-35">#L35</a>: func (f ObjectMarshalerFunc) MarshalLogObject(enc <b>ObjectEncoder</b>) error {
+
+	<a href="../../../pkg/go.uber.org/zap.html">go.uber.org/zap</a>
+		<a href="../../../src/go.uber.org/zap/error.go.html#line-76">error.go#L76</a>: func (e *errArrayElem) MarshalLogObject(enc zapcore.<b>ObjectEncoder</b>) error {
+		<a href="../../../src/go.uber.org/zap/sugar.go.html#line-289">sugar.go#L289</a>: func (p invalidPair) MarshalLogObject(enc zapcore.<b>ObjectEncoder</b>) error {
+
+	<a href="../../../pkg/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap.html">github.com/grpc-ecosystem/go-grpc-middleware/logging/zap</a>
+		<a href="../../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/payload_interceptors.go.html#line-139">payload_interceptors.go#L139</a>: func (j *jsonpbObjectMarshaler) MarshalLogObject(e zapcore.<b>ObjectEncoder</b>) error {
+
+	<a href="../../../pkg/github.com/uber/jaeger-client-go/log/zap.html">github.com/uber/jaeger-client-go/log/zap</a>
+		<a href="../../../src/github.com/uber/jaeger-client-go/log/zap/field.go.html#line-47">field.go#L47</a>: func (t trace) MarshalLogObject(enc zapcore.<b>ObjectEncoder</b>) error {
+		<a href="../../../src/github.com/uber/jaeger-client-go/log/zap/field.go.html#line-72" class="path-duplicate">field.go</a><a href="../../../src/github.com/uber/jaeger-client-go/log/zap/field.go.html#line-72">#L72</a>: func (s spanContext) MarshalLogObject(enc zapcore.<b>ObjectEncoder</b>) error {
+		<a href="../../../src/github.com/uber/jaeger-client-go/log/zap/field.go.html#line-89" class="path-duplicate">field.go</a><a href="../../../src/github.com/uber/jaeger-client-go/log/zap/field.go.html#line-89">#L89</a>: func (b baggageKV) MarshalLogObject(enc zapcore.<b>ObjectEncoder</b>) error {
+		<a href="../../../src/github.com/uber/jaeger-client-go/log/zap/field.go.html#line-111" class="path-duplicate">field.go</a><a href="../../../src/github.com/uber/jaeger-client-go/log/zap/field.go.html#line-111">#L111</a>: func (l logRecord) MarshalLogObject(enc zapcore.<b>ObjectEncoder</b>) error {
+		<a href="../../../src/github.com/uber/jaeger-client-go/log/zap/field.go.html#line-128" class="path-duplicate">field.go</a><a href="../../../src/github.com/uber/jaeger-client-go/log/zap/field.go.html#line-128">#L128</a>: func (l logField) MarshalLogObject(enc zapcore.<b>ObjectEncoder</b>) error {
+		<a href="../../../src/github.com/uber/jaeger-client-go/log/zap/field.go.html#line-146" class="path-duplicate">field.go</a><a href="../../../src/github.com/uber/jaeger-client-go/log/zap/field.go.html#line-146">#L146</a>: func (t tags) MarshalLogObject(enc zapcore.<b>ObjectEncoder</b>) error {
+		<a href="../../../src/github.com/uber/jaeger-client-go/log/zap/field.go.html#line-156" class="path-duplicate">field.go</a><a href="../../../src/github.com/uber/jaeger-client-go/log/zap/field.go.html#line-156">#L156</a>: func (r reference) MarshalLogObject(enc zapcore.<b>ObjectEncoder</b>) error {
+		<a href="../../../src/github.com/uber/jaeger-client-go/log/zap/field.go.html#line-197" class="path-duplicate">field.go</a><a href="../../../src/github.com/uber/jaeger-client-go/log/zap/field.go.html#line-197">#L197</a>: func (s span) MarshalLogObject(enc zapcore.<b>ObjectEncoder</b>) error {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime.schedt.gcwaiting</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/runtime.html">runtime</a>.<a href="../src/runtime/runtime2.go.html#line-745">schedt</a>.<a href="../src/runtime/runtime2.go.html#line-806">gcwaiting</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">16 uses</span>
+
+	runtime (current package)
+		<a href="../src/runtime/mgcmark.go.html#line-1008">mgcmark.go#L1008</a>: 		for !(gp.preempt &amp;&amp; (preemptible || atomic.Load(&amp;sched.<b>gcwaiting</b>) != 0)) {
+		<a href="../src/runtime/mgcmark.go.html#line-1022" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-1022">#L1022</a>: 	for !(gp.preempt &amp;&amp; (preemptible || atomic.Load(&amp;sched.<b>gcwaiting</b>) != 0)) {
+		<a href="../src/runtime/proc.go.html#line-872">proc.go#L872</a>: 		atomic.Store(&amp;sched.<b>gcwaiting</b>, 1)
+		<a href="../src/runtime/proc.go.html#line-1174" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1174">#L1174</a>: 	atomic.Store(&amp;sched.<b>gcwaiting</b>, 1)
+		<a href="../src/runtime/proc.go.html#line-1257" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1257">#L1257</a>: 	sched.<b>gcwaiting</b> = 0
+		<a href="../src/runtime/proc.go.html#line-2534" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2534">#L2534</a>: 	if sched.<b>gcwaiting</b> != 0 {
+		<a href="../src/runtime/proc.go.html#line-2639" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2639">#L2639</a>: 	if sched.<b>gcwaiting</b> == 0 {
+		<a href="../src/runtime/proc.go.html#line-2714" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2714">#L2714</a>: 	if sched.<b>gcwaiting</b> != 0 {
+		<a href="../src/runtime/proc.go.html#line-2842" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2842">#L2842</a>: 	if sched.<b>gcwaiting</b> != 0 || _p_.runSafePointFn != 0 {
+		<a href="../src/runtime/proc.go.html#line-3025" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3025">#L3025</a>: 			if sched.<b>gcwaiting</b> != 0 {
+		<a href="../src/runtime/proc.go.html#line-3313" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3313">#L3313</a>: 	if sched.<b>gcwaiting</b> != 0 {
+		<a href="../src/runtime/proc.go.html#line-3815" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3815">#L3815</a>: 	if sched.<b>gcwaiting</b> != 0 {
+		<a href="../src/runtime/proc.go.html#line-5356" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5356">#L5356</a>: 		if debug.schedtrace &lt;= 0 &amp;&amp; (sched.<b>gcwaiting</b> != 0 || atomic.Load(&amp;sched.npidle) == uint32(gomaxprocs)) {
+		<a href="../src/runtime/proc.go.html#line-5358" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5358">#L5358</a>: 			if atomic.Load(&amp;sched.<b>gcwaiting</b>) != 0 || atomic.Load(&amp;sched.npidle) == uint32(gomaxprocs) {
+		<a href="../src/runtime/proc.go.html#line-5613" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5613">#L5613</a>: 		print(" gcwaiting=", sched.<b>gcwaiting</b>, " nmidlelocked=", sched.nmidlelocked, " stopwait=", sched.stopwait, " sysmonwait=", sched.sysmonwait, "\n")
+		<a href="../src/runtime/runtime2.go.html#line-806">runtime2.go#L806</a>: 	<b>gcwaiting</b>  uint32 // gc is waiting to run
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

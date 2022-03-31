@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: go.uber.org/zap.String</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">func <b><a href="../../pkg/go.uber.org/zap.html">go.uber.org/zap</a>.<a href="../../src/go.uber.org/zap/field.go.html#line-221">String</a></b></span>
+
+<span class="title">28 uses</span>
+
+	go.uber.org/zap (current package)
+		<a href="../../src/go.uber.org/zap/field.go.html#line-221">field.go#L221</a>: func <b>String</b>(key string, val string) Field {
+		<a href="../../src/go.uber.org/zap/field.go.html#line-231" class="path-duplicate">field.go</a><a href="../../src/go.uber.org/zap/field.go.html#line-231">#L231</a>: 	return <b>String</b>(key, *val)
+		<a href="../../src/go.uber.org/zap/field.go.html#line-371" class="path-duplicate">field.go</a><a href="../../src/go.uber.org/zap/field.go.html#line-371">#L371</a>: 	return <b>String</b>(key, takeStacktrace())
+		<a href="../../src/go.uber.org/zap/field.go.html#line-471" class="path-duplicate">field.go</a><a href="../../src/go.uber.org/zap/field.go.html#line-471">#L471</a>: 		return <b>String</b>(key, val)
+
+	<a href="../../pkg/github.com/caring/gopkg-logging.html">github.com/caring/gopkg-logging</a>
+		<a href="../../src/github.com/caring/gopkg-logging/field.go.html#line-21">field.go#L21</a>: 	s := zap.<b>String</b>(k, v)
+
+	<a href="../../pkg/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap.html">github.com/grpc-ecosystem/go-grpc-middleware/logging/zap</a>
+		<a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/client_interceptors.go.html#line-18">client_interceptors.go#L18</a>: 	ClientField = zap.<b>String</b>("span.kind", "client")
+		<a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/client_interceptors.go.html#line-50" class="path-duplicate">client_interceptors.go</a><a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/client_interceptors.go.html#line-50">#L50</a>: 		zap.<b>String</b>("grpc.code", code.String()),
+		<a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/client_interceptors.go.html#line-61" class="path-duplicate">client_interceptors.go</a><a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/client_interceptors.go.html#line-61">#L61</a>: 		zap.<b>String</b>("grpc.service", service),
+		<a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/client_interceptors.go.html#line-62" class="path-duplicate">client_interceptors.go</a><a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/client_interceptors.go.html#line-62">#L62</a>: 		zap.<b>String</b>("grpc.method", method),
+		<a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/server_interceptors.go.html#line-17">server_interceptors.go#L17</a>: 	SystemField = zap.<b>String</b>("system", "grpc")
+		<a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/server_interceptors.go.html#line-20" class="path-duplicate">server_interceptors.go</a><a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/server_interceptors.go.html#line-20">#L20</a>: 	ServerField = zap.<b>String</b>("span.kind", "server")
+		<a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/server_interceptors.go.html#line-41" class="path-duplicate">server_interceptors.go</a><a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/server_interceptors.go.html#line-41">#L41</a>: 			zap.<b>String</b>("grpc.code", code.String()),
+		<a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/server_interceptors.go.html#line-68" class="path-duplicate">server_interceptors.go</a><a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/server_interceptors.go.html#line-68">#L68</a>: 			zap.<b>String</b>("grpc.code", code.String()),
+		<a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/server_interceptors.go.html#line-82" class="path-duplicate">server_interceptors.go</a><a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/server_interceptors.go.html#line-82">#L82</a>: 		zap.<b>String</b>("grpc.service", service),
+		<a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/server_interceptors.go.html#line-83" class="path-duplicate">server_interceptors.go</a><a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/server_interceptors.go.html#line-83">#L83</a>: 		zap.<b>String</b>("grpc.method", method),
+		<a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/server_interceptors.go.html#line-89" class="path-duplicate">server_interceptors.go</a><a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/server_interceptors.go.html#line-89">#L89</a>: 	f = append(f, zap.<b>String</b>("grpc.start_time", start.Format(time.RFC3339)))
+		<a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/server_interceptors.go.html#line-91" class="path-duplicate">server_interceptors.go</a><a href="../../src/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/server_interceptors.go.html#line-91">#L91</a>: 		f = append(f, zap.<b>String</b>("grpc.request.deadline", d.Format(time.RFC3339)))
+
+	<a href="../../pkg/github.com/uber/jaeger-client-go/log/zap.html">github.com/uber/jaeger-client-go/log/zap</a>
+		<a href="../../src/github.com/uber/jaeger-client-go/log/zap/field.go.html#line-189">field.go#L189</a>: 		return zap.<b>String</b>("err", "nil span")
+		<a href="../../src/github.com/uber/jaeger-client-go/log/zap/field.go.html#line-194" class="path-duplicate">field.go</a><a href="../../src/github.com/uber/jaeger-client-go/log/zap/field.go.html#line-194">#L194</a>: 	return zap.<b>String</b>("err", "non jaeger span")
+		<a href="../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-51">tracer.go#L51</a>: 		zap.<b>String</b>("operation_name", operationName),
+		<a href="../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-118" class="path-duplicate">tracer.go</a><a href="../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-118">#L118</a>: 	l.logger.Debug("SetOperationName", zap.<b>String</b>("operation_name", operationName))
+		<a href="../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-123" class="path-duplicate">tracer.go</a><a href="../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-123">#L123</a>: 	l.logger.Debug("SetTag", zap.<b>String</b>("key", key), zap.Any("value", value))
+		<a href="../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-138" class="path-duplicate">tracer.go</a><a href="../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-138">#L138</a>: 	l.logger.Debug("SetBaggageItem", zap.<b>String</b>("key", restrictedKey), zap.<b>String</b>("value", value))
+		<a href="../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-143" class="path-duplicate">tracer.go</a><a href="../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-143">#L143</a>: 	l.logger.Debug("BaggageItem", zap.<b>String</b>("key", restrictedKey))
+		<a href="../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-153" class="path-duplicate">tracer.go</a><a href="../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-153">#L153</a>: 	l.logger.Debug("Deprecated: LogEvent", zap.<b>String</b>("event", event))
+		<a href="../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-158" class="path-duplicate">tracer.go</a><a href="../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-158">#L158</a>: 	l.logger.Debug("Deprecated: LogEventWithPayload", zap.<b>String</b>("event", event), zap.Any("payload", payload))
+		<a href="../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-164" class="path-duplicate">tracer.go</a><a href="../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-164">#L164</a>: 		zap.<b>String</b>("event", data.Event),
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

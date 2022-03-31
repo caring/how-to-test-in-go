@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/go-sql-driver/mysql.digits01</title>
+<link href="../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">const <b><a href="../../../pkg/github.com/go-sql-driver/mysql.html">github.com/go-sql-driver/mysql</a>.<a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-343">digits01</a></b></span>
+
+<span class="title">32 uses</span>
+
+	github.com/go-sql-driver/mysql (current package)
+		<a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-291">utils.go#L291</a>: 	localBuf[0], localBuf[1], localBuf[2], localBuf[3] = digits10[year100], <b>digits01</b>[year100], digits10[year1], <b>digits01</b>[year1]
+		<a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-293" class="path-duplicate">utils.go</a><a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-293">#L293</a>: 	localBuf[5], localBuf[6] = digits10[month], <b>digits01</b>[month]
+		<a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-295" class="path-duplicate">utils.go</a><a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-295">#L295</a>: 	localBuf[8], localBuf[9] = digits10[day], <b>digits01</b>[day]
+		<a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-302" class="path-duplicate">utils.go</a><a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-302">#L302</a>: 	localBuf[11], localBuf[12] = digits10[hour], <b>digits01</b>[hour]
+		<a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-304" class="path-duplicate">utils.go</a><a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-304">#L304</a>: 	localBuf[14], localBuf[15] = digits10[min], <b>digits01</b>[min]
+		<a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-306" class="path-duplicate">utils.go</a><a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-306">#L306</a>: 	localBuf[17], localBuf[18] = digits10[sec], <b>digits01</b>[sec]
+		<a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-320" class="path-duplicate">utils.go</a><a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-320">#L320</a>: 		<b>digits01</b>[nsec100000000], digits10[nsec1000000], <b>digits01</b>[nsec1000000]
+		<a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-323" class="path-duplicate">utils.go</a><a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-323">#L323</a>: 		digits10[nsec10000], <b>digits01</b>[nsec10000], digits10[nsec100]
+		<a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-326" class="path-duplicate">utils.go</a><a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-326">#L326</a>: 		<b>digits01</b>[nsec100], digits10[nsec1], <b>digits01</b>[nsec1]
+		<a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-343" class="path-duplicate">utils.go</a><a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-343">#L343</a>: const <b>digits01</b> = "0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789"
+		<a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-364" class="path-duplicate">utils.go</a><a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-364">#L364</a>: 			digits10[p1], <b>digits01</b>[p1],
+		<a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-365" class="path-duplicate">utils.go</a><a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-365">#L365</a>: 			digits10[p2], <b>digits01</b>[p2],
+		<a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-366" class="path-duplicate">utils.go</a><a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-366">#L366</a>: 			digits10[p3], <b>digits01</b>[p3],
+		<a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-374" class="path-duplicate">utils.go</a><a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-374">#L374</a>: 			digits10[p1], <b>digits01</b>[p1],
+		<a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-378" class="path-duplicate">utils.go</a><a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-378">#L378</a>: 			digits10[p1], <b>digits01</b>[p1],
+		<a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-383" class="path-duplicate">utils.go</a><a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-383">#L383</a>: 			digits10[p1], <b>digits01</b>[p1],
+		<a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-384" class="path-duplicate">utils.go</a><a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-384">#L384</a>: 			digits10[p2], <b>digits01</b>[p2],
+		<a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-388" class="path-duplicate">utils.go</a><a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-388">#L388</a>: 			digits10[p1], <b>digits01</b>[p1],
+		<a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-389" class="path-duplicate">utils.go</a><a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-389">#L389</a>: 			digits10[p2], <b>digits01</b>[p2],
+		<a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-429" class="path-duplicate">utils.go</a><a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-429">#L429</a>: 		digits10[pt], <b>digits01</b>[pt],
+		<a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-430" class="path-duplicate">utils.go</a><a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-430">#L430</a>: 		digits10[p1], <b>digits01</b>[p1], '-',
+		<a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-431" class="path-duplicate">utils.go</a><a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-431">#L431</a>: 		digits10[p2], <b>digits01</b>[p2], '-',
+		<a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-432" class="path-duplicate">utils.go</a><a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-432">#L432</a>: 		digits10[p3], <b>digits01</b>[p3],
+		<a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-447" class="path-duplicate">utils.go</a><a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-447">#L447</a>: 		digits10[p1], <b>digits01</b>[p1], ':',
+		<a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-448" class="path-duplicate">utils.go</a><a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-448">#L448</a>: 		digits10[p2], <b>digits01</b>[p2], ':',
+		<a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-449" class="path-duplicate">utils.go</a><a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-449">#L449</a>: 		digits10[p3], <b>digits01</b>[p3],
+		<a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-485" class="path-duplicate">utils.go</a><a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-485">#L485</a>: 		dst = append(dst, digits10[hours], <b>digits01</b>[hours])
+		<a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-490" class="path-duplicate">utils.go</a><a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-490">#L490</a>: 		digits10[min], <b>digits01</b>[min], ':',
+		<a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-491" class="path-duplicate">utils.go</a><a href="../../../src/github.com/go-sql-driver/mysql/utils.go.html#line-491">#L491</a>: 		digits10[sec], <b>digits01</b>[sec],
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

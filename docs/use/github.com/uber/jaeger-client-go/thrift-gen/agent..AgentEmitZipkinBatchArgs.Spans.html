@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/uber/jaeger-client-go/thrift-gen/agent.AgentEmitZipkinBatchArgs.Spans</title>
+<link href="../../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../../../pkg/github.com/uber/jaeger-client-go/thrift-gen/agent.html">github.com/uber/jaeger-client-go/thrift-gen/agent</a>.<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/agent/agent.go.html#line-189">AgentEmitZipkinBatchArgs</a>.<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-1627">Spans</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">9 uses</span>
+
+	<a href="../../../../../pkg/github.com/uber/jaeger-client-go/thrift-gen/zipkincore.html">github.com/uber/jaeger-client-go/thrift-gen/zipkincore</a>
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-1489">zipkincore.go#L1489</a>:   _args4.<b>Spans</b> = spans
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-1588" class="path-duplicate">zipkincore.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-1588">#L1588</a>:   if retval, err2 = p.handler.SubmitZipkinBatch(ctx, args.<b>Spans</b>); err2 != nil {
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-1627" class="path-duplicate">zipkincore.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-1627">#L1627</a>:   <b>Spans</b> []*Span `thrift:"spans,1" db:"spans" json:"spans"`
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-1636" class="path-duplicate">zipkincore.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-1636">#L1636</a>:   return p.<b>Spans</b>
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-1682" class="path-duplicate">zipkincore.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-1682">#L1682</a>:   p.<b>Spans</b> =  tSlice
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-1688" class="path-duplicate">zipkincore.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-1688">#L1688</a>:     p.<b>Spans</b> = append(p.<b>Spans</b>, _elem9)
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-1712" class="path-duplicate">zipkincore.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-1712">#L1712</a>:   if err := oprot.WriteListBegin(ctx, thrift.STRUCT, len(p.<b>Spans</b>)); err != nil {
+		<a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-1715" class="path-duplicate">zipkincore.go</a><a href="../../../../../src/github.com/uber/jaeger-client-go/thrift-gen/zipkincore/zipkincore.go.html#line-1715">#L1715</a>:   for _, v := range p.<b>Spans</b> {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime.gobuf.ctxt</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/runtime.html">runtime</a>.<a href="../src/runtime/runtime2.go.html#line-312">gobuf</a>.<a href="../src/runtime/runtime2.go.html#line-328">ctxt</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">10 uses</span>
+
+	runtime (current package)
+		<a href="../src/runtime/heapdump.go.html#line-364">heapdump.go#L364</a>: 	dumpint(uint64(uintptr(gp.sched.<b>ctxt</b>)))
+		<a href="../src/runtime/mgcmark.go.html#line-739">mgcmark.go#L739</a>: 	if gp.sched.<b>ctxt</b> != nil {
+		<a href="../src/runtime/mgcmark.go.html#line-740" class="path-duplicate">mgcmark.go</a><a href="../src/runtime/mgcmark.go.html#line-740">#L740</a>: 		scanblock(uintptr(unsafe.Pointer(&amp;gp.sched.<b>ctxt</b>)), sys.PtrSize, &amp;oneptrmask[0], gcw, &amp;state)
+		<a href="../src/runtime/proc.go.html#line-3721">proc.go#L3721</a>: 	if _g_.sched.<b>ctxt</b> != nil {
+		<a href="../src/runtime/runtime2.go.html#line-328">runtime2.go#L328</a>: 	<b>ctxt</b> unsafe.Pointer
+		<a href="../src/runtime/stack.go.html#line-728">stack.go#L728</a>: 	adjustpointer(adjinfo, unsafe.Pointer(&amp;gp.sched.<b>ctxt</b>))
+		<a href="../src/runtime/stack.go.html#line-977" class="path-duplicate">stack.go</a><a href="../src/runtime/stack.go.html#line-977">#L977</a>: 			"\tsched={pc:", hex(gp.sched.pc), " sp:", hex(gp.sched.sp), " lr:", hex(gp.sched.lr), " ctxt:", gp.sched.<b>ctxt</b>, "}\n")
+		<a href="../src/runtime/stack.go.html#line-1027" class="path-duplicate">stack.go</a><a href="../src/runtime/stack.go.html#line-1027">#L1027</a>: 			"\tsched={pc:", hex(gp.sched.pc), " sp:", hex(gp.sched.sp), " lr:", hex(gp.sched.lr), " ctxt:", gp.sched.<b>ctxt</b>, "}\n")
+		<a href="../src/runtime/sys_x86.go.html#line-23">sys_x86.go#L23</a>: 	buf.<b>ctxt</b> = ctxt
+		<a href="../src/runtime/traceback.go.html#line-106">traceback.go#L106</a>: 			ctxt = (*funcval)(gp.sched.<b>ctxt</b>)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

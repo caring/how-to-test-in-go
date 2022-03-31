@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime.globrunqputbatch</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">func <b><a href="../pkg/runtime.html">runtime</a>.<a href="../src/runtime/proc.go.html#line-5775">globrunqputbatch</a></b></span>
+
+<span class="title">7 uses</span>
+
+	runtime (current package)
+		<a href="../src/runtime/mgc.go.html#line-1278">mgc.go#L1278</a>: 						<b>globrunqputbatch</b>(&amp;drainQ, int32(n))
+		<a href="../src/runtime/proc.go.html#line-3263">proc.go#L3263</a>: 		<b>globrunqputbatch</b>(&amp;q, int32(qsize))
+		<a href="../src/runtime/proc.go.html#line-3278" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3278">#L3278</a>: 		<b>globrunqputbatch</b>(&amp;globq, int32(n))
+		<a href="../src/runtime/proc.go.html#line-5697" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5697">#L5697</a>: 		<b>globrunqputbatch</b>(&amp;sched.disable.runnable, n)
+		<a href="../src/runtime/proc.go.html#line-5775" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5775">#L5775</a>: func <b>globrunqputbatch</b>(batch *gQueue, n int32) {
+		<a href="../src/runtime/proc.go.html#line-6022" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-6022">#L6022</a>: 	<b>globrunqputbatch</b>(&amp;q, int32(n+1))
+		<a href="../src/runtime/proc.go.html#line-6056" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-6056">#L6056</a>: 		<b>globrunqputbatch</b>(q, int32(qsize))
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

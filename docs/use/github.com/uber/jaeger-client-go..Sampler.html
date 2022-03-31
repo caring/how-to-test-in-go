@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/uber/jaeger-client-go.Sampler</title>
+<link href="../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../../../pkg/github.com/uber/jaeger-client-go.html">github.com/uber/jaeger-client-go</a>.<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-32">Sampler</a></b></span>
+
+<span class="title">13 uses</span>
+
+	github.com/uber/jaeger-client-go (current package)
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-32">sampler.go#L32</a>: type <b>Sampler</b> interface {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-47" class="path-duplicate">sampler.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-47">#L47</a>: 	Equal(other <b>Sampler</b>) bool
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-84" class="path-duplicate">sampler.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-84">#L84</a>: func (s *ConstSampler) Equal(other <b>Sampler</b>) bool {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-154" class="path-duplicate">sampler.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-154">#L154</a>: func (s *ProbabilisticSampler) Equal(other <b>Sampler</b>) bool {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-228" class="path-duplicate">sampler.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-228">#L228</a>: func (s *RateLimitingSampler) Equal(other <b>Sampler</b>) bool {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-308" class="path-duplicate">sampler.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-308">#L308</a>: func (s *GuaranteedThroughputProbabilisticSampler) Equal(other <b>Sampler</b>) bool {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-429" class="path-duplicate">sampler.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-429">#L429</a>: func (s *PerOperationSampler) getSamplerForOperation(operation string) <b>Sampler</b> {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-483" class="path-duplicate">sampler.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler.go.html#line-483">#L483</a>: func (s *PerOperationSampler) Equal(other <b>Sampler</b>) bool {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote.go.html#line-139">sampler_remote.go#L139</a>: func (s *RemotelyControlledSampler) Equal(other <b>Sampler</b>) bool {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler_remote_options.go.html#line-73">sampler_remote_options.go#L73</a>: func (SamplerOptionsFactory) InitialSampler(sampler <b>Sampler</b>) SamplerOption {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler_v2.go.html#line-38">sampler_v2.go#L38</a>: func samplerV1toV2(s <b>Sampler</b>) SamplerV2 {
+		<a href="../../../src/github.com/uber/jaeger-client-go/sampler_v2.go.html#line-67" class="path-duplicate">sampler_v2.go</a><a href="../../../src/github.com/uber/jaeger-client-go/sampler_v2.go.html#line-67">#L67</a>: func (SamplerV2Base) Equal(other <b>Sampler</b>) bool { return false }
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-81">tracer.go#L81</a>: 	sampler <b>Sampler</b>,
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

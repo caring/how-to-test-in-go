@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime.spanOf</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">func <b><a href="../pkg/runtime.html">runtime</a>.<a href="../src/runtime/mheap.go.html#line-630">spanOf</a></b></span>
+
+<span class="title">8 uses</span>
+
+	runtime (current package)
+		<a href="../src/runtime/mbitmap.go.html#line-251">mbitmap.go#L251</a>: 	s := <b>spanOf</b>(p)
+		<a href="../src/runtime/mbitmap.go.html#line-385" class="path-duplicate">mbitmap.go</a><a href="../src/runtime/mbitmap.go.html#line-385">#L385</a>: 	s = <b>spanOf</b>(p)
+		<a href="../src/runtime/mbitmap.go.html#line-566" class="path-duplicate">mbitmap.go</a><a href="../src/runtime/mbitmap.go.html#line-566">#L566</a>: 	if s := <b>spanOf</b>(dst); s == nil {
+		<a href="../src/runtime/mgcmark.go.html#line-1457">mgcmark.go#L1457</a>: 	s := <b>spanOf</b>(obj)
+		<a href="../src/runtime/mheap.go.html#line-607">mheap.go#L607</a>: 	s := <b>spanOf</b>(b)
+		<a href="../src/runtime/mheap.go.html#line-630" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-630">#L630</a>: func <b>spanOf</b>(p uintptr) *mspan {
+		<a href="../src/runtime/mheap.go.html#line-677" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-677">#L677</a>: 	s := <b>spanOf</b>(p)
+		<a href="../src/runtime/signal_unix.go.html#line-394">signal_unix.go#L394</a>: 			s := <b>spanOf</b>(sp)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/uber/jaeger-client-go/thrift.TMemoryBuffer.String</title>
+<link href="../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift.html">github.com/uber/jaeger-client-go/thrift</a>.<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/memory_buffer.go.html#line-28">TMemoryBuffer</a>.<a href="../../../../src/bytes/buffer.go.html#line-60">String</a></b></span><span style="font-size: large;"><i> (method, <a href="../../../../imp/github.com/uber/jaeger-client-go/thrift.TMemoryBuffer.html#name-String">view implemented interface methods</a>)</i></span>
+
+<span class="title">43 uses</span>
+
+	github.com/uber/jaeger-client-go/thrift (current package)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/serializer.go.html#line-61">serializer.go#L61</a>: 	return t.Transport.<b>String</b>(), nil
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/simple_json_protocol.go.html#line-1243">simple_json_protocol.go#L1243</a>: 				e := fmt.Errorf("Unable to parse number with multiple decimal points '%s.'", buf.<b>String</b>())
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/simple_json_protocol.go.html#line-1247" class="path-duplicate">simple_json_protocol.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/simple_json_protocol.go.html#line-1247">#L1247</a>: 				e := fmt.Errorf("Unable to parse number with decimal points in the exponent '%s.'", buf.<b>String</b>())
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/simple_json_protocol.go.html#line-1254" class="path-duplicate">simple_json_protocol.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/simple_json_protocol.go.html#line-1254">#L1254</a>: 				e := fmt.Errorf("Unable to parse number with multiple exponents '%s%c'", buf.<b>String</b>(), c)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/simple_json_protocol.go.html#line-1322" class="path-duplicate">simple_json_protocol.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/simple_json_protocol.go.html#line-1322">#L1322</a>: 				e := fmt.Errorf("Unable to parse number starting with character '%c' due to existing buffer %s", c, buf.<b>String</b>())
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/simple_json_protocol.go.html#line-1340" class="path-duplicate">simple_json_protocol.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/simple_json_protocol.go.html#line-1340">#L1340</a>: 	return NewNumericFromJSONString(buf.<b>String</b>(), false), nil
+
+	<a href="../../../../pkg/github.com/uber/jaeger-client-go.html">github.com/uber/jaeger-client-go</a>
+		<a href="../../../../src/github.com/uber/jaeger-client-go/propagation.go.html#line-272">propagation.go#L272</a>: 			key := buf.<b>String</b>()
+		<a href="../../../../src/github.com/uber/jaeger-client-go/propagation.go.html#line-285" class="path-duplicate">propagation.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/propagation.go.html#line-285">#L285</a>: 			ctx.baggage[key] = buf.<b>String</b>()
+
+	<a href="../../../../pkg/github.com/uber/jaeger-client-go/log.html">github.com/uber/jaeger-client-go/log</a>
+		<a href="../../../../src/github.com/uber/jaeger-client-go/log/logger.go.html#line-95">logger.go#L95</a>: 	return l.buf.<b>String</b>()
+
+	<a href="../../../../pkg/github.com/aws/aws-sdk-go/aws/awsutil.html">github.com/aws/aws-sdk-go/aws/awsutil</a>
+		<a href="../../../../src/github.com/aws/aws-sdk-go/aws/awsutil/prettify.go.html#line-15">prettify.go#L15</a>: 	return buf.<b>String</b>()
+		<a href="../../../../src/github.com/aws/aws-sdk-go/aws/awsutil/string_value.go.html#line-14">string_value.go#L14</a>: 	return buf.<b>String</b>()
+
+	<a href="../../../../pkg/github.com/aws/aws-sdk-go/aws/ec2metadata.html">github.com/aws/aws-sdk-go/aws/ec2metadata</a>
+		<a href="../../../../src/github.com/aws/aws-sdk-go/aws/ec2metadata/service.go.html#line-177">service.go#L177</a>: 		data.Token = b.<b>String</b>()
+		<a href="../../../../src/github.com/aws/aws-sdk-go/aws/ec2metadata/service.go.html#line-202" class="path-duplicate">service.go</a><a href="../../../../src/github.com/aws/aws-sdk-go/aws/ec2metadata/service.go.html#line-202">#L202</a>: 			data.Content = b.<b>String</b>()
+		<a href="../../../../src/github.com/aws/aws-sdk-go/aws/ec2metadata/service.go.html#line-220" class="path-duplicate">service.go</a><a href="../../../../src/github.com/aws/aws-sdk-go/aws/ec2metadata/service.go.html#line-220">#L220</a>: 	r.Error = awserr.NewRequestFailure(awserr.New("EC2MetadataError", "failed to make EC2Metadata request", errors.New(b.<b>String</b>())),
+
+	<a href="../../../../pkg/github.com/aws/aws-sdk-go/aws/request.html">github.com/aws/aws-sdk-go/aws/request</a>
+		<a href="../../../../src/github.com/aws/aws-sdk-go/aws/request/validation.go.html#line-88">validation.go#L88</a>: 	return w.<b>String</b>()
+
+	<a href="../../../../pkg/github.com/aws/aws-sdk-go/internal/ini.html">github.com/aws/aws-sdk-go/internal/ini</a>
+		<a href="../../../../src/github.com/aws/aws-sdk-go/internal/ini/number_helper.go.html#line-151">number_helper.go#L151</a>: 	return buf.<b>String</b>()
+		<a href="../../../../src/github.com/aws/aws-sdk-go/internal/ini/parse_stack.go.html#line-59">parse_stack.go#L59</a>: 	return buf.<b>String</b>()
+
+	<a href="../../../../pkg/github.com/aws/aws-sdk-go/private/protocol/rest.html">github.com/aws/aws-sdk-go/private/protocol/rest</a>
+		<a href="../../../../src/github.com/aws/aws-sdk-go/private/protocol/rest/build.go.html#line-264">build.go#L264</a>: 	return buf.<b>String</b>()
+
+	<a href="../../../../pkg/github.com/go-sql-driver/mysql.html">github.com/go-sql-driver/mysql</a>
+		<a href="../../../../src/github.com/go-sql-driver/mysql/dsn.go.html#line-287">dsn.go#L287</a>: 	return buf.<b>String</b>()
+
+	<a href="../../../../pkg/github.com/jmespath/go-jmespath.html">github.com/jmespath/go-jmespath</a>
+		<a href="../../../../src/github.com/jmespath/go-jmespath/lexer.go.html#line-285">lexer.go#L285</a>: 	value := lexer.buf.<b>String</b>()
+
+	<a href="../../../../pkg/bytes.html">bytes</a>
+		<a href="../../../../src/bytes/buffer.go.html#line-60">buffer.go#L60</a>: func (b *Buffer) <b>String</b>() string {
+
+	<a href="../../../../pkg/encoding/json.html">encoding/json</a>
+		<a href="../../../../src/encoding/json/encode.go.html#line-1312">encode.go#L1312</a>: 					field.nameEscHTML = nameEscBuf.<b>String</b>()
+
+	<a href="../../../../pkg/go.uber.org/multierr.html">go.uber.org/multierr</a>
+		<a href="../../../../src/go.uber.org/multierr/error.go.html#line-279">error.go#L279</a>: 	result := buff.<b>String</b>()
+
+	<a href="../../../../pkg/golang.org/x/net/http2.html">golang.org/x/net/http2</a>
+		<a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-181">frame.go#L181</a>: 	return buf.<b>String</b>()
+		<a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-1613" class="path-duplicate">frame.go</a><a href="../../../../src/golang.org/x/net/http2/frame.go.html#line-1613">#L1613</a>: 	return buf.<b>String</b>()
+
+	<a href="../../../../pkg/golang.org/x/net/http2/hpack.html">golang.org/x/net/http2/hpack</a>
+		<a href="../../../../src/golang.org/x/net/http2/hpack/hpack.go.html#line-500">hpack.go#L500</a>: 		s = buf.<b>String</b>()
+		<a href="../../../../src/golang.org/x/net/http2/hpack/huffman.go.html#line-39">huffman.go#L39</a>: 	return buf.<b>String</b>(), nil
+
+	<a href="../../../../pkg/golang.org/x/net/trace.html">golang.org/x/net/trace</a>
+		<a href="../../../../src/golang.org/x/net/trace/events.go.html#line-368">events.go#L368</a>: 	return buf.<b>String</b>()
+		<a href="../../../../src/golang.org/x/net/trace/histogram.go.html#line-328">histogram.go#L328</a>: 	return template.HTML(buf.<b>String</b>())
+
+	<a href="../../../../pkg/google.golang.org/grpc.html">google.golang.org/grpc</a>
+		<a href="../../../../src/google.golang.org/grpc/trace.go.html#line-86">trace.go#L86</a>: 	return line.<b>String</b>()
+
+	<a href="../../../../pkg/google.golang.org/grpc/internal/transport.html">google.golang.org/grpc/internal/transport</a>
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http_util.go.html#line-282">http_util.go#L282</a>: 	return buf.<b>String</b>()
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/http_util.go.html#line-316" class="path-duplicate">http_util.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/http_util.go.html#line-316">#L316</a>: 	return buf.<b>String</b>()
+
+	<a href="../../../../pkg/html/template.html">html/template</a>
+		<a href="../../../../src/html/template/html.go.html#line-223">html.go#L223</a>: 	return b.<b>String</b>()
+		<a href="../../../../src/html/template/url.go.html#line-83">url.go#L83</a>: 		return b.<b>String</b>()
+		<a href="../../../../src/html/template/url.go.html#line-156" class="path-duplicate">url.go</a><a href="../../../../src/html/template/url.go.html#line-156">#L156</a>: 			s = b.<b>String</b>()
+		<a href="../../../../src/html/template/url.go.html#line-172" class="path-duplicate">url.go</a><a href="../../../../src/html/template/url.go.html#line-172">#L172</a>: 	return b.<b>String</b>()
+
+	<a href="../../../../pkg/mime/multipart.html">mime/multipart</a>
+		<a href="../../../../src/mime/multipart/formdata.go.html#line-78">formdata.go#L78</a>: 			form.Value[name] = append(form.Value[name], b.<b>String</b>())
+
+	<a href="../../../../pkg/net/http.html">net/http</a>
+		<a href="../../../../src/net/http/h2_bundle.go.html#line-1499">h2_bundle.go#L1499</a>: 	return buf.<b>String</b>()
+		<a href="../../../../src/net/http/h2_bundle.go.html#line-2934" class="path-duplicate">h2_bundle.go</a><a href="../../../../src/net/http/h2_bundle.go.html#line-2934">#L2934</a>: 	return buf.<b>String</b>()
+
+	<a href="../../../../pkg/text/template.html">text/template</a>
+		<a href="../../../../src/text/template/funcs.go.html#line-643">funcs.go#L643</a>: 	return b.<b>String</b>()
+		<a href="../../../../src/text/template/funcs.go.html#line-726" class="path-duplicate">funcs.go</a><a href="../../../../src/text/template/funcs.go.html#line-726">#L726</a>: 	return b.<b>String</b>()
+
+	<a href="../../../../pkg/vendor/golang.org/x/net/http2/hpack.html">vendor/golang.org/x/net/http2/hpack</a>
+		<a href="../../../../src/vendor/golang.org/x/net/http2/hpack/hpack.go.html#line-500">hpack.go#L500</a>: 		s = buf.<b>String</b>()
+		<a href="../../../../src/vendor/golang.org/x/net/http2/hpack/huffman.go.html#line-39">huffman.go#L39</a>: 	return buf.<b>String</b>(), nil
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

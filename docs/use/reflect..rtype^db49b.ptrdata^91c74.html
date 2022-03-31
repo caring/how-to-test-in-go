@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: reflect.rtype.ptrdata</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/reflect.html">reflect</a>.<a href="../src/reflect/type.go.html#line-311">rtype</a>.<a href="../src/reflect/type.go.html#line-313">ptrdata</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">27 uses</span>
+
+	reflect (current package)
+		<a href="../src/reflect/deepequal.go.html#line-39">deepequal.go#L39</a>: 			if v1.typ.<b>ptrdata</b> == 0 {
+		<a href="../src/reflect/swapper.go.html#line-35">swapper.go#L35</a>: 	hasPtr := typ.<b>ptrdata</b> != 0
+		<a href="../src/reflect/type.go.html#line-313">type.go#L313</a>: 	<b>ptrdata</b>    uintptr // number of bytes in the type that can contain pointers
+		<a href="../src/reflect/type.go.html#line-821" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-821">#L821</a>: func (t *rtype) pointers() bool { return t.<b>ptrdata</b> != 0 }
+		<a href="../src/reflect/type.go.html#line-2239" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2239">#L2239</a>: 	if ktyp.<b>ptrdata</b> != 0 || etyp.<b>ptrdata</b> != 0 {
+		<a href="../src/reflect/type.go.html#line-2244" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2244">#L2244</a>: 		if ktyp.<b>ptrdata</b> != 0 {
+		<a href="../src/reflect/type.go.html#line-2249" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2249">#L2249</a>: 		if etyp.<b>ptrdata</b> != 0 {
+		<a href="../src/reflect/type.go.html#line-2270" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2270">#L2270</a>: 		<b>ptrdata</b>: ptrdata,
+		<a href="../src/reflect/type.go.html#line-2291" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2291">#L2291</a>: 	ptrs := typ.<b>ptrdata</b> / ptrSize
+		<a href="../src/reflect/type.go.html#line-2315" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2315">#L2315</a>: 	ptrs := typ.<b>ptrdata</b> / ptrSize
+		<a href="../src/reflect/type.go.html#line-2733" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2733">#L2733</a>: 	typ.<b>ptrdata</b> = typeptrdata(typ.common())
+		<a href="../src/reflect/type.go.html#line-2772" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2772">#L2772</a>: 			off += ft.typ.<b>ptrdata</b>
+		<a href="../src/reflect/type.go.html#line-2861" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2861">#L2861</a>: 		return f.offset() + f.typ.<b>ptrdata</b>
+		<a href="../src/reflect/type.go.html#line-2919" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2919">#L2919</a>: 	if length &gt; 0 &amp;&amp; typ.<b>ptrdata</b> != 0 {
+		<a href="../src/reflect/type.go.html#line-2920" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2920">#L2920</a>: 		array.<b>ptrdata</b> = typ.size*uintptr(length-1) + typ.<b>ptrdata</b>
+		<a href="../src/reflect/type.go.html#line-2928" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2928">#L2928</a>: 	case typ.<b>ptrdata</b> == 0 || array.size == 0:
+		<a href="../src/reflect/type.go.html#line-2931" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2931">#L2931</a>: 		array.<b>ptrdata</b> = 0
+		<a href="../src/reflect/type.go.html#line-2937" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2937">#L2937</a>: 		array.<b>ptrdata</b> = typ.<b>ptrdata</b>
+		<a href="../src/reflect/type.go.html#line-2943" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2943">#L2943</a>: 		mask := make([]byte, (array.<b>ptrdata</b>/ptrSize+7)/8)
+		<a href="../src/reflect/type.go.html#line-2953" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2953">#L2953</a>: 		elemPtrs := typ.<b>ptrdata</b> / ptrSize
+		<a href="../src/reflect/type.go.html#line-2975" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2975">#L2975</a>: 		array.<b>ptrdata</b> = array.size // overestimate but ok; must match program
+		<a href="../src/reflect/type.go.html#line-3072" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-3072">#L3072</a>: 		<b>ptrdata</b>: uintptr(abi.stackPtrs.n) * ptrSize,
+		<a href="../src/reflect/type.go.html#line-3120" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-3120">#L3120</a>: 	if t.<b>ptrdata</b> == 0 {
+		<a href="../src/reflect/value.go.html#line-1811">value.go#L1811</a>: 		if v.typ.<b>ptrdata</b> == 0 {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Source: logger.go in package github.com/uber/jaeger-client-go/thrift</title>
+<link href="../../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre id="header"><code><span class="title">Source File</span>
+	logger.go
+
+<span class="title">Belonging Package</span>
+	<a href="../../../../../pkg/github.com/uber/jaeger-client-go/thrift.html">github.com/uber/jaeger-client-go/thrift</a>
+</code></pre>
+<style>input[type=radio] {display: none;}
+input[id=r0]:checked ~pre label[for=r0],
+input[id=r1]:checked ~pre label[for=r1],
+input[id=r2]:checked ~pre label[for=r2],
+input[id=r3]:checked ~pre label[for=r3],
+input[id=r4]:checked ~pre label[for=r4],
+input[id=r5]:checked ~pre label[for=r5],
+input[id=r6]:checked ~pre label[for=r6]
+{background: #226; color: #ff8;}
+input[id=i0]:checked ~pre .i0,
+input[id=i1]:checked ~pre .i1
+{background: brown; color: #eed;}
+</style><input id="r0" type="radio" name="g"/>
+<input id="r1" type="radio" name="g"/>
+<input id="r2" type="radio" name="g"/>
+<input id="r3" type="radio" name="g"/>
+<input id="r4" type="radio" name="g"/>
+<input id="r5" type="radio" name="g"/>
+<input id="r6" type="radio" name="g"/>
+<input id="i0" type="radio" name="i"/>
+<input id="i1" type="radio" name="i"/>
+
+<pre class="line-numbers">
+<span class="codeline" id="line-1"><code><span class="comment">/*</span></code></span>
+<span class="codeline" id="line-2"><code><span class="comment"> * Licensed to the Apache Software Foundation (ASF) under one</span></code></span>
+<span class="codeline" id="line-3"><code><span class="comment"> * or more contributor license agreements. See the NOTICE file</span></code></span>
+<span class="codeline" id="line-4"><code><span class="comment"> * distributed with this work for additional information</span></code></span>
+<span class="codeline" id="line-5"><code><span class="comment"> * regarding copyright ownership. The ASF licenses this file</span></code></span>
+<span class="codeline" id="line-6"><code><span class="comment"> * to you under the Apache License, Version 2.0 (the</span></code></span>
+<span class="codeline" id="line-7"><code><span class="comment"> * "License"); you may not use this file except in compliance</span></code></span>
+<span class="codeline" id="line-8"><code><span class="comment"> * with the License. You may obtain a copy of the License at</span></code></span>
+<span class="codeline" id="line-9"><code><span class="comment"> *</span></code></span>
+<span class="codeline" id="line-10"><code><span class="comment"> *   http://www.apache.org/licenses/LICENSE-2.0</span></code></span>
+<span class="codeline" id="line-11"><code><span class="comment"> *</span></code></span>
+<span class="codeline" id="line-12"><code><span class="comment"> * Unless required by applicable law or agreed to in writing,</span></code></span>
+<span class="codeline" id="line-13"><code><span class="comment"> * software distributed under the License is distributed on an</span></code></span>
+<span class="codeline" id="line-14"><code><span class="comment"> * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY</span></code></span>
+<span class="codeline" id="line-15"><code><span class="comment"> * KIND, either express or implied. See the License for the</span></code></span>
+<span class="codeline" id="line-16"><code><span class="comment"> * specific language governing permissions and limitations</span></code></span>
+<span class="codeline" id="line-17"><code><span class="comment"> * under the License.</span></code></span>
+<span class="codeline" id="line-18"><code><span class="comment"> */</span></code></span>
+<span class="codeline" id="line-19"><code></code></span>
+<span class="codeline" id="line-20"><code><span class="keyword">package</span> thrift</code></span>
+<span class="codeline" id="line-21"><code></code></span>
+<span class="codeline" id="line-22"><code><span class="keyword">import</span> (</code></span>
+<span class="codeline" id="line-23"><code>	<label for="i0"><span class="lit-string i0">"log"</span></label></code></span>
+<span class="codeline" id="line-24"><code>	<label for="i1"><span class="lit-string i1">"os"</span></label></code></span>
+<span class="codeline" id="line-25"><code>)</code></span>
+<span class="codeline" id="line-26"><code></code></span>
+<span class="codeline" id="line-27"><code><span class="comment">// Logger is a simple wrapper of a logging function.</span></code></span>
+<span class="codeline" id="line-28"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-29"><code><span class="comment">// In reality the users might actually use different logging libraries, and they</span></code></span>
+<span class="codeline" id="line-30"><code><span class="comment">// are not always compatible with each other.</span></code></span>
+<span class="codeline" id="line-31"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-32"><code><span class="comment">// Logger is meant to be a simple common ground that it's easy to wrap whatever</span></code></span>
+<span class="codeline" id="line-33"><code><span class="comment">// logging library they use into.</span></code></span>
+<span class="codeline" id="line-34"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-35"><code><span class="comment">// See https://issues.apache.org/jira/browse/THRIFT-4985 for the design</span></code></span>
+<span class="codeline" id="line-36"><code><span class="comment">// discussion behind it.</span></code></span>
+<span class="codeline" id="line-37"><code><span class="keyword">type</span> <a href="../../../../../pkg/github.com/uber/jaeger-client-go/thrift.html#name-Logger" class="ident">Logger</a> <span class="keyword">func</span>(msg <a href="../../../../../pkg/builtin.html#name-string" class="ident">string</a>)</code></span>
+<span class="codeline" id="line-38"><code></code></span>
+<span class="codeline" id="line-39"><code><span class="comment">// NopLogger is a Logger implementation that does nothing.</span></code></span>
+<span class="codeline" id="line-40"><code><span class="keyword">func</span> <label for="r0" class="ident"><a href="../../../../../pkg/github.com/uber/jaeger-client-go/thrift.html#name-NopLogger" class="ident">NopLogger</a></label>(<label for="r1" class="ident">msg</label> <a href="../../../../../pkg/builtin.html#name-string" class="ident">string</a>) {}</code></span>
+<span class="codeline" id="line-41"><code></code></span>
+<span class="codeline" id="line-42"><code><span class="comment">// StdLogger wraps stdlib log package into a Logger.</span></code></span>
+<span class="codeline" id="line-43"><code><span class="comment">//</span></code></span>
+<span class="codeline" id="line-44"><code><span class="comment">// If logger passed in is nil, it will fallback to use stderr and default flags.</span></code></span>
+<span class="codeline" id="line-45"><code><span class="keyword">func</span> <label for="r2" class="ident"><a href="../../../../../pkg/github.com/uber/jaeger-client-go/thrift.html#name-StdLogger" class="ident">StdLogger</a></label>(<label for="r3" class="ident">logger</label> *<a href="../../../../../pkg/log.html" class="ident i0">log</a>.<a href="../../../../log/log.go.html#line-52" class="ident">Logger</a>) <a href="#line-37" class="ident">Logger</a> {</code></span>
+<span class="codeline" id="line-46"><code>	<span class="keyword">if</span> <label for="r3" class="ident">logger</label> == <a href="../../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-47"><code>		<label for="r3" class="ident">logger</label> = <a href="../../../../../pkg/log.html" class="ident i0">log</a>.<a href="../../../../log/log.go.html#line-65" class="ident">New</a>(<a href="../../../../../pkg/os.html" class="ident i1">os</a>.<a href="../../../../os/file.go.html#line-68" class="ident">Stderr</a>, <span class="lit-string">""</span>, <a href="../../../../../pkg/log.html" class="ident i0">log</a>.<a href="../../../../log/log.go.html#line-45" class="ident">LstdFlags</a>)</code></span>
+<span class="codeline" id="line-48"><code>	}</code></span>
+<span class="codeline" id="line-49"><code>	<span class="keyword">return</span> <span class="keyword">func</span>(<label for="r4" class="ident">msg</label> <a href="../../../../../pkg/builtin.html#name-string" class="ident">string</a>) {</code></span>
+<span class="codeline" id="line-50"><code>		<label for="r3" class="ident">logger</label>.<a href="../../../../log/log.go.html#line-196" class="ident">Print</a>(<label for="r4" class="ident">msg</label>)</code></span>
+<span class="codeline" id="line-51"><code>	}</code></span>
+<span class="codeline" id="line-52"><code>}</code></span>
+<span class="codeline" id="line-53"><code></code></span>
+<span class="codeline" id="line-54"><code><span class="keyword">func</span> <label for="r5" class="ident"><a href="../../../../../pkg/github.com/uber/jaeger-client-go/thrift.html#name-fallbackLogger" class="ident">fallbackLogger</a></label>(<label for="r6" class="ident">logger</label> <a href="#line-37" class="ident">Logger</a>) <a href="#line-37" class="ident">Logger</a> {</code></span>
+<span class="codeline" id="line-55"><code>	<span class="keyword">if</span> <label for="r6" class="ident">logger</label> == <a href="../../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-56"><code>		<span class="keyword">return</span> <a href="#line-45" class="ident">StdLogger</a>(<a href="../../../../../pkg/builtin.html#name-nil" class="ident">nil</a>)</code></span>
+<span class="codeline" id="line-57"><code>	}</code></span>
+<span class="codeline" id="line-58"><code>	<span class="keyword">return</span> <label for="r6" class="ident">logger</label></code></span>
+<span class="codeline" id="line-59"><code>}</code></span>
+</pre><pre id="footer">
+<table><tr><td><img src="../../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

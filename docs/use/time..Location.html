@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: time.Location</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../pkg/time.html">time</a>.<a href="../src/time/zoneinfo.go.html#line-19">Location</a></b></span>
+
+<span class="title">30 uses</span>
+
+	time (current package)
+		<a href="../src/time/format.go.html#line-954">format.go#L954</a>: func ParseInLocation(layout, value string, loc *<b>Location</b>) (Time, error) {
+		<a href="../src/time/format.go.html#line-958" class="path-duplicate">format.go</a><a href="../src/time/format.go.html#line-958">#L958</a>: func parse(layout, value string, defaultLocation, local *<b>Location</b>) (Time, error) {
+		<a href="../src/time/format.go.html#line-974" class="path-duplicate">format.go</a><a href="../src/time/format.go.html#line-974">#L974</a>: 		z          *<b>Location</b>
+		<a href="../src/time/time.go.html#line-147">time.go#L147</a>: 	loc *<b>Location</b>
+		<a href="../src/time/time.go.html#line-204" class="path-duplicate">time.go</a><a href="../src/time/time.go.html#line-204">#L204</a>: func (t *Time) setLoc(loc *<b>Location</b>) {
+		<a href="../src/time/time.go.html#line-1104" class="path-duplicate">time.go</a><a href="../src/time/time.go.html#line-1104">#L1104</a>: func (t Time) In(loc *<b>Location</b>) Time {
+		<a href="../src/time/time.go.html#line-1113" class="path-duplicate">time.go</a><a href="../src/time/time.go.html#line-1113">#L1113</a>: func (t Time) Location() *<b>Location</b> {
+		<a href="../src/time/time.go.html#line-1385" class="path-duplicate">time.go</a><a href="../src/time/time.go.html#line-1385">#L1385</a>: func Date(year int, month Month, day, hour, min, sec, nsec int, loc *<b>Location</b>) Time {
+		<a href="../src/time/zoneinfo.go.html#line-19">zoneinfo.go#L19</a>: type <b>Location</b> struct {
+		<a href="../src/time/zoneinfo.go.html#line-67" class="path-duplicate">zoneinfo.go</a><a href="../src/time/zoneinfo.go.html#line-67">#L67</a>: var UTC *<b>Location</b> = &amp;utcLoc
+		<a href="../src/time/zoneinfo.go.html#line-72" class="path-duplicate">zoneinfo.go</a><a href="../src/time/zoneinfo.go.html#line-72">#L72</a>: var utcLoc = <b>Location</b>{name: "UTC"}
+		<a href="../src/time/zoneinfo.go.html#line-80" class="path-duplicate">zoneinfo.go</a><a href="../src/time/zoneinfo.go.html#line-80">#L80</a>: var Local *<b>Location</b> = &amp;localLoc
+		<a href="../src/time/zoneinfo.go.html#line-84" class="path-duplicate">zoneinfo.go</a><a href="../src/time/zoneinfo.go.html#line-84">#L84</a>: var localLoc <b>Location</b>
+		<a href="../src/time/zoneinfo.go.html#line-87" class="path-duplicate">zoneinfo.go</a><a href="../src/time/zoneinfo.go.html#line-87">#L87</a>: func (l *<b>Location</b>) get() *<b>Location</b> {
+		<a href="../src/time/zoneinfo.go.html#line-99" class="path-duplicate">zoneinfo.go</a><a href="../src/time/zoneinfo.go.html#line-99">#L99</a>: func (l *<b>Location</b>) String() string {
+		<a href="../src/time/zoneinfo.go.html#line-105" class="path-duplicate">zoneinfo.go</a><a href="../src/time/zoneinfo.go.html#line-105">#L105</a>: func FixedZone(name string, offset int) *<b>Location</b> {
+		<a href="../src/time/zoneinfo.go.html#line-106" class="path-duplicate">zoneinfo.go</a><a href="../src/time/zoneinfo.go.html#line-106">#L106</a>: 	l := &amp;<b>Location</b>{
+		<a href="../src/time/zoneinfo.go.html#line-124" class="path-duplicate">zoneinfo.go</a><a href="../src/time/zoneinfo.go.html#line-124">#L124</a>: func (l *<b>Location</b>) lookup(sec int64) (name string, offset int, start, end int64, isDST bool) {
+		<a href="../src/time/zoneinfo.go.html#line-208" class="path-duplicate">zoneinfo.go</a><a href="../src/time/zoneinfo.go.html#line-208">#L208</a>: func (l *<b>Location</b>) lookupFirstZone() int {
+		<a href="../src/time/zoneinfo.go.html#line-236" class="path-duplicate">zoneinfo.go</a><a href="../src/time/zoneinfo.go.html#line-236">#L236</a>: func (l *<b>Location</b>) firstZoneUsed() bool {
+		<a href="../src/time/zoneinfo.go.html#line-587" class="path-duplicate">zoneinfo.go</a><a href="../src/time/zoneinfo.go.html#line-587">#L587</a>: func (l *<b>Location</b>) lookupName(name string, unix int64) (offset int, ok bool) {
+		<a href="../src/time/zoneinfo.go.html#line-640" class="path-duplicate">zoneinfo.go</a><a href="../src/time/zoneinfo.go.html#line-640">#L640</a>: func LoadLocation(name string) (*<b>Location</b>, error) {
+		<a href="../src/time/zoneinfo_read.go.html#line-116">zoneinfo_read.go#L116</a>: func LoadLocationFromTZData(name string, data []byte) (*<b>Location</b>, error) {
+		<a href="../src/time/zoneinfo_read.go.html#line-317" class="path-duplicate">zoneinfo_read.go</a><a href="../src/time/zoneinfo_read.go.html#line-317">#L317</a>: 	l := &amp;<b>Location</b>{zone: zones, tx: tx, name: name, extend: extend}
+		<a href="../src/time/zoneinfo_read.go.html#line-529" class="path-duplicate">zoneinfo_read.go</a><a href="../src/time/zoneinfo_read.go.html#line-529">#L529</a>: func loadLocation(name string, sources []string) (z *<b>Location</b>, firstErr error) {
+
+	<a href="../pkg/github.com/go-sql-driver/mysql.html">github.com/go-sql-driver/mysql</a>
+		<a href="../src/github.com/go-sql-driver/mysql/dsn.go.html#line-44">dsn.go#L44</a>: 	Loc              *time.<b>Location</b>    // Location for time.Time values
+		<a href="../src/github.com/go-sql-driver/mysql/utils.go.html#line-109">utils.go#L109</a>: func parseDateTime(b []byte, loc *time.<b>Location</b>) (time.Time, error) {
+		<a href="../src/github.com/go-sql-driver/mysql/utils.go.html#line-241" class="path-duplicate">utils.go</a><a href="../src/github.com/go-sql-driver/mysql/utils.go.html#line-241">#L241</a>: func parseBinaryDateTime(num uint64, data []byte, loc *time.<b>Location</b>) (driver.Value, error) {
+
+	<a href="../pkg/go.uber.org/zap/zapcore.html">go.uber.org/zap/zapcore</a>
+		<a href="../src/go.uber.org/zap/zapcore/field.go.html#line-146">field.go#L146</a>: 			enc.AddTime(f.Key, time.Unix(0, f.Integer).In(f.Interface.(*time.<b>Location</b>)))
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

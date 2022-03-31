@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: time.Time.UnixNano</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/time.html">time</a>.<a href="../src/time/time.go.html#line-127">Time</a>.<a href="../src/time/time.go.html#line-1162">UnixNano</a></b></span><span style="font-size: large;"><i> (method)</i></span>
+
+<span class="title">37 uses</span>
+
+	time (current package)
+		<a href="../src/time/time.go.html#line-1162">time.go#L1162</a>: func (t Time) <b>UnixNano</b>() int64 {
+
+	<a href="../pkg/crypto/rand.html">crypto/rand</a>
+		<a href="../src/crypto/rand/rand_unix.go.html#line-153">rand_unix.go#L153</a>: 		ns := time.Now().<b>UnixNano</b>()
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws.html">github.com/aws/aws-sdk-go/aws</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/convert_types.go.html#line-872">convert_types.go#L872</a>: 	return t.<b>UnixNano</b>() / int64(time.Millisecond/time.Nanosecond)
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/credentials/stscreds.html">github.com/aws/aws-sdk-go/aws/credentials/stscreds</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/credentials/stscreds/assume_role_provider.go.html#line-304">assume_role_provider.go#L304</a>: 		p.RoleSessionName = fmt.Sprintf("%d", time.Now().UTC().<b>UnixNano</b>())
+		<a href="../src/github.com/aws/aws-sdk-go/aws/credentials/stscreds/web_identity_provider.go.html#line-108">web_identity_provider.go#L108</a>: 		sessionName = strconv.FormatInt(now().<b>UnixNano</b>(), 10)
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/csm.html">github.com/aws/aws-sdk-go/aws/csm</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/csm/metric.go.html#line-13">metric.go#L13</a>: 	ns := time.Duration(time.Time(t).<b>UnixNano</b>())
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/internal/sdkrand.html">github.com/aws/aws-sdk-go/internal/sdkrand</a>
+		<a href="../src/github.com/aws/aws-sdk-go/internal/sdkrand/locked_source.go.html#line-29">locked_source.go#L29</a>: var SeededRand = rand.New(&amp;lockedSource{src: rand.NewSource(time.Now().<b>UnixNano</b>())})
+
+	<a href="../pkg/github.com/uber/jaeger-client-go.html">github.com/uber/jaeger-client-go</a>
+		<a href="../src/github.com/uber/jaeger-client-go/tracer.go.html#line-126">tracer.go#L126</a>: 		seedGenerator := utils.NewRand(time.Now().<b>UnixNano</b>())
+
+	<a href="../pkg/github.com/uber/jaeger-client-go/utils.html">github.com/uber/jaeger-client-go/utils</a>
+		<a href="../src/github.com/uber/jaeger-client-go/utils/utils.go.html#line-86">utils.go#L86</a>: 	return t.<b>UnixNano</b>() / 1000
+
+	<a href="../pkg/go.uber.org/zap.html">go.uber.org/zap</a>
+		<a href="../src/go.uber.org/zap/field.go.html#line-350">field.go#L350</a>: 	return Field{Key: key, Type: zapcore.TimeType, Integer: val.<b>UnixNano</b>(), Interface: val.Location()}
+		<a href="../src/go.uber.org/zap/time.go.html#line-26">time.go#L26</a>: 	return t.<b>UnixNano</b>() / int64(time.Millisecond)
+
+	<a href="../pkg/go.uber.org/zap/zapcore.html">go.uber.org/zap/zapcore</a>
+		<a href="../src/go.uber.org/zap/zapcore/encoder.go.html#line-96">encoder.go#L96</a>: 	nanos := t.<b>UnixNano</b>()
+		<a href="../src/go.uber.org/zap/zapcore/encoder.go.html#line-104" class="path-duplicate">encoder.go</a><a href="../src/go.uber.org/zap/zapcore/encoder.go.html#line-104">#L104</a>: 	nanos := t.<b>UnixNano</b>()
+		<a href="../src/go.uber.org/zap/zapcore/encoder.go.html#line-112" class="path-duplicate">encoder.go</a><a href="../src/go.uber.org/zap/zapcore/encoder.go.html#line-112">#L112</a>: 	enc.AppendInt64(t.<b>UnixNano</b>())
+		<a href="../src/go.uber.org/zap/zapcore/json_encoder.go.html#line-282">json_encoder.go#L282</a>: 		enc.AppendInt64(val.<b>UnixNano</b>())
+		<a href="../src/go.uber.org/zap/zapcore/sampler.go.html#line-66">sampler.go#L66</a>: 	tn := t.<b>UnixNano</b>()
+
+	<a href="../pkg/golang.org/x/net/internal/timeseries.html">golang.org/x/net/internal/timeseries</a>
+		<a href="../src/golang.org/x/net/internal/timeseries/timeseries.go.html#line-241">timeseries.go#L241</a>: 			level.end = time.Unix(0, (t.<b>UnixNano</b>()/level.size.Nanoseconds())*level.size.Nanoseconds())
+
+	<a href="../pkg/google.golang.org/grpc.html">google.golang.org/grpc</a>
+		<a href="../src/google.golang.org/grpc/clientconn.go.html#line-823">clientconn.go#L823</a>: 	atomic.StoreInt64(&amp;cc.czData.lastCallStartedTime, time.Now().<b>UnixNano</b>())
+		<a href="../src/google.golang.org/grpc/clientconn.go.html#line-1538" class="path-duplicate">clientconn.go</a><a href="../src/google.golang.org/grpc/clientconn.go.html#line-1538">#L1538</a>: 	atomic.StoreInt64(&amp;ac.czData.lastCallStartedTime, time.Now().<b>UnixNano</b>())
+		<a href="../src/google.golang.org/grpc/server.go.html#line-1050">server.go#L1050</a>: 	atomic.StoreInt64(&amp;s.czData.lastCallStartedTime, time.Now().<b>UnixNano</b>())
+
+	<a href="../pkg/google.golang.org/grpc/internal/grpcrand.html">google.golang.org/grpc/internal/grpcrand</a>
+		<a href="../src/google.golang.org/grpc/internal/grpcrand/grpcrand.go.html#line-30">grpcrand.go#L30</a>: 	r  = rand.New(rand.NewSource(time.Now().<b>UnixNano</b>()))
+
+	<a href="../pkg/google.golang.org/grpc/internal/transport.html">google.golang.org/grpc/internal/transport</a>
+		<a href="../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-691">http2_client.go#L691</a>: 				atomic.StoreInt64(&amp;t.czData.lastStreamCreatedTime, time.Now().<b>UnixNano</b>())
+		<a href="../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1485" class="path-duplicate">http2_client.go</a><a href="../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1485">#L1485</a>: 		atomic.StoreInt64(&amp;t.lastRead, time.Now().<b>UnixNano</b>())
+		<a href="../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1501" class="path-duplicate">http2_client.go</a><a href="../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1501">#L1501</a>: 			atomic.StoreInt64(&amp;t.lastRead, time.Now().<b>UnixNano</b>())
+		<a href="../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1570" class="path-duplicate">http2_client.go</a><a href="../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1570">#L1570</a>: 	prevNano := time.Now().<b>UnixNano</b>()
+		<a href="../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1580" class="path-duplicate">http2_client.go</a><a href="../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1580">#L1580</a>: 				timer.Reset(time.Duration(lastRead) + t.kp.Time - time.Duration(time.Now().<b>UnixNano</b>()))
+		<a href="../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1675" class="path-duplicate">http2_client.go</a><a href="../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1675">#L1675</a>: 	atomic.StoreInt64(&amp;t.czData.lastMsgSentTime, time.Now().<b>UnixNano</b>())
+		<a href="../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1680" class="path-duplicate">http2_client.go</a><a href="../src/google.golang.org/grpc/internal/transport/http2_client.go.html#line-1680">#L1680</a>: 	atomic.StoreInt64(&amp;t.czData.lastMsgRecvTime, time.Now().<b>UnixNano</b>())
+		<a href="../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-316">http2_server.go#L316</a>: 	atomic.StoreInt64(&amp;t.lastRead, time.Now().<b>UnixNano</b>())
+		<a href="../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-558" class="path-duplicate">http2_server.go</a><a href="../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-558">#L558</a>: 		atomic.StoreInt64(&amp;t.czData.lastStreamCreatedTime, time.Now().<b>UnixNano</b>())
+		<a href="../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-606" class="path-duplicate">http2_server.go</a><a href="../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-606">#L606</a>: 		atomic.StoreInt64(&amp;t.lastRead, time.Now().<b>UnixNano</b>())
+		<a href="../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1110" class="path-duplicate">http2_server.go</a><a href="../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1110">#L1110</a>: 	prevNano := time.Now().<b>UnixNano</b>()
+		<a href="../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1163" class="path-duplicate">http2_server.go</a><a href="../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1163">#L1163</a>: 				kpTimer.Reset(time.Duration(lastRead) + t.kp.Time - time.Duration(time.Now().<b>UnixNano</b>()))
+		<a href="../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1384" class="path-duplicate">http2_server.go</a><a href="../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1384">#L1384</a>: 	atomic.StoreInt64(&amp;t.czData.lastMsgSentTime, time.Now().<b>UnixNano</b>())
+		<a href="../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1389" class="path-duplicate">http2_server.go</a><a href="../src/google.golang.org/grpc/internal/transport/http2_server.go.html#line-1389">#L1389</a>: 	atomic.StoreInt64(&amp;t.czData.lastMsgRecvTime, time.Now().<b>UnixNano</b>())
+
+	<a href="../pkg/os.html">os</a>
+		<a href="../src/os/file_posix.go.html#line-183">file_posix.go#L183</a>: 	utimes[0] = syscall.NsecToTimespec(atime.<b>UnixNano</b>())
+		<a href="../src/os/file_posix.go.html#line-184" class="path-duplicate">file_posix.go</a><a href="../src/os/file_posix.go.html#line-184">#L184</a>: 	utimes[1] = syscall.NsecToTimespec(mtime.<b>UnixNano</b>())
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

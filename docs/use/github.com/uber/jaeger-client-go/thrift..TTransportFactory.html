@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/uber/jaeger-client-go/thrift.TTransportFactory</title>
+<link href="../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift.html">github.com/uber/jaeger-client-go/thrift</a>.<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/transport_factory.go.html#line-26">TTransportFactory</a></b></span>
+
+<span class="title">20 uses</span>
+
+	github.com/uber/jaeger-client-go/thrift (current package)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/configuration.go.html#line-322">configuration.go#L322</a>: 	delegate <b>TTransportFactory</b>
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/configuration.go.html#line-342" class="path-duplicate">configuration.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/configuration.go.html#line-342">#L342</a>: func TTransportFactoryConf(delegate <b>TTransportFactory</b>, conf *TConfiguration) <b>TTransportFactory</b> {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-767">header_transport.go#L767</a>: 	Factory <b>TTransportFactory</b>
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-773" class="path-duplicate">header_transport.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-773">#L773</a>: func NewTHeaderTransportFactory(factory <b>TTransportFactory</b>) <b>TTransportFactory</b> {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-781" class="path-duplicate">header_transport.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/header_transport.go.html#line-781">#L781</a>: func NewTHeaderTransportFactoryConf(factory <b>TTransportFactory</b>, conf *TConfiguration) <b>TTransportFactory</b> {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/simple_server.go.html#line-63">simple_server.go#L63</a>: 	inputTransportFactory  <b>TTransportFactory</b>
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/simple_server.go.html#line-64" class="path-duplicate">simple_server.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/simple_server.go.html#line-64">#L64</a>: 	outputTransportFactory <b>TTransportFactory</b>
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/simple_server.go.html#line-78" class="path-duplicate">simple_server.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/simple_server.go.html#line-78">#L78</a>: func NewTSimpleServer4(processor TProcessor, serverTransport TServerTransport, transportFactory <b>TTransportFactory</b>, protocolFactory TProtocolFactory) *TSimpleServer {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/simple_server.go.html#line-86" class="path-duplicate">simple_server.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/simple_server.go.html#line-86">#L86</a>: func NewTSimpleServer6(processor TProcessor, serverTransport TServerTransport, inputTransportFactory <b>TTransportFactory</b>, outputTransportFactory <b>TTransportFactory</b>, inputProtocolFactory TProtocolFactory, outputProtocolFactory TProtocolFactory) *TSimpleServer {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/simple_server.go.html#line-106" class="path-duplicate">simple_server.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/simple_server.go.html#line-106">#L106</a>: func NewTSimpleServerFactory4(processorFactory TProcessorFactory, serverTransport TServerTransport, transportFactory <b>TTransportFactory</b>, protocolFactory TProtocolFactory) *TSimpleServer {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/simple_server.go.html#line-116" class="path-duplicate">simple_server.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/simple_server.go.html#line-116">#L116</a>: func NewTSimpleServerFactory6(processorFactory TProcessorFactory, serverTransport TServerTransport, inputTransportFactory <b>TTransportFactory</b>, outputTransportFactory <b>TTransportFactory</b>, inputProtocolFactory TProtocolFactory, outputProtocolFactory TProtocolFactory) *TSimpleServer {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/simple_server.go.html#line-135" class="path-duplicate">simple_server.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/simple_server.go.html#line-135">#L135</a>: func (p *TSimpleServer) InputTransportFactory() <b>TTransportFactory</b> {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/simple_server.go.html#line-139" class="path-duplicate">simple_server.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/simple_server.go.html#line-139">#L139</a>: func (p *TSimpleServer) OutputTransportFactory() <b>TTransportFactory</b> {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/transport_factory.go.html#line-26">transport_factory.go#L26</a>: type <b>TTransportFactory</b> interface {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/transport_factory.go.html#line-37" class="path-duplicate">transport_factory.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/transport_factory.go.html#line-37">#L37</a>: func NewTTransportFactory() <b>TTransportFactory</b> {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

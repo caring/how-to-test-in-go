@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: google.golang.org/grpc/internal/transport.outStream.prev</title>
+<link href="../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../../pkg/google.golang.org/grpc/internal/transport.html">google.golang.org/grpc/internal/transport</a>.<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-219">outStream</a>.<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-227">prev</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">10 uses</span>
+
+	google.golang.org/grpc/internal/transport (current package)
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-227">controlbuf.go#L227</a>: 	<b>prev</b> *outStream
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-231" class="path-duplicate">controlbuf.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-231">#L231</a>: 	if s.<b>prev</b> != nil {
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-232" class="path-duplicate">controlbuf.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-232">#L232</a>: 		s.<b>prev</b>.next = s.next
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-235" class="path-duplicate">controlbuf.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-235">#L235</a>: 		s.next.<b>prev</b> = s.<b>prev</b>
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-237" class="path-duplicate">controlbuf.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-237">#L237</a>: 	s.next, s.<b>prev</b> = nil, nil
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-255" class="path-duplicate">controlbuf.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-255">#L255</a>: 	tail.<b>prev</b> = head
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-263" class="path-duplicate">controlbuf.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-263">#L263</a>: 	e := l.tail.<b>prev</b>
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-265" class="path-duplicate">controlbuf.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-265">#L265</a>: 	s.<b>prev</b> = e
+		<a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-267" class="path-duplicate">controlbuf.go</a><a href="../../../../src/google.golang.org/grpc/internal/transport/controlbuf.go.html#line-267">#L267</a>: 	l.tail.<b>prev</b> = s
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: database/sql.DB.maxOpen</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../pkg/database/sql.html">database/sql</a>.<a href="../../src/database/sql/sql.go.html#line-456">DB</a>.<a href="../../src/database/sql/sql.go.html#line-482">maxOpen</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">15 uses</span>
+
+	database/sql (current package)
+		<a href="../../src/database/sql/sql.go.html#line-482">sql.go#L482</a>: 	<b>maxOpen</b>           int                    // &lt;= 0 means unlimited
+		<a href="../../src/database/sql/sql.go.html#line-968" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-968">#L968</a>: 	if db.<b>maxOpen</b> &gt; 0 &amp;&amp; db.maxIdleConnsLocked() &gt; db.<b>maxOpen</b> {
+		<a href="../../src/database/sql/sql.go.html#line-969" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-969">#L969</a>: 		db.maxIdleCount = db.<b>maxOpen</b>
+		<a href="../../src/database/sql/sql.go.html#line-995" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-995">#L995</a>: 	db.<b>maxOpen</b> = n
+		<a href="../../src/database/sql/sql.go.html#line-997" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-997">#L997</a>: 		db.<b>maxOpen</b> = 0
+		<a href="../../src/database/sql/sql.go.html#line-999" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-999">#L999</a>: 	syncMaxIdle := db.<b>maxOpen</b> &gt; 0 &amp;&amp; db.maxIdleConnsLocked() &gt; db.<b>maxOpen</b>
+		<a href="../../src/database/sql/sql.go.html#line-1157" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-1157">#L1157</a>: 		MaxOpenConnections: db.<b>maxOpen</b>,
+		<a href="../../src/database/sql/sql.go.html#line-1177" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-1177">#L1177</a>: 	if db.<b>maxOpen</b> &gt; 0 {
+		<a href="../../src/database/sql/sql.go.html#line-1178" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-1178">#L1178</a>: 		numCanOpen := db.<b>maxOpen</b> - db.numOpen
+		<a href="../../src/database/sql/sql.go.html#line-1300" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-1300">#L1300</a>: 	if db.<b>maxOpen</b> &gt; 0 &amp;&amp; db.numOpen &gt;= db.<b>maxOpen</b> {
+		<a href="../../src/database/sql/sql.go.html#line-1479" class="path-duplicate">sql.go</a><a href="../../src/database/sql/sql.go.html#line-1479">#L1479</a>: 	if db.<b>maxOpen</b> &gt; 0 &amp;&amp; db.numOpen &gt; db.<b>maxOpen</b> {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

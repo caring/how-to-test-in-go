@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: reflect.Type.common</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/reflect.html">reflect</a>.<a href="../src/reflect/type.go.html#line-38">Type</a>.<a href="../src/reflect/type.go.html#line-218">common</a></b></span><span style="font-size: large;"><i> (method)</i></span>
+
+<span class="title">26 uses</span>
+
+	reflect (current package)
+		<a href="../src/reflect/makefunc.go.html#line-52">makefunc.go#L52</a>: 	t := typ.<b>common</b>()
+		<a href="../src/reflect/type.go.html#line-218">type.go#L218</a>: 	<b>common</b>() *rtype
+		<a href="../src/reflect/type.go.html#line-1339" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1339">#L1339</a>: 						ntyp = ntyp.Elem().<b>common</b>()
+		<a href="../src/reflect/type.go.html#line-1639" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1639">#L1639</a>: 	return haveIdenticalUnderlyingType(T.<b>common</b>(), V.<b>common</b>(), false)
+		<a href="../src/reflect/type.go.html#line-2691" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2691">#L2691</a>: 			t := st.<b>common</b>()
+		<a href="../src/reflect/type.go.html#line-2703" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2703">#L2703</a>: 			t := st.<b>common</b>()
+		<a href="../src/reflect/type.go.html#line-2833" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2833">#L2833</a>: 	resolveReflectType(field.Type.<b>common</b>()) // install in runtime
+		<a href="../src/reflect/type.go.html#line-2836" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2836">#L2836</a>: 		typ:         field.Type.<b>common</b>(),
+		<a href="../src/reflect/value.go.html#line-593">value.go#L593</a>: 				ret[i] = Value{tv.<b>common</b>(), add(stackArgs, st.stkOff, "tv.Size() != 0"), fl}
+		<a href="../src/reflect/value.go.html#line-602" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-602">#L602</a>: 			if !ifaceIndir(tv.<b>common</b>()) {
+		<a href="../src/reflect/value.go.html#line-609" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-609">#L609</a>: 				ret[i] = Value{tv.<b>common</b>(), regArgs.Ptrs[steps[0].ireg], flag(tv.Kind())}
+		<a href="../src/reflect/value.go.html#line-622" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-622">#L622</a>: 			s := unsafe_New(tv.<b>common</b>())
+		<a href="../src/reflect/value.go.html#line-640" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-640">#L640</a>: 			ret[i] = Value{tv.<b>common</b>(), s, flagIndir | flag(tv.Kind())}
+		<a href="../src/reflect/value.go.html#line-2475" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2475">#L2475</a>: 	return typedslicecopy(de.<b>common</b>(), ds, ss)
+		<a href="../src/reflect/value.go.html#line-2820" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2820">#L2820</a>: 	op := convertOp(t.<b>common</b>(), v.typ)
+		<a href="../src/reflect/value.go.html#line-2926" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2926">#L2926</a>: 		haveIdenticalUnderlyingType(dst.Elem().<b>common</b>(), src.Elem().<b>common</b>(), false) {
+		<a href="../src/reflect/value.go.html#line-2943" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2943">#L2943</a>: 	typ := t.<b>common</b>()
+		<a href="../src/reflect/value.go.html#line-2961" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2961">#L2961</a>: 	typ := t.<b>common</b>()
+		<a href="../src/reflect/value.go.html#line-2974" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2974">#L2974</a>: 	typ := t.<b>common</b>()
+		<a href="../src/reflect/value.go.html#line-2983" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2983">#L2983</a>: 	typ := t.<b>common</b>()
+		<a href="../src/reflect/value.go.html#line-3111" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-3111">#L3111</a>: 	return Value{t.<b>common</b>(), h.Data, v.flag&amp;^(flagIndir|flagAddr|flagKindMask) | flag(Ptr)}
+		<a href="../src/reflect/value.go.html#line-3117" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-3117">#L3117</a>: 	t := typ.<b>common</b>()
+		<a href="../src/reflect/value.go.html#line-3131" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-3131">#L3131</a>: 	target := unsafe_New(typ.<b>common</b>())
+		<a href="../src/reflect/value.go.html#line-3138" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-3138">#L3138</a>: 	return Value{typ.<b>common</b>(), target, v.flag.ro() | flagIndir | flag(Interface)}
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

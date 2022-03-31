@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: net/http.response.wroteHeader</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../pkg/net/http.html">net/http</a>.<a href="../../src/net/http/server.go.html#line-418">response</a>.<a href="../../src/net/http/server.go.html#line-423">wroteHeader</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">10 uses</span>
+
+	net/http (current package)
+		<a href="../../src/net/http/server.go.html#line-423">server.go#L423</a>: 	<b>wroteHeader</b>      bool               // reply header has been (logically) written
+		<a href="../../src/net/http/server.go.html#line-547" class="path-duplicate">server.go</a><a href="../../src/net/http/server.go.html#line-547">#L547</a>: 	if !w.<b>wroteHeader</b> {
+		<a href="../../src/net/http/server.go.html#line-1055" class="path-duplicate">server.go</a><a href="../../src/net/http/server.go.html#line-1055">#L1055</a>: 	if w.cw.header == nil &amp;&amp; w.<b>wroteHeader</b> &amp;&amp; !w.cw.wroteHeader {
+		<a href="../../src/net/http/server.go.html#line-1118" class="path-duplicate">server.go</a><a href="../../src/net/http/server.go.html#line-1118">#L1118</a>: 	if w.<b>wroteHeader</b> {
+		<a href="../../src/net/http/server.go.html#line-1124" class="path-duplicate">server.go</a><a href="../../src/net/http/server.go.html#line-1124">#L1124</a>: 	w.<b>wroteHeader</b> = true
+		<a href="../../src/net/http/server.go.html#line-1510" class="path-duplicate">server.go</a><a href="../../src/net/http/server.go.html#line-1510">#L1510</a>: 	if !w.<b>wroteHeader</b> {
+		<a href="../../src/net/http/server.go.html#line-1578" class="path-duplicate">server.go</a><a href="../../src/net/http/server.go.html#line-1578">#L1578</a>: 	if !w.<b>wroteHeader</b> {
+		<a href="../../src/net/http/server.go.html#line-1602" class="path-duplicate">server.go</a><a href="../../src/net/http/server.go.html#line-1602">#L1602</a>: 	if !w.<b>wroteHeader</b> {
+		<a href="../../src/net/http/server.go.html#line-1656" class="path-duplicate">server.go</a><a href="../../src/net/http/server.go.html#line-1656">#L1656</a>: 	if !w.<b>wroteHeader</b> {
+		<a href="../../src/net/http/server.go.html#line-1987" class="path-duplicate">server.go</a><a href="../../src/net/http/server.go.html#line-1987">#L1987</a>: 	if w.<b>wroteHeader</b> {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

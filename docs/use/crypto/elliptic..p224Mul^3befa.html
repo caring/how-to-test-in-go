@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: crypto/elliptic.p224Mul</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">func <b><a href="../../pkg/crypto/elliptic.html">crypto/elliptic</a>.<a href="../../src/crypto/elliptic/p224.go.html#line-232">p224Mul</a></b></span>
+
+<span class="title">30 uses</span>
+
+	crypto/elliptic (current package)
+		<a href="../../src/crypto/elliptic/p224.go.html#line-64">p224.go#L64</a>: 	<b>p224Mul</b>(&amp;x3, &amp;x3, &amp;x, &amp;tmp)
+		<a href="../../src/crypto/elliptic/p224.go.html#line-232" class="path-duplicate">p224.go</a><a href="../../src/crypto/elliptic/p224.go.html#line-232">#L232</a>: func <b>p224Mul</b>(out, a, b *p224FieldElement, tmp *p224LargeFieldElement) {
+		<a href="../../src/crypto/elliptic/p224.go.html#line-347" class="path-duplicate">p224.go</a><a href="../../src/crypto/elliptic/p224.go.html#line-347">#L347</a>: 	<b>p224Mul</b>(&amp;f1, &amp;f1, in, &amp;c)  // 2**2 - 1
+		<a href="../../src/crypto/elliptic/p224.go.html#line-349" class="path-duplicate">p224.go</a><a href="../../src/crypto/elliptic/p224.go.html#line-349">#L349</a>: 	<b>p224Mul</b>(&amp;f1, &amp;f1, in, &amp;c)  // 2**3 - 1
+		<a href="../../src/crypto/elliptic/p224.go.html#line-353" class="path-duplicate">p224.go</a><a href="../../src/crypto/elliptic/p224.go.html#line-353">#L353</a>: 	<b>p224Mul</b>(&amp;f1, &amp;f1, &amp;f2, &amp;c) // 2**6 - 1
+		<a href="../../src/crypto/elliptic/p224.go.html#line-358" class="path-duplicate">p224.go</a><a href="../../src/crypto/elliptic/p224.go.html#line-358">#L358</a>: 	<b>p224Mul</b>(&amp;f2, &amp;f2, &amp;f1, &amp;c) // 2**12 - 1
+		<a href="../../src/crypto/elliptic/p224.go.html#line-363" class="path-duplicate">p224.go</a><a href="../../src/crypto/elliptic/p224.go.html#line-363">#L363</a>: 	<b>p224Mul</b>(&amp;f2, &amp;f3, &amp;f2, &amp;c) // 2**24 - 1
+		<a href="../../src/crypto/elliptic/p224.go.html#line-368" class="path-duplicate">p224.go</a><a href="../../src/crypto/elliptic/p224.go.html#line-368">#L368</a>: 	<b>p224Mul</b>(&amp;f3, &amp;f3, &amp;f2, &amp;c) // 2**48 - 1
+		<a href="../../src/crypto/elliptic/p224.go.html#line-373" class="path-duplicate">p224.go</a><a href="../../src/crypto/elliptic/p224.go.html#line-373">#L373</a>: 	<b>p224Mul</b>(&amp;f3, &amp;f3, &amp;f4, &amp;c) // 2**96 - 1
+		<a href="../../src/crypto/elliptic/p224.go.html#line-378" class="path-duplicate">p224.go</a><a href="../../src/crypto/elliptic/p224.go.html#line-378">#L378</a>: 	<b>p224Mul</b>(&amp;f2, &amp;f4, &amp;f2, &amp;c) // 2**120 - 1
+		<a href="../../src/crypto/elliptic/p224.go.html#line-382" class="path-duplicate">p224.go</a><a href="../../src/crypto/elliptic/p224.go.html#line-382">#L382</a>: 	<b>p224Mul</b>(&amp;f1, &amp;f1, &amp;f2, &amp;c) // 2**126 - 1
+		<a href="../../src/crypto/elliptic/p224.go.html#line-384" class="path-duplicate">p224.go</a><a href="../../src/crypto/elliptic/p224.go.html#line-384">#L384</a>: 	<b>p224Mul</b>(&amp;f1, &amp;f1, in, &amp;c)  // 2**127 - 1
+		<a href="../../src/crypto/elliptic/p224.go.html#line-388" class="path-duplicate">p224.go</a><a href="../../src/crypto/elliptic/p224.go.html#line-388">#L388</a>: 	<b>p224Mul</b>(out, &amp;f1, &amp;f3, &amp;c) // 2**224 - 2**96 - 1
+		<a href="../../src/crypto/elliptic/p224.go.html#line-534" class="path-duplicate">p224.go</a><a href="../../src/crypto/elliptic/p224.go.html#line-534">#L534</a>: 	<b>p224Mul</b>(&amp;u1, x1, &amp;z2z2, &amp;c)
+		<a href="../../src/crypto/elliptic/p224.go.html#line-536" class="path-duplicate">p224.go</a><a href="../../src/crypto/elliptic/p224.go.html#line-536">#L536</a>: 	<b>p224Mul</b>(&amp;u2, x2, &amp;z1z1, &amp;c)
+		<a href="../../src/crypto/elliptic/p224.go.html#line-538" class="path-duplicate">p224.go</a><a href="../../src/crypto/elliptic/p224.go.html#line-538">#L538</a>: 	<b>p224Mul</b>(&amp;s1, z2, &amp;z2z2, &amp;c)
+		<a href="../../src/crypto/elliptic/p224.go.html#line-539" class="path-duplicate">p224.go</a><a href="../../src/crypto/elliptic/p224.go.html#line-539">#L539</a>: 	<b>p224Mul</b>(&amp;s1, y1, &amp;s1, &amp;c)
+		<a href="../../src/crypto/elliptic/p224.go.html#line-541" class="path-duplicate">p224.go</a><a href="../../src/crypto/elliptic/p224.go.html#line-541">#L541</a>: 	<b>p224Mul</b>(&amp;s2, z1, &amp;z1z1, &amp;c)
+		<a href="../../src/crypto/elliptic/p224.go.html#line-542" class="path-duplicate">p224.go</a><a href="../../src/crypto/elliptic/p224.go.html#line-542">#L542</a>: 	<b>p224Mul</b>(&amp;s2, y2, &amp;s2, &amp;c)
+		<a href="../../src/crypto/elliptic/p224.go.html#line-554" class="path-duplicate">p224.go</a><a href="../../src/crypto/elliptic/p224.go.html#line-554">#L554</a>: 	<b>p224Mul</b>(&amp;j, &amp;h, &amp;i, &amp;c)
+		<a href="../../src/crypto/elliptic/p224.go.html#line-568" class="path-duplicate">p224.go</a><a href="../../src/crypto/elliptic/p224.go.html#line-568">#L568</a>: 	<b>p224Mul</b>(&amp;v, &amp;u1, &amp;i, &amp;c)
+		<a href="../../src/crypto/elliptic/p224.go.html#line-576" class="path-duplicate">p224.go</a><a href="../../src/crypto/elliptic/p224.go.html#line-576">#L576</a>: 	<b>p224Mul</b>(z3, z3, &amp;h, &amp;c)
+		<a href="../../src/crypto/elliptic/p224.go.html#line-590" class="path-duplicate">p224.go</a><a href="../../src/crypto/elliptic/p224.go.html#line-590">#L590</a>: 	<b>p224Mul</b>(&amp;s1, &amp;s1, &amp;j, &amp;c)
+		<a href="../../src/crypto/elliptic/p224.go.html#line-593" class="path-duplicate">p224.go</a><a href="../../src/crypto/elliptic/p224.go.html#line-593">#L593</a>: 	<b>p224Mul</b>(&amp;z1z1, &amp;z1z1, &amp;r, &amp;c)
+		<a href="../../src/crypto/elliptic/p224.go.html#line-612" class="path-duplicate">p224.go</a><a href="../../src/crypto/elliptic/p224.go.html#line-612">#L612</a>: 	<b>p224Mul</b>(&amp;beta, x1, &amp;gamma, &amp;c)
+		<a href="../../src/crypto/elliptic/p224.go.html#line-622" class="path-duplicate">p224.go</a><a href="../../src/crypto/elliptic/p224.go.html#line-622">#L622</a>: 	<b>p224Mul</b>(&amp;alpha, &amp;alpha, &amp;t, &amp;c)
+		<a href="../../src/crypto/elliptic/p224.go.html#line-653" class="path-duplicate">p224.go</a><a href="../../src/crypto/elliptic/p224.go.html#line-653">#L653</a>: 	<b>p224Mul</b>(y3, &amp;alpha, &amp;beta, &amp;c)
+		<a href="../../src/crypto/elliptic/p224.go.html#line-700" class="path-duplicate">p224.go</a><a href="../../src/crypto/elliptic/p224.go.html#line-700">#L700</a>: 	<b>p224Mul</b>(x, x, &amp;zinvsq, &amp;tmp)
+		<a href="../../src/crypto/elliptic/p224.go.html#line-701" class="path-duplicate">p224.go</a><a href="../../src/crypto/elliptic/p224.go.html#line-701">#L701</a>: 	<b>p224Mul</b>(&amp;zinvsq, &amp;zinvsq, &amp;zinv, &amp;tmp)
+		<a href="../../src/crypto/elliptic/p224.go.html#line-702" class="path-duplicate">p224.go</a><a href="../../src/crypto/elliptic/p224.go.html#line-702">#L702</a>: 	<b>p224Mul</b>(y, y, &amp;zinvsq, &amp;tmp)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

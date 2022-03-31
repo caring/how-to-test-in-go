@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: internal/abi.RegArgs.Ptrs</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../pkg/internal/abi.html">internal/abi</a>.<a href="../../src/internal/abi/abi.go.html#line-18">RegArgs</a>.<a href="../../src/internal/abi/abi.go.html#line-27">Ptrs</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">15 uses</span>
+
+	internal/abi (current package)
+		<a href="../../src/internal/abi/abi.go.html#line-27">abi.go#L27</a>: 	<b>Ptrs</b> [IntArgRegs]unsafe.Pointer
+		<a href="../../src/internal/abi/abi.go.html#line-48" class="path-duplicate">abi.go</a><a href="../../src/internal/abi/abi.go.html#line-48">#L48</a>: 	for _, x := range r.<b>Ptrs</b> {
+
+	<a href="../../pkg/reflect.html">reflect</a>
+		<a href="../../src/reflect/makefunc.go.html#line-172">makefunc.go#L172</a>: 			*(*uintptr)(unsafe.Pointer(&amp;args.<b>Ptrs</b>[i])) = arg
+		<a href="../../src/reflect/makefunc.go.html#line-177" class="path-duplicate">makefunc.go</a><a href="../../src/reflect/makefunc.go.html#line-177">#L177</a>: 			*(*uintptr)(unsafe.Pointer(&amp;args.<b>Ptrs</b>[i])) = 0
+		<a href="../../src/reflect/value.go.html#line-516">value.go#L516</a>: 						regArgs.<b>Ptrs</b>[st.ireg] = *(*unsafe.Pointer)(offset)
+		<a href="../../src/reflect/value.go.html#line-522" class="path-duplicate">value.go</a><a href="../../src/reflect/value.go.html#line-522">#L522</a>: 						regArgs.<b>Ptrs</b>[st.ireg] = v.ptr
+		<a href="../../src/reflect/value.go.html#line-609" class="path-duplicate">value.go</a><a href="../../src/reflect/value.go.html#line-609">#L609</a>: 				ret[i] = Value{tv.common(), regArgs.<b>Ptrs</b>[steps[0].ireg], flag(tv.Kind())}
+		<a href="../../src/reflect/value.go.html#line-630" class="path-duplicate">value.go</a><a href="../../src/reflect/value.go.html#line-630">#L630</a>: 					*((*unsafe.Pointer)(s)) = regArgs.<b>Ptrs</b>[st.ireg]
+		<a href="../../src/reflect/value.go.html#line-718" class="path-duplicate">value.go</a><a href="../../src/reflect/value.go.html#line-718">#L718</a>: 						*((*unsafe.Pointer)(s)) = regs.<b>Ptrs</b>[st.ireg]
+		<a href="../../src/reflect/value.go.html#line-735" class="path-duplicate">value.go</a><a href="../../src/reflect/value.go.html#line-735">#L735</a>: 				v.ptr = regs.<b>Ptrs</b>[steps[0].ireg]
+		<a href="../../src/reflect/value.go.html#line-999" class="path-duplicate">value.go</a><a href="../../src/reflect/value.go.html#line-999">#L999</a>: 					methodRegs.<b>Ptrs</b>[mStep.ireg] = *(*unsafe.Pointer)(from)
+		<a href="../../src/reflect/value.go.html#line-1018" class="path-duplicate">value.go</a><a href="../../src/reflect/value.go.html#line-1018">#L1018</a>: 					*(*unsafe.Pointer)(to) = valueRegs.<b>Ptrs</b>[vStep.ireg]
+		<a href="../../src/reflect/value.go.html#line-1044" class="path-duplicate">value.go</a><a href="../../src/reflect/value.go.html#line-1044">#L1044</a>: 				methodRegs.<b>Ptrs</b>[mStep.ireg] = valueRegs.<b>Ptrs</b>[vStep.ireg]
+
+	<a href="../../pkg/runtime.html">runtime</a>
+		<a href="../../src/runtime/mbarrier.go.html#line-236">mbarrier.go#L236</a>: 			regs.<b>Ptrs</b>[i] = unsafe.Pointer(regs.Ints[i])
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

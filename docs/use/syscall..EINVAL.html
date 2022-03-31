@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: syscall.EINVAL</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">const <b><a href="../pkg/syscall.html">syscall</a>.<a href="../src/syscall/zerrors_darwin_amd64.go.html#line-1172">EINVAL</a></b></span>
+
+<span class="title">102 uses</span>
+
+	syscall (current package)
+		<a href="../src/syscall/bpf_darwin.go.html#line-163">bpf_darwin.go#L163</a>: 		return <b>EINVAL</b>
+		<a href="../src/syscall/env_unix.go.html#line-100">env_unix.go#L100</a>: 		return <b>EINVAL</b>
+		<a href="../src/syscall/env_unix.go.html#line-104" class="path-duplicate">env_unix.go</a><a href="../src/syscall/env_unix.go.html#line-104">#L104</a>: 			return <b>EINVAL</b>
+		<a href="../src/syscall/env_unix.go.html#line-111" class="path-duplicate">env_unix.go</a><a href="../src/syscall/env_unix.go.html#line-111">#L111</a>: 				return <b>EINVAL</b>
+		<a href="../src/syscall/exec_unix.go.html#line-90">exec_unix.go#L90</a>: 			return nil, <b>EINVAL</b>
+		<a href="../src/syscall/route_bsd.go.html#line-49">route_bsd.go#L49</a>: 		return nil, <b>EINVAL</b>
+		<a href="../src/syscall/route_bsd.go.html#line-86" class="path-duplicate">route_bsd.go</a><a href="../src/syscall/route_bsd.go.html#line-86">#L86</a>: 		return nil, 0, <b>EINVAL</b>
+		<a href="../src/syscall/route_bsd.go.html#line-101" class="path-duplicate">route_bsd.go</a><a href="../src/syscall/route_bsd.go.html#line-101">#L101</a>: 			return nil, <b>EINVAL</b>
+		<a href="../src/syscall/route_bsd.go.html#line-107" class="path-duplicate">route_bsd.go</a><a href="../src/syscall/route_bsd.go.html#line-107">#L107</a>: 			return nil, <b>EINVAL</b>
+		<a href="../src/syscall/route_bsd.go.html#line-112" class="path-duplicate">route_bsd.go</a><a href="../src/syscall/route_bsd.go.html#line-112">#L112</a>: 		return nil, <b>EINVAL</b>
+		<a href="../src/syscall/route_bsd.go.html#line-145" class="path-duplicate">route_bsd.go</a><a href="../src/syscall/route_bsd.go.html#line-145">#L145</a>: 		return nil, <b>EINVAL</b>
+		<a href="../src/syscall/route_bsd.go.html#line-350" class="path-duplicate">route_bsd.go</a><a href="../src/syscall/route_bsd.go.html#line-350">#L350</a>: 		return nil, <b>EINVAL</b>
+		<a href="../src/syscall/sockcmsg_unix.go.html#line-58">sockcmsg_unix.go#L58</a>: 		return nil, nil, <b>EINVAL</b>
+		<a href="../src/syscall/sockcmsg_unix.go.html#line-82" class="path-duplicate">sockcmsg_unix.go</a><a href="../src/syscall/sockcmsg_unix.go.html#line-82">#L82</a>: 		return nil, <b>EINVAL</b>
+		<a href="../src/syscall/sockcmsg_unix.go.html#line-85" class="path-duplicate">sockcmsg_unix.go</a><a href="../src/syscall/sockcmsg_unix.go.html#line-85">#L85</a>: 		return nil, <b>EINVAL</b>
+		<a href="../src/syscall/syscall.go.html#line-50">syscall.go#L50</a>: 			return nil, <b>EINVAL</b>
+		<a href="../src/syscall/syscall_bsd.go.html#line-31">syscall_bsd.go#L31</a>: 		return "", <b>EINVAL</b>
+		<a href="../src/syscall/syscall_bsd.go.html#line-54" class="path-duplicate">syscall_bsd.go</a><a href="../src/syscall/syscall_bsd.go.html#line-54">#L54</a>: 		return nil, <b>EINVAL</b>
+		<a href="../src/syscall/syscall_bsd.go.html#line-164" class="path-duplicate">syscall_bsd.go</a><a href="../src/syscall/syscall_bsd.go.html#line-164">#L164</a>: 		return nil, 0, <b>EINVAL</b>
+		<a href="../src/syscall/syscall_bsd.go.html#line-179" class="path-duplicate">syscall_bsd.go</a><a href="../src/syscall/syscall_bsd.go.html#line-179">#L179</a>: 		return nil, 0, <b>EINVAL</b>
+		<a href="../src/syscall/syscall_bsd.go.html#line-197" class="path-duplicate">syscall_bsd.go</a><a href="../src/syscall/syscall_bsd.go.html#line-197">#L197</a>: 		return nil, 0, <b>EINVAL</b>
+		<a href="../src/syscall/syscall_bsd.go.html#line-209" class="path-duplicate">syscall_bsd.go</a><a href="../src/syscall/syscall_bsd.go.html#line-209">#L209</a>: 		return nil, 0, <b>EINVAL</b>
+		<a href="../src/syscall/syscall_bsd.go.html#line-244" class="path-duplicate">syscall_bsd.go</a><a href="../src/syscall/syscall_bsd.go.html#line-244">#L244</a>: 			return nil, <b>EINVAL</b>
+		<a href="../src/syscall/syscall_bsd.go.html#line-518" class="path-duplicate">syscall_bsd.go</a><a href="../src/syscall/syscall_bsd.go.html#line-518">#L518</a>: 		return <b>EINVAL</b>
+		<a href="../src/syscall/syscall_bsd.go.html#line-525" class="path-duplicate">syscall_bsd.go</a><a href="../src/syscall/syscall_bsd.go.html#line-525">#L525</a>: 		return <b>EINVAL</b>
+		<a href="../src/syscall/syscall_bsd.go.html#line-549" class="path-duplicate">syscall_bsd.go</a><a href="../src/syscall/syscall_bsd.go.html#line-549">#L549</a>: 		return <b>EINVAL</b>
+		<a href="../src/syscall/syscall_darwin.go.html#line-95">syscall_darwin.go#L95</a>: 		return <b>EINVAL</b>
+		<a href="../src/syscall/syscall_unix.go.html#line-57">syscall_unix.go#L57</a>: 		return nil, <b>EINVAL</b>
+		<a href="../src/syscall/syscall_unix.go.html#line-83" class="path-duplicate">syscall_unix.go</a><a href="../src/syscall/syscall_unix.go.html#line-83">#L83</a>: 		return <b>EINVAL</b>
+		<a href="../src/syscall/syscall_unix.go.html#line-92" class="path-duplicate">syscall_unix.go</a><a href="../src/syscall/syscall_unix.go.html#line-92">#L92</a>: 		return <b>EINVAL</b>
+		<a href="../src/syscall/syscall_unix.go.html#line-152" class="path-duplicate">syscall_unix.go</a><a href="../src/syscall/syscall_unix.go.html#line-152">#L152</a>: 	errEINVAL error = <b>EINVAL</b>
+		<a href="../src/syscall/syscall_unix.go.html#line-164" class="path-duplicate">syscall_unix.go</a><a href="../src/syscall/syscall_unix.go.html#line-164">#L164</a>: 	case <b>EINVAL</b>:
+		<a href="../src/syscall/zerrors_darwin_amd64.go.html#line-1172">zerrors_darwin_amd64.go#L1172</a>: 	<b>EINVAL</b>          = Errno(0x16)
+
+	<a href="../pkg/internal/poll.html">internal/poll</a>
+		<a href="../src/internal/poll/errno_unix.go.html#line-16">errno_unix.go#L16</a>: 	errEINVAL error = syscall.<b>EINVAL</b>
+		<a href="../src/internal/poll/errno_unix.go.html#line-28" class="path-duplicate">errno_unix.go</a><a href="../src/internal/poll/errno_unix.go.html#line-28">#L28</a>: 	case syscall.<b>EINVAL</b>:
+		<a href="../src/internal/poll/fd_unix.go.html#line-491">fd_unix.go#L491</a>: 		case syscall.<b>EINVAL</b>, syscall.ENOSYS:
+
+	<a href="../pkg/net.html">net</a>
+		<a href="../src/net/fd_unix.go.html#line-73">fd_unix.go#L73</a>: 	case syscall.<b>EINVAL</b>:
+		<a href="../src/net/file_unix.go.html#line-87">file_unix.go#L87</a>: 	return nil, syscall.<b>EINVAL</b>
+		<a href="../src/net/file_unix.go.html#line-102" class="path-duplicate">file_unix.go</a><a href="../src/net/file_unix.go.html#line-102">#L102</a>: 	return nil, syscall.<b>EINVAL</b>
+		<a href="../src/net/file_unix.go.html#line-119" class="path-duplicate">file_unix.go</a><a href="../src/net/file_unix.go.html#line-119">#L119</a>: 	return nil, syscall.<b>EINVAL</b>
+		<a href="../src/net/iprawsock.go.html#line-107">iprawsock.go#L107</a>: 		return nil, syscall.<b>EINVAL</b>
+		<a href="../src/net/iprawsock.go.html#line-115" class="path-duplicate">iprawsock.go</a><a href="../src/net/iprawsock.go.html#line-115">#L115</a>: 		return 0, nil, syscall.<b>EINVAL</b>
+		<a href="../src/net/iprawsock.go.html#line-127" class="path-duplicate">iprawsock.go</a><a href="../src/net/iprawsock.go.html#line-127">#L127</a>: 		return 0, nil, syscall.<b>EINVAL</b>
+		<a href="../src/net/iprawsock.go.html#line-148" class="path-duplicate">iprawsock.go</a><a href="../src/net/iprawsock.go.html#line-148">#L148</a>: 		return 0, 0, 0, nil, syscall.<b>EINVAL</b>
+		<a href="../src/net/iprawsock.go.html#line-160" class="path-duplicate">iprawsock.go</a><a href="../src/net/iprawsock.go.html#line-160">#L160</a>: 		return 0, syscall.<b>EINVAL</b>
+		<a href="../src/net/iprawsock.go.html#line-172" class="path-duplicate">iprawsock.go</a><a href="../src/net/iprawsock.go.html#line-172">#L172</a>: 		return 0, syscall.<b>EINVAL</b>
+		<a href="../src/net/iprawsock.go.html#line-176" class="path-duplicate">iprawsock.go</a><a href="../src/net/iprawsock.go.html#line-176">#L176</a>: 		return 0, &amp;OpError{Op: "write", Net: c.fd.net, Source: c.fd.laddr, Addr: addr, Err: syscall.<b>EINVAL</b>}
+		<a href="../src/net/iprawsock.go.html#line-193" class="path-duplicate">iprawsock.go</a><a href="../src/net/iprawsock.go.html#line-193">#L193</a>: 		return 0, 0, syscall.<b>EINVAL</b>
+		<a href="../src/net/net.go.html#line-181">net.go#L181</a>: 		return 0, syscall.<b>EINVAL</b>
+		<a href="../src/net/net.go.html#line-193" class="path-duplicate">net.go</a><a href="../src/net/net.go.html#line-193">#L193</a>: 		return 0, syscall.<b>EINVAL</b>
+		<a href="../src/net/net.go.html#line-205" class="path-duplicate">net.go</a><a href="../src/net/net.go.html#line-205">#L205</a>: 		return syscall.<b>EINVAL</b>
+		<a href="../src/net/net.go.html#line-237" class="path-duplicate">net.go</a><a href="../src/net/net.go.html#line-237">#L237</a>: 		return syscall.<b>EINVAL</b>
+		<a href="../src/net/net.go.html#line-248" class="path-duplicate">net.go</a><a href="../src/net/net.go.html#line-248">#L248</a>: 		return syscall.<b>EINVAL</b>
+		<a href="../src/net/net.go.html#line-259" class="path-duplicate">net.go</a><a href="../src/net/net.go.html#line-259">#L259</a>: 		return syscall.<b>EINVAL</b>
+		<a href="../src/net/net.go.html#line-271" class="path-duplicate">net.go</a><a href="../src/net/net.go.html#line-271">#L271</a>: 		return syscall.<b>EINVAL</b>
+		<a href="../src/net/net.go.html#line-283" class="path-duplicate">net.go</a><a href="../src/net/net.go.html#line-283">#L283</a>: 		return syscall.<b>EINVAL</b>
+		<a href="../src/net/rawconn.go.html#line-29">rawconn.go#L29</a>: 		return syscall.<b>EINVAL</b>
+		<a href="../src/net/rawconn.go.html#line-41" class="path-duplicate">rawconn.go</a><a href="../src/net/rawconn.go.html#line-41">#L41</a>: 		return syscall.<b>EINVAL</b>
+		<a href="../src/net/rawconn.go.html#line-53" class="path-duplicate">rawconn.go</a><a href="../src/net/rawconn.go.html#line-53">#L53</a>: 		return syscall.<b>EINVAL</b>
+		<a href="../src/net/rawconn.go.html#line-72" class="path-duplicate">rawconn.go</a><a href="../src/net/rawconn.go.html#line-72">#L72</a>: 	return syscall.<b>EINVAL</b>
+		<a href="../src/net/rawconn.go.html#line-76" class="path-duplicate">rawconn.go</a><a href="../src/net/rawconn.go.html#line-76">#L76</a>: 	return syscall.<b>EINVAL</b>
+		<a href="../src/net/tcpsock.go.html#line-94">tcpsock.go#L94</a>: 		return nil, syscall.<b>EINVAL</b>
+		<a href="../src/net/tcpsock.go.html#line-102" class="path-duplicate">tcpsock.go</a><a href="../src/net/tcpsock.go.html#line-102">#L102</a>: 		return 0, syscall.<b>EINVAL</b>
+		<a href="../src/net/tcpsock.go.html#line-115" class="path-duplicate">tcpsock.go</a><a href="../src/net/tcpsock.go.html#line-115">#L115</a>: 		return syscall.<b>EINVAL</b>
+		<a href="../src/net/tcpsock.go.html#line-127" class="path-duplicate">tcpsock.go</a><a href="../src/net/tcpsock.go.html#line-127">#L127</a>: 		return syscall.<b>EINVAL</b>
+		<a href="../src/net/tcpsock.go.html#line-149" class="path-duplicate">tcpsock.go</a><a href="../src/net/tcpsock.go.html#line-149">#L149</a>: 		return syscall.<b>EINVAL</b>
+		<a href="../src/net/tcpsock.go.html#line-161" class="path-duplicate">tcpsock.go</a><a href="../src/net/tcpsock.go.html#line-161">#L161</a>: 		return syscall.<b>EINVAL</b>
+		<a href="../src/net/tcpsock.go.html#line-172" class="path-duplicate">tcpsock.go</a><a href="../src/net/tcpsock.go.html#line-172">#L172</a>: 		return syscall.<b>EINVAL</b>
+		<a href="../src/net/tcpsock.go.html#line-186" class="path-duplicate">tcpsock.go</a><a href="../src/net/tcpsock.go.html#line-186">#L186</a>: 		return syscall.<b>EINVAL</b>
+		<a href="../src/net/tcpsock.go.html#line-238" class="path-duplicate">tcpsock.go</a><a href="../src/net/tcpsock.go.html#line-238">#L238</a>: 		return nil, syscall.<b>EINVAL</b>
+		<a href="../src/net/tcpsock.go.html#line-247" class="path-duplicate">tcpsock.go</a><a href="../src/net/tcpsock.go.html#line-247">#L247</a>: 		return nil, syscall.<b>EINVAL</b>
+		<a href="../src/net/tcpsock.go.html#line-260" class="path-duplicate">tcpsock.go</a><a href="../src/net/tcpsock.go.html#line-260">#L260</a>: 		return nil, syscall.<b>EINVAL</b>
+		<a href="../src/net/tcpsock.go.html#line-273" class="path-duplicate">tcpsock.go</a><a href="../src/net/tcpsock.go.html#line-273">#L273</a>: 		return syscall.<b>EINVAL</b>
+		<a href="../src/net/tcpsock.go.html#line-290" class="path-duplicate">tcpsock.go</a><a href="../src/net/tcpsock.go.html#line-290">#L290</a>: 		return syscall.<b>EINVAL</b>
+		<a href="../src/net/tcpsock.go.html#line-307" class="path-duplicate">tcpsock.go</a><a href="../src/net/tcpsock.go.html#line-307">#L307</a>: 		return nil, syscall.<b>EINVAL</b>
+		<a href="../src/net/udpsock.go.html#line-97">udpsock.go#L97</a>: 		return nil, syscall.<b>EINVAL</b>
+		<a href="../src/net/udpsock.go.html#line-114" class="path-duplicate">udpsock.go</a><a href="../src/net/udpsock.go.html#line-114">#L114</a>: 		return 0, nil, syscall.<b>EINVAL</b>
+		<a href="../src/net/udpsock.go.html#line-142" class="path-duplicate">udpsock.go</a><a href="../src/net/udpsock.go.html#line-142">#L142</a>: 		return 0, 0, 0, nil, syscall.<b>EINVAL</b>
+		<a href="../src/net/udpsock.go.html#line-154" class="path-duplicate">udpsock.go</a><a href="../src/net/udpsock.go.html#line-154">#L154</a>: 		return 0, syscall.<b>EINVAL</b>
+		<a href="../src/net/udpsock.go.html#line-166" class="path-duplicate">udpsock.go</a><a href="../src/net/udpsock.go.html#line-166">#L166</a>: 		return 0, syscall.<b>EINVAL</b>
+		<a href="../src/net/udpsock.go.html#line-170" class="path-duplicate">udpsock.go</a><a href="../src/net/udpsock.go.html#line-170">#L170</a>: 		return 0, &amp;OpError{Op: "write", Net: c.fd.net, Source: c.fd.laddr, Addr: addr, Err: syscall.<b>EINVAL</b>}
+		<a href="../src/net/udpsock.go.html#line-189" class="path-duplicate">udpsock.go</a><a href="../src/net/udpsock.go.html#line-189">#L189</a>: 		return 0, 0, syscall.<b>EINVAL</b>
+		<a href="../src/net/unixsock.go.html#line-76">unixsock.go#L76</a>: 		return nil, syscall.<b>EINVAL</b>
+		<a href="../src/net/unixsock.go.html#line-85" class="path-duplicate">unixsock.go</a><a href="../src/net/unixsock.go.html#line-85">#L85</a>: 		return syscall.<b>EINVAL</b>
+		<a href="../src/net/unixsock.go.html#line-97" class="path-duplicate">unixsock.go</a><a href="../src/net/unixsock.go.html#line-97">#L97</a>: 		return syscall.<b>EINVAL</b>
+		<a href="../src/net/unixsock.go.html#line-108" class="path-duplicate">unixsock.go</a><a href="../src/net/unixsock.go.html#line-108">#L108</a>: 		return 0, nil, syscall.<b>EINVAL</b>
+		<a href="../src/net/unixsock.go.html#line-120" class="path-duplicate">unixsock.go</a><a href="../src/net/unixsock.go.html#line-120">#L120</a>: 		return 0, nil, syscall.<b>EINVAL</b>
+		<a href="../src/net/unixsock.go.html#line-141" class="path-duplicate">unixsock.go</a><a href="../src/net/unixsock.go.html#line-141">#L141</a>: 		return 0, 0, 0, nil, syscall.<b>EINVAL</b>
+		<a href="../src/net/unixsock.go.html#line-153" class="path-duplicate">unixsock.go</a><a href="../src/net/unixsock.go.html#line-153">#L153</a>: 		return 0, syscall.<b>EINVAL</b>
+		<a href="../src/net/unixsock.go.html#line-165" class="path-duplicate">unixsock.go</a><a href="../src/net/unixsock.go.html#line-165">#L165</a>: 		return 0, syscall.<b>EINVAL</b>
+		<a href="../src/net/unixsock.go.html#line-169" class="path-duplicate">unixsock.go</a><a href="../src/net/unixsock.go.html#line-169">#L169</a>: 		return 0, &amp;OpError{Op: "write", Net: c.fd.net, Source: c.fd.laddr, Addr: addr, Err: syscall.<b>EINVAL</b>}
+		<a href="../src/net/unixsock.go.html#line-186" class="path-duplicate">unixsock.go</a><a href="../src/net/unixsock.go.html#line-186">#L186</a>: 		return 0, 0, syscall.<b>EINVAL</b>
+		<a href="../src/net/unixsock.go.html#line-236" class="path-duplicate">unixsock.go</a><a href="../src/net/unixsock.go.html#line-236">#L236</a>: 		return nil, syscall.<b>EINVAL</b>
+		<a href="../src/net/unixsock.go.html#line-245" class="path-duplicate">unixsock.go</a><a href="../src/net/unixsock.go.html#line-245">#L245</a>: 		return nil, syscall.<b>EINVAL</b>
+		<a href="../src/net/unixsock.go.html#line-258" class="path-duplicate">unixsock.go</a><a href="../src/net/unixsock.go.html#line-258">#L258</a>: 		return nil, syscall.<b>EINVAL</b>
+		<a href="../src/net/unixsock.go.html#line-271" class="path-duplicate">unixsock.go</a><a href="../src/net/unixsock.go.html#line-271">#L271</a>: 		return syscall.<b>EINVAL</b>
+		<a href="../src/net/unixsock.go.html#line-288" class="path-duplicate">unixsock.go</a><a href="../src/net/unixsock.go.html#line-288">#L288</a>: 		return syscall.<b>EINVAL</b>
+		<a href="../src/net/unixsock.go.html#line-305" class="path-duplicate">unixsock.go</a><a href="../src/net/unixsock.go.html#line-305">#L305</a>: 		return nil, syscall.<b>EINVAL</b>
+		<a href="../src/net/writev_unix.go.html#line-17">writev_unix.go#L17</a>: 		return 0, syscall.<b>EINVAL</b>
+
+	<a href="../pkg/os.html">os</a>
+		<a href="../src/os/exec_unix.go.html#line-19">exec_unix.go#L19</a>: 		return nil, syscall.<b>EINVAL</b>
+		<a href="../src/os/file_unix.go.html#line-246">file_unix.go#L246</a>: 		return syscall.<b>EINVAL</b>
+		<a href="../src/os/removeall_at.go.html#line-26">removeall_at.go#L26</a>: 		return &amp;PathError{Op: "RemoveAll", Path: path, Err: syscall.<b>EINVAL</b>}
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: strconv.ParseFloat</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">func <b><a href="../pkg/strconv.html">strconv</a>.<a href="../src/strconv/atof.go.html#line-690">ParseFloat</a></b></span>
+
+<span class="title">26 uses</span>
+
+	strconv (current package)
+		<a href="../src/strconv/atof.go.html#line-690">atof.go#L690</a>: func <b>ParseFloat</b>(s string, bitSize int) (float64, error) {
+
+	<a href="../pkg/database/sql.html">database/sql</a>
+		<a href="../src/database/sql/convert.go.html#line-458">convert.go#L458</a>: 		f64, err := strconv.<b>ParseFloat</b>(s, dv.Type().Bits())
+
+	<a href="../pkg/encoding/json.html">encoding/json</a>
+		<a href="../src/encoding/json/decode.go.html#line-195">decode.go#L195</a>: 	return strconv.<b>ParseFloat</b>(string(n), 64)
+		<a href="../src/encoding/json/decode.go.html#line-847" class="path-duplicate">decode.go</a><a href="../src/encoding/json/decode.go.html#line-847">#L847</a>: 	f, err := strconv.<b>ParseFloat</b>(s, 64)
+		<a href="../src/encoding/json/decode.go.html#line-1024" class="path-duplicate">decode.go</a><a href="../src/encoding/json/decode.go.html#line-1024">#L1024</a>: 			n, err := strconv.<b>ParseFloat</b>(s, v.Type().Bits())
+
+	<a href="../pkg/encoding/xml.html">encoding/xml</a>
+		<a href="../src/encoding/xml/read.go.html#line-643">read.go#L643</a>: 		ftmp, err := strconv.<b>ParseFloat</b>(strings.TrimSpace(string(src)), dst.Type().Bits())
+
+	<a href="../pkg/flag.html">flag</a>
+		<a href="../src/flag/flag.go.html#line-248">flag.go#L248</a>: 	v, err := strconv.<b>ParseFloat</b>(s, 64)
+
+	<a href="../pkg/fmt.html">fmt</a>
+		<a href="../src/fmt/scan.go.html#line-781">scan.go#L781</a>: 		f, err := strconv.<b>ParseFloat</b>(str[:p], n)
+		<a href="../src/fmt/scan.go.html#line-799" class="path-duplicate">scan.go</a><a href="../src/fmt/scan.go.html#line-799">#L799</a>: 	f, err := strconv.<b>ParseFloat</b>(str, n)
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/internal/ini.html">github.com/aws/aws-sdk-go/internal/ini</a>
+		<a href="../src/github.com/aws/aws-sdk-go/internal/ini/literal_tokens.go.html#line-168">literal_tokens.go#L168</a>: 		v.decimal, err = strconv.<b>ParseFloat</b>(string(raw), 64)
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/private/protocol.html">github.com/aws/aws-sdk-go/private/protocol</a>
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/timestamp.go.html#line-74">timestamp.go#L74</a>: 		v, err := strconv.<b>ParseFloat</b>(value, 64)
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/private/protocol/rest.html">github.com/aws/aws-sdk-go/private/protocol/rest</a>
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/rest/unmarshal.go.html#line-227">unmarshal.go#L227</a>: 		f, err := strconv.<b>ParseFloat</b>(header, 64)
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/private/protocol/xml/xmlutil.html">github.com/aws/aws-sdk-go/private/protocol/xml/xmlutil</a>
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/xml/xmlutil/unmarshal.go.html#line-279">unmarshal.go#L279</a>: 		v, err := strconv.<b>ParseFloat</b>(node.Text, 64)
+
+	<a href="../pkg/github.com/golang/protobuf/jsonpb.html">github.com/golang/protobuf/jsonpb</a>
+		<a href="../src/github.com/golang/protobuf/jsonpb/decode.go.html#line-267">decode.go#L267</a>: 			f, err := strconv.<b>ParseFloat</b>(string(in), 0)
+
+	<a href="../pkg/github.com/golang/protobuf/proto.html">github.com/golang/protobuf/proto</a>
+		<a href="../src/github.com/golang/protobuf/proto/text_decode.go.html#line-426">text_decode.go#L426</a>: 		if x, err := strconv.<b>ParseFloat</b>(v, 32); err == nil {
+		<a href="../src/github.com/golang/protobuf/proto/text_decode.go.html#line-436" class="path-duplicate">text_decode.go</a><a href="../src/github.com/golang/protobuf/proto/text_decode.go.html#line-436">#L436</a>: 		if x, err := strconv.<b>ParseFloat</b>(v, 64); err == nil {
+
+	<a href="../pkg/github.com/jmespath/go-jmespath.html">github.com/jmespath/go-jmespath</a>
+		<a href="../src/github.com/jmespath/go-jmespath/functions.go.html#line-815">functions.go#L815</a>: 		conv, err := strconv.<b>ParseFloat</b>(v, 64)
+
+	<a href="../pkg/github.com/uber/jaeger-client-go/thrift.html">github.com/uber/jaeger-client-go/thrift</a>
+		<a href="../src/github.com/uber/jaeger-client-go/thrift/numeric.go.html#line-95">numeric.go#L95</a>: 	dValue, _ := strconv.<b>ParseFloat</b>(sValue, 64)
+		<a href="../src/github.com/uber/jaeger-client-go/thrift/numeric.go.html#line-114" class="path-duplicate">numeric.go</a><a href="../src/github.com/uber/jaeger-client-go/thrift/numeric.go.html#line-114">#L114</a>: 	dValue, _ := strconv.<b>ParseFloat</b>(sValue, 64)
+
+	<a href="../pkg/github.com/uber/jaeger-lib/metrics.html">github.com/uber/jaeger-lib/metrics</a>
+		<a href="../src/github.com/uber/jaeger-lib/metrics/metrics.go.html#line-87">metrics.go#L87</a>: 					b, err := strconv.<b>ParseFloat</b>(bucket, 64)
+
+	<a href="../pkg/google.golang.org/protobuf/internal/encoding/defval.html">google.golang.org/protobuf/internal/encoding/defval</a>
+		<a href="../src/google.golang.org/protobuf/internal/encoding/defval/default.go.html#line-98">default.go#L98</a>: 			v, err = strconv.<b>ParseFloat</b>(s, 64)
+
+	<a href="../pkg/google.golang.org/protobuf/internal/encoding/json.html">google.golang.org/protobuf/internal/encoding/json</a>
+		<a href="../src/google.golang.org/protobuf/internal/encoding/json/decode_token.go.html#line-133">decode_token.go#L133</a>: 	f, err := strconv.<b>ParseFloat</b>(t.RawString(), bitSize)
+
+	<a href="../pkg/google.golang.org/protobuf/internal/encoding/text.html">google.golang.org/protobuf/internal/encoding/text</a>
+		<a href="../src/google.golang.org/protobuf/internal/encoding/text/decode_token.go.html#line-319">decode_token.go#L319</a>: 		n, err := strconv.<b>ParseFloat</b>(t.str, 64)
+		<a href="../src/google.golang.org/protobuf/internal/encoding/text/decode_token.go.html#line-342" class="path-duplicate">decode_token.go</a><a href="../src/google.golang.org/protobuf/internal/encoding/text/decode_token.go.html#line-342">#L342</a>: 		n, err := strconv.<b>ParseFloat</b>(t.str, 64)
+
+	<a href="../pkg/text/template/parse.html">text/template/parse</a>
+		<a href="../src/text/template/parse/node.go.html#line-657">node.go#L657</a>: 		f, err := strconv.<b>ParseFloat</b>(text[:len(text)-1], 64)
+		<a href="../src/text/template/parse/node.go.html#line-688" class="path-duplicate">node.go</a><a href="../src/text/template/parse/node.go.html#line-688">#L688</a>: 		f, err := strconv.<b>ParseFloat</b>(text, 64)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

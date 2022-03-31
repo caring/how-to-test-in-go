@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: crypto/x509.ParseCertificate</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">func <b><a href="../../pkg/crypto/x509.html">crypto/x509</a>.<a href="../../src/crypto/x509/parser.go.html#line-989">ParseCertificate</a></b></span>
+
+<span class="title">9 uses</span>
+
+	crypto/x509 (current package)
+		<a href="../../src/crypto/x509/cert_pool.go.html#line-218">cert_pool.go#L218</a>: 		cert, err := <b>ParseCertificate</b>(certBytes)
+		<a href="../../src/crypto/x509/cert_pool.go.html#line-229" class="path-duplicate">cert_pool.go</a><a href="../../src/crypto/x509/cert_pool.go.html#line-229">#L229</a>: 				lazyCert.v, _ = <b>ParseCertificate</b>(certBytes)
+		<a href="../../src/crypto/x509/parser.go.html#line-989">parser.go#L989</a>: func <b>ParseCertificate</b>(der []byte) (*Certificate, error) {
+		<a href="../../src/crypto/x509/root_darwin.go.html#line-125">root_darwin.go#L125</a>: 	return <b>ParseCertificate</b>(der)
+
+	<a href="../../pkg/crypto/tls.html">crypto/tls</a>
+		<a href="../../src/crypto/tls/common.go.html#line-1261">common.go#L1261</a>: 			if x509Cert, err = x509.<b>ParseCertificate</b>(cert); err != nil {
+		<a href="../../src/crypto/tls/common.go.html#line-1356" class="path-duplicate">common.go</a><a href="../../src/crypto/tls/common.go.html#line-1356">#L1356</a>: 	return x509.<b>ParseCertificate</b>(c.Certificate[0])
+		<a href="../../src/crypto/tls/handshake_client.go.html#line-849">handshake_client.go#L849</a>: 		cert, err := x509.<b>ParseCertificate</b>(asn1Data)
+		<a href="../../src/crypto/tls/handshake_server.go.html#line-802">handshake_server.go#L802</a>: 		if certs[i], err = x509.<b>ParseCertificate</b>(asn1Data); err != nil {
+		<a href="../../src/crypto/tls/tls.go.html#line-294">tls.go#L294</a>: 	x509Cert, err := x509.<b>ParseCertificate</b>(cert.Certificate[0])
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

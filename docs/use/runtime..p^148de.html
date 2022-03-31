@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime.p</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../pkg/runtime.html">runtime</a>.<a href="../src/runtime/runtime2.go.html#line-604">p</a></b></span>
+
+<span class="title">70 uses</span>
+
+	runtime (current package)
+		<a href="../src/runtime/mgc.go.html#line-803">mgc.go#L803</a>: 		forEachP(func(_p_ *<b>p</b>) {
+		<a href="../src/runtime/mgc.go.html#line-1051" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-1051">#L1051</a>: 		forEachP(func(_p_ *<b>p</b>) {
+		<a href="../src/runtime/mgc.go.html#line-1338" class="path-duplicate">mgc.go</a><a href="../src/runtime/mgc.go.html#line-1338">#L1338</a>: func gcMarkWorkAvailable(p *<b>p</b>) bool {
+		<a href="../src/runtime/mgcpacer.go.html#line-564">mgcpacer.go#L564</a>: func (c *gcControllerState) findRunnableGCWorker(_p_ *<b>p</b>) *g {
+		<a href="../src/runtime/mwbbuf.go.html#line-215">mwbbuf.go#L215</a>: func wbBufFlush1(_p_ *<b>p</b>) {
+		<a href="../src/runtime/panic.go.html#line-360">panic.go#L360</a>: 	var m [len(<b>p</b>{}.deferpool)]int32
+		<a href="../src/runtime/panic.go.html#line-426" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-426">#L426</a>: 	if sc &lt; uintptr(len(<b>p</b>{}.deferpool)) {
+		<a href="../src/runtime/panic.go.html#line-478" class="path-duplicate">panic.go</a><a href="../src/runtime/panic.go.html#line-478">#L478</a>: 	if sc &gt;= uintptr(len(<b>p</b>{}.deferpool)) {
+		<a href="../src/runtime/proc.go.html#line-1575">proc.go#L1575</a>: func forEachP(fn func(*<b>p</b>)) {
+		<a href="../src/runtime/proc.go.html#line-1843" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-1843">#L1843</a>: func allocm(_p_ *<b>p</b>, fn func(), id int64) *m {
+		<a href="../src/runtime/proc.go.html#line-2200" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2200">#L2200</a>: func newm(fn func(), _p_ *<b>p</b>, id int64) {
+		<a href="../src/runtime/proc.go.html#line-2429" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2429">#L2429</a>: func startm(_p_ *<b>p</b>, spinning bool) {
+		<a href="../src/runtime/proc.go.html#line-2513" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-2513">#L2513</a>: func handoffp(_p_ *<b>p</b>) {
+		<a href="../src/runtime/proc.go.html#line-3089" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3089">#L3089</a>: func checkRunqsNoP(allpSnapshot []*<b>p</b>, idlepMaskSnapshot pMask) *<b>p</b> {
+		<a href="../src/runtime/proc.go.html#line-3110" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3110">#L3110</a>: func checkTimersNoP(allpSnapshot []*<b>p</b>, timerpMaskSnapshot pMask, pollUntil int64) int64 {
+		<a href="../src/runtime/proc.go.html#line-3127" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3127">#L3127</a>: func checkIdleGCNoP() (*<b>p</b>, *g) {
+		<a href="../src/runtime/proc.go.html#line-3432" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3432">#L3432</a>: func checkTimers(pp *<b>p</b>, now int64) (rnow, pollUntil int64, ran bool) {
+		<a href="../src/runtime/proc.go.html#line-3997" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-3997">#L3997</a>: func exitsyscallfast(oldp *<b>p</b>) bool {
+		<a href="../src/runtime/proc.go.html#line-4084" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4084">#L4084</a>: 	var _p_ *<b>p</b>
+		<a href="../src/runtime/proc.go.html#line-4425" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4425">#L4425</a>: func gfput(_p_ *<b>p</b>, gp *g) {
+		<a href="../src/runtime/proc.go.html#line-4468" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4468">#L4468</a>: func gfget(_p_ *<b>p</b>) *g {
+		<a href="../src/runtime/proc.go.html#line-4512" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4512">#L4512</a>: func gfpurge(_p_ *<b>p</b>) {
+		<a href="../src/runtime/proc.go.html#line-4860" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4860">#L4860</a>: func (pp *<b>p</b>) init(id int32) {
+		<a href="../src/runtime/proc.go.html#line-4902" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4902">#L4902</a>: func (pp *<b>p</b>) destroy() {
+		<a href="../src/runtime/proc.go.html#line-4994" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-4994">#L4994</a>: func procresize(nprocs int32) *<b>p</b> {
+		<a href="../src/runtime/proc.go.html#line-5023" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5023">#L5023</a>: 			nallp := make([]*<b>p</b>, nprocs)
+		<a href="../src/runtime/proc.go.html#line-5050" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5050">#L5050</a>: 			pp = new(<b>p</b>)
+		<a href="../src/runtime/proc.go.html#line-5106" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5106">#L5106</a>: 	var runnablePs *<b>p</b>
+		<a href="../src/runtime/proc.go.html#line-5133" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5133">#L5133</a>: func acquirep(_p_ *<b>p</b>) {
+		<a href="../src/runtime/proc.go.html#line-5154" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5154">#L5154</a>: func wirep(_p_ *<b>p</b>) {
+		<a href="../src/runtime/proc.go.html#line-5174" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5174">#L5174</a>: func releasep() *<b>p</b> {
+		<a href="../src/runtime/proc.go.html#line-5575" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5575">#L5575</a>: func preemptone(_p_ *<b>p</b>) bool {
+		<a href="../src/runtime/proc.go.html#line-5785" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5785">#L5785</a>: func globrunqget(_p_ *<b>p</b>, max int32) *g {
+		<a href="../src/runtime/proc.go.html#line-5863" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5863">#L5863</a>: func updateTimerPMask(pp *<b>p</b>) {
+		<a href="../src/runtime/proc.go.html#line-5887" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5887">#L5887</a>: func pidleput(_p_ *<b>p</b>) {
+		<a href="../src/runtime/proc.go.html#line-5906" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5906">#L5906</a>: func pidleget() *<b>p</b> {
+		<a href="../src/runtime/proc.go.html#line-5922" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5922">#L5922</a>: func runqempty(_p_ *<b>p</b>) bool {
+		<a href="../src/runtime/proc.go.html#line-5953" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5953">#L5953</a>: func runqput(_p_ *<b>p</b>, gp *g, next bool) {
+		<a href="../src/runtime/proc.go.html#line-5988" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-5988">#L5988</a>: func runqputslow(_p_ *<b>p</b>, gp *g, h, t uint32) bool {
+		<a href="../src/runtime/proc.go.html#line-6031" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-6031">#L6031</a>: func runqputbatch(pp *<b>p</b>, q *gQueue, qsize int) {
+		<a href="../src/runtime/proc.go.html#line-6065" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-6065">#L6065</a>: func runqget(_p_ *<b>p</b>) (gp *g, inheritTime bool) {
+		<a href="../src/runtime/proc.go.html#line-6092" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-6092">#L6092</a>: func runqdrain(_p_ *<b>p</b>) (drainQ gQueue, n uint32) {
+		<a href="../src/runtime/proc.go.html#line-6133" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-6133">#L6133</a>: func runqgrab(_p_ *<b>p</b>, batch *[256]guintptr, batchHead uint32, stealRunNextG bool) uint32 {
+		<a href="../src/runtime/proc.go.html#line-6188" class="path-duplicate">proc.go</a><a href="../src/runtime/proc.go.html#line-6188">#L6188</a>: func runqsteal(_p_, p2 *<b>p</b>, stealRunNextG bool) *g {
+		<a href="../src/runtime/runtime2.go.html#line-282">runtime2.go#L282</a>: func (pp puintptr) ptr() *<b>p</b> { return (*<b>p</b>)(unsafe.Pointer(pp)) }
+		<a href="../src/runtime/runtime2.go.html#line-285" class="path-duplicate">runtime2.go</a><a href="../src/runtime/runtime2.go.html#line-285">#L285</a>: func (pp *puintptr) set(p *<b>p</b>) { *pp = puintptr(unsafe.Pointer(p)) }
+		<a href="../src/runtime/runtime2.go.html#line-604" class="path-duplicate">runtime2.go</a><a href="../src/runtime/runtime2.go.html#line-604">#L604</a>: type <b>p</b> struct {
+		<a href="../src/runtime/runtime2.go.html#line-818" class="path-duplicate">runtime2.go</a><a href="../src/runtime/runtime2.go.html#line-818">#L818</a>: 	safePointFn   func(*<b>p</b>)
+		<a href="../src/runtime/runtime2.go.html#line-1103" class="path-duplicate">runtime2.go</a><a href="../src/runtime/runtime2.go.html#line-1103">#L1103</a>: 	allp []*<b>p</b>
+		<a href="../src/runtime/time.go.html#line-282">time.go#L282</a>: func doaddtimer(pp *<b>p</b>, t *timer) {
+		<a href="../src/runtime/time.go.html#line-371" class="path-duplicate">time.go</a><a href="../src/runtime/time.go.html#line-371">#L371</a>: func dodeltimer(pp *<b>p</b>, i int) int {
+		<a href="../src/runtime/time.go.html#line-401" class="path-duplicate">time.go</a><a href="../src/runtime/time.go.html#line-401">#L401</a>: func dodeltimer0(pp *<b>p</b>) {
+		<a href="../src/runtime/time.go.html#line-546" class="path-duplicate">time.go</a><a href="../src/runtime/time.go.html#line-546">#L546</a>: func cleantimers(pp *<b>p</b>) {
+		<a href="../src/runtime/time.go.html#line-598" class="path-duplicate">time.go</a><a href="../src/runtime/time.go.html#line-598">#L598</a>: func moveTimers(pp *<b>p</b>, timers []*timer) {
+		<a href="../src/runtime/time.go.html#line-653" class="path-duplicate">time.go</a><a href="../src/runtime/time.go.html#line-653">#L653</a>: func adjusttimers(pp *<b>p</b>, now int64) {
+		<a href="../src/runtime/time.go.html#line-726" class="path-duplicate">time.go</a><a href="../src/runtime/time.go.html#line-726">#L726</a>: func addAdjustedTimers(pp *<b>p</b>, moved []*timer) {
+		<a href="../src/runtime/time.go.html#line-740" class="path-duplicate">time.go</a><a href="../src/runtime/time.go.html#line-740">#L740</a>: func nobarrierWakeTime(pp *<b>p</b>) int64 {
+		<a href="../src/runtime/time.go.html#line-756" class="path-duplicate">time.go</a><a href="../src/runtime/time.go.html#line-756">#L756</a>: func runtimer(pp *<b>p</b>, now int64) int64 {
+		<a href="../src/runtime/time.go.html#line-822" class="path-duplicate">time.go</a><a href="../src/runtime/time.go.html#line-822">#L822</a>: func runOneTimer(pp *<b>p</b>, t *timer, now int64) {
+		<a href="../src/runtime/time.go.html#line-885" class="path-duplicate">time.go</a><a href="../src/runtime/time.go.html#line-885">#L885</a>: func clearDeletedTimers(pp *<b>p</b>) {
+		<a href="../src/runtime/time.go.html#line-964" class="path-duplicate">time.go</a><a href="../src/runtime/time.go.html#line-964">#L964</a>: func verifyTimerHeap(pp *<b>p</b>) {
+		<a href="../src/runtime/time.go.html#line-986" class="path-duplicate">time.go</a><a href="../src/runtime/time.go.html#line-986">#L986</a>: func updateTimer0When(pp *<b>p</b>) {
+		<a href="../src/runtime/time.go.html#line-997" class="path-duplicate">time.go</a><a href="../src/runtime/time.go.html#line-997">#L997</a>: func updateTimerModifiedEarliest(pp *<b>p</b>, nextwhen int64) {
+		<a href="../src/runtime/time.go.html#line-1012" class="path-duplicate">time.go</a><a href="../src/runtime/time.go.html#line-1012">#L1012</a>: func timeSleepUntil() (int64, *<b>p</b>) {
+		<a href="../src/runtime/time.go.html#line-1014" class="path-duplicate">time.go</a><a href="../src/runtime/time.go.html#line-1014">#L1014</a>: 	var pret *<b>p</b>
+		<a href="../src/runtime/trace.go.html#line-476">trace.go#L476</a>: func traceProcFree(pp *<b>p</b>) {
+		<a href="../src/runtime/trace.go.html#line-980" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-980">#L980</a>: func traceProcStop(pp *<b>p</b>) {
+		<a href="../src/runtime/trace.go.html#line-1135" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-1135">#L1135</a>: func traceGoSysBlock(pp *<b>p</b>) {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

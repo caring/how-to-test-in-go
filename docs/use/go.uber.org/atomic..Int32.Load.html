@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: go.uber.org/atomic.Int32.Load</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../pkg/go.uber.org/atomic.html">go.uber.org/atomic</a>.<a href="../../src/go.uber.org/atomic/int32.go.html#line-32">Int32</a>.<a href="../../src/go.uber.org/atomic/int32.go.html#line-44">Load</a></b></span><span style="font-size: large;"><i> (method)</i></span>
+
+<span class="title">11 uses</span>
+
+	go.uber.org/atomic (current package)
+		<a href="../../src/go.uber.org/atomic/int32.go.html#line-44">int32.go#L44</a>: func (i *Int32) <b>Load</b>() int32 {
+		<a href="../../src/go.uber.org/atomic/int32.go.html#line-85" class="path-duplicate">int32.go</a><a href="../../src/go.uber.org/atomic/int32.go.html#line-85">#L85</a>: 	return json.Marshal(i.<b>Load</b>())
+		<a href="../../src/go.uber.org/atomic/int32.go.html#line-100" class="path-duplicate">int32.go</a><a href="../../src/go.uber.org/atomic/int32.go.html#line-100">#L100</a>: 	v := i.<b>Load</b>()
+
+	<a href="../../pkg/go.uber.org/zap.html">go.uber.org/zap</a>
+		<a href="../../src/go.uber.org/zap/level.go.html#line-97">level.go#L97</a>: 	return zapcore.Level(int8(lvl.l.<b>Load</b>()))
+
+	<a href="../../pkg/github.com/uber/jaeger-client-go.html">github.com/uber/jaeger-client-go</a>
+		<a href="../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-102">span_context.go#L102</a>: 		old := s.stateFlags.<b>Load</b>()
+		<a href="../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-110" class="path-duplicate">span_context.go</a><a href="../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-110">#L110</a>: 		old := s.stateFlags.<b>Load</b>()
+		<a href="../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-140" class="path-duplicate">span_context.go</a><a href="../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-140">#L140</a>: 	return byte(s.stateFlags.<b>Load</b>())
+		<a href="../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-144" class="path-duplicate">span_context.go</a><a href="../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-144">#L144</a>: 	return s.stateFlags.<b>Load</b>()&amp;flagSampled == flagSampled
+		<a href="../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-148" class="path-duplicate">span_context.go</a><a href="../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-148">#L148</a>: 	return s.stateFlags.<b>Load</b>()&amp;flagDebug == flagDebug
+		<a href="../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-152" class="path-duplicate">span_context.go</a><a href="../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-152">#L152</a>: 	return s.stateFlags.<b>Load</b>()&amp;flagFirehose == flagFirehose
+		<a href="../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-217" class="path-duplicate">span_context.go</a><a href="../../src/github.com/uber/jaeger-client-go/span_context.go.html#line-217">#L217</a>: 		flags = c.samplingState.stateFlags.<b>Load</b>()
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

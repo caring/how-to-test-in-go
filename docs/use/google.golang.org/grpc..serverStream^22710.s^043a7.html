@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: google.golang.org/grpc.serverStream.s</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../pkg/google.golang.org/grpc.html">google.golang.org/grpc</a>.<a href="../../src/google.golang.org/grpc/stream.go.html#line-1411">serverStream</a>.<a href="../../src/google.golang.org/grpc/stream.go.html#line-1414">s</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">18 uses</span>
+
+	google.golang.org/grpc (current package)
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1434">server.go#L1434</a>: 		<b>s</b>:                     stream,
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1509" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1509">#L1509</a>: 			t.WriteStatus(ss.<b>s</b>, st)
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1561" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1561">#L1561</a>: 		t.WriteStatus(ss.<b>s</b>, appStatus)
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1564" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1564">#L1564</a>: 				Trailer: ss.<b>s</b>.Trailer(),
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1576" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1576">#L1576</a>: 	err = t.WriteStatus(ss.<b>s</b>, statusOK)
+		<a href="../../src/google.golang.org/grpc/server.go.html#line-1579" class="path-duplicate">server.go</a><a href="../../src/google.golang.org/grpc/server.go.html#line-1579">#L1579</a>: 			Trailer: ss.<b>s</b>.Trailer(),
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-1414">stream.go#L1414</a>: 	<b>s</b>     *transport.Stream
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-1449" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-1449">#L1449</a>: 	return ss.<b>s</b>.SetHeader(md)
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-1453" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-1453">#L1453</a>: 	err := ss.t.WriteHeader(ss.<b>s</b>, md)
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-1455" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-1455">#L1455</a>: 		h, _ := ss.<b>s</b>.Header()
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-1468" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-1468">#L1468</a>: 	ss.<b>s</b>.SetTrailer(md)
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-1487" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-1487">#L1487</a>: 			ss.t.WriteStatus(ss.<b>s</b>, st)
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-1510" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-1510">#L1510</a>: 	if err := ss.t.Write(ss.<b>s</b>, hdr, payload, &amp;transport.Options{Last: false}); err != nil {
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-1515" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-1515">#L1515</a>: 			h, _ := ss.<b>s</b>.Header()
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-1526" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-1526">#L1526</a>: 		ss.statsHandler.HandleRPC(ss.<b>s</b>.Context(), outPayload(false, m, data, payload, time.Now()))
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-1547" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-1547">#L1547</a>: 			ss.t.WriteStatus(ss.<b>s</b>, st)
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-1563" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-1563">#L1563</a>: 	if err := recv(ss.p, ss.codec, ss.<b>s</b>, ss.dc, m, ss.maxReceiveMessageSize, payInfo, ss.decomp); err != nil {
+		<a href="../../src/google.golang.org/grpc/stream.go.html#line-1576" class="path-duplicate">stream.go</a><a href="../../src/google.golang.org/grpc/stream.go.html#line-1576">#L1576</a>: 		ss.statsHandler.HandleRPC(ss.<b>s</b>.Context(), &amp;stats.InPayload{
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

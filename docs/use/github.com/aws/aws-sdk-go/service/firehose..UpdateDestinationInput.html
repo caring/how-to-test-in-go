@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/aws/aws-sdk-go/service/firehose.UpdateDestinationInput</title>
+<link href="../../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../../../../../pkg/github.com/aws/aws-sdk-go/service/firehose.html">github.com/aws/aws-sdk-go/service/firehose</a>.<a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-7065">UpdateDestinationInput</a></b></span>
+
+<span class="title">24 uses</span>
+
+	github.com/aws/aws-sdk-go/service/firehose (current package)
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-1273">api.go#L1273</a>: func (c *Firehose) UpdateDestinationRequest(input *<b>UpdateDestinationInput</b>) (req *request.Request, output *UpdateDestinationOutput) {
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-1281" class="path-duplicate">api.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-1281">#L1281</a>: 		input = &amp;<b>UpdateDestinationInput</b>{}
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-1345" class="path-duplicate">api.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-1345">#L1345</a>: func (c *Firehose) UpdateDestination(input *<b>UpdateDestinationInput</b>) (*UpdateDestinationOutput, error) {
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-1359" class="path-duplicate">api.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-1359">#L1359</a>: func (c *Firehose) UpdateDestinationWithContext(ctx aws.Context, input *<b>UpdateDestinationInput</b>, opts ...request.Option) (*UpdateDestinationOutput, error) {
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-7065" class="path-duplicate">api.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-7065">#L7065</a>: type <b>UpdateDestinationInput</b> struct {
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-7107" class="path-duplicate">api.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-7107">#L7107</a>: func (s <b>UpdateDestinationInput</b>) String() string {
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-7112" class="path-duplicate">api.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-7112">#L7112</a>: func (s <b>UpdateDestinationInput</b>) GoString() string {
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-7117" class="path-duplicate">api.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-7117">#L7117</a>: func (s *<b>UpdateDestinationInput</b>) Validate() error {
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-7170" class="path-duplicate">api.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-7170">#L7170</a>: func (s *<b>UpdateDestinationInput</b>) SetCurrentDeliveryStreamVersionId(v string) *<b>UpdateDestinationInput</b> {
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-7176" class="path-duplicate">api.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-7176">#L7176</a>: func (s *<b>UpdateDestinationInput</b>) SetDeliveryStreamName(v string) *<b>UpdateDestinationInput</b> {
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-7182" class="path-duplicate">api.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-7182">#L7182</a>: func (s *<b>UpdateDestinationInput</b>) SetDestinationId(v string) *<b>UpdateDestinationInput</b> {
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-7188" class="path-duplicate">api.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-7188">#L7188</a>: func (s *<b>UpdateDestinationInput</b>) SetElasticsearchDestinationUpdate(v *ElasticsearchDestinationUpdate) *<b>UpdateDestinationInput</b> {
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-7194" class="path-duplicate">api.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-7194">#L7194</a>: func (s *<b>UpdateDestinationInput</b>) SetExtendedS3DestinationUpdate(v *ExtendedS3DestinationUpdate) *<b>UpdateDestinationInput</b> {
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-7200" class="path-duplicate">api.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-7200">#L7200</a>: func (s *<b>UpdateDestinationInput</b>) SetRedshiftDestinationUpdate(v *RedshiftDestinationUpdate) *<b>UpdateDestinationInput</b> {
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-7206" class="path-duplicate">api.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-7206">#L7206</a>: func (s *<b>UpdateDestinationInput</b>) SetS3DestinationUpdate(v *S3DestinationUpdate) *<b>UpdateDestinationInput</b> {
+		<a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-7212" class="path-duplicate">api.go</a><a href="../../../../../src/github.com/aws/aws-sdk-go/service/firehose/api.go.html#line-7212">#L7212</a>: func (s *<b>UpdateDestinationInput</b>) SetSplunkDestinationUpdate(v *SplunkDestinationUpdate) *<b>UpdateDestinationInput</b> {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

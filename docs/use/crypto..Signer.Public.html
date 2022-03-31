@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: crypto.Signer.Public</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/crypto.html">crypto</a>.<a href="../src/crypto/crypto.go.html#line-160">Signer</a>.<a href="../src/crypto/crypto.go.html#line-163">Public</a></b></span><span style="font-size: large;"><i> (method)</i></span>
+
+<span class="title">16 uses</span>
+
+	crypto (current package)
+		<a href="../src/crypto/crypto.go.html#line-163">crypto.go#L163</a>: 	<b>Public</b>() PublicKey
+
+	<a href="../pkg/crypto/tls.html">crypto/tls</a>
+		<a href="../src/crypto/tls/auth.go.html#line-179">auth.go#L179</a>: 	switch pub := priv.<b>Public</b>().(type) {
+		<a href="../src/crypto/tls/auth.go.html#line-268" class="path-duplicate">auth.go</a><a href="../src/crypto/tls/auth.go.html#line-268">#L268</a>: 	switch pub := signer.<b>Public</b>().(type) {
+		<a href="../src/crypto/tls/common.go.html#line-1178">common.go#L1178</a>: 		switch pub := priv.<b>Public</b>().(type) {
+		<a href="../src/crypto/tls/handshake_client.go.html#line-620">handshake_client.go#L620</a>: 			sigType, sigHash, err = legacyTypeAndHashFromPublicKey(key.<b>Public</b>())
+		<a href="../src/crypto/tls/handshake_server.go.html#line-253">handshake_server.go#L253</a>: 		switch priv.<b>Public</b>().(type) {
+		<a href="../src/crypto/tls/handshake_server.go.html#line-262" class="path-duplicate">handshake_server.go</a><a href="../src/crypto/tls/handshake_server.go.html#line-262">#L262</a>: 			return fmt.Errorf("tls: unsupported signing key type (%T)", priv.<b>Public</b>())
+		<a href="../src/crypto/tls/handshake_server_tls13.go.html#line-624">handshake_server_tls13.go#L624</a>: 		public := hs.cert.PrivateKey.(crypto.Signer).<b>Public</b>()
+		<a href="../src/crypto/tls/key_agreement.go.html#line-217">key_agreement.go#L217</a>: 		sigType, sigHash, err = legacyTypeAndHashFromPublicKey(priv.<b>Public</b>())
+
+	<a href="../pkg/crypto/x509.html">crypto/x509</a>
+		<a href="../src/crypto/x509/x509.go.html#line-1482">x509.go#L1482</a>: 	hashFunc, signatureAlgorithm, err := signingParamsForPublicKey(key.<b>Public</b>(), template.SignatureAlgorithm)
+		<a href="../src/crypto/x509/x509.go.html#line-1521" class="path-duplicate">x509.go</a><a href="../src/crypto/x509/x509.go.html#line-1521">#L1521</a>: 	if privPub, ok := key.<b>Public</b>().(privateKey); !ok {
+		<a href="../src/crypto/x509/x509.go.html#line-1585" class="path-duplicate">x509.go</a><a href="../src/crypto/x509/x509.go.html#line-1585">#L1585</a>: 		if err := checkSignature(sigAlg, c.Raw, signature, key.<b>Public</b>()); err != nil {
+		<a href="../src/crypto/x509/x509.go.html#line-1636" class="path-duplicate">x509.go</a><a href="../src/crypto/x509/x509.go.html#line-1636">#L1636</a>: 	hashFunc, signatureAlgorithm, err := signingParamsForPublicKey(key.<b>Public</b>(), 0)
+		<a href="../src/crypto/x509/x509.go.html#line-1850" class="path-duplicate">x509.go</a><a href="../src/crypto/x509/x509.go.html#line-1850">#L1850</a>: 	hashFunc, sigAlgo, err = signingParamsForPublicKey(key.<b>Public</b>(), template.SignatureAlgorithm)
+		<a href="../src/crypto/x509/x509.go.html#line-1857" class="path-duplicate">x509.go</a><a href="../src/crypto/x509/x509.go.html#line-1857">#L1857</a>: 	publicKeyBytes, publicKeyAlgorithm, err = marshalPublicKey(key.<b>Public</b>())
+		<a href="../src/crypto/x509/x509.go.html#line-2128" class="path-duplicate">x509.go</a><a href="../src/crypto/x509/x509.go.html#line-2128">#L2128</a>: 	hashFunc, signatureAlgorithm, err := signingParamsForPublicKey(priv.<b>Public</b>(), template.SignatureAlgorithm)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

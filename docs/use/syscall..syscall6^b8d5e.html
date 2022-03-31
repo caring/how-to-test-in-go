@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: syscall.syscall6</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">func <b><a href="../pkg/syscall.html">syscall</a>.<a href="../src/syscall/syscall_darwin.go.html#line-379">syscall6</a></b></span>
+
+<span class="title">16 uses</span>
+
+	syscall (current package)
+		<a href="../src/syscall/syscall_darwin.go.html#line-138">syscall_darwin.go#L138</a>: 	_, _, e1 := <b>syscall6</b>(
+		<a href="../src/syscall/syscall_darwin.go.html#line-379" class="path-duplicate">syscall_darwin.go</a><a href="../src/syscall/syscall_darwin.go.html#line-379">#L379</a>: func <b>syscall6</b>(fn, a1, a2, a3, a4, a5, a6 uintptr) (r1, r2 uintptr, err Errno)
+		<a href="../src/syscall/syscall_darwin_amd64.go.html#line-50">syscall_darwin_amd64.go#L50</a>: 	_, _, e1 := <b>syscall6</b>(abi.FuncPCABI0(libc_sendfile_trampoline), uintptr(infd), uintptr(outfd), uintptr(*offset), uintptr(unsafe.Pointer(&amp;length)), 0, 0)
+		<a href="../src/syscall/zsyscall_darwin_amd64.go.html#line-44">zsyscall_darwin_amd64.go#L44</a>: 	r0, _, e1 := <b>syscall6</b>(abi.FuncPCABI0(libc_wait4_trampoline), uintptr(pid), uintptr(unsafe.Pointer(wstatus)), uintptr(options), uintptr(unsafe.Pointer(rusage)), 0, 0)
+		<a href="../src/syscall/zsyscall_darwin_amd64.go.html#line-117" class="path-duplicate">zsyscall_darwin_amd64.go</a><a href="../src/syscall/zsyscall_darwin_amd64.go.html#line-117">#L117</a>: 	_, _, e1 := <b>syscall6</b>(abi.FuncPCABI0(libc_getsockopt_trampoline), uintptr(s), uintptr(level), uintptr(name), uintptr(val), uintptr(unsafe.Pointer(vallen)), 0)
+		<a href="../src/syscall/zsyscall_darwin_amd64.go.html#line-131" class="path-duplicate">zsyscall_darwin_amd64.go</a><a href="../src/syscall/zsyscall_darwin_amd64.go.html#line-131">#L131</a>: 	_, _, e1 := <b>syscall6</b>(abi.FuncPCABI0(libc_setsockopt_trampoline), uintptr(s), uintptr(level), uintptr(name), uintptr(val), uintptr(vallen), 0)
+		<a href="../src/syscall/zsyscall_darwin_amd64.go.html#line-207" class="path-duplicate">zsyscall_darwin_amd64.go</a><a href="../src/syscall/zsyscall_darwin_amd64.go.html#line-207">#L207</a>: 	r0, _, e1 := <b>syscall6</b>(abi.FuncPCABI0(libc_recvfrom_trampoline), uintptr(fd), uintptr(_p0), uintptr(len(p)), uintptr(flags), uintptr(unsafe.Pointer(from)), uintptr(unsafe.Pointer(fromlen)))
+		<a href="../src/syscall/zsyscall_darwin_amd64.go.html#line-228" class="path-duplicate">zsyscall_darwin_amd64.go</a><a href="../src/syscall/zsyscall_darwin_amd64.go.html#line-228">#L228</a>: 	_, _, e1 := <b>syscall6</b>(abi.FuncPCABI0(libc_sendto_trampoline), uintptr(s), uintptr(_p0), uintptr(len(buf)), uintptr(flags), uintptr(to), uintptr(addrlen))
+		<a href="../src/syscall/zsyscall_darwin_amd64.go.html#line-272" class="path-duplicate">zsyscall_darwin_amd64.go</a><a href="../src/syscall/zsyscall_darwin_amd64.go.html#line-272">#L272</a>: 	r0, _, e1 := <b>syscall6</b>(abi.FuncPCABI0(libc_kevent_trampoline), uintptr(kq), uintptr(change), uintptr(nchange), uintptr(event), uintptr(nevent), uintptr(unsafe.Pointer(timeout)))
+		<a href="../src/syscall/zsyscall_darwin_amd64.go.html#line-1129" class="path-duplicate">zsyscall_darwin_amd64.go</a><a href="../src/syscall/zsyscall_darwin_amd64.go.html#line-1129">#L1129</a>: 	r0, _, e1 := <b>syscall6</b>(abi.FuncPCABI0(libc_pread_trampoline), uintptr(fd), uintptr(_p0), uintptr(len(p)), uintptr(offset), 0, 0)
+		<a href="../src/syscall/zsyscall_darwin_amd64.go.html#line-1150" class="path-duplicate">zsyscall_darwin_amd64.go</a><a href="../src/syscall/zsyscall_darwin_amd64.go.html#line-1150">#L1150</a>: 	r0, _, e1 := <b>syscall6</b>(abi.FuncPCABI0(libc_pwrite_trampoline), uintptr(fd), uintptr(_p0), uintptr(len(p)), uintptr(offset), 0, 0)
+		<a href="../src/syscall/zsyscall_darwin_amd64.go.html#line-1301" class="path-duplicate">zsyscall_darwin_amd64.go</a><a href="../src/syscall/zsyscall_darwin_amd64.go.html#line-1301">#L1301</a>: 	_, _, e1 := <b>syscall6</b>(abi.FuncPCABI0(libc_select_trampoline), uintptr(n), uintptr(unsafe.Pointer(r)), uintptr(unsafe.Pointer(w)), uintptr(unsafe.Pointer(e)), uintptr(unsafe.Pointer(timeout)), 0)
+		<a href="../src/syscall/zsyscall_darwin_amd64.go.html#line-1773" class="path-duplicate">zsyscall_darwin_amd64.go</a><a href="../src/syscall/zsyscall_darwin_amd64.go.html#line-1773">#L1773</a>: 	_, _, e1 := <b>syscall6</b>(abi.FuncPCABI0(libc_sysctl_trampoline), uintptr(_p0), uintptr(len(mib)), uintptr(unsafe.Pointer(old)), uintptr(unsafe.Pointer(oldlen)), uintptr(unsafe.Pointer(new)), uintptr(newlen))
+		<a href="../src/syscall/zsyscall_darwin_amd64.go.html#line-1822" class="path-duplicate">zsyscall_darwin_amd64.go</a><a href="../src/syscall/zsyscall_darwin_amd64.go.html#line-1822">#L1822</a>: 	r0, _, e1 := <b>syscall6</b>(abi.FuncPCABI0(libc_openat_trampoline), uintptr(fd), uintptr(unsafe.Pointer(_p0)), uintptr(flags), uintptr(perm), 0, 0)
+		<a href="../src/syscall/zsyscall_darwin_amd64.go.html#line-1962" class="path-duplicate">zsyscall_darwin_amd64.go</a><a href="../src/syscall/zsyscall_darwin_amd64.go.html#line-1962">#L1962</a>: 	_, _, e1 := <b>syscall6</b>(abi.FuncPCABI0(libc_fstatat64_trampoline), uintptr(fd), uintptr(unsafe.Pointer(_p0)), uintptr(unsafe.Pointer(stat)), uintptr(flags), 0, 0)
+		<a href="../src/syscall/zsyscall_darwin_amd64.go.html#line-1977" class="path-duplicate">zsyscall_darwin_amd64.go</a><a href="../src/syscall/zsyscall_darwin_amd64.go.html#line-1977">#L1977</a>: 	_, _, e1 := <b>syscall6</b>(abi.FuncPCABI0(libc_ptrace_trampoline), uintptr(request), uintptr(pid), uintptr(addr), uintptr(data), 0, 0)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

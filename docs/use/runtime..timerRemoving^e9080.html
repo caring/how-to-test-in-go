@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime.timerRemoving</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">const <b><a href="../pkg/runtime.html">runtime</a>.<a href="../src/runtime/time.go.html#line-137">timerRemoving</a></b></span>
+
+<span class="title">15 uses</span>
+
+	runtime (current package)
+		<a href="../src/runtime/time.go.html#line-137">time.go#L137</a>: 	<b>timerRemoving</b>
+		<a href="../src/runtime/time.go.html#line-346" class="path-duplicate">time.go</a><a href="../src/runtime/time.go.html#line-346">#L346</a>: 		case timerDeleted, <b>timerRemoving</b>, timerRemoved:
+		<a href="../src/runtime/time.go.html#line-470" class="path-duplicate">time.go</a><a href="../src/runtime/time.go.html#line-470">#L470</a>: 		case timerRunning, <b>timerRemoving</b>, timerMoving:
+		<a href="../src/runtime/time.go.html#line-567" class="path-duplicate">time.go</a><a href="../src/runtime/time.go.html#line-567">#L567</a>: 			if !atomic.Cas(&amp;t.status, s, <b>timerRemoving</b>) {
+		<a href="../src/runtime/time.go.html#line-571" class="path-duplicate">time.go</a><a href="../src/runtime/time.go.html#line-571">#L571</a>: 			if !atomic.Cas(&amp;t.status, <b>timerRemoving</b>, timerRemoved) {
+		<a href="../src/runtime/time.go.html#line-637" class="path-duplicate">time.go</a><a href="../src/runtime/time.go.html#line-637">#L637</a>: 			case timerRunning, <b>timerRemoving</b>, timerMoving:
+		<a href="../src/runtime/time.go.html#line-678" class="path-duplicate">time.go</a><a href="../src/runtime/time.go.html#line-678">#L678</a>: 			if atomic.Cas(&amp;t.status, s, <b>timerRemoving</b>) {
+		<a href="../src/runtime/time.go.html#line-680" class="path-duplicate">time.go</a><a href="../src/runtime/time.go.html#line-680">#L680</a>: 				if !atomic.Cas(&amp;t.status, <b>timerRemoving</b>, timerRemoved) {
+		<a href="../src/runtime/time.go.html#line-702" class="path-duplicate">time.go</a><a href="../src/runtime/time.go.html#line-702">#L702</a>: 		case timerNoStatus, timerRunning, <b>timerRemoving</b>, timerRemoved, timerMoving:
+		<a href="../src/runtime/time.go.html#line-778" class="path-duplicate">time.go</a><a href="../src/runtime/time.go.html#line-778">#L778</a>: 			if !atomic.Cas(&amp;t.status, s, <b>timerRemoving</b>) {
+		<a href="../src/runtime/time.go.html#line-782" class="path-duplicate">time.go</a><a href="../src/runtime/time.go.html#line-782">#L782</a>: 			if !atomic.Cas(&amp;t.status, <b>timerRemoving</b>, timerRemoved) {
+		<a href="../src/runtime/time.go.html#line-808" class="path-duplicate">time.go</a><a href="../src/runtime/time.go.html#line-808">#L808</a>: 		case timerRunning, <b>timerRemoving</b>, timerMoving:
+		<a href="../src/runtime/time.go.html#line-918" class="path-duplicate">time.go</a><a href="../src/runtime/time.go.html#line-918">#L918</a>: 				if atomic.Cas(&amp;t.status, s, <b>timerRemoving</b>) {
+		<a href="../src/runtime/time.go.html#line-921" class="path-duplicate">time.go</a><a href="../src/runtime/time.go.html#line-921">#L921</a>: 					if !atomic.Cas(&amp;t.status, <b>timerRemoving</b>, timerRemoved) {
+		<a href="../src/runtime/time.go.html#line-933" class="path-duplicate">time.go</a><a href="../src/runtime/time.go.html#line-933">#L933</a>: 			case timerRunning, <b>timerRemoving</b>, timerMoving:
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime.stkframe.fp</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/runtime.html">runtime</a>.<a href="../src/runtime/runtime2.go.html#line-990">stkframe</a>.<a href="../src/runtime/runtime2.go.html#line-996">fp</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">22 uses</span>
+
+	runtime (current package)
+		<a href="../src/runtime/heapdump.go.html#line-286">heapdump.go#L286</a>: 	dumpmemrange(unsafe.Pointer(s.sp), s.<b>fp</b>-s.sp)      // frame contents
+		<a href="../src/runtime/heapdump.go.html#line-329" class="path-duplicate">heapdump.go</a><a href="../src/runtime/heapdump.go.html#line-329">#L329</a>: 	child.argoff = s.argp - s.<b>fp</b>
+		<a href="../src/runtime/runtime2.go.html#line-996">runtime2.go#L996</a>: 	<b>fp</b>       uintptr    // stack pointer at caller aka frame pointer
+		<a href="../src/runtime/stack.go.html#line-645">stack.go#L645</a>: 		print("    adjusting ", funcname(f), " frame=[", hex(frame.sp), ",", hex(frame.<b>fp</b>), "] pc=", hex(frame.pc), " continpc=", hex(frame.continpc), "\n")
+		<a href="../src/runtime/traceback.go.html#line-182">traceback.go#L182</a>: 		if frame.<b>fp</b> == 0 {
+		<a href="../src/runtime/traceback.go.html#line-207" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-207">#L207</a>: 			frame.<b>fp</b> = frame.sp + uintptr(funcspdelta(f, frame.pc, &amp;cache))
+		<a href="../src/runtime/traceback.go.html#line-210" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-210">#L210</a>: 				frame.<b>fp</b> += sys.PtrSize
+		<a href="../src/runtime/traceback.go.html#line-245" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-245">#L245</a>: 				if n == 0 &amp;&amp; frame.sp &lt; frame.<b>fp</b> || frame.lr == 0 {
+		<a href="../src/runtime/traceback.go.html#line-251" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-251">#L251</a>: 					lrPtr = frame.<b>fp</b> - sys.PtrSize
+		<a href="../src/runtime/traceback.go.html#line-279" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-279">#L279</a>: 		frame.varp = frame.<b>fp</b>
+		<a href="../src/runtime/traceback.go.html#line-313" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-313">#L313</a>: 			frame.argp = frame.<b>fp</b> + sys.MinFrameSize
+		<a href="../src/runtime/traceback.go.html#line-471" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-471">#L471</a>: 					print(" fp=", hex(frame.<b>fp</b>), " sp=", hex(frame.sp), " pc=", hex(frame.pc))
+		<a href="../src/runtime/traceback.go.html#line-504" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-504">#L504</a>: 		frame.sp = frame.<b>fp</b>
+		<a href="../src/runtime/traceback.go.html#line-505" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-505">#L505</a>: 		frame.<b>fp</b> = 0
+		<a href="../src/runtime/traceback.go.html#line-1053" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-1053">#L1053</a>: 	if frame.<b>fp</b> != 0 &amp;&amp; frame.<b>fp</b> &lt; lo {
+		<a href="../src/runtime/traceback.go.html#line-1054" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-1054">#L1054</a>: 		lo = frame.<b>fp</b>
+		<a href="../src/runtime/traceback.go.html#line-1056" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-1056">#L1056</a>: 	if frame.<b>fp</b> != 0 &amp;&amp; frame.<b>fp</b> &gt; hi {
+		<a href="../src/runtime/traceback.go.html#line-1057" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-1057">#L1057</a>: 		hi = frame.<b>fp</b>
+		<a href="../src/runtime/traceback.go.html#line-1077" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-1077">#L1077</a>: 	print("stack: frame={sp:", hex(frame.sp), ", fp:", hex(frame.<b>fp</b>), "} stack=[", hex(stk.lo), ",", hex(stk.hi), ")\n")
+		<a href="../src/runtime/traceback.go.html#line-1080" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-1080">#L1080</a>: 		case frame.<b>fp</b>:
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

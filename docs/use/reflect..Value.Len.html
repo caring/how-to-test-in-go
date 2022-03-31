@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: reflect.Value.Len</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/reflect.html">reflect</a>.<a href="../src/reflect/value.go.html#line-39">Value</a>.<a href="../src/reflect/value.go.html#line-1500">Len</a></b></span><span style="font-size: large;"><i> (method, <a href="../imp/reflect.Value.html#name-Len">view implemented interface methods</a>)</i></span>
+
+<span class="title">111 uses</span>
+
+	reflect (current package)
+		<a href="../src/reflect/deepequal.go.html#line-89">deepequal.go#L89</a>: 		for i := 0; i &lt; v1.<b>Len</b>(); i++ {
+		<a href="../src/reflect/deepequal.go.html#line-99" class="path-duplicate">deepequal.go</a><a href="../src/reflect/deepequal.go.html#line-99">#L99</a>: 		if v1.<b>Len</b>() != v2.<b>Len</b>() {
+		<a href="../src/reflect/deepequal.go.html#line-105" class="path-duplicate">deepequal.go</a><a href="../src/reflect/deepequal.go.html#line-105">#L105</a>: 		for i := 0; i &lt; v1.<b>Len</b>(); i++ {
+		<a href="../src/reflect/deepequal.go.html#line-132" class="path-duplicate">deepequal.go</a><a href="../src/reflect/deepequal.go.html#line-132">#L132</a>: 		if v1.<b>Len</b>() != v2.<b>Len</b>() {
+		<a href="../src/reflect/swapper.go.html#line-22">swapper.go#L22</a>: 	switch v.<b>Len</b>() {
+		<a href="../src/reflect/value.go.html#line-1468">value.go#L1468</a>: 		for i := 0; i &lt; v.<b>Len</b>(); i++ {
+		<a href="../src/reflect/value.go.html#line-1477" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-1477">#L1477</a>: 		return v.<b>Len</b>() == 0
+		<a href="../src/reflect/value.go.html#line-1500" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-1500">#L1500</a>: func (v Value) <b>Len</b>() int {
+		<a href="../src/reflect/value.go.html#line-2374" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2374">#L2374</a>: 	i0 := s.<b>Len</b>()
+		<a href="../src/reflect/value.go.html#line-2416" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2416">#L2416</a>: 	s, i0, i1 := grow(s, t.<b>Len</b>())
+		<a href="../src/reflect/value.go.html#line-2457" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2457">#L2457</a>: 		ds.Len = dst.<b>Len</b>()
+		<a href="../src/reflect/value.go.html#line-2464" class="path-duplicate">value.go</a><a href="../src/reflect/value.go.html#line-2464">#L2464</a>: 		ss.Len = src.<b>Len</b>()
+
+	<a href="../pkg/crypto/x509.html">crypto/x509</a>
+		<a href="../src/crypto/x509/verify.go.html#line-509">verify.go#L509</a>: 	*count += excludedValue.<b>Len</b>()
+		<a href="../src/crypto/x509/verify.go.html#line-514" class="path-duplicate">verify.go</a><a href="../src/crypto/x509/verify.go.html#line-514">#L514</a>: 	for i := 0; i &lt; excludedValue.<b>Len</b>(); i++ {
+		<a href="../src/crypto/x509/verify.go.html#line-528" class="path-duplicate">verify.go</a><a href="../src/crypto/x509/verify.go.html#line-528">#L528</a>: 	*count += permittedValue.<b>Len</b>()
+		<a href="../src/crypto/x509/verify.go.html#line-534" class="path-duplicate">verify.go</a><a href="../src/crypto/x509/verify.go.html#line-534">#L534</a>: 	for i := 0; i &lt; permittedValue.<b>Len</b>(); i++ {
+
+	<a href="../pkg/encoding/asn1.html">encoding/asn1</a>
+		<a href="../src/encoding/asn1/marshal.go.html#line-507">marshal.go#L507</a>: 			if s.<b>Len</b>() &gt; 0 {
+		<a href="../src/encoding/asn1/marshal.go.html#line-543" class="path-duplicate">marshal.go</a><a href="../src/encoding/asn1/marshal.go.html#line-543">#L543</a>: 		switch l := v.<b>Len</b>(); l {
+		<a href="../src/encoding/asn1/marshal.go.html#line-588" class="path-duplicate">marshal.go</a><a href="../src/encoding/asn1/marshal.go.html#line-588">#L588</a>: 	if v.Kind() == reflect.Slice &amp;&amp; v.<b>Len</b>() == 0 &amp;&amp; params.omitEmpty {
+
+	<a href="../pkg/encoding/binary.html">encoding/binary</a>
+		<a href="../src/encoding/binary/binary.go.html#line-409">binary.go#L409</a>: 			return s * v.<b>Len</b>()
+		<a href="../src/encoding/binary/binary.go.html#line-543" class="path-duplicate">binary.go</a><a href="../src/encoding/binary/binary.go.html#line-543">#L543</a>: 		l := v.<b>Len</b>()
+		<a href="../src/encoding/binary/binary.go.html#line-565" class="path-duplicate">binary.go</a><a href="../src/encoding/binary/binary.go.html#line-565">#L565</a>: 		l := v.<b>Len</b>()
+		<a href="../src/encoding/binary/binary.go.html#line-612" class="path-duplicate">binary.go</a><a href="../src/encoding/binary/binary.go.html#line-612">#L612</a>: 		l := v.<b>Len</b>()
+		<a href="../src/encoding/binary/binary.go.html#line-630" class="path-duplicate">binary.go</a><a href="../src/encoding/binary/binary.go.html#line-630">#L630</a>: 		l := v.<b>Len</b>()
+
+	<a href="../pkg/encoding/json.html">encoding/json</a>
+		<a href="../src/encoding/json/decode.go.html#line-550">decode.go#L550</a>: 				newv := reflect.MakeSlice(v.Type(), v.<b>Len</b>(), newcap)
+		<a href="../src/encoding/json/decode.go.html#line-554" class="path-duplicate">decode.go</a><a href="../src/encoding/json/decode.go.html#line-554">#L554</a>: 			if i &gt;= v.<b>Len</b>() {
+		<a href="../src/encoding/json/decode.go.html#line-559" class="path-duplicate">decode.go</a><a href="../src/encoding/json/decode.go.html#line-559">#L559</a>: 		if i &lt; v.<b>Len</b>() {
+		<a href="../src/encoding/json/decode.go.html#line-584" class="path-duplicate">decode.go</a><a href="../src/encoding/json/decode.go.html#line-584">#L584</a>: 	if i &lt; v.<b>Len</b>() {
+		<a href="../src/encoding/json/decode.go.html#line-588" class="path-duplicate">decode.go</a><a href="../src/encoding/json/decode.go.html#line-588">#L588</a>: 			for ; i &lt; v.<b>Len</b>(); i++ {
+		<a href="../src/encoding/json/encode.go.html#line-344">encode.go#L344</a>: 		return v.<b>Len</b>() == 0
+		<a href="../src/encoding/json/encode.go.html#line-797" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-797">#L797</a>: 	sv := make([]reflectWithString, v.<b>Len</b>())
+		<a href="../src/encoding/json/encode.go.html#line-882" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-882">#L882</a>: 		}{v.Pointer(), v.<b>Len</b>()}
+		<a href="../src/encoding/json/encode.go.html#line-911" class="path-duplicate">encode.go</a><a href="../src/encoding/json/encode.go.html#line-911">#L911</a>: 	n := v.<b>Len</b>()
+
+	<a href="../pkg/encoding/xml.html">encoding/xml</a>
+		<a href="../src/encoding/xml/marshal.go.html#line-457">marshal.go#L457</a>: 		for i, n := 0, val.<b>Len</b>(); i &lt; n; i++ {
+		<a href="../src/encoding/xml/marshal.go.html#line-611" class="path-duplicate">marshal.go</a><a href="../src/encoding/xml/marshal.go.html#line-611">#L611</a>: 		n := val.<b>Len</b>()
+		<a href="../src/encoding/xml/marshal.go.html#line-773" class="path-duplicate">marshal.go</a><a href="../src/encoding/xml/marshal.go.html#line-773">#L773</a>: 			bytes = val.Slice(0, val.<b>Len</b>()).Bytes()
+		<a href="../src/encoding/xml/marshal.go.html#line-775" class="path-duplicate">marshal.go</a><a href="../src/encoding/xml/marshal.go.html#line-775">#L775</a>: 			bytes = make([]byte, val.<b>Len</b>())
+		<a href="../src/encoding/xml/marshal.go.html#line-893" class="path-duplicate">marshal.go</a><a href="../src/encoding/xml/marshal.go.html#line-893">#L893</a>: 			if vf.<b>Len</b>() == 0 {
+		<a href="../src/encoding/xml/marshal.go.html#line-1045" class="path-duplicate">marshal.go</a><a href="../src/encoding/xml/marshal.go.html#line-1045">#L1045</a>: 		return v.<b>Len</b>() == 0
+		<a href="../src/encoding/xml/read.go.html#line-281">read.go#L281</a>: 		n := val.<b>Len</b>()
+		<a href="../src/encoding/xml/read.go.html#line-397" class="path-duplicate">read.go</a><a href="../src/encoding/xml/read.go.html#line-397">#L397</a>: 		n := v.<b>Len</b>()
+
+	<a href="../pkg/fmt.html">fmt</a>
+		<a href="../src/fmt/print.go.html#line-831">print.go#L831</a>: 					bytes = f.Slice(0, f.<b>Len</b>()).Bytes()
+		<a href="../src/fmt/print.go.html#line-836" class="path-duplicate">print.go</a><a href="../src/fmt/print.go.html#line-836">#L836</a>: 					bytes = make([]byte, f.<b>Len</b>())
+		<a href="../src/fmt/print.go.html#line-852" class="path-duplicate">print.go</a><a href="../src/fmt/print.go.html#line-852">#L852</a>: 			for i := 0; i &lt; f.<b>Len</b>(); i++ {
+		<a href="../src/fmt/print.go.html#line-861" class="path-duplicate">print.go</a><a href="../src/fmt/print.go.html#line-861">#L861</a>: 			for i := 0; i &lt; f.<b>Len</b>(); i++ {
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/aws/awsutil.html">github.com/aws/aws-sdk-go/aws/awsutil</a>
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/copy.go.html#line-82">copy.go#L82</a>: 		s := reflect.MakeSlice(src.Type(), src.<b>Len</b>(), src.Cap())
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/copy.go.html#line-84" class="path-duplicate">copy.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/copy.go.html#line-84">#L84</a>: 		for i := 0; i &lt; src.<b>Len</b>(); i++ {
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/path_value.go.html#line-116">path_value.go#L116</a>: 					for i := 0; i &lt; value.<b>Len</b>(); i++ {
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/path_value.go.html#line-127" class="path-duplicate">path_value.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/path_value.go.html#line-127">#L127</a>: 				if i &gt;= value.<b>Len</b>() { // check out of bounds
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/path_value.go.html#line-134" class="path-duplicate">path_value.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/path_value.go.html#line-134">#L134</a>: 					i = value.<b>Len</b>() + i
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/path_value.go.html#line-171" class="path-duplicate">path_value.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/path_value.go.html#line-171">#L171</a>: 	if v.Kind() == reflect.Map &amp;&amp; v.<b>Len</b>() == 0 {
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/path_value.go.html#line-175" class="path-duplicate">path_value.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/path_value.go.html#line-175">#L175</a>: 		out := make([]interface{}, v.<b>Len</b>())
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/path_value.go.html#line-176" class="path-duplicate">path_value.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/path_value.go.html#line-176">#L176</a>: 		for i := 0; i &lt; v.<b>Len</b>(); i++ {
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/prettify.go.html#line-66">prettify.go#L66</a>: 			fmt.Fprintf(buf, "&lt;binary&gt; len %d", v.<b>Len</b>())
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/prettify.go.html#line-71" class="path-duplicate">prettify.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/prettify.go.html#line-71">#L71</a>: 		if v.<b>Len</b>() &gt; 3 {
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/prettify.go.html#line-75" class="path-duplicate">prettify.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/prettify.go.html#line-75">#L75</a>: 		for i := 0; i &lt; v.<b>Len</b>(); i++ {
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/prettify.go.html#line-79" class="path-duplicate">prettify.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/prettify.go.html#line-79">#L79</a>: 			if i &lt; v.<b>Len</b>()-1 {
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/prettify.go.html#line-93" class="path-duplicate">prettify.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/prettify.go.html#line-93">#L93</a>: 			if i &lt; v.<b>Len</b>()-1 {
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/string_value.go.html#line-52">string_value.go#L52</a>: 		if v.<b>Len</b>() &gt; 3 {
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/string_value.go.html#line-56" class="path-duplicate">string_value.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/string_value.go.html#line-56">#L56</a>: 		for i := 0; i &lt; v.<b>Len</b>(); i++ {
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/string_value.go.html#line-60" class="path-duplicate">string_value.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/string_value.go.html#line-60">#L60</a>: 			if i &lt; v.<b>Len</b>()-1 {
+		<a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/string_value.go.html#line-74" class="path-duplicate">string_value.go</a><a href="../src/github.com/aws/aws-sdk-go/aws/awsutil/string_value.go.html#line-74">#L74</a>: 			if i &lt; v.<b>Len</b>()-1 {
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil.html">github.com/aws/aws-sdk-go/private/protocol/json/jsonutil</a>
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/build.go.html#line-155">build.go#L155</a>: 	for i := 0; i &lt; value.<b>Len</b>(); i++ {
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/build.go.html#line-158" class="path-duplicate">build.go</a><a href="../src/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil/build.go.html#line-158">#L158</a>: 		if i &lt; value.<b>Len</b>()-1 {
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/private/protocol/query/queryutil.html">github.com/aws/aws-sdk-go/private/protocol/query/queryutil</a>
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/query/queryutil/queryutil.go.html#line-119">queryutil.go#L119</a>: 	if !value.IsNil() &amp;&amp; value.<b>Len</b>() == 0 {
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/query/queryutil/queryutil.go.html#line-137" class="path-duplicate">queryutil.go</a><a href="../src/github.com/aws/aws-sdk-go/private/protocol/query/queryutil/queryutil.go.html#line-137">#L137</a>: 	for i := 0; i &lt; value.<b>Len</b>(); i++ {
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/query/queryutil/queryutil.go.html#line-153" class="path-duplicate">queryutil.go</a><a href="../src/github.com/aws/aws-sdk-go/private/protocol/query/queryutil/queryutil.go.html#line-153">#L153</a>: 	if !value.IsNil() &amp;&amp; value.<b>Len</b>() == 0 {
+
+	<a href="../pkg/github.com/aws/aws-sdk-go/private/protocol/xml/xmlutil.html">github.com/aws/aws-sdk-go/private/protocol/xml/xmlutil</a>
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/xml/xmlutil/build.go.html#line-190">build.go#L190</a>: 		for i := 0; i &lt; value.<b>Len</b>(); i++ {
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/xml/xmlutil/build.go.html#line-201" class="path-duplicate">build.go</a><a href="../src/github.com/aws/aws-sdk-go/private/protocol/xml/xmlutil/build.go.html#line-201">#L201</a>: 		for i := 0; i &lt; value.<b>Len</b>(); i++ {
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/xml/xmlutil/build.go.html#line-240" class="path-duplicate">build.go</a><a href="../src/github.com/aws/aws-sdk-go/private/protocol/xml/xmlutil/build.go.html#line-240">#L240</a>: 	keys := make([]string, value.<b>Len</b>())
+		<a href="../src/github.com/aws/aws-sdk-go/private/protocol/xml/xmlutil/unmarshal.go.html#line-198">unmarshal.go#L198</a>: 		err := parse(r.Index(r.<b>Len</b>()-1), node, "")
+
+	<a href="../pkg/github.com/grpc-ecosystem/go-grpc-middleware/tags.html">github.com/grpc-ecosystem/go-grpc-middleware/tags</a>
+		<a href="../src/github.com/grpc-ecosystem/go-grpc-middleware/tags/fieldextractor.go.html#line-72">fieldextractor.go#L72</a>: 			if field.<b>Len</b>() == 0 {
+
+	<a href="../pkg/github.com/jmespath/go-jmespath.html">github.com/jmespath/go-jmespath</a>
+		<a href="../src/github.com/jmespath/go-jmespath/functions.go.html#line-415">functions.go#L415</a>: 		return float64(v.<b>Len</b>()), nil
+		<a href="../src/github.com/jmespath/go-jmespath/interpreter.go.html#line-136">interpreter.go#L136</a>: 				for i := 0; i &lt; v.<b>Len</b>(); i++ {
+		<a href="../src/github.com/jmespath/go-jmespath/interpreter.go.html#line-163" class="path-duplicate">interpreter.go</a><a href="../src/github.com/jmespath/go-jmespath/interpreter.go.html#line-163">#L163</a>: 				index += rv.<b>Len</b>()
+		<a href="../src/github.com/jmespath/go-jmespath/interpreter.go.html#line-165" class="path-duplicate">interpreter.go</a><a href="../src/github.com/jmespath/go-jmespath/interpreter.go.html#line-165">#L165</a>: 			if index &lt; rv.<b>Len</b>() &amp;&amp; index &gt;= 0 {
+		<a href="../src/github.com/jmespath/go-jmespath/interpreter.go.html#line-345" class="path-duplicate">interpreter.go</a><a href="../src/github.com/jmespath/go-jmespath/interpreter.go.html#line-345">#L345</a>: 	for i := 0; i &lt; v.<b>Len</b>(); i++ {
+		<a href="../src/github.com/jmespath/go-jmespath/interpreter.go.html#line-352" class="path-duplicate">interpreter.go</a><a href="../src/github.com/jmespath/go-jmespath/interpreter.go.html#line-352">#L352</a>: 			for j := 0; j &lt; elementV.<b>Len</b>(); j++ {
+		<a href="../src/github.com/jmespath/go-jmespath/interpreter.go.html#line-374" class="path-duplicate">interpreter.go</a><a href="../src/github.com/jmespath/go-jmespath/interpreter.go.html#line-374">#L374</a>: 	for i := 0; i &lt; v.<b>Len</b>(); i++ {
+		<a href="../src/github.com/jmespath/go-jmespath/interpreter.go.html#line-385" class="path-duplicate">interpreter.go</a><a href="../src/github.com/jmespath/go-jmespath/interpreter.go.html#line-385">#L385</a>: 	for i := 0; i &lt; v.<b>Len</b>(); i++ {
+		<a href="../src/github.com/jmespath/go-jmespath/interpreter.go.html#line-407" class="path-duplicate">interpreter.go</a><a href="../src/github.com/jmespath/go-jmespath/interpreter.go.html#line-407">#L407</a>: 	for i := 0; i &lt; v.<b>Len</b>(); i++ {
+		<a href="../src/github.com/jmespath/go-jmespath/util.go.html#line-34">util.go#L34</a>: 		return rv.<b>Len</b>() == 0
+
+	<a href="../pkg/google.golang.org/protobuf/internal/impl.html">google.golang.org/protobuf/internal/impl</a>
+		<a href="../src/google.golang.org/protobuf/internal/impl/codec_map.go.html#line-92">codec_map.go#L92</a>: 	if mapv.<b>Len</b>() == 0 {
+		<a href="../src/google.golang.org/protobuf/internal/impl/codec_map.go.html#line-267" class="path-duplicate">codec_map.go</a><a href="../src/google.golang.org/protobuf/internal/impl/codec_map.go.html#line-267">#L267</a>: 	if mapv.<b>Len</b>() == 0 {
+		<a href="../src/google.golang.org/protobuf/internal/impl/codec_map.go.html#line-342" class="path-duplicate">codec_map.go</a><a href="../src/google.golang.org/protobuf/internal/impl/codec_map.go.html#line-342">#L342</a>: 	if srcm.<b>Len</b>() == 0 {
+		<a href="../src/google.golang.org/protobuf/internal/impl/codec_map.go.html#line-357" class="path-duplicate">codec_map.go</a><a href="../src/google.golang.org/protobuf/internal/impl/codec_map.go.html#line-357">#L357</a>: 	if srcm.<b>Len</b>() == 0 {
+		<a href="../src/google.golang.org/protobuf/internal/impl/codec_map.go.html#line-372" class="path-duplicate">codec_map.go</a><a href="../src/google.golang.org/protobuf/internal/impl/codec_map.go.html#line-372">#L372</a>: 	if srcm.<b>Len</b>() == 0 {
+		<a href="../src/google.golang.org/protobuf/internal/impl/convert.go.html#line-353">convert.go#L353</a>: 	if c.goType.Kind() == reflect.String &amp;&amp; v.<b>Len</b>() == 0 {
+		<a href="../src/google.golang.org/protobuf/internal/impl/convert_list.go.html#line-111">convert_list.go#L111</a>: 	return ls.v.Elem().<b>Len</b>()
+		<a href="../src/google.golang.org/protobuf/internal/impl/convert_map.go.html#line-68">convert_map.go#L68</a>: 	return ms.v.<b>Len</b>()
+		<a href="../src/google.golang.org/protobuf/internal/impl/legacy_message.go.html#line-226">legacy_message.go#L226</a>: 		for i := 0; i &lt; vs.<b>Len</b>(); i++ {
+		<a href="../src/google.golang.org/protobuf/internal/impl/message_reflect_field.go.html#line-163">message_reflect_field.go#L163</a>: 			return rv.<b>Len</b>() &gt; 0
+		<a href="../src/google.golang.org/protobuf/internal/impl/message_reflect_field.go.html#line-174" class="path-duplicate">message_reflect_field.go</a><a href="../src/google.golang.org/protobuf/internal/impl/message_reflect_field.go.html#line-174">#L174</a>: 			if rv.<b>Len</b>() == 0 {
+		<a href="../src/google.golang.org/protobuf/internal/impl/message_reflect_field.go.html#line-216" class="path-duplicate">message_reflect_field.go</a><a href="../src/google.golang.org/protobuf/internal/impl/message_reflect_field.go.html#line-216">#L216</a>: 			return rv.<b>Len</b>() &gt; 0
+		<a href="../src/google.golang.org/protobuf/internal/impl/message_reflect_field.go.html#line-227" class="path-duplicate">message_reflect_field.go</a><a href="../src/google.golang.org/protobuf/internal/impl/message_reflect_field.go.html#line-227">#L227</a>: 			if rv.Elem().<b>Len</b>() == 0 {
+		<a href="../src/google.golang.org/protobuf/internal/impl/message_reflect_field.go.html#line-294" class="path-duplicate">message_reflect_field.go</a><a href="../src/google.golang.org/protobuf/internal/impl/message_reflect_field.go.html#line-294">#L294</a>: 				return rv.<b>Len</b>() &gt; 0
+		<a href="../src/google.golang.org/protobuf/internal/impl/message_reflect_field.go.html#line-327" class="path-duplicate">message_reflect_field.go</a><a href="../src/google.golang.org/protobuf/internal/impl/message_reflect_field.go.html#line-327">#L327</a>: 			if isBytes &amp;&amp; rv.<b>Len</b>() == 0 {
+		<a href="../src/google.golang.org/protobuf/internal/impl/message_reflect_field.go.html#line-523" class="path-duplicate">message_reflect_field.go</a><a href="../src/google.golang.org/protobuf/internal/impl/message_reflect_field.go.html#line-523">#L523</a>: 		for i := 0; i &lt; v.<b>Len</b>(); i++ {
+		<a href="../src/google.golang.org/protobuf/internal/impl/message_reflect_field.go.html#line-532" class="path-duplicate">message_reflect_field.go</a><a href="../src/google.golang.org/protobuf/internal/impl/message_reflect_field.go.html#line-532">#L532</a>: 		return v.<b>Len</b>() == 0
+
+	<a href="../pkg/internal/fmtsort.html">internal/fmtsort</a>
+		<a href="../src/internal/fmtsort/sort.go.html#line-59">sort.go#L59</a>: 	n := mapValue.<b>Len</b>()
+		<a href="../src/internal/fmtsort/sort.go.html#line-164" class="path-duplicate">sort.go</a><a href="../src/internal/fmtsort/sort.go.html#line-164">#L164</a>: 		for i := 0; i &lt; aVal.<b>Len</b>(); i++ {
+
+	<a href="../pkg/text/template.html">text/template</a>
+		<a href="../src/text/template/exec.go.html#line-314">exec.go#L314</a>: 		truth = val.<b>Len</b>() &gt; 0
+		<a href="../src/text/template/exec.go.html#line-355" class="path-duplicate">exec.go</a><a href="../src/text/template/exec.go.html#line-355">#L355</a>: 		if val.<b>Len</b>() == 0 {
+		<a href="../src/text/template/exec.go.html#line-358" class="path-duplicate">exec.go</a><a href="../src/text/template/exec.go.html#line-358">#L358</a>: 		for i := 0; i &lt; val.<b>Len</b>(); i++ {
+		<a href="../src/text/template/exec.go.html#line-363" class="path-duplicate">exec.go</a><a href="../src/text/template/exec.go.html#line-363">#L363</a>: 		if val.<b>Len</b>() == 0 {
+		<a href="../src/text/template/funcs.go.html#line-222">funcs.go#L222</a>: 			x, err := indexArg(index, item.<b>Len</b>())
+		<a href="../src/text/template/funcs.go.html#line-267" class="path-duplicate">funcs.go</a><a href="../src/text/template/funcs.go.html#line-267">#L267</a>: 		cap = item.<b>Len</b>()
+		<a href="../src/text/template/funcs.go.html#line-274" class="path-duplicate">funcs.go</a><a href="../src/text/template/funcs.go.html#line-274">#L274</a>: 	idx := [3]int{0, item.<b>Len</b>()}
+		<a href="../src/text/template/funcs.go.html#line-306" class="path-duplicate">funcs.go</a><a href="../src/text/template/funcs.go.html#line-306">#L306</a>: 		return item.<b>Len</b>(), nil
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Source: doc.go in package github.com/grpc-ecosystem/go-grpc-middleware/logging/zap</title>
+<link href="../../../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre id="header"><code><span class="title">Source File</span>
+	doc.go
+
+<span class="title">Belonging Package</span>
+	<a href="../../../../../../pkg/github.com/grpc-ecosystem/go-grpc-middleware/logging/zap.html">github.com/grpc-ecosystem/go-grpc-middleware/logging/zap</a>
+</code></pre>
+
+<pre class="line-numbers">
+<div class="anchor" id="doc"><span class="codeline" id="line-1"><code><span class="comment">/*</span></code></span>
+<span class="codeline" id="line-2"><code><span class="comment">`grpc_zap` is a gRPC logging middleware backed by ZAP loggers</span></code></span>
+<span class="codeline" id="line-3"><code></code></span>
+<span class="codeline" id="line-4"><code><span class="comment">It accepts a user-configured `zap.Logger` that will be used for logging completed gRPC calls. The same `zap.Logger` will</span></code></span>
+<span class="codeline" id="line-5"><code><span class="comment">be used for logging completed gRPC calls, and be populated into the `context.Context` passed into gRPC handler code.</span></code></span>
+<span class="codeline" id="line-6"><code></code></span>
+<span class="codeline" id="line-7"><code><span class="comment">On calling `StreamServerInterceptor` or `UnaryServerInterceptor` this logging middleware will add gRPC call information</span></code></span>
+<span class="codeline" id="line-8"><code><span class="comment">to the ctx so that it will be present on subsequent use of the `ctx_zap` logger.</span></code></span>
+<span class="codeline" id="line-9"><code></code></span>
+<span class="codeline" id="line-10"><code><span class="comment">If a deadline is present on the gRPC request the grpc.request.deadline tag is populated when the request begins. grpc.request.deadline</span></code></span>
+<span class="codeline" id="line-11"><code><span class="comment">is a string representing the time (RFC3339) when the current call will expire.</span></code></span>
+<span class="codeline" id="line-12"><code></code></span>
+<span class="codeline" id="line-13"><code><span class="comment">This package also implements request and response *payload* logging, both for server-side and client-side. These will be</span></code></span>
+<span class="codeline" id="line-14"><code><span class="comment">logged as structured `jsonpb` fields for every message received/sent (both unary and streaming). For that please use</span></code></span>
+<span class="codeline" id="line-15"><code><span class="comment">`Payload*Interceptor` functions for that. Please note that the user-provided function that determines whether to log</span></code></span>
+<span class="codeline" id="line-16"><code><span class="comment">the full request/response payload needs to be written with care, this can significantly slow down gRPC.</span></code></span>
+<span class="codeline" id="line-17"><code></code></span>
+<span class="codeline" id="line-18"><code><span class="comment">ZAP can also be made as a backend for gRPC library internals. For that use `ReplaceGrpcLoggerV2`.</span></code></span>
+<span class="codeline" id="line-19"><code></code></span>
+<span class="codeline" id="line-20"><code></code></span>
+<span class="codeline" id="line-21"><code><span class="comment">*Server Interceptor*</span></code></span>
+<span class="codeline" id="line-22"><code><span class="comment">Below is a JSON formatted example of a log that would be logged by the server interceptor:</span></code></span>
+<span class="codeline" id="line-23"><code></code></span>
+<span class="codeline" id="line-24"><code><span class="comment">	{</span></code></span>
+<span class="codeline" id="line-25"><code><span class="comment">	  "level": "info",									// string  zap log levels</span></code></span>
+<span class="codeline" id="line-26"><code><span class="comment">	  "msg": "finished unary call",						// string  log message</span></code></span>
+<span class="codeline" id="line-27"><code></code></span>
+<span class="codeline" id="line-28"><code><span class="comment">	  "grpc.code": "OK",								// string  grpc status code</span></code></span>
+<span class="codeline" id="line-29"><code><span class="comment">	  "grpc.method": "Ping",							// string  method name</span></code></span>
+<span class="codeline" id="line-30"><code><span class="comment">	  "grpc.service": "mwitkow.testproto.TestService",  // string  full name of the called service</span></code></span>
+<span class="codeline" id="line-31"><code><span class="comment">	  "grpc.start_time": "2006-01-02T15:04:05Z07:00",   // string  RFC3339 representation of the start time</span></code></span>
+<span class="codeline" id="line-32"><code><span class="comment">	  "grpc.request.deadline": "2006-01-02T15:04:05Z07:00",   // string  RFC3339 deadline of the current request if supplied</span></code></span>
+<span class="codeline" id="line-33"><code><span class="comment">	  "grpc.request.value": "something",				// string  value on the request</span></code></span>
+<span class="codeline" id="line-34"><code><span class="comment">	  "grpc.time_ms": 1.345,							// float32 run time of the call in ms</span></code></span>
+<span class="codeline" id="line-35"><code></code></span>
+<span class="codeline" id="line-36"><code><span class="comment">	  "peer.address": {</span></code></span>
+<span class="codeline" id="line-37"><code><span class="comment">	    "IP": "127.0.0.1",								// string  IP address of calling party</span></code></span>
+<span class="codeline" id="line-38"><code><span class="comment">	    "Port": 60216,									// int     port call is coming in on</span></code></span>
+<span class="codeline" id="line-39"><code><span class="comment">	    "Zone": ""										// string  peer zone for caller</span></code></span>
+<span class="codeline" id="line-40"><code><span class="comment">	  },</span></code></span>
+<span class="codeline" id="line-41"><code><span class="comment">	  "span.kind": "server",							// string  client | server</span></code></span>
+<span class="codeline" id="line-42"><code><span class="comment">	  "system": "grpc"									// string</span></code></span>
+<span class="codeline" id="line-43"><code></code></span>
+<span class="codeline" id="line-44"><code><span class="comment">	  "custom_field": "custom_value",					// string  user defined field</span></code></span>
+<span class="codeline" id="line-45"><code><span class="comment">	  "custom_tags.int": 1337,							// int     user defined tag on the ctx</span></code></span>
+<span class="codeline" id="line-46"><code><span class="comment">	  "custom_tags.string": "something",				// string  user defined tag on the ctx</span></code></span>
+<span class="codeline" id="line-47"><code><span class="comment">	}</span></code></span>
+<span class="codeline" id="line-48"><code></code></span>
+<span class="codeline" id="line-49"><code><span class="comment">*Payload Interceptor*</span></code></span>
+<span class="codeline" id="line-50"><code><span class="comment">Below is a JSON formatted example of a log that would be logged by the payload interceptor:</span></code></span>
+<span class="codeline" id="line-51"><code></code></span>
+<span class="codeline" id="line-52"><code><span class="comment">	{</span></code></span>
+<span class="codeline" id="line-53"><code><span class="comment">	  "level": "info",													// string zap log levels</span></code></span>
+<span class="codeline" id="line-54"><code><span class="comment">	  "msg": "client request payload logged as grpc.request.content",   // string log message</span></code></span>
+<span class="codeline" id="line-55"><code></code></span>
+<span class="codeline" id="line-56"><code><span class="comment">	  "grpc.request.content": {											// object content of RPC request</span></code></span>
+<span class="codeline" id="line-57"><code><span class="comment">	    "msg" : {														// object ZAP specific inner object</span></code></span>
+<span class="codeline" id="line-58"><code><span class="comment">		  "value": "something",											// string defined by caller</span></code></span>
+<span class="codeline" id="line-59"><code><span class="comment">	      "sleepTimeMs": 9999											// int    defined by caller</span></code></span>
+<span class="codeline" id="line-60"><code><span class="comment">	    }</span></code></span>
+<span class="codeline" id="line-61"><code><span class="comment">	  },</span></code></span>
+<span class="codeline" id="line-62"><code><span class="comment">	  "grpc.method": "Ping",											// string method being called</span></code></span>
+<span class="codeline" id="line-63"><code><span class="comment">	  "grpc.service": "mwitkow.testproto.TestService",					// string service being called</span></code></span>
+<span class="codeline" id="line-64"><code></code></span>
+<span class="codeline" id="line-65"><code><span class="comment">	  "span.kind": "client",											// string client | server</span></code></span>
+<span class="codeline" id="line-66"><code><span class="comment">	  "system": "grpc"													// string</span></code></span>
+<span class="codeline" id="line-67"><code><span class="comment">	}</span></code></span>
+<span class="codeline" id="line-68"><code></code></span>
+<span class="codeline" id="line-69"><code><span class="comment">Note - due to implementation ZAP differs from Logrus in the "grpc.request.content" object by having an inner "msg" object.</span></code></span>
+<span class="codeline" id="line-70"><code></code></span>
+<span class="codeline" id="line-71"><code></code></span>
+<span class="codeline" id="line-72"><code><span class="comment">Please see examples and tests for examples of use.</span></code></span>
+<span class="codeline" id="line-73"><code><span class="comment">*/</span></code></span></div><span class="codeline" id="line-74"><code><span class="keyword">package</span> grpc_zap</code></span>
+</pre><pre id="footer">
+<table><tr><td><img src="../../../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: bytes.IndexByte</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">func <b><a href="../pkg/bytes.html">bytes</a>.<a href="../src/bytes/bytes.go.html#line-90">IndexByte</a></b></span>
+
+<span class="title">28 uses</span>
+
+	bytes (current package)
+		<a href="../src/bytes/buffer.go.html#line-419">buffer.go#L419</a>: 	i := <b>IndexByte</b>(b.buf[b.off:], delim)
+		<a href="../src/bytes/bytes.go.html#line-90">bytes.go#L90</a>: func <b>IndexByte</b>(b []byte, c byte) int {
+		<a href="../src/bytes/bytes.go.html#line-158" class="path-duplicate">bytes.go</a><a href="../src/bytes/bytes.go.html#line-158">#L158</a>: 		return <b>IndexByte</b>(s, byte(r))
+		<a href="../src/bytes/bytes.go.html#line-1097" class="path-duplicate">bytes.go</a><a href="../src/bytes/bytes.go.html#line-1097">#L1097</a>: 		return <b>IndexByte</b>(s, sep[0])
+		<a href="../src/bytes/bytes.go.html#line-1119" class="path-duplicate">bytes.go</a><a href="../src/bytes/bytes.go.html#line-1119">#L1119</a>: 				o := <b>IndexByte</b>(s[i+1:t], c0)
+		<a href="../src/bytes/bytes.go.html#line-1148" class="path-duplicate">bytes.go</a><a href="../src/bytes/bytes.go.html#line-1148">#L1148</a>: 			o := <b>IndexByte</b>(s[i+1:t], c0)
+
+	<a href="../pkg/bufio.html">bufio</a>
+		<a href="../src/bufio/bufio.go.html#line-335">bufio.go#L335</a>: 		if i := bytes.<b>IndexByte</b>(b.buf[b.r+s:b.w], delim); i &gt;= 0 {
+		<a href="../src/bufio/scan.go.html#line-355">scan.go#L355</a>: 	if i := bytes.<b>IndexByte</b>(data, '\n'); i &gt;= 0 {
+
+	<a href="../pkg/crypto/rsa.html">crypto/rsa</a>
+		<a href="../src/crypto/rsa/pss.go.html#line-162">pss.go#L162</a>: 		psLen := bytes.<b>IndexByte</b>(db, 0x01)
+
+	<a href="../pkg/encoding/pem.html">encoding/pem</a>
+		<a href="../src/encoding/pem/pem.go.html#line-39">pem.go#L39</a>: 	i := bytes.<b>IndexByte</b>(data, '\n')
+		<a href="../src/encoding/pem/pem.go.html#line-117" class="path-duplicate">pem.go</a><a href="../src/encoding/pem/pem.go.html#line-117">#L117</a>: 		i := bytes.<b>IndexByte</b>(line, ':')
+
+	<a href="../pkg/github.com/go-sql-driver/mysql.html">github.com/go-sql-driver/mysql</a>
+		<a href="../src/github.com/go-sql-driver/mysql/packets.go.html#line-213">packets.go#L213</a>: 	pos := 1 + bytes.<b>IndexByte</b>(data[1:], 0x00) + 1 + 4
+		<a href="../src/github.com/go-sql-driver/mysql/packets.go.html#line-260" class="path-duplicate">packets.go</a><a href="../src/github.com/go-sql-driver/mysql/packets.go.html#line-260">#L260</a>: 		if end := bytes.<b>IndexByte</b>(data[pos:], 0x00); end != -1 {
+		<a href="../src/github.com/go-sql-driver/mysql/packets.go.html#line-509" class="path-duplicate">packets.go</a><a href="../src/github.com/go-sql-driver/mysql/packets.go.html#line-509">#L509</a>: 		pluginEndIndex := bytes.<b>IndexByte</b>(data, 0x00)
+
+	<a href="../pkg/golang.org/x/net/http2.html">golang.org/x/net/http2</a>
+		<a href="../src/golang.org/x/net/http2/gotrack.go.html#line-58">gotrack.go#L58</a>: 	i := bytes.<b>IndexByte</b>(b, ' ')
+
+	<a href="../pkg/golang.org/x/net/trace.html">golang.org/x/net/trace</a>
+		<a href="../src/golang.org/x/net/trace/trace.go.html#line-940">trace.go#L940</a>: 		dot := bytes.<b>IndexByte</b>(b, '.')
+
+	<a href="../pkg/google.golang.org/protobuf/internal/encoding/text.html">google.golang.org/protobuf/internal/encoding/text</a>
+		<a href="../src/google.golang.org/protobuf/internal/encoding/text/decode.go.html#line-644">decode.go#L644</a>: 			if i := bytes.<b>IndexByte</b>(b, '\n'); i &gt;= 0 {
+
+	<a href="../pkg/html/template.html">html/template</a>
+		<a href="../src/html/template/css.go.html#line-59">css.go#L59</a>: 	i := bytes.<b>IndexByte</b>(s, '\\')
+		<a href="../src/html/template/css.go.html#line-68" class="path-duplicate">css.go</a><a href="../src/html/template/css.go.html#line-68">#L68</a>: 		i := bytes.<b>IndexByte</b>(s, '\\')
+		<a href="../src/html/template/transition.go.html#line-51">transition.go#L51</a>: 		i := k + bytes.<b>IndexByte</b>(s[k:], '&lt;')
+		<a href="../src/html/template/transition.go.html#line-236" class="path-duplicate">transition.go</a><a href="../src/html/template/transition.go.html#line-236">#L236</a>: 			if len(s) &gt; 0 &amp;&amp; bytes.<b>IndexByte</b>(tagEndSeparators, s[0]) != -1 {
+
+	<a href="../pkg/net/http.html">net/http</a>
+		<a href="../src/net/http/h2_bundle.go.html#line-3006">h2_bundle.go#L3006</a>: 	i := bytes.<b>IndexByte</b>(b, ' ')
+
+	<a href="../pkg/net/http/internal.html">net/http/internal</a>
+		<a href="../src/net/http/internal/chunked.go.html#line-65">chunked.go#L65</a>: 		return bytes.<b>IndexByte</b>(peek, '\n') &gt;= 0
+		<a href="../src/net/http/internal/chunked.go.html#line-162" class="path-duplicate">chunked.go</a><a href="../src/net/http/internal/chunked.go.html#line-162">#L162</a>: 	semi := bytes.<b>IndexByte</b>(p, ';')
+
+	<a href="../pkg/net/textproto.html">net/textproto</a>
+		<a href="../src/net/textproto/reader.go.html#line-511">reader.go#L511</a>: 		i := bytes.<b>IndexByte</b>(kv, ':')
+		<a href="../src/net/textproto/reader.go.html#line-558" class="path-duplicate">reader.go</a><a href="../src/net/textproto/reader.go.html#line-558">#L558</a>: 	if bytes.<b>IndexByte</b>(line, ':') &lt; 0 {
+		<a href="../src/net/textproto/reader.go.html#line-575" class="path-duplicate">reader.go</a><a href="../src/net/textproto/reader.go.html#line-575">#L575</a>: 		i := bytes.<b>IndexByte</b>(peek, '\n')
+
+	<a href="../pkg/regexp.html">regexp</a>
+		<a href="../src/regexp/regexp.go.html#line-671">regexp.go#L671</a>: 	if bytes.<b>IndexByte</b>(repl, '$') &gt;= 0 {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

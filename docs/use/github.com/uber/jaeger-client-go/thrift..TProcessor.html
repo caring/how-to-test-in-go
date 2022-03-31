@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/uber/jaeger-client-go/thrift.TProcessor</title>
+<link href="../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../../../../pkg/github.com/uber/jaeger-client-go/thrift.html">github.com/uber/jaeger-client-go/thrift</a>.<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/processor_factory.go.html#line-26">TProcessor</a></b></span>
+
+<span class="title">8 uses</span>
+
+	github.com/uber/jaeger-client-go/thrift (current package)
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/processor_factory.go.html#line-26">processor_factory.go#L26</a>: type <b>TProcessor</b> interface {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/processor_factory.go.html#line-47" class="path-duplicate">processor_factory.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/processor_factory.go.html#line-47">#L47</a>: 	GetProcessor(trans TTransport) <b>TProcessor</b>
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/processor_factory.go.html#line-51" class="path-duplicate">processor_factory.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/processor_factory.go.html#line-51">#L51</a>: 	processor <b>TProcessor</b>
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/processor_factory.go.html#line-54" class="path-duplicate">processor_factory.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/processor_factory.go.html#line-54">#L54</a>: func NewTProcessorFactory(p <b>TProcessor</b>) TProcessorFactory {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/processor_factory.go.html#line-58" class="path-duplicate">processor_factory.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/processor_factory.go.html#line-58">#L58</a>: func (p *tProcessorFactory) GetProcessor(trans TTransport) <b>TProcessor</b> {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/simple_server.go.html#line-74">simple_server.go#L74</a>: func NewTSimpleServer2(processor <b>TProcessor</b>, serverTransport TServerTransport) *TSimpleServer {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/simple_server.go.html#line-78" class="path-duplicate">simple_server.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/simple_server.go.html#line-78">#L78</a>: func NewTSimpleServer4(processor <b>TProcessor</b>, serverTransport TServerTransport, transportFactory TTransportFactory, protocolFactory TProtocolFactory) *TSimpleServer {
+		<a href="../../../../src/github.com/uber/jaeger-client-go/thrift/simple_server.go.html#line-86" class="path-duplicate">simple_server.go</a><a href="../../../../src/github.com/uber/jaeger-client-go/thrift/simple_server.go.html#line-86">#L86</a>: func NewTSimpleServer6(processor <b>TProcessor</b>, serverTransport TServerTransport, inputTransportFactory TTransportFactory, outputTransportFactory TTransportFactory, inputProtocolFactory TProtocolFactory, outputProtocolFactory TProtocolFactory) *TSimpleServer {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Source: config.go in package github.com/caring/gopkg-logging</title>
+<link href="../../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre id="header"><code><span class="title">Source File</span>
+	config.go
+
+<span class="title">Belonging Package</span>
+	<a href="../../../../pkg/github.com/caring/gopkg-logging.html">github.com/caring/gopkg-logging</a>
+</code></pre>
+<style>input[type=radio] {display: none;}
+input[id=r0]:checked ~pre label[for=r0],
+input[id=r1]:checked ~pre label[for=r1],
+input[id=r2]:checked ~pre label[for=r2],
+input[id=r3]:checked ~pre label[for=r3],
+input[id=r4]:checked ~pre label[for=r4],
+input[id=r5]:checked ~pre label[for=r5],
+input[id=r6]:checked ~pre label[for=r6],
+input[id=r7]:checked ~pre label[for=r7],
+input[id=r8]:checked ~pre label[for=r8],
+input[id=r9]:checked ~pre label[for=r9],
+input[id=r10]:checked ~pre label[for=r10],
+input[id=r11]:checked ~pre label[for=r11],
+input[id=r12]:checked ~pre label[for=r12],
+input[id=r13]:checked ~pre label[for=r13],
+input[id=r14]:checked ~pre label[for=r14],
+input[id=r15]:checked ~pre label[for=r15],
+input[id=r16]:checked ~pre label[for=r16],
+input[id=r17]:checked ~pre label[for=r17],
+input[id=r18]:checked ~pre label[for=r18],
+input[id=r19]:checked ~pre label[for=r19],
+input[id=r20]:checked ~pre label[for=r20],
+input[id=r21]:checked ~pre label[for=r21],
+input[id=r22]:checked ~pre label[for=r22],
+input[id=r23]:checked ~pre label[for=r23],
+input[id=r24]:checked ~pre label[for=r24],
+input[id=r25]:checked ~pre label[for=r25],
+input[id=r26]:checked ~pre label[for=r26],
+input[id=r27]:checked ~pre label[for=r27],
+input[id=r28]:checked ~pre label[for=r28],
+input[id=r29]:checked ~pre label[for=r29],
+input[id=r30]:checked ~pre label[for=r30],
+input[id=r31]:checked ~pre label[for=r31],
+input[id=r32]:checked ~pre label[for=r32],
+input[id=r33]:checked ~pre label[for=r33],
+input[id=r34]:checked ~pre label[for=r34],
+input[id=r35]:checked ~pre label[for=r35],
+input[id=r36]:checked ~pre label[for=r36],
+input[id=r37]:checked ~pre label[for=r37],
+input[id=r38]:checked ~pre label[for=r38],
+input[id=r39]:checked ~pre label[for=r39],
+input[id=r40]:checked ~pre label[for=r40],
+input[id=r41]:checked ~pre label[for=r41],
+input[id=r42]:checked ~pre label[for=r42],
+input[id=r43]:checked ~pre label[for=r43],
+input[id=r44]:checked ~pre label[for=r44],
+input[id=r45]:checked ~pre label[for=r45]
+{background: #226; color: #ff8;}
+input[id=i0]:checked ~pre .i0,
+input[id=i1]:checked ~pre .i1,
+input[id=i2]:checked ~pre .i2,
+input[id=i3]:checked ~pre .i3,
+input[id=i4]:checked ~pre .i4,
+input[id=i5]:checked ~pre .i5,
+input[id=i6]:checked ~pre .i6
+{background: brown; color: #eed;}
+</style><input id="r0" type="radio" name="g"/>
+<input id="r1" type="radio" name="g"/>
+<input id="r2" type="radio" name="g"/>
+<input id="r3" type="radio" name="g"/>
+<input id="r4" type="radio" name="g"/>
+<input id="r5" type="radio" name="g"/>
+<input id="r6" type="radio" name="g"/>
+<input id="r7" type="radio" name="g"/>
+<input id="r8" type="radio" name="g"/>
+<input id="r9" type="radio" name="g"/>
+<input id="r10" type="radio" name="g"/>
+<input id="r11" type="radio" name="g"/>
+<input id="r12" type="radio" name="g"/>
+<input id="r13" type="radio" name="g"/>
+<input id="r14" type="radio" name="g"/>
+<input id="r15" type="radio" name="g"/>
+<input id="r16" type="radio" name="g"/>
+<input id="r17" type="radio" name="g"/>
+<input id="r18" type="radio" name="g"/>
+<input id="r19" type="radio" name="g"/>
+<input id="r20" type="radio" name="g"/>
+<input id="r21" type="radio" name="g"/>
+<input id="r22" type="radio" name="g"/>
+<input id="r23" type="radio" name="g"/>
+<input id="r24" type="radio" name="g"/>
+<input id="r25" type="radio" name="g"/>
+<input id="r26" type="radio" name="g"/>
+<input id="r27" type="radio" name="g"/>
+<input id="r28" type="radio" name="g"/>
+<input id="r29" type="radio" name="g"/>
+<input id="r30" type="radio" name="g"/>
+<input id="r31" type="radio" name="g"/>
+<input id="r32" type="radio" name="g"/>
+<input id="r33" type="radio" name="g"/>
+<input id="r34" type="radio" name="g"/>
+<input id="r35" type="radio" name="g"/>
+<input id="r36" type="radio" name="g"/>
+<input id="r37" type="radio" name="g"/>
+<input id="r38" type="radio" name="g"/>
+<input id="r39" type="radio" name="g"/>
+<input id="r40" type="radio" name="g"/>
+<input id="r41" type="radio" name="g"/>
+<input id="r42" type="radio" name="g"/>
+<input id="r43" type="radio" name="g"/>
+<input id="r44" type="radio" name="g"/>
+<input id="r45" type="radio" name="g"/>
+<input id="i0" type="radio" name="i"/>
+<input id="i1" type="radio" name="i"/>
+<input id="i2" type="radio" name="i"/>
+<input id="i3" type="radio" name="i"/>
+<input id="i4" type="radio" name="i"/>
+<input id="i5" type="radio" name="i"/>
+<input id="i6" type="radio" name="i"/>
+
+<pre class="line-numbers">
+<span class="codeline" id="line-1"><code><span class="keyword">package</span> logging</code></span>
+<span class="codeline" id="line-2"><code></code></span>
+<span class="codeline" id="line-3"><code><span class="keyword">import</span> (</code></span>
+<span class="codeline" id="line-4"><code>	<label for="i0"><span class="lit-string i0">"io"</span></label></code></span>
+<span class="codeline" id="line-5"><code>	<label for="i1"><span class="lit-string i1">"os"</span></label></code></span>
+<span class="codeline" id="line-6"><code>	<label for="i2"><span class="lit-string i2">"strconv"</span></label></code></span>
+<span class="codeline" id="line-7"><code>	<label for="i3"><span class="lit-string i3">"time"</span></label></code></span>
+<span class="codeline" id="line-8"><code></code></span>
+<span class="codeline" id="line-9"><code>	<label for="i4"><span class="lit-string i4">"github.com/caring/gopkg-logging/internal/writer"</span></label></code></span>
+<span class="codeline" id="line-10"><code>	<label for="i5"><span class="lit-string i5">"go.uber.org/zap"</span></label></code></span>
+<span class="codeline" id="line-11"><code>	<label for="i6"><span class="lit-string i6">"go.uber.org/zap/zapcore"</span></label></code></span>
+<span class="codeline" id="line-12"><code>)</code></span>
+<span class="codeline" id="line-13"><code></code></span>
+<span class="codeline" id="line-14"><code><span class="comment">// Config encapsulates the various settings that may be applied to a logger</span></code></span>
+<span class="codeline" id="line-15"><code><span class="keyword">type</span> <a href="../../../../pkg/github.com/caring/gopkg-logging.html#name-Config" class="ident">Config</a> <span class="keyword">struct</span> {</code></span>
+<span class="codeline" id="line-16"><code>	<span class="comment">// The name of the logger</span></code></span>
+<span class="codeline" id="line-17"><code>	<a href="../../../../use/github.com/caring/gopkg-logging..Config.LoggerName.html" class="ident">LoggerName</a> <a href="../../../../pkg/builtin.html#name-string" class="ident">string</a></code></span>
+<span class="codeline" id="line-18"><code>	<span class="comment">// The service name</span></code></span>
+<span class="codeline" id="line-19"><code>	<a href="../../../../use/github.com/caring/gopkg-logging..Config.ServiceName.html" class="ident">ServiceName</a> <a href="../../../../pkg/builtin.html#name-string" class="ident">string</a></code></span>
+<span class="codeline" id="line-20"><code>	<span class="comment">// All levels above this will be logged to output and to kinesis (if enabled)</span></code></span>
+<span class="codeline" id="line-21"><code>	<a href="../../../../use/github.com/caring/gopkg-logging..Config.LogLevel.html" class="ident">LogLevel</a> <a href="level.go.html#line-12" class="ident">Level</a></code></span>
+<span class="codeline" id="line-22"><code>	<span class="comment">// Dev logging out puts in a format to be consumed by the console pretty-printer</span></code></span>
+<span class="codeline" id="line-23"><code>	<a href="../../../../use/github.com/caring/gopkg-logging..Config.EnableDevLogging.html" class="ident">EnableDevLogging</a> <a href="../../../../pkg/builtin.html#name-bool" class="ident">bool</a></code></span>
+<span class="codeline" id="line-24"><code>	<span class="comment">// The name of the kinesis stream where developer monitoring logs are piped through</span></code></span>
+<span class="codeline" id="line-25"><code>	<a href="../../../../use/github.com/caring/gopkg-logging..Config.KinesisStreamMonitoring.html" class="ident">KinesisStreamMonitoring</a> <a href="../../../../pkg/builtin.html#name-string" class="ident">string</a></code></span>
+<span class="codeline" id="line-26"><code>	<span class="comment">// The name of the kinesis stream where business insight lgs are piped through</span></code></span>
+<span class="codeline" id="line-27"><code>	<a href="../../../../use/github.com/caring/gopkg-logging..Config.KinesisStreamReporting.html" class="ident">KinesisStreamReporting</a> <a href="../../../../pkg/builtin.html#name-string" class="ident">string</a></code></span>
+<span class="codeline" id="line-28"><code>	<span class="comment">// Flag to disable kinesis</span></code></span>
+<span class="codeline" id="line-29"><code>	<a href="../../../../use/github.com/caring/gopkg-logging..Config.EnableKinesis.html" class="ident">EnableKinesis</a> <a href="../../../../pkg/builtin.html#name-bool" class="ident">bool</a></code></span>
+<span class="codeline" id="line-30"><code>	<span class="comment">// If kinesis is enabled, this sets the time between each buffer flush</span></code></span>
+<span class="codeline" id="line-31"><code><span class="comment">	// of each core that writes to kinesis</span></code></span>
+<span class="codeline" id="line-32"><code>	<a href="../../../../use/github.com/caring/gopkg-logging..Config.FlushInterval.html" class="ident">FlushInterval</a> <a href="../../../../pkg/time.html" class="ident i3">time</a>.<a href="../../../time/time.go.html#line-590" class="ident">Duration</a></code></span>
+<span class="codeline" id="line-33"><code>	<span class="comment">// If kinesis is enabled this sets the byte size of the buffer for both kinesis cores.</span></code></span>
+<span class="codeline" id="line-34"><code>	<a href="../../../../use/github.com/caring/gopkg-logging..Config.BufferSize.html" class="ident">BufferSize</a> <a href="../../../../pkg/builtin.html#name-int64" class="ident">int64</a></code></span>
+<span class="codeline" id="line-35"><code>	<span class="comment">// This value is used to help filter logs by environment. Expected values are caring-prod, caring-stg, &amp; caring-dev</span></code></span>
+<span class="codeline" id="line-36"><code>	<a href="../../../../use/github.com/caring/gopkg-logging..Config.Env.html" class="ident">Env</a> <a href="../../../../pkg/builtin.html#name-string" class="ident">string</a></code></span>
+<span class="codeline" id="line-37"><code>}</code></span>
+<span class="codeline" id="line-38"><code></code></span>
+<span class="codeline" id="line-39"><code><span class="keyword">func</span> <label for="r0" class="ident"><a href="../../../../pkg/github.com/caring/gopkg-logging.html#name-newDefaultConfig" class="ident">newDefaultConfig</a></label>() *<a href="#line-15" class="ident">Config</a> {</code></span>
+<span class="codeline" id="line-40"><code>	<span class="keyword">return</span> &amp;<a href="#line-15" class="ident">Config</a>{</code></span>
+<span class="codeline" id="line-41"><code>		<a href="#line-17" class="ident">LoggerName</a>:              <span class="lit-string">""</span>,</code></span>
+<span class="codeline" id="line-42"><code>		<a href="#line-19" class="ident">ServiceName</a>:             <span class="lit-string">""</span>,</code></span>
+<span class="codeline" id="line-43"><code>		<a href="#line-21" class="ident">LogLevel</a>:                <a href="level.go.html#line-19" class="ident">InfoLevel</a>,</code></span>
+<span class="codeline" id="line-44"><code>		<a href="#line-23" class="ident">EnableDevLogging</a>:        <a href="../../../../pkg/builtin.html#name-false" class="ident">false</a>,</code></span>
+<span class="codeline" id="line-45"><code>		<a href="#line-25" class="ident">KinesisStreamMonitoring</a>: <span class="lit-string">""</span>,</code></span>
+<span class="codeline" id="line-46"><code>		<a href="#line-27" class="ident">KinesisStreamReporting</a>:  <span class="lit-string">""</span>,</code></span>
+<span class="codeline" id="line-47"><code>		<a href="#line-29" class="ident">EnableKinesis</a>:          <a href="../../../../pkg/builtin.html#name-false" class="ident">false</a>,</code></span>
+<span class="codeline" id="line-48"><code>		<a href="#line-32" class="ident">FlushInterval</a>:           <span class="lit-number">10</span> * <a href="../../../../pkg/time.html" class="ident i3">time</a>.<a href="../../../time/time.go.html#line-612" class="ident">Second</a>,</code></span>
+<span class="codeline" id="line-49"><code>		<a href="#line-34" class="ident">BufferSize</a>:              <a href="../../../../pkg/github.com/caring/gopkg-logging/internal/writer.html" class="ident i4">writer</a>.<a href="internal/writer/buffer.go.html#line-20" class="ident">DefaultBufferSize</a>,</code></span>
+<span class="codeline" id="line-50"><code>		<a href="#line-36" class="ident">Env</a>:                     <span class="lit-string">""</span>,</code></span>
+<span class="codeline" id="line-51"><code>	}</code></span>
+<span class="codeline" id="line-52"><code>}</code></span>
+<span class="codeline" id="line-53"><code></code></span>
+<span class="codeline" id="line-54"><code><span class="comment">// mergeAndPopulateConfig starts with a default config, and populates</span></code></span>
+<span class="codeline" id="line-55"><code><span class="comment">// it with config from the environment. Config from the environment can</span></code></span>
+<span class="codeline" id="line-56"><code><span class="comment">// be overridden with any config input as arguments. Only non 0 values will</span></code></span>
+<span class="codeline" id="line-57"><code><span class="comment">// overwrite the defaults</span></code></span>
+<span class="codeline" id="line-58"><code><span class="keyword">func</span> <label for="r1" class="ident"><a href="../../../../pkg/github.com/caring/gopkg-logging.html#name-mergeAndPopulateConfig" class="ident">mergeAndPopulateConfig</a></label>(<label for="r2" class="ident">c</label> *<a href="#line-15" class="ident">Config</a>) (*<a href="#line-15" class="ident">Config</a>, <a href="../../../../pkg/builtin.html#name-error" class="ident">error</a>) {</code></span>
+<span class="codeline" id="line-59"><code>	<label for="r3" class="ident">final</label> := <a href="#line-39" class="ident">newDefaultConfig</a>()</code></span>
+<span class="codeline" id="line-60"><code></code></span>
+<span class="codeline" id="line-61"><code>	<span class="keyword">if</span> <label for="r2" class="ident">c</label> == <a href="../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-62"><code>		<label for="r2" class="ident">c</label> = &amp;<a href="#line-15" class="ident">Config</a>{}</code></span>
+<span class="codeline" id="line-63"><code>	}</code></span>
+<span class="codeline" id="line-64"><code>	<span class="keyword">if</span> <label for="r2" class="ident">c</label>.<a href="#line-17" class="ident">LoggerName</a> != <span class="lit-string">""</span> {</code></span>
+<span class="codeline" id="line-65"><code>		<label for="r3" class="ident">final</label>.<a href="#line-17" class="ident">LoggerName</a> = <label for="r2" class="ident">c</label>.<a href="#line-17" class="ident">LoggerName</a></code></span>
+<span class="codeline" id="line-66"><code>	} <span class="keyword">else</span> <span class="keyword">if</span> <label for="r4" class="ident">s</label> := <a href="../../../../pkg/os.html" class="ident i1">os</a>.<a href="../../../os/env.go.html#line-101" class="ident">Getenv</a>(<span class="lit-string">"LOG_NAME"</span>); <label for="r4" class="ident">s</label> != <span class="lit-string">""</span> {</code></span>
+<span class="codeline" id="line-67"><code>		<label for="r3" class="ident">final</label>.<a href="#line-17" class="ident">LoggerName</a> = <label for="r4" class="ident">s</label></code></span>
+<span class="codeline" id="line-68"><code>	}</code></span>
+<span class="codeline" id="line-69"><code></code></span>
+<span class="codeline" id="line-70"><code>	<span class="keyword">if</span> <label for="r2" class="ident">c</label>.<a href="#line-19" class="ident">ServiceName</a> != <span class="lit-string">""</span> {</code></span>
+<span class="codeline" id="line-71"><code>		<label for="r3" class="ident">final</label>.<a href="#line-19" class="ident">ServiceName</a> = <label for="r2" class="ident">c</label>.<a href="#line-19" class="ident">ServiceName</a></code></span>
+<span class="codeline" id="line-72"><code>	} <span class="keyword">else</span> <span class="keyword">if</span> <label for="r5" class="ident">s</label> := <a href="../../../../pkg/os.html" class="ident i1">os</a>.<a href="../../../os/env.go.html#line-101" class="ident">Getenv</a>(<span class="lit-string">"SERVICE_NAME"</span>); <label for="r5" class="ident">s</label> != <span class="lit-string">""</span> {</code></span>
+<span class="codeline" id="line-73"><code>		<label for="r3" class="ident">final</label>.<a href="#line-19" class="ident">ServiceName</a> = <label for="r5" class="ident">s</label></code></span>
+<span class="codeline" id="line-74"><code>	}</code></span>
+<span class="codeline" id="line-75"><code></code></span>
+<span class="codeline" id="line-76"><code>	<span class="keyword">if</span> <label for="r2" class="ident">c</label>.<a href="#line-21" class="ident">LogLevel</a> != <span class="lit-number">0</span> {</code></span>
+<span class="codeline" id="line-77"><code>		<label for="r3" class="ident">final</label>.<a href="#line-21" class="ident">LogLevel</a> = <label for="r2" class="ident">c</label>.<a href="#line-21" class="ident">LogLevel</a></code></span>
+<span class="codeline" id="line-78"><code>	} <span class="keyword">else</span> <span class="keyword">if</span> <label for="r6" class="ident">s</label> := <a href="../../../../pkg/os.html" class="ident i1">os</a>.<a href="../../../os/env.go.html#line-101" class="ident">Getenv</a>(<span class="lit-string">"LOG_LEVEL"</span>); <label for="r6" class="ident">s</label> != <span class="lit-string">""</span> {</code></span>
+<span class="codeline" id="line-79"><code>		<label for="r7" class="ident">err</label> := <label for="r3" class="ident">final</label>.<a href="#line-21" class="ident">LogLevel</a>.<a href="level.go.html#line-132" class="ident">Set</a>(<label for="r6" class="ident">s</label>)</code></span>
+<span class="codeline" id="line-80"><code>		<span class="keyword">if</span> <label for="r7" class="ident">err</label> != <a href="../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-81"><code>			<span class="keyword">return</span> <a href="../../../../pkg/builtin.html#name-nil" class="ident">nil</a>, <label for="r7" class="ident">err</label></code></span>
+<span class="codeline" id="line-82"><code>		}</code></span>
+<span class="codeline" id="line-83"><code>	}</code></span>
+<span class="codeline" id="line-84"><code></code></span>
+<span class="codeline" id="line-85"><code>	<span class="comment">// The default value of Config.EnableDevLogging is false, so if c.EnableDevLogging</span></code></span>
+<span class="codeline" id="line-86"><code><span class="comment">	// is true, that means the default was intentionally overwritten</span></code></span>
+<span class="codeline" id="line-87"><code>	<span class="keyword">if</span> <label for="r2" class="ident">c</label>.<a href="#line-23" class="ident">EnableDevLogging</a> == <a href="../../../../pkg/builtin.html#name-true" class="ident">true</a> {</code></span>
+<span class="codeline" id="line-88"><code>		<label for="r3" class="ident">final</label>.<a href="#line-23" class="ident">EnableDevLogging</a> = <a href="../../../../pkg/builtin.html#name-true" class="ident">true</a></code></span>
+<span class="codeline" id="line-89"><code>	} <span class="keyword">else</span> <span class="keyword">if</span> <label for="r8" class="ident">s</label> := <a href="../../../../pkg/os.html" class="ident i1">os</a>.<a href="../../../os/env.go.html#line-101" class="ident">Getenv</a>(<span class="lit-string">"LOG_ENABLE_DEV"</span>); <label for="r8" class="ident">s</label> != <span class="lit-string">""</span> {</code></span>
+<span class="codeline" id="line-90"><code>		<label for="r9" class="ident">b</label>, <label for="r10" class="ident">err</label> := <a href="../../../../pkg/strconv.html" class="ident i2">strconv</a>.<a href="../../../strconv/atob.go.html#line-10" class="ident">ParseBool</a>(<label for="r8" class="ident">s</label>)</code></span>
+<span class="codeline" id="line-91"><code>		<span class="keyword">if</span> <label for="r10" class="ident">err</label> != <a href="../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-92"><code>			<span class="keyword">return</span> <a href="../../../../pkg/builtin.html#name-nil" class="ident">nil</a>, <label for="r10" class="ident">err</label></code></span>
+<span class="codeline" id="line-93"><code>		}</code></span>
+<span class="codeline" id="line-94"><code>		<label for="r3" class="ident">final</label>.<a href="#line-23" class="ident">EnableDevLogging</a> = <label for="r9" class="ident">b</label></code></span>
+<span class="codeline" id="line-95"><code>	}</code></span>
+<span class="codeline" id="line-96"><code></code></span>
+<span class="codeline" id="line-97"><code>	<span class="keyword">if</span> <label for="r2" class="ident">c</label>.<a href="#line-25" class="ident">KinesisStreamMonitoring</a> != <span class="lit-string">""</span> {</code></span>
+<span class="codeline" id="line-98"><code>		<label for="r3" class="ident">final</label>.<a href="#line-25" class="ident">KinesisStreamMonitoring</a> = <label for="r2" class="ident">c</label>.<a href="#line-25" class="ident">KinesisStreamMonitoring</a></code></span>
+<span class="codeline" id="line-99"><code>	} <span class="keyword">else</span> <span class="keyword">if</span> <label for="r11" class="ident">s</label> := <a href="../../../../pkg/os.html" class="ident i1">os</a>.<a href="../../../os/env.go.html#line-101" class="ident">Getenv</a>(<span class="lit-string">"LOG_STREAM_MONITORING"</span>); <label for="r11" class="ident">s</label> != <span class="lit-string">""</span> {</code></span>
+<span class="codeline" id="line-100"><code>		<label for="r3" class="ident">final</label>.<a href="#line-25" class="ident">KinesisStreamMonitoring</a> = <label for="r11" class="ident">s</label></code></span>
+<span class="codeline" id="line-101"><code>	}</code></span>
+<span class="codeline" id="line-102"><code></code></span>
+<span class="codeline" id="line-103"><code>	<span class="keyword">if</span> <label for="r2" class="ident">c</label>.<a href="#line-27" class="ident">KinesisStreamReporting</a> != <span class="lit-string">""</span> {</code></span>
+<span class="codeline" id="line-104"><code>		<label for="r3" class="ident">final</label>.<a href="#line-27" class="ident">KinesisStreamReporting</a> = <label for="r2" class="ident">c</label>.<a href="#line-27" class="ident">KinesisStreamReporting</a></code></span>
+<span class="codeline" id="line-105"><code>	} <span class="keyword">else</span> <span class="keyword">if</span> <label for="r12" class="ident">s</label> := <a href="../../../../pkg/os.html" class="ident i1">os</a>.<a href="../../../os/env.go.html#line-101" class="ident">Getenv</a>(<span class="lit-string">"LOG_STREAM_REPORTING"</span>); <label for="r12" class="ident">s</label> != <span class="lit-string">""</span> {</code></span>
+<span class="codeline" id="line-106"><code>		<label for="r3" class="ident">final</label>.<a href="#line-27" class="ident">KinesisStreamReporting</a> = <label for="r12" class="ident">s</label></code></span>
+<span class="codeline" id="line-107"><code>	}</code></span>
+<span class="codeline" id="line-108"><code></code></span>
+<span class="codeline" id="line-109"><code>	<span class="comment">// The default value of Config.EnableKinesis is false, so if c.EnableKinesis</span></code></span>
+<span class="codeline" id="line-110"><code><span class="comment">	// is false, that means the default was intentionally overwritten</span></code></span>
+<span class="codeline" id="line-111"><code>	<span class="keyword">if</span> <label for="r2" class="ident">c</label>.<a href="#line-29" class="ident">EnableKinesis</a> == <a href="../../../../pkg/builtin.html#name-true" class="ident">true</a> {</code></span>
+<span class="codeline" id="line-112"><code>		<label for="r3" class="ident">final</label>.<a href="#line-29" class="ident">EnableKinesis</a> = <a href="../../../../pkg/builtin.html#name-true" class="ident">true</a></code></span>
+<span class="codeline" id="line-113"><code>	} <span class="keyword">else</span> <span class="keyword">if</span> <label for="r13" class="ident">s</label> := <a href="../../../../pkg/os.html" class="ident i1">os</a>.<a href="../../../os/env.go.html#line-101" class="ident">Getenv</a>(<span class="lit-string">"LOG_ENABLE_KINESIS"</span>); <label for="r13" class="ident">s</label> != <span class="lit-string">""</span> {</code></span>
+<span class="codeline" id="line-114"><code>		<label for="r14" class="ident">b</label>, <label for="r15" class="ident">err</label> := <a href="../../../../pkg/strconv.html" class="ident i2">strconv</a>.<a href="../../../strconv/atob.go.html#line-10" class="ident">ParseBool</a>(<label for="r13" class="ident">s</label>)</code></span>
+<span class="codeline" id="line-115"><code>		<span class="keyword">if</span> <label for="r15" class="ident">err</label> != <a href="../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-116"><code>			<span class="keyword">return</span> <a href="../../../../pkg/builtin.html#name-nil" class="ident">nil</a>, <label for="r15" class="ident">err</label></code></span>
+<span class="codeline" id="line-117"><code>		}</code></span>
+<span class="codeline" id="line-118"><code>		<label for="r3" class="ident">final</label>.<a href="#line-29" class="ident">EnableKinesis</a> = <label for="r14" class="ident">b</label></code></span>
+<span class="codeline" id="line-119"><code>	}</code></span>
+<span class="codeline" id="line-120"><code></code></span>
+<span class="codeline" id="line-121"><code>	<span class="keyword">if</span> <label for="r2" class="ident">c</label>.<a href="#line-34" class="ident">BufferSize</a> != <span class="lit-number">0</span> {</code></span>
+<span class="codeline" id="line-122"><code>		<label for="r3" class="ident">final</label>.<a href="#line-34" class="ident">BufferSize</a> = <label for="r2" class="ident">c</label>.<a href="#line-34" class="ident">BufferSize</a></code></span>
+<span class="codeline" id="line-123"><code>	} <span class="keyword">else</span> <span class="keyword">if</span> <label for="r16" class="ident">s</label> := <a href="../../../../pkg/os.html" class="ident i1">os</a>.<a href="../../../os/env.go.html#line-101" class="ident">Getenv</a>(<span class="lit-string">"LOG_BUFFER_SIZE"</span>); <label for="r16" class="ident">s</label> != <span class="lit-string">""</span> {</code></span>
+<span class="codeline" id="line-124"><code>		<label for="r17" class="ident">i</label>, <label for="r18" class="ident">err</label> := <a href="../../../../pkg/strconv.html" class="ident i2">strconv</a>.<a href="../../../strconv/atoi.go.html#line-184" class="ident">ParseInt</a>(<label for="r16" class="ident">s</label>, <span class="lit-number">0</span>, <span class="lit-number">64</span>)</code></span>
+<span class="codeline" id="line-125"><code>		<span class="keyword">if</span> <label for="r18" class="ident">err</label> != <a href="../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-126"><code>			<span class="keyword">return</span> <a href="../../../../pkg/builtin.html#name-nil" class="ident">nil</a>, <label for="r18" class="ident">err</label></code></span>
+<span class="codeline" id="line-127"><code>		}</code></span>
+<span class="codeline" id="line-128"><code>		<label for="r3" class="ident">final</label>.<a href="#line-34" class="ident">BufferSize</a> = <label for="r17" class="ident">i</label></code></span>
+<span class="codeline" id="line-129"><code>	}</code></span>
+<span class="codeline" id="line-130"><code></code></span>
+<span class="codeline" id="line-131"><code>	<span class="keyword">if</span> <label for="r2" class="ident">c</label>.<a href="#line-32" class="ident">FlushInterval</a> != <span class="lit-number">0</span> {</code></span>
+<span class="codeline" id="line-132"><code>		<label for="r3" class="ident">final</label>.<a href="#line-32" class="ident">FlushInterval</a> = <label for="r2" class="ident">c</label>.<a href="#line-32" class="ident">FlushInterval</a></code></span>
+<span class="codeline" id="line-133"><code>	} <span class="keyword">else</span> <span class="keyword">if</span> <label for="r19" class="ident">s</label> := <a href="../../../../pkg/os.html" class="ident i1">os</a>.<a href="../../../os/env.go.html#line-101" class="ident">Getenv</a>(<span class="lit-string">"LOG_FLUSH_INTERVAL"</span>); <label for="r19" class="ident">s</label> != <span class="lit-string">""</span> {</code></span>
+<span class="codeline" id="line-134"><code>		<label for="r20" class="ident">i</label>, <label for="r21" class="ident">err</label> := <a href="../../../../pkg/strconv.html" class="ident i2">strconv</a>.<a href="../../../strconv/atoi.go.html#line-184" class="ident">ParseInt</a>(<label for="r19" class="ident">s</label>, <span class="lit-number">0</span>, <span class="lit-number">64</span>)</code></span>
+<span class="codeline" id="line-135"><code>		<span class="keyword">if</span> <label for="r21" class="ident">err</label> != <a href="../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-136"><code>			<span class="keyword">return</span> <a href="../../../../pkg/builtin.html#name-nil" class="ident">nil</a>, <label for="r21" class="ident">err</label></code></span>
+<span class="codeline" id="line-137"><code>		}</code></span>
+<span class="codeline" id="line-138"><code>		<label for="r3" class="ident">final</label>.<a href="#line-32" class="ident">FlushInterval</a> = <a href="../../../../pkg/time.html" class="ident i3">time</a>.<a href="../../../time/time.go.html#line-590" class="ident">Duration</a>(<label for="r20" class="ident">i</label>) * <a href="../../../../pkg/time.html" class="ident i3">time</a>.<a href="../../../time/time.go.html#line-612" class="ident">Second</a></code></span>
+<span class="codeline" id="line-139"><code>	}</code></span>
+<span class="codeline" id="line-140"><code></code></span>
+<span class="codeline" id="line-141"><code>	<span class="keyword">if</span> <label for="r2" class="ident">c</label>.<a href="#line-36" class="ident">Env</a> != <span class="lit-string">""</span> {</code></span>
+<span class="codeline" id="line-142"><code>		<label for="r3" class="ident">final</label>.<a href="#line-36" class="ident">Env</a> = <label for="r2" class="ident">c</label>.<a href="#line-36" class="ident">Env</a></code></span>
+<span class="codeline" id="line-143"><code>	} <span class="keyword">else</span> <span class="keyword">if</span> <label for="r22" class="ident">s</label> := <a href="../../../../pkg/os.html" class="ident i1">os</a>.<a href="../../../os/env.go.html#line-101" class="ident">Getenv</a>(<span class="lit-string">"ENV"</span>); <label for="r22" class="ident">s</label> != <span class="lit-string">""</span> {</code></span>
+<span class="codeline" id="line-144"><code>		<label for="r3" class="ident">final</label>.<a href="#line-36" class="ident">Env</a> = <label for="r22" class="ident">s</label></code></span>
+<span class="codeline" id="line-145"><code>	}</code></span>
+<span class="codeline" id="line-146"><code></code></span>
+<span class="codeline" id="line-147"><code>	<span class="keyword">return</span> <label for="r3" class="ident">final</label>, <a href="../../../../pkg/builtin.html#name-nil" class="ident">nil</a></code></span>
+<span class="codeline" id="line-148"><code>}</code></span>
+<span class="codeline" id="line-149"><code></code></span>
+<span class="codeline" id="line-150"><code><span class="comment">// spits out a zap config that has been tuned to play nicely with</span></code></span>
+<span class="codeline" id="line-151"><code><span class="comment">// the zap-pretty pretty printing util and easy development</span></code></span>
+<span class="codeline" id="line-152"><code><span class="keyword">func</span> <label for="r23" class="ident"><a href="../../../../pkg/github.com/caring/gopkg-logging.html#name-newZapDevelopmentConfig" class="ident">newZapDevelopmentConfig</a></label>() <a href="../../../../pkg/go.uber.org/zap.html" class="ident i5">zap</a>.<a href="../../../go.uber.org/zap/config.go.html#line-58" class="ident">Config</a> {</code></span>
+<span class="codeline" id="line-153"><code>	<label for="r24" class="ident">c</label> := <a href="../../../../pkg/go.uber.org/zap.html" class="ident i5">zap</a>.<a href="../../../go.uber.org/zap/config.go.html#line-159" class="ident">NewDevelopmentConfig</a>()</code></span>
+<span class="codeline" id="line-154"><code>	<span class="comment">// This displays log messages in a format compatible with the zap-pretty print library</span></code></span>
+<span class="codeline" id="line-155"><code>	<label for="r24" class="ident">c</label>.<a href="../../../go.uber.org/zap/config.go.html#line-81" class="ident">EncoderConfig</a> = <a href="../../../../pkg/go.uber.org/zap/zapcore.html" class="ident i6">zapcore</a>.<a href="../../../go.uber.org/zap/zapcore/encoder.go.html#line-274" class="ident">EncoderConfig</a>{</code></span>
+<span class="codeline" id="line-156"><code>		<a href="../../../go.uber.org/zap/zapcore/encoder.go.html#line-279" class="ident">TimeKey</a>:        <span class="lit-string">"ts"</span>,</code></span>
+<span class="codeline" id="line-157"><code>		<a href="../../../go.uber.org/zap/zapcore/encoder.go.html#line-278" class="ident">LevelKey</a>:       <span class="lit-string">"level"</span>,</code></span>
+<span class="codeline" id="line-158"><code>		<a href="../../../go.uber.org/zap/zapcore/encoder.go.html#line-280" class="ident">NameKey</a>:        <span class="lit-string">"logger"</span>,</code></span>
+<span class="codeline" id="line-159"><code>		<a href="../../../go.uber.org/zap/zapcore/encoder.go.html#line-281" class="ident">CallerKey</a>:      <span class="lit-string">"caller"</span>,</code></span>
+<span class="codeline" id="line-160"><code>		<a href="../../../go.uber.org/zap/zapcore/encoder.go.html#line-277" class="ident">MessageKey</a>:     <span class="lit-string">"msg"</span>,</code></span>
+<span class="codeline" id="line-161"><code>		<a href="../../../go.uber.org/zap/zapcore/encoder.go.html#line-282" class="ident">StacktraceKey</a>:  <span class="lit-string">"stacktrace"</span>,</code></span>
+<span class="codeline" id="line-162"><code>		<a href="../../../go.uber.org/zap/zapcore/encoder.go.html#line-283" class="ident">LineEnding</a>:     <a href="../../../../pkg/go.uber.org/zap/zapcore.html" class="ident i6">zapcore</a>.<a href="../../../go.uber.org/zap/zapcore/encoder.go.html#line-32" class="ident">DefaultLineEnding</a>,</code></span>
+<span class="codeline" id="line-163"><code>		<a href="../../../go.uber.org/zap/zapcore/encoder.go.html#line-287" class="ident">EncodeLevel</a>:    <a href="../../../../pkg/go.uber.org/zap/zapcore.html" class="ident i6">zapcore</a>.<a href="../../../go.uber.org/zap/zapcore/encoder.go.html#line-64" class="ident">CapitalColorLevelEncoder</a>,</code></span>
+<span class="codeline" id="line-164"><code>		<a href="../../../go.uber.org/zap/zapcore/encoder.go.html#line-288" class="ident">EncodeTime</a>:     <a href="../../../../pkg/go.uber.org/zap/zapcore.html" class="ident i6">zapcore</a>.<a href="../../../go.uber.org/zap/zapcore/encoder.go.html#line-95" class="ident">EpochTimeEncoder</a>,</code></span>
+<span class="codeline" id="line-165"><code>		<a href="../../../go.uber.org/zap/zapcore/encoder.go.html#line-289" class="ident">EncodeDuration</a>: <a href="../../../../pkg/go.uber.org/zap/zapcore.html" class="ident i6">zapcore</a>.<a href="../../../go.uber.org/zap/zapcore/encoder.go.html#line-183" class="ident">SecondsDurationEncoder</a>,</code></span>
+<span class="codeline" id="line-166"><code>		<a href="../../../go.uber.org/zap/zapcore/encoder.go.html#line-290" class="ident">EncodeCaller</a>:   <a href="../../../../pkg/go.uber.org/zap/zapcore.html" class="ident i6">zapcore</a>.<a href="../../../go.uber.org/zap/zapcore/encoder.go.html#line-234" class="ident">ShortCallerEncoder</a>,</code></span>
+<span class="codeline" id="line-167"><code>	}</code></span>
+<span class="codeline" id="line-168"><code>	<span class="keyword">return</span> <label for="r24" class="ident">c</label></code></span>
+<span class="codeline" id="line-169"><code>}</code></span>
+<span class="codeline" id="line-170"><code></code></span>
+<span class="codeline" id="line-171"><code><span class="comment">// builds a zap core configured at info log level. The underlying io stream that writes to kinesis is wrapped in a buffer</span></code></span>
+<span class="codeline" id="line-172"><code><span class="keyword">func</span> <label for="r25" class="ident"><a href="../../../../pkg/github.com/caring/gopkg-logging.html#name-buildReportingCore" class="ident">buildReportingCore</a></label>(<label for="r26" class="ident">streamName</label> <a href="../../../../pkg/builtin.html#name-string" class="ident">string</a>, <label for="r27" class="ident">enc</label> <a href="../../../../pkg/go.uber.org/zap/zapcore.html" class="ident i6">zapcore</a>.<a href="../../../go.uber.org/zap/zapcore/encoder.go.html#line-274" class="ident">EncoderConfig</a>, <label for="r28" class="ident">bufSize</label> <a href="../../../../pkg/builtin.html#name-int64" class="ident">int64</a>, <label for="r29" class="ident">flushInterval</label> <a href="../../../../pkg/time.html" class="ident i3">time</a>.<a href="../../../time/time.go.html#line-590" class="ident">Duration</a>) (<a href="../../../../pkg/go.uber.org/zap/zapcore.html" class="ident i6">zapcore</a>.<a href="../../../go.uber.org/zap/zapcore/core.go.html#line-25" class="ident">Core</a>, <a href="../../../../pkg/io.html" class="ident i0">io</a>.<a href="../../../io/io.go.html#line-104" class="ident">Closer</a>, <a href="../../../../pkg/builtin.html#name-error" class="ident">error</a>) {</code></span>
+<span class="codeline" id="line-173"><code>	<label for="r30" class="ident">w</label>, <label for="r31" class="ident">err</label> := <a href="../../../../pkg/github.com/caring/gopkg-logging/internal/writer.html" class="ident i4">writer</a>.<a href="internal/writer/kinesis.go.html#line-18" class="ident">NewKinesisWriter</a>(<label for="r26" class="ident">streamName</label>)</code></span>
+<span class="codeline" id="line-174"><code>	<span class="keyword">if</span> <label for="r31" class="ident">err</label> != <a href="../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-175"><code>		<span class="keyword">return</span> <a href="../../../../pkg/builtin.html#name-nil" class="ident">nil</a>, <a href="../../../../pkg/builtin.html#name-nil" class="ident">nil</a>, <label for="r31" class="ident">err</label></code></span>
+<span class="codeline" id="line-176"><code>	}</code></span>
+<span class="codeline" id="line-177"><code></code></span>
+<span class="codeline" id="line-178"><code>	<label for="r32" class="ident">buf</label>, <label for="r33" class="ident">closer</label> := <a href="../../../../pkg/github.com/caring/gopkg-logging/internal/writer.html" class="ident i4">writer</a>.<a href="internal/writer/buffer.go.html#line-29" class="ident">Buffer</a>(<a href="../../../../pkg/go.uber.org/zap/zapcore.html" class="ident i6">zapcore</a>.<a href="../../../go.uber.org/zap/zapcore/write_syncer.go.html#line-40" class="ident">AddSync</a>(<label for="r30" class="ident">w</label>), <a href="../../../../pkg/builtin.html#name-int" class="ident">int</a>(<label for="r28" class="ident">bufSize</label>), <label for="r29" class="ident">flushInterval</label>)</code></span>
+<span class="codeline" id="line-179"><code></code></span>
+<span class="codeline" id="line-180"><code>	<label for="r34" class="ident">core</label> := <a href="../../../../pkg/go.uber.org/zap/zapcore.html" class="ident i6">zapcore</a>.<a href="../../../go.uber.org/zap/zapcore/core.go.html#line-58" class="ident">NewCore</a>(</code></span>
+<span class="codeline" id="line-181"><code>		<a href="../../../../pkg/go.uber.org/zap/zapcore.html" class="ident i6">zapcore</a>.<a href="../../../go.uber.org/zap/zapcore/json_encoder.go.html#line-80" class="ident">NewJSONEncoder</a>(<label for="r27" class="ident">enc</label>),</code></span>
+<span class="codeline" id="line-182"><code>		<label for="r32" class="ident">buf</label>,</code></span>
+<span class="codeline" id="line-183"><code>		<a href="../../../../pkg/go.uber.org/zap/zapcore.html" class="ident i6">zapcore</a>.<a href="../../../go.uber.org/zap/zapcore/level.go.html#line-39" class="ident">InfoLevel</a>,</code></span>
+<span class="codeline" id="line-184"><code>	)</code></span>
+<span class="codeline" id="line-185"><code></code></span>
+<span class="codeline" id="line-186"><code>	<span class="keyword">return</span> <label for="r34" class="ident">core</label>, <label for="r33" class="ident">closer</label>, <a href="../../../../pkg/builtin.html#name-nil" class="ident">nil</a></code></span>
+<span class="codeline" id="line-187"><code>}</code></span>
+<span class="codeline" id="line-188"><code></code></span>
+<span class="codeline" id="line-189"><code><span class="comment">// builds a zap core configured at the provided log level. The underlying io stream that writes to kinesis is wrapped in a buffer</span></code></span>
+<span class="codeline" id="line-190"><code><span class="keyword">func</span> <label for="r35" class="ident"><a href="../../../../pkg/github.com/caring/gopkg-logging.html#name-buildMonitoringCore" class="ident">buildMonitoringCore</a></label>(<label for="r36" class="ident">streamName</label> <a href="../../../../pkg/builtin.html#name-string" class="ident">string</a>, <label for="r37" class="ident">enc</label> <a href="../../../../pkg/go.uber.org/zap/zapcore.html" class="ident i6">zapcore</a>.<a href="../../../go.uber.org/zap/zapcore/encoder.go.html#line-274" class="ident">EncoderConfig</a>, <label for="r38" class="ident">bufSize</label> <a href="../../../../pkg/builtin.html#name-int64" class="ident">int64</a>, <label for="r39" class="ident">flushInterval</label> <a href="../../../../pkg/time.html" class="ident i3">time</a>.<a href="../../../time/time.go.html#line-590" class="ident">Duration</a>, <label for="r40" class="ident">lvl</label> <a href="../../../../pkg/go.uber.org/zap/zapcore.html" class="ident i6">zapcore</a>.<a href="../../../go.uber.org/zap/zapcore/level.go.html#line-32" class="ident">Level</a>) (<a href="../../../../pkg/go.uber.org/zap/zapcore.html" class="ident i6">zapcore</a>.<a href="../../../go.uber.org/zap/zapcore/core.go.html#line-25" class="ident">Core</a>, <a href="../../../../pkg/io.html" class="ident i0">io</a>.<a href="../../../io/io.go.html#line-104" class="ident">Closer</a>, <a href="../../../../pkg/builtin.html#name-error" class="ident">error</a>) {</code></span>
+<span class="codeline" id="line-191"><code>	<label for="r41" class="ident">w</label>, <label for="r42" class="ident">err</label> := <a href="../../../../pkg/github.com/caring/gopkg-logging/internal/writer.html" class="ident i4">writer</a>.<a href="internal/writer/kinesis.go.html#line-18" class="ident">NewKinesisWriter</a>(<label for="r36" class="ident">streamName</label>)</code></span>
+<span class="codeline" id="line-192"><code>	<span class="keyword">if</span> <label for="r42" class="ident">err</label> != <a href="../../../../pkg/builtin.html#name-nil" class="ident">nil</a> {</code></span>
+<span class="codeline" id="line-193"><code>		<span class="keyword">return</span> <a href="../../../../pkg/builtin.html#name-nil" class="ident">nil</a>, <a href="../../../../pkg/builtin.html#name-nil" class="ident">nil</a>, <label for="r42" class="ident">err</label></code></span>
+<span class="codeline" id="line-194"><code>	}</code></span>
+<span class="codeline" id="line-195"><code></code></span>
+<span class="codeline" id="line-196"><code>	<label for="r43" class="ident">buf</label>, <label for="r44" class="ident">closer</label> := <a href="../../../../pkg/github.com/caring/gopkg-logging/internal/writer.html" class="ident i4">writer</a>.<a href="internal/writer/buffer.go.html#line-29" class="ident">Buffer</a>(<a href="../../../../pkg/go.uber.org/zap/zapcore.html" class="ident i6">zapcore</a>.<a href="../../../go.uber.org/zap/zapcore/write_syncer.go.html#line-40" class="ident">AddSync</a>(<label for="r41" class="ident">w</label>), <a href="../../../../pkg/builtin.html#name-int" class="ident">int</a>(<label for="r38" class="ident">bufSize</label>), <label for="r39" class="ident">flushInterval</label>)</code></span>
+<span class="codeline" id="line-197"><code></code></span>
+<span class="codeline" id="line-198"><code>	<label for="r45" class="ident">core</label> := <a href="../../../../pkg/go.uber.org/zap/zapcore.html" class="ident i6">zapcore</a>.<a href="../../../go.uber.org/zap/zapcore/core.go.html#line-58" class="ident">NewCore</a>(</code></span>
+<span class="codeline" id="line-199"><code>		<a href="../../../../pkg/go.uber.org/zap/zapcore.html" class="ident i6">zapcore</a>.<a href="../../../go.uber.org/zap/zapcore/json_encoder.go.html#line-80" class="ident">NewJSONEncoder</a>(<label for="r37" class="ident">enc</label>),</code></span>
+<span class="codeline" id="line-200"><code>		<label for="r43" class="ident">buf</label>,</code></span>
+<span class="codeline" id="line-201"><code>		<label for="r40" class="ident">lvl</label>,</code></span>
+<span class="codeline" id="line-202"><code>	)</code></span>
+<span class="codeline" id="line-203"><code></code></span>
+<span class="codeline" id="line-204"><code>	<span class="keyword">return</span> <label for="r45" class="ident">core</label>, <label for="r44" class="ident">closer</label>, <a href="../../../../pkg/builtin.html#name-nil" class="ident">nil</a></code></span>
+<span class="codeline" id="line-205"><code>}</code></span>
+</pre><pre id="footer">
+<table><tr><td><img src="../../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

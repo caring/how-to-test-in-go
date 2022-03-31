@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime/internal/atomic.Loaduintptr</title>
+<link href="../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">func <b><a href="../../../pkg/runtime/internal/atomic.html">runtime/internal/atomic</a>.<a href="../../../src/runtime/internal/atomic/stubs.go.html#line-37">Loaduintptr</a></b></span>
+
+<span class="title">35 uses</span>
+
+	runtime/internal/atomic (current package)
+		<a href="../../../src/runtime/internal/atomic/stubs.go.html#line-37">stubs.go#L37</a>: func <b>Loaduintptr</b>(ptr *uintptr) uintptr
+
+	<a href="../../../pkg/runtime.html">runtime</a>
+		<a href="../../../src/runtime/debuglog.go.html#line-64">debuglog.go#L64</a>: 		all := (*dlogger)(unsafe.Pointer(atomic.<b>Loaduintptr</b>(allp)))
+		<a href="../../../src/runtime/debuglog.go.html#line-85" class="path-duplicate">debuglog.go</a><a href="../../../src/runtime/debuglog.go.html#line-85">#L85</a>: 			head := atomic.<b>Loaduintptr</b>(headp)
+		<a href="../../../src/runtime/debuglog.go.html#line-698" class="path-duplicate">debuglog.go</a><a href="../../../src/runtime/debuglog.go.html#line-698">#L698</a>: 	all := (*dlogger)(unsafe.Pointer(atomic.<b>Loaduintptr</b>(allp)))
+		<a href="../../../src/runtime/lock_sema.go.html#line-61">lock_sema.go#L61</a>: 		v := atomic.<b>Loaduintptr</b>(&amp;l.key)
+		<a href="../../../src/runtime/lock_sema.go.html#line-83" class="path-duplicate">lock_sema.go</a><a href="../../../src/runtime/lock_sema.go.html#line-83">#L83</a>: 				v = atomic.<b>Loaduintptr</b>(&amp;l.key)
+		<a href="../../../src/runtime/lock_sema.go.html#line-107" class="path-duplicate">lock_sema.go</a><a href="../../../src/runtime/lock_sema.go.html#line-107">#L107</a>: 		v := atomic.<b>Loaduintptr</b>(&amp;l.key)
+		<a href="../../../src/runtime/lock_sema.go.html#line-146" class="path-duplicate">lock_sema.go</a><a href="../../../src/runtime/lock_sema.go.html#line-146">#L146</a>: 		v = atomic.<b>Loaduintptr</b>(&amp;n.key)
+		<a href="../../../src/runtime/lock_sema.go.html#line-186" class="path-duplicate">lock_sema.go</a><a href="../../../src/runtime/lock_sema.go.html#line-186">#L186</a>: 		for atomic.<b>Loaduintptr</b>(&amp;n.key) == 0 {
+		<a href="../../../src/runtime/lock_sema.go.html#line-256" class="path-duplicate">lock_sema.go</a><a href="../../../src/runtime/lock_sema.go.html#line-256">#L256</a>: 		v := atomic.<b>Loaduintptr</b>(&amp;n.key)
+		<a href="../../../src/runtime/malloc.go.html#line-1449">malloc.go#L1449</a>: 	chunk := atomic.<b>Loaduintptr</b>((*uintptr)(unsafe.Pointer(&amp;persistentChunks)))
+		<a href="../../../src/runtime/mgcmark.go.html#line-103">mgcmark.go#L103</a>: 	work.nStackRoots = int(atomic.<b>Loaduintptr</b>(&amp;allglen))
+		<a href="../../../src/runtime/mheap.go.html#line-759">mheap.go#L759</a>: 		if credit := atomic.<b>Loaduintptr</b>(&amp;h.reclaimCredit); credit &gt; 0 {
+		<a href="../../../src/runtime/mheap.go.html#line-983" class="path-duplicate">mheap.go</a><a href="../../../src/runtime/mheap.go.html#line-983">#L983</a>: 		zeroedBase := atomic.<b>Loaduintptr</b>(&amp;ha.zeroedBase)
+		<a href="../../../src/runtime/mheap.go.html#line-1013" class="path-duplicate">mheap.go</a><a href="../../../src/runtime/mheap.go.html#line-1013">#L1013</a>: 			zeroedBase = atomic.<b>Loaduintptr</b>(&amp;ha.zeroedBase)
+		<a href="../../../src/runtime/mheap.go.html#line-1974" class="path-duplicate">mheap.go</a><a href="../../../src/runtime/mheap.go.html#line-1974">#L1974</a>: 	if b == nil || atomic.<b>Loaduintptr</b>(&amp;b.free)+bytes &gt; uintptr(len(b.bits)) {
+		<a href="../../../src/runtime/mspanset.go.html#line-80">mspanset.go#L80</a>: 	spineLen := atomic.<b>Loaduintptr</b>(&amp;b.spineLen)
+		<a href="../../../src/runtime/mspanset.go.html#line-93" class="path-duplicate">mspanset.go</a><a href="../../../src/runtime/mspanset.go.html#line-93">#L93</a>: 		spineLen = atomic.<b>Loaduintptr</b>(&amp;b.spineLen)
+		<a href="../../../src/runtime/mspanset.go.html#line-153" class="path-duplicate">mspanset.go</a><a href="../../../src/runtime/mspanset.go.html#line-153">#L153</a>: 		spineLen := atomic.<b>Loaduintptr</b>(&amp;b.spineLen)
+		<a href="../../../src/runtime/netpoll.go.html#line-151">netpoll.go#L151</a>: 	wg := atomic.<b>Loaduintptr</b>(&amp;pd.wg)
+		<a href="../../../src/runtime/netpoll.go.html#line-155" class="path-duplicate">netpoll.go</a><a href="../../../src/runtime/netpoll.go.html#line-155">#L155</a>: 	rg := atomic.<b>Loaduintptr</b>(&amp;pd.rg)
+		<a href="../../../src/runtime/netpoll.go.html#line-184" class="path-duplicate">netpoll.go</a><a href="../../../src/runtime/netpoll.go.html#line-184">#L184</a>: 	wg := atomic.<b>Loaduintptr</b>(&amp;pd.wg)
+		<a href="../../../src/runtime/netpoll.go.html#line-188" class="path-duplicate">netpoll.go</a><a href="../../../src/runtime/netpoll.go.html#line-188">#L188</a>: 	rg := atomic.<b>Loaduintptr</b>(&amp;pd.rg)
+		<a href="../../../src/runtime/netpoll.go.html#line-445" class="path-duplicate">netpoll.go</a><a href="../../../src/runtime/netpoll.go.html#line-445">#L445</a>: 		if v := atomic.<b>Loaduintptr</b>(gpp); v != pdReady &amp;&amp; v != 0 {
+		<a href="../../../src/runtime/netpoll.go.html#line-471" class="path-duplicate">netpoll.go</a><a href="../../../src/runtime/netpoll.go.html#line-471">#L471</a>: 		old := atomic.<b>Loaduintptr</b>(gpp)
+		<a href="../../../src/runtime/proc.go.html#line-564">proc.go#L564</a>: 	length := atomic.<b>Loaduintptr</b>(&amp;allglen)
+		<a href="../../../src/runtime/proc.go.html#line-2140" class="path-duplicate">proc.go</a><a href="../../../src/runtime/proc.go.html#line-2140">#L2140</a>: 		old := atomic.<b>Loaduintptr</b>(&amp;extram)
+		<a href="../../../src/runtime/proc.go.html#line-4645" class="path-duplicate">proc.go</a><a href="../../../src/runtime/proc.go.html#line-4645">#L4645</a>: 	n := int32(atomic.<b>Loaduintptr</b>(&amp;allglen)) - sched.gFree.n - int32(atomic.Load(&amp;sched.ngsys))
+		<a href="../../../src/runtime/proc.go.html#line-5930" class="path-duplicate">proc.go</a><a href="../../../src/runtime/proc.go.html#line-5930">#L5930</a>: 		runnext := atomic.<b>Loaduintptr</b>((*uintptr)(unsafe.Pointer(&amp;_p_.runnext)))
+		<a href="../../../src/runtime/signal_unix.go.html#line-158">signal_unix.go#L158</a>: 		if atomic.<b>Loaduintptr</b>(&amp;fwdSig[sig]) == _SIG_IGN {
+		<a href="../../../src/runtime/signal_unix.go.html#line-226" class="path-duplicate">signal_unix.go</a><a href="../../../src/runtime/signal_unix.go.html#line-226">#L226</a>: 			setsig(sig, atomic.<b>Loaduintptr</b>(&amp;fwdSig[sig]))
+		<a href="../../../src/runtime/signal_unix.go.html#line-301" class="path-duplicate">signal_unix.go</a><a href="../../../src/runtime/signal_unix.go.html#line-301">#L301</a>: 				h := atomic.<b>Loaduintptr</b>(&amp;fwdSig[_SIGPROF])
+		<a href="../../../src/runtime/signal_unix.go.html#line-805" class="path-duplicate">signal_unix.go</a><a href="../../../src/runtime/signal_unix.go.html#line-805">#L805</a>: 		handler = atomic.<b>Loaduintptr</b>(&amp;fwdSig[sig])
+		<a href="../../../src/runtime/signal_unix.go.html#line-970" class="path-duplicate">signal_unix.go</a><a href="../../../src/runtime/signal_unix.go.html#line-970">#L970</a>: 	fwdFn := atomic.<b>Loaduintptr</b>(&amp;fwdSig[sig])
+		<a href="../../../src/runtime/stack.go.html#line-993">stack.go#L993</a>: 	preempt := atomic.<b>Loaduintptr</b>(&amp;gp.stackguard0) == stackPreempt
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

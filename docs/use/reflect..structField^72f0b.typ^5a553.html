@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: reflect.structField.typ</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/reflect.html">reflect</a>.<a href="../src/reflect/type.go.html#line-428">structField</a>.<a href="../src/reflect/type.go.html#line-430">typ</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">23 uses</span>
+
+	reflect (current package)
+		<a href="../src/reflect/abi.go.html#line-240">abi.go#L240</a>: 			if !a.regAssign(f.<b>typ</b>, offset+f.offset()) {
+		<a href="../src/reflect/type.go.html#line-430">type.go#L430</a>: 	<b>typ</b>         *rtype  // type of field
+		<a href="../src/reflect/type.go.html#line-1236" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1236">#L1236</a>: 	f.Type = toType(p.<b>typ</b>)
+		<a href="../src/reflect/type.go.html#line-1337" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1337">#L1337</a>: 					ntyp = f.<b>typ</b>
+		<a href="../src/reflect/type.go.html#line-1715" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-1715">#L1715</a>: 			if !haveIdenticalType(tf.<b>typ</b>, vf.<b>typ</b>, cmpTags) {
+		<a href="../src/reflect/type.go.html#line-2148" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2148">#L2148</a>: 			if !isReflexive(f.<b>typ</b>) {
+		<a href="../src/reflect/type.go.html#line-2175" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2175">#L2175</a>: 			if needKeyUpdate(f.<b>typ</b>) {
+		<a href="../src/reflect/type.go.html#line-2197" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2197">#L2197</a>: 			if hashMightPanic(f.<b>typ</b>) {
+		<a href="../src/reflect/type.go.html#line-2442" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2442">#L2442</a>: 		ft := f.<b>typ</b>
+		<a href="../src/reflect/type.go.html#line-2460" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2460">#L2460</a>: 			if f.<b>typ</b>.Kind() == Ptr {
+		<a href="../src/reflect/type.go.html#line-2468" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2468">#L2468</a>: 			switch f.<b>typ</b>.Kind() {
+		<a href="../src/reflect/type.go.html#line-2744" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2744">#L2744</a>: 			if ft.<b>typ</b>.pointers() {
+		<a href="../src/reflect/type.go.html#line-2756" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2756">#L2756</a>: 			if !ft.<b>typ</b>.pointers() {
+		<a href="../src/reflect/type.go.html#line-2771" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2771">#L2771</a>: 			prog = appendGCProg(prog, ft.<b>typ</b>)
+		<a href="../src/reflect/type.go.html#line-2772" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2772">#L2772</a>: 			off += ft.<b>typ</b>.ptrdata
+		<a href="../src/reflect/type.go.html#line-2792" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2792">#L2792</a>: 				if !ft.<b>typ</b>.equal(pi, qi) {
+		<a href="../src/reflect/type.go.html#line-2801" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2801">#L2801</a>: 	case len(fs) == 1 &amp;&amp; !ifaceIndir(fs[0].<b>typ</b>):
+		<a href="../src/reflect/type.go.html#line-2836" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2836">#L2836</a>: 		<b>typ</b>:         field.Type.common(),
+		<a href="../src/reflect/type.go.html#line-2852" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2852">#L2852</a>: 			ft := st.fields[i].<b>typ</b>
+		<a href="../src/reflect/type.go.html#line-2861" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-2861">#L2861</a>: 		return f.offset() + f.<b>typ</b>.ptrdata
+		<a href="../src/reflect/type.go.html#line-3152" class="path-duplicate">type.go</a><a href="../src/reflect/type.go.html#line-3152">#L3152</a>: 			addTypeBits(bv, offset+f.offset(), f.<b>typ</b>)
+		<a href="../src/reflect/value.go.html#line-1205">value.go#L1205</a>: 	typ := field.<b>typ</b>
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

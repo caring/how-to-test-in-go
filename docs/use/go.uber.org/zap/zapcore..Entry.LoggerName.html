@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: go.uber.org/zap/zapcore.Entry.LoggerName</title>
+<link href="../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../pkg/go.uber.org/zap/zapcore.html">go.uber.org/zap/zapcore</a>.<a href="../../../src/go.uber.org/zap/zapcore/entry.go.html#line-144">Entry</a>.<a href="../../../src/go.uber.org/zap/zapcore/entry.go.html#line-147">LoggerName</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">7 uses</span>
+
+	go.uber.org/zap/zapcore (current package)
+		<a href="../../../src/go.uber.org/zap/zapcore/console_encoder.go.html#line-82">console_encoder.go#L82</a>: 	if ent.<b>LoggerName</b> != "" &amp;&amp; c.NameKey != "" {
+		<a href="../../../src/go.uber.org/zap/zapcore/console_encoder.go.html#line-90" class="path-duplicate">console_encoder.go</a><a href="../../../src/go.uber.org/zap/zapcore/console_encoder.go.html#line-90">#L90</a>: 		nameEncoder(ent.<b>LoggerName</b>, arr)
+		<a href="../../../src/go.uber.org/zap/zapcore/entry.go.html#line-147">entry.go#L147</a>: 	<b>LoggerName</b> string
+		<a href="../../../src/go.uber.org/zap/zapcore/json_encoder.go.html#line-347">json_encoder.go#L347</a>: 	if ent.<b>LoggerName</b> != "" &amp;&amp; final.NameKey != "" {
+		<a href="../../../src/go.uber.org/zap/zapcore/json_encoder.go.html#line-358" class="path-duplicate">json_encoder.go</a><a href="../../../src/go.uber.org/zap/zapcore/json_encoder.go.html#line-358">#L358</a>: 		nameEncoder(ent.<b>LoggerName</b>, final)
+		<a href="../../../src/go.uber.org/zap/zapcore/json_encoder.go.html#line-362" class="path-duplicate">json_encoder.go</a><a href="../../../src/go.uber.org/zap/zapcore/json_encoder.go.html#line-362">#L362</a>: 			final.AppendString(ent.<b>LoggerName</b>)
+
+	<a href="../../../pkg/go.uber.org/zap.html">go.uber.org/zap</a>
+		<a href="../../../src/go.uber.org/zap/logger.go.html#line-270">logger.go#L270</a>: 		<b>LoggerName</b>: log.name,
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime.libcCall</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">func <b><a href="../pkg/runtime.html">runtime</a>.<a href="../src/runtime/sys_libc.go.html#line-17">libcCall</a></b></span>
+
+<span class="title">46 uses</span>
+
+	runtime (current package)
+		<a href="../src/runtime/sys_darwin.go.html#line-23">sys_darwin.go#L23</a>: 	<b>libcCall</b>(unsafe.Pointer(abi.FuncPCABI0(syscall)), unsafe.Pointer(&amp;fn))
+		<a href="../src/runtime/sys_darwin.go.html#line-34" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-34">#L34</a>: 	<b>libcCall</b>(unsafe.Pointer(abi.FuncPCABI0(syscallX)), unsafe.Pointer(&amp;fn))
+		<a href="../src/runtime/sys_darwin.go.html#line-45" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-45">#L45</a>: 	<b>libcCall</b>(unsafe.Pointer(abi.FuncPCABI0(syscall6)), unsafe.Pointer(&amp;fn))
+		<a href="../src/runtime/sys_darwin.go.html#line-56" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-56">#L56</a>: 	<b>libcCall</b>(unsafe.Pointer(abi.FuncPCABI0(syscall6X)), unsafe.Pointer(&amp;fn))
+		<a href="../src/runtime/sys_darwin.go.html#line-67" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-67">#L67</a>: 	<b>libcCall</b>(unsafe.Pointer(abi.FuncPCABI0(syscallPtr)), unsafe.Pointer(&amp;fn))
+		<a href="../src/runtime/sys_darwin.go.html#line-77" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-77">#L77</a>: 	<b>libcCall</b>(unsafe.Pointer(abi.FuncPCABI0(syscall)), unsafe.Pointer(&amp;fn))
+		<a href="../src/runtime/sys_darwin.go.html#line-85" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-85">#L85</a>: 	<b>libcCall</b>(unsafe.Pointer(abi.FuncPCABI0(syscall6)), unsafe.Pointer(&amp;fn))
+		<a href="../src/runtime/sys_darwin.go.html#line-96" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-96">#L96</a>: 	<b>libcCall</b>(unsafe.Pointer(abi.FuncPCABI0(syscallNoErr)), unsafe.Pointer(&amp;fn))
+		<a href="../src/runtime/sys_darwin.go.html#line-108" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-108">#L108</a>: 	ret := <b>libcCall</b>(unsafe.Pointer(abi.FuncPCABI0(pthread_attr_init_trampoline)), unsafe.Pointer(&amp;attr))
+		<a href="../src/runtime/sys_darwin.go.html#line-117" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-117">#L117</a>: 	ret := <b>libcCall</b>(unsafe.Pointer(abi.FuncPCABI0(pthread_attr_getstacksize_trampoline)), unsafe.Pointer(&amp;attr))
+		<a href="../src/runtime/sys_darwin.go.html#line-127" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-127">#L127</a>: 	ret := <b>libcCall</b>(unsafe.Pointer(abi.FuncPCABI0(pthread_attr_setdetachstate_trampoline)), unsafe.Pointer(&amp;attr))
+		<a href="../src/runtime/sys_darwin.go.html#line-136" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-136">#L136</a>: 	ret := <b>libcCall</b>(unsafe.Pointer(abi.FuncPCABI0(pthread_create_trampoline)), unsafe.Pointer(&amp;attr))
+		<a href="../src/runtime/sys_darwin.go.html#line-146" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-146">#L146</a>: 	<b>libcCall</b>(unsafe.Pointer(abi.FuncPCABI0(raise_trampoline)), unsafe.Pointer(&amp;sig))
+		<a href="../src/runtime/sys_darwin.go.html#line-153" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-153">#L153</a>: 	<b>libcCall</b>(unsafe.Pointer(abi.FuncPCABI0(pthread_self_trampoline)), unsafe.Pointer(&amp;t))
+		<a href="../src/runtime/sys_darwin.go.html#line-161" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-161">#L161</a>: 	<b>libcCall</b>(unsafe.Pointer(abi.FuncPCABI0(pthread_kill_trampoline)), unsafe.Pointer(&amp;t))
+		<a href="../src/runtime/sys_darwin.go.html#line-179" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-179">#L179</a>: 	<b>libcCall</b>(unsafe.Pointer(abi.FuncPCABI0(mmap_trampoline)), unsafe.Pointer(&amp;args))
+		<a href="../src/runtime/sys_darwin.go.html#line-187" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-187">#L187</a>: 	<b>libcCall</b>(unsafe.Pointer(abi.FuncPCABI0(munmap_trampoline)), unsafe.Pointer(&amp;addr))
+		<a href="../src/runtime/sys_darwin.go.html#line-195" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-195">#L195</a>: 	<b>libcCall</b>(unsafe.Pointer(abi.FuncPCABI0(madvise_trampoline)), unsafe.Pointer(&amp;addr))
+		<a href="../src/runtime/sys_darwin.go.html#line-203" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-203">#L203</a>: 	<b>libcCall</b>(unsafe.Pointer(abi.FuncPCABI0(mlock_trampoline)), unsafe.Pointer(&amp;addr))
+		<a href="../src/runtime/sys_darwin.go.html#line-211" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-211">#L211</a>: 	ret := <b>libcCall</b>(unsafe.Pointer(abi.FuncPCABI0(read_trampoline)), unsafe.Pointer(&amp;fd))
+		<a href="../src/runtime/sys_darwin.go.html#line-219" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-219">#L219</a>: 	errno = <b>libcCall</b>(unsafe.Pointer(abi.FuncPCABI0(pipe_trampoline)), noescape(unsafe.Pointer(&amp;p)))
+		<a href="../src/runtime/sys_darwin.go.html#line-227" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-227">#L227</a>: 	return <b>libcCall</b>(unsafe.Pointer(abi.FuncPCABI0(close_trampoline)), unsafe.Pointer(&amp;fd))
+		<a href="../src/runtime/sys_darwin.go.html#line-237" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-237">#L237</a>: 	<b>libcCall</b>(unsafe.Pointer(abi.FuncPCABI0(exit_trampoline)), unsafe.Pointer(&amp;code))
+		<a href="../src/runtime/sys_darwin.go.html#line-244" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-244">#L244</a>: 	<b>libcCall</b>(unsafe.Pointer(abi.FuncPCABI0(usleep_trampoline)), unsafe.Pointer(&amp;usec))
+		<a href="../src/runtime/sys_darwin.go.html#line-257" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-257">#L257</a>: 	ret := <b>libcCall</b>(unsafe.Pointer(abi.FuncPCABI0(write_trampoline)), unsafe.Pointer(&amp;fd))
+		<a href="../src/runtime/sys_darwin.go.html#line-266" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-266">#L266</a>: 	ret = <b>libcCall</b>(unsafe.Pointer(abi.FuncPCABI0(open_trampoline)), unsafe.Pointer(&amp;name))
+		<a href="../src/runtime/sys_darwin.go.html#line-279" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-279">#L279</a>: 	<b>libcCall</b>(unsafe.Pointer(abi.FuncPCABI0(nanotime_trampoline)), unsafe.Pointer(&amp;r))
+		<a href="../src/runtime/sys_darwin.go.html#line-298" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-298">#L298</a>: 	<b>libcCall</b>(unsafe.Pointer(abi.FuncPCABI0(walltime_trampoline)), unsafe.Pointer(&amp;t))
+		<a href="../src/runtime/sys_darwin.go.html#line-306" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-306">#L306</a>: 	<b>libcCall</b>(unsafe.Pointer(abi.FuncPCABI0(sigaction_trampoline)), unsafe.Pointer(&amp;sig))
+		<a href="../src/runtime/sys_darwin.go.html#line-315" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-315">#L315</a>: 	<b>libcCall</b>(unsafe.Pointer(abi.FuncPCABI0(sigprocmask_trampoline)), unsafe.Pointer(&amp;how))
+		<a href="../src/runtime/sys_darwin.go.html#line-331" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-331">#L331</a>: 	<b>libcCall</b>(unsafe.Pointer(abi.FuncPCABI0(sigaltstack_trampoline)), unsafe.Pointer(&amp;new))
+		<a href="../src/runtime/sys_darwin.go.html#line-340" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-340">#L340</a>: 	<b>libcCall</b>(unsafe.Pointer(abi.FuncPCABI0(raiseproc_trampoline)), unsafe.Pointer(&amp;sig))
+		<a href="../src/runtime/sys_darwin.go.html#line-347" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-347">#L347</a>: 	<b>libcCall</b>(unsafe.Pointer(abi.FuncPCABI0(setitimer_trampoline)), unsafe.Pointer(&amp;mode))
+		<a href="../src/runtime/sys_darwin.go.html#line-356" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-356">#L356</a>: 	ret := <b>libcCall</b>(unsafe.Pointer(abi.FuncPCABI0(sysctl_trampoline)), unsafe.Pointer(&amp;mib))
+		<a href="../src/runtime/sys_darwin.go.html#line-368" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-368">#L368</a>: 	ret := <b>libcCall</b>(unsafe.Pointer(abi.FuncPCABI0(sysctlbyname_trampoline)), unsafe.Pointer(&amp;name))
+		<a href="../src/runtime/sys_darwin.go.html#line-380" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-380">#L380</a>: 	return <b>libcCall</b>(unsafe.Pointer(abi.FuncPCABI0(fcntl_trampoline)), unsafe.Pointer(&amp;fd))
+		<a href="../src/runtime/sys_darwin.go.html#line-387" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-387">#L387</a>: 	v := <b>libcCall</b>(unsafe.Pointer(abi.FuncPCABI0(kqueue_trampoline)), nil)
+		<a href="../src/runtime/sys_darwin.go.html#line-395" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-395">#L395</a>: 	ret := <b>libcCall</b>(unsafe.Pointer(abi.FuncPCABI0(kevent_trampoline)), unsafe.Pointer(&amp;kq))
+		<a href="../src/runtime/sys_darwin.go.html#line-406" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-406">#L406</a>: 	ret := <b>libcCall</b>(unsafe.Pointer(abi.FuncPCABI0(pthread_mutex_init_trampoline)), unsafe.Pointer(&amp;m))
+		<a href="../src/runtime/sys_darwin.go.html#line-416" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-416">#L416</a>: 	ret := <b>libcCall</b>(unsafe.Pointer(abi.FuncPCABI0(pthread_mutex_lock_trampoline)), unsafe.Pointer(&amp;m))
+		<a href="../src/runtime/sys_darwin.go.html#line-425" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-425">#L425</a>: 	ret := <b>libcCall</b>(unsafe.Pointer(abi.FuncPCABI0(pthread_mutex_unlock_trampoline)), unsafe.Pointer(&amp;m))
+		<a href="../src/runtime/sys_darwin.go.html#line-434" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-434">#L434</a>: 	ret := <b>libcCall</b>(unsafe.Pointer(abi.FuncPCABI0(pthread_cond_init_trampoline)), unsafe.Pointer(&amp;c))
+		<a href="../src/runtime/sys_darwin.go.html#line-444" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-444">#L444</a>: 	ret := <b>libcCall</b>(unsafe.Pointer(abi.FuncPCABI0(pthread_cond_wait_trampoline)), unsafe.Pointer(&amp;c))
+		<a href="../src/runtime/sys_darwin.go.html#line-454" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-454">#L454</a>: 	ret := <b>libcCall</b>(unsafe.Pointer(abi.FuncPCABI0(pthread_cond_timedwait_relative_np_trampoline)), unsafe.Pointer(&amp;c))
+		<a href="../src/runtime/sys_darwin.go.html#line-465" class="path-duplicate">sys_darwin.go</a><a href="../src/runtime/sys_darwin.go.html#line-465">#L465</a>: 	ret := <b>libcCall</b>(unsafe.Pointer(abi.FuncPCABI0(pthread_cond_signal_trampoline)), unsafe.Pointer(&amp;c))
+		<a href="../src/runtime/sys_libc.go.html#line-17">sys_libc.go#L17</a>: func <b>libcCall</b>(fn, arg unsafe.Pointer) int32 {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

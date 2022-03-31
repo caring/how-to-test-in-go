@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime.traceEvent</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">func <b><a href="../pkg/runtime.html">runtime</a>.<a href="../src/runtime/trace.go.html#line-517">traceEvent</a></b></span>
+
+<span class="title">33 uses</span>
+
+	runtime (current package)
+		<a href="../src/runtime/trace.go.html#line-232">trace.go#L232</a>: 			<b>traceEvent</b>(traceEvGoCreate, -1, uint64(gp.goid), uint64(id), stackID)
+		<a href="../src/runtime/trace.go.html#line-237" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-237">#L237</a>: 			<b>traceEvent</b>(traceEvGoWaiting, -1, uint64(gp.goid))
+		<a href="../src/runtime/trace.go.html#line-241" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-241">#L241</a>: 			<b>traceEvent</b>(traceEvGoInSyscall, -1, uint64(gp.goid))
+		<a href="../src/runtime/trace.go.html#line-517" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-517">#L517</a>: func <b>traceEvent</b>(ev byte, skip int, args ...uint64) {
+		<a href="../src/runtime/trace.go.html#line-973" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-973">#L973</a>: 	<b>traceEvent</b>(traceEvGomaxprocs, 1, uint64(procs))
+		<a href="../src/runtime/trace.go.html#line-977" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-977">#L977</a>: 	<b>traceEvent</b>(traceEvProcStart, -1, uint64(getg().m.id))
+		<a href="../src/runtime/trace.go.html#line-986" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-986">#L986</a>: 	<b>traceEvent</b>(traceEvProcStop, -1)
+		<a href="../src/runtime/trace.go.html#line-992" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-992">#L992</a>: 	<b>traceEvent</b>(traceEvGCStart, 3, trace.seqGC)
+		<a href="../src/runtime/trace.go.html#line-997" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-997">#L997</a>: 	<b>traceEvent</b>(traceEvGCDone, -1)
+		<a href="../src/runtime/trace.go.html#line-1001" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-1001">#L1001</a>: 	<b>traceEvent</b>(traceEvGCSTWStart, -1, uint64(kind))
+		<a href="../src/runtime/trace.go.html#line-1005" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-1005">#L1005</a>: 	<b>traceEvent</b>(traceEvGCSTWDone, -1)
+		<a href="../src/runtime/trace.go.html#line-1031" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-1031">#L1031</a>: 			<b>traceEvent</b>(traceEvGCSweepStart, 1)
+		<a href="../src/runtime/trace.go.html#line-1043" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-1043">#L1043</a>: 		<b>traceEvent</b>(traceEvGCSweepDone, -1, uint64(_p_.traceSwept), uint64(_p_.traceReclaimed))
+		<a href="../src/runtime/trace.go.html#line-1049" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-1049">#L1049</a>: 	<b>traceEvent</b>(traceEvGCMarkAssistStart, 1)
+		<a href="../src/runtime/trace.go.html#line-1053" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-1053">#L1053</a>: 	<b>traceEvent</b>(traceEvGCMarkAssistDone, -1)
+		<a href="../src/runtime/trace.go.html#line-1061" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-1061">#L1061</a>: 	<b>traceEvent</b>(traceEvGoCreate, 2, uint64(newg.goid), uint64(id))
+		<a href="../src/runtime/trace.go.html#line-1069" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-1069">#L1069</a>: 		<b>traceEvent</b>(traceEvGoStartLabel, -1, uint64(_g_.goid), _g_.traceseq, trace.markWorkerLabels[_p_.ptr().gcMarkWorkerMode])
+		<a href="../src/runtime/trace.go.html#line-1071" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-1071">#L1071</a>: 		<b>traceEvent</b>(traceEvGoStartLocal, -1, uint64(_g_.goid))
+		<a href="../src/runtime/trace.go.html#line-1074" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-1074">#L1074</a>: 		<b>traceEvent</b>(traceEvGoStart, -1, uint64(_g_.goid), _g_.traceseq)
+		<a href="../src/runtime/trace.go.html#line-1079" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-1079">#L1079</a>: 	<b>traceEvent</b>(traceEvGoEnd, -1)
+		<a href="../src/runtime/trace.go.html#line-1085" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-1085">#L1085</a>: 	<b>traceEvent</b>(traceEvGoSched, 1)
+		<a href="../src/runtime/trace.go.html#line-1091" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-1091">#L1091</a>: 	<b>traceEvent</b>(traceEvGoPreempt, 1)
+		<a href="../src/runtime/trace.go.html#line-1096" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-1096">#L1096</a>: 		<b>traceEvent</b>(traceEvFutileWakeup, -1)
+		<a href="../src/runtime/trace.go.html#line-1098" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-1098">#L1098</a>: 	<b>traceEvent</b>(traceEv &amp; ^traceFutileWakeup, skip)
+		<a href="../src/runtime/trace.go.html#line-1105" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-1105">#L1105</a>: 		<b>traceEvent</b>(traceEvGoUnblockLocal, skip, uint64(gp.goid))
+		<a href="../src/runtime/trace.go.html#line-1108" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-1108">#L1108</a>: 		<b>traceEvent</b>(traceEvGoUnblock, skip, uint64(gp.goid), gp.traceseq)
+		<a href="../src/runtime/trace.go.html#line-1113" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-1113">#L1113</a>: 	<b>traceEvent</b>(traceEvGoSysCall, 1)
+		<a href="../src/runtime/trace.go.html#line-1132" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-1132">#L1132</a>: 	<b>traceEvent</b>(traceEvGoSysExit, -1, uint64(_g_.goid), _g_.traceseq, uint64(ts)/traceTickDiv)
+		<a href="../src/runtime/trace.go.html#line-1141" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-1141">#L1141</a>: 	<b>traceEvent</b>(traceEvGoSysBlock, -1)
+		<a href="../src/runtime/trace.go.html#line-1147" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-1147">#L1147</a>: 	<b>traceEvent</b>(traceEvHeapAlloc, -1, gcController.heapLive)
+		<a href="../src/runtime/trace.go.html#line-1153" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-1153">#L1153</a>: 		<b>traceEvent</b>(traceEvHeapGoal, -1, 0)
+		<a href="../src/runtime/trace.go.html#line-1155" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-1155">#L1155</a>: 		<b>traceEvent</b>(traceEvHeapGoal, -1, heapGoal)
+		<a href="../src/runtime/trace.go.html#line-1182" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-1182">#L1182</a>: 	<b>traceEvent</b>(traceEvUserTaskEnd, 2, id)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

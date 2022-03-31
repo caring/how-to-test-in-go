@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: google.golang.org/grpc.DialOption</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../../pkg/google.golang.org/grpc.html">google.golang.org/grpc</a>.<a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-72">DialOption</a></b></span>
+
+<span class="title">46 uses</span>
+
+	google.golang.org/grpc (current package)
+		<a href="../../src/google.golang.org/grpc/clientconn.go.html#line-104">clientconn.go#L104</a>: func Dial(target string, opts ...<b>DialOption</b>) (*ClientConn, error) {
+		<a href="../../src/google.golang.org/grpc/clientconn.go.html#line-135" class="path-duplicate">clientconn.go</a><a href="../../src/google.golang.org/grpc/clientconn.go.html#line-135">#L135</a>: func DialContext(ctx context.Context, target string, opts ...<b>DialOption</b>) (conn *ClientConn, err error) {
+		<a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-72">dialoptions.go#L72</a>: type <b>DialOption</b> interface {
+		<a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-110" class="path-duplicate">dialoptions.go</a><a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-110">#L110</a>: func WithWriteBufferSize(s int) <b>DialOption</b> {
+		<a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-121" class="path-duplicate">dialoptions.go</a><a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-121">#L121</a>: func WithReadBufferSize(s int) <b>DialOption</b> {
+		<a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-130" class="path-duplicate">dialoptions.go</a><a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-130">#L130</a>: func WithInitialWindowSize(s int32) <b>DialOption</b> {
+		<a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-139" class="path-duplicate">dialoptions.go</a><a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-139">#L139</a>: func WithInitialConnWindowSize(s int32) <b>DialOption</b> {
+		<a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-150" class="path-duplicate">dialoptions.go</a><a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-150">#L150</a>: func WithMaxMsgSize(s int) <b>DialOption</b> {
+		<a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-156" class="path-duplicate">dialoptions.go</a><a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-156">#L156</a>: func WithDefaultCallOptions(cos ...CallOption) <b>DialOption</b> {
+		<a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-167" class="path-duplicate">dialoptions.go</a><a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-167">#L167</a>: func WithCodec(c Codec) <b>DialOption</b> {
+		<a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-176" class="path-duplicate">dialoptions.go</a><a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-176">#L176</a>: func WithCompressor(cp Compressor) <b>DialOption</b> {
+		<a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-192" class="path-duplicate">dialoptions.go</a><a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-192">#L192</a>: func WithDecompressor(dc Decompressor) <b>DialOption</b> {
+		<a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-207" class="path-duplicate">dialoptions.go</a><a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-207">#L207</a>: func WithBalancerName(balancerName string) <b>DialOption</b> {
+		<a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-224" class="path-duplicate">dialoptions.go</a><a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-224">#L224</a>: func WithServiceConfig(c &lt;-chan ServiceConfig) <b>DialOption</b> {
+		<a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-238" class="path-duplicate">dialoptions.go</a><a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-238">#L238</a>: func WithConnectParams(p ConnectParams) <b>DialOption</b> {
+		<a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-251" class="path-duplicate">dialoptions.go</a><a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-251">#L251</a>: func WithBackoffMaxDelay(md time.Duration) <b>DialOption</b> {
+		<a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-259" class="path-duplicate">dialoptions.go</a><a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-259">#L259</a>: func WithBackoffConfig(b BackoffConfig) <b>DialOption</b> {
+		<a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-269" class="path-duplicate">dialoptions.go</a><a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-269">#L269</a>: func withBackoff(bs internalbackoff.Strategy) <b>DialOption</b> {
+		<a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-278" class="path-duplicate">dialoptions.go</a><a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-278">#L278</a>: func WithBlock() <b>DialOption</b> {
+		<a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-293" class="path-duplicate">dialoptions.go</a><a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-293">#L293</a>: func WithReturnConnectionError() <b>DialOption</b> {
+		<a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-309" class="path-duplicate">dialoptions.go</a><a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-309">#L309</a>: func WithInsecure() <b>DialOption</b> {
+		<a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-322" class="path-duplicate">dialoptions.go</a><a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-322">#L322</a>: func WithNoProxy() <b>DialOption</b> {
+		<a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-331" class="path-duplicate">dialoptions.go</a><a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-331">#L331</a>: func WithTransportCredentials(creds credentials.TransportCredentials) <b>DialOption</b> {
+		<a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-339" class="path-duplicate">dialoptions.go</a><a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-339">#L339</a>: func WithPerRPCCredentials(creds credentials.PerRPCCredentials) <b>DialOption</b> {
+		<a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-353" class="path-duplicate">dialoptions.go</a><a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-353">#L353</a>: func WithCredentialsBundle(b credentials.Bundle) <b>DialOption</b> {
+		<a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-364" class="path-duplicate">dialoptions.go</a><a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-364">#L364</a>: func WithTimeout(d time.Duration) <b>DialOption</b> {
+		<a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-374" class="path-duplicate">dialoptions.go</a><a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-374">#L374</a>: func WithContextDialer(f func(context.Context, string) (net.Conn, error)) <b>DialOption</b> {
+		<a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-391" class="path-duplicate">dialoptions.go</a><a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-391">#L391</a>: func WithDialer(f func(string, time.Duration) (net.Conn, error)) <b>DialOption</b> {
+		<a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-403" class="path-duplicate">dialoptions.go</a><a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-403">#L403</a>: func WithStatsHandler(h stats.Handler) <b>DialOption</b> {
+		<a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-421" class="path-duplicate">dialoptions.go</a><a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-421">#L421</a>: func FailOnNonTempDialError(f bool) <b>DialOption</b> {
+		<a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-429" class="path-duplicate">dialoptions.go</a><a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-429">#L429</a>: func WithUserAgent(s string) <b>DialOption</b> {
+		<a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-437" class="path-duplicate">dialoptions.go</a><a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-437">#L437</a>: func WithKeepaliveParams(kp keepalive.ClientParameters) <b>DialOption</b> {
+		<a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-449" class="path-duplicate">dialoptions.go</a><a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-449">#L449</a>: func WithUnaryInterceptor(f UnaryClientInterceptor) <b>DialOption</b> {
+		<a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-460" class="path-duplicate">dialoptions.go</a><a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-460">#L460</a>: func WithChainUnaryInterceptor(interceptors ...UnaryClientInterceptor) <b>DialOption</b> {
+		<a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-468" class="path-duplicate">dialoptions.go</a><a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-468">#L468</a>: func WithStreamInterceptor(f StreamClientInterceptor) <b>DialOption</b> {
+		<a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-479" class="path-duplicate">dialoptions.go</a><a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-479">#L479</a>: func WithChainStreamInterceptor(interceptors ...StreamClientInterceptor) <b>DialOption</b> {
+		<a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-487" class="path-duplicate">dialoptions.go</a><a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-487">#L487</a>: func WithAuthority(a string) <b>DialOption</b> {
+		<a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-501" class="path-duplicate">dialoptions.go</a><a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-501">#L501</a>: func WithChannelzParentID(id int64) <b>DialOption</b> {
+		<a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-513" class="path-duplicate">dialoptions.go</a><a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-513">#L513</a>: func WithDisableServiceConfig() <b>DialOption</b> {
+		<a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-532" class="path-duplicate">dialoptions.go</a><a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-532">#L532</a>: func WithDefaultServiceConfig(s string) <b>DialOption</b> {
+		<a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-545" class="path-duplicate">dialoptions.go</a><a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-545">#L545</a>: func WithDisableRetry() <b>DialOption</b> {
+		<a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-553" class="path-duplicate">dialoptions.go</a><a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-553">#L553</a>: func WithMaxHeaderListSize(s uint32) <b>DialOption</b> {
+		<a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-566" class="path-duplicate">dialoptions.go</a><a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-566">#L566</a>: func WithDisableHealthCheck() <b>DialOption</b> {
+		<a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-576" class="path-duplicate">dialoptions.go</a><a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-576">#L576</a>: func withHealthCheckFunc(f internal.HealthChecker) <b>DialOption</b> {
+		<a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-598" class="path-duplicate">dialoptions.go</a><a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-598">#L598</a>: func withMinConnectDeadline(f func() time.Duration) <b>DialOption</b> {
+		<a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-613" class="path-duplicate">dialoptions.go</a><a href="../../src/google.golang.org/grpc/dialoptions.go.html#line-613">#L613</a>: func WithResolvers(rs ...resolver.Builder) <b>DialOption</b> {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

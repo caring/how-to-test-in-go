@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: net/http.Request.URL</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../pkg/net/http.html">net/http</a>.<a href="../../src/net/http/request.go.html#line-103">Request</a>.<a href="../../src/net/http/request.go.html#line-124">URL</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">157 uses</span>
+
+	net/http (current package)
+		<a href="../../src/net/http/client.go.html#line-172">client.go#L172</a>: 		for _, cookie := range c.Jar.Cookies(req.<b>URL</b>) {
+		<a href="../../src/net/http/client.go.html#line-182" class="path-duplicate">client.go</a><a href="../../src/net/http/client.go.html#line-182">#L182</a>: 			c.Jar.SetCookies(req.<b>URL</b>, rc)
+		<a href="../../src/net/http/client.go.html#line-212" class="path-duplicate">client.go</a><a href="../../src/net/http/client.go.html#line-212">#L212</a>: 	if req.<b>URL</b> == nil {
+		<a href="../../src/net/http/client.go.html#line-239" class="path-duplicate">client.go</a><a href="../../src/net/http/client.go.html#line-239">#L239</a>: 	if u := req.<b>URL</b>.User; u != nil &amp;&amp; req.Header.Get("Authorization") == "" {
+		<a href="../../src/net/http/client.go.html#line-602" class="path-duplicate">client.go</a><a href="../../src/net/http/client.go.html#line-602">#L602</a>: 	if req.<b>URL</b> == nil {
+		<a href="../../src/net/http/client.go.html#line-628" class="path-duplicate">client.go</a><a href="../../src/net/http/client.go.html#line-628">#L628</a>: 			urlStr = stripPassword(resp.Request.<b>URL</b>)
+		<a href="../../src/net/http/client.go.html#line-630" class="path-duplicate">client.go</a><a href="../../src/net/http/client.go.html#line-630">#L630</a>: 			urlStr = stripPassword(req.<b>URL</b>)
+		<a href="../../src/net/http/client.go.html#line-647" class="path-duplicate">client.go</a><a href="../../src/net/http/client.go.html#line-647">#L647</a>: 			u, err := req.<b>URL</b>.Parse(loc)
+		<a href="../../src/net/http/client.go.html#line-653" class="path-duplicate">client.go</a><a href="../../src/net/http/client.go.html#line-653">#L653</a>: 			if req.Host != "" &amp;&amp; req.Host != req.<b>URL</b>.Host {
+		<a href="../../src/net/http/client.go.html#line-665" class="path-duplicate">client.go</a><a href="../../src/net/http/client.go.html#line-665">#L665</a>: 				<b>URL</b>:      u,
+		<a href="../../src/net/http/client.go.html#line-688" class="path-duplicate">client.go</a><a href="../../src/net/http/client.go.html#line-688">#L688</a>: 			if ref := refererForURL(reqs[len(reqs)-1].<b>URL</b>, req.<b>URL</b>); ref != "" {
+		<a href="../../src/net/http/client.go.html#line-802" class="path-duplicate">client.go</a><a href="../../src/net/http/client.go.html#line-802">#L802</a>: 			if shouldCopyHeaderOnRedirect(k, preq.<b>URL</b>, req.<b>URL</b>) {
+		<a href="../../src/net/http/fs.go.html#line-592">fs.go#L592</a>: 	if strings.HasSuffix(r.<b>URL</b>.Path, indexPage) {
+		<a href="../../src/net/http/fs.go.html#line-615" class="path-duplicate">fs.go</a><a href="../../src/net/http/fs.go.html#line-615">#L615</a>: 		url := r.<b>URL</b>.Path
+		<a href="../../src/net/http/fs.go.html#line-630" class="path-duplicate">fs.go</a><a href="../../src/net/http/fs.go.html#line-630">#L630</a>: 		url := r.<b>URL</b>.Path
+		<a href="../../src/net/http/fs.go.html#line-686" class="path-duplicate">fs.go</a><a href="../../src/net/http/fs.go.html#line-686">#L686</a>: 	if q := r.<b>URL</b>.RawQuery; q != "" {
+		<a href="../../src/net/http/fs.go.html#line-715" class="path-duplicate">fs.go</a><a href="../../src/net/http/fs.go.html#line-715">#L715</a>: 	if containsDotDot(r.<b>URL</b>.Path) {
+		<a href="../../src/net/http/fs.go.html#line-843" class="path-duplicate">fs.go</a><a href="../../src/net/http/fs.go.html#line-843">#L843</a>: 	upath := r.<b>URL</b>.Path
+		<a href="../../src/net/http/fs.go.html#line-846" class="path-duplicate">fs.go</a><a href="../../src/net/http/fs.go.html#line-846">#L846</a>: 		r.<b>URL</b>.Path = upath
+		<a href="../../src/net/http/h2_bundle.go.html#line-5799">h2_bundle.go#L5799</a>: 		<b>URL</b>:        url_,
+		<a href="../../src/net/http/h2_bundle.go.html#line-7093" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-7093">#L7093</a>: 	if !(req.<b>URL</b>.Scheme == "https" || (req.<b>URL</b>.Scheme == "http" &amp;&amp; t.AllowHTTP)) {
+		<a href="../../src/net/http/h2_bundle.go.html#line-7097" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-7097">#L7097</a>: 	addr := http2authorityAddr(req.<b>URL</b>.Scheme, req.<b>URL</b>.Host)
+		<a href="../../src/net/http/h2_bundle.go.html#line-8247" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-8247">#L8247</a>: 	if req.<b>URL</b> == nil {
+		<a href="../../src/net/http/h2_bundle.go.html#line-8253" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-8253">#L8253</a>: 		host = req.<b>URL</b>.Host
+		<a href="../../src/net/http/h2_bundle.go.html#line-8262" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-8262">#L8262</a>: 		path = req.<b>URL</b>.RequestURI()
+		<a href="../../src/net/http/h2_bundle.go.html#line-8265" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-8265">#L8265</a>: 			path = strings.TrimPrefix(path, req.<b>URL</b>.Scheme+"://"+host)
+		<a href="../../src/net/http/h2_bundle.go.html#line-8267" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-8267">#L8267</a>: 				if req.<b>URL</b>.Opaque != "" {
+		<a href="../../src/net/http/h2_bundle.go.html#line-8268" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-8268">#L8268</a>: 					return nil, fmt.Errorf("invalid request :path %q from URL.Opaque = %q", orig, req.<b>URL</b>.Opaque)
+		<a href="../../src/net/http/h2_bundle.go.html#line-8304" class="path-duplicate">h2_bundle.go</a><a href="../../src/net/http/h2_bundle.go.html#line-8304">#L8304</a>: 			f(":scheme", req.<b>URL</b>.Scheme)
+		<a href="../../src/net/http/request.go.html#line-124">request.go#L124</a>: 	<b>URL</b> *url.URL
+		<a href="../../src/net/http/request.go.html#line-362" class="path-duplicate">request.go</a><a href="../../src/net/http/request.go.html#line-362">#L362</a>: 	r2.<b>URL</b> = cloneURL(r.<b>URL</b>) // legacy behavior; TODO: try to remove. Issue 23544
+		<a href="../../src/net/http/request.go.html#line-379" class="path-duplicate">request.go</a><a href="../../src/net/http/request.go.html#line-379">#L379</a>: 	r2.<b>URL</b> = cloneURL(r.<b>URL</b>)
+		<a href="../../src/net/http/request.go.html#line-497" class="path-duplicate">request.go</a><a href="../../src/net/http/request.go.html#line-497">#L497</a>: 	return r.Method == "PRI" &amp;&amp; len(r.Header) == 0 &amp;&amp; r.<b>URL</b>.Path == "*" &amp;&amp; r.Proto == "HTTP/2.0"
+		<a href="../../src/net/http/request.go.html#line-573" class="path-duplicate">request.go</a><a href="../../src/net/http/request.go.html#line-573">#L573</a>: 		if r.<b>URL</b> == nil {
+		<a href="../../src/net/http/request.go.html#line-576" class="path-duplicate">request.go</a><a href="../../src/net/http/request.go.html#line-576">#L576</a>: 		host = cleanHost(r.<b>URL</b>.Host)
+		<a href="../../src/net/http/request.go.html#line-584" class="path-duplicate">request.go</a><a href="../../src/net/http/request.go.html#line-584">#L584</a>: 	ruri := r.<b>URL</b>.RequestURI()
+		<a href="../../src/net/http/request.go.html#line-585" class="path-duplicate">request.go</a><a href="../../src/net/http/request.go.html#line-585">#L585</a>: 	if usingProxy &amp;&amp; r.<b>URL</b>.Scheme != "" &amp;&amp; r.<b>URL</b>.Opaque == "" {
+		<a href="../../src/net/http/request.go.html#line-586" class="path-duplicate">request.go</a><a href="../../src/net/http/request.go.html#line-586">#L586</a>: 		ruri = r.<b>URL</b>.Scheme + "://" + host + ruri
+		<a href="../../src/net/http/request.go.html#line-587" class="path-duplicate">request.go</a><a href="../../src/net/http/request.go.html#line-587">#L587</a>: 	} else if r.Method == "CONNECT" &amp;&amp; r.<b>URL</b>.Path == "" {
+		<a href="../../src/net/http/request.go.html#line-590" class="path-duplicate">request.go</a><a href="../../src/net/http/request.go.html#line-590">#L590</a>: 		if r.<b>URL</b>.Opaque != "" {
+		<a href="../../src/net/http/request.go.html#line-591" class="path-duplicate">request.go</a><a href="../../src/net/http/request.go.html#line-591">#L591</a>: 			ruri = r.<b>URL</b>.Opaque
+		<a href="../../src/net/http/request.go.html#line-881" class="path-duplicate">request.go</a><a href="../../src/net/http/request.go.html#line-881">#L881</a>: 		<b>URL</b>:        u,
+		<a href="../../src/net/http/request.go.html#line-1066" class="path-duplicate">request.go</a><a href="../../src/net/http/request.go.html#line-1066">#L1066</a>: 	if req.<b>URL</b>, err = url.ParseRequestURI(rawurl); err != nil {
+		<a href="../../src/net/http/request.go.html#line-1072" class="path-duplicate">request.go</a><a href="../../src/net/http/request.go.html#line-1072">#L1072</a>: 		req.<b>URL</b>.Scheme = ""
+		<a href="../../src/net/http/request.go.html#line-1092" class="path-duplicate">request.go</a><a href="../../src/net/http/request.go.html#line-1092">#L1092</a>: 	req.Host = req.<b>URL</b>.Host
+		<a href="../../src/net/http/request.go.html#line-1272" class="path-duplicate">request.go</a><a href="../../src/net/http/request.go.html#line-1272">#L1272</a>: 		if r.<b>URL</b> != nil {
+		<a href="../../src/net/http/request.go.html#line-1274" class="path-duplicate">request.go</a><a href="../../src/net/http/request.go.html#line-1274">#L1274</a>: 			newValues, e = url.ParseQuery(r.<b>URL</b>.RawQuery)
+		<a href="../../src/net/http/response.go.html#line-142">response.go#L142</a>: 	if r.Request != nil &amp;&amp; r.Request.<b>URL</b> != nil {
+		<a href="../../src/net/http/response.go.html#line-143" class="path-duplicate">response.go</a><a href="../../src/net/http/response.go.html#line-143">#L143</a>: 		return r.Request.<b>URL</b>.Parse(lv)
+		<a href="../../src/net/http/server.go.html#line-2081">server.go#L2081</a>: 		p := strings.TrimPrefix(r.<b>URL</b>.Path, prefix)
+		<a href="../../src/net/http/server.go.html#line-2082" class="path-duplicate">server.go</a><a href="../../src/net/http/server.go.html#line-2082">#L2082</a>: 		rp := strings.TrimPrefix(r.<b>URL</b>.RawPath, prefix)
+		<a href="../../src/net/http/server.go.html#line-2083" class="path-duplicate">server.go</a><a href="../../src/net/http/server.go.html#line-2083">#L2083</a>: 		if len(p) &lt; len(r.<b>URL</b>.Path) &amp;&amp; (r.<b>URL</b>.RawPath == "" || len(rp) &lt; len(r.<b>URL</b>.RawPath)) {
+		<a href="../../src/net/http/server.go.html#line-2086" class="path-duplicate">server.go</a><a href="../../src/net/http/server.go.html#line-2086">#L2086</a>: 			r2.<b>URL</b> = new(url.URL)
+		<a href="../../src/net/http/server.go.html#line-2087" class="path-duplicate">server.go</a><a href="../../src/net/http/server.go.html#line-2087">#L2087</a>: 			*r2.<b>URL</b> = *r.<b>URL</b>
+		<a href="../../src/net/http/server.go.html#line-2088" class="path-duplicate">server.go</a><a href="../../src/net/http/server.go.html#line-2088">#L2088</a>: 			r2.<b>URL</b>.Path = p
+		<a href="../../src/net/http/server.go.html#line-2089" class="path-duplicate">server.go</a><a href="../../src/net/http/server.go.html#line-2089">#L2089</a>: 			r2.<b>URL</b>.RawPath = rp
+		<a href="../../src/net/http/server.go.html#line-2115" class="path-duplicate">server.go</a><a href="../../src/net/http/server.go.html#line-2115">#L2115</a>: 			oldpath := r.<b>URL</b>.Path
+		<a href="../../src/net/http/server.go.html#line-2368" class="path-duplicate">server.go</a><a href="../../src/net/http/server.go.html#line-2368">#L2368</a>: 		if u, ok := mux.redirectToPathSlash(r.<b>URL</b>.Host, r.<b>URL</b>.Path, r.<b>URL</b>); ok {
+		<a href="../../src/net/http/server.go.html#line-2372" class="path-duplicate">server.go</a><a href="../../src/net/http/server.go.html#line-2372">#L2372</a>: 		return mux.handler(r.Host, r.<b>URL</b>.Path)
+		<a href="../../src/net/http/server.go.html#line-2378" class="path-duplicate">server.go</a><a href="../../src/net/http/server.go.html#line-2378">#L2378</a>: 	path := cleanPath(r.<b>URL</b>.Path)
+		<a href="../../src/net/http/server.go.html#line-2382" class="path-duplicate">server.go</a><a href="../../src/net/http/server.go.html#line-2382">#L2382</a>: 	if u, ok := mux.redirectToPathSlash(host, path, r.<b>URL</b>); ok {
+		<a href="../../src/net/http/server.go.html#line-2386" class="path-duplicate">server.go</a><a href="../../src/net/http/server.go.html#line-2386">#L2386</a>: 	if path != r.<b>URL</b>.Path {
+		<a href="../../src/net/http/server.go.html#line-2388" class="path-duplicate">server.go</a><a href="../../src/net/http/server.go.html#line-2388">#L2388</a>: 		u := &amp;url.URL{Path: path, RawQuery: r.<b>URL</b>.RawQuery}
+		<a href="../../src/net/http/server.go.html#line-2392" class="path-duplicate">server.go</a><a href="../../src/net/http/server.go.html#line-2392">#L2392</a>: 	return mux.handler(host, r.<b>URL</b>.Path)
+		<a href="../../src/net/http/server.go.html#line-2867" class="path-duplicate">server.go</a><a href="../../src/net/http/server.go.html#line-2867">#L2867</a>: 	if req.<b>URL</b> != nil &amp;&amp; strings.Contains(req.<b>URL</b>.RawQuery, ";") {
+		<a href="../../src/net/http/server.go.html#line-2898" class="path-duplicate">server.go</a><a href="../../src/net/http/server.go.html#line-2898">#L2898</a>: 		if strings.Contains(r.<b>URL</b>.RawQuery, ";") {
+		<a href="../../src/net/http/server.go.html#line-2901" class="path-duplicate">server.go</a><a href="../../src/net/http/server.go.html#line-2901">#L2901</a>: 			r2.<b>URL</b> = new(url.URL)
+		<a href="../../src/net/http/server.go.html#line-2902" class="path-duplicate">server.go</a><a href="../../src/net/http/server.go.html#line-2902">#L2902</a>: 			*r2.<b>URL</b> = *r.<b>URL</b>
+		<a href="../../src/net/http/server.go.html#line-2903" class="path-duplicate">server.go</a><a href="../../src/net/http/server.go.html#line-2903">#L2903</a>: 			r2.<b>URL</b>.RawQuery = strings.ReplaceAll(r.<b>URL</b>.RawQuery, ";", "&amp;")
+		<a href="../../src/net/http/transport.go.html#line-440">transport.go#L440</a>: 	return envProxyFunc()(req.<b>URL</b>)
+		<a href="../../src/net/http/transport.go.html#line-482" class="path-duplicate">transport.go</a><a href="../../src/net/http/transport.go.html#line-482">#L482</a>: 	if req.<b>URL</b>.Scheme == "https" &amp;&amp; req.requiresHTTP1() {
+		<a href="../../src/net/http/transport.go.html#line-500" class="path-duplicate">transport.go</a><a href="../../src/net/http/transport.go.html#line-500">#L500</a>: 	return altProto[req.<b>URL</b>.Scheme]
+		<a href="../../src/net/http/transport.go.html#line-509" class="path-duplicate">transport.go</a><a href="../../src/net/http/transport.go.html#line-509">#L509</a>: 	if req.<b>URL</b> == nil {
+		<a href="../../src/net/http/transport.go.html#line-517" class="path-duplicate">transport.go</a><a href="../../src/net/http/transport.go.html#line-517">#L517</a>: 	scheme := req.<b>URL</b>.Scheme
+		<a href="../../src/net/http/transport.go.html#line-556" class="path-duplicate">transport.go</a><a href="../../src/net/http/transport.go.html#line-556">#L556</a>: 	if req.<b>URL</b>.Host == "" {
+		<a href="../../src/net/http/transport.go.html#line-831" class="path-duplicate">transport.go</a><a href="../../src/net/http/transport.go.html#line-831">#L831</a>: 	cm.targetScheme = treq.<b>URL</b>.Scheme
+		<a href="../../src/net/http/transport.go.html#line-832" class="path-duplicate">transport.go</a><a href="../../src/net/http/transport.go.html#line-832">#L832</a>: 	cm.targetAddr = canonicalAddr(treq.<b>URL</b>)
+		<a href="../../src/net/http/transport.go.html#line-1671" class="path-duplicate">transport.go</a><a href="../../src/net/http/transport.go.html#line-1671">#L1671</a>: 			<b>URL</b>:    &amp;url.URL{Opaque: cm.targetAddr},
+
+	<a href="../../pkg/net/http/httputil.html">net/http/httputil</a>
+		<a href="../../src/net/http/httputil/dump.go.html#line-99">dump.go#L99</a>: 	if req.<b>URL</b>.Scheme == "https" {
+		<a href="../../src/net/http/httputil/dump.go.html#line-102" class="path-duplicate">dump.go</a><a href="../../src/net/http/httputil/dump.go.html#line-102">#L102</a>: 		reqSend.<b>URL</b> = new(url.URL)
+		<a href="../../src/net/http/httputil/dump.go.html#line-103" class="path-duplicate">dump.go</a><a href="../../src/net/http/httputil/dump.go.html#line-103">#L103</a>: 		*reqSend.<b>URL</b> = *req.<b>URL</b>
+		<a href="../../src/net/http/httputil/dump.go.html#line-104" class="path-duplicate">dump.go</a><a href="../../src/net/http/httputil/dump.go.html#line-104">#L104</a>: 		reqSend.<b>URL</b>.Scheme = "http"
+		<a href="../../src/net/http/httputil/dump.go.html#line-240" class="path-duplicate">dump.go</a><a href="../../src/net/http/httputil/dump.go.html#line-240">#L240</a>: 		reqURI = req.<b>URL</b>.RequestURI()
+		<a href="../../src/net/http/httputil/dump.go.html#line-249" class="path-duplicate">dump.go</a><a href="../../src/net/http/httputil/dump.go.html#line-249">#L249</a>: 		if host == "" &amp;&amp; req.<b>URL</b> != nil {
+		<a href="../../src/net/http/httputil/dump.go.html#line-250" class="path-duplicate">dump.go</a><a href="../../src/net/http/httputil/dump.go.html#line-250">#L250</a>: 			host = req.<b>URL</b>.Host
+		<a href="../../src/net/http/httputil/reverseproxy.go.html#line-146">reverseproxy.go#L146</a>: 		req.<b>URL</b>.Scheme = target.Scheme
+		<a href="../../src/net/http/httputil/reverseproxy.go.html#line-147" class="path-duplicate">reverseproxy.go</a><a href="../../src/net/http/httputil/reverseproxy.go.html#line-147">#L147</a>: 		req.<b>URL</b>.Host = target.Host
+		<a href="../../src/net/http/httputil/reverseproxy.go.html#line-148" class="path-duplicate">reverseproxy.go</a><a href="../../src/net/http/httputil/reverseproxy.go.html#line-148">#L148</a>: 		req.<b>URL</b>.Path, req.<b>URL</b>.RawPath = joinURLPath(target, req.<b>URL</b>)
+		<a href="../../src/net/http/httputil/reverseproxy.go.html#line-149" class="path-duplicate">reverseproxy.go</a><a href="../../src/net/http/httputil/reverseproxy.go.html#line-149">#L149</a>: 		if targetQuery == "" || req.<b>URL</b>.RawQuery == "" {
+		<a href="../../src/net/http/httputil/reverseproxy.go.html#line-150" class="path-duplicate">reverseproxy.go</a><a href="../../src/net/http/httputil/reverseproxy.go.html#line-150">#L150</a>: 			req.<b>URL</b>.RawQuery = targetQuery + req.<b>URL</b>.RawQuery
+		<a href="../../src/net/http/httputil/reverseproxy.go.html#line-152" class="path-duplicate">reverseproxy.go</a><a href="../../src/net/http/httputil/reverseproxy.go.html#line-152">#L152</a>: 			req.<b>URL</b>.RawQuery = targetQuery + "&amp;" + req.<b>URL</b>.RawQuery
+
+	<a href="../../pkg/github.com/aws/aws-sdk-go/aws/request.html">github.com/aws/aws-sdk-go/aws/request</a>
+		<a href="../../src/github.com/aws/aws-sdk-go/aws/request/http_request.go.html#line-12">http_request.go#L12</a>: 	req.<b>URL</b> = &amp;url.URL{}
+		<a href="../../src/github.com/aws/aws-sdk-go/aws/request/http_request.go.html#line-13" class="path-duplicate">http_request.go</a><a href="../../src/github.com/aws/aws-sdk-go/aws/request/http_request.go.html#line-13">#L13</a>: 	*req.<b>URL</b> = *r.<b>URL</b>
+		<a href="../../src/github.com/aws/aws-sdk-go/aws/request/request.go.html#line-132">request.go#L132</a>: 	httpReq.<b>URL</b>, err = url.Parse(clientInfo.Endpoint + operation.HTTPPath)
+		<a href="../../src/github.com/aws/aws-sdk-go/aws/request/request.go.html#line-134" class="path-duplicate">request.go</a><a href="../../src/github.com/aws/aws-sdk-go/aws/request/request.go.html#line-134">#L134</a>: 		httpReq.<b>URL</b> = &amp;url.URL{}
+		<a href="../../src/github.com/aws/aws-sdk-go/aws/request/request.go.html#line-372" class="path-duplicate">request.go</a><a href="../../src/github.com/aws/aws-sdk-go/aws/request/request.go.html#line-372">#L372</a>: 	return r.HTTPRequest.<b>URL</b>.String(), r.SignedHeaderVals, nil
+		<a href="../../src/github.com/aws/aws-sdk-go/aws/request/request.go.html#line-631" class="path-duplicate">request.go</a><a href="../../src/github.com/aws/aws-sdk-go/aws/request/request.go.html#line-631">#L631</a>: 	if port != "" &amp;&amp; isDefaultPort(r.<b>URL</b>.Scheme, port) {
+		<a href="../../src/github.com/aws/aws-sdk-go/aws/request/request.go.html#line-642" class="path-duplicate">request.go</a><a href="../../src/github.com/aws/aws-sdk-go/aws/request/request.go.html#line-642">#L642</a>: 	if r.<b>URL</b> == nil {
+		<a href="../../src/github.com/aws/aws-sdk-go/aws/request/request.go.html#line-646" class="path-duplicate">request.go</a><a href="../../src/github.com/aws/aws-sdk-go/aws/request/request.go.html#line-646">#L646</a>: 	return r.<b>URL</b>.Host
+
+	<a href="../../pkg/github.com/aws/aws-sdk-go/aws/signer/v4.html">github.com/aws/aws-sdk-go/aws/signer/v4</a>
+		<a href="../../src/github.com/aws/aws-sdk-go/aws/signer/v4/v4.go.html#line-323">v4.go#L323</a>: 		Query:                  r.<b>URL</b>.Query(),
+		<a href="../../src/github.com/aws/aws-sdk-go/aws/signer/v4/v4.go.html#line-390" class="path-duplicate">v4.go</a><a href="../../src/github.com/aws/aws-sdk-go/aws/signer/v4/v4.go.html#line-390">#L390</a>: 	ctx.Request.<b>URL</b>.RawQuery = ctx.Query.Encode()
+		<a href="../../src/github.com/aws/aws-sdk-go/aws/signer/v4/v4.go.html#line-507" class="path-duplicate">v4.go</a><a href="../../src/github.com/aws/aws-sdk-go/aws/signer/v4/v4.go.html#line-507">#L507</a>: 		signedURLMsg = fmt.Sprintf(logSignedURLMsg, ctx.Request.<b>URL</b>.String())
+		<a href="../../src/github.com/aws/aws-sdk-go/aws/signer/v4/v4.go.html#line-538" class="path-duplicate">v4.go</a><a href="../../src/github.com/aws/aws-sdk-go/aws/signer/v4/v4.go.html#line-538">#L538</a>: 		ctx.Request.<b>URL</b>.RawQuery += "&amp;" + signatureQueryKey + "=" + ctx.signature
+		<a href="../../src/github.com/aws/aws-sdk-go/aws/signer/v4/v4.go.html#line-569" class="path-duplicate">v4.go</a><a href="../../src/github.com/aws/aws-sdk-go/aws/signer/v4/v4.go.html#line-569">#L569</a>: 	if sig := r.<b>URL</b>.Query().Get("X-Amz-Signature"); len(sig) != 0 {
+		<a href="../../src/github.com/aws/aws-sdk-go/aws/signer/v4/v4.go.html#line-642" class="path-duplicate">v4.go</a><a href="../../src/github.com/aws/aws-sdk-go/aws/signer/v4/v4.go.html#line-642">#L642</a>: 				headerValues[i] = "host:" + ctx.Request.<b>URL</b>.Host
+		<a href="../../src/github.com/aws/aws-sdk-go/aws/signer/v4/v4.go.html#line-654" class="path-duplicate">v4.go</a><a href="../../src/github.com/aws/aws-sdk-go/aws/signer/v4/v4.go.html#line-654">#L654</a>: 	ctx.Request.<b>URL</b>.RawQuery = strings.Replace(ctx.Query.Encode(), "+", "%20", -1)
+		<a href="../../src/github.com/aws/aws-sdk-go/aws/signer/v4/v4.go.html#line-656" class="path-duplicate">v4.go</a><a href="../../src/github.com/aws/aws-sdk-go/aws/signer/v4/v4.go.html#line-656">#L656</a>: 	uri := getURIPath(ctx.Request.<b>URL</b>)
+		<a href="../../src/github.com/aws/aws-sdk-go/aws/signer/v4/v4.go.html#line-665" class="path-duplicate">v4.go</a><a href="../../src/github.com/aws/aws-sdk-go/aws/signer/v4/v4.go.html#line-665">#L665</a>: 		ctx.Request.<b>URL</b>.RawQuery,
+
+	<a href="../../pkg/github.com/aws/aws-sdk-go/private/protocol.html">github.com/aws/aws-sdk-go/private/protocol</a>
+		<a href="../../src/github.com/aws/aws-sdk-go/private/protocol/host.go.html#line-14">host.go#L14</a>: 		err := ValidateEndpointHost(r.Operation.Name, r.HTTPRequest.<b>URL</b>.Host)
+		<a href="../../src/github.com/aws/aws-sdk-go/private/protocol/host_prefix.go.html#line-50">host_prefix.go#L50</a>: 	r.HTTPRequest.<b>URL</b>.Host = prefix + r.HTTPRequest.<b>URL</b>.Host
+
+	<a href="../../pkg/github.com/aws/aws-sdk-go/private/protocol/query.html">github.com/aws/aws-sdk-go/private/protocol/query</a>
+		<a href="../../src/github.com/aws/aws-sdk-go/private/protocol/query/build.go.html#line-34">build.go#L34</a>: 		r.HTTPRequest.<b>URL</b>.RawQuery = body.Encode()
+
+	<a href="../../pkg/github.com/aws/aws-sdk-go/private/protocol/rest.html">github.com/aws/aws-sdk-go/private/protocol/rest</a>
+		<a href="../../src/github.com/aws/aws-sdk-go/private/protocol/rest/build.go.html#line-66">build.go#L66</a>: 	query := r.HTTPRequest.<b>URL</b>.Query()
+		<a href="../../src/github.com/aws/aws-sdk-go/private/protocol/rest/build.go.html#line-71" class="path-duplicate">build.go</a><a href="../../src/github.com/aws/aws-sdk-go/private/protocol/rest/build.go.html#line-71">#L71</a>: 	r.HTTPRequest.<b>URL</b>.RawPath = r.HTTPRequest.<b>URL</b>.Path
+		<a href="../../src/github.com/aws/aws-sdk-go/private/protocol/rest/build.go.html#line-114" class="path-duplicate">build.go</a><a href="../../src/github.com/aws/aws-sdk-go/private/protocol/rest/build.go.html#line-114">#L114</a>: 				err = buildURI(r.HTTPRequest.<b>URL</b>, m, name, field.Tag)
+		<a href="../../src/github.com/aws/aws-sdk-go/private/protocol/rest/build.go.html#line-129" class="path-duplicate">build.go</a><a href="../../src/github.com/aws/aws-sdk-go/private/protocol/rest/build.go.html#line-129">#L129</a>: 	r.HTTPRequest.<b>URL</b>.RawQuery = query.Encode()
+		<a href="../../src/github.com/aws/aws-sdk-go/private/protocol/rest/build.go.html#line-131" class="path-duplicate">build.go</a><a href="../../src/github.com/aws/aws-sdk-go/private/protocol/rest/build.go.html#line-131">#L131</a>: 		cleanPath(r.HTTPRequest.<b>URL</b>)
+
+	<a href="../../pkg/github.com/caring/test/1-mocks.html">github.com/caring/test/1-mocks</a>
+		<a href="../../src/github.com/caring/test/1-mocks/http.go.html#line-66">http.go#L66</a>: 	if !strings.HasPrefix(r.<b>URL</b>.Path, "/fizzbuzz/") {
+		<a href="../../src/github.com/caring/test/1-mocks/http.go.html#line-68" class="path-duplicate">http.go</a><a href="../../src/github.com/caring/test/1-mocks/http.go.html#line-68">#L68</a>: 		result.Error = "not found: " + r.<b>URL</b>.Path
+		<a href="../../src/github.com/caring/test/1-mocks/http.go.html#line-82" class="path-duplicate">http.go</a><a href="../../src/github.com/caring/test/1-mocks/http.go.html#line-82">#L82</a>: 	idStr := strings.TrimPrefix(r.<b>URL</b>.Path, "/fizzbuzz/")
+
+	<a href="../../pkg/golang.org/x/net/http2.html">golang.org/x/net/http2</a>
+		<a href="../../src/golang.org/x/net/http2/server.go.html#line-2118">server.go#L2118</a>: 		<b>URL</b>:        url_,
+		<a href="../../src/golang.org/x/net/http2/transport.go.html#line-465">transport.go#L465</a>: 	if !(req.<b>URL</b>.Scheme == "https" || (req.<b>URL</b>.Scheme == "http" &amp;&amp; t.AllowHTTP)) {
+		<a href="../../src/golang.org/x/net/http2/transport.go.html#line-469" class="path-duplicate">transport.go</a><a href="../../src/golang.org/x/net/http2/transport.go.html#line-469">#L469</a>: 	addr := authorityAddr(req.<b>URL</b>.Scheme, req.<b>URL</b>.Host)
+		<a href="../../src/golang.org/x/net/http2/transport.go.html#line-1475" class="path-duplicate">transport.go</a><a href="../../src/golang.org/x/net/http2/transport.go.html#line-1475">#L1475</a>: 		host = req.<b>URL</b>.Host
+		<a href="../../src/golang.org/x/net/http2/transport.go.html#line-1484" class="path-duplicate">transport.go</a><a href="../../src/golang.org/x/net/http2/transport.go.html#line-1484">#L1484</a>: 		path = req.<b>URL</b>.RequestURI()
+		<a href="../../src/golang.org/x/net/http2/transport.go.html#line-1487" class="path-duplicate">transport.go</a><a href="../../src/golang.org/x/net/http2/transport.go.html#line-1487">#L1487</a>: 			path = strings.TrimPrefix(path, req.<b>URL</b>.Scheme+"://"+host)
+		<a href="../../src/golang.org/x/net/http2/transport.go.html#line-1489" class="path-duplicate">transport.go</a><a href="../../src/golang.org/x/net/http2/transport.go.html#line-1489">#L1489</a>: 				if req.<b>URL</b>.Opaque != "" {
+		<a href="../../src/golang.org/x/net/http2/transport.go.html#line-1490" class="path-duplicate">transport.go</a><a href="../../src/golang.org/x/net/http2/transport.go.html#line-1490">#L1490</a>: 					return nil, fmt.Errorf("invalid request :path %q from URL.Opaque = %q", orig, req.<b>URL</b>.Opaque)
+		<a href="../../src/golang.org/x/net/http2/transport.go.html#line-1526" class="path-duplicate">transport.go</a><a href="../../src/golang.org/x/net/http2/transport.go.html#line-1526">#L1526</a>: 			f(":scheme", req.<b>URL</b>.Scheme)
+
+	<a href="../../pkg/golang.org/x/net/trace.html">golang.org/x/net/trace</a>
+		<a href="../../src/golang.org/x/net/trace/trace.go.html#line-121">trace.go#L121</a>: 	_, pat := http.DefaultServeMux.Handler(&amp;http.Request{<b>URL</b>: &amp;url.URL{Path: debugRequestsPath}})
+
+	<a href="../../pkg/google.golang.org/grpc/internal/transport.html">google.golang.org/grpc/internal/transport</a>
+		<a href="../../src/google.golang.org/grpc/internal/transport/handler_server.go.html#line-360">handler_server.go#L360</a>: 		method:         req.<b>URL</b>.Path,
+		<a href="../../src/google.golang.org/grpc/internal/transport/proxy.go.html#line-42">proxy.go#L42</a>: 		<b>URL</b>: &amp;url.URL{
+		<a href="../../src/google.golang.org/grpc/internal/transport/proxy.go.html#line-82" class="path-duplicate">proxy.go</a><a href="../../src/google.golang.org/grpc/internal/transport/proxy.go.html#line-82">#L82</a>: 		<b>URL</b>:    &amp;url.URL{Host: backendAddr},
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

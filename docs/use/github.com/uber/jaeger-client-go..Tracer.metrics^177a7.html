@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/uber/jaeger-client-go.Tracer.metrics</title>
+<link href="../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../../pkg/github.com/uber/jaeger-client-go.html">github.com/uber/jaeger-client-go</a>.<a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-37">Tracer</a>.<a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-43">metrics</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">20 uses</span>
+
+	github.com/uber/jaeger-client-go (current package)
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-43">tracer.go#L43</a>: 	<b>metrics</b>  Metrics
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-91" class="path-duplicate">tracer.go</a><a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-91">#L91</a>: 		<b>metrics</b>:       *NewNullMetrics(),
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-100" class="path-duplicate">tracer.go</a><a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-100">#L100</a>: 	textPropagator := NewTextMapPropagator(getDefaultHeadersConfig(), t.<b>metrics</b>)
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-103" class="path-duplicate">tracer.go</a><a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-103">#L103</a>: 	httpHeaderPropagator := NewHTTPHeaderPropagator(getDefaultHeadersConfig(), t.<b>metrics</b>)
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-117" class="path-duplicate">tracer.go</a><a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-117">#L117</a>: 		t.baggageSetter = newBaggageSetter(t.baggageRestrictionManager, &amp;t.<b>metrics</b>)
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-119" class="path-duplicate">tracer.go</a><a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-119">#L119</a>: 		t.baggageSetter = newBaggageSetter(baggage.NewDefaultRestrictionManager(0), &amp;t.<b>metrics</b>)
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-417" class="path-duplicate">tracer.go</a><a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-417">#L417</a>: 		t.<b>metrics</b>.SpansStartedDelayedSampling.Inc(1)
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-419" class="path-duplicate">tracer.go</a><a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-419">#L419</a>: 			t.<b>metrics</b>.TracesStartedDelayedSampling.Inc(1)
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-423" class="path-duplicate">tracer.go</a><a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-423">#L423</a>: 		t.<b>metrics</b>.SpansStartedSampled.Inc(1)
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-425" class="path-duplicate">tracer.go</a><a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-425">#L425</a>: 			t.<b>metrics</b>.TracesStartedSampled.Inc(1)
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-427" class="path-duplicate">tracer.go</a><a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-427">#L427</a>: 			t.<b>metrics</b>.TracesJoinedSampled.Inc(1)
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-430" class="path-duplicate">tracer.go</a><a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-430">#L430</a>: 		t.<b>metrics</b>.SpansStartedNotSampled.Inc(1)
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-432" class="path-duplicate">tracer.go</a><a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-432">#L432</a>: 			t.<b>metrics</b>.TracesStartedNotSampled.Inc(1)
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-434" class="path-duplicate">tracer.go</a><a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-434">#L434</a>: 			t.<b>metrics</b>.TracesJoinedNotSampled.Inc(1)
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-443" class="path-duplicate">tracer.go</a><a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-443">#L443</a>: 		t.<b>metrics</b>.SpansFinishedDelayedSampling.Inc(1)
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-445" class="path-duplicate">tracer.go</a><a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-445">#L445</a>: 		t.<b>metrics</b>.SpansFinishedSampled.Inc(1)
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-447" class="path-duplicate">tracer.go</a><a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-447">#L447</a>: 		t.<b>metrics</b>.SpansFinishedNotSampled.Inc(1)
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer_options.go.html#line-39">tracer_options.go#L39</a>: 		tracer.<b>metrics</b> = *m
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer_options.go.html#line-55" class="path-duplicate">tracer_options.go</a><a href="../../../src/github.com/uber/jaeger-client-go/tracer_options.go.html#line-55">#L55</a>: 		textPropagator := NewTextMapPropagator(headerKeys.ApplyDefaults(), tracer.<b>metrics</b>)
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer_options.go.html#line-58" class="path-duplicate">tracer_options.go</a><a href="../../../src/github.com/uber/jaeger-client-go/tracer_options.go.html#line-58">#L58</a>: 		httpHeaderPropagator := NewHTTPHeaderPropagator(headerKeys.ApplyDefaults(), tracer.<b>metrics</b>)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

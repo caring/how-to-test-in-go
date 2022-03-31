@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime.funcInfo</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../pkg/runtime.html">runtime</a>.<a href="../src/runtime/symtab.go.html#line-705">funcInfo</a></b></span>
+
+<span class="title">45 uses</span>
+
+	runtime (current package)
+		<a href="../src/runtime/plugin.go.html#line-104">plugin.go#L104</a>: 		f := <b>funcInfo</b>{(*_func)(unsafe.Pointer(&amp;md.pclntable[md.ftab[i].funcoff])), md}
+		<a href="../src/runtime/runtime2.go.html#line-991">runtime2.go#L991</a>: 	fn       <b>funcInfo</b>   // function being run
+		<a href="../src/runtime/stack.go.html#line-588">stack.go#L588</a>: func adjustpointers(scanp unsafe.Pointer, bv *bitvector, adjinfo *adjustinfo, f <b>funcInfo</b>) {
+		<a href="../src/runtime/stack.go.html#line-686" class="path-duplicate">stack.go</a><a href="../src/runtime/stack.go.html#line-686">#L686</a>: 		adjustpointers(unsafe.Pointer(frame.argp), &amp;args, adjinfo, <b>funcInfo</b>{})
+		<a href="../src/runtime/symtab.go.html#line-59">symtab.go#L59</a>: 	funcInfo <b>funcInfo</b>
+		<a href="../src/runtime/symtab.go.html#line-273" class="path-duplicate">symtab.go</a><a href="../src/runtime/symtab.go.html#line-273">#L273</a>: func (f *Func) funcInfo() <b>funcInfo</b> {
+		<a href="../src/runtime/symtab.go.html#line-275" class="path-duplicate">symtab.go</a><a href="../src/runtime/symtab.go.html#line-275">#L275</a>: 	return <b>funcInfo</b>{fn, findmoduledatap(fn.entry)}
+		<a href="../src/runtime/symtab.go.html#line-585" class="path-duplicate">symtab.go</a><a href="../src/runtime/symtab.go.html#line-585">#L585</a>: 			f1 := <b>funcInfo</b>{(*_func)(unsafe.Pointer(&amp;datap.pclntable[datap.ftab[i].funcoff])), datap}
+		<a href="../src/runtime/symtab.go.html#line-586" class="path-duplicate">symtab.go</a><a href="../src/runtime/symtab.go.html#line-586">#L586</a>: 			f2 := <b>funcInfo</b>{(*_func)(unsafe.Pointer(&amp;datap.pclntable[datap.ftab[i+1].funcoff])), datap}
+		<a href="../src/runtime/symtab.go.html#line-597" class="path-duplicate">symtab.go</a><a href="../src/runtime/symtab.go.html#line-597">#L597</a>: 				print("\t", hex(datap.ftab[j].entry), " ", funcname(<b>funcInfo</b>{(*_func)(unsafe.Pointer(&amp;datap.pclntable[datap.ftab[j].funcoff])), datap}), "\n")
+		<a href="../src/runtime/symtab.go.html#line-705" class="path-duplicate">symtab.go</a><a href="../src/runtime/symtab.go.html#line-705">#L705</a>: type <b>funcInfo</b> struct {
+		<a href="../src/runtime/symtab.go.html#line-710" class="path-duplicate">symtab.go</a><a href="../src/runtime/symtab.go.html#line-710">#L710</a>: func (f <b>funcInfo</b>) valid() bool {
+		<a href="../src/runtime/symtab.go.html#line-714" class="path-duplicate">symtab.go</a><a href="../src/runtime/symtab.go.html#line-714">#L714</a>: func (f <b>funcInfo</b>) _Func() *Func {
+		<a href="../src/runtime/symtab.go.html#line-724" class="path-duplicate">symtab.go</a><a href="../src/runtime/symtab.go.html#line-724">#L724</a>: func findfunc(pc uintptr) <b>funcInfo</b> {
+		<a href="../src/runtime/symtab.go.html#line-727" class="path-duplicate">symtab.go</a><a href="../src/runtime/symtab.go.html#line-727">#L727</a>: 		return <b>funcInfo</b>{}
+		<a href="../src/runtime/symtab.go.html#line-767" class="path-duplicate">symtab.go</a><a href="../src/runtime/symtab.go.html#line-767">#L767</a>: 		return <b>funcInfo</b>{}
+		<a href="../src/runtime/symtab.go.html#line-769" class="path-duplicate">symtab.go</a><a href="../src/runtime/symtab.go.html#line-769">#L769</a>: 	return <b>funcInfo</b>{(*_func)(unsafe.Pointer(&amp;datap.pclntable[funcoff])), datap}
+		<a href="../src/runtime/symtab.go.html#line-794" class="path-duplicate">symtab.go</a><a href="../src/runtime/symtab.go.html#line-794">#L794</a>: func pcvalue(f <b>funcInfo</b>, off uint32, targetpc uintptr, cache *pcvalueCache, strict bool) (int32, uintptr) {
+		<a href="../src/runtime/symtab.go.html#line-886" class="path-duplicate">symtab.go</a><a href="../src/runtime/symtab.go.html#line-886">#L886</a>: func cfuncname(f <b>funcInfo</b>) *byte {
+		<a href="../src/runtime/symtab.go.html#line-893" class="path-duplicate">symtab.go</a><a href="../src/runtime/symtab.go.html#line-893">#L893</a>: func funcname(f <b>funcInfo</b>) string {
+		<a href="../src/runtime/symtab.go.html#line-897" class="path-duplicate">symtab.go</a><a href="../src/runtime/symtab.go.html#line-897">#L897</a>: func funcpkgpath(f <b>funcInfo</b>) string {
+		<a href="../src/runtime/symtab.go.html#line-913" class="path-duplicate">symtab.go</a><a href="../src/runtime/symtab.go.html#line-913">#L913</a>: func cfuncnameFromNameoff(f <b>funcInfo</b>, nameoff int32) *byte {
+		<a href="../src/runtime/symtab.go.html#line-920" class="path-duplicate">symtab.go</a><a href="../src/runtime/symtab.go.html#line-920">#L920</a>: func funcnameFromNameoff(f <b>funcInfo</b>, nameoff int32) string {
+		<a href="../src/runtime/symtab.go.html#line-924" class="path-duplicate">symtab.go</a><a href="../src/runtime/symtab.go.html#line-924">#L924</a>: func funcfile(f <b>funcInfo</b>, fileno int32) string {
+		<a href="../src/runtime/symtab.go.html#line-937" class="path-duplicate">symtab.go</a><a href="../src/runtime/symtab.go.html#line-937">#L937</a>: func funcline1(f <b>funcInfo</b>, targetpc uintptr, strict bool) (file string, line int32) {
+		<a href="../src/runtime/symtab.go.html#line-952" class="path-duplicate">symtab.go</a><a href="../src/runtime/symtab.go.html#line-952">#L952</a>: func funcline(f <b>funcInfo</b>, targetpc uintptr) (file string, line int32) {
+		<a href="../src/runtime/symtab.go.html#line-956" class="path-duplicate">symtab.go</a><a href="../src/runtime/symtab.go.html#line-956">#L956</a>: func funcspdelta(f <b>funcInfo</b>, targetpc uintptr, cache *pcvalueCache) int32 {
+		<a href="../src/runtime/symtab.go.html#line-965" class="path-duplicate">symtab.go</a><a href="../src/runtime/symtab.go.html#line-965">#L965</a>: func funcMaxSPDelta(f <b>funcInfo</b>) int32 {
+		<a href="../src/runtime/symtab.go.html#line-983" class="path-duplicate">symtab.go</a><a href="../src/runtime/symtab.go.html#line-983">#L983</a>: func pcdatastart(f <b>funcInfo</b>, table uint32) uint32 {
+		<a href="../src/runtime/symtab.go.html#line-987" class="path-duplicate">symtab.go</a><a href="../src/runtime/symtab.go.html#line-987">#L987</a>: func pcdatavalue(f <b>funcInfo</b>, table uint32, targetpc uintptr, cache *pcvalueCache) int32 {
+		<a href="../src/runtime/symtab.go.html#line-995" class="path-duplicate">symtab.go</a><a href="../src/runtime/symtab.go.html#line-995">#L995</a>: func pcdatavalue1(f <b>funcInfo</b>, table uint32, targetpc uintptr, cache *pcvalueCache, strict bool) int32 {
+		<a href="../src/runtime/symtab.go.html#line-1005" class="path-duplicate">symtab.go</a><a href="../src/runtime/symtab.go.html#line-1005">#L1005</a>: func pcdatavalue2(f <b>funcInfo</b>, table uint32, targetpc uintptr) (int32, uintptr) {
+		<a href="../src/runtime/symtab.go.html#line-1012" class="path-duplicate">symtab.go</a><a href="../src/runtime/symtab.go.html#line-1012">#L1012</a>: func funcdata(f <b>funcInfo</b>, i uint8) unsafe.Pointer {
+		<a href="../src/runtime/traceback.go.html#line-33">traceback.go#L33</a>: 			frame.fn = <b>funcInfo</b>{}
+		<a href="../src/runtime/traceback.go.html#line-213" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-213">#L213</a>: 		var flr <b>funcInfo</b>
+		<a href="../src/runtime/traceback.go.html#line-217" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-217">#L217</a>: 			flr = <b>funcInfo</b>{}
+		<a href="../src/runtime/traceback.go.html#line-241" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-241">#L241</a>: 			flr = <b>funcInfo</b>{}
+		<a href="../src/runtime/traceback.go.html#line-428" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-428">#L428</a>: 				inlFuncInfo := <b>funcInfo</b>{&amp;inlFunc, f.datap}
+		<a href="../src/runtime/traceback.go.html#line-577" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-577">#L577</a>: func printArgs(f <b>funcInfo</b>, argp unsafe.Pointer) {
+		<a href="../src/runtime/traceback.go.html#line-665" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-665">#L665</a>: func getArgInfoFast(f <b>funcInfo</b>, needArgMap bool) (arglen uintptr, argmap *bitvector, ok bool) {
+		<a href="../src/runtime/traceback.go.html#line-677" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-677">#L677</a>: func getArgInfo(frame *stkframe, f <b>funcInfo</b>, needArgMap bool, ctxt *funcval) (arglen uintptr, argmap *bitvector) {
+		<a href="../src/runtime/traceback.go.html#line-762" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-762">#L762</a>: func printcreatedby1(f <b>funcInfo</b>, pc uintptr) {
+		<a href="../src/runtime/traceback.go.html#line-864" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-864">#L864</a>: func printAncestorTracebackFuncInfo(f <b>funcInfo</b>, pc uintptr) {
+		<a href="../src/runtime/traceback.go.html#line-902" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-902">#L902</a>: func showframe(f <b>funcInfo</b>, gp *g, firstFrame bool, funcID, childID funcID) bool {
+		<a href="../src/runtime/traceback.go.html#line-912" class="path-duplicate">traceback.go</a><a href="../src/runtime/traceback.go.html#line-912">#L912</a>: func showfuncinfo(f <b>funcInfo</b>, firstFrame bool, funcID, childID funcID) bool {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

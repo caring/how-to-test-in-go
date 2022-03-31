@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: encoding/base64.Encoding.EncodeToString</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../pkg/encoding/base64.html">encoding/base64</a>.<a href="../../src/encoding/base64/base64.go.html#line-23">Encoding</a>.<a href="../../src/encoding/base64/base64.go.html#line-177">EncodeToString</a></b></span><span style="font-size: large;"><i> (method)</i></span>
+
+<span class="title">10 uses</span>
+
+	encoding/base64 (current package)
+		<a href="../../src/encoding/base64/base64.go.html#line-177">base64.go#L177</a>: func (enc *Encoding) <b>EncodeToString</b>(src []byte) string {
+
+	<a href="../../pkg/github.com/aws/aws-sdk-go/private/protocol.html">github.com/aws/aws-sdk-go/private/protocol</a>
+		<a href="../../src/github.com/aws/aws-sdk-go/private/protocol/jsonvalue.go.html#line-36">jsonvalue.go#L36</a>: 		return base64.StdEncoding.<b>EncodeToString</b>(b), nil
+
+	<a href="../../pkg/github.com/aws/aws-sdk-go/private/protocol/query/queryutil.html">github.com/aws/aws-sdk-go/private/protocol/query/queryutil</a>
+		<a href="../../src/github.com/aws/aws-sdk-go/private/protocol/query/queryutil/queryutil.go.html#line-222">queryutil.go#L222</a>: 			v.Set(name, base64.StdEncoding.<b>EncodeToString</b>(value))
+
+	<a href="../../pkg/github.com/aws/aws-sdk-go/private/protocol/rest.html">github.com/aws/aws-sdk-go/private/protocol/rest</a>
+		<a href="../../src/github.com/aws/aws-sdk-go/private/protocol/rest/build.go.html#line-277">build.go#L277</a>: 		str = base64.StdEncoding.<b>EncodeToString</b>(value)
+
+	<a href="../../pkg/github.com/aws/aws-sdk-go/private/protocol/xml/xmlutil.html">github.com/aws/aws-sdk-go/private/protocol/xml/xmlutil</a>
+		<a href="../../src/github.com/aws/aws-sdk-go/private/protocol/xml/xmlutil/build.go.html#line-283">build.go#L283</a>: 			str = base64.StdEncoding.<b>EncodeToString</b>(converted)
+
+	<a href="../../pkg/go.uber.org/zap/zapcore.html">go.uber.org/zap/zapcore</a>
+		<a href="../../src/go.uber.org/zap/zapcore/json_encoder.go.html#line-103">json_encoder.go#L103</a>: 	enc.AddString(key, base64.StdEncoding.<b>EncodeToString</b>(val))
+
+	<a href="../../pkg/google.golang.org/grpc/internal/transport.html">google.golang.org/grpc/internal/transport</a>
+		<a href="../../src/google.golang.org/grpc/internal/transport/http_util.go.html#line-138">http_util.go#L138</a>: 	return base64.RawStdEncoding.<b>EncodeToString</b>(v)
+		<a href="../../src/google.golang.org/grpc/internal/transport/proxy.go.html#line-70">proxy.go#L70</a>: 	return base64.StdEncoding.<b>EncodeToString</b>([]byte(auth))
+
+	<a href="../../pkg/google.golang.org/protobuf/encoding/protojson.html">google.golang.org/protobuf/encoding/protojson</a>
+		<a href="../../src/google.golang.org/protobuf/encoding/protojson/encode.go.html#line-289">encode.go#L289</a>: 		e.WriteString(base64.StdEncoding.<b>EncodeToString</b>(val.Bytes()))
+
+	<a href="../../pkg/net/http.html">net/http</a>
+		<a href="../../src/net/http/client.go.html#line-420">client.go#L420</a>: 	return base64.StdEncoding.<b>EncodeToString</b>([]byte(auth))
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

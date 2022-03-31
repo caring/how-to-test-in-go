@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: strings.LastIndexByte</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">func <b><a href="../pkg/strings.html">strings</a>.<a href="../src/strings/strings.go.html#line-225">LastIndexByte</a></b></span>
+
+<span class="title">12 uses</span>
+
+	strings (current package)
+		<a href="../src/strings/strings.go.html#line-82">strings.go#L82</a>: 		return <b>LastIndexByte</b>(s, substr[0])
+		<a href="../src/strings/strings.go.html#line-225" class="path-duplicate">strings.go</a><a href="../src/strings/strings.go.html#line-225">#L225</a>: func <b>LastIndexByte</b>(s string, c byte) int {
+
+	<a href="../pkg/crypto/x509.html">crypto/x509</a>
+		<a href="../src/crypto/x509/verify.go.html#line-361">verify.go#L361</a>: 		if i := strings.<b>LastIndexByte</b>(domain, '.'); i == -1 {
+
+	<a href="../pkg/github.com/golang/protobuf/proto.html">github.com/golang/protobuf/proto</a>
+		<a href="../src/github.com/golang/protobuf/proto/registry.go.html#line-119">registry.go#L119</a>: 	if i := strings.<b>LastIndexByte</b>(s, '.'); i &gt;= 0 {
+
+	<a href="../pkg/go.uber.org/zap/zapcore.html">go.uber.org/zap/zapcore</a>
+		<a href="../src/go.uber.org/zap/zapcore/entry.go.html#line-118">entry.go#L118</a>: 	idx := strings.<b>LastIndexByte</b>(ec.File, '/')
+		<a href="../src/go.uber.org/zap/zapcore/entry.go.html#line-123" class="path-duplicate">entry.go</a><a href="../src/go.uber.org/zap/zapcore/entry.go.html#line-123">#L123</a>: 	idx = strings.<b>LastIndexByte</b>(ec.File[:idx], '/')
+
+	<a href="../pkg/google.golang.org/protobuf/reflect/protoreflect.html">google.golang.org/protobuf/reflect/protoreflect</a>
+		<a href="../src/google.golang.org/protobuf/reflect/protoreflect/proto.go.html#line-481">proto.go#L481</a>: 	if i := strings.<b>LastIndexByte</b>(string(n), '.'); i &gt;= 0 {
+		<a href="../src/google.golang.org/protobuf/reflect/protoreflect/proto.go.html#line-490" class="path-duplicate">proto.go</a><a href="../src/google.golang.org/protobuf/reflect/protoreflect/proto.go.html#line-490">#L490</a>: 	if i := strings.<b>LastIndexByte</b>(string(n), '.'); i &gt;= 0 {
+
+	<a href="../pkg/google.golang.org/protobuf/reflect/protoregistry.html">google.golang.org/protobuf/reflect/protoregistry</a>
+		<a href="../src/google.golang.org/protobuf/reflect/protoregistry/registry.go.html#line-645">registry.go#L645</a>: 	if i := strings.<b>LastIndexByte</b>(url, '/'); i &gt;= 0 {
+
+	<a href="../pkg/google.golang.org/protobuf/types/known/anypb.html">google.golang.org/protobuf/types/known/anypb</a>
+		<a href="../src/google.golang.org/protobuf/types/known/anypb/any.pb.go.html#line-343">any.pb.go#L343</a>: 	if i := strings.<b>LastIndexByte</b>(url, '/'); i &gt;= 0 {
+
+	<a href="../pkg/net/url.html">net/url</a>
+		<a href="../src/net/url/url.go.html#line-1041">url.go#L1041</a>: 			index := strings.<b>LastIndexByte</b>(str, '/')
+		<a href="../src/net/url/url.go.html#line-1177" class="path-duplicate">url.go</a><a href="../src/net/url/url.go.html#line-1177">#L1177</a>: 	colon := strings.<b>LastIndexByte</b>(host, ':')
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

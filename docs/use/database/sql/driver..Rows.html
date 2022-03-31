@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: database/sql/driver.Rows</title>
+<link href="../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../../../pkg/database/sql/driver.html">database/sql/driver</a>.<a href="../../../src/database/sql/driver/driver.go.html#line-420">Rows</a></b></span>
+
+<span class="title">23 uses</span>
+
+	database/sql/driver (current package)
+		<a href="../../../src/database/sql/driver/driver.go.html#line-209">driver.go#L209</a>: 	Query(query string, args []Value) (<b>Rows</b>, error)
+		<a href="../../../src/database/sql/driver/driver.go.html#line-223" class="path-duplicate">driver.go</a><a href="../../../src/database/sql/driver/driver.go.html#line-223">#L223</a>: 	QueryContext(ctx context.Context, query string, args []NamedValue) (<b>Rows</b>, error)
+		<a href="../../../src/database/sql/driver/driver.go.html#line-357" class="path-duplicate">driver.go</a><a href="../../../src/database/sql/driver/driver.go.html#line-357">#L357</a>: 	Query(args []Value) (<b>Rows</b>, error)
+		<a href="../../../src/database/sql/driver/driver.go.html#line-375" class="path-duplicate">driver.go</a><a href="../../../src/database/sql/driver/driver.go.html#line-375">#L375</a>: 	QueryContext(ctx context.Context, args []NamedValue) (<b>Rows</b>, error)
+		<a href="../../../src/database/sql/driver/driver.go.html#line-420" class="path-duplicate">driver.go</a><a href="../../../src/database/sql/driver/driver.go.html#line-420">#L420</a>: type <b>Rows</b> interface {
+		<a href="../../../src/database/sql/driver/driver.go.html#line-445" class="path-duplicate">driver.go</a><a href="../../../src/database/sql/driver/driver.go.html#line-445">#L445</a>: 	<b>Rows</b>
+		<a href="../../../src/database/sql/driver/driver.go.html#line-462" class="path-duplicate">driver.go</a><a href="../../../src/database/sql/driver/driver.go.html#line-462">#L462</a>: 	<b>Rows</b>
+		<a href="../../../src/database/sql/driver/driver.go.html#line-472" class="path-duplicate">driver.go</a><a href="../../../src/database/sql/driver/driver.go.html#line-472">#L472</a>: 	<b>Rows</b>
+		<a href="../../../src/database/sql/driver/driver.go.html#line-488" class="path-duplicate">driver.go</a><a href="../../../src/database/sql/driver/driver.go.html#line-488">#L488</a>: 	<b>Rows</b>
+		<a href="../../../src/database/sql/driver/driver.go.html#line-497" class="path-duplicate">driver.go</a><a href="../../../src/database/sql/driver/driver.go.html#line-497">#L497</a>: 	<b>Rows</b>
+		<a href="../../../src/database/sql/driver/driver.go.html#line-508" class="path-duplicate">driver.go</a><a href="../../../src/database/sql/driver/driver.go.html#line-508">#L508</a>: 	<b>Rows</b>
+
+	<a href="../../../pkg/database/sql.html">database/sql</a>
+		<a href="../../../src/database/sql/convert.go.html#line-318">convert.go#L318</a>: 	case driver.<b>Rows</b>:
+		<a href="../../../src/database/sql/ctxutil.go.html#line-46">ctxutil.go#L46</a>: func ctxDriverQuery(ctx context.Context, queryerCtx driver.QueryerContext, queryer driver.Queryer, query string, nvdargs []driver.NamedValue) (driver.<b>Rows</b>, error) {
+		<a href="../../../src/database/sql/ctxutil.go.html#line-80" class="path-duplicate">ctxutil.go</a><a href="../../../src/database/sql/ctxutil.go.html#line-80">#L80</a>: func ctxDriverStmtQuery(ctx context.Context, si driver.Stmt, nvdargs []driver.NamedValue) (driver.<b>Rows</b>, error) {
+		<a href="../../../src/database/sql/sql.go.html#line-1715">sql.go#L1715</a>: 		var rowsi driver.<b>Rows</b>
+		<a href="../../../src/database/sql/sql.go.html#line-2729" class="path-duplicate">sql.go</a><a href="../../../src/database/sql/sql.go.html#line-2729">#L2729</a>: 	var rowsi driver.<b>Rows</b>
+		<a href="../../../src/database/sql/sql.go.html#line-2787" class="path-duplicate">sql.go</a><a href="../../../src/database/sql/sql.go.html#line-2787">#L2787</a>: func rowsiFromStatement(ctx context.Context, ci driver.Conn, ds *driverStmt, args ...interface{}) (driver.<b>Rows</b>, error) {
+		<a href="../../../src/database/sql/sql.go.html#line-2878" class="path-duplicate">sql.go</a><a href="../../../src/database/sql/sql.go.html#line-2878">#L2878</a>: 	rowsi       driver.<b>Rows</b>
+		<a href="../../../src/database/sql/sql.go.html#line-3134" class="path-duplicate">sql.go</a><a href="../../../src/database/sql/sql.go.html#line-3134">#L3134</a>: func rowsColumnInfoSetupConnLocked(rowsi driver.<b>Rows</b>) []*ColumnType {
+
+	<a href="../../../pkg/github.com/go-sql-driver/mysql.html">github.com/go-sql-driver/mysql</a>
+		<a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-354">connection.go#L354</a>: func (mc *mysqlConn) Query(query string, args []driver.Value) (driver.<b>Rows</b>, error) {
+		<a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-495" class="path-duplicate">connection.go</a><a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-495">#L495</a>: func (mc *mysqlConn) QueryContext(ctx context.Context, query string, args []driver.NamedValue) (driver.<b>Rows</b>, error) {
+		<a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-548" class="path-duplicate">connection.go</a><a href="../../../src/github.com/go-sql-driver/mysql/connection.go.html#line-548">#L548</a>: func (stmt *mysqlStmt) QueryContext(ctx context.Context, args []driver.NamedValue) (driver.<b>Rows</b>, error) {
+		<a href="../../../src/github.com/go-sql-driver/mysql/statement.go.html#line-96">statement.go#L96</a>: func (stmt *mysqlStmt) Query(args []driver.Value) (driver.<b>Rows</b>, error) {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

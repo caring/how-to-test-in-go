@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: crypto/tls.Conn.out</title>
+<link href="../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../../pkg/crypto/tls.html">crypto/tls</a>.<a href="../../src/crypto/tls/conn.go.html#line-27">Conn</a>.<a href="../../src/crypto/tls/conn.go.html#line-95">out</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">36 uses</span>
+
+	crypto/tls (current package)
+		<a href="../../src/crypto/tls/conn.go.html#line-95">conn.go#L95</a>: 	in, <b>out</b>   halfConn
+		<a href="../../src/crypto/tls/conn.go.html#line-819" class="path-duplicate">conn.go</a><a href="../../src/crypto/tls/conn.go.html#line-819">#L819</a>: 	return c.<b>out</b>.setErrorLocked(&amp;net.OpError{Op: "local error", Err: err})
+		<a href="../../src/crypto/tls/conn.go.html#line-824" class="path-duplicate">conn.go</a><a href="../../src/crypto/tls/conn.go.html#line-824">#L824</a>: 	c.<b>out</b>.Lock()
+		<a href="../../src/crypto/tls/conn.go.html#line-825" class="path-duplicate">conn.go</a><a href="../../src/crypto/tls/conn.go.html#line-825">#L825</a>: 	defer c.<b>out</b>.Unlock()
+		<a href="../../src/crypto/tls/conn.go.html#line-869" class="path-duplicate">conn.go</a><a href="../../src/crypto/tls/conn.go.html#line-869">#L869</a>: 	payloadBytes := tcpMSSEstimate - recordHeaderLen - c.<b>out</b>.explicitNonceLen()
+		<a href="../../src/crypto/tls/conn.go.html#line-870" class="path-duplicate">conn.go</a><a href="../../src/crypto/tls/conn.go.html#line-870">#L870</a>: 	if c.<b>out</b>.cipher != nil {
+		<a href="../../src/crypto/tls/conn.go.html#line-871" class="path-duplicate">conn.go</a><a href="../../src/crypto/tls/conn.go.html#line-871">#L871</a>: 		switch ciph := c.<b>out</b>.cipher.(type) {
+		<a href="../../src/crypto/tls/conn.go.html#line-873" class="path-duplicate">conn.go</a><a href="../../src/crypto/tls/conn.go.html#line-873">#L873</a>: 			payloadBytes -= c.<b>out</b>.mac.Size()
+		<a href="../../src/crypto/tls/conn.go.html#line-883" class="path-duplicate">conn.go</a><a href="../../src/crypto/tls/conn.go.html#line-883">#L883</a>: 			payloadBytes -= c.<b>out</b>.mac.Size()
+		<a href="../../src/crypto/tls/conn.go.html#line-976" class="path-duplicate">conn.go</a><a href="../../src/crypto/tls/conn.go.html#line-976">#L976</a>: 		outBuf, err = c.<b>out</b>.encrypt(outBuf, data[:m], c.config.rand())
+		<a href="../../src/crypto/tls/conn.go.html#line-988" class="path-duplicate">conn.go</a><a href="../../src/crypto/tls/conn.go.html#line-988">#L988</a>: 		if err := c.<b>out</b>.changeCipherSpec(); err != nil {
+		<a href="../../src/crypto/tls/conn.go.html#line-999" class="path-duplicate">conn.go</a><a href="../../src/crypto/tls/conn.go.html#line-999">#L999</a>: 	c.<b>out</b>.Lock()
+		<a href="../../src/crypto/tls/conn.go.html#line-1000" class="path-duplicate">conn.go</a><a href="../../src/crypto/tls/conn.go.html#line-1000">#L1000</a>: 	defer c.<b>out</b>.Unlock()
+		<a href="../../src/crypto/tls/conn.go.html#line-1116" class="path-duplicate">conn.go</a><a href="../../src/crypto/tls/conn.go.html#line-1116">#L1116</a>: 	c.<b>out</b>.Lock()
+		<a href="../../src/crypto/tls/conn.go.html#line-1117" class="path-duplicate">conn.go</a><a href="../../src/crypto/tls/conn.go.html#line-1117">#L1117</a>: 	defer c.<b>out</b>.Unlock()
+		<a href="../../src/crypto/tls/conn.go.html#line-1119" class="path-duplicate">conn.go</a><a href="../../src/crypto/tls/conn.go.html#line-1119">#L1119</a>: 	if err := c.<b>out</b>.err; err != nil {
+		<a href="../../src/crypto/tls/conn.go.html#line-1142" class="path-duplicate">conn.go</a><a href="../../src/crypto/tls/conn.go.html#line-1142">#L1142</a>: 		if _, ok := c.<b>out</b>.cipher.(cipher.BlockMode); ok {
+		<a href="../../src/crypto/tls/conn.go.html#line-1145" class="path-duplicate">conn.go</a><a href="../../src/crypto/tls/conn.go.html#line-1145">#L1145</a>: 				return n, c.<b>out</b>.setErrorLocked(err)
+		<a href="../../src/crypto/tls/conn.go.html#line-1152" class="path-duplicate">conn.go</a><a href="../../src/crypto/tls/conn.go.html#line-1152">#L1152</a>: 	return n + m, c.<b>out</b>.setErrorLocked(err)
+		<a href="../../src/crypto/tls/conn.go.html#line-1239" class="path-duplicate">conn.go</a><a href="../../src/crypto/tls/conn.go.html#line-1239">#L1239</a>: 		c.<b>out</b>.Lock()
+		<a href="../../src/crypto/tls/conn.go.html#line-1240" class="path-duplicate">conn.go</a><a href="../../src/crypto/tls/conn.go.html#line-1240">#L1240</a>: 		defer c.<b>out</b>.Unlock()
+		<a href="../../src/crypto/tls/conn.go.html#line-1246" class="path-duplicate">conn.go</a><a href="../../src/crypto/tls/conn.go.html#line-1246">#L1246</a>: 			c.<b>out</b>.setErrorLocked(err)
+		<a href="../../src/crypto/tls/conn.go.html#line-1250" class="path-duplicate">conn.go</a><a href="../../src/crypto/tls/conn.go.html#line-1250">#L1250</a>: 		newSecret := cipherSuite.nextTrafficSecret(c.<b>out</b>.trafficSecret)
+		<a href="../../src/crypto/tls/conn.go.html#line-1251" class="path-duplicate">conn.go</a><a href="../../src/crypto/tls/conn.go.html#line-1251">#L1251</a>: 		c.<b>out</b>.setTrafficSecret(cipherSuite, newSecret)
+		<a href="../../src/crypto/tls/conn.go.html#line-1356" class="path-duplicate">conn.go</a><a href="../../src/crypto/tls/conn.go.html#line-1356">#L1356</a>: 	c.<b>out</b>.Lock()
+		<a href="../../src/crypto/tls/conn.go.html#line-1357" class="path-duplicate">conn.go</a><a href="../../src/crypto/tls/conn.go.html#line-1357">#L1357</a>: 	defer c.<b>out</b>.Unlock()
+		<a href="../../src/crypto/tls/handshake_client.go.html#line-374">handshake_client.go#L374</a>: 	c.<b>out</b>.version = vers
+		<a href="../../src/crypto/tls/handshake_client.go.html#line-673" class="path-duplicate">handshake_client.go</a><a href="../../src/crypto/tls/handshake_client.go.html#line-673">#L673</a>: 	c.<b>out</b>.prepareCipherSpec(c.vers, clientCipher, clientHash)
+		<a href="../../src/crypto/tls/handshake_client_tls13.go.html#line-362">handshake_client_tls13.go#L362</a>: 	c.<b>out</b>.setTrafficSecret(hs.suite, clientSecret)
+		<a href="../../src/crypto/tls/handshake_client_tls13.go.html#line-616" class="path-duplicate">handshake_client_tls13.go</a><a href="../../src/crypto/tls/handshake_client_tls13.go.html#line-616">#L616</a>: 		verifyData: hs.suite.finishedHash(c.<b>out</b>.trafficSecret, hs.transcript),
+		<a href="../../src/crypto/tls/handshake_client_tls13.go.html#line-624" class="path-duplicate">handshake_client_tls13.go</a><a href="../../src/crypto/tls/handshake_client_tls13.go.html#line-624">#L624</a>: 	c.<b>out</b>.setTrafficSecret(hs.suite, hs.trafficSecret)
+		<a href="../../src/crypto/tls/handshake_server.go.html#line-166">handshake_server.go#L166</a>: 	c.<b>out</b>.version = c.vers
+		<a href="../../src/crypto/tls/handshake_server.go.html#line-698" class="path-duplicate">handshake_server.go</a><a href="../../src/crypto/tls/handshake_server.go.html#line-698">#L698</a>: 	c.<b>out</b>.prepareCipherSpec(c.vers, serverCipher, serverHash)
+		<a href="../../src/crypto/tls/handshake_server_tls13.go.html#line-538">handshake_server_tls13.go#L538</a>: 	c.<b>out</b>.setTrafficSecret(hs.suite, serverSecret)
+		<a href="../../src/crypto/tls/handshake_server_tls13.go.html#line-647" class="path-duplicate">handshake_server_tls13.go</a><a href="../../src/crypto/tls/handshake_server_tls13.go.html#line-647">#L647</a>: 		verifyData: hs.suite.finishedHash(c.<b>out</b>.trafficSecret, hs.transcript),
+		<a href="../../src/crypto/tls/handshake_server_tls13.go.html#line-664" class="path-duplicate">handshake_server_tls13.go</a><a href="../../src/crypto/tls/handshake_server_tls13.go.html#line-664">#L664</a>: 	c.<b>out</b>.setTrafficSecret(hs.suite, serverSecret)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

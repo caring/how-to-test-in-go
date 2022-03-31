@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime.special.next</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/runtime.html">runtime</a>.<a href="../src/runtime/mheap.go.html#line-1671">special</a>.<a href="../src/runtime/mheap.go.html#line-1672">next</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">11 uses</span>
+
+	runtime (current package)
+		<a href="../src/runtime/heapdump.go.html#line-455">heapdump.go#L455</a>: 			for sp := s.specials; sp != nil; sp = sp.<b>next</b> {
+		<a href="../src/runtime/heapdump.go.html#line-654" class="path-duplicate">heapdump.go</a><a href="../src/runtime/heapdump.go.html#line-654">#L654</a>: 		for sp := s.specials; sp != nil; sp = sp.<b>next</b> {
+		<a href="../src/runtime/mgcmark.go.html#line-359">mgcmark.go#L359</a>: 			for sp := s.specials; sp != nil; sp = sp.<b>next</b> {
+		<a href="../src/runtime/mgcsweep.go.html#line-444">mgcsweep.go#L444</a>: 			for tmp := siter.s; tmp != nil &amp;&amp; uintptr(tmp.offset) &lt; endOffset; tmp = tmp.<b>next</b> {
+		<a href="../src/runtime/mheap.go.html#line-1672">mheap.go#L1672</a>: 	<b>next</b>   *special // linked list in span
+		<a href="../src/runtime/mheap.go.html#line-1731" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1731">#L1731</a>: 		t = &amp;x.<b>next</b>
+		<a href="../src/runtime/mheap.go.html#line-1736" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1736">#L1736</a>: 	s.<b>next</b> = *t
+		<a href="../src/runtime/mheap.go.html#line-1773" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1773">#L1773</a>: 			*t = s.<b>next</b>
+		<a href="../src/runtime/mheap.go.html#line-1777" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1777">#L1777</a>: 		t = &amp;s.<b>next</b>
+		<a href="../src/runtime/mheap.go.html#line-1892" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1892">#L1892</a>: 	i.pprev = &amp;i.s.<b>next</b>
+		<a href="../src/runtime/mheap.go.html#line-1900" class="path-duplicate">mheap.go</a><a href="../src/runtime/mheap.go.html#line-1900">#L1900</a>: 	i.s = cur.<b>next</b>
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

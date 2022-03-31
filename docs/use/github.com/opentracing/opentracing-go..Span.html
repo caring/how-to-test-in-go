@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: github.com/opentracing/opentracing-go.Span</title>
+<link href="../../../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../../../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;">type <b><a href="../../../pkg/github.com/opentracing/opentracing-go.html">github.com/opentracing/opentracing-go</a>.<a href="../../../src/github.com/opentracing/opentracing-go/span.go.html#line-27">Span</a></b></span>
+
+<span class="title">47 uses</span>
+
+	github.com/opentracing/opentracing-go (current package)
+		<a href="../../../src/github.com/opentracing/opentracing-go/ext.go.html#line-23">ext.go#L23</a>: 	ContextWithSpanHook(ctx context.Context, span <b>Span</b>) context.Context
+		<a href="../../../src/github.com/opentracing/opentracing-go/globaltracer.go.html#line-30">globaltracer.go#L30</a>: func StartSpan(operationName string, opts ...StartSpanOption) <b>Span</b> {
+		<a href="../../../src/github.com/opentracing/opentracing-go/gocontext.go.html#line-11">gocontext.go#L11</a>: func ContextWithSpan(ctx context.Context, span <b>Span</b>) context.Context {
+		<a href="../../../src/github.com/opentracing/opentracing-go/gocontext.go.html#line-26" class="path-duplicate">gocontext.go</a><a href="../../../src/github.com/opentracing/opentracing-go/gocontext.go.html#line-26">#L26</a>: func SpanFromContext(ctx context.Context) <b>Span</b> {
+		<a href="../../../src/github.com/opentracing/opentracing-go/gocontext.go.html#line-28" class="path-duplicate">gocontext.go</a><a href="../../../src/github.com/opentracing/opentracing-go/gocontext.go.html#line-28">#L28</a>: 	if sp, ok := val.(<b>Span</b>); ok {
+		<a href="../../../src/github.com/opentracing/opentracing-go/gocontext.go.html#line-48" class="path-duplicate">gocontext.go</a><a href="../../../src/github.com/opentracing/opentracing-go/gocontext.go.html#line-48">#L48</a>: func StartSpanFromContext(ctx context.Context, operationName string, opts ...StartSpanOption) (<b>Span</b>, context.Context) {
+		<a href="../../../src/github.com/opentracing/opentracing-go/gocontext.go.html#line-59" class="path-duplicate">gocontext.go</a><a href="../../../src/github.com/opentracing/opentracing-go/gocontext.go.html#line-59">#L59</a>: func StartSpanFromContextWithTracer(ctx context.Context, tracer Tracer, operationName string, opts ...StartSpanOption) (<b>Span</b>, context.Context) {
+		<a href="../../../src/github.com/opentracing/opentracing-go/noop.go.html#line-25">noop.go#L25</a>: 	defaultNoopSpan        <b>Span</b>        = noopSpan{}
+		<a href="../../../src/github.com/opentracing/opentracing-go/noop.go.html#line-38" class="path-duplicate">noop.go</a><a href="../../../src/github.com/opentracing/opentracing-go/noop.go.html#line-38">#L38</a>: func (n noopSpan) SetBaggageItem(key, val string) <b>Span</b>                   { return n }
+		<a href="../../../src/github.com/opentracing/opentracing-go/noop.go.html#line-40" class="path-duplicate">noop.go</a><a href="../../../src/github.com/opentracing/opentracing-go/noop.go.html#line-40">#L40</a>: func (n noopSpan) SetTag(key string, value interface{}) <b>Span</b>             { return n }
+		<a href="../../../src/github.com/opentracing/opentracing-go/noop.go.html#line-45" class="path-duplicate">noop.go</a><a href="../../../src/github.com/opentracing/opentracing-go/noop.go.html#line-45">#L45</a>: func (n noopSpan) SetOperationName(operationName string) <b>Span</b>            { return n }
+		<a href="../../../src/github.com/opentracing/opentracing-go/noop.go.html#line-52" class="path-duplicate">noop.go</a><a href="../../../src/github.com/opentracing/opentracing-go/noop.go.html#line-52">#L52</a>: func (n NoopTracer) StartSpan(operationName string, opts ...StartSpanOption) <b>Span</b> {
+		<a href="../../../src/github.com/opentracing/opentracing-go/span.go.html#line-27">span.go#L27</a>: type <b>Span</b> interface {
+		<a href="../../../src/github.com/opentracing/opentracing-go/span.go.html#line-46" class="path-duplicate">span.go</a><a href="../../../src/github.com/opentracing/opentracing-go/span.go.html#line-46">#L46</a>: 	SetOperationName(operationName string) <b>Span</b>
+		<a href="../../../src/github.com/opentracing/opentracing-go/span.go.html#line-58" class="path-duplicate">span.go</a><a href="../../../src/github.com/opentracing/opentracing-go/span.go.html#line-58">#L58</a>: 	SetTag(key string, value interface{}) <b>Span</b>
+		<a href="../../../src/github.com/opentracing/opentracing-go/span.go.html#line-108" class="path-duplicate">span.go</a><a href="../../../src/github.com/opentracing/opentracing-go/span.go.html#line-108">#L108</a>: 	SetBaggageItem(restrictedKey, value string) <b>Span</b>
+		<a href="../../../src/github.com/opentracing/opentracing-go/tracer.go.html#line-37">tracer.go#L37</a>: 	StartSpan(operationName string, opts ...StartSpanOption) <b>Span</b>
+		<a href="../../../src/github.com/opentracing/opentracing-go/tracer.go.html#line-302" class="path-duplicate">tracer.go</a><a href="../../../src/github.com/opentracing/opentracing-go/tracer.go.html#line-302">#L302</a>: func (t Tag) Set(s <b>Span</b>) {
+
+	<a href="../../../pkg/github.com/opentracing/opentracing-go/ext.html">github.com/opentracing/opentracing-go/ext</a>
+		<a href="../../../src/github.com/opentracing/opentracing-go/ext/field.go.html#line-9">field.go#L9</a>: func LogError(span opentracing.<b>Span</b>, err error, fields ...log.Field) {
+		<a href="../../../src/github.com/opentracing/opentracing-go/ext/tags.go.html#line-141">tags.go#L141</a>: func (tag spanKindTagName) Set(span opentracing.<b>Span</b>, value SpanKindEnum) {
+		<a href="../../../src/github.com/opentracing/opentracing-go/ext/tags.go.html#line-170" class="path-duplicate">tags.go</a><a href="../../../src/github.com/opentracing/opentracing-go/ext/tags.go.html#line-170">#L170</a>: func (tag StringTagName) Set(span opentracing.<b>Span</b>, value string) {
+		<a href="../../../src/github.com/opentracing/opentracing-go/ext/tags.go.html#line-180" class="path-duplicate">tags.go</a><a href="../../../src/github.com/opentracing/opentracing-go/ext/tags.go.html#line-180">#L180</a>: func (tag Uint32TagName) Set(span opentracing.<b>Span</b>, value uint32) {
+		<a href="../../../src/github.com/opentracing/opentracing-go/ext/tags.go.html#line-190" class="path-duplicate">tags.go</a><a href="../../../src/github.com/opentracing/opentracing-go/ext/tags.go.html#line-190">#L190</a>: func (tag Uint16TagName) Set(span opentracing.<b>Span</b>, value uint16) {
+		<a href="../../../src/github.com/opentracing/opentracing-go/ext/tags.go.html#line-200" class="path-duplicate">tags.go</a><a href="../../../src/github.com/opentracing/opentracing-go/ext/tags.go.html#line-200">#L200</a>: func (tag BoolTagName) Set(span opentracing.<b>Span</b>, value bool) {
+		<a href="../../../src/github.com/opentracing/opentracing-go/ext/tags.go.html#line-208" class="path-duplicate">tags.go</a><a href="../../../src/github.com/opentracing/opentracing-go/ext/tags.go.html#line-208">#L208</a>: func (tag IPv4TagName) Set(span opentracing.<b>Span</b>, value uint32) {
+		<a href="../../../src/github.com/opentracing/opentracing-go/ext/tags.go.html#line-213" class="path-duplicate">tags.go</a><a href="../../../src/github.com/opentracing/opentracing-go/ext/tags.go.html#line-213">#L213</a>: func (tag IPv4TagName) SetString(span opentracing.<b>Span</b>, value string) {
+
+	<a href="../../../pkg/github.com/uber/jaeger-client-go.html">github.com/uber/jaeger-client-go</a>
+		<a href="../../../src/github.com/uber/jaeger-client-go/contrib_observer.go.html#line-35">contrib_observer.go#L35</a>: 	OnStartSpan(sp opentracing.<b>Span</b>, operationName string, options opentracing.StartSpanOptions) (ContribSpanObserver, bool)
+		<a href="../../../src/github.com/uber/jaeger-client-go/contrib_observer.go.html#line-53" class="path-duplicate">contrib_observer.go</a><a href="../../../src/github.com/uber/jaeger-client-go/contrib_observer.go.html#line-53">#L53</a>: func (o *oldObserver) OnStartSpan(sp opentracing.<b>Span</b>, operationName string, options opentracing.StartSpanOptions) (ContribSpanObserver, bool) {
+		<a href="../../../src/github.com/uber/jaeger-client-go/observer.go.html#line-55">observer.go#L55</a>: func (o *compositeObserver) OnStartSpan(sp opentracing.<b>Span</b>, operationName string, options opentracing.StartSpanOptions) ContribSpanObserver {
+		<a href="../../../src/github.com/uber/jaeger-client-go/reporter.go.html#line-84">reporter.go#L84</a>: 	spans []opentracing.<b>Span</b>
+		<a href="../../../src/github.com/uber/jaeger-client-go/reporter.go.html#line-92" class="path-duplicate">reporter.go</a><a href="../../../src/github.com/uber/jaeger-client-go/reporter.go.html#line-92">#L92</a>: 		spans: make([]opentracing.<b>Span</b>, 0, 10),
+		<a href="../../../src/github.com/uber/jaeger-client-go/reporter.go.html#line-117" class="path-duplicate">reporter.go</a><a href="../../../src/github.com/uber/jaeger-client-go/reporter.go.html#line-117">#L117</a>: func (r *InMemoryReporter) GetSpans() []opentracing.<b>Span</b> {
+		<a href="../../../src/github.com/uber/jaeger-client-go/reporter.go.html#line-120" class="path-duplicate">reporter.go</a><a href="../../../src/github.com/uber/jaeger-client-go/reporter.go.html#line-120">#L120</a>: 	copied := make([]opentracing.<b>Span</b>, len(r.spans))
+		<a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-85">span.go#L85</a>: func (s *Span) SetOperationName(operationName string) opentracing.<b>Span</b> {
+		<a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-99" class="path-duplicate">span.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-99">#L99</a>: func (s *Span) SetTag(key string, value interface{}) opentracing.<b>Span</b> {
+		<a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-103" class="path-duplicate">span.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-103">#L103</a>: func (s *Span) setTagInternal(key string, value interface{}, lock bool) opentracing.<b>Span</b> {
+		<a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-325" class="path-duplicate">span.go</a><a href="../../../src/github.com/uber/jaeger-client-go/span.go.html#line-325">#L325</a>: func (s *Span) SetBaggageItem(key, value string) opentracing.<b>Span</b> {
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-203">tracer.go#L203</a>: ) opentracing.<b>Span</b> {
+		<a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-214" class="path-duplicate">tracer.go</a><a href="../../../src/github.com/uber/jaeger-client-go/tracer.go.html#line-214">#L214</a>: ) opentracing.<b>Span</b> {
+
+	<a href="../../../pkg/github.com/uber/jaeger-client-go/log/zap.html">github.com/uber/jaeger-client-go/log/zap</a>
+		<a href="../../../src/github.com/uber/jaeger-client-go/log/zap/field.go.html#line-187">field.go#L187</a>: func Span(s opentracing.<b>Span</b>) zapcore.Field {
+		<a href="../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-47">tracer.go#L47</a>: func (l loggingTracer) StartSpan(operationName string, opts ...opentracing.StartSpanOption) opentracing.<b>Span</b> {
+		<a href="../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-91" class="path-duplicate">tracer.go</a><a href="../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-91">#L91</a>: 	delegate opentracing.<b>Span</b>
+		<a href="../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-94" class="path-duplicate">tracer.go</a><a href="../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-94">#L94</a>: func newLoggingSpan(logger *zap.Logger, span opentracing.<b>Span</b>) opentracing.<b>Span</b> {
+		<a href="../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-117" class="path-duplicate">tracer.go</a><a href="../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-117">#L117</a>: func (l loggingSpan) SetOperationName(operationName string) opentracing.<b>Span</b> {
+		<a href="../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-122" class="path-duplicate">tracer.go</a><a href="../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-122">#L122</a>: func (l loggingSpan) SetTag(key string, value interface{}) opentracing.<b>Span</b> {
+		<a href="../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-137" class="path-duplicate">tracer.go</a><a href="../../../src/github.com/uber/jaeger-client-go/log/zap/tracer.go.html#line-137">#L137</a>: func (l loggingSpan) SetBaggageItem(restrictedKey, value string) opentracing.<b>Span</b> {
+</code></pre><pre id="footer">
+<table><tr><td><img src="../../../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>

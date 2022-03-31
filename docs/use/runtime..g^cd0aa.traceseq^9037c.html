@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>References: runtime.g.traceseq</title>
+<link href="../css/light-v0.4.5.css" rel="stylesheet">
+<script src="../jvs/golds-v0.4.5.js"></script>
+<body onload="onPageLoad()"><div>
+
+<pre><code><span style="font-size:x-large;"><b><a href="../pkg/runtime.html">runtime</a>.<a href="../src/runtime/runtime2.go.html#line-403">g</a>.<a href="../src/runtime/runtime2.go.html#line-470">traceseq</a></b></span><span style="font-size: large;"><i> (field)</i></span>
+
+<span class="title">12 uses</span>
+
+	runtime (current package)
+		<a href="../src/runtime/runtime2.go.html#line-470">runtime2.go#L470</a>: 	<b>traceseq</b>       uint64   // trace event sequencer
+		<a href="../src/runtime/trace.go.html#line-228">trace.go#L228</a>: 			gp.<b>traceseq</b> = 0
+		<a href="../src/runtime/trace.go.html#line-236" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-236">#L236</a>: 			gp.<b>traceseq</b>++
+		<a href="../src/runtime/trace.go.html#line-240" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-240">#L240</a>: 			gp.<b>traceseq</b>++
+		<a href="../src/runtime/trace.go.html#line-1057" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-1057">#L1057</a>: 	newg.<b>traceseq</b> = 0
+		<a href="../src/runtime/trace.go.html#line-1067" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-1067">#L1067</a>: 	_g_.<b>traceseq</b>++
+		<a href="../src/runtime/trace.go.html#line-1069" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-1069">#L1069</a>: 		traceEvent(traceEvGoStartLabel, -1, uint64(_g_.goid), _g_.<b>traceseq</b>, trace.markWorkerLabels[_p_.ptr().gcMarkWorkerMode])
+		<a href="../src/runtime/trace.go.html#line-1074" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-1074">#L1074</a>: 		traceEvent(traceEvGoStart, -1, uint64(_g_.goid), _g_.<b>traceseq</b>)
+		<a href="../src/runtime/trace.go.html#line-1103" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-1103">#L1103</a>: 	gp.<b>traceseq</b>++
+		<a href="../src/runtime/trace.go.html#line-1108" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-1108">#L1108</a>: 		traceEvent(traceEvGoUnblock, skip, uint64(gp.goid), gp.<b>traceseq</b>)
+		<a href="../src/runtime/trace.go.html#line-1130" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-1130">#L1130</a>: 	_g_.<b>traceseq</b>++
+		<a href="../src/runtime/trace.go.html#line-1132" class="path-duplicate">trace.go</a><a href="../src/runtime/trace.go.html#line-1132">#L1132</a>: 	traceEvent(traceEvGoSysExit, -1, uint64(_g_.goid), _g_.<b>traceseq</b>, uint64(ts)/traceTickDiv)
+</code></pre><pre id="footer">
+<table><tr><td><img src="../png/go101-twitter.png"></td>
+<td>The pages are generated with <a href="https://go101.org/article/tool-golds.html"><b>Golds</b></a> <i>v0.4.5</i>. (GOOS=darwin GOARCH=amd64)
+<b>Golds</b> is a <a href="https://go101.org">Go 101</a> project developed by <a href="https://tapirgames.com">Tapir Liu</a>.
+PR and bug reports are welcome and can be submitted to <a href="https://github.com/go101/golds">the issue list</a>.
+Please follow <a href="https://twitter.com/go100and1">@Go100and1</a> (reachable from the left QR code) to get the latest news of <b>Golds</b>.</td></tr></table></pre>
