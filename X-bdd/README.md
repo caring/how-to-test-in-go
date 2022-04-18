@@ -34,3 +34,20 @@ other scenarios should have its own clean context. Any background section will b
 before each ordinary scenario.
 
 To illustrate what the output for a failed test looks like with each approach, I have intentionally introduced a bug in the AddItem function.
+
+## To see the failures using each example:
+In shoppingcart/shoppingcart.go, you can uncomment line 29 (under "buggy code:") and comment line 31 (under "correct code:") to see what the output would
+look like for yourself when tests fail.
+
+```go
+func (s *ShoppingCart) AddItem(item Item, quantity uint) {
+	if line, found := s.lines[item.ID]; found {
+		//buggy code:
+		// line.Quantity += int(quantity)
+		// correct code:
+		s.lines[item.ID] = LineItem{Item: item, Quantity: line.Quantity + int(quantity)}
+		return
+	}
+	s.lines[item.ID] = LineItem{Item: item, Quantity: int(quantity)}
+}
+```

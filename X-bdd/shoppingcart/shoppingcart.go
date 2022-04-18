@@ -26,9 +26,9 @@ func (s *ShoppingCart) IsEmpty() bool {
 func (s *ShoppingCart) AddItem(item Item, quantity uint) {
 	if line, found := s.lines[item.ID]; found {
 		//buggy code:
-		line.Quantity += int(quantity)
+		// line.Quantity += int(quantity)
 		// correct code:
-		// s.lines[item.ID] = LineItem{Item: item, Quantity: line.Quantity + int(quantity)}
+		s.lines[item.ID] = LineItem{Item: item, Quantity: line.Quantity + int(quantity)}
 		return
 	}
 	s.lines[item.ID] = LineItem{Item: item, Quantity: int(quantity)}
