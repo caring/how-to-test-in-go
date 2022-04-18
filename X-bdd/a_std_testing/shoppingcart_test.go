@@ -36,9 +36,9 @@ func (c testCase) Run(t *testing.T) {
 			t.Logf("%s %d %s which costs %d each is added to the cart\n", keyword, line.Quantity, line.Item.Name, line.Item.Price)
 			cart.AddItem(line.Item, uint(line.Quantity))
 		}
-		t.Logf(" Then the total cost must be %d", c.expectedTotalCost)
-		is.Equal(cart.TotalCost(), c.expectedTotalCost) // should be equal
 	}
+	t.Logf(" Then the total cost must be %d", c.expectedTotalCost)
+	is.Equal(cart.TotalCost(), c.expectedTotalCost) // should be equal
 }
 
 func TestTotalCost(t *testing.T) {
