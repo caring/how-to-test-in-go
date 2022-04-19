@@ -19,6 +19,8 @@ The approached illustrated are:
 - using the gobdd library
 - using the godog library
 
+(note: If you wanted to take an approach where you did something like combine using a library like goconvey with a library that uses external feature files like godog, that would be a valid approach.  Using goconvey could be useful in making the step implementations for godog more expressive, for example.)
+
 The first two examples are intended to illustrate how to write more expressive tests. Utilizing either of these approached would involve initially writing
 acceptance criteria as something that would translate into given-when-then's, and then incorporating those given-when-then's into your test code to
 decorate the test code and make it more expressive.  By making the tests more expressive, what you're trying to accomplish is minimizing the mental overhead
