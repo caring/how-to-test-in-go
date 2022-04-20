@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/caring/test/X-bdd/shoppingcart"
+	"github.com/caring/test/4-bdd/shoppingcart"
 	"github.com/cucumber/godog"
 )
 
